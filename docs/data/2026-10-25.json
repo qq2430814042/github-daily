@@ -1,7 +1,7 @@
 {
   "date": "2026-10-25",
   "timezone": "Asia/Shanghai",
-  "generatedAt": "2026-10-26T14:32:03.028Z",
+  "generatedAt": "2026-10-26T14:45:39.124Z",
   "count": 60,
   "newCount": 34,
   "sources": {
@@ -18,8 +18,8 @@
       "url": "https://github.com/debpalash/VoiceStudio",
       "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
       "language": "Python",
-      "stars": 88195,
-      "forks": 9727,
+      "stars": 88232,
+      "forks": 9729,
       "starsToday": 2292,
       "topics": [],
       "createdAt": null,
@@ -37,7 +37,7 @@
       "url": "https://github.com/Nutlope/hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
       "language": "CSS",
-      "stars": 35371,
+      "stars": 35403,
       "forks": 1844,
       "starsToday": 2235,
       "topics": [],
@@ -56,7 +56,7 @@
       "url": "https://github.com/pbakaus/impeccable",
       "description": "The design language that makes your AI harness better at design.",
       "language": "Rust",
-      "stars": 88616,
+      "stars": 88637,
       "forks": 5288,
       "starsToday": 1551,
       "topics": [],
@@ -75,8 +75,8 @@
       "url": "https://github.com/TauricResearch/TradingAgents",
       "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
       "language": "Python",
-      "stars": 115463,
-      "forks": 22203,
+      "stars": 115484,
+      "forks": 22205,
       "starsToday": 1376,
       "topics": [],
       "createdAt": null,
@@ -94,7 +94,7 @@
       "url": "https://github.com/makecindy/cindy",
       "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
       "language": "TypeScript",
-      "stars": 5870,
+      "stars": 5886,
       "forks": 740,
       "starsToday": 1268,
       "topics": [],
@@ -113,7 +113,7 @@
       "url": "https://github.com/JetBrains/thinkrail",
       "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
       "language": "TypeScript",
-      "stars": 2417,
+      "stars": 2432,
       "forks": 134,
       "starsToday": 1156,
       "topics": [],
@@ -132,8 +132,8 @@
       "url": "https://github.com/affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "language": "JavaScript",
-      "stars": 289349,
-      "forks": 42876,
+      "stars": 289368,
+      "forks": 42878,
       "starsToday": 853,
       "topics": [],
       "createdAt": null,
@@ -151,8 +151,8 @@
       "url": "https://github.com/pollen-robotics/microduck",
       "description": "A Tiny biped duck robot 🦆",
       "language": "Rust",
-      "stars": 12175,
-      "forks": 1528,
+      "stars": 12188,
+      "forks": 1529,
       "starsToday": 844,
       "topics": [],
       "createdAt": null,
@@ -170,8 +170,8 @@
       "url": "https://github.com/Panniantong/Agent-Reach",
       "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
       "language": "Python",
-      "stars": 103053,
-      "forks": 9142,
+      "stars": 103063,
+      "forks": 9143,
       "starsToday": 723,
       "topics": [
         "agent-infrastructure",
@@ -184,7 +184,7 @@
         "cursor"
       ],
       "createdAt": "2026-02-24T02:10:24Z",
-      "updatedAt": "2026-10-26T14:29:55Z",
+      "updatedAt": "2026-10-26T14:45:11Z",
       "sources": [
         "trending",
         "high-star"
@@ -199,7 +199,7 @@
       "url": "https://github.com/multica-ai/andrej-karpathy-skills",
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
       "language": "",
-      "stars": 224248,
+      "stars": 224260,
       "forks": 22442,
       "starsToday": 457,
       "topics": [],
@@ -218,7 +218,7 @@
       "url": "https://github.com/NVIDIA/SkillSpector",
       "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
       "language": "Python",
-      "stars": 21811,
+      "stars": 21822,
       "forks": 1913,
       "starsToday": 203,
       "topics": [],
@@ -237,8 +237,8 @@
       "url": "https://github.com/alchaincyf/huashu-design",
       "description": "Huashu Design 3.0 · 在 agent 里打一句话，拿回能交付的设计：网页 / App 原型 / 可编辑 PPTX / 动画 / 信息图 · 六个候选挑三个方向 · 84 种带样张的风格库 · 越用越懂你的外观账本与设计体检 · HTML-native design skill for Claude Code, Codex, Cursor & any agent",
       "language": "HTML",
-      "stars": 26551,
-      "forks": 2952,
+      "stars": 26559,
+      "forks": 2953,
       "starsToday": 177,
       "topics": [],
       "createdAt": null,
@@ -256,8 +256,8 @@
       "url": "https://github.com/gitroomhq/postiz-app",
       "description": "📨 The ultimate agentic social media scheduling tool 🤖",
       "language": "TypeScript",
-      "stars": 38058,
-      "forks": 7414,
+      "stars": 38077,
+      "forks": 7416,
       "starsToday": 146,
       "topics": [],
       "createdAt": null,
@@ -275,8 +275,8 @@
       "url": "https://github.com/nightly-labs/openbot",
       "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
       "language": "TypeScript",
-      "stars": 1175,
-      "forks": 165,
+      "stars": 1183,
+      "forks": 166,
       "starsToday": 86,
       "topics": [],
       "createdAt": null,
@@ -294,8 +294,8 @@
       "url": "https://github.com/designfuchen/word-atlas",
       "description": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
       "language": "TypeScript",
-      "stars": 1395,
-      "forks": 350,
+      "stars": 1405,
+      "forks": 352,
       "starsToday": 0,
       "topics": [
         "chinese",
@@ -308,7 +308,7 @@
         "pwa"
       ],
       "createdAt": "2026-10-25T08:27:22Z",
-      "updatedAt": "2026-10-26T14:30:02Z",
+      "updatedAt": "2026-10-26T14:44:56Z",
       "sources": [
         "new"
       ],
@@ -322,7 +322,7 @@
       "url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
       "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
       "language": "Python",
-      "stars": 688,
+      "stars": 690,
       "forks": 68,
       "starsToday": 0,
       "topics": [
@@ -336,7 +336,7 @@
         "ussr"
       ],
       "createdAt": "2026-10-25T10:05:56Z",
-      "updatedAt": "2026-10-26T14:27:29Z",
+      "updatedAt": "2026-10-26T14:42:30Z",
       "sources": [
         "new"
       ],
@@ -350,12 +350,12 @@
       "url": "https://github.com/KillaBoi/StealMyBitcoin-PoC",
       "description": "A public release of the Steal My Bitcoin challenge",
       "language": "Python",
-      "stars": 685,
-      "forks": 96,
+      "stars": 690,
+      "forks": 97,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T21:48:32Z",
-      "updatedAt": "2026-10-26T14:31:05Z",
+      "updatedAt": "2026-10-26T14:44:53Z",
       "sources": [
         "new"
       ],
@@ -388,12 +388,12 @@
       "url": "https://github.com/unclebob/ub-mode",
       "description": "",
       "language": "",
-      "stars": 585,
+      "stars": 586,
       "forks": 27,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T16:04:09Z",
-      "updatedAt": "2026-10-26T14:13:07Z",
+      "updatedAt": "2026-10-26T14:45:29Z",
       "sources": [
         "new"
       ],
@@ -426,12 +426,12 @@
       "url": "https://github.com/DrWhax/unfairplay",
       "description": "Decrypt IPA's on MacOS",
       "language": "Go",
-      "stars": 356,
-      "forks": 100,
+      "stars": 361,
+      "forks": 101,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T21:22:20Z",
-      "updatedAt": "2026-10-26T14:30:51Z",
+      "updatedAt": "2026-10-26T14:43:56Z",
       "sources": [
         "new"
       ],
@@ -472,7 +472,7 @@
       "description": "Experimental NVIDIA tensor-compute unlock research: guarded TU102 initramfs port, offline tests, and Ampere reproduction notes",
       "language": "C",
       "stars": 224,
-      "forks": 22,
+      "forks": 23,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T01:18:54Z",
@@ -490,12 +490,12 @@
       "url": "https://github.com/mochiiwuff/capri-desktop",
       "description": "Capri, the Project Capricorn construct from Cyberpunk: Edgerunners 2, living on your desktop and narrating what Claude Code is doing.",
       "language": "JavaScript",
-      "stars": 193,
+      "stars": 195,
       "forks": 31,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T09:07:06Z",
-      "updatedAt": "2026-10-26T14:29:19Z",
+      "updatedAt": "2026-10-26T14:43:03Z",
       "sources": [
         "new"
       ],
@@ -509,7 +509,7 @@
       "url": "https://github.com/kuraeow/ultratears",
       "description": "Unofficial native Windows port of Tears of the Kingdom 1.4.3 using static recompilation. Builds locally from the player's own extracted game dump; no game files included.",
       "language": "C",
-      "stars": 172,
+      "stars": 173,
       "forks": 4,
       "starsToday": 0,
       "topics": [
@@ -523,7 +523,7 @@
         "static-recompilation"
       ],
       "createdAt": "2026-10-25T00:04:08Z",
-      "updatedAt": "2026-10-26T14:25:09Z",
+      "updatedAt": "2026-10-26T14:35:15Z",
       "sources": [
         "new"
       ],
@@ -565,7 +565,7 @@
       "url": "https://github.com/jadezane6634-ops/dsh-purge-flash",
       "description": "DSH稳定高效的破甲插件： 常驻1,597token +零宿主补丁（可与dsh-purge共存）+ 三层技能路由+ 分级 prefill + 拒答自我强化阶梯+ finish_reason 四路分流 状态查询: /flash light",
       "language": "JavaScript",
-      "stars": 166,
+      "stars": 168,
       "forks": 74,
       "starsToday": 0,
       "topics": [
@@ -579,7 +579,7 @@
         "dsh"
       ],
       "createdAt": "2026-10-25T08:59:56Z",
-      "updatedAt": "2026-10-26T14:30:48Z",
+      "updatedAt": "2026-10-26T14:44:25Z",
       "sources": [
         "new"
       ],
@@ -650,12 +650,12 @@
       "url": "https://github.com/keoyyo85/FoundPhone-Studio",
       "description": "An AI-powered interactive found phone story framework. Create your own playable phone stories with natural language.",
       "language": "TypeScript",
-      "stars": 120,
-      "forks": 147,
+      "stars": 121,
+      "forks": 150,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T03:29:02Z",
-      "updatedAt": "2026-10-26T14:31:15Z",
+      "updatedAt": "2026-10-26T14:38:19Z",
       "sources": [
         "new"
       ],
@@ -669,12 +669,12 @@
       "url": "https://github.com/egoist/mygo-cloudmusic",
       "description": "MyGo 云音乐 - 第三方网易云音乐原生客户端",
       "language": "Go",
-      "stars": 118,
-      "forks": 17,
+      "stars": 119,
+      "forks": 18,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T11:41:31Z",
-      "updatedAt": "2026-10-26T14:18:32Z",
+      "updatedAt": "2026-10-26T14:43:36Z",
       "sources": [
         "new"
       ],
@@ -744,7 +744,7 @@
       "url": "https://github.com/heydeer/pngdeer",
       "description": "Smaller PNGs, same picture. Lossy PNG compression that picks the quality for you: 8–12% smaller than TinyPNG at the same quality. Command line and in the browser.",
       "language": "Rust",
-      "stars": 107,
+      "stars": 108,
       "forks": 9,
       "starsToday": 0,
       "topics": [
@@ -757,7 +757,7 @@
         "webassembly"
       ],
       "createdAt": "2026-10-25T05:09:24Z",
-      "updatedAt": "2026-10-26T14:31:55Z",
+      "updatedAt": "2026-10-26T14:36:40Z",
       "sources": [
         "new"
       ],
@@ -765,6 +765,33 @@
     },
     {
       "rank": 36,
+      "fullName": "mxhm11cr/LinuxRunner",
+      "name": "LinuxRunner",
+      "owner": "mxhm11cr",
+      "url": "https://github.com/mxhm11cr/LinuxRunner",
+      "description": "Run ARM64 Linux applications and desktop environments on iPhone.",
+      "language": "C",
+      "stars": 101,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [
+        "arm64",
+        "debian",
+        "interpreter",
+        "ios",
+        "iphone",
+        "linux",
+        "open-source"
+      ],
+      "createdAt": "2026-10-25T20:47:02Z",
+      "updatedAt": "2026-10-26T14:40:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 37,
       "fullName": "breakbrawlerheart/pixeluxe-ai",
       "name": "pixeluxe-ai",
       "owner": "breakbrawlerheart",
@@ -787,34 +814,35 @@
       "isNew": true
     },
     {
-      "rank": 37,
-      "fullName": "mxhm11cr/LinuxRunner",
-      "name": "LinuxRunner",
-      "owner": "mxhm11cr",
-      "url": "https://github.com/mxhm11cr/LinuxRunner",
-      "description": "Run ARM64 Linux applications and desktop environments on iPhone.",
-      "language": "C",
-      "stars": 99,
-      "forks": 4,
+      "rank": 38,
+      "fullName": "jacke-pp/ai-wallet-binance",
+      "name": "ai-wallet-binance",
+      "owner": "jacke-pp",
+      "url": "https://github.com/jacke-pp/ai-wallet-binance",
+      "description": "让任何 AI 用你自己的币安 AI 钱包交易：秒买秒卖、狙击 Agent 专属发射台（Four、Flap、GANG）、AI 专属 Mint、本机交易页面。币安签名，不碰私钥。Let any AI trade with your own Binance AI wallet.",
+      "language": "JavaScript",
+      "stars": 81,
+      "forks": 5,
       "starsToday": 0,
       "topics": [
-        "arm64",
-        "debian",
-        "interpreter",
-        "ios",
-        "iphone",
-        "linux",
-        "open-source"
+        "agent-id",
+        "agentic-wallet",
+        "ai-agent",
+        "binance",
+        "bsc",
+        "flap",
+        "four-meme",
+        "sniper"
       ],
-      "createdAt": "2026-10-25T20:47:02Z",
-      "updatedAt": "2026-10-26T14:24:19Z",
+      "createdAt": "2026-10-25T09:53:57Z",
+      "updatedAt": "2026-10-26T14:41:34Z",
       "sources": [
         "new"
       ],
       "isNew": true
     },
     {
-      "rank": 38,
+      "rank": 39,
       "fullName": "ptgcrpkpqrxx/Murder-Mystery-2-Script-MM2-cheat-menu-scrit8x",
       "name": "Murder-Mystery-2-Script-MM2-cheat-menu-scrit8x",
       "owner": "ptgcrpkpqrxx",
@@ -841,34 +869,6 @@
       "isNew": true
     },
     {
-      "rank": 39,
-      "fullName": "jacke-pp/ai-wallet-binance",
-      "name": "ai-wallet-binance",
-      "owner": "jacke-pp",
-      "url": "https://github.com/jacke-pp/ai-wallet-binance",
-      "description": "让任何 AI 用你自己的币安 AI 钱包交易：秒买秒卖、狙击 Agent 专属发射台（Four、Flap、GANG）、AI 专属 Mint、本机交易页面。币安签名，不碰私钥。Let any AI trade with your own Binance AI wallet.",
-      "language": "JavaScript",
-      "stars": 79,
-      "forks": 5,
-      "starsToday": 0,
-      "topics": [
-        "agent-id",
-        "agentic-wallet",
-        "ai-agent",
-        "binance",
-        "bsc",
-        "flap",
-        "four-meme",
-        "sniper"
-      ],
-      "createdAt": "2026-10-25T09:53:57Z",
-      "updatedAt": "2026-10-26T14:24:50Z",
-      "sources": [
-        "new"
-      ],
-      "isNew": true
-    },
-    {
       "rank": 40,
       "fullName": "Aaryan-Kapoor/english-rs",
       "name": "english-rs",
@@ -876,12 +876,12 @@
       "url": "https://github.com/Aaryan-Kapoor/english-rs",
       "description": "English, rewritten in Rust: grammar as trait bounds, pronouns as borrows, and englishc, a compiler with rustc-style diagnostics for prose",
       "language": "Rust",
-      "stars": 70,
+      "stars": 71,
       "forks": 0,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T00:50:31Z",
-      "updatedAt": "2026-10-26T14:29:45Z",
+      "updatedAt": "2026-10-26T14:42:25Z",
       "sources": [
         "new"
       ],
@@ -895,12 +895,12 @@
       "url": "https://github.com/smhanov/agentloop",
       "description": "Everything you need for building an agent. A Go library for the LLM tool-calling loop with budgets, hooks, skills, and tracing.",
       "language": "Go",
-      "stars": 69,
+      "stars": 71,
       "forks": 9,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T16:18:50Z",
-      "updatedAt": "2026-10-26T13:30:14Z",
+      "updatedAt": "2026-10-26T14:41:42Z",
       "sources": [
         "new"
       ],
@@ -952,7 +952,7 @@
       "url": "https://github.com/ccch1mneyyy/dsh-go",
       "description": "dsh-go — DeepSeek Harness 装进口袋：手机本机运行，也能遥控你的电脑。Android · Unofficial.",
       "language": "",
-      "stars": 64,
+      "stars": 65,
       "forks": 2,
       "starsToday": 0,
       "topics": [
@@ -966,7 +966,7 @@
         "dsh-tui"
       ],
       "createdAt": "2026-10-25T08:09:52Z",
-      "updatedAt": "2026-10-26T12:02:23Z",
+      "updatedAt": "2026-10-26T14:42:02Z",
       "sources": [
         "new"
       ],
@@ -1063,8 +1063,8 @@
       "url": "https://github.com/EbookFoundation/free-programming-books",
       "description": ":books: Freely available programming books",
       "language": "Python",
-      "stars": 400165,
-      "forks": 67013,
+      "stars": 400164,
+      "forks": 67011,
       "starsToday": 0,
       "topics": [
         "books",
@@ -1074,7 +1074,7 @@
         "resource"
       ],
       "createdAt": "2013-10-11T06:50:37Z",
-      "updatedAt": "2026-10-26T14:26:35Z",
+      "updatedAt": "2026-10-26T14:39:30Z",
       "sources": [
         "high-star"
       ],
@@ -1089,7 +1089,7 @@
       "description": "🙃 A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up wi",
       "language": "Shell",
       "stars": 190171,
-      "forks": 28616,
+      "forks": 28618,
       "starsToday": 0,
       "topics": [
         "cli",
@@ -1130,7 +1130,7 @@
         "flutter-package"
       ],
       "createdAt": "2015-03-06T22:54:58Z",
-      "updatedAt": "2026-10-26T14:13:00Z",
+      "updatedAt": "2026-10-26T14:41:58Z",
       "sources": [
         "high-star"
       ],
@@ -1144,12 +1144,12 @@
       "url": "https://github.com/msitarzewski/agency-agents",
       "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
       "language": "Shell",
-      "stars": 164155,
+      "stars": 164157,
       "forks": 26488,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2025-10-13T12:12:29Z",
-      "updatedAt": "2026-10-26T14:30:42Z",
+      "updatedAt": "2026-10-26T14:37:27Z",
       "sources": [
         "high-star"
       ],
@@ -1210,7 +1210,7 @@
       "url": "https://github.com/localsend/localsend",
       "description": "An open-source cross-platform alternative to AirDrop",
       "language": "Dart",
-      "stars": 95728,
+      "stars": 95731,
       "forks": 5390,
       "starsToday": 0,
       "topics": [
@@ -1220,7 +1220,7 @@
         "flutter-apps"
       ],
       "createdAt": "2022-12-16T00:46:07Z",
-      "updatedAt": "2026-10-26T14:30:07Z",
+      "updatedAt": "2026-10-26T14:41:07Z",
       "sources": [
         "high-star"
       ],
@@ -1234,12 +1234,12 @@
       "url": "https://github.com/odysseus-dev/odysseus",
       "description": "Self-hosted AI workspace.",
       "language": "Python",
-      "stars": 94476,
-      "forks": 1764,
+      "stars": 94477,
+      "forks": 1765,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-05-31T14:05:51Z",
-      "updatedAt": "2026-10-26T14:21:58Z",
+      "updatedAt": "2026-10-26T14:43:06Z",
       "sources": [
         "high-star"
       ],
@@ -1253,12 +1253,12 @@
       "url": "https://github.com/modelcontextprotocol/servers",
       "description": "Model Context Protocol Servers",
       "language": "TypeScript",
-      "stars": 91580,
+      "stars": 91581,
       "forks": 11867,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2024-11-19T01:10:17Z",
-      "updatedAt": "2026-10-26T13:46:57Z",
+      "updatedAt": "2026-10-26T14:39:16Z",
       "sources": [
         "high-star"
       ],
@@ -1300,8 +1300,8 @@
       "url": "https://github.com/usestrix/strix",
       "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
       "language": "Python",
-      "stars": 72033,
-      "forks": 8056,
+      "stars": 72037,
+      "forks": 8057,
       "starsToday": 0,
       "topics": [
         "agents",
@@ -1314,7 +1314,7 @@
         "code-quality"
       ],
       "createdAt": "2025-08-05T21:28:30Z",
-      "updatedAt": "2026-10-26T14:30:21Z",
+      "updatedAt": "2026-10-26T14:42:33Z",
       "sources": [
         "high-star"
       ],
