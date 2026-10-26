@@ -57,6 +57,7 @@ const els = {
   sort: document.getElementById('sort'),
   favCount: document.getElementById('favCount'),
   tabs: [...document.querySelectorAll('.tab')],
+  detailOverlay: document.getElementById('detailOverlay'),
   detailDialog: document.getElementById('detailDialog'),
   detailTitle: document.getElementById('detailTitle'),
   detailDesc: document.getElementById('detailDesc'),
@@ -71,6 +72,7 @@ const els = {
 };
 
 let loadToken = 0;
+let lastDetailFocus = null;
 
 function create(tag, className = '', text = '') {
   const element = document.createElement(tag);
@@ -412,22 +414,22 @@ function createCard(item, index) {
   const main = create('div', 'card-main');
   const titleRow = create('div', 'title-row');
 
-  const link = create('a', 'repo-link');
-  link.href = safeGitHubUrl(item.url);
-  link.target = '_blank';
-  link.rel = 'noopener noreferrer';
-  link.title = item.fullName || '';
+  const titleButton = create('button', 'repo-link');
+  titleButton.type = 'button';
+  titleButton.title = item.fullName || '';
+  titleButton.setAttribute('aria-label', `查看 ${item.fullName || '仓库'} 的详情`);
+  titleButton.addEventListener('click', () => openDetail(item));
 
   const fullName = String(item.fullName || '');
   const slash = fullName.indexOf('/');
   if (slash > 0) {
-    link.append(document.createTextNode(fullName.slice(0, slash + 1)));
-    link.append(create('strong', '', fullName.slice(slash + 1)));
+    titleButton.append(document.createTextNode(fullName.slice(0, slash + 1)));
+    titleButton.append(create('strong', '', fullName.slice(slash + 1)));
   } else {
-    link.textContent = fullName || '未知仓库';
+    titleButton.textContent = fullName || '未知仓库';
   }
 
-  titleRow.append(link);
+  titleRow.append(titleButton);
   if (item.isNew) titleRow.append(create('span', 'badge', 'NEW'));
   main.append(titleRow);
 
@@ -526,12 +528,7 @@ function openDetail(item) {
 
   const description = String(item.description || '').trim();
 
-  els.detailTitle.replaceChildren();
-  const titleLink = create('a', '', item.fullName || '未知仓库');
-  titleLink.href = safeGitHubUrl(item.url);
-  titleLink.target = '_blank';
-  titleLink.rel = 'noopener noreferrer';
-  els.detailTitle.append(titleLink);
+  els.detailTitle.textContent = item.fullName || '未知仓库';
 
   els.detailDesc.textContent = description || '暂无描述';
   els.detailDesc.classList.toggle('is-empty', !description);
@@ -601,9 +598,11 @@ function openDetail(item) {
     els.detailTranslate.textContent = '翻译成中文';
   }
 
-  if (!els.detailDialog.open) {
-    els.detailDialog.showModal();
+  if (els.detailOverlay.hidden) {
+    lastDetailFocus = document.activeElement;
+    els.detailOverlay.hidden = false;
     document.body.classList.add('modal-open');
+    requestAnimationFrame(() => els.detailClose.focus({ preventScroll: true }));
   }
 }
 
@@ -677,7 +676,17 @@ async function translateDetail() {
 }
 
 function closeDetail() {
-  if (els.detailDialog.open) els.detailDialog.close();
+  if (els.detailOverlay.hidden) return;
+
+  els.detailOverlay.hidden = true;
+  document.body.classList.remove('modal-open');
+  state.detail = null;
+  state.translateToken += 1;
+
+  if (lastDetailFocus && typeof lastDetailFocus.focus === 'function') {
+    lastDetailFocus.focus({ preventScroll: true });
+  }
+  lastDetailFocus = null;
 }
 
 function render() {
@@ -813,14 +822,15 @@ function bindEvents() {
   els.detailClose.addEventListener('click', closeDetail);
   els.detailTranslate.addEventListener('click', translateDetail);
 
-  els.detailDialog.addEventListener('click', (event) => {
-    if (event.target === els.detailDialog) closeDetail();
+  els.detailOverlay.addEventListener('click', (event) => {
+    if (event.target === els.detailOverlay) closeDetail();
   });
 
-  els.detailDialog.addEventListener('close', () => {
-    document.body.classList.remove('modal-open');
-    state.detail = null;
-    state.translateToken += 1;
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && !els.detailOverlay.hidden) {
+      event.preventDefault();
+      closeDetail();
+    }
   });
 }
 
