@@ -166,6 +166,14 @@ select:disabled {
   color: var(--text);
 }
 
+.share-btn {
+  padding: 0;
+}
+
+.share-btn svg {
+  pointer-events: none;
+}
+
 select,
 input[type="search"] {
   height: 38px;
@@ -575,6 +583,23 @@ body.modal-open {
   min-width: 0;
 }
 
+.detail-back {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 8px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: 12.5px;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.detail-back:hover {
+  text-decoration: underline;
+}
+
 .detail-kicker {
   margin: 0 0 4px;
   color: var(--muted);
@@ -662,6 +687,14 @@ body.modal-open {
   line-height: 1.6;
 }
 
+#translationNote {
+  margin: 10px 2px 0;
+}
+
+#translationNote.is-error {
+  color: #d1242f;
+}
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -708,38 +741,6 @@ body.modal-open {
   opacity: 0.45;
 }
 
-.translation {
-  margin-top: 18px;
-  padding: 14px 16px;
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  background: color-mix(in srgb, var(--accent-soft) 55%, transparent);
-}
-
-.translation.is-error {
-  border-color: rgba(248, 81, 73, 0.45);
-  background: rgba(248, 81, 73, 0.08);
-}
-
-.translation-label {
-  margin: 0 0 6px;
-  color: var(--accent);
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.translation.is-error .translation-label {
-  color: #d1242f;
-}
-
-.translation-text {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.7;
-  white-space: pre-wrap;
-  overflow-wrap: anywhere;
-}
-
 .translation-note {
   margin: 8px 0 0;
   color: var(--muted);
@@ -760,12 +761,6 @@ body.modal-open {
   margin-bottom: 8px;
 }
 
-.readme-head-actions {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
 .readme-title {
   margin: 0;
   font-size: 14px;
@@ -775,31 +770,6 @@ body.modal-open {
 .readme-status {
   color: var(--muted);
   font-size: 11px;
-}
-
-.readme-translate {
-  padding: 0;
-  border: 0;
-  background: none;
-  color: var(--accent);
-  font-size: 12px;
-  line-height: 1.5;
-  white-space: nowrap;
-  cursor: pointer;
-}
-
-.readme-translate:hover {
-  text-decoration: underline;
-}
-
-.readme-translate:disabled {
-  color: var(--muted);
-  cursor: default;
-  text-decoration: none;
-}
-
-.readme-translation {
-  margin: 0 0 10px;
 }
 
 .readme-text {
@@ -833,6 +803,30 @@ body.modal-open {
   line-height: 1.6;
   text-align: center;
   opacity: 0.85;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 200;
+  max-width: calc(100vw - 40px);
+  padding: 10px 16px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--bg-elevated);
+  color: var(--text);
+  box-shadow: var(--shadow);
+  font-size: 13px;
+  opacity: 0;
+  transform: translate(-50%, 8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.toast.is-visible {
+  opacity: 1;
+  transform: translate(-50%, 0);
 }
 
 .noscript {

@@ -1,7 +1,8 @@
 const FAVORITES_KEY = 'github-daily:favorites:v1';
 const TRANSLATIONS_KEY = 'github-daily:translations:v1';
-const README_TRANSLATIONS_KEY = 'github-daily:readme-translations:v1';
+const FULL_TRANSLATIONS_KEY = 'github-daily:full-translations:v1';
 const HIGH_STAR = 1000;
+const TRANSLATE_CHUNK_SIZE = 480;
 
 const LANGUAGE_COLORS = {
   JavaScript: '#f1e05a',
@@ -43,12 +44,15 @@ const state = {
   sort: 'default',
   favorites: loadFavorites(),
   translations: loadTranslations(),
-  readmeTranslations: loadReadmeTranslations(),
+  fullTranslations: loadFullTranslations(),
   detail: null,
-  translateToken: 0,
+  fullTranslation: null,
+  fullTranslationToken: 0,
+  translationMode: 'original',
+  translating: false,
   readmeToken: 0,
-  readmeTranslationToken: 0,
   readmeText: '',
+  readmeLoaded: false,
 };
 
 const els = {
@@ -71,15 +75,13 @@ const els = {
   detailGithub: document.getElementById('detailGithub'),
   detailBaidu: document.getElementById('detailBaidu'),
   detailClose: document.getElementById('detailClose'),
-  translationBox: document.getElementById('translationBox'),
-  translationLabel: document.getElementById('translationLabel'),
-  translationText: document.getElementById('translationText'),
+  detailBack: document.getElementById('detailBack'),
+  sharePage: document.getElementById('sharePage'),
+  toast: document.getElementById('toast'),
+  translationNote: document.getElementById('translationNote'),
   readmeSection: document.getElementById('readmeSection'),
   readmeStatus: document.getElementById('readmeStatus'),
   detailReadme: document.getElementById('detailReadme'),
-  readmeTranslate: document.getElementById('readmeTranslate'),
-  readmeTranslationBox: document.getElementById('readmeTranslationBox'),
-  readmeTranslationText: document.getElementById('readmeTranslationText'),
 };
 
 let loadToken = 0;
@@ -187,9 +189,9 @@ function translationKey(item, text) {
   return `${keyOf(item)}::${text}`;
 }
 
-function loadReadmeTranslations() {
+function loadFullTranslations() {
   try {
-    const parsed = JSON.parse(localStorage.getItem(README_TRANSLATIONS_KEY) || '{}');
+    const parsed = JSON.parse(localStorage.getItem(FULL_TRANSLATIONS_KEY) || '{}');
     if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return {};
     return parsed;
   } catch {
@@ -197,40 +199,73 @@ function loadReadmeTranslations() {
   }
 }
 
-function persistReadmeTranslations() {
-  const entries = Object.entries(state.readmeTranslations);
-  if (entries.length > 100) {
+function persistFullTranslations() {
+  const entries = Object.entries(state.fullTranslations);
+  if (entries.length > 30) {
     entries.sort((a, b) => String(b[1]?.at || '').localeCompare(String(a[1]?.at || '')));
-    state.readmeTranslations = Object.fromEntries(entries.slice(0, 80));
+    state.fullTranslations = Object.fromEntries(entries.slice(0, 25));
   }
 
   try {
     localStorage.setItem(
-      README_TRANSLATIONS_KEY,
-      JSON.stringify(state.readmeTranslations),
+      FULL_TRANSLATIONS_KEY,
+      JSON.stringify(state.fullTranslations),
     );
   } catch (error) {
-    console.warn('Unable to save README translations', error);
+    console.warn('Unable to save full translations', error);
   }
 }
 
-function readmeIntroText(text) {
-  const source = String(text || '').trim();
-  if (source.length <= 500) return source;
-
-  const slice = source.slice(0, 500);
-  const cut = Math.max(
-    slice.lastIndexOf('. '),
-    slice.lastIndexOf('! '),
-    slice.lastIndexOf('? '),
-    slice.lastIndexOf('\n'),
-  );
-
-  return (cut > 200 ? slice.slice(0, cut + 1) : slice.slice(0, 480)).trim();
+function fullTranslationKey(item, readmeText) {
+  const description = String(item?.description || '').trim();
+  return [
+    keyOf(item),
+    item?.readmeFile || '',
+    description.length,
+    readmeText.length,
+    description.slice(0, 40),
+    readmeText.slice(0, 40),
+  ].join('::');
 }
 
-function readmeTranslationKey(item, text) {
-  return `${item.readmeFile || keyOf(item)}::${readmeIntroText(text)}`;
+function isMostlyChinese(text) {
+  const source = String(text || '');
+  if (!source) return false;
+  const cjk = (source.match(/[\u4e00-\u9fff]/g) || []).length;
+  return cjk > source.length * 0.3;
+}
+
+function splitTranslationChunks(text, maxLength = TRANSLATE_CHUNK_SIZE) {
+  const chunks = [];
+  let rest = String(text || '').trim();
+
+  while (rest && chunks.length < 30) {
+    if (rest.length <= maxLength) {
+      chunks.push(rest);
+      break;
+    }
+
+    const window = rest.slice(0, maxLength);
+    const breakIndex = Math.max(
+      window.lastIndexOf('\n\n'),
+      window.lastIndexOf('. '),
+      window.lastIndexOf('! '),
+      window.lastIndexOf('? '),
+      window.lastIndexOf('\n'),
+      window.lastIndexOf(' '),
+    );
+
+    const end = breakIndex > maxLength * 0.4 ? breakIndex + 2 : maxLength;
+    const chunk = rest.slice(0, end).trim();
+    if (chunk) chunks.push(chunk);
+    rest = rest.slice(end).trim();
+  }
+
+  return chunks;
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 function decodeHtmlEntities(value) {
@@ -586,17 +621,19 @@ function addDetailMeta(container, className, text) {
 
 function openDetail(item) {
   state.detail = item;
-  state.translateToken += 1;
+  state.fullTranslationToken += 1;
+  state.fullTranslation = null;
+  state.translationMode = 'original';
+  state.translating = false;
   state.readmeToken += 1;
-  state.readmeTranslationToken += 1;
   state.readmeText = '';
+  state.readmeLoaded = false;
 
-  els.readmeTranslate.hidden = true;
-  els.readmeTranslate.disabled = false;
-  els.readmeTranslate.textContent = '翻译说明';
-  els.readmeTranslationBox.hidden = true;
-  els.readmeTranslationBox.classList.remove('is-error');
-  els.readmeTranslationText.textContent = '';
+  els.translationNote.hidden = true;
+  els.translationNote.classList.remove('is-error');
+  els.translationNote.textContent = '';
+  els.detailTranslate.textContent = '翻译全文';
+  els.detailTranslate.disabled = true;
 
   const description = String(item.description || '').trim();
 
@@ -653,117 +690,67 @@ function openDetail(item) {
     els.detailBaidu.setAttribute('aria-disabled', 'true');
   }
 
-  els.detailTranslate.disabled = !description;
-  els.translationBox.hidden = true;
-  els.translationBox.classList.remove('is-error');
-  els.translationLabel.textContent = '中文翻译';
-  els.translationText.textContent = '';
-
-  const cached = description
-    ? state.translations[translationKey(item, description)]
-    : null;
-
-  if (cached?.text) {
-    showTranslation(cached.text, true);
-    els.detailTranslate.textContent = '重新翻译简介';
-  } else {
-    els.detailTranslate.textContent = '翻译简介';
-  }
-
   if (els.detailOverlay.hidden) {
     lastDetailFocus = document.activeElement;
     els.detailOverlay.hidden = false;
     document.body.classList.add('modal-open');
-    requestAnimationFrame(() => els.detailClose.focus({ preventScroll: true }));
+    if (!history.state?.githubDailyDetail) {
+      history.pushState(
+        { ...(history.state || {}), githubDailyDetail: true },
+        '',
+        window.location.href,
+      );
+    }
+    requestAnimationFrame(() => els.detailBack.focus({ preventScroll: true }));
   }
 
   loadReadme(item, state.readmeToken);
 }
 
 function showReadme(text, item) {
-  state.readmeText = text;
+  state.readmeText = String(text || '');
+  state.readmeLoaded = true;
   els.readmeSection.hidden = false;
   els.readmeStatus.textContent = item.readmeTruncated ? '内容已截断' : '';
-  els.detailReadme.classList.toggle('is-empty', !text);
-  els.detailReadme.textContent = text || '没有抓取到这个项目的 README。';
-
-  els.readmeTranslate.hidden = true;
-  els.readmeTranslate.disabled = false;
-  els.readmeTranslate.textContent = '翻译说明';
-  els.readmeTranslationBox.hidden = true;
-  els.readmeTranslationBox.classList.remove('is-error');
-  els.readmeTranslationText.textContent = '';
-
-  if (!text) return;
-
-  const cjkCount = (text.match(/[\u4e00-\u9fff]/g) || []).length;
-  if (cjkCount > text.length * 0.15) return;
-
-  els.readmeTranslate.hidden = false;
-
-  const cached = state.readmeTranslations[readmeTranslationKey(item, text)];
-  if (cached?.text) {
-    els.readmeTranslationText.textContent = cached.text;
-    els.readmeTranslationBox.hidden = false;
-    els.readmeTranslate.textContent = '已翻译';
-    els.readmeTranslate.disabled = true;
-  }
+  els.detailReadme.classList.toggle('is-empty', !state.readmeText);
+  els.detailReadme.textContent = state.readmeText || '没有抓取到这个项目的 README。';
+  updateTranslateButton();
 }
 
-async function translateReadme() {
-  const item = state.detail;
-  const text = state.readmeText;
-  if (!item || !text) return;
+function setTranslationNote(message, isError = false) {
+  els.translationNote.textContent = message || '';
+  els.translationNote.hidden = !message;
+  els.translationNote.classList.toggle('is-error', Boolean(message) && isError);
+}
 
-  const intro = readmeIntroText(text);
-  if (!intro) return;
+function updateTranslateButton() {
+  if (!state.detail || state.translating) return;
 
-  const key = readmeTranslationKey(item, text);
-  const cached = state.readmeTranslations[key];
-
-  if (cached?.text) {
-    els.readmeTranslationText.textContent = cached.text;
-    els.readmeTranslationBox.hidden = false;
-    els.readmeTranslationBox.classList.remove('is-error');
-    els.readmeTranslate.textContent = '已翻译';
-    els.readmeTranslate.disabled = true;
+  if (state.translationMode === 'translated') {
+    els.detailTranslate.textContent = '显示原文';
+    els.detailTranslate.disabled = false;
     return;
   }
 
-  const token = ++state.readmeTranslationToken;
-  els.readmeTranslate.disabled = true;
-  els.readmeTranslate.textContent = '翻译中…';
-  els.readmeTranslationBox.hidden = true;
-  els.readmeTranslationBox.classList.remove('is-error');
+  const hasCached = Boolean(
+    state.fullTranslations[fullTranslationKey(state.detail, state.readmeText)],
+  );
+  const hasContent = Boolean(
+    String(state.detail.description || '').trim() || state.readmeText.trim(),
+  );
+  const waitingReadme = Boolean(state.detail.readmeFile) && !state.readmeLoaded;
 
-  try {
-    const translated = await requestTranslation(intro);
-    if (token !== state.readmeTranslationToken || state.detail !== item) return;
-
-    state.readmeTranslations[key] = {
-      text: translated,
-      at: new Date().toISOString(),
-    };
-    persistReadmeTranslations();
-
-    els.readmeTranslationText.textContent = translated;
-    els.readmeTranslationBox.hidden = false;
-    els.readmeTranslate.textContent = '已翻译';
-  } catch (error) {
-    if (token !== state.readmeTranslationToken) return;
-    console.error(error);
-    els.readmeTranslationText.textContent = '翻译服务暂时不可用，请稍后重试。';
-    els.readmeTranslationBox.hidden = false;
-    els.readmeTranslationBox.classList.add('is-error');
-    els.readmeTranslate.textContent = '重试翻译';
-    els.readmeTranslate.disabled = false;
-  }
+  els.detailTranslate.textContent = hasCached ? '显示译文' : '翻译全文';
+  els.detailTranslate.disabled = !hasContent || waitingReadme;
 }
 
 async function loadReadme(item, token) {
+  state.readmeLoaded = false;
+  state.readmeText = '';
   els.readmeSection.hidden = false;
   els.readmeStatus.textContent = '';
   els.detailReadme.classList.remove('is-empty');
+  updateTranslateButton();
 
   if (!item.readmeFile) {
     showReadme('', item);
@@ -799,81 +786,197 @@ async function loadReadme(item, token) {
     if (token !== state.readmeToken) return;
     console.error(error);
     state.readmeText = '';
+    state.readmeLoaded = true;
     els.readmeStatus.textContent = '';
-    els.readmeTranslate.hidden = true;
-    els.readmeTranslationBox.hidden = true;
     els.detailReadme.classList.add('is-empty');
     els.detailReadme.textContent = 'README 加载失败，请稍后重新打开详情。';
+    updateTranslateButton();
   }
 }
 
-function showTranslation(text, cached = false) {
-  els.translationBox.hidden = false;
-  els.translationBox.classList.remove('is-error');
-  els.translationLabel.textContent = cached ? '中文翻译（已缓存）' : '中文翻译';
-  els.translationText.textContent = text;
-}
-
-function showTranslationError(message) {
-  els.translationBox.hidden = false;
-  els.translationBox.classList.add('is-error');
-  els.translationLabel.textContent = '翻译失败';
-  els.translationText.textContent = message;
-}
-
-async function requestTranslation(text) {
+async function requestTranslation(text, attempt = 1) {
   const url = new URL('https://api.mymemory.translated.net/get');
   url.searchParams.set('q', text);
   url.searchParams.set('langpair', 'en|zh-CN');
 
-  const response = await fetch(url, { cache: 'no-store' });
-  if (!response.ok) throw new Error(`Translation HTTP ${response.status}`);
+  try {
+    const response = await fetch(url, { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Translation HTTP ${response.status}`);
 
-  const payload = await response.json();
-  if (Number(payload.responseStatus) !== 200) {
-    throw new Error(payload.responseDetails || 'Translation request failed');
+    const payload = await response.json();
+    if (Number(payload.responseStatus) !== 200) {
+      throw new Error(payload.responseDetails || 'Translation request failed');
+    }
+
+    const translated = decodeHtmlEntities(
+      String(payload.responseData?.translatedText || ''),
+    ).trim();
+
+    if (!translated) throw new Error('Empty translation');
+
+    return {
+      text: translated,
+      quotaFinished: Boolean(payload.quotaFinished),
+    };
+  } catch (error) {
+    if (attempt < 3) {
+      await sleep(600 * attempt);
+      return requestTranslation(text, attempt + 1);
+    }
+    throw error;
   }
-
-  const translated = decodeHtmlEntities(
-    String(payload.responseData?.translatedText || ''),
-  ).trim();
-
-  if (!translated) throw new Error('Empty translation');
-  return translated;
 }
 
-async function translateDetail() {
+function applyTranslationMode(mode) {
   const item = state.detail;
   if (!item) return;
 
-  const description = String(item.description || '').trim();
-  if (!description) return;
+  const originalDescription = String(item.description || '').trim();
+  const originalReadme = String(state.readmeText || '').trim();
 
-  const token = ++state.translateToken;
+  if (mode === 'translated' && state.fullTranslation) {
+    const description = String(state.fullTranslation.description || '').trim();
+    const readme = String(state.fullTranslation.readme || '').trim();
+
+    els.detailDesc.textContent = description || originalDescription || '暂无描述';
+    els.detailDesc.classList.toggle('is-empty', !(description || originalDescription));
+    els.detailReadme.textContent = readme || originalReadme || '没有抓取到这个项目的 README。';
+    els.detailReadme.classList.toggle('is-empty', !(readme || originalReadme));
+    els.readmeStatus.textContent = item.readmeTruncated ? '内容已截断 · 译文' : '译文';
+    state.translationMode = 'translated';
+    setTranslationNote('机器翻译由 MyMemory 提供，仅供参考。');
+    els.detailTranslate.textContent = '显示原文';
+    els.detailTranslate.disabled = false;
+    return;
+  }
+
+  els.detailDesc.textContent = originalDescription || '暂无描述';
+  els.detailDesc.classList.toggle('is-empty', !originalDescription);
+  els.detailReadme.textContent = originalReadme || '没有抓取到这个项目的 README。';
+  els.detailReadme.classList.toggle('is-empty', !originalReadme);
+  els.readmeStatus.textContent = item.readmeTruncated ? '内容已截断' : '';
+  state.translationMode = 'original';
+  setTranslationNote('');
+  updateTranslateButton();
+}
+
+async function translateFull() {
+  const item = state.detail;
+  if (!item) return;
+
+  if (state.translationMode === 'translated') {
+    applyTranslationMode('original');
+    return;
+  }
+
+  const description = String(item.description || '').trim();
+  const readmeText = String(state.readmeText || '').trim();
+  const key = fullTranslationKey(item, readmeText);
+
+  if (state.fullTranslations[key]) {
+    state.fullTranslation = state.fullTranslations[key];
+    applyTranslationMode('translated');
+    return;
+  }
+
+  if (state.translating) return;
+  if (!description && !readmeText) return;
+  if (item.readmeFile && !state.readmeLoaded) return;
+
+  const chunks = readmeText ? splitTranslationChunks(readmeText) : [];
+  const descriptionNeedsTranslation = Boolean(description) && !isMostlyChinese(description);
+  const translatableChunks = chunks.filter((chunk) => !isMostlyChinese(chunk)).length;
+  const total = (descriptionNeedsTranslation ? 1 : 0) + translatableChunks;
+
+  state.translating = true;
+  const token = ++state.fullTranslationToken;
+  setTranslationNote('');
   els.detailTranslate.disabled = true;
-  els.detailTranslate.textContent = '翻译中…';
+  els.detailTranslate.textContent = total ? `翻译中 0/${total}` : '翻译中…';
+  if (readmeText) {
+    els.readmeStatus.textContent = total ? `翻译中 0/${total}` : '翻译中…';
+  }
+
+  let done = 0;
+  const updateProgress = () => {
+    if (token !== state.fullTranslationToken || state.detail !== item) return;
+    els.detailTranslate.textContent = `翻译中 ${done}/${total}`;
+    if (readmeText) els.readmeStatus.textContent = `翻译中 ${done}/${total}`;
+  };
 
   try {
-    const translated = await requestTranslation(description);
-    if (token !== state.translateToken || state.detail !== item) return;
+    let translatedDescription = description;
 
-    state.translations[translationKey(item, description)] = {
-      text: translated,
+    if (descriptionNeedsTranslation) {
+      const descriptionKey = translationKey(item, description);
+      const cachedDescription = state.translations[descriptionKey]?.text;
+
+      if (cachedDescription) {
+        translatedDescription = cachedDescription;
+      } else {
+        const result = await requestTranslation(description);
+        if (token !== state.fullTranslationToken || state.detail !== item) return;
+        translatedDescription = result.text;
+        state.translations[descriptionKey] = {
+          text: translatedDescription,
+          at: new Date().toISOString(),
+        };
+        persistTranslations();
+      }
+
+      done += 1;
+      updateProgress();
+    }
+
+    const translatedChunks = [];
+    for (const chunk of chunks) {
+      if (token !== state.fullTranslationToken || state.detail !== item) return;
+
+      if (isMostlyChinese(chunk)) {
+        translatedChunks.push(chunk);
+        continue;
+      }
+
+      const result = await requestTranslation(chunk);
+      if (token !== state.fullTranslationToken || state.detail !== item) return;
+      translatedChunks.push(result.text);
+      done += 1;
+      updateProgress();
+      await sleep(120);
+    }
+
+    const translation = {
+      description: translatedDescription,
+      readme: readmeText ? translatedChunks.join('\n\n') : '',
       at: new Date().toISOString(),
     };
-    persistTranslations();
-    showTranslation(translated);
-    els.detailTranslate.textContent = '重新翻译简介';
+
+    state.fullTranslations[key] = translation;
+    persistFullTranslations();
+    state.fullTranslation = translation;
+    state.translating = false;
+    applyTranslationMode('translated');
   } catch (error) {
-    if (token !== state.translateToken) return;
+    if (token !== state.fullTranslationToken) return;
     console.error(error);
-    showTranslationError('翻译服务暂时不可用，可以点「百度翻译」查看。');
+    state.translating = false;
+    applyTranslationMode('original');
     els.detailTranslate.textContent = '重试翻译';
-  } finally {
-    if (token === state.translateToken) {
-      els.detailTranslate.disabled = false;
-    }
+    els.detailTranslate.disabled = false;
+    els.readmeStatus.textContent = item.readmeTruncated ? '内容已截断' : '';
+    setTranslationNote('翻译失败：免费翻译服务暂时不可用，请稍后重试。', true);
   }
+}
+
+function requestCloseDetail() {
+  if (els.detailOverlay.hidden) return;
+
+  if (history.state?.githubDailyDetail) {
+    history.back();
+    return;
+  }
+
+  closeDetail();
 }
 
 function closeDetail() {
@@ -882,10 +985,13 @@ function closeDetail() {
   els.detailOverlay.hidden = true;
   document.body.classList.remove('modal-open');
   state.detail = null;
-  state.translateToken += 1;
+  state.fullTranslation = null;
+  state.fullTranslationToken += 1;
+  state.translationMode = 'original';
+  state.translating = false;
   state.readmeToken += 1;
-  state.readmeTranslationToken += 1;
   state.readmeText = '';
+  state.readmeLoaded = false;
 
   if (lastDetailFocus && typeof lastDetailFocus.focus === 'function') {
     lastDetailFocus.focus({ preventScroll: true });
@@ -988,6 +1094,50 @@ function setTab(tab) {
   render();
 }
 
+let toastTimer = null;
+
+function showToast(message) {
+  els.toast.textContent = message;
+  els.toast.hidden = false;
+  requestAnimationFrame(() => els.toast.classList.add('is-visible'));
+
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => {
+    els.toast.classList.remove('is-visible');
+    setTimeout(() => {
+      els.toast.hidden = true;
+    }, 200);
+  }, 2200);
+}
+
+async function sharePage() {
+  const url = new URL(window.location.href);
+  url.searchParams.delete('v');
+  if (state.detail) url.searchParams.set('repo', state.detail.fullName);
+
+  const data = {
+    title: 'GitHub 日报',
+    text: '每天看 GitHub 热门仓库，支持中文翻译',
+    url: url.toString(),
+  };
+
+  if (navigator.share) {
+    try {
+      await navigator.share(data);
+      return;
+    } catch (error) {
+      if (error?.name === 'AbortError') return;
+    }
+  }
+
+  try {
+    await navigator.clipboard.writeText(url.toString());
+    showToast('链接已复制，可以发给朋友');
+  } catch {
+    window.prompt('复制链接发给朋友', url.toString());
+  }
+}
+
 function bindEvents() {
   els.prevDate.addEventListener('click', () => moveDate(1));
   els.nextDate.addEventListener('click', () => moveDate(-1));
@@ -1023,19 +1173,24 @@ function bindEvents() {
     render();
   });
 
-  els.detailClose.addEventListener('click', closeDetail);
-  els.detailTranslate.addEventListener('click', translateDetail);
-  els.readmeTranslate.addEventListener('click', translateReadme);
+  els.detailClose.addEventListener('click', requestCloseDetail);
+  els.detailBack.addEventListener('click', requestCloseDetail);
+  els.detailTranslate.addEventListener('click', translateFull);
+  els.sharePage.addEventListener('click', sharePage);
 
   els.detailOverlay.addEventListener('click', (event) => {
-    if (event.target === els.detailOverlay) closeDetail();
+    if (event.target === els.detailOverlay) requestCloseDetail();
   });
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape' && !els.detailOverlay.hidden) {
       event.preventDefault();
-      closeDetail();
+      requestCloseDetail();
     }
+  });
+
+  window.addEventListener('popstate', () => {
+    if (!els.detailOverlay.hidden) closeDetail();
   });
 }
 
@@ -1047,16 +1202,20 @@ function openRepoFromQuery() {
   const item = state.items.find((candidate) => keyOf(candidate) === repo.toLowerCase());
   if (!item) return;
 
-  openDetail(item);
-
   const url = new URL(window.location.href);
   url.searchParams.delete('repo');
-  window.history.replaceState(null, '', url.toString());
+  window.history.replaceState(history.state, '', url.toString());
+
+  openDetail(item);
 }
 
 async function init() {
   bindEvents();
   updateFavCount();
+
+  if (history.state?.githubDailyDetail) {
+    history.replaceState({ ...history.state, githubDailyDetail: false }, '', window.location.href);
+  }
 
   try {
     const index = await fetchJson('data/index.json');
