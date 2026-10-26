@@ -1,8 +1,31 @@
 const FAVORITES_KEY = 'github-daily:favorites:v1';
 const TRANSLATIONS_KEY = 'github-daily:translations:v1';
 const FULL_TRANSLATIONS_KEY = 'github-daily:full-translations:v1';
+const TRANSLATION_SETTINGS_KEY = 'github-daily:translation-settings:v1';
 const HIGH_STAR = 1000;
 const TRANSLATE_CHUNK_SIZE = 480;
+
+const DEFAULT_TRANSLATION_SETTINGS = {
+  provider: 'mymemory',
+  baseUrl: '',
+  model: '',
+  apiKey: '',
+};
+
+const AI_PROVIDER_PRESETS = {
+  deepseek: {
+    baseUrl: 'https://api.deepseek.com',
+    model: 'deepseek-chat',
+  },
+  siliconflow: {
+    baseUrl: 'https://api.siliconflow.cn/v1',
+    model: 'Qwen/Qwen2.5-7B-Instruct',
+  },
+  custom: {
+    baseUrl: '',
+    model: '',
+  },
+};
 
 const LANGUAGE_COLORS = {
   JavaScript: '#f1e05a',
@@ -45,6 +68,7 @@ const state = {
   favorites: loadFavorites(),
   translations: loadTranslations(),
   fullTranslations: loadFullTranslations(),
+  translationSettings: loadTranslationSettings(),
   detail: null,
   fullTranslation: null,
   fullTranslationToken: 0,
@@ -77,6 +101,18 @@ const els = {
   detailClose: document.getElementById('detailClose'),
   detailBack: document.getElementById('detailBack'),
   sharePage: document.getElementById('sharePage'),
+  settingsPage: document.getElementById('settingsPage'),
+  detailSettings: document.getElementById('detailSettings'),
+  settingsOverlay: document.getElementById('settingsOverlay'),
+  settingsClose: document.getElementById('settingsClose'),
+  settingsSave: document.getElementById('settingsSave'),
+  settingsCancel: document.getElementById('settingsCancel'),
+  settingsError: document.getElementById('settingsError'),
+  providerSelect: document.getElementById('providerSelect'),
+  aiSettings: document.getElementById('aiSettings'),
+  apiBase: document.getElementById('apiBase'),
+  apiModel: document.getElementById('apiModel'),
+  apiKey: document.getElementById('apiKey'),
   toast: document.getElementById('toast'),
   translationNote: document.getElementById('translationNote'),
   readmeSection: document.getElementById('readmeSection'),
@@ -189,6 +225,63 @@ function translationKey(item, text) {
   return `${keyOf(item)}::${text}`;
 }
 
+function loadTranslationSettings() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(TRANSLATION_SETTINGS_KEY) || '{}');
+    const provider = ['mymemory', 'deepseek', 'siliconflow', 'custom'].includes(
+      parsed?.provider,
+    )
+      ? parsed.provider
+      : 'mymemory';
+
+    return {
+      provider,
+      baseUrl: String(parsed?.baseUrl || ''),
+      model: String(parsed?.model || ''),
+      apiKey: String(parsed?.apiKey || ''),
+    };
+  } catch {
+    return { ...DEFAULT_TRANSLATION_SETTINGS };
+  }
+}
+
+function saveTranslationSettings(settings) {
+  state.translationSettings = settings;
+  try {
+    localStorage.setItem(TRANSLATION_SETTINGS_KEY, JSON.stringify(settings));
+  } catch (error) {
+    console.warn('Unable to save translation settings', error);
+  }
+}
+
+function isAiProvider() {
+  return state.translationSettings.provider !== 'mymemory';
+}
+
+function translationProviderId() {
+  const settings = state.translationSettings;
+  if (settings.provider === 'mymemory') return 'mymemory';
+  return [
+    'ai',
+    settings.provider,
+    settings.baseUrl.replace(/\/+$/g, ''),
+    settings.model,
+  ].join(':');
+}
+
+function translationProviderNote() {
+  switch (state.translationSettings.provider) {
+    case 'deepseek':
+      return 'AI 翻译由 DeepSeek 提供，仅供参考。';
+    case 'siliconflow':
+      return 'AI 翻译由 SiliconFlow 提供，仅供参考。';
+    case 'custom':
+      return 'AI 翻译由自定义接口提供，仅供参考。';
+    default:
+      return '机器翻译由 MyMemory 提供，仅供参考。';
+  }
+}
+
 function loadFullTranslations() {
   try {
     const parsed = JSON.parse(localStorage.getItem(FULL_TRANSLATIONS_KEY) || '{}');
@@ -219,6 +312,7 @@ function persistFullTranslations() {
 function fullTranslationKey(item, readmeText) {
   const description = String(item?.description || '').trim();
   return [
+    translationProviderId(),
     keyOf(item),
     item?.readmeFile || '',
     description.length,
@@ -827,6 +921,57 @@ async function requestTranslation(text, attempt = 1) {
   }
 }
 
+function aiChatEndpoint(baseUrl) {
+  const base = String(baseUrl || '').replace(/\/+$/g, '');
+  return base.endsWith('/chat/completions')
+    ? base
+    : `${base}/chat/completions`;
+}
+
+function cleanAiOutput(value) {
+  return String(value || '')
+    .replace(/^```(?:markdown|md|text)?\s*\n?/i, '')
+    .replace(/\n?```\s*$/, '')
+    .trim();
+}
+
+async function translateWithAI(kind, text) {
+  const settings = state.translationSettings;
+  const endpoint = aiChatEndpoint(settings.baseUrl);
+  const system =
+    kind === 'description'
+      ? '你是专业的技术文档翻译。把用户提供的 GitHub 项目简介翻译成简体中文。只输出译文，不要解释，不要加引号或代码块。'
+      : '你是专业的技术文档翻译。把用户提供的 GitHub README 翻译成简体中文。保留 Markdown 结构、代码块、命令、URL、专有名词和数字；代码保持原样；只输出译文，不要解释，也不要用代码块包住整篇译文。';
+
+  const response = await fetch(endpoint, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      Authorization: `Bearer ${settings.apiKey}`,
+    },
+    body: JSON.stringify({
+      model: settings.model,
+      messages: [
+        { role: 'system', content: system },
+        { role: 'user', content: text },
+      ],
+      temperature: 0.2,
+      max_tokens: 8192,
+    }),
+  });
+
+  const payload = await response.json().catch(() => null);
+
+  if (!response.ok) {
+    const detail = payload?.error?.message || payload?.message || `HTTP ${response.status}`;
+    throw new Error(String(detail).slice(0, 300));
+  }
+
+  const content = cleanAiOutput(payload?.choices?.[0]?.message?.content);
+  if (!content) throw new Error('AI 返回了空内容');
+  return content;
+}
+
 function applyTranslationMode(mode) {
   const item = state.detail;
   if (!item) return;
@@ -844,7 +989,7 @@ function applyTranslationMode(mode) {
     els.detailReadme.classList.toggle('is-empty', !(readme || originalReadme));
     els.readmeStatus.textContent = item.readmeTruncated ? '内容已截断 · 译文' : '译文';
     state.translationMode = 'translated';
-    setTranslationNote('机器翻译由 MyMemory 提供，仅供参考。');
+    setTranslationNote(translationProviderNote());
     els.detailTranslate.textContent = '显示原文';
     els.detailTranslate.disabled = false;
     return;
@@ -883,71 +1028,105 @@ async function translateFull() {
   if (!description && !readmeText) return;
   if (item.readmeFile && !state.readmeLoaded) return;
 
-  const chunks = readmeText ? splitTranslationChunks(readmeText) : [];
+  const ai = isAiProvider();
   const descriptionNeedsTranslation = Boolean(description) && !isMostlyChinese(description);
-  const translatableChunks = chunks.filter((chunk) => !isMostlyChinese(chunk)).length;
-  const total = (descriptionNeedsTranslation ? 1 : 0) + translatableChunks;
+  const readmeNeedsTranslation = Boolean(readmeText) && !isMostlyChinese(readmeText);
+  const chunks = !ai && readmeText ? splitTranslationChunks(readmeText) : [];
+  const translatableChunks = !ai
+    ? chunks.filter((chunk) => !isMostlyChinese(chunk)).length
+    : 0;
+  const total = ai
+    ? (descriptionNeedsTranslation ? 1 : 0) + (readmeNeedsTranslation ? 1 : 0)
+    : (descriptionNeedsTranslation ? 1 : 0) + translatableChunks;
+  const progressLabel = ai ? 'AI 翻译中' : '翻译中';
 
   state.translating = true;
   const token = ++state.fullTranslationToken;
   setTranslationNote('');
   els.detailTranslate.disabled = true;
-  els.detailTranslate.textContent = total ? `翻译中 0/${total}` : '翻译中…';
+  els.detailTranslate.textContent = total
+    ? `${progressLabel} 0/${total}`
+    : `${progressLabel}…`;
   if (readmeText) {
-    els.readmeStatus.textContent = total ? `翻译中 0/${total}` : '翻译中…';
+    els.readmeStatus.textContent = total
+      ? `${progressLabel} 0/${total}`
+      : `${progressLabel}…`;
   }
 
   let done = 0;
   const updateProgress = () => {
     if (token !== state.fullTranslationToken || state.detail !== item) return;
-    els.detailTranslate.textContent = `翻译中 ${done}/${total}`;
-    if (readmeText) els.readmeStatus.textContent = `翻译中 ${done}/${total}`;
+    const text = total ? `${progressLabel} ${done}/${total}` : `${progressLabel}…`;
+    els.detailTranslate.textContent = text;
+    if (readmeText) els.readmeStatus.textContent = text;
   };
 
   try {
     let translatedDescription = description;
+    let translatedReadme = readmeText;
 
-    if (descriptionNeedsTranslation) {
-      const descriptionKey = translationKey(item, description);
-      const cachedDescription = state.translations[descriptionKey]?.text;
-
-      if (cachedDescription) {
-        translatedDescription = cachedDescription;
-      } else {
-        const result = await requestTranslation(description);
+    if (ai) {
+      if (descriptionNeedsTranslation) {
+        translatedDescription = await translateWithAI('description', description);
         if (token !== state.fullTranslationToken || state.detail !== item) return;
-        translatedDescription = result.text;
-        state.translations[descriptionKey] = {
-          text: translatedDescription,
-          at: new Date().toISOString(),
-        };
-        persistTranslations();
+        done += 1;
+        updateProgress();
       }
 
-      done += 1;
-      updateProgress();
-    }
+      if (readmeNeedsTranslation) {
+        translatedReadme = await translateWithAI('readme', readmeText);
+        if (token !== state.fullTranslationToken || state.detail !== item) return;
+        done += 1;
+        updateProgress();
+      }
+    } else {
+      if (descriptionNeedsTranslation) {
+        const descriptionKey = translationKey(item, description);
+        const cachedDescription = state.translations[descriptionKey]?.text;
 
-    const translatedChunks = [];
-    for (const chunk of chunks) {
-      if (token !== state.fullTranslationToken || state.detail !== item) return;
+        if (cachedDescription) {
+          translatedDescription = cachedDescription;
+        } else {
+          const result = await requestTranslation(description);
+          if (token !== state.fullTranslationToken || state.detail !== item) return;
+          translatedDescription = result.text;
+          state.translations[descriptionKey] = {
+            text: translatedDescription,
+            at: new Date().toISOString(),
+          };
+          persistTranslations();
+        }
 
-      if (isMostlyChinese(chunk)) {
-        translatedChunks.push(chunk);
-        continue;
+        done += 1;
+        updateProgress();
       }
 
-      const result = await requestTranslation(chunk);
-      if (token !== state.fullTranslationToken || state.detail !== item) return;
-      translatedChunks.push(result.text);
-      done += 1;
-      updateProgress();
-      await sleep(120);
+      if (readmeText) {
+        const translatedChunks = [];
+
+        for (const chunk of chunks) {
+          if (token !== state.fullTranslationToken || state.detail !== item) return;
+
+          if (isMostlyChinese(chunk)) {
+            translatedChunks.push(chunk);
+            continue;
+          }
+
+          const result = await requestTranslation(chunk);
+          if (token !== state.fullTranslationToken || state.detail !== item) return;
+          translatedChunks.push(result.text);
+          done += 1;
+          updateProgress();
+          await sleep(120);
+        }
+
+        translatedReadme = translatedChunks.join('\n\n');
+      }
     }
 
     const translation = {
       description: translatedDescription,
-      readme: readmeText ? translatedChunks.join('\n\n') : '',
+      readme: translatedReadme,
       at: new Date().toISOString(),
     };
 
@@ -964,7 +1143,10 @@ async function translateFull() {
     els.detailTranslate.textContent = '重试翻译';
     els.detailTranslate.disabled = false;
     els.readmeStatus.textContent = item.readmeTruncated ? '内容已截断' : '';
-    setTranslationNote('翻译失败：免费翻译服务暂时不可用，请稍后重试。', true);
+    const reason = ai
+      ? `AI 翻译失败：${String(error.message || '请求失败').slice(0, 200)}`
+      : '翻译失败：免费翻译服务暂时不可用，请稍后重试。';
+    setTranslationNote(`${reason} 可点「翻译设置」检查配置。`, true);
   }
 }
 
@@ -1094,6 +1276,117 @@ function setTab(tab) {
   render();
 }
 
+function setSettingsError(message) {
+  els.settingsError.textContent = message || '';
+  els.settingsError.hidden = !message;
+}
+
+function syncSettingsVisibility() {
+  els.aiSettings.hidden = els.providerSelect.value === 'mymemory';
+}
+
+function openSettings() {
+  const settings = state.translationSettings;
+  const preset = AI_PROVIDER_PRESETS[settings.provider];
+
+  els.providerSelect.value = settings.provider;
+  els.apiBase.value = settings.baseUrl || preset?.baseUrl || '';
+  els.apiModel.value = settings.model || preset?.model || '';
+  els.apiKey.value = settings.apiKey || '';
+  syncSettingsVisibility();
+  setSettingsError('');
+
+  const wasHidden = els.settingsOverlay.hidden;
+  els.settingsOverlay.hidden = false;
+  document.body.classList.add('modal-open');
+
+  if (wasHidden && !history.state?.githubDailySettings) {
+    history.pushState(
+      { ...(history.state || {}), githubDailySettings: true },
+      '',
+      window.location.href,
+    );
+  }
+
+  requestAnimationFrame(() => els.settingsClose.focus({ preventScroll: true }));
+}
+
+function requestCloseSettings() {
+  if (els.settingsOverlay.hidden) return;
+
+  if (history.state?.githubDailySettings) {
+    history.back();
+    return;
+  }
+
+  closeSettingsImmediate();
+}
+
+function closeSettingsImmediate() {
+  if (els.settingsOverlay.hidden) return;
+
+  els.settingsOverlay.hidden = true;
+  setSettingsError('');
+  if (els.detailOverlay.hidden) {
+    document.body.classList.remove('modal-open');
+  }
+}
+
+function onProviderChange() {
+  const preset = AI_PROVIDER_PRESETS[els.providerSelect.value];
+  if (preset) {
+    els.apiBase.value = preset.baseUrl;
+    els.apiModel.value = preset.model;
+  }
+  syncSettingsVisibility();
+  setSettingsError('');
+}
+
+function saveSettings() {
+  const provider = els.providerSelect.value;
+  const isFree = provider === 'mymemory';
+  const baseUrl = els.apiBase.value.trim().replace(/\/+$/g, '');
+  const model = els.apiModel.value.trim();
+  const apiKey = els.apiKey.value.trim();
+
+  if (!isFree) {
+    if (!baseUrl || !model || !apiKey) {
+      setSettingsError('接口地址、模型和 API Key 都需要填写。');
+      return;
+    }
+
+    try {
+      const url = new URL(baseUrl);
+      const local = ['localhost', '127.0.0.1'].includes(url.hostname);
+      if (url.protocol !== 'https:' && !(url.protocol === 'http:' && local)) {
+        throw new Error('bad protocol');
+      }
+    } catch {
+      setSettingsError('接口地址需要是 HTTPS（本地 localhost 可用 HTTP）。');
+      return;
+    }
+  }
+
+  const previousProvider = translationProviderId();
+  saveTranslationSettings({
+    provider,
+    baseUrl: isFree ? '' : baseUrl,
+    model: isFree ? '' : model,
+    apiKey: isFree ? '' : apiKey,
+  });
+
+  if (previousProvider !== translationProviderId() && state.detail) {
+    state.fullTranslation = null;
+    state.translationMode = 'original';
+    state.translating = false;
+    state.fullTranslationToken += 1;
+    applyTranslationMode('original');
+  }
+
+  requestCloseSettings();
+  showToast('翻译设置已保存');
+}
+
 let toastTimer = null;
 
 function showToast(message) {
@@ -1177,19 +1470,42 @@ function bindEvents() {
   els.detailBack.addEventListener('click', requestCloseDetail);
   els.detailTranslate.addEventListener('click', translateFull);
   els.sharePage.addEventListener('click', sharePage);
+  els.settingsPage.addEventListener('click', openSettings);
+  els.detailSettings.addEventListener('click', openSettings);
+  els.settingsClose.addEventListener('click', requestCloseSettings);
+  els.settingsCancel.addEventListener('click', requestCloseSettings);
+  els.settingsSave.addEventListener('click', saveSettings);
+  els.providerSelect.addEventListener('change', onProviderChange);
+
+  els.settingsOverlay.addEventListener('click', (event) => {
+    if (event.target === els.settingsOverlay) requestCloseSettings();
+  });
 
   els.detailOverlay.addEventListener('click', (event) => {
     if (event.target === els.detailOverlay) requestCloseDetail();
   });
 
   document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && !els.detailOverlay.hidden) {
+    if (event.key !== 'Escape') return;
+
+    if (!els.settingsOverlay.hidden) {
+      event.preventDefault();
+      requestCloseSettings();
+      return;
+    }
+
+    if (!els.detailOverlay.hidden) {
       event.preventDefault();
       requestCloseDetail();
     }
   });
 
   window.addEventListener('popstate', () => {
+    if (!els.settingsOverlay.hidden) {
+      closeSettingsImmediate();
+      return;
+    }
+
     if (!els.detailOverlay.hidden) closeDetail();
   });
 }
@@ -1213,8 +1529,16 @@ async function init() {
   bindEvents();
   updateFavCount();
 
-  if (history.state?.githubDailyDetail) {
-    history.replaceState({ ...history.state, githubDailyDetail: false }, '', window.location.href);
+  if (history.state?.githubDailyDetail || history.state?.githubDailySettings) {
+    history.replaceState(
+      {
+        ...history.state,
+        githubDailyDetail: false,
+        githubDailySettings: false,
+      },
+      '',
+      window.location.href,
+    );
   }
 
   try {

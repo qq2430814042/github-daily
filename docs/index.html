@@ -13,7 +13,7 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="apple-touch-icon.png">
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="stylesheet" href="style.css?v=5">
+  <link rel="stylesheet" href="style.css?v=6">
 </head>
 <body>
   <header class="topbar">
@@ -38,6 +38,12 @@
             <circle cx="18" cy="19" r="3"></circle>
             <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line>
             <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line>
+          </svg>
+        </button>
+        <button id="settingsPage" class="icon-btn" type="button" aria-label="翻译设置" title="翻译设置">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="3"></circle>
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09a1.65 1.65 0 0 0-1-1.51 1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09a1.65 1.65 0 0 0 1.51-1 1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33h.09A1.65 1.65 0 0 0 10 3.09V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82v.09A1.65 1.65 0 0 0 20.91 10H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
           </svg>
         </button>
       </div>
@@ -91,7 +97,7 @@
           <a id="detailGithub" class="btn" target="_blank" rel="noopener noreferrer">打开 GitHub</a>
           <a id="detailBaidu" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">百度翻译简介</a>
         </div>
-        <p class="detail-hint">GitHub 无法访问时，详情、README 和翻译仍可正常使用。</p>
+        <p class="detail-hint">GitHub 无法访问时，详情、README 和翻译仍可正常使用。<button id="detailSettings" class="inline-link" type="button">翻译设置</button></p>
         <p id="translationNote" class="translation-note" hidden aria-live="polite"></p>
         <section id="readmeSection" class="readme-section" hidden>
           <div class="readme-head">
@@ -105,11 +111,54 @@
     </section>
   </div>
 
+  <div id="settingsOverlay" class="detail-overlay settings-overlay" hidden>
+    <section class="detail-dialog settings-dialog" role="dialog" aria-modal="true" aria-labelledby="settingsTitle">
+      <div class="detail-head">
+        <div class="detail-heading">
+          <p class="detail-kicker">翻译设置</p>
+          <h2 id="settingsTitle" class="detail-title">选择翻译服务</h2>
+        </div>
+        <button id="settingsClose" class="detail-close" type="button" aria-label="关闭设置">×</button>
+      </div>
+      <div class="detail-body">
+        <label class="setting-field">
+          <span>翻译服务</span>
+          <select id="providerSelect">
+            <option value="mymemory">MyMemory（免费，无需 Key）</option>
+            <option value="deepseek">DeepSeek（需 API Key）</option>
+            <option value="siliconflow">SiliconFlow（需 API Key）</option>
+            <option value="custom">自定义 OpenAI 兼容接口</option>
+          </select>
+        </label>
+        <div id="aiSettings" class="ai-settings" hidden>
+          <label class="setting-field">
+            <span>接口地址</span>
+            <input id="apiBase" type="url" placeholder="https://api.deepseek.com" autocomplete="off" spellcheck="false">
+          </label>
+          <label class="setting-field">
+            <span>模型</span>
+            <input id="apiModel" type="text" placeholder="deepseek-chat" autocomplete="off" spellcheck="false">
+          </label>
+          <label class="setting-field">
+            <span>API Key</span>
+            <input id="apiKey" type="password" placeholder="只保存在本机浏览器" autocomplete="off" spellcheck="false">
+          </label>
+          <p class="setting-hint">Key 只保存在本机浏览器，不会上传到 GitHub。AI 翻译可能产生费用，请只使用你信任的接口。</p>
+        </div>
+        <p id="settingsError" class="settings-error" hidden></p>
+        <div class="settings-actions">
+          <button id="settingsSave" class="btn btn-primary" type="button">保存</button>
+          <button id="settingsCancel" class="btn" type="button">取消</button>
+        </div>
+      </div>
+    </section>
+  </div>
+
   <div id="toast" class="toast" role="status" aria-live="polite" hidden></div>
 
   <noscript>
     <p class="noscript">需要开启 JavaScript 才能查看榜单。</p>
   </noscript>
-  <script src="app.js?v=5" type="module"></script>
+  <script src="app.js?v=6" type="module"></script>
 </body>
 </html>

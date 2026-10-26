@@ -175,7 +175,10 @@ select:disabled {
 }
 
 select,
-input[type="search"] {
+input[type="search"],
+input[type="text"],
+input[type="password"],
+input[type="url"] {
   height: 38px;
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -739,6 +742,66 @@ body.modal-open {
 .detail-actions a[aria-disabled="true"] {
   pointer-events: none;
   opacity: 0.45;
+}
+
+.inline-link {
+  margin-left: 4px;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: inherit;
+  cursor: pointer;
+}
+
+.inline-link:hover {
+  text-decoration: underline;
+}
+
+.settings-overlay {
+  z-index: 130;
+}
+
+.settings-dialog {
+  width: min(520px, 100%);
+}
+
+.setting-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 14px;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.setting-field span {
+  color: var(--text);
+  font-size: 13px;
+}
+
+.setting-field input,
+.setting-field select {
+  width: 100%;
+}
+
+.setting-hint {
+  margin: 2px 0 0;
+  color: var(--muted);
+  font-size: 11.5px;
+  line-height: 1.6;
+}
+
+.settings-error {
+  margin: 0 0 12px;
+  color: #d1242f;
+  font-size: 12px;
+}
+
+.settings-actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 18px;
 }
 
 .translation-note {
