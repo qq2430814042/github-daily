@@ -1,0 +1,166 @@
+🦊 ruyiJS
+
+Run any site's JavaScript from Python — with the real Firefox engine.
+
+A new-generation, minimalist browser purpose-built for AI-driven automation.
+
+The authentic Firefox JavaScript engine and networking stack, with no window and no renderer —
+
+made for web scraping, JS reverse engineering, data collection, and getting past bot checks.
+
+Install &nbsp;·&nbsp; Features &nbsp;·&nbsp; Verification systems &nbsp;·&nbsp; Examples &nbsp;·&nbsp; Contact &nbsp;·&nbsp; LinuxDO &nbsp;·&nbsp; English · 简体中文
+
+Is ruyiJS for you?
+
+Headless Chrome and Playwright hand you a whole browser: a GPU-rendering, window-managing, memory-hungry process that anti-bot vendors have spent years learning to detect. ruyiJS takes the opposite path — it embeds only the Firefox internals that matter for automation and leaves the rest behind:
+
+- The real engine, not an impersonation. Genuine SpiderMonkey (Firefox 158) and the Necko network stack execute a site's JavaScript, challenges, signatures, and fingerprints exactly as Firefox would.
+- Truly headless. No window, no layout, no renderer. A pure JavaScript + Web API environment that starts fast and stays light.
+- Isolated and reproducible. Each Context is its own process with a persistent JavaScript world and its own proxy, so sessions never leak into each other.
+- Offline when you need it. Serve scripts and responses yourself and replay a whole captured flow with no network.
+
+If you scrape, reverse-engineer web JavaScript, or collect data behind a challenge, it's for you. If a plain HTTP client already gets your pages, you don't need it.
+
+Runs on Windows x64 with Python 3.10+ (verified on Python 3.14). The wheel bundles the pinned native runtime, so there's nothing else to download.
+
+🚀 Quick start
+
+1 · Install.
+
+python -m pip install ruyijs
+
+The wheel ships the SHA256-pinned SpiderMonkey + Necko runtime; local scripts run offline right after install. No browser download.
+
+2 · Open a context and run JavaScript. Variables and functions persist across eval calls within the same context.
+
+from ruyijs import Context
+
+with Context() as context:
+    context.eval("let count = 40")
+    print(context.eval("count += 2"))        # 42
+    print(context.eval("navigator.userAgent"))
+
+3 · Point it at a real target. Configure the environment, load the page, and let the site's own JavaScript mint whatever token it demands.
+
+with Context(proxy="http://127.0.0.1:7890") as context:
+    context.configure_fingerprint({
+        "navigator": {"language": "zh-CN", "hardwareConcurrency": 8},
+        "locale": {"timezone": "Asia/Shanghai"},
+    })
+    context.load_page("https://target.example/", html)
+    token = context.eval("window.__sign(payload)")   # run the page's signer
+    print(token)
+
+🏗️ How it fits together
+
+Python  ──►  ruyiJS Context (isolated process)  ──►  Target site
+                 ├─ SpiderMonkey — Firefox 158 JS engine
+                 ├─ 38 browser contexts — DOM · Canvas · Workers · iframes · …
+                 └─ Necko — HTTP/1.1 · 2 · 3, per-context proxy
+
+Your Python code drives a Context. Inside it, the genuine SpiderMonkey engine runs the page's scripts against a real DOM and 38 bounded browser subsystems, while in-page fetch/XHR ride the Necko transport. The implementation lives under src/ (domain, application, and every browser subsystem) and python/ruyijs/ (the binding).
+
+✨ Features
+
+Run a site's JavaScript
+
+Execute scripts in a persistent context, load real HTML with iframes and classic scripts, and query the resulting DOM. References to live JS objects come back as JSObject / JSFunction you can call from Python.
+
+| Capability | How |
+| :-- | :-- |
+| Execute JS, keep state | context.eval(src) — variables and functions persist |
+| Get a callable back | context.eval(src, to_py=False) → JSFunction |
+| Load a page | context.load_page(url, html) — relative URLs resolve against url |
+| Top-level navigation | context.navigate(url) — no Referer, Sec-Fetch-Site: none |
+| Query the DOM | context.eval("document.querySelector('#x').textContent") |
+
+with Context() as context:
+    context.set("config", {"offset": 2})
+    add = context.eval("(value) => value + config.offset", to_py=False)
+    print(add(40))  # 42
+
+Configure the browser environment
+
+Set Navigator, Screen, viewport, timezone, and locale through one validated profile surface. Commit it before the first page script runs.
+
+with Context() as context:
+    context.configure_fingerprint({
+        "navigator": {"language": "zh-CN", "hardwareConcurrency": 8},
+        "screen": {"width": 1920, "height": 1080},
+        "viewport": {"width": 1280, "height": 720},
+        "locale": {"timezone": "Asia/Shanghai"},
+    })
+    print(context.eval("navigator.language, screen.width]"))  # ['zh-CN', 1920]
+
+Native network over Necko
+
+In-page fetch and XHR ride real HTTP/1.1, 2, and 3, through a proxy scoped to the context. Serve responses yourself with put_resource() to replay an entire captured flow offline. Inspect every request with net_log().
+
+with Context(proxy="http://127.0.0.1:7890", timeout=30) as context:
+    context.load_page("https://example.com/", "")
+    context.eval("globalThis.r = null; fetch('/api').then(x => x.json()).then(v => r = v)")
+    context.advance(25)               # drive the event loop until it settles
+    print(context.eval("r"))
+
+Python ↔ JavaScript bridge
+
+Pass data in with set(), get callable JS functions out, and expose Python functions to the running script. Workers, Service Workers, and iframes are included.
+
+with Context() as context:
+    context.expose(lambda a, b: a + b, "add")
+    print(context.eval("add(20, 22)"))  # 42
+
+Deterministic clock
+
+Drive timers with a logical clock for perfectly reproducible runs, or use the system clock for live work. The host advances time explicitly.
+
+with Context() as context:
+    context.configure_clock("logical", epoch_ms=1700000000000)
+    context.eval("globalThis.result = 0; setTimeout(() => { result = 42 }, 10)")
+    context.advance(10)
+    print(context.eval("result"))  # 42
+
+Errors and logs
+
+JavaScript exceptions surface as JSError with name, message, and stack. console_log() and net_log() return the captured console and network records.
+
+from ruyijs import Context, JSError
+
+with Context(timeout=10) as context:
+    try:
+        context.eval("throw new TypeError('bad input')", filename="demo.js")
+    except JSError as error:
+        print(error.name, error.message)  # TypeError bad input
+        print(error.stack)
+
+🛡️ Verification systems it defeats
+
+Each example drives the site's own JavaScript to produce the parameters it demands, then completes the flow end to end. All ship runnable in the package: python -m ruyijs.examples .
+
+| System | Category | Example |
+| :-- | :-- | :-- |
+| 瑞数 Ruishu 5/6 | Dynamic VM / page protection | fangdi · cebwm |
+| 极验 Geetest | Slider / one-click | geetest |
+| 腾讯天御 Tencent Captcha | No-feel + slider | tianyu |
+| 数美 Shumei | Slider | shumei |
+| 网易易盾 NetEase Yidun | Smart check | yidun |
+| Arkose Labs + iovation | Enterprise risk / device | expedia-taap |
+| CreepJS | Fingerprint audit — passes every section | creepjs |
+
+Full production data-collection flows: BOSS 直聘, 今日头条 Toutiao, 抖音 Douyin, 小红书 RedNote, Google, Expedia TAAP.
+
+🔒 Strictly prohibited for any unlawful use. ruyiJS is provided solely for research into a new generation of AI browsers. Live results depend on current network conditions and each site's present responses.
+
+🧪 Examples
+
+Examples ship inside the package — no need to clone the repo:
+
+python -m ruyijs.examples                      # list every example and its install path
+python -m ruyijs.examples google --query python --pages 1
+python -m ruyijs.examples boss --query ai --city 101210100
+python -m ruyijs.examples fangdi               # 网上房地产 (Ruishu 6)
+python -m ruyijs.examples cebwm --pages 3      # 光大理财 (custom Ruishu)
+python -m ruyijs.examples toutiao --pages 3    # 今日头条
+python -m ruyijs.examples xhs --pages 3        # 小红书 / RedNote home feed
+
+…（内容已截断）

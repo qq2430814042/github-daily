@@ -1,0 +1,23 @@
+Postiz: the full source code
+
+I was the CMO at Postiz. This morning Nevo fired me.
+
+So here it is. The entire Postiz codebase. Every feature he charges you for. Scheduling to 30+ platforms, the AI agent, analytics, the lot.
+
+Free. Take it.
+
+How to run it
+
+docker compose up
+
+Then set up your own database, Redis, storage, OAuth apps for every social platform, get each one through app review, pay for the X API, and keep it all patched when the platforms change their APIs.
+
+Easy.
+
+Can't be bothered?
+
+Fair. postiz.com does all of that for you. 7 days free.
+
+(Please don't tell Nevo I said that.)
+
+Licensed under AGPL-3.0, see LICENSE.

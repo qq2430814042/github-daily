@@ -1,0 +1,70 @@
+OmarchyTV
+
+An Omarchy-style home screen for Android TV, featuring a native Omarchy TUI Grok Bot assistant, 26 MIT themes with 4K wallpapers, a desktop link to your Omarchy PC / Mac, a native MCP server, and an Android smartphone wireless installer.
+
+Created by Marco Porro (x.com/MarcoPorro · www.marcoporro.it)
+
+Official Synchronized Repositories: GitHub (github.com/piermark/omarchytv) · GitLab (gitlab.com/piermark/omarchytv)
+
+Published: 25 October 2026 (beta) · Version 2.12.0-beta (versionCode 20 — Android TV, PC/Mac Plugin & Mobile Companion) / 2.11.0-testing (LG webOS experimental) · License MIT
+
+BETA SOFTWARE: THINGS MAY NOT WORK. OmarchyTV has been tested on several devices (Sony KD-55XE9005 on Android 9,
+Google TV Streamer on Android 14, Sharp AQUOS, Noblex/Hisense on Android 11) plus the Android TV emulator. Expect rough edges, missing features on some TVs and bugs. It never roots or uninstalls
+anything, and you can always switch back to the stock home screen (see INSTALL), but use it at your own risk.
+
+Default theme since 2.10.2-beta: Tokyo Night with Tom Ballard's "Liftoff Sunset" wallpaper, used with permission (see Credits).
+
+| Workspace 2 · TV | Workspace 4 · PC | Workspace 5 |
+|---|---|---|
+|  |  |  |
+| Logo menu | Screensaver (tte effects) | Workspace 3 |
+|  |  |  |
+
+*Screenshots from the Android TV emulator (API 28, 1920×1080, English UI). The app
+tiles (Netflix, Prime Video, YouTube, CHILI, RaiPlay) are the real app icons captured on a Sony KD-55XE9005 running
+OmarchyTV; see Trademarks.*
+
+Release Downloads & Checksums (v2.12.0-beta)
+
+Every Android APK is signed with the official OmarchyTV release certificate (SHA-256: 90aa68d9f45e623eadfd349ab1eb66042356f95ff6347a4568c3f3a78f8ea33d), so adb install -r upgrades cleanly over 2.11.0-beta and earlier builds while keeping all user settings.
+
+| Artifact | Downloads (GitHub & GitLab Mirrors) | Platform | Version | Size | SHA-256 |
+|---|---|---|---|---|---|
+| omarchytv-release-2.12.0-beta.apk | GitHub · GitLab | Android TV / Google TV (com.omarchytv.home, minSdk 24, targetSdk 34) | 2.12.0-omarchytv (versionCode 20) | 3.8 MB | 9dedc335fb1150afa6027f4123bd295bec8241a4c654842a6be65caff993f035 |
+| omarchy-tv-pc-plugin-2.12.0-beta.tar.gz | GitHub · GitLab | Omarchy Linux / macOS (omarchy-tv + omarchy-link + tools/) | 2.12.0-beta | 184 KB | 2aef33b30e38eba6eb4355ad597bf382bb5e7210be59d7070d6b5f509765bd0c |
+| omarchytv-mobile-2.12.0-beta.apk | GitHub · GitLab | Android Smartphone Installer & Companion (com.omarchytv.mobile, minSdk 26, targetSdk 34) | 2.12.0-beta (versionCode 21200) | 178 KB | 42bb62aa6169c52afacc9b477d25f6f95fffe2eeea9f779394606e1a4e5ad0a4 |
+| omarchytv-webos-2.11.0-testing.ipk | GitHub · GitLab | LG webOS TV (com.omarchytv.webos, experimental testing) | 2.11.0-testing | 124 KB | 04eb928640a0212cad83457ad50b502bc81da440445e33ea2eee95e6eefcc9df |
+
+All releases are available on both GitHub Releases and GitLab Releases. Full release notes: RELEASE-2.12.0-beta.md and CHANGELOG.md.
+
+What's New in 2.12.0-beta (versionCode 20)
+
+1. Native Grok Bot · Omarchy TUI (AskActivity) on the TV Home Shelf:
+   - Clicking the Grok Bot tile (grokbot@tv:$ > GROK BOT  omarchy · tui ]) on the TV Home shelf — or selecting Grok Bot (Omarchy TUI) in the menu — opens a native Omarchy-styled TUI assistant window (BoxView 2 px border, btop-style legend grok bot · omarchy tui [], translucent theme surface over the live 4K WallpaperView, CaskaydiaMono font, and grokbot@omarchytv:$ prompt) instead of jumping straight into a raw web browser.
+   - Standalone Local TV & MCP Control (works offline without a PC): Switch any of the 26 MIT themes (theme jade-horse, theme year-of-the-horse, theme hermarchy, next theme, themes), cycle 4K wallpapers (wallpaper), launch or configure the 37 tte.js ASCII screensavers (screensaver, speed slow|normal|fast), launch installed TV apps or Live TV (open YouTube, open TV, apps), or inspect TV/network/MCP status (status, mcp) via voice, keyboard, or 1-click D-pad quick chips ([ ⏭ next theme ], [ 🖼 wallpaper ], [ ✦ screensaver ], [ 📊 status ], [ 📦 apps ], [ ❓ help ]).
+   - Paired PC / Mac AI Bridge (OmarchyLink): Automatically forwards open-ended AI questions over the encrypted LAN link to your already-authenticated PC/Mac CLI (grok, claude, codex, gemini, hermes, or local ollama) and streams the reply typewriter-style in the TUI terminal.
+   - Optional 1-Click Full Browser WebApp Mode ([ 🌐 grok.com ] / [ 🌐 web ▾ ]): Whenever you want the full web interface, select [ 🌐 grok.com ] or [ 🌐 web ▾ ] inside the TUI header (or from > Grok Bot & AI) to open Grok Web (grok.com), Grok (X) (x.com/i/grok), ChatGPT (chatgpt.com), Claude (claude.ai), or Hermes (hermes.nousresearch.com) in the sandboxed :web process (WebAppActivity) with persistent cookies/DOM storage and D-pad cursor.
+2. 26 100%-MIT Themes & Bundled 4K Wallpapers + Sync PC wallpaper Toggle:
+   - Added 3 new 100%-MIT community themes with all their original 4K wallpapers: DHH's [jade-horse and year-of-the-horse, plus Archer Clawbot's hermarchy.
+   - Added 4K Omarchy wordmark wallpapers (01-omarchy.webp) for last-horizon, solitude, and starship, so all 26 bundled MIT themes include at least one 100%-MIT 4K wallpaper.
+   - Sync PC wallpaper Toggle (off by default): Pairing or syncing with a PC never overwrites the TV's bundled 4K MIT wallpaper unless you explicitly enable Sync PC wallpaper in the TV's Themes or Wallpaper menu.
+3. Native MCP Server (TV POST /mcp & PC omarchy-tv mcp):
+   - Control your TV from Grok Bot, Claude Desktop, Cursor, Hermes, or any Model Context Protocol (2024-11-05, JSON-RPC 2.0) client using a strict TV-only tool whitelist (tv_get_status, tv_list_themes, tv_set_theme, tv_send_key, tv_launch_app, tv_cast_media, tv_show_notification, tv_open_ai_webapp).
+4. Screensaver Effect Speed (Slow / Normal / Fast):
+   - Adjust the animation speed for all 37 tte.js effects and the native ASCII fallback from the Screensaver menu or via the Grok Bot TUI (speed slow, speed normal, speed fast).
+5. Multi-Brand Live TV & Menu Fixes (Community Feedback):
+   - Native Sharp AQUOS (jp.co.sharp.av.android.aquostvapp) and multi-brand Live TV detection alongside Sony BRAVIA (com.sony.dtv.tvx), Google TV (com.google.android.tv), TCL, Hisense, and Philips.
+   - Smooth D-pad scrolling across long menus (Themes menu scrolls smoothly through all 26 themes on 1080p TVs).
+   - Fixed Hide from launcher on the Home shelf and app grid, and added a direct Hidden apps manager in Workspace 5 (System).
+
+Complete Feature Overview
+
+1. Android TV Launcher (com.omarchytv.home)
+- Authentic Omarchy Desktop Look on TV: Hyprland-style windows (BoxView 2 px borders with btop-style cut-out legends), Waybar-style top bar, Walker-style fuzzy search (long OK or Search), and CaskaydiaMono font.
+- Workspaces 1–5: 1 Home, 2 TV & Inputs, 3 All Apps, 4 PC Link & AI, 5 System & Settings. Switch workspaces with number keys 1–5 or the top bar.
+- Native Grok Bot · Omarchy TUI (AskActivity): Built-in terminal assistant on the Home shelf supporting standalone local TV commands, voice recognition, paired PC CLI streaming, and 1-click launch of full AI WebApps (Grok Web, Grok (X), ChatGPT, Claude, Hermes).
+- One-Press Live TV & HDMI Inputs: Supports Sony BRAVIA, Sharp AQUOS, Google TV, AOSP TV, DTVKit, TCL, Hisense, Philips, and standard Android TV Input Framework (TIF) channels.
+- 26 Bundled MIT Themes & 4K Wallpapers: Instant live theme switching with bundled 4K WebP backgrounds, "next wallpaper" cycling, custom image support, procedural aurora fallback, and custom theme packs pushed from your PC.
+- Customizable Home Panels: Toggle individual panels (Clock, Weather with °C / °F switch and auto-location, PC Stats, AI Credits, Deploys, Terminal) and move them on a 12×8 grid with Arrange panels.
+
+…（内容已截断）

@@ -1,0 +1,143 @@
+Awesome SuperMimic
+
+A curated collection of SuperMimic implementations, extensions, demos, and resources.
+
+English · 简体中文
+
+Original paper · Official website · Interactive demo · Community projects
+
+  World-model predictions
+
+      Simulation
+
+      Real G1
+
+Original footage: SuperMimic authors · Click a preview for the full video · Media credits
+
+Start with the original work below, then choose an implementation by framework and task. This is a community-maintained resource list; the linked implementations are credited to their own authors.
+
+Contents
+
+- Original SuperMimic
+- Community projects
+- Related methods and baselines
+- Data and learning resources
+- Contributing
+- Citation
+- Acknowledgements and license
+
+Original SuperMimic
+
+SuperMimic: Scaling Humanoid Whole-Body Control with One Differentiable World Model
+
+Qiayuan Liao, Yiyang Shao, Junfeng Long, Kevin Zakka, Roberto Horowitz, Pieter Abbeel, and Koushil Sreenath.
+
+UC Berkeley · CoRL 2026 Oral
+
+Paper · PDF · Project · Video · Browser demo
+
+SuperMimic learns shared humanoid dynamics from simulator transitions and improves a motion-tracking policy through short imagined rollouts. The world model and policy are updated in the same training loop; policy gradients pass through the learned model. Method overview.
+
+  Original paper, Figure 2 · Framework, p. 4 · Algorithm A.1, p. 15
+
+The world model is fit on 8-step replay windows; the policy and critic learn from 32-step imagined rollouts. During the policy update, model weights stay fixed while gradients pass through the model to the policy. Blue dashed arrows show gradients; ❄️ marks frozen weights and 🔥 marks weights being trained in that phase.
+
+The authors report surpassing SONIC's released-checkpoint return after 3 hours on one H100, with 25 / 129,514 failed motions, and 0 / 129,514 after 9.8 hours on two H100s. These are training-motion coverage results, with different training hardware and data from SONIC. See the official results and compute accounting.
+
+Official code status — checked 2026-10-26: the official website links the paper, video, and browser demo, but does not link a training-code repository. The projects below are community implementations and extensions.
+
+Community projects
+
+29 community projects, grouped by purpose. Descriptions were checked against upstream documentation and selected source files on 2026-10-26; each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
+
+- 🔬 Independent reproductions — 3 projects · Reproduce and evaluate the original method.
+- 🧩 Methods and task extensions — 11 projects · Explore new methods, tasks and control settings.
+- 🛠️ Frameworks, robot ports and deployment — 12 projects · Find a stack, robot port or deployment path.
+- 💡 Inspired experiments — 3 projects · Transfer ideas to other control problems.
+
+Independent reproductions
+
+Reimplementations of the original method, with training, evaluation and reproduction notes.
+
+supermimic_vibed
+
+Repository · Setup and usage · Results
+
+- By Chong Zhang. An independent G1 implementation on Isaac Lab 3, with a kit-less setup, training, full-clip evaluation and rendering tools.
+- Upstream report: On 40 LAFAN1 clips, normalized return 0.829 and 0 / 40 failures after 1.47 hours on one RTX PRO 6000 Blackwell.
+- Useful context: The author describes it as a rapid, unreviewed reproduction. Documented deviations include disabled self-collisions, bf16 MLP computation and an extra reference-root orientation input. Source snapshot.
+
+Simulation · LAFAN1 highlights
+
+SuperMimic-Reproduced
+
+Repository · Setup · Experiment log
+
+- By CuboiLeo. A from-scratch mjlab implementation for G1, with Chinese reproduction notes, LAFAN1/BONES-SEED processing, multi-GPU training and an interactive replay viewer.
+- Upstream report: With anchor-relative observations, one RTX 5090 reaches LAFAN1 return 0.824, 5 / 40 failures at 1.66 hours, and 0.904, 3 / 40 failures at 3.3 hours.
+- Useful context: The paper-observation run reports 0.56 and 9 / 40 failures at 1.8 hours. These observation settings are not equivalent; the reported BONES-SEED scores use a 2,000-motion evaluation subset. Source snapshot.
+
+Report screenshot · paper-style and anchor-relative observations
+
+supermimic_vibe
+
+Repository · Setup · Results log
+
+- By dhmbb2. An independent G1 reproduction in mjlab, covering PPO-Sim/PPO-WM comparisons, horizon and critic ablations, push recovery and velocity-control experiments.
+- Upstream report: On one RTX A6000, LAFAN1 normalized return reaches 0.833 at 1.34 hours and 0.946 with 0 / 40 failures at 12 hours, using complete deterministic clip evaluation.
+- Useful context: The experiment log distinguishes reproduced, partial and pending results. BONES-SEED remains data-gated, hardware transfer is out of scope, and the A6000 timings are not H100 timings. Source snapshot.
+
+Report screenshot · reproduction and ablations on one RTX A6000
+
+Methods and task extensions
+
+Changes to the method, new tasks and focused experiments in perception, morphology and interaction.
+
+MorphMimic
+
+Repository · Setup · Method differences
+
+- By Lizhi Yang et al. Extends SuperMimic in mjlab to share a world model, a policy, or both across G1, X2 Ultra and T2, conditioning the networks on robot morphology.
+- What it provides: Supports full-motion tracking and sparse five-point goals for the pelvis, wrists and ankles; the project includes a browser demo and teleoperation/deployment instructions.
+- Useful context: Robots are mapped to a common 29-joint layout. The README documents changes to termination modeling, normalization, warm-up and actuator-delay randomization. Source snapshot.
+
+Simulation · one shared policy for G1 / X2 Ultra / T2
+
+Video · Interactive demo
+
+allmimic
+
+Repository · Install · Results
+
+- By Shimingyi. Builds on supermimic_vibe for G1 in mjlab, mixing residual upper-body actions with absolute leg actions, weighting world-model losses and balancing motion sampling.
+- Upstream report: With the recommended preset on one RTX 4090, full-length LAFAN1 evaluation reports 0 / 40 failures and return 0.91 after 0.83 hours; training time excludes evaluation.
+- Useful context: The recommended preset changes the method and data sampling. The 306-hard-motion-only run and full BONES-SEED training are separate experiments. Source snapshot.
+
+Simulation · challenging motion clips
+
+SuperMimic on LocoMuJoCo
+
+Repository · Setup · Results
+
+- By Alchedata. Ports the method to H1 with JAX and LocoMuJoCo, comparing an MLP baseline with residual-expert, action-sensitivity and trust-aware world models.
+- Upstream report: Publishes fixed 5,000-iteration checkpoints evaluated over 160 episodes, including both successful seeds and a residual-expert run that became stuck with saturated actions.
+- Useful context: The reward is LocoMuJoCo episode return, not the G1 normalized tracking score. Recovery interventions and their continuation controls are recorded separately. Source snapshot.
+
+Report screenshot · fixed 5k checkpoints, 160 evaluation episodes
+
+Rethinking SuperMimic
+
+Repository · Installation · Implementation comparison
+
+- By btx0424. Studies goal conditioning for G1 in mjlab: concatenating the goal with proprioception versus using FiLM to modulate the policy layers.
+- Useful context: Provides configurable observations, anchor choices and Viser playback. Its implementation table explains differences from the paper and supermimic_vibed, including self-collisions and observation inputs. Source snapshot.
+
+Implementation table excerpt · first three design choices; click for the full comparison
+
+InstinctMJ · SuperMimic
+
+Repository · Method and results · Releases
+
+- By Project Instinct. Extends the method to perceptive G1 tracking and goal-reaching parkour in mjlab / instinct_rl. The world model predicts robot state and depth-encoder latents; components are adapted from supermimic_vibed.
+
+…（内容已截断）

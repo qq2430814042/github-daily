@@ -1,0 +1,100 @@
+GEOInflow
+
+English | 简体中文
+
+Self-hosted web and AI crawler analytics for Generative Engine Optimization (GEO).
+
+Jointly published by 猎看科技 · 北京日报社智源GEO
+
+Quick start · Deployment · AI crawler analytics · Architecture · Documentation · Contributing
+
+GEOInflow brings website visitors, AI search referrals, server crawl logs, and content inventories into a shared website context. It helps teams understand which AI crawlers visit their sites, which pages they request, which important pages have no observed crawl activity, where requests fail, and how AI search contributes visitors and conversions.
+
+The system includes browser tracking, account permissions, GEO reports, crawler evidence, log collection, and analytics acceleration. The current product version is v1.2, with build version 1.2.0. Application source code is distributed under the MIT license.
+
+Quick start and deployment guides are available in English and Simplified Chinese. Other linked reference guides are currently in Simplified Chinese.
+
+Introduction video
+
+https://github.com/user-attachments/assets/81e57cc4-3441-4e5f-b2fb-cd929c6c27bd
+
+What you can use it for
+
+| Question | Available data | Actions it can inform |
+| --- | --- | --- |
+| Which AI platforms visit the site? | Crawler identity, purpose, provider, request volume, verification status, and trends | Distinguish training, search, and user-triggered requests to understand how content is accessed |
+| Which pages are crawled repeatedly? | Page rankings, repeat requests, directory distribution, and recent activity | Review frequently requested paths, invalid URLs, and content structure |
+| Have important pages been crawled? | Import sitemap / CSV / JSON inventories and compare them with observed logs | Check entry points, internal links, robots rules, and responses |
+| Are crawler requests succeeding? | HTTP status, GET / HEAD, caching, latency, errors, and risk signals | Investigate blocked requests, origin errors, coverage drops, and source interruptions |
+| What does AI search bring to the site? | AI referral sessions, landing pages, goals, and conversions | Observe changes in real traffic and business outcomes |
+| Is there enough evidence for a conclusion? | Identity evidence, source coverage, gaps, missing inputs, and estimates | Review results over the same data scope and keep evidence gaps explicit |
+
+GEOInflow is designed for company websites, content sites, media publishers, developer documentation, and GEO teams managing multiple sites. Operators can work at the website and page level, while maintainers can inspect ingestion, queues, source quality, and calculation methods.
+
+AI crawler analytics
+
+Crawler identity and purpose
+
+The built-in catalog covers OpenAI, Anthropic, Perplexity, Google, Microsoft, ByteDance, Baidu, Kimi, Tencent Hunyuan, and other providers. It also retains observations of traditional search crawlers and other bots.
+
+The catalog records platforms, products, and request identities separately. Training, AI search, and user-triggered access describe request purposes; AI workbenches and personal agents describe product types. These dimensions can overlap. Active entries depend on the administrator-published catalog and each website's configuration.
+
+Declared User-Agent strings, matches against official IP ranges, and available DNS or trusted edge evidence are stored independently. A User-Agent claim alone is insufficient to confirm a source. Historical records without verification evidence retain an unknown status.
+
+Crawl activity and content coverage
+
+Review requested-page rankings, observed pages, repeated requests, directory distribution, leading crawlers, recent activity, and content freshness. Import a content inventory to measure observed crawl coverage and AI blind spots against a known set of pages.
+
+Identity, purpose, and product-type filters apply before aggregation and pagination. Cards, tables, comparisons, and exports use the same conditions. Path observations and inferred results retain their estimate labels.
+
+Investigate access problems with evidence
+
+HTTP responses, caching, latency, response bytes, collection continuity, and risk findings are shown separately. Teams can record handling status, notes, deferrals, and resumptions, then review the relevant time windows and evidence.
+
+Access policies support robots / Nginx configuration exports. Supported Cloudflare controls require separate Zone credentials, a preview, explicit confirmation, background execution, and a read-back of the remote state. Provider plans, permissions, and available fields must be checked in the deployed environment.
+
+AI referrals and business outcomes
+
+Browser tracking recognizes supported AI search referrals and combines them with landing pages, events, goals, and conversions. Crawler requests, referral sessions, and conversions are measured separately. Cross-source associations retain their comparability limits.
+
+Crawl logs establish observed access. Indexing, model training, answer citations, recommendation rankings, and customer acquisition each require their own evidence.
+
+See the AI crawler analytics guide for metrics, workflows, and limitations.
+
+Website analytics
+
+| Capability | Scope |
+| --- | --- |
+| Pageviews and visitors | PV, UV, visits, referrals, geography, devices, browsers, and content performance |
+| Events and conversions | Custom events, goals, funnels, visitor paths, attribution, and revenue analysis |
+| Extended analysis | Search engines, referral keywords, UTM, performance, heatmaps, retention, and audiences |
+| Collaboration | Websites, personal and team spaces, permissions, workspaces, dashboards, and public sharing |
+| Exports | CSV / JSON / ZIP for the selected scope, preserving fields, states, and sensitive-data handling |
+| AI assistance | Optional model connections and conversations based on website facts, disabled by default |
+| Operations and governance | Ingestion checks, historical data repair, analytics acceleration, and source and rule versioning |
+
+The application supports Simplified Chinese and English. The main date ranges are Today / 7 days / 30 days, and the default analytics timezone is Asia/Shanghai. The first full sign-in confirms the country and city timezone; later requests use the account's saved timezone to define today. Realtime visitors cover the most recent 30 minutes, and retention uses calendar months.
+
+Browser metrics share a common traffic-quality policy. Empty data, missing integrations, unknown values, estimates, and unsupported capabilities are shown as distinct states. Demo websites are explicitly labeled. See page coverage for the feature matrix and date ranges and timezones for date definitions.
+
+How data enters the system
+
+flowchart LR
+  AWebsite browser script] --> C[Application and ingestion APIs]
+  B[Server / CDN logs] --> C
+  D[sitemap / CSV / JSON inventory] --> C
+  C --> E[(PostgreSQL)]
+  E --> F[Log and analytics workers]
+  F --> E
+  E --> G[Reports and published results]
+  H[(Redis cache)] --- G
+  G --> I[GEO / visitor / content analytics]
+  G --> J[Permission-controlled sharing and exports]
+
+The browser script collects pageviews, events, and enabled extended data. Server and CDN logs add crawler requests that do not run browser scripts. Content inventories provide a known set of pages. Each input can be connected independently, and the corresponding analysis states its limitations when a source is missing.
+
+Log processing retains sources, classifications, and verification evidence. Analytics workers use pre-aggregation, exact visit facts, and durable results to reduce repeated calculations. Standard dashboards and heavier analysis have separate admission controls. Frequently used ranges are prewarmed, and published results remain available during background updates. See the [architecture guide.
+
+Quick deployment
+
+…（内容已截断）

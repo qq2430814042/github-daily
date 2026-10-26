@@ -1,0 +1,147 @@
+English · 简体中文 · 繁體中文 · 日本語 · 한국어 · Türkçe · Русский · Tiếng Việt · ไทย · Deutsch · Español · Français · Українська · Polski · Português (Brasil) · العربية · فارسی · Bahasa Indonesia · Italiano
+· Ελληνικά · മലയാളം · Roman Urdu · Română
+
+REA: Reverse Engineer Anything
+
+One MCP for reverse engineering across binaries, applications, and runtime behavior.
+
+See a feature you like. Understand how it works, down to the binary level.
+
+Website · Guides · Showcases
+
+Quick start · How REA works · What you can analyze · Showcases · Build RL environments · FAQ · Documentation
+
+npx rea-agents setup
+
+Get REA from morluto/rea,
+rea.tools, or the rea-agents npm package.
+Follow the installation and release links from these official sources. A similar
+repository name or copied README does not establish that a download is official.
+
+    Join the Reverse Engineering Community
+
+  Discord · Q&amp;A · Show and Tell
+
+See a feature in an app that you want in your own product? Ask your agent to investigate it with REA. It can inspect the app without its source code, explain how the feature works, show the evidence, and build a version for your project.
+
+REA connects your agent to tools for inspecting native binaries, JavaScript and Electron apps, .NET assemblies, and websites. You can also use the same tools from your terminal. Analysis runs locally, and results include the evidence and limitations behind each conclusion.
+
+Setup registers REA with your agent and installs matching workflow instructions. Native analysis can use an existing Hopper, Ghidra, or IDA installation; setup can optionally install Hopper with approval. Static JavaScript analysis needs no native analysis engine.
+
+Visit the REA website for setup instructions, illustrated guides, and real case studies.
+
+Quick start
+
+On Linux, Ghidra, JADX, firmware tool launches and static JavaScript/Electron
+analysis require a procps-compatible ps on REA's PATH for process ownership
+checks. Recovery steps are in docs/installation.md under
+"Linux owned-process prerequisite".
+
+Set up your agent
+
+With Node.js and npm installed, run:
+
+npx rea-agents setup
+
+Choose your agents, review the proposed changes, and approve them. Setup adds
+REA's MCP server and matching workflow instructions, with backups of existing
+configuration. Restart your agent afterward.
+
+Setup supports Claude Code, Codex, Cursor, Gemini CLI, Grok Build and
+other agents. See
+installation and setup for provider configuration and
+manual MCP registration.
+
+MCP uses compact input schemas by default to reduce context overhead. Set
+REA_MCP_INPUT_SCHEMA_PROFILE=full in your MCP registration when you need the
+complete advertised field guidance and nested validation details. Both profiles
+keep the full tool set and canonical server validation. See
+"Compact input schema profile" in the MCP contracts guide.
+
+Complete output schemas are advertised by default. If your client caps the
+complete tools/list frame, set REA_MCP_OUTPUT_SCHEMA_PROFILE=compact to
+bound each advertised output schema, or off to omit output schemas entirely.
+Both settings keep canonical server-side validation and complete structured
+results. See "Output schemas" in the MCP contracts guide.
+
+Ask your agent
+
+Understand how search works in the Notes app, show me the evidence, and build a
+similar feature for my project.
+
+Replace Notes with your target app and the feature you want to understand.
+
+Use the terminal
+
+Inspect an extracted JavaScript/Electron app directory or ASAR:
+
+npx -y rea-agents@latest analyze-javascript-application /absolute/path/to/app --json
+
+The result includes modules, imports, Electron boundaries and their evidence.
+Replace the path with your target, such as "D:/apps/example" on Windows.
+
+To install the rea command for regular use:
+
+npm install --global rea-agents
+rea --help
+
+For native analysis, configure a provider first. See the
+CLI and Evidence guide for native commands, provider selection,
+snapshots and scripting.
+
+Update REA
+
+REA changes quickly, and new releases include frequent bug fixes. Keep your
+installation up to date.
+
+For a CLI installed with npm install --global or bun add --global:
+
+rea update
+
+rea --update is an alias for this verified workflow and accepts the same global
+output flags. Use rea update when combining it with other command controls.
+
+Updater commands retain at most 4 MiB of stdout and stderr combined. Oversized
+metadata replies are rejected after the command exits; verbose installs continue
+with bounded diagnostics. Human progress output respects terminal backpressure
+and waits for submitted writes to finish.
+
+Bun global updates require Bun 1.2.17 or later. With an older Bun release,
+upgrade Bun manually before running rea update.
+
+To refresh your agent registrations and skill, run the setup command printed
+by the update.
+
+If you use npx, update your agent setup with:
+
+npx rea-agents@latest setup
+
+Review the setup changes and restart your agent. For one-off CLI commands,
+use npx rea-agents@latest followed by the command. With Bun, use
+bunx rea-agents@latest in place of npx rea-agents@latest.
+
+How REA works
+
+Your agent calls REA through MCP to inspect the target and trace relevant code.
+REA returns findings with their evidence. The agent uses them to ask follow-up
+questions, explain the behavior, or write and test an implementation.
+CLI commands use the same workflows.
+
+Open the full-size figure.
+
+What you can analyze
+
+REA requires Node.js 22.x (>=22.23.4), 24.x (>=24.22.1), or 26.12.1+, plus npm.
+Additional tools and host support depend on the target:
+
+| Target                  | What REA returns                                                                                  | Requirements and guide                                                                                                                |
+| ----------------------- | ------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------- |
+| Desktop installations   | Runtime candidates, supporting files, component markers and next probes                           | Built-in bounded directory/header inspection; desktop applications                                    |
+| Native binaries         | Pseudocode, assembly, strings, symbols, calls and references                                      | Hopper, Ghidra or IDA; native analysis                                                                |
+| Offline ELF layout      | Sections, segments, original symbols/relocations and static mitigation candidates                 | Caller-supplied pwntools on Linux x64; binary diagnostics                                               |
+| Go binaries             | Embedded compiler version, modules, replacements and build settings                               | Built-in static ELF/PE/thin Mach-O inspection; no Go installation required                                                            |
+| GPU code objects        | CUDA/HIP targets, selected kernel parameters and resources, retained PTX text                     | Built-in static ELF/PE/fatbin/CUBIN/PTX inspection; GPU code objects                                      |
+| Model artifacts         | GGUF / safetensors metadata, tensor declarations and derived totals                               | Built-in header inspection; optional full-file hash; model files                                           |
+| IL2CPP metadata         | Unity global-metadata.dat assembly images, type and method names and index ranges                 | Built-in static decoding of versions 24, 27, 29, 31 and 39; no Unity required                                                         |
+
+…（内容已截断）

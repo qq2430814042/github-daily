@@ -1,0 +1,1506 @@
+{
+  "date": "2026-10-26",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-10-26T16:11:25.270Z",
+  "count": 60,
+  "newCount": 34,
+  "sources": {
+    "trending": 14,
+    "new": 34,
+    "highStar": 13
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "debpalash/VoiceStudio",
+      "name": "VoiceStudio",
+      "owner": "debpalash",
+      "url": "https://github.com/debpalash/VoiceStudio",
+      "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
+      "language": "Python",
+      "stars": 88403,
+      "forks": 9750,
+      "starsToday": 2292,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "debpalash-voicestudio-ce0088d7.txt"
+    },
+    {
+      "rank": 2,
+      "fullName": "Nutlope/hallmark",
+      "name": "hallmark",
+      "owner": "Nutlope",
+      "url": "https://github.com/Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars": 35559,
+      "forks": 1854,
+      "starsToday": 2235,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nutlope-hallmark-9bed55f1.txt"
+    },
+    {
+      "rank": 3,
+      "fullName": "pbakaus/impeccable",
+      "name": "impeccable",
+      "owner": "pbakaus",
+      "url": "https://github.com/pbakaus/impeccable",
+      "description": "The design language that makes your AI harness better at design.",
+      "language": "Rust",
+      "stars": 88735,
+      "forks": 5292,
+      "starsToday": 1551,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "pbakaus-impeccable-b3881fe4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "TauricResearch/TradingAgents",
+      "name": "TradingAgents",
+      "owner": "TauricResearch",
+      "url": "https://github.com/TauricResearch/TradingAgents",
+      "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
+      "language": "Python",
+      "stars": 115596,
+      "forks": 22218,
+      "starsToday": 1376,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tauricresearch-tradingagents-2fd32a61.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "makecindy/cindy",
+      "name": "cindy",
+      "owner": "makecindy",
+      "url": "https://github.com/makecindy/cindy",
+      "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+      "language": "TypeScript",
+      "stars": 6034,
+      "forks": 754,
+      "starsToday": 1268,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "makecindy-cindy-ff23d87c.txt"
+    },
+    {
+      "rank": 6,
+      "fullName": "JetBrains/thinkrail",
+      "name": "thinkrail",
+      "owner": "JetBrains",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+      "language": "TypeScript",
+      "stars": 2504,
+      "forks": 137,
+      "starsToday": 1156,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jetbrains-thinkrail-be18d273.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "affaan-m/ECC",
+      "name": "ECC",
+      "owner": "affaan-m",
+      "url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 289465,
+      "forks": 42884,
+      "starsToday": 853,
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "createdAt": "2026-01-18T00:51:51Z",
+      "updatedAt": "2026-10-26T16:10:47Z",
+      "sources": [
+        "trending",
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "affaan-m-ecc-c8b1425e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "pollen-robotics/microduck",
+      "name": "microduck",
+      "owner": "pollen-robotics",
+      "url": "https://github.com/pollen-robotics/microduck",
+      "description": "A Tiny biped duck robot 🦆",
+      "language": "Rust",
+      "stars": 12236,
+      "forks": 1533,
+      "starsToday": 844,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "pollen-robotics-microduck-b83288d7.txt"
+    },
+    {
+      "rank": 9,
+      "fullName": "Panniantong/Agent-Reach",
+      "name": "Agent-Reach",
+      "owner": "Panniantong",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "language": "Python",
+      "stars": 103151,
+      "forks": 9147,
+      "starsToday": 723,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "panniantong-agent-reach-14b990a7.txt"
+    },
+    {
+      "rank": 10,
+      "fullName": "multica-ai/andrej-karpathy-skills",
+      "name": "andrej-karpathy-skills",
+      "owner": "multica-ai",
+      "url": "https://github.com/multica-ai/andrej-karpathy-skills",
+      "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
+      "language": "",
+      "stars": 224312,
+      "forks": 22449,
+      "starsToday": 457,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "multica-ai-andrej-karpathy-skills-a89810be.txt"
+    },
+    {
+      "rank": 11,
+      "fullName": "nightly-labs/openbot",
+      "name": "openbot",
+      "owner": "nightly-labs",
+      "url": "https://github.com/nightly-labs/openbot",
+      "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
+      "language": "TypeScript",
+      "stars": 1242,
+      "forks": 167,
+      "starsToday": 312,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nightly-labs-openbot-4e8f3458.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "NVIDIA/SkillSpector",
+      "name": "SkillSpector",
+      "owner": "NVIDIA",
+      "url": "https://github.com/NVIDIA/SkillSpector",
+      "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
+      "language": "Python",
+      "stars": 21882,
+      "forks": 1918,
+      "starsToday": 203,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nvidia-skillspector-5983829c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "alchaincyf/huashu-design",
+      "name": "huashu-design",
+      "owner": "alchaincyf",
+      "url": "https://github.com/alchaincyf/huashu-design",
+      "description": "Huashu Design 3.0 · 在 agent 里打一句话，拿回能交付的设计：网页 / App 原型 / 可编辑 PPTX / 动画 / 信息图 · 六个候选挑三个方向 · 84 种带样张的风格库 · 越用越懂你的外观账本与设计体检 · HTML-native design skill for Claude Code, Codex, Cursor & any agent",
+      "language": "HTML",
+      "stars": 26602,
+      "forks": 2954,
+      "starsToday": 177,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "alchaincyf-huashu-design-8fcf0deb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "gitroomhq/postiz-app",
+      "name": "postiz-app",
+      "owner": "gitroomhq",
+      "url": "https://github.com/gitroomhq/postiz-app",
+      "description": "📨 The ultimate agentic social media scheduling tool 🤖",
+      "language": "TypeScript",
+      "stars": 38159,
+      "forks": 7422,
+      "starsToday": 146,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "gitroomhq-postiz-app-a62d99b2.txt"
+    },
+    {
+      "rank": 15,
+      "fullName": "andyhuo520/digital-human-koubo",
+      "name": "digital-human-koubo",
+      "owner": "andyhuo520",
+      "url": "https://github.com/andyhuo520/digital-human-koubo",
+      "description": "AI digital-human talking-head videos from one photo: Renoise MCP generation + 5 editing styles + 48 creator-grade packaging components. Agent skill for Claude Code / Codex / OpenClaw / WorkBuddy …",
+      "language": "TypeScript",
+      "stars": 520,
+      "forks": 141,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-26T04:34:09Z",
+      "updatedAt": "2026-10-26T16:09:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "andyhuo520-digital-human-koubo-d8076873.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 16,
+      "fullName": "andriu-kun/-wildrig-multi",
+      "name": "-wildrig-multi",
+      "owner": "andriu-kun",
+      "url": "https://github.com/andriu-kun/-wildrig-multi",
+      "description": "multi algo miner for AMD, NVIDIA and Intel gpu's wildrig-multi",
+      "language": "",
+      "stars": 358,
+      "forks": 62,
+      "starsToday": 0,
+      "topics": [
+        "wildrig-multi"
+      ],
+      "createdAt": "2026-10-26T00:08:30Z",
+      "updatedAt": "2026-10-26T15:37:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "andriu-kun-wildrig-multi-c1e14129.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "free-cracks/Adobe-Acrobat-Pro",
+      "name": "Adobe-Acrobat-Pro",
+      "owner": "free-cracks",
+      "url": "https://github.com/free-cracks/Adobe-Acrobat-Pro",
+      "description": "",
+      "language": "",
+      "stars": 287,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adobe-acrobat",
+        "ai",
+        "ilovepdf",
+        "pdf",
+        "pdf-compressor",
+        "pdf-converter",
+        "pdf-editor-pdf",
+        "pdf-lib"
+      ],
+      "createdAt": "2026-10-26T09:34:33Z",
+      "updatedAt": "2026-10-26T10:38:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "free-cracks-adobe-acrobat-pro-0a0c629a.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "yaojingang/GEOInflow",
+      "name": "GEOInflow",
+      "owner": "yaojingang",
+      "url": "https://github.com/yaojingang/GEOInflow",
+      "description": "Self-hosted web and AI crawler analytics for Generative Engine Optimization (GEO). Track visitors, AI search referrals, crawl logs, content coverage, and conversions. Jointly published by 猎看科技 · 北京日报社智源GEO. MIT licensed.",
+      "language": "TypeScript",
+      "stars": 267,
+      "forks": 45,
+      "starsToday": 0,
+      "topics": [
+        "ai-analytics",
+        "geo",
+        "mit",
+        "postgresql",
+        "self-hosted",
+        "web-analytics"
+      ],
+      "createdAt": "2026-10-26T03:12:45Z",
+      "updatedAt": "2026-10-26T16:07:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yaojingang-geoinflow-1b8fb7f4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 19,
+      "fullName": "pro-tools-workspace/Canva-Pro",
+      "name": "Canva-Pro",
+      "owner": "pro-tools-workspace",
+      "url": "https://github.com/pro-tools-workspace/Canva-Pro",
+      "description": "",
+      "language": "",
+      "stars": 255,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "canva-app",
+        "canva-editor-tools",
+        "canva-free",
+        "canva-pro",
+        "canva-pro-team-2026",
+        "canvas",
+        "canvas-api",
+        "canvas-lms"
+      ],
+      "createdAt": "2026-10-26T10:20:42Z",
+      "updatedAt": "2026-10-26T11:14:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "pro-tools-workspace-canva-pro-655ef47c.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "NyxFoundation/nyxis",
+      "name": "nyxis",
+      "owner": "NyxFoundation",
+      "url": "https://github.com/NyxFoundation/nyxis",
+      "description": "",
+      "language": "Lean",
+      "stars": 203,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-26T04:26:18Z",
+      "updatedAt": "2026-10-26T16:08:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nyxfoundation-nyxis-fc323d15.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "arcade-tools/Roblox-script",
+      "name": "Roblox-script",
+      "owner": "arcade-tools",
+      "url": "https://github.com/arcade-tools/Roblox-script",
+      "description": "",
+      "language": "",
+      "stars": 177,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "aimlock",
+        "any-game-cheats",
+        "generate-alts",
+        "roblox",
+        "roblox-aim-assist",
+        "roblox-fly-noclip",
+        "roblox-hub-2026",
+        "roblox-menu-pc"
+      ],
+      "createdAt": "2026-10-26T10:48:50Z",
+      "updatedAt": "2026-10-26T11:28:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "arcade-tools-roblox-script-e8366998.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "SwitchFW-Tools/switch2-bootstrapper",
+      "name": "switch2-bootstrapper",
+      "owner": "SwitchFW-Tools",
+      "url": "https://github.com/SwitchFW-Tools/switch2-bootstrapper",
+      "description": "",
+      "language": "",
+      "stars": 150,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bootstrapper",
+        "cfw",
+        "custom-firmware",
+        "homebrew",
+        "nintendo-switch",
+        "payload",
+        "powershell",
+        "switch2"
+      ],
+      "createdAt": "2026-10-26T11:46:21Z",
+      "updatedAt": "2026-10-26T15:45:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "switchfw-tools-switch2-bootstrapper-930d09e5.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "DiaoOrg/awesome-supermimic",
+      "name": "awesome-supermimic",
+      "owner": "DiaoOrg",
+      "url": "https://github.com/DiaoOrg/awesome-supermimic",
+      "description": "A curated collection of SuperMimic implementations, extensions, demos, and resources.",
+      "language": "",
+      "stars": 132,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "humanoid-robotics",
+        "motion-tracking",
+        "supermimic",
+        "world-model"
+      ],
+      "createdAt": "2026-10-26T02:49:01Z",
+      "updatedAt": "2026-10-26T16:08:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "diaoorg-awesome-supermimic-800da864.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 24,
+      "fullName": "apolinario/urnas-tardias",
+      "name": "urnas-tardias",
+      "owner": "apolinario",
+      "url": "https://github.com/apolinario/urnas-tardias",
+      "description": "",
+      "language": "Python",
+      "stars": 109,
+      "forks": 17,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-26T07:38:53Z",
+      "updatedAt": "2026-10-26T16:06:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "apolinario-urnas-tardias-381d10dc.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "athcagithub/postiz-leaked",
+      "name": "postiz-leaked",
+      "owner": "athcagithub",
+      "url": "https://github.com/athcagithub/postiz-leaked",
+      "description": "The full Postiz source code. Leaked.",
+      "language": "TypeScript",
+      "stars": 99,
+      "forks": 283,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-26T11:48:37Z",
+      "updatedAt": "2026-10-26T16:07:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "athcagithub-postiz-leaked-d63f9c6c.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "ELU-Labs/dark-factory",
+      "name": "dark-factory",
+      "owner": "ELU-Labs",
+      "url": "https://github.com/ELU-Labs/dark-factory",
+      "description": "One prompt that sets up a dark factory for your repository with Grok Bots and ELU.",
+      "language": "",
+      "stars": 94,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-26T01:21:24Z",
+      "updatedAt": "2026-10-26T09:01:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "elu-labs-dark-factory-c1fd04a3.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "piermark/omarchytv",
+      "name": "omarchytv",
+      "owner": "piermark",
+      "url": "https://github.com/piermark/omarchytv",
+      "description": "Omarchy-styled tiling launcher ecosystem for Android TV, Google TV, LG webOS, Android Mobile & Linux/macOS/Omarchy PCs",
+      "language": "Java",
+      "stars": 94,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-26T08:48:20Z",
+      "updatedAt": "2026-10-26T16:09:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "piermark-omarchytv-43597fbc.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 28,
+      "fullName": "polygonloopadapter/Val-Mod-UI",
+      "name": "Val-Mod-UI",
+      "owner": "polygonloopadapter",
+      "url": "https://github.com/polygonloopadapter/Val-Mod-UI",
+      "description": "High-performance Valorant software toolkit cheat. Features undetected Vanguard bypass, Aim module, ESP, Radar hack, and Skin Changer. Optimized for 2026.",
+      "language": "",
+      "stars": 71,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "auto-shoot",
+        "autoshooter",
+        "cheat2026",
+        "cheatfree",
+        "skin-changer-2026",
+        "undetected-cheat-2026",
+        "valorant-accuracy-hack",
+        "valorant-aim-hack"
+      ],
+      "createdAt": "2026-10-26T11:38:50Z",
+      "updatedAt": "2026-10-26T14:47:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "polygonloopadapter-val-mod-ui-39115ee3.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "Motionsites-AI/claude-skill",
+      "name": "claude-skill",
+      "owner": "Motionsites-AI",
+      "url": "https://github.com/Motionsites-AI/claude-skill",
+      "description": "Free Claude skill: make Claude build award-level, cinematic landing pages. By MotionSites.",
+      "language": "Python",
+      "stars": 58,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-26T06:58:45Z",
+      "updatedAt": "2026-10-26T16:07:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "motionsites-ai-claude-skill-5e5999a5.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "Fractal-Compute-Orchestrations/.github",
+      "name": ".github",
+      "owner": "Fractal-Compute-Orchestrations",
+      "url": "https://github.com/Fractal-Compute-Orchestrations/.github",
+      "description": "",
+      "language": "",
+      "stars": 49,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-26T06:04:48Z",
+      "updatedAt": "2026-10-26T16:00:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 31,
+      "fullName": "cortad/cortad",
+      "name": "cortad",
+      "owner": "cortad",
+      "url": "https://github.com/cortad/cortad",
+      "description": "Find out which of your own rules your AI app breaks, before a customer does. Writes people from your rules, plays them against your app, quotes the reply that broke it.",
+      "language": "JavaScript",
+      "stars": 47,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-26T01:50:21Z",
+      "updatedAt": "2026-10-26T12:58:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cortad-cortad-53dfe96b.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "martinkeith700/ruyiJS",
+      "name": "ruyiJS",
+      "owner": "martinkeith700",
+      "url": "https://github.com/martinkeith700/ruyiJS",
+      "description": "A new-generation, minimalist browser purpose-built for AI-driven automation. The authentic Firefox JavaScript engine and networking stack, with no window and no renderer — made for web scraping, JS reverse engineering, data collection, and getting past bot checks.",
+      "language": "C++",
+      "stars": 39,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-26T13:08:12Z",
+      "updatedAt": "2026-10-26T16:05:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "martinkeith700-ruyijs-d98c5d81.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 33,
+      "fullName": "AtEpic9014/PokeMMO-Atlas-AIO-Soft",
+      "name": "PokeMMO-Atlas-AIO-Soft",
+      "owner": "AtEpic9014",
+      "url": "https://github.com/AtEpic9014/PokeMMO-Atlas-AIO-Soft",
+      "description": "A fair-play, community-driven cartography engine for PokeMMO. Observes screen output to chart routes, spawn patterns, and landmarks in real time. Built and released by the respocket team. No memory injection, no packet interception — just pure observation.",
+      "language": "HTML",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "2d-game",
+        "battle-system",
+        "bot",
+        "bottingtool",
+        "client",
+        "community",
+        "frontend",
+        "getimage"
+      ],
+      "createdAt": "2026-10-26T07:20:04Z",
+      "updatedAt": "2026-10-26T13:08:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 34,
+      "fullName": "BGold24258/rpocket-GTA-5-RP-SIMPLE-ESP",
+      "name": "rpocket-GTA-5-RP-SIMPLE-ESP",
+      "owner": "BGold24258",
+      "url": "https://github.com/BGold24258/rpocket-GTA-5-RP-SIMPLE-ESP",
+      "description": "",
+      "language": "",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "gta-v-modding",
+        "gta-v-utility"
+      ],
+      "createdAt": "2026-10-26T07:21:13Z",
+      "updatedAt": "2026-10-26T13:10:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 35,
+      "fullName": "CWraith44357/Fortnite-Respocket-AIO-Soft",
+      "name": "Fortnite-Respocket-AIO-Soft",
+      "owner": "CWraith44357",
+      "url": "https://github.com/CWraith44357/Fortnite-Respocket-AIO-Soft",
+      "description": "Best Software For Fortnite Yet",
+      "language": "C++",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "external",
+        "fot",
+        "hack",
+        "internal",
+        "kernel-driver",
+        "memory-driver",
+        "pattern-scanning",
+        "physical-memory"
+      ],
+      "createdAt": "2026-10-26T07:19:03Z",
+      "updatedAt": "2026-10-26T13:06:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 36,
+      "fullName": "ForHarmony46387/Gta-V-Respocket-AIO-Soft",
+      "name": "Gta-V-Respocket-AIO-Soft",
+      "owner": "ForHarmony46387",
+      "url": "https://github.com/ForHarmony46387/Gta-V-Respocket-AIO-Soft",
+      "description": "Best Software For GTA V Yet",
+      "language": "C++",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "gta-rage",
+        "gta-v-modding",
+        "gta5-enhanced",
+        "gta5-helper",
+        "gta5-optimizer",
+        "gta5-performance-tweak-windows",
+        "gta5-scripthook",
+        "gta5-toolkit"
+      ],
+      "createdAt": "2026-10-26T07:19:32Z",
+      "updatedAt": "2026-10-26T13:07:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 37,
+      "fullName": "GValkyrie87087/albion-resocket-logistics",
+      "name": "albion-resocket-logistics",
+      "owner": "GValkyrie87087",
+      "url": "https://github.com/GValkyrie87087/albion-resocket-logistics",
+      "description": "A desktop ERP and logistics tool for Albion Online.",
+      "language": "HTML",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "albion-online-tools",
+        "albion-online-utilities",
+        "crafting-calculator",
+        "desktop-app",
+        "erp",
+        "gathering",
+        "inventory-management",
+        "radar"
+      ],
+      "createdAt": "2026-10-26T06:55:46Z",
+      "updatedAt": "2026-10-26T13:03:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 38,
+      "fullName": "Helesdragon51668/rpocket-team-deadlock-counterpicker",
+      "name": "rpocket-team-deadlock-counterpicker",
+      "owner": "Helesdragon51668",
+      "url": "https://github.com/Helesdragon51668/rpocket-team-deadlock-counterpicker",
+      "description": "Advanced Deadlock Counter Item Build Guide 2026",
+      "language": "HTML",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "azure-sql",
+        "cicd",
+        "contained-database",
+        "database-administration",
+        "dba",
+        "deadlock-soft",
+        "deadlock-tool",
+        "deadlock-utility"
+      ],
+      "createdAt": "2026-10-26T07:21:30Z",
+      "updatedAt": "2026-10-26T13:11:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 39,
+      "fullName": "InQuest48277/Respocket-Rebirth-Pub-Save-Forge",
+      "name": "Respocket-Rebirth-Pub-Save-Forge",
+      "owner": "InQuest48277",
+      "url": "https://github.com/InQuest48277/Respocket-Rebirth-Pub-Save-Forge",
+      "description": "An independent Rebirth Pub savefile workshop released by the respocket team. Edit gold, AP, stamina, relationships, inventory, and character stats with live previews, integrity checks, automatic backups, and a snapshot timeline — all local, offline, and reversible.",
+      "language": "",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "cheat-tool-for-gamers",
+        "encryption",
+        "game-hacking",
+        "game-hacking-tool",
+        "game-modding-tool",
+        "python",
+        "python-app",
+        "python-script"
+      ],
+      "createdAt": "2026-10-26T07:21:07Z",
+      "updatedAt": "2026-10-26T13:10:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 40,
+      "fullName": "IntoT73731roll/Arc-Raiders-Respocket-FPS-Booster",
+      "name": "Arc-Raiders-Respocket-FPS-Booster",
+      "owner": "IntoT73731roll",
+      "url": "https://github.com/IntoT73731roll/Arc-Raiders-Respocket-FPS-Booster",
+      "description": "Best Software For Arc Raiders Yet",
+      "language": "",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "arc-raiders",
+        "arcriders-optimizer",
+        "arcriders-performance",
+        "cpu-optimization",
+        "desktop-utility",
+        "game-booster-free",
+        "gaming-mode",
+        "latency-optimization"
+      ],
+      "createdAt": "2026-10-26T06:55:51Z",
+      "updatedAt": "2026-10-26T13:04:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 41,
+      "fullName": "JacobMcSeveney/ddr-resocket-multichannel-dma",
+      "name": "ddr-resocket-multichannel-dma",
+      "owner": "JacobMcSeveney",
+      "url": "https://github.com/JacobMcSeveney/ddr-resocket-multichannel-dma",
+      "description": "Open-source multi-channel DDR DMA controller for FPGA: 4 write channels, 5 read channels, async FIFOs, address generation, and arbitration.",
+      "language": "HTML",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adc",
+        "awg",
+        "axi4",
+        "clc",
+        "cmp",
+        "ddr",
+        "dma",
+        "dspic"
+      ],
+      "createdAt": "2026-10-26T06:56:24Z",
+      "updatedAt": "2026-10-26T13:05:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 42,
+      "fullName": "Jotunheimking/Arena-Breakout-Respocket-AIO-Soft",
+      "name": "Arena-Breakout-Respocket-AIO-Soft",
+      "owner": "Jotunheimking",
+      "url": "https://github.com/Jotunheimking/Arena-Breakout-Respocket-AIO-Soft",
+      "description": "Best Software For Arena Breakout Infinite Yet",
+      "language": "",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "arena-breakout-console",
+        "arena-breakout-infinite-codes",
+        "arena-breakout-infinite-console",
+        "arena-breakout-infinite-download",
+        "arena-breakout-infinite-esp-download",
+        "arena-breakout-infinite-external-esp",
+        "arena-breakout-infinite-map-radar",
+        "arena-breakout-infinite-overlay"
+      ],
+      "createdAt": "2026-10-26T06:55:50Z",
+      "updatedAt": "2026-10-26T13:04:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 43,
+      "fullName": "Maedstone/PC-Gaming-Tweaker",
+      "name": "PC-Gaming-Tweaker",
+      "owner": "Maedstone",
+      "url": "https://github.com/Maedstone/PC-Gaming-Tweaker",
+      "description": "Optimize Windows 10/11 for gaming – boost FPS, reduce latency, clean disk, and enhance privacy. All-in-one system tweaker for gamers.",
+      "language": "C++",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "gaming-optimization",
+        "gaming-tweaks",
+        "optimizasyon",
+        "optimization",
+        "optimization-tool",
+        "optimizer",
+        "performance-tool",
+        "privacy-enhancer"
+      ],
+      "createdAt": "2026-10-26T07:20:03Z",
+      "updatedAt": "2026-10-26T13:08:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 44,
+      "fullName": "muhammedhalilozkaya349-cloud/99-Nights-Respocket-Free-Script",
+      "name": "99-Nights-Respocket-Free-Script",
+      "owner": "muhammedhalilozkaya349-cloud",
+      "url": "https://github.com/muhammedhalilozkaya349-cloud/99-Nights-Respocket-Free-Script",
+      "description": "Free keyless 99 Nights In The Forest script for PC — Auto Farm, God Mode, Kill All, Fly & Noclip",
+      "language": "",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "99-nights-campfire",
+        "99-nights-deer-radar",
+        "99-nights-entity-radar",
+        "99-nights-forest-escape",
+        "99-nights-in-the-bunker",
+        "99-nights-in-the-forest",
+        "99-nights-in-the-forest-tool",
+        "99-nights-in-the-forest-tools"
+      ],
+      "createdAt": "2026-10-26T06:55:45Z",
+      "updatedAt": "2026-10-26T13:03:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 45,
+      "fullName": "Speedkrait/Crimson-Desert-Save-Editor-Mod-For-PC",
+      "name": "Crimson-Desert-Save-Editor-Mod-For-PC",
+      "owner": "Speedkrait",
+      "url": "https://github.com/Speedkrait/Crimson-Desert-Save-Editor-Mod-For-PC",
+      "description": "Modify Crimson Desert save files to change character stats, inventory, money, and quest progress with a direct interface.",
+      "language": "C++",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "character-editor",
+        "crimson-desert",
+        "crimson-desert-mods",
+        "crimson-desert-save",
+        "crimson-desert-save-editor",
+        "crimson-desert-tools",
+        "desktop",
+        "game-editor"
+      ],
+      "createdAt": "2026-10-26T06:56:14Z",
+      "updatedAt": "2026-10-26T13:05:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 46,
+      "fullName": "UntoAsgard/Respocket-Yuzu-Emulator-Reworked-v2",
+      "name": "Respocket-Yuzu-Emulator-Reworked-v2",
+      "owner": "UntoAsgard",
+      "url": "https://github.com/UntoAsgard/Respocket-Yuzu-Emulator-Reworked-v2",
+      "description": "Yuzu Emulator Ultimate Toolkit is an all‑in‑one package built to make emulating your Switch library on PC as smooth as possible",
+      "language": "HTML",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "canary-ryujinx",
+        "emulation",
+        "emulation-guide",
+        "emulation-is-not-a-crime",
+        "emulator-ryujinx",
+        "game-emulator",
+        "mgba-api",
+        "mii"
+      ],
+      "createdAt": "2026-10-26T07:21:09Z",
+      "updatedAt": "2026-10-26T13:10:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 47,
+      "fullName": "Vikingcunning/FPSOptimizer-2026-resp",
+      "name": "FPSOptimizer-2026-resp",
+      "owner": "Vikingcunning",
+      "url": "https://github.com/Vikingcunning/FPSOptimizer-2026-resp",
+      "description": "Specialized Windows tool for weak and low-end PCs. Smart FPS optimization, system cleaning, performance tuning and real-time monitoring. Designed specifically for older hardware to achieve maximum possible gaming performance. Lightweight and regularly updated",
+      "language": "HTML",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "desktop",
+        "desktop-app",
+        "desktop-tools",
+        "fps-booster-exe",
+        "fps-booster-for-games",
+        "fps-booster-no-lag",
+        "fps-booster-pro",
+        "fpsoptimizer"
+      ],
+      "createdAt": "2026-10-26T07:19:28Z",
+      "updatedAt": "2026-10-26T13:07:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 48,
+      "fullName": "YetiToGlow22419/SkriptGG-resocket",
+      "name": "SkriptGG-resocket",
+      "owner": "YetiToGlow22419",
+      "url": "https://github.com/YetiToGlow22419/SkriptGG-resocket",
+      "description": "Client-side enhancements for FiveM.",
+      "language": "",
+      "stars": 32,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "aim",
+        "c",
+        "cfx",
+        "client",
+        "client-side",
+        "dumper",
+        "esp",
+        "external"
+      ],
+      "createdAt": "2026-10-26T07:21:42Z",
+      "updatedAt": "2026-10-26T13:11:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 49,
+      "fullName": "freeCodeCamp/freeCodeCamp",
+      "name": "freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript",
+      "stars": 457967,
+      "forks": 48658,
+      "starsToday": 0,
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "createdAt": "2014-12-24T17:49:19Z",
+      "updatedAt": "2026-10-26T15:57:37Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "freecodecamp-freecodecamp-5d095e95.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "openclaw/openclaw",
+      "name": "openclaw",
+      "owner": "openclaw",
+      "url": "https://github.com/openclaw/openclaw",
+      "description": "The AI that really does things. Any OS. Any Platform. The lobster way. 🦞",
+      "language": "TypeScript",
+      "stars": 393132,
+      "forks": 82647,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "assistant",
+        "crustacean",
+        "molty",
+        "openclaw",
+        "own-your-data",
+        "personal"
+      ],
+      "createdAt": "2025-11-24T10:16:47Z",
+      "updatedAt": "2026-10-26T16:08:45Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "openclaw-openclaw-1bc09ef4.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "morluto/rea",
+      "name": "rea",
+      "owner": "morluto",
+      "url": "https://github.com/morluto/rea",
+      "description": "Reverse engineer anything with agents, from app behavior down to native binaries.",
+      "language": "TypeScript",
+      "stars": 389815,
+      "forks": 97661,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "binary-analysis",
+        "claude-code",
+        "cli",
+        "codex",
+        "cordis",
+        "decompiler"
+      ],
+      "createdAt": "2026-04-14T00:51:32Z",
+      "updatedAt": "2026-10-26T16:11:15Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "morluto-rea-39c7c565.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 370462,
+      "forks": 45155,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-10-26T16:10:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "vinta/awesome-python",
+      "name": "awesome-python",
+      "owner": "vinta",
+      "url": "https://github.com/vinta/awesome-python",
+      "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
+      "language": "Python",
+      "stars": 330411,
+      "forks": 29010,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ],
+      "createdAt": "2014-06-27T21:00:06Z",
+      "updatedAt": "2026-10-26T16:08:55Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "vinta-awesome-python-6aca4665.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 54,
+      "fullName": "practical-tutorials/project-based-learning",
+      "name": "project-based-learning",
+      "owner": "practical-tutorials",
+      "url": "https://github.com/practical-tutorials/project-based-learning",
+      "description": "Curated list of project-based tutorials",
+      "language": "Python",
+      "stars": 288060,
+      "forks": 36724,
+      "starsToday": 0,
+      "topics": [
+        "beginner-project",
+        "cpp",
+        "golang",
+        "javascript",
+        "project",
+        "python",
+        "tutorial",
+        "webdevelopment"
+      ],
+      "createdAt": "2017-04-12T05:07:46Z",
+      "updatedAt": "2026-10-26T16:02:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "practical-tutorials-project-based-learning-532d5b87.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "NousResearch/hermes-agent",
+      "name": "hermes-agent",
+      "owner": "NousResearch",
+      "url": "https://github.com/NousResearch/hermes-agent",
+      "description": "The agent that grows with you",
+      "language": "Python",
+      "stars": 257307,
+      "forks": 56366,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "claude",
+        "claude-code",
+        "codex"
+      ],
+      "createdAt": "2025-07-22T22:22:28Z",
+      "updatedAt": "2026-10-26T16:10:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nousresearch-hermes-agent-2d4806ae.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 253542,
+      "forks": 67403,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-10-26T15:52:15Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 251867,
+      "forks": 51577,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-10-26T15:52:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "anomalyco/opencode",
+      "name": "opencode",
+      "owner": "anomalyco",
+      "url": "https://github.com/anomalyco/opencode",
+      "description": "The open source coding agent.",
+      "language": "TypeScript",
+      "stars": 221829,
+      "forks": 29669,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2025-04-30T20:08:00Z",
+      "updatedAt": "2026-10-26T16:05:06Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "anomalyco-opencode-07ae7a61.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "n8n-io/n8n",
+      "name": "n8n",
+      "owner": "n8n-io",
+      "url": "https://github.com/n8n-io/n8n",
+      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "language": "TypeScript",
+      "stars": 208645,
+      "forks": 61255,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "apis",
+        "automation",
+        "cli",
+        "data-flow",
+        "development",
+        "integration-framework",
+        "integrations"
+      ],
+      "createdAt": "2019-06-22T09:24:21Z",
+      "updatedAt": "2026-10-26T16:04:55Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "n8n-io-n8n-fbb2b1d8.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "tensorflow/tensorflow",
+      "name": "tensorflow",
+      "owner": "tensorflow",
+      "url": "https://github.com/tensorflow/tensorflow",
+      "description": "An Open Source Machine Learning Framework for Everyone",
+      "language": "C++",
+      "stars": 201267,
+      "forks": 78697,
+      "starsToday": 0,
+      "topics": [
+        "deep-learning",
+        "deep-neural-networks",
+        "distributed",
+        "machine-learning",
+        "ml",
+        "neural-network",
+        "python",
+        "tensorflow"
+      ],
+      "createdAt": "2015-11-07T01:19:20Z",
+      "updatedAt": "2026-10-26T16:04:57Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "tensorflow-tensorflow-ad663574.txt"
+    }
+  ]
+}

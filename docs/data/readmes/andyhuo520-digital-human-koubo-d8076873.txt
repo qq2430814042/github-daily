@@ -1,0 +1,126 @@
+Digital Human Koubo · AI 数字人口播
+
+One photo + one sentence → a finished talking-head video with a digital human.
+Script, lip-synced AI presenter, voice clean-up, captions, and pro-YouTuber-style packaging — fully automated by your AI agent.
+
+English · 简体中文
+
+This 27-second livestream ad has no real presenter. Face, voice, studio, captions and the price animation are all AI.
+The only input was one sentence: "Use this digital human to make a 30-second livestream ad for the WorkBuddy course — 10 lessons, ¥99, was ¥999."
+Total cost: 482 Renoise credits.
+
+Demos
+
+Click a GIF (or "Watch") to play the full video. Every demo below was produced with this repo.
+
+| | | |
+|:---:|:---:|:---:|
+|  |  |  |
+| Livestream sales ad · 9:16 · 27 s
+Style B + depth-text price ¥999→¥99
+▶ Watch | Product recommendation · 9:16 · 89 s
+Animated captions, emoji, picture-in-picture
+▶ Watch | Text behind the presenter · 5 s
+Vision person matting, 3-layer composite
+▶ Watch |
+
+| | |
+|:---:|:---:|
+|  |  |
+| Step-by-step tutorial · 16:9 · 4:36
+The digital human teaches how she was made (Style D)
+▶ Watch | Digital human, upgraded · 16:9 · 5:55
+Two presenters, 6 languages, 4 scenes, cat & dog (Style E)
+▶ Watch |
+|  |  |
+| Launch breakdown · 16:9 · 39 s
+Presenter on the side, code B-roll on the right (Style C)
+▶ Watch | Finance / tech explainer · 16:9 · 2:21
+Charts, documents, chapter cards (Style A)
+▶ Watch |
+
+Packaging component gallery · 48 components · 2:40 · ▶ Watch
+
+All presenters in the demos are AI digital humans and every video is labelled "内容由 AI 数字人演绎" (performed by an AI digital human). The male presenter is the author's own digital twin, made from his own photo.
+
+What it does
+
+- Digital human from one photo — a fixed presenter (face, outfit, voice description, prompt template) stored in persona.json, so every video is the same person. Composite her into any scene (livestream studio, shop, classroom, Kyoto street) with GPT Image first, then make her talk.
+- Lip-synced talking clips — the script is split into ≤ 15-second segments and generated with Grok Video 1.5 through Renoise MCP. Other models (Wan 3.0, OmniHuman for your own recording) are documented.
+- Cost gate — the agent always quotes segments · seconds · credits · balance first and waits for your "yes". It generates segment 1 for you to check before batching the rest.
+- Quality control — every segment is transcribed with whisper and compared with the script, and 4 frames per segment are inspected (Grok sometimes burns subtitles into the picture; those segments get re-shot).
+- Voice unification — 1/3-octave spectral matching, de-essing, one shared small-room reverb and loudness normalisation, so 30 separately-generated clips sound like one recording (sibilance spread 13.2 dB → 5.9 dB in our tests).
+- 5 editing styles, chosen for your content — the agent diagnoses your content, recommends 2 styles with preview images and asks you everything in one go (style · ratio & length · caption intensity · presenter).
+- 48 packaging components — measured frame-by-frame from 25 videos by top creators (MrBeast, Mark Rober, Ryan Trahan, MKBHD, MediaStorm/影视飓风, 何同学, Johnny Harris, Vox, Kurzgesagt, 回形针, 半佛仙人, 差评, 毕导). Each style has a default packaging recipe; add or remove techniques by just asking.
+- Text behind the presenter — big words / numbers between the background and the person (macOS Vision person segmentation → transparent video → 3-layer composite).
+- Multi-language — English, Japanese, Korean, French, Spanish, Arabic tested (whisper back-check 94–100 %).
+- Works with your agent — a standard SKILL.md Agent Skill plus scripts; any agent that can load skills, connect a remote MCP server and run local commands can drive it.
+
+How it works
+
+your content ──► 0. setup check (Renoise MCP / ffmpeg / whisper — skip what you already have)
+                 1. diagnose content → recommend 2 of 5 styles → ask once → brief.json
+                 2. script.json (≤15 s per segment, ~5.4 Chinese chars/s)
+                 3. quote credits → wait for "yes" → generate segment 1 → you check → batch
+                 4. range-download (CDN-safe) → whisper back-check → frame check
+                 5. voice unification (spectral match + de-ess + shared room)
+                 6. word-level timeline (tl.json)
+                 7. edit in Remotion: style template + default packaging (+ your requests)
+                 8. render → check mid-transition frames → loudness (-14 / -16 LUFS)
+
+Supported agents
+
+The skill is a folder with a SKILL.md (the open Agent Skills format) plus Python / shell / Remotion scripts. To run the whole pipeline an agent needs three things:
+
+1. Load Agent Skills (a skills folder or skill upload),
+2. Connect a remote MCP server (Renoise — streamable HTTP, browser login, no API key),
+3. Run commands on your computer (ffmpeg, Python, Node — for downloading, QA and editing).
+
+| Agent | Skills | Renoise MCP | Local commands | Status |
+|---|---|---|---|---|
+| Claude Code | ~/.claude/skills/ | /plugin (below) | ✅ | ✅ Tested — this repo was built with it |
+| Codex (CLI / desktop) | ~/.codex/skills/ | codex mcp add | ✅ | ✅ Expected to work (same scripts) |
+| OpenClaw | skills folder per OpenClaw docs | openclaw plugins install | ✅ | ⚙️ Should work |
+| WorkBuddy | Skills → import the folder / zip | Connectors → add custom MCP | ✅ desktop agent | ⚙️ Should work — menu names may differ by version |
+| 豆包 (Doubao) · 千问办公 (Qwen Office) · 纳米Work (NamiWork) and other agent products | import if the product supports Agent Skills | add as a custom / remote MCP server if supported | needed for editing | ⚙️ Works if the product supports the 3 requirements above; check its docs |
+| Claude desktop / claude.ai | upload the skill zip in Settings | Connectors → Add custom connector | ⚠️ sandbox only | Script writing, scene design, generation & quoting work; local editing needs a shell agent |
+
+If your agent can only do MCP + chat (no local commands), you can still use it to plan, quote and generate the clips through Renoise; then run the editing steps with Claude Code / Codex, or by hand with the commands in SKILL.md.
+
+Installation
+
+1 · Get the code
+
+git clone https://github.com/andyhuo520/digital-human-koubo.git
+cd digital-human-koubo
+
+2 · Install the two skills into your agent
+
+The repo contains two skills: digital-human-koubo (main) and finance-explainer (the engine for Style A, the finance / tech explainer).
+
+Claude Code
+mkdir -p /.claude/skills && cp -R skills/digital-human-koubo skills/finance-explainer /.claude/skills/
+Codex
+mkdir -p /.codex/skills && cp -R skills/digital-human-koubo skills/finance-explainer /.codex/skills/
+WorkBuddy / OpenClaw / other agents — zip the two folders and import them in the product's Skills page, or copy them into its skills directory (see the product's docs):
+cd skills && zip -r ../digital-human-skills.zip digital-human-koubo finance-explainer && cd ..
+
+3 · Connect Renoise MCP (AI video / image generation)
+
+Create an account at renoise.ai first. Login is in the browser — you never paste an API key.
+
+| Agent | How |
+|---|---|
+| Claude Code | /plugin marketplace add ArcoCodes/renoise-plugins-official then /plugin install renoise@renoise-plugins-official |
+| Codex | codex mcp add renoise --url https://renoise.ai/api/public/mcp then codex mcp login renoise |
+| OpenClaw | openclaw plugins install renoise --marketplace ArcoCodes/renoise-plugins-official |
+| Claude desktop / claude.ai | Settings → Connectors → Add custom connector → name Renoise, URL https://renoise.ai/api/public/mcp |
+| WorkBuddy, Cursor, Windsurf, Cline, 豆包, 千问, 纳米Work, … | add a remote MCP server with URL https://renoise.ai/api/public/mcp (typical config: {"mcpServers":{"renoise":{"url":"https://renoise.ai/api/public/mcp"}}}) |
+
+Latest official instructions: renoise.ai/plugin. Check it worked by asking your agent: "查一下我的 Renoise 余额 / check my Renoise balance."
+
+4 · Local tools (for downloading, QA and editing)
+
+| Tool | macOS | Windows | Linux |
+
+…（内容已截断）

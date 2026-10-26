@@ -1,0 +1,75 @@
+urnas-tardias
+
+Quantos votos entraram depois das 17h no 2º turno de 2026 (25/10), quando o STF estendeu a votação até as 19h.
+
+Resultado (sem o exterior)
+
+| | |
+|---|---|
+| Urnas no país | 497.882 |
+| Urnas estendidas (encerraram depois das 17h45) | 7.352 (1,48%) |
+| Votos depois das 17h nessas urnas | 5.052 |
+| Votos registrados nas urnas | 127.696.482 |
+| Peso dos votos tardios | 0,004% |
+| Vantagem de Lula sobre Flávio | 4.430.191 (votos tardios = 0,11%) |
+
+| UF | Urnas estendidas | Votos depois das 17h |
+|---|---|---|
+| RJ | 3.301 (8,8%) | 1.966 |
+| SP | 1.874 (1,8%) | 1.626 |
+| BA | 1.014 (2,9%) | 842 |
+| PE | 705 (3,3%) | 296 |
+| PB | 312 (2,9%) | 140 |
+| Demais | 146 | 182 |
+
+Outros horários de corte
+
+| Urna estendida se encerrou depois de | Urnas | Votos depois das 17h | % da vantagem de Lula |
+|---|---|---|---|
+| 17h45 (padrão) | 7.352 (1,48%) | 5.052 | 0,11% |
+| 17h30 | 7.606 (1,53%) | 5.139 | 0,12% |
+| 17h15 | 9.079 (1,82%) | 5.621 | 0,13% |
+| 17h (todas as urnas) | 497.882 (100%) | 34.330 | 0,77% |
+
+Com corte às 17h entram todas as urnas, e a maior parte desses votos vem de eleitores que já estavam na fila às 17h, o que é permitido em qualquer eleição.
+
+Método
+
+Os dados vêm do log de cada urna (logd.dat), publicado pelo TSE em resultados.tse.jus.br. Exemplo com a seção 0517 da zona 0009 do Rio de Janeiro (código do município 60011):
+
+1. A lista de seções de cada UF está no arquivo de configuração:
+   https://resultados.tse.jus.br/oficial/ele2026/arquivo-urna/3221/config/rj/rj-p003221-cs.json
+2. O arquivo auxiliar da seção traz o hash da pasta onde estão os arquivos da urna:
+   https://resultados.tse.jus.br/oficial/ele2026/arquivo-urna/3221/dados/rj/60011/0009/0517/p003221-rj-m60011-z0009-s0517-aux.json
+3. O log fica em dados/{uf}/{municipio}/{zona}/{secao}/{hash}/{arquivo -log.jez}:
+   https://resultados.tse.jus.br/oficial/ele2026/arquivo-urna/3221/dados/rj/60011/0009/0517/55454d6e504a34786275774b4d6c55696b4b6132756255506e725333432d36544e357a69776b544f31656b3d/o03221rj6001100090517-log.jez
+
+O .jez é um zip com o logd.dat, um texto em latin1 separado por tab, com os dois turnos. Trecho dessa urna:
+
+25/10/2026 08:00:01	INFO	01781484	VOTA	Urna pronta para receber votos	D732412B4E99352D
+25/10/2026 18:15:22	INFO	01781484	VOTA	O voto do eleitor foi computado	258C2ED24D7644FC
+25/10/2026 19:00:45	INFO	01781484	VOTA	Procedimento de encerramento confirmado	2EC37A3B98BF6D60
+
+Para cada seção, usamos só as linhas de 25/10/2026:
+
+- abertura: evento "Urna pronta para receber votos"
+- encerramento: evento "Procedimento de encerramento confirmado"
+- votos: evento "O voto do eleitor foi computado"
+
+Os horários do log são locais. O fuso de cada município é o mais comum entre as horas de abertura das suas urnas (abertura às 8h locais), e tudo é convertido para o horário de Brasília.
+
+Uma urna é estendida se encerrou depois das 17h45 de Brasília. Nelas, contam-se os votos computados depois das 17h. O exterior (ZZ) fica de fora porque lá a votação segue a hora local de cada país.
+
+Cobertura: 499.248 seções no arquivo de configuração do TSE; 72 sem log (70 no exterior).
+
+Rodar
+
+uv run crawl.py          # todas as UFs, ou: uv run crawl.py rj sp
+python3 analisa.py       # gera secoes.csv e municipios.csv
+
+O crawler limita a taxa (RPS, padrão 10 req/s) e retoma de onde parou. São ~1 milhão de requisições; numa conexão doméstica leva horas.
+
+Arquivos
+
+- secoes.csv: uma linha por urna (fuso, abertura, encerramento, último voto, votos depois das 17h e das 17h20, total de votos, classe)
+- municipios.csv: municípios com urnas estendidas
