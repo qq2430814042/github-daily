@@ -1,0 +1,1408 @@
+{
+  "date": "2026-10-20",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-10-26T14:05:34.668Z",
+  "count": 60,
+  "newCount": 40,
+  "sources": {
+    "trending": 0,
+    "new": 40,
+    "highStar": 20
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "pengchujin/aerial-tv",
+      "name": "aerial-tv",
+      "owner": "pengchujin",
+      "url": "https://github.com/pengchujin/aerial-tv",
+      "description": "给国产电视的一块干净桌面：参照 tvOS 设计的开源 Android TV 桌面，没有广告，开机自动接管。A tvOS-style launcher for Xiaomi, TCL and other China-market TVs.",
+      "language": "Kotlin",
+      "stars": 5877,
+      "forks": 497,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T09:13:06Z",
+      "updatedAt": "2026-10-26T14:05:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 2,
+      "fullName": "Jakeschincariol/day-trader-skill",
+      "name": "day-trader-skill",
+      "owner": "Jakeschincariol",
+      "url": "https://github.com/Jakeschincariol/day-trader-skill",
+      "description": "11 Claude skills for day trading: scan thousands of charts, track breaking news, time every entry and exit, and replay every outcome before you risk a dollar.",
+      "language": "Python",
+      "stars": 1896,
+      "forks": 399,
+      "starsToday": 0,
+      "topics": [
+        "backtesting",
+        "claude",
+        "claude-skills",
+        "day-trading",
+        "stock-market"
+      ],
+      "createdAt": "2026-10-20T14:17:54Z",
+      "updatedAt": "2026-10-26T14:03:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 3,
+      "fullName": "eagle-hq/EAGLE-4",
+      "name": "EAGLE-4",
+      "owner": "eagle-hq",
+      "url": "https://github.com/eagle-hq/EAGLE-4",
+      "description": "Official Inference Code of EAGLE-4",
+      "language": "Python",
+      "stars": 1002,
+      "forks": 35,
+      "starsToday": 0,
+      "topics": [
+        "eagle",
+        "gpu",
+        "llm-inference",
+        "sglang",
+        "speculative-decoding",
+        "tokenspeed",
+        "vllm"
+      ],
+      "createdAt": "2026-10-20T14:03:04Z",
+      "updatedAt": "2026-10-26T13:47:27Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 4,
+      "fullName": "NVIDIA/flare-local-inference",
+      "name": "flare-local-inference",
+      "owner": "NVIDIA",
+      "url": "https://github.com/NVIDIA/flare-local-inference",
+      "description": "",
+      "language": "Python",
+      "stars": 665,
+      "forks": 69,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T17:09:40Z",
+      "updatedAt": "2026-10-26T13:56:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 5,
+      "fullName": "torrentplayer/torrentplayer",
+      "name": "torrentplayer",
+      "owner": "torrentplayer",
+      "url": "https://github.com/torrentplayer/torrentplayer",
+      "description": "Stream any torrent, video or audio, and skip to any moment in about a second. Free, open-source desktop app for Windows, macOS and Linux. No servers, no accounts, no telemetry.",
+      "language": "Rust",
+      "stars": 645,
+      "forks": 13,
+      "starsToday": 0,
+      "topics": [
+        "audio-player",
+        "bittorrent",
+        "cross-platform",
+        "desktop-app",
+        "media-player",
+        "p2p",
+        "rust",
+        "streaming"
+      ],
+      "createdAt": "2026-10-20T19:44:10Z",
+      "updatedAt": "2026-10-26T13:56:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 6,
+      "fullName": "impacifist/Windows-GPU-UNLOCK",
+      "name": "Windows-GPU-UNLOCK",
+      "owner": "impacifist",
+      "url": "https://github.com/impacifist/Windows-GPU-UNLOCK",
+      "description": "Windows GPU UNLOCK: RTX3090 UEFI port, Korean no-reset Windows boot guide, verified source and benchmark evidence",
+      "language": "C",
+      "stars": 637,
+      "forks": 57,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T04:41:07Z",
+      "updatedAt": "2026-10-26T14:05:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 7,
+      "fullName": "nthnclrk/CleanFrame",
+      "name": "CleanFrame",
+      "owner": "nthnclrk",
+      "url": "https://github.com/nthnclrk/CleanFrame",
+      "description": "A personal home screen for Samsung The Frame. A starting point to fork and adapt.",
+      "language": "JavaScript",
+      "stars": 637,
+      "forks": 124,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T04:40:07Z",
+      "updatedAt": "2026-10-26T14:04:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 8,
+      "fullName": "dominikmartn/harp",
+      "name": "harp",
+      "owner": "dominikmartn",
+      "url": "https://github.com/dominikmartn/harp",
+      "description": "Run many Claude Code and Codex agents side by side, in one sidebar that tells you which one needs you. An unofficial fork of Warp.",
+      "language": "Rust",
+      "stars": 632,
+      "forks": 42,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T10:39:43Z",
+      "updatedAt": "2026-10-26T11:45:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 9,
+      "fullName": "LNPANDY/NX2Apple",
+      "name": "NX2Apple",
+      "owner": "LNPANDY",
+      "url": "https://github.com/LNPANDY/NX2Apple",
+      "description": "Play your own Switch games on iPhone/iPad — one-click macOS app, no terminal. | 把 Switch 游戏装进 iPhone：图形界面一键构建，不用命令行。Bring your own game.",
+      "language": "Objective-C",
+      "stars": 539,
+      "forks": 67,
+      "starsToday": 0,
+      "topics": [
+        "apple-silicon",
+        "custom-format",
+        "homebrew",
+        "ios",
+        "ipa",
+        "ipad",
+        "ipados",
+        "iphone"
+      ],
+      "createdAt": "2026-10-20T18:16:07Z",
+      "updatedAt": "2026-10-26T13:52:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 10,
+      "fullName": "raymondchins/Bridgeplay",
+      "name": "Bridgeplay",
+      "owner": "raymondchins",
+      "url": "https://github.com/raymondchins/Bridgeplay",
+      "description": "Free fork of NotProton: Windows Steam games in Mac Steam, on CodeWeavers' Wine and Apple's Game Porting Toolkit",
+      "language": "Scala",
+      "stars": 536,
+      "forks": 111,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T03:13:58Z",
+      "updatedAt": "2026-10-26T13:51:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 11,
+      "fullName": "lesnolie/Tigris",
+      "name": "Tigris",
+      "owner": "lesnolie",
+      "url": "https://github.com/lesnolie/Tigris",
+      "description": "Tigris — tvOS 27 style launcher for Android TV: Liquid Glass dock, Top Shelf, glass Control Center, photo screensaver. Agent-installable.",
+      "language": "Kotlin",
+      "stars": 494,
+      "forks": 42,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T10:12:05Z",
+      "updatedAt": "2026-10-26T13:23:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 12,
+      "fullName": "jss8649/quiet-tizen",
+      "name": "quiet-tizen",
+      "owner": "jss8649",
+      "url": "https://github.com/jss8649/quiet-tizen",
+      "description": "Native Quiet Home launcher, reversible cleanup tools, and an agent-readable guide for the Samsung U8000F running Tizen 9.",
+      "language": "Python",
+      "stars": 396,
+      "forks": 53,
+      "starsToday": 0,
+      "topics": [
+        "codex",
+        "debloat",
+        "launcher",
+        "samsung-tv",
+        "smart-tv",
+        "tizen"
+      ],
+      "createdAt": "2026-10-20T17:23:41Z",
+      "updatedAt": "2026-10-26T13:13:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 13,
+      "fullName": "mrdoob/slop-newyork",
+      "name": "slop-newyork",
+      "owner": "mrdoob",
+      "url": "https://github.com/mrdoob/slop-newyork",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 376,
+      "forks": 117,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T09:16:37Z",
+      "updatedAt": "2026-10-26T13:53:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 14,
+      "fullName": "qianshuixia/shrimpreel",
+      "name": "shrimpreel",
+      "owner": "qianshuixia",
+      "url": "https://github.com/qianshuixia/shrimpreel",
+      "description": "Open-source template for \"one photo → AI video that follows a viral template\" SaaS sites, one site per trending keyword. Cloudflare Workers + D1/R2/KV/Queues, TanStack Start + Hono, Google sign-in, credit packs (Waffo/Dodo), fal.ai video generation, admin console.",
+      "language": "TypeScript",
+      "stars": 275,
+      "forks": 115,
+      "starsToday": 0,
+      "topics": [
+        "ai-video",
+        "cloudflare-d1",
+        "cloudflare-r2",
+        "cloudflare-workers",
+        "fal-ai",
+        "hono",
+        "image-to-video",
+        "react"
+      ],
+      "createdAt": "2026-10-20T18:08:00Z",
+      "updatedAt": "2026-10-26T13:47:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 15,
+      "fullName": "lovisdotio/motion2code",
+      "name": "motion2code",
+      "owner": "lovisdotio",
+      "url": "https://github.com/lovisdotio/motion2code",
+      "description": "Skills for coding agents: rebuild a motion design video as looping SVG + GSAP code, checked frame by frame against the source",
+      "language": "HTML",
+      "stars": 274,
+      "forks": 24,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "animation",
+        "claude-code",
+        "gsap",
+        "motion-design",
+        "svg",
+        "video-to-code"
+      ],
+      "createdAt": "2026-10-20T04:18:10Z",
+      "updatedAt": "2026-10-26T12:50:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 16,
+      "fullName": "h563k/chat-keeper",
+      "name": "chat-keeper",
+      "owner": "h563k",
+      "url": "https://github.com/h563k/chat-keeper",
+      "description": "chat-keeper专注于提供Claude镜像站 提供了1:1还原官网的体验，国内直连可用",
+      "language": "CSS",
+      "stars": 272,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T02:07:28Z",
+      "updatedAt": "2026-10-26T11:50:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 17,
+      "fullName": "op7418/guizang-tv",
+      "name": "guizang-tv",
+      "owner": "op7418",
+      "url": "https://github.com/op7418/guizang-tv",
+      "description": "归藏电视：适配国内小米电视的简洁 Android 桌面，大字列表、壁纸轮播与 HDMI 直达。",
+      "language": "Java",
+      "stars": 252,
+      "forks": 35,
+      "starsToday": 0,
+      "topics": [
+        "android-tv",
+        "java",
+        "launcher",
+        "wallpaper",
+        "xiaomi"
+      ],
+      "createdAt": "2026-10-20T15:00:29Z",
+      "updatedAt": "2026-10-26T12:12:48Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 18,
+      "fullName": "Fluepke/emudrahahahahaha",
+      "name": "emudrahahahahaha",
+      "owner": "Fluepke",
+      "url": "https://github.com/Fluepke/emudrahahahahaha",
+      "description": "Private Keys",
+      "language": "Go",
+      "stars": 242,
+      "forks": 62,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T16:42:49Z",
+      "updatedAt": "2026-10-26T13:15:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 19,
+      "fullName": "NelsonEU/arn0-tv",
+      "name": "arn0-tv",
+      "owner": "NelsonEU",
+      "url": "https://github.com/NelsonEU/arn0-tv",
+      "description": "A custom home screen for a Samsung Q70B (Tizen 6.5)",
+      "language": "JavaScript",
+      "stars": 211,
+      "forks": 51,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T15:03:28Z",
+      "updatedAt": "2026-10-26T12:52:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 20,
+      "fullName": "tombkeeper/BitKindle",
+      "name": "BitKindle",
+      "owner": "tombkeeper",
+      "url": "https://github.com/tombkeeper/BitKindle",
+      "description": "",
+      "language": "C",
+      "stars": 211,
+      "forks": 25,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T15:11:44Z",
+      "updatedAt": "2026-10-26T13:14:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 21,
+      "fullName": "Xc1Ym/LumaDock",
+      "name": "LumaDock",
+      "owner": "Xc1Ym",
+      "url": "https://github.com/Xc1Ym/LumaDock",
+      "description": "璃游 LumaDock：面向 Apple Silicon Mac 的 Switch 游戏启动器，支持自动构建、着色器诊断及未签名 IPA 导出；需自备 nxnative。Native Switch game launcher for Apple Silicon Macs with automated builds, shader diagnostics and unsigned IPA export; bring your own nxnative engine.",
+      "language": "Objective-C",
+      "stars": 206,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T08:22:30Z",
+      "updatedAt": "2026-10-26T06:33:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 22,
+      "fullName": "cs-tool-s/.github",
+      "name": ".github",
+      "owner": "cs-tool-s",
+      "url": "https://github.com/cs-tool-s/.github",
+      "description": "🔥 cs-2-cs2-skin-changer-skin-swapper-skinchanger-skinswapper-all-skins",
+      "language": "HTML",
+      "stars": 205,
+      "forks": 181,
+      "starsToday": 0,
+      "topics": [
+        "cs2-ak-47-skin-changer",
+        "cs2-all-skins",
+        "cs2-awp-dragon-lore-changer",
+        "cs2-glove-changer",
+        "cs2-karambit-changer",
+        "cs2-knife-changer",
+        "cs2-skin-changer-2026",
+        "cs2-skins-how-to-get"
+      ],
+      "createdAt": "2026-10-20T13:20:24Z",
+      "updatedAt": "2026-10-25T09:04:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 23,
+      "fullName": "val-tools/.github",
+      "name": ".github",
+      "owner": "val-tools",
+      "url": "https://github.com/val-tools/.github",
+      "description": "🔥 valorant-weapon-skin-changer-swapper-all-skins",
+      "language": "HTML",
+      "stars": 204,
+      "forks": 198,
+      "starsToday": 0,
+      "topics": [
+        "valorant-gun-changer",
+        "valorant-knife-changer",
+        "valorant-no-key",
+        "valorant-phantom-skins",
+        "valorant-reaver-vandal",
+        "valorant-skin-changer-2026",
+        "valorant-skin-changer-pc",
+        "valorant-skin-changer-working"
+      ],
+      "createdAt": "2026-10-20T03:35:52Z",
+      "updatedAt": "2026-10-24T00:10:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 24,
+      "fullName": "ELY-Open-Source/ELYTerminal",
+      "name": "ELYTerminal",
+      "owner": "ELY-Open-Source",
+      "url": "https://github.com/ELY-Open-Source/ELYTerminal",
+      "description": "A terminal on GPUI and Ely components",
+      "language": "Rust",
+      "stars": 202,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T00:23:23Z",
+      "updatedAt": "2026-10-26T10:55:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 25,
+      "fullName": "llm-xiaoye/douyin-to-obsidian",
+      "name": "douyin-to-obsidian",
+      "owner": "llm-xiaoye",
+      "url": "https://github.com/llm-xiaoye/douyin-to-obsidian",
+      "description": "A portable /dy skill for cc-connect + Claude Code: Douyin videos, image posts and collections to Obsidian, with local ASR/OCR and private configuration.",
+      "language": "Python",
+      "stars": 202,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T14:19:16Z",
+      "updatedAt": "2026-10-26T05:42:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 26,
+      "fullName": "eooce/Cloudflare-Tunnel-Panel",
+      "name": "Cloudflare-Tunnel-Panel",
+      "owner": "eooce",
+      "url": "https://github.com/eooce/Cloudflare-Tunnel-Panel",
+      "description": "一个用cloudflare workers部署的多账号隧道管理面板",
+      "language": "JavaScript",
+      "stars": 200,
+      "forks": 105,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T08:51:36Z",
+      "updatedAt": "2026-10-26T13:31:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 27,
+      "fullName": "vladocar/Sumi.css",
+      "name": "Sumi.css",
+      "owner": "vladocar",
+      "url": "https://github.com/vladocar/Sumi.css",
+      "description": "A minimalist, classless-first CSS framework.",
+      "language": "HTML",
+      "stars": 199,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [
+        "css",
+        "css-framework",
+        "css-grid"
+      ],
+      "createdAt": "2026-10-20T01:38:15Z",
+      "updatedAt": "2026-10-26T13:14:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 28,
+      "fullName": "free-dam-man/homeline-residential-exit-skill",
+      "name": "homeline-residential-exit-skill",
+      "owner": "free-dam-man",
+      "url": "https://github.com/free-dam-man/homeline-residential-exit-skill",
+      "description": "",
+      "language": "Shell",
+      "stars": 177,
+      "forks": 36,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T17:37:03Z",
+      "updatedAt": "2026-10-26T12:39:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 29,
+      "fullName": "InariNGT-Ofiicial/dsh-bili-humanism",
+      "name": "dsh-bili-humanism",
+      "owner": "InariNGT-Ofiicial",
+      "url": "https://github.com/InariNGT-Ofiicial/dsh-bili-humanism",
+      "description": "用多彩的人类世界，训练 DSH 的人格：默认积累信笺反思于专用 human-world.md；允许通过 DSH 与外部插件接驳。历史、收藏、点赞与投币独立默认关闭；本项目不提供评论接口。",
+      "language": "JavaScript",
+      "stars": 174,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "bilibili",
+        "dsh-plugin",
+        "humanism",
+        "local-first"
+      ],
+      "createdAt": "2026-10-20T13:32:36Z",
+      "updatedAt": "2026-10-26T14:01:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 30,
+      "fullName": "holjab/AutoMorph",
+      "name": "AutoMorph",
+      "owner": "holjab",
+      "url": "https://github.com/holjab/AutoMorph",
+      "description": "A self-hosted tool for automatically patching and distributing Android packages, built on Morphe Desktop.",
+      "language": "Python",
+      "stars": 173,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T18:04:37Z",
+      "updatedAt": "2026-10-26T13:22:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 31,
+      "fullName": "mornyeapp/Mornye-Desktop",
+      "name": "Mornye-Desktop",
+      "owner": "mornyeapp",
+      "url": "https://github.com/mornyeapp/Mornye-Desktop",
+      "description": "Desktop music player for your personal library on macOS, Windows and Linux. Built with Flutter and Rust. Open source, no ads, no subscription.",
+      "language": "",
+      "stars": 170,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [
+        "desktop",
+        "desktop-app",
+        "flac",
+        "flutter",
+        "flutter-app",
+        "linux",
+        "lossless",
+        "lossless-audio"
+      ],
+      "createdAt": "2026-10-20T20:50:25Z",
+      "updatedAt": "2026-10-26T13:24:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 32,
+      "fullName": "haiou-666/Haiou-workshop",
+      "name": "Haiou-workshop",
+      "owner": "haiou-666",
+      "url": "https://github.com/haiou-666/Haiou-workshop",
+      "description": "海鸥工坊（Haiou Workshop）｜面向逆向工程、授权渗透测试与安全研发的 AI 专业工作台。内置rea逆向流程，融合 Codex、Claude Code 与 DeepSeek Harness，整合专业技能库、REA 分析能力及按需工具链，辅助开展二进制分析、Web/API 安全评估、代码审计、CTF、数字取证、移动端与协议分析。覆盖任务拆解、脚本编写、工具分析、证据整理、修复建议与技术报告等工作环节，让 AI 深入参与专业分析与开发实践。",
+      "language": "",
+      "stars": 159,
+      "forks": 77,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T16:38:05Z",
+      "updatedAt": "2026-10-26T13:14:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 33,
+      "fullName": "Zafer-Liu/claude-super-sidebar",
+      "name": "claude-super-sidebar",
+      "owner": "Zafer-Liu",
+      "url": "https://github.com/Zafer-Liu/claude-super-sidebar",
+      "description": "A visual sidebar for Claude Code and Codex: agent trees, live status, and conversation task flows.",
+      "language": "JavaScript",
+      "stars": 155,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [
+        "agent-visualization",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "codex",
+        "developer-tools",
+        "multi-agent",
+        "nodejs"
+      ],
+      "createdAt": "2026-10-20T06:18:04Z",
+      "updatedAt": "2026-10-23T01:22:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 34,
+      "fullName": "llm-xiaoye/cc-connect-dy-author",
+      "name": "cc-connect-dy-author",
+      "owner": "llm-xiaoye",
+      "url": "https://github.com/llm-xiaoye/cc-connect-dy-author",
+      "description": "独立的 /dy-author Skill：将抖音作者作品整理为 Obsidian 知识笔记与面试题，支持个人配置与 cc-connect。",
+      "language": "Python",
+      "stars": 146,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T14:10:57Z",
+      "updatedAt": "2026-10-26T11:20:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 35,
+      "fullName": "likangkangkang/mcd-tarot",
+      "name": "mcd-tarot",
+      "owner": "likangkangkang",
+      "url": "https://github.com/likangkangkang/mcd-tarot",
+      "description": "",
+      "language": "Python",
+      "stars": 144,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T05:13:32Z",
+      "updatedAt": "2026-10-26T05:14:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 36,
+      "fullName": "AhmedEzo686/ezoo-download",
+      "name": "ezoo-download",
+      "owner": "AhmedEzo686",
+      "url": "https://github.com/AhmedEzo686/ezoo-download",
+      "description": "",
+      "language": "Rust",
+      "stars": 141,
+      "forks": 31,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T21:45:48Z",
+      "updatedAt": "2026-10-26T13:47:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 37,
+      "fullName": "yuatemycat/SuperGhidra",
+      "name": "SuperGhidra",
+      "owner": "yuatemycat",
+      "url": "https://github.com/yuatemycat/SuperGhidra",
+      "description": "SuperGhidra: Autonomous Agent Reverse Engineering, Lock-Free Ghidra Daemon & C++ Recovery Suite",
+      "language": "Python",
+      "stars": 141,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "arm64",
+        "binary-analysis",
+        "decompiler",
+        "disassembler",
+        "ghidra",
+        "mcp",
+        "pcode",
+        "python"
+      ],
+      "createdAt": "2026-10-20T08:22:31Z",
+      "updatedAt": "2026-10-26T08:30:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 38,
+      "fullName": "Hanmoy/mcsmart-butler",
+      "name": "mcsmart-butler",
+      "owner": "Hanmoy",
+      "url": "https://github.com/Hanmoy/mcsmart-butler",
+      "description": "基于麦当劳官方 MCP 的本机面板与 Agent Skill：单人热量/预算配餐、多人拼单与透明分账、团购比价，以及纸板像素风 McDNA 双面分享卡；确定性内核负责选配与分账。2026 麦当劳程序员创意开发大赛参赛项目。",
+      "language": "TypeScript",
+      "stars": 133,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T15:21:40Z",
+      "updatedAt": "2026-10-26T05:14:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 39,
+      "fullName": "pmarket-14/polymarket-ai-trading-codex-and-claude-bot",
+      "name": "polymarket-ai-trading-codex-and-claude-bot",
+      "owner": "pmarket-14",
+      "url": "https://github.com/pmarket-14/polymarket-ai-trading-codex-and-claude-bot",
+      "description": "polymarket tools",
+      "language": "HTML",
+      "stars": 132,
+      "forks": 71,
+      "starsToday": 0,
+      "topics": [
+        "ai-prediction-market",
+        "ai-trading-arbitrage",
+        "claude-trading-bot",
+        "codex-trading-bot",
+        "free-ai-trading-bot",
+        "llm-trading-bot",
+        "polymarket-ai-2026",
+        "polymarket-ai-arbitrage"
+      ],
+      "createdAt": "2026-10-20T22:18:45Z",
+      "updatedAt": "2026-10-24T00:08:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 40,
+      "fullName": "cocombee/glass-tv",
+      "name": "glass-tv",
+      "owner": "cocombee",
+      "url": "https://github.com/cocombee/glass-tv",
+      "description": "Make your Android TV or Google TV fast and ad-free again: debloat it over Wi-Fi, then come home to a glass home screen with a new place to visit every week.",
+      "language": "Java",
+      "stars": 131,
+      "forks": 167,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-20T03:00:24Z",
+      "updatedAt": "2026-10-26T08:25:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 41,
+      "fullName": "TheAlgorithms/Python",
+      "name": "Python",
+      "owner": "TheAlgorithms",
+      "url": "https://github.com/TheAlgorithms/Python",
+      "description": "All Algorithms implemented in Python",
+      "language": "Python",
+      "stars": 225532,
+      "forks": 51221,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven",
+        "education",
+        "hacktoberfest",
+        "interview"
+      ],
+      "createdAt": "2016-07-16T09:44:01Z",
+      "updatedAt": "2026-10-26T13:51:14Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 42,
+      "fullName": "Chalarangelo/30-seconds-of-code",
+      "name": "30-seconds-of-code",
+      "owner": "Chalarangelo",
+      "url": "https://github.com/Chalarangelo/30-seconds-of-code",
+      "description": "Coding articles to level up your development skills",
+      "language": "JavaScript",
+      "stars": 129340,
+      "forks": 12487,
+      "starsToday": 0,
+      "topics": [
+        "astro",
+        "awesome-list",
+        "css",
+        "education",
+        "es6-javascript",
+        "git",
+        "html",
+        "javascript"
+      ],
+      "createdAt": "2017-11-29T17:35:03Z",
+      "updatedAt": "2026-10-26T13:21:58Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 43,
+      "fullName": "microsoft/Web-Dev-For-Beginners",
+      "name": "Web-Dev-For-Beginners",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/Web-Dev-For-Beginners",
+      "description": "24 Lessons, 12 Weeks, Get Started as a Web Developer",
+      "language": "JavaScript",
+      "stars": 97021,
+      "forks": 16074,
+      "starsToday": 0,
+      "topics": [
+        "css",
+        "curriculum",
+        "education",
+        "html",
+        "javascript",
+        "learning",
+        "microsoft-for-beginners",
+        "tutorials"
+      ],
+      "createdAt": "2020-11-10T02:44:00Z",
+      "updatedAt": "2026-10-26T14:02:27Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 44,
+      "fullName": "ChatGPTNextWeb/NextChat",
+      "name": "NextChat",
+      "owner": "ChatGPTNextWeb",
+      "url": "https://github.com/ChatGPTNextWeb/NextChat",
+      "description": "✨ Zero-config AI chat assistant. No API key needed — sign up and instantly chat with GPT-5, Claude 4, Gemini 2.5, DeepSeek & 100+ top models. Pay-as-you-go saves you more. Available on Web, iOS, macOS, Android, Linux, Windows.",
+      "language": "TypeScript",
+      "stars": 88897,
+      "forks": 58714,
+      "starsToday": 0,
+      "topics": [
+        "calclaude",
+        "claude",
+        "cross-platform",
+        "desktop",
+        "fe",
+        "gemini",
+        "gemini-pro",
+        "gemini-server"
+      ],
+      "createdAt": "2023-03-10T18:27:54Z",
+      "updatedAt": "2026-10-26T13:02:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 45,
+      "fullName": "sansan0/TrendRadar",
+      "name": "TrendRadar",
+      "owner": "sansan0",
+      "url": "https://github.com/sansan0/TrendRadar",
+      "description": "⭐AI-driven public opinion & trend monitor with multi-platform aggregation, RSS, and smart alerts.🎯 告别信息过载，你的 AI 舆情监控助手与热点筛选工具！聚合多平台热点 + RSS 订阅，支持关键词精准筛选。AI 智能筛选新闻 + AI 翻译 + AI 分析简报直推手机，也支持接入 MCP 架构，赋能 AI 自然语言对话分析、情感洞察与趋势预测等。支持 Docker ，数据本地/云端自持。集成微信/飞书/钉钉/Telegram/邮件/ntfy/bark/slack 等渠道智能推送。",
+      "language": "Python",
+      "stars": 63202,
+      "forks": 24897,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "bark",
+        "data-analysis",
+        "docker",
+        "hot-news",
+        "llm",
+        "mail",
+        "mcp"
+      ],
+      "createdAt": "2025-04-28T11:42:16Z",
+      "updatedAt": "2026-10-26T14:00:26Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 46,
+      "fullName": "reduxjs/redux",
+      "name": "redux",
+      "owner": "reduxjs",
+      "url": "https://github.com/reduxjs/redux",
+      "description": "A JS library for predictable global state management",
+      "language": "TypeScript",
+      "stars": 61446,
+      "forks": 15091,
+      "starsToday": 0,
+      "topics": [
+        "redux"
+      ],
+      "createdAt": "2015-05-29T23:53:15Z",
+      "updatedAt": "2026-10-26T06:51:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 47,
+      "fullName": "sharkdp/bat",
+      "name": "bat",
+      "owner": "sharkdp",
+      "url": "https://github.com/sharkdp/bat",
+      "description": "A cat(1) clone with wings.",
+      "language": "Rust",
+      "stars": 60945,
+      "forks": 3642,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "command-line",
+        "git",
+        "hacktoberfest",
+        "rust",
+        "syntax-highlighting",
+        "terminal",
+        "tool"
+      ],
+      "createdAt": "2018-04-21T10:52:23Z",
+      "updatedAt": "2026-10-26T13:55:26Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 48,
+      "fullName": "gatsbyjs/gatsby",
+      "name": "gatsby",
+      "owner": "gatsbyjs",
+      "url": "https://github.com/gatsbyjs/gatsby",
+      "description": "React-based framework with performance, scalability, and security built in.",
+      "language": "JavaScript",
+      "stars": 55929,
+      "forks": 10094,
+      "starsToday": 0,
+      "topics": [
+        "blog",
+        "compiler",
+        "gatsby",
+        "graphql",
+        "react",
+        "static-site-generator",
+        "web-app"
+      ],
+      "createdAt": "2015-05-21T22:43:05Z",
+      "updatedAt": "2026-10-26T05:33:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 49,
+      "fullName": "bmad-code-org/BMAD-METHOD",
+      "name": "BMAD-METHOD",
+      "owner": "bmad-code-org",
+      "url": "https://github.com/bmad-code-org/BMAD-METHOD",
+      "description": "Breakthrough Method for Agile Ai Driven Development",
+      "language": "Python",
+      "stars": 54573,
+      "forks": 6107,
+      "starsToday": 0,
+      "topics": [
+        "agile",
+        "ai",
+        "context-engineering",
+        "sdlc",
+        "spec-driven-development"
+      ],
+      "createdAt": "2025-04-13T14:54:25Z",
+      "updatedAt": "2026-10-26T13:44:21Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 50,
+      "fullName": "luongnv89/claude-howto",
+      "name": "claude-howto",
+      "owner": "luongnv89",
+      "url": "https://github.com/luongnv89/claude-howto",
+      "description": "A visual, example-driven guide to Claude Code — from basic concepts to advanced agents, with copy-paste templates that bring immediate value.",
+      "language": "Python",
+      "stars": 45221,
+      "forks": 5551,
+      "starsToday": 0,
+      "topics": [
+        "claude-code",
+        "guide",
+        "tutorial"
+      ],
+      "createdAt": "2025-11-07T22:59:34Z",
+      "updatedAt": "2026-10-26T14:03:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 51,
+      "fullName": "gkd-kit/gkd",
+      "name": "gkd",
+      "owner": "gkd-kit",
+      "url": "https://github.com/gkd-kit/gkd",
+      "description": "基于无障碍，高级选择器，订阅规则的自定义屏幕点击安卓应用 | An Android APP with custom screen tapping based on Accessibility, Advanced Selectors, and Subscription Rules",
+      "language": "Kotlin",
+      "stars": 43415,
+      "forks": 2078,
+      "starsToday": 0,
+      "topics": [
+        "accessibility",
+        "android",
+        "auto",
+        "click",
+        "compose",
+        "compose-multiplatform",
+        "jetpack-compose",
+        "kotlin"
+      ],
+      "createdAt": "2023-07-04T03:59:15Z",
+      "updatedAt": "2026-10-26T14:04:05Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 52,
+      "fullName": "FuelLabs/fuels-ts",
+      "name": "fuels-ts",
+      "owner": "FuelLabs",
+      "url": "https://github.com/FuelLabs/fuels-ts",
+      "description": "Fuel Network Typescript SDK",
+      "language": "TypeScript",
+      "stars": 42926,
+      "forks": 1359,
+      "starsToday": 0,
+      "topics": [
+        "fuel",
+        "typescript"
+      ],
+      "createdAt": "2021-09-03T18:11:03Z",
+      "updatedAt": "2026-10-25T13:29:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 53,
+      "fullName": "glanceapp/glance",
+      "name": "glance",
+      "owner": "glanceapp",
+      "url": "https://github.com/glanceapp/glance",
+      "description": "A self-hosted dashboard that puts all your feeds in one place",
+      "language": "Go",
+      "stars": 37721,
+      "forks": 1498,
+      "starsToday": 0,
+      "topics": [
+        "aggregator",
+        "dashboard",
+        "docker",
+        "feed-reader",
+        "go",
+        "homelab",
+        "homepage",
+        "monitoring"
+      ],
+      "createdAt": "2024-04-27T18:55:38Z",
+      "updatedAt": "2026-10-26T14:01:56Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 54,
+      "fullName": "utmapp/UTM",
+      "name": "UTM",
+      "owner": "utmapp",
+      "url": "https://github.com/utmapp/UTM",
+      "description": "Virtual machines for iOS and macOS",
+      "language": "Swift",
+      "stars": 36540,
+      "forks": 1883,
+      "starsToday": 0,
+      "topics": [
+        "apple",
+        "emulation",
+        "ios",
+        "jailbreak",
+        "macos",
+        "qemu",
+        "utm",
+        "virtual-machines"
+      ],
+      "createdAt": "2019-04-12T16:09:24Z",
+      "updatedAt": "2026-10-26T13:11:29Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 55,
+      "fullName": "Flowseal/zapret-discord-youtube",
+      "name": "zapret-discord-youtube",
+      "owner": "Flowseal",
+      "url": "https://github.com/Flowseal/zapret-discord-youtube",
+      "description": "",
+      "language": "Batchfile",
+      "stars": 35221,
+      "forks": 2708,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2024-10-08T20:02:28Z",
+      "updatedAt": "2026-10-26T14:04:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 56,
+      "fullName": "facebookresearch/detectron2",
+      "name": "detectron2",
+      "owner": "facebookresearch",
+      "url": "https://github.com/facebookresearch/detectron2",
+      "description": "Detectron2 is a platform for object detection, segmentation and other visual recognition tasks.",
+      "language": "Python",
+      "stars": 34950,
+      "forks": 7940,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2019-09-05T21:30:20Z",
+      "updatedAt": "2026-10-26T09:08:55Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 57,
+      "fullName": "v2fly/v2ray-core",
+      "name": "v2ray-core",
+      "owner": "v2fly",
+      "url": "https://github.com/v2fly/v2ray-core",
+      "description": "A platform for building proxies to bypass network restrictions.",
+      "language": "Go",
+      "stars": 34706,
+      "forks": 5088,
+      "starsToday": 0,
+      "topics": [
+        "anticensorship",
+        "hacktoberfest",
+        "network",
+        "proxy",
+        "shadowsocks",
+        "socks5",
+        "trojan",
+        "tunnel"
+      ],
+      "createdAt": "2019-04-15T10:05:54Z",
+      "updatedAt": "2026-10-26T09:27:17Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 58,
+      "fullName": "NginxProxyManager/nginx-proxy-manager",
+      "name": "nginx-proxy-manager",
+      "owner": "NginxProxyManager",
+      "url": "https://github.com/NginxProxyManager/nginx-proxy-manager",
+      "description": "Docker container for managing Nginx proxy hosts with a simple, powerful interface",
+      "language": "TypeScript",
+      "stars": 34538,
+      "forks": 3946,
+      "starsToday": 0,
+      "topics": [
+        "nginx",
+        "nginx-proxy"
+      ],
+      "createdAt": "2017-12-20T23:01:16Z",
+      "updatedAt": "2026-10-26T13:03:05Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 59,
+      "fullName": "encode/django-rest-framework",
+      "name": "django-rest-framework",
+      "owner": "encode",
+      "url": "https://github.com/encode/django-rest-framework",
+      "description": "Web APIs for Django. 🎸",
+      "language": "Python",
+      "stars": 30218,
+      "forks": 7097,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "django",
+        "python",
+        "rest"
+      ],
+      "createdAt": "2011-03-02T17:13:56Z",
+      "updatedAt": "2026-10-26T09:38:15Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 60,
+      "fullName": "cloudreve/cloudreve",
+      "name": "cloudreve",
+      "owner": "cloudreve",
+      "url": "https://github.com/cloudreve/cloudreve",
+      "description": "🌩 Self-hosted file management and sharing system, supports multiple storage providers",
+      "language": "Go",
+      "stars": 28884,
+      "forks": 3922,
+      "starsToday": 0,
+      "topics": [
+        "cloud",
+        "cloud-storage",
+        "cloudreve",
+        "file",
+        "file-manager",
+        "file-sharing",
+        "golang"
+      ],
+      "createdAt": "2018-02-04T04:56:38Z",
+      "updatedAt": "2026-10-26T12:22:39Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    }
+  ]
+}

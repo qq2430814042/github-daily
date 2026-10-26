@@ -1,0 +1,1450 @@
+{
+  "date": "2026-10-23",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-10-26T14:06:27.200Z",
+  "count": 60,
+  "newCount": 40,
+  "sources": {
+    "trending": 0,
+    "new": 40,
+    "highStar": 20
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "JustAResearcher/gpu-unlock-ada",
+      "name": "gpu-unlock-ada",
+      "owner": "JustAResearcher",
+      "url": "https://github.com/JustAResearcher/gpu-unlock-ada",
+      "description": "GPU tensor unlock source for RTX 4090 and experimental RTX 4070 Ti SUPER; firmware generated locally",
+      "language": "C",
+      "stars": 3592,
+      "forks": 481,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T21:00:53Z",
+      "updatedAt": "2026-10-26T14:06:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 2,
+      "fullName": "morganlinton/BeautifulRust",
+      "name": "BeautifulRust",
+      "owner": "morganlinton",
+      "url": "https://github.com/morganlinton/BeautifulRust",
+      "description": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, and Gemini CLI.",
+      "language": "Python",
+      "stars": 1080,
+      "forks": 45,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "claude-plugin",
+        "claude-skills",
+        "clippy",
+        "code-review",
+        "coding-agent",
+        "cursor"
+      ],
+      "createdAt": "2026-10-23T03:01:11Z",
+      "updatedAt": "2026-10-26T14:06:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 3,
+      "fullName": "enesozturk/dimensional-drawing",
+      "name": "dimensional-drawing",
+      "owner": "enesozturk",
+      "url": "https://github.com/enesozturk/dimensional-drawing",
+      "description": "",
+      "language": "HTML",
+      "stars": 797,
+      "forks": 46,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T12:20:16Z",
+      "updatedAt": "2026-10-26T14:03:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 4,
+      "fullName": "surendrapandar/minilytics",
+      "name": "minilytics",
+      "owner": "surendrapandar",
+      "url": "https://github.com/surendrapandar/minilytics",
+      "description": "Opensource Revenue-first analytics for indie hackers & solo founders",
+      "language": "TypeScript",
+      "stars": 565,
+      "forks": 139,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T19:27:24Z",
+      "updatedAt": "2026-10-26T14:06:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 5,
+      "fullName": "x86rc/unthemidator",
+      "name": "unthemidator",
+      "owner": "x86rc",
+      "url": "https://github.com/x86rc/unthemidator",
+      "description": "An automated Themida / Code Virtualizer / WinLicense (v3.0-v4) unpacker and dump fixer tool",
+      "language": "C++",
+      "stars": 275,
+      "forks": 39,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T13:23:19Z",
+      "updatedAt": "2026-10-26T13:54:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 6,
+      "fullName": "appariciojunior/video-editor-skills",
+      "name": "video-editor-skills",
+      "owner": "appariciojunior",
+      "url": "https://github.com/appariciojunior/video-editor-skills",
+      "description": "Skills that teach Claude Code to be a first-pass video editor in DaVinci Resolve: transcript cuts, vlog pacing, B-roll, music & SFX, clean captions, motion graphics, YouTube export. CC BY-NC 4.0 (no commercial use).",
+      "language": "",
+      "stars": 264,
+      "forks": 39,
+      "starsToday": 0,
+      "topics": [
+        "claude-code",
+        "claude-skills",
+        "davinci-resolve",
+        "remotion",
+        "video-editing",
+        "youtube"
+      ],
+      "createdAt": "2026-10-23T07:51:02Z",
+      "updatedAt": "2026-10-26T13:07:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 7,
+      "fullName": "EgorBo/BlazingFastDotnet",
+      "name": "BlazingFastDotnet",
+      "owner": "EgorBo",
+      "url": "https://github.com/EgorBo/BlazingFastDotnet",
+      "description": "Tips & tricks to tune .NET workloads for better perf (mostly, targeting benchmarks).",
+      "language": "C#",
+      "stars": 254,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [
+        "diagnostics",
+        "dotnet",
+        "performance",
+        "profiling"
+      ],
+      "createdAt": "2026-10-23T11:27:08Z",
+      "updatedAt": "2026-10-26T13:27:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 8,
+      "fullName": "Charonyuu/whatsmyagentdoing",
+      "name": "whatsmyagentdoing",
+      "owner": "Charonyuu",
+      "url": "https://github.com/Charonyuu/whatsmyagentdoing",
+      "description": "See what every Claude Code and Codex agent on your machine is doing — live, in a little office.",
+      "language": "JavaScript",
+      "stars": 247,
+      "forks": 17,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "dashboard",
+        "threejs"
+      ],
+      "createdAt": "2026-10-23T14:15:26Z",
+      "updatedAt": "2026-10-26T13:26:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 9,
+      "fullName": "abckkf321/-mcd-fair-split",
+      "name": "-mcd-fair-split",
+      "owner": "abckkf321",
+      "url": "https://github.com/abckkf321/-mcd-fair-split",
+      "description": "",
+      "language": "Python",
+      "stars": 242,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T14:51:37Z",
+      "updatedAt": "2026-10-26T04:26:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 10,
+      "fullName": "auragrubportico/Adobe-Audition",
+      "name": "Adobe-Audition",
+      "owner": "auragrubportico",
+      "url": "https://github.com/auragrubportico/Adobe-Audition",
+      "description": "Advanced Audio Workbench 2026: Complete standalone setup with all features pre-activated, ready for secure digital asset deployment.",
+      "language": "",
+      "stars": 240,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "acrobat",
+        "adobe-audition",
+        "audio-editing-programs",
+        "audio-editing-windows-platform",
+        "audio-mixing-software",
+        "audition-download-installation-guide",
+        "audition-for-windows",
+        "audition-free"
+      ],
+      "createdAt": "2026-10-23T13:39:26Z",
+      "updatedAt": "2026-10-26T12:08:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 11,
+      "fullName": "Driveuoexhibit/KMS-Pico",
+      "name": "KMS-Pico",
+      "owner": "Driveuoexhibit",
+      "url": "https://github.com/Driveuoexhibit/KMS-Pico",
+      "description": "Kms Pico Free 2026 complete standalone setup. Ready-to-run desktop installation with all features unlocked.",
+      "language": "",
+      "stars": 240,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "activation-fix",
+        "free-excel-word",
+        "key-management-system",
+        "kms-auto-2026",
+        "kms-auto-get",
+        "kms-pico-free",
+        "kmsauto-get",
+        "microsoft-office-26"
+      ],
+      "createdAt": "2026-10-23T13:39:27Z",
+      "updatedAt": "2026-10-26T12:12:27Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 12,
+      "fullName": "prototux/AARE",
+      "name": "AARE",
+      "owner": "prototux",
+      "url": "https://github.com/prototux/AARE",
+      "description": "A proof-of-concept opensource implementation of Android Auto's client side (phone side)",
+      "language": "Kotlin",
+      "stars": 235,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T01:25:32Z",
+      "updatedAt": "2026-10-26T13:54:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 13,
+      "fullName": "ryderclanky/BotW-Native",
+      "name": "BotW-Native",
+      "owner": "ryderclanky",
+      "url": "https://github.com/ryderclanky/BotW-Native",
+      "description": "Breath of the Wild (Wii U, v1.5.0) statically recompiled to a native Windows program with a Vulkan renderer.",
+      "language": "C++",
+      "stars": 230,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "breath-of-the-wild",
+        "cpp",
+        "game-preservation",
+        "powerpc",
+        "recompilation",
+        "static-recompilation",
+        "vulkan",
+        "wii-u"
+      ],
+      "createdAt": "2026-10-23T21:41:37Z",
+      "updatedAt": "2026-10-26T13:31:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 14,
+      "fullName": "ivarvong/lantern",
+      "name": "lantern",
+      "owner": "ivarvong",
+      "url": "https://github.com/ivarvong/lantern",
+      "description": "Animated, steppable code explainers. Zero-dependency TypeScript, SVG output, browser and Cloudflare Workers.",
+      "language": "TypeScript",
+      "stars": 226,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T22:12:49Z",
+      "updatedAt": "2026-10-26T13:44:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 15,
+      "fullName": "Marker284/yandex-station-extended",
+      "name": "yandex-station-extended",
+      "owner": "Marker284",
+      "url": "https://github.com/Marker284/yandex-station-extended",
+      "description": "",
+      "language": "Shell",
+      "stars": 198,
+      "forks": 35,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T21:03:11Z",
+      "updatedAt": "2026-10-26T13:59:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 16,
+      "fullName": "Cattmonkey/ChaosIntelligence",
+      "name": "ChaosIntelligence",
+      "owner": "Cattmonkey",
+      "url": "https://github.com/Cattmonkey/ChaosIntelligence",
+      "description": "把智能体当函数，把想法写成程序。Agent-native functional language with a CLI, Web IDE, goal-driven bots and live UI. Source-available; no AI training.",
+      "language": "Python",
+      "stars": 181,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "agentic-ai",
+        "ai-agents",
+        "cli",
+        "developer-tools",
+        "functional-programming",
+        "generative-ui",
+        "llm",
+        "multi-agent"
+      ],
+      "createdAt": "2026-10-23T13:04:31Z",
+      "updatedAt": "2026-10-26T12:23:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 17,
+      "fullName": "3436872746/mcd-swap",
+      "name": "mcd-swap",
+      "owner": "3436872746",
+      "url": "https://github.com/3436872746/mcd-swap",
+      "description": "",
+      "language": "Python",
+      "stars": 143,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T15:45:47Z",
+      "updatedAt": "2026-10-26T04:29:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 18,
+      "fullName": "dex-tool-best/.github",
+      "name": ".github",
+      "owner": "dex-tool-best",
+      "url": "https://github.com/dex-tool-best/.github",
+      "description": "🔥 dex-copy-trading-bot 🔥",
+      "language": "HTML",
+      "stars": 134,
+      "forks": 87,
+      "starsToday": 0,
+      "topics": [
+        "base-copy-trading",
+        "copy-trading-2026",
+        "copy-trading-download",
+        "crypto-copy-trading-bot",
+        "defi-copy-bot",
+        "dex-copy-trading",
+        "dex-copy-trading-bot",
+        "dexscreener-wallets"
+      ],
+      "createdAt": "2026-10-23T03:26:52Z",
+      "updatedAt": "2026-10-24T00:10:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 19,
+      "fullName": "wpeikxyrjnps/.github",
+      "name": ".github",
+      "owner": "wpeikxyrjnps",
+      "url": "https://github.com/wpeikxyrjnps/.github",
+      "description": "Grow-a-Garden-2-Script-pc-desktop",
+      "language": "HTML",
+      "stars": 134,
+      "forks": 134,
+      "starsToday": 0,
+      "topics": [
+        "free-grow-a-garden-script",
+        "gag-2-autofarm",
+        "gag-2-script",
+        "gag-hack",
+        "gag-script",
+        "gag-script-pastebin",
+        "grow-a-garden-mutation",
+        "grow-a-garden-seed-sniper"
+      ],
+      "createdAt": "2026-10-23T20:52:09Z",
+      "updatedAt": "2026-10-26T01:59:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 20,
+      "fullName": "aotoycffyxns/delta",
+      "name": "delta",
+      "owner": "aotoycffyxns",
+      "url": "https://github.com/aotoycffyxns/delta",
+      "description": "executor-pc",
+      "language": "HTML",
+      "stars": 133,
+      "forks": 133,
+      "starsToday": 0,
+      "topics": [
+        "delta-injector",
+        "delta-key",
+        "delta-mobile",
+        "delta-pc-download",
+        "delta-script-hub",
+        "free-delta-executor"
+      ],
+      "createdAt": "2026-10-23T19:23:23Z",
+      "updatedAt": "2026-10-24T00:25:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 21,
+      "fullName": "df-tools-bn/.github",
+      "name": ".github",
+      "owner": "df-tools-bn",
+      "url": "https://github.com/df-tools-bn/.github",
+      "description": "🔥 defi-arbitrage-trading-bot 🔥",
+      "language": "HTML",
+      "stars": 133,
+      "forks": 79,
+      "starsToday": 0,
+      "topics": [
+        "defi-arbitrage-strategy",
+        "defi-bot",
+        "defi-bot-2026",
+        "defi-bot-download",
+        "defi-passive-income",
+        "defi-profit",
+        "defi-sniper",
+        "defi-sniper-bot"
+      ],
+      "createdAt": "2026-10-23T02:36:55Z",
+      "updatedAt": "2026-10-24T00:10:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 22,
+      "fullName": "onchain-trading-bot/.github",
+      "name": ".github",
+      "owner": "onchain-trading-bot",
+      "url": "https://github.com/onchain-trading-bot/.github",
+      "description": "onchain-trading-bot-pc-desktop",
+      "language": "HTML",
+      "stars": 133,
+      "forks": 109,
+      "starsToday": 0,
+      "topics": [
+        "base-trading-bot",
+        "defi-bot",
+        "defi-profit",
+        "free-onchain-bot",
+        "on-chain-trading-bot",
+        "onchain-bot",
+        "onchain-bot-2026",
+        "onchain-bot-download"
+      ],
+      "createdAt": "2026-10-23T12:02:23Z",
+      "updatedAt": "2026-10-24T00:10:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 23,
+      "fullName": "qnzqfmbacrkk/.github",
+      "name": ".github",
+      "owner": "qnzqfmbacrkk",
+      "url": "https://github.com/qnzqfmbacrkk/.github",
+      "description": "Steal-a-Brainrot-Scripts-(SAB)-pc-desktop",
+      "language": "HTML",
+      "stars": 133,
+      "forks": 99,
+      "starsToday": 0,
+      "topics": [
+        "brainrot-esp",
+        "brainrot-script",
+        "free-brainrot-script",
+        "sab-cheat",
+        "sab-hack",
+        "sab-script",
+        "sab-script-2026",
+        "steal-a-brainrot-autofarm"
+      ],
+      "createdAt": "2026-10-23T20:32:12Z",
+      "updatedAt": "2026-10-26T01:56:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 24,
+      "fullName": "tytpaskanvdc/cross-exchange-arbitrage-bot-pc-desktop",
+      "name": "cross-exchange-arbitrage-bot-pc-desktop",
+      "owner": "tytpaskanvdc",
+      "url": "https://github.com/tytpaskanvdc/cross-exchange-arbitrage-bot-pc-desktop",
+      "description": "🔥 cross-exchange-arbitrage-bot-pc-desktop 🔥",
+      "language": "HTML",
+      "stars": 133,
+      "forks": 114,
+      "starsToday": 0,
+      "topics": [
+        "arbitrage-bot-download",
+        "cex-dex-arbitrage",
+        "cross-exchange-arbitrage-2026",
+        "cross-exchange-arbitrage-bot",
+        "cross-exchange-bot",
+        "crypto-arb-bot",
+        "free-crypto-arb",
+        "inter-exchange-arbitrage"
+      ],
+      "createdAt": "2026-10-23T18:41:59Z",
+      "updatedAt": "2026-10-24T00:10:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 25,
+      "fullName": "xynbspqmochf/.github",
+      "name": ".github",
+      "owner": "xynbspqmochf",
+      "url": "https://github.com/xynbspqmochf/.github",
+      "description": "🔥 smart-money-tracker-pc-desktop-new 🔥",
+      "language": "HTML",
+      "stars": 132,
+      "forks": 104,
+      "starsToday": 0,
+      "topics": [
+        "crypto-smart-money",
+        "defi-smart-money",
+        "dexscreener-smart-money",
+        "onchain-smart-money",
+        "pnl-tracker",
+        "profitable-wallet-tracker",
+        "smart-money-2026",
+        "smart-money-alerts"
+      ],
+      "createdAt": "2026-10-23T16:49:12Z",
+      "updatedAt": "2026-10-24T00:10:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 26,
+      "fullName": "ravensclawx/HBLauncher",
+      "name": "HBLauncher",
+      "owner": "ravensclawx",
+      "url": "https://github.com/ravensclawx/HBLauncher",
+      "description": "SmileBASIC homebrew launcher and documented GPU app SDK, with Pico setup and a Hello World example.",
+      "language": "JavaScript",
+      "stars": 130,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T14:50:57Z",
+      "updatedAt": "2026-10-26T13:55:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 27,
+      "fullName": "XRayLau1/maitaiyi",
+      "name": "maitaiyi",
+      "owner": "XRayLau1",
+      "url": "https://github.com/XRayLau1/maitaiyi",
+      "description": "麦门综合门诊：12 项问诊测出你的麦门体质，出具诊断证明书与 Rp. 处方笺（麦当劳 MCP）",
+      "language": "HTML",
+      "stars": 130,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "mcdonalds",
+        "mcp",
+        "mcp-server",
+        "personality-test",
+        "skills"
+      ],
+      "createdAt": "2026-10-23T16:06:14Z",
+      "updatedAt": "2026-10-25T16:09:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 28,
+      "fullName": "lzp76995-labb/mcd-fairbite",
+      "name": "mcd-fairbite",
+      "owner": "lzp76995-labb",
+      "url": "https://github.com/lzp76995-labb/mcd-fairbite",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 123,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T14:37:26Z",
+      "updatedAt": "2026-10-26T11:50:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 29,
+      "fullName": "PandaSI-Labs/pandasi-agent",
+      "name": "pandasi-agent",
+      "owner": "PandaSI-Labs",
+      "url": "https://github.com/PandaSI-Labs/pandasi-agent",
+      "description": "Offline evidence-policy checker for PandaSI.",
+      "language": "Python",
+      "stars": 123,
+      "forks": 33,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T05:58:36Z",
+      "updatedAt": "2026-10-26T11:47:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 30,
+      "fullName": "CRFXN5C/mcd-mcp-kit",
+      "name": "mcd-mcp-kit",
+      "owner": "CRFXN5C",
+      "url": "https://github.com/CRFXN5C/mcd-mcp-kit",
+      "description": "MCP integration health check and measured pitfalls for McDonald's China MCP Server",
+      "language": "Python",
+      "stars": 122,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T12:56:18Z",
+      "updatedAt": "2026-10-25T15:38:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 31,
+      "fullName": "Addition2000/mcd-diet-guard",
+      "name": "mcd-diet-guard",
+      "owner": "Addition2000",
+      "url": "https://github.com/Addition2000/mcd-diet-guard",
+      "description": "帮有忌口的朋友在麦当劳安心点餐。 不吃猪肉、吃素、海鲜过敏、乳糖不耐、不吃辣、不吃酸黄瓜……说一句话，它就查遍整家门店的实时菜单，告诉你哪些放心点、哪些“去培根”就能吃、套餐里该换成什么，算好价再帮你下单。",
+      "language": "Python",
+      "stars": 121,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T06:34:03Z",
+      "updatedAt": "2026-10-25T18:35:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 32,
+      "fullName": "BaoZ-XHG/MaiMen-Saver",
+      "name": "MaiMen-Saver",
+      "owner": "BaoZ-XHG",
+      "url": "https://github.com/BaoZ-XHG/MaiMen-Saver",
+      "description": "麦门算账员：别人做的是\"帮你查有哪些券\"，我做的是\"直接告诉你这单怎么买、用哪张券、凑多少、省多少钱\"。",
+      "language": "Python",
+      "stars": 119,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T08:48:48Z",
+      "updatedAt": "2026-10-25T16:02:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 33,
+      "fullName": "mokevnin/dev-quality-gates",
+      "name": "dev-quality-gates",
+      "owner": "mokevnin",
+      "url": "https://github.com/mokevnin/dev-quality-gates",
+      "description": "An opinionated, curated list of tools for enforcing software development standards: one recommended tool per job, with limits.",
+      "language": "Python",
+      "stars": 119,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "code-quality",
+        "developer-tools",
+        "git-hooks",
+        "guardrails",
+        "linters",
+        "quality-gates",
+        "static-analysis"
+      ],
+      "createdAt": "2026-10-23T22:48:28Z",
+      "updatedAt": "2026-10-26T13:52:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 34,
+      "fullName": "PandaSI-Labs/littleaibox",
+      "name": "littleaibox",
+      "owner": "PandaSI-Labs",
+      "url": "https://github.com/PandaSI-Labs/littleaibox",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 119,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T06:31:02Z",
+      "updatedAt": "2026-10-26T11:46:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 35,
+      "fullName": "wahaha-potato/mcd-coupon-xray",
+      "name": "mcd-coupon-xray",
+      "owner": "wahaha-potato",
+      "url": "https://github.com/wahaha-potato/mcd-coupon-xray",
+      "description": "麦麦省的券谁都能领，但领了不等于楼下那家店认。一键领全后逐家门店校验哪张券真的能核销，并算出券后实付，直接回答「去哪家店、用哪张券、省多少钱」。基于麦当劳 MCP。",
+      "language": "Python",
+      "stars": 117,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [
+        "ai-agent",
+        "coupon",
+        "mcdonalds",
+        "mcp",
+        "mcp-server",
+        "python",
+        "skill",
+        "workbuddy"
+      ],
+      "createdAt": "2026-10-23T02:38:59Z",
+      "updatedAt": "2026-10-26T05:42:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 36,
+      "fullName": "Alex-star-arch/mcd-burger-studio",
+      "name": "mcd-burger-studio",
+      "owner": "Alex-star-arch",
+      "url": "https://github.com/Alex-star-arch/mcd-burger-studio",
+      "description": "麦当劳「真」随心配 · 用 MCP 真实在售菜单自由拼套餐、设计 3D 汉堡，作品发布与投票打榜 | McDonald's Make-It-Your-Way",
+      "language": "HTML",
+      "stars": 115,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [
+        "food-tech",
+        "hackathon",
+        "mcdonalds",
+        "mcp",
+        "python",
+        "threejs",
+        "voting",
+        "workbuddy"
+      ],
+      "createdAt": "2026-10-23T07:58:39Z",
+      "updatedAt": "2026-10-26T06:02:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 37,
+      "fullName": "lzyang2000/morphmimic",
+      "name": "morphmimic",
+      "owner": "lzyang2000",
+      "url": "https://github.com/lzyang2000/morphmimic",
+      "description": "",
+      "language": "Python",
+      "stars": 111,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T08:38:41Z",
+      "updatedAt": "2026-10-26T13:24:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 38,
+      "fullName": "CH-LaTiao/lumina-guide",
+      "name": "lumina-guide",
+      "owner": "CH-LaTiao",
+      "url": "https://github.com/CH-LaTiao/lumina-guide",
+      "description": "LUMINA Guide / 灵犀: Jetson + Orbbec RGB-D wearable navigation assistant prototype",
+      "language": "Python",
+      "stars": 110,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-23T16:50:21Z",
+      "updatedAt": "2026-10-26T11:43:42Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 39,
+      "fullName": "akhiranandan-04/neverlose",
+      "name": "neverlose",
+      "owner": "akhiranandan-04",
+      "url": "https://github.com/akhiranandan-04/neverlose",
+      "description": "Published: 2026-10-23",
+      "language": "PowerShell",
+      "stars": 107,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [
+        "community",
+        "csgo",
+        "documentation",
+        "gaming",
+        "neverlose"
+      ],
+      "createdAt": "2026-10-23T19:29:22Z",
+      "updatedAt": "2026-10-24T11:21:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 40,
+      "fullName": "onchain-whale-tracker-pc-desktop/.github",
+      "name": ".github",
+      "owner": "onchain-whale-tracker-pc-desktop",
+      "url": "https://github.com/onchain-whale-tracker-pc-desktop/.github",
+      "description": "onchain-whale-tracker-pc-desktop",
+      "language": "HTML",
+      "stars": 107,
+      "forks": 78,
+      "starsToday": 0,
+      "topics": [
+        "base-whale-tracker",
+        "defi-whale-tracker",
+        "dexscreener-wallets",
+        "eth-whale-tracker",
+        "free-whale-tracker",
+        "onchain-analytics",
+        "onchain-whale-tracker",
+        "smart-money-tracker"
+      ],
+      "createdAt": "2026-10-23T13:03:55Z",
+      "updatedAt": "2026-10-24T00:10:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 41,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 305402,
+      "forks": 27206,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "createdAt": "2025-10-09T19:45:18Z",
+      "updatedAt": "2026-10-26T14:03:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 42,
+      "fullName": "deepseek-ai/deepseek-harness",
+      "name": "deepseek-harness",
+      "owner": "deepseek-ai",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "language": "TypeScript",
+      "stars": 262265,
+      "forks": 31705,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "createdAt": "2026-08-13T11:56:32Z",
+      "updatedAt": "2026-10-26T14:06:06Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 43,
+      "fullName": "yt-dlp/yt-dlp",
+      "name": "yt-dlp",
+      "owner": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "language": "Python",
+      "stars": 202425,
+      "forks": 17721,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "createdAt": "2020-10-26T04:22:55Z",
+      "updatedAt": "2026-10-26T14:04:59Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 44,
+      "fullName": "ultraworkers/claw-code",
+      "name": "claw-code",
+      "owner": "ultraworkers",
+      "url": "https://github.com/ultraworkers/claw-code",
+      "description": "An agent-managed museum exhibit, built in Rust with Gajae-Code / LazyCodex — developed and maintained with no human intervention.",
+      "language": "Rust",
+      "stars": 194986,
+      "forks": 107733,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-03-31T08:58:08Z",
+      "updatedAt": "2026-10-26T14:04:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 45,
+      "fullName": "microsoft/markitdown",
+      "name": "markitdown",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/markitdown",
+      "description": "Python tool for converting files and office documents to Markdown.",
+      "language": "Python",
+      "stars": 192305,
+      "forks": 14368,
+      "starsToday": 0,
+      "topics": [
+        "autogen",
+        "autogen-extension",
+        "langchain",
+        "markdown",
+        "microsoft-office",
+        "openai",
+        "pdf"
+      ],
+      "createdAt": "2024-11-13T19:56:40Z",
+      "updatedAt": "2026-10-26T13:53:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 46,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 135808,
+      "forks": 12951,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-10-26T14:05:36Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 47,
+      "fullName": "openai/codex",
+      "name": "codex",
+      "owner": "openai",
+      "url": "https://github.com/openai/codex",
+      "description": "Lightweight coding agent that runs in your terminal",
+      "language": "Rust",
+      "stars": 131003,
+      "forks": 20684,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2025-04-13T05:37:54Z",
+      "updatedAt": "2026-10-26T14:02:08Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 48,
+      "fullName": "godotengine/godot",
+      "name": "godot",
+      "owner": "godotengine",
+      "url": "https://github.com/godotengine/godot",
+      "description": "Godot Engine – Multi-platform 2D and 3D game engine",
+      "language": "C++",
+      "stars": 119106,
+      "forks": 27205,
+      "starsToday": 0,
+      "topics": [
+        "game-development",
+        "game-engine",
+        "gamedev",
+        "godot",
+        "godotengine",
+        "multi-platform",
+        "open-source"
+      ],
+      "createdAt": "2014-01-04T16:05:36Z",
+      "updatedAt": "2026-10-26T14:03:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 49,
+      "fullName": "fatedier/frp",
+      "name": "frp",
+      "owner": "fatedier",
+      "url": "https://github.com/fatedier/frp",
+      "description": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
+      "language": "Go",
+      "stars": 110138,
+      "forks": 15256,
+      "starsToday": 0,
+      "topics": [
+        "expose",
+        "firewall",
+        "frp",
+        "go",
+        "http-proxy",
+        "nat",
+        "p2p",
+        "proxy"
+      ],
+      "createdAt": "2015-12-21T15:24:59Z",
+      "updatedAt": "2026-10-26T13:18:58Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 50,
+      "fullName": "ruanyf/weekly",
+      "name": "weekly",
+      "owner": "ruanyf",
+      "url": "https://github.com/ruanyf/weekly",
+      "description": "科技爱好者周刊，每周五发布",
+      "language": "",
+      "stars": 107009,
+      "forks": 4536,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2018-10-13T12:36:07Z",
+      "updatedAt": "2026-10-26T13:56:14Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 51,
+      "fullName": "punkpeye/awesome-mcp-servers",
+      "name": "awesome-mcp-servers",
+      "owner": "punkpeye",
+      "url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "description": "A collection of MCP servers.",
+      "language": "",
+      "stars": 96890,
+      "forks": 18515,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "mcp"
+      ],
+      "createdAt": "2024-11-30T04:49:10Z",
+      "updatedAt": "2026-10-26T13:54:10Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 52,
+      "fullName": "nvm-sh/nvm",
+      "name": "nvm",
+      "owner": "nvm-sh",
+      "url": "https://github.com/nvm-sh/nvm",
+      "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+      "language": "Shell",
+      "stars": 95661,
+      "forks": 10593,
+      "starsToday": 0,
+      "topics": [
+        "bash",
+        "install",
+        "lts",
+        "node",
+        "node-js",
+        "nodejs",
+        "nvm",
+        "nvmrc"
+      ],
+      "createdAt": "2010-04-15T17:47:47Z",
+      "updatedAt": "2026-10-26T14:05:59Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 53,
+      "fullName": "sveltejs/svelte",
+      "name": "svelte",
+      "owner": "sveltejs",
+      "url": "https://github.com/sveltejs/svelte",
+      "description": "web development for the rest of us",
+      "language": "JavaScript",
+      "stars": 88467,
+      "forks": 7408,
+      "starsToday": 0,
+      "topics": [
+        "compiler",
+        "template",
+        "ui"
+      ],
+      "createdAt": "2016-11-20T18:13:05Z",
+      "updatedAt": "2026-10-26T13:49:53Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 54,
+      "fullName": "coder/code-server",
+      "name": "code-server",
+      "owner": "coder",
+      "url": "https://github.com/coder/code-server",
+      "description": "VS Code in the browser",
+      "language": "TypeScript",
+      "stars": 79708,
+      "forks": 6905,
+      "starsToday": 0,
+      "topics": [
+        "browser-ide",
+        "dev-tools",
+        "development-environment",
+        "ide",
+        "remote-work",
+        "vscode",
+        "vscode-remote"
+      ],
+      "createdAt": "2019-02-27T16:50:41Z",
+      "updatedAt": "2026-10-26T12:44:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 55,
+      "fullName": "obsproject/obs-studio",
+      "name": "obs-studio",
+      "owner": "obsproject",
+      "url": "https://github.com/obsproject/obs-studio",
+      "description": "OBS Studio - Free and open source software for live streaming and screen recording",
+      "language": "C",
+      "stars": 78261,
+      "forks": 10879,
+      "starsToday": 0,
+      "topics": [
+        "c",
+        "c-plus-plus",
+        "directshow",
+        "facebook-live",
+        "ffmpeg",
+        "game-capture",
+        "live-streaming",
+        "screen-capture"
+      ],
+      "createdAt": "2013-10-01T02:40:31Z",
+      "updatedAt": "2026-10-26T14:03:49Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 56,
+      "fullName": "tensorflow/models",
+      "name": "models",
+      "owner": "tensorflow",
+      "url": "https://github.com/tensorflow/models",
+      "description": "Models and examples built with TensorFlow",
+      "language": "Python",
+      "stars": 77650,
+      "forks": 44755,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2016-02-05T01:15:20Z",
+      "updatedAt": "2026-10-25T01:26:04Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 57,
+      "fullName": "rohitg00/ai-engineering-from-scratch",
+      "name": "ai-engineering-from-scratch",
+      "owner": "rohitg00",
+      "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
+      "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
+      "language": "Python",
+      "stars": 74149,
+      "forks": 12993,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "ai-engineering",
+        "computer-vision",
+        "course",
+        "deep-learning",
+        "dsh"
+      ],
+      "createdAt": "2026-03-18T18:38:02Z",
+      "updatedAt": "2026-10-26T14:06:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 58,
+      "fullName": "ansible/ansible",
+      "name": "ansible",
+      "owner": "ansible",
+      "url": "https://github.com/ansible/ansible",
+      "description": "Ansible is a radically simple IT automation platform that makes your applications and systems easier to deploy and maintain. Automate everything from code deployment to network configuration to cloud management, in a language that approaches plain English, using SSH, with no agents to install on rem",
+      "language": "Python",
+      "stars": 71123,
+      "forks": 24344,
+      "starsToday": 0,
+      "topics": [
+        "ansible",
+        "python"
+      ],
+      "createdAt": "2012-03-06T14:58:02Z",
+      "updatedAt": "2026-10-26T13:27:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 59,
+      "fullName": "microsoft/AI-For-Beginners",
+      "name": "AI-For-Beginners",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/AI-For-Beginners",
+      "description": "12 Weeks, 24 Lessons, AI for All!",
+      "language": "Jupyter Notebook",
+      "stars": 70270,
+      "forks": 13641,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "artificial-intelligence",
+        "cnn",
+        "computer-vision",
+        "deep-learning",
+        "gan",
+        "machine-learning",
+        "microsoft-for-beginners"
+      ],
+      "createdAt": "2021-03-03T16:27:36Z",
+      "updatedAt": "2026-10-26T13:13:22Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 60,
+      "fullName": "expressjs/express",
+      "name": "express",
+      "owner": "expressjs",
+      "url": "https://github.com/expressjs/express",
+      "description": "Fast, unopinionated, minimalist web framework for node.",
+      "language": "JavaScript",
+      "stars": 69580,
+      "forks": 25276,
+      "starsToday": 0,
+      "topics": [
+        "express",
+        "javascript",
+        "nodejs",
+        "server"
+      ],
+      "createdAt": "2009-06-26T18:56:01Z",
+      "updatedAt": "2026-10-26T08:49:37Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    }
+  ]
+}

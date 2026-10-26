@@ -1,0 +1,1423 @@
+{
+  "date": "2026-10-19",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-10-26T14:05:18.919Z",
+  "count": 60,
+  "newCount": 40,
+  "sources": {
+    "trending": 0,
+    "new": 40,
+    "highStar": 20
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "simbasjungles/free-my-tv",
+      "name": "free-my-tv",
+      "owner": "simbasjungles",
+      "url": "https://github.com/simbasjungles/free-my-tv",
+      "description": "A fast, ad-free home screen for Google TV, LG webOS and Samsung Tizen. One button to undo.",
+      "language": "Java",
+      "stars": 4754,
+      "forks": 776,
+      "starsToday": 0,
+      "topics": [
+        "android-tv",
+        "claude-code",
+        "google-tv",
+        "home-screen",
+        "launcher",
+        "no-ads",
+        "open-source",
+        "samsung-tizen"
+      ],
+      "createdAt": "2026-10-19T19:29:01Z",
+      "updatedAt": "2026-10-26T14:04:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 2,
+      "fullName": "JoasASantos/REA-Prompts",
+      "name": "REA-Prompts",
+      "owner": "JoasASantos",
+      "url": "https://github.com/JoasASantos/REA-Prompts",
+      "description": "REAP - Prompts for you to use REA (Reverse Engineer Anything), get the most out of it, and clone or break down any program",
+      "language": "Batchfile",
+      "stars": 2632,
+      "forks": 476,
+      "starsToday": 0,
+      "topics": [
+        "prompt-engineering",
+        "rea",
+        "reverse-enginnering"
+      ],
+      "createdAt": "2026-10-19T22:20:47Z",
+      "updatedAt": "2026-10-26T14:03:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 3,
+      "fullName": "EthanArbuckle/fairplay-decrypt",
+      "name": "fairplay-decrypt",
+      "owner": "EthanArbuckle",
+      "url": "https://github.com/EthanArbuckle/fairplay-decrypt",
+      "description": "Offline FairPlay App Store IPA decryption with independent key derivation",
+      "language": "C",
+      "stars": 2163,
+      "forks": 339,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T10:07:58Z",
+      "updatedAt": "2026-10-26T13:45:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 4,
+      "fullName": "UniXNU/UniXNU",
+      "name": "UniXNU",
+      "owner": "UniXNU",
+      "url": "https://github.com/UniXNU/UniXNU",
+      "description": "Run iOS and macOS on non-Apple ARM64 hardware through UEFI.",
+      "language": "Python",
+      "stars": 1039,
+      "forks": 181,
+      "starsToday": 0,
+      "topics": [
+        "unixnu"
+      ],
+      "createdAt": "2026-10-19T10:46:55Z",
+      "updatedAt": "2026-10-26T14:02:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 5,
+      "fullName": "ELY-Open-Source/ElyOffice",
+      "name": "ElyOffice",
+      "owner": "ELY-Open-Source",
+      "url": "https://github.com/ELY-Open-Source/ElyOffice",
+      "description": "Ely Office: offline-first desktop apps in Rust and GPUI",
+      "language": "Rust",
+      "stars": 1022,
+      "forks": 66,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T23:04:42Z",
+      "updatedAt": "2026-10-26T13:20:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 6,
+      "fullName": "stackedlol/ascii-sharks",
+      "name": "ascii-sharks",
+      "owner": "stackedlol",
+      "url": "https://github.com/stackedlol/ascii-sharks",
+      "description": "ascii shark components in typescript",
+      "language": "TypeScript",
+      "stars": 923,
+      "forks": 70,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T21:54:19Z",
+      "updatedAt": "2026-10-26T13:54:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 7,
+      "fullName": "Hugo-Dz/spritefusion-sprite-normals",
+      "name": "spritefusion-sprite-normals",
+      "owner": "Hugo-Dz",
+      "url": "https://github.com/Hugo-Dz/spritefusion-sprite-normals",
+      "description": "A tool to generate normal maps from any sprite and animated sprite sheet.",
+      "language": "Rust",
+      "stars": 675,
+      "forks": 48,
+      "starsToday": 0,
+      "topics": [
+        "gamedev",
+        "normal-map",
+        "normal-mapping",
+        "pixel-art",
+        "sprites"
+      ],
+      "createdAt": "2026-10-19T13:26:45Z",
+      "updatedAt": "2026-10-26T13:00:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 8,
+      "fullName": "VictorTaelin/uniichat",
+      "name": "uniichat",
+      "owner": "VictorTaelin",
+      "url": "https://github.com/VictorTaelin/uniichat",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 596,
+      "forks": 62,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T15:26:48Z",
+      "updatedAt": "2026-10-26T09:22:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 9,
+      "fullName": "opentrap/opentrap",
+      "name": "opentrap",
+      "owner": "opentrap",
+      "url": "https://github.com/opentrap/opentrap",
+      "description": "A free, open-source alternative to Burp Suite: an intercepting proxy and web app security testing suite with Repeater, Intruder, Collaborator and a built-in OWASP ZAP scanner. Linux, AGPL-3.0.",
+      "language": "Java",
+      "stars": 587,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "application-security",
+        "appsec",
+        "bug-bounty",
+        "burp-alternative",
+        "burp-suite",
+        "dast",
+        "http-proxy",
+        "infosec"
+      ],
+      "createdAt": "2026-10-19T03:29:08Z",
+      "updatedAt": "2026-10-26T13:23:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 10,
+      "fullName": "indexable-inc/blaze",
+      "name": "blaze",
+      "owner": "indexable-inc",
+      "url": "https://github.com/indexable-inc/blaze",
+      "description": "Incremental rust builds up to 92x faster than cargo/rustc",
+      "language": "Rust",
+      "stars": 496,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [
+        "cargo",
+        "compiler",
+        "cranelift",
+        "developer-tools",
+        "hot-reload",
+        "incremental-compilation",
+        "jit",
+        "live-coding"
+      ],
+      "createdAt": "2026-10-19T23:31:09Z",
+      "updatedAt": "2026-10-26T14:03:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 11,
+      "fullName": "timhengc/mai-shen-zai-ci",
+      "name": "mai-shen-zai-ci",
+      "owner": "timhengc",
+      "url": "https://github.com/timhengc/mai-shen-zai-ci",
+      "description": "麦门封神榜｜你在麦门算老几？领取你的麦门专属身份",
+      "language": "Python",
+      "stars": 482,
+      "forks": 49,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T06:49:32Z",
+      "updatedAt": "2026-10-26T11:50:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 12,
+      "fullName": "blendi-remade/prompt2rig",
+      "name": "prompt2rig",
+      "owner": "blendi-remade",
+      "url": "https://github.com/blendi-remade/prompt2rig",
+      "description": "Type a motion, watch a rigged character perform it: fast video model + GVHMR + live Mixamo retargeting",
+      "language": "JavaScript",
+      "stars": 451,
+      "forks": 66,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T09:29:42Z",
+      "updatedAt": "2026-10-26T12:51:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 13,
+      "fullName": "stencil-hq/dquickts",
+      "name": "dquickts",
+      "owner": "stencil-hq",
+      "url": "https://github.com/stencil-hq/dquickts",
+      "description": "QuickJS with durable execution: suspend running JS, snapshot the whole heap, resume it in another process. Native TypeScript, a REPL that survives restarts, Rust bindings.",
+      "language": "C",
+      "stars": 427,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [
+        "c",
+        "durable-execution",
+        "embeddable",
+        "hibernation",
+        "interpreter",
+        "javascript",
+        "javascript-engine",
+        "quickjs"
+      ],
+      "createdAt": "2026-10-19T12:06:42Z",
+      "updatedAt": "2026-10-26T12:38:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 14,
+      "fullName": "typecraft-dev/oma-cast",
+      "name": "oma-cast",
+      "owner": "typecraft-dev",
+      "url": "https://github.com/typecraft-dev/oma-cast",
+      "description": "omarchy rebuild of raycast",
+      "language": "JavaScript",
+      "stars": 424,
+      "forks": 48,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T17:48:58Z",
+      "updatedAt": "2026-10-26T12:20:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 15,
+      "fullName": "MemTensor/MemT-1.0",
+      "name": "MemT-1.0",
+      "owner": "MemTensor",
+      "url": "https://github.com/MemTensor/MemT-1.0",
+      "description": "Official repository for MemT-1.0",
+      "language": "Python",
+      "stars": 411,
+      "forks": 22,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "deepseek",
+        "llm",
+        "long-context",
+        "long-term-memory",
+        "memory",
+        "memory-augmented-models",
+        "native-memory"
+      ],
+      "createdAt": "2026-10-19T03:29:30Z",
+      "updatedAt": "2026-10-26T14:04:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 16,
+      "fullName": "vercel-labs/fx0",
+      "name": "fx0",
+      "owner": "vercel-labs",
+      "url": "https://github.com/vercel-labs/fx0",
+      "description": "A lightweight design agent built with libfx. Describe a page and an agent writes it as one HTML file.",
+      "language": "TypeScript",
+      "stars": 405,
+      "forks": 73,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T17:27:02Z",
+      "updatedAt": "2026-10-26T08:14:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 17,
+      "fullName": "garycaogan/ai-live-avatar",
+      "name": "ai-live-avatar",
+      "owner": "garycaogan",
+      "url": "https://github.com/garycaogan/ai-live-avatar",
+      "description": "AI 实时直播间：Vidu S2 实时数字人 + 弹幕过滤调度 + 衣柜换装 + OBS 叠层（角色资产不含）",
+      "language": "Python",
+      "stars": 371,
+      "forks": 107,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T08:10:48Z",
+      "updatedAt": "2026-10-26T13:40:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 18,
+      "fullName": "soumatheusgomes/editonny",
+      "name": "editonny",
+      "owner": "soumatheusgomes",
+      "url": "https://github.com/soumatheusgomes/editonny",
+      "description": "Local video editing through conversation. Created by Matheus Gomes.",
+      "language": "Python",
+      "stars": 364,
+      "forks": 32,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T01:09:26Z",
+      "updatedAt": "2026-10-26T08:24:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 19,
+      "fullName": "thebcd69/bcd-games",
+      "name": "bcd-games",
+      "owner": "thebcd69",
+      "url": "https://github.com/thebcd69/bcd-games",
+      "description": "BCD: Windows games on iPhone and iPad. Steam and GOG built in.",
+      "language": "C",
+      "stars": 352,
+      "forks": 40,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T09:51:10Z",
+      "updatedAt": "2026-10-26T13:42:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 20,
+      "fullName": "Animal2404/xeno-executor",
+      "name": "xeno-executor",
+      "owner": "Animal2404",
+      "url": "https://github.com/Animal2404/xeno-executor",
+      "description": "Published: 2026-10-19",
+      "language": "C++",
+      "stars": 345,
+      "forks": 16,
+      "starsToday": 0,
+      "topics": [
+        "cpp",
+        "executor",
+        "luau",
+        "mit",
+        "roblox",
+        "windows"
+      ],
+      "createdAt": "2026-10-19T18:15:40Z",
+      "updatedAt": "2026-10-24T08:17:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 21,
+      "fullName": "galadran/we-have-a-problem.com",
+      "name": "we-have-a-problem.com",
+      "owner": "galadran",
+      "url": "https://github.com/galadran/we-have-a-problem.com",
+      "description": "",
+      "language": "HTML",
+      "stars": 339,
+      "forks": 80,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T23:30:41Z",
+      "updatedAt": "2026-10-26T13:21:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 22,
+      "fullName": "ToomRamcharan/tv-vibehack",
+      "name": "tv-vibehack",
+      "owner": "ToomRamcharan",
+      "url": "https://github.com/ToomRamcharan/tv-vibehack",
+      "description": "Reverse-engineer any Android TV / Google TV: 100% fail-safe direct boot launcher, remote hotkey remapping, Realtek hardware passthrough & offline media player.",
+      "language": "Java",
+      "stars": 318,
+      "forks": 27,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T11:29:37Z",
+      "updatedAt": "2026-10-26T11:37:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 23,
+      "fullName": "OmkarK97/webos-vibehack",
+      "name": "webos-vibehack",
+      "owner": "OmkarK97",
+      "url": "https://github.com/OmkarK97/webos-vibehack",
+      "description": "Apple TV-style home screen for LG webOS TVs, a port of tv-vibehack",
+      "language": "JavaScript",
+      "stars": 313,
+      "forks": 43,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T08:11:45Z",
+      "updatedAt": "2026-10-26T13:25:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 24,
+      "fullName": "th0mk/nfsu2-web",
+      "name": "nfsu2-web",
+      "owner": "th0mk",
+      "url": "https://github.com/th0mk/nfsu2-web",
+      "description": "",
+      "language": "C",
+      "stars": 307,
+      "forks": 61,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T08:47:39Z",
+      "updatedAt": "2026-10-26T13:24:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 25,
+      "fullName": "kailashsr38/ascii-magic-art",
+      "name": "ascii-magic-art",
+      "owner": "kailashsr38",
+      "url": "https://github.com/kailashsr38/ascii-magic-art",
+      "description": "634 animated ASCII art pieces for web pages, READMEs, wallpapers and terminals. Browse them in your terminal with npx ascii-magic-art and add one to your project in one prompt.",
+      "language": "JavaScript",
+      "stars": 305,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [
+        "animation",
+        "ascii",
+        "ascii-art",
+        "cli",
+        "generative-art",
+        "npx",
+        "readme",
+        "terminal"
+      ],
+      "createdAt": "2026-10-19T08:00:49Z",
+      "updatedAt": "2026-10-26T11:38:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 26,
+      "fullName": "inclusionAI/Ming-3.0-tts",
+      "name": "Ming-3.0-tts",
+      "owner": "inclusionAI",
+      "url": "https://github.com/inclusionAI/Ming-3.0-tts",
+      "description": "Ming-3.0-tts is an open-source TTS model family with 0.5B dense and 7.9B-A1.3B MoE variants, supporting multilingual speech, voice cloning, voice design, and natural-language control.",
+      "language": "Python",
+      "stars": 300,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T07:03:25Z",
+      "updatedAt": "2026-10-26T13:13:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 27,
+      "fullName": "C4rohan/Lampline",
+      "name": "Lampline",
+      "owner": "C4rohan",
+      "url": "https://github.com/C4rohan/Lampline",
+      "description": "Build AI phone agents on your own computer and test every change with an AI caller. Open source, runs free with no API keys, cents per call with your own keys. Imports Dialogflow CX.",
+      "language": "Python",
+      "stars": 267,
+      "forks": 36,
+      "starsToday": 0,
+      "topics": [
+        "agents-as-code",
+        "contact-center",
+        "conversational-ai",
+        "cx-agent-studio",
+        "dialogflow-cx",
+        "ivr",
+        "llm",
+        "pipecat"
+      ],
+      "createdAt": "2026-10-19T06:50:54Z",
+      "updatedAt": "2026-10-25T18:44:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 28,
+      "fullName": "EricJujianZou/rederive",
+      "name": "rederive",
+      "owner": "EricJujianZou",
+      "url": "https://github.com/EricJujianZou/rederive",
+      "description": "Learn a codebase by re-deriving its design decisions yourself. A Claude Code skill.",
+      "language": "Python",
+      "stars": 255,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "learning",
+        "socratic-method",
+        "system-design"
+      ],
+      "createdAt": "2026-10-19T03:05:36Z",
+      "updatedAt": "2026-10-26T12:39:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 29,
+      "fullName": "soniciso1/ps5-linux-loader",
+      "name": "ps5-linux-loader",
+      "owner": "soniciso1",
+      "url": "https://github.com/soniciso1/ps5-linux-loader",
+      "description": "Run Linux on PS5 - with 13.60 support including PS5 Pro (fork of ps5-linux/ps5-linux-loader)",
+      "language": "C",
+      "stars": 250,
+      "forks": 28,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T00:27:24Z",
+      "updatedAt": "2026-10-26T12:39:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 30,
+      "fullName": "kukemc/bili-cli",
+      "name": "bili-cli",
+      "owner": "kukemc",
+      "url": "https://github.com/kukemc/bili-cli",
+      "description": "为 AI Agent 设计的哔哩哔哩命令行工具：扫码登录、看视频、评论、私信、发动态、投稿，全部 JSON 输出",
+      "language": "Python",
+      "stars": 247,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai-agent",
+        "automation",
+        "bilibili",
+        "claude-code",
+        "cli",
+        "codex",
+        "deepseek"
+      ],
+      "createdAt": "2026-10-19T22:44:50Z",
+      "updatedAt": "2026-10-26T13:30:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 31,
+      "fullName": "danielthejoker18/FreeMyTvWebOS",
+      "name": "FreeMyTvWebOS",
+      "owner": "danielthejoker18",
+      "url": "https://github.com/danielthejoker18/FreeMyTvWebOS",
+      "description": "",
+      "language": "HTML",
+      "stars": 241,
+      "forks": 29,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T23:20:22Z",
+      "updatedAt": "2026-10-26T13:49:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 32,
+      "fullName": "MZhao-ouo/Touchable",
+      "name": "Touchable",
+      "owner": "MZhao-ouo",
+      "url": "https://github.com/MZhao-ouo/Touchable",
+      "description": "Touchable: A better gaming experience for Switch games ported to iOS.",
+      "language": "C",
+      "stars": 238,
+      "forks": 40,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T18:39:40Z",
+      "updatedAt": "2026-10-26T10:09:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 33,
+      "fullName": "philips71017/Hiddify-Manager",
+      "name": "Hiddify-Manager",
+      "owner": "philips71017",
+      "url": "https://github.com/philips71017/Hiddify-Manager",
+      "description": "Multi-user anti-filtering panel, with an effortless installation and supporting more than 20 protocols to circumvent filtering plus the telegram proxy.",
+      "language": "Python",
+      "stars": 229,
+      "forks": 20,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T09:01:13Z",
+      "updatedAt": "2026-10-25T18:40:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 34,
+      "fullName": "mclhm8182/tvhome-zh",
+      "name": "tvhome-zh",
+      "owner": "mclhm8182",
+      "url": "https://github.com/mclhm8182/tvhome-zh",
+      "description": "Apple TV-style launcher for Android TV — ready-to-install APK, no build needed. Apple TV 风格的 Android TV 桌面 —— 装完即用，无需编译。Based on Gathin23/tv-vibehack (CleanYourTV).",
+      "language": "Java",
+      "stars": 227,
+      "forks": 17,
+      "starsToday": 0,
+      "topics": [
+        "adb",
+        "android-tv",
+        "android-tv-launcher",
+        "bloatware-removal",
+        "chinese",
+        "debloat",
+        "google-tv",
+        "home-screen"
+      ],
+      "createdAt": "2026-10-19T05:36:33Z",
+      "updatedAt": "2026-10-26T11:15:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 35,
+      "fullName": "tshi-dev/UrTV",
+      "name": "UrTV",
+      "owner": "tshi-dev",
+      "url": "https://github.com/tshi-dev/UrTV",
+      "description": "Arabic home screen and Saudi screensaver for Android TV / Google TV, plus a safe speed-up. Your AI agent sets it all up. واجهة عربية وشاشة توقف سعودية لتلفزيونات أندرويد، يركّبها لك مساعد الذكاء الاصطناعي.",
+      "language": "Java",
+      "stars": 186,
+      "forks": 73,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "android-tv",
+        "arabic",
+        "debloat",
+        "google-tv",
+        "launcher",
+        "saudi-arabia",
+        "screensaver"
+      ],
+      "createdAt": "2026-10-19T08:00:59Z",
+      "updatedAt": "2026-10-26T13:07:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 36,
+      "fullName": "smm2recomp/smm2recomp",
+      "name": "smm2recomp",
+      "owner": "smm2recomp",
+      "url": "https://github.com/smm2recomp/smm2recomp",
+      "description": "Super Mario Maker 2 Recomp",
+      "language": "Rust",
+      "stars": 178,
+      "forks": 16,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T03:02:41Z",
+      "updatedAt": "2026-10-26T13:28:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 37,
+      "fullName": "andrisgauracs/whistle-esp32",
+      "name": "whistle-esp32",
+      "owner": "andrisgauracs",
+      "url": "https://github.com/andrisgauracs/whistle-esp32",
+      "description": "Whistle speech-to-text running fully on an ESP32-S3: hold a button, say a colour in one of 7 languages, the LED does it. No network.",
+      "language": "C",
+      "stars": 176,
+      "forks": 30,
+      "starsToday": 0,
+      "topics": [
+        "edge-ai",
+        "esp32",
+        "esp32-s3",
+        "inmp441",
+        "speech-recognition",
+        "speech-to-text",
+        "tinyml",
+        "whistle"
+      ],
+      "createdAt": "2026-10-19T04:19:26Z",
+      "updatedAt": "2026-10-26T11:56:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 38,
+      "fullName": "kulwantnagi/android-tv-makeover",
+      "name": "android-tv-makeover",
+      "owner": "kulwantnagi",
+      "url": "https://github.com/kulwantnagi/android-tv-makeover",
+      "description": "Debloat an Android TV, replace its home screen with a clean Apple TV style launcher, and add a fast Indian live TV app. Reversible, over Wi-Fi ADB.",
+      "language": "Java",
+      "stars": 169,
+      "forks": 36,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-19T04:48:07Z",
+      "updatedAt": "2026-10-26T11:19:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 39,
+      "fullName": "ecklf/lg-luma",
+      "name": "lg-luma",
+      "owner": "ecklf",
+      "url": "https://github.com/ecklf/lg-luma",
+      "description": "A native launcher for rooted LG webOS TVs",
+      "language": "Rust",
+      "stars": 168,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [
+        "homebrew",
+        "launcher",
+        "lg-tv",
+        "opengl-es",
+        "rust",
+        "sdl2",
+        "smart-tv",
+        "tv-launcher"
+      ],
+      "createdAt": "2026-10-19T16:13:17Z",
+      "updatedAt": "2026-10-26T13:58:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 40,
+      "fullName": "0xProbabillity/luma-tv",
+      "name": "luma-tv",
+      "owner": "0xProbabillity",
+      "url": "https://github.com/0xProbabillity/luma-tv",
+      "description": "A calm, tvOS-inspired home screen for Android TV and Google TV. No ads, no tracking.",
+      "language": "Java",
+      "stars": 164,
+      "forks": 17,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "android-tv",
+        "google-tv",
+        "home-screen",
+        "java",
+        "launcher",
+        "smart-home",
+        "tvos"
+      ],
+      "createdAt": "2026-10-19T12:22:31Z",
+      "updatedAt": "2026-10-26T13:21:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 41,
+      "fullName": "tailwindlabs/tailwindcss",
+      "name": "tailwindcss",
+      "owner": "tailwindlabs",
+      "url": "https://github.com/tailwindlabs/tailwindcss",
+      "description": "A utility-first CSS framework for rapid UI development.",
+      "language": "TypeScript",
+      "stars": 98124,
+      "forks": 7656,
+      "starsToday": 0,
+      "topics": [
+        "css",
+        "css-framework",
+        "functional-css",
+        "postcss",
+        "responsive",
+        "tailwindcss",
+        "utility-classes"
+      ],
+      "createdAt": "2017-10-06T14:59:14Z",
+      "updatedAt": "2026-10-26T13:59:20Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 42,
+      "fullName": "doocs/advanced-java",
+      "name": "advanced-java",
+      "owner": "doocs",
+      "url": "https://github.com/doocs/advanced-java",
+      "description": "😮 Core Interview Questions & Answers For Experienced Java(Backend) Developers | 互联网 Java 工程师进阶知识完全扫盲：涵盖高并发、分布式、高可用、微服务、海量数据处理等领域知识",
+      "language": "Java",
+      "stars": 79163,
+      "forks": 19109,
+      "starsToday": 0,
+      "topics": [
+        "advanced-java",
+        "distributed-search-engine",
+        "distributed-systems",
+        "doocs",
+        "dubbo",
+        "elasticsearch",
+        "eureka",
+        "feign"
+      ],
+      "createdAt": "2018-10-06T11:38:30Z",
+      "updatedAt": "2026-10-26T11:53:01Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 43,
+      "fullName": "vuejs/awesome-vue",
+      "name": "awesome-vue",
+      "owner": "vuejs",
+      "url": "https://github.com/vuejs/awesome-vue",
+      "description": "🎉 A curated list of awesome things related to Vue.js",
+      "language": "",
+      "stars": 73509,
+      "forks": 9478,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2015-10-20T00:16:14Z",
+      "updatedAt": "2026-10-26T11:50:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 44,
+      "fullName": "RVC-Boss/GPT-SoVITS",
+      "name": "GPT-SoVITS",
+      "owner": "RVC-Boss",
+      "url": "https://github.com/RVC-Boss/GPT-SoVITS",
+      "description": "1 min voice data can also be used to train a good TTS model! (few shot voice cloning)",
+      "language": "Python",
+      "stars": 63793,
+      "forks": 6735,
+      "starsToday": 0,
+      "topics": [
+        "text-to-speech",
+        "tts",
+        "vits",
+        "voice-clone",
+        "voice-cloneai",
+        "voice-cloning"
+      ],
+      "createdAt": "2024-01-14T18:05:21Z",
+      "updatedAt": "2026-10-26T13:58:50Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 45,
+      "fullName": "FuelLabs/sway",
+      "name": "sway",
+      "owner": "FuelLabs",
+      "url": "https://github.com/FuelLabs/sway",
+      "description": "🌴 Empowering everyone to build reliable and efficient smart contracts.",
+      "language": "Rust",
+      "stars": 61370,
+      "forks": 5417,
+      "starsToday": 0,
+      "topics": [
+        "compiler",
+        "fuel",
+        "language",
+        "sway"
+      ],
+      "createdAt": "2021-01-19T20:54:33Z",
+      "updatedAt": "2026-10-25T01:28:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 46,
+      "fullName": "ayghri/i-have-adhd",
+      "name": "i-have-adhd",
+      "owner": "ayghri",
+      "url": "https://github.com/ayghri/i-have-adhd",
+      "description": "A skill to stop your coding agent from burying the answer. ADHD-friendly output.",
+      "language": "Python",
+      "stars": 58818,
+      "forks": 3406,
+      "starsToday": 0,
+      "topics": [
+        "adhd",
+        "claude-",
+        "claude-code-plugin",
+        "claude-skills",
+        "developer-tools",
+        "productivity"
+      ],
+      "createdAt": "2026-05-13T20:42:06Z",
+      "updatedAt": "2026-10-26T14:04:49Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 47,
+      "fullName": "ggml-org/whisper.cpp",
+      "name": "whisper.cpp",
+      "owner": "ggml-org",
+      "url": "https://github.com/ggml-org/whisper.cpp",
+      "description": "Port of OpenAI's Whisper model in C/C++",
+      "language": "C++",
+      "stars": 54685,
+      "forks": 6241,
+      "starsToday": 0,
+      "topics": [
+        "inference",
+        "openai",
+        "speech-recognition",
+        "speech-to-text",
+        "transformer",
+        "whisper"
+      ],
+      "createdAt": "2022-09-25T18:26:37Z",
+      "updatedAt": "2026-10-26T14:03:32Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 48,
+      "fullName": "VoltAgent/awesome-openclaw-skills",
+      "name": "awesome-openclaw-skills",
+      "owner": "VoltAgent",
+      "url": "https://github.com/VoltAgent/awesome-openclaw-skills",
+      "description": "The awesome collection of OpenClaw skills. 5,400+ skills filtered and categorized from the official OpenClaw Skills Registry.🦞",
+      "language": "",
+      "stars": 53355,
+      "forks": 5058,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "awesome",
+        "awesome-list",
+        "awesome-lists",
+        "clawd",
+        "clawdbot",
+        "clawdbot-skill",
+        "clawdhub"
+      ],
+      "createdAt": "2026-01-25T09:22:32Z",
+      "updatedAt": "2026-10-26T13:32:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 49,
+      "fullName": "DavidHDev/react-bits",
+      "name": "react-bits",
+      "owner": "DavidHDev",
+      "url": "https://github.com/DavidHDev/react-bits",
+      "description": "The largest open-source library of animated, interactive, and customizable React & Next.js components for building standout web products and experiences. Built for humans and AI agents.",
+      "language": "JavaScript",
+      "stars": 50258,
+      "forks": 2484,
+      "starsToday": 0,
+      "topics": [
+        "3d",
+        "animations",
+        "component-library",
+        "components",
+        "components-library",
+        "components-react",
+        "css-animations",
+        "javascript"
+      ],
+      "createdAt": "2024-08-06T06:54:54Z",
+      "updatedAt": "2026-10-26T14:02:33Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 50,
+      "fullName": "NaiboWang/EasySpider",
+      "name": "EasySpider",
+      "owner": "NaiboWang",
+      "url": "https://github.com/NaiboWang/EasySpider",
+      "description": "A visual no-code/code-free web crawler/spider易采集：一个可视化浏览器自动化测试/数据采集/网页爬虫软件，可以无代码图形化的设计和执行爬虫任务。别名：ServiceWrapper面向Web应用的智能化服务封装系统。",
+      "language": "JavaScript",
+      "stars": 44739,
+      "forks": 5393,
+      "starsToday": 0,
+      "topics": [
+        "batch-processing",
+        "batch-script",
+        "code-free",
+        "crawler",
+        "data-collection",
+        "frontend",
+        "gui",
+        "html"
+      ],
+      "createdAt": "2020-07-18T02:41:27Z",
+      "updatedAt": "2026-10-26T14:04:43Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 51,
+      "fullName": "Kong/kong",
+      "name": "kong",
+      "owner": "Kong",
+      "url": "https://github.com/Kong/kong",
+      "description": "🦍 The API and AI Gateway",
+      "language": "Lua",
+      "stars": 44303,
+      "forks": 5238,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-gateway",
+        "api-gateway",
+        "api-management",
+        "apis",
+        "artificial-intelligence",
+        "cloud-native",
+        "devops"
+      ],
+      "createdAt": "2014-11-17T23:56:08Z",
+      "updatedAt": "2026-10-26T11:10:26Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 52,
+      "fullName": "colinhacks/zod",
+      "name": "zod",
+      "owner": "colinhacks",
+      "url": "https://github.com/colinhacks/zod",
+      "description": "TypeScript-first schema validation with static type inference",
+      "language": "TypeScript",
+      "stars": 44199,
+      "forks": 2293,
+      "starsToday": 0,
+      "topics": [
+        "runtime-validation",
+        "schema-validation",
+        "static-types",
+        "type-inference",
+        "typescript"
+      ],
+      "createdAt": "2020-03-07T20:59:08Z",
+      "updatedAt": "2026-10-26T10:21:37Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 53,
+      "fullName": "FuelLabs/fuels-rs",
+      "name": "fuels-rs",
+      "owner": "FuelLabs",
+      "url": "https://github.com/FuelLabs/fuels-rs",
+      "description": "Fuel Network Rust SDK",
+      "language": "Rust",
+      "stars": 42966,
+      "forks": 1360,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2021-10-31T22:33:54Z",
+      "updatedAt": "2026-10-25T01:39:08Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 54,
+      "fullName": "styled-components/styled-components",
+      "name": "styled-components",
+      "owner": "styled-components",
+      "url": "https://github.com/styled-components/styled-components",
+      "description": "Fast, expressive styling for React. Server components, client components, streaming SSR, React Native—one API.",
+      "language": "TypeScript",
+      "stars": 41060,
+      "forks": 2612,
+      "starsToday": 0,
+      "topics": [
+        "css",
+        "css-in-js",
+        "react",
+        "reactnative",
+        "rsc",
+        "styled-components"
+      ],
+      "createdAt": "2016-08-16T06:41:32Z",
+      "updatedAt": "2026-10-26T11:37:43Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 55,
+      "fullName": "JCodesMore/ai-website-cloner-template",
+      "name": "ai-website-cloner-template",
+      "owner": "JCodesMore",
+      "url": "https://github.com/JCodesMore/ai-website-cloner-template",
+      "description": "Clone any website with one command using AI coding agents",
+      "language": "TypeScript",
+      "stars": 37418,
+      "forks": 5489,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-tools",
+        "automation",
+        "boilerplate",
+        "claude",
+        "claude-code",
+        "clone"
+      ],
+      "createdAt": "2026-03-13T11:14:39Z",
+      "updatedAt": "2026-10-26T14:04:13Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 56,
+      "fullName": "vercel-labs/skills",
+      "name": "skills",
+      "owner": "vercel-labs",
+      "url": "https://github.com/vercel-labs/skills",
+      "description": "The open agent skills tool - npx skills",
+      "language": "TypeScript",
+      "stars": 36633,
+      "forks": 3158,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-01-14T21:31:18Z",
+      "updatedAt": "2026-10-26T13:59:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 57,
+      "fullName": "casey/just",
+      "name": "just",
+      "owner": "casey",
+      "url": "https://github.com/casey/just",
+      "description": "🤖 Just a command runner",
+      "language": "Rust",
+      "stars": 36432,
+      "forks": 865,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2016-06-17T06:08:08Z",
+      "updatedAt": "2026-10-26T13:06:25Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 58,
+      "fullName": "surrealdb/surrealdb",
+      "name": "surrealdb",
+      "owner": "surrealdb",
+      "url": "https://github.com/surrealdb/surrealdb",
+      "description": "A scalable, distributed, collaborative, document-graph database, for the realtime web",
+      "language": "Rust",
+      "stars": 33233,
+      "forks": 1397,
+      "starsToday": 0,
+      "topics": [
+        "backend-as-a-service",
+        "cloud-database",
+        "database",
+        "database-as-a-service",
+        "developer-tools",
+        "devtools",
+        "distributed",
+        "distributed-database"
+      ],
+      "createdAt": "2021-12-09T15:03:29Z",
+      "updatedAt": "2026-10-26T13:07:08Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 59,
+      "fullName": "deepinsight/insightface",
+      "name": "insightface",
+      "owner": "deepinsight",
+      "url": "https://github.com/deepinsight/insightface",
+      "description": "State-of-the-art 2D and 3D Face Analysis Project",
+      "language": "Python",
+      "stars": 30053,
+      "forks": 6123,
+      "starsToday": 0,
+      "topics": [
+        "age-estimation",
+        "arcface",
+        "face-alignment",
+        "face-detection",
+        "face-recognition",
+        "mxnet",
+        "oneflow",
+        "paddlepaddle"
+      ],
+      "createdAt": "2017-09-01T00:36:51Z",
+      "updatedAt": "2026-10-26T13:31:28Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 60,
+      "fullName": "python-telegram-bot/python-telegram-bot",
+      "name": "python-telegram-bot",
+      "owner": "python-telegram-bot",
+      "url": "https://github.com/python-telegram-bot/python-telegram-bot",
+      "description": "We have made you a wrapper you can't refuse",
+      "language": "Python",
+      "stars": 29532,
+      "forks": 6168,
+      "starsToday": 0,
+      "topics": [
+        "bot",
+        "chatbot",
+        "framework",
+        "python",
+        "telegram"
+      ],
+      "createdAt": "2015-07-07T15:30:39Z",
+      "updatedAt": "2026-10-26T07:56:56Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    }
+  ]
+}

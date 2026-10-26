@@ -1,0 +1,615 @@
+const FAVORITES_KEY = 'github-daily:favorites:v1';
+const HIGH_STAR = 1000;
+
+const LANGUAGE_COLORS = {
+  JavaScript: '#f1e05a',
+  TypeScript: '#3178c6',
+  Python: '#3572a5',
+  Rust: '#dea584',
+  Go: '#00add8',
+  Java: '#b07219',
+  'C++': '#f34b7d',
+  C: '#555555',
+  'C#': '#178600',
+  Shell: '#89e051',
+  Ruby: '#701516',
+  PHP: '#4f5d95',
+  Swift: '#f05138',
+  Kotlin: '#a97bff',
+  Dart: '#00b4ab',
+  HTML: '#e34c26',
+  CSS: '#563d7c',
+  Vue: '#41b883',
+  Svelte: '#ff3e00',
+  Zig: '#ec915c',
+  Lua: '#000080',
+  Haskell: '#5e5086',
+  Elixir: '#6e4a7e',
+  Scala: '#c22d40',
+  'Jupyter Notebook': '#da5b0b',
+};
+
+const state = {
+  dates: [],
+  date: '',
+  data: null,
+  items: [],
+  status: 'empty',
+  tab: 'all',
+  query: '',
+  language: '',
+  sort: 'default',
+  favorites: loadFavorites(),
+};
+
+const els = {
+  list: document.getElementById('list'),
+  meta: document.getElementById('meta'),
+  dateSelect: document.getElementById('dateSelect'),
+  prevDate: document.getElementById('prevDate'),
+  nextDate: document.getElementById('nextDate'),
+  search: document.getElementById('search'),
+  language: document.getElementById('language'),
+  sort: document.getElementById('sort'),
+  favCount: document.getElementById('favCount'),
+  tabs: [...document.querySelectorAll('.tab')],
+};
+
+let loadToken = 0;
+
+function create(tag, className = '', text = '') {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  if (text) element.textContent = text;
+  return element;
+}
+
+function formatNumber(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) return '0';
+  return new Intl.NumberFormat('zh-CN').format(number);
+}
+
+function formatDate(isoDate) {
+  const [year, month, day] = String(isoDate).split('-');
+  if (!year || !month || !day) return isoDate;
+  return `${year}年${Number(month)}月${Number(day)}日`;
+}
+
+function weekdayOf(isoDate) {
+  const date = new Date(`${isoDate}T00:00:00Z`);
+  if (Number.isNaN(date.getTime())) return '';
+  return new Intl.DateTimeFormat('zh-CN', {
+    weekday: 'short',
+    timeZone: 'UTC',
+  }).format(date);
+}
+
+function safeGitHubUrl(value) {
+  try {
+    const url = new URL(value);
+    if (url.protocol === 'https:' && url.hostname === 'github.com') return url.href;
+  } catch {
+    // Invalid URLs fall through to the placeholder.
+  }
+  return '#';
+}
+
+function languageColor(language) {
+  return LANGUAGE_COLORS[language] || 'var(--muted)';
+}
+
+function keyOf(item) {
+  return String(item?.fullName || '').toLowerCase();
+}
+
+function cleanItem(item) {
+  const { savedAt, ...rest } = item;
+  return rest;
+}
+
+function loadFavorites() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(FAVORITES_KEY) || '{}');
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return {};
+    const favorites = {};
+    for (const [key, entry] of Object.entries(parsed)) {
+      if (entry?.item?.fullName) favorites[key] = entry;
+    }
+    return favorites;
+  } catch {
+    return {};
+  }
+}
+
+function persistFavorites() {
+  try {
+    localStorage.setItem(FAVORITES_KEY, JSON.stringify(state.favorites));
+  } catch (error) {
+    console.warn('Unable to save favorites', error);
+  }
+}
+
+function updateFavCount() {
+  const count = Object.keys(state.favorites).length;
+  els.favCount.textContent = count ? String(count) : '';
+  els.favCount.hidden = count === 0;
+}
+
+async function fetchJson(url) {
+  const response = await fetch(url, { cache: 'no-store' });
+  if (!response.ok) throw new Error(`${url}: HTTP ${response.status}`);
+  return response.json();
+}
+
+function normalizeDates(index) {
+  const raw = Array.isArray(index?.dates) ? index.dates : [];
+  const map = new Map();
+
+  for (const entry of raw) {
+    const date = typeof entry === 'string' ? entry : entry?.date;
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date || '')) continue;
+    map.set(date, {
+      date,
+      count: Number(typeof entry === 'object' ? entry.count : 0) || 0,
+      newCount: Number(typeof entry === 'object' ? entry.newCount : 0) || 0,
+    });
+  }
+
+  return [...map.values()].sort((a, b) => b.date.localeCompare(a.date));
+}
+
+function populateDateSelect() {
+  els.dateSelect.replaceChildren();
+
+  if (!state.dates.length) {
+    const option = create('option', '', '暂无数据');
+    option.value = '';
+    els.dateSelect.append(option);
+    return;
+  }
+
+  for (const entry of state.dates) {
+    const option = create('option', '', formatDate(entry.date));
+    option.value = entry.date;
+    els.dateSelect.append(option);
+  }
+
+  const target = state.date || state.dates[0].date;
+  if (state.dates.some((entry) => entry.date === target)) {
+    els.dateSelect.value = target;
+  }
+}
+
+function updateDateNav() {
+  const disabledBase = state.tab === 'fav' || !state.dates.length;
+  const index = state.dates.findIndex((entry) => entry.date === state.date);
+
+  els.dateSelect.disabled = disabledBase;
+  els.prevDate.disabled = disabledBase || index < 0 || index >= state.dates.length - 1;
+  els.nextDate.disabled = disabledBase || index <= 0;
+}
+
+function baseItemsForTab() {
+  if (state.tab === 'fav') {
+    return Object.values(state.favorites).map((entry) => entry.item);
+  }
+  if (state.tab === 'new') return state.items.filter((item) => item.isNew);
+  if (state.tab === 'high') return state.items.filter((item) => item.stars >= HIGH_STAR);
+  return state.items;
+}
+
+function populateLanguages() {
+  const languages = [
+    ...new Set(baseItemsForTab().map((item) => item.language).filter(Boolean)),
+  ].sort((a, b) => a.localeCompare(b, 'zh-CN'));
+
+  const current = state.language;
+  els.language.replaceChildren();
+
+  const all = create('option', '', '全部语言');
+  all.value = '';
+  els.language.append(all);
+
+  for (const language of languages) {
+    const option = create('option', '', language);
+    option.value = language;
+    els.language.append(option);
+  }
+
+  if (languages.includes(current)) {
+    els.language.value = current;
+  } else {
+    state.language = '';
+    els.language.value = '';
+  }
+}
+
+function getVisibleItems() {
+  let list;
+
+  if (state.tab === 'fav') {
+    list = Object.values(state.favorites).map((entry) => ({
+      ...entry.item,
+      savedAt: entry.savedAt,
+    }));
+  } else {
+    list = [...baseItemsForTab()];
+  }
+
+  if (state.language) {
+    list = list.filter((item) => item.language === state.language);
+  }
+
+  const query = state.query.trim().toLowerCase();
+  if (query) {
+    list = list.filter((item) => {
+      const haystack = [
+        item.fullName,
+        item.description,
+        item.language,
+        ...(Array.isArray(item.topics) ? item.topics : []),
+      ]
+        .join(' ')
+        .toLowerCase();
+      return haystack.includes(query);
+    });
+  }
+
+  if (state.sort === 'stars') {
+    list.sort((a, b) => b.stars - a.stars || keyOf(a).localeCompare(keyOf(b)));
+  } else if (state.sort === 'today') {
+    list.sort(
+      (a, b) =>
+        (b.starsToday || 0) - (a.starsToday || 0) ||
+        b.stars - a.stars ||
+        keyOf(a).localeCompare(keyOf(b)),
+    );
+  } else if (state.sort === 'created') {
+    list.sort(
+      (a, b) =>
+        String(b.createdAt || '').localeCompare(String(a.createdAt || '')) ||
+        b.stars - a.stars,
+    );
+  } else if (state.tab === 'fav') {
+    list.sort((a, b) => String(b.savedAt || '').localeCompare(String(a.savedAt || '')));
+  } else {
+    list.sort((a, b) => (a.rank || 0) - (b.rank || 0));
+  }
+
+  return list;
+}
+
+function renderMeta(items) {
+  if (state.tab === 'fav') {
+    const total = Object.keys(state.favorites).length;
+    let text = `收藏 ${total} 个仓库`;
+    if (items.length !== total) text += ` · 当前显示 ${items.length} 个`;
+    els.meta.textContent = text;
+    return;
+  }
+
+  if (!state.data) {
+    els.meta.textContent = state.date && state.status === 'loading'
+      ? `${formatDate(state.date)} · 加载中…`
+      : '';
+    return;
+  }
+
+  let text =
+    `${formatDate(state.data.date)} ${weekdayOf(state.data.date)} · ` +
+    `${state.data.count} 个仓库 · ${state.data.newCount} 个新项目`;
+
+  if (items.length !== state.data.count) {
+    text += ` · 筛选出 ${items.length} 个`;
+  }
+
+  els.meta.textContent = text;
+}
+
+function renderMessage(title, hint) {
+  els.list.replaceChildren();
+  const box = create('div', 'message');
+  box.append(create('p', '', title));
+  if (hint) box.append(create('p', 'hint', hint));
+  els.list.append(box);
+}
+
+function renderLoading() {
+  els.list.replaceChildren();
+  const box = create('div', 'message');
+  box.append(create('div', 'spinner'));
+  box.append(create('p', '', '正在加载榜单…'));
+  els.list.append(box);
+}
+
+function renderEmptyForCurrentView() {
+  const favoritesCount = Object.keys(state.favorites).length;
+  const hasFilters = Boolean(state.query.trim() || state.language);
+
+  if (state.tab === 'fav' && !favoritesCount) {
+    renderMessage('还没有收藏', '点击卡片右上角的星标即可收藏。');
+    return;
+  }
+
+  if (hasFilters) {
+    renderMessage('没有匹配的仓库', '试试清除搜索词或切换筛选条件。');
+    return;
+  }
+
+  if (state.tab === 'new') {
+    renderMessage('这一天没有新项目', '切到「全部」看看其他仓库。');
+    return;
+  }
+
+  if (state.tab === 'high') {
+    renderMessage('这一天没有高星仓库', '高星指总 Star 超过 1000 的仓库。');
+    return;
+  }
+
+  renderMessage('这一天还没有数据', '稍后再来看看。');
+}
+
+function createCard(item, index) {
+  const card = create('article', 'card');
+  card.append(create('div', 'rank', String(index + 1).padStart(2, '0')));
+
+  const main = create('div', 'card-main');
+  const titleRow = create('div', 'title-row');
+
+  const link = create('a', 'repo-link');
+  link.href = safeGitHubUrl(item.url);
+  link.target = '_blank';
+  link.rel = 'noopener noreferrer';
+  link.title = item.fullName || '';
+
+  const fullName = String(item.fullName || '');
+  const slash = fullName.indexOf('/');
+  if (slash > 0) {
+    link.append(document.createTextNode(fullName.slice(0, slash + 1)));
+    link.append(create('strong', '', fullName.slice(slash + 1)));
+  } else {
+    link.textContent = fullName || '未知仓库';
+  }
+
+  titleRow.append(link);
+  if (item.isNew) titleRow.append(create('span', 'badge', 'NEW'));
+  main.append(titleRow);
+
+  const description = String(item.description || '').trim();
+  const desc = create(
+    'p',
+    description ? 'desc' : 'desc is-empty',
+    description || '暂无描述',
+  );
+  if (description) desc.title = description;
+  main.append(desc);
+
+  const tags = create('div', 'tags');
+
+  if (item.language) {
+    const language = create('span', 'tag');
+    const dot = create('span', 'lang-dot');
+    dot.style.backgroundColor = languageColor(item.language);
+    language.append(dot, document.createTextNode(item.language));
+    tags.append(language);
+  }
+
+  const stars = create('span', 'tag');
+  const starsText = create('span', 'stars', `★ ${formatNumber(item.stars)}`);
+  stars.title = '总 Star 数';
+  stars.append(starsText);
+  tags.append(stars);
+
+  if (item.starsToday > 0) {
+    const today = create('span', 'today', `↑ ${formatNumber(item.starsToday)} 今日`);
+    today.title = '今日新增 Star';
+    tags.append(today);
+  }
+
+  const topics = Array.isArray(item.topics) ? item.topics : [];
+  for (const topic of topics.slice(0, 3)) {
+    tags.append(create('span', 'tag topic', `#${topic}`));
+  }
+
+  main.append(tags);
+  card.append(main);
+
+  const key = keyOf(item);
+  const isFavorite = Boolean(state.favorites[key]);
+  const favButton = create('button', 'fav-btn');
+  favButton.type = 'button';
+  favButton.textContent = '★';
+  favButton.setAttribute('aria-pressed', String(isFavorite));
+  favButton.setAttribute('aria-label', isFavorite ? '取消收藏' : '收藏');
+  favButton.title = isFavorite ? '取消收藏' : '收藏';
+  favButton.addEventListener('click', () => toggleFavorite(item));
+  card.append(favButton);
+
+  return card;
+}
+
+function toggleFavorite(item) {
+  const key = keyOf(item);
+  if (!key) return;
+
+  if (state.favorites[key]) {
+    delete state.favorites[key];
+  } else {
+    state.favorites[key] = {
+      item: cleanItem(item),
+      savedAt: new Date().toISOString(),
+    };
+  }
+
+  persistFavorites();
+  updateFavCount();
+
+  if (state.tab === 'fav') populateLanguages();
+  render();
+}
+
+function render() {
+  updateDateNav();
+
+  if (state.tab !== 'fav') {
+    if (state.status === 'loading') {
+      renderMeta([]);
+      renderLoading();
+      return;
+    }
+
+    if (state.status === 'error') {
+      els.meta.textContent = state.date ? formatDate(state.date) : '';
+      renderMessage('数据加载失败', '请稍后刷新页面重试。');
+      return;
+    }
+
+    if (!state.data) {
+      els.meta.textContent = state.dates.length ? '' : '暂无数据';
+      renderMessage(
+        '还没有榜单数据',
+        '等待 GitHub Actions 第一次运行，或手动触发一次工作流。',
+      );
+      return;
+    }
+  }
+
+  const items = getVisibleItems();
+  renderMeta(items);
+  els.list.replaceChildren();
+
+  if (!items.length) {
+    renderEmptyForCurrentView();
+    return;
+  }
+
+  const fragment = document.createDocumentFragment();
+  items.forEach((item, index) => fragment.append(createCard(item, index)));
+  els.list.append(fragment);
+}
+
+async function loadDate(date) {
+  const token = ++loadToken;
+  state.date = date;
+  state.status = 'loading';
+  state.language = '';
+  els.language.value = '';
+  els.dateSelect.value = date;
+
+  render();
+
+  try {
+    const data = await fetchJson(`data/${encodeURIComponent(date)}.json`);
+    if (token !== loadToken) return;
+
+    state.data = data;
+    state.items = Array.isArray(data.items) ? data.items : [];
+    state.status = 'ready';
+    populateLanguages();
+    document.title = `${formatDate(data.date)} · GitHub 日报`;
+
+    const url = new URL(window.location.href);
+    url.searchParams.set('date', data.date);
+    window.history.replaceState(null, '', url.toString());
+
+    render();
+  } catch (error) {
+    if (token !== loadToken) return;
+    console.error(error);
+    state.data = null;
+    state.items = [];
+    state.status = 'error';
+    render();
+  }
+}
+
+function moveDate(offset) {
+  const index = state.dates.findIndex((entry) => entry.date === state.date);
+  const target = state.dates[index + offset];
+  if (target) loadDate(target.date);
+}
+
+function setTab(tab) {
+  if (!['all', 'new', 'high', 'fav'].includes(tab)) return;
+  state.tab = tab;
+
+  for (const button of els.tabs) {
+    const active = button.dataset.tab === tab;
+    button.classList.toggle('is-active', active);
+    button.setAttribute('aria-selected', String(active));
+  }
+
+  populateLanguages();
+  render();
+}
+
+function bindEvents() {
+  els.prevDate.addEventListener('click', () => moveDate(1));
+  els.nextDate.addEventListener('click', () => moveDate(-1));
+
+  els.dateSelect.addEventListener('change', () => {
+    if (els.dateSelect.value) loadDate(els.dateSelect.value);
+  });
+
+  for (const button of els.tabs) {
+    button.addEventListener('click', () => setTab(button.dataset.tab));
+  }
+
+  els.search.addEventListener('input', () => {
+    state.query = els.search.value;
+    render();
+  });
+
+  els.search.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+      els.search.value = '';
+      state.query = '';
+      render();
+    }
+  });
+
+  els.language.addEventListener('change', () => {
+    state.language = els.language.value;
+    render();
+  });
+
+  els.sort.addEventListener('change', () => {
+    state.sort = els.sort.value;
+    render();
+  });
+}
+
+async function init() {
+  bindEvents();
+  updateFavCount();
+
+  try {
+    const index = await fetchJson('data/index.json');
+    state.dates = normalizeDates(index);
+  } catch (error) {
+    console.error(error);
+    state.dates = [];
+    state.status = 'error';
+    populateDateSelect();
+    render();
+    return;
+  }
+
+  if (!state.dates.length) {
+    state.status = 'empty';
+    populateDateSelect();
+    render();
+    return;
+  }
+
+  const requested = new URLSearchParams(window.location.search).get('date');
+  const initial = state.dates.some((entry) => entry.date === requested)
+    ? requested
+    : state.dates[0].date;
+
+  populateDateSelect();
+  await loadDate(initial);
+}
+
+init();

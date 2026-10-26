@@ -1,0 +1,1446 @@
+{
+  "date": "2026-10-22",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-10-26T14:06:05.475Z",
+  "count": 60,
+  "newCount": 40,
+  "sources": {
+    "trending": 0,
+    "new": 40,
+    "highStar": 20
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "oosexgang/hackios-xnu-kernel",
+      "name": "hackios-xnu-kernel",
+      "owner": "oosexgang",
+      "url": "https://github.com/oosexgang/hackios-xnu-kernel",
+      "description": "",
+      "language": "C",
+      "stars": 1580,
+      "forks": 289,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T06:20:11Z",
+      "updatedAt": "2026-10-26T14:02:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 2,
+      "fullName": "Snapintosh/Snapintosh",
+      "name": "Snapintosh",
+      "owner": "Snapintosh",
+      "url": "https://github.com/Snapintosh/Snapintosh",
+      "description": "EL2 hypervisor and toolchain that boots macOS on the ASUS A16 (Snapdragon X2 Elite), with an Adreno Metal/IOGPU stack",
+      "language": "Python",
+      "stars": 965,
+      "forks": 56,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T01:40:05Z",
+      "updatedAt": "2026-10-26T13:36:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 3,
+      "fullName": "assetnote/php2shell-scanner",
+      "name": "php2shell-scanner",
+      "owner": "assetnote",
+      "url": "https://github.com/assetnote/php2shell-scanner",
+      "description": "High fidelity scanner for php2shell (CVE-2026-109618 and CVE-2026-109619)",
+      "language": "Python",
+      "stars": 923,
+      "forks": 133,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T03:53:20Z",
+      "updatedAt": "2026-10-26T14:03:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 4,
+      "fullName": "SmokeProduction/DLSS5-Unlocker",
+      "name": "DLSS5-Unlocker",
+      "owner": "SmokeProduction",
+      "url": "https://github.com/SmokeProduction/DLSS5-Unlocker",
+      "description": "Unlock and manage DLSS 5 on any NVIDIA or AMD graphics card. The ultimate one-click frame generation tool.",
+      "language": "",
+      "stars": 531,
+      "forks": 103,
+      "starsToday": 0,
+      "topics": [
+        "amd",
+        "amd-gpu",
+        "dlss",
+        "dlss-5",
+        "dlss-5-mod",
+        "dlss5",
+        "dlss5-optiscaler",
+        "dlss5-swapper"
+      ],
+      "createdAt": "2026-10-22T21:35:38Z",
+      "updatedAt": "2026-10-26T12:40:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 5,
+      "fullName": "rossark0/rossark-motion-skill",
+      "name": "rossark-motion-skill",
+      "owner": "rossark0",
+      "url": "https://github.com/rossark0/rossark-motion-skill",
+      "description": "Turn any SVG into a professional 60 fps animation. A Claude Code skill that brings anything drawn to life: live faces, full-body acting and whole scenes, in React Native and SwiftUI.",
+      "language": "Swift",
+      "stars": 501,
+      "forks": 36,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T03:33:03Z",
+      "updatedAt": "2026-10-26T13:29:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 6,
+      "fullName": "actionow-ai/vvv",
+      "name": "vvv",
+      "owner": "actionow-ai",
+      "url": "https://github.com/actionow-ai/vvv",
+      "description": "Build a video template once, reuse it across coding agents. Editable Remotion templates and an Agent Skill for Claude Code, Codex and 25+ agents.",
+      "language": "Python",
+      "stars": 390,
+      "forks": 110,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T07:29:54Z",
+      "updatedAt": "2026-10-26T13:51:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 7,
+      "fullName": "oosexgang/hackios-xnu-userland",
+      "name": "hackios-xnu-userland",
+      "owner": "oosexgang",
+      "url": "https://github.com/oosexgang/hackios-xnu-userland",
+      "description": "",
+      "language": "",
+      "stars": 387,
+      "forks": 137,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T06:20:36Z",
+      "updatedAt": "2026-10-26T13:51:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 8,
+      "fullName": "zengshuangzi/mcd-money-saver",
+      "name": "mcd-money-saver",
+      "owner": "zengshuangzi",
+      "url": "https://github.com/zengshuangzi/mcd-money-saver",
+      "description": "基于麦当劳MCP的智能省钱助手",
+      "language": "Python",
+      "stars": 345,
+      "forks": 28,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T08:15:03Z",
+      "updatedAt": "2026-10-26T11:20:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 9,
+      "fullName": "david-silvalab1993i0/Roblox-Aimbot-Smooth-Tracking-Auto-Aim-Script-2026",
+      "name": "Roblox-Aimbot-Smooth-Tracking-Auto-Aim-Script-2026",
+      "owner": "david-silvalab1993i0",
+      "url": "https://github.com/david-silvalab1993i0/Roblox-Aimbot-Smooth-Tracking-Auto-Aim-Script-2026",
+      "description": "High-performance Roblox aimbot with adaptive smooth tracking and precise auto aim. Fully configurable, works with most executors, clean modular structure. Easy setup for current Roblox version.",
+      "language": "Python",
+      "stars": 305,
+      "forks": 217,
+      "starsToday": 0,
+      "topics": [
+        "roblox"
+      ],
+      "createdAt": "2026-10-22T18:45:14Z",
+      "updatedAt": "2026-10-26T12:00:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 10,
+      "fullName": "alexturkey/voxcpm2-turkce-ses-tasarimi",
+      "name": "voxcpm2-turkce-ses-tasarimi",
+      "owner": "alexturkey",
+      "url": "https://github.com/alexturkey/voxcpm2-turkce-ses-tasarimi",
+      "description": "Turkish voice design with VoxCPM2 on a 4 GB GPU: describe a voice, pick a variant, read Turkish text. Patched audio.cpp, local UI, 7 synthetic voices.",
+      "language": "Swift",
+      "stars": 265,
+      "forks": 28,
+      "starsToday": 0,
+      "topics": [
+        "cuda",
+        "ggml",
+        "low-vram",
+        "speech-synthesis",
+        "text-to-speech",
+        "tts",
+        "turkce",
+        "turkish"
+      ],
+      "createdAt": "2026-10-22T19:08:51Z",
+      "updatedAt": "2026-10-26T14:03:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 11,
+      "fullName": "huaxialucaicaizi/ai-startup-skills",
+      "name": "ai-startup-skills",
+      "owner": "huaxialucaicaizi",
+      "url": "https://github.com/huaxialucaicaizi/ai-startup-skills",
+      "description": "创业公司做 AI 产品的 7 步 Agent Skill 合集：验证 → BP → 政策 → 路演 → 获客 → 定价 → 注册。",
+      "language": "Python",
+      "stars": 264,
+      "forks": 25,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai",
+        "business-plan",
+        "claude-code",
+        "codex",
+        "cursor",
+        "entrepreneurship",
+        "growth"
+      ],
+      "createdAt": "2026-10-22T10:23:29Z",
+      "updatedAt": "2026-10-26T13:24:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 12,
+      "fullName": "tunflwgudkyb/cs2-external-esp",
+      "name": "cs2-external-esp",
+      "owner": "tunflwgudkyb",
+      "url": "https://github.com/tunflwgudkyb/cs2-external-esp",
+      "description": "CS2 external cheat: ESP player boxes, skeleton, health bars, radar hack, aimbot, glow, no-flash — external overlay for educational cheat-dev research.",
+      "language": "HTML",
+      "stars": 258,
+      "forks": 125,
+      "starsToday": 0,
+      "topics": [
+        "anti-flash",
+        "bone-esp",
+        "counter-strike-2",
+        "dma",
+        "entity-list",
+        "external-esp",
+        "game-memory-reader",
+        "imgui-overlay"
+      ],
+      "createdAt": "2026-10-22T12:24:51Z",
+      "updatedAt": "2026-10-25T22:16:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 13,
+      "fullName": "Tencent/WeVisOne-VL",
+      "name": "WeVisOne-VL",
+      "owner": "Tencent",
+      "url": "https://github.com/Tencent/WeVisOne-VL",
+      "description": "WeVisOne-VL is a powerful VLM by the WeChat Vision Team at Tencent, unifying object-level and pixel-level perception from points and boxes to masks and alpha mattes.",
+      "language": "Jupyter Notebook",
+      "stars": 255,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T08:58:16Z",
+      "updatedAt": "2026-10-26T13:40:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 14,
+      "fullName": "wpfigfszroxn/pubg-external-esp",
+      "name": "pubg-external-esp",
+      "owner": "wpfigfszroxn",
+      "url": "https://github.com/wpfigfszroxn/pubg-external-esp",
+      "description": "PUBG external ESP/aimbot: player skeleton ESP, item glow, no-recoil, radar — read-only DMA overlay for cheat research.",
+      "language": "HTML",
+      "stars": 250,
+      "forks": 100,
+      "starsToday": 0,
+      "topics": [
+        "battlegrounds",
+        "battlegrounds-esp",
+        "esp-overlay",
+        "external-esp",
+        "external-overlay",
+        "memory-reader",
+        "overlay-esp",
+        "overlay-renderer"
+      ],
+      "createdAt": "2026-10-22T12:24:51Z",
+      "updatedAt": "2026-10-25T22:09:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 15,
+      "fullName": "Marooniogrip/Discord-Quest-Completer",
+      "name": "Discord-Quest-Completer",
+      "owner": "Marooniogrip",
+      "url": "https://github.com/Marooniogrip/Discord-Quest-Completer",
+      "description": "Discord Quest Completer 2026: Full working installer for a seamless desktop experience, ready to run right out of the box.",
+      "language": "",
+      "stars": 248,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "discord-automation",
+        "discord-orbs",
+        "discord-quest",
+        "discord-quest-completer-2026",
+        "discord-quest-completer-bot",
+        "discord-quest-completer-free",
+        "discord-quests",
+        "discord-rewards"
+      ],
+      "createdAt": "2026-10-22T12:07:11Z",
+      "updatedAt": "2026-10-26T12:13:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 16,
+      "fullName": "WallScorpion/Imei-Repair",
+      "name": "Imei-Repair",
+      "owner": "WallScorpion",
+      "url": "https://github.com/WallScorpion/Imei-Repair",
+      "description": "Imei Repair Free 2026 - Full working installer with all features activated, ready to run on your desktop.",
+      "language": "",
+      "stars": 248,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "chimera",
+        "cpid",
+        "device-unlocking",
+        "imei-check",
+        "imei-check-myanmar",
+        "imei-masker",
+        "imei-number",
+        "imei-randomization"
+      ],
+      "createdAt": "2026-10-22T16:25:55Z",
+      "updatedAt": "2026-10-26T12:07:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 17,
+      "fullName": "7API/uncensored-ai-api",
+      "name": "uncensored-ai-api",
+      "owner": "7API",
+      "url": "https://github.com/7API/uncensored-ai-api",
+      "description": "Uncensored AI API and models — one key for Claude, GPT, Gemini, Grok, DeepSeek, GLM and Kimi, with uncensored and abliterated variants where available. OpenAI- and Anthropic-compatible. Pay per token.",
+      "language": "",
+      "stars": 217,
+      "forks": 54,
+      "starsToday": 0,
+      "topics": [
+        "abliterated-models",
+        "ai-gateway",
+        "anthropic-compatible",
+        "claude-api",
+        "claude-code",
+        "deepseek-api",
+        "gemini-api",
+        "glm-api"
+      ],
+      "createdAt": "2026-10-22T16:07:12Z",
+      "updatedAt": "2026-10-25T20:29:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 18,
+      "fullName": "mrcen3204097569-spec/lean-electron-vue",
+      "name": "lean-electron-vue",
+      "owner": "mrcen3204097569-spec",
+      "url": "https://github.com/mrcen3204097569-spec/lean-electron-vue",
+      "description": "轻量的 Electron + Vite + Vue 3 + TypeScript 桌面应用模板，不依赖第三方集成插件 | A lean Electron + Vite + Vue 3 + TS desktop app template",
+      "language": "TypeScript",
+      "stars": 206,
+      "forks": 13,
+      "starsToday": 0,
+      "topics": [
+        "desktop-app",
+        "electron",
+        "electron-builder",
+        "electron-updater",
+        "element-plus",
+        "pinia",
+        "template",
+        "typescript"
+      ],
+      "createdAt": "2026-10-22T07:09:16Z",
+      "updatedAt": "2026-10-26T11:42:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 19,
+      "fullName": "openmathmodel/open-math-harness",
+      "name": "open-math-harness",
+      "owner": "openmathmodel",
+      "url": "https://github.com/openmathmodel/open-math-harness",
+      "description": "The harness of Open Math OS, infrastructure for Math 2.0. Built for everyday math research.",
+      "language": "Rust",
+      "stars": 190,
+      "forks": 24,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T08:17:44Z",
+      "updatedAt": "2026-10-26T10:49:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 20,
+      "fullName": "JoasASantos/php2shell-exploit",
+      "name": "php2shell-exploit",
+      "owner": "JoasASantos",
+      "url": "https://github.com/JoasASantos/php2shell-exploit",
+      "description": "PHP2Shell exploit framework — CVE-2026-109618/619 PHP session.upload_progress UAF to RCE",
+      "language": "Python",
+      "stars": 176,
+      "forks": 51,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T12:53:40Z",
+      "updatedAt": "2026-10-26T12:50:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 21,
+      "fullName": "morerokk/MHGURecomp",
+      "name": "MHGURecomp",
+      "owner": "morerokk",
+      "url": "https://github.com/morerokk/MHGURecomp",
+      "description": "A native PC port of Monster Hunter Generations Ultimate. Requires the game's files to play or build.",
+      "language": "C",
+      "stars": 162,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T13:43:06Z",
+      "updatedAt": "2026-10-26T14:00:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 22,
+      "fullName": "theorem-labs/oss-verify-proofs",
+      "name": "oss-verify-proofs",
+      "owner": "theorem-labs",
+      "url": "https://github.com/theorem-labs/oss-verify-proofs",
+      "description": "Theorem statements about OSS-Fuzz fuzz targets as compiled RISC-V binaries, and machine-checked Rocq proofs of them",
+      "language": "Rocq Prover",
+      "stars": 159,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "formal-verification",
+        "fuzzing",
+        "oss-fuzz",
+        "proofs",
+        "riscv",
+        "rocq"
+      ],
+      "createdAt": "2026-10-22T17:20:28Z",
+      "updatedAt": "2026-10-26T13:32:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 23,
+      "fullName": "7API/glm-5.3-abliterated",
+      "name": "glm-5.3-abliterated",
+      "owner": "7API",
+      "url": "https://github.com/7API/glm-5.3-abliterated",
+      "description": "GLM 5.3 Abliterated or Uncensored AI model — 35 jailbreak prompts, model guide and API. One 7API key also covers Claude, GPT, Gemini, Grok, DeepSeek and Kimi.",
+      "language": "",
+      "stars": 156,
+      "forks": 31,
+      "starsToday": 0,
+      "topics": [
+        "abliterated",
+        "abliterated-models",
+        "ai-jailbreaks",
+        "anthropic-compatible",
+        "claude-code",
+        "glm",
+        "glm-5-3",
+        "glm-5-3-abliterated"
+      ],
+      "createdAt": "2026-10-22T16:07:16Z",
+      "updatedAt": "2026-10-26T11:11:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 24,
+      "fullName": "Spectrmachina/Ztrust",
+      "name": "Ztrust",
+      "owner": "Spectrmachina",
+      "url": "https://github.com/Spectrmachina/Ztrust",
+      "description": "Zero-trust supply-chain security for open source: detects malicious & vulnerable dependencies, typosquats, leaked secrets and unsafe GitHub Actions — and pays independent researchers in shielded Zcash via a front-running-proof bounty protocol.",
+      "language": "Python",
+      "stars": 154,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T18:38:37Z",
+      "updatedAt": "2026-10-26T11:22:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 25,
+      "fullName": "Motphys/Uni-SuperMimic",
+      "name": "Uni-SuperMimic",
+      "owner": "Motphys",
+      "url": "https://github.com/Motphys/Uni-SuperMimic",
+      "description": "SuperMimic-UniLab: An Independent reproduction of SuperMimic on UniLab for whole-body humanoid motion tracking.",
+      "language": "Python",
+      "stars": 153,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "amd",
+        "macos",
+        "mjwarp",
+        "motrixsim",
+        "mujoco",
+        "rocm",
+        "supermimic",
+        "unilab"
+      ],
+      "createdAt": "2026-10-22T09:06:45Z",
+      "updatedAt": "2026-10-26T13:13:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 26,
+      "fullName": "ios151/One-releases",
+      "name": "One-releases",
+      "owner": "ios151",
+      "url": "https://github.com/ios151/One-releases",
+      "description": "One 的安装包发布页（只发布 IPA，不含源码）",
+      "language": "",
+      "stars": 144,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T23:30:06Z",
+      "updatedAt": "2026-10-26T13:38:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 27,
+      "fullName": "man15h/tellyscope",
+      "name": "tellyscope",
+      "owner": "man15h",
+      "url": "https://github.com/man15h/tellyscope",
+      "description": "Debloat your Android TV, install apps, browse and transfer files on it, all from your phone. Under 3 MB, no tracking, no root, no PC.",
+      "language": "Kotlin",
+      "stars": 142,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "androidtv",
+        "googletv",
+        "privacy"
+      ],
+      "createdAt": "2026-10-22T19:51:46Z",
+      "updatedAt": "2026-10-26T13:50:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 28,
+      "fullName": "Krusty84/yaDisk-Health",
+      "name": "yaDisk-Health",
+      "owner": "Krusty84",
+      "url": "https://github.com/Krusty84/yaDisk-Health",
+      "description": "Проверка доступности ваших файлов на Yandex Диск",
+      "language": "Python",
+      "stars": 139,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [
+        "yandex",
+        "yandex-api",
+        "yandex-cloud",
+        "yandex-disk",
+        "yandexcloud"
+      ],
+      "createdAt": "2026-10-22T13:08:40Z",
+      "updatedAt": "2026-10-25T16:20:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 29,
+      "fullName": "looplj/reveric",
+      "name": "reveric",
+      "owner": "looplj",
+      "url": "https://github.com/looplj/reveric",
+      "description": "Agent Native 一站式 AI 小说，短剧桌面创作工作台",
+      "language": "Dart",
+      "stars": 130,
+      "forks": 31,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T16:20:15Z",
+      "updatedAt": "2026-10-26T13:32:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 30,
+      "fullName": "rolottr/bambu-bar",
+      "name": "bambu-bar",
+      "owner": "rolottr",
+      "url": "https://github.com/rolottr/bambu-bar",
+      "description": "Native macOS menu bar app for Bambu Lab 3D printers. Live progress, time left, temperatures, AMS spools and errors, print controls, several printers and desktop widgets. Local network, no account or cloud.",
+      "language": "Swift",
+      "stars": 128,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [
+        "3d-printing",
+        "bambu-lab",
+        "macos",
+        "menu-bar",
+        "swiftui",
+        "widgetkit"
+      ],
+      "createdAt": "2026-10-22T09:33:07Z",
+      "updatedAt": "2026-10-26T12:59:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 31,
+      "fullName": "Vibha-Ramprakash/claude-video-effects",
+      "name": "claude-video-effects",
+      "owner": "Vibha-Ramprakash",
+      "url": "https://github.com/Vibha-Ramprakash/claude-video-effects",
+      "description": "36 video effects for Claude Code: drop in a talking-head clip, type /effects orbit. Face tracking, behind-your-head layers. By @vibha.in.progress",
+      "language": "Python",
+      "stars": 121,
+      "forks": 41,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T08:59:18Z",
+      "updatedAt": "2026-10-26T14:03:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 32,
+      "fullName": "danisiber/rom-cli",
+      "name": "rom-cli",
+      "owner": "danisiber",
+      "url": "https://github.com/danisiber/rom-cli",
+      "description": "Terminal CLI to search and download ROMs, ISOs and Switch games. Interactive Textual UI, cross-platform catalog, resumable downloads.",
+      "language": "Python",
+      "stars": 120,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "game-downloader",
+        "python",
+        "retro-gaming",
+        "rom-cli",
+        "roms",
+        "switch",
+        "textual"
+      ],
+      "createdAt": "2026-10-22T08:38:38Z",
+      "updatedAt": "2026-10-26T07:36:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 33,
+      "fullName": "piqganehprlv/ff-external-esp",
+      "name": "ff-external-esp",
+      "owner": "piqganehprlv",
+      "url": "https://github.com/piqganehprlv/ff-external-esp",
+      "description": "FreeFire external ESP cheat: player boxes, skeleton ESP, distance readout, item glow — C++ overlay, no injector, educational use only.",
+      "language": "HTML",
+      "stars": 120,
+      "forks": 59,
+      "starsToday": 0,
+      "topics": [
+        "battleroyale-mod",
+        "educational-game-modding",
+        "educational-modding",
+        "esp-overlay",
+        "external-esp",
+        "ff-esp",
+        "freefire-esp",
+        "freefire-external"
+      ],
+      "createdAt": "2026-10-22T12:28:16Z",
+      "updatedAt": "2026-10-25T21:31:25Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 34,
+      "fullName": "Jakeschincariol/console-skill",
+      "name": "console-skill",
+      "owner": "Jakeschincariol",
+      "url": "https://github.com/Jakeschincariol/console-skill",
+      "description": "11 Claude skills that port PlayStation 2 games you own to PC: reverse engineer the code, rebuild the graphics and backend, any controller, play it anywhere, then mod it however you want.",
+      "language": "Python",
+      "stars": 119,
+      "forks": 16,
+      "starsToday": 0,
+      "topics": [
+        "claude",
+        "claude-skills",
+        "game-dev",
+        "gamepad",
+        "modding",
+        "ps2",
+        "reverse-engineering",
+        "static-recompilation"
+      ],
+      "createdAt": "2026-10-22T14:12:44Z",
+      "updatedAt": "2026-10-26T03:50:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 35,
+      "fullName": "ulymxumfqtdi/dbd-external-esp",
+      "name": "dbd-external-esp",
+      "owner": "ulymxumfqtdi",
+      "url": "https://github.com/ulymxumfqtdi/dbd-external-esp",
+      "description": "DBD external ESP: survivor aura, killer wallhack, skillcheck aimbot, injector for Dead by Daylight, educational cheat source",
+      "language": "Python",
+      "stars": 116,
+      "forks": 59,
+      "starsToday": 0,
+      "topics": [
+        "behavior-interactive",
+        "dbd-anticheat-research",
+        "dbd-esp-overlay",
+        "dbd-external",
+        "dbd-modding",
+        "dbd-overlay",
+        "entity-esp",
+        "esp-overlay"
+      ],
+      "createdAt": "2026-10-22T12:24:50Z",
+      "updatedAt": "2026-10-26T08:10:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 36,
+      "fullName": "Xinge2333/codex-quota-bar",
+      "name": "codex-quota-bar",
+      "owner": "Xinge2333",
+      "url": "https://github.com/Xinge2333/codex-quota-bar",
+      "description": "macOS Codex quota menu bar with an optional desktop overlay. 中文 / English guides.",
+      "language": "Swift",
+      "stars": 116,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T09:25:13Z",
+      "updatedAt": "2026-10-26T02:03:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 37,
+      "fullName": "stockedge/manga-generator",
+      "name": "manga-generator",
+      "owner": "stockedge",
+      "url": "https://github.com/stockedge/manga-generator",
+      "description": "原作から脚本・画像生成・組版・PDF出力まで進める、Codex向け漫画制作ツール",
+      "language": "JavaScript",
+      "stars": 114,
+      "forks": 19,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "ai-comic",
+        "ai-comics",
+        "ai-manga",
+        "character-consistency",
+        "claude-code",
+        "codex",
+        "comfyui"
+      ],
+      "createdAt": "2026-10-22T02:58:45Z",
+      "updatedAt": "2026-10-26T11:59:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 38,
+      "fullName": "cpypwn/mac2jb",
+      "name": "mac2jb",
+      "owner": "cpypwn",
+      "url": "https://github.com/cpypwn/mac2jb",
+      "description": "Use your Apple Silicon Mac as a USB HID keyboard to transfer the ns2jb bootstrap and automate post-bootstrap commands on Nintendo Switch 2.",
+      "language": "JavaScript",
+      "stars": 111,
+      "forks": 19,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T18:42:23Z",
+      "updatedAt": "2026-10-26T13:11:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 39,
+      "fullName": "josiahg2502-glitch/BrawlRecompiled",
+      "name": "BrawlRecompiled",
+      "owner": "josiahg2502-glitch",
+      "url": "https://github.com/josiahg2502-glitch/BrawlRecompiled",
+      "description": "Native PC port of Super Smash Bros. Brawl (static recompilation): 4K, widescreen, gamepads, and Wii SD mods (Project+, Project+Ex, REX, Brawl Minus, Legacy XP). Bring your own disc.",
+      "language": "C++",
+      "stars": 106,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T20:50:15Z",
+      "updatedAt": "2026-10-26T13:42:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 40,
+      "fullName": "PlusF666/mctaste-lab",
+      "name": "mctaste-lab",
+      "owner": "PlusF666",
+      "url": "https://github.com/PlusF666/mctaste-lab",
+      "description": "麦麦偏爱实验室｜几轮餐品二选一，生成可解释、可调整的偏好与探索推荐。麦当劳 MCP 创意开发大赛独立作品。",
+      "language": "Python",
+      "stars": 106,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T05:54:04Z",
+      "updatedAt": "2026-10-26T09:40:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 41,
+      "fullName": "awesome-selfhosted/awesome-selfhosted",
+      "name": "awesome-selfhosted",
+      "owner": "awesome-selfhosted",
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
+      "language": "",
+      "stars": 330593,
+      "forks": 15566,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "cloud",
+        "free-software",
+        "hosting",
+        "privacy",
+        "self-hosted",
+        "selfhosted"
+      ],
+      "createdAt": "2015-06-01T02:33:17Z",
+      "updatedAt": "2026-10-26T13:58:43Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 42,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 303755,
+      "forks": 25551,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-10-26T14:04:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 43,
+      "fullName": "Shubhamsaboo/awesome-llm-apps",
+      "name": "awesome-llm-apps",
+      "owner": "Shubhamsaboo",
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+      "language": "Python",
+      "stars": 143116,
+      "forks": 21054,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "llms",
+        "python",
+        "rag"
+      ],
+      "createdAt": "2024-04-29T05:30:25Z",
+      "updatedAt": "2026-10-26T14:01:25Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 44,
+      "fullName": "ventoy/Ventoy",
+      "name": "Ventoy",
+      "owner": "ventoy",
+      "url": "https://github.com/ventoy/Ventoy",
+      "description": "A new bootable USB solution.",
+      "language": "C",
+      "stars": 80361,
+      "forks": 5009,
+      "starsToday": 0,
+      "topics": [
+        "arm64",
+        "auto-install",
+        "bootable-usb",
+        "bsd",
+        "chromeos",
+        "iso-files",
+        "legacy",
+        "linux"
+      ],
+      "createdAt": "2020-03-10T15:19:19Z",
+      "updatedAt": "2026-10-26T13:35:22Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 45,
+      "fullName": "josephmisiti/awesome-machine-learning",
+      "name": "awesome-machine-learning",
+      "owner": "josephmisiti",
+      "url": "https://github.com/josephmisiti/awesome-machine-learning",
+      "description": "A curated list of awesome Machine Learning frameworks, libraries and software.",
+      "language": "Python",
+      "stars": 74663,
+      "forks": 15682,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2014-07-15T19:11:19Z",
+      "updatedAt": "2026-10-26T13:26:12Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 46,
+      "fullName": "pmndrs/zustand",
+      "name": "zustand",
+      "owner": "pmndrs",
+      "url": "https://github.com/pmndrs/zustand",
+      "description": "🐻 Bear necessities for state management in React",
+      "language": "TypeScript",
+      "stars": 58875,
+      "forks": 2174,
+      "starsToday": 0,
+      "topics": [
+        "hacktoberfest",
+        "hooks",
+        "react",
+        "react-context",
+        "reactjs",
+        "redux",
+        "state-management"
+      ],
+      "createdAt": "2019-04-09T09:10:06Z",
+      "updatedAt": "2026-10-26T13:38:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 47,
+      "fullName": "coreyhaines31/marketingskills",
+      "name": "marketingskills",
+      "owner": "coreyhaines31",
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+      "language": "JavaScript",
+      "stars": 56620,
+      "forks": 8369,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "ai-seo",
+        "claude",
+        "claude-code",
+        "claude-code-plugin",
+        "claude-skills",
+        "codex"
+      ],
+      "createdAt": "2026-01-15T19:45:23Z",
+      "updatedAt": "2026-10-26T13:59:51Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 48,
+      "fullName": "microsoft/qlib",
+      "name": "qlib",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/qlib",
+      "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github",
+      "language": "Python",
+      "stars": 49729,
+      "forks": 7857,
+      "starsToday": 0,
+      "topics": [
+        "algorithmic-trading",
+        "auto-quant",
+        "deep-learning",
+        "finance",
+        "fintech",
+        "investment",
+        "machine-learning",
+        "paper"
+      ],
+      "createdAt": "2020-08-14T06:46:00Z",
+      "updatedAt": "2026-10-26T14:04:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 49,
+      "fullName": "bigskysoftware/htmx",
+      "name": "htmx",
+      "owner": "bigskysoftware",
+      "url": "https://github.com/bigskysoftware/htmx",
+      "description": "</> htmx - high power tools for HTML",
+      "language": "JavaScript",
+      "stars": 49573,
+      "forks": 1731,
+      "starsToday": 0,
+      "topics": [
+        "hateoas",
+        "html",
+        "htmx",
+        "hyperscript",
+        "javascript",
+        "rest"
+      ],
+      "createdAt": "2020-04-13T16:17:51Z",
+      "updatedAt": "2026-10-26T11:35:17Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 50,
+      "fullName": "alibaba/open-code-review",
+      "name": "open-code-review",
+      "owner": "alibaba",
+      "url": "https://github.com/alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "language": "Go",
+      "stars": 48328,
+      "forks": 3537,
+      "starsToday": 0,
+      "topics": [
+        "agent",
+        "agent-skills",
+        "code-review",
+        "code-review-assistant",
+        "harness",
+        "repository-level-context"
+      ],
+      "createdAt": "2026-05-18T02:16:36Z",
+      "updatedAt": "2026-10-26T13:28:06Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 51,
+      "fullName": "lysine-dev/okhttp",
+      "name": "okhttp",
+      "owner": "lysine-dev",
+      "url": "https://github.com/lysine-dev/okhttp",
+      "description": "A meticulous HTTP client for the JVM, Android, and GraalVM.",
+      "language": "Kotlin",
+      "stars": 47097,
+      "forks": 9297,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "graalvm",
+        "java",
+        "kotlin"
+      ],
+      "createdAt": "2012-07-23T13:42:55Z",
+      "updatedAt": "2026-10-26T10:23:15Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 52,
+      "fullName": "parcel-bundler/parcel",
+      "name": "parcel",
+      "owner": "parcel-bundler",
+      "url": "https://github.com/parcel-bundler/parcel",
+      "description": "The zero configuration build tool for the web. 📦🚀",
+      "language": "JavaScript",
+      "stars": 44005,
+      "forks": 2322,
+      "starsToday": 0,
+      "topics": [
+        "assets",
+        "build-tool",
+        "commonjs",
+        "compiler",
+        "css",
+        "es6",
+        "html",
+        "javascript"
+      ],
+      "createdAt": "2017-08-07T16:36:47Z",
+      "updatedAt": "2026-10-25T23:46:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 53,
+      "fullName": "nwjs/nw.js",
+      "name": "nw.js",
+      "owner": "nwjs",
+      "url": "https://github.com/nwjs/nw.js",
+      "description": "Call all Node.js modules directly from DOM/WebWorker and enable a new way of writing applications with all Web technologies.",
+      "language": "JavaScript",
+      "stars": 41144,
+      "forks": 3848,
+      "starsToday": 0,
+      "topics": [
+        "desktop",
+        "javascript",
+        "node-webkit",
+        "nodejs",
+        "nwjs",
+        "web-application-framework"
+      ],
+      "createdAt": "2012-01-04T06:21:10Z",
+      "updatedAt": "2026-10-26T05:46:43Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 54,
+      "fullName": "Crosstalk-Solutions/project-nomad",
+      "name": "project-nomad",
+      "owner": "Crosstalk-Solutions",
+      "url": "https://github.com/Crosstalk-Solutions/project-nomad",
+      "description": "Project NOMAD is an offline-first knowledge and education server. Wikipedia, thousands of books, courses, maps, and optional local AI, all running on hardware you own with no internet required.",
+      "language": "TypeScript",
+      "stars": 40964,
+      "forks": 4149,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2025-06-24T15:35:01Z",
+      "updatedAt": "2026-10-26T13:24:27Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 55,
+      "fullName": "datalab-to/marker",
+      "name": "marker",
+      "owner": "datalab-to",
+      "url": "https://github.com/datalab-to/marker",
+      "description": "Convert PDF to markdown + JSON quickly with high accuracy",
+      "language": "Python",
+      "stars": 40648,
+      "forks": 2945,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2023-10-30T20:14:08Z",
+      "updatedAt": "2026-10-26T13:53:54Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 56,
+      "fullName": "aseprite/aseprite",
+      "name": "aseprite",
+      "owner": "aseprite",
+      "url": "https://github.com/aseprite/aseprite",
+      "description": "Animated sprite editor & pixel art tool (Windows, macOS, Linux)",
+      "language": "C++",
+      "stars": 40398,
+      "forks": 9319,
+      "starsToday": 0,
+      "topics": [
+        "animated-sprites",
+        "animation",
+        "aseprite",
+        "c-plus-plus",
+        "cpp",
+        "draw",
+        "gif",
+        "graphics"
+      ],
+      "createdAt": "2014-08-19T23:44:50Z",
+      "updatedAt": "2026-10-26T13:26:34Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 57,
+      "fullName": "HKUDS/LightRAG",
+      "name": "LightRAG",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/LightRAG",
+      "description": "[EMNLP2025] LightRAG: Simple and Fast Retrieval-Augmented Generation",
+      "language": "Python",
+      "stars": 40344,
+      "forks": 5730,
+      "starsToday": 0,
+      "topics": [
+        "docling",
+        "genai",
+        "gpt",
+        "graphrag",
+        "knowledge-graph",
+        "large-language-models",
+        "llm",
+        "mineru"
+      ],
+      "createdAt": "2024-10-02T11:57:54Z",
+      "updatedAt": "2026-10-26T13:44:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 58,
+      "fullName": "microsoft/playwright-mcp",
+      "name": "playwright-mcp",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/playwright-mcp",
+      "description": "Playwright MCP server",
+      "language": "TypeScript",
+      "stars": 38652,
+      "forks": 3316,
+      "starsToday": 0,
+      "topics": [
+        "mcp",
+        "playwright"
+      ],
+      "createdAt": "2025-03-21T17:48:36Z",
+      "updatedAt": "2026-10-26T13:48:43Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 59,
+      "fullName": "jaywcjlove/linux-command",
+      "name": "linux-command",
+      "owner": "jaywcjlove",
+      "url": "https://github.com/jaywcjlove/linux-command",
+      "description": "Linux命令大全搜索工具，内容包含Linux命令手册、详解、学习、搜集。https://git.io/linux",
+      "language": "Markdown",
+      "stars": 37181,
+      "forks": 6591,
+      "starsToday": 0,
+      "topics": [
+        "bash",
+        "chrome",
+        "chrome-extension",
+        "command-line",
+        "gh-pages",
+        "linux",
+        "linux-command",
+        "ls"
+      ],
+      "createdAt": "2016-11-12T15:44:26Z",
+      "updatedAt": "2026-10-26T08:41:56Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 60,
+      "fullName": "maboloshi/github-chinese",
+      "name": "github-chinese",
+      "owner": "maboloshi",
+      "url": "https://github.com/maboloshi/github-chinese",
+      "description": "GitHub 汉化插件，GitHub 中文化界面。 (GitHub Translation To Chinese)",
+      "language": "JavaScript",
+      "stars": 36741,
+      "forks": 2047,
+      "starsToday": 0,
+      "topics": [
+        "github",
+        "greasyfork",
+        "macaque",
+        "tampermonkey",
+        "userscript",
+        "violentmonkey"
+      ],
+      "createdAt": "2021-09-27T08:47:55Z",
+      "updatedAt": "2026-10-26T14:01:41Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    }
+  ]
+}

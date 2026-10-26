@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="每天更新前一天的 GitHub 热门仓库，支持手机浏览、搜索、筛选和收藏。">
+  <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
+  <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d1117">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="GitHub 日报">
+  <title>GitHub 日报</title>
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <img class="brand-icon" src="favicon.svg" alt="" width="38" height="38">
+        <div class="brand-text">
+          <h1>GitHub 日报</h1>
+          <p>每天更新前一天的榜单</p>
+        </div>
+      </div>
+      <div class="date-nav" aria-label="切换日期">
+        <button id="prevDate" class="icon-btn" type="button" aria-label="前一天" title="前一天">‹</button>
+        <select id="dateSelect" aria-label="选择日期" disabled>
+          <option value="">加载中…</option>
+        </select>
+        <button id="nextDate" class="icon-btn" type="button" aria-label="后一天" title="后一天">›</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="toolbar" aria-label="筛选榜单">
+      <div class="tabs" role="tablist" aria-label="榜单分类">
+        <button class="tab is-active" type="button" role="tab" aria-selected="true" data-tab="all">全部</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="new">新项目</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="high" title="总 Star 超过 1000">高星</button>
+        <button class="tab" type="button" role="tab" aria-selected="false" data-tab="fav">收藏 <span id="favCount" class="count"></span></button>
+      </div>
+      <div class="filters">
+        <input id="search" type="search" placeholder="搜索仓库、描述或 topic" autocomplete="off" spellcheck="false" aria-label="搜索仓库">
+        <select id="language" aria-label="按语言筛选">
+          <option value="">全部语言</option>
+        </select>
+        <select id="sort" aria-label="排序方式">
+          <option value="default">综合排序</option>
+          <option value="today">今日涨星</option>
+          <option value="stars">按 Star 数</option>
+          <option value="created">按创建时间</option>
+        </select>
+      </div>
+    </section>
+
+    <div id="meta" class="meta" aria-live="polite"></div>
+    <section id="list" class="list" aria-live="polite"></section>
+    <p class="footnote">
+      数据来自 GitHub Trending 与 GitHub Search API。每天北京时间 08:05 自动更新前一天内容。
+    </p>
+  </main>
+
+  <noscript>
+    <p class="noscript">需要开启 JavaScript 才能查看榜单。</p>
+  </noscript>
+  <script src="app.js" type="module"></script>
+</body>
+</html>

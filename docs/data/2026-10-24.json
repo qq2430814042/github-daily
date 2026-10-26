@@ -1,0 +1,1447 @@
+{
+  "date": "2026-10-24",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-10-26T14:06:42.550Z",
+  "count": 60,
+  "newCount": 40,
+  "sources": {
+    "trending": 0,
+    "new": 40,
+    "highStar": 20
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "rddmwmddr/android-ad-cleaner",
+      "name": "android-ad-cleaner",
+      "owner": "rddmwmddr",
+      "url": "https://github.com/rddmwmddr/android-ad-cleaner",
+      "description": "关掉国产安卓手机系统里的广告、热搜、资讯推荐和营销推送。不 root，可还原，支持 AI 智能体一键执行。",
+      "language": "Python",
+      "stars": 1602,
+      "forks": 136,
+      "starsToday": 0,
+      "topics": [
+        "adb",
+        "ai-agent",
+        "android",
+        "coloros",
+        "debloat",
+        "hyperos",
+        "magicos",
+        "originos"
+      ],
+      "createdAt": "2026-10-24T05:35:47Z",
+      "updatedAt": "2026-10-26T14:05:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 2,
+      "fullName": "t3dotgg/tstack",
+      "name": "tstack",
+      "owner": "t3dotgg",
+      "url": "https://github.com/t3dotgg/tstack",
+      "description": "The agent skills I use every day. Works with Claude Code and Codex.",
+      "language": "Python",
+      "stars": 969,
+      "forks": 36,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T05:00:20Z",
+      "updatedAt": "2026-10-26T14:05:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 3,
+      "fullName": "songjianyang/xss-audit",
+      "name": "xss-audit",
+      "owner": "songjianyang",
+      "url": "https://github.com/songjianyang/xss-audit",
+      "description": "Static XSS audit skill with 14 layers of checks for React, TypeScript, and JavaScript projects.",
+      "language": "",
+      "stars": 476,
+      "forks": 135,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T11:32:36Z",
+      "updatedAt": "2026-10-26T13:55:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 4,
+      "fullName": "wangrongding/tv-fresh",
+      "name": "tv-fresh",
+      "owner": "wangrongding",
+      "url": "https://github.com/wangrongding/tv-fresh",
+      "description": "tv-fresh 电视焕新：小米电视(MIUI TV)去广告/清理预装/换桌面/装代理与影视仓的 Agent Skill——免root可逆，含固件逆向实录与一键脚本",
+      "language": "Shell",
+      "stars": 471,
+      "forks": 62,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T16:58:15Z",
+      "updatedAt": "2026-10-26T13:45:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 5,
+      "fullName": "mirkobrombin/raven",
+      "name": "raven",
+      "owner": "mirkobrombin",
+      "url": "https://github.com/mirkobrombin/raven",
+      "description": "A Windows your apps recognize.",
+      "language": "C++",
+      "stars": 418,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T17:13:42Z",
+      "updatedAt": "2026-10-26T13:45:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 6,
+      "fullName": "routerhubSI/glm-5.3-abliterated",
+      "name": "glm-5.3-abliterated",
+      "owner": "routerhubSI",
+      "url": "https://github.com/routerhubSI/glm-5.3-abliterated",
+      "description": "GLM 5.3 abliterated or uncensored API access with RouterHub. Browse 35 jailbreak prompt links, compare GLM models, and find SDK examples, coding-tool setup, pricing, and evaluation guides.",
+      "language": "Python",
+      "stars": 390,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [
+        "abliterated",
+        "abliterated-models",
+        "ai-api",
+        "ai-jailbreaks",
+        "api-gateway",
+        "glm",
+        "glm-5-3",
+        "glm-5-3-abliterated"
+      ],
+      "createdAt": "2026-10-24T13:51:36Z",
+      "updatedAt": "2026-10-26T12:31:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 7,
+      "fullName": "routerhubSI/uncensored-ai-api",
+      "name": "uncensored-ai-api",
+      "owner": "routerhubSI",
+      "url": "https://github.com/routerhubSI/uncensored-ai-api",
+      "description": "Uncensored AI API and models — one key for Claude, GPT, Gemini, Grok, DeepSeek, GLM and Qwen, with uncensored and abliterated variants where available. OpenAI- and Anthropic-compatible. Pay per token.",
+      "language": "",
+      "stars": 366,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [
+        "abliterated-models",
+        "ai-api",
+        "ai-gateway",
+        "anthropic-compatible",
+        "claude-api",
+        "claude-code",
+        "cursor",
+        "deepseek-api"
+      ],
+      "createdAt": "2026-10-24T16:55:17Z",
+      "updatedAt": "2026-10-26T05:33:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 8,
+      "fullName": "hevnsnt/CVEngine",
+      "name": "CVEngine",
+      "owner": "hevnsnt",
+      "url": "https://github.com/hevnsnt/CVEngine",
+      "description": "AI-first external attack surface assessment with continuous discovery, evidence-based vulnerability validation, and developer-agent MCP integration.",
+      "language": "Python",
+      "stars": 308,
+      "forks": 51,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "attack-surface-management",
+        "bbot",
+        "cybersecurity",
+        "mcp",
+        "nmap",
+        "nuclei",
+        "vulnerability-scanner"
+      ],
+      "createdAt": "2026-10-24T22:34:43Z",
+      "updatedAt": "2026-10-26T14:04:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 9,
+      "fullName": "xMazaki/unbloat-android-tv",
+      "name": "unbloat-android-tv",
+      "owner": "xMazaki",
+      "url": "https://github.com/xMazaki/unbloat-android-tv",
+      "description": "Slim down any Android TV (ads, telemetry) + minimalist Apple TV-style home screen. Reversible, one double-click. 🇫🇷 Allégez n'importe quelle TV Android (pubs, télémétrie) + écran d'accueil minimaliste façon Apple TV. Réversible, en un double-clic.",
+      "language": "Java",
+      "stars": 257,
+      "forks": 21,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T07:16:39Z",
+      "updatedAt": "2026-10-26T12:48:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 10,
+      "fullName": "nlzy/turing-unlock",
+      "name": "turing-unlock",
+      "owner": "nlzy",
+      "url": "https://github.com/nlzy/turing-unlock",
+      "description": "Unlock full speed FP16 tensor core of NVIDIA Turing GPUs",
+      "language": "C",
+      "stars": 226,
+      "forks": 32,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T15:18:08Z",
+      "updatedAt": "2026-10-26T13:58:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 11,
+      "fullName": "jouaaaaaa/mcd-self-butler",
+      "name": "mcd-self-butler",
+      "owner": "jouaaaaaa",
+      "url": "https://github.com/jouaaaaaa/mcd-self-butler",
+      "description": "麦当劳自助管家 McButler — 基于麦当劳 MCP 的点单参谋：每日推荐 / 套餐健康体检 / 门店全成本比价 / 团餐智能配餐 / 麦险分信用评级 / 麦门小剧场。麦当劳 1024 程序员节参赛作品。",
+      "language": "Python",
+      "stars": 218,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [
+        "credit-scoring",
+        "mcdonalds",
+        "mcp",
+        "nutrition",
+        "python",
+        "skill",
+        "workbuddy"
+      ],
+      "createdAt": "2026-10-24T04:34:37Z",
+      "updatedAt": "2026-10-26T11:50:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 12,
+      "fullName": "dvbs2000/liuchunlin-shufa",
+      "name": "liuchunlin-shufa",
+      "owner": "dvbs2000",
+      "url": "https://github.com/dvbs2000/liuchunlin-shufa",
+      "description": "刘春霖小楷书房 · 在线诗词书法生成系统",
+      "language": "",
+      "stars": 210,
+      "forks": 43,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T14:40:17Z",
+      "updatedAt": "2026-10-26T14:02:42Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 13,
+      "fullName": "mamcjr/BOTWRecompAndroid",
+      "name": "BOTWRecompAndroid",
+      "owner": "mamcjr",
+      "url": "https://github.com/mamcjr/BOTWRecompAndroid",
+      "description": "Static recompilation of The Legend of Zelda: Breath of the Wild (Switch 1.0.0 / 1.6.0 / 1.8.2) for Android - no game files included",
+      "language": "C",
+      "stars": 207,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T00:53:21Z",
+      "updatedAt": "2026-10-26T13:43:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 14,
+      "fullName": "YoyoLin008/mcreplay",
+      "name": "mcreplay",
+      "owner": "YoyoLin008",
+      "url": "https://github.com/YoyoLin008/mcreplay",
+      "description": "McReplay（麦回放）— Structural snapshots, change reports, and local MCP replay for McDonald's China integrations.",
+      "language": "Python",
+      "stars": 202,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T17:14:18Z",
+      "updatedAt": "2026-10-26T05:15:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 15,
+      "fullName": "hffgzktbcc-blip/ounce-core",
+      "name": "ounce-core",
+      "owner": "hffgzktbcc-blip",
+      "url": "https://github.com/hffgzktbcc-blip/ounce-core",
+      "description": "Clean-room systems research runtime and architecture compatibility layer for NVIDIA Tegra T239 (Horizon OS FW 23.0.1 ABI)",
+      "language": "Rust",
+      "stars": 172,
+      "forks": 16,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T19:32:45Z",
+      "updatedAt": "2026-10-26T14:05:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 16,
+      "fullName": "vxcn/mcd-kcal-picker",
+      "name": "mcd-kcal-picker",
+      "owner": "vxcn",
+      "url": "https://github.com/vxcn/mcd-kcal-picker",
+      "description": "麦门热量搭配师：基于麦当劳中国 MCP 的热量搭配 Skill，只读，不下单",
+      "language": "Python",
+      "stars": 157,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T15:00:20Z",
+      "updatedAt": "2026-10-26T05:10:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 17,
+      "fullName": "xkx121029/mcd-vibe-commit",
+      "name": "mcd-vibe-commit",
+      "owner": "xkx121029",
+      "url": "https://github.com/xkx121029/mcd-vibe-commit",
+      "description": "麦门人格 Commit 生成器：测出你的麦门人格，生成专属 git commit message（麦当劳 MCP 大赛参赛作品）",
+      "language": "Python",
+      "stars": 155,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T06:59:59Z",
+      "updatedAt": "2026-10-26T11:50:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 18,
+      "fullName": "lalalune/pumpfun-source",
+      "name": "pumpfun-source",
+      "owner": "lalalune",
+      "url": "https://github.com/lalalune/pumpfun-source",
+      "description": "Pump.fun deployment evidence and byte-exact reconstruction research (incomplete)",
+      "language": "Rust",
+      "stars": 152,
+      "forks": 69,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T23:37:50Z",
+      "updatedAt": "2026-10-26T14:06:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 19,
+      "fullName": "cyber-xiaoya/cyber-xiaoya-live",
+      "name": "cyber-xiaoya-live",
+      "owner": "cyber-xiaoya",
+      "url": "https://github.com/cyber-xiaoya/cyber-xiaoya-live",
+      "description": "赛博小雅直播版 · 组件版数字人（Vidu s2）· 免费开源 AGPL-3.0 · 作者：天工开帧（抖音/B站/YouTube 同名）",
+      "language": "Python",
+      "stars": 143,
+      "forks": 95,
+      "starsToday": 0,
+      "topics": [
+        "agpl",
+        "danmaku",
+        "digital-human",
+        "live-streaming",
+        "python",
+        "tts",
+        "vidu"
+      ],
+      "createdAt": "2026-10-24T16:54:32Z",
+      "updatedAt": "2026-10-26T13:54:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 20,
+      "fullName": "chenkezhen480/dsh-world",
+      "name": "dsh-world",
+      "owner": "chenkezhen480",
+      "url": "https://github.com/chenkezhen480/dsh-world",
+      "description": "给鲸鲸一个完整的世界",
+      "language": "TypeScript",
+      "stars": 138,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T05:53:18Z",
+      "updatedAt": "2026-10-26T14:02:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 21,
+      "fullName": "kqgzhkbiqutr/dex-sniper-bot-pc-desktop",
+      "name": "dex-sniper-bot-pc-desktop",
+      "owner": "kqgzhkbiqutr",
+      "url": "https://github.com/kqgzhkbiqutr/dex-sniper-bot-pc-desktop",
+      "description": "🔥 dex-sniper-bot-pc-desktop 🔥",
+      "language": "HTML",
+      "stars": 133,
+      "forks": 130,
+      "starsToday": 0,
+      "topics": [
+        "anti-rug-sniper",
+        "defi-sniper-bot",
+        "dex-sniper-2026",
+        "dex-sniper-download",
+        "dex-sniper-free",
+        "free-dex-sniper",
+        "honeypot-checker",
+        "memecoin-sniper-bot"
+      ],
+      "createdAt": "2026-10-24T03:54:16Z",
+      "updatedAt": "2026-10-25T02:49:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 22,
+      "fullName": "tractordev/webframe",
+      "name": "webframe",
+      "owner": "tractordev",
+      "url": "https://github.com/tractordev/webframe",
+      "description": "Run a web page like a program",
+      "language": "Go",
+      "stars": 129,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "cross-platform",
+        "golang",
+        "headless-browser",
+        "purego"
+      ],
+      "createdAt": "2026-10-24T14:18:15Z",
+      "updatedAt": "2026-10-26T12:39:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 23,
+      "fullName": "xanthichi/mcd-meal-mate",
+      "name": "mcd-meal-mate",
+      "owner": "xanthichi",
+      "url": "https://github.com/xanthichi/mcd-meal-mate",
+      "description": "M餐搭子：基于麦当劳 MCP 实时菜单与营养数据的智能搭餐 Skill｜在线演示已上线",
+      "language": "TypeScript",
+      "stars": 128,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [
+        "mcdonalds",
+        "mcp",
+        "meal-planner",
+        "nutrition",
+        "react",
+        "skill",
+        "typescript",
+        "workbuddy"
+      ],
+      "createdAt": "2026-10-24T12:39:14Z",
+      "updatedAt": "2026-10-26T05:14:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 24,
+      "fullName": "TUcookie/mcd-deal-hunter",
+      "name": "mcd-deal-hunter",
+      "owner": "TUcookie",
+      "url": "https://github.com/TUcookie/mcd-deal-hunter",
+      "description": "点麦当劳之前，先让它算算哪种点法最省钱",
+      "language": "",
+      "stars": 123,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T04:33:32Z",
+      "updatedAt": "2026-10-25T16:09:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 25,
+      "fullName": "xx20050823xx/McMate",
+      "name": "McMate",
+      "owner": "xx20050823xx",
+      "url": "https://github.com/xx20050823xx/McMate",
+      "description": "询问用户就餐餐厅并根据餐厅菜单用户就餐人数及就餐预算帮用户选择套餐。",
+      "language": "Python",
+      "stars": 123,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T09:20:54Z",
+      "updatedAt": "2026-10-25T16:06:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 26,
+      "fullName": "zgx949/ai-pojia",
+      "name": "ai-pojia",
+      "owner": "zgx949",
+      "url": "https://github.com/zgx949/ai-pojia",
+      "description": "用 AI 搞定麻烦事。面向小白的实用 Skills 与插件，附完整教程和示例。",
+      "language": "Python",
+      "stars": 122,
+      "forks": 181,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T03:17:43Z",
+      "updatedAt": "2026-10-26T14:02:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 27,
+      "fullName": "JellyFlow/Mcdonalds_in_RokidGlasses",
+      "name": "Mcdonalds_in_RokidGlasses",
+      "owner": "JellyFlow",
+      "url": "https://github.com/JellyFlow/Mcdonalds_in_RokidGlasses",
+      "description": "麦当劳 × Rokid Glasses 眼镜点餐助手：一句话点餐、MCP直连、购物车管理与实时算价",
+      "language": "TypeScript",
+      "stars": 121,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "aiui",
+        "mcdonalds",
+        "mcdonalds-china",
+        "mcdonalds-mcp",
+        "rokid",
+        "rokid-glasses",
+        "rokidglasses",
+        "yodaos"
+      ],
+      "createdAt": "2026-10-24T05:22:44Z",
+      "updatedAt": "2026-10-26T12:24:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 28,
+      "fullName": "tian1326/mcd-coupon-assistant",
+      "name": "mcd-coupon-assistant",
+      "owner": "tian1326",
+      "url": "https://github.com/tian1326/mcd-coupon-assistant",
+      "description": "麦当劳优惠券省钱助手 — 基于麦当劳中国官方 MCP 的 WorkBuddy Skill：查门店/查券/带券算价/比价推荐。默认不下单、不自动领券。",
+      "language": "Python",
+      "stars": 120,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T03:58:29Z",
+      "updatedAt": "2026-10-26T05:09:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 29,
+      "fullName": "xiaozhangup/Oh-My-McDonald",
+      "name": "Oh-My-McDonald",
+      "owner": "xiaozhangup",
+      "url": "https://github.com/xiaozhangup/Oh-My-McDonald",
+      "description": "基于麦当劳官方 MCP 的对话式 AI Skill，支持餐品推荐、门店比价、优惠查询、营养计算和探索记录，并通过 Python 生成体素风格分享图片。",
+      "language": "Python",
+      "stars": 120,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-agent",
+        "ai-skill",
+        "coupons",
+        "data-visualization",
+        "mcdonalds",
+        "mcdonalds-mcp",
+        "mcp",
+        "model-context-protocol"
+      ],
+      "createdAt": "2026-10-24T08:38:16Z",
+      "updatedAt": "2026-10-26T05:09:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 30,
+      "fullName": "LittleChest/mcd-withwork-skills",
+      "name": "mcd-withwork-skills",
+      "owner": "LittleChest",
+      "url": "https://github.com/LittleChest/mcd-withwork-skills",
+      "description": "为何不一边工作一边想想去麦当劳吃什么呢？| 关怀计划！",
+      "language": "HTML",
+      "stars": 116,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T04:50:40Z",
+      "updatedAt": "2026-10-26T11:12:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 31,
+      "fullName": "dlt2000/xc-soundfont-synth",
+      "name": "xc-soundfont-synth",
+      "owner": "dlt2000",
+      "url": "https://github.com/dlt2000/xc-soundfont-synth",
+      "description": "",
+      "language": "C",
+      "stars": 115,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T02:49:32Z",
+      "updatedAt": "2026-10-26T12:34:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 32,
+      "fullName": "adhiprib/humanizer-indonesia",
+      "name": "humanizer-indonesia",
+      "owner": "adhiprib",
+      "url": "https://github.com/adhiprib/humanizer-indonesia",
+      "description": "Membuat tulisan AI lebih luwes dan enak dibaca, bukan untuk mengelabui deteksi AI",
+      "language": "Python",
+      "stars": 107,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [
+        "academic-writing",
+        "ai-writing",
+        "bahasa-indonesia",
+        "claude",
+        "claude-skill",
+        "humanizer",
+        "indonesian"
+      ],
+      "createdAt": "2026-10-24T05:21:12Z",
+      "updatedAt": "2026-10-26T12:23:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 33,
+      "fullName": "ChinaOpenClaw/mcd-nutrition-expert",
+      "name": "mcd-nutrition-expert",
+      "owner": "ChinaOpenClaw",
+      "url": "https://github.com/ChinaOpenClaw/mcd-nutrition-expert",
+      "description": "身材管控期也想吃麦当劳？这个专家会帮你根据每日消耗搭配麦麦套餐。基于 SP 矩阵理论，打通麦当劳官方 MCP Server 的营养选型与点餐闭环（35 个官方工具 · 14 个 REST 接口 · 零第三方前端依赖）。",
+      "language": "Python",
+      "stars": 105,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "canvas",
+        "diet",
+        "fastapi",
+        "fitness",
+        "hackathon",
+        "health",
+        "mcd-mcp",
+        "mcdonalds"
+      ],
+      "createdAt": "2026-10-24T18:06:01Z",
+      "updatedAt": "2026-10-26T11:12:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 34,
+      "fullName": "SuperBigFatDog/mcd-nearest-deal",
+      "name": "mcd-nearest-deal",
+      "owner": "SuperBigFatDog",
+      "url": "https://github.com/SuperBigFatDog/mcd-nearest-deal",
+      "description": "",
+      "language": "Python",
+      "stars": 105,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T02:42:53Z",
+      "updatedAt": "2026-10-26T05:08:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 35,
+      "fullName": "joeseesun/qiaomu-simpleui",
+      "name": "qiaomu-simpleui",
+      "owner": "joeseesun",
+      "url": "https://github.com/joeseesun/qiaomu-simpleui",
+      "description": "Kindle/KOReader 手机式读书首页：乔木精选资讯、划线 AI 翻译与问答、微信读书入口 | Phone-like KOReader home: curated AI news, AI translation and Q&A on selections, WeRead shortcut",
+      "language": "Lua",
+      "stars": 104,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "e-ink",
+        "ebook-reader",
+        "kindle",
+        "kindle-plugin",
+        "koreader",
+        "lua",
+        "rss-reader"
+      ],
+      "createdAt": "2026-10-24T13:08:01Z",
+      "updatedAt": "2026-10-26T13:47:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 36,
+      "fullName": "big-tooth/mcd-recommend-meal-by-emotion",
+      "name": "mcd-recommend-meal-by-emotion",
+      "owner": "big-tooth",
+      "url": "https://github.com/big-tooth/mcd-recommend-meal-by-emotion",
+      "description": "",
+      "language": "",
+      "stars": 102,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T02:49:25Z",
+      "updatedAt": "2026-10-26T04:18:48Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 37,
+      "fullName": "Nebelung-cloud/glyph-rice",
+      "name": "glyph-rice",
+      "owner": "Nebelung-cloud",
+      "url": "https://github.com/Nebelung-cloud/glyph-rice",
+      "description": "Glyph: a Nothing OS rice for Hyprland + Quickshell, black, white dots and one red",
+      "language": "QML",
+      "stars": 97,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [
+        "arch-linux",
+        "dotfiles",
+        "hyprland",
+        "nothing-os",
+        "quickshell",
+        "rice",
+        "unixporn"
+      ],
+      "createdAt": "2026-10-24T14:20:55Z",
+      "updatedAt": "2026-10-26T13:51:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 38,
+      "fullName": "Moessif/code-video-showcase",
+      "name": "code-video-showcase",
+      "owner": "Moessif",
+      "url": "https://github.com/Moessif/code-video-showcase",
+      "description": "A pure-code beat-synced showcase-video Agent Skill: HTML/Canvas/SVG/Three.js frame-by-frame + Python numpy/scipy score + FFmpeg. No generative models.",
+      "language": "JavaScript",
+      "stars": 94,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-24T14:02:58Z",
+      "updatedAt": "2026-10-26T13:42:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 39,
+      "fullName": "oscarlosu-lab/USBAnywhere",
+      "name": "USBAnywhere",
+      "owner": "oscarlosu-lab",
+      "url": "https://github.com/oscarlosu-lab/USBAnywhere",
+      "description": "🌐 The Free, Open-Source VirtualHere Alternative for Windows & Linux — Connect unlimited USB devices over LAN, Wi-Fi & Internet (Low-Latency WSK, 1-Click Pi Setup, WHQL Drivers)",
+      "language": "C#",
+      "stars": 94,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [
+        "cloud-gaming",
+        "dotnet",
+        "homelab",
+        "klipper",
+        "moonlight",
+        "openwrt",
+        "proxmox",
+        "raspberry-pi"
+      ],
+      "createdAt": "2026-10-24T09:31:08Z",
+      "updatedAt": "2026-10-26T13:43:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 40,
+      "fullName": "thomasunise/argus",
+      "name": "argus",
+      "owner": "thomasunise",
+      "url": "https://github.com/thomasunise/argus",
+      "description": "Open-source agentic security operations platform:",
+      "language": "Python",
+      "stars": 93,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [
+        "agentic-ai",
+        "agentic-security",
+        "agentic-workflow",
+        "cyber-security",
+        "cyber-threat-intelligence",
+        "cybersecurity",
+        "cybersecurity-tools",
+        "penetration-testing"
+      ],
+      "createdAt": "2026-10-24T16:12:28Z",
+      "updatedAt": "2026-10-26T12:08:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 41,
+      "fullName": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python",
+      "stars": 492321,
+      "forks": 54820,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "createdAt": "2016-03-20T23:49:42Z",
+      "updatedAt": "2026-10-26T14:05:31Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 42,
+      "fullName": "Genymobile/scrcpy",
+      "name": "scrcpy",
+      "owner": "Genymobile",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "description": "Display and control your Android device",
+      "language": "C",
+      "stars": 153186,
+      "forks": 14052,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "c",
+        "ffmpeg",
+        "genyteam-system",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen"
+      ],
+      "createdAt": "2017-11-21T18:00:27Z",
+      "updatedAt": "2026-10-26T14:03:48Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 43,
+      "fullName": "microsoft/generative-ai-for-beginners",
+      "name": "generative-ai-for-beginners",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/generative-ai-for-beginners",
+      "description": "21 Lessons, Get Started Building with Generative AI",
+      "language": "Jupyter Notebook",
+      "stars": 122205,
+      "forks": 64921,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "azure",
+        "chatgpt",
+        "dall-e",
+        "generative-ai",
+        "generativeai",
+        "gpt",
+        "language-model"
+      ],
+      "createdAt": "2023-06-19T16:28:59Z",
+      "updatedAt": "2026-10-26T14:01:46Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 44,
+      "fullName": "browser-use/browser-use",
+      "name": "browser-use",
+      "owner": "browser-use",
+      "url": "https://github.com/browser-use/browser-use",
+      "description": "Open-source Python library for AI browser agents, plus Browser Use Cloud: stealth browsers and a hosted agent API.",
+      "language": "Python",
+      "stars": 119185,
+      "forks": 13247,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "ai-tools",
+        "browser-agent",
+        "browser-automation",
+        "browser-use",
+        "cdp",
+        "cloud-browser",
+        "computer-use"
+      ],
+      "createdAt": "2024-10-31T16:00:56Z",
+      "updatedAt": "2026-10-26T14:01:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 45,
+      "fullName": "hacksider/Deep-Live-Cam",
+      "name": "Deep-Live-Cam",
+      "owner": "hacksider",
+      "url": "https://github.com/hacksider/Deep-Live-Cam",
+      "description": "real time face swap and one-click video deepfake with only a single image",
+      "language": "Python",
+      "stars": 97241,
+      "forks": 14156,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-deep-fake",
+        "ai-face",
+        "ai-webcam",
+        "artificial-intelligence",
+        "deep-fake",
+        "deepfake",
+        "deepfake-webcam"
+      ],
+      "createdAt": "2023-09-24T13:19:31Z",
+      "updatedAt": "2026-10-26T14:05:45Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 46,
+      "fullName": "Developer-Y/cs-video-courses",
+      "name": "cs-video-courses",
+      "owner": "Developer-Y",
+      "url": "https://github.com/Developer-Y/cs-video-courses",
+      "description": "List of Computer Science courses with video lectures.",
+      "language": "",
+      "stars": 83770,
+      "forks": 11481,
+      "starsToday": 0,
+      "topics": [
+        "algorithms",
+        "bioinformatics",
+        "computational-biology",
+        "computational-physics",
+        "computer-architecture",
+        "computer-science",
+        "computer-vision",
+        "database-systems"
+      ],
+      "createdAt": "2016-10-21T17:02:11Z",
+      "updatedAt": "2026-10-26T12:35:28Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 47,
+      "fullName": "microsoft/ai-agents-for-beginners",
+      "name": "ai-agents-for-beginners",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/ai-agents-for-beginners",
+      "description": "18 Lessons to Get Started Building AI Agents",
+      "language": "Jupyter Notebook",
+      "stars": 77915,
+      "forks": 25559,
+      "starsToday": 0,
+      "topics": [
+        "agentic-ai",
+        "agentic-framework",
+        "agentic-rag",
+        "ai-agents",
+        "ai-agents-framework",
+        "autogen",
+        "foundry",
+        "foundry-local"
+      ],
+      "createdAt": "2024-11-28T10:42:52Z",
+      "updatedAt": "2026-10-26T13:46:46Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 48,
+      "fullName": "headroomlabs-ai/headroom",
+      "name": "headroom",
+      "owner": "headroomlabs-ai",
+      "url": "https://github.com/headroomlabs-ai/headroom",
+      "description": "Compress tool outputs, logs, files, and RAG chunks before they reach the LLM. 20% fewer tokens for coding agents, 60-95% fewer tokens for JSON, same answers. Library, proxy, MCP server.",
+      "language": "Python",
+      "stars": 77890,
+      "forks": 6053,
+      "starsToday": 0,
+      "topics": [
+        "agent",
+        "ai",
+        "anthropic",
+        "claude-code",
+        "compression",
+        "context-engineering",
+        "context-window",
+        "cursor"
+      ],
+      "createdAt": "2026-01-07T19:58:51Z",
+      "updatedAt": "2026-10-26T14:05:14Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 49,
+      "fullName": "tesseract-ocr/tesseract",
+      "name": "tesseract",
+      "owner": "tesseract-ocr",
+      "url": "https://github.com/tesseract-ocr/tesseract",
+      "description": "Tesseract Open Source OCR Engine (main repository)",
+      "language": "C++",
+      "stars": 77170,
+      "forks": 10860,
+      "starsToday": 0,
+      "topics": [
+        "hacktoberfest",
+        "lstm",
+        "machine-learning",
+        "ocr",
+        "ocr-engine",
+        "tesseract",
+        "tesseract-ocr"
+      ],
+      "createdAt": "2014-08-12T18:04:59Z",
+      "updatedAt": "2026-10-26T12:03:57Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 50,
+      "fullName": "colbymchenry/codegraph",
+      "name": "codegraph",
+      "owner": "colbymchenry",
+      "url": "https://github.com/colbymchenry/codegraph",
+      "description": "Pre-indexed code knowledge graph, auto syncs on code changes, for Claude Code, Codex, Gemini, Cursor, OpenCode, AntiGravity, Kiro, CoPilot, and Hermes Agent — fewer tokens, fewer tool calls, 100% local",
+      "language": "C",
+      "stars": 75400,
+      "forks": 4942,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-01-18T21:45:37Z",
+      "updatedAt": "2026-10-26T14:00:17Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 51,
+      "fullName": "openbq-org/OpenBB",
+      "name": "OpenBB",
+      "owner": "openbq-org",
+      "url": "https://github.com/openbq-org/OpenBB",
+      "description": "Open Data Platform for analysts, quants and AI agents.",
+      "language": "Python",
+      "stars": 74737,
+      "forks": 7772,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "crypto",
+        "derivatives",
+        "economics",
+        "equity",
+        "finance",
+        "fixed-income",
+        "machine-learning"
+      ],
+      "createdAt": "2020-12-20T10:46:38Z",
+      "updatedAt": "2026-10-26T14:05:55Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 52,
+      "fullName": "calesthio/OpenMontage",
+      "name": "OpenMontage",
+      "owner": "calesthio",
+      "url": "https://github.com/calesthio/OpenMontage",
+      "description": "World's first open-source, agentic video production system. 12 production pipelines, 100+ tools, 700+ agent skill and production-knowledge files. Turn your AI coding assistant into a full video production studio.",
+      "language": "Python",
+      "stars": 72070,
+      "forks": 9357,
+      "starsToday": 0,
+      "topics": [
+        "agent",
+        "agentic-ai",
+        "ai",
+        "claude",
+        "copilot",
+        "cursor",
+        "elevenlabs",
+        "ffmpeg"
+      ],
+      "createdAt": "2026-03-29T15:23:22Z",
+      "updatedAt": "2026-10-26T14:02:20Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 53,
+      "fullName": "hugohe3/ppt-master",
+      "name": "ppt-master",
+      "owner": "hugohe3",
+      "url": "https://github.com/hugohe3/ppt-master",
+      "description": "AI turns documents or topics into real, native PowerPoint decks—with native shapes, transitions and animations, data-backed charts and tables on demand, audio narration from speaker notes, and support for your own .pptx templates. · by Hugo He",
+      "language": "Python",
+      "stars": 68744,
+      "forks": 5366,
+      "starsToday": 0,
+      "topics": [
+        "ai-agent",
+        "aippt",
+        "office",
+        "powerpoint",
+        "powerpoint-generation",
+        "ppt",
+        "pptx",
+        "presentation"
+      ],
+      "createdAt": "2025-12-10T06:54:33Z",
+      "updatedAt": "2026-10-26T14:06:32Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 54,
+      "fullName": "virattt/ai-hedge-fund",
+      "name": "ai-hedge-fund",
+      "owner": "virattt",
+      "url": "https://github.com/virattt/ai-hedge-fund",
+      "description": "An AI Hedge Fund Team",
+      "language": "Python",
+      "stars": 64267,
+      "forks": 11285,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2024-11-29T16:30:01Z",
+      "updatedAt": "2026-10-26T14:04:14Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 55,
+      "fullName": "youngyangyang04/leetcode-master",
+      "name": "leetcode-master",
+      "owner": "youngyangyang04",
+      "url": "https://github.com/youngyangyang04/leetcode-master",
+      "description": "《代码随想录》LeetCode 刷题攻略：200道经典题目刷题顺序，共60w字的详细图解，视频难点剖析，50余张思维导图，支持C++，Java，Python，Go，JavaScript等多语言版本，从此算法学习不再迷茫！🔥🔥 来看看，你会发现相见恨晚！🚀",
+      "language": "Shell",
+      "stars": 62744,
+      "forks": 12280,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "cpp",
+        "go",
+        "interview",
+        "java",
+        "javascript",
+        "leetcode",
+        "offer"
+      ],
+      "createdAt": "2019-12-14T12:05:42Z",
+      "updatedAt": "2026-10-26T13:50:01Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 56,
+      "fullName": "pi-hole/pi-hole",
+      "name": "pi-hole",
+      "owner": "pi-hole",
+      "url": "https://github.com/pi-hole/pi-hole",
+      "description": "A black hole for Internet advertisements",
+      "language": "Shell",
+      "stars": 61474,
+      "forks": 3341,
+      "starsToday": 0,
+      "topics": [
+        "ad-blocker",
+        "blocker",
+        "cloud",
+        "dashboard",
+        "dhcp",
+        "dhcp-server",
+        "dns-server",
+        "dnsmasq"
+      ],
+      "createdAt": "2014-06-08T15:02:55Z",
+      "updatedAt": "2026-10-26T14:05:28Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 57,
+      "fullName": "chen08209/FlClash",
+      "name": "FlClash",
+      "owner": "chen08209",
+      "url": "https://github.com/chen08209/FlClash",
+      "description": "A multi-platform proxy client based on ClashMeta,simple and easy to use, open-source and ad-free.",
+      "language": "Dart",
+      "stars": 58329,
+      "forks": 3779,
+      "starsToday": 0,
+      "topics": [
+        "clash",
+        "clash-meta",
+        "flutter",
+        "hysteria",
+        "multi-platform",
+        "proxy",
+        "v2ray",
+        "vless"
+      ],
+      "createdAt": "2023-08-15T07:47:22Z",
+      "updatedAt": "2026-10-26T14:03:08Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 58,
+      "fullName": "typst/typst",
+      "name": "typst",
+      "owner": "typst",
+      "url": "https://github.com/typst/typst",
+      "description": "A markup-based typesetting system that is powerful and easy to learn.",
+      "language": "Rust",
+      "stars": 56825,
+      "forks": 1773,
+      "starsToday": 0,
+      "topics": [
+        "compiler",
+        "markup",
+        "typesetting",
+        "typst"
+      ],
+      "createdAt": "2019-09-24T21:41:56Z",
+      "updatedAt": "2026-10-26T13:28:27Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 59,
+      "fullName": "anthropics/claude-cookbooks",
+      "name": "claude-cookbooks",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/claude-cookbooks",
+      "description": "A collection of notebooks/recipes showcasing some fun and effective ways of using Claude.",
+      "language": "Jupyter Notebook",
+      "stars": 53792,
+      "forks": 6486,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2023-08-15T20:23:51Z",
+      "updatedAt": "2026-10-26T13:45:49Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 60,
+      "fullName": "ionic-team/ionic-framework",
+      "name": "ionic-framework",
+      "owner": "ionic-team",
+      "url": "https://github.com/ionic-team/ionic-framework",
+      "description": "A powerful cross-platform UI toolkit for building native-quality iOS, Android, and Progressive Web Apps with HTML, CSS, and JavaScript.",
+      "language": "TypeScript",
+      "stars": 52721,
+      "forks": 13299,
+      "starsToday": 0,
+      "topics": [
+        "angular",
+        "capacitor",
+        "framework",
+        "frontend",
+        "ionic",
+        "ios",
+        "javascript",
+        "material-design"
+      ],
+      "createdAt": "2013-08-20T23:06:02Z",
+      "updatedAt": "2026-10-26T12:54:22Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    }
+  ]
+}

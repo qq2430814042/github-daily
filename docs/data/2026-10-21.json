@@ -1,0 +1,1439 @@
+{
+  "date": "2026-10-21",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-10-26T14:05:49.944Z",
+  "count": 60,
+  "newCount": 40,
+  "sources": {
+    "trending": 0,
+    "new": 40,
+    "highStar": 20
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "wesbos/3d-model-anything",
+      "name": "3d-model-anything",
+      "owner": "wesbos",
+      "url": "https://github.com/wesbos/3d-model-anything",
+      "description": "Capture iPhone LiDAR and photos, reconstruct editable Three.js rooms, and explore them in a browser.",
+      "language": "Swift",
+      "stars": 2022,
+      "forks": 298,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T19:38:50Z",
+      "updatedAt": "2026-10-26T14:03:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 2,
+      "fullName": "xevrion/hatchzip",
+      "name": "hatchzip",
+      "owner": "xevrion",
+      "url": "https://github.com/xevrion/hatchzip",
+      "description": "HatchZip is a free, open-source archive extractor for Windows, macOS and Linux that extracts ZIP, 7z, RAR, tar and split archives in place, so it needs free space for the extracted files only. Desktop app and CLI.",
+      "language": "Rust",
+      "stars": 2011,
+      "forks": 56,
+      "starsToday": 0,
+      "topics": [
+        "7z",
+        "7zip",
+        "archive",
+        "archive-extractor",
+        "cli",
+        "crash-safe",
+        "disk-space",
+        "extract"
+      ],
+      "createdAt": "2026-10-21T17:29:28Z",
+      "updatedAt": "2026-10-26T13:44:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 3,
+      "fullName": "ikow/php2shell-poc",
+      "name": "php2shell-poc",
+      "owner": "ikow",
+      "url": "https://github.com/ikow/php2shell-poc",
+      "description": "CVE-2026-109618/109619 — 5 RCE chains + detection rules (Suricata, Sigma, ModSecurity). PHP session.upload_progress pre-auth exploit research.",
+      "language": "Python",
+      "stars": 1820,
+      "forks": 628,
+      "starsToday": 0,
+      "topics": [
+        "cve-2026-109618",
+        "cve-2026-109619",
+        "detection-rules",
+        "exploit",
+        "php-exploit",
+        "php-security",
+        "php2shell",
+        "poc"
+      ],
+      "createdAt": "2026-10-21T07:55:16Z",
+      "updatedAt": "2026-10-26T13:25:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 4,
+      "fullName": "9bie/php2shell-bypass-aslr-exp",
+      "name": "php2shell-bypass-aslr-exp",
+      "owner": "9bie",
+      "url": "https://github.com/9bie/php2shell-bypass-aslr-exp",
+      "description": "A php2shell exploit that requires no modifications to the official version, and does not require display_errors or limit_memory.",
+      "language": "Python",
+      "stars": 1466,
+      "forks": 423,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T11:11:57Z",
+      "updatedAt": "2026-10-26T14:01:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 5,
+      "fullName": "openai/php2shell-checker",
+      "name": "php2shell-checker",
+      "owner": "openai",
+      "url": "https://github.com/openai/php2shell-checker",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 1408,
+      "forks": 134,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T00:29:12Z",
+      "updatedAt": "2026-10-26T12:40:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 6,
+      "fullName": "colinhacks/reylo",
+      "name": "reylo",
+      "owner": "colinhacks",
+      "url": "https://github.com/colinhacks/reylo",
+      "description": "Import .sql files into TypeScript with full type inference and zero codegen.",
+      "language": "Rust",
+      "stars": 1292,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T00:16:54Z",
+      "updatedAt": "2026-10-26T13:42:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 7,
+      "fullName": "lyramakesmusic/neuron-explorer",
+      "name": "neuron-explorer",
+      "owner": "lyramakesmusic",
+      "url": "https://github.com/lyramakesmusic/neuron-explorer",
+      "description": "Steering-first neuron explorer for Qwen3.5-4B: push every MLP neuron, keep every rollout, browse the results",
+      "language": "Python",
+      "stars": 1097,
+      "forks": 118,
+      "starsToday": 0,
+      "topics": [
+        "interpretability",
+        "mechanistic-interpretability",
+        "qwen",
+        "steering"
+      ],
+      "createdAt": "2026-10-21T04:09:05Z",
+      "updatedAt": "2026-10-26T14:03:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 8,
+      "fullName": "eness/php2shell-CVE-2026-109618-CVE-2026-109619-PoC",
+      "name": "php2shell-CVE-2026-109618-CVE-2026-109619-PoC",
+      "owner": "eness",
+      "url": "https://github.com/eness/php2shell-CVE-2026-109618-CVE-2026-109619-PoC",
+      "description": "Proof-of-Concept (PoC) exploit for php2shell (CVE-2026-109618 / CVE-2026-109619), demonstrating remote code execution in vulnerable PHP environments. For security research and educational purposes only.",
+      "language": "Shell",
+      "stars": 1015,
+      "forks": 256,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T08:31:43Z",
+      "updatedAt": "2026-10-26T12:02:48Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 9,
+      "fullName": "udhaykumarbala/cleanyourtv-app",
+      "name": "cleanyourtv-app",
+      "owner": "udhaykumarbala",
+      "url": "https://github.com/udhaykumarbala/cleanyourtv-app",
+      "description": "A community-built phone app for Clean Your TV: clean up an Android TV from your phone. No laptop, no coding agent, nothing uninstalled.",
+      "language": "Kotlin",
+      "stars": 690,
+      "forks": 61,
+      "starsToday": 0,
+      "topics": [
+        "adb",
+        "android-tv",
+        "debloat",
+        "fire-tv",
+        "google-tv",
+        "launcher"
+      ],
+      "createdAt": "2026-10-21T12:42:09Z",
+      "updatedAt": "2026-10-26T13:56:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 10,
+      "fullName": "zita-ch/supermimic_vibed",
+      "name": "supermimic_vibed",
+      "owner": "zita-ch",
+      "url": "https://github.com/zita-ch/supermimic_vibed",
+      "description": "vibe coded supermimic within 1h, LAFAN passed within 1.5 gpuh training",
+      "language": "Python",
+      "stars": 595,
+      "forks": 58,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T17:29:28Z",
+      "updatedAt": "2026-10-26T14:03:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 11,
+      "fullName": "Alejandros17487/ai-jailbreaks",
+      "name": "ai-jailbreaks",
+      "owner": "Alejandros17487",
+      "url": "https://github.com/Alejandros17487/ai-jailbreaks",
+      "description": "AI jailbreaks: 35 paste-ready AI jailbreak prompts for 25+ frontier and open-weight models - system prompts, AGENTS.md specs, and Ollama Modelfiles. Built for AI security research and red-team testing.",
+      "language": "",
+      "stars": 491,
+      "forks": 95,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-safety",
+        "jailbreak",
+        "jailbreaking",
+        "privacy",
+        "safety",
+        "security"
+      ],
+      "createdAt": "2026-10-21T14:44:06Z",
+      "updatedAt": "2026-10-26T14:02:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 12,
+      "fullName": "WoYun520/dsh-purge",
+      "name": "dsh-purge",
+      "owner": "WoYun520",
+      "url": "https://github.com/WoYun520/dsh-purge",
+      "description": "DeepSeek Harness 破甲 (mirror of mmparko/dsh-purge) — 全量镜像：全部分支/100 个 tag/完整提交历史。原作者署名见 README。",
+      "language": "JavaScript",
+      "stars": 445,
+      "forks": 730,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T01:35:52Z",
+      "updatedAt": "2026-10-26T11:23:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 13,
+      "fullName": "agharsallah/esp-labs-web",
+      "name": "esp-labs-web",
+      "owner": "agharsallah",
+      "url": "https://github.com/agharsallah/esp-labs-web",
+      "description": "The ESP32-S3 bench guide as a React app: live pinout, lessons with interactive simulators, a code reader for the esp-labs firmware, and the bench log. In 11 languages.",
+      "language": "TypeScript",
+      "stars": 327,
+      "forks": 48,
+      "starsToday": 0,
+      "topics": [
+        "education",
+        "electronics",
+        "embedded",
+        "esp32",
+        "esp32-s3",
+        "i18n",
+        "interactive-learning",
+        "pinout"
+      ],
+      "createdAt": "2026-10-21T13:40:04Z",
+      "updatedAt": "2026-10-26T12:14:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 14,
+      "fullName": "JMS1717/ming-voice",
+      "name": "ming-voice",
+      "owner": "JMS1717",
+      "url": "https://github.com/JMS1717/ming-voice",
+      "description": "Low-latency local speech-to-speech voice assistant with Ming-3.0-audio-tiny on AMD and Nvidia GPUs. Easy setup on Windows and Linux",
+      "language": "Python",
+      "stars": 308,
+      "forks": 16,
+      "starsToday": 0,
+      "topics": [
+        "amd",
+        "local-llm",
+        "radeon",
+        "realtime",
+        "rocm",
+        "speech-to-speech",
+        "triton",
+        "voice-assistant"
+      ],
+      "createdAt": "2026-10-21T01:08:35Z",
+      "updatedAt": "2026-10-26T13:41:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 15,
+      "fullName": "atbfun/ATBGamePort",
+      "name": "ATBGamePort",
+      "owner": "atbfun",
+      "url": "https://github.com/atbfun/ATBGamePort",
+      "description": "Transplant all the games to the web platform",
+      "language": "Python",
+      "stars": 303,
+      "forks": 59,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T01:29:33Z",
+      "updatedAt": "2026-10-26T09:03:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 16,
+      "fullName": "quanhoangindex/ascii-reveal",
+      "name": "ascii-reveal",
+      "owner": "quanhoangindex",
+      "url": "https://github.com/quanhoangindex/ascii-reveal",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 301,
+      "forks": 28,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T12:12:04Z",
+      "updatedAt": "2026-10-26T13:46:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 17,
+      "fullName": "NCSC-NL/php2shell",
+      "name": "php2shell",
+      "owner": "NCSC-NL",
+      "url": "https://github.com/NCSC-NL/php2shell",
+      "description": "Operational information regarding the 2026 php2shell vulnerabilities",
+      "language": "Python",
+      "stars": 300,
+      "forks": 101,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T10:21:40Z",
+      "updatedAt": "2026-10-26T13:29:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 18,
+      "fullName": "KardDev/dsh-plugins",
+      "name": "dsh-plugins",
+      "owner": "KardDev",
+      "url": "https://github.com/KardDev/dsh-plugins",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 287,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T01:39:43Z",
+      "updatedAt": "2026-10-26T10:21:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 19,
+      "fullName": "helloianneo/ian-xhs-carousel",
+      "name": "ian-xhs-carousel",
+      "owner": "helloianneo",
+      "url": "https://github.com/helloianneo/ian-xhs-carousel",
+      "description": "把文章、案例或笔记排成 3:4 小红书图文 | 1080×1440 | 20 个母版 | 浅色 / 深色 | Claude Code Skill",
+      "language": "HTML",
+      "stars": 269,
+      "forks": 20,
+      "starsToday": 0,
+      "topics": [
+        "ai-agent",
+        "carousel",
+        "chinese",
+        "claude-code",
+        "claude-skill",
+        "design",
+        "xiaohongshu"
+      ],
+      "createdAt": "2026-10-21T07:58:58Z",
+      "updatedAt": "2026-10-26T13:38:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 20,
+      "fullName": "CuboiLeo/SuperMimic-Reproduced",
+      "name": "SuperMimic-Reproduced",
+      "owner": "CuboiLeo",
+      "url": "https://github.com/CuboiLeo/SuperMimic-Reproduced",
+      "description": "Reproduction of SuperMimic (arXiv:2610.28480): learned differentiable world model + BPTT policy for G1 humanoid motion tracking, on mjlab/MuJoCo Warp",
+      "language": "Python",
+      "stars": 247,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T23:36:13Z",
+      "updatedAt": "2026-10-26T13:13:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 21,
+      "fullName": "recursive-oss/rec",
+      "name": "rec",
+      "owner": "recursive-oss",
+      "url": "https://github.com/recursive-oss/rec",
+      "description": "Our lightning-fast inference engine.",
+      "language": "Python",
+      "stars": 223,
+      "forks": 35,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T15:35:55Z",
+      "updatedAt": "2026-10-26T13:46:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 22,
+      "fullName": "lasharor/cleanyourtv-WebOS",
+      "name": "cleanyourtv-WebOS",
+      "owner": "lasharor",
+      "url": "https://github.com/lasharor/cleanyourtv-WebOS",
+      "description": "A clean home screen for rooted LG webOS TVs, with an optional debloat of LG's ads and telemetry.",
+      "language": "HTML",
+      "stars": 222,
+      "forks": 24,
+      "starsToday": 0,
+      "topics": [
+        "homescreen",
+        "lg",
+        "rootmytv",
+        "webos"
+      ],
+      "createdAt": "2026-10-21T11:43:47Z",
+      "updatedAt": "2026-10-26T13:56:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 23,
+      "fullName": "xingjian-bai/opal",
+      "name": "opal",
+      "owner": "xingjian-bai",
+      "url": "https://github.com/xingjian-bai/opal",
+      "description": "OPAL: a reactive optimizer. A coding agent rewrites the optimizer while your model trains.",
+      "language": "Python",
+      "stars": 212,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [
+        "deep-learning",
+        "llm-agents",
+        "optimizer",
+        "pytorch"
+      ],
+      "createdAt": "2026-10-21T14:17:50Z",
+      "updatedAt": "2026-10-26T13:31:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 24,
+      "fullName": "lklbar666/mcd-saver-checkup",
+      "name": "mcd-saver-checkup",
+      "owner": "lklbar666",
+      "url": "https://github.com/lklbar666/mcd-saver-checkup",
+      "description": "麦当劳省钱体检：不看你想吃什么，先看你已经亏在哪。基于麦当劳中国 MCP 的差价审计 Skill——枚举所有买法，用 calculate-price 逐个复算，报差额、归因与凑单临界点。",
+      "language": "HTML",
+      "stars": 208,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "agent-skill",
+        "chinese",
+        "mcdonalds",
+        "mcp",
+        "price-audit",
+        "python"
+      ],
+      "createdAt": "2026-10-21T03:28:42Z",
+      "updatedAt": "2026-10-26T05:28:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 25,
+      "fullName": "Tencent-Hunyuan/Hy-Nomas",
+      "name": "Hy-Nomas",
+      "owner": "Tencent-Hunyuan",
+      "url": "https://github.com/Tencent-Hunyuan/Hy-Nomas",
+      "description": "Hy-Nomas: Towards Free-form Interactive World Generation",
+      "language": "Python",
+      "stars": 196,
+      "forks": 22,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T03:04:54Z",
+      "updatedAt": "2026-10-26T12:47:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 26,
+      "fullName": "Wunsch2048/codex-bailong-desktop-pet",
+      "name": "codex-bailong-desktop-pet",
+      "owner": "Wunsch2048",
+      "url": "https://github.com/Wunsch2048/codex-bailong-desktop-pet",
+      "description": "Codex&GPT桌宠数据中心 | 你桌面的龙娘小助手：任务状态、完成提醒、额度与Token日报。",
+      "language": "Python",
+      "stars": 193,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [
+        "bailong",
+        "codex",
+        "desktop-assistant",
+        "desktop-pet",
+        "pyside6",
+        "token-usage",
+        "windows"
+      ],
+      "createdAt": "2026-10-21T04:17:15Z",
+      "updatedAt": "2026-10-26T14:00:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 27,
+      "fullName": "lusouldepth-ai/FDE_Learning",
+      "name": "FDE_Learning",
+      "owner": "lusouldepth-ai",
+      "url": "https://github.com/lusouldepth-ai/FDE_Learning",
+      "description": "",
+      "language": "Python",
+      "stars": 190,
+      "forks": 29,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T07:37:12Z",
+      "updatedAt": "2026-10-25T09:27:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 28,
+      "fullName": "dk23lhl/termius-mcp",
+      "name": "termius-mcp",
+      "owner": "dk23lhl",
+      "url": "https://github.com/dk23lhl/termius-mcp",
+      "description": "Your Termius sessions, ready for AI. Read terminals, run commands, and track native SFTP uploads through MCP. Community adapter for macOS Termius 9.38.1.",
+      "language": "Python",
+      "stars": 188,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T15:46:44Z",
+      "updatedAt": "2026-10-26T13:22:25Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 29,
+      "fullName": "h9-tec/ai-roadmap-2026",
+      "name": "ai-roadmap-2026",
+      "owner": "h9-tec",
+      "url": "https://github.com/h9-tec/ai-roadmap-2026",
+      "description": "AI Roadmap 2026: a beginner's path through Foundations, LLM Engineering, Agents, Evaluation, and Production, with verified free resources and a mini-project per layer",
+      "language": "",
+      "stars": 168,
+      "forks": 19,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-engineering",
+        "evaluation",
+        "learning-path",
+        "llm",
+        "rag",
+        "roadmap"
+      ],
+      "createdAt": "2026-10-21T12:23:43Z",
+      "updatedAt": "2026-10-26T13:58:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 30,
+      "fullName": "devploit/php2shell",
+      "name": "php2shell",
+      "owner": "devploit",
+      "url": "https://github.com/devploit/php2shell",
+      "description": "PHP2Shell: version-aware research toolkit for CVE-2026-109618 / CVE-2026-109619 — pre-auth RCE in PHP session.upload_progress (mod_php). Build profiles, labs, heap calibration and detection guidance for authorized security testing.",
+      "language": "Python",
+      "stars": 166,
+      "forks": 54,
+      "starsToday": 0,
+      "topics": [
+        "cve-2026-109618",
+        "cve-2026-109619",
+        "exploit",
+        "mod-php",
+        "penetration-testing",
+        "php",
+        "php-security",
+        "php2shell"
+      ],
+      "createdAt": "2026-10-21T22:53:01Z",
+      "updatedAt": "2026-10-26T11:29:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 31,
+      "fullName": "browser-use/rl-env-use",
+      "name": "rl-env-use",
+      "owner": "browser-use",
+      "url": "https://github.com/browser-use/rl-env-use",
+      "description": "Build RL environments for any domain from real cases that Browser Use agents mine from the web",
+      "language": "HTML",
+      "stars": 159,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T04:31:55Z",
+      "updatedAt": "2026-10-26T05:16:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 32,
+      "fullName": "HOSTED-POWER/php_uploadprogress_guard",
+      "name": "php_uploadprogress_guard",
+      "owner": "HOSTED-POWER",
+      "url": "https://github.com/HOSTED-POWER/php_uploadprogress_guard",
+      "description": "Protects an unpatched PHP against php2shell (CVE-2026-109618 / CVE-2026-109619): a small extension that mirrors the official fix component by component and steps aside once the engine carries it. PHP 5.6-8.5; Sury, cPanel EA4, DirectAdmin, Docker, Windows.",
+      "language": "C",
+      "stars": 159,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [
+        "cve-2026-109618",
+        "cve-2026-109619",
+        "mitigation",
+        "php",
+        "php-extension",
+        "php2shell",
+        "security"
+      ],
+      "createdAt": "2026-10-21T09:00:12Z",
+      "updatedAt": "2026-10-26T12:52:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 33,
+      "fullName": "bhoult/correlation",
+      "name": "correlation",
+      "owner": "bhoult",
+      "url": "https://github.com/bhoult/correlation",
+      "description": "Do stock correlations predict the market? 66 pre-registered tests, the data, and a triple pendulum that explains why not. If you have an idea you want me to try, submit it as a PR and I will test it and get back to you.",
+      "language": "Python",
+      "stars": 158,
+      "forks": 28,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T22:54:00Z",
+      "updatedAt": "2026-10-26T11:53:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 34,
+      "fullName": "headmaster247/mcvalue-mate",
+      "name": "mcvalue-mate",
+      "owner": "headmaster247",
+      "url": "https://github.com/headmaster247/mcvalue-mate",
+      "description": "McValue Mate — Budget-aware meal planning powered by McDonald's China MCP.",
+      "language": "Python",
+      "stars": 157,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T19:00:16Z",
+      "updatedAt": "2026-10-25T16:07:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 35,
+      "fullName": "l0ng-ai/openidea",
+      "name": "openidea",
+      "owner": "l0ng-ai",
+      "url": "https://github.com/l0ng-ai/openidea",
+      "description": "The IDE you know, rebuilt in Rust. IntelliJ IDEA–style keymap, tool windows and search-everywhere in a fast native app: editor, code insight, debugger, Git, terminal, database and HTTP clients for 60+ languages.",
+      "language": "TypeScript",
+      "stars": 154,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [
+        "code-editor",
+        "cross-platform",
+        "dap",
+        "database-client",
+        "debugger",
+        "desktop-app",
+        "developer-tools",
+        "git"
+      ],
+      "createdAt": "2026-10-21T12:23:14Z",
+      "updatedAt": "2026-10-26T12:21:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 36,
+      "fullName": "victaphu/glass-home-samsung-tv",
+      "name": "glass-home-samsung-tv",
+      "owner": "victaphu",
+      "url": "https://github.com/victaphu/glass-home-samsung-tv",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 150,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T12:11:11Z",
+      "updatedAt": "2026-10-26T14:02:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 37,
+      "fullName": "JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe",
+      "name": "Hackintosh-XPS13Plus-IrisXe-Tahoe",
+      "owner": "JulioNectar",
+      "url": "https://github.com/JulioNectar/Hackintosh-XPS13Plus-IrisXe-Tahoe",
+      "description": "Intel Iris Xe (Raptor Lake) Metal acceleration on macOS Tahoe — Dell XPS 13 Plus 9320 OpenCore hackintosh. Work in progress.",
+      "language": "C++",
+      "stars": 145,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [
+        "hackintosh",
+        "intel-gpu",
+        "iris-xe",
+        "macos-tahoe",
+        "metal",
+        "nootedgreen",
+        "opencore",
+        "raptor-lake"
+      ],
+      "createdAt": "2026-10-21T01:00:15Z",
+      "updatedAt": "2026-10-26T10:47:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 38,
+      "fullName": "Ryder191/haloflux",
+      "name": "haloflux",
+      "owner": "Ryder191",
+      "url": "https://github.com/Ryder191/haloflux",
+      "description": "Beat-driven sci-fi light-ring visualization. Pure Canvas, single HTML, zero dependencies. Noncommercial use only. RYDER CODE / Ms MAIKEBAIs CAT ｜ 节拍驱动的科幻光环数据可视化，纯原生 Canvas 单文件 HTML、零依赖，支持 Wallpaper Engine 动态壁纸。仅限非商业使用，严禁商用。",
+      "language": "HTML",
+      "stars": 144,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [
+        "canvas",
+        "generative-art",
+        "html5",
+        "live-wallpaper",
+        "sci-fi",
+        "visualization",
+        "wallpaper",
+        "wallpaper-engine"
+      ],
+      "createdAt": "2026-10-21T12:21:48Z",
+      "updatedAt": "2026-10-26T13:52:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 39,
+      "fullName": "syrex1013/php2shell",
+      "name": "php2shell",
+      "owner": "syrex1013",
+      "url": "https://github.com/syrex1013/php2shell",
+      "description": "CVE-2026-109618/109619 PoC — PHP session.upload_progress heap use-after-free (CVSS 9.2)",
+      "language": "Python",
+      "stars": 143,
+      "forks": 88,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-21T15:06:33Z",
+      "updatedAt": "2026-10-26T08:47:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 40,
+      "fullName": "heterodoxin/AbliteratedOutTheBox",
+      "name": "AbliteratedOutTheBox",
+      "owner": "heterodoxin",
+      "url": "https://github.com/heterodoxin/AbliteratedOutTheBox",
+      "description": "llama.cpp fork that abliterates at inference",
+      "language": "C++",
+      "stars": 140,
+      "forks": 16,
+      "starsToday": 0,
+      "topics": [
+        "abliteration",
+        "ai",
+        "inference",
+        "llama-cpp",
+        "llm",
+        "llms"
+      ],
+      "createdAt": "2026-10-21T21:54:10Z",
+      "updatedAt": "2026-10-26T13:16:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 41,
+      "fullName": "2dust/v2rayN",
+      "name": "v2rayN",
+      "owner": "2dust",
+      "url": "https://github.com/2dust/v2rayN",
+      "description": "A GUI client for Windows, Linux and macOS, support Xray and sing-box and others",
+      "language": "C#",
+      "stars": 119149,
+      "forks": 16172,
+      "starsToday": 0,
+      "topics": [
+        "proxy",
+        "shadowsocks",
+        "socks5",
+        "trojan",
+        "v2fly",
+        "v2ray",
+        "vless",
+        "vmess"
+      ],
+      "createdAt": "2019-07-30T03:47:24Z",
+      "updatedAt": "2026-10-26T14:04:41Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 42,
+      "fullName": "d3/d3",
+      "name": "d3",
+      "owner": "d3",
+      "url": "https://github.com/d3/d3",
+      "description": "Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
+      "language": "Shell",
+      "stars": 113799,
+      "forks": 22647,
+      "starsToday": 0,
+      "topics": [
+        "chart",
+        "charts",
+        "d3",
+        "data-visualization",
+        "svg",
+        "visualization"
+      ],
+      "createdAt": "2010-09-27T17:22:42Z",
+      "updatedAt": "2026-10-26T12:01:27Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 43,
+      "fullName": "microsoft/ML-For-Beginners",
+      "name": "ML-For-Beginners",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/ML-For-Beginners",
+      "description": "12 weeks, 26 lessons, 52 quizzes, classic Machine Learning for all",
+      "language": "Jupyter Notebook",
+      "stars": 91763,
+      "forks": 22731,
+      "starsToday": 0,
+      "topics": [
+        "data-science",
+        "education",
+        "machine-learning",
+        "machine-learning-algorithms",
+        "machinelearning",
+        "machinelearning-python",
+        "microsoft-for-beginners",
+        "ml"
+      ],
+      "createdAt": "2021-03-03T01:34:05Z",
+      "updatedAt": "2026-10-26T13:39:40Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 44,
+      "fullName": "jesseduffield/lazygit",
+      "name": "lazygit",
+      "owner": "jesseduffield",
+      "url": "https://github.com/jesseduffield/lazygit",
+      "description": "simple terminal UI for git commands",
+      "language": "Go",
+      "stars": 83427,
+      "forks": 3126,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "git",
+        "terminal"
+      ],
+      "createdAt": "2018-05-19T00:53:06Z",
+      "updatedAt": "2026-10-26T13:47:05Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 45,
+      "fullName": "hiyouga/LlamaFactory",
+      "name": "LlamaFactory",
+      "owner": "hiyouga",
+      "url": "https://github.com/hiyouga/LlamaFactory",
+      "description": "Unified Efficient Fine-Tuning of 100+ LLMs & VLMs (ACL 2024)",
+      "language": "Python",
+      "stars": 75741,
+      "forks": 9297,
+      "starsToday": 0,
+      "topics": [
+        "agent",
+        "ai",
+        "deepseek",
+        "fine-tuning",
+        "gemma",
+        "gpt",
+        "instruction-tuning",
+        "large-language-models"
+      ],
+      "createdAt": "2023-05-28T10:09:12Z",
+      "updatedAt": "2026-10-26T12:09:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 46,
+      "fullName": "eternity4719/HowToLiveBetter",
+      "name": "HowToLiveBetter",
+      "owner": "eternity4719",
+      "url": "https://github.com/eternity4719/HowToLiveBetter",
+      "description": "高性价比人生指南: 长寿防病、急救、省钱理财、法律红线、失业与工伤、医保社保、恋爱婚育、怀孕育儿、创业与做平台合规、出国与技能。每条写明成本、收益、证据等级和原始出处，只引期刊论文与官方文件。",
+      "language": "HTML",
+      "stars": 69389,
+      "forks": 6015,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-09-07T01:53:36Z",
+      "updatedAt": "2026-10-26T14:04:44Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 47,
+      "fullName": "leonardomso/33-js-concepts",
+      "name": "33-js-concepts",
+      "owner": "leonardomso",
+      "url": "https://github.com/leonardomso/33-js-concepts",
+      "description": "📜 33 JavaScript concepts every developer should know.",
+      "language": "JavaScript",
+      "stars": 66527,
+      "forks": 9123,
+      "starsToday": 0,
+      "topics": [
+        "angular",
+        "concepts",
+        "es6",
+        "es6-javascript",
+        "hacktoberfest",
+        "javascript",
+        "javascript-closures",
+        "javascript-engines"
+      ],
+      "createdAt": "2018-09-04T13:27:04Z",
+      "updatedAt": "2026-10-26T12:25:59Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 48,
+      "fullName": "ultralytics/yolov5",
+      "name": "yolov5",
+      "owner": "ultralytics",
+      "url": "https://github.com/ultralytics/yolov5",
+      "description": "Ultralytics YOLOv5 in PyTorch for object detection, instance segmentation, classification, training, and export.",
+      "language": "Python",
+      "stars": 58226,
+      "forks": 17447,
+      "starsToday": 0,
+      "topics": [
+        "computer-vision",
+        "coreml",
+        "deep-learning",
+        "image-classification",
+        "inference",
+        "instance-segmentation",
+        "model-export",
+        "model-training"
+      ],
+      "createdAt": "2020-05-18T03:45:11Z",
+      "updatedAt": "2026-10-26T14:05:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 49,
+      "fullName": "serhii-londar/open-source-mac-os-apps",
+      "name": "open-source-mac-os-apps",
+      "owner": "serhii-londar",
+      "url": "https://github.com/serhii-londar/open-source-mac-os-apps",
+      "description": "🚀 Awesome list of open source applications for macOS. https://t.me/s/opensourcemacosapps",
+      "language": "",
+      "stars": 51048,
+      "forks": 3113,
+      "starsToday": 0,
+      "topics": [
+        "applications",
+        "apps",
+        "awesome",
+        "awesome-list",
+        "c",
+        "c-plus-plus",
+        "hacktoberfest",
+        "javascript"
+      ],
+      "createdAt": "2017-11-03T02:35:33Z",
+      "updatedAt": "2026-10-26T12:52:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 50,
+      "fullName": "AlistGo/alist",
+      "name": "alist",
+      "owner": "AlistGo",
+      "url": "https://github.com/AlistGo/alist",
+      "description": "🗂️A file list/WebDAV program that supports multiple storages, powered by Gin and Solidjs. / 一个支持多存储的文件列表/WebDAV程序，使用 Gin 和 Solidjs。",
+      "language": "Go",
+      "stars": 50366,
+      "forks": 7914,
+      "starsToday": 0,
+      "topics": [
+        "file-server",
+        "gin",
+        "golang",
+        "onedrive",
+        "solidjs",
+        "webdav"
+      ],
+      "createdAt": "2020-12-23T17:40:29Z",
+      "updatedAt": "2026-10-26T13:15:46Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 51,
+      "fullName": "gogs/gogs",
+      "name": "gogs",
+      "owner": "gogs",
+      "url": "https://github.com/gogs/gogs",
+      "description": "The painless way to host your own Git service",
+      "language": "Go",
+      "stars": 47903,
+      "forks": 5074,
+      "starsToday": 0,
+      "topics": [
+        "docker",
+        "git",
+        "go",
+        "gogs",
+        "mysql",
+        "postgresql",
+        "raspberry-pi",
+        "self-hosted"
+      ],
+      "createdAt": "2014-02-12T01:57:08Z",
+      "updatedAt": "2026-10-26T14:03:51Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 52,
+      "fullName": "9001/copyparty",
+      "name": "copyparty",
+      "owner": "9001",
+      "url": "https://github.com/9001/copyparty",
+      "description": "Portable file server with accelerated resumable uploads, dedup, WebDAV, SFTP, FTP, TFTP, zeroconf, media indexer, thumbnails++ all in one file",
+      "language": "Python",
+      "stars": 47138,
+      "forks": 1913,
+      "starsToday": 0,
+      "topics": [
+        "copyparty",
+        "file-server",
+        "file-sharing",
+        "file-upload-server",
+        "ftp-server",
+        "nas-frontend",
+        "tftp-server",
+        "webdav-server"
+      ],
+      "createdAt": "2019-05-26T15:28:33Z",
+      "updatedAt": "2026-10-26T13:29:28Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 53,
+      "fullName": "android/architecture-samples",
+      "name": "architecture-samples",
+      "owner": "android",
+      "url": "https://github.com/android/architecture-samples",
+      "description": "A collection of samples to discuss and showcase different architectural tools and patterns for Android apps.",
+      "language": "Kotlin",
+      "stars": 45876,
+      "forks": 11851,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "android-architecture",
+        "sample",
+        "samples"
+      ],
+      "createdAt": "2016-02-05T13:42:07Z",
+      "updatedAt": "2026-10-26T03:05:22Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 54,
+      "fullName": "GyulyVGC/sniffnet",
+      "name": "sniffnet",
+      "owner": "GyulyVGC",
+      "url": "https://github.com/GyulyVGC/sniffnet",
+      "description": "Comfortably monitor your network traffic 🕵️‍♂️",
+      "language": "Rust",
+      "stars": 41700,
+      "forks": 1939,
+      "starsToday": 0,
+      "topics": [
+        "app",
+        "application",
+        "cybersecurity",
+        "gui",
+        "iced",
+        "ip-geolocation",
+        "ipfix",
+        "linux"
+      ],
+      "createdAt": "2022-07-31T21:55:56Z",
+      "updatedAt": "2026-10-26T12:32:55Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 55,
+      "fullName": "remoteintech/remote-jobs",
+      "name": "remote-jobs",
+      "owner": "remoteintech",
+      "url": "https://github.com/remoteintech/remote-jobs",
+      "description": "Source for remoteintech.company — a community-maintained directory of remote-friendly tech companies",
+      "language": "JavaScript",
+      "stars": 40935,
+      "forks": 3953,
+      "starsToday": 0,
+      "topics": [
+        "distributed-companies",
+        "hacktoberfest",
+        "jobs-search",
+        "jobsearch",
+        "jobseeker",
+        "remote",
+        "remote-companies",
+        "remote-job"
+      ],
+      "createdAt": "2015-10-13T03:49:25Z",
+      "updatedAt": "2026-10-26T14:01:53Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 56,
+      "fullName": "google/googletest",
+      "name": "googletest",
+      "owner": "google",
+      "url": "https://github.com/google/googletest",
+      "description": "GoogleTest - Google Testing and Mocking Framework",
+      "language": "C++",
+      "stars": 39664,
+      "forks": 10924,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2015-07-28T15:07:53Z",
+      "updatedAt": "2026-10-26T10:41:50Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 57,
+      "fullName": "microsoft/Data-Science-For-Beginners",
+      "name": "Data-Science-For-Beginners",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/Data-Science-For-Beginners",
+      "description": "10 Weeks, 20 Lessons, Data Science for All!",
+      "language": "Jupyter Notebook",
+      "stars": 37708,
+      "forks": 7596,
+      "starsToday": 0,
+      "topics": [
+        "data-analysis",
+        "data-science",
+        "data-visualization",
+        "microsoft-for-beginners",
+        "pandas",
+        "python"
+      ],
+      "createdAt": "2021-03-03T16:30:15Z",
+      "updatedAt": "2026-10-26T13:35:59Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 58,
+      "fullName": "koajs/koa",
+      "name": "koa",
+      "owner": "koajs",
+      "url": "https://github.com/koajs/koa",
+      "description": "Expressive middleware for node.js using ES2017 async functions",
+      "language": "JavaScript",
+      "stars": 35685,
+      "forks": 3240,
+      "starsToday": 0,
+      "topics": [
+        "koa"
+      ],
+      "createdAt": "2013-07-20T18:53:45Z",
+      "updatedAt": "2026-10-26T04:41:33Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 59,
+      "fullName": "pmndrs/react-three-fiber",
+      "name": "react-three-fiber",
+      "owner": "pmndrs",
+      "url": "https://github.com/pmndrs/react-three-fiber",
+      "description": "🇨🇭 A React renderer for Three.js",
+      "language": "TypeScript",
+      "stars": 33251,
+      "forks": 2050,
+      "starsToday": 0,
+      "topics": [
+        "3d",
+        "animation",
+        "fiber",
+        "react",
+        "renderer",
+        "threejs"
+      ],
+      "createdAt": "2019-02-25T14:31:51Z",
+      "updatedAt": "2026-10-26T13:14:57Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    },
+    {
+      "rank": 60,
+      "fullName": "liquidslr/leetcode-company-wise-problems",
+      "name": "leetcode-company-wise-problems",
+      "owner": "liquidslr",
+      "url": "https://github.com/liquidslr/leetcode-company-wise-problems",
+      "description": "Lists of company wise questions. Every csv file in the companies directory corresponds to a list of questions on leetcode for a specific company based on the leetcode company tags. Updated as of 20 Oct, 2025",
+      "language": "",
+      "stars": 32773,
+      "forks": 6393,
+      "starsToday": 0,
+      "topics": [
+        "amazon-interview",
+        "google-interview",
+        "interview",
+        "meta-interview",
+        "online-assessment",
+        "uber-interview"
+      ],
+      "createdAt": "2024-12-31T19:58:45Z",
+      "updatedAt": "2026-10-26T14:05:33Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false
+    }
+  ]
+}

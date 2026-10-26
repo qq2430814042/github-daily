@@ -1,0 +1,18 @@
+{
+  "name": "github-daily",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "每天更新前一天的 GitHub 热门仓库，并推送到微信",
+  "scripts": {
+    "fetch": "node scripts/fetch.mjs",
+    "push": "node scripts/push.mjs",
+    "daily": "node scripts/fetch.mjs && node scripts/push.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "cheerio": "^1.2.0"
+  }
+}
