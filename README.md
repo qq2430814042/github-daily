@@ -5,7 +5,7 @@
 - 每日榜单：新项目、Trending、高星项目合并去重
 - 手机优先：支持搜索、语言筛选、按 Star 数/涨星数排序、收藏
 - 历史归档：每天一个 JSON 文件，日期可回看
-- 微信推送：通过 PushPlus 每天推送 Top 8 和完整榜单链接
+- 微信推送：通过 Server酱 或 PushPlus 每天推送 Top 8 和完整榜单链接
 - 零成本：GitHub Actions + GitHub Pages，无需服务器
 
 ## 工作原理
@@ -17,7 +17,7 @@
    - GitHub Search API：总 Star 超过 1000、前一天有推送的仓库
 3. 合并、去重、排序后写入 `docs/data/YYYY-MM-DD.json`，并更新 `docs/data/index.json`。
 4. 数据自动提交回仓库，GitHub Pages 部署 `docs` 目录。
-5. 部署完成后运行 `scripts/push.mjs`，通过 PushPlus 推送到微信。
+5. 部署完成后运行 `scripts/push.mjs`，通过 Server酱 或 PushPlus 推送到微信。
 
 默认抓取日期是北京时间的前一天，所以早上看到的是完整的前一天榜单。
 
@@ -59,17 +59,16 @@ https://<你的用户名>.github.io/<仓库名>/
 
 ### 4. 配置微信推送
 
-推荐使用 [PushPlus](https://www.pushplus.plus)：
+推荐使用 [Server酱](https://sct.ftqq.com)，免费且不需要实名：
 
-1. 微信扫码登录 PushPlus，关注它的微信公众号。
-2. 在「一对一消息」里复制你的 token。
+1. 打开 Server酱，微信扫码登录并关注它的微信服务号。
+2. 点顶部「Key&API」，复制以 `SCT` 开头的 SendKey。
 3. 回到 GitHub 仓库，进入 `Settings` → `Secrets and variables` → `Actions` → `New repository secret`。
-4. 名称填 `PUSHPLUS_TOKEN`，值填刚才复制的 token。
+4. 名称填 `SERVERCHAN_SENDKEY`，值填刚才复制的 SendKey。
 
-如果不想用 PushPlus，也可以配置 Server酱：
+Server酱免费版每天最多 5 条，微信通知主要展示标题，完整榜单可以在消息详情或网页中查看。
 
-- 在 [Server酱](https://sct.ftqq.com) 获取 SendKey。
-- 添加仓库 Secret，名称为 `SERVERCHAN_SENDKEY`。
+PushPlus 也可以使用，但 2024 年起要求实名认证（需要身份证并付费/开通会员）后才能调用发送接口。如果账号已经实名，可以添加 Secret `PUSHPLUS_TOKEN`。
 
 两个都配置时会同时发送；不配置任何推送渠道时，抓取和页面仍会正常运行，只跳过推送。
 
@@ -117,7 +116,7 @@ python -m http.server 4173 --directory docs
 本地推送需要先设置环境变量：
 
 ```powershell
-$env:PUSHPLUS_TOKEN="你的 PushPlus token"
+$env:SERVERCHAN_SENDKEY="你的 Server酱 SendKey"
 $env:PAGE_URL="https://<你的用户名>.github.io/<仓库名>/"
 npm run push
 ```
@@ -127,8 +126,8 @@ npm run push
 | 变量 | 用途 | 是否必需 |
 | --- | --- | --- |
 | `GITHUB_TOKEN` | 本地抓取时提高 API 限流额度 | 否 |
-| `PUSHPLUS_TOKEN` | PushPlus 微信推送 | 二选一 |
 | `SERVERCHAN_SENDKEY` | Server酱 微信推送 | 二选一 |
+| `PUSHPLUS_TOKEN` | PushPlus 微信推送（需实名） | 二选一 |
 | `PAGE_URL` | 推送消息里的榜单地址，自定义域名时使用 | 否 |
 
 在 GitHub Actions 中，`PAGE_URL` 可以配置成仓库 Variable；不配置时会自动推导 Pages 地址。
@@ -174,9 +173,10 @@ npm run push
 
 **收不到微信推送**
 
-- 确认 Secret 名称是 `PUSHPLUS_TOKEN`
-- 确认 PushPlus 已关注公众号，且 token 完整
-- 检查 Actions 的 `notify` 任务日志
+- 确认 Secret 名称是 `SERVERCHAN_SENDKEY` 或 `PUSHPLUS_TOKEN`
+- 检查 Actions 的 `notify` 任务日志，正常情况下会看到 `ServerChan: sent`
+- Server酱免费版每天最多 5 条，通知卡片主要显示标题
+- PushPlus 返回“账户未通过实名认证”时，需要先完成实名认证，或改用 Server酱
 - PushPlus 的接口返回 `code: 200` 只代表服务端收到请求，实际发送可能稍有延迟
 
 **某一天没有新项目**
