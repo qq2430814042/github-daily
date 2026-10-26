@@ -1,0 +1,140 @@
+SuperGhidra
+
+SuperGhidra: Compilable C Rewriter & Guardrailed Agent MCP Suite.
+
+Python tools that make Ghidra faster to script against, rewrite raw decompiler output into compilable C, and run static binary analyses Ghidra does not include out of the box: MSVC RTTI and MFC CRuntimeClass recovery, Serialize() archive layout tracing, cross-version function and struct-shift matching, and a Z3 equivalence checker for P-code.
+
+Instead of paying 5–15 seconds of JVM startup per headless run or fighting .rep project lock contention while the Ghidra GUI is open, SuperGhidra keeps a single read-only Ghidra instance warm in a background daemon (127.0.0.1:5073) backed by an L2 SQLite cache and a non-destructive JSON write overlay. Heavy binary sweeps and class-layout recovery run in pure Python, NumPy SIMD, or WGPU compute shaders without touching the JVM.
+
+Try It in 60 Seconds
+
+No Ghidra needed, just Python. Recover MSVC RTTI classes and MFC Serialize() layouts straight from a PE file:
+
+pip install superghidra
+superghidra rtti-recover target.dll -o classes.json
+python -m superghidra.formats.serialize_trace target.dll CMyDoc
+
+Want an AI agent (Claude Desktop, Claude Code, Cursor, Antigravity) driving Ghidra without GUI lockups? Install the MCP server and point it at your project; see Agent & MCP Configuration for the config block. GHIDRA_INSTALL_DIR and JAVA_HOME must be set (Ghidra 11/12 + OpenJDK 21):
+
+pip install git+https://github.com/yuatemycat/SuperGhidraMCP.git
+claude mcp add superghidra -- superghidra-mcp -t stdio --project-path
+
+Choose Your Operating Mode First
+
+SuperGhidra spans four distinct execution paths. Pick the entry point that matches your task before running commands:
+
+| What You Want to Do | Entry Point / Command | Requires Ghidra + JVM? | Writes to .rep Directly? |
+| :--- | :--- | :---: | :---: |
+| Decompile real functions, query xrefs, or rename symbols | python ghidra_oracle.py  | Yes (Ghidra 11/12 + OpenJDK 21 + PyGhidra) | No (writes go to JSON overlay / fork journal) |
+| Recover MSVC RTTI, MFC CRuntimeClass, Serialize(), or PE/ELF/Mach-O headers | python -m superghidra.formats.msvc_class_recovery  or superghidra rtti-recover  -o classes.json | No (standalone Python) | No (exports JSON, DWARF 5, Breakpad, or .map) |
+| Connect Claude Desktop, Cursor, or Antigravity to an open target | MCP Server (superghidra-mcp via SuperghidraMCP) | Yes (connects to running daemon) | No (commits gated by validation + overlay sync) |
+| Run GPU/SIMD ARM64 scans, LZ4/Zstd buffer compression, or Z3 P-code checks | Python API / standalone modules (or MCP tools) | No (standalone Python / NumPy / WGPU / Z3) | No |
+
+The superghidra decompile CLI Subcommand is Experimental
+Do not use superghidra decompile to decompile production binaries. The standalone superghidra decompile CLI subcommand invokes an experimental, zero-JVM P-code lifter restricted to a small integer-arithmetic subset (register-to-register mov/add/xor and ret on x86-64; any other instruction exits non-zero). It will exit non-zero or return incomplete output on real functions containing branches, floats, or complex calls.
+To decompile real functions from a Ghidra project, use the Ghidra-backed oracle:
+> python ghidra_oracle.py decompile
+
+How SuperGhidra Compares to Stock Headless & Existing Ghidra MCP Bridges
+
+Most Ghidra automation scripts and MCP servers either pay a 5–15 second JVM cold-start penalty per invocation or bind directly to a single mutable GUI session where concurrent agent edits can corrupt the .rep database or trigger LockException. SuperGhidra separates read-only oracle queries (127.0.0.1:5073) from non-destructive overlay writes (ghidra_overlay.json), while executing bulk binary sweeps and C++/MFC recovery in pure Python, NumPy SIMD, and WGPU without touching the JVM.
+
+| Capability / Architecture | Stock Ghidra Headless | LaurieWired/GhidraMCP | bethington/ghidra-mcp / GhydraMCP | SuperGhidra + SuperGhidraMCP |
+| :--- | :--- | :--- | :--- | :--- |
+| JVM Startup Overhead | 5–15 s per script run | None (requires open GUI) | None (requires open GUI/plugin) | 0 ms after initial daemon boot (127.0.0.1:5073) |
+| Concurrent GUI + Multi-Agent Access | Blocked by .rep project lock | Single mutable GUI state | Single/HTTP bridged GUI state | Lock-free readOnly=True daemon + isolated session forks |
+| Mutation Safety & Conflict Resolution | Direct .rep writes | Direct in-place renames | Direct in-place tool mutations | Non-destructive ghidra_overlay.json + merge_fork conflict detection |
+| Semantic Verification Gate | None | None | None | Z3 P-code equivalence prover + Obligation Ledger Gate (vtable/offset checks) |
+| Query & IPC Latency | Seconds per batch | HTTP / Socket bridge | HTTP / REST bridge | 5.12 µs L1 SHM ring buffer (195,300 msg/s) & **
+5-Minute End-to-End Quickstart
+
+2-Minute End-to-End Walkthrough: Follow docs/WALKTHROUGH_MSVC_MFC_RECOVERY.md for a step-by-step example recovering MSVC RTTI and MFC Serialize() archive layouts, validating candidate renames through ReconstructionObligationLedger, and syncing them live into an open Ghidra CodeBrowser window (superghidra overlay-sync --watch).
+
+Workflow A: Standalone C++ / MSVC / MFC Class Recovery (No Ghidra Required)
+
+Recover MSVC RTTI hierarchies, MFC CRuntimeClass descriptors, and virtual function tables directly from raw PE binaries without requiring Ghidra or a JVM:
+
+Direct module execution
+python -m superghidra.formats.msvc_class_recovery target.dll
+
+Or recover classes and export to JSON via unified CLI
+superghidra rtti-recover target.dll -o classes.json
+
+Trace MFC Serialize() archive field layouts
+python -m superghidra.formats.serialize_trace target.dll CMyDoc
+
+Workflow B: Ghidra Daemon + Oracle Decompilation + GUI Sync
+
+1. Set Environment Variables
+Point SuperGhidra to NSA Ghidra (11.x or 12.x) and OpenJDK 21:
+
+Linux / macOS
+export GHIDRA_INSTALL_DIR="/opt/ghidra"
+export JAVA_HOME="/usr/lib/jvm/java-21-openjdk"
+
+Windows (PowerShell)
+$env:GHIDRA_INSTALL_DIR = "C:\tools\ghidra"
+$env:JAVA_HOME = "C:\Program Files\Eclipse Adoptium\jdk-21"
+
+2. Launch or Query the Persistent Daemon
+Verify the daemon status or launch it with project coordinates:
+
+Check daemon status (auto-reports uptime, cache hit rate, and loaded binary)
+python ghidra_oracle.py status
+
+Run daemon with explicit project paths
+python ghidra_oracle.py --project-dir ~/re/proj --project-name game --program-name libgame.so status
+
+Or launch as a dedicated background server on port 5073
+python ghidra_oracle.py serve --project-dir ~/re/proj --project-name game --program-name libgame.so --mode balanced
+
+You can also define candidate projects globally via SUPERGHIDRA_PROJECTS="dir,name,program]".
+
+3. Decompile and Propose Renames
+Subsequent queries execute in `"
+      ],
+      "env": {
+        "GHIDRA_INSTALL_DIR": "/opt/ghidra",
+        "JAVA_HOME": "/path/to/jdk-21"
+      }
+    }
+  }
+}
+Alternative using uvx: Replace "command": "superghidra-mcp" with "command": "uvx" and set "args" to:json
+["--from", "git+https://github.com/yuatemycat/SuperGhidraMCP.git", "superghidra-mcp", "-t", "stdio", "--project-path", ""]
+Cursor (.cursor/mcp.json) & Antigravity (~/.gemini/config/mcp_config.json)
+
+Both Cursor and Antigravity use standard JSON mcpServers configuration:json
+{
+  "mcpServers": {
+    "superghidra": {
+      "command": "superghidra-mcp",
+      "args": [
+        "-t",
+        "stdio",
+        "--project-path",
+        ""
+      ],
+      "env": {
+        "GHIDRA_INSTALL_DIR": "/opt/ghidra",
+        "JAVA_HOME": "/path/to/jdk-21"
+      }
+    }
+  }
+}
+Claude Code CLI & Streamable HTTP Transport
+
+If running the server via HTTP (superghidra-mcp --transport streamable-http --port 8000):
+
+* Claude Code CLI:bash
+  claude mcp add --transport http superghidra http://127.0.0.1:8000/mcp
+  * HTTP URL Config (Antigravity / Cursor / Claude Desktop):json
+  {
+    "mcpServers": {
+      "superghidra": {
+        "url": "http://127.0.0.1:8000/mcp"
+      }
+    }
+  }
+
+…（内容已截断）

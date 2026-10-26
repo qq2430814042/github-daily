@@ -1,0 +1,116 @@
+OSS Verify: proofs about OSS-Fuzz fuzz targets
+
+OSS-Fuzz runs the fuzz targets of open-source projects to search for inputs that make them fail. This repository holds Rocq proofs that, for some of these fuzz targets, no such input exists within stated limits. Each proof is about compiled binaries, not source code. It shows that, on every input within the limits, the build with a sanitizer behaves like the plain build, and that the sanitizer never detects an error. OSS Verify is a Theorem program; a maintainer enrolls a project at theorem-labs/oss-verify.
+
+60 entry points in 25 libraries have proofs. The proofs are checked with Rocq 9.2.0. They are stated in LPS, a formal model of a Linux process that runs a RISC-V binary.
+
+LPS is best effort and not complete. It describes part of Linux, and it makes some assumptions that it does not check. A proof is only as good as LPS. docs/semantics.md gives the design principles of LPS and its limits.
+
+- What is proved
+- The theorem, in words
+- What a proof does not say
+- Versions
+- Check a proof
+- How the binaries are built
+- Explore the proofs
+- Statements for OSS-Fuzz fuzz targets
+- What you have to trust
+- Repository layout
+
+What is proved
+
+| library | entry point | sanitizer builds proved |
+|---|---|---|
+| boost-beast | http_request | ASan, UBSan, ASan+UBSan |
+| boost-json | fuzz_parse | ASan, UBSan, ASan+UBSan |
+| bzip2 | bzip2_compress_target | ASan, ASan+UBSan |
+| cgif | cgif_file_fuzzer | ASan+UBSan |
+| cgif | cgif_rgb_fuzzer | ASan, ASan+UBSan |
+| cjson | cjson_read_fuzzer | ASan, UBSan, ASan+UBSan |
+| coturn | FuzzStunClient | ASan, UBSan, ASan+UBSan |
+| double-conversion | string_to_double_fuzzer | ASan, UBSan, ASan+UBSan |
+| fast_float | from_chars | ASan, UBSan, ASan+UBSan |
+| glaze | binary_reflection | ASan, UBSan, ASan+UBSan |
+| json-c | json_object_fuzzer | ASan, ASan+UBSan |
+| jsoncons | fuzz_bigint | ASan, UBSan, ASan+UBSan |
+| jsoncons | fuzz_bson_parser_max | ASan |
+| jsoncons | fuzz_json_cursor | ASan, ASan+UBSan |
+| jsoncons | fuzz_json_encoder | ASan, ASan+UBSan |
+| jsoncons | fuzz_msgpack_encoder | ASan |
+| jsoncons | fuzz_ubjson_encoder | ASan, UBSan, ASan+UBSan |
+| jsoncons | fuzz_ubjson_parser_max | ASan, UBSan, ASan+UBSan |
+| leptonica | bilateral_fuzzer | ASan, ASan+UBSan |
+| leptonica | colorfill_fuzzer | ASan, UBSan, ASan+UBSan |
+| leptonica | edge_fuzzer | ASan, UBSan, ASan+UBSan |
+| leptonica | fhmtgen_fuzzer | ASan, ASan+UBSan |
+| leptonica | graymorph_fuzzer | ASan, UBSan, ASan+UBSan |
+| leptonica | grayquant_fuzzer | ASan, ASan+UBSan |
+| leptonica | jpegiostub_fuzzer | ASan, UBSan, ASan+UBSan |
+| leptonica | kernel_fuzzer | ASan, UBSan, ASan+UBSan |
+| leptonica | paintcmap_fuzzer | ASan, UBSan, ASan+UBSan |
+| leptonica | pix1_fuzzer | ASan, UBSan, ASan+UBSan |
+| leptonica | pix_orient_fuzzer | ASan, ASan+UBSan |
+| libpcap | fuzz_pcap | ASan, UBSan, ASan+UBSan |
+| mbedtls | fuzz_pkcs7 | ASan |
+| msgpack-c | unpack_pack_fuzzer | ASan, UBSan, ASan+UBSan |
+| openssl | bignum | ASan, ASan+UBSan |
+| openssl | bndiv | ASan, UBSan |
+| openssl | ct | ASan+UBSan |
+| openssl | echconfiglist_parser | ASan, UBSan |
+| openssl | hashtable | ASan |
+| openssl | pem | ASan+UBSan |
+| openssl | punycode | ASan, UBSan, ASan+UBSan |
+| pupnp | FuzzHttp | ASan, ASan+UBSan |
+| simdjson | fuzz_atpointer | ASan, UBSan, ASan+UBSan |
+| simdjson | fuzz_dump | ASan, UBSan |
+| simdjson | fuzz_dump_raw_tape | ASan, UBSan |
+| simdjson | fuzz_element | ASan+UBSan |
+| simdjson | fuzz_implementations | ASan, UBSan |
+| simdjson | fuzz_minifyimpl | ASan, UBSan, ASan+UBSan |
+| simdjson | fuzz_ondemand | ASan, UBSan, ASan+UBSan |
+| simdjson | fuzz_parser | ASan, UBSan, ASan+UBSan |
+| simdjson | fuzz_print_json | ASan, ASan+UBSan |
+| simdjson | fuzz_utf8 | ASan, UBSan, ASan+UBSan |
+| skcms | iccprofile_info | ASan, UBSan, ASan+UBSan |
+| speex | speex_decode_fuzzer_float | ASan, ASan+UBSan |
+| spirv-tools | spvtools_binary_parser_fuzzer | ASan, UBSan |
+| tinyobjloader | fuzz_tobj_c | ASan, ASan+UBSan |
+| varnish | esi_parse_fuzzer | ASan, UBSan, ASan+UBSan |
+| yajl-ruby | json_fuzzer | ASan, UBSan, ASan+UBSan |
+| zstd | fse_read_ncount | ASan, ASan+UBSan |
+| zstd | huf_decompress | ASan |
+| zstd | simple_decompress | ASan+UBSan |
+| zstd | zstd_frame_info | ASan, ASan+UBSan |
+
+index/PROOFS.md has one row for each entry point: the statements proved, the system-call failures they allow, the binaries, and where the proof is.
+
+Every proof is about the binaries of this release and the statements under projects/. All of them use one LPS version and one static AddressSanitizer (Versions). docs/origin.md says how the proofs were made: the proving task, its submissions and its checker, and how a proof enters this repository.
+
+The theorem, in words
+Every proof here proves one or more agreement statements. There is one agreement statement for each sanitizer build: AddressSanitizer (ASan), UndefinedBehaviorSanitizer (UBSan), or both (ASan+UBSan). An agreement statement says:
+
+On every input on which the plain build stays within its memory budget, neither build reaches an error, and the plain build and the sanitizer build have the same set of observable behaviours.
+
+- Every input means every process input that LPS accepts as valid: the arguments, the environment variables, the files (so the input file, its contents or its absence), standard input, and the rest of what a process receives. LPS leaves out a few inputs; for example, an argument after the program name may not contain / (docs/semantics.md).
+- An error is a crash, an invalid memory access, an abort() (a failed assert(), a sanitizer report or an uncaught C++ exception), a failed UBSan check, or a step that LPS does not interpret. In a Rust fuzz target, a failed rustc UB check is not an error: it exits with status 79 after a line on standard error that the plain build does not write at that point, so agreement rules it out too.
+- Observable behaviours are the bytes that the process reads and writes on its standard streams and connections, in order, its exit status, and the final contents of its files.
+- The memory budget of the plain build is 2 GiB in a statement about a build with ASan (ASan or ASan+UBSan), and 16 GiB in a statement about the UBSan build. The budget is a premise: an input on which the plain build needs more memory is not covered.
+- System-call failures. Each statement says which system calls the environment may refuse without cause. In most of the proofs here, a memory request is refused only when the budget is spent or no address range is free.
+
+So a proof rules out every error that the sanitizer build detects, on every input that the statement covers. If the harness checks a property with assert(), abort() or a trap, and the check is in the binary, the proof also shows that the property holds on every covered input (docs/exploring.md).
+
+The Rocq definitions are in theories/Shapes.v. Each agreement form is proved equal to its LPS definition, strong_universal_error_free_T_budgets or one of its variants. docs/statements.md explains each form.
+
+What a proof does not say
+- It does not say that the library is correct. Errors that the sanitizers cannot detect are not excluded: for example, a wrong result or a memory leak.
+- It is about the code that one entry point reaches, not about the whole library.
+- It is about these binaries: static riscv64 programs, built with clang 20.1.8 against musl. It is not about the source code, and not about the x86-64 builds of OSS-Fuzz.
+- It is true in LPS. Where LPS differs from Linux, the proof may not apply (docs/semantics.md).
+- An agreement statement does not exclude a run that never ends. Only a halts statement does. No proof in this release proves a halts statement, so none of them rules out a run that never ends.
+
+Versions
+| item | version |
+|---|---|
+| Rocq | 9.2.0, the official release (opam package rocq-core). The proofs load their libraries with plain Require. |
+
+…（内容已截断）

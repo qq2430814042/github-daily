@@ -1,0 +1,96 @@
+xc-soundfont-synth
+
+简体中文 | English
+
+A SoundFont (SF2) synthesis component for DIY electronic instruments, built on ESP-IDF.
+
+For electronic wind instruments, guitars, and other projects that use sensors to control pitch and loudness,
+this component handles the path from note events to PCM audio. Your application reads sensors and determines
+the pitch; the component loads SoundFonts, renders audio, and passes it to your I2S, codec, or other output
+backend through a callback.
+
+SF2 parsing and sample synthesis are provided by TinySoundFont.
+This repository adds ESP-IDF / FreeRTOS integration, command scheduling, expression control, legato transitions,
+lightweight reverb, and an output adapter interface.
+
+Features
+
+- Load uncompressed .sf2 files from a filesystem already mounted through ESP-IDF VFS; storage is not limited to SD cards.
+- Render interleaved stereo PCM16, with defaults of 44.1 kHz and 128 frames per block.
+- Serialize note-on, note-off, SoundFont loading, reverb, and silence commands through a FreeRTOS queue.
+- Update a linear loudness target from 0 to 127 using the latest value, with approximately 5 ms smoothing and compensation for TinySoundFont's CC11 curve.
+- Perform approximately 5 ms legato transitions by fading out the old note, switching at zero gain, and fading in the new note.
+- Provide lightweight reverb using two feedback delay buffers, with optional render tracing and periodic diagnostic logging.
+- Configure the SF2 bank/preset, file size budget, zone validation range, task priority, stack, queue, and core affinity.
+
+The current implementation supports one instance and monophonic note control. max_voices sets the budget
+for internal SF2 voices, including sample layers; it is not the number of independent notes you can play
+simultaneously. note_on() ends the previous performance note, and note_off() stops all performance channels.
+Keyboard chords, multiple MIDI channels, and simultaneous instruments require further development.
+
+Component boundaries
+
+Application: sensors / buttons / MIDI parsing / instrument logic
+                │ note / expression / legato
+                ▼
+xc-soundfont-synth
+  FreeRTOS command queue → TinySoundFont → expression & legato → reverb
+                │ PCM16, interleaved L/R
+                ▼
+Application-provided output_write() → I2S / codec / other output
+
+The component does not initialize GPIO, I2C, I2S, codecs, amplifiers, or SD cards. It does not include fingering
+logic, breath sampling, a UI, Bluetooth, or Wi-Fi. Your application owns filesystem mounting, synchronization
+of SoundFont file access, and the output device's sample format and lifecycle.
+
+Requirements and dependencies
+
+| Item              | Requirement                                                                                               |
+| ----------------- | --------------------------------------------------------------------------------------------------------- |
+| Framework         | ESP-IDF; build validation used 5.5.1. The manifest declares `>=5.5.1, flash monitor
+The example does not require PSRAM by default. Before using a larger SoundFont, enable and verify PSRAM
+using settings appropriate for your board, allow ordinary malloc() allocations to use external RAM,
+and choose a resource budget based on the available heap. Do not copy another board's PSRAM, power,
+or codec configuration without checking it against your hardware.
+
+Configuration
+
+The configuration structure can be zero-initialized, but output_write is required.
+
+| Field                            | Zero-value behavior / default | Description                                                                                                                                         |
+| -------------------------------- | ----------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------- |
+| sample_rate                    | 44100                         | Accepts 8000–192000. This is parameter validation, not a guarantee of real-time operation at every rate. The output backend must use the same rate. |
+| chunk_frames                   | 128                           | Frames per channel per block. Changing this affects scheduling, buffering, and response.                                                            |
+| max_voices                     | 8                             | TinySoundFont's internal voice budget, not the number of independently playable notes.                                                              |
+| max_sf2_bytes                  | 512 KiB                       | Default file size budget. A larger value can be set explicitly, but allocation can still fail.                                                      |
+| bank / preset                | 0 / 0                         | Selects the SF2 bank/program at initialization. Changing the selection requires reinitialization.                                                   |
+| validate_zones                 | Disabled                      | When enabled, checks that every note in note_min..note_max has at least one zone at zone_velocity.                                              |
+| zone_velocity                  | 100                           | Velocity used for zone validation; it does not validate coverage at every velocity.                                                                 |
+| max_zones_per_note             | Unlimited                     | Optional limit on matching sample layers per note when zone validation is enabled.                                                                  |
+| min_free_psram_bytes           | No check                      | Optional free-PSRAM threshold before loading. It does not control allocation placement or guarantee a sufficiently large contiguous block.          |
+| command_queue_length           | 16                            | Queue submission fails immediately when full; the calling performance task does not wait for space.                                                 |
+| task_stack_bytes               | 6144                          | Stack size in ESP-IDF bytes. An explicit value must be at least 4096.                                                                               |
+| task_priority                  | 8                             | Must be below configMAX_PRIORITIES; zero selects the default.                                                                                     |
+| pin_task_to_core / task_core | Not pinned                    | When enabled, the application must select an existing core.                                                                                         |
+| diagnostics                    | Disabled                      | When enabled, logs render, write, timeout, and heap statistics approximately every 10 seconds.                                                      |
+
+Any available SF2 preset can be selected. By default, the component does not enforce the original OFLU
+requirements of MIDI notes 36–71 and at most two layers per note. To preserve those validation requirements, use:c
+cfg.validate_zones = true;
+cfg.note_min = 36;
+cfg.note_max = 71;
+cfg.zone_velocity = 100;
+cfg.max_zones_per_note = 2;
+cfg.min_free_psram_bytes = 1152U * 1024U;
+Move codec/SD initialization from the original firmware into your application and connect the output through
+output_write. The old SAMPLER_SYNTH_ERROR_CODEC value is retained as a compatibility alias for
+SAMPLER_SYNTH_ERROR_OUTPUT.
+
+This extraction changes the configuration structure and initialization requirements. Existing callers must
+provide an output callback and recompile; this is not a binary-compatible replacement.
+
+Memory, threading, and timing
+
+- Use uncompressed SF2 files; compressed SF3 files are not supported. TinySoundFont does not yet implement
+
+…（内容已截断）

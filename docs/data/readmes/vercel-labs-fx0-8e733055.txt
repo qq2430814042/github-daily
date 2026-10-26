@@ -1,0 +1,82 @@
+fx0
+
+fx0 is an open-source, lightweight design agent built with libfx. You describe a page and an agent writes it as one HTML file.
+
+fx0 is also a working example of an app built on libfx. One createFxAgent() call gives it the agent loop, streaming, tool calls, retries and durable sessions, and createFxEngine() runs each subagent.
+
+Try it at fx0.vercel.dev, or clone it and make it your own.
+
+Features
+
+- Sign in with Vercel to bill model calls through AI Gateway to your own team.
+- Optionally offer five free Opus 5.5 Fast prompts per IP without sign-in or a card. BotID protects the trial; a server-only Gateway key funds its admitted prompts.
+- A chat survives the function dying mid-reply: the turn continues where it stopped. See Durability.
+- Every turn keeps its version of the design. You can reopen any of them and copy or download the HTML.
+- Pick each chat's model, with its reasoning effort and fast mode. New chats start on fast Claude Opus 5.5, or on FX0_MODEL when it's set.
+- The agent can search the web and fetch pages for reference.
+- Start from one of ten design.md styles, or upload your own. The ten styles, and the one-line descriptions in the picker, come from VoltAgent's awesome-design-md, which you can browse at getdesign.md. Thanks to VoltAgent for publishing them.
+- Type a message before you sign in. The draft, images included, waits in the tab for 15 minutes while you sign in.
+- A turn stops after 64 model steps, its subagents' included, which keeps an agent stuck in a loop from running up a bill.
+- In paid-only chats, a text message sent while the agent works steers it, as in the fx CLI. Trial chats run each input as its own turn so free and paid funding stay separate.
+
+How fx0 uses libfx
+
+fx0 is the app. libfx is the agent inside it. Vercel keeps the agent's work safe while it runs.
+
+- fx0 owns what you see and what's yours: the chat and live preview, sign-in, the design tools the agent calls, and the chat history in Redis and Neon.
+- libfx runs every turn, meaning one message and everything the agent does to answer it: the model loop, tool calls, retries and steering. fx0 creates one agent with createFxAgent() and passes each chat's messages to it.
+- Workflow World, the store behind Vercel Workflow, is where libfx saves each turn as it runs: the prompt before it's accepted, then every step.
+- Vercel Queues keeps a backup of each prompt. When the function running a turn crashes or reaches its time limit, the queue wakes a new one at /api/libfx, and libfx continues from the last saved step.
+- AI Gateway receives every model call. Paid turns use the sender's OAuth token and team; explicitly sponsored turns use the server's trial key.
+
+Durability
+
+fx0 runs one durable libfx agent per server. libfx keeps each chat's conversation as a session and backs every turn with Vercel Queues, so a turn finishes even when the function running it dies. fx0 has no code of its own to recover a turn. Durability takes three pieces.
+
+The agent. fx0 passes no durability option, so createFxAgent() uses libfx's default: on Vercel, libfx keeps its sessions in Vercel's World, the store behind Vercel Workflow, and uses Vercel Queues. libfx bundles both clients, so fx0 neither writes workflows nor calls Vercel Queues itself. A prompt runs its turn in the request that sent it, so the reply starts without a queue hop, and Vercel Queues keeps the prompt as a backstop until just after that request's 800-second limit. fx0 sends a message as a prompt when the chat is idle. One sent while a turn runs or waits to start is a steer instead, which libfx delivers through Vercel Queues to the running turn.
+
+// lib/libfx-agent.ts, simplified
+const agent = createFxAgent({
+  // No durability option: Vercel's World and Queues on Vercel, local files elsewhere.
+  apiKey: 'session-authenticated',
+  fetch: chatFetch,
+  tools,
+})
+
+// lib/agent.ts, simplified: a chat gets a libfx session on its first message,
+// and each message is one turn of it
+const libfxSessionId = await agent.newSessionId()
+const session = agent.session(libfxSessionId, { model, instructions, context: { chatId, turnId } })
+session.prompt(${author}] ${text}, { messageId: m${turnId} })
+
+The route. Vercel Queues delivers the turns no request runs itself to [app/api/libfx: the rest of a turn that outlasted its prompt request, and a prompt's backstop when that request died. libfx's handler runs them:
+
+// app/api/libfx/route.ts
+export const maxDuration = 800
+export const POST = agent().wakeHandler()
+
+The trigger. One entry in vercel.json subscribes that route to libfx's queue topic:
+
+{
+  "functions": {
+    "app/api/libfx/route.ts": {
+      "experimentalTriggers": { "type": "queue/v2beta", "topic": "__libfx_wkf_workflow_session", "retryAfterSeconds": 5 }]
+    }
+  }
+}
+
+fx0 keeps the transcript, designs and settings in Redis. Here is one message from send to reply. The numbers match the steps below:
+
+1. Save the message before answering. POST /api/prompt adds the message to the transcript in one Redis script, then hands it to libfx with its message id. libfx stores it before acknowledging, so a message that shows as sent can't be lost, and a retried request reaches the same turn.
+
+2. Keep the turn's funding. A queue delivery has no browser cookie, so the prompt route seals its funding in Redis. Every message records the funding of the turn it starts: either the admitted sponsorship or its paid sender's OAuth grant and team. Fresh SDK diagnostics and the journal's restore hook identify the executing turn after a crash. Refresh tokens stay in the cookie, and the server trial key stays out of every stored credential. Missing or expired trial funding never falls back to a customer's paid grant.
+
+3. libfx runs the turn. One worker holds a session at a time, and libfx fences out any other. The prompt request runs the turn first; it and each delivery to /api/libfx can run for 800 seconds, their maxDuration. libfx stops a turn 30 seconds before that limit, keeping what it has done so far, and a delivery to /api/libfx continues it, so a long turn spans several invocations.
+
+4. Copy the stream into the transcript. Any route following the chat, the prompt's own response or an open tab, copies libfx's stream into the transcript. A cursor check makes each line land once, however many follow. The same Redis script marks a turn running when its start lands, and when its end lands it leaves the turn's history to write, with the design the turn left. The copy then writes that history and design version to Neon, and a write that fails waits in Redis for the next copy to retry.
+
+5. Pick up where it stopped. On Vercel, libfx can't tell a crashed function from a slow one, so the request running a turn holds its session until its time limit. The prompt's backstop comes due 5 seconds after that limit: if the request died, the backstop takes the session over and the turn continues where its records end. In a delivery to /api/libfx, a process that exits has its delivery run again about a second later, and a function that stops without exiting holds its message until the queue's hold runs out, up to five minutes. The model is told the turn was interrupted, so it can check what happened before going on. A function that only stalled and wakes after that stops at its next write, so two never write at once.
+
+A tool call the crash cut off runs again only if it's safe to repeat. libfx refuses a tool that doesn't say which it is, and fx0 marks its tools in [lib/libfx-agent.ts: reading the design, publishing it, fetching a page, paging through a tool result and searching the tools run again. Edits, questions and subagents don't, so the model is told those calls may have run and decides what to do. The reads start as soon as the model asks for them, while libfx saves the call.
+
+…（内容已截断）

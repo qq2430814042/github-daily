@@ -1,0 +1,137 @@
+AI Agents for Beginners - A Course
+
+A course teaching everything you need to know to start building AI Agents
+
+🌐 Multi-Language Support
+
+Translations maintained with Co-op Translator
+
+Arabic | Bengali | Bulgarian | Burmese (Myanmar) | Chinese (Simplified) | Chinese (Traditional, Hong Kong) | Chinese (Traditional, Macau) | Chinese (Traditional, Taiwan) | Croatian | Czech | Danish | Dutch | Estonian | Finnish | French | German | Greek | Hebrew | Hindi | Hungarian | Indonesian | Italian | Japanese | Kannada | Khmer | Korean | Lithuanian | Malay | Malayalam | Marathi | Nepali | Nigerian Pidgin | Norwegian | Persian (Farsi) | Polish | Portuguese (Brazil) | Portuguese (Portugal) | Punjabi (Gurmukhi) | Romanian | Russian | Serbian (Cyrillic) | Slovak | Slovenian | Spanish | Swahili | Swedish | Tagalog (Filipino) | Tamil | Telugu | Thai | Turkish | Ukrainian | Urdu | Vietnamese
+
+Prefer to Clone Locally?
+This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:
+Bash / macOS / Linux:
+> git clone --filter=blob:none --sparse https://github.com/microsoft/ai-agents-for-beginners.git
+cd ai-agents-for-beginners
+git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
+CMD (Windows):
+> git clone --filter=blob:none --sparse https://github.com/microsoft/ai-agents-for-beginners.git
+cd ai-agents-for-beginners
+git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
+This gives you everything you need to complete the course with a much faster download.
+
+For additional language options, see Co-op Translator's supported languages.
+
+🌱 Getting Started
+
+This course has lessons covering the fundamentals of building AI Agents. Each lesson covers its own topic so start wherever you like!
+
+There is multi-language support for this course. Go to our available languages here.
+
+If this is your first time building with Generative AI models, check out our Generative AI For Beginners course, which includes 21 lessons on building with GenAI.
+
+Don't forget to star (🌟) this repo and fork this repo to run the code.
+
+Meet Other Learners, Get Your Questions Answered
+
+If you get stuck or have any questions about building AI Agents, join our dedicated Discord Channel in the Microsoft Foundry Discord.
+
+What You Need
+
+Each lesson in this course includes code examples, which can be found in the code_samples folder. You can fork this repo to create your own copy.
+
+The code examples in these exercises utilize Microsoft Agent Framework with Microsoft Foundry Agent Service V2:
+
+- Microsoft Foundry - Azure Account Required
+
+This course uses the following AI Agent frameworks and services from Microsoft:
+
+- Microsoft Agent Framework (MAF)
+- Microsoft Foundry Agent Service V2
+
+Some code samples also support alternative OpenAI-compatible providers such as MiniMax, which offers large-context models (up to 204K tokens). See the Course Setup for configuration details.
+
+For more information on running the code for this course, go to the Course Setup.
+
+🙏 Want to help?
+
+Do you have suggestions or found spelling or code errors? Raise an issue or Create a pull request
+
+📂 Each lesson includes
+
+- A written lesson located in the README and a short video
+- Python code samples using Microsoft Agent Framework with Microsoft Foundry
+- Links to extra resources to continue your learning
+
+🗃️ Lessons
+
+| Lesson                                   | Text & Code                                    | Video                                                  | Extra Learning                                                                     |
+|----------------------------------------------|----------------------------------------------------|------------------------------------------------------------|----------------------------------------------------------------------------------------|
+| Intro to AI Agents and Agent Use Cases       | Link          | Video  | Link |
+| Exploring AI Agentic Frameworks              | Link  | Video  | Link |
+| Understanding AI Agentic Design Patterns     | Link     | Video  | Link |
+| Tool Use Design Pattern                      | Link                    | Video  | Link |
+| Agentic RAG                                  | Link                 | Video  | Link |
+| Building Trustworthy AI Agents               | Link | Video | Link |
+| Planning Design Pattern                      | Link             | Video  | Link |
+| Multi-Agent Design Pattern                   | Link                 | Video  | Link |
+| Metacognition Design Pattern                 | Link               | Video  | Link |
+| AI Agents in Production                      | Link        | Video  | Link |
+| Using Agentic Protocols (MCP, A2A and NLWeb) | Link           | Video                                 | Link |
+| Context Engineering for AI Agents            | Link         | Video                                 | Link |
+| Managing Agentic Memory                      | Link     |      Video                                                      |                                                                                        |
+| Exploring Microsoft Agent Framework                         | Link                            |                                                            |                                                                                        |
+| Building Computer Use Agents (CUA)           | Link     |                                                            | Link         |
+| Deploying Scalable Agents                    | Link |                                                    | Link                   |
+| Creating Local AI Agents                     | Link  |                                                    | Link                    |
+| Securing AI Agents                           | Link  |                                                            | Link |
+
+🎒 Other Courses
+
+Our team produces other courses! Check out:
+
+LangChain
+
+Azure / Edge / MCP / Agents
+
+Generative AI Series
+
+-9333EA?style=for-the-badge&labelColor=E5E7EB&color=9333EA)
+-C084FC?style=for-the-badge&labelColor=E5E7EB&color=C084FC)
+-E879F9?style=for-the-badge&labelColor=E5E7EB&color=E879F9)
+
+Core Learning
+
+Copilot Series
+
+🌟 Community Thanks
+
+Thanks to Shivam Goyal for contributing important code samples demonstrating Agentic RAG.
+
+Contributing
+
+This project welcomes contributions and suggestions.  Most contributions require you to agree to a
+Contributor License Agreement (CLA) declaring that you have the right to, and actually do, grant us
+the rights to use your contribution. For details, visit .
+
+When you submit a pull request, a CLA bot will automatically determine whether you need to provide
+a CLA and decorate the PR appropriately (e.g., status check, comment). Simply follow the instructions
+provided by the bot. You will only need to do this once across all repos using our CLA.
+
+This project has adopted the Microsoft Open Source Code of Conduct.
+For more information see the Code of Conduct FAQ or
+contact opencode@microsoft.com with any additional questions or comments.
+
+Trademarks
+
+This project may contain trademarks or logos for projects, products, or services. Authorized use of Microsoft
+trademarks or logos is subject to and must follow
+Microsoft's Trademark & Brand Guidelines.
+Use of Microsoft trademarks or logos in modified versions of this project must not cause confusion or imply Microsoft sponsorship.
+Any use of third-party trademarks or logos is subject to those third-parties' policies.
+
+Getting Help
+
+If you get stuck or have any questions about building AI apps, join:
+
+If you have product feedback or errors while building visit:

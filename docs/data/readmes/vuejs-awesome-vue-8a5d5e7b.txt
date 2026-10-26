@@ -1,0 +1,280 @@
+Resource from plugin:github:github at repo://vuejs/awesome-vue/sha/14fa265df1bd0a3d78fca341a9739a42bf6cd95d/contents/README.md]
+Awesome Vue.js
+
+A curated list of awesome things related to Vue.js
+
+Table of Contents
+
+- Resources
+  - Official Resources
+  - Truly awesome projects
+  - External Resources
+  - Newsletters
+  - Job Portal
+  - Community
+  - Conferences
+  - Podcasts
+  - Official Examples
+  - Tutorials
+  - Examples
+  - Books
+  - Blog Posts
+  - Courses
+  - Documentaries
+- Companies Using Vue.js
+- Projects Using Vue.js
+  - Open Source
+  - Commercial Products
+  - Apps/Websites
+  - Interactive Experiences
+  - Enterprise Usage
+  - A11y
+- Components & Libraries
+  - Frameworks
+    - Responsive
+    - Mobile
+    - Component Collections
+    - Admin Template
+    - Server-side rendering
+    - Static website generator
+    - Other
+  - UI Layout
+  - UI Components
+    - Table
+    - Notification
+    - Loader
+      - Progress Bar
+    - Tooltip
+    - Overlay
+    - Marquee
+    - Menu
+    - Carousel
+    - Charts
+    - Time
+    - Calendar
+    - Map
+    - Audio / Video
+    - Infinite Scroll
+    - Markdown
+    - PDF
+    - Tree
+    - Graph
+    - Social Sharing
+    - QR Code
+    - Search
+    - Miscellaneous
+    - Tabs
+    - Form
+      - Phone Number Input Formatter
+      - Picker
+      - Generator
+        - Date Picker
+      - Select
+      - Drag and Drop
+      - Type Select
+      - Color Picker
+      - Switch
+      - Masked Input
+      - Rich Text Editing
+      - Image Manipulation
+      - File Upload
+      - Context Menu
+      - Miscellaneous
+      - Wizard
+    - Canvas
+    - Link Preview
+    - Tour
+  - UI Utilities
+    - Event Handling
+    - Responsive Design
+    - Form
+      - Validation
+    - Resize
+    - Scroll
+    - Routing
+    - Lazy Load
+    - Pagination
+    - Animation
+    - Meta Tags
+    - Portal
+    - SVG
+    - Miscellaneous
+    - WebGL
+    - Fullscreen
+    - Printing
+  - Utilities
+    - Typescript
+    - HTTP Requests
+    - i18n
+    - Custom Events
+    - Persistence
+    - State Management
+      - Mobx
+      - Pinia
+      - Authentication/Authorization
+      - Vuex Utilities
+    - GraphQL
+    - Code Style
+    - CSS
+    - Asset Management
+    - Page Navigation
+    - Miscellaneous
+    - Web Sockets
+    - Payment
+      - Stripe
+  - Integrations
+    - Vue CLI Plugins
+      - Google Analytics
+  - Dev Tools
+    - Inspect
+    - Docs
+    - Test
+    - Source Code Editing
+      - Vim
+      - Visual Studio Code
+      - Intellij
+      - Emacs
+  - Scaffold
+    - Universal
+    - Desktop
+  - Prerendering
+
+Resources
+
+Official Resources
+
+- Documentation
+- API Reference
+- GitHub Repo
+- Release Notes
+- Style Guide
+- Vue.js News
+- IDE Language Support
+- Awesome Vite
+
+Truly awesome projects
+
+These projects are exceptionally high quality, have a proven trackrecord, and are virtually indispensable.
+
+ - Vue DevTools - Browser devtools extension for debugging Vue.js applications.
+ - unplugin-icons - On-demand icon loader supporting all known popular icon sets
+ - vue-i18n - Internationalization plugin for Vue.js
+
+External Resources
+
+- Vue.js 資料まとめ(for japanese) by @hashrock
+- Vue.js Wikipedia
+- Vue Curated Resources - Recommended Vue.js courses and tutorials.
+- Vue School - Learn Vue.js from video courses by core members and industry experts
+- VueDose. Tips & tricks about the Vue ecosystem, for busy devs.
+- Vue.js DEV Community - Official tag for the Vue.js JavaScript Framework on DEV.to
+- WebTechSurvey.com - An extensive list of websites created with the Vue.js Javascript framework.
+- Vue Mastery - The ultimate learning resource for Vue developers
+- Vue 3 Video Playlist - Amazing Vue 3 tutorials and experiments
+- Vue.js Workshops - Learn Vue 2, in browser, by building 3 applications: Landing page, Todos App and Podcasts aggregator.( Vue.js, Vue-Router, Vuex, Vue-Axios, Vue-Apollo )
+- Vue.js Articles - Assorted Vue 2 and 3 tutorials and articles.
+- Best vue.js Courses On YouTube - Handpicked list of best Vue.js tutorials on YouTube
+- Notes on Vue - A personal guide to Vue development.
+- Vue-FAQ - FAQ about frontend in general and Vue.js in particular.
+- State of Vue Report - The 5th edition of the most comprehensive Vue publication. Co-created with Evan You, the Vue & Nuxt Core Teams
+- TODOvue Blog - Guides and tutorials on creating modern components with Vue.js. Website
+
+Newsletters
+
+- Weekly Vue news - A weekly newsletter with the most interesting Vue & Nuxt News, Tutorials, Projects, and Tools.
+
+Job Portal
+
+- Vue.js Jobs - VueJobs - A Vue.js job portal to hire or get hired for all your Vue.js jobs.
+- Vue.js Interview Questions - A List of 300 VueJS Interview Questions and Answers
+- Jobs in JS - Vue.js developer jobs in the US, Canada and UK. Updated daily.
+
+Community
+
+- X (Twitter)
+- Official Forum
+- VueJS English community
+- VueJS Iran - Telegram Channel & group (group link available in channel bio)
+- VueJS Russia - Telegram Group [Russian]
+- VueJS Viet Nam - Facebook group
+- VueJS Thailand - Facebook Group
+- VueJS Brasil - Telegram Group [Portuguese]
+- VueJS Brasil - Facebook Page [Portuguese]
+- VueJS Brasil - Facebook Group [Portuguese]
+- VueJS en español - Facebook Group [Spanish]
+- VueJS India - Discord chat server
+- VueJS Indonesia - Telegram Group [Indonesian]
+- VueJS Indonesia - Facebook Group [Indonesian]
+- VueJS Hong Kong - Facebook group
+- VueJS Arab - Telegram Group
+- VueJS Vix - Telegram Group [Portuguese]
+- VueJS Israel - Facebook Page
+- VueJS Finland - Facebook Page
+- Hablemos de Vue.js - Telegram Group [Castellano]
+- VueBLR - WhatsApp Group
+- VueBLR - Facebook Group
+- VueJS USA - Meetups
+- VueJS CZ/SK - Discord group
+- VueJS DOM - WhatsApp group
+- VueJS Uzbekistan - Telegram Group [Uzbek]
+- VueJS Uzbekistan - Telegram Community and Support Group [Uzbek]
+- VueJS Turkey - Telegram Group
+- Vue Turkey - Twitter Account
+- Vue Türkiye - Kommunity Page
+- VueJS Singapore - Telegram Group
+- VueJS Bootcamp kablosuzkedi - Turkey - Telegram Group
+- VueJS Translations Ukraine - Telegram Group (Ukraine)
+- VueJS Kenya - Twitter Account
+- VueJS Magyar - Facebook Group [Hungarian]
+- VueJS Bangladesh - Facebook Group
+
+Conferences
+
+- VueConf US
+- VueConf Toronto
+- Vue.js Amsterdam
+
+Podcasts
+
+- Full Stack Radio #30 (11-23-2015)
+- Changelog #184 (11-27-2015)
+- Software Engineering Daily (12-29-2015)
+- Codecasts #2 - Falando Sobre Vuejs e Web Components (2016-08-19) [pt-BR]
+- Full Stack Radio #50 (09-21-2016)
+- 和 Vue.js 框架的作者聊聊前端框架开发背后的故事 [zh-CN]
+- Request For Commits #12 - Crowdfunding Open Source (Vue.js) (06-15-2017)
+- The Web Platform Podcast 132: Vue.js (07-27-2017)
+- Animating VueJS with Sarah Drasner(Software Engineering Daily 01-12-2017)
+- Cynical Developer #99 (10-15-2018)
+- Syntax #130 (03-27-2019)
+- Enjoy the Vue: The new Vue.js podcast
+- What is Pinia? with @posva (My typeof Radio) [es-MX]
+- Evolution of Vue - Part I (My typeof Radio) [es-MX]
+- Evolution of Vue - Part II (My typeof Radio) [es-MX]
+- Evolution of Vue - Part III (My typeof Radio) [es-MX]
+- React vs Vue - their communities (My typeof Radio) [es-MX]
+- Views on Vue (weekly podcast on Vue)
+- DejaVue - The Vue podcast to remember
+- Pinia and friends in 2025 with @posva (My typeof Radio) [es-MX]
+
+Official Examples
+
+- Vue.js TodoMVC
+
+Tutorials
+
+- Learn Vue 3: Step by Step on Laracasts
+- Vuejs 2 Authentication Tutorial on Auth0 blog
+- Vuex introduction video - James Browne from London Vue.js Meetup #1
+- Hybrid App Example with Laravel and Vue.js in Portuguese by @vedovelli
+- Vue.js Screencast Series in Spanish on Styde.net
+- 讲解 Vue.js 官网 中文-含代码、百度云、youtube on bhnddowinf
+- Exploring Real Time Apps with VueJS, ES2015 and Webpack on Pusher
+- Vue.js in Bahasa Indonesia on sekolahkoding.com
+- Vue.js from Scratch Series in Russian on YouTube by .dev
+- Створення сервісу для зберігання файлів з Flask, RethinkDB та Vue.js, ч. 1 Ukraine
+- VueJS 2 French tutorial Français par Grafikart
+- How to Create Great VueJS Applications Using Wijmo Controls
+- 讲解 Vue.js 2 官网 中文-含代码、百度云、youtube on bhnddowinf
+
+…（内容已截断）

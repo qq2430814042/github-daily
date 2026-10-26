@@ -1,0 +1,111 @@
+Deutsch |
+  Español |
+  français |
+  日本語 |
+  한국어 |
+  Português |
+  Русский |
+  中文
+
+TradingAgents: Multi-Agents LLM Financial Trading Framework
+
+News
+
+- 2026-10] TradingAgents v0.7.0 released with runs on your own ChatGPT Plus or Pro plan, backtests scored from the first close after each decision, a note at start-up when a newer release is out, and a wheel attached to each GitHub release.
+- [2026-10] TradingAgents v0.6.0 released with reports saved as one HTML page, a provider per model tier so the managers and analysts can run on different models, past decisions settled for every ticker while the analysts work, and company news read from Yahoo search while Yahoo's news feed is down.
+- [2026-09] TradingAgents v0.5.2 released with parallel analysts for a faster analysis, a CLI that runs without prompts from flags such as --ticker and --date, the run's settings recorded in every report, and backtests that see only data published by each analysis date.
+
+Full release notes are in [CHANGELOG.md.
+
+Earlier news
+
+- 2026-09] TradingAgents v0.5.1 released with a package layout organised by what each module holds (import paths moved), optional Jev screening of social posts, GPT-6 Sol and Luna as the default models, and fixes to run isolation and SEC EDGAR statements.
+- [2026-09] TradingAgents v0.5.0 released with point-in-time integrity across every dated path, SEC EDGAR fundamentals served as filed, backtesting over a ticker and date grid, portfolio-aware runs, and current model lineups across every provider.
+- [2026-08] TradingAgents v0.4.0 released with look-ahead / point-in-time fixes across FRED macro, social sentiment, and the decision-log memory; clearer decision signals; working CLI checkpoint resume; Trader price grounding; and the GPT-5.6 and GLM-5.3 models.
+- [2026-07] TradingAgents v0.3.1 released with correctness and stability fixes: Alpha Vantage look-ahead filtering, graph-router crash-safety, graph-shape-aware checkpoint resume, working crypto sentiment sources, a configurable LLM retry budget, Bedrock API-key auth, and Claude Sonnet 5 / Fable 5 support.
+- [2026-06] TradingAgents v0.3.0 released with a verified data-access contract, an expanded provider registry (NVIDIA, Kimi, Groq, Mistral, Bedrock, and any OpenAI-compatible endpoint), FRED and Polymarket data vendors, a current-generation model catalog, and a CI gate.
+- [2026-05] TradingAgents v0.2.5 released with the grounded Sentiment Analyst, GPT-5.5 etc. model coverage, Qwen/GLM/MiniMax dual-region support, TRADINGAGENTS_* env-var configurability with API-key auto-detection, remote Ollama support, non-US alpha benchmarks, and ticker path-traversal hardening.
+- [2026-04] TradingAgents v0.2.4 released with structured-output agents (Research Manager, Trader, Portfolio Manager), LangGraph checkpoint resume, persistent decision log, DeepSeek/Qwen/GLM/Azure provider support, Docker, and a Windows UTF-8 encoding fix.
+- [2026-03] TradingAgents v0.2.3 released with multi-language support, GPT-5.4 family models, unified model catalog, backtesting date fidelity, and proxy support.
+- [2026-03] TradingAgents v0.2.2 released with GPT-5.4/Gemini 3.1/Claude 4.6 model coverage, five-tier rating scale, OpenAI Responses API, Anthropic effort control, and cross-platform stability.
+- [2026-02] TradingAgents v0.2.0 released with multi-provider LLM support (GPT-5.x, Gemini 3.x, Claude 4.x, Grok 4.x) and improved system architecture.
+- [2026-01] Trading-R1 [Technical Report released, with Terminal expected to land soon.
+
+🚀 TradingAgents | ⚡ Installation & CLI | 🎬 Demo | 📦 Package Usage | 🤝 Contributing | 📄 Citation
+
+🎉 TradingAgents officially released! We have received numerous inquiries about the work, and we would like to express our thanks for the enthusiasm in our community.
+So we decided to fully open-source the framework. Looking forward to building impactful projects with you!
+
+TradingAgents Framework
+
+TradingAgents is a multi-agent trading framework that mirrors the dynamics of real-world trading firms. By deploying specialized LLM-powered agents: from fundamental analysts, sentiment experts, and technical analysts, to trader, risk management team, the platform collaboratively evaluates market conditions and informs trading decisions. Moreover, these agents engage in dynamic discussions to pinpoint the optimal strategy.
+
+TradingAgents framework is designed for research purposes. Trading performance may vary based on many factors, including the chosen backbone language models, model temperature, trading periods, the quality of data, and other non-deterministic factors. It is not intended as financial, investment, or trading advice.
+
+Our framework decomposes complex trading tasks into specialized roles.
+
+Analyst Team
+- Fundamentals Analyst: Evaluates company financials and performance metrics, identifying intrinsic values and potential red flags.
+- Sentiment Analyst: Aggregates news headlines, StockTwits, and Reddit chatter into a single sentiment read to gauge short-term market mood.
+- News Analyst: Monitors global news and macroeconomic indicators, interpreting the impact of events on market conditions.
+- Technical Analyst: Utilizes technical indicators (like MACD and RSI) to detect trading patterns and forecast price movements.
+
+The selected analysts work at the same time, each on its own tools, and the research debate starts once all of their reports are in.
+
+Researcher Team
+- Comprises both bullish and bearish researchers who critically assess the insights provided by the Analyst Team. Through structured debates, they balance potential gains against inherent risks.
+
+Trader Agent
+- Composes reports from the analysts and researchers to make informed trading decisions, determining the timing and magnitude of trades.
+
+Risk Management and Portfolio Manager
+- Continuously evaluates portfolio risk by assessing market volatility, liquidity, and other risk factors. The risk management team evaluates and adjusts trading strategies, providing assessment reports to the Portfolio Manager for final decision.
+- The Portfolio Manager approves/rejects the transaction proposal. If approved, the order will be sent to the simulated exchange and executed.
+
+Installation and CLI
+
+Installation
+
+Clone TradingAgents:
+git clone https://github.com/TauricResearch/TradingAgents.git
+cd TradingAgents
+
+TradingAgents needs Python 3.11 or later. Create a virtual environment in any of your favorite environment managers:
+conda create -n tradingagents python=3.13
+conda activate tradingagents
+
+Or with uv:
+uv venv --python 3.13
+source .venv/bin/activate
+
+Install the package and its dependencies (uv pip install . with uv):
+pip install .
+
+Docker
+
+Alternatively, run with Docker:
+cp .env.example .env  # add your API keys
+docker compose run --rm tradingagents
+
+After updating the repository, rebuild the image with docker compose build.
+
+Results, reports, the memory log and the cache live in the tradingagents_data volume. To keep them in a folder on the host instead, create the folder and point TRADINGAGENTS_DATA_DIR at it, in .env or the shell: mkdir -p data && TRADINGAGENTS_DATA_DIR=./data docker compose run --rm tradingagents.
+
+For local models with Ollama:
+docker compose --profile ollama run --rm tradingagents-ollama
+
+Required APIs
+
+TradingAgents supports multiple LLM providers. Set the API key for your chosen provider:
+
+export OPENAI_API_KEY=...          # OpenAI (GPT)
+export GOOGLE_API_KEY=...          # Google (Gemini)
+export ANTHROPIC_API_KEY=...       # Anthropic (Claude)
+export XAI_API_KEY=...             # xAI (Grok)
+export DEEPSEEK_API_KEY=...        # DeepSeek
+export DASHSCOPE_API_KEY=...       # Qwen (international, dashscope-intl.aliyuncs.com)
+export DASHSCOPE_CN_API_KEY=...    # Qwen (China, dashscope.aliyuncs.com)
+export ZHIPU_API_KEY=...           # GLM via Z.AI (international)
+export ZHIPU_CN_API_KEY=...        # GLM via BigModel (China, open.bigmodel.cn)
+
+…（内容已截断）

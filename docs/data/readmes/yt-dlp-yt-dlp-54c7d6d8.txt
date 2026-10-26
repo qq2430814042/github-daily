@@ -1,0 +1,167 @@
+yt-dlp is a feature-rich command-line audio/video downloader with support for thousands of sites. The project is a fork of youtube-dl based on the now inactive youtube-dlc.
+
+* INSTALLATION
+    * Detailed instructions
+    * Release Files
+    * Update
+    * Dependencies
+    * Compile
+* USAGE AND OPTIONS
+    * General Options
+    * Network Options
+    * Geo-restriction
+    * Video Selection
+    * Download Options
+    * Filesystem Options
+    * Thumbnail Options
+    * Internet Shortcut Options
+    * Verbosity and Simulation Options
+    * Workarounds
+    * Video Format Options
+    * Subtitle Options
+    * Authentication Options
+    * Post-processing Options
+    * SponsorBlock Options
+    * Extractor Options
+    * Preset Aliases
+* CONFIGURATION
+    * Configuration file encoding
+    * Authentication with netrc
+    * Notes about environment variables
+* OUTPUT TEMPLATE
+    * Output template examples
+* FORMAT SELECTION
+    * Filtering Formats
+    * Sorting Formats
+    * Format Selection examples
+* MODIFYING METADATA
+    * Modifying metadata examples
+* EXTRACTOR ARGUMENTS
+* PLUGINS
+    * Installing Plugins
+    * Developing Plugins
+* EMBEDDING YT-DLP
+    * Embedding examples
+* CHANGES FROM YOUTUBE-DL
+    * New features
+    * Differences in default behavior
+    * Deprecated options
+* CONTRIBUTING
+    * Opening an Issue
+    * Developer Instructions
+* WIKI
+    * FAQ
+
+INSTALLATION
+
+You can install yt-dlp using the binaries, pip or one using a third-party package manager. See the wiki for detailed instructions
+
+RELEASE FILES
+
+Recommended
+
+File|Description
+:---|:---
+yt-dlp|Platform-independent zipimport binary. Needs Python (recommended for Linux/BSD)
+yt-dlp.exe|Windows (Win10+) standalone x64 binary (recommended for Windows)
+yt-dlp_macos|Universal MacOS (10.15+) standalone executable (recommended for MacOS)
+
+Alternatives
+
+File|Description
+:---|:---
+yt-dlp_linux|Linux (glibc 2.17+) standalone x86_64 binary
+yt-dlp_linux.zip|Unpackaged Linux (glibc 2.17+) x86_64 executable (no auto-update)
+yt-dlp_linux_aarch64|Linux (glibc 2.17+) standalone aarch64 binary
+yt-dlp_linux_aarch64.zip|Unpackaged Linux (glibc 2.17+) aarch64 executable (no auto-update)
+yt-dlp_linux_armv7l.zip|Unpackaged Linux (glibc 2.31+) armv7l executable (no auto-update)
+yt-dlp_musllinux|Linux (musl 1.2+) standalone x86_64 binary
+yt-dlp_musllinux.zip|Unpackaged Linux (musl 1.2+) x86_64 executable (no auto-update)
+yt-dlp_musllinux_aarch64|Linux (musl 1.2+) standalone aarch64 binary
+yt-dlp_musllinux_aarch64.zip|Unpackaged Linux (musl 1.2+) aarch64 executable (no auto-update)
+yt-dlp_x86.exe|Windows (Win10+) standalone x86 (32-bit) binary
+yt-dlp_win_x86.zip|Unpackaged Windows (Win10+) x86 (32-bit) executable (no auto-update)
+yt-dlp_arm64.exe|Windows (Win10+) standalone ARM64 binary
+yt-dlp_win_arm64.zip|Unpackaged Windows (Win10+) ARM64 executable (no auto-update)
+yt-dlp_win.zip|Unpackaged Windows (Win10+) x64 executable (no auto-update)
+yt-dlp_macos.zip|Unpackaged MacOS (10.15+) executable (no auto-update)
+
+Misc
+
+File|Description
+:---|:---
+yt-dlp.tar.gz|Source tarball
+SHA2-512SUMS|GNU-style SHA512 sums
+SHA2-512SUMS.sig|GPG signature file for SHA512 sums
+SHA2-256SUMS|GNU-style SHA256 sums
+SHA2-256SUMS.sig|GPG signature file for SHA256 sums
+
+The public key that can be used to verify the GPG signatures is available here
+Example usage:
+curl -L https://github.com/yt-dlp/yt-dlp/raw/master/public.key | gpg --import
+gpg --verify SHA2-256SUMS.sig SHA2-256SUMS
+gpg --verify SHA2-512SUMS.sig SHA2-512SUMS
+
+Licensing
+
+While yt-dlp is licensed under the Unlicense, many of the release files contain code from other projects with different licenses.
+
+Most notably, the PyInstaller-bundled executables include GPLv3+ licensed code, and as such the combined work is licensed under GPLv3+.
+
+The zipimport Unix executable (yt-dlp) and release tarball (yt-dlp.tar.gz) contain ISC licensed code from meriyah and MIT licensed code from astring.
+
+See THIRD_PARTY_LICENSES.txt for more details.
+
+The git repository, the PyPI source distribution and the PyPI built distribution (wheel) only contain code licensed under the Unlicense.
+
+Note: The manpages, shell completion (autocomplete) files etc. are available inside the source tarball
+
+UPDATE
+You can use yt-dlp -U to update if you are using the release binaries
+
+If you installed with pip, simply re-run the same command that was used to install the program
+
+For other third-party package managers, see the wiki or refer to their documentation
+
+There are currently three release channels for binaries: stable, nightly and master.
+
+* stable is the default channel, which offers releases published on a (mostly) monthly schedule. While it is named stable due to many of its changes having been tested by users of the nightly or master release channels, the latest stable release is often "stale" and prone to external breakage (i.e. sites changing things on their end and breaking yt-dlp).
+* The nightly channel offers releases that publish shortly before midnight UTC on any day that sees changes to the codebase. This channel serves as a snapshot of the project's development, and it is the recommended channel for regular users of yt-dlp. The nightly releases are available from yt-dlp/yt-dlp-nightly-builds or as development releases of the yt-dlp PyPI package (which can be installed with pip's --pre flag).
+* The master channel offers "canary" releases that publish after each push to the master branch. This channel will always provide the very latest fixes and features, but may be prone to bugs or regressions. The master releases are available from yt-dlp/yt-dlp-master-builds.
+
+When using --update/-U, a release binary will only update to its current channel.
+--update-to CHANNEL can be used to switch to a different channel when a newer version is available. --update-to CHANNEL@]TAG can also be used to upgrade or downgrade to specific tags from a channel.
+
+You may also use --update-to  (/) to update to a channel on a completely different repository. Be careful with what repository you are updating to though, there is no verification done for binaries from different repositories.
+
+Example usage:
+
+* yt-dlp --update-to master switch to the master channel and update to its latest release
+* yt-dlp --update-to stable@2023.07.06 upgrade/downgrade to release to stable channel tag 2023.07.06
+* yt-dlp --update-to 2023.10.07 upgrade/downgrade to tag 2023.10.07 if it exists on the current channel
+* yt-dlp --update-to example/yt-dlp@2023.09.24 upgrade/downgrade to the release from the example/yt-dlp repository, tag 2023.09.24
+
+Important: Any user experiencing an issue with the stable release should install or update to the nightly release before submitting a bug report:
+To update to nightly from stable executable/binary:
+yt-dlp --update-to nightly
+
+To install nightly with pip:
+python -m pip install -U --pre "yt-dlp[default]"
+
+When running a yt-dlp version that is older than 90 days, you will see a warning message suggesting to update to the latest version.
+You can suppress this warning by adding --no-update to your command or configuration file.
+
+DEPENDENCIES
+Python versions 3.11+ (CPython and PyPy) are supported. Other versions and implementations may or may not work correctly.
+
+While all the other dependencies are optional, ffmpeg, ffprobe, yt-dlp-ejs and a supported JavaScript runtime/engine are highly recommended
+
+Strongly recommended
+
+* [ffmpeg and ffprobe - Required for merging separate video and audio files, as well as for various post-processing tasks. License depends on the build
+
+    Since ffmpeg is such an important dependency, we provide our own builds at yt-dlp/FFmpeg-Builds. In the past, patches were applied to these builds in order to fix common issues for yt-dlp users, but currently our builds are equivalent to upstream ffmpeg. See the readme for details
+
+    Important: What you need is ffmpeg binary, NOT the Python package of the same name
+
+…（内容已截断）

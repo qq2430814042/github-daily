@@ -1,0 +1,140 @@
+VoiceStudio
+
+  Open-source voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.
+
+    Website ·
+    Download ·
+    Get started ·
+    Docs ·
+    Discord ·
+    简体中文 ·
+    日本語
+Your voice. Your workflow.
+
+| Create | Produce | Connect |
+| :--- | :--- | :--- |
+| Clone a voice or design your own | Dub videos with timed speech | Local API & MCP for agents |
+| Dictate with a floating widget | Stories, audiobooks & batch jobs | Reusable recipes & watch folders |
+
+Start with VoiceStudio (default, powered by k2-fsa/OmniVoice), or choose another engine. Features & engine catalog.
+
+Local workflows run on your hardware. Remote services are optional; usage analytics requires consent.
+
+Explore the workspaces · Clone, dub, design & models
+
+  Voice cloningVideo dubbing
+
+  Voice designLocal models
+
+OmniVoice GGUF source builds can optionally use Vulkan on Windows and Linux;
+see the native engine guide
+for build requirements, CPU fallback, and device overrides.
+
+Get started
+
+One-command install (macOS / Linux)
+
+Latest Electron release
+curl -fsSL https://voicestudio.sh/install | sh
+
+A specific published Electron release (replace X.Y.Z)
+curl -fsSL https://voicestudio.sh/install | sh -s -- --version X.Y.Z
+
+Build current main and install the desktop app
+curl -fsSL https://voicestudio.sh/install | sh -s -- --main
+
+Uninstall the app, keeping your data
+curl -fsSL https://voicestudio.sh/install | sh -s -- --uninstall
+
+On Windows, run irm https://voicestudio.sh/install | iex in PowerShell.
+
+If voicestudio.sh/install is unreachable or returns 404, run the same script
+straight from the repository, or clone it and run scripts/install.sh:
+
+curl -fsSL https://raw.githubusercontent.com/debpalash/VoiceStudio/main/scripts/install.sh | sh
+
+Release downloads require curl and a SHA-256 tool. --main requires Git,
+Node.js 22+, Bun, Rust/Cargo, and platform build tools; see
+installer prerequisites and behavior.
+The installer preserves your settings, projects, and models. Older versions
+must contain Electron packages; it never falls back to archived Tauri builds.
+
+Or download from Releases (macOS .dmg, Windows .exe, Linux .AppImage or .deb) and follow your platform guide:
+
+macOS · Windows · Linux · Docker
+
+| Hardware | Support |
+|---|---|
+| NVIDIA GPU (Windows / Linux) | CUDA acceleration |
+| AMD Radeon / supported Ryzen AI (Windows) | CPU by default; opt-in Windows ROCm setup for AMD's Windows 11 hardware matrix. Setup distinguishes package repair from host failures; install the VC++ runtime manually first. Optional engines have separate limits; Vulkan engines retain their own runtime. |
+| Apple Silicon | Metal (MPS) acceleration |
+| AMD GPU | Opt-in native CosyVoice GGUF can use Vulkan when the community runtime is built with Vulkan; verified on RX 6700 XT (setup) |
+| No dedicated GPU (Intel/AMD integrated graphics, older PCs) | Fully usable on the CPU, slower; setup installs the small CPU build of PyTorch (about 5 GB free disk) |
+| Windows on ARM (Snapdragon X etc.) | Experimental, validation pending: native ARM64 app, x64 Python backend under emulation, CPU only |
+| Intel Mac | App UI only; connect to a remote backend (why) |
+
+Open Voice cloning, choose a voice or add a clean reference recording, enter your text, and generate. Install the required model when prompted. Hardware needs vary by engine; see performance.
+
+Install with prompt
+
+Paste into your coding agent (Claude Code, Codex, Cursor, …):
+
+Install the VoiceStudio Electron app on this device and verify it works, following
+https://github.com/debpalash/VoiceStudio/blob/main/docs/install/agent.md
+
+The agent guide covers hardware detection, reusing existing
+data, asking before model downloads, and a test generation. Agents that support skills
+can also run npx skills add debpalash/VoiceStudio.
+
+Run the Electron preview from source
+
+git clone https://github.com/debpalash/VoiceStudio.git
+cd VoiceStudio
+bun install
+bun run setup:api  # prepare Python dependencies before starting Electron
+bun run dev
+
+See Electron setup for prerequisites and backend configuration.
+
+Use bun run smoke-test to build and launch an isolated packaged Electron app.
+Add -- --install for the networked managed-runtime installation check.
+
+Electron is the only desktop app and web UI. Version 0.5.3 was the final Tauri release. Existing Tauri users must install Electron separately. The retired Tauri shell and legacy UI entry points have been removed.
+
+Documentation
+
+| Need | Start here |
+|---|---|
+| Setup help | Troubleshooting · Model downloads |
+| Models & audio quality | Engine guides · whisper.cpp ASR · Benchmarks |
+| Integrations | Local API · MCP · Examples |
+| Phone apps (preview, run offline) | iOS and Android |
+| Development | Contributing (CLA signing guidance for your first PR) · Electron · Changelog |
+
+Agent skills: npx skills add debpalash/VoiceStudio — choose voicestudio for audio workflows or voicestudio-maintainer for repository maintenance.
+
+Team
+
+Core team
+
+Palash Debnath
+Creator and Core Team
+palash.dev · GitHub · X
+
+Shimul Debnath
+Core Team
+shimul.me · GitHub · X
+
+Contributors
+
+Thank you to everyone who has sent code, reports, translations and ideas. See all contributors · Contribute
+
+Sponsors
+
+Sponsorship funds maintainer time, development tools, release infrastructure and test hardware; it buys recognition, not features.
+
+GitHub Sponsors · Ko-fi · PayPal · Tiers and recognition · Ask for recognition
+
+License & responsible use
+
+AGPL-3.0 covers the application, including commercial use under its conditions. Model weights, tokenizers, voices and generated-output conditions are separate; a paid app licence does not grant those rights. Clone voices only with permission. Model Manager now shows versioned model-source notices, evidence links and unresolved review gaps from the shared inventory. Its optional reviewed-file preview does not enforce ordinary downloads or certify commercial permission. See license details.

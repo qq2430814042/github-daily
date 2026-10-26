@@ -1,0 +1,102 @@
+Project NOMAD
+Knowledge That Never Goes Offline
+
+Project NOMAD is a self-contained, offline-first knowledge and education server packed with critical tools, knowledge, and AI to keep you informed and empowered — anytime, anywhere.
+
+Installation & Quickstart
+Project NOMAD can be installed on any Debian-based operating system (we recommend Ubuntu 26.04 LTS; 24.04 LTS and Debian 12 are also supported). Installation is completely terminal-based, and all tools and resources are designed to be accessed through the browser, so there's no need for a desktop environment if you'd rather setup NOMAD as a "server" and access it through other clients.
+
+Before you start: NOMAD itself needs about 5 GB of disk and under 1 GB of RAM. The offline content you add afterwards is what actually fills a drive, and the AI Assistant is what drives the memory requirement up. See Device Requirements for both, and the FAQ for individual content sizes.
+
+Note: sudo/root privileges are required to run the install script
+
+Quick Install (Debian-based OS Only)
+sudo apt-get update && \
+sudo apt-get install -y curl && \
+curl -fsSL https://raw.githubusercontent.com/Crosstalk-Solutions/project-nomad/refs/heads/main/install/install_nomad.sh \
+  -o install_nomad.sh && \
+sudo bash install_nomad.sh
+
+Project NOMAD is now installed on your device! Open a browser and navigate to http://localhost:8080 (or http://DEVICE_IP:8080) to start exploring!
+
+For a complete step-by-step walkthrough (including Ubuntu installation), see the Installation Guide. For Windows users, see the WSL2 install guide — community-supported path covering native Docker and Docker Desktop install routes.
+
+Advanced Installation
+For more control over the installation process, copy and paste the Docker Compose template into a docker-compose.yml file and customize it to your liking (be sure to replace any placeholders with your actual values). Then, run docker compose up -d to start the Command Center and its dependencies. Note: this method is recommended for advanced users only, as it requires familiarity with Docker and manual configuration before starting.
+
+How It Works
+NOMAD is a management UI ("Command Center") and API that orchestrates a collection of containerized tools and resources via Docker. It handles installation, configuration, and updates for everything — so you don't have to.
+
+Built-in capabilities include:
+- AI Chat with Knowledge Base — local AI chat powered by Ollama or you can use OpenAI API compatible software such as LM Studio or llama.cpp, with document upload and semantic search (RAG via Qdrant)
+- Information Library — offline Wikipedia, medical references, ebooks, and more via Kiwix
+- Education Platform — Khan Academy courses with progress tracking via Kolibri
+- Offline Maps — downloadable regional maps via ProtoMaps
+- Data Tools — encryption, encoding, and analysis via CyberChef
+- Notes — local note-taking via FlatNotes
+- System Benchmark — hardware scoring with a community leaderboard
+- Supply Depot — a one-click app catalog (PDF tools, file browser, e-book library, password manager, and more) plus the ability to run your own custom Docker containers
+- Automatic Updates — opt-in, hands-off updates for the core software, installed apps, and offline content, on a schedule you control
+- Easy Setup Wizard — guided first-time configuration with curated content collections
+
+NOMAD also includes built-in tools like a Wikipedia content selector, ZIM library manager, and content explorer.
+
+What's Included
+
+| Capability | Powered By | What You Get |
+|-----------|-----------|-------------|
+| Information Library | Kiwix | Offline Wikipedia, medical references, survival guides, ebooks |
+| AI Assistant | Ollama + Qdrant | Built-in chat with document upload and semantic search |
+| Education Platform | Kolibri | Khan Academy courses, progress tracking, multi-user support |
+| Offline Maps | ProtoMaps | Downloadable regional maps for offline viewing and search |
+| Data Tools | CyberChef | Encryption, encoding, hashing, and data analysis |
+| Notes | FlatNotes | Local note-taking with markdown support |
+| System Benchmark | Built-in | Hardware scoring, Builder Tags, and community leaderboard |
+| Supply Depot | Built-in | One-click app catalog + bring-your-own custom Docker containers |
+
+Device Requirements
+While many similar offline survival computers are designed to be run on bare-minimum, lightweight hardware, Project NOMAD is quite the opposite. To install and run the
+available AI tools, we highly encourage the use of a beefy, GPU-backed device to make the most of your install.
+
+At its core, however, NOMAD is still very lightweight. For a barebones installation of the management application itself, the following minimal specs are required:
+
+Note: Project NOMAD is not sponsored by any hardware manufacturer and is designed to be as hardware-agnostic as possible. The hardware listed below is for example/comparison use only
+
+Minimum Specs
+- Processor: 2 GHz dual-core processor or better
+- RAM: 4GB system memory (the whole stack without AI runs in under 1 GB)
+- Storage: At least 5 GB free disk space (plan for 10 GB to install comfortably)
+- OS: Debian-based (Ubuntu 26.04 LTS recommended)
+- Stable internet connection (required during install only)
+
+Adding the AI Assistant brings the install to roughly 25 GB, because Ollama and a general-purpose model are both large, and a model needs about its download size in memory while it answers. That memory comes from VRAM if you have a discrete GPU and from system RAM if you do not, which is the single biggest reason the figures below are so much higher.
+
+To run LLMs and other included AI tools:
+
+Optimal Specs
+- Processor: AMD Ryzen 7 or Intel Core i7 or better
+- RAM: 32 GB system memory
+- Graphics: NVIDIA RTX 3060 or AMD equivalent or better (more VRAM = run larger models)
+- Storage: At least 250 GB free disk space (preferably on SSD)
+- OS: Debian-based (Ubuntu 26.04 LTS recommended)
+- Stable internet connection (required during install only)
+
+For detailed build recommendations at three price points ($150–$1,000+), see the Hardware Guide.
+
+Again, Project NOMAD itself is quite lightweight — it's the tools and resources you choose to install with NOMAD that will determine the specs required for your unique deployment
+
+Running AI models on a different host
+By default, NOMAD's installer will attempt to setup Ollama on the host when the AI Assistant is installed. However, if you would like to run the AI model on a different host, you can go to the settings of the AI assistant and input a URL for either an ollama or OpenAI-compatible API server (such as LM Studio).
+Note that if you use Ollama on a different host, you must start the server with this option: OLLAMA_HOST=0.0.0.0.
+Ollama is the preferred way to use the AI assistant, as it has features such as model download that OpenAI API does not support. So when using LM Studio, for example, you will have to use LM Studio to download models.
+You are responsible for the setup of Ollama/OpenAI server on the other host.
+
+Frequently Asked Questions (FAQ)
+For answers to common questions about Project NOMAD, please see our FAQ page.
+
+About Internet Usage & Privacy
+Project NOMAD is designed for offline usage. An internet connection is only required during the initial installation (to download dependencies) and if you (the user) decide to download additional tools and resources at a later time. Otherwise, NOMAD does not require an internet connection and has ZERO built-in telemetry.
+
+To test internet connectivity, NOMAD first attempts to make a request to Cloudflare's utility endpoint, https://1.1.1.1/cdn-cgi/trace. If that endpoint is unreachable (for example, because your network blocks 1.1.1.1), it falls back to other endpoints the application already contacts (the GitHub API and the Project NOMAD API) and considers the connection online if any of them respond.
+
+…（内容已截断）

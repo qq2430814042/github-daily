@@ -1,0 +1,197 @@
+agentloop
+
+Everything you need for building an agent.
+
+agentloop is a Go library
+that takes care of everything you don't want to think about right now —
+the loop every agent needs (send a prompt to the model, execute the tool
+calls it requests, feed the results back, repeat until it produces a
+final answer), plus the budgets, hooks, skills, and tracing around it —
+so you can just build your agent. Every step of the loop is observable
+and configurable.
+
+It uses its sister project
+github.com/smhanov/llmhub so you
+can plug into any LLM — OpenAI, Anthropic, Gemini, Ollama, xAI,
+OpenRouter, Z.AI, or your own provider — without ever talking to a
+vendor API directly.
+
+Two pre-configured agents are included as reference examples, each
+assembled entirely from the public core:
+
+- a search agent that uses serper web search
+  to answer multi-step queries, with inline citations
+- a coding agent, based on
+  mini-swe-agent, that
+  solves tasks by executing shell commands in a workspace
+
+Going deeper. If you want the full picture of how agents work —
+the tool-calling loop, budgets, streaming, skills, and how to build
+them all from first principles — read the author's book,
+Building AI Agents from Scratch.
+It is the in-depth companion to this library: agentloop is the
+distillation of the techniques it teaches, with the scaffolding
+already written for you.
+
+Why agentloop?
+
+- The loop, done once and well. llmhub gives you provider-agnostic LLM
+  access including tool calling, but you still have to dispatch calls,
+  append result messages, budget iterations, and aggregate usage.
+  agentloop is that loop.
+- Hooks at every step. Logging, tracing, streaming UIs, approval
+  gates, cost caps, steering, context compression, and entire custom
+  agents are all expressed with one Hooks struct — the presets
+  themselves are built this way, which is the proof the surface is enough.
+- Safe by default. Every run is bounded: tool-call budgets, inference
+  ceilings, duplicate-call loop detection, stream watchdogs, and your
+  context.Context. The loop can never spin forever.
+- Skills, not prompt stuffing. Repeatable procedures live in skill
+  folders, advertised in a tiny catalog and loaded on demand through a
+  jailed read tool — with progressive disclosure from one catalog line to
+  full bodies to linked files to executable scripts.
+- Transparent traces. Every Ask returns the final text plus the
+  complete trace: every tool execution with output and duration, the full
+  message transcript, and token/cost usage.
+- Plain Go, tiny footprint. One dependency, one static binary:
+  agents compile with CGO_ENABLED=0 go build to any GOOS/GOARCH
+  and run in about 7 MB of RAM — no Python environment, no Node
+  sidecar, no container to babysit. Embed an agent in a CLI, a cron
+  job, an existing Go service, or a Raspberry Pi; between model calls
+  the loop itself is nearly free.
+
+Installation
+
+go get github.com/smhanov/agentloop
+
+Go 1.21 or newer. The only dependency is llmhub; the search preset also
+wants a serper.dev API key at runtime (never at
+build time).
+
+The full API reference — every exported type, option, and hook — lives
+on pkg.go.dev.
+
+Quick Start
+
+The search agent answers current-events questions grounded in Serper
+results, citing the sources it used:
+
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+
+	"github.com/smhanov/llmhub"
+	_ "github.com/smhanov/llmhub/providers/openai"
+
+	"github.com/smhanov/agentloop/search"
+)
+
+func main() {
+	llm, _ := llmhub.New("openai", os.Getenv("OPENAI_API_KEY"),
+		llmhub.WithModel("gpt-4o-mini"))
+
+	agent, _ := search.New(llm,
+		search.WithSerperKey(os.Getenv("SERPER_API_KEY")))
+
+	ans, err := agent.Ask(context.Background(),
+		"What Go version was released most recently, and when?")
+	if err != nil {
+		panic(err)
+	}
+
+	fmt.Println(ans.Text)
+	for i, s := range ans.Sources {
+		fmt.Printf("%d] %s — %s\n", i+1, s.Title, s.URL)
+	}
+	fmt.Printf("%d tool calls, $%.4f\n", ans.ToolCalls, ans.Usage.Cost)
+}
+
+ans.Text carries inline [n] citations that line up with ans.Sources
+(see [The search agent).
+
+Command line
+
+The repository ships examples/ask, a general-purpose runner for all
+three agents (search, bash, and the bare core). Three commands cover the
+common cases — using the Z.AI coding endpoint from the local key file as
+the example provider:
+
+Search agent (the default): grounded answers with sources
+export ZAI_API_KEY=… SERPER_API_KEY=…
+go run ./examples/ask \
+  -provider zai -model glm-5.3-flash \
+  -base-url https://api.z.ai/api/coding/paas/v4 \
+  -serper-key "$SERPER_API_KEY" \
+  -prompt "What Go version was released most recently, and when?" -stream
+
+Bash coding agent: solves a task by executing commands in a workspace
+go run ./examples/ask -provider zai -model glm-5.3-flash \
+  -base-url https://api.z.ai/api/coding/paas/v4 \
+  -agent bash -cwd /tmp/workspace -step-limit 20 -cost-limit 1.5 \
+  -prompt "Add a README.md describing this project." -stream -v
+
+Chat mode: one conversation, one prompt per stdin line (blank line exits)
+go run ./examples/ask -provider openai -model gpt-4o-mini -chat -cache-key demo
+
+The main flags (run go run ./examples/ask -h for the full list):
+
+| Flag | Description |
+| --- | --- |
+| -provider | llmhub provider name (required); the key comes from -api-key or the provider's standard environment variable (ZAI_API_KEY, OPENAI_API_KEY, …) |
+| -model | model identifier |
+| -base-url | provider base URL override |
+| -agent | search (default), bash, or plain (the bare core loop, no tools) |
+| -prompt / -prompt-file | prompt or task text, inline or from a file |
+| -chat | interactive multi-turn mode over one Conversation |
+| -cache-key | llmhub prompt-cache key — recommended with -chat |
+| -serper-key | Serper key (or SERPER_API_KEY); search agent only |
+| -system | replace the system prompt |
+| -skills | comma-separated skill directories to load |
+| -cwd, -env | bash agent: working directory and extra KEY=VALUE entries (repeatable) |
+| -step-limit, -cost-limit | bash agent limits |
+| -confirm | bash agent: prompt before every command (default: unattended) |
+| -tool-protocol | bash agent: native tool calling instead of the text protocol |
+| -stream | stream answer deltas as they arrive; reasoning dimmed on stderr; tool activity inline |
+| -v | print the event trace: tool calls with durations, steps, timing |
+| -json | print the final answer as JSON (text, sources or submission, usage, trace) |
+| -max-tool-calls, -max-steps | budget overrides |
+
+Exit codes: 0 success (any bash exit status counts as success), 1
+error, 2 budget exhausted.
+
+Example output
+
+A real transcript of the first command above (answer on stdout, -v
+trace on stderr):
+
+$ go run ./examples/ask -provider zai -model glm-5.3-flash \
+    -base-url https://api.z.ai/api/coding/paas/v4 \
+    -serper-key "$SERPER_API_KEY" \
+    -prompt "What Go version was released most recently, and when?" -v
+
+The most recently released version of Go is Go 1.27.3, released on
+October 19, 2026 1].
+
+Some additional context from the official release history:
+
+- Go 1.27.0 (the current major release) came out on **August 19,
+  2026**, followed by minor revisions 1.27.1 (Sept 1, 2026), 1.27.2
+  (Oct 8, 2026), and 1.27.3 (Oct 19, 2026) [1]. The latest patch, 1.27.3,
+  was primarily a security fix for the crypto/x509 package [1].
+- The previous major release, Go 1.26.0, was released on **February
+  10, 2026** [1, and its branch also received an update the same day
+  (Go 1.26.10, released October 19, 2026) 1].
+- Both Go 1.27 and Go 1.26 are the currently supported versions; the next
+  major release, Go 1.28, is expected in February 2027 [1.
+
+Sources:
+1. Release History – The Go Programming Language (go.dev)
+2. Go 1.26 Introduces Two Language Changes – Phoronix
+3. Next Release Notes Draft (tip.golang.org)
+sources:
+  1] A new pkg.go.dev API for Go https://opensource.googleblog.com/2026/06/a-new-pkggodev-api-for-go.html
+
+…（内容已截断）

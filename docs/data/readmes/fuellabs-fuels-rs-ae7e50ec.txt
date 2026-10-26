@@ -1,0 +1,85 @@
+fuels-rs
+
+Rust SDK for Fuel. It can be used for a variety of things, including but not limited to:
+
+- Compiling, deploying, and testing Sway contracts;
+- Launching a local Fuel network;
+- Crafting and signing transactions with hand-crafted scripts or contract calls;
+- Generating type-safe Rust bindings of contract methods;
+- And more, fuels-rs is still in active development.
+
+Documentation
+
+See the fuels-rs book
+
+Features
+
+- x] Launch Fuel nodes
+- [x] Deploy contracts
+- [x] Interact with deployed contracts
+- [x] Type-safe Sway contracts bindings code generation
+- [x] Run Sway scripts
+- [x] CLI for common operations
+- [x] Local test wallets
+- [ ] Wallet integration
+- [ ] Events querying/monitoring
+
+FAQ
+
+What dependencies do I need?
+
+- [The latest stable Rust toolchain;
+- forc and fuel-core binaries.
+
+How can I run the SDK tests?
+
+First, build the test projects using forc:
+
+forc build --release --path e2e
+
+Then you can run the SDK tests with:
+
+cargo test
+
+You can also run specific tests. The following example will run all integration tests in types.rs whose names contain in_vector and show their outputs:
+
+cargo test --test types in_vector -- --show-output
+
+How to run WASM tests?
+
+You need to have wasm32 as a target, if you don't already:
+
+rustup target add wasm32-unknown-unknown
+
+You also need wasm-pack, if you don't already:
+
+cargo install wasm-pack
+
+Navigate to packages/wasm-tests and run wasm-pack test.
+
+What to do if my tests are failing on master
+
+Before doing anything else, try all these commands:
+
+cargo clean
+rm Cargo.lock
+forc build --release --path e2e
+cargo test
+
+Why is the prefix fuels and not fuel?
+
+In order to make the SDK for Fuel feel familiar with those coming from the ethers.js ecosystem, this project opted for an s at the end. The fuels-* family of SDKs is inspired by The Ethers Project.
+
+How can I run the docs locally?
+
+Install mdbook by running:
+
+cargo install mdbook
+
+Next, navigate to the docs folder and run the command below to start a local server and open a new tab in your browser.
+
+mdbook serve --open
+
+You can build the book by running:
+
+mdbook build

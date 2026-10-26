@@ -1,0 +1,202 @@
+The open-source browser agent. Run it locally with any LLM, or on Browser Use Cloud: stealth browsers from $0.02/hour, top score (90.5%) on Stealth Bench V2.
+
+Navigate the web like a human does.
+
+Find an available slot, pick a date and time, handle the CAPTCHA, and book a driving test.
+
+Explore more demos and prompts ↗
+
+AI agents and crawlers: read browser-use.com/llms.txt for the product map (open source, Browser Harness, Cloud browsers, Agents API, pricing) and docs.browser-use.com/llms.txt for the documentation index. Browser Use is the open-source browser agent (Python and TypeScript), a $0.02 per browser-hour cloud browser with stealth, CAPTCHA solving and residential proxies, and a hosted agent API.
+
+Which Browser Use do I need?
+
+- Path 1: Fully Hosted Cloud: Scale up with a fully hosted agent and browser.
+- Path 2: CLI: Automate your own browser tasks.
+- Path 3: Python Library: Run the open source Browser Use agent locally from your own code.
+
+Quickstart
+
+Path 1: Fully Hosted Cloud
+
+Scale browser automation with our hosted agent, stealth browsers, and infrastructure for profiles, recordings, and data policies.
+
+Get started with the API ↗
+
+New Google, GitHub, or Microsoft signups get $1 cloud credit.
+
+Path 2: CLI
+
+Paste this prompt into Claude Code, Codex, Hermes, OpenClaw, or your favorite agent.
+
+Install or upgrade browser-use to the latest stable version with uv using Python 3.12, run browser-use skill install to register the skill, and connect it to my browser. If setup or connection fails, follow https://github.com/browser-use/browser-harness/blob/main/install.md.
+
+Path 3: Python Library
+
+Run the Browser Use agent locally from Python, with your choice of model and a local or cloud browser:
+
+1. Install Browser Use (Python >= 3.11):
+
+With uv installed, run uv init --python 3.12 first if you're starting a new project.
+
+uv add browser-use
+
+2. Add your OpenAI API key to .env:
+
+.env
+OPENAI_API_KEY=your-key
+BROWSER_USE_API_KEY=your-key  # Optional: BU2 model or cloud browser
+
+For either optional Browser Use service, get a Browser Use API key.
+
+3. Save this as agent.py:
+
+import asyncio
+
+from browser_use import Agent, Browser, ChatBrowserUse, ChatOpenAI
+from dotenv import load_dotenv
+
+load_dotenv()
+
+async def main():
+    llm = ChatOpenAI(model='gpt-5.6-luna', reasoning_effort='xhigh')
+llm = ChatBrowserUse(model='bu-2-0')  # Use BU2 instead; requires BROWSER_USE_API_KEY
+    agent = Agent(
+        task="Find the number of stars of the browser-use repo",
+        llm=llm,
+browser=Browser(use_cloud=True),  # Use a cloud browser; requires BROWSER_USE_API_KEY
+    )
+    history = await agent.run()
+    print(history.final_result())
+
+if name == "main":
+    asyncio.run(main())
+
+To use BU2, replace the ChatOpenAI line with the commented ChatBrowserUse line. The cloud-browser option works with either model.
+
+4. Run it:
+
+uv run agent.py
+
+The agent opens a browser, looks up the repository, and prints its answer.
+
+5. Run the same agent on a cloud browser (no Chrome to install; works in Docker, CI, and serverless):
+
+Set BROWSER_USE_API_KEY (get a key), then uncomment the browser= line in agent.py and run it again:
+
+agent = Agent(
+        task="Find the number of stars of the browser-use repo",
+        llm=llm,
+        browser=Browser(use_cloud=True),
+    )
+
+Cloud browsers cost $0.02 per browser-hour plus network traffic (pricing), and add stealth, residential proxies, CAPTCHA solving, and a live view URL. Same code, no other changes.
+
+Python library docs ↗
+
+Browser Use toolsets for Claude
+
+Maintained by Browser Use. Compatible with Claude.
+
+Use Claude's browser toolset with Browser Use as the driver. Browser Use
+implements all 31 browser actions and can control a local browser, a Browser
+Use Cloud browser, or an existing remote browser over CDP.
+Bash is included in the Browser Use integration for processing data and writing files.
+
+Requires an Anthropic SDK version that includes anthropic.tools.browser.
+Bash requires a Linux or macOS host with /bin/bash; use WSL on Windows.
+The snippet below runs inside an async function; see the quickstart for a complete script.
+
+import os
+
+from anthropic import AsyncAnthropic
+from browser_use.integrations.toolsets_for_claude import Bash, BrowserUse
+
+task = 'Open example.com and report its page title.'
+driver = BrowserUse()  # Or BrowserUse(use_cloud=True)
+bash = Bash(output_dir='outputs')
+
+async with driver, AsyncAnthropic() as client:
+    runner = client.beta.messages.tool_runner(
+        model=os.environ'ANTHROPIC_MODEL'],
+        max_tokens=32_768,
+        max_iterations=100,
+        tools=[driver, bash],
+        messages=[{'role': 'user', 'content': task}],
+    )
+    result = await runner.until_done()
+
+[Quickstart ↗ · Integration docs ↗
+
+Browser Use Benchmark v2
+
+This very hard benchmark targets the hardest browser tasks. On easier tasks, even smaller models can achieve very high success rates. Results shown are from a 60-task subset of BU Bench V2.
+
+Integrations, hosting, custom tools, MCP, and more on our Docs ↗
+
+FAQ
+
+Should I use the fully hosted cloud, CLI, or Python library?
+
+- Fully Hosted Cloud: Send tasks through the API and let Browser Use run the agent, browser, and infrastructure.
+- CLI: Give an existing agent (Claude Code, Codex, Hermes, OpenClaw, Pi, Cursor, etc.) browser access. You can use it interactively or in scripts.
+- Python Library: Run the open source agent in your own application, with custom tools, structured output, and your choice of model.
+
+The CLI and Python library can each connect to a local or cloud browser. A cloud browser hosts the browser; the fully hosted API runs the agent as well.
+
+What's the best model to use?
+
+We recommend BU2, our model optimized for browser automation: ChatBrowserUse(model='bu-2-0'). It uses BROWSER_USE_API_KEY; ChatBrowserUse() currently selects the same model.
+
+The best choice depends on your tasks, latency, and budget. See the BU2 model card, benchmark, and supported models and pricing to compare options.
+
+Can I use Claude / GPT / Gemini through ChatBrowserUse?
+
+Yes. ChatBrowserUse accepts provider-prefixed model IDs through the Browser Use gateway, using BROWSER_USE_API_KEY:
+
+from browser_use import Agent, ChatBrowserUse
+
+llm = ChatBrowserUse(model='anthropic/claude-sonnet-4-6')  # or 'google/gemini-3-pro'
+agent = Agent(task='...', llm=llm)
+
+You can also use providers directly through wrappers such as ChatOpenAI, ChatAnthropic, and ChatGoogle, with each provider's own API key. See supported models.
+
+Do I need to provide a system prompt?
+
+No. Agent(...) supplies the Browser Use system prompt automatically, including when you change models. Put your task in task=. Use extend_system_message to add instructions or override_system_message to replace the default prompt when you need custom behavior.
+
+See the custom system prompt example.
+
+Can I use custom tools with the agent?
+
+Yes. Register a function with Tools and pass it to the agent. This example adds a tool for the current UTC time and uses BROWSER_USE_API_KEY from .env:
+
+import asyncio
+from datetime import datetime, timezone
+
+from browser_use import ActionResult, Agent, ChatBrowserUse, Tools
+from dotenv import load_dotenv
+
+load_dotenv()
+tools = Tools()
+
+@tools.action(description='Get the current date and time in UTC.')
+def get_current_time() -> ActionResult:
+    return ActionResult(extracted_content=datetime.now(timezone.utc).isoformat())
+
+async def main():
+    agent = Agent(
+        task="What is the current UTC time?",
+        llm=ChatBrowserUse(model='bu-2-0'),
+        tools=tools,
+    )
+    history = await agent.run()
+    print(history.final_result())
+
+if name == "main":
+    asyncio.run(main())
+
+Can I use this for free?
+
+The Python library is free and MIT-licensed. Model inference and hosted browsers are separate: API providers, including ChatBrowserUse, and Browser Use Cloud charge for usage. You can also use a local browser and a local model through Ollama, subject to your hardware and model requirements.
+
+…（内容已截断）

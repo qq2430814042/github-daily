@@ -1,0 +1,105 @@
+gdirect
+
+中文 · Changelog
+
+gdirect browses, downloads, uploads and mounts your Google Drive from the terminal. It finds Google IPs that are reachable from your network and sends Drive traffic straight to them, with multi-connection, resumable downloads.
+
+How it works
+
+| Traffic | Route |
+| --- | --- |
+| Drive API, downloads, uploads and their token refresh (browse, ls, download, upload) | A scanned Google IP. The hostname and certificate check stay the same. If connections carrying the real SNI are reset, gdirect automatically retries under a forged identity (g.cn as TLS name, the real host in the Host header) — same idea as Sheas-Cealer — and remembers what worked per IP |
+| Sign-in and account verification (accounts.google.com, oauth2.googleapis.com, www.googleapis.com), and token refresh when no scanned IP answers for it | Your normal system network (DNS, proxy) |
+| mount (rclone) | Your normal system network |
+
+The first transfer command checks a known relay and sweeps Google's own front ends, and keeps the ones that work for 24 hours. The relay, 183.56.143.147, is not Google: it forwards connections to Google, which makes it fast and stable in mainland China, so it is tried first. It cannot read your traffic (TLS runs end to end and is verified against Google's roots), but its operator sees your IP address and, unless the forged identity is used, which Google host you connect to. To avoid it, pass --google-only (or set GDIRECT_GOOGLE_ONLY=1); only Google's own front ends are then used. Those come from the address space Google publishes as its own (goog.json minus cloud.json, embedded and refreshed weekly). Most Google IPs are blocked in mainland China, but some front ends are not: the sweep tries a TCP connection first, fully verifies only what answers (TLS, the Drive API and a test download), and stops once it has 8. Each candidate is probed with the real SNI first, then with the forged identity. If an endpoint (the relay included) stops answering, requests and downloads move to the next verified one. login and mount do not scan. Certificates are verified against Google's own GTS roots (embedded in the binary), never against a system CA bundle — a compromised third-party CA cannot impersonate Google for gdirect.
+
+Network requirements:
+
+- Sign-in needs browser access to accounts.google.com and application access to oauth2.googleapis.com and www.googleapis.com. If Google is blocked, keep a proxy available for sign-in. During transfers, token refresh goes through the scanned IP too, so no proxy is needed then; only if that IP does not answer as Google's token endpoint does gdirect fall back to the system network.
+- If you use a TUN-mode proxy or VPN (for example Clash/Mihomo TUN), route Google's IP ranges DIRECT and turn off fake-ip for them. A TUN proxy accepts every connection, so otherwise the scan measures the proxy instead of your network; scan warns when it sees this. gdirect scan --list shows the IPs in use.
+
+System proxy without TUN
+
+- On macOS and Windows, sign-in and account verification use the manual HTTP/HTTPS system proxy (token refresh too, when it falls back to the system network). A proxy client in rule mode with TUN off is enough: proxy accounts.google.com, oauth2.googleapis.com and www.googleapis.com. No DIRECT rules are needed; scans, Drive API requests, uploads and downloads still connect to the scanned endpoints directly.
+- If you turn TUN on with domain sniffing, a www.googleapis.com proxy rule also catches those transfers. Exclude the scanned IPs from sniffing, or send all of gdirect's traffic DIRECT with a process rule such as Clash's PROCESS-NAME,gdirect,DIRECT.
+- On Linux, or with PAC, set HTTPS_PROXY for each command (your client's HTTP or mixed port). HTTP_PROXY / HTTPS_PROXY take precedence over system settings, and mount passes them on to rclone. NO_PROXY must not exclude the Google endpoints above.
+
+HTTPS_PROXY=http://127.0.0.1:7890 gdirect login --client-secret ~/Downloads/client_secret.json
+HTTPS_PROXY=http://127.0.0.1:7890 gdirect mount
+
+Install
+
+Prebuilt for macOS 15+ (Apple Silicon / Intel), Linux x86_64 with glibc 2.35+ (Ubuntu 22.04+, Debian 12+, recent Fedora/Arch/openSUSE), and Windows x86_64. Alpine/musl, older glibc and Linux ARM64 need a source build.
+
+macOS / Linux (requires curl):
+
+curl -fsSL https://raw.githubusercontent.com/mizorewww/gdirect/main/scripts/install.sh | bash
+
+Windows PowerShell:
+
+& (scriptblock]::Create((Invoke-RestMethod 'https://raw.githubusercontent.com/mizorewww/gdirect/main/scripts/install.ps1')))
+
+The installer puts gdirect in ~/.local/bin (Windows: %LOCALAPPDATA%\gdirect\bin) and tells you how to add it to PATH. On Windows, open a new terminal after installing.
+
+To use mount, add --with-mount (PowerShell: -WithMount). This also installs rclone 1.75.2+ and, on Linux, FUSE3 through your package manager (uses sudo). On Windows it installs rclone and WinFsp with winget; WinFsp may ask for administrator approval.
+
+Homebrew (macOS / Linux):
+
+brew tap mizorewww/gdirect https://github.com/mizorewww/gdirect
+brew install mizorewww/gdirect/gdirect
+brew install rclone   # only for mount; Linux also needs your distro's fuse3 package
+
+Upgrade with brew update && brew upgrade gdirect, or by rerunning the installer.
+
+You can also download a [release archive. Certificates are verified against Google's own GTS roots, which are embedded in the binary — no CA bundle file is needed.
+
+One-time Google setup (about 10 minutes)
+
+gdirect does not ship a shared Google client, so you create your own in a Google Cloud project, once. Follow the Google setup guide to download a Desktop app OAuth client JSON, then:
+
+gdirect login --client-secret ~/Downloads/client_secret.json
+
+A browser opens. After you approve, the terminal prints Logged in. The JSON file is not needed again.
+
+Daily use
+
+gdirect                                   # same as gdirect browse
+gdirect browse -o ~/Downloads             # download directory (default: ./downloads)
+gdirect ls root --json
+gdirect download FILE_ID_OR_URL           # saves to ./downloads/
+gdirect download FILE_ID -o file.zip
+gdirect download DOC_ID --export application/pdf -o doc.pdf
+gdirect upload ./file.zip
+gdirect upload ./file.zip --parent FOLDER_ID --name backup.zip
+
+browse shows the parent folder, the current folder and a preview side by side, like yazi. Press ? for every key.
+
+| Key in browse | Action |
+| --- | --- |
+| j/k, ↑/↓ | Select |
+| g/G, Home/End | First / last item |
+| Ctrl-d/Ctrl-u, PgDn/PgUp | Half a page / a page down or up |
+| Enter, l/→ | Open folder |
+| h/←, Backspace | Parent folder |
+| / | Filter the current folder by name. Enter keeps the filter, Esc clears it |
+| Ctrl-r, F5 | Refresh |
+| Space | Mark or unmark an item. Marks are kept when you change folders |
+| Ctrl-a | Mark everything shown (press again to unmark) |
+| Esc | Clear the filter, then the marks, then the clipboard |
+| a | Create an empty file; a name ending in / creates a folder |
+| r | Rename |
+| y / x | Copy / cut the marked items, or the selected one |
+| p | Paste into the current folder. Cut items are moved; copied files are duplicated (Drive cannot copy folders) |
+| D, Delete | Move the marked items, or the selected one, to the Drive trash (asks first) |
+| u | Upload a local file into the current folder |
+| d | Queue the marked items, or the selected one. A folder is downloaded with all its subfolders into //. Google Docs/Sheets/Slides are exported as PDF |
+| +/- | Connections for the next download (1–16), saved as your default |
+| c | Cancel the current download and keep the partial data |
+| R | Retry failed or cancelled downloads |
+| X | Remove downloads that have not started yet |
+| q | Quit |
+
+- Queue: downloads run one at a time. The file list shows each file's state (◦ queued, ↓ downloading, ✓ saved, ✗ failed), and the Downloads panel shows overall progress. Select a failed file to see the full error. Files with the same name in one session are saved as name (2).ext.
+
+…（内容已截断）

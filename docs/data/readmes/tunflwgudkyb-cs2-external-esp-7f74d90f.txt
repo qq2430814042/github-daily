@@ -1,0 +1,90 @@
+🎯 The Pitch
+
+A fully external CS2 cheat suite that doesn't cost $30/month, doesn't phone home, and doesn't need a driver.
+
+I built this because every "premium" CS2 external on the market in 2026 is either a subscription-farming piece of malware disguised as a cheat, a DMA card setup that costs more than the GPU, or a 2024-era fork that still crashes on every CS2 update and leaks your HWID to someone's Discord webhook. You already know why. Overwolf overlays that get you VAC-flagged, "undetected" loaders that are detected within 48 hours, ESPs that draw through walls but also draw through smoke and lose you the round, spoofers that brick your NIC. I got tired of paying for it and tired of debugging other people's broken builds.
+
+This repo is the free, source-visible, offline-first alternative. No subscription. No token auth. No webhook exfil. Just a single .exe, a config folder, and a memory-read overlay that runs entirely in userland.
+
+📦 Grab the build
+
+🧭 Table of Contents
+
+- What This Actually Is
+- How The Internals Work
+- Comparison — Why Not Just Pay For One
+- Key Features
+- Module Catalog
+  - 👁️ Visual ESP Modules
+  - 🎯 Aim Assistance Modules
+  - 🔧 Player & Economy Tweaks
+  - 🎛️ Overlay & Interface Modules
+  - 🛰️ Recon & Info Modules
+- Usage Guidelines
+- Hotkeys
+- Tips For Best Results
+- Known Issues
+- Roadmap
+- System Requirements
+- The Solution
+- FAQ
+- Troubleshooting Flow
+
+🧩 What This Actually Is
+
+| Term | Explanation |
+|------|-------------|
+| External | The cheat runs as a separate process from .exe. It reads game memory via ReadProcessMemory and renders to a transparent topmost window. It never injects a DLL, never hooks the game's functions in-process, and never touches the game's code pages. |
+| ESP | Extra Sensory Perception — box, skeleton, health, name, weapon, and distance overlays drawn over player models. "Wallhack" if you're old-school. |
+| Overlay | A borderless, per-pixel-alpha, click-through window layered above the game surface via WS_EX_LAYERED \| WS_EX_TRANSPARENT. Nothing is drawn inside the game's render pipeline. |
+| Reader | The memory-reading component. Signature-scanned offsets resolved against the current client.dll / engine2.dll. This is the part that breaks on every Valve patch. |
+| Config | Plain JSON in ./config/. No encryption, no cloud sync. Edit by hand if you want. |
+| Draw-through | Whether ESP renders on top of geometry (walls, props) or is depth-occluded. Controlled per-module — you don't want skeleton showing through smoke at match point. |
+
+Why people actually use external builds like this:
+
+- No injection vector for anti-cheat to scan for in-process.
+- Crash-resistant — if the reader dies, the game keeps running.
+- Debuggable. You can attach a debugger to your own cheat process without tripping anything.
+- Configs are portable and human-readable.
+- Single binary, no runtime install.
+
+⚙️ How The Internals Actually Work
+
+This is the section that paid alternatives don't give you, and it's the part you actually need to understand if you're going to modify this.
+
+The suite boots into three cooperating threads inside one userland process. The first is the resolver: on launch it opens a handle to .exe with PROCESS_VM_READ | PROCESS_QUERY_INFORMATION, walks the module list, locates client.dll, and applies a set of byte-pattern signatures to recover the offsets for the local player, the entity list, the view matrix, the radar base, and the bone matrix array. These signatures are the maintenance burden — when Valve restructures C_CSPlayerPawn or reorders the entity list freelist, the offsets shift and the signature needs a new wildcard. Everything downstream depends on the resolver succeeding within the first ~200ms of attach, so if you're seeing a black overlay with no boxes, the resolver is what failed, and the debug log will tell you which signature didn't match.
+
+The second thread is the sampler. It runs a tight read loop at a configurable interval (default 8ms) pulling entity positions, health, team indices, weapon IDs, and bone matrices into a double-buffered snapshot. The snapshot swap is atomic so the renderer never draws a half-updated frame with an entity position from tick N and a health value from tick N-1 — that mismatch is what causes the famous "dead player still has a box" glitch in cheaper externals. The sampler deliberately reads slightly more than any single render pass needs, because ESP and aim-bot both pull from the same snapshot and you don't want to serialize two readers against the same handle.
+
+The third thread is the presenter. It owns a layered topmost window sized to the game client rect (tracked via GetClientRect on the game's HWND, with SetWinEventHook catching move/resize). It renders with GDI+ into an offscreen bitmap, then UpdateLayeredWindow paints it in one shot — this is deliberately slower than D3D but keeps the cheat entirely out of the graphics driver path, which matters for detection surface. On top of the presenter sits the world-to-screen transform: it pulls the current view matrix, projects each entity origin and each bone origin into clip space, rejects anything behind the near plane, and converts to screen pixels. That projection is the whole ballgame — if boxes drift when you pan the camera, the view matrix read is stale, and the fix is almost always lowering the sampler interval or checking that the resolver picked up the right dwViewMatrix offset.
+
+The aimbot thread is separate and off by default. It reads from the sampler's snapshot, picks a target using a priority tree (FOV distance × visibility × threat weighting), computes a delta in screen space, and moves the cursor via SendInput with MOUSEEVENTF_MOVE relative deltas — not SetCursorPos, which teleports and is both obvious to spectators and breaks on fullscreen. Smoothing is applied per-axis with a configurable humanization curve, and the whole loop can be gated behind an activation key so it only runs when you're holding the button.
+
+Config, logging, and the hotkey listener all run on a fourth, lighter thread. The .exe is a single signed-agnostic build — no installer, no service, no scheduled task.
+
+🥊 Comparison — Why Not Just Pay For One
+
+| Aspect | Paid External (typical 2026) | This Build |
+|--------|------------------------------|------------|
+| Cost | $25–$45/month subscription, HWID-bound | Free, MIT, no account |
+| Auth | License key server, phone-home on every launch | None — runs offline |
+| Update model | Vendor pushes silent updates on their schedule | You patch the signature file yourself, or pull a fork |
+| Config | Encrypted, cloud-synced, sometimes vendor-locked | Plain JSON in ./config/, hand-editable |
+| Detection surface | Loader + injector + driver (needed for their "kernel" features) | Userland overlay only, no driver |
+| Source visibility | Closed | Fully open, audit the reader yourself |
+| Failure mode | Voided sub, support ticket, wait 3 days | Signature fails → you see the debug log line and fix it |
+
+Framing is deliberate — the paid ones win on convenience (they maintain the offsets for you). This one wins on transparency and cost, and asks that you understand what a signature is.
+
+🎁 Key Features
+
+| Feature | Description | Benefit |
+|---------|-------------|---------|
+| ExtEsp | Box, skeleton, health bar, name, weapon, distance — independently toggled per module | Tune your visual load, don't drown in clutter |
+| AimAssist | FOV-limited, humanized smoothing, optional visibility check before lock | Assists without looking like a bot in demos |
+| BonePriority | Configurable target bone (head / chest / pelvis) with fallback chain | Consistent hit registration, no pelvis snaps |
+| RadarHack | Full-map radar with enemy positions and view angles | You read rotations 5 seconds early |
+| NoFlash | Writes flash alpha to zero on the local player only | Land your flick through the flash |
+
+…（内容已截断）

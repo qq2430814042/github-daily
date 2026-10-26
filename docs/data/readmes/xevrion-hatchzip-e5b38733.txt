@@ -1,0 +1,133 @@
+HatchZip
+
+  Extract huge archives in place. The archive shrinks as your files hatch,
+
+  so you only need free space for the output, not for the output and the archive.
+
+  hatchzip.dev |
+  Installation |
+  Usage |
+  Safety |
+  How it works |
+  Contributing
+
+HatchZip is a free, open-source archive extractor for Windows, macOS and Linux, with a desktop app and a command line tool. It extracts ZIP, 7z, RAR, tar and split archives in place, for when there is not enough disk space to extract an archive next to itself, such as a large game download on a nearly full disk. Download it from hatchzip.dev.
+
+A 180 GB game download that unpacks to 200 GB needs 380 GB of disk with WinRAR, 7-Zip or unzip, because the archive and everything extracted from it have to exist at the same time. HatchZip needs a little over 200 GB. It extracts the archive from the end and cuts each finished part off the archive file as it goes, so the space the archive gives back is reused for the next files.
+
+It checks that the extraction will fit before it changes anything, keeps a safety margin of free space the whole way through, and can be stopped or crash at any moment and pick up where it left off. It reads ZIP, 7z, tar, .tar.gz, RAR volume sets and split archives.
+
+Get it
+
+HatchZip is only distributed from this repository's releases and its site, hatchzip.dev. Other sites using the name, such as hatchzip.com, are not affiliated with this project.
+
+No coding needed. Download for Windows (Windows 10 and 11), or for macOS (Apple Silicon), macOS (Intel) and Linux.
+
+1. Run the installer. Windows may show "Windows protected your PC" because HatchZip is not code-signed yet: choose More info, then Run anyway.
+2. Right-click the archive, choose HatchZip, then Extract here. On Windows 11 the menu is under Show more options.
+3. Or open HatchZip from the Start menu, open the archive, and choose Extract.
+
+HatchZip shows whether the files will fit before it changes anything. The archive is used up as the files come out, so when it finishes, only the extracted files are left.
+
+To keep the archive when there is room for both, choose Extract here (keep archive) in the right-click menu, or clear Remove the archive during extraction in the app. That is a normal extraction: the archive is not changed, and space is required for all extracted files.
+
+When there is not enough disk space to extract
+
+The same 200 MB of game data (21 files), packed by the real tools, extracted on a 220 MiB disk with about 50 MB free:
+
+| Archive | unzip / 7-Zip | HatchZip |
+|---|---|---|
+| ZIP, 180 MB | unzip ran out of space at file 6 of 21 | Finished, every file byte-identical |
+| 7z from 7-Zip 25.01, -ms=20m (10 solid blocks) | Needs 380 MB | Finished in 0.64 s, every file byte-identical |
+| 7z split into 5 volumes of 40 MB | Needs 380 MB | Finished; volumes deleted one at a time, peak 210 MB used |
+| tar from GNU tar, 200 MB | Needs 400 MB | Finished in 0.12 s, every file byte-identical |
+| 7z from 7-Zip with default settings (1 solid block) | Needs 380 MB | Refused before touching anything: one solid block can't be freed until all of it is out, so it needs 200 MB free |
+
+| | Result |
+|---|---|
+| ZIP extraction speed, same data | 0.25 to 0.35 s, against 1.48 to 1.50 s for unzip 6.00, including an fsync unzip skips |
+| Crash safety | Killed at both unsafe moments of a batch at many points of each format's run; every resume finished with identical output |
+| Works on | Any filesystem that can shrink a file: ext4, btrfs, XFS, NTFS, APFS, and also exFAT and FAT32 USB drives |
+
+Measured on Fedora 43, Intel Core i7-14700HX, SK Hynix NVMe SSD, warm page cache; the disk-space runs used a 220 MiB tmpfs to stand in for a full laptop disk, the speed runs ext4. Speed comes from decompressing files in parallel, so an archive holding one giant file extracts at the speed of a single core.
+
+The extra space HatchZip needs beyond the output is about the size of the largest single unit it can free at once: one file for ZIP and tar, one solid block for 7z. On filesystems that can punch holes (ext4, XFS, btrfs, tmpfs; NTFS and APFS not yet verified), a large file stored or deflated in a ZIP, or in a tar, frees its archive bytes every 256 MiB while it is extracted: a ZIP holding one 600 MiB stored file extracted on a 950 MiB tmpfs with 367 MB free, where it needed 629 MB before. hatchzip check computes the exact figure for any archive.
+
+Installation
+
+Desktop app
+
+Download from the latest release:
+
+| System | File |
+|---|---|
+| Windows 10 and 11 (x64) | HatchZip-x64-setup.exe: installs per user, no admin rights, adds the right-click menu |
+| Windows 10 and 11 (x64), MSI | HatchZip-x64.msi: the same app and install as the setup, as a Windows Installer package for deployment tools and msiexec /i HatchZip-x64.msi /qn. Install one or the other |
+| macOS, Apple Silicon | HatchZip-aarch64.dmg |
+| macOS, Intel | HatchZip-x86_64.dmg |
+| Debian, Ubuntu | hatchzip_amd64.deb |
+| Fedora, openSUSE | hatchzip-x86_64.rpm |
+| Any Linux | HatchZip-x86_64.AppImage |
+
+The installers also put the hatchzip command (and its short name hz) on your PATH. The Windows installers and the macOS apps are not code-signed yet: on Windows choose More info, then Run anyway; on macOS 15 and later, open the app once, then allow it under System Settings, Privacy & Security.
+
+Command line only
+
+Linux and macOS:
+
+curl -fsSL https://raw.githubusercontent.com/xevrion/hatchzip/main/install.sh | sh
+
+Windows, in PowerShell:
+
+irm https://raw.githubusercontent.com/xevrion/hatchzip/main/install.ps1 | iex
+
+Both download the build for your machine from the latest release, check it against its published SHA-256 checksum, and install hatchzip and hz for your user only, with the man page and shell completions. No root or administrator rights.
+
+Every release file from 0.1.3 on carries signed build provenance. To check that a download really was built from this repository by its release workflow, wherever you got it:
+
+gh attestation verify HatchZip-x64-setup.exe --repo xevrion/hatchzip
+
+Package managers
+
+Homebrew and Scoop are live. winget is in review, and the AUR packages are coming soon; until they are listed as live here, a package under those names does not come from this project.
+
+| System | Command | Installs |
+|---|---|---|
+| Arch Linux (AUR) | yay -S hatchzip-bin, or yay -S hatchzip to build from source | App and CLI |
+| Windows (winget) | winget install Xevrion.HatchZip | App and CLI, same as the setup |
+| Windows (Scoop) | scoop bucket add xevrion https://github.com/xevrion/scoop-bucket, then scoop install xevrion/hatchzip | CLI |
+| macOS and Linux (Homebrew) | brew install xevrion/tap/hatchzip | CLI |
+| macOS (Homebrew) | brew install --cask xevrion/tap/hatchzip | App and CLI |
+
+With Cargo
+
+cargo install hatchzip
+
+This builds the command line tool from crates.io. The engine is a library too: hatchzip-core. It reads every format but RAR; cargo install hatchzip --features rar adds RAR support, which compiles UnRAR's C++ source under its own license and needs a C++ compiler.
+
+From source
+
+With Rust (the version is pinned in rust-toolchain.toml and installed automatically):
+
+git clone https://github.com/xevrion/hatchzip.git
+cd hatchzip
+cargo build --release
+
+The binaries are target/release/hatchzip and target/release/hatchzip-gui (.exe on Windows). Building the desktop app on Linux needs the fontconfig headers (libfontconfig1-dev or fontconfig-devel). cargo build --release --features rar adds RAR support, as in the release builds; it needs a C++ compiler.
+
+Shell completions and man page
+
+hatchzip completions bash > ~/.local/share/bash-completion/completions/hatchzip
+hatchzip completions zsh > "${fpath1]}/_hatchzip"
+hatchzip completions fish > ~/.config/fish/completions/hatchzip.fish
+hatchzip completions powershell >> $PROFILE
+
+hatchzip man > ~/.local/share/man/man1/hatchzip.1    # then: man hatchzip
+
+Usage
+
+See whether it fits
+
+hatchzip check game.zip
+
+…（内容已截断）

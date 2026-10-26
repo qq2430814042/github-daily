@@ -1,0 +1,139 @@
+CleanYourTV for LG webOS
+
+A fast home screen for rooted LG webOS TVs, with Live TV from your own playlist, an Inputs list on the Input key,
+picture notifications, optional on-device voice recognition and an optional debloat of LG's ads and telemetry.
+
+LG's system files are not modified. The launcher takes over Home with a mount that exists only in RAM, so a reboot without the
+boot scripts brings LG's Home back. Everything we install is stored in /media/developer/cleanyourtv (plus two boot scripts and
+the key binds), and the uninstall removes it. It runs on the TV: no server and no account of ours, and the project collects no
+data. Optional features contact the services you choose; Security lists them.
+
+CleanYourTV replaces LG's Home with a launcher: a dock of four apps, a top shelf, an app grid sorted by use, an Inputs
+picker, a Settings shortcut and a clock. A small service runs on the TV as root and adds the rest. A manager app on the TV
+sets up, updates and removes everything.
+
+Compatibility at a glance
+
+* webOS: 5 and newer (2020 models and later). webOS 4 and older have no systemd and an old Node.js; the setup stops before it
+  changes anything. LG names its versions two ways: webOS version numbers gives both.
+* Access: a TV rooted with the Homebrew Channel (rootmy.tv) and internet access
+  on the TV for the download. Install from the Homebrew Channel, or with one command over SSH as root.
+* Tested hardware: LG OLED65G26LA on webOS 25. Other TVs are reported in
+  Tested TVs; an unlisted firmware is set up when LG's Home is of the
+  flutter or web kind, and otherwise the setup stops and offers Set up anyway.
+
+Read the documentation for the features, installation, updates and security.
+
+Quick start
+
+1. Root the TV and install the Homebrew Channel.
+2. Install the manager app, one of two ways:
+   - From the Homebrew Channel. Open the Homebrew Channel, the gear at the top, Add repository, and enter
+
+     https://github.com/lasharor/cleanyourtv-WebOS/releases/latest/download/apps.json
+
+     CleanYourTV then shows in the channel's list: open it and choose Install. New releases show there as updates.
+   - From your computer, with your TV's IP address:
+
+     ssh root@192.168.1.50 'curl -fsSL https://raw.githubusercontent.com/lasharor/cleanyourtv-WebOS/main/install.sh | sh'
+
+3. On the TV, open CleanYourTV, choose the options and Set up now. It takes about a minute and the screen blinks once.
+
+That's it. The launcher is LG's Home from then on. If the new Home does not come up, the setup removes the boot scripts and
+restarts the TV with LG's Home. The installation guide has the details
+and troubleshooting.
+
+What it's for
+
+1. A launcher that is quick and yours. A dock of four apps, an app
+   grid sorted by how often you use each app, top buttons you choose, an Inputs list and a clock; menus in English, Dutch, German,
+   French and Spanish; themes for colours, layout and wallpaper, and
+   Wallpapers: your own photos behind Home, uploaded from a phone or synced
+   from Immich albums.
+
+2. Live TV from your own playlist. Plays an M3U playlist (HLS) with a
+   channel list, a programme guide (XMLTV) and number entry. It does not use LG's tuner, and the project provides no channels.
+
+3. An Inputs list on the Input key. The remote's Input button opens
+   the dock apps, the HDMI inputs (with what is connected) and Live TV over the running app.
+
+4. Picture notifications. A card with a photo over whatever is on
+   screen, sent from your network with a POST request, for example from Home Assistant.
+
+5. Voice, on the TV (optional). Speech recognition from the remote's
+   microphone with a local model (Moonshine), answers from Home Assistant's Assist, a language model through OpenRouter or your own server, shown as
+   text. No audio is recorded or sent anywhere.
+
+6. Removing LG's ads and telemetry (optional). Stops LG's ad and
+   telemetry services and blocks a few ad servers, only while the launcher is Home, and undoes cleanly.
+
+7. Setting up, updating and removing it from the TV. The manager app
+   checks every download against a SHA-256 file, rolls back a launcher or service that does not start, and can follow a
+   dev build to get changes before the daily release.
+
+Themes
+
+Pick how Home looks in the manager app: colours, the position and size of the clock, buttons, dock and grid, a wallpaper, animation
+speed. The themes are in themes/ of this repository: the TV reads them from GitHub and downloads one when you choose it,
+so a new theme needs a pull request and no release (how).
+
+Screenshots
+
+  &nbsp;
+
+  &nbsp;
+
+  Live TV guide, the Inputs picker, the app grid and the manager app.
+
+More screenshots.
+
+Documentation
+
+* Installing and tested TVs
+* Updating and uninstalling, including dev builds
+* Using it: the launcher, Live TV,
+  the Input key, picture notifications,
+  voice, debloat and
+  the manager app
+* Security
+* What it changes on the TV
+* Service API and troubleshooting
+* Contributing, testing and CI
+  and internals
+
+The pages are built with Zensical from docs/, so they can also be read there.
+
+Security
+
+The service runs as root on the TV and listens on 127.0.0.1:8765 only. A few short-lived pages open on the local network on
+request (Live TV pairing, share log, voice setup) and the notification endpoint is off until you switch it on. Everything it
+installs comes from this repository's GitHub releases and carries a SHA-256 file, which detects corruption but **not a compromised
+repository**: download only from this repository's release page. Security
+covers the ports, the token for notifications, voice and dev builds. To report a vulnerability, see SECURITY.md.
+
+Community
+
+Questions, ideas and showing off your home screen: join the CleanYourTV Discord. Bugs and reports of TVs
+that work go in the issues, so they stay findable.
+
+Contributing
+
+Troubleshooting and fixing with an AI assistant (Claude, ChatGPT, a local model) is supported: AGENTS.md is the briefing,
+tools/diagnose.sh collects a read-only report from the TV, and the
+documentation has the prompts and the rules.
+
+Reports from other TVs are the most useful contribution: open an issue
+with the output of Share log in the manager app. For code, see Contributing:
+the service runs on Node.js 8 (webOS 5), sh tools/check.sh runs every check, every push to dev publishes a dev build, and a release goes out daily from dev.
+
+Disclaimer
+
+CleanYourTV is an independent project. It is not affiliated with, endorsed by or supported by LG Electronics. LG and webOS are
+trademarks of LG Electronics. This modifies a running TV with root access; read install.sh and scripts/ before running them,
+and use it at your own risk. Live TV plays only the playlists you add.
+
+Licence
+
+MIT. See LICENSE. The package also contains third-party files, listed with their licences in
+THIRD-PARTY.md and in Credits and licences. The home-screen
+design follows the Android TV project CleanYourTV (MIT); no code from it is used.

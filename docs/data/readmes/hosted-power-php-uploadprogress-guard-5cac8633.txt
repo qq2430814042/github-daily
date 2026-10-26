@@ -1,0 +1,101 @@
+hp_uploadprogress_guard
+
+v3.2.5, 24 October 2026: three issues PHP has not fixed in a release yet, covered. Since the php2shell
+releases, three more problems have surfaced in current PHP. This module covers all three, on patched and
+unpatched PHP alike, so keep it installed after you upgrade.
+
+* CVE-2026-115560, session upload progress (announced 23 October). PHP's security team recommends
+  session.upload_progress.enabled=0 until the next regular release
+  (informational advisory); the 21 October releases do not
+  fix it. PHP rates it unlikely: it needs an application that changes session.serialize_handler at runtime,
+  with upload progress enabled. Covered by the module by default, on every PHP version, patched or not:
+  it detaches the upload-progress handler and forces session.upload_progress.enabled to 0, locked so an
+  application, .user.ini or ini_set() cannot turn it back on. That is exactly PHP's mitigation, already in
+  place on every host running the module. Keep hp_uploadprogress_guard.detach_upload_progress = 1 (the default).
+
+* unserialize() use-after-free, in every current release. When unserialize() cleans up, it frees its
+  bookkeeping first and then runs object destructors; a destructor that calls unserialize() again works on
+  freed memory. This is the bug behind the "PHP 8.5.12 patch is incomplete" claims. Present in 8.5.12,
+  8.4.27, 8.3.36, 8.2.35 and older; reachable when an application unserializes attacker-controlled data, or
+  by code already running on the host. Not fixed in any PHP release, no CVE (PHP does not assign CVEs to
+  unserialize() bugs): php-src#24481.
+  Closed by the module since v3.2.0: such nested calls get their own state. Verified with Valgrind on all
+  five releases named here: freed-memory reads without the module, none with it.
+* SimpleXML crashes, introduced by 8.4.27 and 8.5.12. The security release changed the garbage collector,
+  and SimpleXML now frees its property table twice when an object converted with json_encode(), (array)
+  or get_object_vars() (the everyday json_decode(json_encode($xml), true)) is collected in a reference
+  cycle: zend_mm_heap corrupted, a crashed worker. Fix approved by PHP, not released yet:
+  php-src#24488.
+  Fixed by the module since v3.2.1, by applying PHP's approved fix from inside the module, only on those
+  two releases. On a staging host with 8.4.27, a plain SimpleXML script crashed before and completed after.
+
+Nothing changes for applications: identical output with and without the module on every branch from 5.4 to
+8.5, and PHP's own serialize, session and SimpleXML test suites give the same results. Details and tests
+further down.
+
+What it is. A small PHP extension that mirrors the official fix for
+CVE-2026-109618 / CVE-2026-109619 component by component, so that on an unpatched PHP every link of
+the published attack chain is removed, without rebuilding PHP and without changing anything for the
+applications on the host. Built by Hosted Power for its own fleet,
+published for everyone. PHP 5.4 through 8.5; Sury, Remi, cPanel EA4, DirectAdmin CustomBuild, official
+Docker images. **Prebuilt for Linux x86_64 and arm64 (aarch64), every branch from 5.4 to 8.5, and for
+Windows x64** (7.2 to 8.5, nts and ts), with checksums; one C source file for everything else. On a PHP that already carries the php2shell fix,
+vendor backports included, its php2shell layers notice that and step aside; the two protections above stay on,
+and so does the detached session upload-progress handler (see point 4 below).
+
+Install the official PHP release (8.5.12, 8.4.27, 8.3.36, 8.2.35, and the PHP team's backports
+for 7.4, 8.0 and 8.1, which Sury extended down to 5.6); we recommend it without reservation. **This
+module protects an unpatched PHP for real.** It mirrors the official fix component by component,
+tested per branch and per SAPI (see the tests below), so a host that runs it is protected today,
+whether its packages arrive tomorrow or never. After the upgrade its php2shell layers step aside on their
+own, so there is nothing to undo, and the v3.2.0 unserialize() protection keeps running. Read the advisories:
+GHSA-w8hw-w9fx-j79w and
+GHSA-6wmf-4rv5-p3rp.
+
+What the advisories say, in one paragraph. CVE-2026-109619: the session upload-progress handler runs
+on every multipart request before the request is initialised and can consume state a previous request
+on the same worker left behind; PHP's own mitigation is session.upload_progress.enabled=0. Validated
+RCE on mod_php and php-fpm. CVE-2026-109618: if PHP runs out of memory while the request is still
+being set up, the engine longjmps out and request shutdown runs on half-initialised state; the
+advisory lists three multipart ways to get there (a body without a usable Content-Length, a flood of
+part headers, a flood of empty file controls that each still produce $_FILES arrays). Validated RCE
+on mod_php, where shutdown runs after a failed startup. v3.0.0 removes the handler, carries the fixed
+parser, and makes it impossible for the parser to run out of memory in the first place.
+
+v3.0.0 also fixes v2.2.0 on PHP 7.0 to 7.4, where the carried parser rejected every multipart
+request (Multipart body parts limit exceeded 0) because it read an ini setting that only exists from
+8.0.28. If you installed v2.2.0 on a 7.x host, update.
+
+v3.0.1 (same day): the v3.0.0 binaries for 8.2 to 8.5 were built on Debian 13 and required
+GLIBC_2.38, so they did not load on Debian 12 or older (PHP Startup: Unable to load dynamic library;
+PHP kept running without the guard). Every binary is now built on the oldest Debian that ships the
+minor and build.sh refuses anything above GLIBC_2.14. Also in v3.0.1: requests on hosts with
+mbstring.encoding_translation=On are handed to PHP's own parser (mbstring's multibyte hooks are
+file-static and cannot be mirrored; the callback detach still applies), the 8.0 to 8.3 copies no longer
+depend on max_multipart_body_parts existing (it was added mid-branch, so a stale 8.0.x/8.1.x/8.2.0-2
+install hit the 7.x failure), the parser copies no longer export PHP's own symbol names, mode is
+case-insensitive, any PHP newer than 8.6 counts as patched, and cd src && phpize && ./configure && make
+works again (config.m4 picks the parser copy for the PHP it is built against).
+
+v3.0.2 (same day): session.upload_progress.enabled now reads as Off. The handler detach already
+made the setting meaningless, but ini_get() and phpinfo() kept reporting On, which confused
+scanners and customers. The module now writes the master value to 0 at startup and locks the entry at
+PHP_INI_SYSTEM, so ini_get() returns "0", phpinfo() shows Off => Off, and .user.ini,
+.htaccess or ini_set() cannot change it. No other behaviour changed; binaries rebuilt for 5.6 to 8.5
+with the same glibc floor.
+
+v3.1.0 (same day, evening): the rest of the official fix, mirrored. v3.0 covered the multipart
+parser; v3.1 covers what the patch does outside it. Nothing changes for applications: uploads, forms, error handlers and warnings behave as
+before. In detail:
+
+* Out-of-memory exit. If memory still runs out while no script is executing (request startup or
+  shutdown: PHP's own parser in native mode or the mbstring.encoding_translation case, a genuine
+  out-of-memory from the operating system), the process ends with _exit(137) after unlinking the
+  upload temp files it registered, instead of staying alive with half-cleaned state. That is what the
+  official hard memory limit does, and what the PHP team chose for every memory exhaustion in the
+  backports. php-fpm already discards a worker whose request startup failed; this matters for mod_php,
+  LiteSpeed, FrankenPHP and any other SAPI that keeps the process.
+* Request state cleared at request end. The patch writes safe values over a set of pointers the
+  engine leaves behind at shutdown (user error and exception handlers, recorded errors, the object
+
+…（内容已截断）

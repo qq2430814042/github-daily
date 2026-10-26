@@ -1,0 +1,84 @@
+PPT Master — AI generates native PowerPoint from any document
+
+English | 中文
+
+💼 I'm open to new opportunities. Investment background (CPA · CPV · Consulting Engineer), also building AI tools and open source. Happy to talk about any opportunity: heyug3@gmail.com · hehugo.com.
+
+🆕 I built a construction project economic evaluation site: cs.hehugo.com (in Chinese) — the wind, solar and storage templates are now open to everyone; just register and use them (a comparable module in one commercial package sells for ¥100,000).
+
+❤️ Sponsors
+
+This project is kept free and open source with the support of Kimi, PackyCode, APIKEY.FAN, RunAPI and other sponsors.
+
+Want to appear here?
+
+Click to collapse
+
+Thanks to Kimi for sponsoring this project! Kimi K3 is the world's first open 3T-class model, featuring native vision and a 1-million-token context window. With PPT Master, K3 can understand source materials such as PDFs, DOCX files, and web pages, identify key points, structure the narrative, and generate a natively editable PPTX that you can continue refining in PowerPoint.
+
+Try a Kimi Code plan (中文站 | Global), or access the API through the Kimi Open Platform (中文站 | Global).
+
+    Thanks to PackyCode for sponsoring this project! PackyCode is a reliable and efficient API relay service provider, offering relay services for Claude Code, Codex, Gemini, and more. PackyCode provides special discounts for our project users: register using this link and enter the promo code ppt-master during recharge to get 10% off.
+
+    Thanks to APIKEY.FAN for sponsoring this project! APIKEY.FAN is a professional enterprise-grade AI relay service committed to stable, efficient, and low-cost AI access for businesses and developers. The platform supports mainstream models including Claude, OpenAI, and Gemini, with prices as low as 7% of official rates. Register through our dedicated link for an exclusive perk: up to 5% off on top-ups, permanently.
+
+    Thanks to RunAPI for sponsoring this project! RunAPI is an efficient and stable API platform — a single API Key gives you access to 150+ leading models, including OpenAI, Claude, Gemini, DeepSeek, and Grok, at prices as low as 10% of official rates, with exceptional stability and seamless compatibility with tools like Claude Code. RunAPI offers an exclusive perk for PPT Master users: register and contact an administrator via our dedicated link to claim ¥7 in free credit.
+
+Editable is already table stakes — what sets PPT Master apart is native depth. It hands you a real PowerPoint: slide masters, native shapes, data-backed charts and tables — not flat text boxes, and not a filled-in template. It also does more than lay slides out nicely — it reasons the argument into shape first, then designs; and that native depth keeps converging with PowerPoint itself, adding more of its native capabilities release after release. In form, it's a workflow that runs inside any agent-capable AI tool: hand the AI your topic or material, and it generates on your machine — your data stays local, no platform or model lock-in. How it works and where the limits are → Product Positioning.
+
+  Quick Start ·
+  Live Demo ·
+  Examples ·
+  FAQ ·
+  Roadmap
+
+      Pixel Art — Chinese breakfast atlas: AI sprite sheets, HUD panels, Morph and 8-bit sound cues
+
+      Technical Blueprint — Transformer paper walkthrough: diagrams, native formulas, notes and animations
+
+      Brand Template — China Telecom 2025 results on the company's own deck template, with a native-chart export
+
+  Every example is a single pass with no manual polish; downloading a .pptx and opening it in PowerPoint is the fastest way to see what it can really do.
+Flip through all examples online → · Source repository · Why PPT Master?
+
+Product Positioning
+
+Editable is now table stakes — the real question is how much of PowerPoint you actually get. PPT Master delivers PowerPoint's native object model itself, and in depth: native shapes and connectors with working adjustment handles, data-backed charts and tables on demand, and the full text / picture / fill / effect model — click any element and keep editing it as a native PowerPoint object; and through the template / structured route, it can hand you a deck with real slide masters and layouts (p:sldMaster / p:sldLayout inheritance).
+
+And that depth is a direction of travel, not a fixed checklist. PPT Master's north star is to keep converging with PowerPoint itself: an ongoing effort to build and integrate more of PowerPoint's native capabilities, release after release, closing the gap between what an AI can generate for you and what you could build by hand in PowerPoint. The PowerPoint ↔ SVG Mapping Guide is the honest, feature-by-feature record of how far that reaches today — and SmartArt is a deliberate omission, not a gap.
+
+In form, it's a workflow (a "skill") that runs inside any agent-capable AI tool: tell it in chat — "make a deck from this PDF" — and it runs the workflow on your machine and exports a natively editable .pptx. No coding on your side; you do exactly three things — install Python, install an AI tool, drop in your material.
+
+Generating a new deck from source documents is the main pipeline, but not the only route. PPT Master can also distill reusable brand / style / layout / deck templates from your references, fill an existing .pptx with new content while preserving its design, and add native transitions, animations, and narration to a finished deck — each route with an explicit contract for what gets preserved. How to use each capability → Getting Started.
+
+On top of that native depth, this form comes with three promises:
+
+- Transparent, predictable cost — free and open source; the only cost is your AI model usage, with no PPT subscription on top
+- Data stays local — apart from AI model calls and the search, image, and speech services you choose to enable, the entire pipeline runs on your machine
+- No platform lock-in — any agent-capable AI IDE can drive it; Claude, GPT, Gemini, Kimi, and other models all work
+
+Why you'd choose it, and where it isn't the right fit → Why PPT Master; the long-term capability boundaries behind these promises → Project Positioning.
+
+This is a tool, not a wishing well
+harness + model = agent — PPT Master only owns the workflow; the model sets the ceiling. Recommended: Kimi K3 (or Claude) with a large context window (~1M tokens) + AI image generation (gpt-image-2 or Google gemini-nano-banana-2.1); other models can run the pipeline, with a quality gap.
+And don't expect a finished, perfect deck in one shot. The tool's value is taking most of the tedious work off your plate; the polishing that's left is yours — a natively editable deck exists precisely so you can keep working on it, not a flat image you can't touch. The cheaper the model, the more there is to do; if results disappoint, upgrade the model first, then check your usage against Getting Started and the example projects.
+
+Built by Hugo He
+
+I'm a finance professional (CPA · CPV · Consulting Engineer (Investment)) who regularly reviews and edits presentation decks. I wanted AI-generated slides to remain editable in PowerPoint, not flattened into images — so I built this.
+
+Knowing how to use Python and AI agents will matter more and more, and this project is also meant to show how far you can go with just those two things. There's a learning curve if you're starting cold, but it's the curve worth climbing — making a deck is just the excuse; what I'm really pushing is Python and agents.
+
+You Might Also Like
+
+ResearchStudio-
+
+A Microsoft open-source project I recently joined — from paper to talk video, poster, and blog, automating the last mile of research dissemination.
+📦 Repo: microsoft/ResearchStudio · 📄 Paper: arXiv:2607.04438
+
+BibTeX — if you use ResearchStudio-Reel in your research
+
+@article{xiao2026researchstudioreel,
+  title   = {ResearchStudio-Reel: Automate the Last Mile of Research from Paper to Poster, Video, and Blog},
+
+…（内容已截断）

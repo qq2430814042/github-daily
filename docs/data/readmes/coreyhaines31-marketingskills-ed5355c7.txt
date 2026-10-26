@@ -1,0 +1,87 @@
+Marketing Skills for AI Agents
+
+A collection of AI agent skills focused on marketing tasks. Built for technical marketers and founders who want AI coding agents to help with conversion optimization, copywriting, SEO, analytics, and growth engineering. Works with Claude Code, OpenAI Codex, Cursor, Windsurf, and any agent that supports the Agent Skills spec.
+
+Built by Corey Haines. Need hands-on help? Check out Conversion Factory — Corey's agency for conversion optimization, landing pages, and growth strategy. Want to learn more about marketing? Subscribe to Swipe Files. Want to get dangerously good at using AI for marketing? Check out AI Marketing Training. Want an autonomous AI agent that uses these skills to be your CMO? Try Magister.
+
+New to the terminal and coding agents? Check out the companion guide Coding for Marketers.
+
+Want your agent to read your marketing accounts? Follow the guided tool connection workflow for scoped credentials and a first read-only result.
+
+Contributions welcome! Found a way to improve a skill or have a new one to add? Open a PR.
+
+Run into a problem or have a question? Open an issue — we're happy to help.
+
+Partners
+
+The library is free and MIT-licensed. Verified Partners fund the work — vetted, disclosed tool integrations, listed alongside the neutral options and never influencing what the core skills recommend. The full rules and boundaries are in tools/PARTNERS.md. Become a partner →
+
+◆ Converly — Conversion tracking / attribution. Server-side conversion tracking that fires when someone submits a form, books a meeting, or starts a chat — passing click IDs and identifiers for Enhanced Conversions (Google) and stronger match quality (Meta), across about 100 tools. CLI + MCP so your agent sets it up in minutes. → Integration guide
+
+◆ Ploy — AI website & growth platform. AI marketing platform built around a hosted website builder — an in-app agent that builds and publishes pages, PloyDB for pages at scale, routing to add pages to an existing site, built-in analytics and visitor identification, and a CLI for coding agents. → Integration guide
+
+◆ AIsa — SEO, search & social data. One AIsa key, pay as you go, instead of a subscription to every data platform. Agents get SEO, search, social, and market data from Similarweb, Semrush, Ahrefs, DataForSEO, Tavily, Reddit, X, and more through REST or MCP, and pay only for the calls they make. → Integration guide
+
+◆ Omnia — AI search visibility (AEO). Omnia tracks how AI engines answer your customers' questions every day: visibility, citations, Share of Voice and sentiment for your brand and competitors. Connect the Omnia MCP to Claude and these skills run on real AI answers data instead of guesses. Or let your Omnia Agent turn it into prioritized work that you review and approve. → Integration guide
+
+What are Skills?
+
+Skills are markdown files that give AI agents specialized knowledge and workflows for specific tasks. When you add these to your project, your agent can recognize when you're working on a marketing task and apply the right frameworks and best practices.
+
+How Skills Work Together
+
+Skills reference each other and build on shared context. The product-marketing skill is the foundation — every other skill checks it first to understand your product, audience, and positioning before doing anything.
+
+┌──────────────────────────────────────┐
+                            │          product-marketing           │
+                            │    (read by all other skills first)  │
+                            └──────────────────┬───────────────────┘
+                                               │
+    ┌──────────────┬─────────────┬─────────────┼─────────────┬──────────────┬──────────────┐
+    ▼              ▼             ▼             ▼             ▼              ▼              ▼
+┌──────────┐ ┌──────────┐ ┌──────────┐ ┌────────────┐ ┌──────────┐ ┌─────────────┐ ┌───────────┐
+│  SEO &   │ │   CRO    │ │Content & │ │  Paid &    │ │ Growth & │ │  Sales &    │ │ Strategy  │
+│ Content  │ │          │ │   Copy   │ │Measurement │ │Retention │ │    GTM      │ │           │
+├──────────┤ ├──────────┤ ├──────────┤ ├────────────┤ ├──────────┤ ├─────────────┤ ├───────────┤
+│seo-audit │ │cro       │ │copywritin│ │ads         │ │referrals │ │revops       │ │mktg-ideas │
+│ai-seo    │ │signup    │ │copy-edit │ │ad-creative │ │free-tools│ │sales-enable │ │mktg-psych │
+│site-arch │ │onboarding│ │cold-email│ │ab-testing  │ │churn-    │ │launch       │ │customer-  │
+│programm  │ │popups    │ │emails    │ │analytics   │ │ prevent  │ │pricing      │ │ research  │
+│schema    │ │paywalls  │ │social    │ │            │ │community │ │competitors  │ │           │
+│content   │ │          │ │video     │ │            │ │lead-magnt│ │comp-profile │ │           │
+│aso       │ │          │ │image     │ │            │ │co-mktg   │ │directory    │ │           │
+│link-build│ │          │ │sms       │ │            │ │          │ │prospecting  │ │           │
+└────┬─────┘ └────┬─────┘ └────┬─────┘ └─────┬──────┘ └────┬─────┘ └──────┬──────┘ └─────┬─────┘
+     │            │            │              │             │              │              │
+     └────────────┴─────┬──────┴──────────────┴─────────────┴──────────────┴──────────────┘
+                        │
+         Skills cross-reference each other:
+           copywriting ↔ cro ↔ ab-testing
+           revops ↔ sales-enablement ↔ cold-email
+           seo-audit ↔ schema ↔ ai-seo
+           customer-research → copywriting, cro, competitors
+
+See each skill's Related Skills section for the full dependency map.
+
+Available Skills
+
+| Skill | Description |
+|-------|-------------|
+| ab-testing | When the user wants to plan, design, or implement an A/B test or experiment, or build a growth experimentation program.... |
+| ad-creative | When the user wants to generate, iterate, or scale ad creative — headlines, descriptions, primary text, or full ad... |
+| ads | When the user wants help with paid advertising campaigns on Google Ads, Meta (Facebook/Instagram), LinkedIn, Twitter/X,... |
+| ai-seo | When the user wants to optimize content for AI search engines, get cited by LLMs, or appear in AI-generated answers.... |
+| analytics | When the user wants to set up, improve, or audit analytics tracking and measurement. Also use when the user mentions... |
+| aso | When the user wants to audit or optimize an App Store or Google Play listing. Also use when the user mentions 'ASO... |
+| attribution | When the user wants to figure out which marketing actually drives conversions and revenue, choose or interpret an... |
+| churn-prevention | When the user wants to reduce churn, build cancellation flows, set up save offers, recover failed payments, or... |
+| co-marketing | When the user wants to find co-marketing partners, plan joint campaigns, or brainstorm partnership opportunities. Use... |
+| cold-email | Write and run B2B cold outbound that gets replies, from cold emails and follow-ups to sending setup, LinkedIn,... |
+| community-marketing | Build and leverage online communities to drive product growth and brand loyalty. Use when the user wants to create a... |
+| competitor-profiling | When the user wants to research, profile, or analyze competitors from their URLs. Also use when the user mentions... |
+| competitors | When the user wants to create competitor comparison or alternative pages for SEO and buyer-facing use. Also use when... |
+| content-strategy | When the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Also... |
+| conversion-tracking | Set up, audit, verify, or fix website conversion tracking. Use when the conversion is a form submission, booked... |
+| copy-editing | When the user wants to edit, review, or improve existing marketing copy, or refresh outdated content. Also use when the... |
+
+…（内容已截断）

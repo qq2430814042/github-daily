@@ -1,0 +1,162 @@
+ascii-reveal
+
+Recorded from the real component: &lt;AsciiSkeleton&gt; while loading, then &lt;AsciiReveal&gt; decodes the data in. Try the live demo →
+
+{data ?  : }
+
+A loading effect for React. Text, images and whole cards decode into place through a character grid, in one wave across the page.
+
+- No layout shift. Your content stays in the DOM in its real position. The scramble is drawn on a layer above it.
+- Works on anything. Wrap a subtree and every text node, `,  and ` inside it takes part.
+- Real loading states. Set loading and the content scrambles out, a glyph shimmer runs where the data will land, then the new data decodes in.
+- Accessible. Screen readers read the real text the whole time. prefers-reduced-motion turns the reveal into a short fade.
+- Skeleton-fast. `` is plain HTML and CSS: it paints on the first frame, renders on the server and needs no JavaScript. Data becomes readable about 400 ms after it arrives.
+- Light. One canvas per reveal, repainted at ~30 fps, one animation loop shared by every instance. Slow devices get a short fade instead. About 15 KB gzipped with all mascots and the skeleton, no dependencies.
+
+Install
+
+From npm:
+
+npm i ascii-reveal
+
+Straight from GitHub (no npm publish needed):
+
+npm i github:quanhoangindex/ascii-reveal
+
+React 17 or newer is a peer dependency. The built files in dist/ are committed, so the GitHub install works without a build step.
+
+Quick start
+
+import { AsciiReveal } from 'ascii-reveal';
+
+export function Page() {
+  return (
+
+        Hello world
+
+        Read more
+
+  );
+}
+
+The content reveals when the component mounts.
+
+Loading states
+
+const { data, isLoading } = useQuery(...);
+
+  {data?.latency ?? '—'}
+
+When loading turns true, the matching content scrambles out and a shimmer runs in its place. When it turns false, the new content decodes in.
+
+Skeletons
+
+Skeletons exist to paint instantly while data loads. AsciiSkeleton does exactly that, in ASCII. There are two ways to use it (live demo):
+
+1. Skeleton only. A drop-in replacement for a gray skeleton. Content appears as normal when it arrives.
+
+import { AsciiSkeleton } from 'ascii-reveal';
+
+{data ?  : }
+
+2. Skeleton + reveal. The skeleton paints first; when the data arrives, the real content decodes in (about 400 ms).
+
+import { AsciiReveal, AsciiSkeleton } from 'ascii-reveal';
+
+  {data ?  : }
+
+The reveal never animates the skeleton itself. It leaves it alone while loading, and decodes the content that replaces it.
+
+- It's static markup plus a CSS flicker, so it shows up in server-rendered HTML before any JavaScript runs, and reserves the space your content will take.
+- Patterns are deterministic, so server and client output match (no hydration warnings).
+- lines and widths shape a paragraph; rows, width, height and circle make a block for an image or avatar.
+- A band of denser glyphs sweeps across a faint base pattern, like a classic shimmer. The pattern is plain HTML/CSS; the sweep is drawn on a small canvas once the component mounts. With reduced motion, the sweep stops.
+
+Pick a style with variant:
+
+| variant | Look |
+| --- | --- |
+| dither (default) | Shaded blocks ░▒▓█ that read as soft bars, with a darker dither band scanning across. |
+| scan | Faint dots with a band of dense, scrambling glyphs. Matches the decode preset. |
+| braille | Fine braille dot texture; the band fills the dots in. |
+| terminal | Faint 0s and 1s, lit up in --ascii-accent as the band passes. |
+
+{/* still pattern: cheapest, for long lists */}
+
+Without React: el.innerHTML = asciiSkeletonHTML({ lines: 3 }), then animateSkeletons(el), both from ascii-reveal/core.
+
+How much does it cost?
+
+A skeleton only does its job if it shows up as fast as a gray box and never delays the data, so we measured it against one. Pre-rendered pages, no JavaScript needed to paint, Chromium on a machine without a GPU (so all drawing is done in software, the worst case), median of 7–11 runs:
+
+| 12 cards, normal CPU | Gray skeleton | AsciiSkeleton | AsciiSkeleton animate={false} |
+| --- | --- | --- | --- |
+| First paint | 48 ms | 44 ms | 36 ms |
+| Style + layout at load | 2 ms | 9 ms | 5 ms |
+| Browser CPU while waiting | 15% | 21% | 0% |
+| HTML (gzipped) | 0.5 KB | 3.2 KB | 3 KB |
+
+How it stays cheap:
+
+- The markup is a still glyph pattern (plain HTML + CSS), so it paints on the first frame before any JavaScript runs.
+- The shimmer is drawn on one small canvas per skeleton at ~30 fps once the component mounts. Each row's glyphs are rendered once; a frame only copies the moving band. (Our first version animated a CSS mask instead: it looked the same but used 62% CPU, because the browser repainted every row every frame.)
+- Off-screen skeletons, background tabs and reduced motion don't animate at all. For long lists, animate={false} skips the shimmer entirely.
+- AsciiSkeleton never delays your data: content swaps in the moment it arrives. Only the optional AsciiReveal decode adds time (~350–400 ms after the data lands).
+- With React 19, the skeleton's CSS is sent once per page. With React 18 it's repeated inline per skeleton; add SKELETON_CSS to your page once and use asciiSkeletonHTML({ css: false }) if that matters to you.
+- Without React: el.innerHTML = asciiSkeletonHTML({ lines: 3 }), then animateSkeletons(el) to start the shimmer.
+
+Run it yourself: node scripts/skeleton-bench/build.cjs && node scripts/skeleton-bench/bench.cjs.
+
+Server rendering
+
+Content that arrives in server-rendered HTML is never hidden on hydration: it's already readable, so hiding it to animate it would make the page slower. Set revealOnHydrate if you want the effect anyway. Client-side navigations and loading transitions animate as usual.
+
+Loading mascots
+
+Swap the shimmer for an animated ASCII mascot while data loads. It dissolves as the new content decodes in.
+
+{/* spider | ghost | pumpkin | bat */}
+
+…      {/* your own SVG */}
+
+Pass an SVG URL, SVG markup, or a draw function (ctx, w, h, t, color) => void for full control. Set --ascii-mascot to change the color of the line-art mascots.
+
+Replay from code
+
+const ref = useRef(null);
+
+…
+
+// replay one card from where it was clicked
+ref.current?.reveal({ within: cardElement, origin: { x: e.clientX, y: e.clientY } });
+ref.current?.hide();
+
+Props
+
+| Prop | Type | Default | What it does |
+| --- | --- | --- | --- |
+| preset | 'decode' \| 'dither' \| 'terminal' \| 'blueprint' \| Preset | 'decode' | Glyph set, timing and image style. |
+| duration | 'fast' \| 'cinematic' | 'fast' | fast makes data readable in ~400 ms. cinematic is the slower, showier wave for hero sections. |
+| speed | number | 1 | Playback speed multiplier on top of duration. |
+| origin | 'center' \| 'top-left' \| 'pointer' \| { x, y } | 'center' | Where the wave starts. { x, y } is in viewport pixels. |
+| selector | string | – | Only animate content inside elements matching this selector. |
+| revealOnMount | boolean | true | Reveal when the component mounts. |
+| loading | boolean | – | Scramble out and shimmer while true; decode in when it turns false. |
+| shimmer | boolean | true | Show the glyph shimmer while loading. |
+| lazy | boolean | true | Sections below the fold decode as they scroll into view instead of all at once. |
+| revealOnHydrate | boolean | false | Also animate content that was server-rendered. |
+| fallback | boolean | true | If frames take too long, finish the animation and use a short fade for the next 10 s. |
+| mascot | 'spider' \| 'ghost' \| 'pumpkin' \| 'bat' \| string \| MascotDraw | – | Animated ASCII mascot instead of the shimmer while loading. |
+| onRevealComplete | () => void | – | Called when a reveal finishes. |
+| as | ElementType | 'div' | Element used for the wrapper. |
+
+All other props pass through to the wrapper element.
+
+Marking elements
+
+| Attribute | Effect |
+| --- | --- |
+| data-ascii="surface" | Cards and panels. A dot field and corner frame appear first, then the surface fades in. |
+| data-ascii="fade" | Buttons, chips, badges. Fades in on the wave. |
+
+…（内容已截断）

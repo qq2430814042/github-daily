@@ -1,0 +1,67 @@
+correlation
+
+Three identical triple pendulums, started a billionth of a radian apart. Why this is the answer.
+
+20-something years ago a group of friends sat in a coffee shop. We were fresh out of college and had our first "real" jobs, and we were thinking about how we could get rich. I had an idea at the time that seemed obvious: basically a simple way to slightly improve the odds of predicting stock market moves. Of course, the prevailing wisdom was that this had been attempted many times and proven to not be possible. But then we had to wonder, if it ever did work, why would they tell anyone? They would just quietly use it themselves and get rich. So without trying it, we would never really know.
+
+The core idea was this: if companies are related by market conditions, and company A were to go up or down in value over some period, then might not other companies do the same at a later date? Like if there was a RAM shortage, surely it would affect a lot of companies. But it should affect some (perhaps the smaller ones) before it affected the larger ones. If we could calculate a mathematical correlation across every company, and perhaps even other conditions such as political or weather patterns, then we should be able to say, "A went up, so there is a 3% chance that in 4 months B will also go up"... or something like that.
+
+Of course, the number of calculations on the whole stock market over all offsets, using different time windows to measure up and down, was somewhere in the range of 1.5 trillion. That was going to take perhaps years on a whole room full of Pentium IIs, so it was quite an investment to find out.
+
+A few of us were programmers, so we actually made a start on it in the early 2000s. At the time it turned out to be fairly hard, and we were all kind of busy, so each attempt kind of fizzled. But computers got faster, and with the advent of AI the programming got a lot easier. About a year ago I (with Claude 4.0) wished into existence a proof of concept and discovered that even on a 24-core modern desktop, in Ruby, the correlation would take about 15 years. So I changed the core calculation to inline C, and found that it would take about 6 months of listening to my fans spin furiously with all my CPU maxed out constantly. Having other things to use the computer for, I gave up after a few days.
+
+Last week I decided to try the whole thing again in Rust (using Claude 5.5). This time it would max out every core I had: all the CPUs, all the GPU, and even the tiny NPU that came with this desktop for some reason. I was kind of shocked to find that all the calculations now take a total of 17 minutes. So I waited 17 minutes.
+
+And discovered that the skeptics were right all along. Correlations were found, but they were so small and inconsistent that using them to trade would basically be the same as choosing stocks at random. Not ready to give up quite yet, though (because another idea had emerged in my fevered mind), I thought, "If an LLM trained on words can predict the next word, perhaps one trained on stocks could predict the next stock?" So I tried that and it also failed.
+
+Still not ready to give up, I tried about 70 other variations on those ideas. And at this point I am ready to admit that this 20-year-long question is finally resolved. Unfortunately for me, I will not be getting rich.
+
+In retrospect, I think I now understand why it will never work. It can be explained by a triple pendulum. Correlation can add some accuracy to the swing of the first pendulum, but there is another attached to that, which is people making bets, buying and selling, markets moving faster than I can react. Then there is a third attached to that: outside influences that are not measured. The result, unfortunately, is the incarnation of chaos.
+
+But if you are anything like me and had a similar idea once in your misspent youth, and you are thinking that maybe there is something to it and I am just keeping it hidden so I can profit off it myself, I decided to offer this repo. It has all the things I tried, all the data I used, and with Claude or Codex, or whatever is to come, you can run it yourself and test your own variations. I wish you luck... if you think of something, please let me know; it will be our secret :). If not, maybe I will save you years of wondering why it is not possible.
+
+What it's useful for
+
+It doesn't predict prices; 71 experiments say so. What it does well is measure, quickly and honestly, how stocks move together. That turns out to be useful, mostly for risk. Everything below is in the desktop app, c2-gui.
+
+Knowing what you actually own
+
+The Together tab measures same-day co-movement, the part of correlation that is real and lasting:
+- Portfolio check: how many independent bets your holdings really are, each holding's share of the risk, near-duplicates, and how the correlations compare with a year earlier.
+- Best diversifiers: what to add to lower your portfolio's volatility.
+- Hedge finder: the stocks and funds that track or offset a holding, with hedge ratios and the risk left after each.
+- Groups map: which stocks move together once the market is taken out, each group named by the fund that follows it, and how much of each group held together a year earlier.
+
+This advice was tested on the following year it had never seen. The top diversifier cut a portfolio's volatility by 5.1% more than random choices, and the top hedge left 68% of a stock's risk against 91% for a random fund (+5.1-co-movement-tools). Building a whole portfolio from correlations (minimum variance) gave a quarter to a third less risk than ignoring them in every period tested. In 2008 it fell 36% against 52% (-4.6-correlation-portfolios).
+
+Portfolio check: eight holdings behave like 6.9 independent betsBest diversifiers: what to add, and how much risk it removes
+
+Hedge finder: what tracks or offsets NVDA, and the risk leftGroups map: 1,000 stocks in groups that move together
+
+Exploring relationships, with chance as the yardstick
+
+Every relationship the app shows is set against what chance produces. Each one comes with the number of times it would appear by luck, so you can see which ones are real.
+- Strongest ranks the strongest lead-lag relationships.
+- Stock timeline shows what tends to move before a stock, and how often each relationship held.
+- Explainer recomputes one correlation step by step from prices, so nothing is a black box.
+- Forecast turns the relationships into a forecast and then grades it on its own history. For AAPL it says the direction was right 54% of the time, about a coin flip, "so treat the forecast line as noise". Most tools would just draw the line.
+
+Strongest relationships, with their significanceStock timeline: what moves before NVDA
+
+Explainer: one correlation, step by stepForecast, graded on its own history
+
+Testing your own idea without fooling yourself
+
+The hard part of testing a trading idea isn't the idea; it's not fooling yourself. This repo has the machinery:
+- A grader that compares any strategy with random accounts holding as many stocks and trading as often.
+- Walk-forward tests, plus 16 months of data kept unseen until the end.
+- Rules fixed before results, a habit every one of the 66 experiment write-ups follows. Copy one as a template, and see research/lib/c2eval.py for the grader.
+- The census computes every lagged correlation among every pair of US stocks: 1.57 trillion correlations in about 13 minutes on one desktop GPU. Its chance baseline comes from sign-shuffled data.
+
+Status: a full census, 1.57 trillion correlationsCensus: lagged pairs against chance, about 1.0 at every offset
+
+Holdout: $10,000 against random guessers. +44.8% before costs, +5.2% at 5 bps a trade, −59.7% at 20 bpsData: 13,349 stocks and funds, 28 million daily rows
+
+Fast correlation, for anything
+
+…（内容已截断）

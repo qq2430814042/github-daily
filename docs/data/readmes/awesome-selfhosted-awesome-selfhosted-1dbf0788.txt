@@ -1,0 +1,159 @@
+Awesome-Selfhosted
+
+Self-hosting is the practice of hosting and managing applications on your own server(s) instead of consuming from SaaSS providers.
+
+This is a list of Free Software network services and web applications which can be hosted on your own server(s). Non-Free software is listed on the Non-Free page.
+
+HTML version (recommended), Markdown version (legacy).
+
+See Contributing.
+
+Table of contents
+
+- Software
+  - Analytics
+  - Archiving and Digital Preservation (DP)
+  - Automation
+  - Backup
+  - Blogging Platforms
+  - Booking and Scheduling
+  - Bookmarks and Link Sharing
+  - Calendar & Contacts
+  - Communication - Custom Communication Systems
+  - Communication - Email - Complete Solutions
+  - Communication - Email - Mail Delivery Agents
+  - Communication - Email - Mail Transfer Agents
+  - Communication - Email - Mailing Lists and Newsletters
+  - Communication - Email - Webmail Clients
+  - Communication - IRC
+  - Communication - SIP
+  - Communication - Social Networks and Forums
+  - Communication - Video Conferencing
+  - Communication - XMPP - Servers
+  - Communication - XMPP - Web Clients
+  - Community-Supported Agriculture (CSA)
+  - Conference Management
+  - Content Management Systems (CMS)
+  - Customer Relationship Management (CRM)
+  - Database Management
+  - DNS
+  - Document Management
+  - Document Management - E-books
+  - Document Management - Institutional Repository and Digital Library Software
+  - Document Management - Integrated Library Systems (ILS)
+  - E-commerce
+  - Federated Identity & Authentication
+  - Feed Readers
+  - File Transfer & Synchronization
+  - File Transfer - Distributed Filesystems
+  - File Transfer - Object Storage & File Servers
+  - File Transfer - Peer-to-peer Filesharing
+  - File Transfer - Single-click & Drag-n-drop Upload
+  - File Transfer - Web-based File Managers
+  - Games
+  - Games - Administrative Utilities & Control Panels
+  - Genealogy
+  - Generative Artificial Intelligence (GenAI)
+  - Groupware
+  - Health and Fitness
+  - Human Resources Management (HRM)
+  - Identity Management
+  - Internet of Things (IoT)
+  - Inventory Management
+  - Knowledge Management Tools
+  - Learning and Courses
+  - Manufacturing
+  - Maps and Global Positioning System (GPS)
+  - Media Management
+  - Media Streaming
+  - Media Streaming - Audio Streaming
+  - Media Streaming - Multimedia Streaming
+  - Media Streaming - Video Streaming
+  - Miscellaneous
+  - Money, Budgeting & Management
+  - Monitoring & Status Pages
+  - Network Utilities
+  - Note-taking & Editors
+  - Office Suites
+  - Password Managers
+  - Pastebins
+  - Personal Dashboards
+  - Photo Galleries
+  - Polls and Events
+  - Proxy
+  - Recipe Management
+  - Remote Access
+  - Resource Planning
+  - Search Engines
+  - Self-hosting Solutions
+  - Software Development
+  - Software Development - API Management
+  - Software Development - Continuous Integration & Deployment
+  - Software Development - FaaS & Serverless
+  - Software Development - Feature Toggle
+  - Software Development - IDE & Tools
+  - Software Development - Localization
+  - Software Development - Low Code
+  - Software Development - Project Management
+  - Software Development - Testing
+  - Static Site Generators
+  - Task Management & To-do Lists
+  - Ticketing
+  - Time Tracking
+  - Travel Organization
+  - URL Shorteners
+  - Video Surveillance
+  - VPN
+  - Web Servers
+  - Wikis
+- List of Licenses
+- Anti-features
+- External Links
+- Contributing
+- License
+
+Software
+
+Analytics
+
+^        back to top        ^
+
+Analytics is the systematic computational analysis of data or statistics. It is used for the discovery, interpretation, and communication of meaningful patterns in data.
+
+Related: Database Management, Personal Dashboards
+
+- ANALOG - A minimal analytics tool. Tracks events in a span of 10-30 days. MIT Nodejs/Docker
+- Aptabase - Privacy first and simple analytics for mobile and desktop apps. (Source Code) AGPL-3.0 Docker
+- AWStats - Generate statistics from web, streaming, ftp or mail server logfiles. (Demo, Source Code) GPL-3.0 Perl
+- Countly Community Edition - Real time mobile and web analytics, crash reporting and push notifications platform. (Source Code) AGPL-3.0 Nodejs/Docker
+- d8a.tech - A data collection service that works with your existing Google Analytics setup to capture user activity and send it straight to your own private database. (Demo, Source Code) MIT Go/Docker
+- Daily Stars Explorer ⚠ - Track GitHub repo trends with daily star insights to see growth and community interest over time. (Demo, Source Code) MIT Go/Nodejs/Docker
+- Dreeve ⚠ - Statistics dashboard generated from Strava data. (Demo, Source Code) AGPL-3.0 Docker/K8S
+- Druid - Distributed, column-oriented, real-time analytics data store. (Source Code) Apache-2.0 Java/Docker
+- EDA - Web application for data analysis and visualization. AGPL-3.0 Nodejs/Docker
+- GoAccess - Real-time web log analyzer and interactive viewer that runs in a terminal. (Source Code) GPL-2.0 C
+- GoatCounter - Easy web statistics without tracking of personal data. (Source Code) EUPL-1.2 Go
+- HitKeep - Privacy-first web analytics with goals, funnels, ecommerce tracking, and team management in a single binary with embedded DuckDB (alternative to Google Analytics, Plausible, Umami). (Source Code) MIT Go/Docker
+- Litlyx - All-in-one Analytics Solution. Setup in 30 seconds. Display all your data on an AI-powered dashboard. Fully self-hostable and GDPR compliant. (Source Code) Apache-2.0 Docker
+- Liwan - Privacy-first web analytics. (Demo, Source Code) Apache-2.0 Rust/Docker
+- Matomo - Web analytics that protects your data and your customers' privacy (alternative to Google Analytics). (Source Code) GPL-3.0 PHP
+- Metabase - Easy way for everyone in your company to ask questions and learn from data. (Source Code) AGPL-3.0 Java/Docker
+- Middleware - Tool designed to help engineering leaders measure and analyze the effectiveness of their teams using the DORA metrics. (Source Code) Apache-2.0 Docker/Python/Nodejs
+- Netron - Visualizer for neural network and machine learning models. (Source Code) MIT Python/Nodejs
+- Offen - Fair, lightweight and open web analytics tool. Gain insights while your users have full access to their data. (Demo, Source Code) Apache-2.0 Go/Docker
+- Plausible Analytics - Simple, lightweight ( coordinates) and reverse geocoding (coordinates -> address) on OpenStreetMap data. (Source Code) GPL-2.0 C
+- Open Source Routing Machine (OSRM) - High performance routing engine designed to run on OpenStreetMap data and offering an HTTP API, C++ library interface, and Nodejs wrapper. (Demo, Source Code) BSD-2-Clause C++
+- OpenRouteService - Route service with directions, isochrones, time-distance matrix, route optimization, etc. (Demo, Source Code) GPL-3.0 Docker/Java
+- OpenStreetMap - Collaborative project to create a free editable map of the world. (Source Code, Clients) GPL-2.0 Ruby
+- OpenTripPlanner - Multimodal trip planning software based on OpenStreetMap data and consuming published GTFS-formatted data to suggest routes using local public transit systems. (Source Code) LGPL-3.0 Java/Javascript
+- OwnTracks Recorder ⚠ - Store and access data published by OwnTracks location tracking apps. GPL-2.0 C/Lua/deb/Docker
+- TileServer GL - Vector and raster maps with GL styles. Server side rendering by Mapbox GL Native. Map tile server for Mapbox GL JS, Android, iOS, Leaflet, OpenLayers, GIS via WMTS, etc. (Source Code) BSD-2-Clause Nodejs/Docker
+- Traccar - Java application to track GPS positions. Supports loads of tracking devices and protocols, has an Android and iOS App. Has a web interface to view your trips. (Demo, Source Code) Apache-2.0 Java
+- TRIP - Minimalist POI Map tracker and Trip planner. (Demo, Source Code) MIT Docker
+- wanderer - Trail database where you can upload your recorded tracks or create new ones and add various metadata to build an easily searchable catalogue. (Demo) AGPL-3.0 Docker/Go/Nodejs
+
+Media Management
+
+^        back to top        ^
+
+…（内容已截断）

@@ -1,0 +1,153 @@
+MHGU Recomp
+
+A native PC port of Monster Hunter Generations Ultimate (Nintendo Switch, version 1.4.0), made by statically
+recompiling the game's 32-bit ARM code to C and running it on a host runtime: Switch system services and the NVN
+graphics API are reimplemented on Windows, with Vulkan for rendering.
+
+No game files are included. You need your own copy of the game, dumped from your own Switch. This project does
+not explain how to dump it and does not provide game files, keys or links to them.
+
+Status: fully playable, but there may be some bugs. I've played a dozen hunts with no remaining issues. Multiplayer also works.
+
+What it adds over the Switch version
+
+- Graphics settings (resolution, MSAA, FXAA, Supersampling, VSync)
+- Any screen shape from 16:10 to ultrawide (21:9, 32:9 and wider), with the HUD unstretched: centered or spread to
+  the screen's sides
+- Frame rate cap anywhere between 30-240 fps
+- Supports almost every controller under the sun
+- Experimental KB+M controls
+- Optional: small monsters are properly synced between players in multiplayer
+- Optional: monster HP scaling by playercount
+- Fast-forward unskippable cutscenes by pressing A
+- Optional: village quests are playable in multiplayer (press L/R at the quest counter), with appropriately re-scaled monster HP
+- Mod support. The vast majority of mods work by dropping them into the mods folder, including Forge mods. (see Mods)
+- Cheat codes in the same format as Ryujinx and Atmosphère, in the cheats folder (see Cheats)
+
+Requirements
+
+- OS: Windows 10/11 64-bit, or Linux
+- CPU: Any CPU from 2014 or newer (needs AVX2 support)
+- GPU: Any GPU from 2016 or newer (needs Vulkan 1.2 support), and at least 1GB of VRAM
+- The game files for Monster Hunter Generations Ultimate, version 1.4.0. You can extract these from your Switch or Ryujinx with patches pre-applied.
+    - (Title ID 0100770008DD8000, the main executable's build ID starts with FB08F1D20FD1204F)
+
+Installation
+
+Download the latest prebuilt release from the Releases page. Make sure you download the right ZIP file for your desired platform.
+
+You need the exefs and romfs folders from Monster Hunter Generations Ultimate 1.4.0. If you are coming from Ryujinx, you can right-click the game (make sure the 1.4.0 title update is applied), and Extract the game files with the patches pre-applied.
+
+1. Extract the release zip anywhere, for example C:\Games\MHGURecomp\.
+2. Put the game's exefs and romfs folders in the data subfolder. It should look like this:
+
+   MHGURecomp\
+     mhgurecomp.exe
+     mhgugame.dll
+     (other .dll files)
+     data\
+       exefs\
+         main
+         main.npdm
+         rtld
+         sdk
+         subsdk0
+       romfs\
+         nativeNX\
+         (the rest of the game's romfs)
+
+   exefs must come from the 1.4.0 update, and romfs must be the base game's romfs with the update's files
+   merged over it.
+3. Start mhgurecomp.exe.
+
+If the files are missing or the wrong version, a message box says so.
+
+Where things are
+
+| What | Where |
+| --- | --- |
+| Settings | mhgurecomp.ini next to the exe (written with the defaults on first start; delete it to reset) |
+| Save data | %APPDATA%\MHGURecomp\save\ (kept apart from the game folder so updating the port can't touch it) |
+| Log | log.txt next to the exe (look here first when something goes wrong) |
+| Screenshots | shots\ next to the exe (F12) |
+| Mods | mods\ next to the exe: one folder per mod (see below) |
+| Cheats | cheats\ next to the exe: .txt files with cheat codes (see below) |
+| Shader cache | cache\ next to the exe (safe to delete; the first minutes after that may stutter) |
+
+To move an existing Switch save over, put its system and system_backup files in
+%APPDATA%\MHGURecomp\save\save_0\.
+
+Controls
+
+Almost every controller under the sun should work, as long as it has SDL support. If you really want to swap the face buttons on non-Nintendo controllers, open the .ini file and set FaceButtons = Label.
+
+Keyboard and mouse support (not recommended):
+
+| Key | Switch button |
+| --- | --- |
+| W A S D | left stick (hold Left Shift to walk) |
+| Mouse | right stick (camera) |
+| Left click / Right click | X / A |
+| Space / R | B / Y |
+| Q / E | L / R |
+| Tab / T | ZL / ZR |
+| Enter / Backspace | Plus / Minus |
+| Arrow keys | d-pad |
+| Ctrl / Alt | left / right stick click |
+
+Click in the game window to capture the mouse for the camera; Escape lets it go (so does switching to another
+window). MouseSensitivity in the ini's Mouse] section sets its speed; the game's own camera options (speed,
+inverted axes) apply to it too.
+
+When the game asks for text (names, chat), the keyboard types: Enter confirms, Escape cancels, Ctrl+V pastes.
+
+Other keys: Alt+Enter switches between windowed and full screen, F12 takes a screenshot, F7 cycles MSAA.
+
+Settings
+
+Everything is in mhgurecomp.ini; each setting is explained in the file itself. In short:
+
+- [Display]: Mode (Borderless / Fullscreen / Windowed), Resolution, RenderResolution (the 3D resolution),
+  AspectRatio (Auto follows the window: 16:10 and anything wider fill it, narrower gets 16:10 with bars), FOV
+  (1.0 = the game's), UIAnchor (Center keeps the HUD in the middle 16:9 on an ultrawide screen, Edges spreads it
+  to the sides)
+- [Anti-aliasing]: MSAA (Off / 2x / 4x / 8x), FXAA (On / Off)
+- [Performance]: FPS (30 to 240), VSync (On / Off; above your monitor's refresh rate, turn VSync off)
+- [Controls]: FaceButtons (Position / Label), BackgroundInput (On / Off: the controller keeps working while
+  the game's window is in the background, such as with a wiki in front of it; default On)
+- [Mouse]: MouseSensitivity (1 = default, 0.1 to 10)
+- [Multiplayer]: Port, Join (addresses of hosts outside your LAN), SyncSmallMonsters
+- [Monster HP]: HP factors for 1 to 4 hunters in Hub quests, and per-quest exceptions (default: all 1, the
+  original game)
+- [Village Quests]: VillageQuestsInHub (default On), HubHP (default 2.0: Village quests posted in the Hub
+  multiply their monsters' HP by this first, then by the [Monster HP] factor)
+- [Bonus Content]: BonusContent (default On), see below
+
+Multiplayer
+
+Over LAN or a VLAN, this should work out of the box.
+
+Over the internet, the host needs to forward the right port (39500 TCP/UDP by default), the client needs to configure the host's IP address in their .ini file. (Join = xxx.xxx.xxx.xxx)
+
+Choose the "Local Wireless" multiplayer options, as this port pretends to be a local nearby Switch with a wireless connection. The online options are unavailable and are unnecessary.
+
+Bonus content
+
+By default, the bonus subfolder in releases contains a savegame with all the free online content (event quests, item packs, palicoes), which will be copied into your savegame when the game starts the 2nd time.
+
+If you don't want this, set BonusContent = Off or don't provide a savegame in the bonus subfolder. You can also provide your own savegame instead if you want. Note that this port will not attempt to copy bonus content if such bonus content already exists.
+
+Mods
+
+To install a mod, put the mod folder in mods\. Remove the folder to uninstall said mod. Mods are layered over the game at startup.
+- romfs mods (files that replace or add game data) are found inside the mod's folder, including the
+  atmosphere\contents\0100770008DD8000\romfs layout.
+- exefs patches (.pchtxt, .ips) are applied when they change data. Patches to game code can't be applied, because
+  the code is precompiled; the log lists them.
+- Forge plugins (.nro in romfs\nativeNX\plugins\) are loaded. Forge's menu with the plugins' settings opens with
+  Insert (or the key in Forge's own config.ini, if a mod includes Forge's files); use the mouse, keyboard or
+  controller in it. While it is open the game gets no controller input. Window positions are kept in
+  forge_imgui.ini.
+- You do not need any resolution, FPS cap or connection fix mods. These features are included with this port.
+
+…（内容已截断）

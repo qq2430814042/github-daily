@@ -1,0 +1,33 @@
+Project V
+
+  Project V is a set of network tools that helps you to build your own computer network. It secures your network connections and thus protects your privacy.
+
+Related Links
+
+- Documentation and Newcomer's Instructions
+- Welcome to translate V2Ray documents via Transifex
+
+Packaging Status
+
+If you are willing to package V2Ray for other distros/platforms, please let us know or seek for help via GitHub issues.
+
+License
+
+The MIT License (MIT)
+
+Credits
+
+This repo relies on the following third-party projects:
+
+- In production:
+  - gorilla/websocket
+  - quic-go/quic-go
+  - pires/go-proxyproto
+  - seiflotfy/cuckoofilter
+  - google/starlark-go
+  - jhump/protoreflect
+  - inetaf/netaddr
+
+- For testing only:
+  - miekg/dns
+  - h12w/socks

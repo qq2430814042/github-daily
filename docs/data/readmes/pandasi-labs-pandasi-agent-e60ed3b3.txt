@@ -1,0 +1,143 @@
+Panda Agent
+
+Panda Agent is the evidence-policy checker for PandaSI. It reads one JSON packet about a BNB Smart Chain token and returns either RESEARCH or ABSTAIN. A passing result means the packet is complete enough to keep studying. It does not authorize a trade, a signature, or a transfer.
+
+The program in this repository is deterministic. It uses the Python standard library only. It does not open a network connection, does not hold a key, and does not call a remote model. execution_authorized is false on every path, including a clean fixture and a broken file.
+
+| | |
+| --- | --- |
+| Policy | prototype-v1 |
+| Chain | BNB Smart Chain, integer chain_id 56 |
+| Decisions | RESEARCH or ABSTAIN |
+| Execution | Always unauthorized |
+| Runtime | Python 3.9 or newer, standard library |
+| Entry point | panda_agent.py |
+
+python panda_agent.py
+python panda_agent.py --input example_missing_evidence.json
+python -m unittest -v
+
+What a decision means
+
+RESEARCH is the name of an empty block list. Every schema check, clock, numeric gate, required check, and veto passed. The summary string is fixed:
+
+Prototype checks passed; continue research. No execution is authorized.
+
+ABSTAIN means at least one blocked reason was recorded. Missing data, a stale clock, a failed type, a breached gate, or a veto all take this path. The summary string is also fixed:
+
+Missing, invalid or vetoed evidence blocks further action.
+
+Neither word is a price view, a safety certificate, or an instruction to buy or sell. The same two uncertainty lines and the same two invalidation lines are attached to both decisions:
+
+| Field | Always reported |
+| --- | --- |
+| uncertainties | Offline input is not independently verified. Portfolio limits and live quote or intent checks sit outside this prototype. |
+| invalidation | Evidence expires or changes. Liquidity or permissions change. |
+| execution_authorized | false |
+
+Urgency in a surrounding note, a ticker, or a comment inside the packet cannot change the outcome. The checker never reads a field named metadata. In the tests, setting source_verified to false still abstains when a metadata string tells the program to ignore its rules.
+
+What this build refuses
+
+| Request | Result in this repository |
+| --- | --- |
+| Sign, swap, bridge, or send | No signer and no transaction path exist |
+| Treat RESEARCH as permission | execution_authorized stays false |
+| Fill a missing field with a guess | The field becomes a blocked reason |
+| Accept a future or stale observation | The clock check abstains |
+| Follow instructions hidden in token metadata | Those strings are not inputs to the policy |
+| Change the policy from the packet | Thresholds live in POLICY inside panda_agent.py |
+
+How a packet moves
+
+evaluate(packet, now=None) is the whole policy. now defaults to the current UTC time, which lets tests freeze the clock. main loads JSON from --input or builds the fictional jade fixture, prints indented JSON, and exits. A missing file or broken JSON becomes an abstention whose reason starts with Input error:.
+
+flowchart TD
+  packet[Evidence packet] --> schema{Object, chain 56, address, evidence ids}
+  schema -->|fail| abstain[ABSTAIN]
+  schema --> typed{Numbers finite and checks boolean}
+  typed -->|fail| abstain
+  typed --> clocks{Clocks inside their windows}
+  clocks -->|fail| abstain
+  clocks --> gates{Gates, required trues, and vetoes}
+  gates -->|fail| abstain
+  gates --> research[RESEARCH]
+  research --> locked[execution_authorized is false]
+  abstain --> locked
+
+Reasons accumulate. One bad field does not hide the next. An invalid address and a stale market clock are both listed. Threshold comparisons run only after every numeric field is a finite number greater than or equal to zero, so a negative liquidity value is reported as invalid rather than as "below the floor."
+
+A value that is not a JSON object returns immediately with Packet must be an object, an empty evidence list, a null token key, and coverage 0. Every JSON object continues through the remaining checks.
+
+Decision, identity, and units
+
+A token is an integer chain plus a contract address. The ticker is not an identity.
+
+token_key is chain_id, a colon, and token_address when the address string is non-empty. Otherwise token_key is null. chain_id must be the integer 56. token_address must be 0x followed by exactly 40 hexadecimal digits.
+
+The chain test uses exact integer type, so a boolean or a float such as 56.0 is an unsupported chain. The address test is a full match: the 0x prefix, forty hex digits, and nothing else. Mixed case is accepted. There is no checksum step. token_key is still formed for a non-empty address that fails the pattern, so the key is a label, not evidence that the address passed.
+
+decision is RESEARCH when the blocked-reason list is empty, and ABSTAIN otherwise. execution_authorized is false on both results.
+
+Rates in the packet are basis points. One basis point is one hundredth of one percent.
+
+$$
+1\,\mathrm{bp} = 10^{-4} = 0.01\%
+\qquad
+x_{\%} = \frac{x_{\mathrm{bps}}}{100}
+$$
+
+So 100 bps is 1 percent, and the tax ceiling of 500 bps is 5 percent. The code compares the raw basis-point numbers. It does not convert them before the test.
+
+Freshness and coverage
+
+Both observation fields must be timezone-aware ISO-8601 strings. A trailing Z is read as UTC. A naive timestamp, a number, or a missing key is invalid.
+
+$$
+a(t) = t_{\mathrm{now}} - t
+$$
+
+$$
+0 \le a(t_{\mathrm{market}}) \le 60
+\qquad
+0 \le a(t_{\mathrm{security}}) \le 300
+$$
+
+The market window is one minute. The security window is five minutes. Age is measured in seconds. The boundary is inclusive: a market observation exactly 60 seconds old still passes, and 61 seconds abstains. A timestamp one second in the future abstains. The tests pin those three edges.
+
+Coverage is a separate count: how many required keys are not null, rounded to three decimal places. It is not a trust score, a probability, or a weighted rating.
+
+The required keys are the seven numeric fields, the six boolean fields, market_observed_at, security_observed_at, evidence_ids, chain_id, and token_address. That set has 18 keys. Coverage is the number of those keys that are not null, divided by 18, then rounded to three decimal places.
+
+A present value can still be the wrong type, a failing check, or a veto. A fully present packet that trips a veto has coverage 1.0 and decision ABSTAIN. The incomplete sample has sixteen of the eighteen keys present, so its coverage is 0.889.
+
+Numeric gates
+
+These comparisons run only when all seven numbers are finite and non-negative. A boolean, NaN, infinity, a string, or a negative value is Missing or invalid  and skips this block.
+
+$$
+L \ge 100000
+\qquad
+0 ` | A numeric or boolean field has the wrong type, is not finite, or is negative |
+| Missing or invalid market_observed_at | The market stamp is missing or not a zoned timestamp |
+| Missing or invalid security_observed_at | The security stamp is missing or not a zoned timestamp |
+| Stale or future market_observed_at | Market age is negative or greater than 60 seconds |
+| Stale or future security_observed_at | Security age is negative or greater than 300 seconds |
+| Liquidity below floor | Liquidity is under 100000 USD |
+| Order outside allowed range | The order is 0 or greater than 100 USD |
+| Excessive price impact | Impact is above 100 bps |
+| Excessive slippage | Slippage is above 100 bps |
+| Excessive token tax | The larger of the buy and sell tax is above 500 bps |
+| Holder concentration above ceiling | Classified top-ten share is above 40 percent |
+| Required check failed:  | A required boolean is present and false |
+| Risk veto:  | dangerous_permissions or provider_conflict is true |
+| Input error: ... | The command-line file cannot be read or parsed |
+
+Fields, checks, and vetoes
+
+| Field | Type | Rule |
+| --- | --- | --- |
+| chain_id | integer | Must be 56 |
+| token_address | string | 0x and forty hex digits |
+
+…（内容已截断）

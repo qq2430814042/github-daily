@@ -1,0 +1,111 @@
+Free My TV (for LG webOS)
+
+A fast, ad-free 60fps home screen for LG Smart TVs.
+
+The streaming apps you actually use on a frosted glass shelf, live weather that follows the sunset, and trending cinema picks.
+
+Open source. Zero ads. 100% Onboard. No root required.
+
+Install · Features · Customize · Roadmap · How It Works
+
+🇺🇸 English · 🇧🇷 Português
+
+⚡ Why This Exists
+
+Modern LG webOS (especially webOS 6, 22, 23, and 24) replaced the classic, snappy bottom card bar with a sluggish full-screen portal packed with:
+- Auto-playing banner ads, shopping promotions, and "Trending Now" bloatware.
+- 3 to 5 second lag spikes every time you press the Home button.
+- Background telemetry and Automatic Content Recognition (ACR).
+
+Free My TV for webOS brings the philosophy of simbasjungles/free-my-tv and Apple tvOS natively to LG televisions—giving you an instantaneous, clean glass dashboard that lives right on your TV's internal flash memory.
+
+✨ What You Get
+
+- 🚫 Zero Ads. Ever. No sponsored rows, no banner promos, no shopping widgets.
+- 🧊 Frosted Glass App Shelf. Your favorite streaming apps and HDMI inputs front-and-center, launching natively in ~100ms via the webOS Luna bus.
+- ⚙️ On-Screen Shelf Customizer. Automatically detects installed apps on your LG TV so you can toggle which ones appear on your shelf using your remote.
+- 🌅 Dynamic Sunset & OLED Themes. Connects to Open-Meteo to show live local weather and automatically shifts your background from Daylight Blue to Sunset Amber to Deep Midnight (plus a Pure OLED Black mode).
+- 🎬 Movies & Shows Trending Tabs. Separate tabs for trending movies and TV shows—TMDB-ranked with your optional key, or our built-in zero-key live feed (TVMaze for Shows, curated picks for Movies).
+- 🌤️ Weather & Sun Drawer. Click the weather widget for an hourly forecast and exact sunrise/sunset times, powered by Open-Meteo.
+- 🌑 OLED-Safe Idle Screensaver. A pure-black floating clock kicks in after a few minutes idle and gently shifts position to avoid burn-in—dismissed by any key or remote movement.
+- 🎮 Full Magic Remote & D-Pad Support. Point and click with the LG Magic Remote cursor, or fly across tiles with the directional arrow keys and scroll wheel.
+- 💻 100% Onboard & Independent. Installed as a native .ipk package on your TV. Your computer does not need to stay on.
+- 🛡️ Safe & Reversible. Works on stock unrooted TVs via official LG Developer Mode (or Homebrew Channel). Your factory home screen is untouched.
+
+📊 Stock LG webOS Home vs. Free My TV
+
+| Metric / Feature | Stock LG webOS 24 Home | Free My TV (webOS) |
+|---|---|---|
+| Sponsored Ads & Banners | ❌ 70%+ of screen real estate | ✅ 0% (Completely Ad-Free) |
+| Cold Load Time | ❌ 3.5 – 5.0 seconds | ✅ * *Make It Your 1-Second Home Key (Quick Access):**
+While inside Free My TV on your TV, press and hold number 1 (or hold 0 to open Quick Access) on your Magic Remote and assign Free My TV to key 1. Now, holding 1 from anywhere on your TV jumps straight into your clean glass hub in half a second!
+
+⚙️ Make It Yours (On-TV Customization)
+
+Click the ⚙️ Customize button in the top-right corner of the dashboard using your remote:
+
+Choose Reorder on the main shelf. Select a tile and press OK to pick it up, use Left/Right to move it, then OK to place it. Choose Done to save. Back or Cancel discards changes.
+
+Launch messages use the app or console name and report unavailable apps, failures, or no response after eight seconds. Repeated presses are ignored while a launch is pending; browser previews explain that launching requires an LG TV.
+
+Under HDMI Devices, press a port to cycle through HDMI, PS5, PS4, Xbox, Nintendo Switch, and Gaming PC, then choose Save & Apply. These are manual, per-port choices; connected consoles are not automatically detected. The tile keeps launching the same HDMI input. Cancel discards pending changes, and Reset Defaults clears device choices when saved.
+
+The shelf displays larger artwork with bundled brand logos for PS5, PS4, Xbox, Nintendo Switch, and the streaming apps in the default catalog (including Netflix). These logos work offline. Other installed apps use icons supplied by webOS when accessible; missing or unreadable icons fall back to a readable app name.
+
+Some newer webOS releases block Developer Mode apps from listing installed apps. On those TVs, a one-time on-screen prompt asks to allow Free My TV; accept it so your installed apps appear in Customize.
+
+| Setting | What It Does |
+|---|---|
+| App Shelf Selector | Auto-discovers apps installed on your TV (listLaunchPoints) so you can pick up to 8 favorites for your glass dock. |
+| City Name | Type any city (e.g., São Paulo, Lisbon, New York) for live Open-Meteo weather and accurate local sunset times, or leave blank for automatic IP geolocation. |
+| Theme Mode | Choose Auto (Follows Sunset), Deep Midnight, Pure OLED Black, or Daylight Blue. |
+| Clock Format | Toggle between 24-Hour (20:30) and 12-Hour (8:30 PM) display. |
+| Performance Mode | Choose between Standard (Glass & Glow) and High Performance (60 FPS Boost) to disable heavy backdrop filters on resource-constrained TVs. |
+| TMDB API Key | Paste a free TMDB API Key for live weekly trending movies & shows, or leave empty to use the built-in zero-key live popular feed. |
+
+🗺️ Roadmap & Things to Come
+
+See the full ROADMAP.md for detailed technical specifications.
+
+- x] v1.0 — Core 60fps Glass Engine: Native Luna app launching, Magic Remote + D-Pad spatial nav, 1-command installer.
+- [x] v1.1 — Live Weather, Sunset Themes & On-TV Customizer: Open-Meteo integration, TMDB + zero-key live trending feed, and interactive app shelf editor.
+- [ ] v1.2 — Deep-Linking & Quick Drawer (Next Up 🚧): Direct movie/episode deep-linking into Netflix/YouTube/Plex, D-Pad tile reordering, native TV icon extraction, and multi-language support (EN, PT-BR, ES, DE, FR).
+- [ ] v1.3 — OLED Care Screensaver & Wake-on-LAN 📅: Built-in pixel-shifting 4K ambient screensaver and automatic Wake-on-LAN packet sender to wake your gaming PC when selecting HDMI.
+- [ ] v1.4 — Official Homebrew Repo & Home Button Hook 🚀: One-click installation from the webosbrew.org on-TV store and optional physical Home button binding for rooted TVs.
+- [ ] v2.0 — Smartphone QR Companion & Smart Home Hub 🌟: Scan a QR code to configure settings from your phone and trigger Home Assistant lighting webhooks.
+
+🛠️ How It Works
+
+free-my-webos/
+├── app/
+│   ├── appinfo.json       # webOS package manifest & permissions
+│   ├── index.html         # Self-contained 60fps Glass UI, Weather, TMDB & Luna bridge
+│   ├── webOSTV.js         # Official LG webOS JavaScript service library
+│   └── assets/            # App icons & splash screens
+├── dist/
+│   └── org.webos.freemytv_1.2.5_all.ipk
+├── docs/                  # Live preview & visual assets
+└── scripts/
+    ├── build.py           # Cross-platform .ipk compiler (ares-package + pure Python fallback)
+    └── install.py         # Automated SSDP TV discovery, SSH key pairing & Luna installer
+
+- Zero Framework Bloat: Written in pure, hardware-accelerated HTML5, CSS3, and vanilla JavaScript. The entire .ipk package is under 80 KB.
+- Direct Luna Bus IPC: Calls luna://com.webos.applicationManager/launch directly from the TV's local web engine (with automatic fallback to luna://org.webosbrew.hbchannel.service/exec).
+
+🤝 Credits & License
+
+- Inspired by [simbasjungles/free-my-tv (for Google TV).
+- Built for the webOS Homebrew and LG TV community.
+- Weather data by Open-Meteo · Movie metadata by TMDB & TVMaze.
+
+Released under the MIT License. Fork it, vibe code it, make your TV yours.
+
+Free My TV (para LG webOS)
+
+Uma home screen rápida, sem anúncios e a 60fps para Smart TVs LG.
+
+Os apps de streaming que você realmente usa em uma prateleira de vidro fosco, previsão do tempo ao vivo que acompanha o pôr do sol, e sugestões de filmes e séries em alta.
+
+Código aberto. Zero anúncios. 100% independente na TV. Sem necessidade de root.
+
+…（内容已截断）

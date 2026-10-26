@@ -1,0 +1,63 @@
+Dev Quality Gates
+
+An opinionated, continuously curated list of tools for enforcing software development standards.
+
+Dev Quality Gates is not an Awesome List. It does not list every linter for every language. For each job it recommends one tool (rarely two), says why, and says where the tool stops working.
+
+Principles
+
+- Opinionated. One recommended tool per job. Several only when the jobs or the environments really differ.
+- Curated. Every tool is checked against the selection criteria before it is listed, and again on a schedule.
+- Coverage over quantity. A tool that replaces three narrow checks beats three narrow tools.
+- Fast native toolchains first. Modern stacks are converging on Rust-native tools that do lint, format and analysis in one binary (Ruff, Oxlint with oxfmt, Mago, rumdl). We prefer them over a pile of older single-purpose tools when they cover the same ground. Ecosystems without one (Ruby, Java, .NET, Swift) keep their standard tools.
+- Enforcement over advice. A tool must fail a build (non-zero exit code) when a standard is violated. Reports that nobody reads do not count.
+- Agent-friendly. Non-interactive, machine-readable output, clear diagnostics, and autofix where it is safe. AI coding agents are first-class users of these tools.
+- Honest about gaps. A category with no verified recommendation stays empty rather than getting an outdated one.
+
+This is not a universal stack. Do not install everything here. Pick the entries that match your project.
+
+Use it in your project
+
+Ask your coding agent, from the root of your repository:
+
+Apply https://github.com/mokevnin/dev-quality-gates to this repository.
+Read and follow https://raw.githubusercontent.com/mokevnin/dev-quality-gates/main/docs/adopt.md.
+Show me the plan before you change anything.
+
+The agent inspects the project, picks only the entries that fit, shows you the plan, wires the checks into hooks and CI, and proves that each one can fail. The instructions are in docs/adopt.md; to do it yourself, pick entries below by language and by cross-cutting category, then use the setup patterns.
+
+Recommendations
+
+The entries below are generated from tools.json (pnpm run readme), which records the review date, sources, rationale and limitations of each tool. Every entry was first checked on 2026-10-23: that is one sweep, not independent reviews. Where a claim was tested by running the tool, the entry says so; otherwise it rests on documentation and repository activity.
+
+GitHub Actions
+
+- jactionlint: lints workflows, composite actions and dependabot.yml for correctness, security and policy in one binary. It is a fork of actionlint whose security rules follow the audits of zizmor, so you do not need actionlint or zizmor next to it by default. --fix repairs what has a mechanical fix; with --online it also pins tags to commit SHAs. Limits: created in October 2026 and run by one maintainer; parity with zizmor is self-reported. If you need an established second implementation, offline archived-action detection, pre-commit config audits or an LSP, add zizmor. Details.
+
+GitLab CI
+
+- Plumber: CI/CD security scanner for GitLab CI (and GitHub Actions): checks .gitlab-ci.yml, resolved includes and project settings such as branch protection, and reports to the terminal, JSON, SARIF and GitLab SAST. Runs locally, in Docker or as a GitLab CI component. The only widely adopted GitLab pipeline scanner found: 829 stars, 30 releases, v0.7.11 on 2026-10-21, MPL-2.0, used by projects such as Delve and Resty. Limits: Created 2026-01-19 and pre-1.0. A security and compliance scanner, not a syntax checker: use GitLab's own CI Lint (also glab ci lint) for syntax. Its exit codes were not checked here. For GitHub Actions we recommend jactionlint instead.
+
+JavaScript and TypeScript
+
+- Knip: unused files, exports and dependencies. Limits: monorepos need configuration; never run --fix unattended.
+- Oxlint and oxfmt: Rust-native linter and formatter from the Oxc toolchain: Oxlint runs ESLint-compatible rules (type-aware ones need TypeScript 7), oxfmt is the Prettier-compatible formatter. One fast toolchain instead of ESLint plus Prettier; releases weekly (oxlint 1.89, oxfmt 0.74 on 2026-10-19). Limits: oxfmt is pre-1.0. Oxlint exits 0 on warnings, so pass --deny-warnings in CI (tested). Per its docs, Vue, Svelte and Angular template files are not linted and the plugin ecosystem is smaller than ESLint's: keep ESLint only where you depend on those. Details.
+- TypeScript: tsc --noEmit with strict; version 7 is the native, much faster compiler. Limits: the TypeScript 7 compiler API is not ready, so tools that import typescript may need TypeScript 6 beside it. microsoft/typescript-go is archived because it was merged, not abandoned. Details.
+- dependency-cruiser: import-graph rules (forbidden paths, cycles, orphans, dev-deps in production code) with non-zero exit and JSON output; --ignore-known baselines legacy violations. Chosen over eslint-plugin-boundaries because it does not depend on the lint stack. Limits: static analysis misses dynamic imports; no autofix. Details.
+- syncpack: Rust tool that enforces one version of each dependency and consistent ranges across a monorepo; 11M downloads a month. Limits: monorepos only; package-manager catalogs reduce the need; sherif is the narrower alternative. Details.
+
+Python
+
+- Ruff: linter and formatter that replaces Flake8, isort, pyupgrade and Black. Limits: no type checking, no custom-rule plugins. The S rules replace Bandit, D replaces pydocstyle (archived) and C901 replaces xenon and radon; pair with vulture for dead code across modules.
+- ty: Rust-native Python type checker and language server from the authors of Ruff and uv. The most starred of the new checkers (19.9k stars) and downloaded as much as pyright (about 41 million PyPI downloads a month); v0.0.91 on 2026-10-22. Limits: Beta: 0.0.x, so new releases can add type errors; pin the version. mypy (160 million downloads) and pyright are the stable, battle-tested choices, and Pyrefly (Meta, stable 1.4, 7.1k stars) is the other Rust option.
+- deptry: unused, missing and transitive dependencies. Limits: static analysis misses dynamic imports.
+- import-linter: import contracts (layers, forbidden, independence, protected) that fail CI. Limits: checks imports only; tach is the alternative for public-interface rules. Details.
+- django-upgrade: rewrites code to the idioms of your target Django version, and fails CI when files would change. Limits: Django only; narrow by design. Details.
+- django-migration-linter: flags Django migrations that are not backward compatible with the running code (lintmigrations); 3.4M downloads a month. Limits: Django only; not verified by running; does not replace squawk for lock analysis on SQL. Details.
+
+Go
+
+- golangci-lint: one runner for the Go linters and the formatter, with golangci-lint custom for your own analyzers. Limits: choose linters deliberately; GPL-3.0.
+- govulncheck: reports known vulnerabilities in the Go modules and standard library you actually call, with call stacks, from the official Go vulnerability database. Limits: with -json and -format sarif it exits 0 whatever it finds, so gate on the text output; blind to calls through reflect; the GitHub repo is a mirror of golang.org/x/vuln. For repos in several languages see the open Vulnerabilities decision. Details.
+
+…（内容已截断）

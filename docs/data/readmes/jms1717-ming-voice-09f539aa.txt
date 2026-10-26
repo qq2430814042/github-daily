@@ -1,0 +1,136 @@
+Ming Voice
+
+A fully local, real-time voice assistant for AMD Radeon GPUs (NVIDIA experimental), on Linux or Windows.
+
+Talk to it and it answers out loud, usually starting about a quarter of a second after you stop talking.
+
+Ming Voice turns inclusionAI/Ming-3.0-audio-tiny, a
+speech-to-speech model, into an assistant you can leave running at home. It hears you, decides when you've
+finished, thinks, and speaks back, all on your own GPU. It checks the weather, searches the web, sets timers,
+keeps your shopping list, remembers what you tell it, and controls Home Assistant and Jellyfin.
+
+No audio leaves your machine. With tools on, only search terms and place names go out (to DuckDuckGo or
+Brave Search, and Open-Meteo); turn tools off in Settings to stay fully offline.
+
+See it in action
+
+▶ Watch the Ming Voice demo
+
+Highlights
+
+Conversation that feels natural
+- ~0.23 s from the end of your sentence to the first sound of the answer
+- Smart turn detection (Smart Turn v3) hears from your words and intonation whether you've finished, so it answers sooner when you're done and waits when you're mid-thought
+- Interrupt it any time, even on a speakerphone: it recognises its own voice coming back through the mic and only stops for yours
+- Pause and carry on: if it starts answering and you keep talking within a second, the answer is withdrawn and everything you said is answered as one turn
+- Hands-free, push-to-talk, or wake word ("Hey Ming, …"), with a follow-up window so you don't repeat the name
+- Survives restarts: the conversation is saved after every turn and picked up again
+
+Useful out of the box
+- Web search, weather, calculator and clock
+- Timers and reminders that ring again until you answer
+- Shopping and to-do lists, and remembering things you tell it ("I parked on level 3")
+- Home Assistant: lights and plugs (on/off, brightness, "dimmer", colours, warm white), music and TVs (pause, skip,
+  volume, "what's playing?"), thermostat, locks, the car (climate, temperature, defrost), the vacuum, scripts and scenes
+  by name. Follow-ups work ("now turn it off", "and the living room too"), and the user's own words are used, not the
+  model's rewording. Clear commands skip straight to Home Assistant. Two at once ("turn off the desk lamp and lock
+  the car"), for later ("turn off the lights in 20 minutes", "start the vacuum at 9 am"), and rooms: pick the
+  room the device is in, and "turn off the lights" means that room's. "Play some jazz on the kitchen speaker" works
+  with Music Assistant installed. Heads-ups: a lock or garage door left open at
+  night, the vacuum stuck or finished. Also Jellyfin, and hand-off to a Hermes Agent for bigger jobs
+- Risky actions (unlocking, opening the garage) are confirmed first
+- Jarvis mode: a dry-witted British robot butler ("Certainly, sir.") with its own designed voice and wake word
+- Say "that's all, bye" and it ends the conversation (in wake-word mode it goes back to sleep)
+
+Made to be lived with
+- Runs always on with the PC's own mic and speakers, no browser tab needed
+- Use it from your phone over HTTPS on your home network (QR code, installable web app)
+- Inside Home Assistant's Assist (Wyoming protocol): Ming as speech-to-text, text-to-speech and conversation
+  agent for a Voice PE, other voice satellites, or the Assist button in the HA app
+- 7 built-in voices plus voice cloning from a 5–15 s sample
+- Speaks numbers, money and units properly ("$1,299.99", "−5°C", "24-17", "12 km/h")
+- OpenAI-compatible API for text-to-speech, transcription, and chat with audio in and out
+- English and Chinese
+
+On your phone: the same app over your home Wi-Fi, installable on the home screen.
+Tune everything: turn-taking, voice, timing and persona.
+
+Performance
+
+Measured on a Radeon RX 7900 XTX (24 GB):
+
+| | |
+|---|---|
+| End of your speech → first audio | ~0.23 s median. The reply is generated during the end-of-turn pause (0.2 s when Smart Turn is confident) and is ready when the pause ends |
+| Thinker (audio LLM, 9.3B MoE / 2.7B active) | 115 tokens/s; first token 80 ms after a short spoken turn |
+| Talker (speech synthesis) | ~0.3× real time; 13 ms per 80 ms of audio for the core step |
+| Startup | ~30 s (first start after install: 1–2 min to compile kernels) |
+| VRAM | 20.5 GB in bf16, 12.5 GB with int8 experts (automatic on cards under 23 GB) |
+| Speech quality | 1.0% word error rate when its speech is transcribed back (same as the reference implementation) |
+
+Quick start
+
+Requirements
+
+- Linux (x86_64): Arch, CachyOS, EndeavourOS, Manjaro, Ubuntu, Debian, Pop!_OS, Mint, Fedora, Nobara or
+  openSUSE (others work too if they have git and curl), or Windows 11 with WSL2 (the installer sets it up)
+- A GPU with 16 GB+ VRAM:
+  - AMD Radeon RX 6800 or newer: RX 7000 / 9000 series and Radeon PRO cards (tested on the RX 7900 XTX).
+    On Linux it only needs the standard amdgpu driver that comes with your kernel: PyTorch brings its own ROCm 7.2,
+    so there's no ROCm to install. On Windows: a recent Adrenalin driver with WSL support.
+  - NVIDIA RTX 30 series or newer (e.g. RTX 3090, 4060 Ti 16 GB, 4080, 4090, 5080, 5090), with a current
+    driver (on Linux: your distro's NVIDIA driver, e.g. nvidia-open on Arch/CachyOS). Experimental: the
+    installer sets it up with CUDA PyTorch and the code is vendor-neutral, but it hasn't been tested on a 16 GB
+    NVIDIA card yet. Reports welcome!
+- ~30 GB free disk (20 GB model + Python environment)
+
+Install
+
+Linux: open a terminal and paste:
+
+curl -fsSL https://raw.githubusercontent.com/JMS1717/ming-voice/main/install.sh | bash
+
+It installs what's missing (git, curl, openssl, PortAudio) with your package manager, finds your GPU, sets up
+Python and PyTorch for it (ROCm 7.2 or CUDA 12.8, nothing system-wide), downloads the model (~20 GB) into
+~/ming-voice, and adds Ming Voice to your app menu. It may ask for your password (for the packages, and on
+AMD to add you to the render group that may use the GPU; log out and back in once after that). If anything
+stops halfway, run it again: finished steps are skipped. Set MING_DIR to install somewhere else.
+
+Windows: open PowerShell and paste:
+
+irm https://raw.githubusercontent.com/JMS1717/ming-voice/main/install.ps1 | iex
+
+That's it. It sets up WSL and Ubuntu 24.04 if you don't have them yet, then installs ROCm (AMD only), the Python
+environment and the model (~20 GB download), and puts a Ming Voice shortcut on your Desktop. On AMD it asks for
+your Linux password once (for ROCm). If anything stops halfway, run it again: finished steps are skipped.
+(Prefer not to paste commands? Download the repo and double-click Install.cmd.)
+
+Already in a WSL Ubuntu shell? Same thing from there:
+
+git clone https://github.com/JMS1717/ming-voice.git ~/ming-voice
+bash ~/ming-voice/install.sh
+
+What the installer runs (manual install)
+
+sudo bash scripts/install_rocm_wsl.sh      # AMD only: ROCm 7.2.4 + librocdxg (WSL GPU bridge); then wsl --shutdown
+bash setup_env.sh                          # Python env (ROCm or CUDA PyTorch, needs uv) + model download (~20 GB)
+
+Run
+
+- Windows: double-click Ming Voice on your Desktop (or windows\Ming Voice.cmd in the repo, at
+  \\wsl.localhost\Ubuntu-24.04\home\\ming-voice). It starts the server, waits for the model, and opens
+  .
+- WSL shell: ./run.sh, then open .
+- Linux: Ming Voice in your app menu, or ming-voice in a terminal. It starts the server in the
+  background, waits for the model, and opens . ming-voice --stop stops it (it holds
+  ~20 GB of VRAM), ming-voice --status and ming-voice --logs show what it's doing, ming-voice --help lists
+  the rest. (Or run ./run.sh in the folder, in the foreground.)
+
+Press Start conversation, allow the microphone, and talk. Pause when you're done.
+
+Windows: keep the server window open while you use it: WSL shuts its VM down when nothing is attached. Close it
+when you're done, since it holds ~20 GB of VRAM.
+
+Using it
+
+…（内容已截断）

@@ -1,0 +1,141 @@
+تلفزيونك · UrTV
+
+واجهة رئيسية عربية وشاشة توقف سعودية لتلفزيونات Android TV و Google TV، وتسريع آمن للتلفزيون.
+يركّبها لك مساعد ذكاء اصطناعي بأمر واحد.
+
+An Arabic home screen and a Saudi screensaver for Android TV / Google TV, and a safe speed-up.
+Your AI agent sets it all up.
+
+ركّبه في 3 خطوات
+
+① التلفزيون
+الإعدادات ← حول ← اضغط OK على Build سبع مرات. بعدها روح إلى خيارات المطوّر ← شغّل USB debugging.
+
+② كمبيوتر على نفس الواي فاي، وعليه واحد من هذي
+
+| Codex (OpenAI) | Claude Code (Anthropic) |
+|---|---|
+| مجاني بحساب ChatGPT | يحتاج اشتراك Claude Pro (20$ بالشهر) |
+| حمّل تطبيق Codex | حمّل تطبيق Claude ← تبويب Code |
+| الموافقات: اختر «Approve for me» | الموافقات: Allow للمهمة كلها |
+
+ويندوز: ركّب Git وPython أول (winget install --source winget Git.Git Python.Python.3.12). Gemini CLI مجاني وناس قالوا يشتغل؛ ما جرّبناه.
+
+③ الصق هذا
+
+ركّب تلفزيوني من https://github.com/tshi-dev/UrTV: انسخ المستودع واتبع docs/SETUP-PROMPT.md خطوة بخطوة. أنت على كمبيوتر متصل بنفس شبكة الواي فاي حقت التلفزيون.
+
+وش يصير بعد اللصق؟
+يسألك عن مدينتك وأنديتك، والتلفزيون يسألك Allow مرة وحدة، وبعدها خلّه يشتغل: 40 دقيقة وكم إعادة تشغيل.
+
+بترجعه مثل ما كان؟
+نعم، بأي وقت: تطبيقاتنا تنحذف، واللي أطفأناه يرجع، وشاشة التلفزيون الأصلية ترجع.
+optimize/reset.sh
+
+نزلت نسخة جديدة؟
+حدّث التطبيقين وإعداداتك كلها باقية. الشاشة نفسها تتحدّث لحالها. آخر الإعدادات، تحت «تحديث الشاشة الآن»، ثلاثة أسطر: الإصدار الحالي، والإصدار المتاح، وطريقة التحديث.
+optimize/install.sh all
+
+نزل تحديث للنظام وقفل تطبيقنا؟
+أعد الإعداد كله بأمر واحد، وإعداداتك باقية.
+optimize/run.sh again
+
+Set it up in 3 steps
+
+① The TV
+Settings → About → press OK on Build 7 times. Then go to Developer options → turn on USB debugging.
+
+② A computer on the same Wi-Fi, with one of these
+
+| Codex (OpenAI) | Claude Code (Anthropic) |
+|---|---|
+| Free with a ChatGPT account | Needs Claude Pro ($20/month) |
+| Download the Codex app | Download the Claude app → Code tab |
+| Approvals: choose «Approve for me» | Approvals: Allow for the whole task |
+
+Windows: install Git and Python first (winget install --source winget Git.Git Python.Python.3.12). Gemini CLI is free and reported to work; not tested by us.
+
+③ Paste this
+
+Set up my TV with https://github.com/tshi-dev/UrTV: clone it and follow docs/SETUP-PROMPT.md step by step. You are on a computer on the same Wi-Fi as the TV.
+
+What happens after pasting?
+It asks your city and your clubs, the TV asks Allow once, then leave it: 40 minutes, a few restarts.
+
+Can I put it back as it was?
+Yes, anytime: our apps are removed, what we turned off comes back on, the TV's own screen returns.
+optimize/reset.sh
+
+A new version came out?
+Update both apps; all your settings stay. The screen itself updates on its own. The settings row tells you when one exists.
+optimize/install.sh all
+
+The TV updated its system and locked our app out?
+Redo the whole setup with one command, settings kept.
+optimize/run.sh again
+
+Safe: nothing is uninstalled; AirPlay, Chromecast and voice are never touched; a 5-minute safety switch puts the
+stock home back if ours doesn't come up. The apps are built and signed by GitHub Actions from this repo (version
+3.N = the build number). The full prompt: docs/SETUP-PROMPT.md. To build a different
+screen: docs/RECREATE-PROMPT.md.
+
+What you get
+
+| | | |
+|---|---|---|
+| شاشة تلفزيونك · screensaver | Clock, Hijri date, prayer times and iqama, Ramadan, your teams' matches, weather, markets, and beside the clock your choice of new episodes, today's prayers, the 5-day forecast, all your teams' games, a stock watchlist, or a verse/hadith of the day, over Saudi landscapes | urtv-screensaver.apk |
+| تلفزيونك · home screen | Clean Arabic launcher: favourites row (5–10 apps) arranged in «ترتيب المفضلة», all apps, inputs, Wi-Fi, settings; «المهام» (tasks, by voice too), optional card from the screensaver (off by default). The «تلاوة» pill opens the Quran and the radio, with the adhan at Umm al-Qura times. App names show in Arabic: the name the setup agent gave it on this TV (optimize/dock.sh names / name), else the app's own Arabic name, else the one in res/values/app_names.xml, else its own name | urtv-home.apk |
+| Two free apps | TV Bro, a web browser for the TV, and SmartTube, YouTube without ads, from their own releases (skip with SKIP_EXTRAS=1) | optimize/install.sh extras |
+| Speed-up | Telemetry, ads and demos off (reversibly), closed apps frozen, Play Store kept from running in the background, faster animations | optimize/ |
+
+Download the apps yourself: releases/apk-latest
+(install with adb install; the agent route above also sets everything up).
+Every build is also kept as a numbered release (v3.N, the screensaver and home version), to go back
+to one: APK_TAG=v3.N optimize/install.sh all.
+
+The home screen carries «تلاوة وأذان»: forty reciters (114 surahs each), live Quran radio, and the five daily
+adhans at Umm al-Qura times with a choice of 21 recordings.
+Nothing to install apart from the home app; docs/TILAWAH.md has the screens, the
+remote keys and the ADB controls.
+
+The «تلاوة وأذان» screen on the TV
+
+The «القرّاء · الإذاعات · الأذان» tabs
+Three tabs, read from the right. The selected row has a thick gold frame and a gold chevron.
+
+The «مواقيت أم القرى» times
+Today's five times, the next one in gold with the time left.
+
+The «٢١ أذانًا»
+Twenty-one recordings — muezzins and mosques; the chosen one in gold with its city.
+
+The «١١٤ سورة» grid
+The surahs of a reciter, six columns, right to left.
+
+The «المشغّل»
+Title, reciter, progress and the transport row; during an adhan it shows the muezzin and hides the skip buttons.
+
+During the adhan
+The muezzin's name, and no skip or seek: the surah waits and comes back.
+
+For agents and scripts
+
+Everything is scriptable over ADB, made for slow Wi-Fi (retries, resumable uploads, every step remembered):
+
+| | |
+|---|---|
+| optimize/find-tv.sh | --check: can this terminal reach the home network at all (not from a cloud or sandbox) · then finds the TV (Windows, Mac, Linux) · pair   and connect : Android 11+ «Wireless debugging» for a TV that keeps port 5555 closed (needs adb) |
+| optimize/precheck.sh | is it an Android TV (leanback; Samsung Tizen, LG webOS, phones are refused) and is its WebView 80 or newer · webview-store opens the update page on the TV |
+| optimize/run.sh | the whole setup; run again after any failure to continue · status · again after a TV system update (redo all, settings kept) |
+| docs/FEATURES.md | كل ميزة بالعربي: وش تسوي، ووين تغيّرها، ووش يكتب الوكيل |
+| docs/SETTINGS.md | every setting and feature with its command, for agents: use these, never build your own |
+| optimize/saver.sh | screensaver settings: show, cities, city, find-team, teams, leagues, card, home-card, greeting, events, genres, langs, minrating, photos, idle, digits, national, cardstyle, markets, mkstyle, stocks, slot, countdown, tasks, update |
+| optimize/photos.sh | the owner's own photos, 1 to 10: add FILE..., list, del N, clear, mode mix\|only, show |
+| optimize/dock.sh | favourites row: show, apps, set, reset; hidden, hide PKG, show PKG for apps left off the home screen |
+| optimize/music.sh | «تلاوة وأذان» over ADB: status, reciters, stations, surah, radio, pause, resume, seek, sleep, adhan (now, on/off, voice N) |
+| optimize/measure.sh · shot.sh | memory before/after (restart + settle) · screenshots without navigating |
+| optimize/community.sh | a TV our lists do not know: the tested list for exactly its model from CleanYourTV (MIT; optimize/lists/community/, made by .github/tools/community_lists.py) |
+| optimize/autostart.sh | TCL only: allows our two apps to start at boot (the adhan after a restart, the sleep service), writes it to disk, and reports it |
+| optimize/keep.sh | turn back on anything protected (AirPlay, casting, voice, updates…) that something turned off · off: what the setup turned off, by name · restore : an app the person wants back, remembered so run.sh again leaves it on |
+
+…（内容已截断）

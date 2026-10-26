@@ -1,0 +1,178 @@
+InsightFace: 2D and 3D Face Analysis Project
+
+InsightFace project is mainly maintained by Jia Guo and Jiankang Deng.
+
+For more information, please visit our website at https://www.insightface.ai
+
+InsightFace 2.0 Update
+
+InsightFace 2.0 adds PrivateFrame
+for local video face blur and mosaic, reference-photo selection, and editable
+analysis JSON through desktop, CLI, and Python workflows, plus optional
+RGB liveness detection for
+FaceAnalysis and InsightFace Server. The Python package
+also supports raccoon_s / raccoon_l model packages, automatic CoreML/CUDA/CPU
+provider selection, and reusable CoreML compilation caches. PrivateFrame defaults
+to Fast mode (target 15 analysis FPS).
+
+PersonAnalysis adds person detection,
+face recognition, and body ReID for matching people against registered references.
+Use its Python API or try local videos, webcams, and RTSP streams in the desktop GUI.
+
+For installation and use, start with the Python SDK and GUI documentation.
+
+InsightFace Server
+
+The new InsightFace Server provides a simple self-hosted Web UI,
+snake_case REST API, and Python client for detection, optional liveness checks,
+comparison, registration, and Person search. A single Linux x86_64 CPU or NVIDIA GPU
+container runs local ONNX Runtime inference and SQLite with operator-supplied,
+manifest-verified models. It is a simple AWS Rekognition alternative with
+accuracy-preserving INT8 embedding quantization and 50M+ image search on one RTX 5090 GPU.
+
+License
+
+The code of InsightFace is released under the MIT License. There is no limitation for both academic and commercial usage.
+
+The training data containing the annotation (and the models trained with these data) are available for non-commercial research purposes only.
+
+Both manual-downloading models from our github repo and auto-downloading models with our python-library follow the above license policy(which is for non-commercial research purposes only).
+
+2025-11-24 Update:
+
+1. For inswapper series face swap models (e.g., inswapper_128.onnx/inswapper-512-live), please contact contact@insightface.ai for licensing and additional support.
+2. For open-sourced face recognition models (e.g., buffalo_l package), please contact recognition-oss-pack@insightface.ai for licensing.
+3. For advanced face recognition SDK and models (e.g., InspireFace SDK), please contact contact@insightface.ai for licensing and additional support.
+
+ChangeLogs
+
+2026-10-03 InsightFace 2.1 PersonAnalysis update: Add person detection, face recognition and body ReID with separate get(), match() and optional update() calls. Support cheetah_s / cheetah_l on CPU or CUDA with automatic model downloads, plus a GUI workflow for local videos, webcams and RTSP with analysis-rate controls and advanced settings. See the Python package and full change log.
+
+2026-09-09 InsightFace 2.0 Liveness update: Add the optional RGB liveness addon, normal/observe modes, per-face scores and input-rejection reasons, plus Server Web model installation and activation. See Python usage and Server usage.
+
+2026-09-09 InsightFace 2.0 PrivateFrame update: Add local video detection and tracking, Gaussian blur/mosaic, selective redaction from reference photos, reusable JSON with rendering without another inference pass, and integrated desktop, CLI, and Python API workflows. See the feature and usage guide.
+
+2026-07-27 InsightFace Server Added a simple AWS Rekognition alternative with accuracy-preserving INT8 embedding quantization and 50M+ image search on one RTX 5090 GPU.
+
+2026-05-23 InsightFace 1.0 Added a cross-platform desktop GUI Demo for face recognition, enterprise evaluation, reports, and face swap trials, with a lighter default Python install that removes C++ build requirements.
+
+2025-11-18 Picsi.ai] Released Live Face Swap macOS & iOS App and updated [Picsi.ai services with our latest series of swap models (incl. inswapper-live/Cyn/Dax).
+
+2024-05-04 Picsi.ai] Released [InspireFace, a cross-platform C/C++ face recognition SDK.
+
+2024-04-17: Monocular Identity-Conditioned Facial Reflectance Reconstruction accepted by CVPR-2024.
+
+2023-08-08: We released the implementation of Generalizing Gaze Estimation with Weak-Supervision from Synthetic Views at reconstruction/gaze.
+
+2023-05-03: We have launched the ongoing version of wild face anti-spoofing challenge. See details here.
+
+2023-02-13: We launch a large scale in the wild face anti-spoofing challenge on CVPR23 Workshop, see details at challenges/cvpr23-fas-wild.
+
+2022-11-28: Single line code for facial identity swapping in our python packge ver 0.7, please check the example here.
+
+2022-10-28: MFR-Ongoing website is refactored, please create issues if there's any bug.
+
+2022-09-22: Now we have web-demos: face-localization, face-recognition, and face-swapping.
+
+2022-08-12: We achieved Rank-1st of
+Perspective Projection Based Monocular 3D Face Reconstruction Challenge
+of ECCV-2022 WCPA Workshop, paper and code.
+
+2022-03-30: Partial FC accepted by CVPR-2022.
+
+2022-02-23: SCRFD accepted by ICLR-2022.
+
+2021-11-30: MFR-Ongoing challenge launched(same with IFRT), which is an extended version of iccv21-mfr.
+
+2021-10-29: We achieved 1st place on the VISA track of NIST-FRVT 1:1 by using Partial FC (Xiang An, Jiankang Deng, Jia Guo).
+
+2021-10-11: Leaderboard of ICCV21 - Masked Face Recognition Challenge released. Video: Youtube, Bilibili.
+
+2021-06-05: We launch a Masked Face Recognition Challenge & Workshop on ICCV 2021.
+
+Introduction
+
+InsightFace is an open source 2D&3D deep face analysis toolbox, mainly based on PyTorch and MXNet.
+
+Please check our website for detail.
+
+The master branch works with PyTorch 1.6+ and/or MXNet=1.6-1.8, with Python 3.x.
+
+InsightFace efficiently implements a rich variety of state of the art algorithms of face recognition, face detection and face alignment, which optimized for both training and deployment.
+
+Quick Start
+
+Please start with our python-package, for testing detection, recognition and alignment models on input images.
+
+ArcFace Video Demo
+
+Please click the image to watch the Youtube video. For Bilibili users, click here.
+
+Projects
+
+The page on InsightFace website also describes all supported projects in InsightFace.
+
+You may also interested in some challenges hold by InsightFace.
+
+Face Recognition
+
+Introduction
+
+In this module, we provide training data, network settings and loss designs for deep face recognition.
+
+The supported methods are as follows:
+
+- x](recognition/arcface_mxnet)
+- x](recognition/arcface_torch)
+- x](recognition/subcenter_arcface)
+- x](recognition/partial_fc)
+- x](recognition/arcface_torch)
+- x](recognition/vpl)
+- x(recognition/arcface_oneflow)
+- x](recognition/arcface_paddle)
+
+Commonly used network backbones are included in most of the methods, such as IResNet, MobilefaceNet, MobileNet, InceptionResNet_v2, DenseNet, etc..
+
+Datasets
+
+The training data includes, but not limited to the cleaned MS1M, VGG2 and CASIA-Webface datasets, which were already packed in MXNet binary format. Please dataset page for detail.
+
+Evaluation
+
+We provide standard IJB and Megaface evaluation pipelines in evaluation
+
+Pretrained Models
+
+Please check Model-Zoo for more pretrained models.
+
+Third-party Re-implementation of ArcFace
+
+- TensorFlow: InsightFace_TF
+- TensorFlow: tf-insightface
+- TensorFlow:insightface
+- PyTorch: InsightFace_Pytorch
+- PyTorch: arcface-pytorch
+- Caffe: arcface-caffe
+- Caffe: CombinedMargin-caffe
+- Tensorflow: InsightFace-tensorflow
+- TensorRT: wang-xinyu/tensorrtx
+- TensorRT: InsightFace-REST
+- ONNXRuntime C++: ArcFace-ONNXRuntime
+- ONNXRuntime Go: arcface-go
+- MNN: ArcFace-MNN
+- TNN: ArcFace-TNN
+- NCNN: ArcFace-NCNN
+
+Face Detection
+
+Introduction
+
+In this module, we provide training data with annotation, network settings and loss designs for face detection training, evaluation and inference.
+
+The supported methods are as follows:
+
+- x](detection/retinaface)
+- x](detection/scrfd)
+- x(detection/blazeface_paddle)
+
+…（内容已截断）

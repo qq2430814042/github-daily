@@ -1,0 +1,146 @@
+词光 · Word Atlas
+
+把单词变成画面，让复习有迹可循。
+
+7,298 个雅思词条 · 原创插画 · 英美发音 · FSRS 间隔复习
+
+立即体验 ↗　 /　 48 秒介绍　 /　 下载词库　 /　 English
+
+词光是一款以插画和语境为核心的雅思背词应用。看画面理解词义，听发音建立联系，再用主动回忆和间隔复习巩固记忆。无需账号，学习进度保存在自己的设备上。
+
+版本说明：这个仓库提供词光的开源基础版及配套数据集。在线网站独立迭代，功能与仓库可能不同；仓库里的代码和内容分别遵循下方的 MIT / CC BY 4.0 授权。
+
+产品预览 · 学习方式 · 本地运行 · 开放数据 · 参与贡献
+
+产品预览
+
+一本可以听、可以练的单词图鉴
+
+每日计划，把注意力放在今天插画、词义、发音，在一张词卡里
+
+以上为仓库开源版的实际界面。页首为品牌概念插画。
+
+学过的词，汇成自己的星图
+
+19 个话题组成词汇星图。拖动旋转、滚动缩放，点击星星打开词卡；学习状态用不同亮度呈现。采用 WebGL2 渲染，不支持的设备提供降级显示。
+
+看 48 秒宣传片
+
+播放完整视频（含声音）
+
+学习方式
+
+| 环节 | 你会做什么 |
+| :--- | :--- |
+| 看见 | 每个词配一幅插画、中英释义、两条原创例句，以及搭配、词族和用法提示。 |
+| 听见 | 切换英音、美音，听日常例句朗读；部分词条另含第二条例句录音。 |
+| 想起 | 看义选词、看图补句、听音辨词、拼写，逐步练习主动回忆。 |
+| 复习 | FSRS 根据学习记录安排复习，目标记忆率可调。只有首次作答计入正确率。 |
+| 积累 | 星图展示学习进度；打字练习独立统计；支持导出和恢复本地进度。 |
+
+本地优先。 无需注册；看过的词条与媒体可缓存供离线使用。换设备前，请先导出进度备份。
+
+听发音、例句与环境声样本
+
+拿 abandon 举例，点开就能听（在线播放）：
+
+| | |
+|---|---|
+| 🇬🇧 英音 | abandon /əˈbændən/ |
+| 🇺🇸 美音 | abandon /əˈbændən/ |
+| 📖 例句朗读 | We had to abandon our car in the snow. |
+
+全部 7,298 个词都有英音、美音和例句朗读，还有 1,011 个重点词的第二条例句也配了朗读。
+
+环境声与交互声音
+
+| | |
+|---|---|
+| 🎙 开屏配音 | 「欢迎打开雅思大门」：星尘汇聚成“词光”，大门打开 |
+| 🌌 星图配音 | 「这是你的词汇星图。每学会一个词，就点亮一颗星。」 |
+| 🎵 星空音乐 | 一段可无缝循环的原创配乐，默认陪你背词 |
+| 🌧 6 段环境声 | 雨天图书馆 · 清晨海岸 · 林间早晨 · 夜晚壁炉 · 远航船舱 · 安静咖啡馆 |
+| ✨ 界面音效 | 答对、答错、翻卡、打字、连胜、点亮星星……每个操作都有自己的声音；读单词时背景音会自动压低 |
+
+全部素材都在仓库里：插画在 public/atlas/img/，录音在 public/atlas/audio/，这两类按 CC BY 4.0 开放；界面声音和配乐在 public/sfx/，随应用一起提供。
+
+本地运行
+
+需要 Node.js 20+ 和 npm。仓库含完整图片与录音，首次下载可能较久。
+
+git clone --depth 1 https://github.com/designfuchen/word-atlas.git
+cd word-atlas
+npm ci
+npm run dev
+
+打开 http://localhost:5188。
+
+npm test             # 单元测试
+npm run check:atlas  # 词库结构与媒体校验
+npm run build        # 构建到 dist/
+
+子路径部署：ATLAS_BASE=/words/ npm run build。完整说明见 部署文档。
+
+技术栈：React 19 · TypeScript · Vite · ts-fsrs · WebGL2
+
+开放数据
+
+不仅可以直接使用应用，也可以把词库用于自己的学习工具、Anki 牌组或研究项目。
+
+| 资源 | 开源版内容 | 入口 |
+| :--- | :--- | :--- |
+| 词条 | 7,298 条，CEFR A1–C2、19 个话题 | JSON · CSV |
+| 例句 | 14,596 条，日常与雅思语境，附中文翻译 | 字段说明 |
+| 插画 | 7,298 幅，512 px WebP，另有缩略图 | 图片目录 |
+| 录音 | 22,905 段，英音、美音与例句朗读 | 音频目录 |
+
+import json
+from pathlib import Path
+
+words = json.loads(Path("data/word-atlas.json").read_text(encoding="utf-8"))
+b2_environment = w for w in words if w["cefr"] == "B2" and w["topic"] == "environment"]
+
+查看一条词条的数据结构
+
+{
+  "id": "principle",
+  "w": "principle",
+  "uk": "/ˈprɪnsəpəl/",
+  "us": "/ˈprɪnsəpəl/",
+  "senses": [{ "pos": "n.", "zh": "原则；行为准则", "en": "A belief or rule that guides decisions and behaviour." }],
+  "ex": [
+    { "en": "I refused the extra money as a matter of principle.", "zh": "出于原则，我拒绝了那笔额外的钱。" },
+    { "en": "The principle of equal opportunity should guide policies designed to improve access to higher education.", "zh": "…" }
+  ],
+  "col": ["in principle｜原则上", "basic principle｜基本原则"],
+  "fam": ["principled (adj.)"],
+  "tip": "principle 是原则；principal 是校长、主要的。",
+  "cefr": "B2",
+  "topic": "thinking"
+}
+
+内容来源与局限
+
+释义、例句、插画和录音为本项目生成：文字与插画使用生成式 AI，语音使用 ElevenLabs。内容经过自动结构与一致性校验，尚未逐条人工审校，可能出现释义、例句、插画或发音错误。它不是官方雅思词表，也不承诺提分。
+
+[内容生成流程 · 记忆模型 · 生成脚本
+
+参与贡献
+
+发现问题时，请附上词条 ID、复现步骤和预期结果。内容纠错如有词典或其他可靠依据，也请一并提供。
+
+- 报告问题：词条纠错、界面问题或使用建议。
+- 贡献指南：数据同步、代码规范和提交前检查。
+- 安全政策：安全问题的反馈方式。
+
+授权
+
+| 范围 | 许可 |
+| :--- | :--- |
+| 应用代码 | MIT |
+| 词库文本、插画与词条录音 | CC BY 4.0，署名 Word Atlas contributors（词光） |
+| 第三方依赖与字体 | 遵循各自许可，详见相应文件 |
+
+由 @designfuchen 制作。产品进展与制作过程见 X · @yangleiocx3。
+
+如果词光对你有用，欢迎 Star，或把它分享给正在学英语的朋友。

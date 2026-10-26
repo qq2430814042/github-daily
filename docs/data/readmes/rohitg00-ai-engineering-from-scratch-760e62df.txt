@@ -1,0 +1,180 @@
+Implement model internals, retrieval pipelines, and agent runtimes. Test them, inspect failures, and keep the code and evaluation results.
+
+Start learning · Choose a path · Try a lab · Build a project · Browse the curriculum
+
+Free, open source, MIT. Learn on the website, with a coding agent, or by running local code.
+
+542 lessons. 20 phases. Python, TypeScript, Rust, Julia.
+
+Read in your language
+
+  🇬🇧 English ·
+  🇨🇳 简体中文 ·
+  🇹🇼 繁體中文（台灣） ·
+  🇯🇵 日本語 ·
+  🇰🇷 한국어 ·
+  🇵🇹 Português ·
+  🇧🇷 Português (Brasil) ·
+  🇪🇸 Español ·
+  🇩🇪 Deutsch ·
+  🇫🇷 Français ·
+  🇮🇹 Italiano ·
+  🇳🇱 Nederlands ·
+  🇵🇱 Polski ·
+  🇨🇿 Čeština ·
+  🇷🇴 Română ·
+  🇭🇺 Magyar ·
+  🇬🇷 Ελληνικά ·
+  🇸🇪 Svenska ·
+  🇩🇰 Dansk ·
+  🇳🇴 Norsk ·
+  🇫🇮 Suomi ·
+  🇷🇺 Русский ·
+  🇺🇦 Українська ·
+  🇹🇷 Türkçe ·
+  🇮🇱 עברית ·
+  🇸🇦 العربية ·
+  🇮🇷 فارسی ·
+  🇮🇳 हिन्दी ·
+  🇧🇩 বাংলা ·
+  🇵🇰 اردو ·
+  🇹🇭 ไทย ·
+  🇻🇳 Tiếng Việt ·
+  🇮🇩 Bahasa Indonesia ·
+  🇵🇭 Tagalog
+
+Sponsors
+
+  Your support keeps every lesson free and open source. See all supporters · Become a sponsor
+
+Learning paths
+
+| Route | Starting lesson |
+|---|---|
+| Model foundations | Setup and tooling |
+| LLM systems | Prompt engineering |
+| Agents and delivery | The agent loop |
+
+Compare career paths · Prerequisites and study time
+
+Gradient descent
+
+Twenty starting points follow gradient descent on a quadratic loss. The graph shows their positions and mean loss after each update.
+
+Adjust the learning rate in the lesson · Compare GD, momentum, and Adam in code
+
+Projects
+
+Three projects with staged starters, reference implementations, and local graders. Run commands from the repository root after setup. Starters fail until you implement the stages.
+
+01 · Retrieval Evaluation Lab · Python · Ranking metrics and regression checks
+
+A candidate improves mean NDCG while one query ranks its most relevant evidence lower. Build a query-by-query comparison that reports the regression and can fail a release check.
+
+Use Python 3.10+. Review RAG and model evaluation. Implement ranking validation, precision and recall, rank-sensitive metrics, then system comparison.
+
+python3 scripts/project_test.py retrieval-evaluation-lab \
+  --init learning-artifacts/retrieval-evaluation-lab
+python3 scripts/project_test.py retrieval-evaluation-lab \
+  --stage 1 --path learning-artifacts/retrieval-evaluation-lab --strict
+python3 scripts/project_test.py retrieval-evaluation-lab \
+  --all --path learning-artifacts/retrieval-evaluation-lab --strict
+
+Keep: a reproducible comparison with per-query deltas and the judgments used to score them. Metrics describe those judgments; they do not establish answer correctness.
+
+Start the project · Inspect the reference · Run on your own inputs
+
+02 · Agent Trace Debugger · TypeScript · Trace parsing and timing
+
+A supplied trace still takes 100 ms, but total token usage rises by 200 and one span starts failing. Separate overlapping child work from parent execution time, then produce a report that exposes the change.
+
+Use Node.js 22.18+ and Python 3 for the grader. Implement JSONL parsing, parent validation, interval arithmetic, then an inspectable timeline.
+
+python3 scripts/project_test.py agent-trace-debugger \
+  --init learning-artifacts/agent-trace-debugger
+python3 scripts/project_test.py agent-trace-debugger \
+  --stage 1 --path learning-artifacts/agent-trace-debugger --strict
+python3 scripts/project_test.py agent-trace-debugger \
+  --all --path learning-artifacts/agent-trace-debugger --strict
+
+Keep: the input trace, an HTML timeline, and a JSON regression report. Preserve exclusive per-span token counts so parent and child usage are not counted twice.
+
+Start the project · Inspect the reference · Explore timing interactively
+
+03 · Tool Call Firewall · Rust · Role checks and approval receipts
+
+A write changes after review, or an approval is replayed. Validate the call envelope, check the caller's role and path, then consume an approval bound to the exact request and content.
+
+Use Rust and Python 3.10+. Review tool schema design and security boundaries. The caller application supplies identity; the model proposes an operation.
+
+python3 scripts/project_test.py tool-call-firewall \
+  --init learning-artifacts/tool-call-firewall
+python3 scripts/project_test.py tool-call-firewall \
+  --stage 1 --path learning-artifacts/tool-call-firewall --strict
+python3 scripts/project_test.py tool-call-firewall \
+  --all --path learning-artifacts/tool-call-firewall --strict
+
+Keep: an audit receipt showing the requested operation and the policy decision. Approvals are single-use within one invocation; this project does not provide persistent authorization or an operating-system sandbox.
+
+Start the project · Inspect the reference · Explore approval boundaries
+
+Browse all projects · Career practice guide
+
+Choose how to learn
+
+On the website
+
+Open any completed lesson on aiengineeringfromscratch.com or expand a phase under Contents. No setup, no cloning.
+
+With an AI tutor
+
+If Node.js, npx, and a skill-capable coding agent are already installed, your coding agent can become your tutor. A repository clone is not needed to install or read the tutor. Runnable focused-path labs need python3. Agent Skills host labs also need a selected host and a writable user or project skill scope.
+
+npx skills add rohitg00/ai-engineering-from-scratch
+
+Choose the host and scope when the installer asks. Use start-learning in Codex, /start-learning in Claude Code, or ask your host to use the skill by name.
+
+Tutor setup and host commands
+
+Check the local requirements first:
+
+node --version
+npx --version
+python3 --version
+
+skills writes to the host and scope selected during installation, such as
+.claude/skills/, .cursor/skills/, .codex/skills/, or another supported
+skills folder. Verify that the selected host discovers that exact destination.
+
+Invocation syntax belongs to the host, not to the portable SKILL.md format:
+
+| Host | Start the course | Start Model Context Protocol (MCP) | Start Agent Skills | Run a phase quiz |
+|---|---|---|---|---|
+| Codex | start-learning, or choose it from /skills | learn-mcp, or choose it from /skills | learn-agent-skills, or choose it from /skills | check-understanding 13, or choose it from /skills |
+| Claude Code | /start-learning | /learn-mcp | /learn-agent-skills | /check-understanding 13 |
+| Other compatible hosts | Use start-learning to begin the course. | Use learn-mcp to start the Model Context Protocol (MCP) path. | Use learn-agent-skills to start the Agent Skills Engineering path. | Use check-understanding to quiz me on Phase 13. |
+
+A ten-question placement quiz maps what you already know to a starting phase and
+saves a personalized study plan to LEARNING.md. From there, the learn skill
+teaches one lesson per session: concept, math, code, quiz. It streams lessons
+straight from this repo, and the course-guide skill jumps you to the exact
+lesson that covers anything you are stuck on. In Codex, invoke these skills with
+learn and course-guide; in Claude Code, use /learn and /course-guide;
+in other compatible hosts, ask to use the skill by name.
+
+Only want Model Context Protocol (MCP)? Use the MCP invocation for your host. It creates
+MCP-LEARNING.md and follows one 17-lesson route through stateless
+requests, transports, bidirectional work, security, reliability, registry
+governance, and conformance evidence. The exact order and checkpoints live in
+the Model Context Protocol (MCP) manifest.
+
+Only want Agent Skills? Use the Agent Skills invocation for your host. It
+creates AGENT-SKILLS-LEARNING.md and follows one coherent five-lesson route:
+contract, discovery, invocation, sandbox boundaries, then release evals and
+real-host portability. Start on the web with the
+Agent Skills path.
+
+The installer lists the hosts it can configure and asks where to install. If
+you do not have Node.js, npx, python3, a supported host, or a writable
+
+…（内容已截断）

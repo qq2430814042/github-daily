@@ -1,0 +1,186 @@
+HBLauncher
+
+Maintained by RavensClawX.
+
+USE AT YOUR OWN RISK. This software is provided as-is, without warranties.
+RavensClawX and contributors are not
+responsible for damage to your Nintendo Switch 2, PC, Pico, or other hardware;
+data loss; corrupted saves; or other consequences of using this software.
+Back up important data before making changes. Apps using filesystem features
+can modify or delete real SmileBASIC files.
+
+First time? Follow Getting Started for the complete
+Pico setup, SmileBASIC entry and first launch. Prebuilt GPU assets are included;
+you do not need to compile the launcher to run it.
+
+A homebrew app launcher running through SmileBASIC on Nintendo Switch 2.
+Browse apps on the console, launch independent GPU programs, and return to the
+menu. The included Hello World app is a complete starting point for your own
+software, including source, build script, icon, input handling, and an exit path.
+
+The computer hosts the app library and keeps the bridge alive. Application logic
+runs in compute shaders and graphics run in vertex/fragment shaders on the
+console GPU. This is a GPU app environment, not an NRO loader, native ARM64 app
+loader, standalone installed title, or custom firmware.
+
+The included HB SDK provides shared shader/build helpers,
+controller and motion input, Joy-Con 2 optical mouse input, keyboard/mouse
+telemetry, frequency/amplitude vibration envelopes,
+read-only NFC scanning and console-side UDP. The launcher itself is its
+integration example: move a detached Joy-Con 2 on a surface to control its
+cursor. L/R clicks with the corresponding Joy-Con in mouse mode; ZR
+also clicks. See the
+capability matrix for tested features and hardware
+limitations, and the service protocol for app APIs.
+
+Contents
+
+- Requirements
+- Setup
+- Launch and controls
+- SDK guide and API reference
+- Build your own app
+- Package manifest
+- GPU programming interface
+- Input
+- Graphics and assets
+- Audio
+- Advanced compute and memory
+- Testing and troubleshooting
+- Project layout
+- Credits
+
+Requirements
+
+The supported console configuration is **SmileBASIC 4.4.9 on Switch 2 system
+software 23.0.1**. The bridge uses version-specific addresses and checks; other
+versions are not supported. Keep more than 20 MiB free in the SmileBASIC save.
+
+You also need:
+
+- A Linux computer on a network reachable by the console and Pico. Linux x86-64
+  is the tested host platform.
+- A Raspberry Pi Pico 2 W, a USB data cable, and CircuitPython. The keyboard
+  bridge was used with CircuitPython 10.3.1.
+- Node.js 22+, Bash, Python 3 with Pillow, DejaVu Sans, and spirv-val.
+- For shader builds: glslangValidator.
+- For desktop GPU tests: a C compiler, Vulkan development headers, a Vulkan
+  loader, and a driver (Mesa's software driver is suitable).
+
+On Ubuntu/Debian, after installing Node.js 22+:
+
+sudo apt-get update
+sudo apt-get install python3-pil fonts-dejavu-core glslang-tools spirv-tools \
+  build-essential libvulkan-dev mesa-vulkan-drivers
+node --version
+
+No npm packages are required. Tools are normally found on PATH. Optional local
+copies in tools/ are supported but are not distributed. NODE, GLSLANG,
+SPIRV_VAL, and CC override the corresponding tool paths. Set NODE to an
+executable path, not a command with arguments.
+
+Setup
+
+1. Prepare the Pico
+
+Download CircuitPython for the Pico 2 W.
+Hold BOOTSEL while attaching the Pico to your computer, copy the board's UF2 to
+its bootloader drive, and wait for it to restart as CIRCUITPY.
+
+From the repository root, run this with your actual mounted drive and computer
+LAN address:
+
+bash smilebasic/pico-keyboard/install.sh /media/your-user/CIRCUITPY 192.168.1.10
+
+The installer prompts for Wi-Fi credentials. It installs the HID library,
+boot.py, code.py, and program.bas, writes settings.toml on the Pico, and
+creates a private pairing key at smilebasic/pico-keyboard/secret. Keep the key;
+the host and Pico must agree. Do not share the key or settings.toml.
+
+After installation, ground GP0 to GND before connecting whenever you need
+maintenance access to CIRCUITPY. Without GP0 grounded the device exposes a USB
+keyboard instead. BOOTSEL is for firmware installation, not routine file updates.
+Remove the GP0 jumper before connecting the Pico to the console.
+
+2. Save the bootstrap in SmileBASIC
+
+Set the console's USB keyboard language to English (US). In SmileBASIC's
+program editor, enter smilebasic/bootstrap.bas into
+slot 0 and save it as NS2.
+
+The Pico can type it for you: focus an empty EDIT0 editor, ground GP1 to GND,
+and attach the Pico to the console. It waits before typing program.bas; allow
+roughly eight minutes and then save as NS2. Disconnect and remove the GP1 jumper.
+Do not use bootstrap-entry mode while a different text field is focused.
+
+3. Prepare the host
+
+Allow inbound TCP 39380 (console bridge) and 39381 (Pico keyboard bridge)
+on your local network. The Pico and console independently connect to the host.
+Guest-network isolation can prevent this even when Wi-Fi appears connected.
+The internal RPC service listens on loopback and uses a per-session token.
+
+Launch and controls
+
+1. Start a fresh console/SmileBASIC session and open Direct mode.
+2. Run from the repository root, substituting the computer's LAN address:
+
+   ./start.sh 192.168.1.10
+
+3. Connect the configured Pico to the console with GP0/GP1 ungrounded.
+4. The Pico loads NS2, runs the bootstrap, issues REMOVE, and enters the fresh
+   connection command. The expected Out of memory response to REMOVE is part
+   of this sequence. Let it finish. The host checks the session, creates the
+   display, uploads the catalog, and starts the launcher.
+5. Keep the host running and computer awake throughout the session.
+
+Use D-pad Up/Down or the left stick to select an app, then A to open it.
+You can also tap an app row. The top-right refresh control rescans the host's
+app folders. D-pad Left/Right do not
+change the catalog.
+Joy-Con 2 optical movement controls the cursor; L/R clicks while the
+corresponding Joy-Con is tracking, and ZR also clicks a hovered row or Refresh. The cursor hides when optical tracking stops. The launcher has no separate System menu.
+Hello World uses B or Minus to return to the menu. Other apps define their
+own controls and must implement a return action.
+
+Press Ctrl+C in the host terminal to stop its processes. Console allocations
+are retained for the session; restart SmileBASIC/the console to release them.
+After a failed native session, restart the console before retrying. Never repeat
+REMOVE within the same application process or reuse an old session's addresses.
+
+Build your own app
+
+Generate an app with the SDK
+
+node sdk/create-app.cjs my-app "My App"
+
+The generator copies the working Hello World source, sets the ID and display
+name, and refuses to overwrite an existing folder. Edit its description/version
+in app.json. See the SDK guide for input helpers, motion,
+networking, NFC, vibration, shader examples and the exact memory protocol.
+
+The example is deliberately small:
+
+| File | What to change |
+| --- | --- |
+| app.json | Name, ID, version, icon and asset paths |
+| shaders/app.comp | Per-frame logic and controller handling |
+| shaders/app.frag | Screen rendering |
+| shaders/app.vert | Full-screen triangle; normally leave it alone |
+| assets.py | Text atlas and terminal-style icon generation |
+| build.cjs | Initial state and shader compilation |
+| check.cjs in Hello World | Reference desktop render and input regression checks |
+
+Edit the greeting strings in assets.py, replace its icon drawing with your own
+art, and edit app.frag to change the screen. The builder regenerates the icon,
+so edit the generator or remove that generation step before supplying a custom PNG.
+
+Build from the repository root:
+
+node apps/my-app/build.cjs
+
+The build copies the shared ABI/drawing helpers, writes the initial state,
+generates assets, compiles the three shaders for Vulkan 1.0, and validates their
+SPIR-V. Generated .spv, .bin, and .png files are part of the distributable
+
+…（内容已截断）

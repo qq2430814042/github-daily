@@ -1,0 +1,118 @@
+Kit TV Android : rendez votre TV rapide et belle
+
+🇫🇷 Français · 🇬🇧 English version
+
+Votre TV Android rame, affiche des pubs partout, et le son se décale pendant les films ? Ce kit l'allège en quelques minutes depuis un PC Windows, un Mac ou un PC Linux. Il installe aussi Zen Home, un écran d'accueil minimaliste façon Apple TV.
+
+Téléchargez l'application, c'est le plus simple : rendez-vous dans Releases (dans la colonne de droite de cette page) et prenez la version pour votre ordinateur : Windows, macOS ou Linux. Elle trouve votre TV toute seule et vous guide pas à pas. Détails ci-dessous.
+
+    Avant
+    Après
+
+    Accueil d'origine : pubs, applis promo, lenteurs
+    Zen Home : photo de paysage, l'heure et vos applis
+
+Photos réelles d'une TCL de 2019. Le titre affiché en haut à gauche est personnalisable.
+
+Projet personnel partagé tel quel, sans aucune garantie. Je ne suis pas responsable des problèmes que son utilisation pourrait causer à votre TV, à vos appareils ou à vos données. Chaque TV est différente : lisez la section Avant d'utiliser le kit sur votre TV.
+
+Sommaire
+
+1. En bref
+2. Ce que fait le kit
+3. Compatibilité
+4. Avant d'utiliser le kit sur votre TV
+5. Préparer la TV (5 minutes)
+6. Utilisation
+7. Personnaliser Zen Home
+8. Sécurité et retour en arrière
+9. Dépannage
+10. Contenu du dossier
+11. Responsabilité
+12. Crédits et licence
+
+En bref
+
+Le plus simple : l'application. Téléchargez la version pour votre ordinateur dans les Releases, lancez-la : elle trouve votre TV sur le réseau, vous guide pour activer le débogage, et tout se fait en quelques clics.
+
+| Système | Fichier | Premier lancement |
+|---|---|---|
+| Windows 10 / 11 | KitTVAndroid-…-windows-x64.exe | Si Windows affiche « Windows a protégé votre ordinateur » : Informations complémentaires → Exécuter quand même. |
+| macOS (Apple M1 et plus récents) | KitTVAndroid-…-macos-apple-silicon.zip | Ouvrez le zip, glissez Kit TV Android dans Applications. Au premier lancement : clic droit → Ouvrir, ou Réglages Système → Confidentialité et sécurité → Ouvrir quand même. |
+| macOS (processeur Intel) | KitTVAndroid-…-macos-intel.zip | Pareil que ci-dessus. |
+| Linux | KitTVAndroid-…-linux-x64.tar.gz (ou arm64) | Décompressez, puis lancez kit-tv-android. |
+
+L'application s'ouvre dans votre navigateur et se ferme quand vous fermez l'onglet. Elle fait exactement la même chose que les scripts ci-dessous, avec les mêmes sécurités. Les applications ne sont pas signées (un certificat est payant), d'où l'avertissement au premier lancement.
+
+Avec les scripts (sans rien télécharger d'autre que le kit) :
+
+1. Activez le mode développeur et le débogage sur la TV (voir comment).
+2. Double-cliquez sur LANCER.bat (Windows) ou LANCER.command (macOS), ou lancez ./LANCER.sh (Linux), puis tapez l'adresse IP de la TV.
+3. Acceptez « Autoriser le débogage » sur la TV.
+4. Faites dans l'ordre les options 1 (sauvegarde), 2 (allègement) et 3 (écran d'accueil).
+5. Si quelque chose ne vous plaît pas, l'option 6 remet tout comme avant.
+
+Ce que fait le kit
+
+| Option du menu | Ce qu'elle fait | Modifie la TV ? |
+|---|---|---|
+| 1. Diagnostic + sauvegarde | Relève la version d'Android, la mémoire, le processeur et le Wi-Fi. Sauvegarde la liste des applis et des réglages, avec une capture de l'écran. | Non |
+| 2. Alléger | Désactive les pubs, la télémétrie et les services inutiles connus (Google, TCL, Sony, Xiaomi…). Pour les fonctions que vous utilisez peut-être (Chromecast, Assistant…), le kit vous pose la question. | Oui, réversible |
+| 3. Zen Home | Installe l'écran d'accueil minimaliste : votre titre, une vue à 4, 6 ou 8 applis, et vos applis préférées. Si vous le voulez, il désactive aussi l'accueil d'origine, souvent très gourmand. | Oui, réversible |
+| 4. Mes photos | Remplace les photos fournies par les vôtres. | Oui, réversible |
+| 5. Capture d'écran | Prend une capture de ce qui est affiché sur la TV. | Non |
+| 6. Tout restaurer | Réactive tout ce que le kit a désactivé, remet l'écran d'accueil et les animations d'origine, et désinstalle Zen Home. | Retour à l'origine |
+| 7. Autre TV | Change la TV ciblée. | Non |
+
+Rien n'est jamais désinstallé, sauf Zen Home si vous le demandez. Les applis sont seulement désactivées, et tout se réactive en un clic.
+
+Exemple réel sur une TCL de 2019 (Android 9, 2 Go de RAM) :
+
+| | Avant | Après |
+|---|---|---|
+| Processeur au repos | 61 % | 12 % |
+| RAM disponible | 451 Mo | 720 Mo |
+| Écran d'accueil | 187 Mo (Google TV) | 25 Mo (Zen Home) |
+| Services désactivés (pubs, télémétrie, inutiles) | 0 | 32 |
+
+Ces chiffres viennent d'une seule TV. Le gain sera différent sur la vôtre.
+
+Compatibilité
+
+| Appareil | Allègement | Zen Home |
+|---|---|---|
+| TV Android TV / Google TV : TCL, Sony, Philips, Xiaomi, Hisense (modèles Android), Sharp, Toshiba… | ✅ | ✅ |
+| Boîtiers : Nvidia Shield, Chromecast avec Google TV, Xiaomi Mi Box, Google TV Streamer | ✅ | ✅ |
+| Projecteurs sous Android TV / Google TV : XGIMI… | ✅ | ✅ |
+| Amazon Fire TV / Fire Stick (Fire OS) | ✅ | ❌ Utilisez un outil dédié (voir ci-dessous) |
+| Fire TV sous Vega OS (Fire TV Stick 4K Select et modèles sortis depuis fin 2025) | ❌ Pas Android | ❌ |
+| Samsung (Tizen), LG (webOS), Hisense VIDAA, Roku, Apple TV | ❌ Pas Android | ❌ |
+
+Testé en conditions réelles : une TCL BeyondTV (Android 9). Testés aussi par des utilisateurs : une TCL BeyondTV2 (Android 9), un projecteur XGIMI MoGo 3 Pro (Google TV, Android 11) et une Xiaomi MiTV-MOOR2 (Google TV, Android 11). Les autres appareils de ce tableau devraient fonctionner, car ils utilisent les mêmes commandes Android, mais ils n'ont pas tous été testés.
+
+Philips et Ambilight : d'après un retour d'utilisateur, l'Ambilight continue de fonctionner sans problème après l'allègement et l'installation de Zen Home. Le kit ne touche à aucun paquet Ambilight.
+
+Fire TV / Fire Stick : changer l'accueil
+
+Amazon protège son écran d'accueil : sans root, impossible de le désactiver ou de le remplacer comme le fait le kit sur les autres TV. Utilisez le kit pour l'allègement (options 1, 2 et 6), puis l'un de ces outils dédiés pour l'accueil. Ils redirigent la touche Accueil vers le launcher de votre choix grâce à un service d'accessibilité, sans root, sur Fire OS 7 et 8 :
+
+- Projectivy Launcher : un launcher complet, avec l'option « Remplacer le launcher actuel » dans ses réglages.
+- FireStick Fixer (libre) ou Home on Fire : envoient la touche Accueil vers le launcher de votre choix.
+- Launcher Manager : même principe, et permet aussi de reprogrammer les boutons d'applis de la télécommande.
+
+L'accueil Amazon reste installé et peut apparaître une fraction de seconde. Après une mise à jour de Fire OS, il faut parfois réactiver l'outil. Évitez les méthodes « system user » trouvées sur les forums : elles peuvent bloquer la Fire TV au démarrage.
+
+Marques couvertes par les listes d'allègement
+
+Le kit contient des listes spécifiques pour chaque grande marque, en plus de la partie Google commune à toutes les TV Android :
+
+| Marque | Ce qui est désactivé d'office | Ce qui est demandé |
+|---|---|---|
+| Toutes (Google) | Rapports à Google, services publicitaires Android, recommandations de l'ancien accueil | Chromecast, Assistant, Mode Ambiant, recommandations, Play Films/Musique/Jeux |
+| TCL (et Thomson fabriqué par TCL) | Télémétrie, pubs au démarrage, messages promo, mode démo | TCL Channel, recopie d'écran, Media Center, Alexa, boutique TCL |
+| Sony Bravia | Samba TV (analyse de ce que vous regardez), Sony Select, barres de recommandations, mode démo, télémétrie | Recopie d'écran, AirPlay, Alexa, recherche vocale Sony, BRAVIA CORE |
+| Philips | Analytique TP Vision, rangée « Top Picks », galerie d'applis, Inscape | Alexa, DLNA, Play-Fi, Mimi |
+| Xiaomi | Télémétrie MIUI, rangées publicitaires, moteur de pub, Alphonso | Xiaomi TV+, Mi Cast, recopie d'écran, Mi Musique, Alexa |
+| Hisense (Android) | Mode démo, analyse de ce que vous regardez, télémétrie | Chaînes VIDAA, Alexa, RemoteNOW, Miracast |
+
+…（内容已截断）

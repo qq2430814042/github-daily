@@ -1,0 +1,97 @@
+🗂️A file list program that supports multiple storages, powered by Gin and Solidjs.
+
+English | 中文 | 日本語 | Contributing | CODE_OF_CONDUCT
+
+Features
+
+- x] Multiple storages
+    - [x] Local storage
+    - [x(https://www.alipan.com/)
+    - x] OneDrive / Sharepoint ([global, cn,de,us)
+    - x(https://cloud.189.cn) (Personal, Family)
+    - x(https://drive.google.com/)
+    - x(https://www.123pan.com/)
+    - x] FTP / SFTP
+    - [x(https://www.mypikpak.com/)
+    - x(https://aws.amazon.com/s3/)
+    - x(https://seafile.com/)
+    - x(https://www.upyun.com/products/file-storage)
+    - x] WebDav(Support OneDrive/SharePoint without API)
+    - [x] Teambition([China,International)
+    - x(https://www.mediafire.com)
+    - x(https://www.mediatrack.cn/)
+    - x(https://proton.me/drive)
+    - x(https://yun.139.com/) (Personal, Family, Group)
+    - x(https://disk.yandex.com/)
+    - x(http://pan.baidu.com/)
+    - x(https://www.terabox.com/main)
+    - x(https://drive.uc.cn)
+    - x(https://pan.quark.cn)
+    - x(https://pan.xunlei.com)
+    - x(https://www.lanzou.com/)
+    - x(https://www.ilanzou.com/)
+    - x(https://www.alipan.com/)
+    - x(https://photos.google.com/)
+    - x(https://mega.nz)
+    - x(https://photo.baidu.com/)
+    - x] SMB
+    - [x(https://115.com/)
+    - X] Cloudreve
+    - [x(https://www.dropbox.com/)
+    - x(https://www.feijipan.com/)
+    - x(https://www.dogecloud.com/product/oss)
+    - x(https://azure.microsoft.com/products/storage/blobs)
+- x] Easy to deploy and out-of-the-box
+- [x] File preview (PDF, markdown, code, plain text, ...)
+- [x] Image preview in gallery mode
+- [x] Video and audio preview, support lyrics and subtitles
+- [x] Office documents preview (docx, pptx, xlsx, ...)
+- [x] README.md preview rendering
+- [x] File permalink copy and direct file download
+- [x] Dark mode
+- [x] I18n
+- [x] Protected routes (password protection and authentication)
+- [x] WebDav (see https://alistgo.com/guide/webdav.html for details)
+- [x(https://hub.docker.com/r/xhofe/alist)
+- x] Cloudflare Workers proxy
+- [x] File/Folder package download
+- [x] Web upload(Can allow visitors to upload), delete, mkdir, rename, move and copy
+- [x] Offline download
+- [x] Copy files between two storage
+- [x] Multi-thread downloading acceleration for single-thread download/stream
+
+Document
+
+API Documentation (via Apifox):
+
+Demo
+
+Discussion
+
+Please go to our [discussion forum for general questions, issues are for bug reports and feature requests only.
+
+Sponsor
+
+AList is an open-source software, if you happen to like this project and want me to keep going, please consider sponsoring me or providing a single donation! Thanks for all the love and support:
+https://alistgo.com/guide/sponsor.html
+
+Special sponsors
+
+- VidHub - An elegant cloud video player within the Apple ecosystem. Support for iPhone, iPad, Mac, and Apple TV.
+
+Contributors
+
+Thanks goes to these wonderful people:
+
+License
+
+The AList is open-source software licensed under the AGPL-3.0 license.
+
+Disclaimer
+- This program is a free and open source project. It is designed to share files on the network disk, which is convenient for downloading and learning Golang. Please abide by relevant laws and regulations when using it, and do not abuse it;
+- This program is implemented by calling the official sdk/interface, without destroying the official interface behavior;
+- This program only does 302 redirect/traffic forwarding, and does not intercept, store, or tamper with any user data;
+- Before using this program, you should understand and bear the corresponding risks, including but not limited to account ban, download speed limit, etc., which is none of this program's business;
+- If there is any infringement, please contact me by email, and it will be dealt with in time.
+
+@GitHub · @TelegramGroup · @Discord

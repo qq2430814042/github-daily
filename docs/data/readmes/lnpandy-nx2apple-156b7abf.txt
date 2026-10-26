@@ -1,0 +1,169 @@
+🎮 NX2Apple
+
+Your Switch games, running on your iPhone.
+
+Not an emulator. No terminal. A macOS app does the whole build in a few clicks.
+
+New in v0.4.5
+- 🖥️ Mac app output — build a double-clickable .app instead of an IPA
+- 📱 Older iPhones and iPads — turn on BC texture decoding when building
+
+A macOS app takes your own game dumps and does the whole thing with a few clicks — unpack, rewrite
+the game's code for Apple silicon, translate its shaders to Metal, pack a slim IPA plus a sharded
+RomFS archive that a phone can actually install (even a 16 GB game), and then tells you the three
+steps to get it onto the device.
+
+中文用户请看这里：简体中文 README
+
+Formerly nxnative-romfs-archive — old links redirect here.
+
+📖 What this is
+
+This is a community fork of nxnative — the NSO rewriter,
+the Horizon host, the NVN-on-Metal layer and the per-game profiles are upstream work, and this fork
+follows upstream automatically. What it adds:
+
+- 🖱️ A GUI app for everyone. NS Port Builder walks a first-time user
+  through the whole build: four inputs picked separately (or one folder for all), device
+  dependencies detected and installed with one click, progress from the build's own stages, and an
+  install guide with Reveal-in-Finder buttons at the end. English by default; Chinese on Chinese
+  devices. It also downloads the repository for you and updates itself — no git knowledge
+  needed.
+- 📦 A RomFS archive. Tears of the Kingdom's 304,243 files become 127 shards — the difference
+  between an iOS install that fails with PackageExtractionFailed and one that works (details
+  below).
+- ⏸️ Interrupted builds resume. Extraction, DLC, module rewrite and shader compilation are kept
+  and reused: a failed or stopped build continues where it left off, and a rebuild after a tweak
+  reuses everything unchanged (upstream's pipeline; the app drives it with its own build folder).
+- 🔄 Follows upstream automatically. A daily GitHub Actions job re-applies the fork's features
+  onto upstream's tree, verifies the result (script parse, archive reader test, a macOS host build)
+  and pushes — or opens an issue with the log when a patch no longer fits.
+- 🎯 72 game profiles with the required update version listed per game. Three are verified end
+  to end on this fork; 45 are reported playable on an iPhone upstream.
+
+📚 Contents
+
+- ✨ Features at a glance
+- 🚀 Quick start
+- 🎮 Supported games
+- 🔧 How it works
+- 📝 Update history
+- 🤝 Contributing shaders and game support
+- ⚠️ Limitations
+- 🙏 Credits
+- ⚖️ Legal
+
+✨ Features at a glance
+
+| | Feature | Notes |
+|---|---|---|
+| 🖱️ | One-click build | Pick your files, press build. No command line, ever |
+| 📦 | RomFS archiving | 300,000 files → ~100 shards, so a 16 GB game installs |
+| 🔁 | Resumable builds | A stopped build continues; unchanged work is reused |
+| 🧩 | 72 game profiles | Each with the exact update version it needs |
+| 📲 | Install guide | The three steps to the phone, with Reveal-in-Finder |
+| 🌏 | Bilingual | English / 简体中文, picked from the device language |
+| ⬇️ | Self-installing | Downloads the repository and updates itself |
+| 🔄 | Auto upstream sync | Daily, verified, with a fallback issue if a patch breaks |
+
+🚀 Quick start
+
+1. Download the app — latest release
+   (NS-Port-Builder-macOS-arm64.zip). Unzip, right-click → Open the first time.
+2. Let it fetch the project — the repository group has a Download repository button (a
+   shallow clone into ~/NX2Apple). Slow GitHub? The panel shows the manual ZIP route.
+3. Pick your game files — base game, update, DLC and prod.keys, separately or as one folder.
+4. Press build, then follow the three install steps it prints.
+
+Requirements: an Apple Silicon Mac on macOS 13+, Xcode with the iOS SDK, Python 3.9+, .NET SDK 10.
+The app's dependency panel detects each of these and installs what it can. Your own game files and
+prod.keys — nothing is bundled.
+
+🎮 Supported games
+
+3 verified end to end on this fork (build → install → play on a real iPhone), **29 reported
+playable upstream, **58 profiles in total. The full table with the exact update version each
+game needs is below.
+
+| Game | Verified here | Notes |
+|---|---|---|
+| Tears of the Kingdom | ✅ | 304,243 files → 127 archive shards, byte-verified |
+| Hades II | ✅ | 33-file archive |
+| Animal Crossing: New Horizons | ✅ | 103,645 files → 72 shards, runs smoothly |
+
+🔧 How it works
+
+🖥️ The GUI front end
+
+frontend/ is a macOS app that does steps 2–5 below with a window instead of a terminal, for
+people who would rather not read a build log: four inputs picked separately (base game, update,
+DLC, prod.keys), a dependency panel that detects and installs what is missing, the script's real
+stage list with live percentages, and the archive shards produced at the end.
+
+The problem, the fix, and the archive format (click to expand)
+
+The problem
+
+A RomFS like Tears of the Kingdom's is 304,243 files / 15.9 GiB. Two things break:
+
+- The IPA does not install. A 16.6 GB package with 372,660 entries fails on iOS with
+  PackageExtractionFailed (Could not extract archive). The install daemon's extractor gives up —
+  one directory holds 75,941 files and the ZIP64 central directory starts at 17.8 GB.
+- Copying the tree to the phone takes hours. The Files app and Finder do one round trip per
+  file. 300,000 small files also produce roughly 1 GB of filesystem block overhead.
+
+Packing the tree into ~100 shard files solves both: the package stays small, and the game files move
+to the phone as one folder of large files.
+
+The fix
+
+A ROMFSARC archive: one index file plus N shard files.
+
+romfs.idx        28 MB   header, name pool, file table, directory table
+romfs.00 ... .125        126 shards, 200 MiB each, source bytes verbatim
+
+Measured on Tears of the Kingdom (v1.0.0 + 1.4.3):
+
+| | Plain RomFS | ROMFSARC |
+|---|---|---|
+| Files | 304,243 | 127 |
+| Largest directory | 75,941 entries | 126 shards, none over 200 MiB |
+| IPA with the game inside | 16.6 GB (fails to install) | — |
+| Slim IPA (the default, no RomFS inside) | — | 743 MB, installs |
+| Copy to the phone | hours | one folder of 127 files |
+
+Path lookup is a binary search over the sorted file table; a directory listing walks one contiguous
+child range. The index is mmaped, shards are opened lazily, and reads go straight to pread on
+the shard, so the page cache still works.
+
+The GUI front end
+
+frontend/ is a macOS app that does the build steps with a window instead of a terminal, for
+people who would rather not read a build log: four inputs picked separately (base game, update,
+DLC, prod.keys), a dependency panel that detects and installs what is missing, the script's real
+stage list with live percentages, and the archive shards produced at the end.
+
+界面截图（点开）
+
+cd frontend && swift run          # or double-click frontend/NS Port Builder.app
+
+The interface is bilingual: it follows the device (Chinese for any Chinese variant, **English for
+everything else**) and the 中文 / EN button in the title bar switches at any time.
+
+It runs the same scripts the command line does, so everything below still applies; see
+frontend/README.md. The prebuilt app, and the release notes in English and
+Chinese (including which games are verified), are on the
+releases page and in
+docs/RELEASE_NOTES.md.
+
+📝 Update history
+
+Newest first. The fork follows upstream daily, so its game list and host fixes arrive automatically.
+
+| Date | Version | What changed |
+|---|---|---|
+| 2026-10-26 | v0.4.5 | Mac app output (a double-clickable .app from the same build); A15/A16 and earlier devices via CPU BC decode, as an app switch; per-game data folders (Documents/games//) so an external drive works; NRO header no longer scanned as code; the nightly sync can no longer fail silently |
+| 2026-10-26 | v0.4.4 | Fixes a build failure that hit every app build in v0.4.3 (work read before it was assigned); 72 games (+3) |
+| 2026-10-26 | v0.4.3 | NSZ/XCZ dumps work out of the box; a fresh Xcode now reports its missing iOS SDK; three environment traps closed |
+
+…（内容已截断）

@@ -1,0 +1,147 @@
+💾🎉 copyparty
+
+turn almost any device into a file server with resumable uploads/downloads using any web browser
+
+* server only needs Python (2 or 3), all dependencies optional
+* 🔌 protocols: http(s) // webdav // sftp // ftp(s) // tftp // smb/cifs
+* 📱 android app // iPhone shortcuts
+
+👉 Get started! or visit the read-only demo server 👀 running on a nuc in my basement
+
+📷 screenshots: browser // upload // unpost // thumbnails // search // fsearch // zip-DL // md-viewer
+
+🎬 videos: upload // cli-upload // race-the-beam // 👉 feature-showcase (youtube)
+
+built in Norway 🇳🇴 with contributions from not-norway
+
+readme toc
+
+* top
+    * quickstart - just run copyparty-sfx.py -- that's it! 🎉
+        * mirrors - other places to download copyparty from
+        * at home - make it accessible over the internet
+        * on servers - you may also want these, especially on servers
+    * features - also see comparison to similar software
+    * testimonials - small collection of user feedback
+* motivations - project goals / philosophy
+    * notes - general notes
+* bugs - roughly sorted by chance of encounter
+    * not my bugs - same order here too
+* breaking changes - upgrade notes
+* FAQ - "frequently" asked questions
+* accounts and volumes - per-folder, per-user permissions
+    * shadowing - hiding specific subfolders
+    * dotfiles - unix-style hidden files/folders
+* the browser - accessing a copyparty server using a web-browser
+    * tabs - the main tabs in the ui
+    * hotkeys - the browser has the following hotkeys
+    * navpane - switching between breadcrumbs or navpane
+    * thumbnails - press g or 田 to toggle grid-view instead of the file listing
+    * zip downloads - download folders (or file selections) as zip or tar files
+    * uploading - drag files/folders into the web-browser to upload
+        * file-search - dropping files into the browser also lets you see if they exist on the server
+        * unpost - undo/delete accidental uploads
+        * self-destruct - uploads can be given a lifetime
+        * race the beam - download files while they're still uploading (demo video)
+        * incoming files - the control-panel shows the ETA for all incoming files
+    * file manager - cut/paste, rename, and delete files/folders (if you have permission)
+    * shares - share a file or folder by creating a temporary link
+    * batch rename - select some files and press F2 to bring up the rename UI
+    * rss feeds - monitor a folder with your RSS reader
+    * opds feeds - browse and download files from your e-book reader
+    * recent uploads - list all recent uploads
+    * media player - plays almost every audio format there is
+        * playlists - create and play m3u8 playlists
+        * creating a playlist - with a standalone mediaplayer or copyparty
+        * audio equalizer - and dynamic range compressor
+        * fix unreliable playback on android - due to phone / app settings
+    * textfile viewer - with realtime streaming of logfiles and such (demo)
+    * markdown viewer - and there are two editors
+        * markdown vars - dynamic docs with serverside variable expansion
+    * other tricks
+    * searching - search by size, date, path/name, mp3-tags, ...
+* server config - using arguments or config files, or a mix of both
+    * version-checker - sleep better at night
+    * logging - serverlog is sent to stdout by default
+    * zeroconf - announce enabled services on the LAN (pic)
+        * mdns - LAN domain-name and feature announcer
+        * ssdp - windows-explorer announcer
+    * qr-code - print a qr-code (screenshot) for quick access
+    * ftp server - an FTP server can be started using --ftp 3921
+    * sftp server - goes roughly 700 MiB/s (slower than webdav and ftp)
+    * webdav server - with read-write support
+        * connecting to webdav from windows - using the GUI
+    * tftp server - a TFTP server (read/write) can be started using --tftp 3969
+    * smb server - unsafe, slow, not recommended for wan
+    * wopi server - edit office documents in the web-ui
+    * browser ux - tweaking the ui
+    * opengraph - discord and social-media embeds
+    * file deduplication - enable symlink-based upload deduplication
+    * file indexing - enable music search, upload-undo, and better dedup
+        * exclude-patterns - to save some time
+        * filesystem guards - avoid traversing into other filesystems
+        * periodic rescan - filesystem monitoring
+    * u2sz - configure upload-chunking
+    * upload rules - set upload rules using volflags
+    * compress uploads - files can be autocompressed on upload
+    * chmod and chown - per-volume filesystem-permissions and ownership
+    * other flags
+    * descript.ion - add a description to each file in a folder
+    * dothidden - cosmetically hide specific files in a folder
+    * thumbnail pregen - if you want to pre-generate everything on startup
+    * database location - in-volume (.hist/up2k.db, default) or somewhere else
+    * metadata from audio files - set -e2t to index tags on upload
+        * metadata from xattrs - unix extended file attributes
+    * file parser plugins - provide custom parsers to index additional tags
+    * event hooks - trigger a program on uploads, renames etc (examples)
+        * zeromq - event-hooks can send zeromq messages
+        * upload events - the older, more powerful approach (examples)
+    * handlers - redefine behavior with plugins (examples)
+    * ip auth - autologin based on IP range (CIDR)
+        * restrict to ip - limit a user to certain IP ranges (CIDR)
+    * identity providers - replace copyparty passwords with oauth and such
+        * generic header auth - other ways to auth by header
+    * user-changeable passwords - if permitted, users can change their own passwords
+    * using the cloud as storage - connecting to an aws s3 bucket and similar
+    * hiding from google - tell search engines you don't wanna be indexed
+    * themes
+    * complete examples
+    * listen on port 80 and 443 - become a real webserver
+    * reverse-proxy - running copyparty next to other websites
+        * real-ip - teaching copyparty how to see client IPs
+        * reverse-proxy performance
+    * permanent cloudflare tunnel - if you have a domain and want to get your copyparty online real quick
+    * prometheus - metrics/stats can be enabled
+    * other extremely specific features - you'll never find a use for these
+        * custom mimetypes - change the association of a file extension
+        * GDPR compliance - imagine using copyparty professionally...
+        * feature chickenbits - buggy feature? rip it out
+        * feature beefybits - force-enable features with known issues on your OS/env
+* packages - the party might be closer than you think
+    * arch package - pacman -S copyparty (in arch linux extra)
+    * fedora package - does not exist yet
+    * gentoo ::guru package - emerge www-servers/copyparty::guru (in ::guru)
+    * homebrew formulae - brew install copyparty ffmpeg
+    * nix package - nix profile install github:9001/copyparty
+    * nixos module
+* browser support - TLDR: yes
+* server hall of fame - unexpected things that run copyparty
+* client examples - interact with copyparty using non-browser clients
+    * folder sync - sync folders to/from copyparty
+    * mount as drive - a remote copyparty server as a local filesystem
+* android app - upload to copyparty with one tap
+* iOS shortcuts - there is no iPhone app, but
+* performance - defaults are usually fine - expect 8 GiB/s download, 1 GiB/s upload
+    * client-side - when uploading files
+* security - there is a discord server with announcements
+    * gotchas - behavior that might be unexpected
+    * csp nonce - unauthorized javascript is blocked
+    * cors - cross-site request config
+    * filekeys - prevent filename bruteforcing
+        * dirkeys - share specific folders in a volume
+    * password hashing - you can hash passwords
+    * https - both HTTP and HTTPS are accepted
+* recovering from crashes
+    * client crashes
+
+…（内容已截断）

@@ -1,0 +1,129 @@
+AARE
+
+AARE is an open-source reimplementation of the phone side of Android Auto. The phone talks the
+Android Auto projection protocol (AAP) to the car's head unit, draws the car screen itself, and
+runs apps that Google's Android Auto keeps out:
+
+- Navigation: CoMaps, Organic Maps and other apps built with the AndroidX Car App Library,
+  F-Droid builds included.
+- Media: Tempus (Subsonic/Navidrome) and any app with a media3 or MediaBrowserService
+  library: podcasts, radio, local players.
+- Messaging: WhatsApp, Signal, SMS and any app whose notifications Android Auto can read:
+  conversations read aloud, marked as read, answered with the car keyboard when parked.
+- Voice assistant: the steering-wheel voice button opens the phone's default digital
+  assistant, or another one you pick. Assistants with a car app, such as
+  Lapin, run on the car screen and hear the car's microphone.
+
+It needs no Google Play Services.
+
+This is early software. The protocol stack is tested against a simulated head unit, against
+AARE's own desktop head unit and against Google's Desktop Head Unit up to the certificate check
+(see below). So far it has been tried in two real cars, one over wireless and one over USB (see
+Tested on real head units). Don't depend on it while driving
+until you have tried it in yours.
+
+What works
+
+| Part | State |
+|---|---|
+| Protocol: framing, TLS 1.2 (phone = server), version, service discovery, channels | done, unit and loopback tests |
+| Video: H.264 hardware encoding of a private virtual display, ack flow control, focus, key-frame recovery | done |
+| Adaptive video bitrate: lower when the car or a weak wireless link falls behind, back up when it catches up | new, untested on hardware |
+| Portrait head units: bottom bar, stacked dashboard, CarPlay mode | new, tested only with the desktop head unit's --portrait |
+| Touch, keys, rotary controller, steering-wheel voice/media/home/back keys | done |
+| Sensors: driving restrictions, night mode, car GPS and compass (passed to nav apps) | done |
+| Every other sensor the car offers (RPM, odometer, fuel and range, temperature, HVAC, doors, lights, tyres, accelerometer, gyroscope…) for car apps (car hardware API) and the assistant | new, tested only with the desktop head unit's fake car |
+| Car App Library host: handshake, templates, map surface, navigation trips, alerts, car hardware, microphone | done |
+| Template rendering (list, grid, pane, message, search, sign-in, tabs, navigation, map...) | done |
+| Media apps: browse, search, now playing, transport, active session tracking | done |
+| Messaging apps: conversations from notifications, read aloud, mark as read, reply when parked | new |
+| Turn-by-turn to the instrument cluster and now-playing to the head unit | done |
+| Instrument-cluster video (cars with a cluster display): the navigation app's cluster map, or AARE's turn card | new, tested only with the desktop head unit's --cluster |
+| Directions from Google Maps, Waze… on the phone, on the dashboard and the cluster | new, untested with Google Maps and Waze |
+| Phone screen in the car, with touch | new, untested on hardware |
+| Phone audio to the car: screen capture, Shizuku, or system audio routing like Android Auto (music and navigation voice apart) | screen capture tested; Shizuku and system routing new, untested |
+| Voice assistant as a bar over the screen, with car tools | new, untested in a car |
+| Car microphone to apps (any CarAudioRecord app) | done |
+| Phone status to the car (call state, caller name and photo, signal), battery level; the car's call buttons answer and hang up | new, tested only with the desktop head unit |
+| More audio buffering after the car reports underflows | new, untested on hardware |
+| USB (AOA) | done, tested on one head unit (see Tested on real head units) |
+| Wireless (Bluetooth bootstrap + Wi-Fi + TCP) | done, tested on one head unit (see Tested on real head units) |
+| Developer head-unit server over adb (DHU, openauto, Headunit Revived), optional LAN TCP 5277 | done |
+
+Not done yet
+
+What Android Auto or the protocol offers that AARE doesn't do (yet).
+
+Not planned (rare, or redundant with what AARE draws itself):
+
+| Missing | Why not |
+|---|---|
+| Radio service (AM/FM/DAB tuning, presets) | Very few head units offer it to the phone. |
+| Vendor extensions | Specific to each car maker, undocumented. |
+| Generic notifications service | AARE shows notifications on its own screen; sending them to the car would show them twice. |
+| Native media browser service | Same: media apps are browsed on AARE's own screen. |
+| User switch, connected-devices list, service discovery update | Only matter with several phones in the car or channels changing during a connection. |
+| Audio kept open with silence | AARE closes the car's audio stream after a few seconds of silence and reopens it when sound comes back, like Android Auto does for navigation prompts. |
+
+Requirements
+
+- A phone with Android 8 or newer. Some features need a newer Android:
+
+  | Feature | Needs |
+  |---|---|
+  | Car audio by screen capture | Android 10 (on Android 8 and 9: the privileged install, or the car's Bluetooth) |
+  | Car audio through Shizuku | Android 12 |
+  | WPA3-only car Wi-Fi (wireless) | Android 10 (WPA2 and WPA2/WPA3 work from Android 8) |
+  | Signal bars on the car screen | Android 9 |
+  | Hanging up or declining from the car | Android 9 |
+
+  On Android 17, wireless head units and the head unit server's network mode also need the
+  Local network permission (asked during setup): without it, Android silently drops the
+  connection to the head unit.
+
+- A head unit that accepts AARE's certificate (see Compatibility), or a computer to run the
+  desktop head unit.
+
+Installing
+
+Download aare-.apk from the releases and
+open it on the phone, or adb install -r aare-.apk. Each release also has the Magisk
+module (rooted phones, see Car audio) and the desktop head unit.
+
+Releases are signed with AARE's release key, SHA-256
+63:EF:0D:E1:DB:2C:09:BB:7F:B2:5C:E7:EA:4A:DC:35:38:AF:42:3B:88:52:78:B5:9D:F2:88:9C:7F:18:28:6F.
+Builds you make yourself are signed with your own debug key, so switching between the two needs
+an uninstall first.
+
+Using it
+
+1. Open AARE on the phone and finish Finish setting up: permissions, notification access (for
+   messages, directions from Google Maps and Waze, and now playing) and car audio (see
+   Car audio).
+2. Have a look at the settings pages (car screen, apps, voice assistant, messages, car audio,
+   connection). They mirror Android Auto's.
+3. Plug the phone into the car's Android Auto USB port. For wireless, pair it with the car over
+   Bluetooth first.
+4. To try it without a car, tap Preview car screen: it shows the car UI on the phone with the
+   same apps, or use the desktop head unit below.
+
+The bar is laid out like Android Auto's: on a side next to the driver, or along the bottom
+(Car screen in the settings). It holds:
+
+- at the driver's end, the voice button and the menu button (the app grid on the home screen,
+  home anywhere else);
+- in the middle, the navigation app, the media app, the apps used last, Phone and Settings;
+- at the far end, the clock, the weather, the phone's signal and battery, and the notification
+  bell.
+
+The dashboard shows the map (or directions from Google Maps or Waze), what's playing and the next
+calendar event, over a wallpaper if you pick one. On very wide screens (1920x720 and up) it shows
+three cards side by side. The weather comes from Open-Meteo (no account,
+no Google), asked for an approximate position (about 10 km); you can turn it off.
+
+Instrument cluster. On cars whose head unit offers a cluster display, AARE sends it its own
+video, like Android Auto: the navigation app's cluster map when the app supports it
+(androidx.car.app.category.FEATURE_CLUSTER), otherwise a turn card with the next maneuver, its
+distance, the road and the arrival time (also for Google Maps and Waze directions). Without
+
+…（内容已截断）

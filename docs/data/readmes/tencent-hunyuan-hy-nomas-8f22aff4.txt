@@ -1,0 +1,158 @@
+中文&nbsp;｜&nbsp;English
+
+    Hy-Nomas: Towards Free-Form Interactive World Generation
+
+&nbsp;&nbsp;
+
+&nbsp;&nbsp;
+
+&nbsp;&nbsp;
+
+    🖥️&nbsp;Interactive Demo&nbsp;&nbsp;|&nbsp;&nbsp;
+    🌐&nbsp;Official Website&nbsp;&nbsp;|&nbsp;&nbsp;
+    📄&nbsp;Technical Report
+
+https://github.com/user-attachments/assets/e7a2528c-4ccc-461c-8f09-207650f1f0bd
+
+Table of Contents
+
+- Model Introduction
+- Key Features
+- Usage
+  - Environment Setup
+  - Model Assets
+  - Inference
+    - Inference with Low-Mem GPU
+    - Inference with Diffusers
+  - Interactive Demo
+- LoRA Fine-Tuning
+  - SFT Data Preparation
+  - Offline Sequence Packing
+  - Training and Merging
+- Contributing
+- Security
+- License
+- Contact Us
+
+Model Introduction
+
+Hy-Nomas is a free-form interactive video world generation model. It supports free-form multi-turn text prompt control or camera control. This repository provides the training, inference, interactive demo, and data annotation code.
+
+Key Features
+
+- Segment-based generation: Autoregressive segment-wise world generation controlled by either segment level prompt or camera control signal, maintaining a lifelong KV cache for consistency.
+- Free-form Prompt Control: Control the world generation with any kind of free form user prompt to generate imaginary object, style, scene, and actions.
+- Camera control: Condition generation on camera trajectories alongside text prompts.
+- Distilled inference: Inference uses 8 denoising steps and a finetuned PixelUMM decoder for 32-channel DCAE-V latents.
+- Interactive demo: A web interface supports generation across multiple turns and decoding at segment boundaries.
+- Fine-tuning and data preparation: Lora fine-tuning with customized video dataset, and prepare training data from local videos with our annotation workflow.
+
+Usage
+
+Environment Setup
+
+Choose one of the following two setup options. We strongly recommend the pre-packaged Docker image, which provides the Python environment, PyTorch, and the required CUDA attention kernels together.
+
+Option 1: Pre-packaged Docker Image (Recommended)
+
+Prepare a Linux host with a compatible NVIDIA driver, Docker, and NVIDIA Container Toolkit. Run these commands from the repository root:
+
+export HY_NOMAS_IMAGE="hynomasoss/hynomasoss:cu130"
+
+docker pull "$HY_NOMAS_IMAGE"
+docker run --rm -it --gpus all --ipc=host --network=host \
+  -v "$PWD:/workspace/Hy-Nomas" \
+  -w /workspace/Hy-Nomas \
+  "$HY_NOMAS_IMAGE" bash
+
+Run the remaining commands inside the container, using its pre-installed Python environment. Place model assets under the mounted repository or add a volume mount for your model directory; use the paths visible inside the container in the launch commands below.
+
+Option 2: Manual Installation
+
+Prepare Linux, Python 3.12+, uv, a compatible NVIDIA driver, the CUDA 13.0 Toolkit (nvcc), and a C++ compiler. Run the following from the repository root:
+
+uv sync --extra all
+source .venv/bin/activate
+
+The all extra includes PyTorch 2.10.0 (CUDA 13.0), FlashAttention 2, FlashAttention 3, and MagiAttention. pyproject.toml configures the PyTorch CUDA index, the official FA3 source, and disables build isolation for the attention kernels so their builds can use the environment's PyTorch. Kernel compilation may take some time.
+
+Model Assets
+
+The model repository contains DiT generation models, LoRA adapters, video autoencoders and decoders, and Nomas-PE for online prompt enhancement.
+
+Download all model weights from tencent/Hy-Nomas on Hugging Face, preserving the repository directory structure:
+
+export Hy_Nomas_Model_Path=/path/to/Hy-Nomas
+hf download tencent/Hy-Nomas --local-dir "${Hy_Nomas_Model_Path}"
+
+Set Hy_Nomas_Model_Path to your download directory once. The commands below reuse its existing value, defaulting to /path/to/Hy-Nomas in a new shell. Click a model name below to view its files on Hugging Face.
+
+| Category | Model asset | Purpose |
+|:---|:---|:---|
+| DiT | Base autoregressive DiT (FP32) | Non-distilled checkpoint for segment forcing LoRA fine-tuning. |
+| DiT | Distilled DiT (FP32) | Checkpoint for fast, 4/6/8-step inference and the interactive demo. Also serves as the base for merging fine-tuned LoRA adapters. |
+| DiT | Quantized Distilled DiT (INT8) | Quantized checkpoint for low-memory inference, including single-GPU deployment. |
+| DiT | Cinematic LoRA | LoRA adapter using cinematic data, to be merged into the distilled DiT to enhance the visual quality of generated worlds. |
+| DiT | Robotics LoRA | LoRA adapter trained on the RealSource-World real-world robotic-arm dataset, to be merged into the distilled DiT to enhance the robotics simulation capability of generated worlds. |
+| VAE | DCAE-V | Video autoencoder for encoding training videos into latents and decoding them. |
+| VAE | Fine-tuned PixelUMM Decoder | Decoder for turning generated DCAE-V latents into video frames. |
+| VAE | Quantized PixelUMM Decoder (FP8) | Decoder with FP8 weights for lower memory use and accelerated decoding. |
+| PE | Nomas-PE | Online prompt-enhancement model used by the interactive demo to convert user instructions into structured generation prompts. |
+
+Inference
+
+Run from the repository root with configs/experiment/inference.yaml, overriding the model paths, prompt file, and output directory:
+
+export Hy_Nomas_Model_Path="${Hy_Nomas_Model_Path:-/path/to/Hy-Nomas}"
+
+bash scripts/inference/inference_from_config.sh configs/experiment/inference.yaml \
+  dit_weight="${Hy_Nomas_Model_Path}/DiT/distilled/diffusion_pytorch_model_ema_0_995.safetensors" \
+  model.vae.checkpoint="${Hy_Nomas_Model_Path}/VAE/PixelUMM_FT/diffusion_pytorch_model.safetensors" \
+  inference.prompt=/path/to/prompts.json \
+  inference.save_path=./outputs/distill
+
+Inference with Low-Mem GPU
+
+Hy-Nomas supports inference on a single NVIDIA GeForce RTX 4090 with configs/experiment/single_gpu_low_mem_inference.yaml. This configuration reduces GPU memory use through:
+
+- INT8 DiT weights and KV cache: Store weights and cached keys/values in INT8 while retaining BF16 computation for DiT linear layers and attention.
+- Sliding-window history: Bound the retained context instead of letting the KV cache grow with every segment.
+- CPU offload: Move the text encoder, DiT, and VAE onto the GPU for their respective processing stages and return them to CPU afterward.
+- Single-GPU kernels: Use FlexAttention for the DiT and CUTLASS FP8 for decoding, with sequence parallelism disabled (sp_size=1).
+
+Use a compatible INT8 DiT checkpoint and FP8 decoder checkpoint. Run on a host or container exposing one GPU to nvidia-smi:
+
+export Hy_Nomas_Model_Path="${Hy_Nomas_Model_Path:-/path/to/Hy-Nomas}"
+
+bash scripts/inference/inference_from_config.sh configs/experiment/single_gpu_low_mem_inference.yaml \
+  dit_weight="${Hy_Nomas_Model_Path}/DiT/distilled_int8/diffusion_pytorch_model_ema_0_995_int8.safetensors" \
+  model.vae.checkpoint="${Hy_Nomas_Model_Path}/VAE/PixelUMM_FT_FP8/diffusion_pytorch_model_fp8.safetensors" \
+  inference.prompt=/path/to/prompts.json \
+  inference.save_path=./outputs/single_gpu
+
+CPU offload requires enough system RAM for the models and adds CPU–GPU transfer overhead. Peak GPU memory depends on resolution and segment length.
+
+Inference with Diffusers
+
+Upgrade your diffusers to use HyNomasModularPipeline.
+
+pip install -e "diffusershy-nomas] @ git+https://github.com/jiaxiangc/diffusers.git@hy-nomas"
+
+Hy-Nomas supports multi-turn interactive generation. This example generates two five-second segments.
+
+import json
+
+import torch
+from diffusers import HyNomasModularPipeline
+from diffusers.utils import export_to_video
+
+pipe = HyNomasModularPipeline.from_pretrained("tencent/Hy-Nomas-Diffusers")
+pipe.load_components(dtype=torch.bfloat16)
+pipe.to(device="cuda", dtype=torch.bfloat16)
+Use the FlashAttention and MagiAttention kernels installed with Hy-Nomas.
+pipe.transformer.enable_reference_attention(text_backend="flash_varlen", deterministic=True)
+
+prompts = [
+    {
+
+…（内容已截断）

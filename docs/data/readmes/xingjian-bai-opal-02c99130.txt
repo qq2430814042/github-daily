@@ -1,0 +1,128 @@
+OPAL: a reactive optimizer
+
+A PyTorch optimizer wrapper that lets a coding agent change the optimizer while your model trains.
+
+  Blog post ·
+  Guide ·
+  Start with your agent ·
+  Examples
+
+Most networks are trained with an optimizer that is fixed before training starts. OPAL (OPtimizer with an Agent in
+the Loop) turns the optimizer into a program that an agent keeps rewriting during the run. You wrap your PyTorch
+optimizer in one line. Every so often the agent (Claude Code) reads what the run reports and decides whether to
+rewrite two small programs: the optimizer program, which turns gradients into updates at every step, and an analysis
+program, which measures whatever the agent wants to look at.
+
+The agent can change anything that can be written as optimizer code: the update rule of each parameter group, the
+learning rates and their schedules, momentum and β₂, preconditioning, clipping, guards against loss spikes. It is
+asked not to touch your model, data, loss, batch size, number of steps or evaluation. Its programs run inside your
+training process, so this is a rule, not a sandbox (see Safety). Until the agent changes
+something, the wrapped run is bit-for-bit the same as the plain one.
+
+Start with your coding agent
+
+Open your own project in a coding agent (Claude Code, Codex, Cursor or similar) and paste this prompt. The agent
+installs OPAL, wires it into your training script, asks you what it cannot know, and checks that nothing changed
+before anything costs money.
+
+I want to train my model with OPAL, a reactive optimizer: a coding agent that rewrites the optimizer while the
+model trains. Its docs are at https://github.com/xingjian-bai/opal. Please set it up for this project:
+
+1. Read the README there and skills/train-with-agent/SKILL.md, and follow the skill. Do not edit OPAL's own files;
+   configure everything through opal.wrap arguments.
+2. Install OPAL into the Python environment this project trains with (pip install opal-optimizer), and
+   run opal doctor (free, offline) to check that torch and Claude Code are ready on the machine that will run
+   training; run opal doctor --live (one tiny paid agent call) only once I approve an agent run. If Claude Code is
+   missing or not logged in there, tell me what to run; do not log in for me.
+3. Find my training script and loop. Tell me what you found (optimizer, scheduler, number of steps, single GPU or
+   DDP, gradient clipping, mixed precision, checkpoints) and anything OPAL does not support.
+4. Ask me for the goal sentence: what the run trains and what it is judged by at the end. Do not invent the metric.
+5. Wrap the optimizer and show me the diff before running anything.
+6. Smoke test: about 100 steps unwrapped and 100 steps wrapped with backend="keep" (no agent, no cost); the losses
+   must match step for step. Show me both. If I only asked for a dry run, stop here.
+7. Before the real run, time an update in the smoke test and run opal estimate --total-steps N --sec-per-step S;
+   show me what it prints (how long training will wait for the agent, also as a multiple of the run's own time, and
+   the cost). Ask me for a cost cap (max_cost_usd); leave decisions unset unless I ask, so that the waiting stays
+   within 4x the run's own time. Wait for my go-ahead; then give me the exact command to launch it, and how to
+   follow it (opal show, opal watch, opal report).
+
+Start by hand
+
+pip install opal-optimizer           # or: git clone, then pip install -e ".examples]"
+opal doctor                          # torch and Claude Code ready?
+
+The package is called opal-optimizer on PyPI, because opal there is an unrelated web framework. Both install as import opal, so do not install both.
+
+On a GPU machine, install OPAL into the environment you already train with, or install the PyTorch build for your
+driver first ([pytorch.org). In an empty environment, `pip install
+opal-optimizer pulls the newest torch from PyPI, which may need a newer NVIDIA driver; opal doctor` then shows
+CUDA available: False.
+
+import torch, opal
+
+opt = torch.optim.AdamW(model.parameters(), lr=3e-4)                  # your optimizer, unchanged
+sched = torch.optim.lr_scheduler.CosineAnnealingLR(opt, T_max=steps)  # your scheduler, unchanged
+opt = opal.wrap(opt, model, scheduler=sched, total_steps=steps,
+                goal="ResNet-18 on CIFAR-10; judged by test accuracy after the last update",
+                backend="keep")    # a dry run: no agent, no cost. For the agent run, use max_cost_usd=20 instead.
+
+for step in range(steps):
+    loss = criterion(model(x), y)
+    loss.backward()
+    opt.step(loss=loss)                     # pass the loss so the agent sees it
+    opt.zero_grad()
+    sched.step()
+    if step % 500 == 0:
+        opt.log(test_acc=evaluate(model))   # recorded for you, not shown to the agent
+opt.close()
+
+goal is one sentence: what you train and how it is judged. Then:
+
+python train.py                                  # backend="keep": must match the plain run exactly
+opal doctor --live                               # one tiny agent call to check the setup
+opal estimate --total-steps 10000 --sec-per-step 0.05   # waiting time and cost, before you launch
+python train.py                                  # with max_cost_usd=20: the agent rewrites the optimizer
+opal show    opal_runs/                  # one line per decision
+opal watch   opal_runs/                  # events as they are written; --timeout 0 prints what is there
+opal report  opal_runs/                  # one HTML page: loss, learning rates, rationales, code diffs
+opal compare opal_runs/ opal_runs/         # two runs, or two result.json files, side by side
+
+Each wrapped run prints a profiler_start / profiler_stop pair on stderr when a program starts: OPAL audits one
+update of each new program. It is harmless.
+
+The guide shows how to check the keep run against your plain run byte for byte, and how to use the Hugging Face
+Trainer: Try it without an agent.
+
+Prerequisites
+
+- A PyTorch training script that uses torch.optim optimizers, on CPU, one GPU or several GPUs of one node (DDP).
+  Python 3.10 or newer, PyTorch 2.5 or newer (2.6 on Python 3.13).
+- For an agent run, Claude Code, logged in on the machine that runs rank 0. Install
+  Claude Code, run claude once and log in with a Claude subscription
+  or an API key. The agent's usage is billed to that account. max_cost_usd caps it; there is no cap by default.
+  The short summaries of code changes in the report are not counted (summarize=False turns them off). A dry run
+  with backend="keep" needs neither and makes no model calls.
+- No internet or no login on the GPU machine? Run the agent on your laptop or a login node and connect it to the
+  training job through a mailbox folder, over ssh or a shared filesystem (see the mailbox broker).
+
+Results
+
+Each number is one run, and each agent started from the task's own recipe:
+
+| Example | Measure | Official recipe | Reactive optimizer |
+|---|---|---|---|
+| SiT-B/2, ImageNet 256, 400K updates | FID-50K ↓ | 35.7 (ADM evaluator; the SiT paper reports 33.0) | 23.6 |
+| RAEv2-B, ImageNet 256, 20 epochs | FID-50K ↓ | 3.39 | 3.19 |
+| Goldfish 125M GPT, Swahili | FLORES-200 bits ↓ | 79.37 | 77.25 |
+| modded-nanogpt record #36 | validation loss ↓ | 3.2781 | 3.2749 |
+| LightningDiT-B/1, ImageNet 256, 160 epochs | FID-50K ↓ (with guidance) | 3.22 | 2.31 |
+
+It does not always help: a run of modded-nanogpt on OPAL 0.2.0 ended at 3.2878, worse than record #36. Your
+numbers may also differ from ours, because the agent can choose differently from one run to the next. The
+examples page has every number with its version, hardware, time and cost, the small CPU and
+one-GPU scripts, and how to rerun each setting.
+
+Long runs suit it best. An agent decision takes about the same time in any run, about 40 s on average in ours,
+so the waiting adds up to a roughly fixed cost. In our runs of several hours it came to 0.49 h of 3.75 h on RAEv2-B,
+
+…（内容已截断）

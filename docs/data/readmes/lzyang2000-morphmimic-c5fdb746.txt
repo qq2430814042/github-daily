@@ -1,0 +1,173 @@
+MorphMimic: Morphology-Conditioned World Model and Policy Sharing Across Humanoids
+
+Lizhi Yang, Fengze Xie\, Yuyang Wang\, Lu Gan, Yisong Yue, Aaron D. Ames
+
+\* Equal contribution.
+
+[Website]
+[Paper]
+[Video]
+[Live demo]
+
+Disclaimer. MorphMimic builds on SuperMimic (Liao, Shao, Long, Zakka, Horowitz,
+Abbeel and Sreenath, UC Berkeley; citation below). The base algorithm is
+our own implementation of that paper, written from the paper alone. It is not the
+authors' code, and they have not reviewed or endorsed it or our extensions. Any
+mistakes are ours.
+
+SuperMimic trains a motion-tracking policy for a humanoid by backpropagating through a
+learned, differentiable world model. MorphMimic does this for several robots at
+once: the Unitree G1, the AgiBot X2 Ultra and the Booster T2, simulated in
+mjlab (MuJoCo Warp). You can share the world
+model, the policy, or both between the robots. Every robot is mapped to the G1's
+29-joint layout, and the networks get a morphology vector (gains, limits, limb lengths,
+masses) that tells them which body they are driving.
+
+The policy has two goal interfaces:
+
+- motion: follow a full reference motion (all joints and bodies);
+- five-point: follow sparse targets for the pelvis, both wrists and both ankles,
+  which is what a VR headset with two controllers and two ankle trackers gives you.
+
+No explicit state estimation. The policy reads only the IMU (orientation and
+angular velocity) and the joint encoders. Its goals are position-free: the motion
+goal's path is expressed in the reference's own heading frame, and the five points
+relative to the reference pelvis. So the robot never needs to know where it is in the
+room, and you do not need odometry, motion capture or a base-velocity estimator. Only
+the critics see the robot's offset from the reference, and they are used only in
+training.
+
+If you do have the robot's pose (motion capture, or a state estimator), the anchor mode
+(--goal-anchor robot, below) gives the motion goal relative to the
+robot itself instead, so the policy corrects its drift from the reference path.
+
+Layout
+
+src/morphmimic/
+  data/          SEED CSV -> 50 Hz npz, clip filters, subsets, GPU motion library
+  env/           mjlab tracking env (multi-clip command, reset sampling, observations)
+  model/         state layout, analytic reward heads, world model, policy, critic
+  robots/        G1, X2 Ultra and T2: registry, translator to the 29-joint layout,
+                 morphology vector, vendored X2 and T2 models
+  train/         replay buffer, collector, imagination, trainer, multi-robot sharing
+  scripts/       convert_seed, build_subsets, train
+tools/soma_retargeter/   retargets the SEED motions to the X2 and the T2
+deploy/
+  export_onnx.py         training checkpoint -> policy.onnx + .json
+  run.py                 one-command deployment: the policy node plus the sim or the G1
+  sim2sim/               policy node (onnxruntime) + CPU MuJoCo sim node, over ZMQ
+  vr_teleop/             PICO headset reader, GMR retargeting, streamer
+  hardware/g1_node.py    the real G1 on the same protocol as the sim
+  tools/                 headset-free test sessions for teleop
+
+Setup
+
+You need an NVIDIA GPU for training and uv.
+
+git clone --recursive git@github.com:lzyang2000/morphmimic.git && cd morphmimic
+uv sync                                   # Python 3.11, mjlab 1.6.0, torch (cu128)
+uv sync --group export --group teleop     # adds onnxruntime, pyzmq and GMR for deployment
+
+warp-lang is pinned below 1.18 because 1.18 needs a CUDA 13 driver. Drivers with
+CUDA 12.9 (575 or newer) work.
+
+Data
+
+Training uses the BONES-SEED
+motion dataset. The commands below use $DATA for wherever you keep it.
+
+G1. Download g1/csv//*.csv and seed_metadata_v003.csv, then convert the
+clips to 50 Hz npz and build the subsets (about 5 minutes with 96 workers, about 91 GB
+on disk):
+
+uv run python -m morphmimic.scripts.convert_seed \
+  --csv-dir $DATA/seed/g1/csv --metadata $DATA/seed/seed_metadata_v003.csv \
+  --out-dir $DATA/seed_g1_npz50 --workers 96
+uv run python -m morphmimic.scripts.build_subsets \
+  --manifest $DATA/seed_g1_npz50/manifest.csv --out-dir $DATA/seed_g1_npz50/subsets
+
+This writes subsets/{tiny,1h,7h,40h,all}.yaml. The filters keep 129,398 clips
+(262.8 h).
+
+X2 Ultra and T2. SEED has no retarget for these two robots, so we retarget the SOMA
+BVH files with NVIDIA's SOMA Retargeter
+(commit cbdb2b4). The scripts in tools/soma_retargeter/ do the steps around it:
+
+1. stage_subset.py links the BVH files of a G1 subset into one folder.
+2. assemble_robots.py builds the retargeter's robot folder: its own X2 target with
+   an effector fix, and our hand-written T2 target, both with the simulator's soft
+   joint limits.
+3. Fill the IMPORT, EXPORT and ROBOTS placeholders of batch_x2.json
+   or batch_t2.json with absolute paths, and run the retargeter's
+   app/bvh_to_csv_converter.py --config . For the full set, split the work
+   with shard_stage.py and launch_shards.sh, then check the output with
+   validate_csv.py.
+4. Convert, and build the subsets from the G1's clip lists so that every robot has the
+   same clips:
+
+for r in x2 t2; do
+  uv run python -m morphmimic.scripts.convert_seed --robot $r \
+    --csv-dir $DATA/seed_${r}_csv --metadata $DATA/seed/seed_metadata_v004.csv \
+    --out-dir $DATA/seed_${r}_npz50 --workers 64
+  uv run python -m morphmimic.scripts.build_subsets \
+    --manifest $DATA/seed_${r}npz50/manifest.csv --out-dir $DATA/seed${r}_npz50/subsets \
+    --clips-from $DATA/seed_g1_npz50/subsets/all.yaml
+done
+
+Train
+
+The defaults follow SuperMimic's Table A.5: 4096 envs per GPU, H=32 imagined steps,
+k=8, γ=0.99, λ=0.95, learning rate 2e-4 with cosine decay. Multi-robot runs put one
+robot on each GPU, so they need three GPUs on one machine.
+
+G1=$DATA/seed_g1_npz50/subsets/all.yaml
+X2=$DATA/seed_x2_npz50/subsets/all.yaml
+T2=$DATA/seed_t2_npz50/subsets/all.yaml
+COMMON="--kp-interface --kp-masking full --library-dtype float16 \
+  --iterations 40000 --ckpt-every 4000 --log-dir logs"
+
+Unified: one world model and one policy for all three robots:
+
+uv run python -m morphmimic.scripts.train --robots g1 x2 t2 \
+  --subset-yamls $G1 $X2 $T2 --share all --gpu-ids "0,1,2]" $COMMON --run-name unified
+
+One world model, a policy per robot:
+
+uv run python -m morphmimic.scripts.train --robots g1 x2 t2 \
+  --subset-yamls $G1 $X2 $T2 --share wm --gpu-ids "[0,1,2]" $COMMON --run-name shared_wm
+
+One policy, a world model per robot:
+
+uv run python -m morphmimic.scripts.train --robots g1 x2 t2 \
+  --subset-yamls $G1 $X2 $T2 --share policy --gpu-ids "[0,1,2]" $COMMON --run-name shared_policy
+
+Single robot (its own world model and policy, one GPU):
+
+uv run python -m morphmimic.scripts.train --robot g1 --subset-yaml $G1 --gpu 0 \
+  $COMMON --run-name single_g1        # or --robot x2 / t2 with $X2 / $T2
+
+Notes:
+
+- --kp-interface also trains the five-point interface. Leave it out to train only
+  the motion interface.
+- A multi-robot run writes each robot's checkpoints to logs///
+  (ckpt_.pt and latest.pt).
+- To resume, run the same command with --resume logs//latest.pt (single robot)
+  or --resume logs/ (multi-robot).
+- For a quick try, use the 1 h subset (subsets/1h.yaml) and drop --library-dtype.
+- Memory at 4096 envs: about 28 GB per GPU on the 1 h subset, and 51 to 58 GB on the
+  full set. A multi-robot rank with the full set also needs about 120 to 130 GB of host
+  RAM.
+- The first iterations compile the updates into CUDA graphs, which takes a few
+  minutes. --compile none skips this and runs eagerly.
+- Training adds a random 0 to 40 ms actuator delay by default (--no-actuator-delay
+  turns it off).
+- --wandb logs to Weights & Biases, under WANDB_ENTITY and WANDB_PROJECT (default
+  morphmimic) from the environment.
+- uv run python -m morphmimic.scripts.train --help lists every option.
+
+Anchor mode
+
+By default the motion goal is position-free: the reference path is given in the
+
+…（内容已截断）

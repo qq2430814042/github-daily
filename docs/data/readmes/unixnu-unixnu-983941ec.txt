@@ -1,0 +1,32 @@
+English | 简体中文
+
+UniXNU
+
+Migration notice: Update your device repository for shared SoC support and canonical component names. Follow the migration guide.
+
+An independent project to run iOS and macOS on non-Apple ARM64 hardware through UEFI. Like OpenCore, UniXNU is a general UEFI environment and driver loading system: it loads the drivers a device needs and boots the OS through a common UEFI layer.
+
+UniXNU provides shared build tools, ARM64 support, OS profiles and reusable components for ports across SoCs and devices. SoC repositories supply common platform support, and device repositories supply board configuration and hardware integration.
+
+🎉 News: Adreno740 and AdrenoMetal provide GPU acceleration on sheng. See the Adreno 740 driver documentation.
+
+Documentation: unixnu.com. Start with Port a device or Build and boot.
+
+Repositories
+
+| Repository | Contents |
+| --- | --- |
+| UniXNU | Build tools, component catalog, ARM64 support, OS profiles, UEFI package, documentation |
+| UniXNU-sm8550-common | Shared SM8550 support |
+| UniXNU-sheng | Xiaomi Pad 6S Pro |
+| uefi-sheng | UEFI firmware for the Xiaomi Pad 6S Pro |
+
+Clone with --recurse-submodules.
+
+Contributing
+
+See CONTRIBUTING.md.
+
+License
+
+BSD-2-Clause-Patent. See LICENSE.

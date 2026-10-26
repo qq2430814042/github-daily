@@ -1,0 +1,152 @@
+OpenBot
+
+OpenBot is a local-first desktop workspace for persistent AI teammates. It supports the local
+Codex App Server and
+Claude Code, plus Grok CLI,
+OpenCode, Gemini, Cursor CLI, and Cline CLI through ACP. It gives every agent its own workspace and
+conversation, and provides local queues, file transfers, an embedded browser, and agent-to-agent
+messaging in one desktop app.
+
+OpenBot is a development preview. Agents currently run with danger-full-access and
+approvalPolicy: never. They can read and modify files, run commands, use the network, and control
+the embedded browser without per-action confirmations after the explicit first-launch consent.
+Run only agents and tasks you trust, keep backups, and review Security before use.
+
+What works
+
+- Prompt-driven agent creation and editing on desktop and mobile, with editable instructions, avatar, and section review before saving.
+- Persistent agents backed by independent Codex, Claude, Grok, OpenCode, Gemini, Cursor, or Cline sessions and local workspaces.
+- Custom OpenAI-compatible endpoints and custom ACP agents, with detection of local model servers (Ollama, LM Studio) and installed agents.
+- Per-agent context monitoring with automatic compaction before long threads exhaust the model window.
+- FIFO message queues with pause, resume, cancellation, and crash-safe persistence.
+- Agent-to-agent messages, replies, reactions, images, and managed file transfers.
+- Shared desktop channel chats with one task owner, explicit delegation, shared history, and Stop, Resume, Reassign, Archive, and Restore controls.
+- A persistent embedded browser that agents can open, inspect, and control.
+- Optional Computer Use on macOS, Windows and Linux through the cua-driver binary in the release, which OpenBot starts as its own child process and gives to every provider.
+- Per-agent model, reasoning, profile, notification, browser, and panel state.
+- Local data and privacy-safe diagnostics exports from the account menu.
+- Optional OpenBot accounts through one-time email codes. The account API runs on Cloudflare Workers and D1.
+
+OpenBot is local-first, not offline-only. Codex connects to OpenAI, Claude connects to Anthropic,
+Grok connects to xAI, Gemini connects to Google, Cursor connects to Cursor, Cline connects to Cline,
+visited pages use the network, and installed plugins may connect to their own services.
+
+Install
+
+OpenBot supports macOS 13 or newer on Apple silicon or Intel, Windows 10 or newer on x64 systems, and x64
+or arm64 Linux as an AppImage.
+
+macOS
+
+1. Download the latest OpenBot--arm64.dmg (or OpenBot--x64.dmg on an Intel Mac) from GitHub Releases.
+2. Drag OpenBot to Applications and open it.
+
+Windows
+
+1. Download the latest OpenBot-*-x64.exe from GitHub Releases.
+2. Run the installer and open OpenBot.
+
+Linux
+
+1. Download the latest OpenBot--x86_64.AppImage (or OpenBot--arm64.AppImage on arm64) from GitHub Releases.
+2. Make it executable with chmod +x OpenBot-*.AppImage, then run it.
+
+The AppImage does not need libfuse2, so it also runs on Arch Linux and Omarchy. It mounts itself
+with fusermount3 from the fuse3 package.
+
+On Ubuntu 23.10 or newer and on Debian 13, unprivileged user namespaces are restricted by AppArmor
+and OpenBot exits during launch until you install an AppArmor profile:
+
+sudo install -m 0644 build/linux/openbot.apparmor /etc/apparmor.d/openbot
+sudo systemctl reload apparmor
+
+The same file ships inside the AppImage at resources/linux/openbot.apparmor. Edit the attachment
+path in the profile if you keep the AppImage outside the usual locations. Do not start OpenBot with
+--no-sandbox: that removes the boundary between a renderer and the rest of the computer.
+
+On the first start from an AppImage, OpenBot writes ~/.local/share/applications/openbot.desktop
+and ~/.local/share/icons/openbot.png, which is what lets an openbot:// link - an invitation, or
+a plugin listing - open the app and gives the launcher an icon that stays after the app exits. Delete the two files to undo it.
+
+Remote desktop works on Linux x64 in an X11 session,
+such as Xorg or Xvfb. It does not work under Wayland, and the arm64 AppImage does not include it.
+
+For Gemini sign-in, install a desktop browser and xdg-utils. Open the sign-in page in a
+desktop session on the same host or VM. Google sends the callback to that host through
+127.0.0.1; a server with no desktop cannot complete this sign-in. See
+Gemini setup.
+
+Linux server with no screen
+
+To run OpenBot as an always-on server of your account on a VPS or home server (Ubuntu 24.04 or
+26.04 with systemd), install it from a terminal and sign in with an email code:
+
+curl -fsSL https://raw.githubusercontent.com/nightly-labs/openbot/main/scripts/install-server.sh | sudo bash
+sudo openbot login
+
+Then use it from the desktop app, the iPhone app or openbot.run/app. See
+self-hosted servers for the options and the openbot commands.
+
+Docker
+
+The same server runs as a container (linux/amd64 and linux/arm64). The seccomp profile lets the
+Electron sandbox stay on:
+
+curl -fsSLO https://raw.githubusercontent.com/nightly-labs/openbot/main/docker/seccomp.json
+docker run -d --name openbot --restart unless-stopped \
+  --security-opt seccomp=seccomp.json --security-opt no-new-privileges:true \
+  --shm-size 1g --stop-timeout 60 -v openbot-data:/data \
+  ghcr.io/nightly-labs/openbot:latest
+docker exec -it openbot openbot login
+
+See Docker for Compose, the data volume, upgrades and the security limits. For Amazon ECS,
+see AWS ECS.
+
+Nix
+
+The flake installs the desktop app from the latest release on x64 or arm64 Linux and on Apple silicon:
+
+nix run github:nightly-labs/openbot
+nix profile install github:nightly-labs/openbot
+
+overlays.default adds pkgs.openbot. OpenBot is not free software, so your nixpkgs must allow it,
+for example with nixpkgs.config.allowUnfreePredicate = pkg: lib.getName pkg == "openbot";.
+Nix installs OpenBot updates. OpenBot does not update itself from the Nix store. On Linux, the Nix
+package does not include the remote desktop runtime, because nixpkgs does not have a library that it
+needs.
+
+Windows releases are signed by SYNTHETIFY LABS SPÓŁKA Z OGRANICZONĄ ODPOWIEDZIALNOŚCIĄ. Older
+releases are not code-signed. SmartScreen can still warn about a new release. Check the release
+checksum or GitHub build attestation before you run the installer.
+
+Agent setup
+
+OpenBot can download a supported provider runtime when you select Download in onboarding,
+Settings, agent setup, or the model picker. OpenBot prefers its managed CLI. Explicit OPENBOT_*_PATH overrides take precedence; a compatible
+system CLI is used when no managed copy is available. OpenBot checks for a newer provider CLI
+release at startup and every hour, and Check for updates in a provider's actions menu checks at
+once. Updates install the latest upstream release without changing the user’s system CLI; the
+version in native-runtime.lock.json is only the first-install fallback.
+
+You can also install a CLI yourself.
+
+Codex CLI on macOS:
+
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+
+Claude CLI on macOS:
+
+curl -fsSL https://claude.ai/install.sh | bash
+
+Install Grok CLI following the Grok Build documentation, then
+authenticate with grok login or set XAI_API_KEY in the environment used to launch OpenBot.
+
+OpenBot downloads and pins the OpenCode CLI, like Codex, Claude, and Grok. OpenCode's free models
+need no account and no sign-in: select OpenCode, click Connect, and OpenBot reads the models that
+the CLI advertises. To use the paid OpenCode Go models, click Sign in on the OpenCode row and
+paste a Go key from opencode.ai/auth. OpenBot encrypts the key on this
+computer and gives it only to the local CLI. OpenBot supports OpenCode Go only: the Zen models a
+Go key does not buy stay out of the picker. Models with the Free label in the model picker need no
+sign-in. Other models need a sign-in with their provider: a Go key for the opencode-go/ models, or
+
+…（内容已截断）

@@ -1,0 +1,127 @@
+Awesome LLM Apps
+
+100+ open-source AI agents, agent skills, and RAG apps. Hand-built, tested end-to-end, Apache-2.0.
+
+Clone it, ship it, sell it - 100% free and open-source
+
+Works with Claude, Gemini, GPT, DeepSeek, Llama, Qwen and other open-source models.
+
+Step-by-step tutorials on Unwind AI · Quick start · Browse all templates
+
+      Project Graveyard
+
+      Insurance Claim Live Agent Team
+
+      AI Fraud Investigation Agent
+
+      Self-Improving Agent Skills
+
+      AI Home Renovation Agent
+
+      Always-on HN Briefing Agent
+🚀 Run one now
+
+Give your coding agent a new skill in 10 seconds:
+
+npx skills add https://github.com/Shubhamsaboo/awesome-llm-apps/tree/main/agent_skills/project-graveyard
+
+Then ask it: "why do I never finish my side projects?"
+
+Or clone and run any agent in 30 seconds:
+
+git clone https://github.com/Shubhamsaboo/awesome-llm-apps.git
+cd awesome-llm-apps/starter_ai_agents/ai_travel_agent
+pip install -r requirements.txt
+streamlit run travel_agent.py
+
+📬 New templates drop weekly. Get them in your inbox on Unwind AI.
+
+📂 Browse all templates
+
+🧩 Agent Skills
+
+Give your coding agent new abilities. One command to install, plain English to use. Every skill ships real code and passes a security + eval CI gate. Works with Claude Code, Codex, Cursor, and other coding agents. Browse all skills →
+
+*   ⚰️ Project Graveyard - Finds every side project you abandoned, tells you why each one died, and helps you finish the one worth going back to
+*   👁️ First Reader - Simulates real readers going through your draft and reports where they lose interest, where they stop reading, and what they remember afterward, without rewriting a word
+*   🔭 Scope Creep Detector - Checks whether a diff grew beyond its stated intent and recommends what to keep, split, or justify
+*   🏺 Commit Archaeologist - Reconstructs why a file or code region exists from its introducing commit, later edits, co-changes, and intent clues
+*   🩺 Dependency Doctor - Checks a dependency manifest for standard-library pins, obsolete backports, unpinned entries, duplicate constraints, and yanked releases
+*   🧠 Advisor Orchestrator Worker - Meta Loop with Claude Fable 5.1 as advisor, GPT-6 Astra as orchestrator, and Gemini 3.8 Flash as worker
+*   🎙️ Thinking Out Loud - Echoes a voice ramble back as a scannable brief, with the model's guesses quarantined and your reversals flagged
+*   ♾️ Self-Improving Agent Skills - Automatically optimize agent skills using Gemini and ADK
+
+🛠️ Standalone Apps & Tools
+
+Standalone web apps, creative tools, and browser extensions for everyday workflows.
+
+*   ✏️ Excaliflow - Hand-Drawn Diagrams with Live Animated Flows - Sketch system architectures and AI agent workflows on an Excalidraw-style canvas with live animated arrows and video export
+*   🪡 Needle - A New Way to Find - Search webpages by meaning and highlight the strongest source sentence, using a Chrome extension powered by TypeSafe Jev
+*   🌀 Ripple - Change One Thing, Find What Else Needs to Change - Find related inconsistencies and suggested fixes as you edit a Google Doc, using TypeSafe Jev and Gemini
+
+🌱 Starter AI Agents
+
+Single-file agents that run with just an API key - a great place to start.
+
+*   🎙️ AI Blog to Podcast Agent - Turn any blog URL into a narrated podcast episode
+*   ❤️‍🩹 AI Breakup Recovery Agent - An agent team that talks you through the post-breakup spiral
+*   📊 AI Data Analysis Agent - Ask questions of any CSV or Excel file in plain English
+*   🩻 AI Medical Imaging Agent - Diagnostic analysis of X-rays and scans with Gemini
+*   😂 AI Meme Generator Agent (Browser) - Makes memes by driving a real browser, not an image API
+*   🎵 AI Music Generator Agent - Prompt in, MP3 track out
+*   🛫 AI Travel Agent (Local & Cloud) - Personalized day-by-day travel itineraries
+*   💸 AI x402 Paying Agent - An agent with a wallet that pays per-call for the data it needs — no API keys
+*   ✨ Gemini Multimodal Agent - Video analysis plus web search in one agent
+*   🔄 Mixture of Agents - Multiple LLMs answer, one aggregates the best response
+*   📊 xAI Finance Agent - Real-time stock analysis powered by Grok
+*   🔍 OpenAI Research Agent - Multi-agent topic research with the OpenAI Agents SDK
+*   🕸️ Web Scraping AI Agent - Describe what to extract and the agent scrapes it
+
+🚀 Advanced AI Agents
+
+Production-style agents with tools, memory, and multi-step reasoning.
+
+*   🏚️ 🍌 AI Home Renovation Agent with Nano Banana Pro - Photos of your space in, renovation plan and photorealistic renders out
+*   🧠 DevPulse AI - Multi-Agent Signal Intelligence - Aggregates and scores technical signals into a daily intelligence digest
+*   🔍 AI Deep Research Agent - Comprehensive web research with the OpenAI Agents SDK and Firecrawl
+*   📊 AI VC Due Diligence Agent Team - Multi-agent startup investment analysis with Gemini 3
+*   🔬 AI Research Planner & Executor (Google Interactions API) - Multi-phase research with stateful conversations and auto-generated infographics
+*   🤝 AI Consultant Agent - Market analysis and strategy recommendations with live web research
+*   🏗️ AI System Architect Agent - Architecture reviews using DeepSeek R1 reasoning plus Claude
+*   💰 AI Financial Coach Agent - Personalized budget, debt, and savings analysis
+*   🎬 AI Movie Production Agent - Script drafts and casting ideas from a one-line movie concept
+*   📈 AI Investment Agent - Stock comparison reports built on Yahoo Finance data
+*   📡 Earnings Call Analyst Agent - Turns YouTube earnings calls into a playback-synced analyst workspace
+*   🏋️‍♂️ AI Health & Fitness Agent - Tailored diet and workout plans from your goals
+*   🚀 AI Product Launch Intelligence Agent - Go-to-market intelligence on competitor launches
+*   🔍 AI Fraud Investigation Agent - Cross-references public records to flag facilities that don't add up
+*   🗞️ AI Journalist Agent - Researches, writes, and edits articles on any topic
+*   🧠 AI Mental Wellbeing Agent - A coordinated agent team for mental health support plans
+*   📑 AI Meeting Agent - Context, industry insights, and strategy briefs before you walk in
+*   🧬 AI Self-Evolving Agent - Agents that rewrite their own workflows with EvoAgentX
+*   👨🏻‍💼 AI Sales Intelligence Agent Team - Generates competitive sales battle cards in real time
+*   🎧 AI Social Media News and Podcast Agent - Curates your trusted sources into briefs and generated podcasts
+*   🌐 Openwork - Open Browser Automation Agent ↗ external - Open-source agent that operates a real browser
+*   🛡️ Trust-Gated Multi-Agent Research Team - Every agent verified, every action in a hash-chained audit trail
+
+🛰️ Always-on Agents
+
+Background agents that run on schedules or events, monitor changing context, decide what needs attention, and proactively deliver updates, artifacts, or actions.
+
+*   📰 Always-on Hacker News Briefing Agent - A scheduled scout that ships a ranked daily brief to Slack or email
+*   📡 Release Radar Agent - Watches dependency releases and briefs you on breaking, deprecated, security, and major-version changes
+
+🤝 Multi-agent Teams
+
+Multiple agents collaborating to accomplish complex, cross-domain tasks.
+
+*   🧲 AI Competitor Intelligence Agent Team - Structured competitor teardowns built from their own websites
+*   💲 AI Finance Agent Team - A financial analyst team in 20 lines of Python
+*   🎨 AI Game Design Agent Team - Full game concepts from a swarm of design specialists
+*   🧭 AG2 Adaptive Research Team - Agent teamwork with routing and fallback, built on AG2
+*   👨‍⚖️ AI Legal Agent Team (Cloud & Local) - Research, contract analysis, and strategy from a full legal bench
+*   💼 AI Recruitment Agent Team - Resume screening to interview scheduling, end to end
+*   🏠 AI Real Estate Agent Team - Property search, market analysis, and recommendations
+*   👨‍💼 AI Services Agency (CrewAI) - A digital agency that scopes and plans your software project
+
+…（内容已截断）

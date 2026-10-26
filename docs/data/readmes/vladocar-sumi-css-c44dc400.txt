@@ -1,0 +1,239 @@
+Sumi.css
+
+A minimalist, classless-first CSS framework. Write plain, semantic HTML and it looks finished. Add a class only when you want something specific.
+
+- One file, no build step. 6.7 KB minified and gzipped, with no JavaScript and no dependencies.
+- Classless by default. Headings, forms, tables, cards, accordions, modals and navigation are styled from the HTML element alone.
+- Light and dark mode. It follows the visitor's system setting automatically, and data-theme lets you force either mode.
+- Easy to theme. Every color, font, size and radius is a CSS custom property.
+- Easy to override. Element styles have zero specificity, so your own CSS always wins without !important.
+- Accessible. Visible focus rings, ARIA-driven states (aria-invalid, aria-busy, aria-current) and support for reduced motion.
+
+Components · Tutorial · Cheat sheet
+
+Contents
+
+- Install
+- Quick start
+- What gets styled
+- Classes and attributes
+- Layout
+- Typography
+- Theming
+- Dark mode
+- Overriding styles
+- Browser support
+- Files
+- License
+
+Install
+
+Download. Copy sumi.min.css into your project and link it:
+
+CDN. Load it from this repository through jsDelivr.
+
+Use sumi.css (unminified) while you develop. Its comments explain every section.
+
+Quick start
+
+My page
+
+      My site
+
+        Home
+
+        About
+
+      Welcome
+
+      Hello, ink.
+
+    This page is styled by Sumi with almost no classes.
+
+    Get started
+
+    © 2026 My site
+
+`,  and  center themselves when they are direct children of . Keep the viewport meta tag for phones, and set lang` so the browser can hyphenate long-form text correctly.
+
+What gets styled
+
+| Element | Result |
+| --- | --- |
+| h1–h6, p, lists, blockquote, code, kbd, pre, mark | Fluid type scale and consistent vertical spacing |
+| ` with two  | Navigation bar, left and right groups. Vertical inside ` |
+| `, type=submit], ` | Buttons |
+| `, , , , ` | Full-width fields with focus rings and helper text |
+| type="checkbox", type="radio", type="range", type="file", type="color" | Custom controls that match the theme |
+| `` | Clean rules and tabular numbers |
+| ` | Card. A direct  and ` become shaded bands |
+| ` / ` | Accordion with an animated chevron |
+| `` | Modal with a blurred backdrop |
+| `, ` | Determinate and indeterminate bars |
+
+Classes and attributes
+
+Everything Sumi responds to beyond plain HTML:
+
+| Class or attribute | Goes on | Effect |
+| --- | --- | --- |
+| .container .container-fluid .narrow | any block | Centered page width (72rem), full width, reading width (44rem) |
+| .grid | wrapper | Auto-fitting columns, each at least --s-grid-min (14rem) wide |
+| .cols-2 .cols-3 .cols-4 .cols-6 .cols-12 | .grid | Fixed columns from 48rem up, one column below |
+| .span-2 … .span-9, .span-full | grid child | Spans several columns |
+| .row .spread .stack | wrapper | Wrapping flex row, row with space between, vertical stack |
+| .display .lead | heading, paragraph | Hero headline, larger intro paragraph |
+| .prose .serif | text wrapper | Long-form reading column, serif typeface |
+| .secondary .contrast .outline | button | Button colors and outline style |
+| .small .large .full | button | Sizes, full width |
+| role="button" | `` | Link styled as a button |
+| role="group" | wrapper | Joins buttons, or an input and a button |
+| role="switch" | checkbox | Toggle switch |
+| aria-invalid="true" / "false" | field | Red or green validation state |
+| aria-busy="true" | any element | Loading spinner |
+| aria-current="page" | nav link | Highlights the current page |
+| data-tooltip="…" data-placement="bottom" | any element | Tooltip, above or below |
+| data-theme="light" / "dark" | `` or any element | Forces a color mode |
+| .dropdown .right | `` | Dropdown menu, right-aligned |
+| .callout + .success .warning .danger | block | Message box |
+| .striped | `` | Zebra rows |
+| .muted .small .center .sr-only .overflow-auto | any element | Utilities |
+
+A few examples
+
+Save
+Cancel
+Saving
+
+Email
+
+  Enter a valid email address.
+
+ Email reminders
+
+  Six-week course
+  From first strokes to a finished hanging scroll.
+
+  €180
+
+  Export as…
+
+    PNG
+
+    SVG
+
+    Delete this file?
+
+    This can't be undone.
+
+        Keep
+        Delete
+
+Layout
+
+One
+
+  Two
+
+  Three
+
+  Main
+
+  Sidebar
+
+…
+
+Cards inside a .grid stretch to equal heights and keep their footers aligned at the bottom.
+
+Typography
+
+Headings follow a fluid scale. The ratio grows from 1.2 on phones to 1.28 on desktop, and the base size eases from 16px to 17px. No media queries are needed on your side. Line height and letter spacing tighten as headings get larger.
+
+- ` pairs a heading with an eyebrow ( before it) and a subtitle (` after it).
+- .lead enlarges an intro paragraph. .display makes a hero headline.
+- .prose sets a reading column of about 68 characters with hyphenation. An `` stays plain text instead of becoming a card.
+- .serif switches an element, or the whole ``, to a system serif stack.
+
+Theming
+
+Every design decision is a custom property starting with --s-. Override them in a stylesheet that loads after Sumi:
+
+:root {
+  --s-primary: #0f766e;
+  --s-radius: .25rem;
+  --s-font-body: "Inter", system-ui, sans-serif;
+  --s-font-heading: "Fraunces", Georgia, serif;
+  --s-container: 64rem;
+}
+
+Tokens also work on a single element:
+
+Book now
+  Gift card
+
+Main tokens
+
+| Token | Controls |
+| --- | --- |
+| --s-primary, --s-on-primary | Buttons, links, focus rings, checked controls, and text on them |
+| --s-secondary, --s-contrast | Secondary and contrast button colors |
+| --s-bg, --s-surface, --s-card | Page, shaded areas, cards |
+| --s-text, --s-muted | Body text, secondary text |
+| --s-border, --s-border-strong | Rules, card edges, field borders |
+| --s-success, --s-warning, --s-danger | Validation and callouts |
+| --s-font-body, --s-font-heading, --s-font-mono, --s-font-serif | Typefaces |
+| --s-font-size, --s-line-height, --s-heading-weight | Base size, leading, heading weight |
+| --s-text-display, --s-text-h1 … --s-text-h4, --s-text-lead | Type scale steps |
+| --s-flow, --s-space | Space after text blocks, space after forms and components |
+| --s-container, --s-narrow, --s-measure, --s-gutter | Page width, reading width, line length, side padding |
+| --s-radius, --s-shadow, --s-shadow-lg | Corners and elevation |
+
+The full list is at the top of sumi.css.
+
+Dark mode
+
+Sumi follows the visitor's system setting with no extra code. To force a mode, set data-theme on ``:
+
+data-theme also works on any element, so one section can be dark inside a light page. A theme switch that remembers the visitor's choice:
+
+const root = document.documentElement;
+const saved = localStorage.getItem('theme');
+if (saved) root.dataset.theme = saved;
+
+document.querySelector('#theme-toggle').addEventListener('click', () => {
+  const dark = matchMedia('(prefers-color-scheme: dark)').matches;
+  const current = root.dataset.theme || (dark ? 'dark' : 'light');
+  const next = current === 'dark' ? 'light' : 'dark';
+  root.dataset.theme = next;
+  localStorage.setItem('theme', next);
+});
+
+The dark palette appears twice in sumi.css: once for the system setting and once for data-theme="dark". If you change dark colors, change both blocks.
+
+Overriding styles
+
+Element styles are wrapped in :where(), which has zero specificity, so a plain selector is enough to override them:
+
+/* Sumi: :where(blockquote) { border-left: 3px solid … } */
+blockquote { border-left-color: var(--s-warning); }
+
+Build your own components from Sumi's tokens and they follow your theme and dark mode automatically:
+
+.badge {
+  padding: .1em .55em;
+  border: 1px solid var(--s-border);
+  border-radius: 999px;
+  background: var(--s-surface);
+  color: var(--s-muted);
+  font-size: .8rem;
+}
+
+Browser support
+
+Current versions of Chrome, Edge, Firefox and Safari. Sumi uses :where(), :has() and color-mix(), which are available from Chrome and Edge 111, Firefox 121 and Safari 16.2. Older browsers still show readable pages, with plainer hover and focus colors.
+
+Files
+
+| File | Purpose |
+
+…（内容已截断）

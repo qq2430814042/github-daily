@@ -1,0 +1,324 @@
+GitHub 中文化插件
+
+让 GitHub 界面全面中文化 | 源自 52cik/github-hans
+
+简体中文 · 繁體中文 · 反馈问题
+
+本项目从未发布至 GitCode，如您发现请截图并保留证据
+
+目录树
+
+TOC
+- 🌟 功能特性
+- 🌐 兼容环境
+- 💻 安装指南
+    - 浏览器（Tampermonkey）
+    - VS Code 市场扩展
+- 🔧 本地调试
+- 🔄 更新日志
+- 📌 待办事项
+- 🤝 参与贡献
+- 🖼️ 效果预览
+- 🙏 特别鸣谢
+- 📈 项目统计
+- 🎁 欢迎打赏
+
+🌟 功能特性
+
+- x] 全面中文化 GitHub 界面元素（菜单栏、标题、按钮等）
+- [x] 智能正则匹配功能
+- [x] 支持项目描述的人机翻译
+- [x] 自动本地化时间元素
+- [x] 持续更新词库
+
+🌐 兼容环境
+
+浏览器类型           | 支持的脚本管理器
+:------------------: | :---------------:
+Chrome / Chromium 内核 | [Tampermonkey, Violentmonkey
+Safari（全平台）     | Tampermonkey, Macaque, Stay
+Firefox / Gecko 内核   | Tampermonkey, Violentmonkey
+Via（Android）       | 内置管理器
+VS Code 集成浏览器  |
+
+💻 安装指南
+
+浏览器（Tampermonkey）
+
+1. 安装用户脚本管理器：
+    - 推荐：Tampermonkey
+1. 基于 Chrome / Chromium 内核浏览器：
+    1. 务必开启 “扩展程序” 管理中的 “开发者模式”
+    1. 务必开启 “扩展程序” 管理中脚本管理器扩展的 “允许运行用户脚本”
+    1. 具体可参考 Tampermonkey 官方指引
+1. 选择安装源：
+    - GitHub 源【开发版】
+    - 南大镜像源【开发版】.user.js]
+    - GreasyFork 源【稳定版】.user.js]
+1. 刷新页面后，插件即可生效
+1. 必要时，重启浏览器
+
+: Chrome 切换到 Manifest V3后，使用问题
+
+版本说明：
+- 🚀 开发版：实时更新，每周五自动更新词库
+- 🛡️ 稳定版：每周一同步开发版词库，更稳定
+
+VS Code 集成浏览器
+
+请参考扩展的自述文件。
+
+🔧 本地调试
+
+1. 安装 Tampermonkey，并启用 “允许访问文件网址”。
+1. 下载词库文件到本地（如：D:\github-chinese\locals.js）
+1. 在脚本管理器中修改引用路径：
+   // 原始路径
+   // @require https://raw.githubusercontent.com/...
+
+   // 修改为
+   // @require file:///D:/github-chinese/locals.js
+1. 刷新页面生效
+
+若无效：
+1. 进入 Tampermonkey 插件设置页
+1. 将 通用 - 配置模式 设置为高级，进入高级设置模式
+1. 找到 安全 - 允许脚本访问本地文件 并设置为 外部(@require 和 @resource)
+
+💡 温馨提示： 您可以将词库文件拖拽至浏览器地址栏，复制路径直接使用。
+
+🔄 更新日志
+
+最新版本
+
+v1.9.4.4 (2026-06-20)
+
+1. 兼容修复1.9.2.4,1.9.4.4：
+   - 区分 React GlobalNav 与页面主体共享的 Primer 弹层，恢复下拉菜单即时、完整翻译。
+
+v1.9.4.3 (2026-06-17)
+
+1. 兼容修复1.9.2.3,1.9.4.3：
+   - 收窄 React 搜索模块忽略范围，恢复仓库议题页和搜索页主体区域翻译。
+
+v1.9.4.2 (2026-06-17)
+
+1. 兼容修复1.9.2.2,1.9.4.2：
+   - 在保持 React 头部搜索框稳定的前提下，恢复头部导航、菜单、搜索弹层和提示翻译。
+
+v1.9.4.1 (2026-06-16)
+
+1. 临时修复1.9.2,1.9.4：
+   - 关于 GitHub 引入 React 机制导致头部搜索框消失。副作用整个头部导航全部加入忽略规则，无法翻译。
+
+v1.9.4 (2026-05-17)
+
+1. 代码重构：
+   - 全面结构化重组：抽离配置常量 CONFIG、状态管理器 State
+   - 引入 safe() 错误边界包裹关键函数，便于排错
+   - 函数拆分细化：watchUpdate → setupMutationObserver + processMutations，transDesc → handleTransClick + requestRemoteTrans + showTransResult
+   - processMutations 祖先去重：同一批 mutation 中后代节点不再重复遍历
+1. 新增功能：
+   - 翻译结果 UI 暗色主题适配（CSS 变量 + prefers-color-scheme 媒体查询），使用 GM_addStyle 插入
+   - 未命中词条管理器 MissedTermsManager（记录、导出 JSON、清空、统计、菜单）
+   - 开发者模式（CONFIG.DEV）控制未命中词条菜单显隐
+   - Tampermonkey onurlchange 事件支持（setupUrlChangeListener）
+1. 修复：
+   - 修复翻译 API 响应 XSS 漏洞：innerHTML 模板拼接改为 textContent 安全赋值（由 #692 报告）
+   - 修复 TreeWalker 过滤器在 ignoreSelectors 为空时抛出 SyntaxError
+   - 修复翻译按钮可能重复添加的问题（nextSibling 空值检查）
+   - 修复 RELATIVE-TIME shadowRoot 为 null 时的崩溃
+   - 修复从未识别页面离开后 State.pageConfig 未清空，导致旧配置残留的问题
+1. 性能优化：减少无效迭代，消除不必要的 DOM 遍历
+
+v1.9.3 (2024-08-18)
+
+1. 新增功能：通过设置中文环境，自动本地化时间元素，仅保留on开头的时间正则，并停用时间元素监视
+1. 优化突变翻译处理：
+   - 引入characterDataPage规则，对特定页面启用筛选字符数据的变更
+   - 引入ignoreMutationSelectorPage规则，忽略特定突变元素
+1. 合并reIgnoreClass，reIgnoreItemprop，ignoreId，ignoreTag为ignoreSelectorPage规则，处理全局及特定页面，忽略特定元素
+1. 引入全局缓存模式，减少重复构建包括不限于基于page变化的忽略规则、正则规则数组等
+1. 调整：更新讯飞听见翻译引擎v2.0
+1. 优化：梳理、优化脚本
+1. 调整：调整词库语言代码为zh-CN, 与环境语言设置一致
+
+查看更多历史版本
+
+v1.9.2 (2024-06-14)
+
+1. 适配www.githubstatus.com
+1. 适配skills.github.com
+
+v1.9.1 (2024-05-23)
+
+1. 更新切换正则功能按钮
+
+v1.9.0 (2023-12-09)
+
+1. 重新定义版本号规则, 如1.9.0-2023-12-09。
+   - 1.9.0: 主版本号（由项目所有者更新）
+   - 2023-12-09：词库发布版本号（由 GitHub Action 自动更新）
+1. 加强: GitHub 源【开发版】每周一凌晨自动更新词库发布版本号
+1. 加强: GreasyFork 源【稳定版】.user.js]每周五凌晨自动更新词库发布版本号, 词库内容同上一次GitHub 源【开发版】
+1. 加强：在 README.md 中自动更新贡献者头像
+1. 更新: 忽略规则, 词条等
+
+v1.8.5 (2023-08-31)
+
+1. 优化: transDesc 函数代码
+1. 修复: 重复添加translate-me翻译按钮
+1. 加强：watchUpdate 函数新增节点文本更新的情况
+1. 调整: transBySelector和transDesc函数延迟执行时间
+1. 更新: 忽略规则, 词条等
+
+v1.8.4 (2023-08-08)
+
+1. 修复: Itemprop过滤规则, 依然使用正则方式
+1. 修复: tooltipped样式提示, 依然使用正则方式
+
+v1.8.3 (2023-08-07)
+
+1. 梳理、优化脚本
+1. 更新: 忽略规则, 大量词条等
+
+v1.8.2 (2023-05-15)
+
+1. greasyfork 托管源切换到按页面精细化词条模式
+1. 调整词库格式
+1. 功能加强: 优化元素筛选器翻译逻辑
+1. 更新: 忽略规则, 大量词条等
+
+v1.8.1 (2023-01-22)
+
+1. 修复: #8 与 dark reader 扩展发生冲突，导致时间显示出现问题
+1. GitHub源开始切换到按页面精细化词条模式(开发版), 词库未完全迁移适配
+1. 停止greasyfork源词库文件的同步更新
+
+v1.8.0 (2023-01-18)
+
+1. 删除: TURBO-FRAME框架处理代码. Github 已调整新动态加载模式, 直接检测url的变化就能获取对应的page信息
+1. 新增: 支持时间元素的Shadow DOM翻译, 并监听变化
+1. 新增: 启用并更新时间元素翻译专项正则词条
+1. 新增: 仅当page有效才翻译页面
+1. 修复: 原简介翻译引擎GitHub中文社区失效, 改为讯飞引擎(测试)
+1. 修复: 追加公共正则重复迭代的问题
+1. 修复: 正则标记变量RegExp与构造函数new RegExp冲突
+1. 更新: 忽略规则, 词条等
+
+预告, 下次将细化page匹配规则, 导致词库文件结构大调整, 词库文件会适当变大, 页面正则更精细效率会提升
+
+v1.7.9 (2022-07-17)
+
+GitHub 的 ajax 载入方式逐步从 defunkt/jquery-pjax 切换到 hotwired/turbo, 导致已有的动态监测方式逐步失效
+
+目前, 通过以下修复:
+
+1. 新增 BODY 元素新增监视
+1. 解析 TURBO-FRAME 框架, 获取对应的 page
+1. 修复 github 新动态加载模式, 导致翻译描述返回值无法插入
+1. 修复 github 新动态加载模式, 导致chrome浏览器自带翻译功能卡死页面
+
+其他更新:
+
+1. 修复rePagePath,rePagePathRepo,rePagePathOrg匹配规则，限制路径匹配层次，排除干扰
+1. 直接使用网页URLdocument.URL变化触发标题翻译和JS 筛选器翻译
+1. 修复关闭正则无法生效, 需要刷新页面才生效
+1. 日常更新词库和忽略规则
+1. 更新JS 筛选器规则
+
+v1.7.8 (2022-06-29)
+
+1. 紧急修复: GitHub 变更了document.body和title更新机制, 导致原有的监测更新规则部分失效, 目前使用document.documentElement监视整个页面 DOM 的变更
+1. 跳过``标签
+1. 标题翻译和JS 筛选器翻译, 依据 URL变化更新
+
+v1.7.7 (2022-06-26)
+
+1. 新增时间元素翻译功能
+1. 重写页面标题翻译函数
+1. 梳理遍历节点函数逻辑
+1. 优化transPage函数，默认翻译公共部分
+1. 调整getPage函数, 使ClassName匹配规则优先
+1. 优化translate函数, 跳过不存在英文字母和符号,., 保留首尾空白部分等
+1. 部分函数重命名，使用es6新语法
+1. 日常更新词库和忽略规则，修复一个JS 选择器规则
+
+v1.7.6 (2022-05-12)
+
+1. 日常更新词库和忽略规则
+1. 添加手动开启/禁用正则翻译，添加切换菜单
+1. 优化翻译文本函数：避免已翻译词汇二次匹配，提高效率；局部翻译优先于全局
+
+📌 待办事项
+
+1. 添加 GitHub 专用名词解释
+1. 整理 Git & GitHub 学习资料
+1. 完善文档翻译，需大家 PR 共同翻译
+
+🤝 参与贡献
+
+欢迎通过以下方式参与贡献：
+
+1. 完善词库翻译（编辑 locals.js）
+1. 提交议题报告，参与话题讨论
+1. 改进代码逻辑
+
+翻译参考资源:
+
+1. Pro Git 第二版 简体中文
+1. Pro Git: 翻译约定
+1. Git 官方软件包的简体中文翻译
+1. GitHub 词汇表官方译本
+1. CSS 选择器 用于编写忽略规则
+
+查看详细贡献指南
+
+🖼️ 效果预览
+
+🙏 特别鸣谢
+
+核心团队
+
+- maboloshi - 项目作者
+- wyc-26，陈生杂物房 - 项目协作者
+- 52cik - 项目原作者
+
+贡献者墙
+
+一如既往，感谢我们出色的贡献者❤️！
+
+贡献者列表，由 GitHub Action 自动生成
+
+📈 项目统计
+
+🎁 欢迎打赏
+赞赏列表
+|                                        微信赞赏                                        |                                       支付宝赞赏                                       |
+| :--------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------: |
+|
+☕喝点咖啡继续干☕ |
+🌶️来包辣条吧~🍪 |
+
+[back-to-top]: https://img.shields.io/badge/-BACK_TO_TOP-151515?style=flat-square
+[github-project-link]: https://github.com/maboloshi/github-chinese "GitHub 中文化插件"
+[github-issues-link]: https://github.com/maboloshi/github-chinese/issues "议题"
+[github-issues-shield]: https://img.shields.io/github/issues/maboloshi/github-chinese?style=flat-square&logo=github&label=Issue
+[github-stars-link]: https://github.com/maboloshi/github-chinese/stargazers "星标"
+[github-stars-shield]: https://img.shields.io/github/stars/maboloshi/github-chinese?style=flat-square&logo=github&label=Star
+[github-forks-link]: https://github.com/maboloshi/github-chinese/network "复刻"
+[github-forks-shield]: https://img.shields.io/github/forks/maboloshi/github-chinese?style=flat-square&logo=github&label=Fork
+[github-license-link]: https://opensource.org/licenses/GPL-3.0  "许可证"
+[github-license-shield]: https://img.shields.io/github/license/maboloshi/github-chinese?style=flat-square&logo=github&label=License
+[greasyFork-link]: https://greasyfork.org/scripts/435208  "GreasyFork 源 - GitHub 中文化插件"
+[greasyFork-shield]: https://img.shields.io/greasyfork/dt/435208?style=flat-square&logo=GreasyFork&label=GreasyFork%20Installs
+[pr-welcome-link]: https://github.com/maboloshi/github-chinese/pulls
+[pr-welcome-shield]: https://img.shields.io/badge/🤯_pr_welcome-%E2%86%92-ffcb47?labelColor=black&style=for-the-badge "欢迎提交 PR"
+[Tampermonkey]: http://tampermonkey.net/ "篡改猴"
+[Violentmonkey]: https://violentmonkey.github.io/ "暴力猴"
+[Macaque]: https://macaque.app/ "猕猴"
+[Stay]: https://apps.apple.com/cn/app/stay-for-safari-%E6%B5%8F%E8%A7%88%E5%99%A8%E4%BC%B4%E4%BE%A3/id1591620171 "Stay"
+[main.user.js]: https://github.com/maboloshi/github-chinese/raw/gh-pages/main.user.js "GitHub 中文化插件 - GitHub 源"
+[main(nju.edu).user.js]:https://mirror.nju.edu.cn/github-chinese/main(nju.edu).user.js "GitHub 中文化插件 - 南大镜像源"
+
+…（内容已截断）

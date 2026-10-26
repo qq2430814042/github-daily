@@ -1,0 +1,156 @@
+Awesome MCP Servers
+
+ray.run – from idea to a production-grade MCP server in under a minute! 🦜
+
+Ad
+
+A curated list of awesome Model Context Protocol (MCP) servers.
+
+* What is MCP?
+* Clients
+* Remote Servers
+* Tutorials
+* Community
+* Legend
+* Server Implementations
+* Frameworks
+* Tips & Tricks
+
+What is MCP?
+
+MCP is an open protocol that enables AI models to securely interact with local and remote resources through standardized server implementations. This list focuses on production-ready and experimental MCP servers that extend AI capabilities through file access, database connections, API integrations, and other contextual services.
+
+Clients
+
+Checkout awesome-mcp-clients and glama.ai/mcp/clients.
+
+Remote Servers
+
+This list is for servers with a GitHub repo you install and run yourself. Looking for a hosted server you just connect to over a URL? See awesome-remote-mcp-servers.
+
+Tutorials
+
+* Tool Definition Quality Score (TDQS)
+* Model Context Protocol (MCP) Quickstart
+* Setup Claude Desktop App to Use a SQLite Database
+
+Community
+
+* r/mcp Reddit
+* Discord Server
+
+Legend
+
+* 🎖️ – official implementation
+* programming language
+  * 🐍 – Python codebase
+  * 📇 – TypeScript (or JavaScript) codebase
+  * 🏎️ – Go codebase
+  * 🦀 – Rust codebase
+  * #️⃣ - C# Codebase
+  * ☕ - Java codebase
+  * 🌊 – C/C++ codebase
+  * 💎 - Ruby codebase
+
+* scope
+  * ☁️ - Cloud Service
+  * 🏠 - Local Service
+  * 📟 - Embedded Systems
+* operating system
+  * 🍎 – For macOS
+  * 🪟 – For Windows
+  * 🐧 - For Linux
+
+Confused about Local 🏠 vs Cloud ☁️?
+* Use local when MCP server is talking to a locally installed software, e.g. taking control over Chrome browser.
+* Use cloud when MCP server is talking to remote APIs, e.g. weather API.
+
+Server Implementations
+
+We now have a web-based directory that is synced with the repository.
+
+* 🔗 - Aggregators
+* 🤝 - Agreements & Coordination
+* 🎨 - Art & Culture
+* 📐 - Architecture & Design
+* 📂 - Browser Automation
+* 🧬 - Biology Medicine and Bioinformatics
+* ☁️ - Cloud Platforms
+* 👨‍💻 - Code Execution
+* 🤖 - Coding Agents
+* 🖥️ - Command Line
+* 💬 - Communication
+* 🗣️ - Conversational AI
+* 🔑 - Cryptography
+* 👤 - Customer Data Platforms
+* 🗄️ - Databases
+* 📊 - Data Platforms
+* 🚚 - Delivery
+* 🛠️ - Developer Tools
+* 🧮 - Data Science Tools
+* 📊 - Data Visualization
+* 📟 - Embedded system
+* 🎓 - Education
+* 🛒 - E-Commerce
+* 🌳 - Environment & Nature
+* 📂 - File Systems
+* 💰 - Finance & Fintech
+* 🎮 - Gaming
+* 🏠 - Home Automation
+* 🪪 - Identity
+* 🏭 - Industrial & IoT
+* 🧠 - Knowledge & Memory
+* ⚖️ - Legal
+* 🗺️ - Location Services
+* 🎯 - Marketing
+* 📊 - Monitoring
+* 🎥 - Multimedia Process
+* 🖥️ - OS Automation
+* 🎙️ - Podcasts
+* 📋 - Product Management
+* 🏠 - Real Estate
+* 🔬 - Research
+* 🔎 - Search & Data Extraction
+* 🔒 - Security
+* 🌐 - Social Media
+* 🔮 - Spirituality & Esoterica
+* 🏃 - Sports
+* 🎧 - Support & Service Management
+* 🌎 - Translation Services
+* 🎧 - Text-to-Speech
+* 🎙️ - Speech-to-Text
+* 🚆 - Travel & Transportation
+* 🔄 - Version Control
+* 🏢 - Workplace & Productivity
+* 🛠️ - Other Tools and Integrations
+
+🔗 Aggregators
+
+Servers for accessing many apps and tools through a single MCP server.
+- inth3shadows/terse  🐍 🏠 🍎 🪟 🐧 - Transparent proxy that sits in front of any other MCP server and shrinks its tool output before it reaches the model. Lossless by default — a denser encoding of the same bytes, with a round-trip gate asserting an exact inverse, so nothing is dropped or summarised. Repeated calls to the same tool emit a delta against the prior result instead of the whole payload. Per-tool opt-in, no decode step, no model in the loop. uv tool install terse-mcp then terse proxy --
+- 402signalhq/402signal  🐍 ☁️ - Checks and validates live x402 payment routes across Base, Solana and Algorand.
+- GarphenGate/moltline-mcp  🐍 ☁️ 🍎 🪟 🐧 - Bridge to Moltline Studio's hosted MCP servers: code review, agent governance, business math, regulatory deadlines, crypto tax lots, routing and optimization.
+- team886/findagent-mcp  📇 ☁️ - Marketplace of vetted agents with automated security scans plus human review, credential-to-host binding and sandboxed hosted code with default-deny egress.
+- BotHireAgent/BotHireMCPServer  📇 🏠 - BotHire agent-to-agent hiring marketplace: search agents and skills by capability and trust score, read live demand, and settle in USDT or USDC across chains.
+- @neoninnovationlab/neon-mcp-gateway  📇 ☁️ 🏠 - Edge firewall for exposing internal PostgreSQL databases and APIs to AI agents with strict validation.
+- daedalusdevelopmentgroup/ddg-agent-payable-services  🐍 ☁️ - Pay-per-call x402 tools (utilities, DNS/WHOIS, blockchain RPC, market and DEX data, prediction markets, security audits) plus an OpenAI-compatible LLM gateway.
+- forgemeshlabs/coinopai-mcp  📇 - Paid crypto intelligence via x402 on Base: preflight checks, trade decisions audited against real prices, risk state, signal history and automation search.
+- forgemeshlabs/anomaly-mcp  📇 ☁️ - Real-time anomaly detection with NASA-derived sequence mining across blockchain, mempool, stablecoin depeg, aviation and GitHub signals, paid via x402 on Base.
+- 1mcp/agent 📇 ☁️ 🏠 🍎 🪟 🐧 - Aggregates multiple MCP servers into one unified server.
+- 2s-io/sdk  📇 ☁️ 🍎 🪟 🐧 - Pay-per-call x402 API: geocoding, weather, earthquakes, patents, US case law, Federal Register, scientific papers, DNS/WHOIS, OFAC screening and Census data.
+- 8randonpickart5/alderpost-mcp  📇 ☁️ - Intelligence endpoints for security, company, threat, compliance, sales, sports, property and health data, paid via x402 micropayments on Base.
+- forgemeshlabs/utility-grid-mcp  📇 ☁️ - Search and call utility APIs for OCR, image, audio, web, math, conversion and geodata, paid per call with x402 USDC on Base.
+- giorgio44/gateonai-mcp-server  🐍 ☁️ - Search and compare thousands of AI tools, generate step-by-step AI workflows and AI tool stacks by profession from GateOnAI's curated catalog. Free, no API key.
+- GTCC777/pulsenetwork-mcp  📇 - Pay-per-call x402 intelligence APIs on Base and Solana: finance, crypto, legal, immigration, healthcare costs, real estate, tax, climate, sports and science.
+- mcpqueen/mcpqueen  🎖️ 📇 ☁️ - Graded MCP registry: live-probes remote servers from the MCP Registry (initialization, tool listing, schema quality, latency, provenance) and publishes grades.
+- minia2auk/minia2a-mcp  📇 ☁️ - Pay-per-call x402 gateway for agent tools: crypto and DeFi data, web scraping, AI inference, CAPTCHA solving, token security, DNS/WHOIS and gas monitoring.
+- szp2005/llm-prices-cn  🐍 ☁️ - Daily-verified dataset of LLM API prices for Chinese and global models, with live price queries and token cost estimation.
+- tadas-github/a2asearch-mcp  📇 ☁️ - Search a directory of MCP servers, AI agents, CLI tools and agent skills.
+- Aganium/agenium 📇 ☁️ 🍎 🪟 🐧 - Bridge MCP servers to the agent:// network so other agents can discover and call their tools, with DNS-like identity, mTLS, trust scores and capability search.
+- agentbodegastore/agentbodega  📇 ☁️ - Live catalog of x402-payable HTTP tools from AgentBodega: search, public data, social media, status checks, media conversion and agent-readiness checks.
+- elisymlabs/elisym  📇 ☁️ 🍎 🪟 🐧 - AI agent discovery and marketplace on Nostr with Solana payments (SOL, USDC): NIP-89 discovery, NIP-90 jobs, NIP-44 encryption and on-chain micropayments.
+- PHONGUIT22/nostrpulse-full  📇 🏠 🍎 🪟 🐧 - Agent-to-agent (A2A) commerce framework using Nostr NIP-90 and Cashu eCash micro-settlements.
+- espadaw/Agent47 📇 ☁️ - Job aggregator for AI agents across platforms such as x402, RentAHuman and Virtuals.
+- gzchenhao/openhire  🐍 🏠 🍎 🪟 🐧 - Job search over employer ATS APIs (Greenhouse, Lever, Ashby, Beisen) with freshness verification, ghost-job scoring and apply links; matching runs client-side.
+
+…（内容已截断）

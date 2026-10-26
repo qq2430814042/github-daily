@@ -1,0 +1,172 @@
+Special thanks to:
+
+  Warp, the intelligent terminal
+
+  Available for macOS and Linux
+
+    Visit warp.dev to learn more.
+
+  Tuple, the premier screen sharing app for developers on macOS and Windows.
+
+  I (Jesse) co-founded Subble to save your company time and money by finding unused and over-provisioned SaaS licences. Check it out!
+
+A simple terminal UI for git commands
+
+Sponsors
+
+ Maintenance of this project is made possible by all the contributors and sponsors. If you'd like to sponsor this project and have your avatar or company logo appear below click here. 💙
+
+Elevator Pitch
+
+Rant time: You've heard it before, git is powerful, but what good is that power when everything is so damn hard to do? Interactive rebasing requires you to edit a goddamn TODO file in your editor? Are you kidding me? To stage part of a file you need to use a command line program to step through each hunk and if a hunk can't be split down any further but contains code you don't want to stage, you have to edit an arcane patch file by hand? Are you KIDDING me?! Sometimes you get asked to stash your changes when switching branches only to realise that after you switch and unstash that there weren't even any conflicts and it would have been fine to just checkout the branch directly? YOU HAVE GOT TO BE KIDDING ME!
+
+If you're a mere mortal like me and you're tired of hearing how powerful git is when in your daily life it's a powerful pain in your ass, lazygit might be for you.
+
+Table of contents
+
+- Sponsors
+- Elevator Pitch
+- Table of contents
+- Features
+  - Stage hunks or individual lines
+  - Interactive Rebase
+  - Cherry-pick
+  - Bisect
+  - Nuke the working tree
+  - Amend an old commit
+  - Filter
+  - Invoke a custom command
+  - Worktrees
+  - Rebase magic (custom patches)
+  - Rebase from marked base commit
+  - Undo
+  - Commit graph
+  - Compare two commits
+- Tutorials
+- Installation
+  - Binary Releases
+  - Dev container
+  - Homebrew
+  - MacPorts
+  - Void Linux
+  - Scoop (Windows)
+  - gah (Linux and Mac OS)
+  - Arch Linux
+  - Fedora / Amazon Linux 2023 / CentOS Stream
+    - Fedora / RHEL Derivatives (Terra)
+  - Solus Linux
+  - Debian and Ubuntu
+  - Funtoo Linux
+  - Gentoo Linux
+  - openSUSE
+  - NixOS
+  - Flox
+  - FreeBSD
+  - Termux
+  - Conda
+  - Go
+  - Chocolatey (Windows)
+  - Winget (Windows 10 1709 or later)
+  - Manual
+- Usage
+  - Keybindings
+  - Changing Directory On Exit
+  - Undo/Redo
+- Configuration
+  - Custom Diff Renderers
+  - Custom Commands
+  - Git flow support
+- Contributing
+  - Debugging Locally
+- Donate
+- FAQ
+  - What do the commit colors represent?
+- Shameless Plug
+- Alternatives
+
+Lazygit is not my fulltime job but it is a hefty part time job so if you want to support the project please consider sponsoring me
+
+Features
+
+Stage hunks or individual lines
+
+Press 0 on a changed file to focus its diff in the main view. The selection covers a whole hunk to begin with, so ` stages that hunk and moves on to the next one. When you want only part of a hunk, press a for line-by-line selection and v to select a range of lines. What you staged shows up in the pane below. Press  to move between the two panes;  unstages in the lower one. Press c` to commit without leaving the diff.
+
+Interactive Rebase
+
+Press i to start an interactive rebase. Then squash (s), fixup (f), drop (d), edit (e), move up (ctrl+k) or move down (ctrl+j) any of the TODO commits, before continuing the rebase by bringing up the rebase options menu with m and then selecting continue.
+
+You can also perform any of these actions as a once-off (e.g. pressing s on a commit to squash it) without explicitly starting a rebase.
+
+This demo also uses shift+down to select a range of commits to move and fixup.
+
+Cherry-pick
+
+Press shift+c on a commit to copy it and press shift+v to paste (cherry-pick) it.
+
+Bisect
+
+Press b in the commits view to mark a commit as good/bad in order to begin a git bisect.
+
+Nuke the working tree
+
+For when you really want to just get rid of anything that shows up when you run git status (and yes that includes dirty submodules) kidpix style, press shift+d to bring up the reset options menu and then select the 'nuke' option.
+
+Amend an old commit
+
+Pressing shift+a on any commit will amend that commit with the currently staged changes (running an interactive rebase in the background).
+
+Filter
+
+You can filter a view with /. Here we filter down our branches view and then hit enter to view its commits.
+
+Invoke a custom command
+
+Lazygit has a very flexible custom command system. In this example a custom command is defined which emulates the built-in branch checkout action.
+
+Worktrees
+
+You can create worktrees to have multiple branches going at once without the need for stashing or creating WIP commits when switching between them. Press w in the branches view to create a worktree from the selected branch and switch to it.
+
+Rebase magic (custom patches)
+
+You can build a custom patch from an old commit and then remove the patch from the commit, split out a new commit, apply the patch in reverse to the index, and more.
+
+In this example an old commit contains a change that belongs in a commit of its own. We hit 0 on the commit to focus its diff. ` on the hunk we want to move adds it to the custom patch, and ctrl+p` opens the custom patch options, where we choose to move the patch into a new commit.
+
+Learn more in the Rebase magic Youtube tutorial.
+
+If you only want to remove a hunk from an old commit, you don't need a custom patch for that. Select the hunk in the commit's diff and press d. Lazygit rewrites the commit without it, running an interactive rebase in the background.
+
+Rebase from marked base commit
+
+Say you're on a feature branch that was itself branched off of the develop branch, and you've decided you'd rather be branching off the master branch. You need a way to rebase only the commits from your feature branch. In this demo we check to see which was the last commit on the develop branch, then press shift+b to mark that commit as our base commit, then press r on the master branch to rebase onto it, only bringing across the commits from our feature branch. Then we push our changes with shift+p.
+
+Undo
+
+You can undo the last action by pressing z and redo with shift+z. Here we drop a couple of commits and then undo the actions.
+Undo uses the reflog which is specific to commits and branches so we can't undo changes to the working tree or stash.
+
+More info
+
+Commit graph
+
+When viewing the commit graph in an enlarged window (use + and _ to cycle screen modes), the commit graph is shown. Colours correspond to the commit authors, and as you navigate down the graph, the parent commits of the selected commit are highlighted.
+
+Compare two commits
+
+If you press shift+w on a commit (or branch/ref) a menu will open that allows you to mark that commit so that any other commit you select will be diffed against it. Once you've selected the second commit, you'll see the diff in the main view and if you press ` you'll see the files of the diff. You can press shift+w to view the diff menu again to see options like reversing the diff direction or exiting diff mode. You can also exit diff mode by pressing `.
+
+Show GitHub pull requests
+
+In the branches panel, lazygit can show which of your branches have an associated GitHub pull request by showing a GitHub icon next to the branch name; its color shows the state of the PR (open, merged, etc.). For those that have one, you can press shift-G to open the PR in the browser. There is no configuration needed to enable this for github.com, but it requires the gh tool to be installed, and you need to do gh auth login once to allow lazygit to access GitHub. For GitHub Enterprise, also run gh auth login --hostname  and add a services entry for the host with the github provider.
+
+Tutorials
+
+- 15 Lazygit Features in 15 Minutes
+- Basics Tutorial
+- Rebase Magic Tutorial
+
+Installation
+
+…（内容已截断）

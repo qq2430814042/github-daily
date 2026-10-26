@@ -1,0 +1,171 @@
+LocalSend
+
+ci-badge]: https://github.com/localsend/localsend/actions/workflows/ci.yml/badge.svg
+[ci-workflow]: https://github.com/localsend/localsend/actions/workflows/ci.yml
+[translate-badge]: https://hosted.weblate.org/widget/localsend/app/svg-badge.svg
+[translate-link]: https://hosted.weblate.org/engage/localsend/
+[packaging-badge]: https://repology.org/badge/tiny-repos/localsend.svg
+[packaging-link]: https://repology.org/project/localsend/versions
+
+[Homepage • Discord • GitHub • Codeberg
+
+English (Default) • 中文
+
+homepage]: https://localsend.org
+[discord]: https://discord.gg/GSRWmQNP87
+[github]: https://github.com/localsend/localsend
+[codeberg]: https://codeberg.org/localsend/localsend
+
+LocalSend is a free, open-source app that allows you to securely share files and messages with nearby devices over your local network without needing an internet connection.
+
+- [About
+- Sponsors
+- Screenshots
+- Download
+- How It Works
+- Dependency Hierarchy
+- Getting Started
+- Command Line Interface
+- Contributing
+  - Translation
+  - Bug Fixes and Improvements
+- Troubleshooting
+- Building
+  - Android
+  - iOS
+  - macOS
+  - Windows
+  - Linux
+
+About
+
+LocalSend is a cross-platform app that enables secure communication between devices using a REST API and HTTPS encryption. Unlike other messaging apps that rely on external servers, LocalSend doesn't require an internet connection or third-party servers, making it a fast and reliable solution for local communication.
+
+Sponsors
+
+This project is tested with BrowserStack
+
+Supported by TestMu AI
+
+Screenshots
+
+Download
+
+It is recommended to download the app either from an app store or from a package manager because the app does not have an auto-update.
+
+| Windows                 | macOS                   | Linux              | Android        | iOS           | Fire OS    |
+|-------------------------|-------------------------|--------------------|----------------|---------------|------------|
+| Winget              | App Store           | Flathub        | Play Store | App Store | Amazon |
+| Scoop               | Homebrew            | Nixpkgs        | F-Droid    |               |            |
+| Chocolatey          | DMG Installer | Snap           | APK  |               |            |
+| EXE Installer |                         | AUR            |                |               |            |
+| Portable ZIP  |                         | TAR      |                |               |            |
+|                         |                         | DEB      |                |               |            |
+|                         |                         | AppImage |                |               |            |
+
+Read more about distribution channels.
+
+Windows binaries are signed. Read more about the Code signing policy.
+
+Unofficial MSIX preview: you can try builds from the latest commits at localsend.ob-buff.dev. Stability is not guaranteed and all custom code tweaks are listed on that site.
+
+windows store]: https://www.microsoft.com/store/apps/9NCB4Z0TZ6RR
+[app store]: https://apps.apple.com/us/app/localsend/id1661733229
+[play store]: https://play.google.com/store/apps/details?id=org.localsend.localsend_app
+[f-droid]: https://f-droid.org/packages/org.localsend.localsend_app
+[amazon]: https://www.amazon.com/dp/B0BW6MP732
+[winget]: https://github.com/microsoft/winget-pkgs/tree/master/manifests/l/LocalSend/LocalSend
+[scoop]: https://scoop.sh/#/apps?s=0&d=1&o=true&q=localsend&id=fb88113be361ca32c0dcac423cb4afdeda0b0c66
+[chocolatey]: https://community.chocolatey.org/packages/localsend
+[homebrew]: https://formulae.brew.sh/cask/localsend
+[flathub]: https://flathub.org/apps/details/org.localsend.localsend_app
+[nixpkgs]: https://search.nixos.org/packages?show=localsend
+[snap]: https://snapcraft.io/localsend
+[aur]: https://aur.archlinux.org/packages/localsend-bin
+[latest]: https://github.com/localsend/localsend/releases/latest
+[distribution channels]: https://github.com/localsend/localsend/blob/main/CONTRIBUTING.md#distribution
+[code signing policy]: https://github.com/localsend/localsend/blob/main/CODE_SIGNING.md
+
+Compatibility
+
+| Platform | Minimum Version | Note                                                                                                                        |
+|----------|-----------------|-----------------------------------------------------------------------------------------------------------------------------|
+| Android  | 7.0             | The last version to support Android 5 and 6 is v1.17.0.                                                                     |
+| iOS      | 13.0            | The last version to support iOS 12 is v1.17.0. Sharing from other apps requires iOS 14 or later.                               |
+| macOS    | 11 Big Sur      | Use OpenCore Legacy Patcher 2.0.2 (See [#1005) |
+| Windows  | 10              | The last version to support Windows 7 is v1.15.4.   |
+| Linux    | N.A.            | Deps: Gnome: xdg-desktop-portal and xdg-desktop-portal-gtk, KDE: xdg-desktop-portal and xdg-desktop-portal-kde      |
+
+Setup
+
+In most cases, LocalSend should work out of the box. However, if you are having trouble sending or receiving files, you may need to configure your firewall to allow LocalSend to communicate over your local network.
+
+| Traffic Type | Protocol | Port  | Action |
+|--------------|----------|-------|--------|
+| Incoming     | TCP, UDP | 53317 | Allow  |
+| Outgoing     | TCP, UDP | Any   | Allow  |
+
+On Linux, for example with ufw: sudo ufw allow 53317. With firewalld: sudo firewall-cmd --permanent --add-port=53317/tcp, sudo firewall-cmd --permanent --add-port=53317/udp, then sudo firewall-cmd --reload.
+
+Also make sure to disable AP isolation on your router. It should be usually disabled by default but some routers may have it enabled (especially guest networks).
+See troubleshooting for more information.
+
+Portable Mode
+
+(Introduced in v1.13.0)
+
+Create a file named settings.json located in the same directory as the executable.
+This file can be empty.
+The app will use this file to store settings instead of the default location.
+
+Start hidden
+
+(Updated in v1.15.0)
+
+To start the app hidden (only in tray), use the --hidden flag (example: localsend_app.exe --hidden).
+
+On v1.14.0 and earlier, the app starts hidden if autostart flag is set, and the hidden setting is enabled.
+
+How It Works
+
+LocalSend uses a secure communication protocol that allows devices to communicate with each other using a REST API. All data is sent securely over HTTPS, and the TLS/SSL certificate is generated on the fly on each device, ensuring maximum security.
+
+For more information on the LocalSend Protocol, see the documentation.
+
+Dependency Hierarchy
+
+Getting Started
+
+To compile LocalSend from the source code, follow these steps:
+
+1. Install Flutter directly or using fvm (see version required)
+2. Install Rust
+3. Clone the LocalSend repository
+4. Run cd app to enter the app directory
+5. Run flutter pub get to download dependencies
+6. Run flutter run to start the app
+
+LocalSend currently requires an older Flutter version (specified in .fvmrc)
+and thus build issues may be caused by a mismatch between the required and the (system-wide) installed Flutter version.
+To make development more consistent, LocalSend uses fvm to manage the project Flutter version.
+After installing fvm, run fvm flutter instead of flutter.
+
+Command Line Interface
+
+The LocalSend CLI is a terminal client built on LocalSend Protocol v2.
+Run localsend-cli --help to see every available option and hotkey.
+
+Use the send command with one or more files, directories, or a mixture of both:
+
+localsend-cli send report.pdf photo.jpg ./project-backup
+
+The command opens the discovered-device list; select the destination interactively
+and press Enter to start the transfer.
+
+To select the destination without an interactive device list, pass its exact alias
+or IP address:
+
+localsend-cli send --to "Cute Tomato" report.pdf
+localsend-cli send --to 192.168.27.26 report.pdf
+
+…（内容已截断）

@@ -1,0 +1,133 @@
+GPU unlock 1.1.1 — RTX 4090 and experimental Ada GPUs
+
+New to this project? Start with the copy-paste Quick Start.
+
+This Linux kernel module enables the SM speed-select override before the stock
+NVIDIA driver starts. RTX 4090 (10de:2684, AD102) support has demonstrated
+approximately 2× FP16 and BF16 tensor throughput with FP32 accumulation:
+
+| Mode | Before | After |
+|---|---:|---:|
+| FP16 → FP32 accumulate | 165.6 TF/s | 331.6 TF/s |
+| BF16 → FP32 accumulate | 165.5 TF/s | 330.6 TF/s |
+
+The override survived PCIe Function Level Reset (FLR), stock NVIDIA 615.78.08
+initialization and CUDA benchmarks. INT8, dp4a and scalar FP32 stayed near their
+baseline rates. The original transaction preceded the repository cleanup; see
+the technical report and
+original evidence.
+
+An independent owner run of revision 8855e7b also completed the RTX 4090
+transaction and NVIDIA driver handoff on Linux 7.2.11-arch1-1. Matched
+stock/unlocked measurements with NVIDIA 615.78.08 and the same 450 W cap
+found FP16/FP32 instruction throughput 160.4 → 320.4 TF/s and BF16/FP32
+159.7 → 320.2 TF/s. All exercised numerical checks passed. Real cuBLAS
+GEMM median throughput varied by shape: FP16 gained 12–34%, BF16 gained
+16–20% at two shapes and was essentially unchanged at 4096³. These are one
+matched run pair with the desktop active, not whole-application speedups or
+an extended stability test. See the matched evidence and limits
+and testing workflow.
+
+A modified 48 GB RTX 4090 (10de:2684, AD102) on Ubuntu 26.04 with Linux
+7.0.0-38-generic and NVIDIA 610.57.04 open kernel modules also completed the
+transaction and driver handoff on 2026-10-25: fmla32 went from 1 to 0,
+FP16/FP32 instruction throughput 164.9 → 328.9 TF/s, BF16/FP32
+164.8 → 328.7 TF/s, with INT8, dp4a and scalar unchanged and no Xid. A
+quantized mixture-of-experts serving workload on the same card showed no
+gain (8K prefill 0.983×), which is consistent with quantized matmuls not
+consuming the FP32-accumulate tensor path. That is one card, one cold boot and
+one workload. See the modified-card evidence and limits.
+Further matched owner reproductions used NVIDIA 610.57.04
+and 595.91.07.
+
+A separate cold test of the Ada port on one RTX 4070 Ti SUPER
+(10de:2705) with NVIDIA 580.178.04 measured FP16/FP32 tensor issue rate
+at 95.0 → 189.9 TF/s and BF16/FP32 at 95.0 → 189.7 TF/s under the
+same 240 W power cap. INT8 stayed at 379.5 TOP/s. The stock driver loaded,
+the NVIDIA RM getter reported full FMLA32 rate, deterministic FP16/BF16 GEMM
+outputs matched exactly, and owner mining recovered with fresh accepted shares.
+A second matched instruction benchmark found TF32/FP32 47.49 → 94.51 TF/s
+(1.99×), with its FP16/FP32 control also near 2×. Unsigned INT4/INT32 stayed
+at approximately 754.8 TOP/s in both states. These are register-resident
+issue rates, not application GEMM or inference speedups.
+A matched, verified E4M3 FP8/FP32 CUTLASS GEMM measured **59.326 TF/s stock →
+59.495 TF/s unlocked** on this card, a 0.3% difference. That kernel reaches only
+about 17% of this card's FP8 peak, so it cannot resolve an issue-rate change.
+Other measurements do put FP8 in the affected group: an 8192³ E4M3 GEMM on a
+Windows RTX 4080 SUPER measured 199.4 → 310.4 TF/s (+55.7%) and
+199.4 → 298.7 TF/s (+49.8%) in two runs (see
+goldlionren/gpu-unlock-4080s;
+its author flags FP8 variance and keeps FP8 out of that repo's own pass/fail
+gate), and register-resident E4M3 probes read 603.1 TF/s unlocked on the
+modified 48 GB RTX 4090 (see that evidence directory)
+and 165.45 → 323.95 TF/s (1.96×) on a Windows RTX 4070 Ti SUPER (see
+A-XIANGQAQ/rtx4070tis-ad103-tensor-unlock).
+The 4090 figure is 91% of its 660.6 TF/s full FP8 rate; NVIDIA rates a stock
+RTX 4090 at 330.3 TF/s for FP8 with FP32 accumulate and 660.6 with FP16
+accumulate.
+So FP8 does move at the issue-rate level; a matched AD103 pair is 1.96×. At a
+fixed power limit the application GEMM stays below that: an
+unlocked RTX 4090 peaked at 346 W against 313 W stock and spent both MMA and
+GEMM passes under SW Power Cap (see
+the 610.57.04 evidence).
+This is one card; the unlock succeeded on two cold boots and two ordinary
+warm reboots, the last from a persistent EFI default. Throughput was measured
+on the first cold boot. See the 2705 canary report
+and its sanitized raw benchmark output.
+
+The AD102 payload and its debug-booter analysis come from
+TOTORONG/AD103_win_unlocker.
+This fork integrates that published payload into
+Zagitta/gpu-unlock's Linux module,
+firmware generation and boot packaging. The payload is essential to the result.
+
+Experimental Windows contribution — Latence.app
+
+A separate MSI RTX 4070 Ti AD104 Windows UEFI reference port
+records one successful manual boot with NVIDIA 616.56 and matched cuBLAS FP16/FP32
++80.1%, BF16/FP32 +76.4% measurements. It is tied to one captured MSI Z490
+profile; it does not add AD104 admission to the Linux module. See the
+report and limitations. No firmware/Windows/ROM
+binaries or automatic boot installer are distributed. Contribution by Latence.app;
+original upstream credits and licences are retained.
+
+Supported targets
+
+The module selects the AD102 firmware and payload automatically for RTX 4090
+10de:2684. The original GeForce/CMP GA102/GA104 device list and GA102 payload
+are retained, along with the newer GA103/GA106 device list. Upstream reported
+RTX 3090 success; this branch does not revalidate every legacy board.
+GA107 RTX 3050 6GB (10de:2584) uses the same GA102 Booter path and was
+unlocked on one card (2584 report).
+
+Experimental Ada targets
+
+Each ID below needs its own opt-in flag. Rows marked exact must also be
+named by their exact PCI address in gpu_unlock.targets=, alone or in a
+comma-separated list, and targets=all never selects them. All of them use the RTX 4090's pinned
+AD102-family firmware and payload. Results come from one or a few cards per ID;
+other boards, memory configurations and laptop models remain unverified.
+tools/print_boot_option.py prints the exact option for any card listed here.
+
+| PCI ID | Card | Die | Opt-in | Tested | Details |
+|---|---|---|---|---|---|
+| 2685 | RTX 4090 D | AD102 | rtx4090d_experimental | eight cards in one host | #7 |
+| 2689 | RTX 4070 Ti SUPER | AD102 | rtx4070tis_ad102_experimental, exact | one card, 30-minute soak | #19 |
+| 2702 | RTX 4080 SUPER | AD103 | ad103_experimental, exact | one card, matched mma and cuBLAS, alongside a 2704 in one host | matched evidence, #53 |
+| 2704 | RTX 4080 | AD103 | rtx4080_experimental, exact | one modified 32 GiB card; a second card in matched evidence | report |
+| 2705 | RTX 4070 Ti SUPER | AD103 | ad103_experimental, exact | one card, matched stock/unlocked | report |
+| 2709 | RTX 4070 | AD103 | ad103_experimental, exact | one card, matched | report |
+| 2757 | RTX 4090 Laptop GPU | AD103M | ad103m_experimental, exact | Clevo: unlocked, no throughput change; Lenovo: 2× on two cold boots | report, Lenovo |
+| 2782 | RTX 4070 Ti | AD104 | ad104_experimental, exact | one card in a VFIO guest, matched; one bare-metal owner report | report, #15 |
+| 2783 | RTX 4070 SUPER | AD104 | ad104_experimental, exact | one card, matched | report |
+| 2786 | RTX 4070 | AD104 | ad104_experimental, exact | one card; three owner reports | report, #11 |
+| 2803 | RTX 4060 Ti | AD106 | ad106_experimental, exact | one 16 GB card, matched; two more boards in #34 | report, #34 |
+| 2805 | RTX 4060 Ti 16GB | AD106 | ad106_experimental, exact | one card, no matched throughput run | report |
+| 2882 | RTX 4060 | AD107 | ad107_experimental, exact | one card, matched cuBLAS; cold boot and warm reboot | report |
+| 28a0 | RTX 4060 Laptop GPU | AD107 | ad107_experimental, exact | one card, unlocked state only | report |
+| 28e0 | RTX 4060 Laptop GPU | AD107 | ad107_experimental, exact | one owner report | #10 |
+| 28e1 | RTX 4050 Laptop GPU | AD107 | ad107_experimental, exact | one laptop, matched | report |
+
+Laptops differ in VBIOS ROM exposure, embedded-controller power rails and FLR
+
+…（内容已截断）

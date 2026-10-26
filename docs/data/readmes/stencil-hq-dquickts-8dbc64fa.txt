@@ -1,0 +1,179 @@
+dquickts
+
+A fork of QuickJS, Fabrice Bellard's small embeddable JavaScript
+engine, that adds two things:
+
+- Durable execution. You can pause a running program, even in the middle of a for loop,
+  serialize its whole heap to bytes, and resume it later in a different process.
+- Native TypeScript. .ts files run directly. The parser erases the types as it reads them,
+  so there is no transpile step.
+
+It also includes Rust bindings (a port of rquickjs) that
+expose both features.
+
+git clone https://github.com/stencil-hq/dquickts
+cd dquickts
+make                 # builds qjs, qjsc and libquickjs.a
+./qjs hello.ts
+./qjs --drepl session.snap   # a REPL whose state survives restarts
+make test-snapshot   # builds and runs the suspension and snapshot test hosts
+
+Contents
+
+- What this fork adds
+- Durable REPL
+- Snapshots
+  - What a snapshot is
+  - When you can take one
+  - Example: hibernating in the middle of a loop
+  - Durable host calls
+  - Incremental snapshots
+  - How it works
+  - The host's side of the contract
+  - Limitations
+- TypeScript
+- Rust bindings
+- Testing
+- Documentation
+- Credits and license
+
+What this fork adds
+
+This fork tracks upstream QuickJS 2026-06-04 (see VERSION). Everything upstream ships,
+including the experimental Temporal and Intl support (qjs --experimental), is still here. The
+fork adds:
+
+| Feature | API |
+| --- | --- |
+| In-process suspension of running code | JS_RequestSuspend(), JS_IsSuspended(), JS_Resume() |
+| Durable host calls: a C function parks its JS caller until the host supplies a result | JS_SuspendCall(), JS_ResumeWith() |
+| Heap snapshots of a whole runtime, including a suspended call stack | JS_WriteSnapshot(), JS_ReadSnapshot() |
+| Incremental snapshots: a delta holds only what changed since a base | JS_SNAPSHOT_BASE, JS_SNAPSHOT_DELTA, JS_DropSnapshotBase() |
+| TypeScript: types erased at parse time; enums, namespaces and parameter properties compiled to bytecode | JS_EVAL_FLAG_TYPESCRIPT, qjs --typescript, .ts/.mts/.cts |
+| Standard decorators (2023-05), auto-accessors, Symbol.metadata; TypeScript legacy decorators and decorator metadata | JS_EVAL_FLAG_TS_LEGACY_DECORATORS, JS_EVAL_FLAG_TS_DECORATOR_METADATA |
+| Explicit resource management (ES2026) | using, await using, DisposableStack, AsyncDisposableStack |
+| Ports from quickjs-ng | queueMicrotask(), atob()/btoa(), DOMException, the V8 stack trace API, promise hooks, immutable ArrayBuffers, performance, os.setInterval(), std.writeFile(), the bjson module, a re-entrant event loop, C closures, private symbols, runtime dump flags, and bug fixes |
+| Embedder helpers | JS_IsEqual(), JS_NewProxy(), JS_GetProxyTarget(), JS_PromiseMarkAsHandled(), and others |
+| A REPL whose functions and variables survive restarts | qjs --drepl FILE |
+| Rust bindings built on this engine | rquickjs/ |
+
+The full list is under unreleased in Changelog.
+
+Durable REPL
+
+qjs --drepl FILE starts the usual REPL, with highlighting, history and tab completion, and
+input is TypeScript. After every command, the whole session is saved to FILE. When you start
+qjs --drepl FILE again, the session comes back with the same functions, variables, objects and
+closures:
+
+$ ./qjs --drepl session.snap
+QuickJS - Type "\h" for help
+Created the durable session session.snap
+qjs > function add(a: number, b: number): number { return a + b }
+undefined
+qjs > let total: number = add(2, 3)
+undefined
+qjs > class Counter { constructor(private n = 0) {} inc(): number { return ++this.n } }
+undefined
+qjs > const c = new Counter()
+undefined
+qjs > c.inc()
+1
+qjs > ^C
+(Press Ctrl-C again to quit)
+qjs > ^C
+$ ./qjs --drepl session.snap
+QuickJS - Type "\h" for help
+Restored the durable session session.snap
+qjs > add(total, 10)
+15
+qjs > c.inc()
+2
+
+The commands don't run in the REPL's own runtime. They run in a separate runtime that holds only
+the standard objects plus print() and console.log():
+
+- The line editor (repl.js) stays in the main runtime and passes each command to the durable
+  runtime. The durable runtime runs the command and its promise jobs, so top-level await works,
+  and sends back the rendered result.
+- After each command, the durable runtime is written with JS_WriteSnapshot() as a delta of a
+  new session. It goes to a temporary file that is then renamed over FILE, so the file always
+  holds a complete delta. The session in the transcript above takes about 400 bytes.
+- At startup, qjs rebuilds the base, which is a new session with every lazily created builtin
+  already instantiated. Bases are reproducible, so this rebuilt base is
+  byte-identical to the one the deltas were written against. JS_ReadSnapshot() then applies
+  FILE on top of it. If the file is missing, a new session starts.
+
+Limits:
+
+- The std and os modules are not available. Their files, timers and handlers are host state
+  that a snapshot cannot save.
+- \load file evaluates a file inside the session.
+- Ctrl-C interrupts a running command. The session is not affected.
+- A session file only loads into the qjs build that wrote it.
+- Tab completion lists properties of the global object. Like the regular REPL, it does not list
+  top-level let, const and class names, but it does complete their members (c.in →
+  c.inc()).
+
+Snapshots
+
+What a snapshot is
+
+A snapshot is the entire state of a JavaScript runtime, written out as one byte buffer. It
+includes:
+
+- every context (realm), with its global object and its intrinsics,
+- every object, closure, string, symbol and compiled function,
+- pending promise jobs, paused generators, and async functions waiting on an await,
+- loaded modules, with their bindings and evaluation state (a module can be saved in the middle
+  of a top-level await),
+- the call stack of the synchronous code that was running, if the runtime is currently suspended.
+
+To restore, you read the snapshot into a fresh, empty runtime. You get the same program in the
+same state:
+
+- objects keep their identity, so two references to one object still point to one object,
+- closures still share their captured variables,
+- pending work is still pending.
+
+The snapshot holds indexes instead of pointers. That means the rebuilt heap can live at any
+address, in any process, on any machine that runs the same build of the engine.
+
+Some things you can do with this:
+
+- Hibernate. Write an idle or long-running script to disk, free its memory, and bring it
+  back when there is work for it.
+- Durable workflows. A script calls a host function whose answer arrives hours later. The
+  process saves the script and exits. A later process loads it and finishes the call (see
+  durable host calls).
+- Time slicing across machines. Run a computation in slices, with each slice in whichever
+  worker is free.
+- Warm starts. Run your setup once, snapshot the result, and start every new instance from
+  that snapshot instead of running the setup again.
+
+When you can take one
+
+You can only take a snapshot when no JavaScript is running on the C stack. There are two ways to
+get to that point.
+
+1. Between jobs. The script has returned, and the host is not running any job. Async code
+   reaches this state on its own at every await. A waiting async function, a yielded
+   generator and a pending promise are all ordinary heap objects at that point, so you can
+   snapshot right away.
+2. While suspended. This covers synchronous code. A long loop never yields, so you ask the
+   engine to stop it:
+   1. Call JS_RequestSuspend(), usually from the interrupt handler.
+   2. At the next safepoint (described under How it works), the engine moves
+      the running frames to the heap and unwinds the C stack.
+   3. The call that started the execution, such as JS_Eval() or JS_Call(), returns
+      JS_EXCEPTION, and JS_IsSuspended() returns true.
+   4. Take the snapshot now. Later, in the same runtime or in a restored one, JS_Resume()
+      continues from the exact instruction where the code stopped.
+
+Example: hibernating in the middle of a loop
+
+#include
+#include
+#include "quickjs.h"
+
+…（内容已截断）

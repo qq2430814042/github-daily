@@ -1,0 +1,126 @@
+The most advanced external attack surface assessment you can get for free.
+
+cvENGINE automatically discovers and maps your internet-facing assets, fingerprints every service and version it finds, and tells you which of today's exploited CVEs actually hit you, then reproduces what it can with safe, read-only checks. Enterprise-grade attack surface management with no license fee, no per-asset pricing, and fully opensource.
+
+Why cvENGINE
+
+Attack surface tools find assets. Vulnerability scanners find flaws. Threat feeds find CVEs. cvENGINE runs all three as one continuous loop and hands you a verdict instead of a pile of alerts. It answers the one question that matters: which of today's vulnerabilities are live on assets I own, and can I reproduce them?
+
+- Total visibility. Domains, subdomains, IPs, ports, products, versions, TLS, and technologies are auto-discovered and stored in one Shodan-style inventory that keeps itself current. Just enter your domain name and cvENGINE does the rest.
+- Matched to your environment. The live cve.now feed and the major exploitation sources are rated fire, smoke, or ice and matched to what you actually run, by product and version, with distribution backports understood.
+- Verdicts, not noise. AI triages your findings, read-only checks reproduce what they can, and fixed rules mean the model can never wave away hard evidence. Every check records exactly what it ran.
+- Nothing changes unseen. New hosts, opened ports, version bumps, new certificates, login pages that appear, and front pages that change all land on a timeline.
+- Scanning in minutes. One Docker Compose stack with every scanner built in. No agents to install, no cloud account to open.
+- Yours, completely. Open source and self-hosted. Your inventory stays on your server, and you bring your own AI keys or run a model on your own hardware. Nothing is sent to the authors.
+
+Everything in the box
+
+Discover. bbot subdomain and asset discovery in passive, standard, and deep modes (screenshots in deep). A certificate transparency watch that pulls new hostnames straight into assessment. Targets as domains, IPs, CIDR ranges, or URLs, bulk added by organization and project. Every apex domain gets a deep sweep each week.
+
+Understand. One record per host: ports, services, products, versions, OS, banners, TLS, and technologies, from nmap and nuclei. naabu sweeps every port of each address before nmap fingerprints it, plus a background sweep of all 65,535 ports, one host at a time, for anything that changes in between. Web route checks that label each route open, login, session required, SSO, or redirect. Exposure checks for Redis, Memcached, PostgreSQL, Elasticsearch, and CouchDB that answer without a login. Email and domain hygiene: SPF, DKIM, DMARC, CAA, MTA-STS, DANE, DNSSEC, and TLS.
+
+Prioritize. Fire, smoke, and ice ratings from CISA KEV, ENISA EUVD, Metasploit, Exploit-DB, EPSS, CVSS, and optionally VulnCheck KEV. A 0 to 100 score for every host, with the reasons shown. AI triage of every finding into confirmed, likely, needs validation, likely false positive, or not applicable. Connect your own AI, with your own API keys (Anthropic, OpenAI, OpenRouter) or a model on your own hardware (Ollama, vLLM), and a review every three hours queues the next triage, validation, or rescan per project and tunes scanner concurrency from real measurements.
+
+Verify. Automatic read-only validation: a vetted nuclei template, a single-port nmap check, a banner probe, or the database check, each recording the exact command it ran. Validate now on any CVE match. When no template exists, the AI drafts one, and it never runs on your hosts until a person approves it. Optional auto-fire (off by default) tests new CVEs on matching hosts as the feed delivers them.
+
+Operate. Search every host, port, banner, and finding the way you search Shodan: port:3389 -host:vpn, tech:"apache tomcat" sev:high, ip:203.0.113.0/24 product:nginx (Search). A live dashboard, an AI activity log, and a Changes page with side-by-side screenshot diffs. Rescan, pin, exclude, or archive any host, and record its owner and criticality. Organizations, projects, roles (admin, user, audit), an All projects view, two-step sign-in, an IP allowlist, and an audit log. A REST API, an MCP server, and an OpenAPI spec so agents work under the same permissions. A bug bounty workbench for hunters: browse HackerOne, Bugcrowd, Intigriti, and YesWeHack programs and scope, point the scanner at what is in scope, and draft reports from its findings. Off until an admin enables it. Slack, Discord, Telegram, and Lark alerts if you don't want to monitor a dashboard. One switch pauses all scanning. Memory-aware scheduling keeps small servers healthy, and updates drain running work first or deploy automatically on every new commit.
+
+Bring your own AI. Anthropic, OpenAI, OpenRouter, Ollama, or vLLM, with keys stored encrypted. Without a model, cvENGINE still discovers, scans, matches CVEs, and validates findings. The AI adds triage, targeted scans, and template drafts.
+
+Built on the best
+
+cvENGINE stands on excellent open source work. Full credits and licenses are in THIRD-PARTY.md.
+
+| | |
+| --- | --- |
+| Scanners | bbot discovery, nuclei and its templates, nmap, naabu, gowitness screenshots, WPScan for WordPress, aardwolf RDP screenshots, node2shell detection |
+| Exploitation intelligence | CVE feed cve.now, CISA KEV, ENISA EUVD, FIRST EPSS, Exploit-DB, Metasploit, VulnCheck KEV, CVE List V5 |
+| Backport and certificate data | OSV, Debian security tracker, crt.sh |
+| Email security checks | adapted from MailFail |
+| Bug bounty data | bounty-targets-data, Bugcrowd VRT |
+| AI | Anthropic, OpenAI, OpenRouter, Ollama, vLLM, over the Model Context Protocol |
+| Platform | Django, Celery, PostgreSQL, Redis, nginx, Gunicorn, WeasyPrint, VivaGraphJS, Geist |
+
+How it works
+
+Add a target and cvENGINE runs one pipeline for it. Each scanner runs once per host inside a time window, so repeat scans stay fast.
+
+flowchart LR
+    T("Add a target
+domain, IP, CIDR, URL"])
+
+    subgraph FIND["1 &nbsp; FIND"]
+        direction TB
+        D["Discovery
+bbot"] --> I["Inventory
+nmap, naabu"]
+    end
+
+    subgraph PROBE["2 &nbsp; PROBE"]
+        direction TB
+        X["Exposure checks
+databases, RDP screenshot"] --> N1["nuclei
+technology pass"] --> R["Web route
+checks"] --> W["WPScan
+node2shell, opt-in"]
+    end
+
+    subgraph MATCH["3 &nbsp; MATCH"]
+        direction TB
+        C["CVE correlation"] --> N2["nuclei
+AI-targeted pass"]
+    end
+
+    subgraph DECIDE["4 &nbsp; DECIDE"]
+        direction TB
+        A["AI triage
+and validation"] --> O["Changes, host score,
+dashboard, API, alerts"]
+    end
+
+    H["Hygiene
+TLS, SPF, DKIM, DMARC, CAA"]
+
+    T --> FIND --> PROBE --> MATCH --> DECIDE
+    DECIDE -.-> H
+
+    style FIND fill:#e8f1ff,stroke:#3b82f6,color:#0b3b8c
+    style PROBE fill:#f1eaff,stroke:#8b5cf6,color:#3b1d8c
+    style MATCH fill:#fff4e0,stroke:#f59e0b,color:#7a4a00
+    style DECIDE fill:#e6f7ec,stroke:#22c55e,color:#0b5a2a
+    linkStyle default stroke:#555,stroke-width:2px
+
+    classDef start fill:#111,stroke:#111,color:#fff
+    classDef step fill:#fff,stroke:#444,color:#111
+    classDef out fill:#fff,stroke:#16a34a,stroke-width:2px,color:#111
+    class T start
+    class D,I,X,N1,R,W,C,N2,A step
+    class O out
+    class H step
+
+Meanwhile the CVE feed runs on its own schedule:
+
+flowchart LR
+    F["cve.now feed
+and exploitation sources"] --> T{"Tier"}
+    T --> FIRE["FIRE"]
+    T --> SMOKE["SMOKE"]
+    T --> ICE["ICE"]
+    FIRE --> M["Match to inventory
+product and version"]
+    SMOKE --> M
+    ICE --> M
+    M --> V["AI triage"]
+    V --> X["Validate
+read-only checks"]
+    X --> OUT["Finding
+tracked through the API"]
+
+    classDef fire fill:#fee2e2,stroke:#dc2626,color:#7f1d1d
+    classDef smoke fill:#fef3c7,stroke:#f59e0b,color:#78350f
+    classDef ice fill:#e0f2fe,stroke:#0ea5e9,color:#0c4a6e
+    class FIRE fire
+    class SMOKE smoke
+    class ICE ice
+
+…（内容已截断）

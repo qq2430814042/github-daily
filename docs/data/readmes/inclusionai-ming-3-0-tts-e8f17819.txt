@@ -1,0 +1,205 @@
+Ming-3.0-tts
+
+Multilingual speech synthesis with free-form and paralinguistic control.
+
+🤗 Hugging Face｜ 🤖 ModelScope ｜ 📑 Blog & Demos ｜ 💬 DingTalk(钉钉)
+
+Ming-3.0-tts provides two speech-generation models: 0.5b, a dense model, and tiny, a MoE model built on Ling V3 (7.9B total · 1.3B active).
+
+🏆 Artificial Analysis Leaderboards
+
+On the independent Artificial Analysis text-to-speech leaderboards (October 2026), Ming-3.0-tts ranks 1st among open-weights models on Controlled Voice, 1st overall on Pronunciation Robustness, and 3rd among open-weights models on Provider Voice. Ranks change as new models are added.
+
+| Leaderboard | Setting | Ming-3.0-tts | Rank |
+| --- | --- | :---: | --- |
+| Controlled Voice | Arena preference Elo; every model clones the same 8 voices (4 US, 4 UK) | 1069 | 1st among open-weights · 13th overall |
+| Pronunciation Robustness | Share of highlighted spans in English text that human reviewers judged correctly pronounced | 93.2% | 1st overall |
+| Provider Voice | Arena preference Elo; each model uses its own native voices | 1188 | 3rd among open-weights · 17th overall |
+
+Within Pronunciation Robustness, Ming-3.0-tts also ranks 1st on Expanding Shorthand (text normalization, 96.5%) and Preserving Exact Sequences (sequence fidelity, 90.6%).
+
+Featured Abilities
+
+- Voice creation: clone a reference voice, design one from text, or choose from 100+ Chinese and five English built-in voices.
+- Free-form control: guide speech delivery with natural-language instructions.
+- Paralinguistic control: insert 14 inline tags for laughter, sighs, and other vocal expressions in Chinese or English.
+- Languages and dialects: synthesize Chinese, English, German, Spanish, French, Korean and Japanese, plus Sichuanese and Cantonese.
+- Emotion and attributes: control emotion, or adjust speed, pitch and volume.
+- Multi-speaker dialogue: generate a conversation from a script and speaker references (tiny only).
+
+Capabilities use separate task modes, not arbitrary combinations. See the Cookbook for supported inputs, Performance for benchmarks, and Blog & Demos for audio examples.
+
+Demo Video
+
+https://github.com/user-attachments/assets/4062ba4c-7d2d-4a45-a19b-760100b79f9c
+
+Architecture
+
+Text and task-specific control tokens condition a language model with a DiT patch head and an audio tokenizer. Both models share this generation framework.
+
+News
+
+- 🔥 2026.10] Ming-3.0-tts-0.5b and Ming-3.0-tts-tiny are released, with inference code, a task cookbook and the evaluation tables below.
+
+Roadmap
+
+- [x] Ming-3.0-tts-0.5b weights and inference code
+- [x] Ming-3.0-tts-tiny weights and inference code
+- [x] Ming-3.0-tts-tiny benchmarks
+- [x] vLLM-Omni accelerated inference
+- [ ] Technical report
+
+Contents
+
+- [Demo Video
+- Models
+- Quick Start
+- Cookbook
+- Built-in voices
+- Performance
+- Limitations
+- Usage Disclaimer
+
+Models
+
+      Model
+      Architecture
+      Parameters
+      Download
+
+      Ming-3.0-tts-0.5b
+      Dense
+      0.5b
+
+        🤗 HuggingFace
+
+        🤖 ModelScope
+
+      Ming-3.0-tts-tiny
+      MoE
+      7.9B total · 1.3B active
+
+        🤗 HuggingFace
+
+        🤖 ModelScope
+
+Each release checkpoint bundles the backbone, DiT head, audio tokenizer, speaker encoder and text tokenizer. The 0.5b release layout is shown below; tiny uses sharded weights with model.safetensors.index.json.
+
+Ming-3.0-tts-0.5b/
+├── config.json              # model_type: dense, auto_map -> BailingMMConfig
+├── configuration.json       # ModelScope task descriptor
+├── model.safetensors        # backbone + audio VAE + DiT head + aggregator
+├── campplus.onnx            # speaker embedding extractor
+├── tokenizer.json           # plus vocab.json / merges.txt / added_tokens.json
+├── tokenizer_config.json    #      special_tokens_map.json / chat_template.jinja
+└── README.md
+
+Quick Start 🚀
+
+Installation
+
+git clone https://github.com/inclusionAI/Ming-3.0-tts.git
+cd Ming-3.0-tts
+pip install -r requirements.txt        # Ming-3.0-tts-0.5b
+
+Or build the 0.5b Docker image (torch 2.6, CUDA 12.4, transformers==4.46.3):
+
+docker build -f docker/Dockerfile -t ming-tts .
+
+The 0.5b environment has been tested on NVIDIA H800-80GB and H20-96G. For 0.5b, flash-attn is optional; inference falls back to PyTorch SDPA.
+
+Tiny uses a separate reference inference environment: Python 3.10.15, PyTorch and torchaudio 2.7.1+cu118 (CUDA 11.8 wheels), and transformers==4.46.3. Install the pinned dependencies from requirements-tiny.txt in a dedicated environment, as other dependency versions differ from 0.5b. We recommend using NVIDIA H800 for inference.
+
+conda create -n ming-tiny python=3.10.15 -y && conda activate ming-tiny
+pip install -r requirements-tiny.txt
+
+Model Download
+
+pip install "huggingface_hubcli]"
+hf download inclusionAI/Ming-3.0-tts-0.5b --local-dir Ming-3.0-tts-0.5b
+
+In mainland China, ModelScope is usually faster:
+
+pip install modelscope
+modelscope download --model inclusionAI/Ming-3.0-tts-0.5b --local_dir Ming-3.0-tts-0.5b
+
+Replace 0.5b with tiny for the other variant.
+
+Text Normalization
+
+Numbers, dates, units and symbols are normalized with FST grammars, which need pynini. It has no universal wheel:
+
+conda install -c conda-forge pynini==2.1.6   # or: pip install pynini==2.1.6
+
+It is loaded lazily; pass --no_text_normalization to skip it.
+
+Ming-3.0-tts-0.5b
+
+python infer.py \
+  --model_path inclusionAI/Ming-3.0-tts-0.5b \
+  --task TTS \
+  --language_id Chinese \
+  --text "傍晚的风从山口吹过来，远处的云慢慢染成了金色。" \
+  --prompt_wav_path data/voice_presets/voice_audio/lingguang.wav \
+  --prompt_text "诶，你今天有空吗？我们能不能聊聊这件事啊？" \
+  --use_spk_emb \
+  --output output/tts.wav
+
+Or from Python:
+
+from ming_tts import MingTTS
+
+model = MingTTS("inclusionAI/Ming-3.0-tts-0.5b")
+model.synthesize(
+    task="TTS",
+    language_id="Chinese",             # English for English text
+    text="傍晚的风从山口吹过来，远处的云慢慢染成了金色。",
+    prompt_wav_path="data/voice_presets/voice_audio/lingguang.wav",
+    prompt_text="诶，你今天有空吗？我们能不能聊聊这件事啊？",
+    use_spk_emb=True,
+    output_path="output/tts.wav",
+)
+
+Ming-3.0-tts-tiny
+
+Every task has a one-line script in [examples/one_click/; variables such as MODEL, TEXT and OUT can be overridden from the environment:
+
+bash examples/one_click/run_seed.sh
+MODEL=/path/to/Ming-3.0-tts-tiny OUT=outputs/yue.wav bash examples/one_click/run_dialect.sh
+
+The same call from Python. Loading configures the release runtime (bf16, portable MoE loop, fp32 recurrent state) and checks the checkpoint against it; generate() defaults to cfg_scale=2.0, temperature=0, flow_steps=10, sigma=0.25, and seed 1234 (1235 for podcast):
+
+from ming_tiny import MingTinyTTS
+
+tts = MingTinyTTS.from_pretrained("inclusionAI/Ming-3.0-tts-tiny", device="cuda:0")
+
+tts.generate(
+    task="seed",
+    text="傍晚的风从山口吹过来，远处的云慢慢染成了金色。",
+    prompt_wav="data/voice_presets/voice_audio/lingguang.wav",
+    prompt_text="诶，你今天有空吗？我们能不能聊聊这件事啊？",
+    target_language="Chinese",          # English for English text
+    output_path="outputs/seed.wav",
+)
+
+tts.generate(
+    task="podcast",
+    text="speaker_1: 你最近是不是又去那家面馆了？\nspeaker_2: 对啊，排了半个小时的队，不过真的值得。",
+    prompt_wav="data/voice_presets/voice_audio/lingguang.wav", "data/voice_presets/voice_audio/db30.wav"],
+    prompt_text=["诶，你今天有空吗？我们能不能聊聊这件事啊？", "感谢你的认可。"],
+    output_path="outputs/podcast.wav",
+)
+
+Each call selects one task and accepts the inputs listed below:
+
+| Task | Reference audio | Reference text | target_language | Controls |
+| --- | --- | --- | --- | --- |
+| seed | one | required | Chinese / English, required | — |
+| multilingual | one | required | German / Spanish / French / Korean / Japanese | — |
+| paralinguistic | one | required | Chinese / English | inline tags in text |
+| podcast | one per speaker | one per speaker, same order | inferred from the text | speaker_N: at the start of every line |
+| basic | one | not accepted | — | speed, pitch, volume, all three |
+| emotion | one | not accepted | — | emotion |
+| dialect | one | not accepted | — | dialect: 川渝话 / 广粤话 |
+
+…（内容已截断）

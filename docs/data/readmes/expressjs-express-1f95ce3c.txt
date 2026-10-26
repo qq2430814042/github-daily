@@ -1,0 +1,238 @@
+Fast, unopinionated, minimalist web framework for Node.js.
+
+Table of contents
+
+- Installation
+- Features
+- Docs \& Community
+- Quick Start
+- Philosophy
+- Examples
+- Contributing
+  - Security Issues
+  - Running Tests
+- Current project team members
+  - TC (Technical Committee)
+    - TC emeriti members
+  - Triagers
+    - Emeritus Triagers
+- License
+
+import express from 'express'
+
+const app = express()
+
+app.get('/', (req, res) => {
+  res.send('Hello World')
+})
+
+app.listen(3000, () => {
+  console.log('Server is running on http://localhost:3000')
+})
+
+Installation
+
+This is a Node.js module available through the
+npm registry.
+
+Before installing, download and install Node.js.
+Node.js 18 or higher is required.
+
+If this is a brand new project, make sure to create a package.json first with
+the npm init command.
+
+Installation is done using the
+npm install command:
+
+npm install express
+
+Follow our installing guide
+for more information.
+
+Features
+
+  * Robust routing
+  * Focus on high performance
+  * Super-high test coverage
+  * HTTP helpers (redirection, caching, etc)
+  * View system supporting 14+ template engines
+  * Content negotiation
+  * Executable for generating applications quickly
+
+Docs & Community
+
+  * Website and Documentation - [website repo]
+  * GitHub Organization for Official Middleware & Modules
+  * GitHub Discussions for discussion on the development and usage of Express
+
+PROTIP Be sure to read the migration guide to v5
+
+Quick Start
+
+  The quickest way to get started with express is to utilize the executable express(1) to generate an application as shown below:
+
+  Install the executable. The executable's major version will match Express's:
+
+npm install -g express-generator@4
+
+  Create the app:
+
+express /tmp/foo && cd /tmp/foo
+
+  Install dependencies:
+
+npm install
+
+  Start the server:
+
+npm start
+
+  View the website at: http://localhost:3000
+
+Philosophy
+
+  The Express philosophy is to provide small, robust tooling for HTTP servers, making
+  it a great solution for single page applications, websites, hybrids, or public
+  HTTP APIs.
+
+  Express does not force you to use any specific ORM or template engine. With support for over
+  14 template engines via @ladjs/consolidate,
+  you can quickly craft your perfect framework.
+
+Examples
+
+  To view the examples, clone the Express repository:
+
+git clone https://github.com/expressjs/express.git --depth 1 && cd express
+
+  Then install the dependencies:
+
+npm install
+
+  Then run whichever example you want:
+
+node examples/content-negotiation
+
+Contributing
+
+The Express.js project welcomes all constructive contributions. Contributions take many forms,
+from code for bug fixes and enhancements, to additions and fixes to documentation, additional
+tests, triaging incoming pull requests and issues, and more!
+
+See the Contributing Guide] for more technical details on contributing.
+
+This project has a [Code of Conduct]. By participating, you are expected to uphold this code.
+
+Security Issues
+
+If you discover a security vulnerability in Express, please see [Security Policies and Procedures.
+
+Running Tests
+
+To run the test suite, first install the dependencies:
+
+npm install
+
+Then run npm test:
+
+npm test
+
+Current project team members
+
+For information about the governance of the express.js project, see GOVERNANCE.md.
+
+The original author of Express is TJ Holowaychuk
+
+List of all contributors
+
+TC (Technical Committee)
+
+* UlisesGascon - Ulises Gascón (he/him)
+* jonchurch - Jon Church
+* wesleytodd - Wes Todd
+* LinusU - Linus Unnebäck
+* blakeembrey - Blake Embrey
+* sheplu - Jean Burellier
+* crandmck - Rand McKinney
+* ctcpip - Chris de Almeida
+
+TC emeriti members
+
+TC emeriti members
+
+  * dougwilson - Douglas Wilson
+  * hacksparrow - Hage Yaapa
+  * jonathanong - jongleberry
+  * niftylettuce - niftylettuce
+  * troygoode - Troy Goode
+
+Triagers
+
+* aravindvnair99 - Aravind Nair
+* bjohansebas - Sebastian Beltran
+* carpasse - Carlos Serrano
+* CBID2 - Christine Belzie
+* UlisesGascon - Ulises Gascón (he/him)
+* IamLizu - S M Mahmudul Hasan (he/him)
+* Phillip9587 - Phillip Barta
+* efekrskl - Efe Karasakal
+* rxmarbles - Rick Markins (he/him)
+* krzysdz
+* GroophyLifefor - Murat Kirazkaya
+
+Triagers emeriti members
+
+Emeritus Triagers
+
+  * AuggieH - Auggie Hudak
+  * G-Rath - Gareth Jones
+  * MohammadXroid - Mohammad Ayashi
+  * NawafSwe - Nawaf Alsharqi
+  * NotMoni - Moni
+  * VigneshMurugan - Vignesh Murugan
+  * davidmashe - David Ashe
+  * digitaIfabric - David
+  * e-l-i-s-e - Elise Bonner
+  * fed135 - Frederic Charette
+  * firmanJS - Firman Abdul Hakim
+  * getspooky - Yasser Ameur
+  * ghinks - Glenn
+  * ghousemohamed - Ghouse Mohamed
+  * gireeshpunathil - Gireesh Punathil
+  * jake32321 - Jake Reed
+  * jonchurch - Jon Church
+  * lekanikotun - Lekan Ikotun
+  * marsonya - akhil marsonya
+  * mastermatt - Matt R. Wilson
+  * maxakuru - Max Edell
+  * mlrawlings - Michael Rawlings
+  * rodion-arr - Rodion Abdurakhimov
+  * sheplu - Jean Burellier
+  * tarunyadav1 - Tarun yadav
+  * tunniclm - Mike Tunnicliffe
+  * enyoghasim - David Enyoghasim
+  * 0ss - Salah
+  * ejcheng- Eric Cheng (he/him)
+  * dakshkhetan - Daksh Khetan (he/him)
+  * lucasraziel - Lucas Soares Do Rego
+  * mertcanaltin - Mert Can Altin
+  * dpopp07 - Dustin Popp
+  * Sushmeet - Sushmeet Sunger
+  * 3imed-jaberi - Imed Jaberi
+
+License
+
+  MIT
+
+[coveralls-image]: https://img.shields.io/coverallsCoverage/github/expressjs/express?branch=master
+[coveralls-url]: https://coveralls.io/r/expressjs/express?branch=master
+[github-actions-ci-image]: https://img.shields.io/github/actions/workflow/status/expressjs/express/ci.yml?branch=master&label=ci
+[github-actions-ci-url]: https://github.com/expressjs/express/actions/workflows/ci.yml
+[npm-downloads-image]: https://img.shields.io/npm/dm/express
+[npm-downloads-url]: https://npmcharts.com/compare/express?minimal=true
+[npm-url]: https://npmjs.org/package/express
+[npm-version-image]: https://img.shields.io/npm/v/express
+[ossf-scorecard-badge]: https://api.scorecard.dev/projects/github.com/expressjs/express/badge
+[ossf-scorecard-visualizer]: https://ossf.github.io/scorecard-visualizer/#/projects/github.com/expressjs/express
+[Code of Conduct]: https://github.com/expressjs/.github/blob/HEAD/CODE_OF_CONDUCT.md
+[Contributing Guide]: https://github.com/expressjs/.github/blob/HEAD/CONTRIBUTING.md

@@ -746,6 +746,86 @@ body.modal-open {
   font-size: 11px;
 }
 
+.readme-section {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.readme-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.readme-head-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.readme-title {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.readme-status {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.readme-translate {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--accent);
+  font-size: 12px;
+  line-height: 1.5;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.readme-translate:hover {
+  text-decoration: underline;
+}
+
+.readme-translate:disabled {
+  color: var(--muted);
+  cursor: default;
+  text-decoration: none;
+}
+
+.readme-translation {
+  margin: 0 0 10px;
+}
+
+.readme-text {
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  line-height: 1.75;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.readme-text.is-empty {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.readme-note {
+  margin: 8px 2px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
 .footnote {
   margin: 26px 2px 0;
   color: var(--muted);
@@ -859,6 +939,11 @@ body.modal-open {
 
   .detail-actions .btn-primary {
     grid-column: 1 / -1;
+  }
+
+  .readme-text {
+    padding: 11px 12px;
+    font-size: 12.5px;
   }
 }
 

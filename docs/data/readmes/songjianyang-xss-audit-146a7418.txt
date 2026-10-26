@@ -1,0 +1,96 @@
+xss-audit
+
+Comprehensive XSS vulnerability detection skill with 14 layers of checks for React/TypeScript/JavaScript codebases (static audit). Use when the user wants an in-depth XSS audit with broad static coverage, including SVG, MathML, CSS injection, markdown pipelines, mXSS/sanitizer bypass, JSON-in-script injection, URL validation bypass, and Trusted Types analysis. Outputs report to xss-audit-report.md.
+
+Static analysis only. A search match is not a confirmed vulnerability.
+
+Background
+
+This skill comes from my hands-on work in real-world bug bounty
+programs. Over the course of one year, I used it in my day-to-day
+audit workflow and refined it continuously based on what worked
+and what missed. That workflow helped me identify dozens of XSS
+vulnerabilities that were awarded bounties.
+
+During the same period, I was ranked in Microsoft's MSRC Security
+Researcher Leaderboard (quarterly Top 10) for four consecutive
+quarters — 2025 Q3 #4, Q4 #7, 2026 Q1 #6, Q2 #10
+(leaderboard, my profile).
+
+I'm sharing it so others can adapt the same review process to
+their own audits.
+
+Installation
+
+Copy this directory into your agent's skills directory:
+
+/xss-audit/SKILL.md
+
+Usage
+
+/xss-audit
+/xss-audit src/
+
+Or use $ if that is your agent's skill syntax:
+
+$xss-audit
+$xss-audit src/
+
+What it checks
+
+The 14 review layers cover:
+
+1. DOM and HTML injection: innerHTML, outerHTML, insertAdjacentHTML, document.write, DOMParser, setHTMLUnsafe, shadow DOM, and React dangerouslySetInnerHTML.
+2. Attributes and event handlers: dynamic on* handlers, href, src, srcdoc, action, formaction, style, and JSX props that forward attacker-controlled values.
+3. URLs and navigation: window.open, location, router navigation, protocol allowlists, hostname and substring validation errors, parser normalization, and downstream use of History API state.
+4. Configuration and JSON-in-script: SSR bootstrap data, hydration state, JSON-LD, rich-text configuration, and `` breakout caused by unsafe serialization.
+5. Props spreading and gadget components: untrusted props forwarded to anchors, iframes, URL-handling components, and dynamic attributes.
+6. Untrusted sources and messaging: URL data, API responses, cookies, storage, IndexedDB, referrer, postMessage, BroadcastChannel, and MessageChannel, including origin, source, schema, and target-origin checks.
+7. Prototype pollution chains: unsafe merge, setter, and assignment paths that can influence a security-sensitive XSS gadget.
+8. JavaScript execution: eval, new Function, string timers, dynamically created scripts, Blob/ObjectURL execution, and worker script imports.
+9. CSS and style injection: cssText, setProperty, insertRule, CSS-in-JS interpolation, external CSS URLs, and legacy browser-specific execution mechanisms where relevant.
+10. SVG, MathML, and XML: namespace-aware element creation, xlink:href, animation events, foreignObject, annotation-xml, and namespace confusion.
+11. Markdown, sanitizers, and mXSS: Markdown renderers, DOMPurify, sanitize-html, resolved versions, effective configuration, double parsing, unsafe post-sanitization transforms, and output-context mismatches.
+12. Framework rendering and trust hooks: Vue v-html, Angular trust bypasses, Svelte {@html}, Lit unsafeHTML, and direct DOM writes that bypass framework protections.
+13. Trusted Types and CSP: enforcement, violations, policy configuration, and defense-in-depth gaps without treating browser defenses as proof of safety.
+14. Framework binding and template injection: KnockoutJS, WinJS, Alpine.js, AngularJS, Vue, Angular, Ember, and Handlebars paths where attacker-controlled attributes or template source survive sanitization and reach binding or compilation.
+
+See SKILL.md for the complete audit procedure and validation rules.
+
+Output
+
+The skill writes xss-audit-report.md and uses a timestamped filename if that report already exists.
+
+The report includes:
+
+- Audited paths, exclusions, and unread files.
+- An executive summary with severity counts and manual-review counts.
+- High, medium, and low severity findings with supporting evidence.
+- A separate manual-review section for incomplete or unconfirmed data flows.
+- A per-layer search summary that distinguishes pattern matches from confirmed vulnerabilities.
+
+Each finding documents:
+
+- File and line location, description, and impact.
+- Source, sink, data flow, and missing validation or sanitization.
+- Vulnerable code and a concrete fix recommendation.
+- Confidence and verification status.
+- Reproduction notes that clearly distinguish theoretical steps from steps actually executed.
+
+See the fictional sample report. It demonstrates the format without claiming to be the result of a real audit.
+
+Limitations
+
+Static analysis can produce false positives and false negatives, especially for dynamic runtime behavior, build-time transforms, excluded code, and framework-specific execution timing. Review exclusions and verify findings before relying on them. No coverage is guaranteed.
+
+Generated reports may contain sensitive paths, source code, internal domains, or credentials. Review and sanitize them before sharing.
+
+Disclaimer
+
+Use this project only on code and systems that you own or have permission to assess. You are responsible for how you use it and for complying with applicable laws, policies, and third-party terms.
+
+The project is provided "as is", without warranty of any kind. To the extent permitted by applicable law, the authors and contributors are not liable for damage arising from its use. See LICENSE for the full licensing, warranty, and liability terms.
+
+License
+
+MIT

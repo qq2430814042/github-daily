@@ -4,8 +4,9 @@
 
 - 每日榜单：新项目、Trending、高星项目合并去重
 - 手机优先：支持搜索、语言筛选、按 Star 数/涨星数排序、收藏
-- 项目详情：点击卡片或仓库名查看完整描述、语言、Star、Fork、创建时间和标签
-- 一键翻译：详情内可将英文描述翻译成中文，不依赖 GitHub，失败时可跳转百度翻译
+- 项目详情：点击卡片或仓库名查看简介、语言、Star、Fork、创建时间和标签
+- 项目说明：Actions 预先抓取 README 保存到站点，手机查看不需要访问 GitHub（最多保留前 8000 字）
+- 一键翻译：英文简介和 README 开头可翻译成中文，不依赖 GitHub，失败时可跳转百度翻译
 - 历史归档：每天一个 JSON 文件，日期可回看
 - 微信推送：通过 Server酱 或 PushPlus 每天推送 Top 8 和完整榜单链接
 - 零成本：GitHub Actions + GitHub Pages，无需服务器
@@ -17,9 +18,10 @@
    - `github.com/trending?since=daily`：当天的 Trending 仓库和今日涨星数
    - GitHub Search API：前一天新建且已经获得 Star 的仓库
    - GitHub Search API：总 Star 超过 1000、前一天有推送的仓库
-3. 合并、去重、排序后写入 `docs/data/YYYY-MM-DD.json`，并更新 `docs/data/index.json`。
-4. 数据自动提交回仓库，GitHub Pages 部署 `docs` 目录。
-5. 部署完成后运行 `scripts/push.mjs`，通过 Server酱 或 PushPlus 推送到微信。
+3. 合并、去重、排序后抓取仓库 README，清洗并保存到 `docs/data/readmes/`。
+4. 每日榜单写入 `docs/data/YYYY-MM-DD.json`，并更新 `docs/data/index.json`。
+5. 数据和 README 自动提交回仓库，GitHub Pages 部署 `docs` 目录。
+6. 部署完成后运行 `scripts/push.mjs`，通过 Server酱 或 PushPlus 推送到微信。
 
 默认抓取日期是北京时间的前一天，所以早上看到的是完整的前一天榜单。
 
@@ -100,6 +102,8 @@ GitHub Actions 的定时任务可能延迟几分钟，属于正常现象。
 
 需要 Node.js 20 或更高版本。
 
+抓取 README 会调用 GitHub API，本地建议先设置 `GITHUB_TOKEN`，否则容易触发限流。
+
 ```powershell
 npm install
 
@@ -127,7 +131,7 @@ npm run push
 
 | 变量 | 用途 | 是否必需 |
 | --- | --- | --- |
-| `GITHUB_TOKEN` | 本地抓取时提高 API 限流额度 | 否 |
+| `GITHUB_TOKEN` | 本地抓取时提高 API 限流额度（抓 README 建议配置） | 否 |
 | `SERVERCHAN_SENDKEY` | Server酱 微信推送 | 二选一 |
 | `PUSHPLUS_TOKEN` | PushPlus 微信推送（需实名） | 二选一 |
 | `PAGE_URL` | 推送消息里的榜单地址，自定义域名时使用 | 否 |
@@ -151,12 +155,15 @@ npm run push
 - `topics`、`createdAt`、`updatedAt`
 - `sources`：`trending` / `new` / `high-star`
 - `isNew`：是否为前一天新建的仓库
+- `readmeFile`：README 文件名，位于 `docs/data/readmes/`
+- `readmeTruncated`：README 是否因为过长被截断
 
 ## 可调整的地方
 
 | 想改什么 | 修改位置 |
 | --- | --- |
 | 每天抓取数量 | `scripts/fetch.mjs` 里的 `CAP` |
+| README 最大长度 | `scripts/fetch.mjs` 里的 `README_MAX_CHARS` |
 | 高星门槛 | `docs/app.js` 里的 `HIGH_STAR` |
 | 各类目配额 | `scripts/fetch.mjs` 里的 `selectItems` |
 | 定时时间 | `.github/workflows/daily.yml` 里的 cron |
@@ -181,7 +188,7 @@ npm run push
 
 **翻译失败**
 
-翻译使用 MyMemory 的免费接口，网络受限、额度用尽或描述已经是中文时可能失败。可以点详情里的「百度翻译」打开外部翻译页；重新打开相同项目会优先使用本地缓存。
+翻译使用 MyMemory 的免费接口，网络受限、额度用尽或内容已经是中文时可能失败。README 翻译只翻译开头约 500 字，且结果会缓存在手机本地。失败时可以点详情里的「百度翻译」打开外部翻译页。
 
 **收不到微信推送**
 
@@ -198,6 +205,14 @@ GitHub Search 只索引达到一定 Star 的仓库，当天没有符合条件的
 **历史日期太少**
 
 在 Actions 里手动运行工作流，把 `backfill` 填成 `7` 或 `30`，会补抓最近 N 天。
+
+**README 只显示了一部分**
+
+README 清洗后最多保存 8000 字，超出部分会显示「内容已截断」。这是为了控制手机加载速度和仓库体积；可以在 `README_MAX_CHARS` 调整。
+
+**README 显示“没有抓取到”**
+
+可能是项目没有 README，或抓取时遇到 API 限流。下一次工作流运行时会重新尝试。
 
 ## 目录结构
 
@@ -216,7 +231,8 @@ github-daily/
 │  ├─ icon-192.png
 │  ├─ icon-512.png
 │  ├─ manifest.webmanifest
-│  └─ data/                      # 每日数据和索引
+│  └─ data/                      # 每日数据、README 和索引
+│     └─ readmes/                # 预先抓取的 README 文本
 ├─ package.json
 └─ package-lock.json
 ```

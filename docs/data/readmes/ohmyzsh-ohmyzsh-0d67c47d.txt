@@ -1,0 +1,217 @@
+Oh My Zsh is an open source, community-driven framework for managing your zsh
+configuration.
+
+Sounds boring. Let's try again.
+
+Oh My Zsh will not make you a 10x developer...but you may feel like one.
+
+Once installed, your terminal shell will become the talk of the town or your money back! With each keystroke
+in your command prompt, you'll take advantage of the hundreds of powerful plugins and beautiful themes.
+Strangers will come up to you in cafés and ask you, "that is amazing! are you some sort of genius?"
+
+Finally, you'll begin to get the sort of attention that you have always felt you deserved. ...or maybe you'll
+use the time that you're saving to start flossing more often. 😬
+
+To learn more, visit ohmyz.sh, follow @ohmyzsh on X (formerly
+Twitter), and join us on Discord.
+
+Table of Contents
+
+- Getting Started
+  - Operating System Compatibility
+  - Prerequisites
+  - Basic Installation
+    - Manual Inspection
+- Using Oh My Zsh
+  - Plugins
+    - Enabling Plugins
+    - Using Plugins
+  - Themes
+    - Selecting A Theme
+  - Shellsavers
+  - FAQ
+- Advanced Topics
+  - Advanced Installation
+    - Custom Directory
+    - Unattended Install
+    - Installing From A Forked Repository
+    - Manual Installation
+  - Installation Problems
+  - Custom Plugins And Themes
+  - Enable GNU ls In macOS And FreeBSD Systems
+  - Skip Aliases
+  - Async git prompt
+- Getting Updates
+  - Updates Verbosity
+  - Manual Updates
+- Uninstalling Oh My Zsh
+- How Do I Contribute To Oh My Zsh?
+  - Do Not Send Us Themes
+- Contributors
+- Follow Us
+- Merchandise
+- License
+- About Planet Argon
+
+Getting Started
+
+Operating System Compatibility
+
+| O/S            | Status |
+| :------------- | :----: |
+| Android        |   ✅   |
+| FreeBSD        |   ✅   |
+| LCARS          |   🛸   |
+| Linux          |   ✅   |
+| macOS          |   ✅   |
+| OS/2 Warp      |   ❌   |
+| Windows (WSL2) |   ✅   |
+
+Prerequisites
+
+- Zsh should be installed (v4.3.9 or more recent is fine but we prefer 5.0.8 and
+  newer). If not pre-installed (run zsh --version to confirm), check the following wiki instructions here:
+  Installing ZSH
+- curl or wget should be installed
+- git should be installed (recommended v2.4.11 or higher)
+
+Basic Installation
+
+Oh My Zsh is installed by running one of the following commands in your terminal. You can install this via the
+command-line with either curl, wget or another similar tool.
+
+| Method    | Command                                                                                           |
+| :-------- | :------------------------------------------------------------------------------------------------ |
+| curl  | sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" |
+| wget  | sh -c "$(wget -O- https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"   |
+| fetch | sh -c "$(fetch -o - https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" |
+
+Alternatively, the installer is also mirrored outside GitHub. Using this URL instead may be required if you're
+in a country like China or India (for certain ISPs), that blocks raw.githubusercontent.com:
+
+| Method    | Command                                           |
+| :-------- | :------------------------------------------------ |
+| curl  | sh -c "$(curl -fsSL https://install.ohmyz.sh/)" |
+| wget  | sh -c "$(wget -O- https://install.ohmyz.sh/)"   |
+| fetch | sh -c "$(fetch -o - https://install.ohmyz.sh/)" |
+
+_Note that any previous .zshrc will be renamed to .zshrc.pre-oh-my-zsh. After installation, you can move
+the configuration you want to preserve into the new .zshrc._
+
+Manual Inspection
+
+It's a good idea to inspect the install script from projects you don't yet know. You can do that by
+downloading the install script first, looking through it so everything looks normal, then running it:
+
+wget https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh
+sh install.sh
+
+If the above URL times out or otherwise fails, you may have to substitute the URL for
+https://install.ohmyz.sh to be able to get the script.
+
+Using Oh My Zsh
+
+Plugins
+
+Oh My Zsh comes with a shitload of plugins for you to take advantage of. You can take a look in the
+plugins directory and/or the
+wiki to see what's currently available.
+
+Enabling Plugins
+
+Once you spot a plugin (or several) that you'd like to use with Oh My Zsh, you'll need to enable them in the
+.zshrc file. You'll find the zshrc file in your $HOME directory. Open it with your favorite text editor
+and you'll see a spot to list all the plugins you want to load.
+
+vi ~/.zshrc
+
+For example, this might begin to look like this:
+
+plugins=(
+  git
+  bundler
+  dotenv
+  macos
+  rake
+  rbenv
+  ruby
+)
+
+_Note that the plugins are separated by whitespace (spaces, tabs, new lines...). Do not use commas between
+them or it will break._
+
+Using Plugins
+
+Each built-in plugin includes a README, documenting it. This README should show the aliases (if the plugin
+adds any) and extra goodies that are included in that particular plugin.
+
+Themes
+
+We'll admit it. Early in the Oh My Zsh world, we may have gotten a bit too theme-happy. We have over one
+hundred and fifty themes now bundled. Most of them have
+screenshots on the wiki (We are working on updating this!).
+Check them out!
+
+Selecting A Theme
+
+_Robby's theme is the default one. It's not the fanciest one. It's not the simplest one. It's just the right
+one (for him)._
+
+Once you find a theme that you'd like to use, you will need to edit the ~/.zshrc file. You'll see an
+environment variable (all caps) in there that looks like:
+
+ZSH_THEME="robbyrussell"
+
+To use a different theme, simply change the value to match the name of your desired theme. For example:
+
+ZSH_THEME="agnoster" # (this is one of the fancy ones)
+see https://github.com/ohmyzsh/ohmyzsh/wiki/Themes#agnoster
+
+You will many times see screenshots for a zsh theme, and try it out, and find that it doesn't look the same for you.
+This is because many themes require installing a Powerline Font or a
+Nerd Font in order to render properly. Without them, these themes
+will render weird prompt symbols. Check out
+the FAQ for more
+information.
+Also, beware that themes only control what your prompt looks like. This is, the text you see before or after
+your cursor, where you'll type your commands. Themes don't control things such as the colors of your
+terminal window (known as color scheme) or the font of your terminal. These are settings that you can
+change in your terminal emulator. For more information, see
+what is a zsh theme.
+
+Open up a new terminal window and your prompt should look something like this:
+
+In case you did not find a suitable theme for your needs, please have a look at the wiki for
+more of them.
+
+If you're feeling feisty, you can let the computer select one randomly for you each time you open a new
+terminal window.
+
+ZSH_THEME="random" # (...please let it be pie... please be some pie..)
+
+And if you want to pick a random theme from a list of your favorite themes:
+
+ZSH_THEME_RANDOM_CANDIDATES=(
+  "robbyrussell"
+  "agnoster"
+)
+
+If you only know which themes you don't like, you can add them similarly to an ignored list:
+
+ZSH_THEME_RANDOM_IGNORED=(pygmalion tjkirch_mod)
+
+Shellsavers
+
+Give your terminal a little downtime with omz shellsaver—our playful name for
+terminal screensavers. The aquarium is the default; choose another scene to change the mood:
+
+omz shellsaver                 # A quiet aquarium full of sea shells
+omz shellsaver logo            # The updater's rainbow logo, bouncing around
+omz shellsaver hermit          # A slightly lost hermit crab
+omz shellsaver party           # A rainbow stage and a dancing crowd
+
+Press any key or Ctrl-C to return to your shell. Screensavers run only when invoked
+and restore the terminal when they exit. No plugin or configuration change is needed.
+Use omz help to discover the command, and Tab to complete scene names and options.
+
+…（内容已截断）

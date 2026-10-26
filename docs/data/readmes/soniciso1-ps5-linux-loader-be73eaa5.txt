@@ -1,0 +1,202 @@
+ps5-linux
+
+ps5-linux leverages patched HV vulnerabilities to transform your PS5 Phat, Slim and Pro console running 3.00-13.60 firmwares into a highly capable Linux PC, unlocking its full hardware potential for desktop use. Powered by 8 CPU cores (16 threads) at 3.5 GHz and a GPU at 2.23 GHz, it provides enough performance to run Steam games and various emulators with impressive fluidity.
+
+Features:
+
+- HDMI 4K60 video and audio output
+- M.2 SSD as dedicated Linux partition
+- All USB ports usable for peripherals
+- BD drive usable via custom ahci driver
+- Internal Bluetooth usable via custom xhci driver
+- Ethernet port usable via custom gbe driver
+- Hardware video decode, encode and transcode (VCN) via VAAPI
+
+PS5 firmware
+
+ps5-linux is supported on the following firmwares:
+
+PS5 Phat and Slim:
+- 3.00, 3.10, 3.20, 3.21 without M.2 support
+- 4.00, 4.02, 4.03, 4.50, 4.51 with M.2 support
+- 5.00, 5.02, 5.10, 5.50 with M.2 support
+- 6.00, 6.02, 6.50 with M.2 support
+- 7.00, 7.01, 7.20, 7.40, 7.60, 7.61 with M.2 support
+- 11.60 (regular PS5 only, M.2 not tested yet; the kernel needs KASLR, so do not pass nokaslr, mem= or memmap=)
+- 13.00, 13.20, 13.60 with M.2 support
+
+PS5 Pro:
+- 13.60 with M.2 support
+
+Support for 1.xx and 2.xx firmwares may be added in the future, but we will not prioritize this effort.
+
+If you are on firmwares in-between or you want to update to a specific firmware, download the correct PUP and follow the official guide to upgrade your PS5. Obviously you cannot downgrade.
+
+Hardwares
+
+To run ps5-linux, you need some required and optional hardwares:
+
+- Required: USB drive with minimum 64GB (ideally external SSD) to install and run Linux.
+- Required: USB keyboard/mouse (dongles supported too).
+- Optional: USB WLAN adapter for WLAN internet access.
+- Optional: M.2 SSD compatible on PS5 (see official guide) to run Linux from SSD.
+- Optional: Bluetooth dongle to connect with PS5 DualSense controller.
+
+Configure PS5 settings
+
+- VERY IMPORTANT: Enable Rest Mode features:
+  - Go to Settings → System → Power Saving → Features Available in Rest Mode and set Supply Power to USB Ports to Always.
+- VERY IMPORTANT: Disable HDMI Device Link:
+  - Go to Settings → HDMI → Enable HDMI Device Link
+- Recommended: Disable automatic updates:
+  - Go to Settings → System Software → System Software Update and Settings
+- Recommended: Disable automatic error reporting:
+  - Go to Settings → System Software → Report System Software Errors Automatically
+
+If you reset your PS5 settings or reinstall the FW, you need to reapply these settings again.
+
+Installation
+
+1. Get a Linux image
+
+Pre-built images
+
+You can download them from ps5-linux-image. Recommended is ps5-ubuntu2604.img.xz. Unpack the .xz file.
+
+Build your own image
+
+If you use Windows,  run this in PowerShell or CMD as administrator to install WSL
+
+wsl --install
+
+Install docker:
+
+sudo apt update
+sudo apt install docker.io -y
+sudo service docker start
+sudo usermod -aG docker $USER
+
+Then clone and build:
+
+cd ~/
+git clone https://github.com/ps5-linux/ps5-linux-image
+cd ps5-linux-image
+chmod +x ./build_image.sh
+./build_image.sh --distro ubuntu2604
+
+The finished image is written to output/ps5-ubuntu2604.img.
+
+2. Flash the image to USB
+Minimum drive size: 64 GB. An external SSD is strongly recommended.
+
+Linux/macOS:
+
+check drive name with lsblk / diskutil list
+sudo dd if=output/ps5-ubuntu2604.img of=/dev/sdX bs=4M status=progress conv=fsync
+
+Windows (Balena Etcher):
+
+Download Balena Etcher, select the .img file, select your USB drive, click Flash.
+
+3. Plug the USB drive into your PS5
+
+The following USB ports are supported for booting:
+
+- Front bottom Type-C port
+- Rear Type-A ports
+
+The front top Type-A port is USB 2.0 which is slower and thus not recommended.
+
+4. Run the jailbreak
+
+Firmware 3.00-5.50
+
+1. Clone via: git clone https://github.com/idlesauce/umtx2
+2. Configure fakedns via dns.conf to point manuals.playstation.net to your PCs IP address
+3. Run fake dns: sudo python fakedns.py -c dns.conf
+4. In a different terminal, run HTTPS server: sudo python host.py
+5. Go into PS5 advanced network settings and set primary DNS to your PCs IP address and leave secondary at 0.0.0.0
+6. Go to user manual in settings and accept untrusted certificate prompt, run.
+
+Firmware 6.00-7.61
+
+1. Install Y2JB by following https://github.com/Gezine/Y2JB.
+2. Run kernel exploit: python3 payload_sender.py $PS5IP 50000 payloads/lapse.js
+
+5. Send the payload
+If you're on ARM64 Linux, first install the x86-64 cross-compilation tools before:
+
+sudo apt install gcc-x86-64-linux-gnu binutils-x86-64-linux-gnu
+
+Either download ps5-linux-loader.elf, or install ps5-payload-sdk and compile it yourself:
+
+git clone https://github.com/ps5-linux/ps5-linux-loader
+cd ps5-linux-loader
+make
+
+Send the payload with your $PS5IP (shown on the page):
+
+`bash
+socat -t 99999999 - TCP:$PS5IP:9021 =14.00 firmwares be supported?
+  - A: No.
+- Q: Why can I not use M.2 on 3.xx?
+  - A: Because the PS5 fails to boot with it attached.
+- Q: Can I dual-boot Linux and PS5 OS?
+  - A: No, this is a soft-mod. You need to re-run the exploit in order to boot into Linux.
+- Q: Can I put Linux into standby and resume?
+  - A: No, this is not supported. We may however add a shutdown feature that puts your PS5 into rest-mode allowing you to relaunch Linux when powering up again.
+- Q: Can I continue using my PS5 if I install Linux?
+  - A: Yes, the internal SSD is not modified
+- Q: Can I use the PS5's NIC/WLAN module in Linux?
+  - A: WLAN is supported for Marvell chipsets (Phat/Slim) and the MediaTek MT7925 (Pro) — both work out of the box with the included firmware. Ethernet is supported on all models.
+- Q: Does hardware video decode and transcode work?
+  - A: Yes, since ps5-linux-patches #38. Decode works for H.264, HEVC Main/Main 10, VP9 Profile 0/2, VC-1 and MPEG-2. Encode works for H.264, and for HEVC with I-frames only.
+- Q: Does the DualSense controller work?
+  - A: Yes, via internal Bluetooth as well as Bluetooth dongle.
+- Q: What resolutions and refresh rates are supported?
+  - A: 1080p, 1440p and 2160p at 60Hz are broadly supported. 1440p@120Hz has been the only confirmed working on the DELL S3225QC yet. 120Hz or 30Hz may be added in the future.
+- Q: After reboot, I get a "Repairing" screen and "Your PS5 wasn't turned off properly." screen. Is that normal?
+  - A: Yes, and it's harmless.
+
+Tips and tricks
+
+- If you see graphical issues in your games, add the environment variable RADV_DEBUG=nohiz as recommended for BC250 as well.
+- You can adjust the kernel cmdline in cmdline.txt in the FAT32 partition.
+- You can adjust the VRAM size in vram.txt in the FAT32 partition. By default, it uses 512MB (0x20000000) which enables Dynamic VRAM allocation.
+- Monitor hotswap may work, but it will not change resolution automatically.
+- Some monitors have a black screen if a video=DP-1: parameter is set in cmdline.txt. Confirmed working without video=DP-1:1920x1080@60 on:
+  - MSI MAG274Q QD E2, DELL S2721DGF, DELL U2515H (1440p@60Hz)
+  - Possibly also: LG 27GL850, Lenovo Legion Y27q, ViewSonic Elite XG270QG
+
+Many configurations, tips and tricks from the AMD BC250 Documentation also apply to PS5.
+
+Bugs
+
+- screen save does not work properly
+- hdmi audio output does not work on some monitors
+- hdmi 1440p and 2160p video output does not work on some monitors
+- VCN HEVC encode has corrupt chroma with P-frames, use I-frame only (-g 1 -bf 0) or H.264
+
+Upstreamed changes
+
+During this project, we have upstreamed some changes:
+
+- drm/amd: fix dcn 2.01 check
+- amd/addrlib: Add more GFX1013 GPUs
+
+Discord
+
+Join our Discord server to celebrate Linux on PS5, receive help, learn tips & tricks, join development, or report issues.
+
+Credits
+
+- theflow: ps5-linux-loader, ps5-linux-patches, ps5-linux-tools
+- c0w: ps5-linux-loader
+- resulknad: ps5-linux-image
+- rmuxnet: ps5 ethernet driver
+- fail0verflow: prosperous
+- flatz: HV exploit
+- cragson: HV expoit implementation
+- john-tornblom: PS5 SDK
+
+…（内容已截断）

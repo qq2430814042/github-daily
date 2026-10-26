@@ -1,7 +1,7 @@
 {
   "date": "2026-10-23",
   "timezone": "Asia/Shanghai",
-  "generatedAt": "2026-10-26T14:06:27.200Z",
+  "generatedAt": "2026-10-26T15:07:17.075Z",
   "count": 60,
   "newCount": 40,
   "sources": {
@@ -18,16 +18,18 @@
       "url": "https://github.com/JustAResearcher/gpu-unlock-ada",
       "description": "GPU tensor unlock source for RTX 4090 and experimental RTX 4070 Ti SUPER; firmware generated locally",
       "language": "C",
-      "stars": 3592,
-      "forks": 481,
+      "stars": 3627,
+      "forks": 488,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-23T21:00:53Z",
-      "updatedAt": "2026-10-26T14:06:04Z",
+      "updatedAt": "2026-10-26T15:06:34Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "justaresearcher-gpu-unlock-ada-0e60368f.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 2,
@@ -37,8 +39,8 @@
       "url": "https://github.com/morganlinton/BeautifulRust",
       "description": "Agent Skills that teach coding agents to write, review, and port idiomatic Rust, plus a tested clippy config. Works with Claude Code, Codex, Copilot, Cursor, and Gemini CLI.",
       "language": "Python",
-      "stars": 1080,
-      "forks": 45,
+      "stars": 1106,
+      "forks": 47,
       "starsToday": 0,
       "topics": [
         "agent-skills",
@@ -51,11 +53,13 @@
         "cursor"
       ],
       "createdAt": "2026-10-23T03:01:11Z",
-      "updatedAt": "2026-10-26T14:06:07Z",
+      "updatedAt": "2026-10-26T15:05:26Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "morganlinton-beautifulrust-d1b6bfd5.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 3,
@@ -65,16 +69,17 @@
       "url": "https://github.com/enesozturk/dimensional-drawing",
       "description": "",
       "language": "HTML",
-      "stars": 797,
-      "forks": 46,
+      "stars": 820,
+      "forks": 49,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-23T12:20:16Z",
-      "updatedAt": "2026-10-26T14:03:03Z",
+      "updatedAt": "2026-10-26T15:05:46Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "enesozturk-dimensional-drawing-6a6babc4.txt"
     },
     {
       "rank": 4,
@@ -84,16 +89,18 @@
       "url": "https://github.com/surendrapandar/minilytics",
       "description": "Opensource Revenue-first analytics for indie hackers & solo founders",
       "language": "TypeScript",
-      "stars": 565,
-      "forks": 139,
+      "stars": 571,
+      "forks": 142,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-23T19:27:24Z",
-      "updatedAt": "2026-10-26T14:06:02Z",
+      "updatedAt": "2026-10-26T14:43:10Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "surendrapandar-minilytics-20019581.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 5,
@@ -103,16 +110,17 @@
       "url": "https://github.com/x86rc/unthemidator",
       "description": "An automated Themida / Code Virtualizer / WinLicense (v3.0-v4) unpacker and dump fixer tool",
       "language": "C++",
-      "stars": 275,
-      "forks": 39,
+      "stars": 282,
+      "forks": 40,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-23T13:23:19Z",
-      "updatedAt": "2026-10-26T13:54:23Z",
+      "updatedAt": "2026-10-26T14:52:52Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "x86rc-unthemidator-097dcbbb.txt"
     },
     {
       "rank": 6,
@@ -122,7 +130,7 @@
       "url": "https://github.com/appariciojunior/video-editor-skills",
       "description": "Skills that teach Claude Code to be a first-pass video editor in DaVinci Resolve: transcript cuts, vlog pacing, B-roll, music & SFX, clean captions, motion graphics, YouTube export. CC BY-NC 4.0 (no commercial use).",
       "language": "",
-      "stars": 264,
+      "stars": 266,
       "forks": 39,
       "starsToday": 0,
       "topics": [
@@ -134,11 +142,12 @@
         "youtube"
       ],
       "createdAt": "2026-10-23T07:51:02Z",
-      "updatedAt": "2026-10-26T13:07:53Z",
+      "updatedAt": "2026-10-26T14:54:48Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "appariciojunior-video-editor-skills-b9f3e2b1.txt"
     },
     {
       "rank": 7,
@@ -148,7 +157,7 @@
       "url": "https://github.com/EgorBo/BlazingFastDotnet",
       "description": "Tips & tricks to tune .NET workloads for better perf (mostly, targeting benchmarks).",
       "language": "C#",
-      "stars": 254,
+      "stars": 256,
       "forks": 10,
       "starsToday": 0,
       "topics": [
@@ -158,11 +167,12 @@
         "profiling"
       ],
       "createdAt": "2026-10-23T11:27:08Z",
-      "updatedAt": "2026-10-26T13:27:34Z",
+      "updatedAt": "2026-10-26T14:39:41Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "egorbo-blazingfastdotnet-ae554f8d.txt"
     },
     {
       "rank": 8,
@@ -187,7 +197,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "charonyuu-whatsmyagentdoing-4407335c.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 9,
@@ -206,7 +218,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "abckkf321-mcd-fair-split-49be063f.txt"
     },
     {
       "rank": 10,
@@ -234,7 +247,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "auragrubportico-adobe-audition-d79f3ca2.txt"
     },
     {
       "rank": 11,
@@ -262,7 +276,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "driveuoexhibit-kms-pico-df836bbd.txt"
     },
     {
       "rank": 12,
@@ -272,16 +287,18 @@
       "url": "https://github.com/prototux/AARE",
       "description": "A proof-of-concept opensource implementation of Android Auto's client side (phone side)",
       "language": "Kotlin",
-      "stars": 235,
+      "stars": 236,
       "forks": 11,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-23T01:25:32Z",
-      "updatedAt": "2026-10-26T13:54:39Z",
+      "updatedAt": "2026-10-26T14:18:04Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "prototux-aare-6edc4028.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 13,
@@ -291,7 +308,7 @@
       "url": "https://github.com/ryderclanky/BotW-Native",
       "description": "Breath of the Wild (Wii U, v1.5.0) statically recompiled to a native Windows program with a Vulkan renderer.",
       "language": "C++",
-      "stars": 230,
+      "stars": 231,
       "forks": 9,
       "starsToday": 0,
       "topics": [
@@ -305,11 +322,13 @@
         "wii-u"
       ],
       "createdAt": "2026-10-23T21:41:37Z",
-      "updatedAt": "2026-10-26T13:31:20Z",
+      "updatedAt": "2026-10-26T14:42:59Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "ryderclanky-botw-native-54563a73.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 14,
@@ -328,7 +347,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "ivarvong-lantern-e2eafffe.txt"
     },
     {
       "rank": 15,
@@ -338,16 +358,17 @@
       "url": "https://github.com/Marker284/yandex-station-extended",
       "description": "",
       "language": "Shell",
-      "stars": 198,
-      "forks": 35,
+      "stars": 215,
+      "forks": 38,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-23T21:03:11Z",
-      "updatedAt": "2026-10-26T13:59:01Z",
+      "updatedAt": "2026-10-26T15:05:35Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "marker284-yandex-station-extended-e43e6202.txt"
     },
     {
       "rank": 16,
@@ -375,7 +396,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "cattmonkey-chaosintelligence-29f85bbf.txt"
     },
     {
       "rank": 17,
@@ -394,7 +416,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "3436872746-mcd-swap-e88776ce.txt"
     },
     {
       "rank": 18,
@@ -422,7 +445,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "dex-tool-best-github-b5b79bf0.txt"
     },
     {
       "rank": 19,
@@ -450,7 +474,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "wpeikxyrjnps-github-0b67b335.txt"
     },
     {
       "rank": 20,
@@ -476,7 +501,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "aotoycffyxns-delta-f2dea6d9.txt"
     },
     {
       "rank": 21,
@@ -504,7 +530,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "df-tools-bn-github-d7efd375.txt"
     },
     {
       "rank": 22,
@@ -532,7 +559,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "onchain-trading-bot-github-f81d6ffa.txt"
     },
     {
       "rank": 23,
@@ -560,7 +588,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "qnzqfmbacrkk-github-43013dda.txt"
     },
     {
       "rank": 24,
@@ -588,7 +617,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "tytpaskanvdc-cross-exchange-arbitrage-bot-pc-desktop-17d49280.txt"
     },
     {
       "rank": 25,
@@ -616,7 +646,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "xynbspqmochf-github-a85d7281.txt"
     },
     {
       "rank": 26,
@@ -635,7 +666,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "ravensclawx-hblauncher-47cd0b69.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 27,
@@ -660,7 +693,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "xraylau1-maitaiyi-1f48b04f.txt"
     },
     {
       "rank": 28,
@@ -679,7 +713,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "lzp76995-labb-mcd-fairbite-a17a6492.txt"
     },
     {
       "rank": 29,
@@ -698,7 +733,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "pandasi-labs-pandasi-agent-e60ed3b3.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 30,
@@ -717,7 +754,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "crfxn5c-mcd-mcp-kit-2f6e4556.txt"
     },
     {
       "rank": 31,
@@ -736,7 +774,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "addition2000-mcd-diet-guard-8e8f90c5.txt"
     },
     {
       "rank": 32,
@@ -755,7 +794,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "baoz-xhg-maimen-saver-faedf9fb.txt"
     },
     {
       "rank": 33,
@@ -783,7 +823,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "mokevnin-dev-quality-gates-ba55d99d.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 34,
@@ -802,7 +844,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "pandasi-labs-littleaibox-32760da5.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 35,
@@ -830,7 +874,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "wahaha-potato-mcd-coupon-xray-f5463aeb.txt"
     },
     {
       "rank": 36,
@@ -858,7 +903,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "alex-star-arch-mcd-burger-studio-d4e4588d.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 37,
@@ -868,16 +915,18 @@
       "url": "https://github.com/lzyang2000/morphmimic",
       "description": "",
       "language": "Python",
-      "stars": 111,
+      "stars": 113,
       "forks": 10,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-23T08:38:41Z",
-      "updatedAt": "2026-10-26T13:24:09Z",
+      "updatedAt": "2026-10-26T14:51:39Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "lzyang2000-morphmimic-c5fdb746.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 38,
@@ -896,7 +945,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "ch-latiao-lumina-guide-a4d7df49.txt"
     },
     {
       "rank": 39,
@@ -921,7 +971,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "akhiranandan-04-neverlose-a53b7783.txt"
     },
     {
       "rank": 40,
@@ -949,7 +1000,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "onchain-whale-tracker-pc-desktop-github-1f943875.txt"
     },
     {
       "rank": 41,
@@ -959,7 +1011,7 @@
       "url": "https://github.com/obra/superpowers",
       "description": "An agentic skills framework & software development methodology that works.",
       "language": "Shell",
-      "stars": 305402,
+      "stars": 305429,
       "forks": 27206,
       "starsToday": 0,
       "topics": [
@@ -973,11 +1025,13 @@
         "superpowers"
       ],
       "createdAt": "2025-10-09T19:45:18Z",
-      "updatedAt": "2026-10-26T14:03:07Z",
+      "updatedAt": "2026-10-26T14:59:13Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 42,
@@ -987,8 +1041,8 @@
       "url": "https://github.com/deepseek-ai/deepseek-harness",
       "description": "DeepSeek Harness: Everything is a Plugin.",
       "language": "TypeScript",
-      "stars": 262265,
-      "forks": 31705,
+      "stars": 262338,
+      "forks": 31709,
       "starsToday": 0,
       "topics": [
         "ai-agents",
@@ -997,11 +1051,12 @@
         "dsh-plugin"
       ],
       "createdAt": "2026-08-13T11:56:32Z",
-      "updatedAt": "2026-10-26T14:06:06Z",
+      "updatedAt": "2026-10-26T15:07:04Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "deepseek-ai-deepseek-harness-a4daff9d.txt"
     },
     {
       "rank": 43,
@@ -1011,8 +1066,8 @@
       "url": "https://github.com/yt-dlp/yt-dlp",
       "description": "A feature-rich command-line audio/video downloader",
       "language": "Python",
-      "stars": 202425,
-      "forks": 17721,
+      "stars": 202463,
+      "forks": 17730,
       "starsToday": 0,
       "topics": [
         "cli",
@@ -1024,11 +1079,13 @@
         "yt-dlp"
       ],
       "createdAt": "2020-10-26T04:22:55Z",
-      "updatedAt": "2026-10-26T14:04:59Z",
+      "updatedAt": "2026-10-26T15:07:02Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "yt-dlp-yt-dlp-54c7d6d8.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 44,
@@ -1039,15 +1096,17 @@
       "description": "An agent-managed museum exhibit, built in Rust with Gajae-Code / LazyCodex — developed and maintained with no human intervention.",
       "language": "Rust",
       "stars": 194986,
-      "forks": 107733,
+      "forks": 107731,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-03-31T08:58:08Z",
-      "updatedAt": "2026-10-26T14:04:52Z",
+      "updatedAt": "2026-10-26T14:43:01Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "ultraworkers-claw-code-6882ee54.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 45,
@@ -1057,8 +1116,8 @@
       "url": "https://github.com/microsoft/markitdown",
       "description": "Python tool for converting files and office documents to Markdown.",
       "language": "Python",
-      "stars": 192305,
-      "forks": 14368,
+      "stars": 192317,
+      "forks": 14369,
       "starsToday": 0,
       "topics": [
         "autogen",
@@ -1070,11 +1129,13 @@
         "pdf"
       ],
       "createdAt": "2024-11-13T19:56:40Z",
-      "updatedAt": "2026-10-26T13:53:02Z",
+      "updatedAt": "2026-10-26T15:06:30Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "microsoft-markitdown-4aa99f7d.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 46,
@@ -1084,8 +1145,8 @@
       "url": "https://github.com/Graphify-Labs/graphify",
       "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
       "language": "Python",
-      "stars": 135808,
-      "forks": 12951,
+      "stars": 135847,
+      "forks": 12959,
       "starsToday": 0,
       "topics": [
         "ai-agents",
@@ -1098,11 +1159,13 @@
         "cursor"
       ],
       "createdAt": "2026-04-03T15:49:07Z",
-      "updatedAt": "2026-10-26T14:05:36Z",
+      "updatedAt": "2026-10-26T15:06:57Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 47,
@@ -1117,11 +1180,12 @@
       "starsToday": 0,
       "topics": [],
       "createdAt": "2025-04-13T05:37:54Z",
-      "updatedAt": "2026-10-26T14:02:08Z",
+      "updatedAt": "2026-10-26T15:05:30Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "openai-codex-c95e9fa6.txt"
     },
     {
       "rank": 48,
@@ -1144,11 +1208,12 @@
         "open-source"
       ],
       "createdAt": "2014-01-04T16:05:36Z",
-      "updatedAt": "2026-10-26T14:03:52Z",
+      "updatedAt": "2026-10-26T14:52:21Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "godotengine-godot-05742f8d.txt"
     },
     {
       "rank": 49,
@@ -1158,7 +1223,7 @@
       "url": "https://github.com/fatedier/frp",
       "description": "A fast reverse proxy to help you expose a local server behind a NAT or firewall to the internet.",
       "language": "Go",
-      "stars": 110138,
+      "stars": 110139,
       "forks": 15256,
       "starsToday": 0,
       "topics": [
@@ -1172,11 +1237,13 @@
         "proxy"
       ],
       "createdAt": "2015-12-21T15:24:59Z",
-      "updatedAt": "2026-10-26T13:18:58Z",
+      "updatedAt": "2026-10-26T14:43:06Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "fatedier-frp-a5e25427.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 50,
@@ -1186,16 +1253,18 @@
       "url": "https://github.com/ruanyf/weekly",
       "description": "科技爱好者周刊，每周五发布",
       "language": "",
-      "stars": 107009,
+      "stars": 107016,
       "forks": 4536,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2018-10-13T12:36:07Z",
-      "updatedAt": "2026-10-26T13:56:14Z",
+      "updatedAt": "2026-10-26T15:02:48Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "ruanyf-weekly-283e5616.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 51,
@@ -1205,19 +1274,21 @@
       "url": "https://github.com/punkpeye/awesome-mcp-servers",
       "description": "A collection of MCP servers.",
       "language": "",
-      "stars": 96890,
-      "forks": 18515,
+      "stars": 96895,
+      "forks": 18523,
       "starsToday": 0,
       "topics": [
         "ai",
         "mcp"
       ],
       "createdAt": "2024-11-30T04:49:10Z",
-      "updatedAt": "2026-10-26T13:54:10Z",
+      "updatedAt": "2026-10-26T15:06:15Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "punkpeye-awesome-mcp-servers-ade9a20a.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 52,
@@ -1227,8 +1298,8 @@
       "url": "https://github.com/nvm-sh/nvm",
       "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
       "language": "Shell",
-      "stars": 95661,
-      "forks": 10593,
+      "stars": 95662,
+      "forks": 10597,
       "starsToday": 0,
       "topics": [
         "bash",
@@ -1241,37 +1312,16 @@
         "nvmrc"
       ],
       "createdAt": "2010-04-15T17:47:47Z",
-      "updatedAt": "2026-10-26T14:05:59Z",
+      "updatedAt": "2026-10-26T14:59:29Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "nvm-sh-nvm-8490b630.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 53,
-      "fullName": "sveltejs/svelte",
-      "name": "svelte",
-      "owner": "sveltejs",
-      "url": "https://github.com/sveltejs/svelte",
-      "description": "web development for the rest of us",
-      "language": "JavaScript",
-      "stars": 88467,
-      "forks": 7408,
-      "starsToday": 0,
-      "topics": [
-        "compiler",
-        "template",
-        "ui"
-      ],
-      "createdAt": "2016-11-20T18:13:05Z",
-      "updatedAt": "2026-10-26T13:49:53Z",
-      "sources": [
-        "high-star"
-      ],
-      "isNew": false
-    },
-    {
-      "rank": 54,
       "fullName": "coder/code-server",
       "name": "code-server",
       "owner": "coder",
@@ -1295,17 +1345,18 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "coder-code-server-2c3f6aaf.txt"
     },
     {
-      "rank": 55,
+      "rank": 54,
       "fullName": "obsproject/obs-studio",
       "name": "obs-studio",
       "owner": "obsproject",
       "url": "https://github.com/obsproject/obs-studio",
       "description": "OBS Studio - Free and open source software for live streaming and screen recording",
       "language": "C",
-      "stars": 78261,
+      "stars": 78260,
       "forks": 10879,
       "starsToday": 0,
       "topics": [
@@ -1319,14 +1370,15 @@
         "screen-capture"
       ],
       "createdAt": "2013-10-01T02:40:31Z",
-      "updatedAt": "2026-10-26T14:03:49Z",
+      "updatedAt": "2026-10-26T14:15:17Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "obsproject-obs-studio-a0fb125d.txt"
     },
     {
-      "rank": 56,
+      "rank": 55,
       "fullName": "tensorflow/models",
       "name": "models",
       "owner": "tensorflow",
@@ -1334,7 +1386,7 @@
       "description": "Models and examples built with TensorFlow",
       "language": "Python",
       "stars": 77650,
-      "forks": 44755,
+      "forks": 44754,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2016-02-05T01:15:20Z",
@@ -1342,18 +1394,19 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "tensorflow-models-4e81af6a.txt"
     },
     {
-      "rank": 57,
+      "rank": 56,
       "fullName": "rohitg00/ai-engineering-from-scratch",
       "name": "ai-engineering-from-scratch",
       "owner": "rohitg00",
       "url": "https://github.com/rohitg00/ai-engineering-from-scratch",
       "description": "Learn AI Engineering! Learn it. Build it. Ship it for others.",
       "language": "Python",
-      "stars": 74149,
-      "forks": 12993,
+      "stars": 74190,
+      "forks": 12996,
       "starsToday": 0,
       "topics": [
         "agents",
@@ -1366,14 +1419,16 @@
         "dsh"
       ],
       "createdAt": "2026-03-18T18:38:02Z",
-      "updatedAt": "2026-10-26T14:06:24Z",
+      "updatedAt": "2026-10-26T15:05:53Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "rohitg00-ai-engineering-from-scratch-760e62df.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 58,
+      "rank": 57,
       "fullName": "ansible/ansible",
       "name": "ansible",
       "owner": "ansible",
@@ -1388,22 +1443,23 @@
         "python"
       ],
       "createdAt": "2012-03-06T14:58:02Z",
-      "updatedAt": "2026-10-26T13:27:24Z",
+      "updatedAt": "2026-10-26T14:24:28Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "ansible-ansible-0e954d13.txt"
     },
     {
-      "rank": 59,
+      "rank": 58,
       "fullName": "microsoft/AI-For-Beginners",
       "name": "AI-For-Beginners",
       "owner": "microsoft",
       "url": "https://github.com/microsoft/AI-For-Beginners",
       "description": "12 Weeks, 24 Lessons, AI for All!",
       "language": "Jupyter Notebook",
-      "stars": 70270,
-      "forks": 13641,
+      "stars": 70271,
+      "forks": 13642,
       "starsToday": 0,
       "topics": [
         "ai",
@@ -1416,14 +1472,16 @@
         "microsoft-for-beginners"
       ],
       "createdAt": "2021-03-03T16:27:36Z",
-      "updatedAt": "2026-10-26T13:13:22Z",
+      "updatedAt": "2026-10-26T14:42:50Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "microsoft-ai-for-beginners-d10cb4d7.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 60,
+      "rank": 59,
       "fullName": "expressjs/express",
       "name": "express",
       "owner": "expressjs",
@@ -1431,7 +1489,7 @@
       "description": "Fast, unopinionated, minimalist web framework for node.",
       "language": "JavaScript",
       "stars": 69580,
-      "forks": 25276,
+      "forks": 25278,
       "starsToday": 0,
       "topics": [
         "express",
@@ -1444,7 +1502,38 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "expressjs-express-1f95ce3c.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "BurntSushi/ripgrep",
+      "name": "ripgrep",
+      "owner": "BurntSushi",
+      "url": "https://github.com/BurntSushi/ripgrep",
+      "description": "ripgrep recursively searches directories for a regex pattern while respecting your gitignore",
+      "language": "Rust",
+      "stars": 69461,
+      "forks": 4761,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "command-line",
+        "command-line-tool",
+        "gitignore",
+        "grep",
+        "recursively-search",
+        "regex",
+        "ripgrep"
+      ],
+      "createdAt": "2016-03-11T02:02:33Z",
+      "updatedAt": "2026-10-26T14:18:38Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "burntsushi-ripgrep-42075ce7.txt",
+      "readmeTruncated": true
     }
   ]
 }

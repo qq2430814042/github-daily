@@ -1,0 +1,182 @@
+frp
+
+README | 中文文档
+
+Sponsors
+
+frp is an open source project with its ongoing development made possible entirely by the support of our awesome sponsors. If you'd like to join them, please consider sponsoring frp's development.
+
+Gold Sponsors
+
+Recall.ai - API for meeting recordings
+
+If you're looking for a meeting recording API, consider checking out Recall.ai,
+
+an API that records Zoom, Google Meet, Microsoft Teams, in-person meetings, and more.
+
+	The complete IDE crafted for professional Go developers
+
+	The sovereign cloud that puts you in control
+
+	An open source, self-hosted alternative to public clouds, built for data ownership and privacy
+What is frp?
+
+frp is a fast reverse proxy that allows you to expose a local server located behind a NAT or firewall to the Internet. It currently supports TCP and UDP, as well as HTTP and HTTPS protocols, enabling requests to be forwarded to internal services via domain name.
+
+frp also offers a P2P connect mode.
+
+Table of Contents
+
+* Development Status
+    * About V2
+* Architecture
+* Example Usage
+    * Access your computer in a LAN network via SSH
+    * Multiple SSH services sharing the same port
+    * Accessing Internal Web Services with Custom Domains in LAN
+    * Forward DNS query requests
+    * Forward Unix Domain Socket
+    * Expose a simple HTTP file server
+    * Enable HTTPS for a local HTTP(S) service
+    * Expose your service privately
+    * P2P Mode
+* Features
+    * Configuration Files
+    * Using Environment Variables
+    * Split Configures Into Different Files
+    * Server Dashboard
+    * Client Admin UI
+        * Dynamic Proxy Management (Store)
+    * Monitor
+        * Prometheus
+    * Authenticating the Client
+        * Token Authentication
+        * OIDC Authentication
+    * Encryption and Compression
+        * TLS
+    * Hot-Reloading frpc configuration
+    * Get proxy status from client
+    * Only allowing certain ports on the server
+    * Port Reuse
+    * Bandwidth Limit
+        * For Each Proxy
+    * TCP Stream Multiplexing
+    * Support KCP Protocol
+    * Support QUIC Protocol
+    * Connection Pooling
+    * Load balancing
+    * Service Health Check
+    * Rewriting the HTTP Host Header
+    * Setting other HTTP Headers
+    * Get Real IP
+        * HTTP X-Forwarded-For
+        * Proxy Protocol
+    * Require HTTP Basic Auth (Password) for Web Services
+    * Custom Subdomain Names
+    * URL Routing
+    * TCP Port Multiplexing
+    * Connecting to frps via PROXY
+    * Port range mapping
+    * Client Plugins
+    * Server Manage Plugins
+    * SSH Tunnel Gateway
+    * Virtual Network (VirtualNet)
+* Feature Gates
+    * Available Feature Gates
+    * Enabling Feature Gates
+    * Feature Lifecycle
+* Related Projects
+* Contributing
+* Donation
+    * GitHub Sponsors
+    * PayPal
+
+Development Status
+
+frp is currently under development. You can try the latest release version in the master branch, or use the dev branch to access the version currently in development.
+
+We are currently working on version 2 and attempting to perform some code refactoring and improvements. However, please note that it will not be compatible with version 1.
+
+We will transition from version 0 to version 1 at the appropriate time and will only accept bug fixes and improvements, rather than big feature requests.
+
+About V2
+
+The complexity and difficulty of the v2 version are much higher than anticipated. I can only work on its development during fragmented time periods, and the constant interruptions disrupt productivity significantly. Given this situation, we will continue to optimize and iterate on the current version until we have more free time to proceed with the major version overhaul.
+
+The concept behind v2 is based on my years of experience and reflection in the cloud-native domain, particularly in K8s and ServiceMesh. Its core is a modernized four-layer and seven-layer proxy, similar to envoy. This proxy itself is highly scalable, not only capable of implementing the functionality of intranet penetration but also applicable to various other domains. Building upon this highly scalable core, we aim to implement all the capabilities of frp v1 while also addressing the functionalities that were previously unachievable or difficult to implement in an elegant manner. Furthermore, we will maintain efficient development and iteration capabilities.
+
+In addition, I envision frp itself becoming a highly extensible system and platform, similar to how we can provide a range of extension capabilities based on K8s. In K8s, we can customize development according to enterprise needs, utilizing features such as CRD, controller mode, webhook, CSI, and CNI. In frp v1, we introduced the concept of server plugins, which implemented some basic extensibility. However, it relies on a simple HTTP protocol and requires users to start independent processes and manage them on their own. This approach is far from flexible and convenient, and real-world demands vary greatly. It is unrealistic to expect a non-profit open-source project maintained by a few individuals to meet everyone's needs.
+
+Finally, we acknowledge that the current design of modules such as configuration management, permission verification, certificate management, and API management is not modern enough. While we may carry out some optimizations in the v1 version, ensuring compatibility remains a challenging issue that requires a considerable amount of effort to address.
+
+We sincerely appreciate your support for frp.
+
+Architecture
+
+Example Usage
+
+To begin, download the latest program for your operating system and architecture from the Release page.
+
+Next, place the frps binary and server configuration file on Server A, which has a public IP address.
+
+Finally, place the frpc binary and client configuration file on Server B, which is located on a LAN that cannot be directly accessed from the public internet.
+
+Some antiviruses improperly mark frpc as malware and delete it. This is due to frp being a networking tool capable of creating reverse proxies. Antiviruses sometimes flag reverse proxies due to their ability to bypass firewall port restrictions. If you are using antivirus, then you may need to whitelist/exclude frpc in your antivirus settings to avoid accidental quarantine/deletion. See issue 3637 for more details.
+
+Access your computer in a LAN network via SSH
+
+1. Modify frps.toml on server A by setting the bindPort for frp clients to connect to:
+
+frps.toml
+  bindPort = 7000
+
+2. Start frps on server A:
+
+  ./frps -c ./frps.toml
+
+3. Modify frpc.toml on server B and set the serverAddr field to the public IP address of your frps server:
+
+frpc.toml
+  serverAddr = "x.x.x.x"
+  serverPort = 7000
+
+  [proxies]]
+  name = "ssh"
+  type = "tcp"
+  localIP = "127.0.0.1"
+  localPort = 22
+  remotePort = 6000
+
+Note that the localPort (listened on the client) and remotePort (exposed on the server) are used for traffic going in and out of the frp system, while the serverPort is used for communication between frps and frpc.
+
+4. Start frpc on server B:
+
+  ./frpc -c ./frpc.toml
+
+5. To access server B from another machine through server A via SSH (assuming the username is test), use the following command:
+
+  ssh -oPort=6000 test@x.x.x.x
+
+Multiple SSH services sharing the same port
+
+This example implements multiple SSH services exposed through the same port using a proxy of type tcpmux. Similarly, as long as the client supports the HTTP Connect proxy connection method, port reuse can be achieved in this way.
+
+1. Deploy frps on a machine with a public IP and modify the frps.toml file. Here is a simplified configuration:
+
+  bindPort = 7000
+  tcpmuxHTTPConnectPort = 5002
+
+2. Deploy frpc on the internal machine A with the following configuration:
+
+  serverAddr = "x.x.x.x"
+  serverPort = 7000
+
+  [[proxies]]
+  name = "ssh1"
+  type = "tcpmux"
+  multiplexer = "httpconnect"
+  customDomains = ["machine-a.example.com"]
+  localIP = "127.0.0.1"
+  localPort = 22
+
+…（内容已截断）

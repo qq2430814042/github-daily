@@ -1,7 +1,7 @@
 {
   "date": "2026-10-25",
   "timezone": "Asia/Shanghai",
-  "generatedAt": "2026-10-26T14:52:43.948Z",
+  "generatedAt": "2026-10-26T15:07:50.158Z",
   "count": 60,
   "newCount": 34,
   "sources": {
@@ -18,8 +18,8 @@
       "url": "https://github.com/debpalash/VoiceStudio",
       "description": "VoiceStudio is the open-source, fully-local ElevenLabs alternative — voice cloning, voice design, video dubbing, dictation, transcription & audiobook creation in 646 languages.",
       "language": "Python",
-      "stars": 88241,
-      "forks": 9730,
+      "stars": 88263,
+      "forks": 9733,
       "starsToday": 2292,
       "topics": [],
       "createdAt": null,
@@ -27,7 +27,8 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "debpalash-voicestudio-ce0088d7.txt"
     },
     {
       "rank": 2,
@@ -37,8 +38,8 @@
       "url": "https://github.com/Nutlope/hallmark",
       "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
       "language": "CSS",
-      "stars": 35423,
-      "forks": 1844,
+      "stars": 35448,
+      "forks": 1847,
       "starsToday": 2235,
       "topics": [],
       "createdAt": null,
@@ -46,7 +47,8 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "nutlope-hallmark-9bed55f1.txt"
     },
     {
       "rank": 3,
@@ -56,8 +58,8 @@
       "url": "https://github.com/pbakaus/impeccable",
       "description": "The design language that makes your AI harness better at design.",
       "language": "Rust",
-      "stars": 88649,
-      "forks": 5289,
+      "stars": 88660,
+      "forks": 5291,
       "starsToday": 1551,
       "topics": [],
       "createdAt": null,
@@ -65,7 +67,9 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "pbakaus-impeccable-b3881fe4.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 4,
@@ -75,7 +79,7 @@
       "url": "https://github.com/TauricResearch/TradingAgents",
       "description": "TradingAgents: Multi-Agents LLM Financial Trading Framework",
       "language": "Python",
-      "stars": 115495,
+      "stars": 115511,
       "forks": 22208,
       "starsToday": 1376,
       "topics": [],
@@ -84,7 +88,9 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "tauricresearch-tradingagents-2fd32a61.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 5,
@@ -94,8 +100,8 @@
       "url": "https://github.com/makecindy/cindy",
       "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
       "language": "TypeScript",
-      "stars": 5897,
-      "forks": 740,
+      "stars": 5920,
+      "forks": 742,
       "starsToday": 1268,
       "topics": [],
       "createdAt": null,
@@ -103,7 +109,8 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "makecindy-cindy-ff23d87c.txt"
     },
     {
       "rank": 6,
@@ -113,8 +120,8 @@
       "url": "https://github.com/JetBrains/thinkrail",
       "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
       "language": "TypeScript",
-      "stars": 2438,
-      "forks": 134,
+      "stars": 2444,
+      "forks": 135,
       "starsToday": 1156,
       "topics": [],
       "createdAt": null,
@@ -122,7 +129,9 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "jetbrains-thinkrail-be18d273.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 7,
@@ -132,8 +141,8 @@
       "url": "https://github.com/affaan-m/ECC",
       "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
       "language": "JavaScript",
-      "stars": 289379,
-      "forks": 42878,
+      "stars": 289398,
+      "forks": 42880,
       "starsToday": 853,
       "topics": [],
       "createdAt": null,
@@ -141,7 +150,9 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "affaan-m-ecc-c8b1425e.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 8,
@@ -151,8 +162,8 @@
       "url": "https://github.com/pollen-robotics/microduck",
       "description": "A Tiny biped duck robot 🦆",
       "language": "Rust",
-      "stars": 12195,
-      "forks": 1529,
+      "stars": 12208,
+      "forks": 1530,
       "starsToday": 844,
       "topics": [],
       "createdAt": null,
@@ -160,7 +171,8 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "pollen-robotics-microduck-b83288d7.txt"
     },
     {
       "rank": 9,
@@ -170,7 +182,7 @@
       "url": "https://github.com/Panniantong/Agent-Reach",
       "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
       "language": "Python",
-      "stars": 103073,
+      "stars": 103093,
       "forks": 9143,
       "starsToday": 723,
       "topics": [
@@ -184,12 +196,13 @@
         "cursor"
       ],
       "createdAt": "2026-02-24T02:10:24Z",
-      "updatedAt": "2026-10-26T14:51:25Z",
+      "updatedAt": "2026-10-26T15:06:00Z",
       "sources": [
         "trending",
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "panniantong-agent-reach-14b990a7.txt"
     },
     {
       "rank": 10,
@@ -199,7 +212,7 @@
       "url": "https://github.com/multica-ai/andrej-karpathy-skills",
       "description": "A single CLAUDE.md file to improve Claude Code behavior, derived from Andrej Karpathy's observations on LLM coding pitfalls.",
       "language": "",
-      "stars": 224263,
+      "stars": 224270,
       "forks": 22442,
       "starsToday": 457,
       "topics": [],
@@ -208,7 +221,8 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "multica-ai-andrej-karpathy-skills-a89810be.txt"
     },
     {
       "rank": 11,
@@ -218,7 +232,7 @@
       "url": "https://github.com/NVIDIA/SkillSpector",
       "description": "Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, security risks, prompt injection, data exfiltration, and supply-chain risks in Claude Code, Codex, and MCP skills before you install them.",
       "language": "Python",
-      "stars": 21825,
+      "stars": 21833,
       "forks": 1913,
       "starsToday": 203,
       "topics": [],
@@ -227,7 +241,9 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "nvidia-skillspector-5983829c.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 12,
@@ -237,8 +253,8 @@
       "url": "https://github.com/alchaincyf/huashu-design",
       "description": "Huashu Design 3.0 · 在 agent 里打一句话，拿回能交付的设计：网页 / App 原型 / 可编辑 PPTX / 动画 / 信息图 · 六个候选挑三个方向 · 84 种带样张的风格库 · 越用越懂你的外观账本与设计体检 · HTML-native design skill for Claude Code, Codex, Cursor & any agent",
       "language": "HTML",
-      "stars": 26564,
-      "forks": 2953,
+      "stars": 26570,
+      "forks": 2954,
       "starsToday": 177,
       "topics": [],
       "createdAt": null,
@@ -246,7 +262,9 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "alchaincyf-huashu-design-8fcf0deb.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 13,
@@ -256,7 +274,7 @@
       "url": "https://github.com/gitroomhq/postiz-app",
       "description": "📨 The ultimate agentic social media scheduling tool 🤖",
       "language": "TypeScript",
-      "stars": 38086,
+      "stars": 38095,
       "forks": 7417,
       "starsToday": 146,
       "topics": [],
@@ -265,7 +283,8 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "gitroomhq-postiz-app-a62d99b2.txt"
     },
     {
       "rank": 14,
@@ -275,7 +294,7 @@
       "url": "https://github.com/nightly-labs/openbot",
       "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
       "language": "TypeScript",
-      "stars": 1186,
+      "stars": 1192,
       "forks": 166,
       "starsToday": 86,
       "topics": [],
@@ -284,7 +303,9 @@
       "sources": [
         "trending"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "nightly-labs-openbot-4e8f3458.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 15,
@@ -294,8 +315,8 @@
       "url": "https://github.com/designfuchen/word-atlas",
       "description": "词光 · Word Atlas — Illustrated IELTS vocabulary with 7,298 words, UK/US audio and FSRS review. Open-source app + CC BY 4.0 dataset.",
       "language": "TypeScript",
-      "stars": 1411,
-      "forks": 353,
+      "stars": 1430,
+      "forks": 363,
       "starsToday": 0,
       "topics": [
         "chinese",
@@ -308,11 +329,12 @@
         "pwa"
       ],
       "createdAt": "2026-10-25T08:27:22Z",
-      "updatedAt": "2026-10-26T14:52:29Z",
+      "updatedAt": "2026-10-26T15:07:25Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "designfuchen-word-atlas-e7b34967.txt"
     },
     {
       "rank": 16,
@@ -322,16 +344,18 @@
       "url": "https://github.com/KillaBoi/StealMyBitcoin-PoC",
       "description": "A public release of the Steal My Bitcoin challenge",
       "language": "Python",
-      "stars": 693,
-      "forks": 98,
+      "stars": 701,
+      "forks": 99,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T21:48:32Z",
-      "updatedAt": "2026-10-26T14:51:32Z",
+      "updatedAt": "2026-10-26T15:06:02Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "killaboi-stealmybitcoin-poc-4cf6bbab.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 17,
@@ -341,7 +365,7 @@
       "url": "https://github.com/DenisSergeevitch/ex-ussr-kinship-research",
       "description": "Evidence-first genealogy skill for AI agents (Codex, Claude Code): church books, civil, military, deportation and repression records across the former USSR. Replies in your language.",
       "language": "Python",
-      "stars": 692,
+      "stars": 695,
       "forks": 68,
       "starsToday": 0,
       "topics": [
@@ -355,11 +379,13 @@
         "ussr"
       ],
       "createdAt": "2026-10-25T10:05:56Z",
-      "updatedAt": "2026-10-26T14:49:17Z",
+      "updatedAt": "2026-10-26T15:04:12Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "denissergeevitch-ex-ussr-kinship-research-f6a73eae.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 18,
@@ -369,16 +395,18 @@
       "url": "https://github.com/mizorewww/gdirect",
       "description": "Rust Google Drive direct downloader using pinned libaria2",
       "language": "Rust",
-      "stars": 687,
+      "stars": 688,
       "forks": 44,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T05:52:22Z",
-      "updatedAt": "2026-10-26T14:51:46Z",
+      "updatedAt": "2026-10-26T15:05:03Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "mizorewww-gdirect-e6eecf2c.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 19,
@@ -388,16 +416,17 @@
       "url": "https://github.com/unclebob/ub-mode",
       "description": "",
       "language": "",
-      "stars": 590,
+      "stars": 593,
       "forks": 27,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T16:04:09Z",
-      "updatedAt": "2026-10-26T14:50:25Z",
+      "updatedAt": "2026-10-26T15:06:23Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "unclebob-ub-mode-df4e1a08.txt"
     },
     {
       "rank": 20,
@@ -416,7 +445,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "misshexa66-ouncecake-203f70e8.txt"
     },
     {
       "rank": 21,
@@ -426,16 +456,17 @@
       "url": "https://github.com/DrWhax/unfairplay",
       "description": "Decrypt IPA's on MacOS",
       "language": "Go",
-      "stars": 363,
-      "forks": 101,
+      "stars": 368,
+      "forks": 102,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T21:22:20Z",
-      "updatedAt": "2026-10-26T14:52:23Z",
+      "updatedAt": "2026-10-26T15:07:06Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "drwhax-unfairplay-4eff37dd.txt"
     },
     {
       "rank": 22,
@@ -445,8 +476,8 @@
       "url": "https://github.com/ZiChuanLan/agent-purge",
       "description": "One persona, many coding agents. Replace or inject system prompts across codex, claude, opencode, grok, omp, hermes, pi, zcode - with a local web console.",
       "language": "JavaScript",
-      "stars": 231,
-      "forks": 251,
+      "stars": 233,
+      "forks": 255,
       "starsToday": 0,
       "topics": [
         "claude-code",
@@ -457,11 +488,12 @@
         "system-prompt"
       ],
       "createdAt": "2026-10-25T06:06:02Z",
-      "updatedAt": "2026-10-26T14:13:54Z",
+      "updatedAt": "2026-10-26T15:05:51Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "zichuanlan-agent-purge-c5a3dbf0.txt"
     },
     {
       "rank": 23,
@@ -471,16 +503,17 @@
       "url": "https://github.com/KohakuBlueleaf/KohakUnlock",
       "description": "Experimental NVIDIA tensor-compute unlock research: guarded TU102 initramfs port, offline tests, and Ampere reproduction notes",
       "language": "C",
-      "stars": 226,
-      "forks": 23,
+      "stars": 228,
+      "forks": 24,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T01:18:54Z",
-      "updatedAt": "2026-10-26T14:48:27Z",
+      "updatedAt": "2026-10-26T15:01:40Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "kohakublueleaf-kohakunlock-44212f5f.txt"
     },
     {
       "rank": 24,
@@ -490,16 +523,18 @@
       "url": "https://github.com/mochiiwuff/capri-desktop",
       "description": "Capri, the Project Capricorn construct from Cyberpunk: Edgerunners 2, living on your desktop and narrating what Claude Code is doing.",
       "language": "JavaScript",
-      "stars": 195,
-      "forks": 31,
+      "stars": 197,
+      "forks": 32,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T09:07:06Z",
-      "updatedAt": "2026-10-26T14:49:34Z",
+      "updatedAt": "2026-10-26T15:05:23Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "mochiiwuff-capri-desktop-01e8554e.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 25,
@@ -509,7 +544,7 @@
       "url": "https://github.com/kuraeow/ultratears",
       "description": "Unofficial native Windows port of Tears of the Kingdom 1.4.3 using static recompilation. Builds locally from the player's own extracted game dump; no game files included.",
       "language": "C",
-      "stars": 173,
+      "stars": 174,
       "forks": 4,
       "starsToday": 0,
       "topics": [
@@ -523,14 +558,46 @@
         "static-recompilation"
       ],
       "createdAt": "2026-10-25T00:04:08Z",
-      "updatedAt": "2026-10-26T14:35:15Z",
+      "updatedAt": "2026-10-26T14:58:42Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "kuraeow-ultratears-e5c0507f.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 26,
+      "fullName": "jadezane6634-ops/dsh-purge-flash",
+      "name": "dsh-purge-flash",
+      "owner": "jadezane6634-ops",
+      "url": "https://github.com/jadezane6634-ops/dsh-purge-flash",
+      "description": "DSH稳定高效的破甲插件： 常驻1,597token +零宿主补丁（可与dsh-purge共存）+ 三层技能路由+ 分级 prefill + 拒答自我强化阶梯+ finish_reason 四路分流 状态查询: /flash light",
+      "language": "JavaScript",
+      "stars": 172,
+      "forks": 74,
+      "starsToday": 0,
+      "topics": [
+        "ai-agent",
+        "anti-censorship",
+        "cli",
+        "context-window",
+        "cordis",
+        "deepseek",
+        "deepseek-harness",
+        "dsh"
+      ],
+      "createdAt": "2026-10-25T08:59:56Z",
+      "updatedAt": "2026-10-26T15:02:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jadezane6634-ops-dsh-purge-flash-62a92ee5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 27,
       "fullName": "rbl-all-toosl/Roblox-Scripts",
       "name": "Roblox-Scripts",
       "owner": "rbl-all-toosl",
@@ -555,35 +622,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
-    },
-    {
-      "rank": 27,
-      "fullName": "jadezane6634-ops/dsh-purge-flash",
-      "name": "dsh-purge-flash",
-      "owner": "jadezane6634-ops",
-      "url": "https://github.com/jadezane6634-ops/dsh-purge-flash",
-      "description": "DSH稳定高效的破甲插件： 常驻1,597token +零宿主补丁（可与dsh-purge共存）+ 三层技能路由+ 分级 prefill + 拒答自我强化阶梯+ finish_reason 四路分流 状态查询: /flash light",
-      "language": "JavaScript",
-      "stars": 168,
-      "forks": 74,
-      "starsToday": 0,
-      "topics": [
-        "ai-agent",
-        "anti-censorship",
-        "cli",
-        "context-window",
-        "cordis",
-        "deepseek",
-        "deepseek-harness",
-        "dsh"
-      ],
-      "createdAt": "2026-10-25T08:59:56Z",
-      "updatedAt": "2026-10-26T14:44:25Z",
-      "sources": [
-        "new"
-      ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "rbl-all-toosl-roblox-scripts-09022b3b.txt"
     },
     {
       "rank": 28,
@@ -602,7 +642,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "holdcloud-mcd-calendar-buddy-b40d3b1d.txt"
     },
     {
       "rank": 29,
@@ -612,54 +653,58 @@
       "url": "https://github.com/Bodila51/reverse-engineer-Wi-Fi-router",
       "description": "",
       "language": "Python",
-      "stars": 129,
+      "stars": 130,
       "forks": 7,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T16:25:35Z",
-      "updatedAt": "2026-10-26T14:48:13Z",
+      "updatedAt": "2026-10-26T15:00:23Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "bodila51-reverse-engineer-wi-fi-router-924437cf.txt"
     },
     {
       "rank": 30,
-      "fullName": "lemiur/Game-Decompilation-Skill-For-Claude",
-      "name": "Game-Decompilation-Skill-For-Claude",
-      "owner": "lemiur",
-      "url": "https://github.com/lemiur/Game-Decompilation-Skill-For-Claude",
-      "description": "Skill for creating a bytematching decompilation of a game with Claude",
-      "language": "",
-      "stars": 123,
-      "forks": 11,
-      "starsToday": 0,
-      "topics": [],
-      "createdAt": "2026-10-25T19:29:03Z",
-      "updatedAt": "2026-10-26T14:31:29Z",
-      "sources": [
-        "new"
-      ],
-      "isNew": true
-    },
-    {
-      "rank": 31,
       "fullName": "egoist/mygo-cloudmusic",
       "name": "mygo-cloudmusic",
       "owner": "egoist",
       "url": "https://github.com/egoist/mygo-cloudmusic",
       "description": "MyGo 云音乐 - 第三方网易云音乐原生客户端",
       "language": "Go",
-      "stars": 120,
+      "stars": 124,
       "forks": 18,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T11:41:31Z",
-      "updatedAt": "2026-10-26T14:52:20Z",
+      "updatedAt": "2026-10-26T15:01:59Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "egoist-mygo-cloudmusic-b894e099.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "lemiur/Game-Decompilation-Skill-For-Claude",
+      "name": "Game-Decompilation-Skill-For-Claude",
+      "owner": "lemiur",
+      "url": "https://github.com/lemiur/Game-Decompilation-Skill-For-Claude",
+      "description": "Skill for creating a bytematching decompilation of a game with Claude",
+      "language": "",
+      "stars": 124,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-25T19:29:03Z",
+      "updatedAt": "2026-10-26T15:02:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lemiur-game-decompilation-skill-for-claude-df5c7a44.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 32,
@@ -669,16 +714,17 @@
       "url": "https://github.com/keoyyo85/FoundPhone-Studio",
       "description": "An AI-powered interactive found phone story framework. Create your own playable phone stories with natural language.",
       "language": "TypeScript",
-      "stars": 120,
+      "stars": 121,
       "forks": 151,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T03:29:02Z",
-      "updatedAt": "2026-10-26T14:50:24Z",
+      "updatedAt": "2026-10-26T15:01:34Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "keoyyo85-foundphone-studio-fe3debe0.txt"
     },
     {
       "rank": 33,
@@ -706,7 +752,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "boyuchengz-canvas-mcp-ceceb23a.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 34,
@@ -734,7 +782,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "aideveloper-web-free-deepseek-c4650cd4.txt"
     },
     {
       "rank": 35,
@@ -744,7 +793,7 @@
       "url": "https://github.com/heydeer/pngdeer",
       "description": "Smaller PNGs, same picture. Lossy PNG compression that picks the quality for you: 8–12% smaller than TinyPNG at the same quality. Command line and in the browser.",
       "language": "Rust",
-      "stars": 108,
+      "stars": 110,
       "forks": 9,
       "starsToday": 0,
       "topics": [
@@ -757,11 +806,12 @@
         "webassembly"
       ],
       "createdAt": "2026-10-25T05:09:24Z",
-      "updatedAt": "2026-10-26T14:49:02Z",
+      "updatedAt": "2026-10-26T15:01:29Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "heydeer-pngdeer-a4f6a7e6.txt"
     },
     {
       "rank": 36,
@@ -771,7 +821,7 @@
       "url": "https://github.com/mxhm11cr/LinuxRunner",
       "description": "Run ARM64 Linux applications and desktop environments on iPhone.",
       "language": "C",
-      "stars": 102,
+      "stars": 104,
       "forks": 4,
       "starsToday": 0,
       "topics": [
@@ -784,11 +834,12 @@
         "open-source"
       ],
       "createdAt": "2026-10-25T20:47:02Z",
-      "updatedAt": "2026-10-26T14:46:54Z",
+      "updatedAt": "2026-10-26T15:05:24Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "mxhm11cr-linuxrunner-ecbec71b.txt"
     },
     {
       "rank": 37,
@@ -811,7 +862,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "breakbrawlerheart-pixeluxe-ai-1b4bc28b.txt"
     },
     {
       "rank": 38,
@@ -839,7 +891,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "jacke-pp-ai-wallet-binance-777f1172.txt"
     },
     {
       "rank": 39,
@@ -866,7 +919,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "ptgcrpkpqrxx-murder-mystery-2-script-mm2-cheat-menu-scrit8x-e21890f4.txt"
     },
     {
       "rank": 40,
@@ -876,16 +930,18 @@
       "url": "https://github.com/Aaryan-Kapoor/english-rs",
       "description": "English, rewritten in Rust: grammar as trait bounds, pronouns as borrows, and englishc, a compiler with rustc-style diagnostics for prose",
       "language": "Rust",
-      "stars": 71,
+      "stars": 72,
       "forks": 0,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T00:50:31Z",
-      "updatedAt": "2026-10-26T14:42:25Z",
+      "updatedAt": "2026-10-26T14:53:34Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "aaryan-kapoor-english-rs-a2157926.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 41,
@@ -904,7 +960,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "smhanov-agentloop-6296c6cd.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 42,
@@ -923,7 +981,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "assetnote-node2shell-scanner-95580589.txt"
     },
     {
       "rank": 43,
@@ -942,7 +1001,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "vnnc1-gow-native-pc-0d8cba58.txt"
     },
     {
       "rank": 44,
@@ -970,7 +1030,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "ccch1mneyyy-dsh-go-8f994698.txt"
     },
     {
       "rank": 45,
@@ -996,7 +1057,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "patch-gg-trompe-2bc14393.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 46,
@@ -1015,7 +1078,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "ttom795-skyrim-android-324d3cd9.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 47,
@@ -1034,7 +1099,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "gminustwo-primerecomp-84d62778.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 48,
@@ -1044,16 +1111,17 @@
       "url": "https://github.com/safzanpirani/comfyui-zip-ties",
       "description": "",
       "language": "JavaScript",
-      "stars": 59,
+      "stars": 60,
       "forks": 4,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-25T17:54:54Z",
-      "updatedAt": "2026-10-26T14:24:31Z",
+      "updatedAt": "2026-10-26T14:53:16Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "safzanpirani-comfyui-zip-ties-4efef9d0.txt"
     },
     {
       "rank": 49,
@@ -1063,7 +1131,7 @@
       "url": "https://github.com/EbookFoundation/free-programming-books",
       "description": ":books: Freely available programming books",
       "language": "Python",
-      "stars": 400165,
+      "stars": 400167,
       "forks": 67011,
       "starsToday": 0,
       "topics": [
@@ -1074,11 +1142,12 @@
         "resource"
       ],
       "createdAt": "2013-10-11T06:50:37Z",
-      "updatedAt": "2026-10-26T14:50:49Z",
+      "updatedAt": "2026-10-26T14:56:10Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "ebookfoundation-free-programming-books-c336ecc2.txt"
     },
     {
       "rank": 50,
@@ -1106,7 +1175,9 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "ohmyzsh-ohmyzsh-0d67c47d.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 51,
@@ -1116,7 +1187,7 @@
       "url": "https://github.com/flutter/flutter",
       "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
       "language": "Dart",
-      "stars": 180378,
+      "stars": 180377,
       "forks": 33302,
       "starsToday": 0,
       "topics": [
@@ -1130,11 +1201,12 @@
         "flutter-package"
       ],
       "createdAt": "2015-03-06T22:54:58Z",
-      "updatedAt": "2026-10-26T14:41:58Z",
+      "updatedAt": "2026-10-26T15:05:03Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "flutter-flutter-a9183a2c.txt"
     },
     {
       "rank": 52,
@@ -1144,16 +1216,18 @@
       "url": "https://github.com/msitarzewski/agency-agents",
       "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
       "language": "Shell",
-      "stars": 164158,
+      "stars": 164163,
       "forks": 26488,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2025-10-13T12:12:29Z",
-      "updatedAt": "2026-10-26T14:52:07Z",
+      "updatedAt": "2026-10-26T15:06:18Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "msitarzewski-agency-agents-1798a34a.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 53,
@@ -1181,7 +1255,8 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "snailclimb-javaguide-355a2214.txt"
     },
     {
       "rank": 54,
@@ -1196,11 +1271,12 @@
       "starsToday": 0,
       "topics": [],
       "createdAt": "2025-02-22T17:41:21Z",
-      "updatedAt": "2026-10-26T14:52:04Z",
+      "updatedAt": "2026-10-26T14:57:32Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "anthropics-claude-code-fbb8cd09.txt"
     },
     {
       "rank": 55,
@@ -1210,8 +1286,8 @@
       "url": "https://github.com/localsend/localsend",
       "description": "An open-source cross-platform alternative to AirDrop",
       "language": "Dart",
-      "stars": 95733,
-      "forks": 5390,
+      "stars": 95737,
+      "forks": 5392,
       "starsToday": 0,
       "topics": [
         "dart",
@@ -1220,11 +1296,13 @@
         "flutter-apps"
       ],
       "createdAt": "2022-12-16T00:46:07Z",
-      "updatedAt": "2026-10-26T14:48:45Z",
+      "updatedAt": "2026-10-26T15:04:31Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "localsend-localsend-f22f3aa4.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 56,
@@ -1234,16 +1312,17 @@
       "url": "https://github.com/odysseus-dev/odysseus",
       "description": "Self-hosted AI workspace.",
       "language": "Python",
-      "stars": 94476,
+      "stars": 94478,
       "forks": 1765,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-05-31T14:05:51Z",
-      "updatedAt": "2026-10-26T14:49:52Z",
+      "updatedAt": "2026-10-26T14:58:11Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "odysseus-dev-odysseus-8e3f6f20.txt"
     },
     {
       "rank": 57,
@@ -1253,16 +1332,17 @@
       "url": "https://github.com/modelcontextprotocol/servers",
       "description": "Model Context Protocol Servers",
       "language": "TypeScript",
-      "stars": 91581,
+      "stars": 91582,
       "forks": 11867,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2024-11-19T01:10:17Z",
-      "updatedAt": "2026-10-26T14:39:16Z",
+      "updatedAt": "2026-10-26T15:00:52Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "modelcontextprotocol-servers-978ef45f.txt"
     },
     {
       "rank": 58,
@@ -1273,7 +1353,7 @@
       "description": ":cherry_blossom: A command-line fuzzy finder",
       "language": "Go",
       "stars": 83796,
-      "forks": 4695,
+      "forks": 4697,
       "starsToday": 0,
       "topics": [
         "bash",
@@ -1290,45 +1370,19 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "junegunn-fzf-a44333ff.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 59,
-      "fullName": "usestrix/strix",
-      "name": "strix",
-      "owner": "usestrix",
-      "url": "https://github.com/usestrix/strix",
-      "description": "Open-source AI penetration testing tool to find and fix your app’s vulnerabilities.",
-      "language": "Python",
-      "stars": 72038,
-      "forks": 8057,
-      "starsToday": 0,
-      "topics": [
-        "agents",
-        "ai-hacking",
-        "ai-penetration-testing",
-        "ai-pentesting",
-        "ai-security",
-        "artificial-intelligence",
-        "bug-bounty",
-        "code-quality"
-      ],
-      "createdAt": "2025-08-05T21:28:30Z",
-      "updatedAt": "2026-10-26T14:52:27Z",
-      "sources": [
-        "high-star"
-      ],
-      "isNew": false
-    },
-    {
-      "rank": 60,
       "fullName": "asgeirtj/system_prompts_leaks",
       "name": "system_prompts_leaks",
       "owner": "asgeirtj",
       "url": "https://github.com/asgeirtj/system_prompts_leaks",
       "description": "Documented system prompts from Anthropic - Claude Fable 5.1, Opus 5.5, Claude Design, Claude Code. OpenAI - ChatGPT GPT-6-Astra, Codex. Google - Gemini 3.8 Flash, 3.1 Pro, Antigravity. xAI - Grok, Grok Bot, Cursor, Kimi and more! Updated regularly.",
       "language": "Python",
-      "stars": 70253,
+      "stars": 70254,
       "forks": 11382,
       "starsToday": 0,
       "topics": [
@@ -1342,11 +1396,40 @@
         "claude-code"
       ],
       "createdAt": "2025-05-03T02:43:56Z",
-      "updatedAt": "2026-10-26T14:47:39Z",
+      "updatedAt": "2026-10-26T14:59:45Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "asgeirtj-system-prompts-leaks-810794c2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "dani-garcia/vaultwarden",
+      "name": "vaultwarden",
+      "owner": "dani-garcia",
+      "url": "https://github.com/dani-garcia/vaultwarden",
+      "description": "Unofficial Bitwarden compatible server written in Rust, formerly known as bitwarden_rs",
+      "language": "Rust",
+      "stars": 69705,
+      "forks": 3371,
+      "starsToday": 0,
+      "topics": [
+        "bitwarden",
+        "bitwarden-rs",
+        "docker",
+        "rocket",
+        "rust",
+        "vaultwarden"
+      ],
+      "createdAt": "2018-02-17T22:40:20Z",
+      "updatedAt": "2026-10-26T14:48:40Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "dani-garcia-vaultwarden-a93615f0.txt"
     }
   ]
 }

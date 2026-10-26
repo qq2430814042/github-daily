@@ -74,6 +74,18 @@ function resolvePageUrl() {
   return `https://${owner}.github.io/${repo}/`;
 }
 
+function appDetailUrl(pageUrl, date, fullName) {
+  if (!pageUrl) return '';
+  try {
+    const url = new URL(pageUrl);
+    url.searchParams.set('date', date);
+    url.searchParams.set('repo', fullName);
+    return url.toString();
+  } catch {
+    return '';
+  }
+}
+
 function itemStats(item) {
   const parts = [`★ ${formatNumber(item.stars)}`];
   if (item.starsToday > 0) parts.push(`↑ ${formatNumber(item.starsToday)} 今日`);
@@ -86,9 +98,10 @@ function buildHtml(data, pageUrl) {
   const rows = top
     .map((item) => {
       const description = trimText(item.description, 110);
+      const href = appDetailUrl(pageUrl, data.date, item.fullName) || item.url;
       return [
         '<li style="margin:0 0 14px;">',
-        `<a href="${escapeHtml(item.url)}" style="color:#0969da;font-weight:600;text-decoration:none;">${escapeHtml(item.fullName)}</a>`,
+        `<a href="${escapeHtml(href)}" style="color:#0969da;font-weight:600;text-decoration:none;">${escapeHtml(item.fullName)}</a>`,
         '<br>',
         `<span style="color:#57606a;font-size:12px;">${escapeHtml(itemStats(item))}</span>`,
         description
@@ -115,8 +128,9 @@ function buildMarkdown(data, pageUrl) {
   const rows = top
     .map((item, index) => {
       const description = trimText(item.description, 110);
+      const href = appDetailUrl(pageUrl, data.date, item.fullName) || item.url;
       const lines = [
-        `${index + 1}. [${escapeMarkdown(item.fullName)}](${item.url})`,
+        `${index + 1}. [${escapeMarkdown(item.fullName)}](${href})`,
         `   ${escapeMarkdown(itemStats(item))}`,
       ];
       if (description) lines.push(`   ${escapeMarkdown(description)}`);

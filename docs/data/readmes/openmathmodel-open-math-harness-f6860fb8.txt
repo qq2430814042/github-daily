@@ -1,0 +1,173 @@
+Open Math Harness
+
+Open Math Harness is the open-source runtime of
+Open Math OS, and this repository holds its kernel,
+services and agents, written in Rust. Its first generation is named Nucleus.
+
+Open Math OS is infrastructure for Math 2.0: the operating system for collaborative math
+research, with open frontier models, a scientific compute cloud and collaboration tools
+in one system, and the mathematical community in control of its data.
+
+On Open Math OS, Open Math Harness runs agents on open models, parallel
+exploration with Ultramath and proofs checked by Lean. Its capability-based microkernel
+holds every agent to the authority it was given: agents propose, mathematicians decide.
+
+Apply for a team on Open Math OS.
+
+Project status
+
+Open Math Harness is developed as the runtime of Open Math OS. We publish its source so
+that its design and implementation can be inspected, studied and built on.
+
+The full runtime currently relies on the Open Math OS deployment environment.
+This repository supports building the runtime and running a small self-contained
+example, but does not yet provide a standalone local setup for interactive agents
+or proof search.
+
+We plan to reduce these deployment dependencies and make individual components easier
+to run independently in future releases.
+
+What it runs
+
+- Agents on open models. Every chat has an agent on the open-weight model and the
+  reasoning depth chosen for the task, with streaming replies, tool use, sub-agents and
+  persistent session history.
+- Ultramath. Several agents explore different approaches to one hard problem and
+  bring their findings back to the chat. You decide what holds.
+- Proof search. A tree search over candidate proofs of a fixed Lean statement, with
+  confined prover agents working its branches in parallel.
+- Proofs checked by Lean. Every candidate is checked by Lean in a confined workspace,
+  with a deadline. Whether a proof holds is decided by Lean, never by what a model says
+  about it.
+- Tools and memory for every project. Projects are git repositories. Agents work with
+  files and the shell, web and PDF tools, the project's skills, MCP servers (stdio and
+  Streamable HTTP) and plugins they build, and keep a project memory across sessions.
+- People in charge. A protected action waits for a person's approval, and a session's
+  records are scanned for secrets before the platform shows them.
+
+Built for everyday math research
+
+Agents propose; mathematicians review and decide. Open Math Harness is designed so that
+this holds in the runtime, not only in the prompts:
+
+- Every program, agents included, is a confined process that holds only the capabilities
+  its composition grants it, and what it starts receives no more.
+- Model output, tool results and repository content are untrusted input. Text cannot grant
+  authority, approve an action or decide a verification result.
+- Credentials stay with narrowly privileged providers. They never reach a model, a
+  transcript or a log.
+- Agent loops, model providers, tools and memory are replaceable services. The kernel keeps
+  only the mechanisms every service must share: identity, capabilities, IPC and lifetimes.
+
+AGENTS.md states these requirements; each module's docs say what its code guarantees.
+
+Design
+
+Ultramath
+
+Ultramath coordinates multiple agents exploring different approaches to a hard problem.
+Each member registers a proposed direction, which a model-based duplicate check compares
+against other registered directions. Members share lemmas, partial results,
+counterexamples and unsuccessful approaches on a common board, and keep their working
+files in separate directories.
+
+Exploration runs asynchronously alongside the conversation. Members submit reports and
+supporting files to the coordinating agent for review. The coordinator can return
+feedback for revision or accept a solution, which stops the remaining members. The run
+records directions, findings and review decisions for later inspection.
+
+Proof search
+
+Proof search starts from a fixed Lean statement and preserves candidate proofs in a
+tree. An exploration policy selects which saved workspaces to continue, and workers
+explore those branches in parallel. The harness evaluates submitted candidates through
+the Lean verifier and records the results, so later rounds can build on earlier work.
+
+The discovery interface manages runs and exposes their progress and search trees.
+The explore interface gives each worker its assignment, lets workers share research
+plans, and receives their candidates. A proof counts as solved only when it passes
+verification against the original statement.
+
+Memory
+
+Memory is maintained per project. After a session becomes quiet, the memory service
+extracts material from its history and consolidates selected material into MEMORY.md.
+Later sessions receive that memory as context and cite what they use; citation history
+helps select material for future consolidation. Memory carries no authority to grant
+permissions or override the user's current instructions.
+
+Building from source
+
+Requirements
+
+- Linux, with a C compiler and linker for native dependencies. Windows and macOS are
+  not supported as native runtime hosts.
+- Rust installed through rustup. rust-toolchain.toml pins the
+  toolchain and includes the formatting and linting components.
+- bubblewrap, with bwrap on PATH and
+  permission to create unprivileged user namespaces. Host security policy must allow
+  bubblewrap to create its sandbox; startup fails if confinement is unavailable.
+
+Build
+
+git clone https://github.com/openmathmodel/open-math-harness.git
+cd open-math-harness
+cargo build --locked --workspace
+
+This builds the launcher and service binaries into target/debug/.
+
+Running interactive agents additionally requires a service configuration, model provider
+credentials and a client. Proof search also requires a configured Lean and Mathlib
+environment. The files in deploy/vm/ target the managed Open Math OS VM and are not
+a standalone installer for a personal machine.
+
+Run the local example
+
+The slice example runs a scripted agent, a worker and a filesystem
+service to demonstrate capability checks and delegation. It does not call a model or
+start interactive chat, Ultramath, memory or proof search. It needs no model credentials
+or Open Math OS deployment, but still requires Linux and working bubblewrap confinement.
+After building, run this command from the repository root:
+
+cargo run --locked --manifest-path cli/Cargo.toml -- run examples/slice/config.json
+
+The agent reads permitted files, delegates access to a smaller directory to its worker,
+and attempts operations that the kernel refuses. Calls and results are recorded in
+examples/slice/out/agent/transcript.jsonl and
+examples/slice/out/agent/worker/transcript.jsonl. The filesystem service records the
+calls it receives in examples/slice/log/access.jsonl.
+
+The example also creates examples/slice/data/work/report.txt. To repeat that creation
+successfully, remove the generated report before running the example again.
+
+Development
+
+Run the Rust tests from the repository root after building:
+
+cargo test --workspace
+
+The default tests require no paid model API or production credentials. Integration
+tests exercise real child processes and bubblewrap; tests requiring external providers
+or a Lean installation are explicitly opt-in.
+
+The CI workflow defines the full checks and their environment,
+including formatting, Clippy, Python tooling tests and Node.js MCP integration tests.
+See CONTRIBUTING.md for contribution requirements, including AI
+review, testing and the information to include in a pull request.
+
+Community
+
+We welcome discussion and contributions. Join the
+Open-Math-Model channel
+on the SAIR Foundation Zulip, and see
+Community discussion for how to take part.
+
+License
+
+Open Math Harness is licensed under the Apache License 2.0.
+Attributions and license terms for incorporated third-party material are in
+third-party/NOTICES.txt.
+
+Version
+
+…（内容已截断）

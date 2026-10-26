@@ -1,0 +1,105 @@
+English (C edition) has been in production since about the fifth century. It has no type checker, so "he don't" ships. Its pronouns are raw pointers that can dangle or point at two things at once. Its plurals and past tenses are a hand-maintained table of legacy special cases that every user has to memorise. This repository is the rewrite, and it comes in two parts.
+
+The english crate is English (Rust edition). You write sentences as Rust tokens, and grammar is enforced by the type system: subject-verb agreement is a trait bound, case is a trait, determiners know which numbers and sounds they may precede, and a pronoun is a borrow of its antecedent, so the borrow checker rejects a dangling "it".
+
+englishc is the migration tool for the fifteen centuries of legacy English already out there. It reads ordinary prose and reports what the new edition would reject, in rustc's diagnostic format, with --fix for the cases where the right answer is unambiguous.
+
+englishc
+
+$ cargo run -p englishc -- examples/essay.txt
+   Compiling examples/essay.txt (english 2026)
+...
+error[E0001]: mismatched verb form
+ --> examples/essay.txt:3:70
+  |
+3 | Irregardless of the weather, me and my brother goed to the beach. He are
+  |                                                                   -- ^^^ expected is, found are
+  |                                                                   |
+  |                                                                   He is third-person singular
+  |
+  = note: in English (Rust edition) this is a compile error: the trait bound He: TakesAre is not satisfied
+help: use is
+  |
+3 - Irregardless of the weather, me and my brother goed to the beach. He are
+3 + Irregardless of the weather, me and my brother goed to the beach. He is
+  |
+...
+error: could not compile examples/essay.txt due to 11 previous errors; 5 warnings emitted (run englishc --fix examples/essay.txt to apply 15 suggestions)
+
+englishc --fix applies every machine-applicable suggestion, as cargo fix does, and repeats until nothing changes. On the sample essay it produces correct prose and leaves one warning, an ambiguous "it", because only the author knows whether they meant the dog or the ball.
+
+Other flags work the way rustc's do. englishc --explain E0005 prints the long explanation of an error code, englishc -W help lists every lint, -A lint and -D lint allow or deny one, --error-format short prints one line per diagnostic, and a file name of - (or none) reads standard input. Inside a document, a line reading #![allow(double_negative)] allows a lint for the whole file, and #[allow(E0002)] allows it for the next line only, which is how you ship "I can't get no satisfaction" on purpose.
+
+| code    | lint                       | catches                                               |
+|---------|----------------------------|-------------------------------------------------------|
+| E0001   | subject_verb_agreement   | he are, they was, she don't, he always go             |
+| E0002   | indefinite_article       | a apple, an unicorn, a hour, a MBA                    |
+| E0003   | of_for_have              | could of, should of                                   |
+| E0004   | regularized_verb         | goed, runned, bringed                                 |
+| E0005   | wrong_verb_form          | had went, have ate, I seen it                         |
+| E0006   | regularized_plural       | childs, mouses, criterions, childrens                 |
+| E0007   | its_confusion            | its a trap, it's own                                  |
+| E0008   | your_confusion           | your welcome, your a genius                           |
+| E0009   | there_confusion          | their is, there going, their going to                 |
+| E0010   | then_for_than            | bigger then, rather then                              |
+| E0011   | unknown_word             | irregardless, alot, dont                              |
+| E0012   | lowercase_i              | i think                                               |
+| E0013   | objective_case_subject   | me and my brother went (fix: my brother and I went)   |
+| warning | ambiguous_pronoun        | the dog chased the ball until it stopped              |
+| warning | double_negative          | I don't have no money                                 |
+| warning | repeated_word            | the the                                               |
+| warning | absolute_adjective       | very unique (unique is a bool, not PartialOrd)  |
+| warning | unused_literally         | literally (prefix with _ if intentional)            |
+| warning | non_capitalized_sentences| a sentence that starts in lower case                  |
+
+The lints are deliberately conservative. Each rule looks at a word and its neighbours and fires only where the neighbour rules out the correct reading, so "its a" is flagged and "its tail" is not. Mistakes in irregular forms are predicted rather than listed: for every irregular verb the lint works out what a learner's -ed would produce, for every irregular noun what -s would produce, and it flags exactly those spellings, minus the handful that are real words ("seed", "winded", "putted").
+
+To keep that honest, the compiler is run over the prose of The Rust Programming Language, about 150,000 words that a team of editors has already been over. It reports no errors and 17 warnings. A dozen of those are ambiguous pronouns, several of them genuinely ambiguous ("The runtime will pause the future until it is ready"), and one is a true positive: the book calls ownership "Rust's most unique feature".
+
+The english crate
+
+use english::english;
+
+let text = english!(The dog barks. I 'm happy! These mice are small. She doesn 't care.);
+assert_eq!(text.to_string(), "The dog barks. I'm happy! These mice are small. She doesn't care.");
+
+A sentence that type-checks is rendered back into ordinary text. One that doesn't is a compile error, with a message that says why:
+
+error[E0277]: subject-verb disagreement: He needs the -s form of this verb
+   --> src/main.rs:7:13
+    |
+  7 |     let _ = english!(He don 't care);
+    |             ^^^^^^^^^^^^^^^^^^^^^^^^
+    |             |
+    |             third-person singular subjects take -s
+    |             required by a bound introduced by this call
+    |
+    = help: the trait TakesBase is not implemented for He
+    = note: he runs, she does, it has, the dog barks
+
+The same mechanism rejects english!(I is happy) ("I cannot take is"), english!(Me am happy) ("Me cannot be the subject of a sentence"), english!(A dogs barks) ("A cannot come before a plural noun") and english!(A apple is red) ("A cannot come before a vowel sound; write An"). Each of these is a compile_fail doctest, so the claims in this paragraph are checked by cargo test.
+
+Contractions are written with a space, as in don 't, because since Rust 2021 don't is a reserved prefix and rustc will tell you to insert one. Inside the macro, 't, 's, 're, 'm, 've, 'll and 'd are lifetimes that attach to the word before them when the sentence is rendered.
+
+Pronouns are borrows
+
+A Pronoun holds a shared borrow of the noun it stands for. It cannot outlive that noun, and the noun cannot be moved out of the story while the pronoun is in use:
+
+error[E0505]: cannot move out of dog because it is borrowed
+ --> src/main.rs:6:10
+  |
+4 |     let dog = Noun::new("dog").the();
+  |         --- binding dog declared here
+5 |     let it = dog.pronoun(); // it borrows the dog
+  |              --- borrow of dog occurs here
+6 |     drop(dog); // the dog leaves the story
+  |          ^^^ move out of dog occurs here
+7 |     println!("{}", english!(it barks));
+  |                    ------------------ borrow later used here
+  |
+help: consider cloning the value if the performance cost is acceptable
+  |
+5 |     let it = dog.clone().pronoun(); // it borrows the dog
+  |                 ++++++++
+
+…（内容已截断）

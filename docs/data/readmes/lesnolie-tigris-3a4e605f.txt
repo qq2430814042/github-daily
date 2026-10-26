@@ -1,0 +1,189 @@
+Tigris
+
+海信安装成功案例（用户反馈，2026-10-26）： 用户通过 WorkBuddy 在海信电视上成功安装 Tigris。未提供型号、系统/固件及 Tigris 版本；仅收录为安装成功案例，不推断所有海信或原生 VIDAA 兼容，也不作为实体 Home、冷启动、待机唤醒或广告清理的验证结论。
+
+LG webOS 测试包 / Developer preview: webos-v0.1.0-preview.1 · IPK 安装、启动、更新和卸载 / Setup guide。已提供打包 IPK，无需自行构建；未做实机测试，不是稳定版，不接管 Home。Prebuilt IPK available; hardware untested, no Home takeover.
+
+统一安装验收 / Shared compatibility rules: 按品牌排查、遥控器/U 盘安装、电脑检查与四项验收. AI 与手动安装使用同一个 tools/check-install.py；先验证 Home，失败才处理品牌限制。APK 安装不等于桌面接管，未测项目必须标记未验证。
+
+安装与模块化： v2.0.9 提供共享电脑端安装策略和模块扩展指南。小米 HOME 与广告行为仍需实机验证；未获精确固件审查的广告候选不执行禁用，其他品牌保留既有路径。
+
+v2.0.9（2026-10-26）： 统一安装策略、固件安全门槛及通用功能扩展契约。保持官方签名和安装包类型，递增版本以支持覆盖升级；不清除用户设置或布局。继续包含 2.0.8 的 Android 9/10 签名兼容修复。详见 2.0.9 更新说明。
+
+v2.0.7（2026-10-25）已更新：本版未做实机测试。 统一安装兼容性检查，并修复待机唤醒动画前露出 Tigris 主页、进程恢复后守护服务未绑定的代码路径。请红米 X50 / MIUI，以及出现相同问题的小米 / Redmi 电视用户协助测试；不保证解决系统强制停止或原厂桌面闪现。详见 2.0.7 更新说明。
+
+请分别测试：从其他应用按实体 Home、待机唤醒时是否先闪主页及动画是否正常、长按 Home 清理内存后守护能否恢复、自行确认可重启后测试重启保持。通过 Issues 反馈型号、MIUI / 固件版本、标准版或 Guard 版、动画模式和等待时间，以及每项“通过 / 失败 / 未测试”；闪屏请说明是 Tigris 还是原厂桌面，方便时附短视频。
+
+语言： 简体中文 · English
+
+把 Android TV 的桌面换成 tvOS 26 的样子：沉底的 Liquid Glass Dock、Top Shelf 式顶部内容、毛玻璃控制中心、风景照片背景和相框屏保。
+
+十二生肖开源系列第三个项目：虎。Tigris 是拉丁语和希腊语里的“老虎”。
+
+- 官网：tigris-tv.pages.dev
+- 最新正式版：v2.0.9 Release（标准版 APK · TCL / 雷鸟守护版 APK · SHA-256 校验文件）
+
+▶ 观看 42 秒宣传片（在官网播放，有声音）
+
+1. 展示与功能
+
+| 顶部内容（Top Shelf） | 展开全部 App |
+|---|---|
+|  |  |
+| 控制中心 | 相框 / 屏保 |
+|  |  |
+
+v2.0.6 更新内容
+
+- 应用顺序可以固定：主屏幕设置 → App →「最近打开的 App 自动置顶」。默认关闭，不再因为启动应用而改变顺序；需要自动置顶时可自行开启。切换选项不会重置现有布局和文件夹。
+- 正式安装包带版本号：标准版 Tigris-v2.0.6.apk、守护版 Tigris-guard-v2.0.6.apk；同版本的校验文件为 SHA256SUMS-v2.0.6.txt。应用内更新与安装脚本兼容新版和旧版命名。
+- 稳定升级：沿用现有正式版签名，兼容签名一致的覆盖安装；不需要卸载清数据。完整变化见 v2.0.6 更新说明。
+
+2.0.4 新增
+
+- 应用文件夹：长按应用创建文件夹，支持移入、移出、改名和解散。
+- 上传头像：主屏幕设置 → 上传头像，用手机扫码上传或恢复默认头像。
+- 统一更新中心：在同一个页面检查 Tigris 和 MiracastReceiver 的 GitHub 正式版，可手动下载，也可尝试自动安装。
+- 下滑磨砂效果：应用列表下滑时背景逐渐虚化，Dock 保留玻璃底板并随第一排自然滑出屏幕；右上角时间和控件同步离屏，不吸顶、不占用焦点。
+- 内置默认素材：内置默认开机视频和设置页背景；设置背景的主体向左偏移，为右侧按钮留出空间。自定义素材优先，已有配置保留。
+
+核心功能
+
+- 主屏幕：5 列 16:9 圆角图标，选中时弹性放大、倾斜并带高光和投影。右上角显示时间、网络与可选头像；时间支持 12 / 24 小时制，也可改成左上角大时钟或隐藏。
+- Liquid Glass Dock：第一排应用放在液态玻璃 Dock 中，下一排露出上沿。玻璃模糊、边缘折射和高光会按当前背景预先生成，低配电视可改用更省性能的样式。
+- 顶部内容：选中 Dock 中的云视听小电视或斗鱼时，上半屏轮播对应的热门内容。数据来自服务公开的网页接口，使用前需要安装对应的 TV 版 App。
+- 主屏幕设置：仿 tvOS 的分组布局，可分别调整时钟、聚焦动画、控制中心样式、背景、相框、开机动画、头像和桌面守护。
+- 最近打开自动置顶（可开启）：v2.0.6 首次安装或从旧版升级时默认关闭；可在「主屏幕设置 → App → 最近打开的 App 自动置顶」开启，之后成功打开的 App 或文件夹会移到第一位。关闭后固定当前排序，长按「编辑主屏幕」可自行调整；已有的个人布局和开关选择会保留。
+- 编辑、文件夹与删除：长按图标可移动、放入文件夹或删除。电视预装 App 也可用 pm uninstall --user 0 从当前用户空间移除，并可在设置中恢复；系统运行必需组件受到保护。
+- 控制中心：遥控器返回键或右上角按钮打开，提供网络、待机、关机、重启、释放内存、相框、设置、亮度、音量和 HDMI 输入源。低配机型可切换成深色面板。
+- 背景与手机上传：支持必应每日风景、360 壁纸、Wallhaven 全年龄二次元、公有领域名画、纯色渐变、手机相册照片和自定义图片链接。手机扫码页面还支持上传头像、开机视频和设置页背景。扫码后的手机页面现支持中英文自动识别：跟随手机浏览器语言，和电视系统语言独立；英文手机不会再看到中文上传按钮或提示。
+- 相框与航拍屏保：照片全屏轮播，画面缓慢平移缩放，时间文字定时移动以减少 OLED 烙印；也可在线播放 Apple TV 航拍视频，支持左右键切换，断网时回到照片。
+- HDMI 输入源上屏：在控制中心把常用 HDMI 口固定到主屏幕，按一下即可切换。
+- 软件更新与投屏：每 6 小时检查 Tigris 和 MiracastReceiver 的正式版。更新前验证包名、系统版本、递增版本号和签名；不会自动卸载、不清数据、不接受降级。电视系统仍可能要求一次安装来源授权或每次确认。
+- 内存清理：支持定时清理和待机清理，保留名单可在设置中修改。
+
+素材与商标说明
+
+仓库为界面展示打包了默认开机视频，并在线播放 Apple TV 航拍内容。这些素材不附带 Apple 或任何第三方的额外授权，也不代表 Tigris 与 Apple 有关联。对外分发、商用或再发布时，请确认素材授权；也可以在设置中改用 Tigris 字样动画或上传自己拥有权利的视频。截图中的影视封面、摄影作品和第三方图标版权归各自权利人所有。
+
+LG webOS 专区（独立平台 · 开发预览版）
+
+状态： Android APK 仍不能安装到 LG webOS。仓库已新增独立 webos/ 源码、非 Root 模块和已有 Root 用户的高级模块、天气卡片，以及面向 webOS 的构建/安装脚本。尚无已发布的 LG 正式 IPK；尚未实机验证 HOME 键接管。 不要将下面的源码预览安装说明误认为正式版下载。
+
+- 无需 Root： LG Developer Mode + Key Server 配对，安装普通 Tigris webOS 应用；应用启动、遥控器操作、Luna API 和 HDMI 输入源以实际固件权限为准。默认不拦截 Home，可通过电视自带 LG Quick Access 绑定数字键快速打开。
+- 已有 Root： 可以额外检测现有 Homebrew / Root 能力；Tigris 不会 Root、刷机或静默修改系统。系统级 Home Helper 需要独立验证与恢复功能后才可启用，目前不包含在开发预览包中。
+- 非 Root Home Helper： 计划参考 Clean Your TV 的原生输入处理方案。AI 可在正式安装前进行 SSH 只读预检，但只有装入隔离的安全探针、验证遥控器实体 Home 键与紧急退出后，才能宣称兼容。当前探针仍待实现；仅连通 SSH 不等于可以接管 Home。
+- 天气： 新增独立模块，采用 Open-Meteo（30 分钟更新、6 小时缓存），用户明确打开并选城市后才请求网络；默认关闭，不申请定位权限。
+
+LG 用 AI 安装（先识别平台）
+
+把下面内容发给能在电脑上执行命令的 AI Agent（如 Codex、Claude Code）。LG webOS 不是 Android：不执行 adb connect、adb shell 或 Android 包管理命令。
+
+我要在 LG webOS 电视上安装 Tigris。先判断电视系统，不要仅凭电视品牌推断。
+请阅读：
+https://github.com/lesnolie/Tigris/blob/main/docs/WEBOS_AI_INSTALL.md
+https://github.com/lesnolie/Tigris/blob/main/webos/README.md
+请使用 LG Developer Mode、Key Server、@webos-tools/cli 和 SSH/Luna（不是 ADB）。
+先只读检查电视配对、固件和权限，并报告非 Root Home Helper 的实际状态。
+需要电视端授权时请提醒我；不得索取或泄露私人配对密钥。
+我同意后，才构建和安装 webOS 开发预览 IPK。
+不要 Root、停用/覆盖 LG Home、未经确认重启或开启未测试的 HOME 拦截。
+安装后验证应用/输入源、遥控器按键和原厂 LG Home 的恢复路径。
+当前未实现的 Home Helper 必须报告为“未验证/未提供”，不能声称成功。
+
+LG 一行命令：先预检，再按需安装
+
+在 macOS / Linux 上先安装 Node.js + @webos-tools/cli，通过 ares-setup-device 配对 LG Developer Mode，并将设备命名为 myTV。电视 IP 不等于 CLI 的设备别名。
+
+只读预检，不安装、不接管 HOME
+curl -fsSLo tigris-webos.sh https://raw.githubusercontent.com/lesnolie/Tigris/main/webos/install.sh && sh tigris-webos.sh --device myTV --preflight
+
+用户确认后：从仓库源码构建 IPK，安装并启动普通桌面（仍不接管 HOME）
+sh tigris-webos.sh --device myTV --install
+
+重要： 以上是代码合并至 main 后可使用的源码预览入口，而非已发布的稳定 LG 安装包。命令会在确认 CLI 已配对后下载源码、使用官方工具构建；不会自动 Root 或安装未验证的 Home Helper。首次运行前应检查脚本内容。
+
+LG 手动安装和还原
+
+npm install -g @webos-tools/cli
+ares-setup-device                  # 按向导添加电视、完成 Dev Mode 配对
+ares-setup-device --list
+Enable Key Server on the TV; enter the passphrase locally when prompted.
+ares-novacom --device myTV --getkey
+ares-device --system-info --device myTV
+ares-package webos/app
+ares-install --device myTV org.tigris.webos_0.1.0_all.ipk
+ares-launch --device myTV org.tigris.webos
+还原（仅移除 Tigris webOS，原厂 Home 未被改变）：
+ares-install --device myTV --remove org.tigris.webos
+
+Windows 可在 PowerShell 执行 ares- 指令；一行 Shell 脚本需要 macOS/Linux 或兼容的 POSIX Shell。配对码、SSH 私钥、IP 不要上传到公开 Issue。*
+
+详细说明与英文版：LG webOS 独立安装指南 · AI 与 Home Helper 安全预检规范 · 官网 webOS 专区。
+
+2. 安装指南
+
+不要停用或卸载电视原厂桌面。 尤其是小米 / Redmi 的 com.mitv.tvhome（PatchWall）；强行停用后，部分电视会开机黑屏，只能通过 ADB 恢复。正确做法是保留原桌面，使用 Tigris 的默认 HOME 或桌面守护。
+手动修改前先记录原配置。 至少保存默认 HOME、屏保、无障碍服务和通知监听的原值。install.sh 会自动保存快照；手动安装请自行记录，缺少记录时不要猜包名。
+只在自己的局域网开启 ADB。 不要把电视调试端口暴露到公网。
+签名不一致时不要直接卸载。 INSTALL_FAILED_UPDATE_INCOMPATIBLE 表示新 APK 与原包签名不同；直接卸载会丢失设置和授权。应先找到原签名密钥重新签名。
+
+Tigris 现有正式 APK 要求 Android 9 / API 28 或更高，不能安装到 LG webOS、三星 Tizen 等非 Android 系统。LG webOS 是上方介绍的独立 IPK 开发预览项目，并非现有 APK 的兼容品牌。
+
+2.1 打开电视的 ADB 调试
+
+1. 让电脑和电视连接同一个局域网。
+2. 在电视的网络或关于页面找到 IP 地址，例如 192.168.1.20。
+3. 按品牌打开 ADB。
+
+| 电视 | 开启方法 |
+|---|---|
+| 索尼 BRAVIA | 设置 → 系统 → 关于 → 在 Android TV 操作系统版本上连按确认键 7 次；再到 设置 → 系统 → 开发者选项，打开 USB 调试。 |
+| 小米 / Redmi | 设置 → 关于 → 产品型号，连续按确认键直到提示进入开发者模式；再到 设置 → 账号与安全，打开 ADB 调试 和 安装未知来源的应用。 |
+| TCL / 雷鸟 | 设置 → 关于 → 本机信息，依次按遥控器 上、下、左、右，间隔不要超过 1 秒；在底部出现的「更多」中打开 ADB。 |
+| 原生 Android TV / Google TV、海信等 | 设置 → 设备偏好设置 → 关于，连续按 版本号 7 次；再到开发者选项打开 USB 调试，也可能叫「网络调试」或「ADB 调试」。 |
+
+电脑第一次连接时，电视会显示「允许 USB 调试吗？」。用遥控器勾选 始终允许，再选 允许。
+
+电脑需要安装 Android SDK Platform-Tools，并能运行 adb version。TCL 多屏互动推送还需要 Python 3。
+
+2.2 让 AI Agent 安装（推荐）
+
+适合 Codex、Claude Code，以及能在电脑上执行命令的 WorkBuddy、豆包电脑版 / 工作版、千问电脑版、Trae 等。把下面整段发给 Agent，并替换电视 IP：
+
+请帮我把开源电视桌面 Tigris 装到我的电视上，并设置为默认桌面或启用桌面守护。
+电视 IP：
+保持 ADB 常开：要
+
+安装说明：
+https://github.com/lesnolie/Tigris/blob/main/AGENTS.md
+打不开时：
+https://raw.githubusercontent.com/lesnolie/Tigris/main/AGENTS.md
+
+请先完整阅读安装说明，再在我的电脑上亲自运行命令，不要只把步骤告诉我。
+需要我在电视上操作时请提醒我。
+不要未经确认重启、待机、关机、卸载旧版、清空配置或停用原厂桌面。
+签名不匹配时先寻找原签名密钥，不要自动卸载。
+请先记录默认 HOME、屏保、无障碍服务和通知监听，安装后分别验证安装、主页键、待机唤醒和开机。
+没有实际测过的项目不要写成通过。
+
+最后把下面命令的原始输出贴给我，每条 adb 都加 -s :5555：
+- adb shell cmd package resolve-activity --brief -a android.intent.action.MAIN -c android.intent.category.HOME
+- adb shell settings get secure enabled_accessibility_services
+- 按主页键并等待两秒后：adb shell "dumpsys window | grep mCurrentFocus"
+
+Agent 必须能在这台电脑上实际运行命令。手机聊天或网页版如果只能回复步骤，就不能完成安装。
+
+验收时看按主页键后的 mCurrentFocus 是否包含 com.leslie.tvhome。守护版可能仍把原厂桌面保留为 HOME resolver，因此不能只看 resolve-activity；应以前台窗口和主页键结果为准。
+
+2.3 一行命令（macOS / Linux）
+
+电脑需要先安装 adb（Android SDK Platform-Tools）、curl 和 python3。脚本默认下载最新正式版，按版本号解析 APK 与对应的 SHA-256 校验文件，保存原桌面快照，覆盖安装时保留 App 配置。
+
+curl -fsSL https://raw.githubusercontent.com/lesnolie/Tigris/main/install.sh \
+  | KEEP_ADB=1 TV=192.168.1.20 bash
+
+- 把 192.168.1.20 换成电视 IP。
+- 小米电视想保持 ADB 常开时使用 KEEP_ADB=1；不需要可改为 KEEP_ADB=0。
+
+…（内容已截断）

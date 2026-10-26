@@ -1,0 +1,229 @@
+Show your love for fzf -- T-shirts, mugs, and stickers now available!
+
+fzf is a general-purpose command-line fuzzy finder and an interactive terminal toolkit.
+
+Whether you're selecting files, browsing command history, previewing data,
+navigating complex datasets with fuzzy matching, or creating custom menus and
+workflows, fzf provides the building blocks to turn shell scripts into rich
+terminal applications.
+
+Highlights
+- Portable // Distributed as a single binary for easy installation
+- Fast // Optimized to process millions of items in milliseconds
+- Programmable // Event-driven architecture for building custom terminal interfaces and workflows
+- Batteries-included // Comes with integrations for Bash, Zsh, Fish, Nushell, Vim, and Neovim
+
+Table of Contents
+* Installation
+    * Using Homebrew
+    * Using Mise
+    * Linux packages
+    * Windows packages
+    * Using git
+    * Binary releases
+    * Setting up shell integration
+    * Vim/Neovim plugin
+* Upgrading fzf
+* Building fzf
+* Usage
+    * Using the finder
+    * Display modes
+        * --height mode
+        * --popup mode
+    * Search syntax
+    * Environment variables
+    * Customizing the look
+    * Options
+    * Demo
+* Examples
+* Key bindings for command-line
+* Fuzzy completion
+    * Files and directories
+    * Process IDs
+    * Host names
+    * Environment variables / Aliases
+    * Customizing fuzzy completion for bash and zsh
+        * Customizing fzf options for completion
+        * Customizing completion source for paths and directories
+        * Supported commands (bash)
+        * Custom fuzzy completion
+    * Fuzzy completion for fish
+    * Fuzzy completion for Nushell
+* Vim plugin
+* Advanced topics
+    * Customizing for different types of input
+    * Performance
+    * Executing external programs
+    * Turning into a different process
+    * Reloading the candidate list
+        * 1. Update the list of processes by pressing CTRL-R
+        * 2. Switch between sources by pressing CTRL-D or CTRL-F
+        * 3. Interactive ripgrep integration
+    * Preview window
+    * Previewing an image
+* Tips
+    * Respecting .gitignore
+    * Fish shell
+    * fzf Theme Playground
+* Related projects
+* License
+* Goods
+* Sponsors :heart:
+
+Installation
+Using Homebrew
+
+You can use Homebrew (on macOS or Linux) to install fzf.
+
+brew install fzf
+
+To set up shell integration (key bindings and fuzzy completion),
+see the instructions below.
+
+fzf is also available via MacPorts: sudo port install fzf
+
+portfile]: https://github.com/macports/macports-ports/blob/master/sysutils/fzf/Portfile
+
+Using Mise
+
+You can use [mise to install fzf.
+
+mise use -g fzf@latest
+
+Linux packages
+
+| Package Manager | Linux Distribution      | Command                            |
+| --------------- | ----------------------- | ---------------------------------- |
+| APK             | Alpine Linux            | sudo apk add fzf                 |
+| APT             | Debian 9+/Ubuntu 19.10+ | sudo apt install fzf             |
+| Conda           |                         | conda install -c conda-forge fzf |
+| DNF             | Fedora                  | sudo dnf install fzf             |
+| Nix             | NixOS, etc.             | nix-env -iA nixpkgs.fzf          |
+| Pacman          | Arch Linux              | sudo pacman -S fzf               |
+| pkg             | FreeBSD                 | pkg install fzf                  |
+| pkgin           | NetBSD                  | pkgin install fzf                |
+| pkg_add         | OpenBSD                 | pkg_add fzf                      |
+| Portage         | Gentoo                  | emerge --ask app-shells/fzf      |
+| Spack           |                         | spack install fzf                |
+| XBPS            | Void Linux              | sudo xbps-install -S fzf         |
+| Zypper          | openSUSE                | sudo zypper install fzf          |
+
+To set up shell integration (key bindings and fuzzy completion),
+see the instructions below.
+
+Windows packages
+
+On Windows, fzf is available via Chocolatey, Scoop,
+Winget, and MSYS2:
+
+| Package manager | Command                               |
+| --------------- | ------------------------------------- |
+| Chocolatey      | choco install fzf                   |
+| Scoop           | scoop install fzf                   |
+| Winget          | winget install fzf                  |
+| MSYS2 (pacman)  | pacman -S $MINGW_PACKAGE_PREFIX-fzf |
+
+choco]: https://chocolatey.org/packages/fzf
+[scoop]: https://github.com/ScoopInstaller/Main/blob/master/bucket/fzf.json
+[winget]: https://github.com/microsoft/winget-pkgs/tree/master/manifests/j/junegunn/fzf
+[msys2]: https://packages.msys2.org/base/mingw-w64-fzf
+
+Using git
+
+Alternatively, you can "git clone" this repository to any directory and run
+[install script.
+
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+
+The install script will add lines to your shell configuration file to modify
+$PATH and set up shell integration.
+
+Binary releases
+
+You can download the official fzf binaries from the releases page.
+
+* https://github.com/junegunn/fzf/releases
+
+Setting up shell integration
+
+Add the following line to your shell configuration file.
+
+* bash
+Set up fzf key bindings and fuzzy completion
+  eval "$(fzf --bash)"
+* zsh
+Set up fzf key bindings and fuzzy completion
+  source  --bash, --zsh, --fish, and --nushell options are only available in
+recent versions of fzf. If you have an older version of fzf, or want finer control, you can
+source individual script files in the /shell directory. The
+location of the files may vary depending on the package manager you use.
+Please refer to the package documentation for more information.
+(e.g. apt show fzf)
+
+You can disable CTRL-T, CTRL-R, or ALT-C bindings by setting the
+corresponding *_COMMAND variable to an empty string when sourcing the
+script. For example, to disable CTRL-R and ALT-C:
+* bash: FZF_CTRL_R_COMMAND= FZF_ALT_C_COMMAND= eval "$(fzf --bash)"
+* zsh: FZF_CTRL_R_COMMAND= FZF_ALT_C_COMMAND= source  * fish: fzf --fish | FZF_CTRL_R_COMMAND= FZF_ALT_C_COMMAND= source`
+* nushell: add to your env.nu:
+  $env.FZF_CTRL_R_COMMAND = ""; $env.FZF_ALT_C_COMMAND = ""
+Setting the variables after sourcing the script will have no effect.
+
+Vim/Neovim plugin
+
+If you use vim-plug, add this to
+your Vim configuration file:vim
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+* junegunn/fzf provides the basic library functions
+    * fzf#install() makes sure that you have the latest binary
+* junegunn/fzf.vim is a separate project
+  that provides a variety of useful commands
+
+To learn more about the Vim integration, see README-VIM.md.
+
+If you use Neovim and prefer Lua-based plugins, check out
+fzf-lua.
+
+Upgrading fzf
+fzf is being actively developed, and you might want to upgrade it once in a
+while. Please follow the instruction below depending on the installation
+method used.
+
+- git: cd ~/.fzf && git pull && ./install
+- brew: brew update; brew upgrade fzf
+- macports: sudo port upgrade fzf
+- chocolatey: choco upgrade fzf
+- vim-plug: :PlugUpdate fzf
+
+Building fzf
+See BUILD.md.
+
+Usage
+fzf will launch interactive finder, read the list from STDIN, and write the
+selected item to STDOUT.sh
+find * -type f | fzf > selected
+Without STDIN pipe, fzf will traverse the file system under the current
+directory to get the list of files.sh
+vim $(fzf)
+You can override the default behavior
+* Either by setting $FZF_DEFAULT_COMMAND to a command that generates the desired list
+* Or by setting --walker, --walker-root, and --walker-skip options in $FZF_DEFAULT_OPTS
+
+A more robust solution would be to use xargs but we've presented
+the above as it's easier to grasp
+sh
+fzf --print0 | xargs -0 -o vim
+> fzf also has the ability to turn itself into a different process.
+sh
+fzf --bind 'enter:become(vim {})'
+>
+*See Turning into a different process
+for more information.*
+
+Using the finder
+
+- CTRL-K / CTRL-J (or CTRL-P / CTRL-N) to move cursor up and down
+
+…（内容已截断）

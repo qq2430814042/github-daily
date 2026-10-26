@@ -1,0 +1,125 @@
+ESP32 Labs: the bench guide
+
+Wire it, flash it, watch it, then read the code.
+
+An interactive guide to the ESP32-S3: 32 hands-on labs with live simulators, a 3D board, a pinout, a reader that explains the firmware line by line, and the chip's datasheet made readable.
+
+Live guide ·
+Firmware (esp-labs) ·
+Architecture ·
+Contributing ·
+Report a bug ·
+Propose a lab
+
+Contents
+
+- What's inside
+- The labs
+- Quick start
+- How it is built
+- Contributing
+- Commands
+- Configuration
+- Deploy to Vercel
+- Where things live
+
+What's inside
+
+Every lab runs in the browser first
+
+Each lesson is one sheet: the goal, the pins it uses on a live pinout, the wiring, the command to flash it, the steps to tick off and a simulator of what you should see. Type a command into the simulated serial monitor and the board answers like the real firmware does.
+
+A code reader that never overwhelms
+
+Read the code opens the real firmware the lab flashes, taken from esp-labs at build time. Tour walks it a few lines at a time and asks you to guess first. Story follows the program as it runs, from setup() into every call. Explore explains any line you tap. New C++ words come up three at a time, and the phrasebook remembers the ones you've already met.
+
+The datasheet, made for makers
+
+The new Datasheet section (#/datasheet) is about the ESP32-S3 itself. Explore keeps the 10% of Espressif's documents a maker needs: the chip at a glance with a 3D dive from the board down to the die, every pin and its jobs, an atlas of all 32 peripheral blocks with a page each, and memory, clocks and power modes. Each fact cites its section of the reference, the "things that bite" are called out, and the blocks your labs have used light up as you tick steps.
+
+A citation opens that section of the reference in a side reader, and Read turns the board guide, module datasheet, chip datasheet and technical reference into one book you can read cover to cover, with section ticks and "Continue at". Titles follow your language; the text stays Espressif's English.
+
+Espressif's reference (docs-llm/esp32-s3/ESP32-S3_REFERENCE.md and its images/) is in the repo, so a clone and the deploy get the reader and the book. Its text stays Espressif's and is never bundled into the JS: the build emits it as static files under reference/. Without the file (see REFERENCE_FILE under Configuration) the curated pages work as usual and citations link to Espressif's official PDFs.
+
+In your language, on your phone
+
+The guide is in English, French, Spanish, Italian, German, Polish, Turkish, Chinese (Simplified and Traditional), Japanese and Arabic (right to left). Add ?lang=fr to any link to share it in a language. It works on a phone at 390 px, in light and dark themes, and respects reduced motion.
+
+Also inside
+
+- Meet the board: the DevKitC-1 in 3D (three.js) with six callouts. Each one lights up its part and lists the labs that use it.
+- The bench log: what is flashed on the board right now and every command recorded. It is plain JSON in public/data/, so you can update it without a rebuild.
+- Progress: your ticks, the last lesson you opened and the variants you picked stay in your browser, with no account.
+- The parts library at #/parts: 42 isometric drawings of every component on the bench, coloured from design tokens only.
+
+The labs
+
+| Theme             | Labs                                                                                       | What you build                                          |
+| ----------------- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------- |
+| Intro         | 00 Setup · 01 Hello · 02 First circuit                                                     | The toolchain, your first program, an LED you command   |
+| Display & input | 03 Display · 03b Showcase                                                                | The 1.9″ TFT and the buttons                            |
+| Wi-Fi         | W1 Scan & join · W2 Phone control · W3 Internet & AI · W4, W5 planned                    | Scanning, a web page on the board, APIs over HTTPS      |
+| RFID & NFC    | R1 Wire & talk → R8 Card friends                                                           | The 13.56 MHz field, card memory, a door with card admin |
+| Bluetooth LE  | B1 Listen → B8 Host                                                                        | Advertising, pairing, a phone app, a keyboard, music    |
+| Sound         | S1 Hear → S8 Voice FX                                                                      | Loudness, clap control, a recorder, a spectrum, a speaker |
+| Sensors       | planned                                                                                  | Temperature, air and motion over I2C                    |
+
+The firmware for every lab is a standalone PlatformIO project in esp-labs. Each lesson links to its folder on GitHub.
+
+Quick start
+
+You need Node 24.14+ and pnpm 11 (corepack enable gives you the pinned version). The code reader shows the firmware from a sibling checkout of esp-labs, so clone both repos side by side:
+
+git clone https://github.com/agharsallah/esp-labs.git
+git clone https://github.com/agharsallah/esp-labs-web.git
+cd esp-labs-web
+pnpm install
+pnpm dev              # http://localhost:5180
+
+Without ../esp-labs, everything else still works: the lessons, the simulators and the bench log. Only the code reader has nothing to show. Point FIRMWARE_DIR elsewhere if your checkout lives somewhere else (Configuration).
+
+How it is built
+
+React 19 with React Compiler, React Router 8 (data mode, hash URLs), TanStack Query 5, zod 4, i18next, three.js, CSS Modules and design tokens, built by Vite 8. Lessons are data, simulators are lazily loaded widgets, and the bench log is JSON fetched at run time.
+
+flowchart LR
+  url"#/lessons/R3"] --> loader["route loader"] --> query["TanStack Query cache"]
+  query --> content["lesson content
+(one chunk per track)"]
+  query --> data["public/data/*.json
+(bench status + log)"]
+  loader --> page["LessonPage"] --> slot["WidgetSlot
+(lazy + error boundary)"] --> sim["simulator / diagram"]
+
+The full picture: layers, the widget contract, the three simulator rules, the lab-screen engine and the code reader. It's all in [docs/ARCHITECTURE.md. How text and translations work is in docs/I18N.md.
+
+Contributing
+
+Contributions of every size are welcome. These need no React at all:
+
+| You want to…                          | Start here                                                                                                         |
+| ------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| Report something broken               | Bug report                       |
+| Suggest a lab or a theme              | Lab proposal                        |
+| Fix or improve a translation          | Translation issue or edit src/locales// |
+| Fix a typo or a confusing step        | Edit the lesson in src/content/lessons/.ts and open a PR                                                  |
+| Add a lab, a simulator or a language  | CONTRIBUTING.md: step by step, with the checks to run                                          |
+
+Issues labelled good first issue are a good place to start. Please read the code of conduct; report security problems privately (SECURITY.md). How CI and the review rules work: docs/MAINTAINING.md.
+
+Commands
+
+Run them from this folder.
+
+pnpm install          # once
+pnpm dev              # http://localhost:5180
+pnpm check            # typecheck + lint + tests
+pnpm i18n:extract     # regenerate the English content catalogues after editing lessons
+pnpm build            # static bundle in dist/ (relative paths: serve it from any folder)
+pnpm preview          # serve dist/ locally (browsers will not run module scripts from file://)
+
+Configuration
+
+Copy .env.example to .env to override:
+
+…（内容已截断）

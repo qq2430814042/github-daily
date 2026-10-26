@@ -1,0 +1,117 @@
+Datalab
+
+  State of the Art models for Document Intelligence
+
+Marker
+
+Marker converts documents to markdown, JSON, chunks, and HTML quickly and accurately.
+
+- Converts PDF, image, PPTX, DOCX, XLSX, HTML, EPUB files in all languages
+- Formats tables, forms, equations, inline math, links, references, and code blocks
+- Extracts and saves images
+- Removes headers/footers/other artifacts
+- Extensible with your own formatting and logic
+- Optionally boost accuracy with LLMs (and your own prompt)
+- Works on GPU, CPU, or MPS
+
+Try Datalab's Managed Platform
+
+Our managed platform uses Chandra, our latest open source model, and other models — higher accuracy than Marker, with opt-in zero data retention, SOC 2 Type 2, and custom BAAs.
+
+If you have high volume workloads, we offer a batch processing service that has processed 1B+ pages in a day at peak — we manage the infrastructure so your workloads finish on time.
+
+The Datalab API turns documents into verifiable knowledge your agents act on. Every result traces back to its page and position, and one API can parse, extract, fill and edit documents.
+
+Get started with about 5,000 free convert pages every month (work email) — sign up.
+
+Performance
+
+We measure marker on olmocr-bench, a third-party benchmark of 1,403 PDFs with tests covering math, tables, multi-column layout, scans, and hard edge cases.  Balanced mode scores 76.0% overall — 83.5% on born-digital PDFs — ahead of MinerU and docling and within range of much larger VLMs, while fast mode runs the layout + text-layer path far cheaper (and a no-OCR mode goes faster still).  Scores are the olmocr-bench overall (macro-average across the 8 categories).
+
+See below for the full per-category scores, the competitive comparison, and instructions on how to run your own benchmarks.
+
+Hybrid Mode
+
+For the highest accuracy, pass the --use_llm flag to use an LLM alongside marker.  This will do things like merge tables across pages, handle inline math, format tables properly, and extract values from forms.  It works with Gemini, Claude, OpenAI-compatible, Azure, Vertex, OpenRouter, or Ollama models.  By default, it uses gemini-3.5-flash.  See below for details.
+
+Examples
+
+| PDF | File type | Markdown                                                                                                                     | JSON                                                                                                   |
+|-----|-----------|------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| Think Python | Textbook | View                 | View         |
+| Switch Transformers | arXiv paper | View | View |
+| Multi-column CNN | arXiv paper | View                 | View         |
+
+Commercial usage
+
+Our code is licensed under Apache 2.0 — free to use, including commercially. Our model weights use a modified AI Pubs Open Rail-M license (free for research, personal use, and startups under $5M funding/revenue). For commercial use of the model weights beyond that, visit our pricing page here.
+
+Community
+
+Discord is where we discuss future development.
+
+Installation
+
+You'll need python 3.10+ and PyTorch.
+
+Install with:
+
+pip install marker-pdf
+
+If you want to use marker on documents other than PDFs, you will need to install additional dependencies with:
+
+pip install marker-pdffull]
+
+Inference backend prerequisites
+
+Surya auto-spawns the server on first use, and you need vllm (NVIDIA GPU) or llama.cpp (CPU / Apple Silicon):
+
+- NVIDIA GPU: [Docker plus the NVIDIA Container Toolkit.
+- CPU / Apple Silicon: the llama-server binary from llama.cpp:
+  brew install llama.cpp     # macOS
+or grab a release from https://github.com/ggml-org/llama.cpp/releases
+
+Usage
+
+First, some configuration:
+
+- Mode (--mode balanced|fast; defaults by device — balanced on GPU, fast on CPU/MPS):
+  - balanced (best on a GPU) uses the surya VLM for layout, OCRs inline math, and re-OCRs the whole page whenever any of its embedded text is bad — highest quality.
+  - fast (optimized for CPU) uses the lightweight rf-detr layout detector, extracts text with pdftext, and keeps VLM use minimal: equations, surgical block-level repair of individual garbled/empty blocks, and a single full-page pass only for pages that are scanned or mostly bad. A clean digital document without equations never starts the VLM server.
+  - Tables are reconstructed from the PDF text layer in both modes (scanned tables come from the full-page OCR); low-confidence reconstructions fall back to the VLM, with a stricter bar in balanced.
+  - --disable_ocr turns off all VLM calls (including equations) in either mode — pure text-layer extraction.
+- Marker runs layout, OCR, and table recognition through a single surya VLM, served by a local inference server (used for OCR in both modes, and for layout in balanced mode).  The server is spawned automatically on first use - vLLM (docker) on NVIDIA GPUs, llama.cpp elsewhere.  You can also point marker at an already-running server with SURYA_INFERENCE_URL=http://host:port/v1.
+- Useful server settings (all surya env vars): SURYA_INFERENCE_BACKEND (vllm or llamacpp), SURYA_INFERENCE_PARALLEL (concurrent requests — by default this auto-scales to the server's capacity: the GPU's max_num_seqs under vllm, a conservative slot count under llama.cpp; set an int only to override), SURYA_INFERENCE_KEEP_ALIVE (keep the server running between invocations), VLLM_GPUS (GPU indices for the server).
+- Some PDFs, even digital ones, have bad text in them.  Set --force_ocr to force OCR on all pages, or the strip_existing_ocr to keep all digital text, and strip out any existing OCR text.
+- Inline math is converted to LaTeX automatically in balanced mode (ocr_inline_math); in fast mode, set --force_ocr or --ocr_inline_math to get the same.
+
+Interactive App
+
+I've included a streamlit app that lets you interactively try marker with some basic options.  Run it with:
+
+pip install -U streamlit streamlit-ace
+marker_gui
+
+Convert a single file
+
+marker_single /path/to/file.pdf
+
+You can pass in PDFs or images.
+
+Options:
+- --mode balanced|fast]: Conversion mode (see above).  Defaults by device: balanced on GPU, fast on CPU/MPS.
+- --disable_ocr: Never call the VLM - pure text-layer extraction (equations and scanned pages are skipped).
+- --page_range TEXT: Specify which pages to process. Accepts comma-separated page numbers and ranges. Example: --page_range "0,5-10,20" will process pages 0, 5 through 10, and page 20.
+- --output_format [markdown|json|html|chunks]: Specify the format for the output results.
+- --output_dir PATH: Directory where output files will be saved. Defaults to the value specified in settings.OUTPUT_DIR.
+- --paginate_output: Paginates the output, using \n\n{PAGE_NUMBER} followed by - * 48, then \n\n
+- --use_llm: Uses an LLM to improve accuracy.  You will need to configure the LLM backend - see [below.
+- --force_ocr: Force OCR processing on the entire document, even for pages that might contain extractable text.
+- --block_correction_prompt: if LLM mode is active, an optional prompt that will be used to correct the output of marker.  This is useful for custom formatting or logic that you want to apply to the output.
+- --strip_existing_ocr: Remove all existing OCR text in the document and re-OCR with surya.
+- --redo_inline_math: If you want the absolute highest quality inline math conversion, use this along with --use_llm.
+- --disable_image_extraction: Don't extract images from the PDF.  If you also specify --use_llm, then images will be replaced with a description.
+- --keep_pageheader_in_output / --keep_pagefooter_in_output: Keep running page headers / footers in the output instead of stripping them (they are removed by default).
+- --debug: Enable debug mode for additional logging and diagnostic information.
+
+…（内容已截断）

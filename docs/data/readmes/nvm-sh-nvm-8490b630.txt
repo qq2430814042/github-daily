@@ -1,0 +1,210 @@
+Node Version Manager
+
+Table of Contents
+
+- Intro
+- About
+- Installing and Updating
+  - Install & Update Script
+    - Additional Notes
+    - Installing in Docker
+      - Installing in Docker for CICD-Jobs
+    - Troubleshooting on Linux
+    - Troubleshooting on macOS
+    - Ansible
+  - Verify Installation
+  - Important Notes
+  - Git Install
+  - Manual Install
+  - Manual Upgrade
+- Usage
+  - Long-term Support
+  - Migrating Global Packages While Installing
+  - Migrating Global Packages Between Installed Versions
+  - Offline Install
+  - Default Global Packages From File While Installing
+  - io.js
+  - System Version of Node
+  - Listing Versions
+  - Setting Custom Colors
+    - Persisting custom colors
+    - Suppressing colorized output
+  - Restoring PATH
+  - Set default node version
+  - Use a mirror of node binaries
+    - Pass Authorization header to mirror
+  - Platforms without official binaries
+  - .nvmrc
+  - Deeper Shell Integration
+    - Calling nvm use automatically in a directory with a .nvmrc file
+      - bash
+      - zsh
+      - fish
+- Running Tests
+- Environment variables
+- Bash Completion
+  - Usage
+- Compatibility Issues
+- Installing nvm on Alpine Linux
+  - Alpine Linux 3.13+
+  - Alpine Linux 3.5 - 3.12
+- Uninstalling / Removal
+  - Manual Uninstall
+- Docker For Development Environment
+- Problems
+- macOS Troubleshooting
+- WSL Troubleshooting
+- Maintainers
+- Project Support
+- Enterprise Support
+- License
+- Copyright notice
+
+Intro
+
+nvm allows you to quickly install and use different versions of node via the command line.
+
+Example:
+$ nvm install 24
+Now using node v24.14.0 (npm v11.9.0)
+$ node -v
+v24.14.0
+$ nvm use 22
+Now using node v22.22.1 (npm v10.9.4)
+$ node -v
+v22.22.1
+$ nvm use 20
+Now using node v20.20.1 (npm v10.8.2)
+$ node -v
+v20.20.1
+
+Simple as that!
+
+About
+nvm is a version manager for node.js, designed to be installed per-user, and invoked per-shell. nvm works on any POSIX-compliant shell (sh, dash, ksh, zsh, bash), in particular on these platforms: unix, macOS, and Windows WSL.
+
+Installing and Updating
+
+Install & Update Script
+
+To install or update nvm, you should run the install script. To do that, you may either download and run the script manually, or use the following cURL or Wget command:
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
+
+Running either of the above commands downloads a script and runs it. The script clones the nvm repository to /.nvm, and attempts to add the source lines from the snippet below to the correct profile file (/.bashrc, /.bash_profile, /.zshrc, or ~/.profile). If you find the install script is updating the wrong profile file, set the $PROFILE env var to the profile file’s path, and then rerun the installation script.
+
+export NVM_DIR="$( -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+Additional Notes
+
+- If the environment variable $XDG_CONFIG_HOME is present, it will place the nvm files there.
+
+- You can add --no-use to the end of the above script to postpone using nvm until you manually [use it:
+
+export NVM_DIR="$( -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" --no-use # This loads nvm, without auto-using the default version
+
+- You can customize the install source, directory, profile, and version using the NVM_SOURCE, NVM_DIR, PROFILE, and NODE_VERSION variables.
+Eg: curl ... | NVM_DIR="path/to/nvm". Ensure that the NVM_DIR does not contain a trailing slash.
+
+- The installer can use [git, curl, or wget to download nvm, whichever is available.
+
+- You can instruct the installer to not edit your shell config (for example if you already get completions via a zsh nvm plugin) by setting PROFILE=/dev/null before running the install.sh script. Here's an example one-line command to do that: PROFILE=/dev/null bash -c 'curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash'
+
+Installing in Docker
+
+When invoking bash as a non-interactive shell, like in a Docker container, none of the regular profile files are sourced. In order to use nvm, node, and npm like normal, you can instead specify the special BASH_ENV variable, which bash sources when invoked non-interactively.
+
+Use bash for the shell
+SHELL "/bin/bash", "-o", "pipefail", "-c"]
+
+Create a script file sourced by both interactive and non-interactive bash shells
+ENV BASH_ENV="${HOME:-/root}/.bash_env"
+RUN touch "${BASH_ENV}"
+RUN echo '. "${BASH_ENV}"' >> ~/.bashrc
+
+Download and install nvm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | PROFILE="${BASH_ENV}" bash
+RUN echo node > .nvmrc
+RUN nvm install
+
+Installing in Docker for CICD-Jobs
+
+More robust, works in CI/CD-Jobs. Can be run in interactive and non-interactive containers.
+See https://github.com/nvm-sh/nvm/issues/3531.
+
+FROM ubuntu:latest
+ARG NODE_VERSION=20
+
+install curl
+RUN apt update && apt install curl -y
+
+install nvm
+RUN curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.8/install.sh | bash
+
+set env
+ENV NVM_DIR="${HOME:-/root}/.nvm"
+
+install node
+RUN bash -c "source $NVM_DIR/nvm.sh && nvm install $NODE_VERSION"
+
+set ENTRYPOINT for reloading nvm-environment
+ENTRYPOINT ["bash", "-c", "source $NVM_DIR/nvm.sh && exec \"$@\"", "--"]
+
+set cmd to bash
+CMD ["/bin/bash"]
+
+This example defaults to installation of nodejs version 20.x.y. Optionally you can easily override the version with docker build args like:
+docker build -t nvmimage --build-arg NODE_VERSION=19 .
+
+After creation of the image you can start container interactively and run commands, for example:
+docker run --rm -it nvmimage
+
+root@0a6b5a237c14:/# nvm -v
+0.40.8
+
+root@0a6b5a237c14:/# node -v
+v19.9.0
+
+root@0a6b5a237c14:/# npm -v
+9.6.3
+
+Noninteractive example:
+user@host:/tmp/test $ docker run --rm -it nvmimage node -v
+v19.9.0
+user@host:/tmp/test $ docker run --rm -it nvmimage npm -v
+9.6.3
+
+Troubleshooting on Linux
+
+On [Linux, after running the install script, if you get nvm: command not found or see no feedback from your terminal after you type command -v nvm, simply close your current terminal, open a new terminal, and try verifying again.
+Alternatively, you can run the following commands for the different shells on the command line:
+
+bash: source ~/.bashrc
+
+zsh: source ~/.zshrc
+
+ksh: . ~/.profile
+
+These should pick up the nvm command.
+
+Troubleshooting on macOS
+
+Since OS X 10.9, /usr/bin/git has been preset by Xcode command line tools, which means we can't properly detect if Git is installed or not. You need to manually install the Xcode command line tools before running the install script, otherwise, it'll fail. (see #1782)
+
+If you get nvm: command not found after running the install script, one of the following might be the reason:
+
+  - Since macOS 10.15, the default shell is zsh and nvm will look for .zshrc to update, none is installed by default. Create one with touch ~/.zshrc and run the install script again.
+
+  - If you use bash, the previous default shell, your system may not have .bash_profile or .bashrc files where the command is set up. Create one of them with touch /.bash_profile or touch /.bashrc and run the install script again. Then, run . /.bash_profile or . /.bashrc to pick up the nvm command.
+
+  - You have previously used bash, but you have zsh installed. You need to manually add these lines to /.zshrc and run . /.zshrc.
+
+  - You might need to restart your terminal instance or run . ~/.nvm/nvm.sh. Restarting your terminal/opening a new tab/window, or running the source command will load the command and the new configuration.
+
+  - If the above didn't help, you might need to restart your terminal instance. Try opening a new tab/window in your terminal and retry.
+
+If the above doesn't fix the problem, you may try the following:
+
+…（内容已截断）

@@ -1,0 +1,148 @@
+Open Traffic Replay and Analysis Proxy
+
+A free and open-source alternative to Burp Suite, built on the trusted OWASP ZAP engine.
+
+&nbsp;
+
+&nbsp;
+
+Share:
+X &middot;
+LinkedIn &middot;
+Reddit &middot;
+Hacker News
+
+One command to download and run the tool:
+
+wget https://github.com/opentrap/opentrap/releases/latest/download/opentrap-x86_64.appimage && chmod +x opentrap-x86_64.appimage && ./opentrap-x86_64.appimage
+
+The Dashboard after a scan: the crawl's locations and requests, the audit's findings by severity, and the most serious vulnerabilities as they were confirmed.
+
+Proudly free and open source
+
+OpenTRAP is free and open source software, released under the GNU AGPL v3.0 with
+no licence gate on anything. We stand with the organisations that make free and
+open source software possible - if OpenTRAP is useful to you, consider supporting them.
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+Why we built it
+
+The most capable intercepting proxies, such as Burp Suite, are commercial and
+closed, with their most useful features behind a paid licence. OWASP ZAP is a
+powerful open engine, but its interface is unfamiliar to the many testers who work
+proxy-first. OpenTRAP brings the two together: the familiar Burp-style workflow on
+top of the trusted OWASP ZAP detection engine, genuinely open, genuinely useful
+day to day, and immediately familiar to anyone who has worked with an
+intercepting proxy before.
+
+OpenTRAP is that tool. A complete testing workspace with a clean, recognisable
+workflow, that any practitioner can run, inspect, and extend, with no licence gate
+on its core capabilities. It is built to be improved by the people who use it
+rather than steered by a single vendor's roadmap. If a security tester can describe
+a better way to work, OpenTRAP should be the tool that lets them build it.
+
+What it is
+
+A proxy-first workspace for web application testing. Capture, inspect, replay and
+tamper with the traffic between a browser and a web application. Map an
+application's attack surface, and drive repeatable manual and automated testing
+from one window: interception, HTTP history, a target site map and scope, a request
+toolset, an out-of-band collaborator, and a complete log of everything that runs.
+
+It is built for penetration testers, bug bounty hunters, AppSec engineers and
+students who want a professional intercepting-proxy workflow without a commercial
+licence.
+
+See it in action
+
+Target
+Site map with a padlock per host (open for http, closed for https), out-of-scope hosts greyed, and every issue found with the advisory, request and response beside it.
+
+Proxy and built-in browser
+One click opens Chromium already routed through the proxy and trusting its certificate authority, so TLS interception works with nothing to configure.
+
+Collaborator
+Out-of-band DNS and HTTP interactions captured for blind vulnerabilities, with every callback request on record.
+
+Intruder
+Four attack types with payload sets and processing; the attack window shows status, length and timing per request.
+
+Logger
+A complete, filterable record of every request OpenTRAP and the scan engine make, newest first and tagged by the tool that sent it.
+
+Decoder
+Chain URL, Base64, hex and hash transforms on any value, or let smart decode work it out for you.
+
+Full-size screenshots of every tool are on the
+project site.
+
+Help build OpenTRAP
+
+OpenTRAP is a community project, and this is an open call. We want this to grow
+into something the whole web security community owns and improves. If you can fix a
+bug, patch a rough edge, sharpen the UI, add a tool, or bring anything useful at
+all, we want your contribution. You do not need permission to improve it: if you
+think you can make it better, you probably can.
+
+- Every change is reviewed, merged, and fully credited to its author.
+- One-line fixes are as welcome as whole new tools.
+- Bug reports and concrete ideas move the project forward too.
+
+The fastest way to help it grow is to star the repository and share it (buttons
+at the top), and to send that first change. See CONTRIBUTING.md
+to get started, then open an issue or a pull request.
+
+Roadmap
+
+OpenTRAP is built in the open, and so is its to-do list. Every feature that is
+laid out in the interface but not implemented yet is in ROADMAP.md,
+each with a stable reference code such as OT-INTRUDER-RESPOOL. Using one of those
+features in the app opens a dialog that names the same code, explains how to
+contribute it, and offers a one-click copy of a short build anchor. The
+Discover > Roadmap tab shows the same list inside the app.
+
+Pick an item, quote its code in your pull request, and it is merged with full
+credit. To discuss a feature or ask for it to be prioritised, open an issue.
+
+There are no AI features on the roadmap, by design. A security tool runs in
+environments where sending traffic to a third-party model is not acceptable, so
+OpenTRAP ships none and will not add any.
+
+Scanning and detection
+
+Point OpenTRAP at a target and it crawls the application, maps what it finds, and
+audits it for real vulnerabilities: injection, cross-site scripting, broken access
+control, information disclosure, misconfiguration and more. Findings land in a
+clear issue view with the request, response and the matched evidence highlighted,
+ready to triage or hand straight to a developer. The detection is built on the
+proven OWASP ZAP engine, so what OpenTRAP reports holds up.
+
+Choose how hard a scan digs with a scan configuration: Lightweight, Fast,
+Balanced or Deep. Every tier tests the same ground, so they differ only in how
+far the crawl reaches and how hard the audit probes, never in what gets checked.
+For full control there is a Custom configuration with its own settings screen,
+exposing crawl depth, attack strength, the input points tested and more.
+
+Highlights
+
+- Proxy-first by design - intercept, replay and edit live traffic, with the whole toolset one click away.
+- Detection that stands up - crawl and audit with the proven OWASP ZAP engine, so the findings you report carry weight.
+- Everything in one window - repeater, intruder, sequencer, decoder, comparer, collaborator and a full logger.
+- One self-contained file - every release is a single Linux AppImage with its own runtime and the scan engine built in; download it and run it.
+- Open and hackable - AGPL v3.0: read it, change it, extend it, with no gate on its core capabilities.
+- Guided from the start - open or create a project at launch, then drive crawl-and-audit scans through a step-by-step wizard.
+- Scan configurations that fit the job - pick a tier from Lightweight to Deep, build a Custom scan with full control over crawl depth, attack strength and the inputs tested, and save it to the configuration library for next time.
+- Projects that open in seconds - a saved project with tens of thousands of requests loads in a few seconds without freezing the window.
+- Projects that stay small - the crawl, your own traffic and every finding are kept in full; the audit's thousands of probe requests are kept as headers only, so a scan-heavy project is a fraction of the size. Save a copy with in-scope items only to shrink it further, and see where the bytes go under Project > Project size.
+- Scope that keeps the noise out - add a host or a path to scope from the site map, and the proxy offers to stop recording everything else; the site map and history filters hide out-of-scope, not-found and static content the way you would expect, and a scan crawls and attacks only what the scope covers.
+- Newest first, everywhere - every history in the suite, from the proxy and the Logger to Intruder results and Collaborator interactions, lists the latest entry at the top, so what just happened is always in view.
+- One Settings dialog - every tool's settings in one place, reachable from the gear in the top bar or from the tool itself.
+
+…（内容已截断）

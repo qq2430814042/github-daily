@@ -1,0 +1,112 @@
+English · Português · Español
+
+editonny
+
+You ask. Your video gets rhythm.
+
+A free, open-source video editing skill for Claude Code and Codex. Cut pauses and mistakes, add captions, fix the audio, reframe, and turn parts of your speech into motion scenes by asking in plain language. Transcription and rendering run on your computer.
+
+Install with one request · How it works · Lab · Motion scenes · Guide · Star history
+
+Install with one request
+
+You don't download anything by hand. Open Claude Code or Codex in any folder and paste this request. The same request installs editonny the first time and updates it later: your agent clones the skill from GitHub, follows its setup procedure, verifies everything, and asks before anything outside the request.
+
+Install or update the editonny skill for Codex and Claude Code from https://github.com/soumatheusgomes/editonny. Clone the latest version into a temporary folder; I won't download anything myself. Read skills/editonny/SKILL.md and follow its complete setup procedure. If editonny is already installed, compare versions, summarize what changes, and update it through its existing delivery method: the repository installer for a shared installation (it preserves my settings and backs up the previous copy) or the host's updater for a managed plugin. Prepare the compatible local tools, locked engine, pinned renderer and browser, default transcription model, local OCR for caption checks, and bundled media before the first edit. Verify with diagnostics and a synthetic sample, report anything pending, remove the temporary clone, and tell me when to restart my agent. Ask before paid services or sending my media.
+
+When it finishes, restart your agent and call /editonny in Claude Code or $editonny in Codex. This is the same request the guide copies for you.
+
+| You'll need | Version |
+|---|---|
+| Claude Code or Codex | Already configured |
+| Python | 3.9+ for the launcher; the engine uses >=3.10,
+Prefer the terminal?
+
+git clone https://github.com/soumatheusgomes/editonny.git
+cd editonny
+python3 install.py --target both
+python3 ~/.local/share/editonny/scripts/editonny.py doctor
+python3 ~/.local/share/editonny/scripts/editonny.py media status
+
+Use --target codex or --target claude to register one agent. One shared installation lives at ~/.local/share/editonny; agent entries are links to it. These commands register the skill and prepare its Python environment. For the complete setup (renderer, browser, transcription model, OCR, and synthetic checks), ask your agent to read skills/editonny/SKILL.md and follow its setup procedure. Each use checks local readiness and GitHub updates; applying an update requires your acceptance.
+
+See installation and recovery for isolated installation, plugin loading, updates, and removal.
+
+How it works
+
+editonny is a skill installed on your computer. You describe the result and point your agent at a video folder; the skill inspects the recording, chooses complete takes, measures cuts against the waveform, assembles a project, reviews a representative sample, and exports a checked MP4.
+
+$editonny
+Edit a 45-second vertical video from /path/to/footage.
+Keep complete takes, clean pauses, breaths, and mistakes, and add clear captions.
+Use visual scenes only where they explain the story.
+Verify an 8–15 second sample before finishing the export.
+
+1. Choose a goal in the guide, specify the footage folder, and copy the request (in the guide's language) to your agent.
+2. The skill inspects the selected sources, proposes every editing setting, and waits for your confirmation, even with a detailed prompt. Defaults preserve the original image, geometry, and FPS; color filters and conversions are never automatic.
+3. After acceptance, work stays in Downloads/editonny/date-title/: finished videos in exports/, editing files in project/. Review an 8–15 second sample; select user approval if you want the agent to wait at this later step too.
+4. A supported render route publishes uniquely named MP4/subtitle files with a matching verification manifest. Unsupported color/timing paths block clearly; remote execution must identify an accessible destination.
+
+Standard cleanup removes unnecessary pauses, audible breaths, mistakes, false starts, and redundant repetitions while preserving complete words, natural pacing, intentional pauses, and meaning. Narrow revisions stay within the requested scope. Original footage is preserved, and speech can stay in its original language.
+
+Every request is a layer
+
+Two services, one flow
+
+Input, request, result
+
+Speech becomes a scene
+
+Scenes come from the bundled catalog of 145 motion scenes and 79 original clips; projects receive only the clips they use. Sample numbers, offers, testimonials, and brands in scenes are illustrative and must be replaced with supplied facts. Never treat generated visuals as evidence. All banners in this README are illustrative animations of the workflow, not renders of customer footage.
+
+Open the guide
+
+The guide is the editonny website: it builds editing requests, browses the 145 motion scenes and 54 example requests, and explains installation in English, Brazilian Portuguese, or Spanish (picked from your browser; your choice and your brief stay saved in that browser). It never receives or uploads footage.
+
+To run it locally from this repository (Node.js 22.13+ or 24+):
+
+npm ci
+python3 editonny.py guide
+
+This starts the development server at http://localhost:4173 and opens it. Stop it with Ctrl+C; use --port to choose another port and --no-open to skip the browser. npm run dev does the same on port 3000.
+
+Structure
+
+| Path | Responsibility |
+|---|---|
+| skills/editonny/ | Single portable skill and CLI |
+| skills/editonny/engine/ | Local processing, preview, and English project template |
+| skills/editonny/visuals/ | Scenes, catalog, bundled media, and recipes |
+| web/ | Public guide: Next.js app with localized request builder, catalog, examples, and installation |
+| DESIGN.md | Visual contract and source of truth for design tokens |
+| design-system/ | React component library, tokens, preview templates, showcase, and reference HTML |
+| docs/ | Canonical architecture, installation, integration, and validation references |
+| scripts/, tests/ | Packaging, README artwork, render checks, and regression tests |
+
+New projects use project.json and English commands, fields, and scene IDs. This is a clean pre-release foundation; previous experimental project formats are unsupported.
+
+Development, verification, and distribution
+
+Develop and validate
+
+npm ci --ignore-scripts
+uv sync --locked --directory skills/editonny/engine
+npm run build
+npm run check
+python3 editonny.py doctor
+npm run test:engine
+npm run test:browser
+npm run test:preview
+npm run test:scenes
+npm run test:three
+python3 scripts/smoke_engine.py
+
+npm run test:browser builds the guide and runs Playwright (install its Chromium once with npx playwright install chromium). The preview and 3D browser checks (npm run test:preview, npm run test:three) require agent-browser. Render checks require FFmpeg and network access on the first HyperFrames use. Inspect generated samples before deleting task outputs from .work/. Full commands, results, and known limits belong in validation.
+
+The repository is an npm workspace: web/ (@editonny/web) and design-system/ (@editonny/design-system). npm run build builds the guide; npm run check runs lint, typechecks, unit tests, and the icon registry check (npm run icons regenerates it from design-system/assets/icons/). Open /design-system on the running guide to browse every component and state in both themes; new UI follows DESIGN.md and the library map.
+
+The README banners are generated from the guide's interface text and the DESIGN.md tokens: run npm run readme:art after changing either. npm test fails when a banner is stale, and the install request in each README must match the guide's.
+
+Deploy the guide
+
+…（内容已截断）

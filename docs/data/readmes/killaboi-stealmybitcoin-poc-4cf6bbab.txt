@@ -1,0 +1,107 @@
+sponsored with ❤️ by&nbsp;
+
+Steal My Bitcoin CTF proof of concept
+
+One live PHP callback against the Steal My Bitcoin challenge, start to finish, in a single standard-library Python file.
+
+This README explains stealmybitcoin_poc.py, a single-file Python reproduction of the request sequence used in my Steal My Bitcoin CTF run. It uses only Python's standard library. The script builds the requests itself, checks each leak before moving on, and records the HTTP bytes from a new run.
+
+This can probably be done easier without all the extra debug crap and as in my John Hammond video about the Steam Local Privilege Escalation I discovered, you could probably clean up this ugly PoC.
+
+⚠️ Honestly please clean it up or make your own better version that isn't crumpled by Sol. ⚠️
+
+Everything below is written against the Docker lab, not the live challenge. The lab is a local Alpine PHP 8.4.26 CLI server behind nginx, which is the same build and worker model the offsets were calibrated on. Stand it up in a minute and the whole chain runs end to end on your own machine. The live run that actually solved the challenge is kept as a historical note at the bottom.
+
+stage                 what goes out                        what comes back
+  ─────────────────────────────────────────────────────────────────────────────
+  0  health      GET /php-version.php                 ->  PHP 8.4.26 confirmed
+  1  heap leak   249,042 B producer + 8 x   6,672 B   ->  256 B cookie
+                 (OOM poisons a worker)                   └─ Zend chunk base
+  2  code leak   251,557 B producer + 8 x  92,388 B   ->   16 B cookie
+                 (OOM poisons a worker)                   └─ zval_ptr_dtor
+  3  callback    368,812 B POST                       ->  forged HashTable runs
+                 (fake HashTable + command)               └─ zif_system(cmd)
+  ─────────────────────────────────────────────────────────────────────────────
+  20 HTTP requests at most. No looping, no retries.
+
+The short version
+
+1. A small multipart upload makes PHP chew through far more memory than the wire size suggests.
+2. When it runs out of memory partway through session upload-progress parsing, PHP leaves stale state behind in a worker that then gets reused.
+3. Shape the follow-up requests right and bytes fall out through session cookies. I read those as a heap address and a PHP code address.
+4. With both addresses, a final request drops a forged PHP structure where cleanup will find it, and cleanup calls zif_system, PHP's handler for system.
+5. That command sends back a fresh proof marker and one print-flag result over the connection that is still open.
+
+Why two addresses? The OS randomizes where PHP's code and heap land, independently. The heap leak tells the script where to put the forged structure, the code leak tells it where the function it wants to call actually lives. Addresses from an earlier worker or an earlier run are not safe substitutes, and every time I tried it the attempt just failed.
+
+Contents
+
+- The lab
+- Start here
+- What each request does
+  - 1. How a small producer reaches the memory limit
+  - 2. How the heap address is recovered
+  - 3. How the PHP code address is recovered
+  - 4. How the final request reaches system
+- Reading the result
+- How often it actually works
+- The live run that solved it
+- Jargon, briefly
+- Thanks
+
+The lab
+
+The offsets in this PoC are calibrated for Alpine PHP 8.4.26 running the built-in CLI server with four workers. The lab reproduces exactly that, behind nginx, on loopback.
+
+The build matters more than the version string. A Debian php:8.4.26-fpm stack reports the same PHP/8.4.26 but has a different binary layout, so the code-pointer fingerprint will never match and the run aborts at the code-leak stage. Use the Alpine image below.
+
+Three small files. Put them in an empty directory:
+
+public/php-version.php (the health endpoint, and the only page the PoC needs)
+
+On Windows, run those docker run commands from PowerShell, or replace $PWD with a full drive path like C:/lab. In Git Bash $PWD expands to an MSYS path such as /tmp/..., which Docker Desktop resolves inside its own VM. The bind mounts then silently create empty directories where nginx.conf and print-flag should be, and the containers come up broken.
+
+A couple of notes on that recipe. The image is the fpm tag but the container runs php -S, so the SAPI is cli-server, which is what the calibration was measured against. PHP_CLI_SERVER_WORKERS=4 is what gives the leak stages more than one worker to race for. My own lab harness also passed --cap-add SYS_PTRACE --security-opt seccomp=unconfined so it could attach a tracer to the workers; the PoC itself never does that, so those are left out above.
+
+Start here
+
+Python 3.11 or newer, standard library only, nothing to install:powershell
+python .\stealmybitcoin_poc.py --url http://127.0.0.1:18166/php-version.php
+Run it with no arguments and it prints its help and exits without touching the network.
+
+A good run looks like this:console
+health] PHP 8.4.26 confirmed
+[heap] strict Zend base 0x78113e800000
+[code] strict zval_ptr_dtor 0x615b1f512930
+{"stage": "final", "nonce": "1ef0e73d8615157a", "execution_proof_verified": true, "response_path": "..."}
+Note the low 21 bits of that zval_ptr_dtor value: 0x112930, exactly the fingerprint the script expects from this Alpine build. That is the check that rejects a mismatched image.
+
+The response body that comes back:
+
+Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 131072 bytes) in Unknown on line 0
+
+1ef0e73d8615157a
+uid=0(root) gid=0(root) groups=0(root),0(root),1(bin),2(daemon),3(sys),4(adm),6(disk),10(wheel),11(floppy),20(dialout),26(tape),27(video)
+0ec066e8b91457c7c19b5612f3e2ded7f117df08f402693669c1ffc2cfc24942  /usr/local/bin/print-flag
+LOCAL_DUMMY_WIF_NEVER_USE
+The PHP fatal, then the nonce this run generated, then id, then the hash of the binary it resolved, then the dummy flag. Exit status is 0 on a verified run and 1 on anything else.
+
+The producer deliberately walks PHP into its memory limit. Only run this somewhere that behaviour is authorized. The script will only talk to the challenge endpoint or a loopback lab URL, and anything else aborts before a packet goes out.
+
+One run means one health GET, up to two leak batches, and at most one final request. No looping, no retries. Every multipart body stays under 1 MiB, though each leak batch pipelines nine separate requests down one connection.
+
+| Flag | What it does |
+| --- | --- |
+| --url | Lab endpoint, or the challenge. Required to do anything. |
+| --output-dir | Where to write the run's evidence. Defaults to poc-run-. |
+
+What each request does
+
+| Step | What goes out, what should come back | Why |
+| --- | --- | --- |
+| Health | One ordinary GET /php-version.php must return HTTP 200, PHP 8.4.26, and X-Powered-By: PHP/8.4.26. | Keeps the memory-limit payload away from a changed or unhealthy endpoint. |
+| Heap leak | One 249,042-byte multipart producer, then eight pipelined 6,672-byte consumers. The producer must return a PHP 128 MiB memory-limit fatal. A consumer may return a 256-byte PHPSESSID cookie. | Four or more pointer-looking values in that cookie have to agree on one aligned 2 MiB Zend heap base. |
+| Code leak | One 251,557-byte producer, then eight pipelined 92,388-byte consumers. A consumer may return a 16-byte PHPSESSID cookie. | Its first eight bytes must encode 16, and its second eight must look like the locally calibrated zval_ptr_dtor pointer. |
+| Final callback | One 368,812-byte multipart POST. | A forged PHP HashTable points cleanup at zif_system and supplies a command argument. The fresh nonce, id output, and print-flag binary hash are the evidence that the callback actually ran. |
+
+…（内容已截断）

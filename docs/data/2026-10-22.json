@@ -1,7 +1,7 @@
 {
   "date": "2026-10-22",
   "timezone": "Asia/Shanghai",
-  "generatedAt": "2026-10-26T14:06:05.475Z",
+  "generatedAt": "2026-10-26T15:07:00.399Z",
   "count": 60,
   "newCount": 40,
   "sources": {
@@ -18,16 +18,18 @@
       "url": "https://github.com/oosexgang/hackios-xnu-kernel",
       "description": "",
       "language": "C",
-      "stars": 1580,
+      "stars": 1594,
       "forks": 289,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T06:20:11Z",
-      "updatedAt": "2026-10-26T14:02:59Z",
+      "updatedAt": "2026-10-26T15:01:26Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "oosexgang-hackios-xnu-kernel-9605baa9.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 2,
@@ -37,16 +39,18 @@
       "url": "https://github.com/Snapintosh/Snapintosh",
       "description": "EL2 hypervisor and toolchain that boots macOS on the ASUS A16 (Snapdragon X2 Elite), with an Adreno Metal/IOGPU stack",
       "language": "Python",
-      "stars": 965,
-      "forks": 56,
+      "stars": 968,
+      "forks": 57,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T01:40:05Z",
-      "updatedAt": "2026-10-26T13:36:28Z",
+      "updatedAt": "2026-10-26T15:06:39Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "snapintosh-snapintosh-05225695.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 3,
@@ -65,38 +69,11 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "assetnote-php2shell-scanner-416c1f43.txt"
     },
     {
       "rank": 4,
-      "fullName": "SmokeProduction/DLSS5-Unlocker",
-      "name": "DLSS5-Unlocker",
-      "owner": "SmokeProduction",
-      "url": "https://github.com/SmokeProduction/DLSS5-Unlocker",
-      "description": "Unlock and manage DLSS 5 on any NVIDIA or AMD graphics card. The ultimate one-click frame generation tool.",
-      "language": "",
-      "stars": 531,
-      "forks": 103,
-      "starsToday": 0,
-      "topics": [
-        "amd",
-        "amd-gpu",
-        "dlss",
-        "dlss-5",
-        "dlss-5-mod",
-        "dlss5",
-        "dlss5-optiscaler",
-        "dlss5-swapper"
-      ],
-      "createdAt": "2026-10-22T21:35:38Z",
-      "updatedAt": "2026-10-26T12:40:09Z",
-      "sources": [
-        "new"
-      ],
-      "isNew": true
-    },
-    {
-      "rank": 5,
       "fullName": "rossark0/rossark-motion-skill",
       "name": "rossark-motion-skill",
       "owner": "rossark0",
@@ -104,7 +81,7 @@
       "description": "Turn any SVG into a professional 60 fps animation. A Claude Code skill that brings anything drawn to life: live faces, full-body acting and whole scenes, in React Native and SwiftUI.",
       "language": "Swift",
       "stars": 501,
-      "forks": 36,
+      "forks": 37,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T03:33:03Z",
@@ -112,48 +89,51 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "rossark0-rossark-motion-skill-3ce323e0.txt"
     },
     {
-      "rank": 6,
+      "rank": 5,
       "fullName": "actionow-ai/vvv",
       "name": "vvv",
       "owner": "actionow-ai",
       "url": "https://github.com/actionow-ai/vvv",
       "description": "Build a video template once, reuse it across coding agents. Editable Remotion templates and an Agent Skill for Claude Code, Codex and 25+ agents.",
       "language": "Python",
-      "stars": 390,
+      "stars": 392,
       "forks": 110,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T07:29:54Z",
-      "updatedAt": "2026-10-26T13:51:15Z",
+      "updatedAt": "2026-10-26T15:04:35Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "actionow-ai-vvv-8ed869ae.txt"
     },
     {
-      "rank": 7,
+      "rank": 6,
       "fullName": "oosexgang/hackios-xnu-userland",
       "name": "hackios-xnu-userland",
       "owner": "oosexgang",
       "url": "https://github.com/oosexgang/hackios-xnu-userland",
       "description": "",
       "language": "",
-      "stars": 387,
+      "stars": 388,
       "forks": 137,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T06:20:36Z",
-      "updatedAt": "2026-10-26T13:51:00Z",
+      "updatedAt": "2026-10-26T14:26:34Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "oosexgang-hackios-xnu-userland-4c3bd57a.txt"
     },
     {
-      "rank": 8,
+      "rank": 7,
       "fullName": "zengshuangzi/mcd-money-saver",
       "name": "mcd-money-saver",
       "owner": "zengshuangzi",
@@ -169,38 +149,40 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "zengshuangzi-mcd-money-saver-de99ae69.txt"
     },
     {
-      "rank": 9,
+      "rank": 8,
       "fullName": "david-silvalab1993i0/Roblox-Aimbot-Smooth-Tracking-Auto-Aim-Script-2026",
       "name": "Roblox-Aimbot-Smooth-Tracking-Auto-Aim-Script-2026",
       "owner": "david-silvalab1993i0",
       "url": "https://github.com/david-silvalab1993i0/Roblox-Aimbot-Smooth-Tracking-Auto-Aim-Script-2026",
       "description": "High-performance Roblox aimbot with adaptive smooth tracking and precise auto aim. Fully configurable, works with most executors, clean modular structure. Easy setup for current Roblox version.",
       "language": "Python",
-      "stars": 305,
+      "stars": 307,
       "forks": 217,
       "starsToday": 0,
       "topics": [
         "roblox"
       ],
       "createdAt": "2026-10-22T18:45:14Z",
-      "updatedAt": "2026-10-26T12:00:45Z",
+      "updatedAt": "2026-10-26T15:04:19Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "david-silvalab1993i0-roblox-aimbot-smooth-tracking-auto-aim-script-2026-d63b0a4c.txt"
     },
     {
-      "rank": 10,
+      "rank": 9,
       "fullName": "alexturkey/voxcpm2-turkce-ses-tasarimi",
       "name": "voxcpm2-turkce-ses-tasarimi",
       "owner": "alexturkey",
       "url": "https://github.com/alexturkey/voxcpm2-turkce-ses-tasarimi",
       "description": "Turkish voice design with VoxCPM2 on a 4 GB GPU: describe a voice, pick a variant, read Turkish text. Patched audio.cpp, local UI, 7 synthetic voices.",
       "language": "Swift",
-      "stars": 265,
+      "stars": 266,
       "forks": 28,
       "starsToday": 0,
       "topics": [
@@ -214,22 +196,24 @@
         "turkish"
       ],
       "createdAt": "2026-10-22T19:08:51Z",
-      "updatedAt": "2026-10-26T14:03:51Z",
+      "updatedAt": "2026-10-26T14:38:18Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "alexturkey-voxcpm2-turkce-ses-tasarimi-0b161c0d.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 11,
+      "rank": 10,
       "fullName": "huaxialucaicaizi/ai-startup-skills",
       "name": "ai-startup-skills",
       "owner": "huaxialucaicaizi",
       "url": "https://github.com/huaxialucaicaizi/ai-startup-skills",
       "description": "创业公司做 AI 产品的 7 步 Agent Skill 合集：验证 → BP → 政策 → 路演 → 获客 → 定价 → 注册。",
       "language": "Python",
-      "stars": 264,
-      "forks": 25,
+      "stars": 266,
+      "forks": 26,
       "starsToday": 0,
       "topics": [
         "agent-skills",
@@ -242,14 +226,16 @@
         "growth"
       ],
       "createdAt": "2026-10-22T10:23:29Z",
-      "updatedAt": "2026-10-26T13:24:01Z",
+      "updatedAt": "2026-10-26T14:52:16Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "huaxialucaicaizi-ai-startup-skills-922316ca.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 12,
+      "rank": 11,
       "fullName": "tunflwgudkyb/cs2-external-esp",
       "name": "cs2-external-esp",
       "owner": "tunflwgudkyb",
@@ -274,29 +260,33 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "tunflwgudkyb-cs2-external-esp-7f74d90f.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 13,
+      "rank": 12,
       "fullName": "Tencent/WeVisOne-VL",
       "name": "WeVisOne-VL",
       "owner": "Tencent",
       "url": "https://github.com/Tencent/WeVisOne-VL",
       "description": "WeVisOne-VL is a powerful VLM by the WeChat Vision Team at Tencent, unifying object-level and pixel-level perception from points and boxes to masks and alpha mattes.",
       "language": "Jupyter Notebook",
-      "stars": 255,
-      "forks": 18,
+      "stars": 257,
+      "forks": 19,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T08:58:16Z",
-      "updatedAt": "2026-10-26T13:40:01Z",
+      "updatedAt": "2026-10-26T14:31:37Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "tencent-wevisone-vl-c462e1f6.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 14,
+      "rank": 13,
       "fullName": "wpfigfszroxn/pubg-external-esp",
       "name": "pubg-external-esp",
       "owner": "wpfigfszroxn",
@@ -321,10 +311,12 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "wpfigfszroxn-pubg-external-esp-2f4a584f.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 15,
+      "rank": 14,
       "fullName": "Marooniogrip/Discord-Quest-Completer",
       "name": "Discord-Quest-Completer",
       "owner": "Marooniogrip",
@@ -349,10 +341,11 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "marooniogrip-discord-quest-completer-54522eeb.txt"
     },
     {
-      "rank": 16,
+      "rank": 15,
       "fullName": "WallScorpion/Imei-Repair",
       "name": "Imei-Repair",
       "owner": "WallScorpion",
@@ -377,10 +370,11 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "wallscorpion-imei-repair-157b17a1.txt"
     },
     {
-      "rank": 17,
+      "rank": 16,
       "fullName": "7API/uncensored-ai-api",
       "name": "uncensored-ai-api",
       "owner": "7API",
@@ -405,10 +399,12 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "7api-uncensored-ai-api-536cfb1c.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 18,
+      "rank": 17,
       "fullName": "mrcen3204097569-spec/lean-electron-vue",
       "name": "lean-electron-vue",
       "owner": "mrcen3204097569-spec",
@@ -433,10 +429,11 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "mrcen3204097569-spec-lean-electron-vue-ba4b01c7.txt"
     },
     {
-      "rank": 19,
+      "rank": 18,
       "fullName": "openmathmodel/open-math-harness",
       "name": "open-math-harness",
       "owner": "openmathmodel",
@@ -452,48 +449,54 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "openmathmodel-open-math-harness-f6860fb8.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 20,
+      "rank": 19,
       "fullName": "JoasASantos/php2shell-exploit",
       "name": "php2shell-exploit",
       "owner": "JoasASantos",
       "url": "https://github.com/JoasASantos/php2shell-exploit",
       "description": "PHP2Shell exploit framework — CVE-2026-109618/619 PHP session.upload_progress UAF to RCE",
       "language": "Python",
-      "stars": 176,
+      "stars": 177,
       "forks": 51,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T12:53:40Z",
-      "updatedAt": "2026-10-26T12:50:34Z",
+      "updatedAt": "2026-10-26T14:07:09Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "joasasantos-php2shell-exploit-f7574b5f.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 21,
+      "rank": 20,
       "fullName": "morerokk/MHGURecomp",
       "name": "MHGURecomp",
       "owner": "morerokk",
       "url": "https://github.com/morerokk/MHGURecomp",
       "description": "A native PC port of Monster Hunter Generations Ultimate. Requires the game's files to play or build.",
       "language": "C",
-      "stars": 162,
+      "stars": 168,
       "forks": 10,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T13:43:06Z",
-      "updatedAt": "2026-10-26T14:00:36Z",
+      "updatedAt": "2026-10-26T15:02:05Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "morerokk-mhgurecomp-21488b15.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 22,
+      "rank": 21,
       "fullName": "theorem-labs/oss-verify-proofs",
       "name": "oss-verify-proofs",
       "owner": "theorem-labs",
@@ -516,10 +519,12 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "theorem-labs-oss-verify-proofs-1385e270.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 23,
+      "rank": 22,
       "fullName": "7API/glm-5.3-abliterated",
       "name": "glm-5.3-abliterated",
       "owner": "7API",
@@ -544,7 +549,38 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "7api-glm-5-3-abliterated-10279551.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 23,
+      "fullName": "Motphys/Uni-SuperMimic",
+      "name": "Uni-SuperMimic",
+      "owner": "Motphys",
+      "url": "https://github.com/Motphys/Uni-SuperMimic",
+      "description": "SuperMimic-UniLab: An Independent reproduction of SuperMimic on UniLab for whole-body humanoid motion tracking.",
+      "language": "Python",
+      "stars": 155,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "amd",
+        "macos",
+        "mjwarp",
+        "motrixsim",
+        "mujoco",
+        "rocm",
+        "supermimic",
+        "unilab"
+      ],
+      "createdAt": "2026-10-22T09:06:45Z",
+      "updatedAt": "2026-10-26T14:41:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "motphys-uni-supermimic-13854116.txt"
     },
     {
       "rank": 24,
@@ -563,64 +599,39 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "spectrmachina-ztrust-7a289f70.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 25,
-      "fullName": "Motphys/Uni-SuperMimic",
-      "name": "Uni-SuperMimic",
-      "owner": "Motphys",
-      "url": "https://github.com/Motphys/Uni-SuperMimic",
-      "description": "SuperMimic-UniLab: An Independent reproduction of SuperMimic on UniLab for whole-body humanoid motion tracking.",
-      "language": "Python",
-      "stars": 153,
-      "forks": 9,
-      "starsToday": 0,
-      "topics": [
-        "amd",
-        "macos",
-        "mjwarp",
-        "motrixsim",
-        "mujoco",
-        "rocm",
-        "supermimic",
-        "unilab"
-      ],
-      "createdAt": "2026-10-22T09:06:45Z",
-      "updatedAt": "2026-10-26T13:13:46Z",
-      "sources": [
-        "new"
-      ],
-      "isNew": true
-    },
-    {
-      "rank": 26,
       "fullName": "ios151/One-releases",
       "name": "One-releases",
       "owner": "ios151",
       "url": "https://github.com/ios151/One-releases",
       "description": "One 的安装包发布页（只发布 IPA，不含源码）",
       "language": "",
-      "stars": 144,
+      "stars": 145,
       "forks": 5,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T23:30:06Z",
-      "updatedAt": "2026-10-26T13:38:00Z",
+      "updatedAt": "2026-10-26T14:38:33Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "ios151-one-releases-34a75a04.txt"
     },
     {
-      "rank": 27,
+      "rank": 26,
       "fullName": "man15h/tellyscope",
       "name": "tellyscope",
       "owner": "man15h",
       "url": "https://github.com/man15h/tellyscope",
       "description": "Debloat your Android TV, install apps, browse and transfer files on it, all from your phone. Under 3 MB, no tracking, no root, no PC.",
       "language": "Kotlin",
-      "stars": 142,
+      "stars": 145,
       "forks": 4,
       "starsToday": 0,
       "topics": [
@@ -630,14 +641,16 @@
         "privacy"
       ],
       "createdAt": "2026-10-22T19:51:46Z",
-      "updatedAt": "2026-10-26T13:50:07Z",
+      "updatedAt": "2026-10-26T15:05:47Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "man15h-tellyscope-6fe7eb0f.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 28,
+      "rank": 27,
       "fullName": "Krusty84/yaDisk-Health",
       "name": "yaDisk-Health",
       "owner": "Krusty84",
@@ -659,10 +672,12 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "krusty84-yadisk-health-10a51252.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 29,
+      "rank": 28,
       "fullName": "looplj/reveric",
       "name": "reveric",
       "owner": "looplj",
@@ -678,17 +693,18 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "looplj-reveric-40720011.txt"
     },
     {
-      "rank": 30,
+      "rank": 29,
       "fullName": "rolottr/bambu-bar",
       "name": "bambu-bar",
       "owner": "rolottr",
       "url": "https://github.com/rolottr/bambu-bar",
       "description": "Native macOS menu bar app for Bambu Lab 3D printers. Live progress, time left, temperatures, AMS spools and errors, print controls, several printers and desktop widgets. Local network, no account or cloud.",
       "language": "Swift",
-      "stars": 128,
+      "stars": 129,
       "forks": 11,
       "starsToday": 0,
       "topics": [
@@ -700,30 +716,63 @@
         "widgetkit"
       ],
       "createdAt": "2026-10-22T09:33:07Z",
-      "updatedAt": "2026-10-26T12:59:58Z",
+      "updatedAt": "2026-10-26T14:14:23Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "rolottr-bambu-bar-2a5a87e6.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 31,
+      "rank": 30,
       "fullName": "Vibha-Ramprakash/claude-video-effects",
       "name": "claude-video-effects",
       "owner": "Vibha-Ramprakash",
       "url": "https://github.com/Vibha-Ramprakash/claude-video-effects",
       "description": "36 video effects for Claude Code: drop in a talking-head clip, type /effects orbit. Face tracking, behind-your-head layers. By @vibha.in.progress",
       "language": "Python",
-      "stars": 121,
+      "stars": 125,
       "forks": 41,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T08:59:18Z",
-      "updatedAt": "2026-10-26T14:03:24Z",
+      "updatedAt": "2026-10-26T14:48:24Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "vibha-ramprakash-claude-video-effects-0ee8a03a.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "Jakeschincariol/console-skill",
+      "name": "console-skill",
+      "owner": "Jakeschincariol",
+      "url": "https://github.com/Jakeschincariol/console-skill",
+      "description": "11 Claude skills that port PlayStation 2 games you own to PC: reverse engineer the code, rebuild the graphics and backend, any controller, play it anywhere, then mod it however you want.",
+      "language": "Python",
+      "stars": 123,
+      "forks": 16,
+      "starsToday": 0,
+      "topics": [
+        "claude",
+        "claude-skills",
+        "game-dev",
+        "gamepad",
+        "modding",
+        "ps2",
+        "reverse-engineering",
+        "static-recompilation"
+      ],
+      "createdAt": "2026-10-22T14:12:44Z",
+      "updatedAt": "2026-10-26T15:03:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jakeschincariol-console-skill-ff2756a1.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 32,
@@ -751,7 +800,8 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "danisiber-rom-cli-74f263a2.txt"
     },
     {
       "rank": 33,
@@ -779,35 +829,38 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "piqganehprlv-ff-external-esp-45f7b0a3.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 34,
-      "fullName": "Jakeschincariol/console-skill",
-      "name": "console-skill",
-      "owner": "Jakeschincariol",
-      "url": "https://github.com/Jakeschincariol/console-skill",
-      "description": "11 Claude skills that port PlayStation 2 games you own to PC: reverse engineer the code, rebuild the graphics and backend, any controller, play it anywhere, then mod it however you want.",
-      "language": "Python",
-      "stars": 119,
-      "forks": 16,
+      "fullName": "stockedge/manga-generator",
+      "name": "manga-generator",
+      "owner": "stockedge",
+      "url": "https://github.com/stockedge/manga-generator",
+      "description": "原作から脚本・画像生成・組版・PDF出力まで進める、Codex向け漫画制作ツール",
+      "language": "JavaScript",
+      "stars": 116,
+      "forks": 20,
       "starsToday": 0,
       "topics": [
-        "claude",
-        "claude-skills",
-        "game-dev",
-        "gamepad",
-        "modding",
-        "ps2",
-        "reverse-engineering",
-        "static-recompilation"
+        "ai-agents",
+        "ai-comic",
+        "ai-comics",
+        "ai-manga",
+        "character-consistency",
+        "claude-code",
+        "codex",
+        "comfyui"
       ],
-      "createdAt": "2026-10-22T14:12:44Z",
-      "updatedAt": "2026-10-26T03:50:51Z",
+      "createdAt": "2026-10-22T02:58:45Z",
+      "updatedAt": "2026-10-26T14:23:59Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "stockedge-manga-generator-53d5dfec.txt"
     },
     {
       "rank": 35,
@@ -835,7 +888,9 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "ulymxumfqtdi-dbd-external-esp-66c301ef.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 36,
@@ -854,76 +909,53 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "xinge2333-codex-quota-bar-140f827f.txt"
     },
     {
       "rank": 37,
-      "fullName": "stockedge/manga-generator",
-      "name": "manga-generator",
-      "owner": "stockedge",
-      "url": "https://github.com/stockedge/manga-generator",
-      "description": "原作から脚本・画像生成・組版・PDF出力まで進める、Codex向け漫画制作ツール",
-      "language": "JavaScript",
-      "stars": 114,
-      "forks": 19,
-      "starsToday": 0,
-      "topics": [
-        "ai-agents",
-        "ai-comic",
-        "ai-comics",
-        "ai-manga",
-        "character-consistency",
-        "claude-code",
-        "codex",
-        "comfyui"
-      ],
-      "createdAt": "2026-10-22T02:58:45Z",
-      "updatedAt": "2026-10-26T11:59:24Z",
-      "sources": [
-        "new"
-      ],
-      "isNew": true
-    },
-    {
-      "rank": 38,
       "fullName": "cpypwn/mac2jb",
       "name": "mac2jb",
       "owner": "cpypwn",
       "url": "https://github.com/cpypwn/mac2jb",
       "description": "Use your Apple Silicon Mac as a USB HID keyboard to transfer the ns2jb bootstrap and automate post-bootstrap commands on Nintendo Switch 2.",
       "language": "JavaScript",
-      "stars": 111,
+      "stars": 113,
       "forks": 19,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T18:42:23Z",
-      "updatedAt": "2026-10-26T13:11:19Z",
+      "updatedAt": "2026-10-26T14:46:53Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "cpypwn-mac2jb-9de41aa7.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 39,
+      "rank": 38,
       "fullName": "josiahg2502-glitch/BrawlRecompiled",
       "name": "BrawlRecompiled",
       "owner": "josiahg2502-glitch",
       "url": "https://github.com/josiahg2502-glitch/BrawlRecompiled",
       "description": "Native PC port of Super Smash Bros. Brawl (static recompilation): 4K, widescreen, gamepads, and Wii SD mods (Project+, Project+Ex, REX, Brawl Minus, Legacy XP). Bring your own disc.",
       "language": "C++",
-      "stars": 106,
+      "stars": 107,
       "forks": 3,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-10-22T20:50:15Z",
-      "updatedAt": "2026-10-26T13:42:26Z",
+      "updatedAt": "2026-10-26T15:01:00Z",
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "josiahg2502-glitch-brawlrecompiled-4020f850.txt",
+      "readmeTruncated": true
     },
     {
-      "rank": 40,
+      "rank": 39,
       "fullName": "PlusF666/mctaste-lab",
       "name": "mctaste-lab",
       "owner": "PlusF666",
@@ -939,7 +971,29 @@
       "sources": [
         "new"
       ],
-      "isNew": true
+      "isNew": true,
+      "readmeFile": "plusf666-mctaste-lab-179127d7.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "Tom123223/maimen-xinshi",
+      "name": "maimen-xinshi",
+      "owner": "Tom123223",
+      "url": "https://github.com/Tom123223/maimen-xinshi",
+      "description": "麦门心事：把一句心事读成一顿麦当劳，再让三个陌生人决定这顿吃不吃。基于麦当劳中国 MCP 的 Skill + 零依赖单文件演示页。",
+      "language": "HTML",
+      "stars": 105,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-22T00:39:26Z",
+      "updatedAt": "2026-10-26T05:09:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tom123223-maimen-xinshi-232f0887.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 41,
@@ -949,8 +1003,8 @@
       "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
       "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
       "language": "",
-      "stars": 330593,
-      "forks": 15566,
+      "stars": 330605,
+      "forks": 15569,
       "starsToday": 0,
       "topics": [
         "awesome",
@@ -963,11 +1017,13 @@
         "selfhosted"
       ],
       "createdAt": "2015-06-01T02:33:17Z",
-      "updatedAt": "2026-10-26T13:58:43Z",
+      "updatedAt": "2026-10-26T15:00:00Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "awesome-selfhosted-awesome-selfhosted-1dbf0788.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 42,
@@ -977,16 +1033,18 @@
       "url": "https://github.com/mattpocock/skills",
       "description": "Skills for Real Engineers. Straight from my .agents directory.",
       "language": "Shell",
-      "stars": 303755,
-      "forks": 25551,
+      "stars": 303802,
+      "forks": 25557,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2026-02-03T11:15:53Z",
-      "updatedAt": "2026-10-26T14:04:24Z",
+      "updatedAt": "2026-10-26T15:04:11Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 43,
@@ -996,8 +1054,8 @@
       "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
       "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
       "language": "Python",
-      "stars": 143116,
-      "forks": 21054,
+      "stars": 143128,
+      "forks": 21056,
       "starsToday": 0,
       "topics": [
         "agents",
@@ -1006,11 +1064,13 @@
         "rag"
       ],
       "createdAt": "2024-04-29T05:30:25Z",
-      "updatedAt": "2026-10-26T14:01:25Z",
+      "updatedAt": "2026-10-26T15:03:56Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "shubhamsaboo-awesome-llm-apps-8a517fe8.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 44,
@@ -1020,7 +1080,7 @@
       "url": "https://github.com/ventoy/Ventoy",
       "description": "A new bootable USB solution.",
       "language": "C",
-      "stars": 80361,
+      "stars": 80362,
       "forks": 5009,
       "starsToday": 0,
       "topics": [
@@ -1034,11 +1094,13 @@
         "linux"
       ],
       "createdAt": "2020-03-10T15:19:19Z",
-      "updatedAt": "2026-10-26T13:35:22Z",
+      "updatedAt": "2026-10-26T14:50:05Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "ventoy-ventoy-172bf0b1.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 45,
@@ -1048,16 +1110,18 @@
       "url": "https://github.com/josephmisiti/awesome-machine-learning",
       "description": "A curated list of awesome Machine Learning frameworks, libraries and software.",
       "language": "Python",
-      "stars": 74663,
+      "stars": 74664,
       "forks": 15682,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2014-07-15T19:11:19Z",
-      "updatedAt": "2026-10-26T13:26:12Z",
+      "updatedAt": "2026-10-26T14:08:43Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "josephmisiti-awesome-machine-learning-9e623532.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 46,
@@ -1068,7 +1132,7 @@
       "description": "🐻 Bear necessities for state management in React",
       "language": "TypeScript",
       "stars": 58875,
-      "forks": 2174,
+      "forks": 2176,
       "starsToday": 0,
       "topics": [
         "hacktoberfest",
@@ -1084,7 +1148,9 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "pmndrs-zustand-b8b56a34.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 47,
@@ -1094,8 +1160,8 @@
       "url": "https://github.com/coreyhaines31/marketingskills",
       "description": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
       "language": "JavaScript",
-      "stars": 56620,
-      "forks": 8369,
+      "stars": 56630,
+      "forks": 8370,
       "starsToday": 0,
       "topics": [
         "agent-skills",
@@ -1108,11 +1174,13 @@
         "codex"
       ],
       "createdAt": "2026-01-15T19:45:23Z",
-      "updatedAt": "2026-10-26T13:59:51Z",
+      "updatedAt": "2026-10-26T15:03:18Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "coreyhaines31-marketingskills-ed5355c7.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 48,
@@ -1122,7 +1190,7 @@
       "url": "https://github.com/microsoft/qlib",
       "description": "Qlib is an AI-oriented Quant investment platform that aims to use AI tech to empower Quant Research, from exploring ideas to implementing productions. Qlib supports diverse ML modeling paradigms, including supervised learning, market dynamics modeling, and RL, and is now equipped with https://github",
       "language": "Python",
-      "stars": 49729,
+      "stars": 49731,
       "forks": 7857,
       "starsToday": 0,
       "topics": [
@@ -1136,11 +1204,13 @@
         "paper"
       ],
       "createdAt": "2020-08-14T06:46:00Z",
-      "updatedAt": "2026-10-26T14:04:23Z",
+      "updatedAt": "2026-10-26T14:24:05Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "microsoft-qlib-eb2ad5bb.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 49,
@@ -1166,7 +1236,8 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "bigskysoftware-htmx-f456ba5b.txt"
     },
     {
       "rank": 50,
@@ -1176,7 +1247,7 @@
       "url": "https://github.com/alibaba/open-code-review",
       "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
       "language": "Go",
-      "stars": 48328,
+      "stars": 48332,
       "forks": 3537,
       "starsToday": 0,
       "topics": [
@@ -1188,11 +1259,13 @@
         "repository-level-context"
       ],
       "createdAt": "2026-05-18T02:16:36Z",
-      "updatedAt": "2026-10-26T13:28:06Z",
+      "updatedAt": "2026-10-26T15:05:30Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "alibaba-open-code-review-33046d59.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 51,
@@ -1216,7 +1289,9 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "lysine-dev-okhttp-30b8c964.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 52,
@@ -1227,7 +1302,7 @@
       "description": "The zero configuration build tool for the web. 📦🚀",
       "language": "JavaScript",
       "stars": 44005,
-      "forks": 2322,
+      "forks": 2325,
       "starsToday": 0,
       "topics": [
         "assets",
@@ -1244,7 +1319,8 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "parcel-bundler-parcel-fa946998.txt"
     },
     {
       "rank": 53,
@@ -1270,7 +1346,8 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "nwjs-nw-js-4b9cb9c3.txt"
     },
     {
       "rank": 54,
@@ -1280,16 +1357,18 @@
       "url": "https://github.com/Crosstalk-Solutions/project-nomad",
       "description": "Project NOMAD is an offline-first knowledge and education server. Wikipedia, thousands of books, courses, maps, and optional local AI, all running on hardware you own with no internet required.",
       "language": "TypeScript",
-      "stars": 40964,
-      "forks": 4149,
+      "stars": 40966,
+      "forks": 4150,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2025-06-24T15:35:01Z",
-      "updatedAt": "2026-10-26T13:24:27Z",
+      "updatedAt": "2026-10-26T14:42:49Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "crosstalk-solutions-project-nomad-c0a1f261.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 55,
@@ -1299,16 +1378,18 @@
       "url": "https://github.com/datalab-to/marker",
       "description": "Convert PDF to markdown + JSON quickly with high accuracy",
       "language": "Python",
-      "stars": 40648,
+      "stars": 40650,
       "forks": 2945,
       "starsToday": 0,
       "topics": [],
       "createdAt": "2023-10-30T20:14:08Z",
-      "updatedAt": "2026-10-26T13:53:54Z",
+      "updatedAt": "2026-10-26T14:59:33Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "datalab-to-marker-ead990bb.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 56,
@@ -1318,7 +1399,7 @@
       "url": "https://github.com/aseprite/aseprite",
       "description": "Animated sprite editor & pixel art tool (Windows, macOS, Linux)",
       "language": "C++",
-      "stars": 40398,
+      "stars": 40399,
       "forks": 9319,
       "starsToday": 0,
       "topics": [
@@ -1332,11 +1413,12 @@
         "graphics"
       ],
       "createdAt": "2014-08-19T23:44:50Z",
-      "updatedAt": "2026-10-26T13:26:34Z",
+      "updatedAt": "2026-10-26T14:18:39Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "aseprite-aseprite-45c97123.txt"
     },
     {
       "rank": 57,
@@ -1346,7 +1428,7 @@
       "url": "https://github.com/HKUDS/LightRAG",
       "description": "[EMNLP2025] LightRAG: Simple and Fast Retrieval-Augmented Generation",
       "language": "Python",
-      "stars": 40344,
+      "stars": 40345,
       "forks": 5730,
       "starsToday": 0,
       "topics": [
@@ -1360,11 +1442,13 @@
         "mineru"
       ],
       "createdAt": "2024-10-02T11:57:54Z",
-      "updatedAt": "2026-10-26T13:44:18Z",
+      "updatedAt": "2026-10-26T14:43:23Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "hkuds-lightrag-27ffa893.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 58,
@@ -1374,7 +1458,7 @@
       "url": "https://github.com/microsoft/playwright-mcp",
       "description": "Playwright MCP server",
       "language": "TypeScript",
-      "stars": 38652,
+      "stars": 38653,
       "forks": 3316,
       "starsToday": 0,
       "topics": [
@@ -1382,11 +1466,13 @@
         "playwright"
       ],
       "createdAt": "2025-03-21T17:48:36Z",
-      "updatedAt": "2026-10-26T13:48:43Z",
+      "updatedAt": "2026-10-26T14:21:07Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "microsoft-playwright-mcp-9f2a3d53.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 59,
@@ -1414,7 +1500,9 @@
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "jaywcjlove-linux-command-0e5f4d3e.txt",
+      "readmeTruncated": true
     },
     {
       "rank": 60,
@@ -1424,7 +1512,7 @@
       "url": "https://github.com/maboloshi/github-chinese",
       "description": "GitHub 汉化插件，GitHub 中文化界面。 (GitHub Translation To Chinese)",
       "language": "JavaScript",
-      "stars": 36741,
+      "stars": 36749,
       "forks": 2047,
       "starsToday": 0,
       "topics": [
@@ -1436,11 +1524,13 @@
         "violentmonkey"
       ],
       "createdAt": "2021-09-27T08:47:55Z",
-      "updatedAt": "2026-10-26T14:01:41Z",
+      "updatedAt": "2026-10-26T14:55:59Z",
       "sources": [
         "high-star"
       ],
-      "isNew": false
+      "isNew": false,
+      "readmeFile": "maboloshi-github-chinese-8b87b631.txt",
+      "readmeTruncated": true
     }
   ]
 }

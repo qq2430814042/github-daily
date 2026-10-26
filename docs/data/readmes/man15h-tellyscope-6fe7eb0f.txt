@@ -1,0 +1,49 @@
+Tellyscope
+
+Debloat your Android TV, install apps, and browse and transfer files on it, all from your phone. No root, no PC.
+
+    Your TV at a glance
+    Control the TV, dock your apps
+    Review every app Debloat turns off
+    Install or update apps
+
+    Send files to the TV
+    Block ads and tweak the TV
+    Set default launcher
+    Move your setup to a new TV (coming soon)
+
+    Know when another computer connects
+    See who has access, remove it in one tap
+
+Rendered from the app's screenshot tests with sample data, except Move your setup, which is a preview.
+
+Get it
+
+- GitHub Releases. Download Tellyscope-.apk from the latest release and open it on your phone. You may need to allow installs from your browser or file manager first. Pre-releases marked -alpha are test builds: they install as a separate app next to the regular one, with the same name and icon.
+- Obtainium. To get updates automatically, tap the Obtainium badge above on your phone, or add this repository's GitHub address in Obtainium. Turn on Include prereleases only if you want the alpha builds.
+- Orion Store. Tellyscope is in the Orion Store catalog: tap the Orion Store badge above on your phone, or search for Tellyscope in the app. Orion installs it from this project's GitHub releases and tells you when there's an update.
+
+Tellyscope needs a phone on Android 8.0 or newer, on the same Wi-Fi as the TV, and a TV with developer options turned on (how).
+
+Is it safe?
+
+- Small and private. Under 3 MB. No ads, no tracking, no accounts. It makes two internet requests: one fetches the debloat lists from this project's GitHub, or from your own fork if you point it there; the other asks GitHub every 30 minutes whether a newer version is out, and you can turn it off in Settings. Everything else stays on your Wi-Fi, except one lookup: the scan asks your phone's DNS server for the name of each TV it finds, which leaves your Wi-Fi only if that server is outside it, such as Private DNS on the phone. Turning on Private DNS changes where the TV looks up addresses, not what the app sends.
+- Reversible. Apps that came with the TV are only ever disabled, never uninstalled, so nothing is deleted. Apps you installed yourself can also be uninstalled, after a confirm that says it can't be undone. Every change goes into History, all but Uninstall with an Undo, and Restore everything turns back on all it turned off.
+- Protected list. Apps the TV needs to start, update, stay on Wi-Fi, show its home screen or take input can't be stopped or disabled. They sit in their own System section under Apps. There is no override. Apps a TV's list only says to keep can still be changed, after a warning in the confirm.
+- You see it first. Debloat shows every app it will turn off, and the confirm names each one before anything runs.
+
+The full rules are under Safety rules.
+
+What it does
+
+Tellyscope is a phone app that talks to your Android TV, Google TV or Fire TV over the network using ADB, the same debugging protocol developers use.
+
+- Find and connect. It looks for TVs on your Wi-Fi, or you add one by IP address. Classic network debugging (port 5555) and Android 11+ wireless debugging with a 6-digit pairing code both work. Add your TV walks through turning debugging on one step at a time, with the menu names for Google TV, Android TV, Fire TV, Xiaomi or XGIMI, and general steps for any other TV, then lists the TVs it found. Each TV opens its own screen: the pairing code, or the Allow box with this phone's key to check against the one the TV shows. The first launch opens a short welcome with the three setup steps, and on Android 17 or newer asks for the local-network permission it needs to reach the TV.
+- Remembers your TVs. They reconnect on their own after a restart of the app or the TV. You can rename a TV (the name stays on your phone) or forget it. The ⋮ menu shows which TV it's for on top, then this TV's items and the app's in two blocks.
+- How it's doing. Every tab of a TV's page opens with the TV itself: its name, maker and model, and a one-line summary such as "Running fine" or "Storage almost full". Scroll, and its icon and name shrink and slide up into the top bar, where a Connected or Offline badge joins them. On Overview, below that is a chip per TV to switch between them, then a + Device chip. Then comes free space as a bar, with CPU, RAM, temperature and network speed. When a TV is offline, it shows the storage from the last time Tellyscope saw it. Its address and how long it's been on are under Advanced.
+- The main jobs up front. Big Install app, Debloat and Send file tiles sit right under the vitals. Debloat shows a count while the TV's list still has apps on, or while apps Tellyscope turned off are back on, often after a TV update. When there's nothing left, it opens Apps instead. Below the tiles, one line says how many apps on the TV's list are off. If any came back on, a red line says so. Below that are the TV's Android version, when it last updated, and Check for updates, which opens the TV's own update screen. The Apps tab has an Install app button, and Files has Upload files.
+- Advanced. Every number in one place: memory, storage, CPU, temperature, uptime and screen state, CPU and RAM by app, processes, network and data used, and the TV's address.
+- Apps. Every app on the TV with its real name and icon, under three buttons: Running (what's using memory now), Installed (only the apps you put on the TV) and Built-in (what came with it). The buttons stay pinned under the bar as you scroll. Stop, disable or turn back on any app that isn't protected; each button says what it will do and asks first. Apps you installed yourself also offer Uninstall, which asks in a dialog that names the app and says it can't be undone. On Running and Built-in, the protected apps sit last under System, which folds away with a tap and stays folded until you open it again. Search apps sits under the buttons and pins with them. Tap it and the field moves to the top, the TV and the buttons step aside, and every matching app shows in one list. ← or Back brings them back.
+- Another home screen. With a second launcher such as Projectivy installed, its row in Apps offers Set as default launcher. Tellyscope makes it Home, checks that Home really opens it, and only then disables the old launcher, so the TV can't switch back by itself. The one exception: a stock launcher that outranks the rest, e.g. Android TV Home, is turned off first and turned back on if Home still doesn't open the new one. One Undo in History turns the old launcher back on and makes it Home again. Later, the new launcher's row offers Switch home back to the one it replaced, or the TV's own if there was no switch: it's turned back on if it's off and made Home, and the added launcher stays, free to uninstall. For a launcher that keeps Home with its own accessibility service, such as Projectivy (the ones marked in launchers.json), Set as default also turns that service on, after the confirm says so, for TVs whose Home button opens their own launcher whatever the default is. Undo and Switch home back turn it off again, and any other accessibility services stay as they were. Settings and other apps that only answer Home as a fallback are never offered as launchers. On Google TV, the Apps row and the Live tab are part of the old launcher and go with it.
+
+…（内容已截断）

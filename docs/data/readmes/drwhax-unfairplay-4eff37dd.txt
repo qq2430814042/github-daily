@@ -1,0 +1,93 @@
+UnfairPlay
+
+UnfairPlay recovers a FairPlay model from an enrolled Mac and uses it to
+decrypt personalized iOS IPAs. It is a standalone Go program.
+
+It does not log in to Apple, buy apps, or download IPAs. You can use ipatool or
+another downloader for that part.
+
+Build
+
+go build -o unfairplay ./cmd/unfairplay
+
+Usage
+
+First, sign in to the native Mac App Store. Install an iPhone or iPad app and
+open it once. Download an encrypted IPA with the same Apple Account.
+
+Collect the Mac state and matching IPA:
+
+sudo ./unfairplay collect \
+  --app /Applications/App.app \
+  --ipa App.ipa \
+  --output App.capture
+
+Recover the model and validate it:
+
+./unfairplay recover \
+  --capture App.capture \
+  --output App.recovery
+
+For exact 26A428/26A434 captures, UnfairPlay automatically uses the
+captured fairplayd as hash-checked reference code. --reference-binary is an
+optional override for archived research captures. --selection-max-blocks
+can raise the bounded execution limit.
+
+Decrypt another IPA from the same enrollment:
+
+./unfairplay decrypt \
+  --input AnotherApp.ipa \
+  --model App.recovery/fairplay-enrollment.bin
+
+IPAs with extensions or watch apps are decrypted in one pass. Use a model
+directory when their SINF selectors require different enrollment models.
+
+Test a model without keeping the decrypted IPA:
+
+./unfairplay verify \
+  --input AnotherApp.ipa \
+  --model App.recovery/fairplay-enrollment.bin
+
+Use unfairplay doctor to check a capture, IPA, or model. Use
+unfairplay profile to inspect a fairplayd binary.
+
+Create a code profile for an exact fairplayd binary:
+
+./unfairplay profile --binary /path/to/fairplayd.arm64e \
+  --recovery-profile-output fairplayd.recovery-profile.gz
+
+The profile contains code locations and import names. It contains no account
+data and does not execute fairplayd. It helps add native support for new macOS
+builds, but creating it alone does not enable decryption.
+
+Support
+
+Verified enrollment contracts: 25G83, 26A428/26A434, and 26B118.
+25G83 and 26B118 use the portable semantic evaluator; native fairplayd
+execution is not required. Unknown arm64e builds are accepted only when model
+recovery and full IPA validation succeed.
+
+The evaluator source build is recorded for audit purposes. UnfairPlay does not
+load or run that fairplayd binary during recovery.
+
+macOS arm64 and Linux amd64/arm64 are supported. Windows is compile-tested but
+cannot yet enforce the required private-file permissions.
+
+The IPA, installed app, Mac state, hardware identity, and model must belong to
+the same enrollment. Account or selector mismatches are rejected.
+
+Keep capture and model files private. Do not share SIDB, SINF, hardware data,
+recovery models, or decrypted apps. Decrypted IPAs are analysis files and need
+signing before installation.
+
+Releases
+
+Run the private control matrix in QA.md before tagging a release.
+
+Tags matching v* publish binaries and SHA256SUMS through GitHub Actions.
+Tags such as v0.2.0-rc.1 create prereleases.
+
+License
+
+MIT. The DarkPhoenix-derived Go code keeps its Apache-2.0 notice in
+LICENSE-DARKPHOENIX.txt.

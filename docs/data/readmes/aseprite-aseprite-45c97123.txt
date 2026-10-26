@@ -1,0 +1,76 @@
+Aseprite
+
+Introduction
+
+Aseprite is a program to create animated sprites. Its main features are:
+
+* Sprites are composed of layers &amp; frames as separated concepts.
+* Support for color profiles and different color modes: RGBA, Indexed (palettes up to 256 colors), Grayscale.
+* Animation facilities, with real-time preview and onion skinning.
+* Export/import animations to/from sprite sheets, GIF files, or sequence of PNG files (and FLC, FLI, JPG, BMP, PCX, TGA).
+* Multiple editors support.
+* Layer groups for organizing your work, and reference layers for rotoscoping.
+* Pixel-art specific tools like Pixel Perfect freehand mode, Shading ink, Custom Brushes, Outlines, Wide Pixels, etc.
+* Other special drawing tools like Pressure sensitivity, Symmetry Tool, Stroke and Fill selection, Gradients.
+* Tiled mode useful to draw patterns and textures.
+* Transform multiple frames/layers at the same time.
+* Lua scripting capabilities.
+* CLI - Command Line Interface to automatize tasks.
+* Quick Reference / Cheat Sheet keyboard shortcuts (customizable keys and mouse wheel).
+* Reopen closed files and recover data in case of crash.
+* Undo/Redo for every operation and support for non-linear undo.
+* More features &amp; tips
+
+Issues
+
+There is a list of
+Known Issues (things
+to be fixed or that aren't yet implemented).
+
+If you found a bug or have a new idea/feature for the program,
+you can report them.
+
+Support
+
+You can ask for help in:
+
+* Aseprite Community
+* Aseprite Discord Server
+* Official support: support@aseprite.org
+* Social networks and community-driven places:
+  Twitter,
+  Facebook,
+  YouTube,
+  Instagram.
+
+Credits
+
+Aseprite was originally created by David Capello
+and is now being developed and maintained by Igara Studio
+and contributors.
+
+Check the AUTHORS file for details about the active team
+of developers working on Aseprite.
+
+License
+
+This program is distributed under three different licenses:
+
+1. Source code and official releases/binaries are distributed under
+   our End-User License Agreement for Aseprite (EULA). Please check
+   that there are modules/libraries in the source code that
+   are distributed under the MIT license
+   (e.g. laf,
+   clip,
+   undo,
+   observable,
+   ui, etc.).
+2. You can request a special
+   educational license
+   in case you are a teacher in an educational institution and want to
+   use Aseprite in your classroom (in-situ).
+3. Steam releases are distributed under the terms of the
+   Steam Subscriber Agreement.
+
+You can get more information about Aseprite license in the
+FAQ.

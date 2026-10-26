@@ -1,0 +1,189 @@
+&nbsp;
+
+    &nbsp;
+
+    &nbsp;
+
+    &nbsp;
+
+	&nbsp;
+
+    &nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+    &nbsp;
+
+	&nbsp;
+
+    &nbsp;
+
+    &nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+    &nbsp;
+
+    &nbsp;
+
+    &nbsp;
+
+    &nbsp;
+
+    &nbsp;
+
+&nbsp;&nbsp;What is SurrealDB?
+
+SurrealDB is a multi-model database built in Rust designed to unify multiple data models into a single engine. SurrealDB combines document, graph, relational, time-series, geospatial and key-value data types with powerful search and retrieval functionalities (full-text, vector, hybrid) and real-time and event-driven capabilities, enabling developers to build powerful applications faster and more efficiently. SurrealDB can also be used as a backend-as-a-service given its support for end user authentication. Given that it’s a single Rust binary, SurrealDB can run embedded (in‐app), in the browser (via WebAssembly), in the edge, self-hosted as single backend node, or in a distributed cluster in the cloud.
+
+SurrealDB is used for data-intensive systems such as applications requiring multiple data types, data layer for AI agents, knowledge graphs, real-time apps (e.g. recommendation engines, fraud detection systems) and embedded/edge systems. With SurrealDB, you can simplify your database and API infrastructure, reduce development time, and build secure, performant apps quickly and cost-effectively.
+
+Key features of SurrealDB include:
+
+- Reduces development time: SurrealDB simplifies your database and API stack by removing the need for most server-side components, allowing you to build secure, performant apps faster and cheaper.
+- Multi-model: native multi-model support for document, graph, relational (enforcing schema and schemaless), time-series, geospatial and retrieval (full-text, vector, hybrid). This is offered natively through SurrealQL, SurrealDB's SQL-like intuitive query language.
+- Real-time collaborative API backend service: SurrealDB functions as both a database and an API backend service, enabling real-time collaboration.
+- Support for multiple querying languages: SurrealDB supports SQL querying from client devices, GraphQL, ACID transactions, WebSocket connections, structured and unstructured data, graph querying, full-text and vector indexing, and geospatial querying.
+- Granular access control: SurrealDB provides row-level permissions-based access control, giving you the ability to manage data access with precision.
+
+View the features, the latest releases, and documentation.
+
+&nbsp;&nbsp;Contents
+
+- Database, API, and permissions
+- Tables, documents, and graph
+- Advanced inter-document relations and analysis. No JOINs. No pain.
+- Simple schema definition for frontend and backend development
+- Connect and query directly from web-browsers and client devices
+- Query the database with the tools you want
+- Realtime live queries and data changes direct to application
+- Scale effortlessly to hundreds of nodes for high-availability and scalability
+- Extend your database with JavaScript functions
+- Designed to be embedded or to run distributed in the cloud
+
+&nbsp;&nbsp;Features
+
+- x] Database server, or embedded library
+- [x] Multi-row, multi-table ACID transactions
+- [x] Single-node, or highly-scalable distributed mode
+- [x] Record links and directed typed graph connections
+- [x] Store structured and unstructured data
+- [x] Incrementally computed views for pre-computed advanced analytics
+- [x] Realtime-API layer, and security permissions built in
+- [x] Store and model data in any way with tables, documents, and graph
+- [x] Simple schema definition for frontend and backend development
+- [x] Connect and query directly from web-browsers and client devices
+- [x] Use embedded JavaScript functions for custom advanced functionality
+- [x] MCP (Model Context Protocol) server for LLM and AI-agent integration
+
+&nbsp;&nbsp;Documentation
+
+For guidance on installation, development, deployment, and administration, take a look at the following resources:
+
+- Documentation: https://surrealdb.com/docs
+- SurrealDB University: https://surrealdb.com/learn
+- Aeon's Surreal Renaissance (interactive book): https://surrealdb.com/learn/book
+
+&nbsp;&nbsp;Getting started
+
+Getting started with SurrealDB is as easy as starting up the SurrealDB database server, choosing your platform, and integrating its SDK into your code. You can easily get started with your platform of choice by reading one of our tutorials.
+
+Server side code
+
+    &nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+Client side apps
+
+    &nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+	&nbsp;
+
+&nbsp;&nbsp;SurrealDB Cloud
+
+SurrealDB is available as a [managed cloud service. Forget about infrastructure operations, monitoring, backups or capacity planning. SurrealDB Cloud allows you to focus on building great products using the power and flexibility of SurrealDB in just a few clicks. Grow from prototype to enterprise-scale. The SurrealDB Cloud scalable architecture allows your database to evolve as your application grows, ensuring you are always ahead of demand. However if you want to deploy SurrealDB yourself, keep reading below.
+
+&nbsp;&nbsp;Installation
+
+SurrealDB is designed to be simple to install and simple to run - using just one command from your terminal. In addition to traditional installation, SurrealDB can be installed and run with HomeBrew, Docker, or using any other container orchestration tool such as Docker Compose, Docker Swarm, Rancher, or in Kubernetes.
+
+&nbsp;Install on macOS
+
+The quickest way to get going with SurrealDB on macOS is to use Homebrew. This will install both the command-line tools, and the SurrealDB server as a single executable. If you don't use Homebrew, follow the instructions for Linux below to install SurrealDB.
+
+brew install surrealdb/tap/surreal
+
+If you want to test a version with the latest features, published every night, install the nightly version:
+
+brew install surrealdb/tap/surreal-nightly
+
+&nbsp;Install on Linux
+
+The easiest and preferred way to get going with SurrealDB on Unix operating systems is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions.
+
+curl --proto '=https' --tlsv1.2 -sSf https://install.surrealdb.com | sh
+
+If you want to run a beta release, before the next version is released, the beta version:
+
+curl --proto '=https' --tlsv1.2 -sSf https://install.surrealdb.com | sh -s -- --beta
+
+If you want to test a version with the latest features, published every night, install the nightly version:
+
+curl --proto '=https' --tlsv1.2 -sSf https://install.surrealdb.com | sh -s -- --nightly
+
+&nbsp;Install on Windows
+
+The easiest and preferred way to get going with SurrealDB on Windows is to install and use the SurrealDB command-line tool. Run the following command in your terminal and follow the on-screen instructions.
+
+iwr https://windows.surrealdb.com -useb | iex
+
+If you want to test a version with the latest features, published every night, install the nightly version:
+
+iex "& { $(irm https://windows.surrealdb.com) } -Nightly"
+
+&nbsp;Run using Docker
+
+Docker can be used to manage and run SurrealDB database instances without the need to install any command-line tools. The SurrealDB docker container contains the full command-line tools for importing and exporting data from a running server, or for running a server itself.
+
+docker run --rm --pull always --name surrealdb -p 8000:8000 surrealdb/surrealdb:latest start
+
+For just getting started with a development server running in memory, you can pass the container a basic initialization to set the user and password as root and enable logging.
+
+docker run --rm --pull always --name surrealdb -p 8000:8000 surrealdb/surrealdb:latest start --log info --user root --pass root memory
+
+&nbsp;&nbsp;Quick look
+
+With strongly-typed data types, data can be fully modelled right in the database.
+
+UPDATE person SET
+    waist =  "34",
+    height =  201,
+    score =  0.3 + 0.3 + 0.3 + 0.1
+;
+
+…（内容已截断）

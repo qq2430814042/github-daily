@@ -1,0 +1,154 @@
+Minilytics
+
+Revenue-first web analytics for your own websites, inspired by DataFast. It shows where visitors came from (which
+tweet, article, Google page or AI assistant), what they did, and which source made you money. It runs on
+Cloudflare's free plan.
+
+Sponsors
+
+      DiskMate
+
+      Disk space analyzer &amp; cleaner for Mac
+
+      PasteBuddy
+
+      Clipboard history for Mac: never lose what you copy
+
+      Your logo here
+
+      Reach indie hackers and developers who self-host their analytics
+
+      Become a sponsor →
+What it tracks
+
+- Visitors, revenue, conversion rate, revenue per visitor, bounce rate, session time, online now, each with a % change against the previous period
+- A chart of visitors (line) and revenue (bars), hourly, daily, weekly or monthly
+- Date ranges: today, yesterday, last 24h, last 2 days, 7/30/90 days, 12 months, all time and custom, with ‹ › to step back and forward
+- Where visitors come from: channel, referrer (X, Google, ChatGPT, Reddit…), campaign (utm_campaign), keyword (utm_term), ?ref= tags
+- Where they are and what they use: country, region, city, browser, OS, device
+- What they did: pages, entry pages, exit links (outbound clicks), button clicks and custom goals, funnels
+- Who paid: a Journey list of every customer with their source, amount, time to convert, and a full visitor timeline (visit → pages → clicks → payment)
+- Live globe (press M): every visitor on your site right now, on a 3D globe or 2D map, with a live feed of page views, goals and payments, optional sounds, light/dark map and fullscreen. Map tiles from OpenFreeMap, free with no API key
+- Anonymous visitors get friendly, stable names like "brown fox"
+- Click any row to filter the whole dashboard (for example "only visitors from the launch tweet")
+- Multiple websites, one login
+
+Deploy for free (about 10 minutes)
+
+Every person deploys their own copy on their own free Cloudflare account. Your data stays on your account, and you
+get your own dashboard with its own password.
+
+You need a free Cloudflare account, Node.js 20+ and Git.
+Run these commands in a terminal on your computer. You only do this once; afterwards the app runs on Cloudflare.
+
+1. Download the code and log in to Cloudflare
+
+git clone https://github.com/surendrapandar/minilytics.git
+cd minilytics
+npm install
+npx wrangler login          # opens your browser; click "Allow"
+
+2. Create the database
+
+npx wrangler d1 create minilytics
+
+If Wrangler asks "Would you like Wrangler to add it on your behalf?", answer No. Answer No to the optional
+"Cloudflare skills" questions too. Then copy the printed database_id and paste it into wrangler.jsonc, replacing
+00000000-0000-0000-0000-000000000000. There must be exactly one entry under d1_databases, with "binding": "DB".
+
+3. Set your password and a signing secret
+
+npx wrangler secret put ADMIN_PASSWORD     # the password you'll log in with (use a strong one)
+npx wrangler secret put SESSION_SECRET     # any long random text, e.g. the output of: openssl rand -hex 32
+
+Typing is hidden; that's normal. If asked "There doesn't seem to be a Worker called minilytics… create it?", answer Yes.
+
+4. Deploy
+
+npm run deploy
+
+This builds the dashboard, creates the database tables and deploys. It prints your link, e.g.
+https://minilytics..workers.dev. Open it, log in, add a website and copy its script tag. Each site's Settings
+page also has a Copy AI prompt button that lets Claude Code / Cursor do the install in your codebase for you.
+
+If you see fetch failed, it's a network hiccup (VPN, proxy, Wi-Fi). Run npm run deploy again.
+
+You can attach a custom domain such as analytics.yourdomain.com in Cloudflare → Workers & Pages → minilytics →
+Settings → Domains & Routes.
+
+Updating later
+
+git stash          # keeps your database_id edit in wrangler.jsonc safe
+git pull
+git stash pop
+npm run deploy
+
+What the free plan covers
+
+| Cloudflare free limit | What it means here |
+| --- | --- |
+| 100,000 Worker requests/day | About 100k tracked events per day across all sites. The script and dashboard files are static and don't count. |
+| 100,000 D1 rows written/day | About 10k pageviews per day |
+| 5M D1 rows read/day | A dashboard load reads roughly 10 times the sessions in the range, so with 10k visitors/month that's hundreds of loads a day |
+| 5 GB D1 storage | Years of data at side-project traffic |
+
+At 5–10k visitors a month you'll use a few percent of this. If you outgrow it, Cloudflare's Workers Paid plan is $5/month.
+
+Run it as a hosted SaaS (optional)
+
+By default Minilytics is single-user with a password. Set the Google values below and it becomes a hosted product:
+a landing page with pricing, Sign in with Google, a paid plan through Dodo Payments, and every customer sees only
+their own sites. Tracking stops (quietly) for sites whose owner's plan has ended.
+
+npx wrangler secret put GOOGLE_CLIENT_ID        # Google Cloud → Credentials → OAuth client (Web)
+npx wrangler secret put GOOGLE_CLIENT_SECRET    # redirect URI: https://YOUR-DOMAIN/api/auth/google/callback
+npx wrangler secret put ADMIN_EMAILS            # your Google email(s): free, and you keep the existing sites
+npx wrangler secret put PLAN_CHECKOUT_URL       # Dodo payment link for the plan
+npx wrangler secret put PLAN_PRODUCT_ID         # that product's id (pdt_...)
+npx wrangler secret put BILLING_WEBHOOK_SECRET  # Dodo webhook → https://YOUR-DOMAIN/api/billing/webhook
+npx wrangler secret put PLAN_PRICE              # e.g. $29
+npx wrangler secret put PLAN_INTERVAL           # lifetime | month | year
+npx wrangler secret put PLAN_SPOTS              # e.g. 5 ("3 of 5 spots left"); optional
+npx wrangler secret put PLAN_NEXT_PRICE         # e.g. $49 ("…, then $49"); optional
+npx wrangler secret put SUPPORT_EMAIL           # shown on pricing, billing and legal pages
+npm run deploy
+
+Subscribe the billing webhook to payment.succeeded, subscription.* and refund.succeeded. A one-time product
+(PLAN_INTERVAL=lifetime) gives lifetime access; a subscription gives access until it expires or is refunded.
+The Terms, Privacy and Refund pages (/terms, /privacy, /refund) are plain-language starting points: review them.
+
+Install on a website
+
+- Button clicks / goals: `, or window.minilytics('goal', 'signup', { plan: 'pro' })`
+- Identify logged-in users: window.minilytics('identify', { user_id, email, name })
+- Ignore your own visits: open https://yoursite.com/?ml_ignore=true once per browser
+- Single-page apps (Next.js, React Router…) are handled automatically
+- Subdomains: app.yoursite.com and yoursite.com share the same visitor, because the cookie is set on the root domain
+
+Tracking a specific tweet / article
+
+X, Medium, LinkedIn and others hide which exact post sent someone; the referrer only says t.co or medium.com.
+To see the exact post, tag each link. Settings has a link builder for this:
+
+https://yoursite.com/?utm_source=x&utm_medium=social&utm_campaign=launch-tweet
+https://yoursite.com/?ref=launch-tweet            (short version)
+
+For SEO, Google never shares the search keyword, but Entry page with the Google referrer tells you which
+article people found you through.
+
+Revenue attribution with Dodo Payments
+
+1. In Dodo → Developer → Webhooks, add https://YOUR-HOST/api/webhooks/dodo/SITE_ID and subscribe to
+   payment.succeeded and refund.succeeded. Paste the signing secret (whsec_…) into the site settings.
+2. Pass the visitor cookies as metadata when creating a checkout:
+
+const jar = await cookies(); // next/headers
+await dodo.checkoutSessions.create({
+  product_cart: { product_id: 'pdt_xxx', quantity: 1 }],
+  metadata: { ml_visitor_id: jar.get('ml_vid')?.value ?? '', ml_session_id: jar.get('ml_sid')?.value ?? '' },
+});
+
+Using Dodo payment links? The script adds metadata_ml_visitor_id / metadata_ml_session_id to any
+checkout.dodopayments.com link when it's clicked. That metadata doesn't always reach the payment, so also do step 3.
+
+…（内容已截断）

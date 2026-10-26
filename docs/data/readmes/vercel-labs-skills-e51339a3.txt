@@ -1,0 +1,96 @@
+skills
+
+The CLI for the open agent skills ecosystem.
+
+Agent skills are reusable instructions that teach coding agents how to perform tasks,
+from reviewing code to working with a library. Discover skills at skills.sh.
+
+Supports OpenCode, Claude Code, Codex, Cursor, and 75 more.
+
+Install a Skill
+
+Requires Node.js 22.20 or later. Run this from your project:
+
+npx skills add vercel-labs/agent-skills
+
+Choose the skills and coding agents to install to. Skills are installed to the current
+project by default; add -g to make them available across projects.
+
+Choose one skill and agent
+npx skills add vercel-labs/agent-skills --skill web-design-guidelines -a claude-code
+
+Browse available skills
+npx skills find
+
+See the installation reference for source formats,
+private repositories, and all options.
+
+Other Commands
+
+| Command                           | Description                      |
+| --------------------------------- | -------------------------------- |
+| npx skills find query]         | Search for skills                |
+| npx skills list                 | List installed skills            |
+| npx skills use @ | Use one skill without installing |
+| npx skills experimental_sync    | Sync skills from npm dependencies (experimental) |
+| npx skills check                | Check for available updates      |
+| npx skills update [skills...]   | Update installed skills          |
+| npx skills remove [skills...]   | Remove installed skills          |
+| npx skills init [name]          | Create a skill template          |
+
+Read the [CLI reference or run npx skills --help for examples and options.
+
+Use a Skill Without Installing
+
+Generate a prompt for a skill, or launch a supported coding agent with it:
+
+npx skills use vercel-labs/agent-skills@web-design-guidelines --agent claude-code
+
+Omit --agent to print the prompt instead. See skills use.
+
+Sync Skills from npm Packages (Experimental)
+
+Some npm packages bundle instructions for your agent alongside their code:
+
+npm install -D skills agent-browser
+npx skills experimental_sync -y
+
+Sync links packaged skills into your project so they update with
+the dependency. It also supports skill packs declared in package.json.
+This feature is experimental; its options and behavior may change as we iterate.
+See npm skills and automatic setup.
+
+Supported Agents
+
+The CLI detects installed agents and lets you choose where skills are installed.
+See all supported agents, installation paths, and compatibility.
+
+Creating Skills
+
+npx skills init my-skill
+
+Edit the generated SKILL.md with instructions for your agent.
+See creating and sharing skills for the format and discovery rules.
+
+Documentation
+
+- CLI reference: installation, command examples, and experimental features
+- Supported agents: agent names, skill directories, and compatibility
+- Creating skills: frontmatter, repository layouts, and plugins
+- Troubleshooting and configuration: common problems, environment variables, and telemetry
+
+Telemetry
+
+The CLI collects anonymous usage data. Set DISABLE_TELEMETRY=1 or DO_NOT_TRACK=1
+to disable telemetry and security-audit requests.
+See what is collected.
+
+Related Links
+
+- Skills Directory
+- Agent Skills Specification
+- Vercel Agent Skills
+
+License
+
+This project is licensed under the MIT License.

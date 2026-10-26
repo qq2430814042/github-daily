@@ -1,0 +1,118 @@
+Two years of duct-taped overlay code, a patched driver here, a broken offset there — that's what the old build was. January 2026 is the ground-up rewrite: every module pulled out of the monolith, offsets externalized to a config, and the renderer moved off the DirectX hook entirely. If you've been chasing a stable external ESP that doesn't need recompiling every Tuesday patch, this is what that looks like.
+
+Educational purposes only. This repository documents external read-only memory inspection techniques for reverse-engineering study. Use at your own risk; the author assumes no responsibility for account actions resulting from misuse.
+
+📑 Table of Contents
+
+- System Requirements
+- The Solution — Problem | Solution Mirror
+- Comparison — Aspect | Alternative | This Tool
+- Compatibility / Platform Support
+- All Modules Status — 31 Modules
+- How the Internals Actually Work
+- Hotkeys Reference
+- Tips for Best Results
+- Usage Guidelines — Allowed | Not Allowed
+- Performance Benchmarks
+-
+
+(#-download)
+- FAQ
+
+🖥 System Requirements
+
+| Component | Minimum | Recommended |
+|---|---|---|
+| OS | Windows 10 21H2 (x64) | Windows 11 23H2 (x64) |
+| CPU | Quad-core 2.6 GHz | 6-core 3.6 GHz+ |
+| RAM | 8 GB | 16 GB |
+| GPU | DX11-capable, 2 GB VRAM | DX12-capable, 6 GB VRAM |
+| Storage | 120 MB free | 500 MB free (logs + config backup) |
+| Runtime | .NET 6 Desktop Runtime | .NET 8 Desktop Runtime |
+| Permissions | Standard user | Administrator (for driver-backed reads) |
+| Display | 1920×1080 | 2560×1440 or higher |
+
+Additional requirements as a bullet list:
+
+- Windows must be fully updated — the memory-inspection layer relies on recent NtQueryVirtualMemory behavior.
+- Secure Boot may block the optional kernel-assisted read path; the user-mode path works regardless.
+- Antivirus exclusions recommended for the working directory (false positives on the injector stub are common).
+- A second monitor is strongly recommended — overlay window is borderless and position-persistent.
+- DirectX June 2010 redistributable for the legacy overlay fallback path.
+
+🧩 The Solution — Problem | Solution Mirror
+
+| Problem | Solution |
+|---|---|
+| Offsets break after every game patch | Offsets externalized to a signed JSON config, refreshed independently of the binary |
+| Overlay causes frame drops | Renderer moved to a separate composited window — zero in-process hook |
+| Monolithic codebase impossible to audit | 31 discrete modules, each toggled from a single config file |
+| Hard to verify what's actually reading memory | Built-in read-audit log — every handle, every region, timestamped |
+| Recompiling for every tweak | All behavior driven by config.json, no rebuild needed |
+| Users couldn't tell if a module was alive | Live status table in the overlay footer, updated per tick |
+
+⚖ Comparison — Aspect | Alternative | This Tool
+
+| Aspect | Alternative | This Tool |
+|---|---|---|
+| Injection model | DLL injection into game process | Fully external — no injection, no in-process code |
+| Overlay method | DirectX swapchain hook | Separated composited window + desktop duplication |
+| Patch resilience | Hardcoded offsets, recompile required | Externalized offset config, hot-reloadable |
+| Detection surface | In-process memory writes | Read-only external inspection |
+| Debugging | Silent failures | Timestamped read-audit log |
+| Modularity | One binary, all features on | 31 modules, individually toggleable |
+| Update cadence | Full rebuild | Config-only refresh |
+
+🪟 Compatibility / Platform Support
+
+| Platform / Layer | Support Level | Notes |
+|---|---|---|
+| Windows 10 21H2+ | ✅ Full | Primary target |
+| Windows 11 23H2 | ✅ Full | Tested on 24H2 as well |
+| Windows 8.1 | ⚠️ Partial | Overlay fallback only, no desktop duplication |
+| Steam (PUBG PC) | ✅ Full | Standard launch, no special flags |
+| Steam (PUBG via Proton) | ❌ Unsupported | Windows-only external reads |
+| Kakao / regional clients | ⚠️ Partial | Offsets may differ, config override needed |
+| Fullscreen exclusive | ⚠️ Partial | Borderless windowed strongly preferred |
+| Borderless windowed | ✅ Full | Recommended mode |
+| HDR-enabled displays | ⚠️ Partial | Overlay desaturates, known limitation |
+
+📦 All Modules Status — 31 Modules
+
+| Module | Status | Description |
+|---|---|---|
+| Player ESP | ✅ Working | Box, name, distance, health bar per entity |
+| Skeleton ESP | ✅ Working | Bone-line rendering, 18-point skeleton |
+| Box ESP (2D) | ✅ Working | Corner-style or full-outline box |
+| Box ESP (3D) | ✅ Working | World-space oriented box |
+| Health Bar ESP | ✅ Working | Numeric + bar, color-coded by percentage |
+| Distance ESP | ✅ Working | Meters from local player, configurable units |
+| Name ESP | ✅ Working | Player name render, font configurable |
+| Team ID ESP | ✅ Working | Team color coding, avoids friendly confusion |
+| Weapon ESP | ✅ Working | Currently-held weapon name + ammo count |
+| Vehicle ESP | ✅ Working | Vehicle type + distance, filter by class |
+| Airdrop ESP | ✅ Working | Crate marker with descent trail |
+| Loot ESP | ✅ Working | Item filter list, rarity color coding |
+| Ammo ESP | ✅ Working | Ammo type + count per nearby loot |
+| Attachments ESP | ✅ Working | Scope, grip, muzzle markers on loot |
+| Grenade Trajectory | ✅ Working | Predicted arc for thrown utility |
+| Bullet Drop Line | ✅ Working | Trajectory preview for scoped shots |
+| Skeleton Aim Assist | ✅ Working | Bone-target selection with smoothing curve |
+| Recoil Compensation | ✅ Working | Pattern-based, per-weapon profile |
+| FOV Circle | ✅ Working | On-screen FOV boundary indicator |
+| Radar (minimap) | ✅ Working | 2D top-down entity map |
+| Crosshair Overlay | ✅ Working | Custom crosshair, size + color config |
+| Stream-Proof Mode | ✅ Working | Hides overlay from capture APIs |
+| Panic Key | ✅ Working | Instant overlay + module teardown |
+| Config Hot-Reload | ✅ Working | Edit config.json, changes apply live |
+| Offset Auto-Detect | ✅ Working | Scans build signature and picks offset set |
+| Read-Audit Log | ✅ Working | Every memory read timestamped and logged |
+| Handle Cleanup | ✅ Working | Ensures no dangling handles on exit |
+| Multi-Monitor Support | ✅ Working | Overlay follows primary display config |
+| DPI Scaling | ✅ Working | Per-monitor DPI awareness, V2 |
+| Font Customization | ✅ Working | TTF loading, size + weight per element |
+| Color Schemes | ✅ Working | Preset themes + full per-element override |
+
+🔬 How the Internals Actually Work
+
+…（内容已截断）

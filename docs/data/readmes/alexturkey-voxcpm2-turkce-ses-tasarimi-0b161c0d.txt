@@ -1,0 +1,124 @@
+voxcpm2-turkce-ses-tasarimi
+
+Turkish voice design with VoxCPM2 on a 4 GB GPU. Describe a voice in English, let the model create it, pick the
+variant you like, then read any Turkish text with that voice. Includes a one-command installer, a patched
+audio.cpp engine that fits a GTX 1050 Ti (4 GB), a tiny local web UI and fourteen
+ready-made synthetic voices: seven Turkish and seven native narrators in English, French, German, Spanish,
+Russian, Chinese and Japanese (8 languages in total).
+
+Türkçe README · How it fits in 4 GB · macOS · Install guide for AI agents · Responsible use
+
+The bundled voices are synthetic, designed from a text description. The voice cloning section is only for your own
+voice or a voice used with its owner's explicit permission; the UI asks you to confirm that permission. Impersonation,
+fraud and deception are prohibited. Label what you generate as AI-generated. See ETHICS.md.
+
+Multilingual: 8 languages, native narrators, sentence-by-sentence consistency
+
+We made one Cappadocia documentary video in 8 languages: Turkish, English, French, German, Spanish, Russian, Chinese
+and Japanese. Each language has its own native narrator, designed with VoxCPM2 from an English description. All of
+it was generated fully locally on a 4 GB GTX 1050 Ti, with the same fixed quality (16 steps, cfg 2.0). The seven
+narrators are bundled here, with their prompt, design text, seed and reference recording.
+
+| Code | Language | Voice | Listen | Video |
+|---|---|---|---|---|
+| tr | Turkish | hazir/belgesel_hanim (and 6 more) | sample | |
+| en | English | hazir/anlatici_en | sample | video |
+| fr | French | hazir/anlatici_fr | sample | video |
+| de | German | hazir/anlatici_de | sample | video |
+| es | Spanish | hazir/anlatici_es | sample | video |
+| ru | Russian | hazir/anlatici_ru | sample | video |
+| zh | Chinese (Mandarin) | hazir/anlatici_zh | sample | video |
+| ja | Japanese | hazir/anlatici_ja | sample | video |
+
+the language comes from the voice card; --dil overrides it
+.venv\Scripts\python.exe -m ses_tasarim.oku --ses hazir/anlatici_fr --metin @hazir_sesler/anlatici_fr/ornek_okuma_metni.txt --cikti cikti\fr
+.venv\Scripts\python.exe -m ses_tasarim.oku --ses hazir/anlatici_ja --metin @text_ja.txt --cikti cikti\ja
+design a voice in another language: English prompt, design text in that language
+.venv\Scripts\python.exe -m ses_tasarim.tasarla --ad narrator_es --dil es --cesit 3 --tarif "A deep-voiced Spanish man ..." --metin @texto.txt
+
+Why sentence by sentence. VoxCPM2 is not stable for a single long generation (roughly above 30 seconds): the rhythm
+speeds up and the voice can drift. Here the voice is carried by a fixed reference recording and seed, and long text is
+read one sentence per line, so timbre and style stay the same from the first sentence to the last. For languages other
+than Turkish the Turkish pronunciation dictionary is not applied. Other languages VoxCPM2 supports should work with
+--dil ; we have not tested them. Per-language commands and the lessons we learned:
+docs/cok_dilli.md. Claude Code skill for the whole design flow:
+.claude/skills/ses-tasarimi/SKILL.md.
+
+144 example prompts to start from. 18 roles (documentary narrator, news anchor, commercial voice, audiobook,
+grandmother storyteller, podcast host, teacher, movie trailer, meditation guide, sports commentator and more, male and
+female) in each of the 8 languages. The prompt is English with the speaker's nationality and native accent; the text
+read while the voice is created comes with it, in that language and matched to the role. Pick one, listen to the
+variants, keep the one you like: python -m ses_tasarim.tasarla --ornek fr_sesli_kitap_kadin --cesit 3, or choose
+Example prompt in the web UI. Full list: docs/ornek_tarifler.md.
+
+Dub your videos with your own voice. DubWorld is our local video dubbing
+program; it installs this repository as its VoxCPM2 voice engine. A voice you design here is used there with
+ses.voxcpm2_ses = "/".
+
+Quick start (Windows, 3 steps)
+
+1. Download the code: voxcpm2-turkce-ses-tasarimi-main.zip.
+   The ready-made engine package for your card is fetched by the installer in step 3:
+   NVIDIA → CUDA package,
+   AMD / Intel → Vulkan package, experimental
+   (already downloaded one? add -HazirZip  to the command below).
+2. Extract the zip, open the voxcpm2-turkce-ses-tasarimi-main folder, type powershell in the Explorer address
+   bar and press Enter.
+3. Run the installer (needs 64-bit Python 3.10–3.13; NVIDIA driver ≥ 570 for CUDA), then double-click baslat.bat:
+   powershell -NoProfile -ExecutionPolicy Bypass -File scripts\kur.ps1 -Kok C:\vox
+   AMD / Intel: add -Vulkan at the end. The UI opens at http://127.0.0.1:8765/.
+
+The engine zip is not a standalone app (its exe needs the model and DLLs that the installer sets up). Details, GPU
+list and common problems: "Quick install" below.
+
+Quick start (macOS, Apple Silicon)
+
+Needs Xcode Command Line Tools (xcode-select --install) and Homebrew:
+brew install cmake python@3.12
+git clone https://github.com/alexturkey/voxcpm2-turkce-ses-tasarimi.git
+cd voxcpm2-turkce-ses-tasarimi
+bash scripts/kur.sh
+The installer downloads the model, builds the patched engine with Metal (1 min) and sets everything up under /vox.
+Then double-click baslat.command. On a MacBook Air M4 16 GB: ~2 s of compute per 1 s of speech, same seed gives
+byte-identical audio, peak ~5.3 GB RAM, no thermal slowdown over 12 min of continuous reading. Details and
+measurements: docs/mac.md.
+
+Native Mac app (no Python, Homebrew or Terminal): macos/README.md. It bundles the same
+patched engine and downloads the model on first launch; for now it is built from source with Xcode.
+
+For Mac (Apple Silicon) users
+
+There is also an independent, community-made adaptation for Apple Silicon Macs that runs VoxCPM2 with Apple's
+MLX framework: emre-koc/voxcpm2-turkce-ses-tasarimi-mlx.
+It is developed and maintained by Emre Koç (@emre-koc) in his own repository, not
+here; installation steps and support questions go there. Thank you, Emre, for bringing this project to the Mac!
+
+How it works
+
+1. Voice design. An English voice description + a Turkish text read while the voice is created + a number of
+   variants. Each variant gets its own seed; the engine receives (description)text and returns a 20-35 s design
+   recording per seed.
+2. Reference-based reading. The design recording is passed to both engine inputs (audio and voice_ref),
+   together with its transcript (reference_text) and the new text to read, with the same seed. The voice is carried by
+   the recording, not by the description, so it does not drift from text to text. Text is read sentence by sentence.
+3. Quality is fixed: 16 diffusion steps, CFG 2.0. The seed is not a quality knob.
+
+The engine is audio.cpp v0.7.2 with our patch (patches/), the model is VoxCPM2 Q8_0 GGUF. Peak VRAM ≈ 2.8 GB;
+about 2 s of compute per 1 s of speech on a GTX 1050 Ti. Details and measurements: docs/4gb.md.
+
+Bundled voices (hazir_sesler/)
+
+All fourteen were designed from the prompts stored in their ses.json; none was cloned from a recording (cloning is the
+separate, consent-gated section 3).
+
+| Voice | Short description | Listen |
+|---|---|---|
+| belgesel_hanim | Mature woman in her fifties, deep warm alto; calm documentary narrator | sample · reference |
+| gizemli_bilge | Deep, powerful, mysterious male narrator | sample · reference |
+| haber_spikeri | Seasoned news anchor around seventy, calm and authoritative | sample · reference |
+| cekici_spiker | Charismatic evening-news anchor in her thirties, velvety and expressive | sample · reference |
+| masal_cadisi | Fairy-tale witch: low, slightly nasal, slyly sweet | sample · reference |
+| tok_anlatici | Exceptionally deep, dense, commanding male narrator | sample · reference |
+| yasli_bilge | Old wise man, deep and booming, slightly mysterious | sample · reference |
+
+…（内容已截断）

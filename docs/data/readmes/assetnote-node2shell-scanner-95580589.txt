@@ -1,0 +1,61 @@
+node2shell-scanner
+
+A command-line tool for detecting CVE-2026-111497 in Node.js HTTP applications.
+
+How It Works
+
+The scanner sends four one-byte controls to learn how the endpoint handles valid Brotli JSON, malformed Brotli, requests without a JSON content type, and unsupported encodings. It then streams a 23,068,764-byte Brotli probe and repeats the valid control.
+
+A target is reported vulnerable only when the full probe reaches the valid route-response class, the malformed-response class is distinct, and the final control confirms the endpoint remained stable. This matches Assetnote's internal postmodule detection logic and does not execute a command.
+
+The URL path is preserved and defaults to /. Redirects are not followed.
+
+Network Impact
+
+Each tested endpoint receives five one-byte requests and one 23,068,764-byte probe. The probe uses Expect: 100-continue, so a proxy can reject its advertised size before the body is uploaded.
+
+Requirements
+
+- Python 3.9+
+- h11
+- tqdm
+
+Installation
+
+pip install -r requirements.txt
+
+Docker
+
+docker build -t node2shell-scanner .
+docker run --rm node2shell-scanner -u https://example.com/api
+
+Usage
+
+python3 scanner.py -u https://example.com/api
+python3 scanner.py -l hosts.txt -t 20 -o results.json
+python3 scanner.py -u https://example.com --path /api/json
+python3 scanner.py -u https://example.com -H "Authorization: Bearer token"
+
+Options
+
+-u, --url         Single URL to check
+-l, --list        File containing hosts (one per line)
+-t, --threads     Number of concurrent threads (default: 10)
+--timeout         Per-request timeout in seconds (default: 60)
+-o, --output      Output file for results (JSON)
+--all-results     Save all results, not just vulnerable hosts
+-k, --insecure    Disable TLS certificate verification
+-H, --header      Custom header (can be used multiple times)
+-v, --verbose     Show verdict reasons and response snippets
+-q, --quiet       Only output vulnerable hosts
+--no-color        Disable colored output
+--path            Custom path to test (can be used multiple times)
+--path-file       File containing paths to test (one per line)
+
+Output
+
+Results are printed to the terminal. With -o, vulnerable hosts are saved to JSON with the comparison mode and redacted request/response evidence. Use --all-results to save every verdict.
+
+Credits
+
+Built by the Assetnote Security Research Team using detection logic developed for Searchlight's Exposure Platform.

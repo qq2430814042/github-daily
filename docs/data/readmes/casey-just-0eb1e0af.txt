@@ -1,0 +1,363 @@
+Table of Contents↗️
+
+just
+
+just is a handy way to save and run project-specific commands.
+
+This readme is also available as a book. The
+book reflects the latest release, whereas the
+readme on GitHub
+reflects latest master.
+
+(中文文档在 这里,
+快看过来!)
+
+Commands, called recipes, are stored in a file called justfile with syntax
+inspired by make:
+
+You can then run them with just RECIPE:
+
+$ just test-all
+cc *.c -o main
+./test --all
+Yay, all your tests passed!
+
+just has a ton of useful features, and many improvements over make:
+
+- just is a command runner, not a build system, so it avoids much of
+  make's complexity and idiosyncrasies.
+  No need for .PHONY recipes!
+
+- Linux, macOS, Windows, and other reasonable unixes are supported with no
+  additional dependencies. (Although if your system doesn't have an sh,
+  you'll need to choose a different shell.)
+
+- Errors are specific and informative, and syntax errors are reported along
+  with their source context.
+
+- Recipes can accept command line arguments, including
+  flags and options.
+
+- just has a rich expression language and many
+  built-in-functions.
+
+- Wherever possible, errors are resolved statically. Unknown recipes and
+  circular dependencies are reported before anything runs.
+
+- just loads .env files, making it easy to populate
+  environment variables.
+
+- Recipes can be listed from the command line.
+
+- Command line completion scripts are
+  available for most popular shells.
+
+- Recipes can be written in
+  arbitrary languages, like Python or Node.js.
+
+- just can be invoked from any subdirectory, not just the directory that
+  contains the justfile.
+
+- justfiles can be organized into multiple files using modules
+  and imports.
+
+- And much more!
+
+If you need help with just, please feel free to open an issue or ping me on
+Discord. Feature requests and bug reports are
+always welcome!
+
+Installation
+Just can be installed using your favorite package manager, by
+downloading pre-built binaries, or building from source
+with cargo install just.
+
+Prerequisites
+
+just should run on any system with a reasonable sh, including Linux, macOS,
+and the BSDs.
+
+Windows
+
+On Windows, just works with the sh provided by
+Git for Windows,
+GitHub Desktop, or
+Cygwin. After installation, sh must be available in
+the PATH of the shell you want to invoke just from.
+
+If you'd rather not install sh, you can use the shell setting to use the
+shell of your choice.
+
+Like PowerShell:
+
+use PowerShell instead of sh:
+set shell := "powershell.exe", "-c"]
+
+hello:
+  Write-Host "Hello, world!"
+
+…or cmd.exe:
+
+use cmd.exe instead of sh:
+set shell := ["cmd.exe", "/c"]
+
+list:
+  dir
+
+You can also set the shell using command-line arguments. For example, to use
+PowerShell, launch just with --shell powershell.exe --shell-arg -c.
+
+(PowerShell is installed by default on Windows 7 SP1 and Windows Server 2008 R2
+SP1 and later, and cmd.exe is quite fiddly, so PowerShell is recommended for
+most Windows users.)
+
+Packages
+
+Cross-platform
+
+      Package Manager
+      Package
+      Command
+
+      arkade
+      just
+      arkade get just
+
+      asdf
+      just
+
+        asdf plugin add just
+
+        asdf install just &lt;version&gt;
+
+      Cargo
+      just
+      cargo install just
+
+      Cargo Binstall
+      just
+      cargo binstall just
+
+      Conda
+      just
+      conda install -c conda-forge just
+
+      Homebrew
+      just
+      brew install just
+
+      Nix
+      just
+      nix-env -iA nixpkgs.just
+
+      npm
+      rust-just
+      npm install -g rust-just
+
+      pipx
+      rust-just
+      pipx install rust-just
+
+      Snap
+      just
+      snap install --edge --classic just
+
+      Spack
+      just
+      spack install just
+
+      uv
+      rust-just
+      uv tool install rust-just
+BSD
+
+      Operating System
+      Package Manager
+      Package
+      Command
+
+      FreeBSD
+      pkg
+      just
+      pkg install just
+
+      OpenBSD
+      pkg_*
+      just
+      pkg_add just
+Linux
+
+      Operating System
+      Package Manager
+      Package
+      Command
+
+      Alpine
+      apk-tools
+      just
+      apk add just
+
+      Arch
+      pacman
+      just
+      pacman -S just
+
+        Debian 13 and
+        Ubuntu 24.04 derivatives
+      apt
+      just
+      apt install just
+
+      Fedora
+      DNF
+      just
+      dnf install just
+
+      Gentoo
+      Portage
+      dev-build/just
+
+        emerge -av dev-build/just
+
+      NixOS
+      Nix
+      just
+      nix-env -iA nixos.just
+
+      openSUSE
+      Zypper
+      just
+      zypper in just
+
+      Solus
+      eopkg
+      just
+      eopkg install just
+
+      Void
+      XBPS
+      just
+      xbps-install -S just
+Windows
+
+      Package Manager
+      Package
+      Command
+
+      Chocolatey
+      just
+      choco install just
+
+      Scoop
+      just
+      scoop install just
+
+      Windows Package Manager
+      Casey/Just
+      winget install --id Casey.Just --exact
+macOS
+
+      Package Manager
+      Package
+      Command
+
+      MacPorts
+      just
+      port install just
+Pre-Built Binaries
+
+Pre-built binaries for Linux, macOS, and Windows can be found on
+[the releases page.
+
+You can use the following command on Linux, macOS, or Windows to download the
+latest release, just replace DEST with the directory where you'd like to put
+just:
+
+curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to DEST
+
+For example, to install just to ~/bin:
+
+create ~/bin
+mkdir -p ~/bin
+
+download and extract just to ~/bin/just
+curl --proto '=https' --tlsv1.2 -sSf https://just.systems/install.sh | bash -s -- --to ~/bin
+
+add ~/bin to the paths that your shell searches for executables
+this line should be added to your shell's initialization file,
+e.g. /.bashrc or /.zshrc
+export PATH="$PATH:$HOME/bin"
+
+just should now be executable
+just --help
+
+Note that install.sh may fail on GitHub Actions, or in other environments
+where many machines share IP addresses. install.sh calls GitHub APIs in order
+to determine the latest version of just to install, and those API calls are
+rate-limited on a per-IP basis. To make install.sh more reliable in such
+circumstances, pass a specific tag to install with --tag.
+
+Another way to avoid rate-limiting is to pass a GitHub authentication token to
+install.sh as an environment variable named GITHUB_TOKEN, allowing it to
+authenticate its requests.
+
+Releases include a SHA256SUM file
+which can be used to verify the integrity of pre-built binary archives.
+
+To verify a release, download the pre-built binary archive along with the
+SHA256SUM file and run:
+
+shasum --algorithm 256 --ignore-missing --check SHA256SUMS
+
+GitHub Actions
+
+just can be installed on GitHub Actions in a few ways.
+
+Using package managers pre-installed on GitHub Actions runners on macOS with
+brew install just, and on Windows with choco install just.
+
+With extractions/setup-just:
+
+- uses: extractions/setup-just@v3
+  with:
+    just-version: 1.5.0  # optional semver specification, otherwise latest
+
+Or with taiki-e/install-action:
+
+- uses: taiki-e/install-action@just
+
+Docker
+
+just is available as a Docker image from
+the GitHub Container Registry.
+
+To copy just into a Docker image, add the following line to your
+Dockerfile:
+
+COPY --from=ghcr.io/casey/just:latest /just /usr/local/bin/
+
+After copying, just may also be used as part of a docker build:
+
+RUN just
+
+Release RSS Feed
+
+An RSS feed of just releases is
+available here.
+
+Node.js Installation
+
+just-install can be used to automate
+installation of just in Node.js applications.
+
+just is a great, more robust alternative to npm scripts. If you want to
+include just in the dependencies of a Node.js application, just-install
+will install a local, platform-specific binary as part of the npm install
+command. This removes the need for every developer to install just
+independently using one of the processes mentioned above. After installation,
+the just command will work in npm scripts or with npx. It's great for teams
+who want to make the setup process for their project as easy as possible.
+
+For more information, see the
+
+…（内容已截断）

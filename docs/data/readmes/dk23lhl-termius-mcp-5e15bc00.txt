@@ -1,0 +1,166 @@
+Termius MCP
+
+中文文档 · Quick start · Security · Validation
+
+Your Termius sessions, ready for AI.
+
+Read terminal output, run commands, switch sessions, and follow SFTP uploads from
+an MCP client such as Codex — inside the Termius app you already use.
+
+Keep your saved hosts and native transfer queue. Give your agent explicit session
+IDs, terminal text, and transfer status for the work that otherwise takes repeated
+screenshots and clicks.
+
+This community adaptation of
+deltaguita/termius-mcp targets
+macOS Termius 9.38.1. It is not an official Termius integration.
+
+The adapter uses Termius's existing sessions and native transfer queue through
+its local debugging interface. It does not create a separate SSH/SFTP client.
+A running Termius that reports another version is rejected before anything is
+injected; Windows and Linux desktop support have not been implemented.
+
+Why pair it with Computer Use?
+
+Computer Use is useful for navigating Termius and handling dialogs. Terminal work
+also needs precise text and state: logs scroll, focus moves between tabs, and a
+full progress bar does not prove that an upload finished. Termius MCP gives those
+repeated operations dedicated tools.
+
+| Friction in a screenshot-and-click workflow | What this adapter provides |
+| --- | --- |
+| Reading long terminal output across screenshots | Text from the xterm buffer, command-output markers, and an explicit warning when history is lost. Output is capped at 200 lines. |
+| Keeping track of the intended terminal as focus changes | Explicit session IDs for reads and input; tools to activate and close the selected session. |
+| Deciding what a quiet screen means | Reported states such as timeout, waiting for input and prompt observed. Prompt observation remains a heuristic; remote exit code is unknown. |
+| Watching a small SFTP progress bar and checking for errors | A transfer ID with native progress, error and completion observations. A wait timeout keeps the original upload available for follow-up. |
+| Multiple agents typing into the same terminal | Claims and cross-process locks for cooperating MCP callers. Human typing remains outside these locks. |
+
+Use Computer Use for setup, SFTP pane selection and dialogs; use MCP for the
+repeated terminal and transfer operations. The app stays visible so you can inspect
+what is happening.
+
+Ask for the task
+
+Once configured, you can give your agent requests such as:
+
+Show me the open Termius sessions and read the output from the one I select.
+Connect to my saved development host in a new terminal, then run pwd there.
+Upload this file to the prepared SFTP destination. Follow the same transfer until
+it completes or reports an error, and tell me the result.
+
+The agent operates through named tools while you keep working in a familiar SSH
+client. It does not need you to copy terminal output back into the chat.
+
+Capabilities
+
+| Operation | Tools |
+| --- | --- |
+| Inspect saved hosts and open terminals | list_hosts, list_terminal_sessions, read_terminal |
+| Connect a saved terminal host | connect_host |
+| Coordinate terminal input | claim_terminal, release_terminal |
+| Execute commands or send input | run_command, send_text, send_key |
+| Select or close a terminal | switch_terminal, close_terminal |
+| Upload one regular file and inspect its native transfer | list_sftp_sessions, sftp_upload, sftp_transfer_status |
+
+These 14 tools are the default set. list_keychain, which returns selected identity
+metadata, is registered only when TERMIUS_ENABLE_KEYCHAIN=1 is set. Metadata
+filtering does not redact secrets printed by a remote command in the terminal.
+
+Requirements
+
+- macOS, with Termius 9.38.1 installed at /Applications/Termius.app.
+- Python 3.11 or newer; Python 3.12 was used for validation.
+- Saved Termius hosts and access already configured by you.
+- Node.js 20 or newer only for the JavaScript development tests; Node.js 24 was
+  used for validation. Node.js is not required to run the MCP server.
+
+The version check is intentional: the integration uses private React, xterm and
+transfer-queue interfaces. Removing the check does not establish compatibility.
+
+Install
+
+Clone this repository and create a Python environment:
+
+git clone https://github.com/dk23lhl/termius-mcp.git
+cd termius-mcp
+python3.12 -m venv .venv
+.venv/bin/python -m pip install -r requirements.lock
+
+requirements.lock pins the runtime dependencies; requirements-dev.lock adds the
+offline test tools. Neither contains credentials or machine-specific package paths.
+
+The checkout can also be installed as a package with a termius-mcp command, for
+example run straight from it with uv:
+
+uvx --from /absolute/path/to/termius-mcp --constraints /absolute/path/to/termius-mcp/requirements.lock termius-mcp
+
+This command passes requirements.lock as constraints for the runtime dependencies.
+Use it in place of the .venv/bin/python …/server.py pair in the client
+configurations below. If you use a git+https:// source pinned to a reviewed
+commit, point --constraints to the lock file from that same checkout; uvx does
+not discover requirements.lock automatically.
+
+Enable Termius access when needed
+
+Save your work and quit Termius first. Restarting it disconnects existing
+terminal sessions. Then start it with a loopback debugging port:
+
+open -a /Applications/Termius.app --args --remote-debugging-address=127.0.0.1 --remote-debugging-port=9222
+lsof -nP -iTCP:9222 -sTCP:LISTEN
+
+Continue only if the listener is 127.0.0.1:9222, not * or 0.0.0.0.
+Passing these arguments to an already running Termius process does not reliably
+enable debugging.
+
+Other processes on your Mac can access the debug interface, including data
+held in the renderer. Loopback binding does not provide authentication. Open the
+port only while needed. To close it, quit Termius and reopen normally:
+
+open -a /Applications/Termius.app
+
+After a normal restart, the lsof command above should show no listener. The MCP
+server itself never opens the port or restarts Termius. Read SECURITY.md
+before enabling access.
+
+Configure Codex
+
+Merge codex-mcp.toml.example into ~/.codex/config.toml.
+Replace both /absolute/path/to/termius-mcp placeholders with the absolute path
+to your checkout. Preserve unrelated configuration and do not enable this adapter
+and the upstream server together; they share a lock directory and the same Termius window.
+
+Restart or reload your client if it has not loaded the new server. In Codex,
+/mcp displays connected servers. An MCP configuration does not create a
+same-named @ app mention or slash-command skill. You can ask:
+
+Use the termius MCP to list saved hosts and open terminal sessions.
+
+Configure Claude Code
+
+As a plugin (needs uv on PATH). This repository is
+also a plugin marketplace:
+
+claude plugin marketplace add dk23lhl/termius-mcp
+claude plugin install termius-mcp@termius-mcp
+
+Claude Code asks for the plugin's options (debug port, host-key mode, allowed hosts,
+upload directories, claim label); /config changes them later. The server runs as
+uvx --from  termius-mcp, pinned by requirements.lock, and its
+tools appear as mcp__plugin_termius-mcp_termius__. To try a checkout for one
+session without installing anything, run
+claude --plugin-dir /absolute/path/to/termius-mcp. Use either the plugin or the
+manual registration below, not both.
+
+Manually, register the server once for your user, with the same absolute paths:
+
+claude mcp add termius -s user -e TERMIUS_CDP_PORT=9222 -e TERMIUS_HOSTKEY=ask -- /absolute/path/to/termius-mcp/.venv/bin/python /absolute/path/to/termius-mcp/server.py
+claude mcp list
+
+The tools then appear as mcp__termius__. Add -e TERMIUS_UPLOAD_ROOTS=...
+or -e TERMIUS_CONNECT_ALLOW=... in the same command to set those limits.
+
+Either way, Claude Code asks before each MCP tool call unless a permission rule allows
+it; if you add rules, allow only read tools such as read_terminal and keep input,
+connect, close and upload tools on ask. The server also sends its usage rules (claim
+
+…（内容已截断）

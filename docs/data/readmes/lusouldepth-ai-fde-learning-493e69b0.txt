@@ -1,0 +1,59 @@
+FDE Learning · 腾讯云 FDE 原创模拟题库
+
+基于腾讯云公开考试大纲、课程与产品文档编写的本地备考 Web 应用。题库版本 2026.10.13.3。
+
+本项目为非官方原创模拟练习，与腾讯云无隶属或背书关系，不含官方考试题库，不保证命中率、通过率或与真实考试难度一致。产品名称及商标归各自权利人所有。
+
+本地运行
+
+需要 Python 3.9 或更高版本，运行时只用标准库；前端使用原生 JavaScript/CSS，无需账号、云密钥或模型 API。
+
+git clone https://github.com/lusouldepth-ai/FDE_Learning.git
+cd FDE_Learning
+python3 server.py
+
+访问 http://127.0.0.1:8765 。macOS 也可双击 启动备考.command；Windows 可使用 py -3 server.py。如默认端口已使用，可运行 python3 server.py --port 8766。请通过本地服务打开页面。
+
+服务只监听本机。学习操作不调用外部 API；点击题目中的官方来源链接需要联网。
+
+题库与功能
+
+- 完整保留 1000 道原创题：500 道核心可组卷题、458 道仅学习题、42 道待修订题。待修订题不进入普通练习与新组卷。
+- 核心池由已逐题复核的原 400 题（118 修订、282 保留）与 100 道重写题组成；含 15 道原创专题练习。
+- 提供章节筛选、检索、解析与来源、错题本、收藏、间隔复习、学习进度、JSON 备份恢复及键盘操作。
+- 提供 25 分钟 15 题短练与 90 分钟 60 题完整练习。计分是本地练习规则；不承诺复刻官方题型、难度或出题算法。
+
+审校由 AI 完成，不等于腾讯审核或人工专家认证。题目附来源链接、事实转述、核实日期与版本。产品规则会变化，请结合来源日期核对；本次发布未将历史来源日期更新为发布日。
+
+学习记录
+
+首次保存时自动创建 local-data/progress.json，浏览器也保留应急副本。更新项目时保留 local-data/，并先使用页面的“数据备份”导出记录。已有考试按开考时的题目快照计分；修订后的题目按内容哈希分开统计掌握程度。避免多个窗口同时作答，冲突时先导出，再刷新合并。
+
+个人记录、导出、日志、截图、录屏、迁移备份及官方模拟题原题不属于公开项目文件，已在发布副本中排除。公开的 data/rounds.json 仅记录原创题库分组与复核统计。
+
+开发验证
+
+需要 Node.js 22 或更高版本。Python 测试仅使用标准库。
+
+npm test
+python3 -m unittest discover -s tests -p 'test_*.py'
+python3 scripts/validate_bank.py --published
+
+可选浏览器回归需要自行安装 Playwright 及其 Chromium，或通过 PLAYWRIGHT_MODULE 指定已有 Playwright 模块，通过 CHROME_EXECUTABLE_PATH 指定浏览器。两个脚本都会启动独立测试进程并使用临时记录目录，禁止使用日常学习端口 8765。
+
+node tests/browser.test.mjs
+node tests/round1.browser.mjs
+
+测试输出默认在被忽略的 .test-artifacts/；可用 FDE_QA_OUT 更改，测试端口可用 FDE_TEST_PORT 更改。结构验证会更新 research/validation-report.json。
+
+目录与历史资料
+
+src/ 是前端，server.py 是本地服务；data/questions.json 和 data/quality.json 为当前题库及用途分级，data/core500-export.json 为核心导出，data/batches/ 保留早期分模块原创稿。research/ 保留来源索引、逐题复核和原创命题源码。部分研究文件记录旧版本判断，当前界面以 data/ 的版本与分级为准。
+
+除 scripts/validate_bank.py 和 scripts/package_release.py 外，scripts/ 与 research/ 中的构建、命题及报告生成脚本为历史实现资料，依赖已排除的旧快照或旧验收输出，不能用于重建当前发布版；运行它们可能覆盖当前题库或报告。详见 研究资料说明。
+
+来源与许可状态
+
+保留腾讯官方来源链接和原创题目中的事实转述；官方文档、课程、产品名称及商标不由本项目授予许可。运行时未打包第三方库、Python 解释器或浏览器；可选测试工具遵循其自身许可证。
+
+本项目公开源码与原创题库，具体许可证尚待权利人选择。当前未添加 LICENSE，不能据此宣称已获得开源使用授权。详见 许可待确认范围。

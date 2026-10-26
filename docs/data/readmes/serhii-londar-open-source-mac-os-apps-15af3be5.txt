@@ -1,0 +1,347 @@
+Awesome macOS Open Source Applications
+
+  A curated list of open source applications for macOS
+
+  Audio •
+  Backup •
+  Browser •
+  Chat •
+  Crypto •
+  Database •
+  Dev •
+  Editors •
+  Graphics •
+  Productivity •
+  Utilities
+
+List of awesome open source applications for macOS. This list contains a lot of native, and cross-platform apps. The main goal of this repository is to find free open source apps and start contributing. Feel free to contribute to the list, any suggestions are welcome!
+
+To receive all new or popular applications you can join our telegram channel.
+
+Support
+
+Hey friend! Help me out for a couple of :beers:!
+
+📊 Statistics
+
+| Metric | Count |
+|--------|-------|
+| 📱 Total Applications | 931 |
+| 📂 Categories | 49 |
+| 🔝 Top Languages | Swift: 476 • Objective-C: 142 • Javascript: 125 • Typescript: 83 • C++: 64 |
+
+Languages
+
+You can see in which language an app is written. Currently there are following languages:
+
+| Language | Icon |
+|----------|------|
+| C |  |
+| C++ |  |
+| C# |  |
+| Clojure |  |
+| CoffeeScript |  |
+| CSS |  |
+| Elm |  |
+| Go |  |
+| Haskell |  |
+| Java |  |
+| JavaScript |  |
+| Lua |  |
+| Objective-C |  |
+| Python |  |
+| Ruby |  |
+| Rust |  |
+| Shell |  |
+| Swift |  |
+| TypeScript |  |
+| Metal |  |
+
+Contents
+- Audio
+- Backup
+- Browser
+- Chat
+- Cryptocurrency
+- Database
+- Development
+- Git
+- iOS / macOS
+- JSON Parsing
+- Web development
+- Other development
+- Downloader
+- Editors
+- CSV
+- JSON
+- Markdown
+- TeX
+- Text
+- Extensions
+- Finder
+- Games
+- Graphics
+- IDE
+- Images
+- Keyboard
+- Mail
+- Menubar
+- Music
+- News
+- Notes
+- Other
+- Podcast
+- Productivity
+- Screensaver
+- Security
+- Sharing Files
+- Social Networking
+- Streaming
+- System
+- Terminal
+- Touch Bar
+- Utilities
+- VPN & Proxy
+- Video
+- Wallpaper
+- Window Management
+
+Applications
+🎵 Audio (62)
+- [Un]MuteMic - macOS app to mute & unmute the input volume of your microphone. Perfect for podcasters.
+
+  Languages:  Objective-C  C
+
+  Screenshots
+
+- Audacity - Free, open source, cross-platform audio software
+
+  Languages:  C
+
+  Website: https://www.audacityteam.org/
+
+  Screenshots
+
+- Audio Priority Bar - Native macOS menu bar app that automatically switches to your highest-priority connected headphones, speakers, and microphone.
+
+  Languages:  Swift
+
+  Website: https://github.com/camguillory/Audio-Priority-Bar
+
+  Screenshots
+
+- AUHost - Application which hosts AudioUnits v3 using AVFoundation API.
+
+  Languages:  Swift
+
+  Screenshots
+
+- Aural Player - Aural Player is a audio player application for the macOS platform. Inspired by the classic Winamp player for Windows, it is designed to be to-the-point and easy to use.
+
+  Languages:  Swift
+
+  Screenshots
+
+  (5 more screenshots available in the repository)
+
+- AutoMute - Automatically mute the sound when headphones disconnect / Mac awake from sleep.
+
+  Languages:  Objective-C
+
+  Website: https://yoni.ninja/automute/
+
+  Screenshots
+
+- Background Music - Background Music, a macOS audio utility: automatically pause your music, set individual apps' volumes and record system audio.
+
+  Languages:  C++
+
+  Screenshots
+
+- BlackHole - BlackHole is a modern macOS virtual audio driver that allows applications to pass audio to other applications with zero additional latency.
+
+  Languages:  C
+
+- Blurt - Free, open-source dictation for macOS: hold a key, talk, and polished text lands in whatever app you're typing in. Powered by AssemblyAI speech-to-text (bring your own API key).
+
+  Languages:  Swift
+
+  Website: https://www.assemblyai.com/blurt
+
+  Screenshots
+
+- CAM - macOS camera recording using ffmpeg
+
+  Languages:  JavaScript
+
+  Screenshots
+
+  (1 more screenshots available in the repository)
+
+- Clementine - Clementine is a modern music player and library organizer for Windows, Linux and macOS.
+
+  Languages:  C++
+
+  Website: https://www.clementine-player.org/
+
+  Screenshots
+
+  (1 more screenshots available in the repository)
+
+- Cog - Cog is an open source audio player for macOS. The basic layout is a single-paned playlist interface with two retractable drawers, one for navigating the user's music folders and another for viewing audio file properties, like bitrate.
+
+  Languages:  Objective-C
+
+  Website: https://cogx.org/
+
+- Dictámelo - Voice dictation with downloadable local speech models, optional cloud providers and a configurable push-to-talk shortcut.
+
+  Languages:  Rust  JavaScript
+
+  Website: https://www.dictamelo.com/en
+
+- Earnote - Records lectures, meetings and calls, transcribes them locally with Whisper and writes structured notes with an on-device AI model.
+
+  Languages:  Swift
+
+  Website: https://earnote.dev
+
+  Screenshots
+
+- EnviousWispr - Free on-device AI dictation for macOS with Whisper and Parakeet speech models on Apple Silicon.
+
+  Languages:  Swift
+
+  Website: https://enviouswispr.com/
+
+- eqMac2 - System-Wide Equalizer for the Mac.
+
+  Languages:  C++
+
+  Screenshots
+
+- Fader - Menu bar volume mixer with per-app volume, one-click audio output switching, and Bluetooth headphone control.
+
+  Languages:  Swift
+
+  Website: https://fader.pantafive.dev
+
+  Screenshots
+
+- fre:ac - The fre:ac audio converter project.
+
+  Languages:  C++
+
+  Screenshots
+
+- HomeRec - Lightweight native macOS app for recording system audio as high-quality WAV files using ScreenCaptureKit.
+
+  Languages:  Swift
+
+- iTunes-Volume-Control - This app allows you to control the iTunes volume using volume up and volume down hotkeys.
+
+  Languages:  Objective-C
+
+  Screenshots
+
+- jmc - jmc is new macOS media organizer.
+
+  Languages:  Swift
+
+  Screenshots
+
+  (1 more screenshots available in the repository)
+
+- Karaoke Forever - Host awesome karaoke parties where everyone can queue songs from their phone's browser. Plays MP3+G and MP4 with WebGL visualizations.
+
+  Languages:  JavaScript
+
+  Website: https://www.karaoke-eternal.com/
+
+  Screenshots
+
+- LocalRadio - LocalRadio is software for listening to "Software-Defined Radio" on your Mac and mobile devices.
+
+  Languages:  Objective-C
+
+  Screenshots
+
+- LosslessCut - The swiss army knife of lossless video/audio editing without re-encoding.
+
+  Languages:  JavaScript
+
+  Website: https://mifi.no/losslesscut/
+
+  Screenshots
+
+- Lurar - Menu-bar parametric EQ for headphones. Loads the AutoEq catalog and applies it system-wide via Apple's Core Audio Process Tap — no virtual audio driver.
+
+  Languages:  Swift
+
+  Website: https://lurar.app/
+
+  Screenshots
+
+- LyricGlow - macOS application displaying synchronized lyrics with animated word-by-word glow effects for Spotify, Apple Music, and YouTube Music.
+
+  Languages:  JavaScript
+
+  Screenshots
+
+- Lyricism - macOS app to show you lyric what currently iTunes or Spotify is playing.
+
+  Languages:  Objective-C  Swift
+
+  Screenshots
+
+- LyricsX - Lyrics for iTunes, Spotify and Vox.
+
+  Languages:  Swift
+
+  Screenshots
+
+  (1 more screenshots available in the repository)
+
+- Lyrimuse - Word-synced desktop lyrics for Apple Music, Spotify, QQ Music, NetEase Cloud Music, Kugou and YouTube Music / Spotify Web in the browser, with translation, romanization and Last.fm scrobbling.
+
+  Languages:  Swift  Go
+
+  Website: https://yudaotor.github.io/lyrimuse/
+
+  Screenshots
+
+- MonitorControl - Control your external monitor brightness, contrast or volume directly from a menulet or with keyboard native keys.
+
+  Languages:  Swift  Objective-C
+
+  Screenshots
+
+- Mooziac - Lightweight native macOS menu bar player for YouTube Music and local audio with trackpad gestures.
+
+  Languages:  Swift
+
+  Website: https://mooziac.pages.dev
+
+  Screenshots
+
+- Mous Player - Simple yet powerful audio player for BSD/Linux/macOS.
+
+  Languages:  C++
+
+  Screenshots
+
+  (2 more screenshots available in the repository)
+
+- MPV - Lightweight, highly configurable media player.
+
+  Languages:  C
+
+  Website: https://mpv.io
+
+  Screenshots
+
+- NarrateClaude - Hands-free, on-device voice loop for talking to Claude Code: Apple speech recognition in, cloned-voice text-to-speech out, no cloud.
+
+  Languages:  Swift  Python  Shell
+
+…（内容已截断）

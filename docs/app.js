@@ -1,5 +1,6 @@
 const FAVORITES_KEY = 'github-daily:favorites:v1';
 const TRANSLATIONS_KEY = 'github-daily:translations:v1';
+const README_TRANSLATIONS_KEY = 'github-daily:readme-translations:v1';
 const HIGH_STAR = 1000;
 
 const LANGUAGE_COLORS = {
@@ -42,8 +43,12 @@ const state = {
   sort: 'default',
   favorites: loadFavorites(),
   translations: loadTranslations(),
+  readmeTranslations: loadReadmeTranslations(),
   detail: null,
   translateToken: 0,
+  readmeToken: 0,
+  readmeTranslationToken: 0,
+  readmeText: '',
 };
 
 const els = {
@@ -69,10 +74,17 @@ const els = {
   translationBox: document.getElementById('translationBox'),
   translationLabel: document.getElementById('translationLabel'),
   translationText: document.getElementById('translationText'),
+  readmeSection: document.getElementById('readmeSection'),
+  readmeStatus: document.getElementById('readmeStatus'),
+  detailReadme: document.getElementById('detailReadme'),
+  readmeTranslate: document.getElementById('readmeTranslate'),
+  readmeTranslationBox: document.getElementById('readmeTranslationBox'),
+  readmeTranslationText: document.getElementById('readmeTranslationText'),
 };
 
 let loadToken = 0;
 let lastDetailFocus = null;
+const readmeCache = new Map();
 
 function create(tag, className = '', text = '') {
   const element = document.createElement(tag);
@@ -173,6 +185,52 @@ function persistTranslations() {
 
 function translationKey(item, text) {
   return `${keyOf(item)}::${text}`;
+}
+
+function loadReadmeTranslations() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(README_TRANSLATIONS_KEY) || '{}');
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return {};
+    return parsed;
+  } catch {
+    return {};
+  }
+}
+
+function persistReadmeTranslations() {
+  const entries = Object.entries(state.readmeTranslations);
+  if (entries.length > 100) {
+    entries.sort((a, b) => String(b[1]?.at || '').localeCompare(String(a[1]?.at || '')));
+    state.readmeTranslations = Object.fromEntries(entries.slice(0, 80));
+  }
+
+  try {
+    localStorage.setItem(
+      README_TRANSLATIONS_KEY,
+      JSON.stringify(state.readmeTranslations),
+    );
+  } catch (error) {
+    console.warn('Unable to save README translations', error);
+  }
+}
+
+function readmeIntroText(text) {
+  const source = String(text || '').trim();
+  if (source.length <= 500) return source;
+
+  const slice = source.slice(0, 500);
+  const cut = Math.max(
+    slice.lastIndexOf('. '),
+    slice.lastIndexOf('! '),
+    slice.lastIndexOf('? '),
+    slice.lastIndexOf('\n'),
+  );
+
+  return (cut > 200 ? slice.slice(0, cut + 1) : slice.slice(0, 480)).trim();
+}
+
+function readmeTranslationKey(item, text) {
+  return `${item.readmeFile || keyOf(item)}::${readmeIntroText(text)}`;
 }
 
 function decodeHtmlEntities(value) {
@@ -286,10 +344,14 @@ function getVisibleItems() {
   let list;
 
   if (state.tab === 'fav') {
-    list = Object.values(state.favorites).map((entry) => ({
-      ...entry.item,
-      savedAt: entry.savedAt,
-    }));
+    list = Object.values(state.favorites).map((entry) => {
+      const current = state.items.find((item) => keyOf(item) === keyOf(entry.item));
+      return {
+        ...entry.item,
+        ...(current || {}),
+        savedAt: entry.savedAt,
+      };
+    });
   } else {
     list = [...baseItemsForTab()];
   }
@@ -525,6 +587,16 @@ function addDetailMeta(container, className, text) {
 function openDetail(item) {
   state.detail = item;
   state.translateToken += 1;
+  state.readmeToken += 1;
+  state.readmeTranslationToken += 1;
+  state.readmeText = '';
+
+  els.readmeTranslate.hidden = true;
+  els.readmeTranslate.disabled = false;
+  els.readmeTranslate.textContent = '翻译说明';
+  els.readmeTranslationBox.hidden = true;
+  els.readmeTranslationBox.classList.remove('is-error');
+  els.readmeTranslationText.textContent = '';
 
   const description = String(item.description || '').trim();
 
@@ -593,9 +665,9 @@ function openDetail(item) {
 
   if (cached?.text) {
     showTranslation(cached.text, true);
-    els.detailTranslate.textContent = '重新翻译';
+    els.detailTranslate.textContent = '重新翻译简介';
   } else {
-    els.detailTranslate.textContent = '翻译成中文';
+    els.detailTranslate.textContent = '翻译简介';
   }
 
   if (els.detailOverlay.hidden) {
@@ -603,6 +675,135 @@ function openDetail(item) {
     els.detailOverlay.hidden = false;
     document.body.classList.add('modal-open');
     requestAnimationFrame(() => els.detailClose.focus({ preventScroll: true }));
+  }
+
+  loadReadme(item, state.readmeToken);
+}
+
+function showReadme(text, item) {
+  state.readmeText = text;
+  els.readmeSection.hidden = false;
+  els.readmeStatus.textContent = item.readmeTruncated ? '内容已截断' : '';
+  els.detailReadme.classList.toggle('is-empty', !text);
+  els.detailReadme.textContent = text || '没有抓取到这个项目的 README。';
+
+  els.readmeTranslate.hidden = true;
+  els.readmeTranslate.disabled = false;
+  els.readmeTranslate.textContent = '翻译说明';
+  els.readmeTranslationBox.hidden = true;
+  els.readmeTranslationBox.classList.remove('is-error');
+  els.readmeTranslationText.textContent = '';
+
+  if (!text) return;
+
+  const cjkCount = (text.match(/[\u4e00-\u9fff]/g) || []).length;
+  if (cjkCount > text.length * 0.15) return;
+
+  els.readmeTranslate.hidden = false;
+
+  const cached = state.readmeTranslations[readmeTranslationKey(item, text)];
+  if (cached?.text) {
+    els.readmeTranslationText.textContent = cached.text;
+    els.readmeTranslationBox.hidden = false;
+    els.readmeTranslate.textContent = '已翻译';
+    els.readmeTranslate.disabled = true;
+  }
+}
+
+async function translateReadme() {
+  const item = state.detail;
+  const text = state.readmeText;
+  if (!item || !text) return;
+
+  const intro = readmeIntroText(text);
+  if (!intro) return;
+
+  const key = readmeTranslationKey(item, text);
+  const cached = state.readmeTranslations[key];
+
+  if (cached?.text) {
+    els.readmeTranslationText.textContent = cached.text;
+    els.readmeTranslationBox.hidden = false;
+    els.readmeTranslationBox.classList.remove('is-error');
+    els.readmeTranslate.textContent = '已翻译';
+    els.readmeTranslate.disabled = true;
+    return;
+  }
+
+  const token = ++state.readmeTranslationToken;
+  els.readmeTranslate.disabled = true;
+  els.readmeTranslate.textContent = '翻译中…';
+  els.readmeTranslationBox.hidden = true;
+  els.readmeTranslationBox.classList.remove('is-error');
+
+  try {
+    const translated = await requestTranslation(intro);
+    if (token !== state.readmeTranslationToken || state.detail !== item) return;
+
+    state.readmeTranslations[key] = {
+      text: translated,
+      at: new Date().toISOString(),
+    };
+    persistReadmeTranslations();
+
+    els.readmeTranslationText.textContent = translated;
+    els.readmeTranslationBox.hidden = false;
+    els.readmeTranslate.textContent = '已翻译';
+  } catch (error) {
+    if (token !== state.readmeTranslationToken) return;
+    console.error(error);
+    els.readmeTranslationText.textContent = '翻译服务暂时不可用，请稍后重试。';
+    els.readmeTranslationBox.hidden = false;
+    els.readmeTranslationBox.classList.add('is-error');
+    els.readmeTranslate.textContent = '重试翻译';
+    els.readmeTranslate.disabled = false;
+  }
+}
+
+async function loadReadme(item, token) {
+  els.readmeSection.hidden = false;
+  els.readmeStatus.textContent = '';
+  els.detailReadme.classList.remove('is-empty');
+
+  if (!item.readmeFile) {
+    showReadme('', item);
+    return;
+  }
+
+  const cached = readmeCache.get(item.readmeFile);
+  if (cached) {
+    if (token === state.readmeToken) showReadme(cached, item);
+    return;
+  }
+
+  els.readmeStatus.textContent = '加载中…';
+  els.detailReadme.classList.add('is-empty');
+  els.detailReadme.textContent = '正在加载 README…';
+
+  try {
+    const response = await fetch(
+      `data/readmes/${encodeURIComponent(item.readmeFile)}`,
+      { cache: 'no-store' },
+    );
+    if (!response.ok) throw new Error(`README HTTP ${response.status}`);
+
+    const text = (await response.text()).trim();
+    if (token !== state.readmeToken || state.detail !== item) return;
+
+    readmeCache.set(item.readmeFile, text);
+    if (readmeCache.size > 120) {
+      readmeCache.delete(readmeCache.keys().next().value);
+    }
+    showReadme(text, item);
+  } catch (error) {
+    if (token !== state.readmeToken) return;
+    console.error(error);
+    state.readmeText = '';
+    els.readmeStatus.textContent = '';
+    els.readmeTranslate.hidden = true;
+    els.readmeTranslationBox.hidden = true;
+    els.detailReadme.classList.add('is-empty');
+    els.detailReadme.textContent = 'README 加载失败，请稍后重新打开详情。';
   }
 }
 
@@ -662,7 +863,7 @@ async function translateDetail() {
     };
     persistTranslations();
     showTranslation(translated);
-    els.detailTranslate.textContent = '重新翻译';
+    els.detailTranslate.textContent = '重新翻译简介';
   } catch (error) {
     if (token !== state.translateToken) return;
     console.error(error);
@@ -682,6 +883,9 @@ function closeDetail() {
   document.body.classList.remove('modal-open');
   state.detail = null;
   state.translateToken += 1;
+  state.readmeToken += 1;
+  state.readmeTranslationToken += 1;
+  state.readmeText = '';
 
   if (lastDetailFocus && typeof lastDetailFocus.focus === 'function') {
     lastDetailFocus.focus({ preventScroll: true });
@@ -821,6 +1025,7 @@ function bindEvents() {
 
   els.detailClose.addEventListener('click', closeDetail);
   els.detailTranslate.addEventListener('click', translateDetail);
+  els.readmeTranslate.addEventListener('click', translateReadme);
 
   els.detailOverlay.addEventListener('click', (event) => {
     if (event.target === els.detailOverlay) closeDetail();
@@ -832,6 +1037,21 @@ function bindEvents() {
       closeDetail();
     }
   });
+}
+
+function openRepoFromQuery() {
+  const params = new URLSearchParams(window.location.search);
+  const repo = params.get('repo');
+  if (!repo) return;
+
+  const item = state.items.find((candidate) => keyOf(candidate) === repo.toLowerCase());
+  if (!item) return;
+
+  openDetail(item);
+
+  const url = new URL(window.location.href);
+  url.searchParams.delete('repo');
+  window.history.replaceState(null, '', url.toString());
 }
 
 async function init() {
@@ -864,6 +1084,7 @@ async function init() {
 
   populateDateSelect();
   await loadDate(initial);
+  if (state.status === 'ready') openRepoFromQuery();
 }
 
 init();

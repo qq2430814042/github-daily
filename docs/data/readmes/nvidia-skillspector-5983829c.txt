@@ -1,0 +1,152 @@
+SkillSpector
+
+Security scanner for AI agent skills. Detect vulnerabilities, malicious patterns, and security risks before installing agent skills.
+
+Overview
+
+AI agent skills (used by Claude Code, Codex CLI, Gemini CLI, etc.) execute with implicit trust and minimal vetting. In the 31,132-skill analyzed subset of the research dataset, 26.1% of skills contain vulnerabilities and 5.2% show likely malicious intent.
+
+SkillSpector helps you answer: "Is this skill safe to install?"
+
+SkillSpector is part of the NVIDIA Verified Skills pipeline, which scans, evaluates, and signs agent skills before publication. Skills that pass are published to the NVIDIA skills catalog.
+
+Documentation
+
+- Scan agent skills before installation — Hosted guide: when to scan, how to read a report, and how to gate installs.
+- Development guide — Architecture, package layout, and how to extend the analyzer pipeline.
+- Analysis resource bounds — Fail-closed bundle, parser, nested-artifact, ledger, and finding ceilings.
+- Pi extension — Install SkillSpector as a Pi tool for scanning skills from inside agent sessions.
+- OpenCode extension — Install SkillSpector as an OpenCode tool and /skillspector command for scanning skills from inside agent sessions.
+
+Features
+
+- Multi-format input: Scan Git repos, URLs, zip files, directories, or single files
+- 71 vulnerability patterns across 17 categories: prompt injection, data exfiltration, privilege escalation, supply chain, excessive agency, output handling, system prompt leakage, memory poisoning, tool misuse, rogue agent, anti-refusal, trigger abuse, dangerous code (AST), taint tracking, YARA signatures, MCP least privilege, and MCP tool poisoning
+- Two-stage analysis: Fast static analysis + optional LLM semantic evaluation
+- Live vulnerability lookups: SC4 queries OSV.dev for real-time CVE data with automatic offline fallback
+- Multiple output formats: Terminal, JSON, Markdown, and SARIF reports
+- Risk scoring: 0-100 score with severity labels and clear recommendations
+- Baseline / false-positive suppression: Accept known findings via a glob-rule or fingerprint baseline so re-scans surface only new issues (docs)
+
+Quick Start
+
+Installation
+
+Open-source software notice: This project will download and install additional third-party open source software projects. Review the license terms of these open source projects before use.
+
+Create and activate a virtual environment first (all make targets assume the venv is active). Use uv or pip; the Makefile uses uv if available, otherwise pip.
+
+Quick install with uv (CLI-only):
+
+uv tool install git+https://github.com/NVIDIA/skillspector.git
+Update later: uv tool update skillspector
+
+If you plan to run skillspector mcp, install the MCP extra at install time:
+
+uv tool install 'skillspectormcp] @ git+https://github.com/NVIDIA/skillspector.git'
+
+From source:
+
+Clone the repository
+git clone https://github.com/NVIDIA/skillspector.git
+cd skillspector
+
+Create and activate virtual environment
+uv venv .venv && source .venv/bin/activate
+or: python3 -m venv .venv && source .venv/bin/activate
+
+Install for production use
+make install
+
+Or install with development dependencies
+make install-dev
+
+Docker (no Python required)
+
+Run SkillSpector without installing Python by building it locally from the included [Dockerfile. The image is based on the Docker Official Python 3.12-slim-bookworm image.
+
+Build the image:
+
+make docker-build
+or: docker build -t skillspector .
+
+Scan a local directory by mounting your current directory into /scan, the container's working directory:
+
+docker run --rm -v "$PWD:/scan" skillspector scan ./my-skill/ --no-llm
+
+Scan with LLM analysis by passing credentials with a local .env file:
+
+cat > .env  Note on LLM support: The default configuration targets DeepSeek as the
+cheapest public option. DeepSeek-Chat is
+expected to sunset, and the contributor
+does not have hardware to test against local models. The batch scanner was
+originally tested with OpenAI-compatible endpoints — DeepSeek's lack of
+structured-output support required manual JSON-parsing patches. If you can
+contribute a more universal backend (Ollama, vLLM, or a different provider),
+PRs are very welcome.
+
+Comparing MCP Registry snapshots
+
+Start with raw registry payload captures (registry-before.json and
+registry-after.json). Save a scan report as previous.json, then compare a
+later scan against that generated local report:bash
+skillspector scan registry-before.json --mcp-registry --format json --output previous.json
+skillspector scan registry-after.json --mcp-registry --format json \
+  --mcp-registry-compare previous.json --output compared.json
+The optional comparison object lists added and removed server identities,
+changed normalized fields with their previous and current values, and an
+unchanged_count. Identity is the server name and version, so a new version
+appears as an addition and the old version as a removal if it is absent from the
+new scan. Acquisition source and scan timestamp are excluded from comparison.
+unmodeled_changes lists same-identity records whose raw-record hash changed
+while normalized fields match; these are not counted as unchanged. This can
+indicate a change to fields outside the snapshot model, or array reordering in
+the raw record. Package and remote ordering alone is not a normalized field change.
+Entries in changed may also contain changes outside the snapshot model; inspect
+the raw record to see those changes.
+Compare reports with the same selection scope: a server absent from the current
+input is reported as removed, which does not prove it was removed from a registry.
+
+The comparison file must be a local report produced by this registry mode with
+valid normalized snapshots. Malformed, oversized or duplicate server identities
+are rejected. This option requires --mcp-registry and is separate from the
+finding-suppression --baseline: it never suppresses findings or changes risk
+scores, and it does not fetch or execute listed server endpoints.
+
+Registry mode rejects skill-only controls such as --use-shipped-baseline,
+--transitive, --transitive-depth, --transitive-allow-prefix, and
+--transitive-deny-prefix with exit code 2, including an explicitly supplied
+default depth (--transitive-depth 1). Omit these options for registry scans.
+
+Suppressing False Positives (baseline)
+
+Suppress known/accepted findings so the risk score reflects only un-triaged
+issues and re-scans surface only new findings. See the
+suppression guide for the full reference.bash
+Accept all current findings into a baseline (run once), then commit it.
+skillspector baseline ./my-skill/ -o .skillspector-baseline.yaml
+
+Scan against the baseline — only NEW findings are reported and scored.
+skillspector scan ./my-skill/ --baseline .skillspector-baseline.yaml
+
+Review what was suppressed (still excluded from the score).
+skillspector scan ./my-skill/ --baseline .skillspector-baseline.yaml --show-suppressed
+A baseline can also use drift-tolerant glob rules (by rule id, file path, or
+message) — see .skillspector-baseline.example.yaml.
+Exact fingerprint baselines are evidence-bound: changing the scanned source or
+SkillSpector version keeps the finding active until it is reviewed again.
+When a selected baseline or baseline output is stored inside the skill
+directory, SkillSpector excludes that exact file from content analysis so its
+suppression text cannot create findings or enter regenerated fingerprints;
+sibling files remain in normal scan scope.
+
+Explicit scan scope
+
+For a local directory containing one SKILL.md or skill.md, repeat --exclude to omit
+selected files before content analysis:bash
+skillspector scan ./my-skill --exclude 'tests/' --exclude 'fixtures/.json'
+Patterns are case-sensitive globs matched against the entire relative POSIX path;
+* also matches /. Quote patterns so your shell does not expand them. This is
+an explicit caller option, not an author-controlled ignore file. Patterns matching
+
+…（内容已截断）

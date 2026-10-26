@@ -1,0 +1,166 @@
+APILayer Unified Suite in now Live! 🎉 🥳
+
+APILayer unified suite allows you to integrate production-grade REST APIs using One Account, One Dashboard, and One API key. Whether you need to geocode an address, validate an email, fetch a flight, pull stock market data, or scrape a search result.
+
+Sign up and start building today!
+
+Fork our official APILayer Postman Collection and get started in under 60 seconds.
+
+APIs Covered Under APILayer Suite!
+
+- IPstack
+- Mediastack
+- Aviationstack
+- Positionstack
+- Mediastack
+- Mailboxlayer
+- Countrylayer
+- Serpstack
+- Scrapestack
+
+Try Public APIs for free
+The Public APIs repository is manually curated by community members like you and folks working at APILayer. It includes an extensive list of public APIs from many domains that you can use for your own products. Consider it a treasure trove of APIs well-managed by the community over the years.
+
+APILayer is the fastest way to integrate APIs into any product. Explore APILayer APIs here for your next project.
+
+Join our Discord server to get updates, ask questions, get answers, random community calls, and more.
+
+APILayer APIs
+| API | Description | Call this API |
+|:---|:---|:---|
+| IPstack | Locate and Identify Website Visitors by IP Address | |
+| Marketstack | Free, easy-to-use REST API interface delivering worldwide stock market data in JSON format | |
+| Weatherstack | Retrieve instant, accurate weather information for any location in the world in lightweight JSON format | |
+| Numverify | Global Phone Number Validation & Lookup JSON API ||
+| Fixer | Fixer is a simple and lightweight API for current and historical foreign exchange (forex) rates. ||
+| Aviationstack | Free, real-time flight status and global Aviation data API ||
+| Zenserp | Fast, Accurate Google Search Data Built for Developers ||
+| Filestack | Powerful API to upload, transform & deliver any file into your app |Documentation|
+| Screenshotlayer | Capture highly customizable screenshots of any website |Documentation|
+| Exchangerate Host | Real-time current and historical foreign exchange and crypto rates |Documentation|
+| Mailboxlayer | Email Validation & Verification JSON API for Developers |Documentation|
+
+MCP Servers
+
+Model Context Protocol servers let AI agents call APIs as tools. You install one into a client, Claude, Cursor, VS Code, instead of calling it from your own code, so these entries list transport and where you can install them rather than HTTPS/CORS.
+
+| Name | Description | Auth | Transport | Install |
+|:---|:---|:---|:---|:---|
+| IPstack MCP | IP geolocation, threat and timezone lookups for agents | apiKey | stdio, HTTP | Cursor · Glama |
+| Agent Nexus | Find agent-callable APIs, MCP servers and CLIs by capability, with live health and uptime data | No | HTTP | Glama |
+| BlockVectra | Blockchain RPC and indexed data; keyless documentation and chain discovery | apiKey | HTTP | – |
+| Catastro GPS | Cadastral parcels in 29 European countries by reference, point or address | apiKey | stdio | Glama |
+| corpusAI Cloud Pricing | Cloud, GPU and LLM token prices for agents, free discovery tools and paid per-call data | No | stdio, HTTP | npm · MCP Registry |
+| Council of AI | Read a signed AI measurement board and verify its signed records and Merkle proofs | No | HTTP | Glama |
+| crawlbrulee | EU-native web scraping for AI agents & developers: turn any page into markdown, screenshots and more | apiKey | stdio | npm · MCP Registry · Glama |
+| Edgepedia | Search and read Edgepedia, a free and growing encyclopedia with citations | No | HTTP | Glama |
+| Filesystem | Read/write local files | No | stdio | – |
+| GitHub | Repos, issues, PRs, code search | OAuth | stdio, HTTP | Glama |
+| IndiaInsurances | Indian insurance policy wordings read clause by clause, with verbatim quotes | No | HTTP | – |
+| Kuro | Create AI images, video clips, voice-overs, music and editable storyboard films | OAuth | HTTP | – |
+| Master Setter | Pokémon TCG cards, sets and printings in 14 languages, searchable by name in any language | apiKey | HTTP | Glama · MCP Registry |
+| Monocrawl | Public posts, profiles, comments and products from 70+ social, shopping and search platforms | apiKey | stdio, HTTP | Glama |
+| Openpath | US job listings and local businesses for agents, with apply links and owner inboxes | No | HTTP | Anthropic · Glama · Smithery |
+| OpenSwissData | Swiss customs tariff (TARES), FINMA register and warnings, NOGA/NACE/ISIC code crosswalks | No | stdio, HTTP | Glama |
+| Refnusa | Indonesian holidays, wages, regions, postal codes, tax, food prices and NIK/plate checks (31 tools) | No | HTTP | Glama |
+| RegSentry | Inspect authorized static tracking signals and review supplied consent evidence | No | HTTP | Glama |
+| Scalekit | Manage auth for AI agents and MCP servers: environments, orgs, users, SSO connections and roles | OAuth | stdio, HTTP | Glama |
+| ShapelessAI | Write, schedule and publish social posts, carousels and short video to 8 networks | OAuth | stdio, HTTP | Cursor · Glama |
+| Silicon Floor | Who owns AI and chip stocks, what insiders sell, how fast they grow: answers from SEC filings | No | HTTP | Anthropic · Glama |
+| SkyAccess | Search 5,000+ live empty leg flights, get charter price estimates and booking links | No | HTTP | Cursor · Glama |
+| Twinbay | Spin up stateful API twins, read request logs and grade agent runs | OAuth | HTTP | – |
+| US Recalls | Check US recalls from 9 agencies by UPC, model, NDC, lot or VIN; 4 read-only tools | apiKey | HTTP | Glama · MCP Registry |
+| Vuntum | Sourced, dated data on consumer robots and physical AI: specs, prices, evidence | No | HTTP | Glama |
+
+Maintain an open-source MCP server? Add it.
+
+Learn more about Public APIs
+
+Get Involved
+
+* Contributing Guide
+* API for this project
+* Issues
+* Pull Requests
+* LICENSE
+
+Index
+
+* Animals
+* Anime
+* Anti-Malware
+* Art & Design
+* Authentication & Authorization
+* Blockchain
+* Books
+* Business
+* Calendar
+* Cloud Storage & File Sharing
+* Continuous Integration
+* Cryptocurrency
+* Currency Exchange
+* Data Validation
+* Development
+* Dictionaries
+* Documents & Productivity
+* Email
+* Entertainment
+* Environment
+* Events
+* Finance
+* Food & Drink
+* Games & Comics
+* Geocoding
+* Government
+* Health
+* Jobs
+* Machine Learning
+* Music
+* News
+* Open Data
+* Open Source Projects
+* Patent
+* Personality
+* Phone
+* Photography
+* Programming
+* Science & Math
+* Security
+* Shopping
+* Social
+* Sports & Fitness
+* Test Data
+* Text Analysis
+* Tracking
+* Transportation
+* URL Shorteners
+* Vehicle
+* Video
+* Weather
+
+Animals
+API | Description | Auth | HTTPS | CORS
+|:---|:---|:---|:---|:---|
+| Axolotl | Collection of axolotl pictures and facts | No | Yes | No |
+| Breed Health Score | Dog breed health scores, median lifespans and conditions | No | Yes | No |
+| Cat Facts | Daily cat facts | No | Yes | No |
+| Cat Facts | Random cat facts | No | Yes | Yes |
+| Cats | Pictures of cats from Tumblr | apiKey | Yes | No |
+| Dog Facts | Random dog facts | No | Yes | Yes |
+| Dog Facts | Random facts of Dogs | No | Yes | Yes |
+| Dogs | Based on the Stanford Dogs Dataset | No | Yes | Yes |
+| eBird | Retrieve recent or notable birding observations within a region | apiKey | Yes | No |
+| FishWatch | Information and pictures about individual fish species | No | Yes | Yes |
+| HTTP Cat | Cat for every HTTP Status | No | Yes | Yes |
+| HTTP Dog | Dogs for every HTTP response status code | No | Yes | Yes |
+| IUCN | IUCN Red List of Threatened Species | apiKey | Yes | No |
+| MeowFacts | Get random cat facts | No | Yes | No |
+| Movebank | Movement and Migration data of animals | No | Yes | Yes |
+| PlaceBear | Placeholder bear pictures | No | Yes | Yes |
+| PlaceDog | Placeholder Dog pictures | No | Yes | Yes |
+| RandomDog | Random pictures of dogs | No | Yes | Yes |
+| RandomDuck | Random pictures of ducks | No | Yes | No |
+| RandomFox | Random pictures of foxes | No | Yes | No |
+| RescueGroups | Adoption | No | Yes | Unknown |
+
+…（内容已截断）

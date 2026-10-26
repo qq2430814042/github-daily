@@ -1,0 +1,91 @@
+Artificial Intelligence for Beginners - A Curriculum
+
+||
+|:---:|
+| AI For Beginners - Sketchnote by @girlie_mac |
+
+Explore the world of Artificial Intelligence (AI) with our 12-week, 24-lesson curriculum!  It includes practical lessons, quizzes, and labs. The curriculum is beginner-friendly and covers tools like TensorFlow and PyTorch, as well as ethics in AI
+
+🌐 Multi-Language Support
+
+Supported via GitHub Action (Automated & Always Up-to-Date)
+
+Arabic | Bengali | Bulgarian | Burmese (Myanmar) | Chinese (Simplified) | Chinese (Traditional, Hong Kong) | Chinese (Traditional, Macau) | Chinese (Traditional, Taiwan) | Croatian | Czech | Danish | Dutch | Estonian | Finnish | French | German | Greek | Hebrew | Hindi | Hungarian | Indonesian | Italian | Japanese | Kannada | Khmer | Korean | Lithuanian | Malay | Malayalam | Marathi | Nepali | Nigerian Pidgin | Norwegian | Persian (Farsi) | Polish | Portuguese (Brazil) | Portuguese (Portugal) | Punjabi (Gurmukhi) | Romanian | Russian | Serbian (Cyrillic) | Slovak | Slovenian | Spanish | Swahili | Swedish | Tagalog (Filipino) | Tamil | Telugu | Thai | Turkish | Ukrainian | Urdu | Vietnamese
+
+Prefer to Clone Locally?
+This repository includes 50+ language translations which significantly increases the download size. To clone without translations, use sparse checkout:
+Bash / macOS / Linux:
+> git clone --filter=blob:none --sparse https://github.com/microsoft/AI-For-Beginners.git
+cd AI-For-Beginners
+git sparse-checkout set --no-cone '/*' '!translations' '!translated_images'
+CMD (Windows):
+> git clone --filter=blob:none --sparse https://github.com/microsoft/AI-For-Beginners.git
+cd AI-For-Beginners
+git sparse-checkout set --no-cone "/*" "!translations" "!translated_images"
+This gives you everything you need to complete the course with a much faster download.
+
+If you wish to have additional translations languages supported are listed here
+
+Join the Community
+
+🤝 Contributing
+
+We welcome contributions from the community! Whether you're fixing typos, improving documentation, or adding new examples, your help makes this curriculum better for everyone. Check out our CONTRIBUTING.md guide to get started.
+
+What you will learn
+
+Mindmap of the Course
+
+In this curriculum, you will learn:
+
+* Different approaches to Artificial Intelligence, including the "good old" symbolic approach with Knowledge Representation and reasoning (GOFAI).
+* Neural Networks and Deep Learning, which are at the core of modern AI. We will illustrate the concepts behind these important topics using code in two of the most popular frameworks - TensorFlow and PyTorch.
+* Neural Architectures for working with images and text. We will cover recent models but may be a bit lacking in the state-of-the-art.
+* Less popular AI approaches, such as Genetic Algorithms and Multi-Agent Systems.
+
+What we will not cover in this curriculum:
+
+Find all additional resources for this course in our Microsoft Learn collection
+
+* Business cases of using AI in Business. Consider taking Introduction to AI for business users learning path on Microsoft Learn, or AI Business School, developed in cooperation with INSEAD.
+* Classic Machine Learning, which is well described in our Machine Learning for Beginners Curriculum.
+* Practical AI applications built using Cognitive Services. For this, we recommend that you start with modules Microsoft Learn for vision, natural language processing, Generative AI with Azure OpenAI Service and others.
+* Specific ML Cloud Frameworks, such as Azure Machine Learning, Microsoft Fabric, or Azure Databricks. Consider using Build and operate machine learning solutions with Azure Machine Learning and Build and Operate Machine Learning Solutions with Azure Databricks learning paths.
+* Conversational AI and Chat Bots. There is a separate Create conversational AI solutions learning path, and you can also refer to this blog post for more detail.
+* Deep Mathematics behind deep learning. For this, we would recommend Deep Learning by Ian Goodfellow, Yoshua Bengio and Aaron Courville, which is also available online at https://www.deeplearningbook.org/.
+
+For a gentle introduction to AI in the Cloud topics you may consider taking the Get started with artificial intelligence on Azure Learning Path.
+
+Content
+
+|     |                                                                 Lesson Link                                                                  |                                           PyTorch/Keras/TensorFlow                                          | Lab                                                            |
+| :-: | :------------------------------------------------------------------------------------------------------------------------------------------: | :---------------------------------------------------------------------------------------------: | ------------------------------------------------------------------------------ |
+| 0  |                                 Course Setup                                 |                      Setup Your Development Environment                       |   |
+| I  |               Introduction to AI      | | |
+| 01  |       Introduction and History of AI       |           -                            | -  |
+| II |              Symbolic AI              |
+| 02  |       Knowledge Representation and Expert Systems       |            Expert Systems /  Ontology /Concept Graph                             |  |
+| III |                        Introduction to Neural Networks |||
+| 03  |                Perceptron                 |                       Notebook                      | Lab |
+| 04  |                   Multi-Layered Perceptron and Creating our own Framework                   |        Notebook        | Lab |
+| 05  |            Intro to Frameworks (PyTorch/TensorFlow) and Overfitting             |           PyTorch / Keras / TensorFlow             | Lab |
+| IV  |            Computer Vision             | PyTorch / TensorFlow| Explore Computer Vision on Microsoft Azure |
+| 06  |            Intro to Computer Vision. OpenCV             |           Notebook         | Lab |
+| 07  |            Convolutional Neural Networks &  CNN Architectures             |           PyTorch /TensorFlow             | Lab |
+| 08  |            Pre-trained Networks and Transfer Learning and Training Tricks             |           PyTorch / TensorFlow             | Lab |
+| 09  |            Autoencoders and VAEs             |           PyTorch / TensorFlow             |  |
+| 10  |            Generative Adversarial Networks & Artistic Style Transfer             |           PyTorch / TensorFlow             |  |
+| 11  |            Object Detection             |         TensorFlow             | Lab |
+| 12  |            Semantic Segmentation. U-Net             |           PyTorch / TensorFlow             |  |
+| V  |            Natural Language Processing             | PyTorch /TensorFlow | Explore Natural Language Processing on Microsoft Azure|
+| 13  |            Text Representation. Bow/TF-IDF             |           PyTorch / TensorFlow             | |
+| 14  |            Semantic word embeddings. Word2Vec and GloVe             |           PyTorch / TensorFlow             |  |
+| 15  |            Language Modeling. Training your own embeddings             |           PyTorch / TensorFlow             | Lab |
+| 16  |            Recurrent Neural Networks             |           PyTorch / TensorFlow             |  |
+| 17  |            Generative Recurrent Networks             |           PyTorch / TensorFlow             | Lab |
+| 18  |            Transformers. BERT.             |           PyTorch /TensorFlow             |  |
+| 19  |            Named Entity Recognition             |           TensorFlow             | Lab |
+| 20  |            Large Language Models, Prompt Programming and Few-Shot Tasks             |           PyTorch | |
+| VI |            Other AI Techniques || |
+
+…（内容已截断）

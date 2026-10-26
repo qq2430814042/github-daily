@@ -1,0 +1,139 @@
+Discover 5300+ community-built OpenClaw skills, organized by category.
+Awesome OpenClaw Skills
+
+OpenClaw is a locally-running AI assistant that operates directly on your machine. Skills extend its capabilities, allowing it to interact with external services, automate workflows, and perform specialized tasks. This collection helps you discover and install the right skills for your needs. It can also serve as a source of inspiration for OpenClaw use cases.
+
+Skills in this list are sourced from ClawHub (OpenClaw's public skills registry) and categorized for easier discovery.
+
+Installation
+
+OpenClaw CLI
+
+openclaw skills install
+
+ClawHub CLI
+
+Or with the ClawHub CLI, for registry-managed skill folders outside a full OpenClaw workspace:
+
+npx clawhub install
+
+Manual Installation
+
+Copy the skill folder to one of these locations:
+
+| Location | Path |
+|----------|------|
+| Global | ~/.openclaw/skills/ |
+| Workspace | /skills/ |
+
+Priority: Workspace > Local > Bundled
+
+Alternative
+
+You can also paste the skill's GitHub repository link directly into your assistant's chat and ask it to use it. The assistant will handle the setup automatically in the background.
+
+Why This List Exists?
+
+OpenClaw's public registry (ClawHub) hosts thousands of community-built skills. This awesome list curates the best of them. Here's what we filtered out:
+
+| Filter | Excluded |
+|--------|----------|
+| Possibly spam — bulk accounts, bot accounts, test/junk | 4,065 |
+| Duplicate / Similar name | 1,040 |
+| Low-quality or non-English descriptions | 851 |
+| Crypto / Blockchain / Finance / Trade | 886 |
+| Malicious — identified by security audits published by researchers (excluding VirusTotal) | 373 |
+| Total not taken from OpenClaw's official skill registry | 7,215 |
+
+Want to add a skill?
+
+This list only includes skills that are already published on ClawHub, OpenClaw's public skills registry. We do not accept links to personal repos, gists, or any other external source. If your skill isn't on ClawHub yet, publish it there first.
+
+Include the ClawHub link for your skill (e.g. https://clawhub.ai/steipete/slack) in your PR description — the clawskills.sh listings are managed by us separately. See CONTRIBUTING.md for details.
+
+OpenClaw Ecosystem Tools
+
+🕸️ Web Crawling & Data Infrastructure
+
+AI agents are only as good as the web data they can reach. Crawling at scale means dealing with JavaScript-heavy pages, rotating proxies, and anti-bot systems — you can build all that yourself, or use an API that handles it and hands your agent clean, ready-to-use data.
+
+Crawlbase is web data infrastructure trusted by 70,000+ developers: one API to crawl any URL at scale, with JS rendering, proxy rotation and anti-bot handling. Its MCP server gives agents live web access: crawl, crawl_markdown, crawl_screenshot.
+
+☁️ Managed AI Hosting
+
+Cloudways is a managed cloud hosting platform for deploying and scaling applications without the infrastructure overhead. Cloudways Managed AI Agents lets you run OpenClaw on dedicated, isolated infrastructure with managed updates, backups, SSL, and security controls. Get $10 hosting credit with promo code VOLTAGENT. Sign up.
+
+Deploy OpenClaw on dedicated, isolated infrastructure with managed updates, backups, SSL, and security controls. Sign up with promo code VOLTAGENT to get $10 hosting credit.
+
+🔍 Search & Web Data
+
+OpenClaw agents often need fresh, real-world data — search results, product listings, videos, and more. You can scrape and parse it yourself, or use a search API that returns clean, structured data in real time without managing proxies, CAPTCHAs, or HTML parsing.
+
+Give OpenClaw agents access to real-time Google Search, YouTube, Amazon Product, and web search data through a single API.
+
+🦞 You can feature your OpenClaw ecosystem tool in the section above.
+
+The #1 most visited community resource after the official OpenClaw resource
+
+Security Notice
+
+Skills in this list are curated, not audited. They may be updated, modified, or replaced by their original maintainers at any time after being added here.
+
+Before installing or using any Agent Skill, review potential security risks and validate the source yourself. OpenClaw has a VirusTotal partnership that provides security scanning for skills, visit a skill's page on ClawHub and check the VirusTotal report to see if it's flagged as risky.
+
+Recommended tools:
+
+- Snyk Skill Security Scanner
+- Agent Trust Hub
+Agent skills can include prompt injections, tool poisoning, hidden malware payloads, or unsafe data handling patterns. Always review the source code before installing and use skills at your own discretion.
+
+ For a broader overview of the ClawHub ecosystem, see Trent AI's ClawHub by the Numbers.
+
+If you believe a skill in this list should be flagged or has a security concern, please open an issue so we can review it.
+
+Table of Contents
+
+| | | |
+|---|---|---|
+| Git & GitHub (167) | Marketing & Sales (108) | Communication (146) |
+| Coding Agents & IDEs (1184) | Productivity & Tasks (207) | Speech & Transcription (48) |
+| Browser & Automation (323) | AI & LLMs (176) | Smart Home & IoT (41) |
+| Web & Frontend Development (920) | Data & Analytics (28) | Shopping & E-commerce (51) |
+| DevOps & Cloud (393) | Calendar & Scheduling (66) | |
+| Image & Video Generation (171) | Media & Streaming (86) | PDF & Documents (105) |
+| Apple Apps & Services (44) | Notes & PKM (69) | Self-Hosted & Automation (33) |
+| Search & Research (344) | iOS & macOS Development (29) | Security & Passwords (54) |
+| Clawdbot Tools (37) | Transportation (111) | Moltbook (29) |
+| CLI Utilities (180) | Personal Development (53) | Gaming (35) |
+| Health & Fitness (87) | | |
+
+Git & GitHub
+
+- agent-commons - Consult, commit, extend, and challenge reasoning chains.
+- agent-team-orchestration - Orchestrate multi-agent teams with defined roles, task lifecycles, handoff protocols, and review workflows.
+- agentdo - Post tasks for other AI agents to do, or pick up work from the AgentDo task queue (agentdo.dev)
+- agentgate - API gateway for personal data with human-in-the-loop write approval.
+- airadar - Distill the signal around AI-native tools/apps and their GitHub home bases: fast-growing, hyped, well-funded.
+- alex-session-wrap-up - End-of-session automation that commits unpushed work, extracts learnings, detects patterns, and persists rules.
+- amazon-product-api-skill - This skill helps users extract structured product listings from Amazon, including titles, ASINs, prices, ratings.
+- app-store-screenshot-generation - Generate App Store and Google Play screenshot assets using each::sense AI.
+- arc-agent-lifecycle - Manage the lifecycle of autonomous agents and their skills.
+- arc-security-audit - Comprehensive security audit for an agent's full skill stack.
+- arc-skill-gitops - Automated deployment, rollback, and version management for agent workflows and skills.
+- arc-trust-verifier - Verify skill provenance and build trust scores for ClawHub skills.
+- arxiv-search-collector - Model-driven arXiv retrieval workflow for building a paper set with a manual language parameter: initialize a run.
+- auto-pr-merger - This skill automates the workflow of checking out a GitHub.
+- azhua-skill-vetter - Security-first skill vetting for AI agents.
+- azure-devops - List Azure DevOps projects, repositories, and branches; create pull requests; manage work items; check build status.
+- bat-cat - A cat clone with syntax highlighting, line numbers, and Git integration.
+- beeminder - Beeminder API for goal tracking and commitment devices.
+- billy-emergency-repair - - Neill explicitly requests Billy system repair.
+- bitbucket-automation - Automate Bitbucket repositories, pull.
+- biz-reporter - Automated business intelligence reports pulling data from Google Analytics GA4, Google Search Console, Stripe.
+- blinko - Play Blinko (on-chain Plinko) headlessly on Abstract chain.
+
+View all 159 skills in Git & GitHub →
+
+Coding Agents & IDEs
+
+…（内容已截断）

@@ -1,0 +1,106 @@
+Black, white dots, one red. A sibling of Demon's Shot.
+
+What's inside
+
+| | | |
+|---|---|:---:|
+| Bar | launcher, workspaces, clock, tray | |
+| Home | clock, greeting, widgets, dot grid | |
+| Glyph | screen edges as OSD: volume, brightness, notifications, progress | |
+| Launcher | apps, commands, windows, calculator | Super |
+| Quick | quick settings, media, notifications; also opens from the right edge | Super A |
+| Deck | dashboard from the bottom edge | Super Space |
+| Prefs | settings | Super I |
+| Shot | screenshots, editor, recording | Print |
+| Clip | clipboard history | Super V |
+| Charms | emoji, kaomoji, symbols | Super . |
+| Walls | wallpapers as dots | Super Shift W |
+| VPN | Clash Verge panel | Super P |
+| Cal | calendar, focus timer | click the clock |
+| Buds | Nothing / CMF earbuds: battery, ANC | |
+| Power | power menu | Super Esc |
+| Lock | lock screen | Super L |
+| Rice | shell switcher, if Demon's Shot is installed too | rice switch  |
+
+Also: Hyprland (Lua), hypridle, kitty, fish, starship, fastfetch, btop, cava, GTK, Qt and folder colours.
+
+Screenshots
+
+| | |
+|:---:|:---:|
+|  Launcher |  Quick |
+|  Deck |  Prefs |
+|  Shot |  Clip |
+|  Power | |
+
+Install
+
+git clone https://github.com/Nebelung-cloud/glyph-rice ~/.local/share/glyph
+~/.local/share/glyph/install.sh          # Arch: packages, services, symlinks
+~/.local/share/glyph/install.sh --links  # any distro: symlinks only
+
+Old configs go to /.dots-backup-/. Wallpapers are read from /Pictures/Wallpapers.
+
+| config/ | goes to |
+|---|---|
+| hypr/ | ~/.config/hypr |
+| quickshell/glyph/ | ~/.config/quickshell/glyph |
+| quickshell/rice/ | /.config/quickshell/rice, /.local/bin/rice |
+| quickshell/glyph/term/ | starship.toml fastfetch/ btop/ cava/ gtk-*/gtk.css qtengine.colors in ~/.config |
+| kitty/ qtengine/ | ~/.config/… |
+| fish/ | ~/.config/fish |
+| fonts/ | ~/.local/share/fonts/glyph |
+
+Monitor, backlight, GPU and sensors are detected. Keyboard layouts are in hypr/hyprland/input.lua,
+default apps in hypr/variables.lua. Earbuds photo: quickshell/glyph/buds/.png.
+Your own binds and overrides go in hypr/user.lua: it's gitignored, so git pull never touches it.
+
+Dependencies
+
+| | |
+|---|---|
+| Shell | quickshell · hyprland 0.56+ · hypridle · hyprsunset · xdg-desktop-portal-hyprland · jq · curl · python3 · libqalculate |
+| System | networkmanager · bluez · pipewire · wireplumber · upower · power-profiles-daemon · brightnessctl · libnotify · playerctl · polkit-gnome · gnome-keyring · geoclue |
+| Capture | grim · slurp · imagemagick · libvips · gpu-screen-recorder · cliphist · wl-clipboard |
+| Terminal | kitty · fish · starship · fastfetch · btop · cava · eza · zoxide · direnv |
+| Look | papirus-icon-theme · JetBrains Mono Nerd Font · Bibata · qtengine · darkly |
+| Optional | clash-verge-rev · nvidia-utils · ydotool · hyprpicker · swappy · trash-cli |
+
+From the AUR only qtengine, darkly, Bibata, Zen and Clash Verge, all optional. The VPN panel expects Clash Verge in English.
+NixOS: change the /usr/lib agent paths in hypr/hyprland/execs.lua and the Papirus path in quickshell/rice/rice.
+
+Colours
+
+Dark and light. Red marks the one live thing on screen.
+Fonts: Doto, Space Grotesk, Space Mono, JetBrains Mono Nerd Font.
+
+Inspiration
+
+- Nothing OS: the look and the Glyph lights.
+- Doto: the dot matrix font.
+- Gadgetbridge: the earbuds protocol in glyph/ear.
+- Caelestia: the shell I used before; the deck and hardware detection follow it.
+
+License
+
+GPL-3.0. Fonts are under the OFL, cava shaders keep their MIT headers.
+Nothing, Nothing OS and Glyph are trademarks of Nothing Technology Ltd; this is a fan project, not affiliated with Nothing.
+
+ᓚᘏᗢ  · · ·
+
+⠀⠀⠀⠀⣰⣶⣦⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣤⣶⣶⡆⠀⠀⠀⠀
+⠀⠀⠀⢠⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣿⣿⣿⠀⠀⠀⠀
+⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣦⡀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀
+⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣄⣀⣀⣀⣀⣰⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡇⠀⠀⠀
+⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀
+⠀⠀⠀⠀⢿⣿⣿⣿⣿⣿⡿⢿⣿⣿⣿⣿⣿⣿⣿⣿⠿⣿⣿⣿⣿⣿⣿⡏⠀⠀⠀⠀
+⠀⠀⠀⠀⣼⣿⣿⣿⣿⡏⠀⠀⢹⣿⣿⣿⣿⣿⣿⠃⠀⠀⣿⣿⣿⣿⣿⣆⠀⠀⠀⠀
+⠀⠀⠀⣸⣿⣿⣿⣿⣿⣷⣀⣀⣼⣿⣿⣿⣿⣿⣿⣦⣀⣠⣿⣿⣿⣿⣿⣿⡆⠀⠀⠀
+⣀⣠⣤⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣤⣀⡀
+⠻⠿⠛⣿⣿⣿⣿⣿⣿⣿⢿⣿⣿⣿⣷⠀⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡟⠛⠿⠇
+⠀⢀⣠⣾⣿⣿⣿⣿⣿⣿⡈⢿⣿⣿⣿⠃⠸⣿⣿⣿⡿⢰⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀
+⠀⢿⠿⠋⢻⣿⣿⣿⣿⣿⣷⣄⣉⣉⣡⣾⣧⣈⣉⣉⣴⣿⣿⣿⣿⣿⣿⠏⠙⢿⡗⠀
+⠀⠀⠀⠀⠀⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠟⠁⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠛⠻⠿⢿⣿⣿⣿⣿⠿⠿⠟⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀

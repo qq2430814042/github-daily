@@ -1,0 +1,21 @@
+Blazing Fast .NET
+
+Tips & tricks to tune .NET 10.0 - 11.0 workloads for better performance (mostly targeting benchmarks), packaged as a single SKILL.md for AI coding agents. It reads fine as a regular doc too.
+
+Usage
+
+I don't expect it to be useful as an always-on skill. It's rather something to consult on demand when you need to optimize a .NET workload, e.g. paste this into your coding agent:
+
+Read https://raw.githubusercontent.com/EgorBo/BlazingFastDotnet/main/SKILL.md and use it to
+improve the performance of this app. Measure a baseline first, profile to find
+the actual bottleneck, apply one change at a time, and keep only changes with a measurable win.
+
+This is not an official Microsoft guide or documentation. Use at your own discretion and always measure performance changes.
+
+Not welcome in this doc
+
+- Anything that requires an unsafe context, under either the unsafe-v1 or the unsafe-v2 rules.
+- ArrayPool: renting and returning buffers by hand is too error-prone, and I don't want to be responsible for the resulting use-after-return and double-return bugs.
+- Third-party dependencies: I'd like to minimize the number of dependencies. Currently, they are limited to:
+  - BenchmarkDotNet
+  - FlameGraph (for perf flame graphs)

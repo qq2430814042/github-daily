@@ -1,0 +1,310 @@
+Playwright MCP
+
+A Model Context Protocol (MCP) server that provides browser automation capabilities using Playwright. This server enables LLMs to interact with web pages through structured accessibility snapshots, bypassing the need for screenshots or visually-tuned models.
+
+Playwright MCP vs Playwright CLI
+
+This package provides MCP interface into Playwright. If you are using a coding agent, you might benefit from using the CLI+SKILLS instead.
+
+- CLI: Modern coding agents increasingly favor CLI–based workflows exposed as SKILLs over MCP because CLI invocations are more token-efficient: they avoid loading large tool schemas and verbose accessibility trees into the model context, allowing agents to act through concise, purpose-built commands. This makes CLI + SKILLs better suited for high-throughput coding agents that must balance browser automation with large codebases, tests, and reasoning within limited context windows.
+Learn more about Playwright CLI with SKILLS.
+
+- MCP: MCP remains relevant for specialized agentic loops that benefit from persistent state, rich introspection, and iterative reasoning over page structure, such as exploratory automation, self-healing tests, or long-running autonomous workflows where maintaining continuous browser context outweighs token cost concerns.
+
+Key Features
+
+- Fast and lightweight. Uses Playwright's accessibility tree, not pixel-based input.
+- LLM-friendly. No vision models needed, operates purely on structured data.
+- Deterministic tool application. Avoids ambiguity common with screenshot-based approaches.
+
+Requirements
+- Node.js 18 or newer
+- VS Code, Cursor, Windsurf, Claude Desktop, Goose, Grok, Junie or any other MCP client
+
+Getting started
+
+First, install the Playwright MCP server with your client.
+
+Standard config works in most of the tools:
+
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args":
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
+
+[
+
+Amp
+
+Add via the Amp VS Code extension settings screen or by updating your settings.json file:
+
+"amp.mcpServers": {
+  "playwright": {
+    "command": "npx",
+    "args":
+      "@playwright/mcp@latest"
+    ]
+  }
+}
+
+Amp CLI Setup:
+
+Add via the amp mcp add command below
+
+amp mcp add playwright -- npx @playwright/mcp@latest
+
+Antigravity
+
+Add via the Antigravity settings or by updating your configuration file:
+
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
+
+Claude Code
+
+Use the Claude Code CLI to add the Playwright MCP server:
+
+claude mcp add playwright npx @playwright/mcp@latest
+
+Claude Desktop
+
+Follow the MCP install [guide, use the standard config above.
+
+Cline
+
+Follow the instruction in the section Configuring MCP Servers
+
+Example: Local Setup
+
+Add the following to your cline_mcp_settings.json file:
+
+{
+  "mcpServers": {
+    "playwright": {
+      "type": "stdio",
+      "command": "npx",
+      "timeout": 30,
+      "args":
+        "-y",
+        "@playwright/mcp@latest"
+      ],
+      "disabled": false
+    }
+  }
+}
+
+Codex
+
+Use the Codex CLI to add the Playwright MCP server:
+
+codex mcp add playwright npx "@playwright/mcp@latest"
+
+Alternatively, create or edit the configuration file ~/.codex/config.toml and add:
+
+[mcp_servers.playwright]
+command = "npx"
+args = ["@playwright/mcp@latest"]
+
+For more information, see the [Codex MCP documentation.
+
+Copilot
+
+Use the Copilot CLI to interactively add the Playwright MCP server:
+
+/mcp add
+
+Alternatively, create or edit the configuration file ~/.copilot/mcp-config.json and add:
+
+{
+  "mcpServers": {
+    "playwright": {
+      "type": "local",
+      "command": "npx",
+      "tools":
+        "*"
+      ],
+      "args": [
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
+
+For more information, see the [Copilot CLI documentation.
+
+Cursor
+
+Click the button to install:
+
+Or install manually:
+
+Go to Cursor Settings -> MCP -> Add new MCP Server. Name to your liking, use command type with the command npx @playwright/mcp@latest. You can also verify config or add command like arguments via clicking Edit.
+
+Factory
+
+Use the Factory CLI to add the Playwright MCP server:
+
+droid mcp add playwright "npx @playwright/mcp@latest"
+
+Alternatively, type /mcp within Factory droid to open an interactive UI for managing MCP servers.
+
+For more information, see the Factory MCP documentation.
+
+Gemini CLI
+
+Follow the MCP install guide, use the standard config above.
+
+Goose
+
+Click the button to install:
+
+Or install manually:
+
+Go to Advanced settings -> Extensions -> Add custom extension. Name to your liking, use type STDIO, and set the command to npx @playwright/mcp. Click "Add Extension".
+
+Grok
+
+Use the Grok CLI to add the Playwright MCP server:
+
+grok mcp add playwright -- npx @playwright/mcp@latest
+
+Alternatively, create or edit the configuration file ~/.grok/config.toml and add:
+
+mcp_servers.playwright]
+command = "npx"
+args = ["@playwright/mcp@latest"]
+
+For more information, see the [Grok MCP documentation.
+
+Junie
+
+To add the Playwright MCP server in Junie CLI:
+
+1. Type /mcp
+2. Press Ctrl+A to add a new MCP server
+3. Select Playwright from the list
+
+Alternatively, add to .junie/mcp/mcp.json:
+
+{
+  "mcpServers": {
+    "Playwright": {
+      "command": "npx",
+      "args":
+        "-y",
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
+
+For more information, see the [Junie MCP configuration documentation.
+
+Kiro
+
+Follow the MCP Servers documentation. For example in .kiro/settings/mcp.json:
+
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args":
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
+
+LM Studio
+
+Click the button to install:
+
+[
+
+Or install manually:
+
+Go to Program in the right sidebar -> Install -> Edit mcp.json. Use the standard config above.
+
+opencode
+
+Follow the MCP Servers documentation. For example in ~/.config/opencode/opencode.json:
+
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "playwright": {
+      "type": "local",
+      "command":
+        "npx",
+        "@playwright/mcp@latest"
+      ],
+      "enabled": true
+    }
+  }
+}
+
+Qodo Gen
+
+Open [Qodo Gen chat panel in VSCode or IntelliJ → Connect more tools → + Add new MCP → Paste the standard config above.
+
+Click Save.
+
+VS Code
+
+Click the button to install:
+
+Or install manually:
+
+Follow the MCP install guide, use the standard config above. You can also install the Playwright MCP server using the VS Code CLI:
+
+For VS Code
+code --add-mcp '{"name":"playwright","command":"npx","args":"@playwright/mcp@latest"]}'
+
+After installation, the Playwright MCP server will be available for use with your GitHub Copilot agent in VS Code.
+
+Warp
+
+Go to Settings -> AI -> Manage MCP Servers -> + Add to [add an MCP Server. Use the standard config above.
+
+Alternatively, use the slash command /add-mcp in the Warp prompt and paste the standard config from above:
+{
+  "mcpServers": {
+    "playwright": {
+      "command": "npx",
+      "args":
+        "@playwright/mcp@latest"
+      ]
+    }
+  }
+}
+
+Windsurf
+
+Follow Windsurf MCP [documentation. Use the standard config above.
+
+Configuration
+
+Playwright MCP server supports following arguments. They can be provided in the JSON configuration above, as a part of the "args" list:
+
+| Option | Description |
+|--------|-------------|
+| --allowed-hosts  | comma-separated list of hosts this server is allowed to serve from. Defaults to the host the server is bound to. Pass '*' to disable the host check.
+env PLAYWRIGHT_MCP_ALLOWED_HOSTS |
+| --allowed-origins  | semicolon-separated list of TRUSTED origins to allow the browser to request. Default is to allow all. Important: does not serve as a security boundary and does not affect redirects.
+env PLAYWRIGHT_MCP_ALLOWED_ORIGINS |
+
+…（内容已截断）

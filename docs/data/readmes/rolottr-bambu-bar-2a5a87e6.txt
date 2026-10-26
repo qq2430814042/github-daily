@@ -1,0 +1,70 @@
+Bambu Bar
+
+Your Bambu Lab printer, one click away in the menu bar.
+
+Bambu Bar is a native macOS app that shows your 3D printer's progress, temperatures and filament without opening Bambu Studio or Bambu Handy. Glance at the menu bar for percent and time left, click for everything else, or keep a widget on your desktop.
+
+Built with Swift and SwiftUI. No account, no cloud service, no analytics.
+
+Getting started · Features · Widgets · Compatibility · Building
+
+Independent, community-developed software. Not affiliated with or endorsed by Bambu Lab. A P2S is the development printer; other Bambu Lab printers that speak the same LAN protocol (X1, P1, A1, H2) should work.
+
+Why this app?
+
+The printer is in another room, and the slicer is a big app to keep open just to see how long is left. Bambu Bar keeps the answer in the menu bar: 64% · 1h 02m. Click it and a panel shows the job, the stage, temperatures, the spool in use and how much filament is left, with pause, stop, light and speed controls right there.
+
+It talks to the printer directly over your network, the same way Bambu Studio does in LAN mode, so it works with the printer still bound to your Bambu account and nothing goes through a cloud.
+
+Features
+
+| | What you get |
+| --- | --- |
+| Menu bar | A printer glyph that fills as the print grows, with progress and time left beside it (or just one, or only the icon), and a pause or alert mark when the printer needs you. |
+| Panel | The job, its stage ("Heating hotend", "Paused: filament ran out"), percentage, layers, time left and finish time; nozzle, bed and chamber temperatures; AMS spools with what's left and the humidity; printer errors in plain words, in Bambu Lab's own translation. |
+| Grams left | Bambu Lab spools tell the AMS their net weight, so Bambu Bar shows filament left in grams (≈ 810 g), not just a percentage, and how much you have on hand in total. |
+| Named filament | Bambu Lab spools show their colour by name (Grass Green, Charcoal). Other spools show the maker and product of the preset you set the slot to on the printer or in Bambu Studio, such as SUNLU PLA Matte. |
+| Controls | Pause, resume, stop (with a confirmation), print speed (Silent, Standard, Sport, Ludicrous) and a chamber light switch. |
+| 3D printer models | Each printer family is modelled in Blender: the P2S/P1S/X1 enclosure, the wider dual-nozzle H2, the open P1P frame, the A1's arch with its AMS Lite, the A1 mini. In the app it's a live 3D model you can turn with the mouse: the print grows layer by layer in the filament's colour, the bed drops (or the A1's gantry rises) as it goes, the toolhead moves while printing, the AMS spools take their real colours and the chamber light follows the printer's. Widgets use studio renders of the same models. |
+| Knows your model | What each model has comes from the printer profiles Bambu Lab publishes with Bambu Studio, so you only see what your printer can report: no chamber temperature on an A1 or P1S, no door or chamber light on the A series, both nozzles on an H2D, heated-chamber targets on the H2 and X1E, and the build volume and fans on the Printer page. |
+| Window | A larger view plus fans, nozzle, door, network, storage and firmware; a Filament page with every spool; a Widgets page that tours every widget size and state. |
+| Many printers | Bambu Bar watches all of them at once. All Printers in the window and the grid button in the panel list every printer, the ones that need you first (failed, paused), then by soonest finish. Switch from the printer name at the top of the panel or the window's sidebar, and choose which one the menu bar shows (or let it pick whichever is busy). |
+| Desktop widgets | Small, medium and large, one per printer if you like, counting down between updates. |
+| Notifications | Print finished, failed or canceled, paused (filament runout and the like), new printer errors, and optionally when a print starts. |
+| Easy setup | Finds printers on your network and reads the access codes from Bambu Studio or OrcaSlicer, on this Mac or from a settings file copied from another one. When the slicer knows several printers, Add All sets them all up at once. |
+| Mac integration | Open at Login, no Dock icon while it lives in the menu bar (the icon and menus appear while its window is open), keyboard shortcuts, and it follows the printer when DHCP gives it a new address. |
+| 17 languages | English, Čeština, Deutsch, Español, Français, Italiano, Magyar, Nederlands, Polski, Português (Brasil), Svenska, Türkçe, Русский, Українська, 日本語, 한국어, 简体中文 and 繁體中文. It follows your Mac's language, or the one picked in Settings → Language. Printer terms follow Bambu Studio's translations, and printer errors use Bambu Lab's own texts where Bambu publishes them (all but Czech, Turkish and Ukrainian, which show them in English, and Traditional Chinese, which shows the Simplified ones). |
+| Updates | Checks GitHub once a day for a new release (turn it off in Settings) and offers the download; Check for Updates… in the app menu asks right away. It never installs anything by itself. |
+
+Getting started
+
+Requirements
+
+- macOS 26 Tahoe or later, Apple silicon or Intel.
+- A Bambu Lab printer on the same local network as the Mac.
+
+Install and connect
+
+1. Download the latest Bambu-Bar--macos.zip from Releases, unzip it and move Bambu Bar.app to your Applications folder. Or build it yourself.
+2. Open it. The window lists the printers it finds on your network; pick yours. Not listed? Open Enter address manually and type the printer's IP address (printer screen → Settings → Network); Bambu Bar reads the serial number from the printer. When macOS asks whether Bambu Bar may find devices on your local network, click Allow: without it the app can't see or reach any printer, and it says so with a button to the right switch in System Settings.
+3. The access code usually fills itself in: if Bambu Studio or OrcaSlicer on this Mac has used the printer, Bambu Bar reads the code from its settings. Slicer on another Mac? Drop that Mac's ~/Library/Application Support/BambuStudio/BambuStudio.conf onto the setup page. Otherwise read it off the printer: Settings → Network on its screen shows the 8-character Access Code.
+4. Click Connect. The menu bar starts showing progress as soon as the printer reports in.
+
+The access code is stored in your keychain and only ever sent to the printer. If it changes later (after a factory reset, say) and the slicer has the new one, Bambu Bar offers to use it.
+
+Closing the window keeps Bambu Bar running in the menu bar without a Dock icon. Opened at login, it starts quietly in the menu bar; open it from Spotlight or the menu bar to see the window. Add Printer… in the printer picker or in Settings adds another printer.
+
+About downloaded builds
+
+Builds on the Releases page are universal, Developer ID signed and notarized by Apple, so they open normally after you download them. Builds you make yourself without a Developer ID certificate, and the artifacts of the Actions workflow, are ad-hoc signed: they run on the Mac that built them, but the desktop widget only loads in a Developer ID signed copy.
+
+Controlling prints
+
+Reading status works in any mode. Pause, resume, stop and speed changes are accepted only when the printer is in LAN Only mode with Developer Mode on (printer screen → Settings → Network). That's Bambu Lab's rule for third-party apps; without it the printer refuses the command and Bambu Bar says so (the buttons show a lock). The chamber light works either way.
+
+Desktop widgets
+
+- Small: a progress ring with the percentage, time left, the filament going in, and the finish time and layers. Paused, it says why; finished, how long ago and how long it took; idle, the temperatures and loaded spools.
+- Medium: the rendered printer with the part growing in the filament's colour and the AMS spools in theirs, the job and its progress, finish time, layers and temperatures.
+
+…（内容已截断）

@@ -1,0 +1,179 @@
+🌐 Language / Ngôn ngữ / 语言 / Мова: English | Tiếng Việt | 中文 | Українська | 日本語
+
+Master Claude Code in a Weekend
+
+Go from typing claude to orchestrating agents, hooks, skills, and MCP servers — with visual tutorials, copy-paste templates, and a guided learning path.
+
+Get Started in 15 Minutes | Find Your Level | Browse the Feature Catalog
+
+Table of Contents
+
+- The Problem
+- How Claude How To Fixes This
+- How It Works
+- Not Sure Where to Start?
+- Get Started in 15 Minutes
+- What Can You Build With This?
+- FAQ
+- Contributing
+- License
+
+The Problem
+
+You installed Claude Code. You ran a few prompts. Now what?
+
+- The official docs describe features — but don't show you how to combine them. You know slash commands exist, but not how to chain them with hooks, memory, and subagents into a workflow that actually saves hours.
+- There's no clear learning path. Should you learn MCP before hooks? Skills before subagents? You end up skimming everything and mastering nothing.
+- Examples are too basic. A "hello world" slash command doesn't help you build a production code review pipeline that uses memory, delegates to specialized agents, and runs security scans automatically.
+
+You're leaving 90% of Claude Code's power on the table — and you don't know what you don't know.
+
+How Claude How To Fixes This
+
+This isn't another feature reference. It's a structured, visual, example-driven guide that teaches you to use every Claude Code feature with real-world templates you can copy into your project today.
+
+| | Official Docs | This Guide |
+|--|---------------|------------|
+| Format | Reference documentation | Visual tutorials with Mermaid diagrams |
+| Depth | Feature descriptions | How it works under the hood |
+| Examples | Basic snippets | Production-ready templates you use immediately |
+| Structure | Feature-organized | Progressive learning path (beginner to advanced) |
+| Onboarding | Self-directed | Guided roadmap with time estimates |
+| Self-Assessment | None | Interactive quizzes to find your gaps and build a personalized path |
+
+What you get:
+
+- 10 tutorial modules covering every Claude Code feature — from slash commands to custom agent teams
+- Copy-paste configs — slash commands, CLAUDE.md templates, hook scripts, MCP configs, subagent definitions, and full plugin bundles
+- Mermaid diagrams showing how each feature works internally, so you understand why, not just how
+- A guided learning path that takes you from beginner to power user in 11-13 hours
+- Built-in self-assessment — run /self-assessment or /lesson-quiz hooks directly in Claude Code to identify gaps
+
+Start the Learning Path  ->
+
+How It Works
+
+1. Find your level
+
+Take the self-assessment quiz or run /self-assessment in Claude Code. Get a personalized roadmap based on what you already know.
+
+2. Follow the guided path
+
+Work through 10 modules in order — each builds on the last. Copy templates directly into your project as you learn.
+
+3. Combine features into workflows
+
+The real power is in combining features. Learn to wire slash commands + memory + subagents + hooks into automated pipelines that handle code reviews, deployments, and documentation generation.
+
+4. Test your understanding
+
+Run /lesson-quiz topic] after each module. The quiz pinpoints what you missed so you can fill gaps fast.
+
+[Get Started in 15 Minutes
+
+Trusted by Developers
+
+- GitHub stars from developers who use Claude Code daily
+- Forks from teams adapting this guide for their own workflows
+- Actively maintained — synced with every Claude Code release (latest: v2.1.302, October 2026)
+- Community-driven — contributions from developers who share their real-world configurations
+
+Not Sure Where to Start?
+
+Take the self-assessment or pick your level:
+
+| Level | You can... | Start here | Time |
+|-------|-----------|------------|------|
+| Beginner | Start Claude Code and chat | Slash Commands | ~2.5 hours |
+| Intermediate | Use CLAUDE.md and custom commands | Skills | ~3.5 hours |
+| Advanced | Configure MCP servers and hooks | Advanced Features | ~5 hours |
+
+Full learning path with all 10 modules:
+
+| Order | Module | Level | Time |
+|-------|--------|-------|------|
+| 1 | Slash Commands | Beginner | 30 min |
+| 2 | Memory | Beginner+ | 45 min |
+| 3 | Checkpoints | Intermediate | 45 min |
+| 4 | CLI Basics | Beginner+ | 30 min |
+| 5 | Skills | Intermediate | 1 hour |
+| 6 | Hooks | Intermediate | 1 hour |
+| 7 | MCP | Intermediate+ | 1 hour |
+| 8 | Subagents | Intermediate+ | 1.5 hours |
+| 9 | Advanced Features | Advanced | 2-3 hours |
+| 10 | Plugins | Advanced | 2 hours |
+
+Complete Learning Roadmap ->
+
+Get Started in 15 Minutes
+
+Installation note: Starting in v2.1.113, Claude Code ships as a native per-platform binary (macOS/Linux/Windows). The recommended install is the native installer (curl -fsSL https://claude.ai/install.sh | bash); npm installation is deprecated in the official README; prefer the native installer, Homebrew (brew install --cask claude-code) or WinGet (winget install Anthropic.ClaudeCode). For reference, npm install -g @anthropic-ai/claude-code pulls the same native binary through a per-platform optional dependency at install time. As of v2.1.116, downloads come from https://downloads.claude.ai/claude-code-releases — corporate proxies must allowlist this host.
+
+1. Clone the guide
+git clone https://github.com/luongnv89/claude-howto.git
+cd claude-howto
+
+2. Copy your first slash command
+mkdir -p /path/to/your-project/.claude/commands
+cp 01-slash-commands/optimize.md /path/to/your-project/.claude/commands/
+
+3. Try it — in Claude Code, type:
+/optimize
+
+4. Ready for more? Set up project memory:
+cp 02-memory/project-CLAUDE.md /path/to/your-project/CLAUDE.md
+
+5. Install a skill:
+cp -r 03-skills/code-review-specialist ~/.claude/skills/
+
+Want the full setup? Here's the 1-hour essential setup:
+
+Slash commands (15 min)
+cp 01-slash-commands/*.md .claude/commands/
+
+Project memory (15 min)
+cp 02-memory/project-CLAUDE.md ./CLAUDE.md
+
+Install a skill (15 min)
+cp -r 03-skills/code-review-specialist ~/.claude/skills/
+
+Weekend goal: add hooks, subagents, MCP, and plugins
+Follow the learning path for guided setup
+
+View the Full Installation Reference
+
+What Can You Build With This?
+
+| Use Case | Features You'll Combine |
+|----------|------------------------|
+| Automated Code Review | Slash Commands + Subagents + Memory + MCP |
+| Team Onboarding | Memory + Slash Commands + Plugins |
+| CI/CD Automation | CLI Reference + Hooks + Background Tasks |
+| Documentation Generation | Skills + Subagents + Plugins |
+| Security Audits | Subagents + Skills + Hooks (read-only mode) |
+| DevOps Pipelines | Plugins + MCP + Hooks + Background Tasks |
+| Complex Refactoring | Checkpoints + Planning Mode + Hooks |
+
+FAQ
+
+Is this free?
+Yes. MIT licensed, free forever. Use it in personal projects, at work, in your team — no restrictions beyond including the license notice.
+
+Is this maintained?
+Actively. The guide is synced with every Claude Code release. Current version: v2.1.302 (October 2026), compatible with Claude Code 2.1+.
+
+How is this different from the official docs?
+The official docs are a feature reference. This guide is a tutorial with diagrams, production-ready templates, and a progressive learning path. They complement each other — start here to learn, reference the docs when you need specifics.
+
+How long does it take to go through everything?
+11-13 hours for the full path. But you'll get immediate value in 15 minutes — just copy a slash command template and try it.
+
+Can I use this with Claude Sonnet / Haiku / Opus?
+Yes. All templates work with Claude Fable 5.1, Claude Fable 5, Claude Opus 5.5, Claude Opus 5, Claude Sonnet 5.5, Claude Sonnet 5, Claude Sonnet 4.6, Claude Opus 4.8, Claude Haiku 5.5, and Claude Haiku 4.5.
+
+Can I contribute?
+Absolutely. See CONTRIBUTING.md for guidelines. We welcome new examples, bug fixes, documentation improvements, and community templates.
+
+Can I read this offline?
+
+…（内容已截断）

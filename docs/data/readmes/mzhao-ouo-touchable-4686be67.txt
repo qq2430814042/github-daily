@@ -1,0 +1,69 @@
+Touchable
+
+Native iOS experience for your own Switch games
+
+English | 简体中文
+
+Touchable brings ported games a native iOS experience, with better touch controls, virtual buttons, graphics, and performance. Bring your own Switch game files, and build native iPhone and iPad games on an Apple Silicon Mac.
+
+General Improvements
+
+Every supported game gets these improvements:
+
+- 🫧 Liquid Glass controls: on-screen buttons use the iOS Liquid Glass style.
+- 📳 HD rumble: precise vibration through the Taptic Engine or a connected controller.
+- 🎮 Game controllers: play with a physical controller.
+- 📱 iPhone and iPad: one app runs full screen on both.
+- 🚀 Game Mode: native iOS and iPadOS Game Mode gives the game priority for performance.
+- 🌐 Language setting: choose the game language per app in iOS Settings.
+
+Exclusive Improvements
+
+Select a game to see its improvements.
+
+      Rhythm Heaven Groove
+
+      Hollow Knight: Silksong
+Get started
+
+1. Install the full Xcode and sign in to your Apple Account in Xcode.
+2. Put your prod.keys in MyGameFiles/keys/.
+3. Put each NSP in the folder for its game.
+4. Double-click Touchable.command.
+5. Select a game.
+6. Select "Build and install" or "Build IPA only".
+
+The first run needs a network connection. The launcher prepares the local tools.
+
+Where to find things
+
+| Location | Purpose |
+| --- | --- |
+| MyGameFiles | Put your own NSP files and keys here |
+| IPA | Find the finished install packages |
+| docs | Read the user guides |
+| internal | See the code and developer tools |
+
+For detailed requirements, see Supported games.
+For install steps, see Signing and installation.
+If an error occurs, first read Troubleshooting.
+Before development, read AGENTS.md.
+This project is based on d2r-mobile.
+
+Community
+
+Join the Discord server to ask questions, report problems, and share feedback.
+
+Credits
+
+If you use or adapt Touchable's touch control design in your own project, please credit mzhao and link to this repository.
+The design includes the Liquid Glass virtual controller, the per-level touch areas, sliding between buttons, and the direct-touch menus.
+To cite the project, use Cite this repository on GitHub, or see CITATION.cff.
+
+License and disclaimer
+
+The code is under the MIT License.
+
+This project is not affiliated with or endorsed by Nintendo, Team Cherry, or any other game publisher.
+It does not contain game files, keys, or firmware. You must supply files from games that you own.
+Game names, logos, and artwork belong to their owners. The app icons and the Silksong logo in this repository are used only to identify the games.

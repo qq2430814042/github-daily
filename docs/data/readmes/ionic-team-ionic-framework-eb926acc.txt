@@ -1,0 +1,73 @@
+Ionic
+
+  Ionic is an open source app development toolkit for building modern, fast, top-quality cross-platform native and Progressive Web Apps from a single codebase with JavaScript and the Web.
+
+  Ionic is based on Web Components, which enables significant performance, usability, and feature improvements alongside support for popular web frameworks like Angular, React, and Vue.
+
+  Quickstart
+   ·
+
+    Documentation
+
+   ·
+  Contribute
+   ·
+  Blog
+
+  Community:
+  Discord
+   ·
+  Forums
+   ·
+  Twitter
+
+Packages
+
+| Project | Package | Version | Downloads| Links |
+| ------- | ------- | ------- | -------- |:-----:|
+| Core | @ionic/core |  |  | README.md
+| Angular | @ionic/angular |  |  | README.md
+| Vue | @ionic/vue |  |  | README.md
+| React | @ionic/react |  |  |README.md
+
+Looking for the ionic-angular package? Ionic 3 has been moved to the ionic-v3 repo. See Earlier Versions.
+
+Getting Started
+
+Start a new project by following our documentation.
+We would love to hear from you! If you have any feedback or run into issues using our framework, please file
+an issue on this repository.
+
+Migration Guides
+
+Already have an Ionic app? These guides will help you migrate to the latest versions.
+
+* Migrate from v7 to v8
+* Migrate from v6 to v7
+* Migrate from v5 to v6
+* Migrate from v4 to v5
+* Migrate from v3 to v4
+
+Examples
+
+The Ionic Conference App is a full featured Ionic app. It is the perfect starting point for learning and building your own app.
+
+- Angular Ionic Conference App
+- React Ionic Conference App
+- Vue Ionic Conference App
+
+Contributing
+
+Thanks for your interest in contributing! Read up on our guidelines for
+contributing
+and then look through our issues with a help wanted
+label.
+
+Please note that this project is released with a Contributor Code of Conduct. By participating in this project you agree to abide by its terms.
+
+Earlier Versions
+
+The source code for earlier versions of the Ionic Framework may exist in other repositories. Please open issues and pull requests in their respective repositories.
+
+* Ionic 2/3: Moved to ionic-team/ionic-v3
+* Ionic 1: Moved to ionic-team/ionic-v1

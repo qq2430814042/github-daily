@@ -1,0 +1,7 @@
+Moved
+
+The HakiOS user space now lives in the main repository together with the kernel:
+
+https://github.com/oosexgang/hakios-os (until it is renamed: https://github.com/oosexgang/hackios-xnu-kernel)
+
+Everything that was here is in userland/ there. This repository is kept only as a pointer.

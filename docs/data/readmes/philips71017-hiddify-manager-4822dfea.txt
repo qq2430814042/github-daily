@@ -1,0 +1,182 @@
+* &nbsp;فارسی*&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+
+Welcome to Hiddify-Manager
+
+Hiddify-Manager is a powerful and professional anti-censorship toolbox, which is a multi-user panel with an effortless installation and supporting more than 20 protocols including Reality and Telegram proxy to circumvent filtering.  It's optimized for censorship circumvention in Iran and listed by Xray.
+
+Table of Contents
+- Why Hiddify-Manager?
+  - Attractive features
+  - Supported protocols
+  - Smart Proxy For Domestic And Filtered Sites
+  - Other fantastic features
+- Installation and tutorials
+- Donation and Support
+- Collaboration and Contact Information
+
+Why Hiddify-Manager?
+The word Hiddify is a combination of hidden and simplify. We aim to bring together everything that helps to make it simple and hidden in Hiddify-Manager. In other words, it is a panel with a wide range of features and capabilities that helps you enjoy hassle-free and secure internet browsing. Serving as a user-friendly VPN solution, Hiddify-Manager ensures that you can access the free internet with ease and peace of mind.
+
+Attractive features
+- Quick installation
+- Multiple core Xray and SingBox
+- Smart proxy (Hiddify and Clash client)
+- Automatic update
+- Automatic backup (every 6 hours)
+- Automatic connection to Cloudflare
+- Using multiple domains
+- Auto CDN IP configuration capability
+- Management of active configurations
+- Multiple admin privileges
+- the Only SingBox panel with user management feature
+- Applying time and traffic limit for each user
+- Dedicated pages for users to view consumption and configurations
+- Dedicated and smart configurations
+- Dedicated client software
+- Telegram proxy using different libraries
+- DNS over HTTPS (DoH)
+- User management using Telegram Bot
+- Dedicated WARP to bypass some restrictions
+
+And dozens of other features that you will notice upon installation.
+
+ Supported protocols
+ (click here)
+
+| Supported Configs | Supported Configs | Supported Configs |
+| - | - | - |
+| Direct | CDN | Domain Fronting |
+|- Reality XTLS vless
+- Reality gRPC vless
+- SSH
+- Hysteria2
+- TUICv5 |
+|Trojan:
+- TLS WS
+- TLS TCP
+- TLS gRPC
+- TLS H2 WS
+- TLS H2 TCP
+- TLS H2 gRPC
+ |  Trojan:
+- TLS WS
+- TLS gRPC
+- TLS H2 WS
+- TLS H2 gRPC
+
+| Trojan:
+- TLS WS Fake
+
+ |
+| Vless:
+- TLS WS
+- HTTP WS
+- TLS XTLS
+- TLS gRPC
+- TLS H2 TLS
+- TLS H2 WS
+- TLS H2 gRPC| Vless:
+- TLS WS
+- TLS gRPC
+- HTTP WS
+- TLS H2 WS
+- TLS H2 gRPC
+
+| Vless:
+- TLS WS Fake
+- HTTP WS Fake
+
+ |
+| Vmess:
+- TLS WS
+- TLS TCP
+- HTTP WS
+- HTTP TCP
+- TLS gRPC
+- TLS H2 WS
+- TLS H2 TCP
+ | Vmess:
+- TLS WS
+- TLS gRPC
+- HTTP WS
+- TLS H2 WS
+- TLS H2 gRPC
+
+ | Vmess:
+- TLS WS Fake
+- HTTP WS Fake
+
+ |
+| V2ray:
+- TLS WS
+- HTTP WS
+- TLS H2 |  V2ray:
+- TLS WS
+- HTTP WS
+- TLS H2 | |
+| Shadowsocks:
+- TLS Shadowtls
+- HTTP Shadowtls
+- TLS H2 Shadowtls
+- TLS H3 Shadowtls | | |
+| -Wiregaurd
+- SSH
+- TUIC
+- Hysteria2|||
+
+ Smart proxy for domestic and filtered sites
+ (click here)
+
+You can connect to the internet in 3 modes using Hiddify-Next and Hiddify-Manager.
+1. This method only circumvents filtered websites via the proxies.
+2. This method circumvents all websites except domestic websites based in Iran. This way the domestic websites can be opened without any proxies (recommended)
+3. This method circumvents all websites.
+
+At the same time, the proposed solution is resistant to detection by the internet filtering entities and prevents the usual attacks on the server i.e., the possibility of detection is minimal, however, do not forget to disable other ports except 22, 80 and 443.
+
+Other fantastic features
+ (click here)
+
+ Supported operating systems
+Hiddify-Manager has been tested on Ubuntu 22.04. Ubuntu arm64 or amd64
+
+ Speed test
+
+In this way, you can check the speed of the server with and without anti-filter.
+
+ DNS over HTTPS (CDN support)
+
+To use DNS over HTTPS, just use the following DNS in the browser.
+
+ https://yourdomain.com/yoursecret/dns/dns-query{?dns}
+
+ Redirector (CDN support)
+When you want to share Telegram proxy or Shadowsocks proxy through other programs, it is possible to redirect with CDN support. For example, if you put the Shadowsocks configuration instead of "fullURL", clicking on this link will open Shadowsocks app and activate the proxy on it. For example:
+
+ https://yourdomain.com/yoursecret/redirect/fullURL
+
+ Replace "fullURL" by the Shadowsocks configuration.
+
+ https://yourdomain.com/yoursecret/redirect/ss://secret/
+Installation and tutorials
+Please find tutorial information on our website by clicking on image below.
+
+Acknowledgements
+We would like to express our sincere appreciation to the contributors of the following projects, whose robust foundation and innovative features have significantly enhanced the success and functionality of this project.
+- Sing-box
+- Xray
+- Linux by Linus Torvalds
+- Font: Vazirmatn by Saber Rastikerdar
+
+Donation And Support
+The easiest way to support us is to click on the star (⭐) at the top of this page.
+
+We also need financial support for our services. All of our activities are done voluntarily and financial support will be spent on the development of the project. You can view our support addresses here.
+
+Collaboration and Contact Information
+We need your collaboration in order to develop this project. If you are specialists in these areas, please do not hesitate to contact us and mention your skill.
+
+* Media Production
+* Python Developing‌
+* Kotlin Developing
+* Flutter Developing

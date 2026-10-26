@@ -1,0 +1,105 @@
+Swap in your photos and words for a new film.
+Or bring a film you love and get your own version.
+
+Website · 简体中文 · Get started · Templates · Community · Docs
+
+Made with the templates
+
+Doodle · hand-drawn
+
+Album · clean album
+
+DV Story · camcorder
+
+Comedy · comic opener
+
+Starter · beat-cut reel
+
+Album 9:16 · vertical short
+
+Click a loop for the full preview with sound. All rendered straight from the templates and passing vvv check; the couples and photos are fictional. All templates, formats and styles
+
+Say one sentence. Your agent does the rest.
+
+Picking the template, placing photos, writing copy, rendering, checking and delivering all happen in the conversation. You watch the sample and say what to change.
+
+Use the vvv skill to make a 9:16 wedding short from the photos in ./photos. We are Lin Yizhou and Xu Zhixia, married on October 18. Show me a checked sample first.
+
+Add it to your agent, any one of:
+
+| Agent | Install |
+|---|---|
+| Claude Code | /plugin install vvv --marketplace actionow-ai/vvv (the plugin includes the templates) |
+| Codex, Cursor, Gemini CLI, Copilot and 20+ more | npx skills add actionow-ai/vvv, then clone this repository and set VVV_KIT (details) |
+| WorkBuddy | Upload the skill ZIP from Releases under 技能 → 添加技能 (details) |
+| Any MCP client | claude mcp add --transport http vvv https://mcp.vibevision.video/mcp to browse templates and guides with no install |
+
+Rendering runs on your machine, which needs Python 3.9+, Node.js 26 and npm; the agent installs everything else.
+
+One template, every new film
+
+The scenes, layouts, timing and checks are built once. A new film changes only what belongs to it.
+
+  Built onceScene structure and camera moves · layouts for 16:9 and 9:16 · beat-planned timing · render checks
+
+  Changed per filmPhotos · names and dates · every line of copy · music and format
+
+vvv.py describe tells the agent each template's photo slots, copy fields and settings, and validate catches bad inputs before a render. The agent changes the template's inputs first and its React/TypeScript source only where the brief needs it. Reuse is meant to save the tokens otherwise spent redesigning, regenerating and debugging the same video code; no comparative benchmark is published yet (see the roadmap).
+
+Show it a film you love. Get your own.
+
+Give your agent a reference video and the attachments that make it yours: photos, a logo, copy, music. It studies how the reference works and rebuilds it as an editable project with your material.
+
+    01 Reference + attachments
+A local video file plus your photos, logo, copy and music. The reference is studied, never shipped.
+    02 Measure
+Sections in beats, shot lengths, still frames and beat alignment, measured from the actual file.
+    03 Rebuild
+On the closest template or a new composition. Missing artwork is generated; the result is checked against the reference.
+
+Use the vvv skill to recreate ./reference.mp4 as our own film with the photos in ./photos, our logo and copy. Generate any missing artwork and show me a checked sample before the full render.
+
+Best with an image-capable agent. With Claude Code and Codex both installed, Claude Code can use Codex's image generation through the bundled bridge. Video and voice are not generated. How it works
+
+Also included
+
+- Photos in emotional order: every template maps its emotional sections (laughs before tears, first date to wedding). The agent looks at each photo, tags who is in it, its mood and when it was taken, places it in the matching section, and shows you the order before rendering.
+- Style presets: settle the opening rule, the music and the studio name once, save them, and every later film starts from them.
+- Render checks: vvv check measures format, audio, still stretches and beat alignment, then lists what only a viewer can judge.
+- Handoff: pack a template, effect or finished project as one .vvv file with its code, media licenses and render evidence, so any agent can continue it.
+- Footage tools: a local FFmpeg helper probes media, cuts ranges, extracts audio and samples frames (walkthrough).
+- Community templates: built one you are proud of? Pack it and submit it on the website. Once approved, it appears on the site and in the MCP server.
+
+Your agent runs the whole thing
+
+You describe the film, watch the sample and say what to change. Setup, scripts, rendering and checks are the agent's job:
+
+    01 Pick a template
+Matched to your format, style and photo count, such as Album · 9:16 for a phone-first short.
+    02 Place the photos
+Checks their size and orientation, then fills the opening, gallery and ending.
+    03 Write the copy
+Names, date and every line of text, validated before anything renders.
+
+    04 Set up and sample
+Installs dependencies, fetches the music and renders a sample for you to watch.
+    05 Check
+Measures format, loudness, still frames and beat sync, then reviews the frames.
+    06 Deliver
+The film plus its editable project, so any agent can pick it up later.
+
+The first time your agent runs commands on your machine, it may ask for permission. To run things by hand or build a new template, see getting started and contributing; ready-made .vvv template packages are attached to Releases.
+
+Make your first film today.
+
+Get started · Website · contact@vibevision.video · Linux.do
+
+    Status
+0.1, an early release. Verified end to end on macOS ARM64 with Claude Code and Codex; WorkBuddy and other platforms are less tested. Verification and limits
+    License
+Code, docs, templates and demo media are MIT. Fonts, preview soundtracks and third-party code keep their own terms: media · third-party notices
+    Get involved
+Contributing · Roadmap · Changelog
+Security · Brand kit · Submit a template
+
+© 2026 Vibe Vision Video contributors · vibevision.video

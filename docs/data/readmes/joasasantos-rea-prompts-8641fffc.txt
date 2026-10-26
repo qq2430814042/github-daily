@@ -1,0 +1,198 @@
+REA Investigation Prompts (REAP) — Reverse Engineering with your Coding Agent
+
+A curated collection of prompts for REA (Reverse Engineer Anything) — the toolset that lets your AI coding agent inspect how software works, from native binaries, firmware and kernels to games, Electron apps, APKs and websites.
+
+Prompts are ready to paste into your agent. Replace everything in `` and keep each request focused on one feature — narrow questions get evidence-backed answers.
+
+Star History
+
+Install as agent skills (recommended)
+
+setup.sh (macOS/Linux) or setup.bat (Windows) copies every prompt section into your coding agent's skills folder (/.hermes/skills, /.claude/skills or ~/.codex/skills):
+
+./setup.sh          # auto-detect installed agents
+./setup.sh hermes   # or: claude-code | codex | all
+
+setup.bat           :: Windows
+
+What you get:
+
+- Skills/ — 26 skill packs, one folder per section (reap-00-install-and-verify … reap-22-go-and-rust-binary-source-recovery, plus reap-prompts index, reap-wildcard and reap-prompt-writing-tips), each a SKILL.md with YAML frontmatter the agent auto-loads when relevant.
+- system_prompt.md — the whole library as a single document you can paste into any agent's system prompt / custom instructions instead of installing skills.
+- tools/build_skills.py and tools/build_system_prompt.py — regenerate Skills/ and system_prompt.md from readme.md (the setup scripts run them automatically; readme.md stays the source of truth).
+
+Sources & credits
+
+- REA tools & guides: https://rea.tools/
+- Official prompt gallery: https://madewithrea.com/prompts
+- Intro thread ("REA is the most dangerous thing on the internet right now") by codila — https://x.com/0xCodila/status/2109623431763292649
+  (quoting Matthew Berman — https://x.com/MatthewBerman/status/2108245653843509415)
+- REAP Name by https://x.com/zazencodes?s=11
+Table of contents
+
+| # | Section |
+|---|---------|
+| 0 | Install & verify |
+| 1 | Getting started |
+| 2 | Feature tracing (any program) |
+| 3 | Native binary exploration |
+| 4 | Software & feature cloning |
+| 5 | Games |
+| 6 | Game portability to WASM |
+| 7 | Firmware & embedded |
+| 8 | Android |
+| 9 | Kernel analysis |
+| 10 | Vulnerability research |
+| 11 | Electron & JavaScript |
+| 12 | Anti-cheat & protection research |
+| 13 | DMA & hardware-assisted cheat research (defensive) |
+| 14 | Software cracking research |
+| 15 | Version comparison & crash work |
+| 16 | Long-running investigations |
+| 17 | Malware analysis |
+| 18 | Advanced binary exploration & deobfuscation |
+| 19 | Kernel & driver exploitation research |
+| 20 | Advanced software cloning & feature reconstruction |
+| 21 | Protector & obfuscator research |
+| 22 | Go & Rust binary source recovery |
+| — | Wildcard prompt · Prompt-writing tips · Next steps |
+
+⚠️ Use responsibly. Only analyze software you own or are explicitly authorized to test. Anti-cheat, DMA, DRM, kernel and vulnerability prompts below are for security research, interoperability, CTFs, bug bounties and testing the protection of your own software. Bypassing protection of software you don't own, cheating in online games, or weaponizing a found vulnerability may violate law and terms of service. Every prompt asks the agent to separate confirmed facts from hypotheses and to cite evidence — treat that as non-negotiable.
+
+0. Install & verify
+
+Install REA and connect it to this agent using: npx rea-agents@latest setup
+
+First, show me the installation plan and the configuration changes for my
+approval. After the install, verify the connection and list the available
+tools and workflows.
+
+1. Getting started
+
+First exercise — trace a CSV export
+
+Download https://rea.tools/examples/notes-example.zip into a new folder and
+extract the contents.
+
+Use REA to investigate what happens when I click "Export notes". Trace the
+flow from the button to the file write.
+
+Show where notes.csv is created, which fields it contains, and the files and
+functions that prove each step.
+
+First look at an unfamiliar app
+
+Use REA to give me a map of : its main parts, entry points and the
+three features worth investigating first. Keep it short and point to evidence
+for each claim.
+
+2. Feature tracing (any program)
+
+Explain one feature
+
+Use REA to investigate how  works in .
+
+Identify the entry point, the functions involved, the data flow, the
+dependencies and the observable effects.
+
+For every conclusion, present evidence: file, function, address or relevant
+snippet. Separate confirmed facts, inferences and points that remain unknown.
+
+Do not execute the application in this step.
+
+Trace a button to its effect
+
+Use REA on . Start at the  button and trace what happens
+until the result is written, sent or shown. Name every module or function on
+the path and what each one does.
+
+Recover a rule and rebuild it
+
+Use REA to find the rule that controls  in . Write the
+rule in plain words, then build a minimal standalone version I can run, and
+give me one input that proves it matches the original.
+
+3. Native binary exploration
+
+Understand an executable
+
+Analyze  with REA.
+
+Identify format, architecture, runtime, libraries, relevant strings and
+possible entry points.
+
+Map the main components and explain their responsibilities with evidence.
+State which analysis engine is available and its limitations.
+
+Start with static analysis.
+
+Function deep-dive
+
+Use REA on . Pick the function that handles  and produce:
+decompiled pseudocode, its callers and callees, the data structures it reads
+or writes, and every string/global it touches. Annotate each finding with the
+address range that proves it.
+
+Imports, strings and triage map
+
+Use REA on . Produce a triage map: file format and architecture,
+section layout, linked libraries and imports grouped by capability (network,
+filesystem, crypto, process/thread, registry/IPC), interesting strings with
+their addresses, and the top candidate entry points for . Flag any
+signs of packing, obfuscation or control-flow flattening.
+
+File-format reverse engineering
+
+Use REA on  to work out how it reads and writes .
+Describe the structure field by field, show where each field is parsed, and
+write a small reader that prints a sample file.
+
+Protocol / serialization extraction
+
+Use REA on  to recover the wire format used for 's network or
+IPC traffic. Show the marshal/unmarshal functions with addresses, list every
+field (size, endianness, encoding), and produce a Python struct/proto
+definition plus one example message built from the code's constants.
+
+4. Software & feature cloning
+
+Clean-room methodology: extract behavior, not code. Never copy
+proprietary source, assets, branding or licensing mechanisms.
+
+Full application clone (behavioral)
+
+Use REA to study  as a black box for a clean-room clone.
+
+Produce CLONE_SPEC.md covering: every user-visible feature, screen and state
+machine; inputs, outputs and edge cases; file formats and network protocols it
+uses; settings and persistence layout; error behaviors.
+
+For each requirement, cite the evidence (function, address, string, captured
+request). Mark anything unconfirmed as UNKNOWN. Do not copy code or assets —
+I will implement from the spec only.
+
+Clone one feature into my own app
+
+Use REA to recover the exact behavior of  in : trigger,
+inputs, processing steps, outputs, side effects and failure modes.
+
+Then implement  from scratch in  matching that
+behavior, with tests derived from the recovered rules. List every observable
+difference that remains between my version and the original.
+
+Validate a clone against the original
+
+Compare  with the observed behavior of .
+
+Use verify_reconstruction, if available. Check results, errors, limits and
+state transitions.
+
+Present passing cases, divergences and behaviors not yet tested. Do not
+consider equivalence demonstrated just because a few examples passed.
+
+UI/UX behavior cloning without assets
+
+Use REA on  to document its interaction model: layout logic,
+keyboard shortcuts, command dispatch, undo/redo semantics and clipboard
+
+…（内容已截断）

@@ -1,0 +1,97 @@
+Abstract
+
+ounce-core is an experimental, non-commercial AArch64 execution and high-level service implementation research runtime written in Rust. It contains an interpreter, three execution tiers, a paged memory model, a subset of Horizon-style supervisor calls (SVCs) and services, and software models of graphics, audio and input. It is a test harness for studying these subsystems. It is a clean-room research runtime, not a tool for running commercial software, and makes no claim of compatibility with any commercial software.
+
+- Safe Rust only: the crate is #!forbid(unsafe_code)], and grep -rnE "unsafe[ ({]" src returns no matches.
+- Five runtime dependencies: byteorder, cpal (host audio playback), gilrs (gamepad input), minifb (host window), thiserror. The optional gpu-present feature adds wgpu, winit and pollster for GPU presentation.
+- No network code, no telemetry. The only URL in the source is the project's own repository link in the CLI banner.
+
+Legal Notice
+
+What this repository does not contain
+
+- No firmware, system archives, or code or data derived from them.
+- No encryption keys. Code that handles keys reads only files the user supplies at runtime (prod.keys, title.keys). The .gitignore excludes these files.
+- No game content, ROMs, or dumps. Test inputs are synthetic: they are generated at runtime or written as AArch64 instructions in source.
+- No code copied from third-party projects. Earlier revisions contained third-party-derived byte sequences; they were removed. See Known Issues for the git history.
+
+Trademarks. "Nintendo", "Nintendo Switch", "Switch 2", "NVIDIA", "Tegra", "Horizon" and related names are trademarks of their respective owners. This project is not affiliated with, endorsed by, or sponsored by any of them. Names appear only to describe the hardware and ABI being modelled.
+
+No warranty; not legal advice. The software is provided as is. Anyone using, modifying or distributing it is responsible for complying with the copyright, anti-circumvention and other laws that apply where they are. Consult a lawyer before any use beyond private research.
+
+License. MIT. See [LICENSE. The license covers the code in this repository only. It does not cover any third-party material that may appear in earlier commits (see Known Issues).
+
+Security Advisory
+
+Third parties may distribute executables labelled "ounce-core" that contain malware. The only source of this project is the repository above. Build from source with the standard Rust toolchain.
+
+Implementation Status
+
+Status reflects what the code does and what the tests exercise. "Modelled" means the behaviour is simulated in software, not measured against hardware.
+
+| Subsystem | Status | Notes |
+| :--- | :--- | :--- |
+| AArch64 CPU | Implemented (subset) | Interpreter plus Tier-1 block cache, Tier-2 chained blocks and Tier-3 super-blocks. Not the full ISA. |
+| Memory | Implemented | 4 KB-page MMU with per-page permissions. No DRAM timing model. |
+| Kernel (SVC) | Implemented (subset) | Threads, events, mutexes, memory and process queries needed by the test programs. |
+| IPC | Implemented (subset) | CMIF and TIPC message formats. Services are synthetic. |
+| Services | Modelled | sm:, set:sys, am, vi, hid, fsp-srv, pl:u (placeholder font data), time:u, nvdrv, ro:1. |
+| GPU | Modelled | Command-buffer model, software rasterizer, texture and ASTC/BC7 block decoders. No GPU API is called. |
+| Shader translation | Partial | A SASS-subset decoder that emits SPIR-V 1.5 bytes. Not validated against a driver. |
+| Vulkan HAL (gpu/vulkan.rs) | Model only | Structures and SPIR-V module checks. It does not call a Vulkan loader or driver. |
+| Host presentation (gpu/present/) | Implemented | Guest framebuffer shown through a GPU swapchain (wgpu: Vulkan on Linux/Windows, Metal on macOS; feature gpu-present), a software window (minifb) or headless. Presentation only: guest rendering stays on the CPU. |
+| Upscaler (gpu/dlss.rs) | Modelled | 2× bilinear interpolation with sharpening. Not DLSS; there is no neural network. |
+| Audio | Implemented | Software 64-voice mixer; real-time 48 kHz stereo host audio sink via cpal. |
+| Input (hid/) | Implemented | Controller state filled from host keyboard and physical USB/Bluetooth gamepads via gilrs. |
+| Containers | Implemented (parsing) | PFS0/NSP, HFS0/XCI, NCA3, NSO0, NRO0, NPDM, RomFS, unencrypted loose directories. |
+| Dynamic linking | Implemented (subset) | MOD0 .dynamic parsing; R_AARCH64_RELATIVE, ABS64, GLOB_DAT, JUMP_SLOT; imports resolved across modules in loose packages; DT_REL/DT_RELA tables; unresolved imports reported; DT_GNU_HASH symbol counts; TLS relocations (TPREL64, DTPMOD64, DTPREL64, TLSDESC) against a static TLS layout; DT_INIT/INIT_ARRAY/FINI_ARRAY/DT_FINI runner (opt-in, OUNCE_RUN_INIT=1). PT_TLS templates (.tdata copied, .tbss zeroed, p_align honoured) when supplied from an ELF; each svcCreateThread thread gets its own TLS area and TPIDR_EL0. Limits: NSO/NRO carry no PT_TLS, so for them TLS block sizes come from STT_TLS symbols, alignment is assumed 16, and blocks start zeroed. Guest SVCs inside initialisers are not serviced. |
+| Crypto | Implemented | AES-128 checked against FIPS-197 vectors. AES-128-CTR is used for NCA sections when the user supplies keys. |
+
+Known limitations
+
+- Timing and MIPS figures are host measurements of small synthetic programs. They are not comparable to hardware and are not pass/fail criteria.
+- Behaviour that is not in the test suite should be assumed unverified.
+
+Repository Structure
+
+ounce-core/
+├── assets/           # Vector artwork (banner, logo, architecture diagram)
+├── src/
+│   ├── audio/        # Audio renderer model and PCM output sink
+│   ├── cpu/          # AArch64 decoder, interpreter, Tier-1/2 JIT, Tier-3 super-block engine
+│   ├── crypto/       # AES-128 and AES-128-CTR (user-supplied keys)
+│   ├── fs/           # Virtual filesystem, RomFS parser, save-data storage
+│   ├── gpu/          # Command-buffer model, rasterizer, shader translator, upscaler model
+│   ├── hid/          # Controller state model and deadzone filters
+│   ├── kernel/       # SVC dispatcher, IPC, scheduler, synchronization, nnSdk-style runtime
+│   ├── loader/       # Container parsers and synthetic image builders
+│   ├── mmu/          # Paged memory model
+│   ├── ui/           # Headless package inspector and CLI telemetry
+│   └── main.rs       # CLI and the 25-stage integration harness
+├── Cargo.toml
+└── README.md
+
+Verification
+
+cargo test --release            # unit tests
+cargo run --release -- test     # 25-stage integration harness
+
+The harness runs synthetic AArch64 programs through the CPU, kernel and service models. Each stage passes when its guest program returns the expected exit code. Host timings are printed for information only.
+
+| Stage | Subsystem | What it checks | Exit |
+| :---: | :--- | :--- | :---: |
+| 01 | AArch64 ALU & branching | Fibonacci N=10 through the block cache | 55 |
+| 02 | Debug SVC | svcOutputDebugString with a guest string | — |
+| 03 | Calling convention | Stack frame, BL and RET | 42 |
+| 04 | CMIF IPC & vector math | sm: lookup of nvdrv, IEEE-754 FADD | D0 = 42.0 |
+| 05 | RomFS & PCM audio | Reads romfs:/title.txt, queues audio to audout:u | — |
+| 06 | AES-CTR & threads | NCA section decryption, SASS-subset decode, thread spawn | — |
+| 07 | Package boot & rasterizer | Boots an NSP, futex arbitration, textured triangle | — |
+| 08 | crt0 & depth | svcGetInfo, direct-chained JIT, Z-buffer occlusion | — |
+| 09 | NEON & upscaler | 128-bit vector arithmetic, 2× upscaler, save sync | — |
+| 10 | FS query payload | BTI landing pad, process/thread queries, challenge response | — |
+| 11 | Dynamic linker | RO NSO0 module over TIPC, NS2ROEXE reply | — |
+| 12 | Thread-affinity wrapper | BL into a leaf that returns 0xFF, then AND X0, X0, #7 | 0x07 |
+| 13 | Timing & events | Synthetic event init, try-wait and tick frequency | 0x124F801 (19,200,001) |
+
+…（内容已截断）

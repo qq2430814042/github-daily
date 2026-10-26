@@ -1,0 +1,59 @@
+ShrimpReel
+
+English | 简体中文
+
+Built by 浅水虾 (qianshuixia).
+
+An open-source template for "one photo → an AI video that follows a viral template" SaaS sites. Every trending keyword gets its own site: create a repo from this template, change the config, copy and media, and ship. Everything runs on Cloudflare: Workers + D1 + R2 + KV + Queues + Rate Limiting + Cron Triggers.
+
+https://github.com/user-attachments/assets/ce92074a-2a09-4a3e-b750-4b888d12abf8
+
+A 72-second tour, no sound (Chinese version; MP4 files in docs/media). Screens are from a local run; the demo site "Neon Shuffle AI" and its clips are placeholders.
+
+Built with ShrimpReel
+
+Christmas Dance AI: upload one photo and dance as an elf in Santa's workshop, or at a Christmas party in your own outfit. Two styles, Google sign-in, credit packs and subscriptions, all from this template.
+
+Status: the full flow works locally (unit tests + Playwright e2e), and the site above runs it in production. The template itself is not deployed; ROADMAP.md lists what has and hasn't been verified against real services. Code comments, ROADMAP and docs/ are currently in Chinese.
+
+- Frontend/SSR: TanStack Start (React 19) + Tailwind 4. English at /, Chinese at /zh.
+- API: Hono (/api/, /media/, /sitemap.xml, /robots.txt, /llms.txt, IndexNow key file); entry point src/server.ts.
+- Payments: Waffo Pancake (default) or Dodo Payments, both Merchants of Record, or Stripe (you are the merchant and handle sales tax yourself). mock is for local dev and e2e only.
+- Video: fal.ai queue API (default) or the optional yir.ai router or NanoAPI; mock for local dev and e2e. See "Video providers" below.
+- Included:
+  - Users and credits: Google sign-in (including One Tap), credit packs, monthly and yearly subscriptions and a credit ledger, dashboard (videos, billing, settings, redeem codes, invite link, account deletion, data export); billing shows amounts paid and refunded, orders and the ledger load page by page, and every order has a printable detail page (tax invoices come from the payment provider).
+  - Orders and generation: partial and full refunds that claw back credits, a generation queue with a dead-letter queue, credits returned automatically on failure.
+  - Growth: first- and last-touch attribution (UTM and ad click IDs), a visit → sign-up → checkout → paid → generate funnel, GA4 events behind a consent banner, public share pages for videos (opt-in per video, with link previews).
+  - Admin: overview (including provider cost and gross margin), users, orders, generations, takedowns, contact messages, payment events, emails, audit log, reports and order CSV, redeem codes, referral leaderboard, runtime settings and connection tests.
+    - Users: filter by status, role and paying, sort by sign-up, last login or credits; the detail page shows total paid, generation stats, orders, credit grants, the credit ledger and admin actions on that user (granted credits can have an expiry).
+    - Orders: search by order id, email or provider transaction id; the detail page merges payment webhooks, credit changes, admin actions and emails into one timeline, with refund, check-with-provider and mark-paid actions.
+    - Generations: search by job id, email or provider request id.
+  - Transactional email: credits added, video ready, generation failed and refunded, takedown receipts (signed-in users only) and outcomes; admins get new takedowns, deadline reminders and contact messages (Cloudflare Email Service, outbox with dedupe and retries).
+  - Compliance and safety: AI-generated label on videos; photos deleted after 7 days and videos after 30; takedown requests on a 48-hour queue (every video made from the same source photo is removed and the photo is blocked); upload moderation; Turnstile on the contact and report forms.
+  - Ops and security: maintenance mode, a checkout pause, the payment provider for new orders, a site-wide announcement and a daily generation cap switched from the admin without a deploy; health-check alert emails, instant payment notifications (Telegram, Feishu, Discord and more), daily D1 backups to R2, browser error reporting to Workers Logs, CSP (Report-Only, per-request nonce) and Permissions-Policy.
+  - Content and SEO: one-page home (How it works / What is, plus optional problem and "doing it yourself vs. this site" blocks), an extensible article collection (/guides hub, related articles), legal pages, contact form; SSR canonical, hreflang, JSON-LD and sitemap; copy is code-split per locale; npm run seo:check lints the whole site.
+
+Release notes: CHANGELOG.md. Feature notes and plans: docs/SAAS_VIDEO_FEATURES.md and ROADMAP.md. SEO rules, keyword planning and audit results: docs/SEO_AUDIT.md. All environment variables and the launch-related site.ts fields: docs/env.md. Adding a payment provider and the webhook response-code contract: docs/payments.md. The subscription switch, plans and provider setup: docs/subscriptions.md. Conventions to follow before changing code (credits, payment fulfillment, bilingual copy, migrations, e2e): AGENTS.md. The docs/ files and AGENTS.md are in Chinese.
+
+Local development
+
+npm install
+cp .dev.vars.example .dev.vars       # set at least SESSION_SECRET
+npm run seed:local                   # apply D1 migrations and upload the mp4 and jpg files in seed/templates/ to local R2
+npm run dev -- --host 127.0.0.1      # http://127.0.0.1:3000
+
+- Use npm 11.19 or newer; devEngines in package.json warns on older versions. Running npm install with an older npm rewrites package-lock.json into a form that npm ci on CI rejects (Missing: @emnapi/core@… from lock file).
+- PAYMENT_PROVIDER=mock and VIDEO_PROVIDER=mock by default: buying opens a mock checkout and generating copies the template video. Nothing is charged.
+- Outside production the sign-in page has a "dev login" (POST /api/auth/dev-login); in production it returns 404. Dev login, mock payments and /api/dev/* only accept direct requests from localhost: anything that came through a tunnel or proxy (with cf-connecting-ip, X-Forwarded-For or similar headers) gets 404. Someone on your LAN can fake those conditions, so don't start the dev server with --host 0.0.0.0 or expose it to the internet directly; for webhooks use scripts/webhook-proxy.mjs (see below).
+- MODERATION_PROVIDER=mock by default: an upload form with mockOutcome=reject simulates a rejected image. Leave TURNSTILE_SITE_KEY empty to disable Turnstile.
+- POST /api/dev/sweep {"days": 8} (localhost only) runs retention cleanup as if N days had passed, for the signed-in user's media only.
+- Addresses in ADMIN_EMAILS can open /admin; locally that is admin@example.com. They are made admins when they sign in, and removing an address later doesn't take the role away: also click "取消管理员" (remove admin) on that user's page under /admin/users.
+- Email is only simulated locally; check the outbox instead: GET /api/dev/emails?to=&ref= (localhost only). POST /api/dev/takedown-reminders {"takedownId": "tdr_…", "hours": 37} runs the takedown reminder check for one request as if N hours had passed.
+- Windows: start with --host 127.0.0.1, otherwise Playwright and other tools may resolve localhost to IPv6 and fail to connect. Stop the dev server before npm install, or locked .wrangler / miniflare files cause EBUSY.
+- drainUnreadBody in src/server.ts only runs in dev: with the current miniflare 5 beta, a Worker that responds without reading the request body breaks the next request on the same connection (500 fetch failed). After upgrading @cloudflare/vite-plugin, try removing it and run npm run test:e2e to check the CSRF tests.
+
+Launching a site for a new keyword
+
+Each keyword site is its own repository that tracks this template as upstream, so payment, security and framework fixes are made once in the template and merged into every site.
+
+…（内容已截断）

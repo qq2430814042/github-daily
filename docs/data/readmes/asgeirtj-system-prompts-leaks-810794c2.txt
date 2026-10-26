@@ -1,0 +1,168 @@
+Thanks to
+
+Open Source Agent Analytics
+Understand your agents in production
+
+System Prompts Leaks
+
+The full verbatim system prompts behind the most popular chatbots in the world. Carefully curated and complete. Feel free to open up a PR or get in contact if you got a different result.
+
+The Washington Post built its interactive story on prompts from this repo: See the hidden rules behind AI. Then use them to rewrite this article. (May 11, 2026)
+
+CEPS' AI World built an interactive breakdown of what is inside system prompts, topic by topic, from this repo's files: System prompts and what they tell us about the chat before the chat (July 10, 2026)
+
+Simon Willison calls it "the most thorough leaked system prompt collection I know of": ChatGPT search now uses the site: operator at scale (August 20, 2026)
+
+Most recent additions/changes
+
+| What | Date | Link |
+|------|------|------|
+| Grok Bot (updated) | October 24, 2026 | Grok Bot system prompt · skills |
+| Perplexity search | October 23, 2026 | Perplexity search system prompt |
+| Claude Motion | October 21, 2026 | Motion type skill · references |
+| ZCode Desktop (GLM-5.3) | October 20, 2026 | ZCode Desktop system prompt and tools · skills · agents |
+| Claude artifact types (Slides, Dashboard, Design, Docs) | October 9, 2026 | Slides · Dashboard · Design · Design System · Docs · all types |
+| Claude Haiku 5.5 | October 7, 2026 | Claude Haiku 5.5 system prompt |
+| Haiku 5.5 Claude Code | October 7, 2026 | Claude Code system prompt (Haiku 5.5) |
+| ChatGPT Dots | October 5, 2026 | Dreamer system prompt · Voice · all prompts · skills |
+| Muse Spark 1.3 Muse Code | October 4, 2026 | Muse Code system prompt (Muse Spark 1.3) · skills · prompts |
+| Meta Muse agent (VM files) | October 3, 2026 | Muse agent system prompt · all VM files |
+| Grok 4.7 | October 3, 2026 | Grok 4.7 system prompt (grok.com) |
+| GPT-6.1-Sol Codex | September 29, 2026 | GPT-6.1-Sol Codex system prompt · ChatGPT Work local |
+
+Anthropic — Claude
+
+Claude.ai system prompts (web, desktop & mobile)
+
+| Model | Prompt |
+|-------|--------|
+| Claude Haiku 5.5 | Claude Haiku 5.5 system prompt |
+| Claude Sonnet 5.5 | Claude Sonnet 5.5 system prompt |
+| Claude Opus 5.5 | Claude Opus 5.5 system prompt |
+| Claude Fable 5.1 | Claude Fable 5.1 system prompt |
+| Claude Opus 5 | Claude Opus 5 system prompt |
+| Claude Fable 5 | Claude Fable 5 system prompt |
+| Claude Opus 4.8 | Claude Opus 4.8 system prompt |
+| Claude Sonnet 5 | Claude Sonnet 5 system prompt |
+| Claude Opus 4.7 | Claude Opus 4.7 system prompt |
+| Claude Opus 4.6 | Claude Opus 4.6 system prompt · No tools |
+| Claude Sonnet 4.6 | Claude Sonnet 4.6 system prompt · No tools |
+| Injected reminders | Claude.ai injected reminders |
+
+Claude Code system prompts
+
+| Component | Prompt |
+|-----------|--------|
+| Opus 5.5 Claude Code | Claude Code system prompt (Opus 5.5) |
+| Sonnet 5.5 Claude Code | Claude Code system prompt (Sonnet 5.5) |
+| Haiku 5.5 Claude Code | Claude Code system prompt (Haiku 5.5) |
+| Fable 5.1 Claude Code | Claude Code system prompt (Fable 5.1) |
+| Fable 5.1 Claude Code Desktop | Claude Code desktop app system prompt (Fable 5.1) · Fable 5 |
+| Fable 5.1 Claude Code on the web | Claude Code on the web (cloud) system prompt (Fable 5.1) |
+| Fable 5.1 Claude Code headless | Claude Code headless system prompt (Fable 5.1) |
+| Opus 5 Claude Code | Claude Code system prompt (Opus 5) |
+| Fable 5 Claude Code | Claude Code system prompt (Fable 5) |
+| Opus 4.8 Claude Code | Claude Code system prompt (Opus 4.8) |
+| Sonnet 5 Claude Code | Claude Code system prompt (Sonnet 5) |
+| Claude Code (older models) | Opus 4.7 · Opus 4.6 · Sonnet 4.6 · Haiku 4.5 |
+| Subagents | Claude Code subagent system prompts |
+| Advisor tool | Advisor tool prompts (both sides) |
+| Skills & commands | Claude Code skills · Slash commands |
+| Docs assistant | docs.claude.com assistant instructions |
+
+Claude artifact types (Slides, Dashboard, Design, Docs)
+
+| Type | Prompt |
+|------|--------|
+| Claude Slides | Slides type skill · references |
+| Claude Dashboards | Dashboard type skill · references |
+| Claude Design (canvas) | Design type skill · references |
+| Claude Docs | Docs type skill |
+| Claude Motion | Motion type skill · references |
+| Design System | Design System type skill · references |
+
+Claude integrations
+
+| Product | Prompt |
+|---------|--------|
+| Claude Projects | Claude Projects - Thread Claude system prompt |
+| Claude Design | Claude Design system prompt · skills · starter components |
+| Claude Cowork | Claude Cowork system prompt · Dispatch · setup skills |
+| Claude Science | Claude Science system prompt |
+| Claude for Microsoft 365 | Claude for Excel · Claude for Word · Claude in PowerPoint |
+| Claude in Chrome | Claude in Chrome extension system prompt |
+| Claude iOS app | Claude mobile iOS system prompt |
+
+OpenAI — ChatGPT
+
+| Model | Prompt |
+|-------|--------|
+| ChatGPT 5.6 Sol | ChatGPT 5.6 system prompt (Sol, extra high) |
+| ChatGPT 5.5 Thinking | ChatGPT 5.5 Thinking system prompt |
+| ChatGPT 5.5 Instant | ChatGPT 5.5 Instant system prompt |
+| ChatGPT 5.4 | ChatGPT 5.4 Thinking system prompt |
+| ChatGPT 5.3 | ChatGPT 5.3 Instant system prompt |
+| ChatGPT 5.2 | ChatGPT 5.2 Thinking system prompt |
+| ChatGPT 5 | ChatGPT 5 Thinking system prompt · Agent mode |
+| ChatGPT Atlas | ChatGPT Atlas system prompt |
+| ChatGPT 4.5 | ChatGPT 4.5 system prompt |
+| ChatGPT 4o | ChatGPT 4o system prompt · Deprecation preparedness |
+| Voice modes | ChatGPT advanced voice mode system prompt · Legacy voice mode |
+| ChatGPT Dots | Dreamer system prompt · Voice · Tools · Available skills · 28 skills |
+| Personalities | ChatGPT personality instructions |
+| Memory | ChatGPT advanced memory system prompt |
+
+Codex system prompts
+
+| Model | Prompt |
+|-------|--------|
+| GPT-6.1 Codex | GPT-6.1-Sol Codex system prompt · ChatGPT Work local |
+| GPT-6 Codex | GPT-6-Astra Codex system prompt · Sol · Luna · ChatGPT Work local |
+| GPT-5.6 Codex | Codex GPT-5.6 system prompt (Terra/Luna) |
+| GPT-5.5 Codex | Codex GPT-5.5 system prompt · Full prompt · Friendly · Pragmatic |
+| GPT-5.4 Codex | Codex GPT-5.4 system prompt · Mini |
+| Codex Spark | Codex Spark system prompt |
+| Codex modes | Plan mode · Auto-review · Computer use · Control Chrome · In-app browser |
+| Personas | Friendly · Pragmatic |
+
+API-injected prompts
+
+| Model | Prompt |
+|-------|--------|
+| GPT-5.5 | GPT-5.5 API system prompt · Pro |
+| GPT-5.4 / 5.3 | GPT-5.4 API · 5.3 Chat · 5.3 Codex |
+| o-series & older | o3 / o4-mini reasoning-effort variants |
+
+Old models, tools & deprecated features
+
+| Category | Prompts |
+|----------|---------|
+| Old models | GPT-4.5 · GPT-4.1 · GPT-4.1 Mini · o3 · o4-mini · GPT-5.2 Mini (free) · ChatGPT 4o Mini |
+| Old 4o variants | 4o WhatsApp · 4o new personality · Monday GPT |
+| Old tools | Canvas · Image gen · File search · Python · Web search |
+| Old policies | Image safety · Image safety (2026) · Automation context |
+| GPT-5 personalities | Listener · Nerdy · Robot |
+| GPT-5.1 personalities | Efficient · Professional · Nerdy |
+| Deprecated features | Deep research tool · Study and learn · All |
+
+Google — Gemini
+
+| Model | Prompt |
+|-------|--------|
+| Gemini 3.8 Flash | Gemini 3.8 Flash system prompt |
+| Gemini 3.1 Pro | Gemini 3.1 Pro system prompt · API |
+| Antigravity CLI | Antigravity CLI system prompt |
+| Gemini 3.7 Flash | Gemini 3.7 Flash system prompt |
+| Gemini 3.5 Flash | Gemini 3.5 Flash system prompt · AI Studio |
+| Nano / Banana 2 | Nano Banana 2 system prompt |
+| Google Search AI Mode | Google Search AI Mode system prompt |
+| Gemini CLI | Gemini CLI system prompt |
+| NotebookLM | NotebookLM chat system prompt |
+| Jules | Jules system prompt |
+| AI Studio Build | AI Studio Build system prompt |
+| Gemini 3 | Gemini 3 Flash system prompt · Gemini 3 Pro |
+| Gemini YouTube | Gemini YouTube system prompt |
+| Gemini Diffusion | Gemini Diffusion system prompt |
+| Gemini in Chrome | Gemini in Chrome system prompt |
+
+…（内容已截断）

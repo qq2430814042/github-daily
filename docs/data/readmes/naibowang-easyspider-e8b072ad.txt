@@ -1,0 +1,169 @@
+易采集/EasySpider: Visual Code-Free Web Crawler
+
+一个完全免费（包括商业使用和二次开发）的可视化浏览器自动化测试/数据采集/爬虫软件，可以使用图形化界面，无代码可视化的设计和执行任务。只需要在网页上选择自己想要操作的内容并根据提示框操作即可完成任务的设计和执行。同时软件还可以单独以命令行的方式进行执行，从而可以很方便的嵌入到其他系统中。
+
+A completely free (including for commercial use and secondary development) visual browser automation test/data collection/crawler software, which can be used to design and execute tasks in a code-free visual way. You only need to select the content you want to operate on the web page and follow the prompts to complete the design and execution of the task. At the same time, the software can also be executed separately in the command line, so that it can be easily embedded into other systems.
+
+下载易采集/Download EasySpider
+
+进入 Releases Page 下载最新版本。如果下载速度慢，可以考虑中国境内下载地址：中国境内下载地址。
+
+Refer to the Releases Page to download the latest version of EasySpider.
+
+软件使用示例/Software Usage Example
+
+示例1/Example 1
+
+（右键）选中一个大商品块 -> 软件自动检测到同类型商品块 -> 点击“选中全部”选项 -> 点击“选中子元素”选项 -> 点击“采集数据”选项，即可采集到所有商品的所有信息，并分成不同字段保存。
+
+(Right click) Select a large product block -> The software will automatically detect similar blocks -> Click the 'Select All' option -> Click the 'Select Child Elements' option -> Click the 'Collect Data' option, you can collect the information of all products, and will be saved by sub-field.
+
+示例2/Example 2
+
+（右键）选中一个商品标题，同类型标题会被自动匹配，点击“选中全部”选项 -> 点击“采集数据”选项，即可采集到所有商品的标题信息。
+
+同时，选中全部后如果选择“循环点击每个元素”选项，即可自动打开每个商品的详情页，然后可以再继续设置采集详情页的信息。
+
+(Right Click) Select a product title, the same type of title will be automatically matched, click the 'Select All' option -> Click the 'Collect Data' option, you can collect the title information of all products.
+
+At the same time, if you select the 'Loop-click every element' option after selecting all, you can automatically open the details page of each product, and then can set to collect the information of the details page.
+
+赞助者/Sponsors
+
+Bright Data（亮数据）作为全球领先的代理网络，覆盖全球1.5亿+IP，提供真实住宅IP及采集API，支持大规模稳定采集互联网公开数据，成功率经过实战验证。如需高性价比代理服务，可点击上方图片注册并联系中文客服；目前有“首充多少送多少”、动态IP 5折的优惠活动。Bright Data 也可配合EasySpider等工具进行数据采集。
+
+Bright Data is a leading proxy network with 150M+ IPs worldwide, offering real residential Ips and web unlocker to help you collect public web data at scale with proven, high success rates. For cost-effective proxy access, click the banner above to sign up and reach our Chinese support team—there’s currently a promo that matches your first deposit.
+
+CapSolver是CAPTCHA solving领域的Top 3供应商，提供AI驱动的CAPTCHA solving服务，支持reCAPTCHA, Image CAPTCHA, Cloudflare, AWS WAF and more。专为大批量网页爬取、自动化工作流而生，赋能你的AI、BI项目，解码速度最快可99%,宕机时间为0，快速的客服支持，全网性价比最高，还可叠加EasySpider的6%专属折扣码：ESN。
+
+CapSolver is one of the top 3 providers in the CAPTCHA-solving industry, offering AI-powered solutions that support reCAPTCHA, Image CAPTCHA, Cloudflare, AWS WAF, and more. Designed for high-volume web scraping and automated workflows, it boasts decoding speeds of  99%, and 0 downtime, empowering your AI and BI projects. Backed by fast customer support, it offers the best value-for-money solution on the market.
+Get your extra 6% extra credit using EasySpider’s bonus code: ESN.
+
+Click here to see how to solve captcha in EasySpider with CapSolver integration.
+
+Proxy-Seller - 专业可靠的网络爬虫与自动化代理服务
+
+Proxy-Seller提供高质量的住宅代理、ISP 静态住宅代理、数据中心 IPv4/IPv6 代理及移动代理，覆盖全球 195 多个地区。支持 HTTP(S) 和 SOCKS5 协议，价格灵活，每个 IP 低至 $0.70 起，并提供全天候 24/7 客户支持，是网页数据采集、网络爬虫、浏览器自动化及其他在线业务的理想选择。专属 85 折优惠 — 优惠码：EasySpider666。
+
+Proxy-Seller - Reliable Proxies for Web Scraping & Automation
+
+Proxy-Seller provides high-quality Residential, ISP, Datacenter IPv4/IPv6, and Mobile proxies across 195+ locations worldwide. With HTTP(S) and SOCKS5 support, flexible pricing starting at just $0.70 per IP, and 24/7 customer support, Proxy-Seller is an excellent choice for web scraping, data collection, browser automation, and other online tasks. Exclusive 15% Discount - Use Code: EasySpider666.
+
+Thordata为网页自动化、数据采集和AI工作流提供数据访问服务，包括住宅代理、ISP代理、数据中心代理，以及SERP API和Web Scraper API，覆盖190多个国家和地区。适合EasySpider用户进行公开网页数据采集、自动化测试和数据处理。首次购买使用优惠码EasySpider10，可享9折优惠。
+
+Thordata provides data access services for web automation, data collection, and AI workflows, including residential, ISP, and datacenter proxies, as well as SERP API and Web Scraper API services across 190+ countries and regions. It is suitable for EasySpider users working on public-web data collection, automation testing, and data processing. Use promo code EasySpider10 to get 10% off your first purchase.
+
+官方网站/Official Website
+
+访问易采集官网：www.easyspider.cn
+
+Visit the official website of EasySpider: www.easyspider.net
+
+更多特性/More Features
+
+更多特性请翻到页面底部查看。
+
+More features please scroll to the bottom of this page to view.
+
+支持作者/Support Author
+
+易采集EasySpider是一款完全免费且使用中无广告的开源软件，软件开发和维护全靠作者用爱发电，因此您可以选择支持作者让作者有更多的热情和精力维护此软件，或者您使用了此软件进行了盈利，欢迎您通过下面的方式支持作者：
+
+1. Github Sponsor：直接点击右侧Sponsor按钮赞助。
+2. 支付宝账号：naibowang@foxmail.com，也可以扫描下方二维码。
+3. 微信收款：扫描下方二维码。
+4. PayPal账号：naibowang，也可以扫描下方二维码。
+
+You can support the author by clicking the Sponsor button at right side or pay via paypal: naibowang.
+
+文档/Documentation
+
+请点此进入教程文档，如有英文可暂时翻译一下，或看作者的硕士毕业论文（主要看第三章和第五章）。
+
+Ebay样例博客：https://blog.csdn.net/ihero/article/details/130805504。
+
+Documentation can be found from GitHub Wiki.
+
+视频教程/Video Tutorials
+
+Bilibili/B站视频教程:
+
+EasySpider介绍 - 中国地震台网采集案例
+
+设置页面向下滚动
+
+如何无代码可视化的爬取需要登录才能爬的网站 - 知乎网站案例
+
+循环点击列表中每个链接进入详情页采集详情页内容+设计时动态调试+动态JS
+
+实战采集汽车网文章内容并下载文章内图片
+
+定时执行任务+选中子元素多种模式+将提取值作为变量输入
+
+【重要】自定义条件判断之使用循环项内的JS命令返回值 - 第二弹
+
+流程图执行逻辑解析 - 58同城房源描述采集案例
+
+MacOS系统设计和执行eBay网站爬虫任务教程
+
+如何执行自己写的JS代码和系统代码 （自定义操作）
+
+如何自定义循环和判断条件 - 第一弹
+
+如何对元素和网页截图及命令行执行指南
+
+OCR识别元素内容功能（常用于文字验证码）
+
+如何爬需要输入验证码的网站
+
+如何切换IP池和使用隧道IP - 打开详情页采集案例
+
+如何同时执行多个任务（并行多开）
+
+Python代码运算后的结果作为文本框的输入
+
+实例 - 反人类网站文章采集和代码调试
+
+写入MySQL数据库教程
+
+从源代码编译程序并设计运行和调试任务指南（基于Ubuntu24.04）
+
+Refer to Youtube Playlist to see the video tutorials of EasySpider.
+
+样例任务/Sample Tasks
+
+从本项目的Examples文件夹中下载样例任务，更名为大于0的数字，导入到EasySpider中的tasks文件夹中，然后在EasySpider中打开即可。
+
+Download sample tasks from the Examples folder of this project, rename them to numbers greater than 0, import them into the tasks folder in EasySpider, and then open them in EasySpider.
+
+声明/Declaration
+
+本软件仅供学习交流使用，严禁使用软件进行任何违法违规的操作，如爬取不允许爬取的政府/军事机关网站等。使用本软件所造成的一切后果由使用者自负，与作者本人无关，作者不会承担任何责任。
+
+This software is for learning and communication only. It is strictly forbidden to use the software for any illegal operations, such as crawling government/military websites that are not allowed to be crawled. All consequences caused by the use of this software are at the user's own risk, and the author is not responsible for any consequences.
+
+对于政府和军事机关等网站的爬虫操作，作者将不会进行任何答疑，以免违反国家相关法律法规和政策。
+
+For the crawler operations of government and military websites, the author will not answer any questions in order to avoid violating relevant national laws, regulations and policies.
+
+EasySpider遵循AGPL-3.0协议，任何个人和企业都可以免费使用软件本身或使用源代码进行二次开发，无需联系作者进行商业（专利）授权，但需要注意AGPL-3.0协议的相关规则：
+
+EasySpider complies with the AGPL-3.0 agreement. Any individual or enterprise can use the software for free and use the software source code for secondary development without contacting the author for commercial (patent) authorization. However, it is necessary to pay attention to the related rules of the AGPL-3.0 agreement:
+
+1. Copyleft（传染性） / Copyleft (Viral Clause)
+- 衍生作品 / Derivative Works
+  - 任何基于 AGPL 代码的修改或衍生作品，必须以相同许可证（AGPL-3.0）发布。
+  - Any modifications or derivative works based on AGPL code must be licensed under AGPL-3.0.
+- 联动范围 / Scope of Copyleft
+  - 若 AGPL 代码与其他代码结合（如静态链接、紧密集成），整个作品需遵守 AGPL。
+  - If AGPL code is combined with other code (e.g., static linking), the entire work must comply with AGPL.
+
+2. 网络使用条款 / Network Use Clause
+- SaaS 触发开源义务 / SaaS Trigger
+  - 若软件以服务形式提供（如网站、API），必须向所有用户公开完整对应源代码（包括修改后的代码）。
+  - If the software is provided as a service (e.g., website, API), the full corresponding source code (including modifications) must be made available to all users.
+- 用户权利 / User Rights
+  - 服务的接收者可通过下载或书面请求获取源码。
+  - Service recipients may obtain the source code via download or written request.
+
+…（内容已截断）

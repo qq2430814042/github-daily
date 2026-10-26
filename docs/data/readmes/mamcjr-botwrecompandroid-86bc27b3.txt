@@ -1,0 +1,87 @@
+BOTWRecompAndroid
+
+English | Português
+
+A static recompilation of The Legend of Zelda: Breath of the Wild (Nintendo Switch, versions **1.0.0, 1.6.0 and
+1.8.2) for Android. This is **not emulation: the game's ARM64 code becomes C compiled for your phone, and its
+graphics (NVN) are translated to Vulkan.
+
+It is built on the engine of LAS Recomp by peiikai (a recompilation of
+Link's Awakening) and its Android port, LASRecompAndroid.
+
+Beta. Tested on one phone only (POCO F7 Ultra, Adreno 830, Mesa Turnip driver). Expect bugs. The plan and the
+state of each phase are in docs/BOTW-PORT.md (in Portuguese).
+
+Supported platform
+
+Android is the only application target. Desktop ports and packaging were discontinued on 2026-10-22.
+Windows, Linux or macOS may still be used as development hosts with the Android SDK/NDK.
+
+Status
+
+- Playable from the title screen into the world, with saves, on the POCO F7 Ultra: 1.0.0 and 1.6.0 at 30 fps,
+  1.8.2 at 30 or up to 60 (about 40-47 fps in the open world with a Turnip driver).
+- 1.8.2 has Brazilian Portuguese, widescreen (Video > Aspect ratio "Unlocked": the view widens, the HUD goes to
+  the screen's edges) and SavageWindRecomp's frame pacing.
+- Video: internal resolution, AMD FSR 1 / Snapdragon GSR 1 upscaling, output resolution, SMAA.
+- App: game files set up from the phone (each version in its own folder, switched on the Game Files page), touch
+  controls, controllers, mods, menus in English and Portuguese, Vulkan driver choice (Turnip via adrenotools) and
+  driver compatibility options.
+- Known gaps: setting the game up on the phone compiles the game code there, and that has not been timed or
+  tested with BOTW yet (expect a long wait and a hot phone); GPUs other than Adreno 8xx take slower, safer paths;
+  thumbnails of saves made in the app are black; the audio still uses a simplified mixer.
+
+Like LAS Recomp, this project is made almost entirely with AI (Claude, by Anthropic, through Claude Code), directed,
+tested and reviewed by a human.
+
+No game files are included. You need your own legally obtained dump of Breath of the Wild 1.0.0, 1.6.0 or
+1.8.2 (exefs and romfs, extracted). Instructions on how to obtain it will not be provided.
+
+Installing (beta)
+
+1. Download the APK from Releases and install it (Android 11+,
+   arm64, Vulkan; about 30 GB free per game version).
+2. Open it, go to Set up game files and choose the folder with your exefs and romfs. The version is told from
+   the files. The app copies what it needs and builds the game code on the phone.
+3. On Adreno phones, a Mesa Turnip driver (Settings > Files > Vulkan driver) runs the game much faster than the
+   system driver. If the app stops at start with "Vulkan driver is too old", long-press the app icon and choose
+   Choose driver to pick one before the game starts.
+
+Testing on Android (developers)
+
+With the Android SDK / NDK, a phone on adb and your dump in Dump/:
+
+cd android/botwrecompandroid && ./gradlew assembleDebug    # the app
+android/build_gamelib.sh Dump/01007EF00011E000/exefs  # the game code (about an hour)
+android/push_game.sh Dump/01007EF00011E000           # game files and game code onto the phone
+android/run_boot.sh 120                               # start the game, log to android/out/boot.log
+
+Credits
+
+- peiikai for LAS Recomp, the recompiler and
+  runtime this project starts from (MIT, see LICENSE). The original README is kept in docs/las/.
+- LASRecompAndroid, its Android port: the app, the phone-side game code
+  build, touch controls, mods, driver compatibility and the Portuguese menus.
+- Revivedx for SavageWindRecomp (MIT),
+  the reference for 1.8.2: frame pacing, internal resolution, the SDK 20 kernel fixes, setjmp.
+- Nycolazs for LASRecomp-Android-Plus (MIT): Vulkan driver compatibility.
+- The zeldaret/botw decompilation and open-ead/sead,
+  for what is known about the game's code.
+- Dusklight's launcher, the start screen's style.
+- Upscaling and anti-aliasing: AMD FidelityFX FSR 1 (MIT),
+  Qualcomm Snapdragon GSR (BSD-3-Clause),
+  SMAA (MIT).
+- Libraries: SDL (zlib), Dear ImGui (MIT),
+  libadrenotools (BSD-2-Clause), volk (MIT),
+  Vulkan Memory Allocator (MIT),
+  shaderc (Apache 2.0), FFmpeg (LGPL),
+  LZ4 (BSD-2-Clause), Capstone (BSD-3-Clause),
+  Unicorn (GPLv2, built from its source by android/deps/build_unicorn.sh),
+  Python (PSF) and Zig (MIT) for the phone-side build.
+- Mesa's Turnip driver (MIT), which players load themselves.
+- Fonts: Baloo 2 (OFL), DejaVu Sans (Bitstream Vera license). The Android robot
+  is reproduced or modified from work created and shared by Google (CC BY 3.0).
+- Made with Claude Code (Anthropic).
+
+The Legend of Zelda and Breath of the Wild are trademarks of Nintendo. This project is not affiliated with or
+endorsed by Nintendo.

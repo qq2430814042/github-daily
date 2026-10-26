@@ -1,0 +1,86 @@
+dbd-external-esp — an external ESP / aimbot / wallhack cheat for Dead by Daylight, rebuilt from scratch in 2026 after the original project went dead. Educational use only.
+
+Is it compatible? (compatibility matrix up top)
+
+Before you touch anything, check this matrix. This is the single most common question I get from people who pulled the repo before reading and then opened an issue because their build was from Steam's beta channel and the overlay never drew.
+
+| OS | DBD Version / Channel | Anti-Cheat Present | Supported | Notes |
+|---|---|---|---|---|
+| Windows 10 x64 (21H2+) | Steam live | Yes (EAC) | ✅ Yes | Main target build |
+| Windows 11 x64 (23H2+) | Steam live | Yes (EAC) | ✅ Yes | Fully tested |
+| Windows 10/11 | Epic Games Store live | Yes (EAC) | ✅ Yes | Different module offset, auto-detected |
+| Windows 11 ARM64 | Any | — | ❌ No | No x64 emulation path for the driver |
+| Windows 7 / 8.1 | Any | — | ❌ No | Unsupported since the 2026 rewrite |
+| Steam publicbeta branch | Beta | Yes | ⚠️ Partial | Offsets drift, wait for a signature update |
+| Any OS | DBD PTB (test server) | Yes | ⚠️ Partial | Usually breaks for 24–72h after a PTB patch |
+
+If your row says ❌, stop here. Everything below assumes a live Steam or EGS install on Windows 10/11 x64 with the anti-cheat handshake completing normally at game launch.
+
+The Problem
+
+I took this project over in late 2025 because the previous maintainer vanished and the repo sat for eight months with a broken overlay and an offset list from a build that no longer existed. Here's what actually goes wrong when you try to use a Dead by Daylight external cheat in the wild — the stuff you only find out after a few hundred hours:
+
+- Every DBD patch nukes your offsets. Behaviour Interactive ships balance patches and hotfixes constantly. A single Unreal Engine object layout change and your ESP renders the wrong thing or draws nothing at all — usually with no error, just silence.
+- The old project hardcoded a signature scan window. Fine on Steam, dead on Epic, and it silently failed on the publicbeta branch. You'd think the cheat was broken when it was just looking in the wrong memory region.
+- External overlays fight with EAC's process enumeration. Naive ReadProcessMemory loops get the handle yanked mid-match, and you get a friendly "connection lost" that isn't the game's fault.
+- Killer vs. Survivor ESP needs different data. Survivor players want to see the killer's aura and totem positions; killer players want survivor silhouettes, pallet states, and generator progress. One-size-fits-all ESP is useless.
+- Aimbot on a 3rd-person camera is not the same as FPS aimbot. The camera pivot, aim assist curves, and hit registration on DBD's melee/hatchet weapons behave completely differently, and generic FPS aim math makes your crosshair slide past the target.
+- Detection is not just "don't rage." External reads, overlay window class names, and driver signatures all get fingerprinted. If you don't think about stealth at the process and driver level, you get flagged on a Tuesday.
+- Nobody documents the recovery path. When the .exe crashes mid-match, people panic-reinstall the game. There's a clean way back.
+
+Grab the current build from the project page, extract, run.
+
+Performance benchmarks
+
+These numbers come from a clean test bench — single DBD instance, killer present, 5-minute Survivor match, ESP fully enabled with all aura modules, no aimbot. Framerate is what DBD itself reports; read latency is the round-trip from the external process reading game memory to the overlay frame.
+
+| Scenario | Result | Hardware |
+|---|---|---|
+| Survivor match, ESP only | 144 fps locked, overlay latency ~3.1 ms | i7-13700K / RTX 4070 / 32 GB DDR5 |
+| Killer match, ESP + aimbot assist | 120 fps, aimbot tick ~2.4 ms | Ryzen 7 7800X3D / RX 7900 XT / 32 GB |
+| Full module load (all 18 modules) | 96 fps, overlay ~4.7 ms | i5-12400F / RTX 3060 / 16 GB |
+| Laptop, integrated GPU | 60 fps, overlay ~9 ms | i7-1165G7 / Iris Xe / 16 GB |
+| 4-hour session, memory footprint | Stable ~48 MB RSS, no leak | Any bench above |
+
+If you're below 96 fps on the full load, it's almost always the aura refresh rate set too high in the config — drop esp.refresh_hz to 30 and you'll claw back the frames.
+
+How It Works
+
+Under the hood, this is an external cheat in the strict sense: the .exe never injects a DLL into the game process. A signed user-mode loader opens a read-only handle to DeadByDaylight-Win64-Shipping via a minimal kernel driver that I rewrote in 2026 to stop the handle-revocation dance EAC does on process enumeration. The driver exposes only what the external process asks for — a bounded region of the game's UObject and UWorld graph — and the external side walks that graph every frame to resolve entity transforms, actor class pointers, pallet and totem states, and generator progression. The overlay itself is a separate layered window owned by the external process, never by the game, so it can't be enumerated as part of the game's own window tree. Aimbot runs entirely on the external side: it reads the current camera transform, projects candidate hit-spheres to screen space, runs a small predictive filter on target velocity, and emits relative mouse deltas — it does not touch the game's input pipeline, which is what keeps it outside most of the input-integrity checks that catch injected aim modules. The signature resolver re-scans the shipped binary on every launch and caches results in a local hash file; if a scan fails, the loader refuses to enable the affected module rather than running on stale offsets, which is the single biggest cause of silent ESP breakage in the old build. Everything is config-file driven, nothing phones home, and the whole thing is designed to be boring — no injected code, no patched bytes, no funny business with the game's own heap.
+
+Comparison
+
+Fair framing: what do the common alternatives actually give you, and where does this one land?
+
+| Aspect | Alternative: injected DLL cheats | This Tool |
+|---|---|---|
+| Detection surface | Injects into game process, patched bytes are scannable | External only — never touches game memory for writes |
+| Patch resilience | Offsets break silently, no failure signal | Signature resolver refuses stale modules, loud failure |
+| Overlay | In-game, enumerable window tree | Separate layered window, not in game tree |
+| Steam vs. Epic | Usually one target | Auto-detects both |
+| Survivor vs. killer ESP | Single generic config | Two tuned profiles shipped |
+| Kernel driver | Often unsigned (instant flag on load) | Signed loader, bounded driver interface |
+| Recovery on crash | Reinstall the game | Restart .exe, restore from config backup |
+
+Grouped module catalog
+
+18 modules, grouped by what they actually do in a match — not alphabetically, not "general tools." Each category is a place where you play.
+
+👁️ Aura & Vision — survivor-side information
+
+- Survivor Aura ESP — reveals survivor silhouettes through walls and terrain, distance-tinted so far targets fade.
+- Killer Aura ESP — always-on killer outline with nameplate and held-item icon.
+- Totem Tracker — hex totem positions, lit/unlit state, and a subtle pulse when a dull totem has been blessed.
+- Generator Aura — all five generators with live progress ring and regression flag.
+- Hatch Aura — hatch position the moment it spawns, plus a bearing arrow when you're in chase.
+
+🎯 Aimbot & Aim Assist — crosshair and melee
+
+- Hit-Sphere Aimbot — projects melee and hatchet hit-spheres to screen space, snaps with a configurable curve.
+- Predictive Lead — velocity-compensated aim for hatchets and ranged killer powers.
+- Smooth Assist — non-snappy aim-assist that nudges crosshair toward the nearest valid target, tunable strength.
+- Hit-Registration Check — highlights whether the current aim line actually intersects a target capsule before you swing.
+
+🪵 Pallet & Loops — chase geometry
+
+…（内容已截断）

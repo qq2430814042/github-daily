@@ -1,0 +1,34 @@
+AI Roadmap 2026
+
+Per the market analysis this roadmap is built on, AI engineering in 2026 shifted from "train models" to "build reliable agentic systems" on top of models that already exist. The same analysis finds three skills repeated in every job description: RAG, Agents, and Evals. Per LinkedIn Jobs on the Rise 2026, AI Engineer is the fastest-growing job in the US, with 143% growth. This roadmap takes a beginner through those skills in five layers, each ending in a mini-project you can show. For job titles and the rest of the numbers, see Careers.
+
+If you only learn one thing in 2026, make it evaluation engineering. Start with Layer 4: Evaluation.
+
+How to use
+
+New here? Read Start here first.
+
+Then pick one of two paths:
+
+- Layer by layer. Pick a layer, finish its mini-project, and move on to the next.
+- On a schedule. Follow the 12-week sample plan.
+
+Each layer budget assumes ~10 hrs/week. At that pace the five layers take about 25 weeks.
+
+| Layer | Weeks | Mini-project |
+|---|---|---|
+| 1. Foundations | ~4 | LLM proxy API |
+| 2. LLM Engineering | ~6 | Docs Q&A with citations |
+| 3. Agents | ~5 | Research agent with a sandbox |
+| 4. Evaluation | ~4 | Eval the Layer 2 project |
+| 5. Production (LLMOps) | ~6 | Ship it |
+
+More
+
+- Careers: which job titles each layer leads to.
+- Resources: every resource in one list.
+- Contributing: how to suggest a resource or fix.
+
+License
+
+Content is licensed under CC BY 4.0.

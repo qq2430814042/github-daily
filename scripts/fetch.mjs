@@ -1,14 +1,19 @@
 import { load } from 'cheerio';
+import { createHash } from 'node:crypto';
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import process from 'node:process';
+import removeMarkdown from 'remove-markdown';
 
 const ROOT = path.resolve(import.meta.dirname, '..');
 const DATA_DIR = path.join(ROOT, 'docs', 'data');
+const README_DIR = path.join(DATA_DIR, 'readmes');
 const INDEX_FILE = path.join(DATA_DIR, 'index.json');
 const TIME_ZONE = 'Asia/Shanghai';
 const CAP = 60;
 const MAX_BACKFILL = 30;
+const README_MAX_CHARS = 8000;
+const README_CONCURRENCY = 4;
 const TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || '';
 const SEARCH_DELAY = TOKEN ? 1200 : 6000;
 const SOURCE_ORDER = ['trending', 'new', 'high-star'];
@@ -72,6 +77,128 @@ function cleanText(value, maxLength = 300) {
     .replace(/\s+/g, ' ')
     .trim()
     .slice(0, maxLength);
+}
+
+function readmeFileName(fullName) {
+  const key = String(fullName).toLowerCase();
+  const base = key
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+    .slice(0, 80) || 'repo';
+  const hash = createHash('sha1').update(key).digest('hex').slice(0, 8);
+  return `${base}-${hash}.txt`;
+}
+
+function cleanReadme(raw) {
+  let text = String(raw || '').replace(/\r\n?/g, '\n');
+
+  text = text.replace(/<!--[\s\S]*?-->/g, '');
+  text = text.replace(/^\s*>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*$/gim, '');
+  text = text.replace(/<script[\s\S]*?<\/script>/gi, '');
+  text = text.replace(/<style[\s\S]*?<\/style>/gi, '');
+  text = text.replace(/<br\s*\/?>/gi, '\n');
+  text = text.replace(/<\/(p|div|li|tr|h[1-6]|blockquote)>/gi, '\n');
+  text = text.replace(/<[^>]+>/g, '');
+
+  let plain = removeMarkdown(text, {
+    stripListLeaders: false,
+    listUnicodeChar: '',
+    gfm: true,
+    useImgAltText: false,
+  });
+
+  plain = plain
+    .replace(/\u00a0/g, ' ')
+    .replace(/[ \t]+\n/g, '\n')
+    .replace(/\n{3,}/g, '\n\n')
+    .replace(/^(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]$/gim, '')
+    .trim();
+
+  if (!plain) return { text: '', truncated: false };
+
+  let truncated = false;
+  if (plain.length > README_MAX_CHARS) {
+    let cut = plain.lastIndexOf('\n', README_MAX_CHARS);
+    if (cut < README_MAX_CHARS * 0.6) cut = README_MAX_CHARS;
+    plain = `${plain.slice(0, cut).trim()}\n\n…（内容已截断）`;
+    truncated = true;
+  }
+
+  return { text: plain, truncated };
+}
+
+async function fetchReadme(fullName) {
+  const url = `https://api.github.com/repos/${fullName}/readme`;
+  const headers = {
+    Accept: 'application/vnd.github.raw',
+    'X-GitHub-Api-Version': '2022-11-28',
+    'User-Agent': 'github-daily/1.0',
+  };
+  if (TOKEN) headers.Authorization = `Bearer ${TOKEN}`;
+
+  let lastError;
+
+  for (let attempt = 1; attempt <= 2; attempt += 1) {
+    const response = await fetch(url, { headers });
+
+    if (response.status === 404) return { text: '', truncated: false };
+
+    if (response.ok) {
+      const contentType = response.headers.get('content-type') || '';
+      if (/image\/|application\/octet-stream/i.test(contentType)) {
+        return { text: '', truncated: false };
+      }
+      return cleanReadme(await response.text());
+    }
+
+    lastError = new Error(`README ${fullName} HTTP ${response.status}`);
+    if ((response.status === 403 || response.status === 429) && attempt < 2) {
+      const reset = Number(response.headers.get('x-ratelimit-reset')) * 1000;
+      const wait = Number.isFinite(reset) && reset > Date.now()
+        ? Math.max(3000, reset - Date.now())
+        : 15000;
+      await sleep(Math.min(wait, 60000));
+      continue;
+    }
+
+    break;
+  }
+
+  throw lastError;
+}
+
+async function enrichReadmes(items) {
+  await mkdir(README_DIR, { recursive: true });
+
+  let cursor = 0;
+  const workers = Array.from(
+    { length: Math.min(README_CONCURRENCY, items.length) },
+    async () => {
+      while (true) {
+        const index = cursor;
+        cursor += 1;
+        if (index >= items.length) return;
+
+        const item = items[index];
+
+        try {
+          const { text, truncated } = await fetchReadme(item.fullName);
+          if (text) {
+            const fileName = readmeFileName(item.fullName);
+            await writeFile(path.join(README_DIR, fileName), `${text}\n`, 'utf8');
+            item.readmeFile = fileName;
+            if (truncated) item.readmeTruncated = true;
+          }
+        } catch (error) {
+          console.warn(`[readme] ${item.fullName}: ${error.message}`);
+        }
+
+        await sleep(TOKEN ? 120 : 1200);
+      }
+    },
+  );
+
+  await Promise.all(workers);
 }
 
 function normalizeSearchItem(item) {
@@ -321,7 +448,12 @@ async function buildDate(date, trendingItems) {
   if (!merged.length) return null;
 
   const selected = selectItems(merged);
+  await enrichReadmes(selected);
   const items = selected.map((item, index) => ({ rank: index + 1, ...item }));
+
+  console.log(
+    `[${date}] README cached for ${items.filter((item) => item.readmeFile).length} repositories`,
+  );
 
   return {
     date,

@@ -1,0 +1,152 @@
+Computer Science courses with video lectures
+
+Introduction
+
+- Please check NOTES for general information about this list.
+- Please refer CONTRIBUTING.md for contribution guidelines.
+- Please feel free to raise any genuine issue you may have, however, it has been noticed that few people open empty issues to raise their GitHub contribution on their account. Such spammers will be blocked.
+- You are welcome to contribute, please create PR for actual college/University level courses. Please do not add links for small MOOCs, basic tutorials, or advertisements for some sites/channels.
+
+Table of Contents
+
+- Introduction to Computer Science
+- Data Structures and Algorithms
+- Systems Programming
+  * Operating Systems
+  * Distributed Systems
+  * Real-Time Systems
+- Database Systems
+- Software Engineering
+  * Object Oriented Design
+  * Software Engineering
+  * Software Architecture
+  * Concurrency
+  * Mobile Application Development
+- Artificial Intelligence
+- Machine Learning
+  * Introduction to Machine Learning
+  * Data Mining
+  * Probabilistic Graphical Modeling
+  * Deep Learning
+  * Reinforcement Learning
+  * Advanced Machine Learning
+  * Natural Language Processing
+  * Generative AI and LLMs
+  * Computer Vision
+  * Time Series Analysis
+  * Optimization
+  * Unsupervised Learning
+  * Misc Machine Learning Topics
+- Computer Networks
+- Math for Computer Scientist
+- Web Programming and Internet Technologies
+- Theoretical CS and Programming Languages
+- Embedded Systems
+- Real time system evaluation
+- Computer Organization and Architecture
+- Security
+- Computer Graphics
+- Image Processing and Computer Vision
+- Computational Physics
+- Computational Biology
+- Quantum Computing
+- Robotics and Control
+- Computational Finance
+- Network Science
+- Blockchain Development
+- Misc
+
+Courses
+
+Introduction to Computer Science
+- COMP6991 - Rust Programming - UNSW (2022) | Video Playlist
+- COMP1511 - Programming Fundamentals - UNSW (Complete Course: Lectures, Labs, Assignments, Exercises, Exams) | Video Playlist
+- CS 10 - The Beauty and Joy of Computing - Spring 2015 - Dan Garcia - UC Berkeley InfoCoBuild
+- 6.0001 - Introduction to Computer Science and Programming in Python - MIT OCW
+- 6.001 - Structure and Interpretation of Computer Programs, MIT
+- Introduction to Computational Thinking - MIT
+- CS 50 - Introduction to Computer Science, Harvard University (cs50.tv)
+- CS50R - Introduction to Programming with R (Lecture Videos)
+- CS50P - CS50's Introduction to Programming with Python - Harvard (David J. Malan) (Lecture Videos)
+- CS 61A - Structure and Interpretation of Computer Programs [Python], UC Berkeley
+- CPSC 110 - Systematic Program Design [Racket], University of British Columbia
+- CS50's Understanding Technology
+- CSE 142 Computer Programming I (Java Programming), Spring 2016 - University of Washington
+- CS 1301 Intro to computing - Gatech
+- CS 106A - Programming Methodology, Stanford University (Lecture Videos)
+- CS 106B - Programming Abstractions, Stanford University
+- CS 106L - Standard C++ Programming(Lecture Videos)
+- CS 106X - Programming Abstractions in C++
+- CS 107 - Programming Paradigms, Stanford University
+- CmSc 150 - Introduction to Programming with Arcade Games, Simpson College
+- IN2377 - Concepts of C++ programming (Winter 2023), TUM (Winter 2022) (Summer 2022) (Summer 2021)
+- IN1503 - Advanced C++ Programming, TUM
+- LINFO 1104 - Paradigms of computer programming, Peter Van Roy, Université catholique de Louvain, Belgium - EdX
+- FP 101x - Introduction to Functional Programming, TU Delft
+- Introduction to Problem Solving and Programming - IIT Kanpur
+- Introduction to programming in C - IIT Kanpur
+- Programming in C++ - IIT Kharagpur
+- Python Boot Camp Fall 2016 - Berkeley Institute for Data Science (BIDS)
+- CS 101 - Introduction to Computer Science - Udacity
+- 6.00SC - Introduction to Computer Science and Programming (Spring 2011) - MIT OCW
+- 6.00 - Introduction to Computer Science and Programming (Fall 2008) - MIT OCW
+- 6.01SC - Introduction to Electrical Engineering and Computer Science I - MIT OCW
+- Modern C++ Course (2018) - Bonn University
+- Modern C++ (Lecture & Tutorials, 2020, Vizzo & Stachniss) - University of Bonn
+- UW Madison CS 368 C++ for Java Programmers Fall 2020, by Michael Doescher
+- UW Madison CS 354 Machine Organization and Programming spring 2020, 2021, by Michael Doescher
+- Cornell CS 1110 Introduction to Computing using Python fall 2020, by Walker White (Lecture Videos)
+- Cornell ECE 4960 Computational and Software Engineering spring 2017, by Edwin Kan
+
+Data Structures and Algorithms
+
+- ECS 36C - Data Structures and Algorithms (C++) - Spring 2020 - Joël Porquet-Lupine - UC Davis
+- Programming and Data Structures with Python, 2021-2022, Sem I - by Prof. Madhavan Mukund, CMI
+- Graph Algorithms - Robert Sedgewick - Princeton University
+- EECS 477 - Introduction to Algorithms, Winter 2023, UMichigan
+- EECS 498 / 598 - Advanced Graph Algorithms: Graph Algorithms via Graph Decomposition, Fall 2025, UMichigan
+- EECS 498 / 598 - Advanced Graph Algorithms: Expanders and Fast Graph Algorithms, Fall 2021, UMichigan
+- 6.006 - Introduction to Algorithms, MIT OCW
+- MIT 6.006 Introduction to Algorithms, Spring 2020
+- Algorithms: Design and Analysis 1 - Stanford University
+- Algorithms: Design and Analysis 2 - Stanford University
+- COS 226 Algorithms, Youtube, Princeton - by Robert Sedgewick and Kevin Wayne
+- CSE 331 Introduction to Algorithm Design and Analysis, SUNY University at Buffalo, NY - Fall 2017 (Lectures) (Homework Walkthroughs)
+- CSE 373 - Analysis of Algorithms, Stony Brook - Prof Skiena
+- COP 3530 Data Structures and Algorithms, Prof Sahni, UFL (Videos)
+- CS225 - Data Structures - University of Illinois at Urbana-Champaign(Video lectures)
+- CS2 - Data Structures and Algorithms Sim-Mautner - UNSW
+- Data Structures - Pepperdine University
+- CS 161 - Design and Analysis of Algorithms, Prof. Tim Roughgarden, Stanford University
+- 6.046J - Introduction to Algorithms - Fall 2005, MIT OCW
+- Introduction to Algorithms (Spring 2020), MIT OCW
+- 6.046 - Design and Analysis of Algorithms, Spring 2015 - MIT OCW
+- CS 473 - Algorithms - University of Illinois at Urbana-Champaign (Notes - Jeff Erickson) (YouTube)
+- COMP300E - Programming Challenges, Prof Skiena, Hong Kong University of Science and Technology - 2009
+- 16s-4102 - Algorithms, University of Virginia (Youtube)
+- CS 61B - Data Structures (Java) - UC Berkeley(Discussion 2022)
+- CS 170 Algorithms - UCBerkeley Fall 2019, Youtube Fall 2018, Youtube Fall 2018,Bilibili 2013 Bilibili
+- CS 159 Data-Driven Algorithm Design - Caltech Spring 2020, Youtube
+- ECS 122A - Algorithm Design and Analysis, UC Davis
+- CSE 373 - Data Structures and Algorithms, Winter 2024 - University of Washington (Winter 2024, Youtube) (Spring 2023, Notes) (Spring 2023, Youtube)
+- CSEP 521 - Applied Algorithms, Winter 2013 - University of Washington (Videos)
+- Data Structures And Algorithms - IIT Delhi
+- Design and Analysis of Algorithms - IIT Bombay
+- Programming, Data Structures and Algorithms - IIT Madras
+- Design and Analysis of Algorithms - IIT Madras
+- Fundamental Algorithms:Design and Analysis - IIT Kharagpur
+- Programming and Data Structure - IIT Kharagpur
+- Programming, Data structures and Algorithms - IIT Madras
+- Programming, Data Structures and Algorithms in Python - IIT Madras
+- Programming and Data structures (PDS) - IIT Madras
+- COP 5536 Advanced Data Structures, Prof Sahni - UFL (Videos)
+- CS 261 - A Second Course in Algorithms, Stanford University (Youtube)
+- CS 224 - Advanced Algorithms, Harvard University (Lecture Videos) (Youtube)
+- CS 627 - Advanced Algorithms, Marburg University (Videos - Su 2025)
+- CS 6150 - Advanced Algorithms (Fall 2016), University of Utah
+- CS 6150 - Advanced Algorithms (Fall 2017), University of Utah
+- ECS 222A - Graduate Level Algorithm Design and Analysis, UC Davis
+- 6.851 - Advanced Data Structures, MIT (MIT OCW)
+- 6.854 - Advanced Algorithms, MIT (Prof. Karger lectures)
+
+…（内容已截断）

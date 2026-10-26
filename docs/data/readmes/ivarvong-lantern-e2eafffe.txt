@@ -1,0 +1,124 @@
+lantern
+
+Animated, steppable explainers for code changes. A zero-dependency JS port of
+manim's core model that renders to SVG: a live DOM in the browser, strings in
+Cloudflare Workers or Node. Every step is addressable (?scene=&step=), and
+every scene has a text form and a structured trace for agents.
+
+Quickstart
+
+git clone https://github.com/ivarvong/lantern && cd lantern   # not on npm yet; zero runtime dependencies
+
+Then:
+
+The repo is TypeScript throughout. Node 24 runs the tools and tests as .ts directly
+(type stripping, so only erasable syntax); tsc compiles the library to dist/.
+
+npm install
+npm run dev        # http://localhost:5173/?scene=pyex-limits, reloads on save, keeps your step
+npm test           # ~8 s; FULL=1 (npm run test:full) checks every frame
+npm run check      # tsc over every project, emits dist/
+
+A scene is a class with an async construct(). Steps are markers; this.state is
+what the explanation is about, and it is what traces record:
+
+import { Scene, Rectangle, Text, Labeled, Arrow, FadeIn, Create, RIGHT, TEAL, GOLD } from '../src/index.ts';
+
+export class CacheScene extends Scene {
+  override async construct() {
+    const st = (this.state = { cache: false });
+
+    await this.step('before');
+    const handler = new Labeled(new Rectangle({ width: 3, height: 1, stroke: TEAL }), new Text('handler'));
+    const db = new Labeled(new Rectangle({ width: 2, height: 1, stroke: GOLD }), new Text('D1'));
+    db.nextTo(handler, RIGHT, 2);
+    await this.play(new FadeIn(handler), new FadeIn(db));
+    await this.play(new Create(new Arrow(handler.shape.right(), db.shape.left(), { buff: 0.1 })));
+
+    await this.step('after', { pr: 482 });
+    st.cache = true;
+    // ...
+  }
+}
+
+Register it in scenes/index.ts, then:
+
+npm run see -- my-scene after      # the frame as text, plus the step's state diff
+npm run shot -- my-scene           # contact sheet: the end of every step, as a PNG
+npm run verify:motion -- my-scene  # teleports, pops, cuts, flicker
+
+Diagrams can be text: flowchart(mermaidSource) parses a Mermaid flowchart, lays it out
+and returns shapes you can animate (docs/FLOWCHART.md). Scenes can also be
+data: sceneFromDoc(doc) plays a JSON document of nodes, edges,
+code and ops (docs/DOC-FORMAT.md).
+
+Model
+
+- A Mobject is a tree of Float32Array point buffers (stride 2) plus a style record.
+  Every geometric operation maps a function over the family's points: points are the truth.
+- A VMobject is a list of cubic Bézier subpaths anchor, (h1, h2, anchor)*], so curve
+  n starts at point 3n. The serializer and the alignment code share that one contract.
+- Text is glyph outlines (Inter, JetBrains Mono, embedded), one VMobject per glyph: exact
+  advances, letter-by-letter Write, and Transform between strings morphs glyph to glyph.
+  Nothing depends on installed fonts, so every rasterizer draws the same thing.
+- An Animation is a pure function of alpha over two endpoints fixed in begin().
+  Transform first aligns structure (null copies, de Casteljau subdivision) so both ends
+  have equal shape; each frame is then a lerp, field by field, style included.
+- A Scene advances a fixed dt = 1/fps and hands itself to a sink, which decides
+  what a frame is: StringSink collects SVG, DomSink patches a live `` on rAF time,
+  MotionSink samples boxes for the verifier, TraceSink records state at step boundaries.
+  Output is deterministic.
+- Seeking re-runs the scene to t with frames skipped (manim's skip_animations): the
+  loop is fixed-dt and the endpoints are fixed at begin(), so a seek is byte-identical to a
+  full run. Tests assert this for every scene.
+
+Coordinates are manim's: the frame is 16 × 9 units, origin at the center, y up
+(UP = [0, 1], angles counterclockwise). The flip to SVG's y-down happens in one place,
+where path data is written (VMobject.roundedRelative).
+
+Layout
+
+src/        the library: no dependencies, no runtime assumptions (browser, Workers, Node)
+  index.ts    the public API, curated, types included; anything not exported here is internal
+dist/       src/ compiled by tsc: ESM .js, .d.ts, maps. What the package exports (npm run build:lib)
+scenes/     example scenes and the registry (index.ts)
+app/        the player (player.ts, DomSink) and the Worker (worker.ts): the only runtime-specific code
+tools/      dev server, build, inspection, verifiers, perf tools (Node; Chromium via playwright-core)
+test/       node --test; golden-traces.json hashes each scene's trace (UPDATE_GOLDEN=1 to bless)
+vendor/     the glyph shaper bundle (tools/vendor-glyph.ts) and its types
+docs/       PERF.md, VERIFY.md, DOC-FORMAT.md
+
+Outputs
+
+| | how |
+|---|---|
+| live, in a page | app/player.ts: ?scene=&step= deep links, step mode, copy link |
+| one frame as SVG | renderAt(Scene, t, new SnapshotSink()), or Worker GET /frame.svg?scene=&step= |
+| one frame as text | renderText(scene), npm run see, or Worker GET /text?scene=&step= |
+| state at every step | traceScene(Scene), or Worker GET /trace.json?scene= |
+| every frame | npm run render --  writes out/frames//*.svg |
+
+Deploy: npm run deploy (builds out/site/, then wrangler deploy).
+
+Commands
+
+| | |
+|---|---|
+| npm run dev | source tree as native ES modules, live reload |
+| npm run build | single-file player pages in out/ (esbuild, ~80 ms) |
+| npm test / test:full | sampled frames / every frame |
+| npm run check | tsc -b over every project (library, app, tools and tests), emit dist/, compile a TypeScript consumer against it |
+| npm run build:lib | dist/ from scratch; prepack runs it |
+| npm run verify | motion verifier, then the playback gate in Chromium ([docs/VERIFY.md) |
+| npm run bench | every scene timed against bench/baseline.json; fails on a reproduced regression |
+| MANIM_DIR=… npm test | also diffs rate functions and curve subdivision against manim's own code |
+| npm run see, shot, render | look at a scene: text, contact sheet, SVG frames |
+| npm run trace, profile, seek, ab, hitch | performance (docs/PERF.md) |
+| npm run fonts | re-subset the embedded fonts (needs pip install fonttools brotli) |
+
+Out of scope, for now
+
+- Matching morphs (TransformMatchingShapes): glyphs pair by index, not by shape.
+- 3D, boolean path ops, LaTeX.
+- Rigid moves as SVG transform attributes: every move rewrites points.
+- Collaboration: the trace and doc formats are diffable, but nothing syncs them yet.

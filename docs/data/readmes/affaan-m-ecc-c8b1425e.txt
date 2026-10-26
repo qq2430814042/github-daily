@@ -1,0 +1,167 @@
+Language:
+  English |
+  العربية |
+  Português (Brasil) |
+  简体中文 |
+  繁體中文 |
+  日本語 |
+  한국어 |
+  Türkçe |
+  Русский |
+  Tiếng Việt |
+  ไทย |
+  Deutsch |
+  Español |
+  Українська |
+  Polski |
+  বাংলা
+
+Official sources only. Install ECC only from verified channels: the GitHub repository github.com/affaan-m/ECC, the npm packages ecc-universal and ecc-agentshield, the GitHub App, the plugin slug ecc@ecc, and the project website ecc.tools. Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware.
+
+Install with Claude Code
+
+Use the guided setup or native plugin commands. Both install the same ecc@ecc plugin. Choose one and do not stack a full manual Claude install on top.
+
+    ECC Pro + GitHub App
+
+  Install free · Private repos from $19/seat/mo
+
+    Sponsor ECC
+
+  Fund the open-source project
+
+    Community
+
+  Discord · Q&amp;A · Show and Tell
+
+OSS stays free. This repo is MIT-licensed forever. ECC Pro is the hosted GitHub App for private repos. Sponsors and Pro subscribers fund the work. That's why a single maintainer ships weekly across 7 harnesses.
+
+Partners &amp; sponsors
+
+  &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;
+  &nbsp;&nbsp;&nbsp;
+
+Past sponsors: Atlas Cloud · Mike Morgan (inactive)
+
+Community sponsors: @jasonwu513 · @1anter · @massimotodaro · @meadmccabe
+
+Become a Sponsor · Sponsor Tiers · Sponsorship Program
+
+Jump to install ↓
+
+ECC
+
+Your agent can write code, but ECC gives it a coordinated engineering system and toolbox: it plans before it builds, verifies changes with tests, reviews its own work from a fresh context, remembers what matters, and turns repeated wins into reusable skills and workflows.
+
+plan -> test -> implement -> review -> verify -> remember -> improve
+
+Instead of rebuilding that process in every prompt, you install it once and make it part of how your agent works.
+
+Optimize the context window. Persist everything else.
+
+ECC is MIT-licensed open source. It works best with Claude Code today, has native Codex and Qoder plugin paths, and provides capability-limited adapters for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity, Qwen, and other harnesses. See the support status matrix before assuming feature parity.
+
+Access to 71 agents, 311 skills, and 97 legacy command shims, plus hooks, rules, memory, continuous learning, and AgentShield security scanning. The agents are specialized for planning, review, build repair, security, architecture, and domain work.
+
+| Included         |       Count | What it gives you                                                                    |
+| ---------------- | ----------: | ------------------------------------------------------------------------------------ |
+| Agents           |   71 agents | Planning, review, build repair, security, architecture, and domain work              |
+| Skills           |  311 skills | TDD, research, security, docs, frontend, data, ML, operations, and more              |
+| Commands         | 97 commands | Convenient entry points while ECC moves to a skills-first surface                    |
+| Hooks and memory |     Runtime | Enforcement, session summaries, continuous learning, instincts, and context controls |
+| Rules            |   Selective | Always-loaded standards you choose by language or project                            |
+| AgentShield      |    Included | Scanning for prompts, hooks, MCP config, permissions, secrets, and agent files       |
+
+Install ECC
+
+ECC 2.2 includes guided package setup for Claude Code, Codex, and Kimi Code.
+The universal package requires Node.js 18 or newer. Claude plugin setup also
+requires Git and Claude Code 2.1 or newer on PATH.
+
+Recommended: universal guided setup
+
+For Claude Code plugin setup, updates, scope changes, and hook-profile changes:
+
+npx ecc-universal@2.2.3 setup
+
+Windows first-time walkthrough
+
+If you are new to command-line tools, use this copy-and-paste path:
+
+1. Install Node.js 18 or newer, Git, and Claude Code.
+2. Open PowerShell from the Windows Start menu.
+3. Confirm that each prerequisite is available:
+
+   node --version
+   git --version
+   claude --version
+
+4. Run the guided installer:
+
+   npx ecc-universal@2.2.3 setup
+
+5. For a typical personal setup, choose Global user, choose Standard hooks, and confirm.
+6. Start a new Claude Code session and run /plugin list to verify that ecc@ecc is enabled.
+
+This path does not require cloning the repository. If any prerequisite command is not found, install or repair that prerequisite before rerunning ECC setup.
+
+If npm reports a version or cache error, confirm the registry version before retrying:
+
+npm view ecc-universal version
+
+ECC 2.2 supports the same guided setup through modern package runners:
+
+| Package runner | Guided setup command |
+|---|---|
+| npm / npx | npx ecc-universal@2.2.3 setup |
+| pnpm | pnpm dlx ecc-universal@2.2.3 setup |
+| Yarn 2+ | yarn dlx ecc-universal@2.2.3 setup |
+| Bun | bunx ecc-universal@2.2.3 setup |
+
+The examples select the published ECC 2.2.3 release, matching this repository's release version. A version pin is not a security audit or an integrity check. Review the release source and registry integrity before running package code; use a reviewed checkout for unreleased changes.
+
+Yarn Classic 1 does not provide yarn dlx; use npx, install the package globally, or upgrade Yarn for a temporary one-shot run.
+
+The wizard inventories the official marketplace and every native Claude install scope before making changes, then installs, updates, or safely moves ecc@ecc to the scope you choose. Rerun the same command whenever you want to update ECC, change scope, or change its hook profile. This setup wizard currently configures the Claude Code plugin; use the multi-harness wizard below for Codex or Kimi Code.
+
+To configure more than one coding agent in one reviewed flow, use the multi-harness wizard:
+
+npx ecc-universal@2.2.3 install --guided
+
+It lets you select any combination of Claude Code, Codex, and Kimi Code, shows each install channel and destination, preflights every selection before the first write, and asks for one final confirmation.
+
+| Harness | Guided install behavior |
+|---|---|
+| Claude Code | Native ecc@ecc plugin with one user, project, or local scope and an ECC hook profile |
+| Codex | Native Codex marketplace/plugin lifecycle; hook review and trust remain Codex-owned |
+| Kimi Code | Managed project files under ./.kimi-code; ECC hooks, model/provider settings, and authentication are not configured |
+
+For automation, make every provider-specific choice explicit:
+
+npx ecc-universal@2.2.3 install --guided \
+  --harness claude --harness codex --harness kimi \
+  --claude-scope local --claude-hooks standard \
+  --profile core --yes
+
+Verify the native guided Codex path and managed Kimi path without writing first:
+
+npx ecc-universal@2.2.3 install --guided --harness codex --dry-run
+npx ecc-universal@2.2.3 install --profile core --target kimi --dry-run
+
+Additional package-name commands are also available through the 2.2 alias:
+
+npx ecc-universal@2.2.3 consult "security reviews" --target claude
+npx ecc-universal@2.2.3 install --profile minimal --target claude --with capability:machine-learning
+npx ecc-universal@2.2.3 doctor --target kimi
+
+Do not use npx ecc-install --profile minimal --target claude: ecc-install is a binary name inside ecc-universal, not a separately published npm package.
+
+ECC also ships advanced managed adapters for cursor, antigravity, gemini, opencode, codebuddy, joycode, qwen, zed, hermes, and openclaw. Those targets still use their documented ecc install --target ... paths until each adapter has passed the guided collision, update, repair, and uninstall lifecycle matrix. Neither wizard silently installs into every detected harness.
+
+Pick one path only (per harness)
+
+You can use ECC with Claude Code, Codex, and other harnesses at the same time. Choose one install method for each harness:
+
+…（内容已截断）

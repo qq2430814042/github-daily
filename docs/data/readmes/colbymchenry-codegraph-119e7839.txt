@@ -1,0 +1,125 @@
+CodeGraph
+
+Already installed? Run codegraph upgrade
+
+Follow @getcodegraph on X for updates.
+
+Supercharge Claude Code, Cursor, Codex, OpenCode, Hermes Agent, Gemini, Antigravity, Kiro, and GitHub Copilot with Semantic Code Intelligence
+
+The fastest complete code graph · surgical context · built for how agents actually work · 100% local
+
+&nbsp; Kernel powered by Rust
+
+Documentation & Website →
+
+The CodeGraph platform is coming — for every PR, know exactly what to test, what could break, which flows are affected, and whether business logic is compromised.
+
+Get early beta access to the hosted product · getcodegraph.com
+
+Contents
+
+- Get Started
+- Language Support
+- Why CodeGraph?
+- Key Features
+- Framework-aware Routes
+- Mixed iOS / React Native / Expo bridging
+- Quick Start
+- How It Works
+- CLI Reference
+- MCP Tools
+- Library Usage
+- Configuration
+- Telemetry
+- Verified releases
+- Supported Platforms
+- Supported Agents
+- Supported Languages
+- Measured cross-file coverage
+- Troubleshooting
+- License
+
+Get Started
+
+1. Install the CLI
+
+No Node.js required — one command grabs the right build for your OS:
+
+macOS / Linux
+curl -fsSL https://raw.githubusercontent.com/colbymchenry/codegraph/main/install.sh | sh
+
+Windows (PowerShell)
+irm https://raw.githubusercontent.com/colbymchenry/codegraph/main/install.ps1 | iex
+
+Already have Node? Use npm instead (works on any version)
+
+npm i -g @colbymchenry/codegraph
+
+CodeGraph bundles its own runtime — nothing to compile, no native build, works the same everywhere. The installer puts codegraph on your PATH but doesn't change your current shell — open a new terminal before the next step so the command resolves.
+
+Upgrade any time with codegraph upgrade — it detects how you installed (bundle, npm, or npx) and updates in place. Add --check to see if an update is available, or codegraph upgrade  to pin one.
+
+2. Wire up your agent(s)
+
+In a new terminal, run the installer to connect CodeGraph to the agents you use:
+
+codegraph install
+
+Detects and auto-configures Claude Code, Cursor, Codex CLI, opencode, Hermes Agent, Gemini CLI, Antigravity IDE, Kiro, and GitHub Copilot (VS Code, Copilot CLI, JetBrains IDEs) — wiring the CodeGraph MCP server into each. This is the step that connects CodeGraph to your agent; installing the CLI in step 1 does not do it on its own. It only wires up your agent — it does not index any code; building each project's graph is the separate codegraph init in step 3. (Shortcut: npx @colbymchenry/codegraph downloads and runs this in one go.)
+
+3. Initialize each project
+
+cd your-project
+codegraph init
+
+codegraph init creates the local .codegraph/ directory and builds the full graph in the same step — one command, done.
+
+4. No more syncing!
+
+Auto-sync is enabled by default. CodeGraph watches the project and updates the graph on every file change — while your agent edits code, or you add, modify, or delete files. The index is never stale, and there is nothing to re-run.
+
+Uninstall
+
+Changed your mind? One command removes CodeGraph from every agent it configured and the CLI itself — every install it finds (standalone bundle, npm global package, launcher link), shown to you before anything is deleted:
+
+codegraph uninstall
+
+Pass --keep-cli to remove only the agent configurations and keep the CLI installed.
+
+Reverses the installer — strips CodeGraph's MCP server config, instructions, and permissions from each configured agent. Your project indexes (.codegraph/) are left untouched; remove those per-project with codegraph uninit. Use --target to remove from specific agents, or --yes to run non-interactively.
+
+Language Support
+
+Every language below gets the same treatment — full structural extraction and cross-file resolution into one graph, no per-language setup:
+
+Per-language details — extensions, frameworks, and what exactly gets extracted — in Supported Languages.
+
+Why CodeGraph?
+
+When an AI agent needs to understand code — to answer a question or make a change — it discovers structure the slow way: grep, glob, and Read, one file at a time, rebuilding call paths and dependencies by hand. That's a pile of tool calls and round-trips before it even starts the real work.
+
+CodeGraph hands the agent the exact code it needs in one call. It's a pre-built knowledge graph of every symbol, call edge, and dependency in your codebase — so instead of crawling files, the agent asks one question and gets back the relevant source, the call paths between those symbols (including dynamic-dispatch hops grep can't follow), and the blast radius of a change. Surgical context, not a file-by-file search — which means fewer tool calls and faster answers on every codebase, large or small.
+
+A note on cost: CodeGraph's win on every codebase is precision — the agent stops crawling files and answers from the graph. On current models that precision is also a large direct saving: the 2026-08 re-measurement, on a harness that blocks the CLI in both arms, put it at 44% lower cost and 62% fewer tokens on average across the seven benchmark repos, because a strong model without the graph burns its budget re-deriving structure. Cost tracks how much discovery a question demands more than raw repo size: 57–78% on questions the file-reading agent needed 28–43 tool calls to answer, near-even where it got there in 7.
+
+A note on context: the numbers above measure throughput — tokens processed, tools called, dollars spent to reach one answer. They don't measure what is still sitting in your context window afterward, and on that axis CodeGraph costs more, not less. Across the same seven repos in multi-turn sessions, CodeGraph's responses leave about 80% more retrieval context resident at the end of a session than a file-reading agent's do — on VS Code, 67k tokens against 18k. The mechanism is the same one that makes it fast: CodeGraph returns one dense, verbatim payload that answers the question and then stays in the window, where a grep-and-read agent churns through many small results that get evicted. Fewer tokens processed and a larger persistent footprint are both real at once. If you run long sessions in a small window, budget for it. Measured per-repo: docs/benchmarks/residual-context-occupancy.md.
+
+Benchmark Results
+
+Tested across 7 real-world open-source codebases spanning 7 languages, comparing an agent (Claude Code, headless) answering one architecture question with and without CodeGraph, at the median of 4 runs per arm. Re-measured 2026-08-05 on Claude Opus 4.8 against the current build, on a harness that blocks the codegraph CLI in both arms — contamination row: 0 of 28 without-arm runs.
+
+The universal win — every repo, every size: 88% fewer tool calls · 53% faster · 62% fewer tokens · 44% cheaper · file reads cut to zero on all seven repos.
+
+With the index available, the agent answers from one to four codegraph_explore calls and stops. Without it, the agent burns its budget on discovery — up to 43 tool calls and 19 file reads re-deriving what the graph already knew. Every repo was faster with CodeGraph in this measurement — by 35% on the narrowest question, by 3.6× on the widest.
+
+| Codebase | Language | Tool calls | Time | File reads | Tokens | Cost |
+|----------|----------|------------|------|------------|--------|------|
+| VS Code | TypeScript · ~11k files | 2 vs 28 | 2.2× faster (58s vs 2m 10s) | 0 vs 12 | 77% fewer | 71% cheaper |
+| Excalidraw | TypeScript · ~640 | 2 vs 43 | 3.6× faster (45s vs 2m 42s) | 0 vs 18 | 84% fewer | 78% cheaper |
+| Django | Python · ~3k | 3 vs 14 | 35% faster (54s vs 1m 23s) | 0 vs 8.5 | 41% fewer | 13% cheaper¹ |
+| Tokio | Rust · ~790 | 3 vs 29 | 2.6× faster (1m 3s vs 2m 43s) | 0 vs 19 | 65% fewer | 64% cheaper |
+| OkHttp | Java · ~645 | 1 vs 6 | 43% faster (33s vs 58s) | 0 vs 2 | 54% fewer | 21% cheaper |
+| Gin | Go · 110 | 1 vs 7 | 39% faster (28s vs 46s) | 0 vs 4 | 52% fewer | even¹ |
+| Alamofire | Swift · ~110 | 4 vs 33 | 2.6× faster (54s vs 2m 22s) | 0 vs 16.5 | 59% fewer | 57% cheaper |
+
+…（内容已截断）

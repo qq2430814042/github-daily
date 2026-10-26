@@ -1,0 +1,254 @@
+Glance
+
+  Install •
+  Configuration •
+  Discord •
+  Sponsor
+
+  Community widgets •
+  Preconfigured pages •
+  Themes
+
+A lightweight, highly customizable dashboard that displays
+ your feeds in a beautiful, streamlined interface
+
+Features
+Various widgets
+* RSS feeds
+* Subreddit posts
+* Hacker News posts
+* Weather forecasts
+* YouTube channel uploads
+* Twitch channels
+* Market prices
+* Docker containers status
+* Server stats
+* Custom widgets
+* and many more...
+
+Fast and lightweight
+* Low memory usage
+* Few dependencies
+* Minimal vanilla JS
+* Single
+Preview example configuration file
+
+pages:
+  - name: Home
+    columns:
+      - size: small
+        widgets:
+          - type: calendar
+            first-day-of-week: monday
+
+          - type: rss
+            limit: 10
+            collapse-after: 3
+            cache: 12h
+            feeds:
+              - url: https://selfh.st/rss/
+                title: selfh.st
+                limit: 4
+              - url: https://ciechanow.ski/atom.xml
+              - url: https://www.joshwcomeau.com/rss.xml
+                title: Josh Comeau
+              - url: https://samwho.dev/rss.xml
+              - url: https://ishadeed.com/feed.xml
+                title: Ahmad Shadeed
+
+          - type: twitch-channels
+            channels:
+              - theprimeagen
+              - j_blow
+              - piratesoftware
+              - cohhcarnage
+              - christitustech
+              - EJ_SA
+
+      - size: full
+        widgets:
+          - type: group
+            widgets:
+              - type: hacker-news
+              - type: lobsters
+
+          - type: videos
+            channels:
+              - UCXuqSBlHAE6Xw-yeJA0Tunw # Linus Tech Tips
+              - UCR-DXc1voovS8nhAvccRZhg # Jeff Geerling
+              - UCsBjURrPoezykLs9EqgamOA # Fireship
+              - UCBJycsmduvYEL83R_U4JriQ # Marques Brownlee
+              - UCHnyfMqiRRG1u-2MsSQLbXA # Veritasium
+
+          - type: group
+            widgets:
+              - type: reddit
+                subreddit: technology
+                show-thumbnails: true
+              - type: reddit
+                subreddit: selfhosted
+                show-thumbnails: true
+
+      - size: small
+        widgets:
+          - type: weather
+            location: London, United Kingdom
+            units: metric
+            hour-format: 12h
+
+          - type: markets
+            markets:
+              - symbol: SPY
+                name: S&P 500
+              - symbol: BTC-USD
+                name: Bitcoin
+              - symbol: NVDA
+                name: NVIDIA
+              - symbol: AAPL
+                name: Apple
+              - symbol: MSFT
+                name: Microsoft
+
+          - type: releases
+            cache: 1d
+            repositories:
+              - glanceapp/glance
+              - go-gitea/gitea
+              - immich-app/immich
+              - syncthing/syncthing
+
+Installation
+
+Choose one of the following methods:
+
+Docker compose using provided directory structure (recommended)
+
+Create a new directory called glance as well as the template files within it by running:
+
+mkdir glance && cd glance && curl -sL https://github.com/glanceapp/docker-compose-template/archive/refs/heads/main.tar.gz | tar -xzf - --strip-components 2
+
+click here to view the files that will be created
+
+Then, edit the following files as desired:
+* docker-compose.yml to configure the port, volumes and other containery things
+* config/home.yml to configure the widgets or layout of the home page
+* config/glance.yml if you want to change the theme or add more pages
+
+Other files you may want to edit
+
+* .env to configure environment variables that will be available inside configuration files
+* assets/user.css to add custom CSS
+
+When ready, run:
+
+docker compose up -d
+
+If you encounter any issues, you can check the logs by running:
+
+docker compose logs
+
+Docker compose manual
+
+Create a docker-compose.yml file with the following contents:
+
+services:
+  glance:
+    container_name: glance
+    image: glanceapp/glance
+    restart: unless-stopped
+    volumes:
+      - ./config:/app/config
+    ports:
+      - 8080:8080
+
+Then, create a new directory called config and download the example starting glance.yml file into it by running:
+
+mkdir config && wget -O config/glance.yml https://raw.githubusercontent.com/glanceapp/glance/refs/heads/main/docs/glance.yml
+
+Feel free to edit the glance.yml file to your liking, and when ready run:
+
+docker compose up -d
+
+If you encounter any issues, you can check the logs by running:
+
+docker logs glance
+
+Manual binary installation
+
+Precompiled binaries are available for Linux, Windows and macOS (x86, x86_64, ARM and ARM64 architectures).
+
+Linux
+
+Visit the latest release page for available binaries. You can place the binary in /opt/glance/ and have it start with your server via a systemd service. By default, when running the binary, it will look for a glance.yml file in the directory it's placed in. To specify a different path for the config file, use the --config option:
+
+/opt/glance/glance --config /etc/glance.yml
+
+To grab a starting template for the config file, run:
+
+wget https://raw.githubusercontent.com/glanceapp/glance/refs/heads/main/docs/glance.yml
+
+Windows
+
+Download and extract the executable from the latest release (most likely the file called glance-windows-amd64.zip if you're on a 64-bit system) and place it in a folder of your choice. Then, create a new text file called glance.yml in the same folder and paste the content from here in it. You should then be able to run the executable and access the dashboard by visiting http://localhost:8080 in your browser.
+
+Other
+
+Glance can also be installed through the following 3rd party channels:
+* Proxmox VE Helper Script
+* NixOS package
+* Hostinger
+* Coolify.io
+
+Common issues
+
+Requests timing out
+
+The most common cause of this is when using Pi-Hole, AdGuard Home or other ad-blocking DNS services, which by default have a fairly low rate limit. Depending on the number of widgets you have in a single page, this limit can very easily be exceeded. To fix this, increase the rate limit in the settings of your DNS service.
+
+If using Podman, in some rare cases the timeout can be caused by an unknown issue, in which case it may be resolved by adding the following to the bottom of your docker-compose.yml file:
+networks:
+  podman:
+    external: true
+
+Broken layout for markets, bookmarks or other widgets
+
+This is almost always caused by the browser extension Dark Reader. To fix this, disable dark mode for the domain where Glance is hosted.
+
+cannot unmarshal !!map into ]glance.page
+
+The most common cause of this is having a pages key in your glance.yml and then also having a pages key inside one of your included pages. To fix this, remove the pages key from the top of your included pages.
+
+FAQ
+
+Does the information on the page update automatically?
+No, a page refresh is required to update the information. Some things do dynamically update where it makes sense, like the clock widget and the relative time showing how long ago something happened.
+
+How frequently do widgets update?
+No requests are made periodically in the background, information is only fetched upon loading the page and then cached. The default cache lifetime is different for each widget and can be configured.
+
+Can I create my own widgets?
+
+Yes, there are multiple ways to create custom widgets:
+* iframe widget - allows you to embed things from other websites
+* html widget - allows you to insert your own static HTML
+* extension widget - fetch HTML from a URL
+* custom-api widget - fetch JSON from a URL and render it using custom HTML
+
+Can I change the title of a widget?
+
+Yes, the title of all widgets can be changed by specifying the title property in the widget's configuration:
+
+- type: rss
+  title: My custom title
+
+- type: markets
+  title: My custom title
+
+- type: videos
+  title: My custom title
+
+and so on for all widgets...
+
+Feature requests
+
+…（内容已截断）

