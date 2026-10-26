@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="description" content="每天更新前一天的 GitHub 热门仓库，支持手机浏览、搜索、筛选和收藏。">
+  <meta name="description" content="每天更新前一天的 GitHub 热门仓库，支持手机浏览、搜索、筛选、收藏和中文翻译。">
   <meta name="theme-color" media="(prefers-color-scheme: light)" content="#ffffff">
   <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#0d1117">
   <meta name="apple-mobile-web-app-capable" content="yes">
@@ -63,6 +63,30 @@
       数据来自 GitHub Trending 与 GitHub Search API。每天北京时间 08:05 自动更新前一天内容。
     </p>
   </main>
+
+  <dialog id="detailDialog" class="detail-dialog" aria-labelledby="detailTitle">
+    <div class="detail-head">
+      <div class="detail-heading">
+        <p class="detail-kicker">仓库详情</p>
+        <h2 id="detailTitle" class="detail-title"></h2>
+      </div>
+      <button id="detailClose" class="detail-close" type="button" aria-label="关闭详情">×</button>
+    </div>
+    <div class="detail-body">
+      <p id="detailDesc" class="detail-desc"></p>
+      <div id="detailMeta" class="detail-meta"></div>
+      <div class="detail-actions">
+        <button id="detailTranslate" class="btn btn-primary" type="button">翻译成中文</button>
+        <a id="detailGithub" class="btn" target="_blank" rel="noopener noreferrer">打开 GitHub</a>
+        <a id="detailBaidu" class="btn btn-ghost" target="_blank" rel="noopener noreferrer">百度翻译</a>
+      </div>
+      <div id="translationBox" class="translation" hidden aria-live="polite">
+        <p id="translationLabel" class="translation-label">中文翻译</p>
+        <p id="translationText" class="translation-text"></p>
+        <p class="translation-note">机器翻译由 MyMemory 提供，仅供参考</p>
+      </div>
+    </div>
+  </dialog>
 
   <noscript>
     <p class="noscript">需要开启 JavaScript 才能查看榜单。</p>

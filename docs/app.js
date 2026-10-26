@@ -1,4 +1,5 @@
 const FAVORITES_KEY = 'github-daily:favorites:v1';
+const TRANSLATIONS_KEY = 'github-daily:translations:v1';
 const HIGH_STAR = 1000;
 
 const LANGUAGE_COLORS = {
@@ -40,6 +41,9 @@ const state = {
   language: '',
   sort: 'default',
   favorites: loadFavorites(),
+  translations: loadTranslations(),
+  detail: null,
+  translateToken: 0,
 };
 
 const els = {
@@ -53,6 +57,17 @@ const els = {
   sort: document.getElementById('sort'),
   favCount: document.getElementById('favCount'),
   tabs: [...document.querySelectorAll('.tab')],
+  detailDialog: document.getElementById('detailDialog'),
+  detailTitle: document.getElementById('detailTitle'),
+  detailDesc: document.getElementById('detailDesc'),
+  detailMeta: document.getElementById('detailMeta'),
+  detailTranslate: document.getElementById('detailTranslate'),
+  detailGithub: document.getElementById('detailGithub'),
+  detailBaidu: document.getElementById('detailBaidu'),
+  detailClose: document.getElementById('detailClose'),
+  translationBox: document.getElementById('translationBox'),
+  translationLabel: document.getElementById('translationLabel'),
+  translationText: document.getElementById('translationText'),
 };
 
 let loadToken = 0;
@@ -128,6 +143,46 @@ function persistFavorites() {
   } catch (error) {
     console.warn('Unable to save favorites', error);
   }
+}
+
+function loadTranslations() {
+  try {
+    const parsed = JSON.parse(localStorage.getItem(TRANSLATIONS_KEY) || '{}');
+    if (!parsed || typeof parsed !== 'object' || Array.isArray(parsed)) return {};
+    return parsed;
+  } catch {
+    return {};
+  }
+}
+
+function persistTranslations() {
+  const entries = Object.entries(state.translations);
+  if (entries.length > 600) {
+    entries.sort((a, b) => String(b[1]?.at || '').localeCompare(String(a[1]?.at || '')));
+    state.translations = Object.fromEntries(entries.slice(0, 500));
+  }
+
+  try {
+    localStorage.setItem(TRANSLATIONS_KEY, JSON.stringify(state.translations));
+  } catch (error) {
+    console.warn('Unable to save translations', error);
+  }
+}
+
+function translationKey(item, text) {
+  return `${keyOf(item)}::${text}`;
+}
+
+function decodeHtmlEntities(value) {
+  const documentFragment = new DOMParser().parseFromString(
+    `<body>${value}</body>`,
+    'text/html',
+  );
+  return documentFragment.body.textContent || '';
+}
+
+function baiduTranslateUrl(text) {
+  return `https://fanyi.baidu.com/#en/zh/${encodeURIComponent(text)}`;
 }
 
 function updateFavCount() {
@@ -412,6 +467,12 @@ function createCard(item, index) {
     tags.append(create('span', 'tag topic', `#${topic}`));
   }
 
+  const detailButton = create('button', 'detail-link', '详情 / 翻译');
+  detailButton.type = 'button';
+  detailButton.setAttribute('aria-label', `查看 ${item.fullName || '仓库'} 的详情和翻译`);
+  detailButton.addEventListener('click', () => openDetail(item));
+  tags.append(detailButton);
+
   main.append(tags);
   card.append(main);
 
@@ -425,6 +486,12 @@ function createCard(item, index) {
   favButton.title = isFavorite ? '取消收藏' : '收藏';
   favButton.addEventListener('click', () => toggleFavorite(item));
   card.append(favButton);
+
+  card.classList.add('is-clickable');
+  card.addEventListener('click', (event) => {
+    if (event.target.closest('a, button')) return;
+    openDetail(item);
+  });
 
   return card;
 }
@@ -447,6 +514,170 @@ function toggleFavorite(item) {
 
   if (state.tab === 'fav') populateLanguages();
   render();
+}
+
+function addDetailMeta(container, className, text) {
+  container.append(create('span', className, text));
+}
+
+function openDetail(item) {
+  state.detail = item;
+  state.translateToken += 1;
+
+  const description = String(item.description || '').trim();
+
+  els.detailTitle.replaceChildren();
+  const titleLink = create('a', '', item.fullName || '未知仓库');
+  titleLink.href = safeGitHubUrl(item.url);
+  titleLink.target = '_blank';
+  titleLink.rel = 'noopener noreferrer';
+  els.detailTitle.append(titleLink);
+
+  els.detailDesc.textContent = description || '暂无描述';
+  els.detailDesc.classList.toggle('is-empty', !description);
+
+  els.detailMeta.replaceChildren();
+
+  if (item.language) {
+    const language = create('span', 'tag');
+    const dot = create('span', 'lang-dot');
+    dot.style.backgroundColor = languageColor(item.language);
+    language.append(dot, document.createTextNode(item.language));
+    els.detailMeta.append(language);
+  }
+
+  addDetailMeta(els.detailMeta, 'tag stars', `★ ${formatNumber(item.stars)}`);
+
+  if (item.starsToday > 0) {
+    addDetailMeta(els.detailMeta, 'today', `↑ ${formatNumber(item.starsToday)} 今日`);
+  }
+
+  addDetailMeta(els.detailMeta, 'tag', `Fork ${formatNumber(item.forks)}`);
+
+  if (item.createdAt) {
+    const createdDate = String(item.createdAt).slice(0, 10);
+    if (/^\d{4}-\d{2}-\d{2}$/.test(createdDate)) {
+      addDetailMeta(els.detailMeta, 'tag', `创建于 ${formatDate(createdDate)}`);
+    }
+  }
+
+  if (item.sources?.includes('trending')) {
+    addDetailMeta(els.detailMeta, 'source-badge', 'Trending');
+  }
+  if (item.isNew) addDetailMeta(els.detailMeta, 'source-badge', '新项目');
+  if (item.sources?.includes('high-star')) {
+    addDetailMeta(els.detailMeta, 'source-badge', '高星');
+  }
+
+  const topics = Array.isArray(item.topics) ? item.topics : [];
+  for (const topic of topics) {
+    addDetailMeta(els.detailMeta, 'tag topic', `#${topic}`);
+  }
+
+  els.detailGithub.href = safeGitHubUrl(item.url);
+
+  if (description) {
+    els.detailBaidu.href = baiduTranslateUrl(description);
+    els.detailBaidu.removeAttribute('aria-disabled');
+  } else {
+    els.detailBaidu.href = '#';
+    els.detailBaidu.setAttribute('aria-disabled', 'true');
+  }
+
+  els.detailTranslate.disabled = !description;
+  els.translationBox.hidden = true;
+  els.translationBox.classList.remove('is-error');
+  els.translationLabel.textContent = '中文翻译';
+  els.translationText.textContent = '';
+
+  const cached = description
+    ? state.translations[translationKey(item, description)]
+    : null;
+
+  if (cached?.text) {
+    showTranslation(cached.text, true);
+    els.detailTranslate.textContent = '重新翻译';
+  } else {
+    els.detailTranslate.textContent = '翻译成中文';
+  }
+
+  if (!els.detailDialog.open) {
+    els.detailDialog.showModal();
+    document.body.classList.add('modal-open');
+  }
+}
+
+function showTranslation(text, cached = false) {
+  els.translationBox.hidden = false;
+  els.translationBox.classList.remove('is-error');
+  els.translationLabel.textContent = cached ? '中文翻译（已缓存）' : '中文翻译';
+  els.translationText.textContent = text;
+}
+
+function showTranslationError(message) {
+  els.translationBox.hidden = false;
+  els.translationBox.classList.add('is-error');
+  els.translationLabel.textContent = '翻译失败';
+  els.translationText.textContent = message;
+}
+
+async function requestTranslation(text) {
+  const url = new URL('https://api.mymemory.translated.net/get');
+  url.searchParams.set('q', text);
+  url.searchParams.set('langpair', 'en|zh-CN');
+
+  const response = await fetch(url, { cache: 'no-store' });
+  if (!response.ok) throw new Error(`Translation HTTP ${response.status}`);
+
+  const payload = await response.json();
+  if (Number(payload.responseStatus) !== 200) {
+    throw new Error(payload.responseDetails || 'Translation request failed');
+  }
+
+  const translated = decodeHtmlEntities(
+    String(payload.responseData?.translatedText || ''),
+  ).trim();
+
+  if (!translated) throw new Error('Empty translation');
+  return translated;
+}
+
+async function translateDetail() {
+  const item = state.detail;
+  if (!item) return;
+
+  const description = String(item.description || '').trim();
+  if (!description) return;
+
+  const token = ++state.translateToken;
+  els.detailTranslate.disabled = true;
+  els.detailTranslate.textContent = '翻译中…';
+
+  try {
+    const translated = await requestTranslation(description);
+    if (token !== state.translateToken || state.detail !== item) return;
+
+    state.translations[translationKey(item, description)] = {
+      text: translated,
+      at: new Date().toISOString(),
+    };
+    persistTranslations();
+    showTranslation(translated);
+    els.detailTranslate.textContent = '重新翻译';
+  } catch (error) {
+    if (token !== state.translateToken) return;
+    console.error(error);
+    showTranslationError('翻译服务暂时不可用，可以点「百度翻译」查看。');
+    els.detailTranslate.textContent = '重试翻译';
+  } finally {
+    if (token === state.translateToken) {
+      els.detailTranslate.disabled = false;
+    }
+  }
+}
+
+function closeDetail() {
+  if (els.detailDialog.open) els.detailDialog.close();
 }
 
 function render() {
@@ -577,6 +808,19 @@ function bindEvents() {
   els.sort.addEventListener('change', () => {
     state.sort = els.sort.value;
     render();
+  });
+
+  els.detailClose.addEventListener('click', closeDetail);
+  els.detailTranslate.addEventListener('click', translateDetail);
+
+  els.detailDialog.addEventListener('click', (event) => {
+    if (event.target === els.detailDialog) closeDetail();
+  });
+
+  els.detailDialog.addEventListener('close', () => {
+    document.body.classList.remove('modal-open');
+    state.detail = null;
+    state.translateToken += 1;
   });
 }
 
