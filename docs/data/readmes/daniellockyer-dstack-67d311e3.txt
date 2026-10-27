@@ -1,0 +1,19 @@
+🤠 dstack
+
+The agent skills I use daily.
+
+My focus is performance and scalability: keeping websites fast and
+available as they grow.
+
+This repo is a work in progress. Skills are coming soon.
+
+These skills are focused on performance and scalability. For general code
+development, I'd recommend pstack
+by @poteto, a much wider set of rigorous engineering
+workflows.
+
+Follow me on X: @daniellockyer
+
+License
+
+MIT

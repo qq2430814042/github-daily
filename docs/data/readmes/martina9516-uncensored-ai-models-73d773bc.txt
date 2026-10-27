@@ -1,0 +1,158 @@
+Uncensored AI Models — One Key. Every Frontier Model.
+
+Uncensored AI access for developers: choose an uncensored AI API or an uncensored AI model and run it through one OpenAI- and Anthropic-compatible endpoint — Claude, GPT, Gemini, Grok, DeepSeek, GLM and Qwen, with uncensored and abliterated variants where available.
+
+Get an API key → · Quickstart · Docs · Telegram
+
+RouterHub is live: the uncensored model API, live model catalogue and pricing are available at routerhub.si.
+
+What is an uncensored AI API?
+
+An uncensored AI API is a single programmatic endpoint that gives your application access to model variants with fewer built-in refusals than standard hosted models. If you are searching for uncensored AI, an uncensored AI model or an uncensored AI API, the same gateway covers all three: the API is the connection, the model is the engine, and uncensored AI is the category. Instead of maintaining separate SDKs, keys and billing accounts for every provider, you send one request and choose the model family you need.
+
+RouterHub is an OpenAI- and Anthropic-compatible gateway for exactly that workflow. It bundles frontier and open-weight model families — plus uncensored and abliterated variants where available — behind one API key, one balance and one billing model: pay per token, no subscription.
+
+You may also see the same idea called an uncensored LLM API, an unfiltered AI API, a no-refusal AI API, or an abliterated model API. The labels overlap; the practical questions are the same: model coverage, compatibility, billing and behavior.
+
+Uncensored does not mean lawless. Model behavior still depends on the model, version, prompt and provider policy. You stay responsible for lawful, ethical use. See Safety & responsible use.
+
+What is an uncensored AI model?
+
+An uncensored AI model is a model variant trained, fine-tuned or weight-modified to refuse less often than a standard release. The model is the engine; the API is how your application reaches it, and a gateway gives you one key across families.
+
+| | |
+|---|---|
+| Uncensored AI model | The model itself, with reduced refusal behavior. |
+| Uncensored AI API | The endpoint that lets your app call that model. |
+| API gateway | One key, one bill and one compatible interface across model families. |
+
+Uncensored models still vary by version, prompt and provider policy. Evaluate the exact model before deploying. See Uncensored vs. abliterated models.
+
+✨ What you get
+
+| | |
+|---|---|
+| 🔑 One key, every family | Claude, GPT, Gemini, Grok, DeepSeek, GLM and Qwen from a single account. |
+| 🔌 Drop-in compatibility | OpenAI SDK, Anthropic SDK, Claude Code, Cursor, Codex CLI, OpenCode and any compatible client. |
+| 🧠 Uncensored options | Select uncensored and abliterated variants alongside the standard models. |
+| 💳 Pay per token | No subscription. Prompt caching lowers repeated input; card and crypto accepted. |
+| 🛡️ Honest limits | Reduced refusals, not a guarantee. Evaluate the model before you deploy. |
+
+🧠 Model families
+
+| Family | What people use it for | Uncensored variants |
+|---|---|---|
+| Claude | Long-form reasoning, writing, coding agents | Select variants |
+| GPT | General assistants, tools, structured output | Select variants |
+| Gemini | Multimodal workflows, research, long context | Select variants |
+| Grok | Real-time style answers, ideation | Select variants |
+| DeepSeek | Coding, reasoning, cost-efficient agents | Select variants |
+| GLM | Agents, coding, bilingual work | Select variants |
+| Qwen | Long-document reading, agent workflows | Select variants |
+
+Model IDs, context limits and live availability are shown in the RouterHub dashboard. Availability changes as providers release new versions — always confirm the current model ID before deploying.
+
+Quickstart
+
+1. Get your key and base URL
+
+Create an account at routerhub.si. Your API key starts with sk-; the exact Base URL is shown on the dashboard overview.
+
+export ROUTERHUB_API_KEY="sk-..."
+export ROUTERHUB_BASE_URL="https://.../v1"   # copy from the dashboard
+
+2. OpenAI-compatible request
+
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ"ROUTERHUB_API_KEY"],
+    base_url=os.environ["ROUTERHUB_BASE_URL"],
+)
+
+response = client.chat.completions.create(
+    model="MODEL_ID",  # choose any model ID from the dashboard
+    messages=[
+        {"role": "system", "content": "You are a precise, helpful assistant."},
+        {"role": "user", "content": "Explain the trade-offs of model routing in two paragraphs."},
+    ],
+)
+
+print(response.choices[0].message.content)
+
+3. Anthropic-compatible request
+
+import os
+from anthropic import Anthropic
+
+client = Anthropic(
+    api_key=os.environ["ROUTERHUB_API_KEY"],
+    base_url=os.environ["ROUTERHUB_BASE_URL"],  # use the Anthropic base URL from the dashboard
+)
+
+message = client.messages.create(
+    model="MODEL_ID",
+    max_tokens=1024,
+    messages=[{"role": "user", "content": "Write a concise release note for a developer tool."}],
+)
+
+print(message.content[0].text)
+
+4. cURL
+
+curl "$ROUTERHUB_BASE_URL/chat/completions" \
+  -H "Authorization: Bearer $ROUTERHUB_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "MODEL_ID",
+    "messages": [{"role": "user", "content": "Hello from the RouterHub quickstart."}]
+  }'
+
+Full setup guides: [OpenAI-compatible · Anthropic-compatible · cURL.
+
+Works with your stack
+
+| Client / SDK | Setup |
+|---|---|
+| OpenAI SDK | Set base_url to the RouterHub base URL |
+| Anthropic SDK | Set base_url to the Anthropic-compatible endpoint |
+| Claude Code | Point the Anthropic base URL at RouterHub |
+| Cursor | Add a custom OpenAI-compatible provider |
+| Codex CLI | Use an OpenAI-compatible provider profile |
+| OpenCode | Configure a custom provider and model ID |
+| LangChain / LlamaIndex | Use the OpenAI-compatible adapter |
+| Any OpenAI-compatible app | Change two values: base URL and API key |
+
+Step-by-step guides: Claude Code · Cursor · OpenCode · Codex CLI.
+
+Pricing
+
+- Pay per token — you are charged for the tokens you actually use.
+- No subscription — no monthly minimum and no seat fees.
+- Prompt caching — repeated prefixes are billed at the lower cached-input rate.
+- Crypto top-ups — add prepaid credits with card or crypto.
+- API keys — create separate keys to isolate projects and usage.
+- One dashboard — keys, billing, usage and support in one place.
+
+Live model prices are listed in the dashboard and can change when providers update their rates. See Pricing & limits.
+
+Use cases
+
+- AI safety and red-team research — compare how model versions handle instruction conflicts and policy boundaries.
+- Creative writing and worldbuilding — work with fewer mid-scene refusals while keeping your own review process.
+- Agentic coding — route Claude, GPT, DeepSeek and GLM through one key in Claude Code, Cursor, Codex or OpenCode.
+- Multilingual assistants — test the same prompt across model families without rebuilding your integration.
+- Privacy-conscious prototyping — keep billing and keys centralized while you evaluate providers.
+- Developer tooling — API keys and one balance make it easier to meter usage per project or client.
+- AI-assisted editing and tailoring — rewrite, tighten, adapt tone and tailor copy for different audiences.
+- Summarization and document analysis — long-context workflows across model families.
+- Chatbot and assistant backends — one API for multiple model families.
+
+Honest limits
+
+- No provider can guarantee that a model will never refuse. Uncensored and abliterated variants reduce refusal behavior; they do not remove the need for evaluation, guardrails or human review.
+- Model behavior is version-dependent. A prompt that works on one release may behave differently after an upstream update.
+- Provider terms still apply. You are responsible for complying with the terms of the model providers and the laws that apply to you.
+
+…（内容已截断）

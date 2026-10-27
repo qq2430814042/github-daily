@@ -1,0 +1,152 @@
+AutoGPT — Your team of AI Experts
+
+  Bring in specialists for content, sales, research, and recurring work.
+
+  Brief them in plain English. Let Otto coordinate.
+
+  Sign up for a trial
+  ·
+  Watch the demo
+  ·
+  Meet the Experts
+  ·
+  Pricing
+  ·
+  Self-host
+  ·
+  Contribute
+
+One conversation. The right expertise.
+
+Tell Otto what's on your plate. It brings in the right Experts, hands over the work, and keeps you up to date. Talk to a specialist directly when you want to get into the details.
+
+Each Expert has a role you can shape with your instructions, context, skills, and connected apps. Start with a ready-made specialist or create your own.
+
+| Meet your team | Put them to work |
+| --- | --- |
+| Otto · Head of AI | Coordinate a job across specialists and bring their work back to you. |
+| Maria · SEO Content Manager | Turn a target keyword into a content brief and article draft. |
+| Max · Account Executive | Research prospects, draft outreach, and prepare the next conversation. |
+| Frankie · Executive Assistant | Prepare meeting context, email drafts, and a digest for the day. |
+
+Explore the Experts →
+
+See the team at work
+
+One launch brief to Otto. Maria prepares the article, Max researches prospects, and Frankie prepares the launch review.
+
+https://github.com/user-attachments/assets/83cddd83-00f8-46e7-be9e-e0a7237c7eea
+
+Watch the full 45-second demo → · Sign up for a trial
+
+A 15-second highlight of a real run, edited and sped up. In this example, the team prepares the work for review without sending or publishing it.
+
+From a first brief to a routine
+
+1. Choose your Expert. Tell Otto what you need, pick a specialist, or create one for your own way of working.
+2. Brief them on the job. Share the context, connect the apps they need, and agree on the first outcome.
+3. Review and refine. Check the work and adjust the instructions. Activate routines for jobs that keep coming back.
+
+You choose which accounts each Expert can access, set spending controls, and follow progress in their activity.
+
+See how it works →
+
+Get started
+
+AutoGPT Platform
+
+Use the hosted Platform to get your team running without managing the infrastructure or supplying model API keys.
+
+Sign up for a trial →
+
+The hosted Platform is a paid service. See current plans, trial terms, and usage pricing.
+
+Self-host AutoGPT
+
+Run AutoGPT on your own infrastructure. You provide model credentials, configure the deployment, and manage its updates and operation.
+
+The quickest way to self-host is the single-container image on
+Docker Hub, significantgravitas/autogpt:
+
+docker run -d \
+  --name autogpt \
+  --restart unless-stopped \
+  --shm-size 2g \
+  --ulimit nofile=65536:65536 \
+  --log-driver json-file \
+  --log-opt max-size=50m \
+  --log-opt max-file=5 \
+  -p 127.0.0.1:3000:3000 \
+  -e AUTOGPT_PUBLIC_URL=http://localhost:3000 \
+  -v autogpt-data:/data \
+  significantgravitas/autogpt:latest
+
+Give the first boot a few minutes, then open
+http://localhost:3000, create your account, and make it
+the administrator:
+
+docker exec autogpt autogpt-admin promote you@example.com
+
+Requirements, closing signup, ports, model providers, backups, and upgrades are
+covered in the guide:
+
+Read the single-container guide →
+
+On Linux, macOS, and Windows, the installer
+sets up the same image with one command.
+
+To run each service in its own container with Docker Compose, or to develop from
+source, use the manual self-hosting guide.
+
+| | Hosted Platform | Self-hosted |
+| --- | --- | --- |
+| Setup and operations | Managed by AutoGPT | Managed by you |
+| Model access | Built in | Bring your own model credentials or a local model |
+| Cost | Paid plan and usage | Your infrastructure and model usage |
+| Data and infrastructure | Hosted by AutoGPT | Runs on your infrastructure |
+
+See the license for the repository's usage terms.
+
+Workflows when you need more control
+
+Experts can use skills and workflows to do their jobs. The visual builder lets you define repeatable steps, connect tools, and inspect how work runs. Start with a workflow from the marketplace or build your own.
+
+- Visual builder: connect blocks, branch logic, and control the steps.
+- Marketplace: discover workflows you can adapt to your work.
+- Integrations: connect the tools your team uses.
+
+Build with us
+
+Explore the code, report a problem, or help improve AutoGPT.
+
+| Resource | Where to go |
+| --- | --- |
+| Platform source and development setup | autogpt_platform/ |
+| Documentation | agpt.co/docs |
+| Contributing | CONTRIBUTING.md |
+| Bugs and feature requests | GitHub Issues |
+| Community and support | Discord |
+
+License
+
+| Component | License | What it means |
+|---|---|---|
+| autogpt_platform/ | Polyform Shield | Free for personal and internal business use; cannot be sold as a competing hosted service |
+| classic/ and everything else | MIT | Permissive open-source use |
+
+AutoGPT Classic
+
+Looking for the original standalone AutoGPT? Explore Classic, Forge, or agbenchmark.
+
+Contributors
+
+  Sign up for a trial →
+
+Deutsch |
+Español |
+français |
+日本語 |
+한국어 |
+Português |
+Русский |
+中文

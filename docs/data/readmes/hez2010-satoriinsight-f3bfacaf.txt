@@ -1,0 +1,61 @@
+Satori Insight
+
+A desktop profiler for exploring local .NET memory and garbage collection.
+
+- Follow heap usage, allocation rate, CPU time, elapsed time, and resident memory.
+- Inspect GC events, generation counts, pause distributions, and tail latency.
+- Explore live memory regions and replay a selected point or period.
+- Capture heaps, browse types and objects, follow root paths, and compare captures.
+- Launch an application with custom arguments and environment variables, or attach to a running process.
+- Save recordings and reopen them for offline analysis.
+
+Available measurements depend on the target runtime. Remote processes and ordinary .NET Framework applications are not supported.
+
+Download
+
+Download the package for your operating system and architecture from the latest release.
+
+| Platform | x64 | ARM64 |
+| --- | --- | --- |
+| Windows | SatoriInsight-win-x64.zip | SatoriInsight-win-arm64.zip |
+| macOS | SatoriInsight-osx-x64.tar.gz | SatoriInsight-osx-arm64.tar.gz |
+| Linux (glibc) | SatoriInsight-linux-x64.tar.gz | SatoriInsight-linux-arm64.tar.gz |
+| Linux (musl / Alpine) | SatoriInsight-linux-musl-x64.tar.gz | SatoriInsight-linux-musl-arm64.tar.gz |
+
+Screenshots
+
+GC analysis and heap inspection
+
+Collection log and GC details
+
+Heap inspector
+
+Captured regions and fragmentation
+
+Build and run
+
+Install the .NET 10 SDK. Full functionality requires an Avalonia Pro license. You can still build and run the application without a license, but the memory chart and pause histogram show placeholders, and release notes appear as plain text. GC statistics and collection timeline selection remain available.
+
+dotnet run --project SatoriInsight/SatoriInsight.csproj -c Release
+
+Setting the AvaloniaUILicenseKey environment variable or MSBuild property enables the Avalonia Pro Charts and Markdown controls.
+
+To create a self-contained Windows build:
+
+dotnet publish SatoriInsight/SatoriInsight.csproj -c Release -r win-x64 --self-contained true -p:PublishTrimmed=true -o artifacts/publish
+
+For NativeAOT, also install the Visual Studio C++ desktop build tools and Windows SDK:
+
+dotnet publish SatoriInsight/SatoriInsight.csproj -c Release -r win-x64 -p:PublishAot=true -o artifacts/publish-aot
+
+Start profiling
+
+Choose Attach process or Launch process. Use Memory activity for live measurements and Heap inspector for captures.
+
+See the user guide for the complete workflow and troubleshooting for connection, capture, and recording problems.
+
+Verify a source build
+
+dotnet test SatoriInsight.slnx -c Release
+
+Running the tests requires the .NET 10 runtime.

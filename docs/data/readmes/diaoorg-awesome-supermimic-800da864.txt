@@ -48,11 +48,11 @@ Official code status — checked 2026-10-26: the official website links the pape
 
 Community projects
 
-29 community projects, grouped by purpose. Descriptions were checked against upstream documentation and selected source files on 2026-10-26; each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
+30 community projects, grouped by purpose. Existing descriptions were checked against upstream documentation and selected source files on 2026-10-26; ScaleBFM_Plus was checked on 2026-10-27. Each entry links to the reviewed source revision. Results and demos are upstream reports; this list has not independently rerun the experiments.
 
 - 🔬 Independent reproductions — 3 projects · Reproduce and evaluate the original method.
 - 🧩 Methods and task extensions — 11 projects · Explore new methods, tasks and control settings.
-- 🛠️ Frameworks, robot ports and deployment — 12 projects · Find a stack, robot port or deployment path.
+- 🛠️ Frameworks, robot ports and deployment — 13 projects · Find a stack, robot port or deployment path.
 - 💡 Inspired experiments — 3 projects · Transfer ideas to other control problems.
 
 Independent reproductions
@@ -137,7 +137,5 @@ Implementation table excerpt · first three design choices; click for the full c
 InstinctMJ · SuperMimic
 
 Repository · Method and results · Releases
-
-- By Project Instinct. Extends the method to perceptive G1 tracking and goal-reaching parkour in mjlab / instinct_rl. The world model predicts robot state and depth-encoder latents; components are adapted from supermimic_vibed.
 
 …（内容已截断）

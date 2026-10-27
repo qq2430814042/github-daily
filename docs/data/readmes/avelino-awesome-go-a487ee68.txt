@@ -1,0 +1,218 @@
+Awesome Go
+
+We use the Golang Bridge community Slack for instant communication, follow the form here to join.
+
+Sponsorships:
+
+Special thanks to
+
+Awesome Go has no monthly fee_, but we have employees who work hard to keep it running. With money raised, we can repay the effort of each person involved! You can see how we calculate our billing and distribution as it is open to the entire community. Want to be a supporter of the project click here._
+
+A curated list of awesome Go frameworks, libraries, and software. Inspired by awesome-python.
+
+Contributing:
+
+Please take a quick gander at the contribution guidelines first. Thanks to all contributors; you rock!
+
+If you see a package or project here that is no longer maintained or is not a good fit, please submit a pull request to improve this file. Thank you!
+
+Contents
+
+Expand contents
+
+- Awesome Go
+  - Contents
+  - Actor Model
+  - Artificial Intelligence
+  - Audio and Music
+  - Authentication and Authorization
+  - Blockchain
+  - Bot Building
+  - Build Automation
+  - Command Line
+    - Advanced Console UIs
+    - Standard CLI
+  - Configuration
+  - Continuous Integration
+  - CSS Preprocessors
+  - Data Integration Frameworks
+  - Data Structures and Algorithms
+    - Bit-packing and Compression
+    - Bit Sets
+    - Bloom and Cuckoo Filters
+    - Data Structure and Algorithm Collections
+    - Iterators
+    - Maps
+    - Miscellaneous Data Structures and Algorithms
+    - Nullable Types
+    - Queues
+    - Sets
+    - Text Analysis
+    - Trees
+    - Pipes
+  - Database
+    - Caches
+    - Databases Implemented in Go
+    - Database Schema Migration
+    - Database Tools
+    - SQL Query Builders
+  - Database Drivers
+    - Interfaces to Multiple Backends
+    - Relational Database Drivers
+    - NoSQL Database Drivers
+    - Search and Analytic Databases
+  - Date and Time
+  - Distributed Systems
+  - Dynamic DNS
+  - Email
+  - Embeddable Scripting Languages
+  - Error Handling
+  - File Handling
+  - Financial
+  - Forms
+  - Functional
+  - Game Development
+  - Generators
+  - Geographic
+  - Go Compilers
+  - Goroutines
+  - GUI
+  - Hardware
+  - Images
+  - IoT (Internet of Things)
+  - Job Scheduler
+  - JSON
+  - Logging
+  - Machine Learning
+  - Messaging
+  - Microsoft Office
+    - Microsoft Excel
+    - Microsoft Word
+  - Miscellaneous
+    - Dependency Injection
+    - Project Layout
+    - Strings
+    - Uncategorized
+  - Natural Language Processing
+    - Language Detection
+    - Morphological Analyzers
+    - Slugifiers
+    - Tokenizers
+    - Translation
+    - Transliteration
+  - Networking
+    - HTTP Clients
+  - OpenGL
+  - ORM
+  - Package Management
+  - Performance
+  - Query Language
+  - Reflection
+  - Resource Embedding
+  - Science and Data Analysis
+  - Security
+  - Serialization
+  - Server Applications
+  - Stream Processing
+  - Template Engines
+  - Testing
+    - Testing Frameworks
+    - Mock
+    - Fuzzing and delta-debugging/reducing/shrinking
+    - Selenium and browser control tools
+    - Fail injection
+  - Text Processing
+    - Formatters
+    - Markup Languages
+    - Parsers/Encoders/Decoders
+    - Regular Expressions
+    - Sanitation
+    - Scrapers
+    - RSS
+    - Utility/Miscellaneous
+  - Third-party APIs
+  - Utilities
+  - UUID
+  - Validation
+  - Version Control
+  - Video
+  - Web Frameworks
+    - Middlewares
+      - Actual middlewares
+      - Libraries for creating HTTP middlewares
+    - Routers
+  - WebAssembly
+  - Webhooks Server
+  - Windows
+  - Workflow Frameworks
+  - XML
+  - Zero Trust
+  - Code Analysis
+  - Editor Plugins
+  - Go Generate Tools
+  - Go Tools
+  - Software Packages
+    - DevOps Tools
+    - Other Software
+- Resources
+  - Benchmarks
+  - Conferences
+  - E-Books
+    - E-books for purchase
+    - Free e-books
+  - Gophers
+  - Meetups
+  - Style Guides
+  - Social Media
+    - Twitter
+    - Reddit
+  - Websites
+    - Tutorials
+    - Guided Learning
+  - Contribution
+  - License
+
+⬆ back to top
+
+Actor Model
+
+Libraries for building actor-based programs.
+
+- asyncmachine-go/pkg/machine - Graph control flow library (AOP, actor, state-machine).
+- Ergo - An actor-based Framework with network transparency for creating event-driven architecture in Golang. Inspired by Erlang.
+- Goakt - Fast and Distributed Actor framework using protocol buffers as message for Golang.
+- Hollywood - Blazingly fast and light-weight Actor engine written in Golang.
+- ProtoActor - Distributed actors for Go, C#, and Java/Kotlin.
+
+⬆ back to top
+
+Artificial Intelligence
+
+Libraries for building programs that leverage AI.
+
+- AegisFlow - AI gateway for routing, securing, and monitoring LLM traffic across 10+ providers. OpenAI-compatible API, WASM policy plugins, canary rollouts, real-time dashboard.
+- Aetheris - AI Agent execution runtime with event sourcing, checkpoint recovery, and At-Most-Once execution guarantee. Written in Go.
+- agent-sdk-go - Framework for building stateful AI agents in Go.
+- agy-mcp - Model Context Protocol (MCP) server wrapping the Antigravity CLI to run prompts and peer reviews.
+- ai - A Go toolkit for building AI agents and applications across multiple providers with unified LLM, embeddings, tool calling, and MCP integration.
+- ai-gateway - OpenAI-compatible LLM gateway that routes requests across 30 providers with fallback, rate limiting, budgets, guardrails, and observability.
+- chromem-go - Embeddable vector database for Go with Chroma-like interface and zero third-party dependencies. In-memory with optional persistence.
+- clai - Agentic harness focused on terminal workflows, following UNIX principles. No external dependencies, ideal for scripting/prototyping agentic apps, engine is also exposed as a package.
+- claude-code-go - Go library for driving the Claude Code CLI non-interactive prompt surface from Go programs.
+- crewai-go - Idiomatic Go port of CrewAI (multi-agent orchestration). Zero dependencies, stdlib only.
+- Cynative - Framework for building security engineering AI agents in Go. Read-only by construction, built-in sandbox, 45 agent blueprints for AWS, GCP, Azure, K8s, GitHub & GitLab deep research.
+- dakera-go - Official Go client SDK for the Dakera self-hosted agent memory server, providing typed interfaces for memory store/recall, session management, namespace operations, and decay configuration.
+- Genkit - Framework created by Google for building AI-powered and agentic applications in idiomatic Go.
+- goai - Go SDK for building AI applications. One SDK, 20+ providers. Inspired by Vercel AI SDK.
+- golem - Framework for building dependable AI agents with typed dependencies, zero external dependencies, and native MCP support.
+- GoModel - AI gateway exposing a unified OpenAI-compatible API across OpenAI, Anthropic, Gemini, Groq, xAI, Ollama and other providers, with routing, usage tracking, rate limits, and guardrails.
+- hotplex - AI Agent runtime engine with long-lived sessions for Claude Code, OpenCode, pi-mono and other CLI AI tools. Provides full-duplex streaming, multi-platform integrations, and secure sandbox.
+- jargo - Framework for building real-time voice AI agents over WebRTC, wiring speech-to-text, LLMs, and text-to-speech into a streaming pipeline.
+- keen-code - A context-efficient terminal-based AI coding agent. Provider agnostic, supports MCPs, Agent Skills, Subagents, and more. Comes with a simple and straightforward TUI.
+- langchaingo - LangChainGo is a framework for developing applications powered by language models.
+- langgraphgo - A Go library for building stateful, multi-actor applications with LLMs, built on the concept of LangGraph，with a lot of builtin Agent architectures.
+- llm-box - Terminal-based AI workflow engine with YAML-driven pipelines, 20+ LLM providers (DeepSeek, Qwen, GLM, Mistral, etc.), and a TUI for workflow management.
+- LocalAI - Open Source OpenAI alternative, self-host AI models.
+- localaik - LocalStack-style local emulation of OpenAI and Gemini APIs; single Docker container, llama.cpp + Gemma 3 backend.
+
+…（内容已截断）
