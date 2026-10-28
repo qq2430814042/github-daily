@@ -1,0 +1,114 @@
+hdUE
+
+hdUE is a Windows x64 proof of concept for rendering OpenUSD scenes with Unreal Engine in the same process as a Hydra host. It provides a standalone host, usdview integration, and a Houdini Solaris viewport integration. Lumen is the default renderer; progressive Path Tracer rendering is also supported.
+
+This repository contains the delegate, backend source, build scripts, synthetic samples, and tests. Local SDK installations, private projects, supplied content, generated runtimes, and machine-specific configuration are excluded. See VERIFICATION.md for validation coverage.
+
+System architecture
+
+flowchart LR
+    subgraph Process"Single host process"]
+        Host["Hydra host
+CLI / usdview / Houdini Solaris"]
+        Delegate["hdUE delegate
+Scene batching / CPU AOV buffers"]
+        Backend["UE backend DLL
+UELibrary / World / GPU readback"]
+
+        Host -->|"Hydra scene synchronization"| Delegate
+        Delegate -->|"Versioned C ABI
+Scene updates / render requests"| Backend
+        Backend -->|"Completed CPU frames
+Frame ID / generation"| Delegate
+        Delegate -->|"Color / optional depth AOVs"| Host
+        Host -.->|"Owner-thread Init / Tick / Shutdown"| Backend
+    end
+
+    GPU["GPU via D3D12
+Lumen / Path Tracer"]
+    Backend -->|"Render commands"| GPU
+    GPU -->|"Asynchronous readback"| Backend
+
+The host, delegate, and UE runtime share one process. The C ABI passes fixed-width data, handles, and caller-owned buffers. The host owns UE's lifetime; destroying a delegate releases its scene resources without restarting UE.
+
+Hydra changes are batched and applied on the UE owner thread. Rendering and readback run asynchronously, and the delegate publishes completed frames without waiting for another Tick. Frame IDs and generation numbers prevent stale results from being presented as current. Solaris consumes both color and linear depth; the standalone path uses color by default.
+
+Requirements
+
+- Unreal Engine 5.8.4 source: tag 5.8.4-release, commit f45729c0b6f097038e72b52d366a62baeca3275b.
+- Windows x64, Visual Studio 2022 C++ tools, a Windows SDK, DirectX 12, and hardware ray tracing. The CMake scripts use the Visual Studio 17 2022 generator.
+- PowerShell 7, Git, and CMake 3.24 or newer, with Git and CMake available on PATH.
+- OpenUSD 26.03 C++ SDK with Hydra/usdImaging, usdview, and Python 3.11 bindings for the standalone host and usdview.
+- Houdini 22.0.466, with its bundled USD 26.05 and Python 3.13, for Solaris.
+- uv for all Python execution and dependency management.
+
+The standalone and Houdini delegates use separate builds because their USD ABIs differ. The UE backend disables UE's USD and Python plugins. Dependencies retain their own licensing requirements.
+
+Local configuration
+
+Run commands from the repository root. Store installation locations in the ignored .local/paths.json file, environment variables, or explicit script parameters. Fill in the values locally; do not commit them.
+
+{
+  "engine_root": "",
+  "editor_root": "",
+  "openusd_root": "",
+  "houdini_root": ""
+}
+
+| Local key | Environment variable | Script parameter |
+| --- | --- | --- |
+| engine_root | HDUE_ENGINE_ROOT | -EngineRoot |
+| editor_root | HDUE_EDITOR_ROOT | -EditorRoot |
+| openusd_root | HDUE_OPENUSD_ROOT | -OpenUsdRoot |
+| houdini_root | HDUE_HOUDINI_ROOT or HFS | -HoudiniRoot |
+| houdini_build_root | HDUE_HOUDINI_BUILD_ROOT | -BuildDirectory (Houdini build/launch scripts) |
+| runtime_config | HDUE_RUNTIME_CONFIG | -RuntimeConfig |
+| review_scene | HDUE_REVIEW_SCENE | -InputUsd |
+
+For scripts using the local-path resolver, explicit parameters take priority over environment variables and local configuration. HDUE_LOCAL_CONFIG selects an alternative local configuration file. Relative values stored in that file are resolved against its directory; relative explicit parameters and environment values use the current working directory.
+
+runtime_config is read by Launch-Houdini.ps1 and Update-HoudiniRuntime.ps1. Pass -RuntimeConfig explicitly to Launch-Usdview.ps1; it otherwise uses the repository's staged runtime. review_scene supplies the input for Test-Opacity.ps1 and Test-Glass.ps1; scene launchers use their own -InputUsd parameter.
+
+Keep private projects, scene-specific helpers, catalogs, runtime profiles, and review evidence in .local/, external/, or out/. These directories are ignored. The source under unreal/HdUEBackend remains version controlled; its generated Content and build products do not.
+
+Build and validation
+
+.\scripts\Setup-Engine.ps1
+.\scripts\Verify.ps1
+
+Setup-Engine.ps1 obtains the pinned source using the user's own engine access. Verify.ps1 builds the host, prepares synthetic UE content, builds the backend DLL, stages a runtime, runs rendering checks, and compares native UE and Hydra HDR images. Add -WithUsdview for GUI, camera, and buffer checks. -SkipBuild reuses compatible build and cook outputs.
+
+Individual steps are available:
+
+.\scripts\Build-Host.ps1
+.\scripts\Prepare-Content.ps1
+.\scripts\Build-Backend.ps1
+.\scripts\Stage-Runtime.ps1
+
+The monolithic DLL requires a source engine. A matching editor installation can prepare content. Virtual-texture residency support adds one friend declaration through Apply-ResidencyPatch.ps1, which validates the engine version and insertion point. UELibrary and Launch are otherwise unchanged.
+
+Fresh verification evidence is written under out/. A successful exit code alone is insufficient: tests require new images, metadata, and clean engine shutdown.
+
+Standalone rendering and usdview
+
+.\scripts\Test-Hydra.ps1 -InputUsd samples/smoke.usda -Mode both -Cycles 1
+.\scripts\Launch-Usdview.ps1 -InputUsd samples/smoke.usda
+.\scripts\Launch-Usdview.ps1 -InputUsd samples/smoke.usda -Mode pathtraced
+
+The launcher owns UE initialization, Tick, and shutdown on the UI thread. Use it rather than an unmanaged usdview process. Asynchronous scene processing is unsupported.
+
+Generic Hydra translation supports meshes, cameras, materials, and distant, sphere, rect, disk, cylinder, and dome lights. Material-binding GeomSubsets partition triangles by their original USD face while preserving UVs, normals, transforms, visibility, and picking paths. Unassigned faces retain the mesh material; overlapping or invalid material subsets are rejected. Subset edits and removals update the generated meshes.
+
+Missing or zero normals are generated from area-weighted vertex adjacency before subset partitioning, so material boundaries share the same shading normals. Authored normals are retained. Author explicit face-varying normals or split vertices where hard edges are required; normal generation does not subdivide geometry or apply subdivision creases. The smoke fixture authors its box normals explicitly.
+
+Hydra instancing, curves, points, and volumes are not implemented. The Solaris settings subnet expands instanceable references in its own layer for editable mesh/material translation; point instancers remain unsupported.
+
+Camera controls include orbit, pan, and dolly. Continuous updates are coalesced. Lumen retains its ViewState during camera motion; scene, material, time, resolution, and Path Tracer request changes reset accumulation.
+
+The launcher supplies its own CPU picking path for generic meshes and supported native geometry. This is separate from standard Hydra ID AOVs and selection outlines. Native CPU picking requires readable, resident LOD0 data and rejects unsupported material deformation or Nanite overrides.
+
+Optional camera-following review lights are used when there are no active supported scene lights. Authored lights, including DomeLight, take precedence. Review lights are intended for inspection, not calibrated illumination.
+
+Lights and HDR environments
+
+…（内容已截断）

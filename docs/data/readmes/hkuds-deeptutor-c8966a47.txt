@@ -1,0 +1,105 @@
+&nbsp;
+
+DeepTutor: Lifelong Personalized Tutoring
+
+  &nbsp;
+
+&#32;&#32;
+
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+  &nbsp;
+
+Features · Get Started · Explore · CLI · Ecosystem · Community
+
+🤝 We welcome any kinds of contributing! Vote on roadmap items or propose new ones at Roadmap, and see our Contributing Guide for branching strategy, coding standards, and how to get started.
+
+📦 Releases
+
+2026.10.19] [v1.6.15 — Reviewed learning-path changes, grouped assessments, bounded tutoring memory, reliable chat recovery, sturdier parsing, retrieval comparisons, and native Gemini speech.
+
+Past releases (more than 1 week ago)
+
+2026.10.8] [v1.6.14 — Original-source visual practice, recoverable indexing, unified video Reading, scientific research tools, managed plugins, a learning journal, and provider setup improvements.
+
+2026.10.4] [v1.6.13 — Reading and listening improvements, question-bank practice, resilient document parsing, configurable speech, workspace-visible attachments, Polish, and new providers.
+
+2026.9.27] [v1.6.12 — Workspace KB moves, Kiwix archives, source figures, Task Board, German UI, and chat recovery.
+
+2026.9.24] [v1.6.11 — French and Ukrainian interfaces, reading folders with in-chat selection actions, figures sent to vision models, paged Office previews, and self-syncing knowledge bases.
+
+2026.9.22] [v1.6.10 — Native LightRAG role models, a published index that records and enforces what built it, PDF attachments that follow your parsing engine, visible truncation, and unfiltered provider choices.
+
+2026.9.21] [v1.6.9 — Folder-based learning workspaces, daily practice, redesigned Settings, clearer streaming conversations, persistent usage accounting, and recoverable archives with explicit permanent deletion.
+
+2026.9.14] [v1.6.8 — A recycle bin for deleted chats, search across your whole conversation history, a tool that looks past your knowledge base, and a sweep of fixes for quiet failures.
+
+2026.9.11] [v1.6.7 — A fix release: books that arrived as one empty chapter, quizzes that produced nothing, the model's scratchpad in the text, formulas printed raw, and cards you could not submit.
+
+2026.9.8] [v1.6.6 — A fix release: answers that could not submit, a copy button that lied, connected knowledge bases for partners, Codex sign-in inside Docker, and a 100 KB lighter home route.
+
+2026.9.6] [v1.6.5 — A content workspace you point at any folder, one exec tool for every language, Mastery Path modes that gate its tools, and Settings that grades readiness.
+
+2026.9.3] [v1.6.4 — Faster isolated runtimes, controllable Book generation, source-complete Mastery paths and Chat hand-offs, durable Reading, unified activity UI, recoverable sessions, and explicit per-model API capabilities.
+
+2026.9.2] [v1.6.3 — Breaking front/back-end refactor, strict canonical routes and recoverable streams, plus learner/guardian accounts, grounded Reading, WeKnora, broader parsing, Python 3.14, and DashScope media.
+
+2026.8.31] [v1.6.2 — Immersive YouTube learning, a plugin-driven Visualize catalog, three new agent harnesses, safer reading citations, multi-format MinerU, live Partner channel status, and guided updates.
+
+2026.8.30] [v1.6.1 — One vendor key linked to every service it serves, a task model for background work, Settings as a searchable navigator, a sidebar you arrange, and first-party LightRAG.
+
+2026.8.27] [v1.6.0 — Faithful EPUB reading and annotations, Courses with Little Tutor and Ask Questions, bounded web-source sync, shared Books with private learning state, and Serply/native search.
+
+2026.8.25] [v1.5.17 — Partners each member owns with private conversations and linkable chat accounts, GitHub repos as a knowledge source, Antigravity CLI, browser WeChat QR login, and deeptutor doctor.
+
+2026.8.22] [v1.5.16 — MarginNote 4 libraries you connect and its add-on fills, Book pages that turn again, and tool-call ids, embeddings and temperature limits that stop breaking behind a gateway.
+
+2026.8.20] [v1.5.15 — PageIndex OSS you host yourself with reasoning retrieval, a question bank you can finally file into, third-party tool/capability plugins, and Apache Tika parsing.
+
+2026.8.19] [v1.5.14 — Immersive Reading: a document open beside the thread, cited page by page; DeepTutor configures itself from chat; IMA libraries you browse and write to; a notebook console.
+
+2026.8.17] [v1.5.13 — Books stream while they compile, track your progress, and export to Markdown; a cost estimate before you approve a spine; and home starter suggestions drawn from memory.
+
+2026.8.13] [v1.5.12 — Web search rebuilt with six new providers (Doubao, Bocha, Zhipu, Firecrawl, Qianfan, Aliyun IQS), a LiteParse parsing engine, MCP servers that reconnect on credential change, and CodeBuddy + OrcaRouter.
+
+2026.8.10] [v1.5.11 — Prose around a DSML tool call stops vanishing, a truncated reply continues instead of ending, live memory usage in Settings, and LightRAG indexing off the event loop.
+
+2026.8.7] [v1.5.10 — Every account signs in to its own Codex, model output language becomes its own setting, empty tool calls are rejected instead of retried, and uploads stop blocking the loop.
+
+2026.8.4] [v1.5.9 — Gemini Embedding 2 on its native endpoint, a per-model reasoning effort control, a Novita AI gateway, retrieval roles for queries, and Compose deployments that keep all of data/.
+
+2026.8.2] [v1.5.8 — Memory: a real heap ceiling for the dev server, source installs serve a production build, bounded LLM client and index caches, and a keep-alive fix for stray 500s.
+
+2026.7.31] [v1.5.7 — A per-account MCP Services store, 101 CLI Apps the tutor can run, credentials moved out of the sandbox's reach, and a mobile layout.
+
+2026.7.29] [v1.5.6 — Remote Codex sign-in completes behind an SSH tunnel, generated files get their own card in Activity, non-English languages stop collapsing to Chinese, and book creation no longer times out.
+
+2026.7.26] [v1.5.5 — Sign in with your ChatGPT plan via OpenAI Codex OAuth, an Eden AI provider, knowledge bases that report what they hold, traceable rag citations, and GraphRAG indexing without a workaround.
+
+2026.7.24] [v1.5.4 — Maintenance sweep: the post-answer "generating" stall is gone, IM partners render Markdown tables faithfully, LLM JSON parsing is sturdier, plus quiz, create-KB form, and Math Animator fixes.
+
+2026.7.24] [v1.5.3 — Themeable code blocks, four more coding CLIs in My Agents (Gemini, Kimi, opencode, MiMo), an Atlas Cloud LLM provider, and a broad chat, memory, embedding, and parsing reliability sweep.
+
+2026.7.19] [v1.5.2 — Configurable chat attachment limits, PageIndex retrieval that reasons across your documents via agentic tool calls, broader Anthropic/OpenAI model support, and steadier Book, Knowledge Base, and chat UI.
+
+2026.7.9] [v1.5.1 — Remove a single failed document from a knowledge base — even one stuck in an error state — instead of deleting and rebuilding the whole base.
+
+2026.7.4] [v1.5.0 — LlamaIndex ingestion now honors your Document Parsing engine with multimodal image extraction, Partner & Soul ids stay URL-safe for non-Latin names, and optional RAG extras install cleanly on Python 3.14+.
+
+2026.6.30] [v1.4.15 — A native Mattermost channel for Partners, plus fixes so Guided Learning multiple-choice questions grade correctly and a configured zero chunk overlap is honored.
+
+2026.6.29] [v1.4.14 — Click an assigned partner to chat in one step, Deep Research flags partial reports, LightRAG indexes without MinerU, FAISS handles non-ASCII paths, and PocketBase sessions are isolated per user.
+
+2026.6.27] [v1.4.13 — Partners support non-Latin names and become assignable to users, logos render after login (#599), tiny knowledge bases retrieve reliably, and containers start cleanly under rootless Podman.
+
+2026.6.24] [v1.4.12 — A new LightRAG Server retrieval engine, a lightweight PyMuPDF4LLM parsing engine, and a FAISS vector backend that makes large knowledge-base retrieval dramatically faster.
+
+…（内容已截断）

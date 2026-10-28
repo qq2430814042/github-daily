@@ -1,0 +1,68 @@
+Universal DLSS 5 installer and manager for ANY graphics card. Stable FPS boost for NVIDIA & AMD!
+
+🚀 DLSS-5-Anywhere
+
+The Ultimate Frame Generation & Upscaling Manager for ANY Graphics Card.
+
+Unlock next-gen performance and bypass hardware restrictions with a single click.
+
+📥 Download the Latest Release
+
+⬇️ DOWNLOAD STANDARD INSTALLER (.exe)
+
+📦 DOWNLOAD PORTABLE ARCHIVE (.zip)
+
+💡 About the Project
+DLSS-5-Anywhere is a powerful, automated mod manager that democratizes high-end gaming performance. You no longer need to own the latest flagship GPU to experience buttery-smooth gameplay. By modifying and porting advanced DLSS 5 algorithms, this tool successfully bridges the gap between proprietary upscaling technology and cross-vendor hardware.
+
+Forget about manually downloading, renaming, and dragging .dll files into game directories. DLSS-5-Anywhere automatically detects your games, configures the optimal upscaling pipeline for your specific GPU architecture, and handles the injection safely.
+
+🎮 Hardware Support Matrix
+
+| GPU Vendor | Compatibility Status | Performance Impact | Notes |
+| :--- | :---: | :---: | :--- |
+| 🟢 NVIDIA (RTX / GTX) | 🌟 Stable | Massive Boost | Maximum visual fidelity and frame generation compatibility. |
+| 🔴 AMD (Radeon RX) | 🌟 Stable | Massive Boost | Seamless native integration, zero visual artifacts. |
+| 🔵 Intel ARC | 🛠️ Beta | Moderate Boost | Minor visual bugs may occur (actively patching in upcoming updates). |
+
+🔥 Key Features
+* Intelligent Auto-Detection: Automatically scans your drives for supported games and identifies your exact GPU model to apply the most stable preset.
+* Failsafe Backups: Creates automatic, timestamped backups of your original game files before applying any modifications. You can revert to vanilla with one click.
+* Two Deployment Options: Choose between a traditional system installer or a lightweight portable version to keep on a USB drive.
+* Built-in Updater: Never miss a performance tweak. The manager downloads updated .dll configurations and hotfixes directly from our servers.
+* Clean UI: A modern, dark-themed interface built for gamers. No complex coding or terminal commands required.
+
+⚙️ Installation & Setup
+
+We offer two ways to use DLSS-5-Anywhere. Choose the method that works best for you.
+
+Option A: Standard Installer
+This is the easiest method and sets up the necessary system shortcuts automatically.
+1. Download DLSS-5-Installer.exe from the Releases page.
+2. Run the installer and follow the on-screen instructions.
+3. Launch the application from your Start Menu or Desktop shortcut.
+
+Option B: Portable Archive
+Ideal for users who prefer not to install software on their system drive.
+1. Download the DLSS-5-Portable.zip archive.
+2. Extract the folder to a location of your choice (e.g., C:\Tools\DLSS-Manager).
+3. CRITICAL STEP: You MUST right-click DLSS-Manager.exe and select "Run as Administrator".
+   (Note: The portable version requires administrative privileges to successfully write .dll files into protected game directories).
+
+🕹️ How to Use
+1. Launch DLSS-5-Anywhere.
+2. Click "Scan for Games" or manually point the app to your game's .exe file.
+3. Select your desired preset (Quality, Balanced, Performance, or Ultra Performance).
+4. Click "Apply Mod".
+5. Launch your game, navigate to the in-game graphics settings, and enable DLSS/Frame Generation.
+
+⚠️ FAQ & Troubleshooting
+
+My Antivirus flagged the download as a threat. Is it safe?
+Yes. Because DLSS-5-Anywhere injects and modifies .dll files inside game directories to enable frame generation, some overzealous antivirus software (like Windows Defender) may flag it as a false positive. The code is entirely open-source, and you are welcome to compile it yourself from this repository.
+
+The game crashes immediately on startup.
+Verify that you ran the manager as an Administrator (especially if using the Portable version). If you are using an Intel ARC GPU, please check the "Issues" tab, as ARC support is still in active beta testing.
+
+How do I uninstall the mod?
+Open DLSS-5-Anywhere, select your game from the list, and click the "Restore Original Files" button. Your game will return to its untouched vanilla state.

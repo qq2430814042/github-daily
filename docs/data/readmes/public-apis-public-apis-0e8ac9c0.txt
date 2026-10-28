@@ -76,6 +76,19 @@ Maintain an open-source MCP server? Add it.
 
 Learn more about Public APIs
 
+Prefer a website? Browse this list at publicapis.lol
+
+Everything in this README, rebuilt as a searchable site. It's the official home of public-apis: 2,000+ free APIs in 50+ categories, synced from this repo and tested daily.
+
+* Browse the directory: every category, featured picks and the latest from the blog
+* Search and filter every API by auth, HTTPS and CORS
+* APIs with no key: call them right now, no sign-up
+* Live status: which APIs are up, slow or down today
+* MCP servers for AI agents
+* Free developer tools: JSON formatter, JWT decoder, cURL converter and more
+* Blog: tutorials and roundups built on the APIs in this list
+* Can't decide? Get a random API 🎲
+
 Get Involved
 
 * Contributing Guide
@@ -151,16 +164,5 @@ API | Description | Auth | HTTPS | CORS
 | Dogs | Based on the Stanford Dogs Dataset | No | Yes | Yes |
 | eBird | Retrieve recent or notable birding observations within a region | apiKey | Yes | No |
 | FishWatch | Information and pictures about individual fish species | No | Yes | Yes |
-| HTTP Cat | Cat for every HTTP Status | No | Yes | Yes |
-| HTTP Dog | Dogs for every HTTP response status code | No | Yes | Yes |
-| IUCN | IUCN Red List of Threatened Species | apiKey | Yes | No |
-| MeowFacts | Get random cat facts | No | Yes | No |
-| Movebank | Movement and Migration data of animals | No | Yes | Yes |
-| PlaceBear | Placeholder bear pictures | No | Yes | Yes |
-| PlaceDog | Placeholder Dog pictures | No | Yes | Yes |
-| RandomDog | Random pictures of dogs | No | Yes | Yes |
-| RandomDuck | Random pictures of ducks | No | Yes | No |
-| RandomFox | Random pictures of foxes | No | Yes | No |
-| RescueGroups | Adoption | No | Yes | Unknown |
 
 …（内容已截断）

@@ -1,0 +1,60 @@
+AI Design Skills
+
+A growing collection of design skills for AI coding tools — Claude Code, Cursor, Codex, Windsurf, and anything else that reads a markdown rules file.
+
+Each skill is a self-contained folder. Install the ones you need.
+
+Skills
+
+| Skill | What it does |
+|---|---|
+| landing-page-design | Builds a landing page from scratch — intake questions, page structure, conversion copy, plus a full visual system (type, spacing, radius, motion) |
+
+More on the way. Upgrading an existing site instead of building new? That one lives in its own repo since it predates this collection.
+
+Install
+
+Pick a skill from the table above, then swap `` below for its folder name.
+
+Claude Code
+
+mkdir -p .claude/skills
+git clone https://github.com/elayadesign/ai-design-skills.git /tmp/ai-design-skills
+cp -r /tmp/ai-design-skills/skills/ .claude/skills/
+
+Then just ask, in plain language, for what that skill covers.
+
+Cursor
+
+mkdir -p .cursor/rules
+curl -o .cursor/rules/.md \
+  https://raw.githubusercontent.com/elayadesign/ai-design-skills/main/skills//SKILL.md
+
+Or paste the file into Settings → Rules for AI.
+
+Codex / Windsurf / other
+
+Copy the skill's SKILL.md into whatever your tool uses for project rules:
+
+| Tool | Path |
+|---|---|
+| Codex | AGENTS.md |
+| Windsurf | .windsurfrules |
+| Cline | .clinerules |
+| Generic | paste into your system prompt |
+
+Claude.ai (no terminal)
+
+Download the skill's SKILL.md and upload it to a Project, or attach it to a chat and say "follow this."
+
+Make it yours
+
+Every skill's design values (fonts, colors, spacing, motion) live in one section near the bottom of its file. Fork this repo, edit that section, and the rest of the skill follows automatically.
+
+Credits
+
+landing-page-design adapts content realism and motion ideas from Leonxlnx/taste-skill by Leon Lin, MIT licensed. Details are at the end of its SKILL.md.
+
+License
+
+MIT. Use it, fork it, ship it, sell what you build with it. No attribution needed.

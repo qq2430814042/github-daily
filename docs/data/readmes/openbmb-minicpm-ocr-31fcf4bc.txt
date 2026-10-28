@@ -1,0 +1,131 @@
+MiniCPM-OCR · Fast, accurate parsing for real-world documents.
+
+  MiniCPM-OCR 1.0&ensp;&ensp;
+  &emsp;
+  MiniCPM-OCR Jev&ensp;&ensp;
+
+  Get Started &nbsp;·&nbsp;
+  Model Weights &nbsp;·&nbsp;
+  Online Demo (China) &nbsp;·&nbsp;
+  Online Demo (Global)
+  &nbsp;|&nbsp; English &nbsp;·&nbsp; 中文
+
+MiniCPM-OCR is a family of models for efficient document parsing and text recognition. MiniCPM-OCR 1.0 parses Chinese and English documents and PDFs, balancing quality and efficiency across challenging inputs such as scans, photographs, curved pages, and recaptured documents. MiniCPM-OCR Jev evaluates OCR results at the region level, distinguishing problematic regions from reliable ones. It works with different parsing models to help users locate content that needs review.
+
+MiniCPM-OCR 1.0
+
+MiniCPM-OCR 1.0 (1.3B) is the first OCR-specific model in the MiniCPM-V/o family. It focuses on text-centric document understanding, covering text, tables, formulas, charts, seals, and structured information extraction. Its key features include:
+
+- 🏆 SOTA document parsing: MiniCPM-OCR 1.0 achieves a SOTA score of 93.68 on Real5-OmniDocBench, a benchmark for real-world document parsing, and demonstrates leading parsing capabilities on OmniDocBench v1.6, Wild-OmniDocBench, and olmOCR-Bench. It supports Chinese and English documents and PDFs, handling both standard documents and challenging capture conditions, including scans, curved pages, photographs, skewed pages, and recaptured documents.
+- ⚡ Efficient inference. With DSpark decoding acceleration (DSpark-BF16, DSpark-GGUF), MiniCPM-OCR 1.0 improves end-to-end processing efficiency by 55%. Its throughput is approximately 1.49× that of PaddleOCR-VL-1.6 and 3.62× that of MinerU2.5 Pro, reducing the time needed for large-scale document parsing.
+- 🔍 General recognition and information extraction: MiniCPM-OCR 1.0 achieves a SOTA score of 54.7 on OCRBench v2, demonstrating strong general OCR capabilities. It also supports key information extraction (KIE), extracting relevant document content for downstream information management and automated processing.
+- 🛠️ Easy deployment and development: MiniCPM-OCR 1.0 supports vLLM, SGLang, llama.cpp, and Ollama from day one, with multiple chip platforms and quantized versions available at release. It supports further fine-tuning and provides a pip SDK, a full-featured API, and established agent workflows for application integration and customization. Online demos are available for China and global users.
+
+SOTA Performance, Higher Throughput
+
+Among the open-source OCR models shown below, MiniCPM-OCR 1.0 achieves a parsing throughput of 1.2 pages/s and the highest equally weighted average score across four document parsing benchmarks: OmniDocBench v1.6, Real5-OmniDocBench, Wild-OmniDocBench, and olmOCR-Bench.
+
+The average score weights OmniDocBench v1.6, Real5-OmniDocBench, Wild-OmniDocBench, and olmOCR-Bench equally. The horizontal axis shows throughput in pages per second on a logarithmic scale. See the reproduction guide for test settings and reproduction details, and the model guide throughput evaluation for each model's throughput.
+
+Benchmark Comparisons
+
+View complete MiniCPM-OCR 1.0 evaluation results
+
+See the OCR model guide for per-benchmark bar charts and throughput details.
+
+Examples
+
+Left to right: original document, detected layout, and rendered Markdown.
+
+English Documents
+
+Chinese Documents
+
+More Examples
+
+Original documents and parsed results, side by side.
+
+English Documents
+
+Chinese Documents
+
+MiniCPM-OCR Jev
+
+MiniCPM-OCR Jev is an OCR quality decision model for text, formulas, and tables. Given an image and its corresponding OCR result, it returns a quality score from 0 to 1 to help select reliable results and locate content that needs review.
+
+- 🛡️ Strong performance in a small model: With only 2B parameters, MiniCPM-OCR Jev achieves an AUROC (×100) of 93.6 on JevOCRBench, outperforming JEV-35B-A3B (90.1) and approaching Qwen3.5-397B-A17B (93.8).
+- 🧩 Consistent generalization: Across parsing results from MiniCPM-OCR 1.0, GLM-OCR, PaddleOCR-VL-1.6, and Xiaomi-OCR-0, its AUROC (×100) ranges from 91.9 to 93.4.
+
+Evaluation Results
+
+The table below reports overall and per-category AUROC (×100) on JevOCRBench. Higher values indicate better discrimination between correct and incorrect parsing results.
+
+Review-Free Accuracy
+
+Accuracy at different review-free rates across three document types.
+
+Decision Examples
+
+Jev scores for text, formula, and table recognition.
+
+See the model guide, use cases, cross-model evaluation, and decision examples.
+
+Using MiniCPM-OCR
+
+Choose how to integrate MiniCPM-OCR 1.0 and MiniCPM-OCR Jev:
+
+Skill
+
+Ask a coding agent to follow the MiniCPM-OCR 1.0 skill to set up the environment, download models, and parse your first document. Send the following instruction to the agent:
+
+Read and execute https://github.com/OpenBMB/MiniCPM-OCR/blob/main/docs/SKILL_en.md
+
+If you have already cloned this repository, you can use ./docs/SKILL_en.md directly.
+
+API
+
+Use the API to access MiniCPM-OCR 1.0 recognition and MiniCPM-OCR Jev quality scoring.
+
+MiniCPM-OCR 1.0 API example &emsp;·&emsp; MiniCPM-OCR Jev API example (coming soon)
+
+Local Deployment
+
+Run the models on your own hardware: MiniCPM-OCR 1.0 parses PDFs and images into Markdown or JSON, while MiniCPM-OCR Jev scores the parsing results.
+
+MiniCPM-OCR 1.0 deployment tutorial · MiniCPM-OCR Jev deployment tutorial
+
+Fine-Tuning
+
+| Model | Fine-tuning tutorial |
+| :--- | :--- |
+| MiniCPM-OCR 1.0 | LLaMA-Factory · Swift |
+| MiniCPM-OCR Jev | Swift |
+
+Model Weights
+
+Model
+Description
+Main Model Weights
+DSpark Heads
+
+MiniCPM&#8209;OCR&nbsp;1.0
+Efficient document parsing and text recognition for Chinese and English documents and PDFs, balancing quality and speed across scans, photographs, curved pages, and recaptured documents.
+🤗&nbsp;&nbsp;&nbsp;BF16
+🤗&nbsp;&nbsp;&nbsp;GGUF
+🤗&nbsp;&nbsp;&nbsp;AWQ
+🤗&nbsp;&nbsp;&nbsp;GPTQ
+🤗&nbsp;&nbsp;&nbsp;BF16
+🤗&nbsp;&nbsp;&nbsp;GGUF
+
+MiniCPM&#8209;OCR&nbsp;Jev
+An OCR quality decision model for text, formulas, and tables. Given an image and its OCR result, it returns a quality score from 0 to 1.
+🤗&nbsp;&nbsp;&nbsp;BF16&emsp;🤗&nbsp;&nbsp;&nbsp;GGUF
+🤗&nbsp;&nbsp;&nbsp;AWQ&emsp;🤗&nbsp;&nbsp;&nbsp;GPTQ
+
+💡 FAQ and Troubleshooting
+
+See the FAQ for common questions about installation, model downloads, GPU memory, input formats, and unexpected outputs.
+
+📄 License
+
+The entire project is released under the Apache License 2.0, including code, documentation, and model weights for MiniCPM-OCR 1.0 and MiniCPM-OCR Jev.

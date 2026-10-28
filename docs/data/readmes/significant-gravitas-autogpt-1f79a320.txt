@@ -114,6 +114,7 @@ Experts can use skills and workflows to do their jobs. The visual builder lets y
 - Visual builder: connect blocks, branch logic, and control the steps.
 - Marketplace: discover workflows you can adapt to your work.
 - Integrations: connect the tools your team uses.
+- API and MCP server: run and build workflows from your own code, or from an AI coding agent.
 
 Build with us
 

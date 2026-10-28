@@ -1,46 +1,96 @@
 English · 简体中文
 
-  🌐 cindy.app &nbsp;·&nbsp; ⬇️ Download
+  Download Cindy &nbsp;·&nbsp; Website &nbsp;·&nbsp; Build with us &nbsp;·&nbsp; Get help
 
-Cindy is an open-source AI agent that works out of the box. She brings multiple
-harnesses, models and tools into one agent that finishes real work in your
-projects and apps. Ready from day one, yours to shape over time.
+Cindy is an open-source AI agent, ready out of the box and yours to shape.
+Connect your computers and phone, bring the models and subscriptions you already
+use, and build a companion that knows how you like to work.
 
-Cindy runs locally on your own machine, using your real files and logged-in
-apps. The first supported harnesses are Claude Code and Codex — more are
-being added, and a native harness is in the works. Models and harnesses mix
-freely and can switch mid-task while your workspace, memory, skills and tools
-stay continuous; one task can even be planned, executed in parallel, and
-reviewed by agents on different harness × model combos. She can drive your
-browser, computer and phone, and take work from IM and schedules.
+All your devices. One Cindy.
 
-This repository is the open-source client for Cindy — the desktop and mobile
-apps plus their shared packages, organized as a pnpm monorepo.
+Your work computer, home desktop, laptop and phone belong together.
 
-The client is free to use, and its source code is open under Apache-2.0. Bring
-models your way: sign in to the official Cindy service (usage deducted
-transparently), authorize the Claude Code / Codex Coding Plan you already
-pay for and keep using it inside Cindy — no duplicate bill — connect your own
-API keys, or use local models.
-See cindy.app for service details,
-pricing, and downloads.
+- Pick up the same work. Open a session from another device, continue the
+  conversation, and access its files without copying everything into a new chat.
+- Share more than a screen. Use model providers configured on another
+  computer — including supported subscriptions, API providers and local models.
+- Reach your whole desktop. Built-in remote desktop on your phone lets you
+  open apps, type and operate a connected computer when a chat isn't enough.
+
+Your computer becomes your server: no server rental or self-hosting setup.
+
+How connections and data work
+
+For remote access to your computers, keep them online, sign in with the same
+account and enable the relevant permissions. Model sharing requires allowing
+remote access to that provider; remote desktop also needs its own permissions.
+Project files stay on their computer — remote access is not whole-disk sync.
+Cloud companions sync their conversations, memory, skills and shared attachments
+through Cindy's services; model providers process the requests sent to them.
+Provider and service billing still apply.
+
+Keep your favorite agents. Get a better way to work.
+
+Already using Claude Code or Codex? Cindy brings them together with Pi,
+then adds a shared interface, multi-device access, tools and a companion of
+your own.
+
+| Harness | What it brings |
+| --- | --- |
+| Claude Code | Claude Code's agent workflow, with Cindy's interface and connected tools. |
+| Codex | Codex's coding workflow, available alongside your other agents. |
+| Pi | A lean, open-source, extensible agent with support for multiple model providers. |
+
+Choose a supported harness and model combination, and change it as the work
+evolves. Your session stays in Cindy; switching harnesses hands off or rebuilds
+the engine context rather than making their internal states identical.
+
+One agent not enough? Let her lead a team. Use different agents for planning,
+parallel implementation and independent review, with a shared goal and clear
+acceptance criteria.
+
+Real work, in your actual tools
+
+Work with your files, browser and apps. Ask for a change, inspect what happened,
+and keep working from the result. Answers can include **charts, interactive
+controls and rich HTML**, not just a wall of text.
+
+Build a recurring routine with automations, or hand over work through
+connected chat channels such as Slack and Telegram. Connect more tools through
+Skills, plugins and MCP.
+
+Ready from day one. Yours to shape over time.
+
+- Create your own companions. Give them a role, instructions, skills and
+  recurring work — a reviewer, researcher, project partner, or something of your own.
+- Make experience reusable. Keep useful preferences and knowledge in memory;
+  turn a good way of working into a Skill you can reuse and share.
+- Extend the product. Discover Skills and plugins in SkillHub, connect your
+  own tools, or build on the official plugins.
+- Help shape Cindy. Audit the code, fork it, improve an interaction, fix a bug,
+  or contribute a useful integration. The client is Apache-2.0 licensed.
+
+Open source means more than visible — it means changeable.
+Build Cindy with us →
+
+Start with what you already have
+
+The client is free. Authorize a supported subscription you already pay for,
+including Claude Code or Codex plans, connect your own API keys, or use a local
+model. You can also use Cindy's managed model service. Provider limits and
+billing still apply; the free client does not mean unlimited model usage.
+
+macOS · Windows · Linux · iOS · Android
+
+Download Cindy · Service pricing
 
 Linux users: see the Ubuntu, Arch Linux and Omarchy installation guide
 for installation, updates, keyring setup and migration from a manual install.
 
-Yours to shape
+For developers
 
-Open source means more than visible — it means changeable:
-
-- Memory — correct her once and she does it right from then on, shared across harnesses.
-- Skills — teach a way of working once and reuse it everywhere; handing them to your team is in the making.
-- Automation — recurring work schedules itself, runs itself, reports back.
-- MCP — wire your internal tools and business systems into her reach.
-- Plugins — reshape features, UI and interactions, shared through an open marketplace (in the making).
-- Source — audit, fork, extend, and contribute improvements back under Apache-2.0.
-
-Ready out of the box, never boxed in — start with
-CONTRIBUTING.en.md and build Cindy with us.
+This repository contains Cindy's open-source desktop and mobile clients and
+their shared packages, organized as a pnpm monorepo.
 
 What's in this repo
 
@@ -133,39 +183,4 @@ privately through SECURITY.en.md.
 
 Security
 
-Never commit credentials or authorization files to the working tree. If you
-discover a security issue, follow SECURITY.en.md to report it
-privately rather than opening a public issue.
-
-Privacy & telemetry
-
-Official distribution builds include TapDB
-usage analytics for product-level aggregate statistics (device / OS / app-version
-metadata; associated with your account ID after sign-in). It does not collect
-chat content, file content, or working-directory data. In addition, while signed
-in to a cloud account the client sends an online heartbeat to Cindy services
-(account ID, platform, and version only). Crash dumps stay on the local machine
-and are never uploaded automatically.
-
-Building from source? You are not required to keep analytics:
-
-- Mobile is off by default — without TapDB credentials (clientId /
-  clientToken) injected at build time, apps/mobile/src/analytics/mobileTapdb.ts
-  is a no-op;
-- Desktop can be fully stripped by removing the initTapdb() call in
-  apps/desktop/src/renderer/index.tsx (implementation lives in
-  apps/desktop/src/renderer/analytics/).
-
-License / 许可证
-
-Except as otherwise noted, the source code in this repository is licensed under
-the Apache License, Version 2.0. Individual source files do not
-carry per-file license headers; the repository-root LICENSE governs.
-
-Model weights, datasets, prompts, trademarks, and other separately identified
-materials may be subject to their own license terms and are not automatically
-covered by the repository-level Apache-2.0 grant. Third-party open-source
-components retain their own copyright and license. Their attribution notices and
-SPDX SBOMs are managed under docs/legal/, with artifact-specific
-outputs in docs/legal/notices/. See NOTICE
-for this project's copyright and attribution information.
+…（内容已截断）

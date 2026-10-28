@@ -1,0 +1,131 @@
+Manufacturing WeChat Mini Program Starter
+
+A privacy-first, synthetic starter that turns a familiar WeChat Mini Program into a low-friction shop-floor data channel for small and medium-sized manufacturers.
+
+Why this matters
+
+Many frontline events are still reported on paper, in chat messages or after a shift. The delay makes production, quality and workforce records incomplete when managers need them. A Mini Program can collect structured data at the point of work without asking employees to install or learn another application, then return validated events to MES, payroll or factory administration systems.
+
+The intended production model always works with an MES. MES remains the system of record for work orders, processes, routing, equipment, production results and quality records. The Mini Program is the employee-facing collection and feedback layer: it receives authorized tasks from MES and sends verified shop-floor events back through an auditable adapter.
+
+This starter focuses on four practical outcomes:
+
+- capture production completion, material use, quality, abnormal events, work time and forms as close to the event as possible;
+- maintain an approved employee roster and auditable employment records;
+- deliver payroll statements to the correct employee and record acknowledgement safely;
+- compare each employee's demonstrated efficiency across processes to support training, shift planning and job assignment.
+
+MES work order / process master data
+                 ↓
+Frontline employee ↔ familiar Mini Program → validated shop-floor event → MES
+                              │
+                              └→ approved payroll / administration boundary
+                                                     ↓
+                                   process evidence and feedback loop
+
+Process-efficiency analytics should support a manager's decision, not make an employment decision by itself. A production implementation should use comparable measurements, show the evidence and time window, allow correction or appeal, exclude protected or irrelevant personal attributes, and require human review before changes to assignment, pay or employment status.
+
+It demonstrates the parts that are easy to get wrong when a Mini Program connects to MES or factory administration systems:
+
+- employee access requests with explicit administrative approval;
+- platform identity derived from trusted server context;
+- current-user-only clock-in and clock-out;
+- location collection only after an explicit user action;
+- daily payroll acknowledgement and monthly signature requirements;
+- dynamic form drafts and submissions;
+- idempotent MES exports with payload hashes and receipts;
+- audit events that exclude sensitive request bodies;
+- fail-closed validation and safe error envelopes.
+
+All names, departments, dates, amounts, identifiers and locations in this repository are synthetic. The repository contains no production AppID, CloudBase environment, endpoint, credential, employee record, attendance location, payroll record or signature.
+
+Quick start
+
+Node.js 20 or newer is required for the zero-dependency test and demo runtime.
+
+npm test
+npm run demo
+
+Expected demo output contains only synthetic identifiers, one MES receipt and a SHA-256 payload hash.
+
+Repository layout
+
+miniprogram/                 Native WXML/WXSS/JavaScript page skeletons
+cloudfunctions/              Platform-neutral gateway and production boundary
+src/                         Domain rules, memory store and MES connector
+tests/                       Synthetic authorization and failure-path tests
+examples/                    Deterministic local demo
+
+Mini Program setup
+
+1. Copy miniprogram/project.config.example.json to a local project.config.json.
+2. Replace the placeholder AppID locally. Do not commit the resulting file.
+3. Copy miniprogram/config.example.js to your own environment-specific configuration.
+4. Connect cloudfunctions/employeeGateway/handler.js to a persistent repository and CloudBase identity provider.
+5. Configure collections so Mini Program clients cannot read or write employee, payroll, signature, attendance or audit data directly.
+6. Compile and preview in WeChat Developer Tools, then verify privacy disclosures before submission.
+
+The included cloud gateway is deliberately not deployable without operator-owned identity and storage wiring. This prevents a demo identity model from being mistaken for production authentication.
+
+Architecture
+
+Native Mini Program
+       │ action + payload
+       ▼
+Cloud gateway ── verified platform identity
+       │
+       ├─ employee access and authorization rules
+       ├─ attendance / payroll / form services
+       └─ MES connector ── idempotency key + payload hash + receipt
+
+The client never submits the trusted platform subject identifier. A production adapter must derive it from the verified CloudBase execution context.
+
+MES integration model
+
+This repository provides the boundary pattern; an operator supplies the adapter for its own MES.
+
+| Direction | Typical records | Owner |
+| --- | --- | --- |
+| MES → Mini Program | released work orders, operation definitions, allowed equipment, shift tasks and quality checkpoints | MES |
+| Mini Program → MES | start/finish events, quantity, scrap reason, process time, inspection result, abnormal event and attachment reference | MES after validation |
+| HR/payroll → Mini Program | approved employee binding and published payroll notice | HR/payroll system |
+| Mini Program → HR/payroll | acknowledgement, correction request and signature hash | HR/payroll system after validation |
+
+Every outbound MES event should include a stable idempotency key, source employee binding, work-order and operation references, device or station context, event time, payload hash and receipt. The adapter must reject unknown work orders, unauthorized operations, stale master-data versions and receipt hash mismatches. Failed or uncertain writes remain pending for safe retry instead of being counted twice.
+
+Efficiency comparisons should be calculated from MES-confirmed production events with comparable product, operation, equipment, shift and quality conditions. The result can suggest training or assignment options, but a manager should review the evidence and quality outcome before changing a person's job.
+
+Included workflows
+
+Employee access
+
+An unbound identity submits an employee code and display name. A server-authorized reviewer approves or rejects the request. Approval binds the verified platform identity to one roster entry. Duplicate pending requests are replayed safely.
+
+Attendance
+
+Clock-in and clock-out always resolve the employee from the verified identity. Sending another employee ID does not grant delegation. Location requires explicit consent and a user-triggered collection step.
+
+Payroll acknowledgement
+
+Employees can list only their own published notices. Daily notices require explicit confirmation. Monthly notices also require a deliberate signature payload; the sample stores only its SHA-256 hash.
+
+Dynamic forms
+
+Templates define allowed and required fields. Unknown fields fail closed. Drafts belong to the current employee and are cleared after a successful submission. Audit entries record the event identity, not form bodies.
+
+MES export
+
+Every export requires a stable idempotency key. A repeated key with the same payload returns the original receipt without another network call. Reusing the key with a changed payload fails. A receipt with a different payload hash is rejected.
+
+Privacy and security boundaries
+
+The starter intentionally excludes:
+
+- real Mini Program and CloudBase identifiers;
+- deployable keys, tokens and environment files;
+- real employee, organization, payroll, attendance, signature and location data;
+- direct client access to privileged collections;
+- automatic background location collection;
+- a production-ready account, RBAC, database or retention implementation.
+
+…（内容已截断）

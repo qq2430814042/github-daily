@@ -1,0 +1,146 @@
+🟠 RUST-RECOIL-PRO
+
+⚡ Premium Undetected Utility & Script Tool for Rust
+
+«Control the recoil. Dominate the island.»
+
+📥DOWNLOAD
+
+📋 Table of Contents
+
+- 📌 About
+- ✨ Features
+- 🖥️ Screenshots
+- 📦 Installation
+- 🚀 Quick Start
+- ⚙️ Configuration
+- ❓ FAQ
+- 📜 Changelog
+- 🤝 Contributing
+
+📌 About
+
+RUST-RECOIL-PRO is an advanced helper tool designed for Rust players, featuring humanized recoil control, visual overlays, and automated mechanics.
+
+| Module | Description | Status |
+|--------|-------------|--------|
+| 🎯 Recoil Engine | Perfect pattern compensation (AK, LR-300, MP5, etc.) | ✅ Active |
+| 👁️ Player ESP | Distance, health, active weapon rendering | ✅ Active |
+| 📦 Loot Visualizer | Shows high-tier crates, nodes, and dropped items | ✅ Active |
+| 🛠️ Auto-Codelock | Instant code entry and lock automation | ✅ Active |
+| 🎯 Crosshair Overlay | Customizable center screen crosshair | ✅ Active |
+
+🟢 Current Status: UNDETECTED — Last checked: October 26, 2026 (Compatible with EAC)
+
+✨ Features
+
+- 🟢 EAC Bypass (Bypass for Easy Anti-Cheat)
+- 🟢 Humanized Recoil Control (Randomized pixel movement to avoid detection)
+- 🟢 Mouse Driver Emulation (Supports Logitech, Razer, and Generic mice)
+- 🟢 Loot & Ore Filter (Find Sulfur, Metal, and Elite Crates instantly)
+- 🟢 Custom Configs — Import/export settings via .json
+- 🟢 Zero Performance Loss (Optimized for high FPS)
+
+🖥️ Screenshots
+
+📦 Installation
+
+Requirements
+
+| Parameter | Minimum |
+|-----------|---------|
+| OS | Windows 10/11 (x64) |
+| RAM | 16 GB |
+| GPU | GTX 1060 / RX 580 or better |
+| Game Version | Steam Latest |
+
+Step-by-Step Guide
+
+1. Download the latest release:
+https://github.com/Tunnelclabungalow/Rust-Recoil-Pro/releases/latest
+
+2. Extract the archive to a separate folder:
+C:\Tools\RustRP\
+
+3. Run RustRP.exe as Administrator.
+
+4. Launch Rust and press INSERT in-game to open the menu.
+
+🚀 Quick Start
+
+1. Run RustRP.exe (Admin)
+2. Open Rust and join a server
+3. Press INSERT] to toggle GUI
+4. Select your active weapon pattern
+5. Save settings: Config → Save Default
+
+Hotkeys
+
+| Key | Action |
+|-----|--------|
+| INSERT | Open / Close Menu |
+| F1 | Toggle Recoil Control |
+| F2 | Toggle Player ESP |
+| F3 | Toggle Loot ESP |
+| NUMPAD 1-6 | Quick Weapon Select (AK, LR, MP5, Custom) |
+| F9 | Emergency Exit (Panic Key) |
+
+⚙️ Configuration
+
+Example config (config.json)
+
+{
+  "recoil": {
+    "enabled": true,
+    "humanize": true,
+    "smoothness": 1.2,
+    "fov_scaling": true,
+    "auto_weapon_detect": true
+  },
+  "esp": {
+    "players": true,
+    "boxes": true,
+    "distance": 300,
+    "ores": {
+      "sulfur": true,
+      "metal": true,
+      "stone": false
+    }
+  },
+  "misc": {
+    "auto_lock": true,
+    "crosshair": true
+  }
+}
+
+❓ FAQ
+
+🔸 Is this safe from EAC (Easy Anti-Cheat)?
+
+Yes. The software uses humanized mouse event emulation and kernel-level masking, making it undetected by signature and behavioral scans.
+
+🔸 Does it work with all attachments (Scopes, Muzzle Boost)?
+
+Yes, the script automatically adjusts values depending on your attached sight (8x, 16x, Holo) and muzzle modification.
+
+🔸 Does it affect my sensitivity settings?
+
+You can set your exact in-game sensitivity inside the app configuration panel for 1:1 compensation accuracy.
+
+📜 Changelog
+
+v3.1.2 — 2026-10-26
+- ✅ Updated pattern algorithms for latest Rust patch
+- ✅ Added support for new weapons and attachments
+- ✅ Improved EAC bypass routines
+- 🐛 Fixed FOV scale calculations
+
+🤝 Contributing
+
+Pull requests are welcome! For major changes, please open an Issue first.
+
+⭐ Enjoying the project? Drop a star!
+
+Made with ❤️ by [Tunnelclabungalow
+
+© 2026 — Rust-Recoil-Pro. Not affiliated with Facepunch Studios.

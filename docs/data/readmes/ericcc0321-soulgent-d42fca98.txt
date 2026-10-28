@@ -1,0 +1,111 @@
+Soulgent
+
+Give your agents a soul.
+Every session, a companion you can see.
+
+简体中文
+
+A note from the author: why I built Soulgent (click to open)
+
+In Claude Code, Codex, WorkBuddy and tools like them, every piece of work starts the same way: you open a session in a terminal or an app. I like to give each session one kind of job. One looks after my VPS, one plays a phone game for me, one keeps my inboxes in order...
+
+The longer I worked this way, the more sessions I had. Once I taught my Claude Code sessions to message each other, managing the sessions themselves became the bottleneck. Finding one thing meant digging through many sessions. At first I could keep track of three or four; whenever I focused on one task, the rest were forgotten.
+
+I noticed other people trying to solve the same problem. On Reddit, someone wired up a physical warning light; someone else put a little virtual character on their iPhone as a reminder. That was when I realized I needed a better way to work alongside agents, because what slows down people and agents working together is often us, the humans.
+
+Many great products today are building one all-powerful super assistant. My habit is different: one session, one kind of job. Each session keeps the context of its own corner of the work, and gets better at it the longer it runs.
+
+Later I had more than 40 long-running sessions, and even a dashboard could not keep up. So I split them into 4 agent teams, each with a Leader who organizes most of the collaboration. There may be more teams one day, and maybe a "vice president" to manage the Leaders. Soulgent's three scenes grew out of this step by step: the Duty Room for handling things fast, the Office where companions walk up to my desk to report, and Seaview, where each team sits together.
+
+In real life we have many friends and work with many colleagues. One day we will have many agents too. I want sessions to step out of terminals and chat boxes, so that living with a crowd of agents feels as natural as living among people you know.
+
+What is Soulgent
+
+Soulgent turns every agent session on your computer into a character with a name, a look and a mood. Who is working, who is done and has something to tell you, who is waiting for your decision: one glance up and you know. Seeing every session works on its own; clicking a character to jump to its session and replying from your phone work together with Orca.
+
+They sit at their desks while they work. When they are done and have something to report, they wait on the sofas; when they need your decision, they walk up to your desk, queue and knock. Keep the whole crew on an iPad, seated by team in one seaside office, and answer them from your iPhone like texting a friend.
+
+Soulgent has two parts that share one live picture of your sessions:
+
+- Soulgent for Mac is a native menu-bar app with a floating window you can keep open on an iPad. Look up and you see how every companion is doing. Lives in app/, build from source.
+- Soulgent App (mobile web app) is a web app you add to your iPhone home screen; its chat page is called SoulChat. Away from your desk, you answer them like a chat. Lives in webapp/, runs on your Mac in Docker.
+
+Click to jump
+
+Click any character and Orca jumps straight to its session, stamping the session name across the pane so you never pick the wrong one. The setup I recommend: Orca on the big screen, Seaview on an iPad right below it (macOS Sidecar), Soulgent App on your phone. No iPad? Keep Soulgent's floating window in a corner, or open Soulgent App in a desktop browser.
+
+Seaview
+
+A seaside office rendered in Blender, with four islands for four teams.
+
+One room for every session
+
+Every session on your Mac is a character in one seaside office, sitting on its team's island. The Leader always takes desk 1 at the front. When an island is full, the rest go to the lounge and the team sign shows +N. The session you are typing in, in Orca, gets a disco ball overhead; switch tabs and it follows.
+
+Queuing and knocking at your desk
+
+A session that needs your decision walks to your desk and joins the queue, with a note above its head saying what it is waiting for, and knocks every 3 seconds. Once you answer, it walks back and the next one steps up.
+
+Sub-agents at the desk
+
+When a session sends out sub-agents, each one shows up as a little figure busy beside its desk, and leaves when its job is done. A badge overhead shows which tool the session is using.
+
+Blaze Mode
+
+Only sessions running a Fable model catch fire, so one glance tells you how many Fable sessions are running. While one works it is wrapped in flame and lightning; when it goes idle, only a glow is left.
+
+Soulgent checks whether a session's model name contains "fable" (in any case), and only for Claude Code sessions. The Blaze Mode switch in Settings turns it off; it is on by default.
+
+The orca and the beach
+
+Every few minutes an orca lunges onto the beach. Crabs, sandpipers and turtles wander the sand on their own and scatter when it comes; gulls fly overhead.
+
+Visiting
+
+When two sessions message each other, the sender gets up and walks to the other's desk, the first line of its message above its head from the moment it sets off.
+
+Off duty, check-in, changing seats
+
+A session sent off duty becomes an "off duty" count on its team sign; click it to call the session back. New sessions without a team stand at the check-in spot. Drag anyone to another desk, or right-click to give them a different character.
+
+Office
+
+The Office and the Duty Room are two simpler scenes, made for anyone who does not need teams. Neither of them groups sessions by team.
+
+When a session finishes, it hops at its desk and walks to the sofa to wait with its news. Sessions that need you line up at your desk.
+
+The back wall keeps a log of who finished, who is asking you and who talked to whom; hover over a figure to see its card.
+
+Duty Room
+
+One card per session, grouped by what it needs from you. When a session changes state its card moves to the new group, and a paper plane flies when one session messages another.
+
+A waiting card spells out the command to approve or the question it asked. Make the window narrow and it turns into an inbox column; start typing to search.
+
+Soulgent App (mobile web app)
+
+Knocking when it needs you
+
+A session waiting for your decision knocks in the list and turns red, so it stands out even in a long list. The ring at the end of each row shows how full its context window is. A session that belongs to no team is tagged "No zone", and while it works its pet steps out of the avatar and strolls along the row.
+
+Every team has its own effect
+
+While a session on a team works, its avatar plays that team's effect: orbit, marquee, halo or circuit, set by fx in the team table. Leaders and members look the same, apart from the ★ after a Leader's name.
+
+Watch it work
+
+While a tool runs, a little character climbs onto the chat bubble and walks along it; when the tool finishes it ticks and hops off.
+
+Flip to see its sub-agents
+
+When a session sends out sub-agents, tap that message and it flips over to a card for each one, with its state and how long it ran. Tap again to flip back.
+
+Replying, answering its questions and approving commands all happen in the conversation, and you can send photos and files both ways. Notifications ring only on the device you are using. In a desktop browser it opens in two columns.
+
+For now, Soulgent App can only reply to Claude Code sessions (running in Orca). For Codex and WorkBuddy sessions, Soulgent App shows their state and summary only: no full conversation, no replies yet.
+
+It runs on your own Mac (in Docker) and is reached over HTTPS on your local network. The one thing that leaves your network is push notifications, which go, encrypted, through Apple's or Google's push service. Anyone with the admin key can type into your sessions, so read the security model in webapp/README.md before you set it up.
+
+Platforms
+
+…（内容已截断）
