@@ -1,0 +1,150 @@
+Droids
+
+  OWN YOUR PHONE. NO ROOT.
+
+  Debloat, back up, sideload, and mirror any Android device over ADB, no root required.
+
+  Download
+  &nbsp;·&nbsp;
+  Quick start
+  &nbsp;·&nbsp;
+  Features
+  &nbsp;·&nbsp;
+  FAQ
+
+What is Droids?
+
+Droids is a Android ADB toolkit for Python 3.12. Debloat, back up, sideload, and mirror any Android device over ADB, no root required.
+
+| | |
+| --- | --- |
+| Platform | Windows, macOS, Linux |
+| Runtime | Python 3.12 |
+| Requires | ADB, USB debugging |
+| Root | Not required |
+| Price | Free, MIT |
+
+v1.5.2 is live. The build in the download folder mirrors the source
+in this repository.
+
+Preview
+
+Workspace — devices, debloat, backup, settings.
+
+Features
+
+    Device manager
+
+    See every attached device, its Android version, and its connection state.
+
+    Debloat
+
+    Disable or uninstall 200+ known packages with per-package explanations and restore.
+
+    Backup
+
+    Full app and media backups over ADB, with incremental runs.
+
+    Sideload
+
+    Install APK and APKS bundles with signature and architecture checks.
+
+    Mirroring
+
+    Low-latency screen mirror and input control over scrcpy.
+
+    Console
+
+    Every action shows the underlying ADB command before it runs.
+Quick start
+
+1. Enable Developer Options and USB debugging.
+2. Install platform-tools and scrcpy.
+3. Install Droids with pipx install droids-adb.
+4. Connect the device and authorize the key.
+5. Pick a device and run a preset.
+
+droids/
+├── bin\
+├── config\
+├── profiles\
+└── logs\
+
+Uninstall by deleting the folder. Nothing is written outside it and the
+per-user config directory.
+
+Usage
+
+install
+pipx install droids-adb
+
+debloat
+droids debloat --list
+droids debloat --disable com.example.bloat --dry-run
+
+backup
+droids backup --all --out D:/phone-backup
+
+- USB debugging must be enabled.
+- The dry run prints every command.
+- System-critical packages are protected.
+
+FAQ
+
+Does it void the warranty?
+
+No root and no bootloader unlock. Disabling a package is reversible from the same screen.
+
+Can I brick a device?
+
+Disabling system-critical packages can cause boot issues. Droids marks them and blocks the recommended preset from touching them.
+
+Does it work with any phone?
+
+Any device that exposes standard ADB. Vendor-specific quirks are documented per device.
+
+Why scrcpy?
+
+It is the fastest open-source mirroring tool. Droids wraps it with device selection and presets.
+
+Repo activity
+
+| | |
+| --- | --- |
+| Latest release | v1.5.2 — 3 days ago |
+| Last commit | core: stability fixes and dependency bump |
+| Open issues | 6 |
+| Contributors | 9 |
+| Update cadence | weekly |
+
+Changelog — v1.5.2
+
+- Stability fixes across the main workflow
+- Reduced startup time
+- Updated dependencies
+- Documentation cleanup
+
+Roadmap
+
+- x] Multi-device manager
+- [x] Debloat with dry run
+- [x] Incremental backups
+- [x] Sideload with checks
+- [ ] Wireless ADB pairing
+- [ ] Bulk photo export
+
+Project layout
+
+src/                 core implementation
+docs/                usage, FAQ, publishing notes
+assets/              original artwork
+CHANGELOG.md         release history
+DISCLAIMER.md        responsible-use notice
+
+License
+
+MIT. See [LICENSE.
+
+Unofficial project. Droids is not affiliated with any platform or
+publisher it interoperates with. Use it only on systems you own, and only
+where such modifications are permitted.

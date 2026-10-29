@@ -1,0 +1,1523 @@
+{
+  "date": "2026-10-28",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-10-29T00:54:12.599Z",
+  "count": 60,
+  "newCount": 34,
+  "sources": {
+    "trending": 14,
+    "new": 34,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "HKUDS/DeepTutor",
+      "name": "DeepTutor",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/DeepTutor",
+      "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+      "language": "Python",
+      "stars": 47980,
+      "forks": 5949,
+      "starsToday": 2371,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hkuds-deeptutor-c8966a47.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "elayadesign/ai-design-skills",
+      "name": "ai-design-skills",
+      "owner": "elayadesign",
+      "url": "https://github.com/elayadesign/ai-design-skills",
+      "description": "",
+      "language": "",
+      "stars": 11118,
+      "forks": 798,
+      "starsToday": 2139,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elayadesign-ai-design-skills-5de54b3b.txt"
+    },
+    {
+      "rank": 3,
+      "fullName": "Nutlope/hallmark",
+      "name": "hallmark",
+      "owner": "Nutlope",
+      "url": "https://github.com/Nutlope/hallmark",
+      "description": "Anti-AI-slop design skill for Claude Code, Cursor, and Codex.",
+      "language": "CSS",
+      "stars": 40717,
+      "forks": 2111,
+      "starsToday": 2110,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nutlope-hallmark-9bed55f1.txt"
+    },
+    {
+      "rank": 4,
+      "fullName": "hmjz100/LinkSwift",
+      "name": "LinkSwift",
+      "owner": "hmjz100",
+      "url": "https://github.com/hmjz100/LinkSwift",
+      "description": "一个基于 JavaScript 的网盘文件下载地址获取工具。基于【网盘直链下载助手】修改 ，支持 百度网盘 / 阿里云盘 / 中国移动云盘 / 天翼云盘 / 迅雷云盘 / 夸克网盘 / UC网盘 / 123云盘 八大网盘",
+      "language": "JavaScript",
+      "stars": 34671,
+      "forks": 2452,
+      "starsToday": 1616,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hmjz100-linkswift-cf6a62d9.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "togg53192-cmd/jailbreaks",
+      "name": "jailbreaks",
+      "owner": "togg53192-cmd",
+      "url": "https://github.com/togg53192-cmd/jailbreaks",
+      "description": "LIST OF ALL MY JAILBREAKS",
+      "language": "",
+      "stars": 7114,
+      "forks": 1019,
+      "starsToday": 1477,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "togg53192-cmd-jailbreaks-490cf5d2.txt"
+    },
+    {
+      "rank": 6,
+      "fullName": "pbakaus/impeccable",
+      "name": "impeccable",
+      "owner": "pbakaus",
+      "url": "https://github.com/pbakaus/impeccable",
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "language": "Rust",
+      "stars": 92671,
+      "forks": 5480,
+      "starsToday": 1472,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "pbakaus-impeccable-b3881fe4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 307442,
+      "forks": 27348,
+      "starsToday": 1095,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "JetBrains/thinkrail",
+      "name": "thinkrail",
+      "owner": "JetBrains",
+      "url": "https://github.com/JetBrains/thinkrail",
+      "description": "Vibe code with pi in a lightweight, real IDE that customises itself around the way you work — The Vibe You Need",
+      "language": "TypeScript",
+      "stars": 5054,
+      "forks": 260,
+      "starsToday": 1068,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jetbrains-thinkrail-be18d273.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "nightly-labs/openbot",
+      "name": "openbot",
+      "owner": "nightly-labs",
+      "url": "https://github.com/nightly-labs/openbot",
+      "description": "A local-first desktop workspace for persistent AI teammates. Run Codex, Claude, and Grok with dedicated workspaces, task queues, file sharing, browser control, and agent-to-agent collaboration.",
+      "language": "TypeScript",
+      "stars": 3254,
+      "forks": 315,
+      "starsToday": 1054,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nightly-labs-openbot-4e8f3458.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "makecindy/cindy",
+      "name": "cindy",
+      "owner": "makecindy",
+      "url": "https://github.com/makecindy/cindy",
+      "description": "Consider it done. The open-source AI agent that works out of the box · 想到，就能做到。开源、开箱即用的 AI Agent。",
+      "language": "TypeScript",
+      "stars": 8102,
+      "forks": 945,
+      "starsToday": 728,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "makecindy-cindy-ff23d87c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "ruvnet/RuView",
+      "name": "RuView",
+      "owner": "ruvnet",
+      "url": "https://github.com/ruvnet/RuView",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "language": "Rust",
+      "stars": 101058,
+      "forks": 13162,
+      "starsToday": 557,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ruvnet-ruview-2c6aba49.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "xiaolai/the-craft-of-selfteaching",
+      "name": "the-craft-of-selfteaching",
+      "owner": "xiaolai",
+      "url": "https://github.com/xiaolai/the-craft-of-selfteaching",
+      "description": "One has no future if one couldn't teach themself.",
+      "language": "Jupyter Notebook",
+      "stars": 18505,
+      "forks": 17886,
+      "starsToday": 148,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "xiaolai-the-craft-of-selfteaching-1be1fb2d.txt"
+    },
+    {
+      "rank": 13,
+      "fullName": "macro-inc/macro",
+      "name": "macro",
+      "owner": "macro-inc",
+      "url": "https://github.com/macro-inc/macro",
+      "description": "Macro is a unified workspace for teams: email, chat, docs, tasks, agents, calls, and CRM — @-linked together with shared AI memory.",
+      "language": "Rust",
+      "stars": 5420,
+      "forks": 518,
+      "starsToday": 117,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "macro-inc-macro-72e98602.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "expo/skills",
+      "name": "skills",
+      "owner": "expo",
+      "url": "https://github.com/expo/skills",
+      "description": "A collection of AI agent skills for working with Expo projects and Expo Application Services",
+      "language": "Shell",
+      "stars": 3579,
+      "forks": 228,
+      "starsToday": 90,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "expo-skills-fb9ff1e7.txt"
+    },
+    {
+      "rank": 15,
+      "fullName": "smithjohn78390/tongjiang-lab",
+      "name": "tongjiang-lab",
+      "owner": "smithjohn78390",
+      "url": "https://github.com/smithjohn78390/tongjiang-lab",
+      "description": "Free interactive 3D science lessons for high school · 铜匠实验室 · https://lab.tongjiang.app",
+      "language": "HTML",
+      "stars": 505,
+      "forks": 143,
+      "starsToday": 0,
+      "topics": [
+        "3d",
+        "biology",
+        "chemistry",
+        "education",
+        "geography",
+        "high-school",
+        "interactive",
+        "open-educational-resources"
+      ],
+      "createdAt": "2026-10-28T04:29:29Z",
+      "updatedAt": "2026-10-29T00:49:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "smithjohn78390-tongjiang-lab-1db6023b.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "vaishantsah/watson-AI-osint-all-in-one",
+      "name": "watson-AI-osint-all-in-one",
+      "owner": "vaishantsah",
+      "url": "https://github.com/vaishantsah/watson-AI-osint-all-in-one",
+      "description": "Watson — free OSINT tool for Windows: people search across 3,100+ public sites by nickname, email, phone or website. Open-source intelligence made simple: digital footprint check, username lookup, social media search. No account, no tracking. Site: watsonfind.icu",
+      "language": "TypeScript",
+      "stars": 355,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "cybersecurity",
+        "desktop-app",
+        "digital-footprint",
+        "electron",
+        "free",
+        "infosec",
+        "intelligence",
+        "investigation"
+      ],
+      "createdAt": "2026-10-28T00:09:33Z",
+      "updatedAt": "2026-10-29T00:32:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "vaishantsah-watson-ai-osint-all-in-one-7407e218.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "jacke-pp/open-yoki",
+      "name": "open-yoki",
+      "owner": "jacke-pp",
+      "url": "https://github.com/jacke-pp/open-yoki",
+      "description": "An AI live-stream host that runs on one server: voice, face, chat, memory, posts. The base yoki runs on. By Jacke_pp · contact: DM @Jacke_pp on X",
+      "language": "JavaScript",
+      "stars": 213,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-28T08:58:27Z",
+      "updatedAt": "2026-10-29T00:42:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jacke-pp-open-yoki-3a7c84e9.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "MiniMax-AI/mcode-stack",
+      "name": "mcode-stack",
+      "owner": "MiniMax-AI",
+      "url": "https://github.com/MiniMax-AI/mcode-stack",
+      "description": "The workflows and skills the MiniMax Code team uses to build MiniMax Code. Open source, install and use.",
+      "language": "Python",
+      "stars": 207,
+      "forks": 17,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai-coding",
+        "claude-skills",
+        "coding-agent",
+        "harness-engineering",
+        "minimax-code"
+      ],
+      "createdAt": "2026-10-28T02:17:41Z",
+      "updatedAt": "2026-10-29T00:52:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "minimax-ai-mcode-stack-5fcef1a9.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "ScalarGrouse/SketchUp-Pro",
+      "name": "SketchUp-Pro",
+      "owner": "ScalarGrouse",
+      "url": "https://github.com/ScalarGrouse/SketchUp-Pro",
+      "description": "Sketchup Pro 2023 complete standalone setup. Pre-activated desktop edition ready to run, with all professional tools included.",
+      "language": "",
+      "stars": 199,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "3d-modeling-software",
+        "architectural-visualization",
+        "design-pipeline",
+        "measurement-tools",
+        "premium-software",
+        "render-ready",
+        "sketch-pro-download",
+        "sketch-up"
+      ],
+      "createdAt": "2026-10-28T16:53:42Z",
+      "updatedAt": "2026-10-28T20:18:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "scalargrouse-sketchup-pro-c5c46482.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "brainstormity/LightPost",
+      "name": "LightPost",
+      "owner": "brainstormity",
+      "url": "https://github.com/brainstormity/LightPost",
+      "description": "A lightweight system to automate posting to all of your socials from one dashboard",
+      "language": "Python",
+      "stars": 142,
+      "forks": 34,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-28T00:19:12Z",
+      "updatedAt": "2026-10-29T00:51:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "brainstormity-lightpost-f196f274.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "aa1143/NamiGPT",
+      "name": "NamiGPT",
+      "owner": "aa1143",
+      "url": "https://github.com/aa1143/NamiGPT",
+      "description": "零基础入门大模型（LLM）的基础教程：从零手写 GPT-2，一行行看懂大模型是怎么工作的 | Build GPT-2 from scratch in PyTorch, step by step",
+      "language": "Python",
+      "stars": 107,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "attention",
+        "chinese",
+        "deep-learning",
+        "from-scratch",
+        "gpt-2",
+        "large-language-models",
+        "llm",
+        "pytorch"
+      ],
+      "createdAt": "2026-10-28T00:57:01Z",
+      "updatedAt": "2026-10-29T00:42:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "aa1143-namigpt-07cd9deb.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "addozhang/leancast",
+      "name": "leancast",
+      "owner": "addozhang",
+      "url": "https://github.com/addozhang/leancast",
+      "description": "Ad-free DLNA / UPnP cast receiver for Android TV · 极简无广告投屏接收器",
+      "language": "Kotlin",
+      "stars": 107,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-28T00:22:23Z",
+      "updatedAt": "2026-10-28T18:29:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "addozhang-leancast-174d59dc.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "Lookouteiseparator/droids-v1.5.2",
+      "name": "droids-v1.5.2",
+      "owner": "Lookouteiseparator",
+      "url": "https://github.com/Lookouteiseparator/droids-v1.5.2",
+      "description": "Published: 2026-10-28",
+      "language": "",
+      "stars": 103,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "adb",
+        "adb-toolkit",
+        "android",
+        "backup",
+        "debloat",
+        "no-root",
+        "scrcpy",
+        "sideload"
+      ],
+      "createdAt": "2026-10-28T05:30:46Z",
+      "updatedAt": "2026-10-28T23:35:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lookouteiseparator-droids-v1-5-2-74ce04f0.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "BranchLegendWhirl71/hexa-v2.6.0",
+      "name": "hexa-v2.6.0",
+      "owner": "BranchLegendWhirl71",
+      "url": "https://github.com/BranchLegendWhirl71/hexa-v2.6.0",
+      "description": "Published: 2026-10-28",
+      "language": "",
+      "stars": 102,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "cpp",
+        "debugging",
+        "lua",
+        "memory-editor",
+        "memory-scanner",
+        "reverse-engineering",
+        "windows"
+      ],
+      "createdAt": "2026-10-28T05:29:40Z",
+      "updatedAt": "2026-10-28T23:57:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "branchlegendwhirl71-hexa-v2-6-0-a04f8618.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "Centaurbinexplode/nova-v1.9.2",
+      "name": "nova-v1.9.2",
+      "owner": "Centaurbinexplode",
+      "url": "https://github.com/Centaurbinexplode/nova-v1.9.2",
+      "description": "Published: 2026-10-28",
+      "language": "",
+      "stars": 102,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [
+        "achievements",
+        "card-farming",
+        "dotnet",
+        "idle",
+        "steam",
+        "steam-idler",
+        "steam-tool"
+      ],
+      "createdAt": "2026-10-28T05:33:28Z",
+      "updatedAt": "2026-10-29T00:29:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "centaurbinexplode-nova-v1-9-2-3ba56dfc.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "ExitGooseEntrance/relay-v2.2.0",
+      "name": "relay-v2.2.0",
+      "owner": "ExitGooseEntrance",
+      "url": "https://github.com/ExitGooseEntrance/relay-v2.2.0",
+      "description": "Published: 2026-10-28",
+      "language": "",
+      "stars": 102,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "ffmpeg",
+        "media-downloader",
+        "playlist",
+        "python",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "createdAt": "2026-10-28T05:33:07Z",
+      "updatedAt": "2026-10-28T23:35:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "exitgooseentrance-relay-v2-2-0-1001f1c2.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "Novavyalimit/vanta-v2.1.0",
+      "name": "vanta-v2.1.0",
+      "owner": "Novavyalimit",
+      "url": "https://github.com/Novavyalimit/vanta-v2.1.0",
+      "description": "Published: 2026-10-28",
+      "language": "",
+      "stars": 102,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [
+        "clickgui",
+        "fabric",
+        "fabric-mod",
+        "minecraft",
+        "minecraft-client",
+        "minecraft-mod",
+        "utility-client"
+      ],
+      "createdAt": "2026-10-28T14:35:35Z",
+      "updatedAt": "2026-10-29T00:12:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "novavyalimit-vanta-v2-1-0-f0a56500.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "ScrewPantherRampart/clean-v4.0.3",
+      "name": "clean-v4.0.3",
+      "owner": "ScrewPantherRampart",
+      "url": "https://github.com/ScrewPantherRampart/clean-v4.0.3",
+      "description": "Published: 2026-10-28",
+      "language": "",
+      "stars": 102,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [
+        "debloat",
+        "optimizer",
+        "powershell",
+        "privacy",
+        "windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-10-28T14:35:16Z",
+      "updatedAt": "2026-10-29T00:05:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "screwpantherrampart-clean-v4-0-3-86d61bbc.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "UltraSultanHonor/recon-v1.7.0",
+      "name": "recon-v1.7.0",
+      "owner": "UltraSultanHonor",
+      "url": "https://github.com/UltraSultanHonor/recon-v1.7.0",
+      "description": "Published: 2026-10-28",
+      "language": "",
+      "stars": 102,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "domain-recon",
+        "email-osint",
+        "osint",
+        "python",
+        "reconnaissance",
+        "security",
+        "username-search"
+      ],
+      "createdAt": "2026-10-28T05:31:26Z",
+      "updatedAt": "2026-10-29T00:24:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ultrasultanhonor-recon-v1-7-0-80f89959.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "Humpalumps/Ultra-Water",
+      "name": "Ultra-Water",
+      "owner": "Humpalumps",
+      "url": "https://github.com/Humpalumps/Ultra-Water",
+      "description": "Real-time FFT ocean renderer for three.js (WebGL2): shore breakers, foam, caustics, underwater rendering and buoyancy at 200+ fps",
+      "language": "JavaScript",
+      "stars": 101,
+      "forks": 17,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-28T16:27:44Z",
+      "updatedAt": "2026-10-29T00:52:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "humpalumps-ultra-water-a4161e89.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 31,
+      "fullName": "BarbarianCare/KMS-Pico",
+      "name": "KMS-Pico",
+      "owner": "BarbarianCare",
+      "url": "https://github.com/BarbarianCare/KMS-Pico",
+      "description": "Kms Pico Free 2026 - Full working installer for professional utility configuration, ready to run on your desktop.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "activation-fix",
+        "free-excel-word",
+        "key-management-system",
+        "kms-auto-2026",
+        "kms-auto-get",
+        "kms-pico-free",
+        "kmsauto-get",
+        "microsoft-office-26"
+      ],
+      "createdAt": "2026-10-28T10:54:11Z",
+      "updatedAt": "2026-10-28T11:12:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "barbariancare-kms-pico-ac9eba80.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "EgretRestore/Camtasia",
+      "name": "Camtasia",
+      "owner": "EgretRestore",
+      "url": "https://github.com/EgretRestore/Camtasia",
+      "description": "Camtasia 2026 complete standalone setup, fully functional with all features unlocked. Ready-to-run installation package.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "camtasia",
+        "camtasia-key-license",
+        "camtasia-license",
+        "camtasia-pro",
+        "camtasia-safe",
+        "camtasia-script",
+        "camtasia-studio",
+        "camtasia-studio-2026"
+      ],
+      "createdAt": "2026-10-28T10:54:10Z",
+      "updatedAt": "2026-10-28T11:07:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "egretrestore-camtasia-f9a79c5d.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "LinkCounselor/Filmora-15",
+      "name": "Filmora-15",
+      "owner": "LinkCounselor",
+      "url": "https://github.com/LinkCounselor/Filmora-15",
+      "description": "Filmora 15 pre-activated desktop edition. Complete standalone setup ready to run.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "filmora-15",
+        "filmora-latest",
+        "filmora-new",
+        "filmora-setup",
+        "filmora-watermark"
+      ],
+      "createdAt": "2026-10-28T10:54:11Z",
+      "updatedAt": "2026-10-28T11:08:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "linkcounselor-filmora-15-7306a4a7.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "marooncocoonexcite/LossLess-Scaling",
+      "name": "LossLess-Scaling",
+      "owner": "marooncocoonexcite",
+      "url": "https://github.com/marooncocoonexcite/LossLess-Scaling",
+      "description": "Lossless Scaling Utility 2023: Full working installer for seamless, high-quality image resizing without data loss.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "auto-lossless-scaling",
+        "lossless-frame-generation",
+        "lossless-scaling-26",
+        "lossless-scaling-best-settings",
+        "lossless-scaling-download-free",
+        "lossless-scaling-exploit",
+        "lossless-scaling-for-free",
+        "lossless-scaling-free"
+      ],
+      "createdAt": "2026-10-28T10:54:11Z",
+      "updatedAt": "2026-10-28T11:11:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "marooncocoonexcite-lossless-scaling-0b28dca6.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "SleuthMesmerize/BorisFX",
+      "name": "BorisFX",
+      "owner": "SleuthMesmerize",
+      "url": "https://github.com/SleuthMesmerize/BorisFX",
+      "description": "Complete standalone setup for Borisfx 2026, your go-to solution for professional video editing and VFX. Ready to run with all features unlocked.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bcc-plugins-effects",
+        "boris-fx-plugin-sapphire",
+        "boris-fx-sapphire",
+        "borisfx",
+        "borisfx-plugin-free",
+        "free-boris-fx",
+        "plugins-after-effects",
+        "sapphire-download"
+      ],
+      "createdAt": "2026-10-28T16:00:20Z",
+      "updatedAt": "2026-10-28T16:04:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sleuthmesmerize-borisfx-35b383a8.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "TempoEstimate/Cinema-4d",
+      "name": "Cinema-4d",
+      "owner": "TempoEstimate",
+      "url": "https://github.com/TempoEstimate/Cinema-4d",
+      "description": "Pre-activated Cinema 4D Studio 2026 desktop installation build. Full working installer with all features ready to run.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "c4d-plugin",
+        "cinema-4d",
+        "cinema-4d-2026",
+        "cinema-4d-free",
+        "cinema-4d-freel",
+        "cinema-4d-plugin",
+        "cinema-4d-plugin-maxon",
+        "cinema-4d-studio-pc"
+      ],
+      "createdAt": "2026-10-28T10:54:10Z",
+      "updatedAt": "2026-10-28T11:06:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tempoestimate-cinema-4d-d3211090.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "shipwords-dev/shipwords",
+      "name": "shipwords",
+      "owner": "shipwords-dev",
+      "url": "https://github.com/shipwords-dev/shipwords",
+      "description": "Ship a money-making AI site for every new keyword. Cloudflare-native starter with auth, credits, payments and AI generation. | 新词站群框架：一个新词一个站，一个下午上线。起量的继续迭代，没起来的放着不管。不变的共享，变的独立。",
+      "language": "TypeScript",
+      "stars": 99,
+      "forks": 71,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "cloudflare",
+        "cloudflare-workers",
+        "d1",
+        "react",
+        "saas-boilerplate",
+        "saas-starter",
+        "seo"
+      ],
+      "createdAt": "2026-10-28T06:35:51Z",
+      "updatedAt": "2026-10-29T00:54:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "shipwords-dev-shipwords-6c4302b8.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "floatboatai/OpenMinutes",
+      "name": "OpenMinutes",
+      "owner": "floatboatai",
+      "url": "https://github.com/floatboatai/OpenMinutes",
+      "description": "OpenMinutes · 录音笔工作台：MemoTalk S1 录音的导入 · 转录 · AI 归类 · 检索复盘（Floatboat Workbench 开源实现）",
+      "language": "TypeScript",
+      "stars": 86,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-classification",
+        "floatboat",
+        "memotalk",
+        "react",
+        "speech-to-text",
+        "sqlite",
+        "transcription",
+        "typescript"
+      ],
+      "createdAt": "2026-10-28T12:48:27Z",
+      "updatedAt": "2026-10-29T00:54:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "floatboatai-openminutes-61aaee18.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "anomalyco/hokum",
+      "name": "hokum",
+      "owner": "anomalyco",
+      "url": "https://github.com/anomalyco/hokum",
+      "description": "Notifications for Wayland that look like they belong on a computer from this decade. Drawn with Rune.",
+      "language": "Rust",
+      "stars": 84,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-28T01:37:19Z",
+      "updatedAt": "2026-10-29T00:52:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "anomalyco-hokum-8d3087d2.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "HRuiCcc/RuiC-PoseAtlas",
+      "name": "RuiC-PoseAtlas",
+      "owner": "HRuiCcc",
+      "url": "https://github.com/HRuiCcc/RuiC-PoseAtlas",
+      "description": "RuiC-PoseAtlas｜三语人体姿态参考图库：288 组姿态 × 5 视角 × 1,439 张人台线稿；支持中/英/日切换、搜索筛选、键盘浏览与 PNG 原图下载。AI 绘画 / 3D / 摄影构图参考，纯静态零依赖。",
+      "language": "JavaScript",
+      "stars": 81,
+      "forks": 34,
+      "starsToday": 0,
+      "topics": [
+        "3d-modeling",
+        "ai-art",
+        "art-reference",
+        "gallery",
+        "photography",
+        "pose-reference",
+        "ruic",
+        "static-site"
+      ],
+      "createdAt": "2026-10-28T07:00:53Z",
+      "updatedAt": "2026-10-29T00:41:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hruiccc-ruic-poseatlas-a1d320a5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 41,
+      "fullName": "jmanico/grim-prompter",
+      "name": "grim-prompter",
+      "owner": "jmanico",
+      "url": "https://github.com/jmanico/grim-prompter",
+      "description": "Threat modeling for AI coding agents: point Claude Code, Codex or any agent at your repo and get an evidence-traced threat model. 36 architectures, 29 methods, MIT.",
+      "language": "",
+      "stars": 79,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "appsec",
+        "claude-code",
+        "codex",
+        "linddun",
+        "llm",
+        "pasta",
+        "prompt-engineering"
+      ],
+      "createdAt": "2026-10-28T12:09:26Z",
+      "updatedAt": "2026-10-29T00:35:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jmanico-grim-prompter-63a0f151.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 42,
+      "fullName": "Xpropel/Pi-Remote",
+      "name": "Pi-Remote",
+      "owner": "Xpropel",
+      "url": "https://github.com/Xpropel/Pi-Remote",
+      "description": "Mirror and remotely control pi terminal sessions from any browser — official pi extension + lightweight relay + unified desktop/mobile UI.",
+      "language": "TypeScript",
+      "stars": 65,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "developer-tools",
+        "pi",
+        "pi-coding-agent",
+        "react",
+        "relay",
+        "remote-control",
+        "terminal",
+        "typescript"
+      ],
+      "createdAt": "2026-10-28T10:46:22Z",
+      "updatedAt": "2026-10-28T23:35:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "xpropel-pi-remote-134c055d.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "Akil-x/R00tLib-Catalog",
+      "name": "R00tLib-Catalog",
+      "owner": "Akil-x",
+      "url": "https://github.com/Akil-x/R00tLib-Catalog",
+      "description": "A community-curated knowledge hub and catalog for computer science, cybersecurity & software engineering books",
+      "language": "",
+      "stars": 56,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-28T17:22:39Z",
+      "updatedAt": "2026-10-29T00:33:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "akil-x-r00tlib-catalog-28ff16b2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 44,
+      "fullName": "andyhuo520/vibe-knowledge",
+      "name": "vibe-knowledge",
+      "owner": "andyhuo520",
+      "url": "https://github.com/andyhuo520/vibe-knowledge",
+      "description": "Vibe 知识大赏：一个知识点 → 一条有旁白、每句有出处的精品知识短片（Claude Code skill · 44 套风格 · 代码逐帧成片）",
+      "language": "JavaScript",
+      "stars": 54,
+      "forks": 13,
+      "starsToday": 0,
+      "topics": [
+        "chinese",
+        "claude-code",
+        "claude-skills",
+        "explainer-video",
+        "text-to-video",
+        "threejs",
+        "video-generation"
+      ],
+      "createdAt": "2026-10-28T09:37:45Z",
+      "updatedAt": "2026-10-29T00:53:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "andyhuo520-vibe-knowledge-b709b9fb.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "zklmiao/CodeWar",
+      "name": "CodeWar",
+      "owner": "zklmiao",
+      "url": "https://github.com/zklmiao/CodeWar",
+      "description": "网页端 Python 编程对抗游戏：解题速度即战斗力 · A turn-based competitive Python programming game",
+      "language": "Go",
+      "stars": 53,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-28T03:49:23Z",
+      "updatedAt": "2026-10-29T00:20:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "zklmiao-codewar-25f65619.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "lfhywt/binance-btc-cursors-",
+      "name": "binance-btc-cursors-",
+      "owner": "lfhywt",
+      "url": "https://github.com/lfhywt/binance-btc-cursors-",
+      "description": "binance Windows 10/11 cursor theme: 48 cursors in 32/48/64/96/256 px, one-click install, synced pointer size, layered restore.币安 × 比特币黑金鼠标指针主题：48 款指针、32/48/64/96/256 五档尺寸，一键安装、逐层恢复，支持 Windows 10/11。",
+      "language": "",
+      "stars": 51,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-28T05:52:03Z",
+      "updatedAt": "2026-10-28T23:52:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lfhywt-binance-btc-cursors-a845c5dd.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "missuo/unfairplay-bot",
+      "name": "unfairplay-bot",
+      "owner": "missuo",
+      "url": "https://github.com/missuo/unfairplay-bot",
+      "description": "Private Telegram bot and API that downloads App Store IPAs with ipatool and decrypts them with UnfairPlay",
+      "language": "Go",
+      "stars": 51,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-28T12:17:29Z",
+      "updatedAt": "2026-10-29T00:38:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "missuo-unfairplay-bot-efb51f4c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 48,
+      "fullName": "undecuple/project-helghast",
+      "name": "project-helghast",
+      "owner": "undecuple",
+      "url": "https://github.com/undecuple/project-helghast",
+      "description": "Killzone 3 // Unofficial PC Port (static recompilation). Work in progress, partly playable. Builds on your PC from your own game.",
+      "language": "C",
+      "stars": 46,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "ai-assisted",
+        "direct3d12",
+        "game-port",
+        "killzone",
+        "killzone3",
+        "ps3",
+        "ps3recomp",
+        "recompilation"
+      ],
+      "createdAt": "2026-10-28T00:26:17Z",
+      "updatedAt": "2026-10-28T22:32:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "undecuple-project-helghast-9b611131.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 49,
+      "fullName": "freeCodeCamp/freeCodeCamp",
+      "name": "freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript",
+      "stars": 458129,
+      "forks": 48715,
+      "starsToday": 0,
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "createdAt": "2014-12-24T17:49:19Z",
+      "updatedAt": "2026-10-29T00:51:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "freecodecamp-freecodecamp-5d095e95.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 370653,
+      "forks": 45158,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-10-29T00:52:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "vinta/awesome-python",
+      "name": "awesome-python",
+      "owner": "vinta",
+      "url": "https://github.com/vinta/awesome-python",
+      "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
+      "language": "Python",
+      "stars": 330951,
+      "forks": 29029,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ],
+      "createdAt": "2014-06-27T21:00:06Z",
+      "updatedAt": "2026-10-29T00:54:06Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "vinta-awesome-python-6aca4665.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "deepseek-ai/deepseek-harness",
+      "name": "deepseek-harness",
+      "owner": "deepseek-ai",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "language": "TypeScript",
+      "stars": 264797,
+      "forks": 32072,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "createdAt": "2026-08-13T11:56:32Z",
+      "updatedAt": "2026-10-29T00:54:06Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "deepseek-ai-deepseek-harness-a4daff9d.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 253780,
+      "forks": 67463,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-10-29T00:42:30Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 251797,
+      "forks": 51591,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-10-29T00:53:00Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 55,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
+      "language": "TypeScript",
+      "stars": 196427,
+      "forks": 10371,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler",
+        "data-extraction",
+        "html-to-markdown"
+      ],
+      "createdAt": "2024-04-15T21:02:29Z",
+      "updatedAt": "2026-10-29T00:50:41Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "ultraworkers/claw-code",
+      "name": "claw-code",
+      "owner": "ultraworkers",
+      "url": "https://github.com/ultraworkers/claw-code",
+      "description": "An agent-managed museum exhibit, built in Rust with Gajae-Code / LazyCodex — developed and maintained with no human intervention.",
+      "language": "Rust",
+      "stars": 194970,
+      "forks": 107666,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-03-31T08:58:08Z",
+      "updatedAt": "2026-10-29T00:36:58Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ultraworkers-claw-code-6882ee54.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "microsoft/markitdown",
+      "name": "markitdown",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/markitdown",
+      "description": "Python tool for converting files and office documents to Markdown.",
+      "language": "Python",
+      "stars": 192733,
+      "forks": 14417,
+      "starsToday": 0,
+      "topics": [
+        "autogen",
+        "autogen-extension",
+        "langchain",
+        "markdown",
+        "microsoft-office",
+        "openai",
+        "pdf"
+      ],
+      "createdAt": "2024-11-13T19:56:40Z",
+      "updatedAt": "2026-10-29T00:44:35Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "microsoft-markitdown-4aa99f7d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 58,
+      "fullName": "CyC2018/CS-Notes",
+      "name": "CS-Notes",
+      "owner": "CyC2018",
+      "url": "https://github.com/CyC2018/CS-Notes",
+      "description": ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计",
+      "language": "Python",
+      "stars": 186365,
+      "forks": 50663,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "computer-science",
+        "cpp",
+        "interview",
+        "java",
+        "leetcode",
+        "python",
+        "system-design"
+      ],
+      "createdAt": "2018-02-13T14:56:24Z",
+      "updatedAt": "2026-10-29T00:52:01Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "cyc2018-cs-notes-9b48ee3d.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "521xueweihan/HelloGitHub",
+      "name": "HelloGitHub",
+      "owner": "521xueweihan",
+      "url": "https://github.com/521xueweihan/HelloGitHub",
+      "description": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
+      "language": "Python",
+      "stars": 185310,
+      "forks": 13135,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "github",
+        "hellogithub",
+        "python"
+      ],
+      "createdAt": "2016-05-04T06:24:11Z",
+      "updatedAt": "2026-10-29T00:52:25Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "521xueweihan-hellogithub-592b065c.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 185141,
+      "forks": 18701,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-10-29T00:46:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

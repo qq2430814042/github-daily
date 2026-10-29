@@ -191,10 +191,10 @@ Libraries for building AI applications, LLM integrations, and autonomous agents.
 
 Deep Learning
 
-Frameworks for Neural Networks and Deep Learning. Also see awesome-deep-learning.
+Frameworks for neural networks and deep learning. Also see awesome-deep-learning.
 
 - Frameworks
-  - pytorch - Tensors and Dynamic neural networks in Python with strong GPU acceleration.
+  - pytorch - Tensors and dynamic neural networks in Python with strong GPU acceleration.
   - pytorch-lightning - Deep learning framework to train, deploy, and ship AI products Lightning fast.
   - jax - A library for high-performance numerical computing with autodiff and JIT compilation.
   - keras - A high-level deep learning library with support for JAX, TensorFlow, and PyTorch backends.
@@ -205,17 +205,17 @@ Frameworks for Neural Networks and Deep Learning. Also see awesome-deep-learning
 
 Machine Learning
 
-Libraries for Machine Learning. Also see awesome-machine-learning.
+Libraries for machine learning. Also see awesome-machine-learning.
 
 - General
-  - scikit-learn - The most popular Python library for Machine Learning with extensive documentation and community support.
+  - scikit-learn - The most popular Python library for machine learning with extensive documentation and community support.
   - imbalanced-learn - Resampling techniques for imbalanced datasets, compatible with scikit-learn.
   - pgmpy - A Python library for causal and probabilistic reasoning with graphical models.
-  - feature-engine - sklearn compatible API with the widest toolset for feature engineering and selection.
+  - feature-engine - sklearn-compatible API with the widest toolset for feature engineering and selection.
 - Gradient Boosting
   - xgboost - A scalable, portable, and distributed gradient boosting library.
-  - lightgbm - A fast, distributed, high performance gradient boosting framework.
-  - catboost - A fast, scalable, high performance gradient boosting on decision trees library.
+  - lightgbm - A fast, distributed, high-performance gradient boosting framework.
+  - catboost - A fast, scalable, high-performance gradient boosting on decision trees library.
 - Time Series Forecasting
 
 …（内容已截断）

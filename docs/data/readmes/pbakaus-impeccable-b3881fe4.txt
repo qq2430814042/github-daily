@@ -1,143 +1,107 @@
 Impeccable
 
-Design guidance for AI coding agents. 1 skill, 24 commands, live browser iteration, and 62 deterministic detector rules for AI-generated frontend design.
+The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, and catch AI slop before it ships.
 
-Quick start: From your project root, run npx impeccable install, then run /impeccable init inside your AI coding tool. Full docs: impeccable.style.
-
-Why Impeccable?
-
-Anthropic's frontend-design was the first widely-used design skill for Claude. Impeccable started from there.
-
-Every model trained on the same SaaS templates. Skip the guidance and you get the same handful of tells on every project: Inter for everything, purple-to-blue gradients, cards nested in cards, gray text on colored backgrounds, the rounded-square icon tile above every heading.
-
-Impeccable adds:
-- One setup flow. /impeccable init records durable product truth in PRODUCT.md, so later commands know the audience, purpose, operating context, constraints, voice, and evidence without confusing those facts with surface-level visual direction.
-- 24 commands. A shared design vocabulary with your AI: polish, audit, critique, distill, animate, bolder, quieter, and more.
-- 62 deterministic detector rules plus LLM-only critique checks. The CLI and browser extension run the deterministic rules with no LLM and no API key.
-
-What's Included
-
-The Skill: impeccable
-
-The skill installs as one command:
-
-/impeccable
-
-Start every new project with:
-
-/impeccable init
-
-init inspects the project, asks only for material gaps in durable product truth, and writes PRODUCT.md. Visitor mode and visual direction are chosen later for each surface; incumbent or newly built visual systems are recorded separately in DESIGN.md.
-
-24 Commands
-
-All commands are accessed through /impeccable:
-
-| Command | What it does |
-|---------|--------------|
-| /impeccable craft | Full shape-then-build flow with visual iteration |
-| /impeccable init | One-time setup: gather durable product context, write PRODUCT.md, configure live mode when applicable, recommend next steps |
-| /impeccable document | Generate root DESIGN.md from existing project code |
-| /impeccable extract | Pull reusable components and tokens into the design system |
-| /impeccable shape | Plan UX/UI before writing code |
-| /impeccable critique | UX design review: hierarchy, clarity, emotional resonance |
-| /impeccable audit | Run technical quality checks (a11y, performance, responsive) |
-| /impeccable polish | Final pass, design system alignment, and shipping readiness |
-| /impeccable bolder | Amplify boring designs |
-| /impeccable quieter | Tone down overly bold designs |
-| /impeccable distill | Strip to essence |
-| /impeccable harden | Error handling, i18n, text overflow, edge cases |
-| /impeccable onboard | First-run flows, empty states, activation paths |
-| /impeccable animate | Add purposeful motion |
-| /impeccable colorize | Introduce strategic color |
-| /impeccable typeset | Fix font choices, hierarchy, sizing |
-| /impeccable layout | Fix layout, spacing, visual rhythm |
-| /impeccable delight | Add moments of joy |
-| /impeccable overdrive | Add technically extraordinary effects |
-| /impeccable clarify | Improve unclear UX copy |
-| /impeccable adapt | Adapt for different devices |
-| /impeccable optimize | Performance improvements |
-| /impeccable live | Visual variant mode: iterate on elements in the browser |
-| /impeccable generate | Generate variants of a named element in the live browser, no manual picking |
-
-Use /impeccable pin  to create standalone shortcuts (e.g., pin audit creates /audit).
-
-Usage Examples
-
-/impeccable audit blog           # Audit blog hub + post pages
-/impeccable critique landing     # UX design review
-/impeccable polish settings      # Final pass before shipping
-/impeccable harden checkout      # Add error handling + edge cases
-
-Or use /impeccable directly with a description:
-/impeccable redo this hero section
-
-Anti-Patterns
-
-The skill includes explicit guidance on what to avoid:
-
-- Don't use overused fonts (Arial, Inter, system defaults)
-- Don't use gray text on colored backgrounds
-- Don't use pure black/gray (always tint)
-- Don't wrap everything in cards or nest cards inside cards
-- Don't use bounce/elastic easing (feels dated)
-
-See It In Action
-
-Visit the Neo Mirai case study to see a before/after case study of a real project transformed with Impeccable commands.
-
-Installation
-
-The skill needs no runtime of its own. Every skill copy ships a small launcher (scripts/impeccable, plus impeccable.cmd for Windows) that runs the Impeccable engine, a self-contained binary that either sits next to the launcher or is downloaded once on first run into ~/.impeccable/bin/. Node is only involved if you use the npx impeccable installer, which is a shim around the same binary; the manual and Git options below work without it.
-
-Option 1: CLI installer (Recommended)
-
-From the root of your project, run:
+From your project root:
 
 npx impeccable install
 
-This shows the harness folders or installed CLIs it detected (for example /.claude, /.codex, /.grok, /.hermes, /.veto, or project-local .cursor), lets you keep the detected set or customize providers, then asks whether to install into the current project or globally. Use --providers=claude,codex,replit,cursor,grok,hermes,veto and --scope=project|global to skip those choices in scripts. On Claude Code, Cursor, Codex, GitHub Copilot, and Grok Build, it also installs the provider-native hook manifest for the current project. Veto receives the packaged skill under /.veto/skills/ and does not run native Impeccable edit hooks. Works with Cursor, Claude Code, Gemini CLI, Codex CLI, Replit Agent, Grok Build, Hermes Agent, Veto, and every other supported tool. Reload your harness afterward.
+Reload your coding tool, then run /impeccable init in your agent ($impeccable init on Codex).
 
-To refresh an existing install, run:
+Works with Claude Code, Cursor, Codex CLI, GitHub Copilot, Devin, Replit Agent, Gemini CLI, Grok Build, OpenCode, Google Antigravity, Kiro, Trae, Rovo Dev, Qoder, Mistral Vibe, Pi, Hermes Agent, DeepSeek Harness, and Veto. Full docs live at impeccable.style/docs.
 
-npx impeccable update
+| Without Impeccable | With Impeccable |
+|---|---|
+|  |  |
 
-Codex users should open /hooks after install or update and approve the project hook when prompted. Codex tracks trust by hook definition, so updates that change .codex/hooks.json can require approval again. Grok Build users need project folder trust (/hooks-trust or launch with --trust) before .grok/hooks/ scripts run.
+Same model (Fable 5.1), same brief: a fourteen-room family guesthouse on the Ligurian coast. Without Impeccable, it builds the tasteful default: cream page, thin serif, italic accent, pill buttons. With it, the page is built around one picture: the house at night, seen from the water.
 
-See Allow the hook in your harness for harness-specific trust and verification steps.
+For a full project, see the Neo Mirai case study: a conference site taken from mockup to shipped page.
 
-Option 2: Git Submodule
+Why
 
-For teams that want to keep Impeccable vendored and updated through Git, add this repo as a submodule and link the compiled provider build into your harness folders:
+Inter for everything. Purple-to-blue gradients. Cards nested in cards, gray text on colored backgrounds, a rounded-square icon tile above every heading. Ask an agent for a page with no other guidance and these show up again and again, across models and projects.
 
-git submodule add https://github.com/pbakaus/impeccable .impeccable
-npx impeccable link --source=.impeccable --providers=claude,cursor
-git add .gitmodules .impeccable .claude .cursor
-git commit -m "Add Impeccable skills"
+- Words for what you want. "Make it pop" leaves your agent to guess. /impeccable bolder the pricing cards loads a playbook written for that one move and points it at one target.
+- A reviewer. critique scores the design against usability heuristics and ranks what to fix first. audit checks accessibility, performance, theming, and responsive behavior, with findings ranked P0 (blocking) to P3 (polish).
+- A slop detector. 62 deterministic rules flag the tells above, plus quality problems like cramped padding and skipped headings. No LLM, no API key.
 
-Use the providers your project needs, for example claude, cursor, gemini, codex, github, grok, devin, hermes, opencode, pi, qoder, trae, trae-cn, rovo-dev, vibe, or veto. The command links individual skill folders from .impeccable/dist/universal/ and leaves existing real skill directories untouched unless you pass --force.
+Impeccable is strongest on interfaces that already exist: point it at a page or a component and iterate. It builds new pages too; see Build something new for how to get the most out of that harder mode. To start, pick one component:
 
-To update later:
+/impeccable critique the pricing cards
 
-git submodule update --remote .impeccable
-npx impeccable link --source=.impeccable --providers=claude,cursor
+How it works
 
-Option 3: Plugin install
+Run /impeccable init once per project. It reads your code, asks only what it can't infer (who the product is for, what it needs to do, the constraints), and writes PRODUCT.md. Every later command reads it. Run /impeccable document to capture your existing visual system in DESIGN.md, so changes stay on-brand. More on context files.
 
-GitHub Copilot in VS Code:
+Then name a command and a target:
 
-Install Impeccable from the Visual Studio Marketplace, or run:
+/impeccable critique the onboarding flow
+/impeccable quieter the landing page
+/impeccable polish settings
+/impeccable harden checkout
 
-code --install-extension renaissance-geek.impeccable
+Or just describe what you want: /impeccable redo this hero section. Narrow targets get better results; a single section reviewed closely beats a whole page at a glance. Pin a command you use often with /impeccable pin audit to get /audit as its own shortcut.
 
-Requires VS Code 1.109.3+, Copilot Chat access, and a trusted local workspace. Open Chat in Agent mode and try /impeccable polish. This skill-only extension does not install automatic hooks; avoid a duplicate Impeccable skill in the same workspace/profile. See VS Code distribution details.
+24 commands
 
-Claude Code:
-/plugin marketplace add pbakaus/impeccable
+| | Commands |
+|---|---|
+| Steer | bolder amplifies safe designs · quieter tones down loud ones · distill removes what the page doesn't need · colorize brings color to a gray interface · typeset fixes fonts, hierarchy, and sizing · layout fixes spacing and rhythm · animate adds transitions and interaction feedback · delight adds personality · overdrive goes for shaders, spring physics, and scroll-driven effects |
+| Review | critique is a scored UX review · audit is a technical quality report |
+| Finish | polish is the final pass before shipping · harden covers errors, i18n, overflow, and edge cases · clarify rewrites unclear copy · adapt handles screen sizes and devices · optimize fixes loading and rendering performance · onboard designs first-run flows and empty states |
+| Iterate live | live lets you pick an element in the browser and cycle through variants · generate produces variants of a named element without manual picking |
+| Plan and set up | shape plans UX before code · init writes PRODUCT.md · document writes DESIGN.md · extract pulls repeated patterns into your design system |
 
-Claude Code only. After adding the marketplace, open /plugin and install Impeccable from the list.
+The 24th, craft, is a deprecated alias for a plain build request. Type /impeccable alone to see the list in your agent. Each command has its own page: impeccable.style/docs.
 
-Grok Build:
-grok plugin install pbakaus/impeccable#plugin --trust
+On Codex, open /skills or type $impeccable instead of the slash command.
+
+Live mode
+
+/impeccable live opens your running dev server with an overlay. Select an element, pick a direction, and Impeccable hot-swaps variants in place. Accept one and it is written back to your source. It works with Vite, Next, SvelteKit, Astro, Nuxt, and plain HTML. Iterate in the browser.
+
+Live mode edits a local checkout only; don't inject it into a deployed site or weaken a production CSP to make it work. Applying copy edits runs your package.json's optional impeccable:manual-edit-validate script with your permissions, so review it before using live mode in an unfamiliar repo.
+
+Three ways to run the detector
+
+In your agent. The design hook scans every UI file your agent edits and hands the findings back before the agent calls the work done. This is where most slop gets caught: without the hook, the detector only runs when someone remembers to run it. It's available on Claude Code, Cursor, Codex, GitHub Copilot, Grok Build, and Hermes Agent, and the installer sets it up. Say yes. Automatic design checks.
+
+In CI or your terminal. The CLI needs no agent:
+
+npx impeccable detect src/                   # scan a directory
+npx impeccable detect https://example.com    # scan a rendered page (uses your installed Chrome or Edge)
+npx impeccable detect --json .               # machine-readable output
+npx impeccable detect --github src/          # GitHub Actions annotations
+npx impeccable detect --list-rules           # every rule with its id and description
+
+Source files like JSX and TSX get the pattern rules only. Rules that need a rendered page, such as low contrast and tiny text, run when you scan a URL, so point the CLI at your dev server too: npx impeccable detect http://localhost:5173.
+
+Exit code 2 means findings, 1 means a target couldn't be scanned. To allow your brand font everywhere, run npx impeccable ignores add-value overused-font Inter --reason "Brand font". To turn a rule off for one file, add a comment: ``. Run a detector scan · Configuration and ignores.
+
+In your browser. The Chrome extension overlays the same findings on any live page, yours or anyone else's. Review with a visual overlay.
+
+Installation
+
+npx impeccable install
+
+The installer detects your coding tools, asks whether to install for this project or globally, and offers the design hook where your tool supports one. Accept the hook. Reload your tool afterward. npx impeccable update refreshes an existing install. For scripts, pass --providers=claude,codex,cursor and --scope=project|global.
+
+Three tools need one more step before the hook runs. In Codex, open /hooks and approve the project hook (again after an update that changes it). In Grok Build, run /hooks-trust or launch with --trust. In Hermes Agent, the hook is a plugin: run hermes plugins enable impeccable-design-hook once. Allow the hook in your harness.
+
+Node is only needed for npx. The skill itself runs a self-contained engine binary that ships next to it or downloads once into ~/.impeccable/bin/.
+
+Claude Code, Copilot, and Grok plugins
+
+Claude Code: /plugin marketplace add pbakaus/impeccable, then open /plugin and install Impeccable.
+
+GitHub Copilot in VS Code: install Impeccable from the Visual Studio Marketplace or run code --install-extension renaissance-geek.impeccable. Needs VS Code 1.109.3+, Copilot Chat, and a trusted workspace. It installs the skill without the hook. Details.
+
+Grok Build: grok plugin install pbakaus/impeccable#plugin --trust installs the skill, agents, and hook.
+
+Git submodule (a pinned version for the whole team)
+
+git submodule add https://github.com/pbakaus/impeccable vendor/impeccable
+npx impeccable link --source=vendor/impeccable --providers=claude,cursor
 
 …（内容已截断）

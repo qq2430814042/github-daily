@@ -1,0 +1,123 @@
+π RuView
+
+Start here
+
+Hardware
+
+Models
+
+AI toolkit
+
+Smart home
+
+Cognitum Seed
+
+See through walls with WiFi
+
+Turn ordinary WiFi into a spatial intelligence / sensing system. Detect people, measure breathing and heart rate, track movement, and monitor rooms — through walls, in the dark, with no cameras or wearables. Just physics.
+
+Works natively with the four major smart-home ecosystems: Home Assistant via the HA-DISCO MQTT publisher, Apple Home & HomePod as a discoverable HAP-1.1 bridge, Google Home + Amazon Alexa via the same HA bridge or a Matter endpoint. Siri, Google Assistant, and Alexa can voice presence and vitals by room with zero custom skills.
+
+Drop into any Home Assistant install with one --mqtt flag. Or pair into Apple Home / Google Home / Alexa / SmartThings as a Matter Bridge. Ships 21 entities per node (11 raw signals + 10 inferred semantic states: someone-sleeping, possible-distress, room-active, elderly-inactivity-anomaly, meeting-in-progress, bathroom-occupied, fall-risk-elevated, bed-exit, no-movement, multi-room-transition) plus 3 starter HA Blueprints. See docs/integrations/home-assistant.md · ADR-115.
+
+π RuView is a WiFi sensing platform that turns radio signals into spatial intelligence.
+
+Every WiFi router already fills your space with radio waves. When people move, breathe, or even sit still, they disturb those waves in measurable ways. RuView captures these disturbances using Channel State Information (CSI) from low-cost ESP32 sensors and turns them into actionable data: who's there, what they're doing, and whether they're okay.
+
+What it senses:
+- Presence and occupancy — detect people through walls, count them, track entries and exits
+- Vital signs — breathing rate and heart rate, contactless, while sleeping or sitting
+- Activity recognition — walking, sitting, gestures, falls — from temporal CSI patterns
+- Environment mapping — RF fingerprinting identifies rooms, detects moved furniture, spots new objects
+- Sleep quality — overnight monitoring with sleep stage classification and apnea screening
+
+Also included:
+
+- Camera-free pose — estimate 17 body keypoints from WiFi CSI
+- Built-in model workflow — record CSI, train models, load RVF files, and switch LoRA profiles
+- Local automation — HOMECORE provides state, history, automations, signed Wasm plugins, voice hooks, and HomeKit support
+- Unified RF world model — combine WiFi CSI, radar, UWB, and cellular sensing in one privacy-bounded scene model; accuracy is still synthetic until real-data validation
+- Governed evidence — attach privacy policy, uncertainty, provenance, and witness records to sensing events
+- RuView MetaHarness — use an AI operator to onboard, calibrate, train, verify, and check sensing claims
+
+Presence and motion
+
+Breathing and vital signals
+
+Pose research and limitations
+
+Edge sensor mesh
+
+Local automation
+
+Guided AI operator
+
+RuView MetaHarness — guided operation for humans and AI agents
+
+The RuView-specific metaharness we created is published as @ruvnet/ruview. It provides:
+- source-cited guidance;
+- device access for CSI nodes, radar and LiDAR;
+- firmware flashing with boot evidence;
+- one MCP server, usable over stdio or HTTP for ChatGPT, with a live console widget;
+- a Claude Code mod;
+- guarded Claude Code/Codex agents;
+- deterministic verification;
+- an honesty check for accuracy claims.
+
+Companion packages: homecore (Homecore developer metaharness) and @ruvnet/ruview-kernel (the vitals pipeline as WASM).
+
+Check the local setup and get source-cited guidance
+npx @ruvnet/ruview@0.9.1 doctor
+npx @ruvnet/ruview@0.9.1 guidance --topic sensing --query "model loading"
+
+Hardware: what is plugged in, live CSI from your nodes, a 60 GHz radar kit
+npx @ruvnet/ruview@0.9.1 devices
+npx @ruvnet/ruview@0.9.1 esp32 --watch                       # ESP32 + Realtek RAC1 nodes, live view
+npx @ruvnet/ruview@0.9.1 esp32 --seconds 45 --analyze        # live CSI through the vitals kernel
+npx @ruvnet/ruview@0.9.1 mmwave --source esphome --host
+
+Agents: MCP over stdio, or over HTTP for ChatGPT (token-protected, read tools only)
+npx @ruvnet/ruview@0.9.1 mcp start
+RUVIEW_MCP_GRANTS=device-access npx @ruvnet/ruview@0.9.1 mcp start --http
+
+Claude Code: a live sensing pane (/ruview), shipped in the package
+npx @ruvnet/ruview@0.9.1 mod
+
+Run a read-only RuView agent through Codex
+npx @ruvnet/ruview@0.9.1 agent run --host codex --repo . \
+  --prompt "Find the nearest tests and cite the source files"
+
+Check claims, replay the deterministic proof, search the reviewed brain
+npx @ruvnet/ruview@0.9.1 claim-check --file REPORT.md
+npx @ruvnet/ruview@0.9.1 verify
+npx @ruvnet/ruview@0.9.1 brain search --query "calibration"
+
+Safety:
+- Agent runs are read-only by default. Workspace writes require both --allow-write and --confirm.
+- Hardware reads need the device-access grant.
+- Flashing and calibration never run over the HTTP transport.
+- Device-reported vitals are labelled as unvalidated.
+- Retrieved brain content is evidence, not authority.
+
+A single npx ruview package bundling all of this is ready (ADR-376). It is waiting on npm to release the unscoped name.
+
+Full walkthrough: user guide → RuView npm toolkit.
+
+Built on RuVector and Cognitum Seed, RuView runs entirely on edge hardware — an ESP32 mesh (as low as $9 per node) paired with a Cognitum Seed for persistent memory, cryptographic attestation, and AI integration. No cloud, no cameras, no internet required.
+
+The system learns each environment locally using spiking neural networks that adapt in under 30 seconds, with multi-frequency mesh scanning across 6 WiFi channels that uses your neighbors' routers as free radar illuminators. Every measurement is cryptographically attested via an Ed25519 witness chain.
+
+RuView turns ordinary WiFi into a contactless sensor. A $9 ESP32 board reads the radio reflections off the people in a room, and a small pretrained model — published on Hugging Face at ruvnet/wifi-densepose-pretrained — tells you who's there, how they're breathing, and how their heart rate is trending. The model fits in 8 KB (4-bit quantized) and runs in microseconds on a Raspberry Pi. (The v2 encoder reports an honest, label-free held-out temporal-triplet accuracy of 82.3% — up from 66.4% raw; the older "100% presence" figure was measured on a single-class recording and has been retracted in favor of this.) No cameras, no wearables, no app on the user's phone.
+
+Built for low-power edge applications
+
+Edge modules are small programs that run directly on the ESP32 sensor — no internet needed, no cloud fees, instant response.
+
+| What | How | Speed / scale |
+|------|-----|---------------|
+| 🫁 Breathing rate | Bandpass 0.1–0.5 Hz on wrapped phase, circular variance, zero-crossing BPM (#593) | 6–30 BPM, real-time |
+| 💓 Heart rate | Bandpass 0.8–2.0 Hz, zero-crossing BPM | 40–120 BPM, real-time |
+| 👤 Presence detection | Trained head on Hugging Face (ruvnet/wifi-densepose-pretrained; v2 encoder = 82.3% held-out temporal-triplet acc, honestly re-benchmarked) + a phase-variance fallback that needs no model |  | 🧬 CSI embeddings | 128-dim contrastive encoder shipped on Hugging Face, 4-bit quantised variant fits in 8 KB | 164,183 emb/s on M4 Pro |
+| 🦴 17-keypoint pose estimation | cog-pose-estimation Cog v0.0.1 — signed aarch64 + x86_64 binaries on GCS, loads pose_v1.safetensors via Candle (the committed pose_v1 is a first-cut on-device model: PCK@20 = 3.0%, below the ADR-079 ≥35% target, and its runtime path is still a confidence=0 stub — see Model weights: what's real, what's not; the 82.69% figure below is the separate published MM-Fi benchmark, not this live cog). Train your own from paired data in 2.1 s on an RTX 5080 (ADR-101, benchmarks). SOTA on MM-Fi: ruvnet/wifi-densepose-mmfi-pose hits 82.69% torso-PCK@20 (ensemble 83.59%), beating MultiFormer (72.25%) and CSI2Pose (68.41%) on the matched MM-Fi random_split protocol — self-corrected and auditable on AetherArena | 8.4 ms cold-start on a Pi 5 |
+
+…（内容已截断）

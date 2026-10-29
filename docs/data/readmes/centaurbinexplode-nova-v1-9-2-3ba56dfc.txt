@@ -1,0 +1,147 @@
+Nova
+
+  IDLE SMARTER. NOT HARDER.
+
+  Idle hours, manage achievements, and organize your Steam library from one window.
+
+  Download
+  &nbsp;·&nbsp;
+  Quick start
+  &nbsp;·&nbsp;
+  Features
+  &nbsp;·&nbsp;
+  FAQ
+
+What is Nova?
+
+Nova is a Steam idle and achievement tool for C# / .NET 8. Idle hours, manage achievements, and organize your Steam library from one window.
+
+| | |
+| --- | --- |
+| Platform | Windows 10 / 11 |
+| Runtime | .NET 8 |
+| Login | Steam Guard supported |
+| Storage | Local, SQLite |
+| Price | Free, MIT |
+
+v1.9.2 is live. The build in the download folder mirrors the source
+in this repository.
+
+Preview
+
+Workspace — games, idler, achievements, settings.
+
+Features
+
+    Idle engine
+
+    Idle up to 32 games at once with realistic session windows.
+
+    Achievements
+
+    Unlock, lock, and schedule achievements per game with a preview.
+
+    Card farming
+
+    Farm remaining card drops, then rotate to the next game automatically.
+
+    Library tools
+
+    Sort, tag, hide, and export your library as CSV or JSON.
+
+    Backups
+
+    Snapshot screenshots, configs, and saves to a folder of your choice.
+
+    Privacy
+
+    Credentials stay in the Windows credential store. Nothing is uploaded.
+Quick start
+
+1. Install the .NET 8 desktop runtime.
+2. Download and unpack Nova.
+3. Sign in with Steam Guard.
+4. Select games and start the idler.
+5. Set a session limit and let it run.
+
+nova/
+├── bin\
+├── config\
+├── profiles\
+└── logs\
+
+Uninstall by deleting the folder. Nothing is written outside it and the
+per-user config directory.
+
+Usage
+
+run
+Nova.exe
+
+cli mode
+Nova.exe --idle 730,440 --limit 4h
+Nova.exe --export library.csv
+
+- Steam Guard is supported.
+- Idle up to 32 games at once.
+- Library export supports CSV and JSON.
+
+FAQ
+
+Is idling against the rules?
+
+Steam allows idling; card farming policies change. Read the current Steam terms before using automation.
+
+Does it need my password?
+
+Sign-in uses the official Steam login flow with Steam Guard. Tokens are stored in the Windows credential store.
+
+Can I run it on a server?
+
+It is a desktop app, but the CLI mode works on Windows Server with the desktop runtime installed.
+
+Where is the database?
+
+%APPDATA%/Nova/nova.db.
+
+Repo activity
+
+| | |
+| --- | --- |
+| Latest release | v1.9.2 — 3 days ago |
+| Last commit | core: stability fixes and dependency bump |
+| Open issues | 6 |
+| Contributors | 9 |
+| Update cadence | weekly |
+
+Changelog — v1.9.2
+
+- Stability fixes across the main workflow
+- Reduced startup time
+- Updated dependencies
+- Documentation cleanup
+
+Roadmap
+
+- x] Multi-game idler
+- [x] Achievement manager
+- [x] Card farming
+- [x] Library export
+- [ ] Trading card market helper
+- [ ] Linux build
+
+Project layout
+
+src/                 core implementation
+docs/                usage, FAQ, publishing notes
+assets/              original artwork
+CHANGELOG.md         release history
+DISCLAIMER.md        responsible-use notice
+
+License
+
+MIT. See [LICENSE.
+
+Unofficial project. Nova is not affiliated with any platform or
+publisher it interoperates with. Use it only on systems you own, and only
+where such modifications are permitted.

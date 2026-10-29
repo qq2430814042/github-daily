@@ -1,0 +1,149 @@
+Clean
+
+  FRESH WINDOWS. NO BLOAT.
+
+  Remove preinstalled apps, disable telemetry, and tune services from one reversible checklist.
+
+  Download
+  &nbsp;·&nbsp;
+  Quick start
+  &nbsp;·&nbsp;
+  Features
+  &nbsp;·&nbsp;
+  FAQ
+
+What is Clean?
+
+Clean is a Windows debloat and optimizer for PowerShell 7. Remove preinstalled apps, disable telemetry, and tune services from one reversible checklist.
+
+| | |
+| --- | --- |
+| Platform | Windows 10 / 11 |
+| Runtime | PowerShell 7 |
+| Install | None, portable script |
+| Undo | Full restore point |
+| Price | Free, MIT |
+
+v4.0.3 is live. The build in the download folder mirrors the source
+in this repository.
+
+Preview
+
+Workspace — tweaks, apps, services, settings.
+
+Features
+
+    Debloat
+
+    Remove 42 preinstalled apps with a single checklist and a dry-run preview.
+
+    Telemetry
+
+    Disable diagnostic data, activity history, and advertising ID at the policy level.
+
+    Services
+
+    Tune 30 services with plain-language explanations and a recommended preset.
+
+    Privacy
+
+    Harden Explorer, Edge, and search settings without breaking updates.
+
+    Restore
+
+    Every action is logged and reversible from a generated undo script.
+
+    Audit
+
+    Export a before and after report so you can see exactly what changed.
+Quick start
+
+1. Download the release and unpack it.
+2. Right-click Start-Clean.ps1 and run as administrator.
+3. Pick a preset or select individual tweaks.
+4. Review the dry-run report.
+5. Apply, then reboot.
+
+clean/
+├── bin\
+├── config\
+├── profiles\
+└── logs\
+
+Uninstall by deleting the folder. Nothing is written outside it and the
+per-user config directory.
+
+Usage
+
+preview
+./Start-Clean.ps1 -DryRun
+
+apply recommended
+./Start-Clean.ps1 -Preset Recommended
+
+undo everything
+./Restore.ps1 -Latest
+
+- Always run the dry run first.
+- Every change writes an undo script.
+- A restore point is created before applying.
+
+FAQ
+
+Will it break Windows Update?
+
+No. The recommended preset leaves update services untouched, and every change is reversible.
+
+Does it need installing?
+
+No. It is a portable script with no installer and no background service.
+
+Can I undo?
+
+Yes. Each run writes an undo script and a restore point.
+
+Is it safe on a work PC?
+
+Check with your administrator first. Some policies are managed by your organization.
+
+Repo activity
+
+| | |
+| --- | --- |
+| Latest release | v4.0.3 — 3 days ago |
+| Last commit | core: stability fixes and dependency bump |
+| Open issues | 6 |
+| Contributors | 9 |
+| Update cadence | weekly |
+
+Changelog — v4.0.3
+
+- Stability fixes across the main workflow
+- Reduced startup time
+- Updated dependencies
+- Documentation cleanup
+
+Roadmap
+
+- x] App removal with dry run
+- [x] Telemetry policy pack
+- [x] Service presets
+- [x] Undo and restore point
+- [ ] Winget bulk installer
+- [ ] Scheduled maintenance mode
+
+Project layout
+
+src/                 core implementation
+docs/                usage, FAQ, publishing notes
+assets/              original artwork
+CHANGELOG.md         release history
+DISCLAIMER.md        responsible-use notice
+
+License
+
+MIT. See [LICENSE.
+
+Unofficial project. Clean is not affiliated with any platform or
+publisher it interoperates with. Use it only on systems you own, and only
+where such modifications are permitted.

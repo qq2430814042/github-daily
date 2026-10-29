@@ -1,0 +1,88 @@
+Sign up
+    ·
+    Docs
+    ·
+    Book demo
+    ·
+    Website
+    ·
+    Feature requests
+    ·
+    Contribute
+    ·
+    Hiring
+
+Macro is the all-in-one workspace for you and your team. It unifies email + messages + docs + tasks + agents + CRM into a single fast interface with shared team-level memory. Everything in your workspace is @linked and searchable so your team (and your agents) never have to switch tools.
+Why Macro
+
+We built Macro because we wanted a single operating system for our startup. There are many good software products, and we used them all — Slack, Linear, Notion, HubSpot, and Superhuman — but they don't work together as one system. As we scaled our last venture to ~20 people things started to break: every team got their own tools and the company was held together by MCP and Zapier. The company was not computable. It was chaotic.
+
+Macro is a complete redesign of work software from the ground up as a single system.
+
+Designed by us in NYC and Toronto, dogfooded by our team of ~15 for two years. Built in SolidJS and Rust for speed and reliability. We're focused on building something that any small company or team at a larger company can use as their "operating system".
+
+Features
+
+Macro is composed of 'blocks' designed to be modular, extensible, and work together like Lego. For each block, we studied the best prior art and tried to make it even better.
+
+Each surface is purpose-built for its job rather than composed from a generic block primitive — but every one of them shares the same backend; cross-references between a doc and a task, or a channel message and an email, are natively stored as a bidirectional graph.
+
+| Block         | Docs                                                      | What it does                                                                  |
+| ------------- | --------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| Email         | Docs &rarr;       | Multi-account unified inbox, keyboard shortcuts, and shared inboxes. Gmail.   |
+| Messages      | Docs &rarr;    | Channels and direct messages designed for focused technical discussions.      |
+| Tasks         | Docs &rarr;       | Linear-inspired tasks, tightly integrated with channels, email, and agents.   |
+| Docs          | Docs &rarr;        | Real-time collaborative, markdown-native docs built on CRDTs, with @mentions. |
+| Canvas        | Docs &rarr;      | 2D board with embedded @links to tasks, files, and emails.                    |
+| Agents        | Docs &rarr;      | Unified, team-level memory. Can take action on your behalf.                   |
+| Calls         | Docs &rarr;       | Recorded, transcribed, and logged to team memory for agents.                  |
+| File storage  | Docs &rarr;     | Auto-imported from email and channels, fully searchable.                      |
+| Pull requests | Docs &rarr; | Linked to tasks, embeddable in channels, available to agents.                 |
+| CRM           | Docs &rarr;         | Customer and contact objects, custom properties, email sync, enrichment.      |
+
+Multiple email inboxes w/ good AI tools, integrated CRM
+
+Macro Mail is inspired by Superhuman's keyboard-first interface with a few key additions:
+
+1. Multi-account. Triage all your Google accounts in a single inbox, with the same tagging and sharing system. Or triage individually.
+2. Unified inbox: emails, messages, @mentions, and tasks to complete, all in the same list. Use j k and e to navigate everything.
+3. Better AI, with a tools/MCP surface designed to work across inboxes and to help your agents more accurately retrieve information. For example, we expose a unified search tool that allows agents to search all file attachment PDFs (parsed out of email) directly, rather than pulling email threads then attachments. You can also draft, edit and send emails right from AI chats, without opening your email.
+
+4. Multitasking ability — Macro has a built-in window manager that lets you create 3+ splits (scales with monitor size) so you can draft emails while reviewing prior threads.
+5. Company/Contact objects. Macro has native CRM capability so you can cmd+k to a contact, like tim@acme.com to see all emails between you and that person, or companies, to see all emails and files between everyone on your team and everyone at that company, e.g. @acme.com. All of this right from your email without having to open a heavyweight CRM like HubSpot or Salesforce. Email aggregation by contact or company is also available to your agents so they can better assist with CRM-type queries and actions.
+
+Macro Mail lives in the same interface as channels, docs, tasks, and code. From any email, hit "task" to create a linked task, e.g. a ticket for an engineer from a customer support email. @mention emails in documents, e.g. @Re: Contract Signature.eml inside of Todos.md. In Macro, your email is brought into the fold with all of your tools, and your team, in the same permissions system: just hit Share to share an email to any DM or channel — no need to screenshot.
+
+Email docs &rarr;
+
+Team chat for focused technical discussions
+
+Macro Chat is designed to be more focused than Slack. The first couple of replies show inline and the rest collapse into a thread, so a busy channel stays readable. Threads are permissioned severally so you can share threads across channels by copying links. Everything is stored in a bidirectional graph, so tasks @link to messages that created them, customer support emails tie into support channels, CRM records get updated when they're discussed in messages, etc. The core idea is that (i) messaging should be the centerpiece around which tasks, mail, docs, and content management are built, all in a lightweight way, and agents should be first-class citizens like human users and (ii) messaging needs to be more focused and readable for technical conversations, and not turn into battles where context is lost and progress is indistinguishable from noise.
+
+Messages docs &rarr;
+
+Task management built around chat
+
+Linear recently published a report that issue tracking is dead. We agree with that, but the stronger form is that issue tracking never really worked, at least for us. We really tried and we blamed ourselves, but as we talked to other companies, it turns out that nobody was using their issue tracker "correctly". And if that's the case, the problem is the design of the tool, not the companies that use it.
+
+The core problem with traditional issue trackers or project management tools is that they get out of date. The reason they get out of date is that (i) they're a separate system from where the conversation really happens in team chat (e.g. Slack, Macro, Discord, etc.) and (ii) they don't add much benefit beyond tracking the work. They're a chore with near-term costs and only the promise of long-term benefit. They're too rigid compared to a 2D canvas, too opinionated, and don't match how your project actually functions.
+
+The solution isn't to forgo tracking entirely. We tried that and it was a different form of chaos. The solution we've found is lightweight issues tightly coupled to your channels and DMs, so that issue tracking naturally occurs where the conversation itself happens.
+
+Creating tasks in Macro is easy. Where possible, tasks created are bidirectionally linked to the creating context (e.g. a customer email) so the full chain is auditable from "why are we doing this" → task → agent → pull request, all in one system.
+
+- Create a task from an email
+- From anywhere via c t
+- From a markdown doc with /task
+- From any -  ] bullet by highlighting and clicking "Task"
+- @Macro create tasks in any channel or DM
+- In any agent chat
+- Via external MCP, API or SDK
+
+[Tasks docs &rarr;
+
+@linked markdown docs powered by CRDTs
+
+We wanted everything in a single markdown editor without switching tools.
+
+…（内容已截断）

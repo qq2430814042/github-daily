@@ -1,0 +1,145 @@
+vibe-knowledge · Vibe 知识大赏
+
+一个知识点 → 一条有旁白、每句有出处的精品知识短片。
+
+Claude Code skill：选题 → 查证 → 写稿 → 配音 → 代码成片 → 1080p60 → 质检 → 发布包，全程在对话里完成。
+
+English · 看样片 · 风格库 · 听一听 · Renoise · 安装
+
+↑ 风格快闪片节选。完整 42 秒版：style-flash-42s.mp4
+
+看样片
+
+点封面播放（视频放在 Release v1.0.0）。所有画面都由 Claude Opus 编排、代码逐帧渲染；标「增强」的镜头用 Renoise 生成配图和动态镜头，片中都标注「AI 示意」。
+
+如果你活在古代没有冰箱（古风版）
+2:05 · 两难选择片 · 古风 · 增强标准档（Wan 3.0 动态镜头）
+商鞅立木：搬一根木头赏五十金，你搬不搬？
+2:32 · 两难选择片 · 古风 · 增强档
+
+商鞅立木（基础档，0 积分）
+2:32 · 同一份 film.js，代码插画版
+商鞅立木 · 两档上下对比
+2:32 · 基础档 vs 增强档，旁白和脚本完全一样
+
+一张纸折多少次能到月球
+1:10 · 猜谜概念片 · 深色数学 + 尺度穿越 · 增强标准档
+什么是洗钱
+1:31 · 痛点原理片 · 半调拼贴 · 增强轻档
+
+如果你活在古代没有冰箱
+3:12 · 猜谜概念片 · 星空光点 · 基础档 0 积分（同一选题的另一种讲法）
+火箭怎么飞上天
+1:46 · 猜谜概念片 · 蓝图专利图 · 增强标准档
+
+风格样片集（每套风格演同一段「商鞅立木」开场，方便横向比较）：
+
+- 最早 7 套（古风、星空光点、暗金线描、水墨纸本、像素、字幕新闻、视觉调查）
+- 剪辑与纪实
+- 补空白家族 8 套
+- 增强档：敦煌、青花、木刻、半调拼贴
+- 第五批 8 套
+- 第六批 8 套
+- 增强档：长卷、铜版博物
+- 田园像素
+- 第九批 5 套
+- 手绘过程（手 + 笔画给你看）
+
+风格库：44 套 · 8 个家族
+
+| 家族 | 数量 | 风格（点开看 STYLE.md：配色、字体、镜头语言、适合的选题） |
+|---|---|---|
+| 东方 | 7 | 古风、水墨纸本、敦煌壁画（增强）、青花（增强）、木刻（增强）、留白极简、长卷（增强） |
+| 暗场概念 | 7 | 星空光点、暗金线描、深色数学、霓虹赛博、发布会极简、极光、装饰艺术金线 |
+| 游戏 | 4 | 像素、RPG 对话框、卡牌对战、田园像素 |
+| 剪辑与纪实 | 5 | 字幕新闻、视觉调查、复古桌面、档案灯台、电视新闻包装 |
+| 明亮流行 | 5 | 综艺花字、孟菲斯波普、手账涂鸦、蒸汽波、黏土卡哇伊 |
+| 图解与设计 | 8 | 粉笔黑板、蓝图专利图、等轴测剖面、瑞士网格动态字、地铁线路图、象形统计、铜版博物（增强）、手绘过程 |
+| 印刷与纸 | 5 | 孔版印刷、半调拼贴（增强）、剪报拼字、杂志编辑、国家公园海报 |
+| 电影感 | 3 | 剪影片头、默片字卡、构成主义蒙太奇 |
+
+「增强」= 需要 Renoise 生图（约 8 积分 / 段），其余全部代码生成、0 积分。给出选题后，recommend.py 会推荐 3 套风格；你也可以从空白开始定一套自己的风格（references/09-style-studio.md）。
+
+听一听：默认音色与 BGM
+
+| 音频 | 说明 |
+|---|---|
+| default-voice-demo.m4a | 默认配音音色「科技博主沉稳男声」，小米 MiMo 音色设计生成的 AI 声音，不是真人；快节奏，5.5–6 字/秒 |
+| mix-demo-voice-plus-bgm.m4a | 成片混音效果：旁白 + 默认 BGM + 音效（第 04 期 B 版开头 24 秒） |
+| vibe-bgm.m4a | 默认 BGM（112.9 BPM，160 秒），每条视频都会用 |
+
+BGM 是强制的：混音时如果 film.js 没放 BGM，会按片长自动裁一份补上；别的整段配乐会被停用；音量统一校准到「说话时比人声低 10 dB」。只有用户明确要求换曲才换（音乐条目写 bgm: true, user_request: "用户原话"）。
+
+它怎么做一期
+
+| 段 | 做什么 |
+|---|---|
+| ① 选题 | 3 秒内能不能让人先猜 / 先选？有没有贯穿全片的道具？有没有反转？ |
+| 确认 1 | 选题、6 种母版之一、时长（按复杂度给四档：速览 / 精讲 / 标准 / 深挖，每档写清能讲多细、要砍掉什么）、风格、档位 |
+| ② 查 | 事实清单 facts.md：每个数字、人名、年份、引文都有出处；说法有分歧时两说并列 |
+| ③ 写 | 按母版写旁白 → 子 agent 对抗审查（钩子、出处、字数）→ 改 |
+| 确认 2 | 看旁白稿 + 分镜（增强档附带镜头清单和 Renoise 报价），同意后才生成 |
+| ④ 配音 | MiMo 克隆音色 + 逐字对齐 + 回读校验 + 人声后期 |
+| ⑤ 编 | film.js：组件库 know.js（配图推拉、逐帧视频、关键词、计数器、竖排古文、出处脚注、两难按钮、印章、线稿剖面图…）|
+| ⑥ 渲 | 1080p60 逐帧录制 → 混音（强制 BGM、按人声校准）→ 封面接成开头帧 |
+| ⑦ 质检 | 接触表 + OCR 回读对照 facts.md + 响度 + 冻结检测 + BGM 检测 |
+| 确认 3 | 看成片 → 发布包（标题、话题、简介、封面） |
+
+两档制作：基础档 0 积分（Opus 手写 SVG 分层插画、粒子、数据组件）；增强档只把代码做不好的镜头（写实场景、最需要被记住的 1–3 个时刻）交给 Renoise，每次先报价、你同意了才生成。同一份 film.js 两档通用。
+
+六种母版：猜谜概念片、两难选择片、痛点原理片、一条主线片、闯关片、六面轮转片（references/01-templates.md）。
+
+Renoise：增强档的生成平台
+
+Renoise 是一个 AI 视频、图片、音频生成平台，通过 MCP 直接接进 Claude Code、Codex 等 Agent。一个账号就能用 Midjourney、GPT Image、Nano Banana、Seedance 2.5、Wan 3.0、Kling、Grok Video、Lyria、ElevenLabs 音效等模型，在对话里直接生成。
+
+在 vibe-knowledge 里，Renoise 只负责增强档里代码做不好的那几个镜头：写实的时代场景配图、最需要被记住的 1–3 个动态镜头、个别音效。其余画面照样用代码画。基础档完全不需要 Renoise，0 积分就能出片。
+
+- 先报价、你点头才生成：每一期都会把要生成的镜头、模型、提示词和 estimate_cost 总价列给你，你在对话里明确同意才提交。
+- 花多少心里有数：第 01 期《商鞅立木》增强版用了 246 积分（10 张 Midjourney 配图 + 2 个 Wan 动态镜头 + 配乐 + 5 个音效）；增强档一般在轻 ≈25–40 / 标准 ≈250–300 / 旗舰 ≈600–700 积分。
+- 片中标注：Renoise 生成的画面都会标「AI 示意」。
+
+还没有账号？先到 renoise.ai 注册。登录都在浏览器里完成，不用复制任何 API key。然后按你用的 Agent 接入：
+
+| 用的是 | 怎么接 |
+|---|---|
+| Claude Code | 依次输入 /plugin marketplace add ArcoCodes/renoise-plugins-official、/plugin install renoise@renoise-plugins-official，首次调用时浏览器登录 |
+| Claude 桌面端 / claude.ai | 设置 → 连接器 → Add custom connector → 名称 Renoise，地址 https://renoise.ai/api/public/mcp |
+| Codex | codex mcp add renoise --url https://renoise.ai/api/public/mcp，再 codex mcp login renoise |
+| OpenClaw | openclaw plugins install renoise --marketplace ArcoCodes/renoise-plugins-official |
+| WorkBuddy、Cursor、Windsurf、Cline、豆包、千问、纳米Work…… | 添加远程 MCP 服务器，地址 https://renoise.ai/api/public/mcp（常见配置：{"mcpServers":{"renoise":{"url":"https://renoise.ai/api/public/mcp"}}}） |
+
+官方最新装法：renoise.ai/plugin。装好后问 Agent 一句「查一下我的 Renoise 余额」，能查到就接通了。
+
+安装
+
+git clone https://github.com/andyhuo520/vibe-knowledge.git
+cp -R vibe-knowledge/skills/vibe-knowledge vibe-knowledge/skills/ai-teardown ~/.claude/skills/
+
+- vibe-knowledge 是本体；ai-teardown 提供 cine 渲染引擎、建工作区和配音脚本，两个都要装。
+- 渲染用的 Python：python3 -m venv /.venvs/cine && /.venvs/cine/bin/pip install numpy scipy pillow playwright && /.venvs/cine/bin/python -m playwright install chromium-headless-shell，再 export CINE_PY=/.venvs/cine/bin/python。
+- ffmpeg；OCR 质检用 macOS 自带的 Vision（需要 swiftc）。
+- 配音：小米 MiMo，密钥放 MIMO_API_KEY 环境变量或 ~/.config/ai-teardown/mimo.env（不要写进项目文件）。默认音色是仓库自带的 AI 声音；想用自己的声音：new_film.py --voice-ref 你的录音.wav（只用你本人或已获授权的声音）。
+- 增强档（可选）：Renoise MCP，注册和接入见上面的 Renoise 一节。
+
+然后在 Claude Code 里说：
+
+做一期知识大赏：为什么假账总被数字 1 出卖？
+
+第一次用会先打开本地「风格图鉴」，介绍母版、风格和档位。
+
+目录
+
+skills/vibe-knowledge/   本体：SKILL.md、references/（14 份规范与踩坑）、styles/（44 套风格）、kit/know.js、tools/、templates/、assets/（默认 BGM、默认音色）
+skills/ai-teardown/      cine 引擎（three.js 逐帧渲染）、字体、图标集、建工作区和配音脚本
+docs/                    README 用的封面、风格墙、动图、试听音频
+
+致谢
+
+做这个项目时参考过 lemo-opuscar、huashu-art-motion、paper2video、Paper-Cut、LuZhong-Li/vibe-knowledge-video-skill、earshot 等开源项目。每个项目参考了什么、用在哪里、什么许可证，都列在 ACKNOWLEDGEMENTS.md。如有不准确的地方，欢迎开 issue，我们会及时更正。
+
+许可
+
+代码以 MIT 开源。示例视频、AI 生成的配图和动态镜头、默认 BGM 与默认音色的说明见 NOTICE.md；第三方组件见 THIRD_PARTY.md；参考过的开源项目见 ACKNOWLEDGEMENTS.md。
+
+作者 @Berryxia · 用 Claude Code（Claude Opus）编排制作

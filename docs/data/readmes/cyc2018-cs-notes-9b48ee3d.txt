@@ -1,15 +1,23 @@
-| 算法&nbsp; | 操作系统 | 网络&nbsp;|面向对象| &nbsp;数据库&nbsp;&nbsp;|&nbsp;Java&nbsp;&nbsp;|系统设计| &nbsp;&nbsp;工具&nbsp;&nbsp; |编码实践| &nbsp;&nbsp;后记&nbsp;&nbsp; |
-| :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: | :----: |
-| :pencil2: | :computer: | :cloud: | :art: | :floppy_disk: |:coffee:| :bulb: |:wrench:| :watermelon: |:memo:|
+个人网站在线阅读 · 飞书知识库在线阅读
 
-准备面试可以从 面试高频问题 开始，每个问题都链接到对应的章节。
+| 学习路线 | 算法&nbsp; | 操作系统 | 网络&nbsp;|面向对象| &nbsp;数据库&nbsp;&nbsp;|&nbsp;Java&nbsp;&nbsp;|系统设计| &nbsp;&nbsp;工具&nbsp;&nbsp; | &nbsp;&nbsp;后记&nbsp;&nbsp; |
+| :---: | :---: | :----: | :---: | :----: | :----: | :----: | :----: | :----: | :----: |
+| :rocket: | :pencil2: | :computer: | :cloud: | :art: | :floppy_disk: |:coffee:| :bulb: |:wrench:| :memo:|
+
+:rocket: 学习路线
+
+每条路线把笔记按天排好，每天 1～2 小时：读一段笔记，回答几道面试中的真实问题，做一个动手练习；后三条路线每天还有一道算法题。
+
+- 零基础：没有学过计算机课程时从这里开始，用一次外卖下单讲清程序、操作系统、网络、数据库和数据结构，不需要会编程；
+- Java 后端：会 Java 语法以后，系统准备后端面试，依次学 Java、MySQL、Redis、网络、操作系统、Spring、分布式和系统设计；
+- 大模型应用开发：准备 RAG、Agent 方向的岗位，从 Transformer 的原理学到 Agent 和工程实践；
+- 面试冲刺：两三周后就要面试时，每天复习 3 个最常考的知识点。
 
 :pencil2: 算法
 
 - 剑指 Offer 题解
 - Leetcode 题解
 - 算法
-- 字节跳动内推
 
 :computer: 操作系统
 
@@ -29,11 +37,13 @@
 - SQL 练习
 - MySQL
 - Redis
+- Redis - 进阶
 
 :coffee: Java
 
 - Java 基础
 - Java 容器
+- Java 容器 - 进阶
 - Java 并发
 - Java 虚拟机
 - Java I/O
@@ -49,6 +59,7 @@
 - 缓存
 - 消息队列
 - 大模型应用
+- 大模型应用 - 进阶
 
 :art: 面向对象
 
@@ -60,23 +71,8 @@
 - Git
 - Docker
 - 构建工具
-- 正则表达式
-
-:watermelon: 编码实践
-
-- 代码可读性
-- 代码风格规范
 
 :memo: 后记
-
-排版
-
-笔记内容按照 中文文案排版指北 进行排版，以保证内容的可读性。
-
-不使用 ` 这种方式来引用图片，而是用  标签。一方面是为了能够控制图片以合适的大小显示，另一方面是因为 GFM 不支持    这种方法让图片居中显示，只能使用
-` 达到居中的效果。
-
-在线排版工具：Text-Typesetting。
 
 提交 Issue、PR 以及添加配图的约定见 贡献指南。
 

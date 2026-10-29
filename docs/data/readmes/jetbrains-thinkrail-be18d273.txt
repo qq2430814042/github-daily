@@ -45,7 +45,12 @@ What you get
   in the chat instead of guessing, and inline diagrams, option comparisons and file previews rendered right
   in the chat — when the agent proposes a UI change it shows a before/after mockup you can comment on like
   a diff. Settings → Extensions lists the ThinkRail extensions the agent gets and lets you switch each one
-  off.
+  off. The questions and visualize tools are also published as plain pi packages, one each —
+  pi install npm:@thinkrail/pi-ask-user-question for the questions
+  (@thinkrail/pi-ask-user-question) and
+  pi install npm:@thinkrail/pi-visualize for the diagrams and previews
+  (@thinkrail/pi-visualize) — so a vanilla pi
+  in the terminal gets the same tools.
 - MCP servers. Connect the MCP servers in your pi mcp.json (or add them, and a few presets, from
   Settings): ThinkRail asks in the chat before calls the server does not mark read-only (or always allows
   the tools you trust in a project), keeps servers a repository
@@ -110,18 +115,9 @@ Then run thinkrail, optionally with a git repo to open as a project:
 thinkrail ~/code/my-repo
 
 thinkrail needs git on your PATH and a model provider — sign in with JetBrains AI from the app or use
-your own provider credentials. thinkrail --help lists the flags; thinkrail --version prints the build.
-
-Nightly builds, pinned versions, updates, and uninstall
-
-The installer takes --channel stable|nightly and --version; a pinned version must belong to the
-selected channel:
-
-curl -fsSL https://raw.githubusercontent.com/JetBrains/thinkrail/main/install.sh | bash -s -- --channel nightly
-curl -fsSL https://raw.githubusercontent.com/JetBrains/thinkrail/main/install.sh | bash -s -- --channel stable --version 0.1.2
-curl -fsSL https://raw.githubusercontent.com/JetBrains/thinkrail/main/install.sh | bash -s -- --channel nightly --version 0.2.0-nightly.10
-
-On Windows the options are environment variables (THINKRAIL_CHANNEL, THINKRAIL_VERSION,
-THINKRAIL_PREFIX, THINKRAIL_NO_MODIFY_PATH):
+your own provider credentials. The first launch walks you through connecting a provider and picking a
+project; Start a new project creates an empty git repository (under ~/thinkrail by default), so you
+don't need one ready. Add project → Clone repository… clones a Git URL into a new folder on the
+computer running ThinkRail and opens it as a project. Choose the parent folder and folder name, optionally
 
 …（内容已截断）

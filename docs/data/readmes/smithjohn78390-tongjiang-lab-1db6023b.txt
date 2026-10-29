@@ -1,0 +1,105 @@
+Tongjiang Lab
+
+English | 简体中文
+
+Free, interactive 3D science lessons for high school — physics, chemistry, biology and geography.
+
+Try them online: https://lab.tongjiang.app
+
+There are 54 lessons so far. Each one is a single self-contained HTML file of about 1 MB: double-click to open it, and it works offline, on a projector or on an interactive whiteboard. Every lesson is one 3D world with a live control console, a guiding question and a step-by-step path a teacher can follow from start to finish.
+
+The lessons follow the Chinese national curriculum standards for senior high school and the People's Education Press (PEP) 2019 textbooks. The lesson interface is currently in Chinese; other languages are planned.
+
+How to use
+
+- Online: click ▶ Open lesson in the tables below. GitHub only shows the source code of an HTML file, so use these links to see the lessons.
+- Offline: download all lessons as one zip from Releases, or download a single lesson from its page on https://lab.tongjiang.app, then open it in Chrome or Edge.
+- Embed: " width="100%" style="aspect-ratio:16/9;border:0" allow="fullscreen">
+- Data: catalog.json lists every lesson with its textbook location and steps.
+
+Lessons
+
+Physics (10)
+
+| Lesson | PEP 2019 textbook | Steps | Open | Source |
+|---|---|---|---|---|
+| The Photoelectric Effect | Elective Vol. 3, Ch. 4, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Observing Capacitor Charging and Discharging | Required Vol. 3, Ch. 10, Sec. 4 | 9 | ▶ Open lesson | HTML |
+| Experiment: Acceleration vs. Force and Mass | Required Vol. 1, Ch. 4, Sec. 2 | 8 | ▶ Open lesson | HTML |
+| Experiment: Verifying Conservation of Mechanical Energy | Required Vol. 2, Ch. 8, Sec. 5 | 8 | ▶ Open lesson | HTML |
+| Experiment: Exploring Projectile Motion | Required Vol. 2, Ch. 5, Sec. 3 | 9 | ▶ Open lesson | HTML |
+| Centripetal Force vs. Radius, Angular Velocity and Mass | Required Vol. 2, Ch. 6, Sec. 2 | 8 | ▶ Open lesson | HTML |
+| Self-Induction and Eddy Currents | Elective Vol. 2, Ch. 2, Sec. 4 | 9 | ▶ Open lesson | HTML |
+| Measuring EMF and Internal Resistance | Required Vol. 3, Ch. 12, Sec. 3 | 9 | ▶ Open lesson | HTML |
+| Magnetic Field of an Electric Current | Required Vol. 3, Ch. 13, Sec. 1 | 9 | ▶ Open lesson | HTML |
+| Brownian Motion and Diffusion | Elective Vol. 3, Ch. 1, Sec. 1 | 9 | ▶ Open lesson | HTML |
+
+Chemistry (25)
+
+| Lesson | PEP 2019 textbook | Steps | Open | Source |
+|---|---|---|---|---|
+| Industrial Ammonia Synthesis (Haber Process) | Elective Vol. 1, Ch. 2, Sec. 4 | 7 | ▶ Open lesson | HTML |
+| Factors Affecting Reaction Rate | Required Vol. 2, Ch. 6 | 8 | ▶ Open lesson | HTML |
+| Ball-and-Stick Models of Organic Molecules | Required Vol. 2, Ch. 7 | 9 | ▶ Open lesson | HTML |
+| Strong Acid–Strong Base Titration | Elective Vol. 1, Ch. 3, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Preparation and Properties of Chlorine | Required Vol. 1, Ch. 2, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Ironmaking in a Blast Furnace | Required Vol. 2, Ch. 8, Sec. 1 | 8 | ▶ Open lesson | HTML |
+| Metal Smelting: Molten-Salt Electrolysis and the Thermite Reaction | Required Vol. 2, Ch. 8, Sec. 1 | 8 | ▶ Open lesson | HTML |
+| Coal Utilization: Coal Gasification | Required Vol. 2, Ch. 8, Sec. 1 | 8 | ▶ Open lesson | HTML |
+| Sulfuric Acid by the Contact Process | Required Vol. 2, Ch. 5, Sec. 1 | 7 | ▶ Open lesson | HTML |
+| Hydrolysis of Salts and Its Applications | Elective Vol. 1, Ch. 3, Sec. 3 | 9 | ▶ Open lesson | HTML |
+| Industrial Cement Production | Required Vol. 2, Ch. 5, Sec. 3 | 8 | ▶ Open lesson | HTML |
+| Iron and Its Compounds: Changing Oxidation States | Required Vol. 1, Ch. 3, Sec. 1 | 9 | ▶ Open lesson | HTML |
+| Principles of Electrolysis: CuCl₂ Solution and Brine | Elective Vol. 1, Ch. 4, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Preparation and Properties of Ammonia (Fountain Experiment) | Required Vol. 2, Ch. 5, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Factors That Shift Chemical Equilibrium | Elective Vol. 1, Ch. 2 | 9 | ▶ Open lesson | HTML |
+| Flame Tests and Atomic Spectra | Required Vol. 1, Ch. 2, Sec. 1 | 8 | ▶ Open lesson | HTML |
+| Galvanic Cells: From One Electrolyte to Two | Required Vol. 2, Ch. 6, Sec. 1 | 9 | ▶ Open lesson | HTML |
+| Ionization, Solution Conductivity and Ionic Reactions | Required Vol. 1, Ch. 1, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Concentrated and Dilute Nitric Acid; Nitrogen Oxides | Required Vol. 2, Ch. 5, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Bromine from Seawater: The Air Blow-Out Process | Required Vol. 2, Ch. 8, Sec. 1 | 7 | ▶ Open lesson | HTML |
+| Properties of Sodium (and Putting Out Sodium Fires) | Required Vol. 1, Ch. 2, Sec. 1 | 9 | ▶ Open lesson | HTML |
+| Sulfur, SO₂ and Sulfuric Acid: Converting Between Oxidation States | Required Vol. 2, Ch. 5, Sec. 1 | 9 | ▶ Open lesson | HTML |
+| Oxygen-Absorption Corrosion and Designing a Hand Warmer | Elective Vol. 1, Ch. 4, Sec. 3 | 9 | ▶ Open lesson | HTML |
+| The Chlor-Alkali Industry | Elective Vol. 1, Ch. 4, Sec. 2 | 8 | ▶ Open lesson | HTML |
+| Hou's Soda Process | Required Vol. 1, Ch. 2, Sec. 1 | 8 | ▶ Open lesson | HTML |
+
+Biology (5)
+
+| Lesson | PEP 2019 textbook | Steps | Open | Source |
+|---|---|---|---|---|
+| Water Uptake and Loss in Plant Cells | Required Vol. 1, Ch. 4, Sec. 1 | 8 | ▶ Open lesson | HTML |
+| Transport Across Cell Membranes | Required Vol. 1, Ch. 4 | 8 | ▶ Open lesson | HTML |
+| Generation and Conduction of Nerve Impulses | Elective Vol. 1, Ch. 2, Sec. 3 | 9 | ▶ Open lesson | HTML |
+| Observing Mitosis in Root-Tip Meristem Cells | Required Vol. 1, Ch. 6, Sec. 1 | 9 | ▶ Open lesson | HTML |
+| Conditions Affecting Enzyme Activity | Required Vol. 1, Ch. 5, Sec. 1 | 8 | ▶ Open lesson | HTML |
+
+Geography (14)
+
+| Lesson | PEP 2019 textbook | Steps | Open | Source |
+|---|---|---|---|---|
+| Development of River Landforms | Elective Vol. 1, Ch. 2, Sec. 3 | 8 | ▶ Open lesson | HTML |
+| Migration of the Subsolar Point: Seasons and Climate Zones | Elective Vol. 1, Ch. 1, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| World Ocean Currents: Patterns and Effects | Elective Vol. 1, Ch. 4, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Ocean–Atmosphere Interaction: El Niño and La Niña | Elective Vol. 1, Ch. 4, Sec. 3 | 7 | ▶ Open lesson | HTML |
+| How the Atmosphere Is Heated | Required Vol. 1, Ch. 2, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Formation and Recognition of Karst Landforms | Required Vol. 1, Ch. 4, Sec. 1 | 7 | ▶ Open lesson | HTML |
+| Global Climate Change and National Security | Elective Vol. 3, Ch. 3, Sec. 4 | 8 | ▶ Open lesson | HTML |
+| Formation of Tectonic Landforms | Elective Vol. 1, Ch. 2, Sec. 2 | 6 | ▶ Open lesson | HTML |
+| Geographic Significance of Earth's Motions | Elective Vol. 1, Ch. 1, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Soil-Forming Factors and Soil Profiles | Required Vol. 1, Ch. 5, Sec. 2 | 8 | ▶ Open lesson | HTML |
+| Thermal Circulation | Required Vol. 1, Ch. 2, Sec. 2 | 9 | ▶ Open lesson | HTML |
+| Horizontal Motion of the Atmosphere: Wind | Required Vol. 1, Ch. 2, Sec. 2 | 8 | ▶ Open lesson | HTML |
+| The Water Cycle and Its Geographic Significance | Required Vol. 1, Ch. 3, Sec. 1 | 9 | ▶ Open lesson | HTML |
+| Pressure Belts, Wind Belts and the Three-Cell Circulation | Elective Vol. 1, Ch. 3, Sec. 2 | 7 | ▶ Open lesson | HTML |
+
+License
+
+- Lessons, covers and catalog are licensed under CC BY-NC 4.0. You may use, share and adapt them for non-commercial purposes, with credit to “Tongjiang Lab (https://lab.tongjiang.app)”.
+- Third-party code bundled in the lessons (three.js, MIT) keeps its own license. See THIRD_PARTY_NOTICES.md.
+- Not affiliated with People's Education Press.
+
+Author
+
+Tongjiang (铜匠十点睡觉) builds 3D visualizations for education, digital twins and factory demos.
+Follow on X: @CopperForgeAI. Found a mistake? Open an issue or send a DM on X.

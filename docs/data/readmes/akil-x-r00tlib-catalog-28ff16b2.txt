@@ -1,0 +1,71 @@
+📚 Open Tech Books Index
+
+A Community-Curated Knowledge Hub for Computer Science, Cybersecurity & Software Engineering
+
+📖 About
+
+This repository is an open, community-driven catalog of premier technical books across computer science, cybersecurity, systems engineering, artificial intelligence, and software development.
+
+Resources, download mirrors, and verified metadata are aggregated from open educational archives, technical libraries, public repositories, and tech communities worldwide (including the R00tLib community and various open sources).
+
+📑 Categories
+
+- 3D Modeling & Game Development (17 books)
+- Artificial Intelligence & Machine Learning (79 books)
+- Computer Networks & Protocols (14 books)
+- Cybersecurity & Ethical Hacking (76 books)
+- Database Systems (15 books)
+- General Computer Science & Miscellaneous (8 books)
+- Python Programming (15 books)
+- Reverse Engineering & Malware Analysis (7 books)
+- UI & UX Design (9 books)
+- Web & Application Development (79 books)
+- WordPress & Search Engine Optimization (5 books)
+
+3D Modeling & Game Development
+17 books indexed in this category
+
+| Book Title | Author | Year | ISBN | Sources & Links |
+|:---|:---|:---:|:---:|:---:|
+| 3D Math Primer for Graphics and Game Development | Fletcher Dunn, Ian Parberry | 2011 | 9781568817231 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Blender All-in-One For Dummies | Jason van Gumster | 2024 | 9781394204045 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Blender For Dummies | Van Gumster, Jason | 2011 | 9780470584460 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Blueprints Visual Scripting for Unreal Engine 5: Unleash the true power of Blueprints to create impressive games and applications in UE53 | Marcos Romero; Brenden Sewell | 2022 | 180181158X | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Coding Roblox Games Made Easy, Second Edition | Zander Brumbaugh | 2022 | 9781803247571 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Computer Graphics: Principles and Practice | John F. Hughes, Andries van Dam, Morgan McGuire, David F. Sklar, James D. Foley, Steven K. Feiner, Kurt Akeley | 2013 | 9780321399526 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Fundamentals of Game Design | 【美】Ernest Adams，江涛译 | 2017 | 9780321929679 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Game Design Workshop: A Playcentric Approach to Creating Innovative Games, Fourth Edition | Tracy Fullerton | 2018 | 9781138098770 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Game Engine Architecture | Gregory, Jason | 2019 | 9781138035454 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Game Programming in C++: Creating 3D Games (Game Design) | Sanjay Madhav | Apr 2018 | 9780134597201 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Game Programming Patterns | Bob Nystrom | 2014 | 9780990582908 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Invent Your Own Computer Games with Python, 4th Edition | Al Sweigart | 2016 | 9781593277956 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Learning Blender: A Hands-On Guide to Creating 3D Animated Characters | Oliver Villar | 2017 | 9780134663463 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Multiplayer Game Development with Unreal Engine 5: Create compelling multiplayer games with C++, Blueprints Team-IRA] | Marco Secchi | 2023 | 1803232870 | [📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Roblox Game Development in 24 Hours: The Official Roblox Guide | Roblox Roblox Corporation | 2021 | 9780136829737 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Unity in Action, Third Edition: Multiplatform game development in C# | Joseph Hocking | 2022 | 9781617299339 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Unreal Engine 4.x Scripting with C++ Cookbook: Develop quality game components and solve scripting problems with the power of C++ and UE4, 2nd Edition | John P. Doran | 2019 | 9781789809503 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+
+Artificial Intelligence & Machine Learning
+79 books indexed in this category
+
+| Book Title | Author | Year | ISBN | Sources & Links |
+|:---|:---|:---:|:---:|:---:|
+| Ace the Data Science Interview: 201 Real Interview Questions Asked By FAANG, Tech Startups, & Wall Street | Nick Singh, Kevin Huo | 2021 | 9780578973838 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Advanced Machine Learning with Python: Solve data science problems by mastering cutting-edge machine learning techniques in Python | John Hearty | 2016 | 9781784398637 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| AI Engineering: Building Applications with Foundation Models1 | Chip Huyen | 2025 | 1098166302 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| AI Made Simple for Beginners: Discover Faster Results to Increase Productivity with Smart Problem-Solving Techniques & Hands-On Exercises to Effectively Minimize Ethical Dilemmas | Aurélien Géron | 2019 | 9781492032649 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| AI Snake Oil: What Artificial Intelligence Can Do, What It Can't, and How to Tell the Difference | Arvind Narayanan, Sayash Kapoor | 2024 | 9780691249131 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Algorithm Design | Kleinberg, Jon | 2005 | 9780321295354 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Algorithms (4th Edition) | Robert Sedgewick, Kevin Wayne | 2011 | 9780321573513 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| An Introduction to Neural Networks | Kevin Gurney | 1997 | 9781857285031 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| An Introduction to Statistical Learning: with Applications in R (Springer Texts in Statistics) | Gareth James, Daniela Witten, Trevor Hastie, Robert Tibshirani (auth.) | 2013 | 9781461471370 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Applied Text Analysis with Python: Enabling Language-Aware Data Products with Machine Learning | Benjamin Bengfort, Tony Ojeda, Rebecca Bilbro | 2018 | 9781491963043 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Artificial Intelligence: A Modern Approach | Stuart Russell, Peter Norvig | 2010 | 9780136042594 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Artificial Intelligence: A Modern Approach (Pearson Series in Artifical Intelligence) | Stuart Russell, Peter Norvig | 2020 | 9780134610993 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Artificial Intelligence: A Modern Approach, Global Edition4 | Stuart J. Russell, Peter Norvig | 2021 | 1292401133 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Build a Large Language Model (From Scratch) | Sebastian Raschka | 2024 | 9781633437166 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Building Applications with AI Agents: Designing and Implementing Multiagent Systems | Albada, Michael | 2025 October 21 | 9781098176501 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Building Big Data Pipelines with Apache Beam: Use a single programming model for both batch and stream data processing | Jan Lukavský | 2022 | 9781800564930 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+| Collective Intelligence in Action | Satnam Alag | 2009 | 9781933988313 | 📥 Download Source &middot; 💬 Discussion Post &middot; 🛒 Amazon |
+
+…（内容已截断）

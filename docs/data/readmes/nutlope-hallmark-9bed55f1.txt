@@ -86,6 +86,10 @@ npx skills add nutlope/hallmark -g
 - Lint any page: node skills/hallmark/scripts/sloplint.mjs  --render.
 - If it does not fire on its own, name it: use hallmark to build ....
 
+Inspired by
+
+Impeccable · frontend-design · Open Design · Kami · taste-skill · huashu-design · UI UX Pro Max · Emil Kowalski's skills · Web Interface Guidelines
+
 Licence
 
 MIT. Use it, fork it, ship it.

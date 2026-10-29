@@ -4,7 +4,7 @@ A curated collection of system prompts, persona locks, workspace policies, and a
 
 About
 
-A working collection of 31 prompts targeting 25+ models, including complete system prompts, persona definitions, workspace policies, AGENTS.md files, configuration blocks, and Ollama Modelfiles.
+A working collection of 32 prompts targeting 26+ models, including complete system prompts, persona definitions, workspace policies, AGENTS.md files, configuration blocks, and Ollama Modelfiles.
 
 Every file is intended to be complete and paste-ready. No summaries. No partial excerpts.
 
@@ -76,6 +76,12 @@ xAI — Grok
 | Grok Build | Grok build.md | Agent operating instructions |
 | Grok 4.7 | grok-4.7.md | App-builder workspace guide |
 | Grok Config | grok-config.txt | `` priority and routing configuration |
+
+NVIDIA — Nemotron
+
+| Model | File | Type |
+|---|---|---|
+| Nemotron 3 Ultra 550B A55B | nemotron-3-ultra.md | Assistant operating specification |
 
 Google / Mistral / Alibaba
 
