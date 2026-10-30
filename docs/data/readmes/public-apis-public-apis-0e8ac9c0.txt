@@ -50,6 +50,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | Agent Nexus | Find agent-callable APIs, MCP servers and CLIs by capability, with live health and uptime data | No | HTTP | Glama |
 | BlockVectra | Blockchain RPC and indexed data; keyless documentation and chain discovery | apiKey | HTTP | – |
 | Catastro GPS | Cadastral parcels in 29 European countries by reference, point or address | apiKey | stdio | Glama |
+| ContextFetch | Web search and any page as Markdown pruned to the query, plus research, crawl and site maps | No | stdio, HTTP | Glama |
 | corpusAI Cloud Pricing | Cloud, GPU and LLM token prices for agents, free discovery tools and paid per-call data | No | stdio, HTTP | npm · MCP Registry |
 | Council of AI | Read a signed AI measurement board and verify its signed records and Merkle proofs | No | HTTP | Glama |
 | crawlbrulee | EU-native web scraping for AI agents & developers: turn any page into markdown, screenshots and more | apiKey | stdio | npm · MCP Registry · Glama |
@@ -162,7 +163,5 @@ API | Description | Auth | HTTPS | CORS
 | Dog Facts | Random dog facts | No | Yes | Yes |
 | Dog Facts | Random facts of Dogs | No | Yes | Yes |
 | Dogs | Based on the Stanford Dogs Dataset | No | Yes | Yes |
-| eBird | Retrieve recent or notable birding observations within a region | apiKey | Yes | No |
-| FishWatch | Information and pictures about individual fish species | No | Yes | Yes |
 
 …（内容已截断）
