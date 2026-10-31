@@ -1,0 +1,128 @@
+GTA: Vice City Stories — Native PC port (PS2 static recompilation)
+
+A native Windows and Linux port of Grand Theft Auto: Vice City Stories (PS2, USA, SLUS-21590), made by
+recompiling the game's PS2 executable into C++. Both are built from the same source and run natively: Direct3D 11 on
+Windows, Vulkan on Linux.
+
+This repository contains no game code or game data. You need your own copy of the game as an .iso.
+The build reads the executable from your disc, and the finished game reads everything else from it while it runs.
+
+Status: in development. See docs/PROGRESS.md for what works, and docs/LINUX.md
+for the Linux build in detail.
+
+Install on Windows: the launcher (easiest)
+
+1. Download the newest VCS-Recomp--windows.zip from the Releases page and extract it
+   somewhere short and local, like C:\Games\VCS (not Program Files, not a OneDrive-synced folder such as Desktop or
+   Documents: the build writes thousands of files).
+2. Start VCSLauncher.exe in that folder. It goes through four steps and the big button always shows the next one:
+   - Folders: the game is built in build\ next to the launcher, or in a folder you choose (another drive with
+     more room, say): Choose another folder on this step.
+   - Disc: it looks for your .iso in Downloads, Desktop, Documents and its own folder; otherwise choose it (or
+     drag it onto the window, or copy your disc from a DVD drive). It checks that it is the USA release.
+   - Build tools: the game is compiled on your PC with Microsoft's free C++ tools. If they are missing,
+     Install build tools runs Microsoft's installer with the right options (about 6 GB; Windows asks for permission).
+   - Build: recompiles the game from your disc and compiles it, with a progress bar - 20 to 60 minutes the first
+     time, a few minutes after an update. Nothing is downloaded during the build: the release brings Python and the
+     libraries.
+   - Play.
+
+The launcher also backs up and restores your saves, makes a desktop shortcut, checks for a new release (only when you
+ask, or at start if you turn that on in Settings), and zips the logs into a report for bug reports. Windows may warn
+that the launcher is from an unknown publisher (it isn't signed): More info > Run anyway. How it works:
+docs/LAUNCHER.md. Everything it does is a script in tools/ you can also run yourself (below).
+
+Install by hand (Windows and Linux)
+
+The release zip contains the full source: the steps below work in it too, and in a git clone.
+
+1. Install the tools (once)
+
+Windows
+- Python 3: python.org. During setup, tick Add python.exe to PATH.
+- Git: git-scm.com (the default options are fine). The first build uses it
+  to download the libraries the game needs (SDL3, FFmpeg, ...), so it also needs an internet connection.
+- Visual Studio 2022 or newer (the free Community edition, or just the
+  Build Tools). In the installer, pick the workload
+  Desktop development with C++, and under Installation details on the right also tick
+  C++ Clang tools for Windows.
+
+That's all: you don't need to open Visual Studio or a special command prompt. CMake and Ninja are found wherever
+they are (Visual Studio's own, the CMake installer, winget, scoop, Chocolatey, pip, CLion...); when none is new enough
+(CMake 3.21, Ninja 1.10), the build downloads them once (~55 MB, into build\build-tools).
+
+Linux
+- Python 3 and Git (most distributions have both), then let the build list the rest: in the source folder (step 2),
+  python3 tools/build.py --check-deps
+  prints what is missing and the command that installs it (apt, dnf or pacman): clang 19 or newer with lld,
+  glslang, and the FFmpeg and SDL3 development packages (CMake and Ninja too if you like; without them, or with ones
+  that are too old, the build downloads its own). On Ubuntu 24.04 / Linux Mint 22 that is
+  sudo apt install clang-20 lld-20 llvm-20 cmake ninja-build pkg-config git glslang-tools \
+      libavcodec-dev libavformat-dev libavutil-dev libswscale-dev libswresample-dev \
+      libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxi-dev libxfixes-dev libxss-dev \
+      libwayland-dev wayland-protocols libxkbcommon-dev libdecor-0-dev \
+      libpipewire-0.3-dev libpulse-dev libasound2-dev libudev-dev libdbus-1-dev
+- A graphics driver with Vulkan 1.3: Mesa (AMD, Intel) or NVIDIA's own. vulkaninfo --summary shows it.
+
+2. Get the source and your disc
+
+1. Get the source, e.g. into C:\Games\vcs-recomp (Windows) or ~/games/vcs-recomp (Linux):
+   git clone  vcs-recomp
+   (Code > Download ZIP on GitHub works too.)
+2. Copy your disc image into that folder. It must be the USA release, and its file name must contain
+   Vice City Stories, like the usual Grand Theft Auto - Vice City Stories (USA).iso.
+
+Optional check that the disc is the right one:
+python tools/vcs_disc.py info "Grand Theft Auto - Vice City Stories (USA).iso"
+
+3. Build
+
+Open a terminal in the folder (Windows Explorer: right-click the folder > Open in Terminal) and run:
+python tools/build.py --recompile        # Windows
+python3 tools/build.py --recompile       # Linux
+This recompiles the game from your disc and builds it, optimised. The first time takes a while: the game becomes
+about 200 MB of C++ to compile (about 15 minutes on a 4-core laptop). It ends with:
+build] ok: build\vcs.exe (optimised: ThinLTO)        (Linux: build/vcs)
+If your .iso is somewhere else, give its path: python tools/build.py --recompile "D:\path\to\your.iso".
+
+4. Play
+
+Start build\vcs.exe on Windows, build/vcs on Linux (a desktop shortcut works well). The build already told it
+where your disc is.
+
+- F2 opens the settings: presets, resolution, widescreen, frame rate, vsync, sound, and every key, mouse and
+  gamepad binding. The defaults match the PS2 except the frame rate (60 fps, frame-rate independent); every other
+  improvement is an option you turn on (Display > Presets > Enhanced turns on the usual ones at once). Settings are
+  saved in vcs.ini next to the game.
+- Alt+Enter switches between full screen and the window.
+- F5 opens the trainer ([docs/TRAINER.md).
+- Keyboard, mouse and gamepads (Xbox, PlayStation, Switch Pro, ...) all work: docs/CONTROLS.md.
+- Saves (the memory card) live in %LOCALAPPDATA%\VCSRecomp on Windows and ~/.local/share/VCSRecomp on Linux.
+
+Features
+
+The defaults are the PS2 game as it was, except the frame rate: 60 fps with frame-rate independent timing. Every
+other improvement below is an option in the settings menu (F2), and Authentic (PS2) goes back to the PS2's 30 fps.
+Display > Presets turns on the usual ones at once: Enhanced for a modern graphics card, Widescreen, light
+for older PCs and integrated graphics, Authentic (PS2) to go back.
+
+Runs natively, on Windows and Linux. The game's own code, recompiled to C++ and running on the PC, not in an
+emulator. The 3D world, characters, vehicles, HUD and menus are drawn by a native renderer - Direct3D 11 on Windows,
+Vulkan on Linux -, sound and streaming run on the PC, and the movies are decoded with FFmpeg.
+
+Frame rate
+- Frame-rate independent timing: 60, 100, 120, 144, 165, 240 fps, your display's refresh rate or uncapped (up to
+  240), with game time following real time - 60 by default. Or the original timing at 30 fps, or 60.
+- Things the PS2 game counted per frame (vehicle physics, mission meters and timers) put back on real time, so they
+  keep their speed at high frame rates. Some behaviour at high frame rates is still being fixed
+  (docs/PROGRESS.md).
+- Fast: well past 100 fps nearly everywhere at the original resolution (over 200 in most of the city on an
+  i7-7700K + GTX 1080 Ti), and a locked 60 on a 2015 laptop with integrated graphics (Linux, Intel HD 520;
+  docs/PERFORMANCE.md).
+- Low input delay with frame-rate independent timing: each frame starts on fresh input just in time to be shown.
+- Vertical sync on or off, and a tearing mode for G-Sync / FreeSync monitors.
+- Frame rate counter, and a performance overlay (F3) with CSV recording (F4).
+
+Widescreen and ultrawide
+
+…（内容已截断）

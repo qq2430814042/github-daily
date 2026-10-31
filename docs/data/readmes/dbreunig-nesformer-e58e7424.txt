@@ -1,0 +1,65 @@
+nesformer
+
+An NES CPU compiled into the weights of a stock Qwen3.5 model.
+
+The NES's 6502 CPU (the core of its 2A03 chip), its 2 KB of work RAM, and a cartridge's program
+ROM run inside a standard Qwen3_5ForCausalLM checkpoint. Nobody trained these weights; a
+compiler computed every one. When you play a game, the model predicts the CPU's execution log
+one token at a time. A small host program plays the rest of the console around it: it draws the
+picture, reads the controller, and fires the vblank interrupt.
+
+nesformer builds on Qwenputer by Divyansh Agrawal, which
+compiled a CHIP-8 and then a RISC-V CPU into Qwen3.5-4B. It reuses Qwenputer's compiler and its
+central trick: the model's Gated DeltaNet state is the machine's memory.
+
+| Super Mario Bros. (World 1-1) | Full Game by Doug Fraker (title screen and first level) |
+|---|---|
+|  |  |
+
+Every CPU token in these runs came from the model. For the bundled test games, every frame also
+matches a conventional 6502 emulator's output exactly (see How it was checked).
+
+Quick start
+
+1. Folder layout
+
+Unzip nesformer.zip and nesformer-weights.zip into the same folder. The weights go next to
+the nesformer/ package, not inside it:
+
+nesformer/              =2.6" "transformers>=5.22"
+python -m nesformer run roms/thwaite.nes --frames 3 --engine hf
+
+nesformer/hfcheck.py shows the whole procedure: load the checkpoint, decode one padding token,
+write the machine's state into the cache's DeltaNet states, then feed tokens one at a time.
+
+Files
+
+| Path | Contents |
+|---|---|
+| nesformer/spec.py | token families and records |
+| nesformer/cpu.py | the reference 6502 that writes the trace |
+| nesformer/host.py | everything around the CPU: PPU, controllers, NMI timing, cycle counting, idle skip |
+| nesformer/core.py | the circuit and the state snapshot |
+| nesformer/weights.py | the emitter that turns the circuit into a Qwen3_5ForCausalLM checkpoint |
+| nesformer/engine.py, fastengine.py | run the weights (numpy / numba) |
+| nesformer/hfcheck.py | run the weights in stock transformers |
+| nesformer/run.py, check.py, cli.py, main.py | drivers, the teacher-forced check, the CLI |
+| chipformer/ | Qwenputer's q35 compiler (q35/ emitter and primitives, dsl/ graph) |
+| weights/ | the compiled checkpoint and its SHA-256 checksum |
+| roms/ | test ROMs; roms/SOURCES.md lists their authors and licenses |
+| examples/ | GIFs and frame sheets from the runs; demo.gif is the Super Mario Bros. run shown at the top |
+| tests/test_nesformer.py | the test suite |
+
+Credits
+
+* Qwenputer and its chipformer compiler: MIT,
+  © 2026 Divyansh Agrawal (LICENSE.chipformer). That license also covers the code adapted
+  from Qwenputer in nesformer/core.py and nesformer/weights.py. Its last paragraph refers to
+  Qwenputer's CHIP-8 ROMs, which this repository does not include.
+* Test ROMs: nestest by Kevin Horton; Full Game by Doug Fraker (MIT); Thwaite by Damian Yerrick
+  (GPL-3.0, source at pinobatch/thwaite-nes).
+
+License
+
+nesformer is released under the MIT License (see LICENSE). The ROMs in roms/ keep their own
+licenses, listed in roms/SOURCES.md.

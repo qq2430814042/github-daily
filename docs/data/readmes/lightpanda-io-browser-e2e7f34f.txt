@@ -1,0 +1,207 @@
+Lightpanda Browser
+
+The headless browser built from scratch for AI agents and automation.
+
+Not a Chromium fork. Not a WebKit patch. A new browser, written in Zig.
+
+16x lighter and 9x faster than Chromium.
+
+&emsp;
+
+Benchmarks
+
+Requesting 933 real web pages over the network on a AWS EC2 m5.large instance.
+See benchmark details.
+
+| Metric | Lightpanda | Headless Chrome | Difference |
+| :---- | :---- | :---- | :---- |
+| Memory (peak, 100 pages) | 123MB | 2GB | ~16x less |
+| Execution time (100 pages) | 5s | 46s | ~9x faster |
+
+Quick start
+
+Install
+
+Package Managers
+
+Latest nightly from Homebrew:
+brew install lightpanda-io/browser/lightpanda
+
+Latest nightly from Arch Linux User Repository:
+yay -S lightpanda-nightly-bin
+
+Download from the nightly builds
+
+You can download the last binary from the nightly
+builds for
+Linux and MacOS for both x86_64 and aarch64.
+
+For Linux
+curl -L -o lightpanda https://github.com/lightpanda-io/browser/releases/download/nightly/lightpanda-x86_64-linux && \
+chmod a+x ./lightpanda
+
+Verify the binary before running anything:
+./lightpanda version
+
+Linux aarch64 is also available
+
+If you use Nix, you can run Lightpanda directly from the flake without downloading a binary:
+nix run github:lightpanda-io/browser -- --help
+
+Or pin it as an input in your own flake:
+{
+  inputs.lightpanda.url = "github:lightpanda-io/browser";
+}
+
+Note: The Linux release binaries are linked against glibc. On musl-based Linux distributions (Alpine, etc.) the binary fails with cannot execute: required file not found because the glibc dynamic linker is missing. Use a glibc-based base image (e.g., FROM debian:bookworm-slim or FROM ubuntu:24.04) or build from sources.
+Android / Termux: there is no native Android build. The Linux aarch64 binary needs the glibc loader (/lib/ld-linux-aarch64.so.1), which Android's Bionic libc does not provide, so it fails with the same cannot execute: required file not found error.
+
+For MacOS
+curl -L -o lightpanda https://github.com/lightpanda-io/browser/releases/download/nightly/lightpanda-aarch64-macos && \
+chmod a+x ./lightpanda
+
+MacOS x86_64 is also available
+
+For Windows + WSL2
+
+Lightpanda has no native Windows binary. Install it inside WSL following the Linux steps above.
+
+WSL not installed? Run wsl --install from an administrator shell, restart, then open wsl.
+See Microsoft's WSL install guide for details.
+
+Your automation client (Puppeteer, Playwright, etc.) can run either inside WSL or on the Windows host. WSL forwards localhost:9222 automatically.
+
+Install from Docker
+
+Lightpanda provides official Docker
+images for both Linux amd64 and
+arm64 architectures.
+The following command fetches the Docker image and starts a new container exposing Lightpanda's CDP server on port 9222.
+docker run -d --name lightpanda -p 127.0.0.1:9222:9222 lightpanda/browser:latest
+
+Dump a URL
+
+./lightpanda fetch --obey-robots --dump html --log-format pretty  --log-level info https://demo-browser.lightpanda.io/campfire-commerce/
+
+You can use --dump markdown to convert directly into markdown, or
+--dump png > page.png or --dump pdf > page.pdf for a text-only rendering
+of the page. --dump structured_data prints the page's JSON-LD, OpenGraph,
+Twitter card, meta and link tags as JSON, like the MCP structuredData tool.
+--wait-until, --wait-ms, --wait-selector and --wait-script are
+available to adjust waiting time before dump.
+
+Start a CDP server
+
+./lightpanda serve --obey-robots --log-format pretty  --log-level info --host 127.0.0.1 --port 9222
+
+To listen on a Unix-domain socket (owner-only, mode 0600) instead of TCP:
+
+./lightpanda serve --unix-socket /run/user/1000/lightpanda.sock
+
+Once the CDP server started, you can run a Puppeteer script by configuring the
+browserWSEndpoint.
+
+Example Puppeteer script
+
+import puppeteer from 'puppeteer-core';
+
+// use browserWSEndpoint to pass the Lightpanda's CDP server address.
+const browser = await puppeteer.connect({
+  browserWSEndpoint: "ws://127.0.0.1:9222",
+});
+
+// The rest of your script remains the same.
+const context = await browser.createBrowserContext();
+const frame = await context.newPage();
+
+// Dump all the links from the frame.
+await frame.goto('https://demo-browser.lightpanda.io/amiibo/', {waitUntil: "networkidle0"});
+
+const links = await frame.evaluate(() => {
+  return Array.from(document.querySelectorAll('a')).map(row => {
+    return row.getAttribute('href');
+  });
+});
+
+console.log(links);
+
+await frame.close();
+await context.close();
+await browser.disconnect();
+
+Start a webdriver Bidi server
+
+Use --protocol webdriver to enable Bidi support.
+You can start both, CDP and Bidi, with --protocol webdriver --protocol cdp
+
+./lightpanda serve --obey-robots --log-format pretty  --log-level info --host 127.0.0.1 --port 9222 --protocol webdriver
+
+Agent mode
+
+lightpanda agent lets you drive the browser with a native agent. Describe what
+you want in plain English or with slash commands, and it controls the browser:
+navigating pages, clicking through flows, filling forms, extracting structured
+data. Think of it as a robot you're directing to use the web, more than a
+chatbot you're having a conversation with.
+
+Because the agent runs inside the same process as the browser, every tool call
+is a direct operation and you retain Lightpanda's speed and memory advantage.
+
+The output of an agent session is a
+PandaScript: vanilla JavaScript
+with a small set of native browser primitives built directly into Lightpanda.
+Run /save to export one from your current session, then replay it with
+lightpanda run .js. Scripts are deterministic and token-free, so
+you can prototype with the LLM and ship the output to production without a
+model at runtime.
+
+It supports Anthropic, OpenAI, Gemini, Google Vertex AI, Mistral, Hugging
+Face, the multi-lab gateways Vercel AI Gateway
+and OpenRouter (one key for hundreds of models), any OpenAI-compatible endpoint via
+OPENAI_BASE_URL, and local models via Ollama, llama.cpp or LLMD. You can also run
+without an LLM using --no-llm, which drops you into the REPL. See the
+agent documentation for the full
+reference.
+
+./lightpanda agent                                    # auto-detects API key from env
+./lightpanda agent --task "top story on news.ycombinator.com?"
+./lightpanda agent --no-llm                           # basic REPL, no LLM
+./lightpanda run session.js                           # run a recorded script
+cat session.js | ./lightpanda run -                   # ...or pipe one in via stdin
+./lightpanda agent --provider gemini --task "..."     # force a specific provider
+./lightpanda agent --list-models                      # models available for the detected provider
+VERTEX_API_KEY=... ./lightpanda agent --provider vertex             # Vertex AI, express mode
+GOOGLE_CLOUD_PROJECT=my-proj ./lightpanda agent --provider vertex   # Vertex AI, token via gcloud auth
+AI_GATEWAY_API_KEY=... ./lightpanda agent --provider vercel --model moonshotai/kimi-k2   # any model behind Vercel AI Gateway
+OPENROUTER_API_KEY=... ./lightpanda agent --provider openrouter --model anthropic/claude-sonnet-5   # any model behind OpenRouter
+OPENAI_BASE_URL=https://my-gateway/v1 OPENAI_API_KEY=... ./lightpanda agent            # any OpenAI-compatible server
+
+Native MCP and skill
+
+The MCP server communicates via MCP JSON-RPC 2.0 over stdio.
+
+Add to your MCP configuration:
+{
+  "mcpServers": {
+    "lightpanda": {
+      "command": "/path/to/lightpanda",
+      "args": "mcp"]
+    }
+  }
+}
+
+HTTP transport and independent sessions
+
+For serving several agents from one process, start the MCP server over HTTP
+instead of stdio by giving it a port (add --host x.x.x.x to specify the
+interface to listen on):
+
+lightpanda mcp --port 9223
+
+Clients POST JSON-RPC to http://host:9223/mcp. Each connection is routed to
+its own browsing session — its own page, cookies and memory — so agents no
+longer clobber each other's page:
+
+- A client that initializes without an Mcp-Session-Id header is assigned a
+
+…（内容已截断）

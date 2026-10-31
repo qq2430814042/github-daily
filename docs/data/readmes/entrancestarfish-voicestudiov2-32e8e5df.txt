@@ -1,0 +1,162 @@
+🎙️ VoiceStudioV2
+
+Local AI voice studio — real-time voice changer, text-to-speech, voice cloning and dubbing, with a drop-in OpenAI-compatible API.
+
+100% local. No cloud. No API keys. Your voice never leaves your machine.
+
+Unofficial fork. VoiceStudioV2 is a community fork of debpalash/VoiceStudio. It is not affiliated with or endorsed by the upstream authors.
+
+✨ What is VoiceStudioV2?
+
+VoiceStudioV2 is a desktop app that puts a full voice toolkit on your own computer: speak in a different voice live, turn text into natural speech, clone a voice from a short sample, dub video into other languages, and plug it all into your favorite tools through an OpenAI-compatible API.
+
+Everything runs on your hardware. No subscriptions, no per-character billing, no uploads.
+
+🆕 What's new in V2
+
+| | Feature | Description |
+|---|---|---|
+| ⚡ | Real-time voice | Speak into your microphone and be heard in another voice with low latency. Built for streaming, gaming, calls and content creation. |
+| 🔌 | OpenAI-compatible API | A local server that speaks the OpenAI audio API format. |
+
+Everything else from upstream VoiceStudio is still here. See Features.
+
+🧰 Features
+
+New in V2
+- ⚡ Real-time voice conversion from your microphone
+- 🔌 OpenAI-compatible HTTP API (drop-in replacement for cloud TTS)
+
+Inherited from upstream VoiceStudio
+- 🗣️ Text-to-speech with multiple open-source engines, switchable from the status bar
+- 🧬 Voice cloning and voice design
+- 🎬 Multilingual dubbing workspace with per-language cards
+- 📦 Model catalogue: every TTS, transcription and LLM engine with install state and device routing
+- 🎤 Dictation and transcription
+- 🔗 Integrations (MCP for coding agents, telephony) as provided by upstream
+- 🖥️ Desktop installers for Windows, macOS and Linux
+
+⬇️ Download
+
+| Platform | Installer |
+|---|---|
+| Windows (x64) | VoiceStudioV2-X.X.X-windows-x64.exe |
+
+Installers may be unsigned. Windows SmartScreen can show "Windows protected your PC": click More info → Run anyway.
+
+🚀 Quick start
+
+1. Install VoiceStudioV2 from the table above.
+2. Open the app and pick a model from the Model Catalogue. The first launch downloads the model you choose.
+3. Try it:
+   - Type some text and press Generate for text-to-speech.
+   - Open Real-time voice, choose your microphone and output device, and start talking.
+4. Optional: enable the local API server in Settings → API to use VoiceStudioV2 from other apps.
+
+⚡ Real-time voice
+
+Speak into your microphone and hear yourself in a different voice, live.
+
+How to use it
+1. Open the Real-time voice workspace.
+2. Select your input (microphone) and output device.
+3. Choose a voice or a cloned voice.
+4. Press Start and talk.
+
+Using it in other apps (Discord, OBS, games, calls)
+Route the output to a virtual audio cable and select that cable as the microphone in the target app.
+
+| OS | Virtual audio device |
+|---|---|
+| Windows | VB-CABLE |
+
+Tips for low latency
+- Use a wired headset or a low-latency audio interface.
+- Prefer a lightweight model for live use.
+- Run on a GPU if you have one.
+- Close other heavy apps while streaming.
+
+Mapping models and voices
+
+Clients send OpenAI names such as tts-1 and alloy. VoiceStudioV2 maps them to local engines and voices, so you decide what actually answers.
+
+| OpenAI name | Runs locally as |
+|---|---|
+| tts-1 | your default engine |
+| alloy, echo, … | your voices / cloned voices |
+
+Works with
+
+Any app that lets you set a custom OpenAI base URL can use VoiceStudioV2 as its voice backend: chat frontends, automation tools, bots, readers and scripts. Typical examples are SillyTavern, Open WebUI, n8n and your own code. Check the target app's settings for "OpenAI-compatible" or "custom endpoint".
+
+🧩 Supported engines
+
+VoiceStudioV2 inherits the engine catalogue of upstream VoiceStudio. Engines and models are installed from the in-app Model Catalogue and can be switched at any time.
+
+💻 System requirements
+
+| | Minimum | Recommended |
+|---|---|---|
+| OS | Windows 10+, macOS 13.3+, modern Linux | Windows 11, macOS 14+ |
+| RAM | 8 GB | 16 GB+ |
+| GPU | Not required for lightweight models | NVIDIA GPU with CUDA for faster models and real-time use |
+| Disk | A few GB per model | SSD |
+
+🗺️ Roadmap
+
+- x] Real-time voice
+- [x] OpenAI-compatible API
+- [ ] One-click audiobook creation (EPUB / PDF / TXT to M4B)
+- [ ] Video URL to dubbed video with subtitles
+- [ ] Vocal and background separation for cleaner dubbing
+- [ ] Global-hotkey dictation with LLM post-processing
+- [ ] Meeting transcription with speaker labels and summaries
+- [ ] Speech enhancement and denoising
+- [ ] Voice library with import, export and sharing
+- [ ] Batch queue and CLI
+- [ ] Subtitle editor with timeline
+
+Have an idea? [Open an issue.
+
+❓ FAQ
+
+Is it really free and offline?
+Yes. Models run on your computer. Internet is only needed to download the app and models.
+
+Do I need a GPU?
+No for lightweight models. A GPU helps a lot with larger models and with real-time use.
+
+Can I use it with my own apps?
+Yes. Use the OpenAI-compatible API and set a custom base URL.
+
+Does it work in Discord / OBS / games?
+Yes, via a virtual audio cable. See Real-time voice.
+
+How is this different from upstream VoiceStudio?
+V2 adds real-time voice and an OpenAI-compatible API on top of the upstream app. See What's new in V2.
+
+The app says my antivirus / SmartScreen blocked it.
+Builds may be unsigned. Download only from this repository's Releases page, then use More info → Run anyway.
+
+⚠️ Responsible use
+
+Voice cloning and voice changing are powerful. Use them only with voices you own or have explicit permission to use. Do not use this software for impersonation, fraud, harassment or misleading content. You are responsible for complying with the laws that apply to you.
+
+🤝 Contributing
+
+Issues, bug reports and pull requests are welcome.
+
+1. Fork the repo and create a branch.
+2. Make your change and test it.
+3. Open a pull request describing what and why.
+
+For bugs, include your OS, hardware, app version and steps to reproduce.
+
+🙏 Credits & License
+
+- Upstream: debpalash/VoiceStudio and its contributors. VoiceStudioV2 is built on their work.
+- Models: each engine and model keeps its own license and terms. Check them before commercial use.
+
+VoiceStudioV2 is released under the same license as upstream: see LICENSE.
+
+If VoiceStudioV2 is useful to you, a ⭐ helps other people find it.

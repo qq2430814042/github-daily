@@ -1,0 +1,142 @@
+Bird stickers for all 11,064 living bird species
+
+花叔开源的全球鸟类贴纸库：全世界现存的11064种鸟，每种一张白边贴纸，附43种语言的鸟名和分布、形态、保护等级数据。贴纸出自花叔做的观鸟App「鸣迹」。中文说明 →
+
+English · 简体中文 · 繁體中文 · 日本語 · 한국어 · Español · Français · Deutsch · Português · Русский · العربية
+
+By Huashu (花叔), from the bird-watching app Mingji (鸣迹). 11,064 bird species, one sticker each, across 44 orders and 250 families: every living species in the IOC World Bird List v15.2 (the 163 extinct species are not included). Each species comes with structured data: taxonomy, names in up to 43 languages, cross-database IDs, and where every sticker came from.
+
+The stickers are free to use for almost anything, including commercial work, under PolyForm Shield 1.0.0: the one thing you may not do is use them in a product that competes with our bird app (another birding, bird-ID or field-guide app or site). The data is MIT. Please read NOTICE for the parts that come from third parties, and About the reference photos below.
+
+Gallery
+
+Eighteen of the most colourful and distinctive groups, 24 stickers each, picked so that no two look alike. Every sticker shown here meets the quality bar.
+
+Hummingbirds · Trochilidae — 365 species
+
+Parrots & cockatoos · Psittaciformes — 392 species
+
+Kingfishers · Alcedinidae — 116 species
+
+Bee-eaters, rollers & motmots · Meropidae · Coraciidae · Brachypteraciidae · Momotidae · Todidae — 68 species
+
+Toucans & barbets · Ramphastidae · Capitonidae · Semnornithidae · Megalaimidae · Lybiidae — 134 species
+
+Birds-of-paradise & bowerbirds · Paradisaeidae · Ptilonorhynchidae — 69 species
+
+Pittas · Pittidae — 46 species
+
+Tanagers · Thraupidae — 393 species
+
+Sunbirds & flowerpeckers · Nectariniidae · Dicaeidae — 208 species
+
+Cotingas & manakins · Cotingidae · Pipridae — 121 species
+
+Pheasants & partridges · Phasianidae — 185 species
+
+Ducks, geese & swans · Anatidae — 166 species
+
+Pigeons & doves · Columbidae — 339 species
+
+Waxbills & munias · Estrildidae — 140 species
+
+Jays & magpies · Corvidae — 138 species
+
+New World orioles & oropendolas · Icteridae — 107 species
+
+Hornbills · Bucerotidae — 64 species
+
+Starlings & mynas · Sturnidae — 120 species
+
+One from each of the 44 orders
+
+What's inside
+
+| | |
+|---|---|
+| stickers///.webp | 11,064 transparent stickers with a white outline, about 1,000 px on the long side |
+| data/species.json | One record per species, the complete dataset: taxonomy, names, IDs, range and subspecies, body measurements and ecology, conservation status, sticker and its source. Field reference: data/README.md |
+| data/species.csv | The same, flattened for spreadsheets |
+| data/names.csv | Names in 43 languages (46 columns: Chinese, French and Portuguese each have two variants) |
+| data/languages.json | Language codes and the IOC column each one comes from |
+| data/field-guide.zh-Hans.json | Chinese field-guide notes (look, field marks, sexes and ages, similar species) for 1,596 species, CC BY-SA 4.0 |
+
+A record looks like this (names shortened):
+
+{
+  "id": "Accipiter_nisus",
+  "scientificName": "Accipiter nisus",
+  "authority": "(Linnaeus, 1758)",
+  "taxonomy": {"system": "IOC 15.2", "seq": 2872, "order": "Accipitriformes", "family": "Accipitridae", "genus": "Accipiter"},
+  "names": {"en": "Eurasian Sparrowhawk", "zh-Hans": "雀鹰", "ja": "ハイタカ", "es": "Gavilán común", "fr": "Épervier d'Europe", "…": "…"},
+  "ids": {"wikidata": "Q25380", "ebird": "eurspa1", "gbif": "2480637", "inaturalist": 5106},
+  "range": {"breedingRegion": "PAL", "breeding": "widespread", "nonbreeding": "OR, ne AF"},
+  "subspecies": {"name": "nisus", "range": "Europe to sw Siberia and c Asia"}, "…"],
+  "traits": {"massG": 220.8, "wingMm": 207.4, "tailMm": 155.5, "habitat": "Forest", "migration": "partially migratory", "trophicNiche": "Vertivore", "…": "…"},
+  "conservation": {"iucn": "LC", "cites": "II"},
+  "sticker": {
+    "file": "stickers/Accipitriformes/Accipitridae/Accipiter_nisus.webp",
+    "kind": "ai-illustration",
+    "reviewScore": 91,
+    "meetsQualityBar": true,
+    "license": "PolyForm-Shield-1.0.0",
+    "reference": {"type": "photo", "page": "https://commons.wikimedia.org/wiki/File:…", "author": "Dion Art", "license": "CC BY-SA 4.0"}
+  }
+}
+
+Coverage
+
+- Names: English covers every species, French and Simplified Chinese all but a handful (Simplified Chinese has no names yet for 23 recently split species); Japanese, Traditional Chinese, Russian, German, Spanish, Polish, Dutch, Swedish and about a dozen more European languages cover over 90%. Serbian, Hungarian and Estonian are between 50% and 75%. Korean, Arabic, Thai, Persian and some others cover only a few hundred to about a thousand species so far, because that is what the IOC list has. See data/names.csv.
+- IDs: Wikidata 10,939, GBIF 10,649, eBird 10,052.
+- Stickers: 11,064 of 11,064.
+
+How the stickers were made, and how good they are
+
+11,030 stickers are AI illustrations. For each species we found a reference photo (or, for 453 species where no single photo was good enough, a board of several images plus a written description), drew the sticker with GPT-image, upscaled it, and cut it out. 34 are cut out from real photographs and passed a blind review against the original photo.
+
+Every AI sticker was then scored by a separate reviewer against the reference for field marks: bill, eye, legs and feet, plumage pattern and colour. In the last round, 852 borderline stickers (80–82) also got a second, blind review, and 211 of them failed it and were redrawn. Borderline stickers from earlier rounds did not get this second review.
+
+- 7,676 meet our quality bar ("meetsQualityBar": true): AI stickers scoring 80 or above, plus the 34 photo cutouts.
+- 3,388 do not. They were redrawn up to the limit, and we kept the best-scoring version so that no species is left without a picture. 3,273 score 70–79, 109 score below 70, and 6 scored 80+ but failed the blind second review.
+
+These are illustrations, not field-guide plates. Treat them as a friendly picture of the bird, and check a field guide before relying on a fine detail. If you spot a mistake, please [open an issue — corrections from birders are the most valuable contribution this project can get.
+
+About the reference photos
+
+Each sticker's reference is listed in sticker.reference, with its page, author and license. They break down like this (AI stickers, by species):
+
+| Reference | Species |
+|---|---|
+| Openly licensed photo (CC0, public domain, CC BY, CC BY-SA) | 1,986 |
+| Board of openly licensed images, or a written description only | 46 |
+| Photo under a non-commercial or no-derivatives license (CC BY-NC, -ND, …) | 5,071 |
+| Photo with all rights reserved, or under Macaulay Library terms | 1,500 |
+| Photo whose license we did not record | 2,017 |
+| Board mixing images under different terms | 410 |
+
+The stickers are new drawings, not copies, and the reference photos are not distributed here. Whether a drawing made from a photo is bound by that photo's license is not settled law. If it matters for what you are doing, filter on sticker.reference.license.
+
+Use it
+
+Raw files can be loaded directly:
+
+https://raw.githubusercontent.com/alchaincyf/huashu-bird-sticker/main/stickers/Accipitriformes/Accipitridae/Accipiter_nisus.webp
+
+import json
+species = json.load(open("data/species.json"))"species"]
+by_name = {s["scientificName"]: s for s in species}
+print(by_name["Pica pica""ja"], by_name["Pica pica"["file"])
+
+The repository is about 700 MB. To fetch only the data and a few stickers:
+
+git clone --filter=blob:none --sparse https://github.com/alchaincyf/huashu-bird-sticker
+cd huashu-bird-sticker && git sparse-checkout set data stickers/Strigiformes
+
+Credits
+
+- Taxonomy and multilingual names: IOC World Bird List v15.2, Gill, Donsker & Rasmussen (Eds), CC BY 3.0.
+- Cross-database IDs: Wikidata (CC0).
+- Body measurements and ecology: AVONET, Tobias et al. 2022, Ecology Letters, CC BY 4.0.
+- Reference photographers: credited per species in data/species.json. Reference photos are not included in this repository.
+
+…（内容已截断）

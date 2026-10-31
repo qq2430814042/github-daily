@@ -1,0 +1,154 @@
+florilegium
+
+Origin
+
+The Reddit post
+asked how to make flowers like these in LaTeX. I don't know how the original was made, and
+this project doesn't try to reproduce it. It is one possible way, and the way I did it:
+hand-authored primitives with randomized parameters, painted in Lua, placed by a procedural
+layout whose "fill the unused space" part borrows a 1998 idea from the ornament literature.
+It gets a similar look.
+
+What it is
+
+Procedurally generated Delft-blue floral page margins for LaTeX. No images, no imported
+paths, no external assets: every petal, leaf and stem is a parametric curve computed in Lua
+while the page is being written, painted like a watercolor, and written straight into the
+PDF. Every page gets its own garden.
+
+*Six seeds of the grown composition. Same code, different seed — and the garden fills
+whatever space the text leaves free.*
+
+Two documents share one package, and a third shows what else it does:
+
+| | florilegium.tex | florilegium-grow.tex |
+|---|---|---|
+| composition | authored: stems, leaves and flowers placed by hand, every parameter sampled | grown: a plant grown to fit the page by a greedy space-filling loop |
+| adapts to | nothing (tuned for A4, 68 mm margin) | the page layout, and the free space below the text on the last page |
+| preview |  |  |
+
+Both PDFs are self-describing: the body text is the write-up of how the margin is drawn.
+
+Last page of the grown document: the text ends early, so branches arch into the space below.
+
+*300 dpi crop. Mottled washes with white streaks lifted out, lobed leaves with white veins,
+forget-me-not cymes, a pale ghost flower behind the stems.*
+
+Watch it grow
+
+| as it grows | with the free space it fills |
+|---|---|
+|  |  |
+
+*Seed 6, from an empty margin to the finished page. The stems rise first, leaves open as
+the tips pass their nodes, and each stem ends in a flower. Then the greedy loop takes over:
+on the right, each dashed circle is the largest free disc it found, just before a branch
+grows to it. Big holes come first and slowly, small ones last and fast. The butterflies and
+bees fly in, the bird glides onto its twig, and the snail crawls up its stem until the last
+frame, which is exactly the page this seed always gives.*
+
+The growth is recorded once, while the page is laid out: each stem is also drawn as
+prefixes of increasing length and each motif at a few smaller scales, replaying the same
+random draws. A frame then writes the pieces whose time has come, in their original
+painting order. make grow-6 renders one seed this way (build/grow-6.gif and .mp4, about
+45 seconds); add EXPLAIN=1 for the dashed circles.
+
+The margin reads the text
+
+*showcase.tex, "A year in the margin": spring on the first page, summer, autumn on the
+last. Each section describes the feature it shows.*
+
+The grown margin can respond to the document around it:
+
+- Initials. \florilegiuminitial5]{E} sets the first letter of a paragraph in a tile
+  five lines tall. The outline of the letter is read from an OpenType font (Latin Modern
+  Bold by default) and painted like a petal; a vine passes over and under its strokes in
+  turn, with leaves where they fit and flowers in the gaps, often in the letter's counters.
+  The letter is also typeset invisibly, so the paragraph still copies as "Every".
+- Flowers at the headings. With the option sections, every numbered section and
+  subsection gets a flower in the margin beside its heading, painted in the copper of the
+  accents, the way headings were once picked out in red.
+- A flower where the text asks. \florilegiumbloom puts a flower beside the line it
+  stands in; \florilegiumbloom[lily] asks for any motif of the garden. The marks are found
+  in the page box when the page is shipped out, so this works in one run.
+- Seasons. With the option aging, the garden ages from spring on the first page
+  (mostly in bud, small pale leaves) to autumn on the last (seed heads, falling petals, a
+  few copper leaves). It needs two runs, for the page count; \florilegiumage{0.8} sets an
+  age by hand instead.
+
+*One seed in spring, early summer, late summer and autumn. The seasons change what grows,
+not where.*
+
+Visitors
+
+Most pages have visitors: a butterfly or two and bees in the open spaces, a snail crawling
+up one of the main stems, and on about one page in five a bird perched on a twig of its own.
+They come from a random stream of their own, so a page without them is exactly the page it
+would have been; the option novisitors leaves them out.
+
+Any ink
+
+*The whole palette comes from one color, ink: Delft blue, sepia, green, crimson, violet,
+teal. The ramp from the darkest stroke to the palest wash is computed from that hue in
+OKLCH, so the light end never turns gray.*
+
+In PostScript
+
+*postscript/florilegium.ps: the grown margin in pure PostScript, one self-contained file.
+Ghostscript, or a printer, computes every petal while it interprets the page, and the
+two pages of text explain how.*
+
+The drawing core, every primitive and the growth loop are ported from ink.lua, flora.lua
+and grow.lua, procedure for procedure. It needs no TeX and no other file:
+
+gs -dALLOWPSTRANSPARENCY -sDEVICE=pdfwrite -dSeed=7 -o garden.pdf postscript/florilegium.ps
+make postscript             # the same -> build/postscript-7.pdf; SEED=12 for another garden
+
+-dSeed=N picks the garden; without it the clock picks one, so every print is new.
+-dAge=0 to 1 sets the season, and -dNoVisitors leaves out the butterflies, bees, snail
+and bird. Two pages take about 2.5 seconds. Much of the Lua maps directly: PostScript's own
+transformation matrix places each primitive (translate, rotate, scale), paths and Bézier
+curves are native, and procedures built at run time stand in for Lua's closures (a petal's
+half-width is a procedure handed to the outline builder). Four things don't map:
+
+- Layers. The garden grows in one order but is painted back to front, so every fill and
+  stroke is captured with pathforall into a list per layer, and the lists are played back
+  at the end.
+- Transparency. PostScript has none. Ghostscript provides it with -dALLOWPSTRANSPARENCY.
+  Without that flag, or on a printer, each translucent fill is mixed with the color it is
+  likely to land on and painted opaque. The result is flatter, but it's the same garden.
+- Randomness. The generator is Park-Miller in 32-bit integer arithmetic, and PostScript
+  reals are single precision, so seed 7 here is a different garden from seed 7 in LaTeX.
+- Text. The file typesets its own two pages in Times. It knows where its headings are and
+  where its text ends, so the copper flowers at the headings and the garden under the last
+  line work as they do in LaTeX. It has no initials, animation or authored composition.
+
+*The file sent twice to an Epson inkjet with lp postscript/florilegium.ps, with no seed
+given. The computer's print system runs the program again for each job, so each print takes
+its seed from the clock and grows a different garden. A printer gets the opaque version, as
+it has no transparency.*
+
+Build
+
+LuaLaTeX, one pass, about a second a page (two passes for showcase.tex, whose seasons need
+the page count).
+
+make                        # the three PDFs
+make seed-7                 # one page from seed 7 -> build/seed-7.pdf
+make gallery                # gallery/seeds.png + seeds.gif, inks.png, seasons.png (python3, Pillow, pdftoppm)
+make grow-6                 # growth animation of seed 6 -> build/grow-6.gif + .mp4 (ffmpeg)
+make grow-6 EXPLAIN=1       # the same with the free discs marked -> build/grow-6-explain.*
+
+No TeX installed? Build the image once and run everything in it:
+
+docker build -t florilegium-tex tools
+make RUN=tools/in-docker
+
+Or paste florilegium.sty, the six .lua files and one of the .tex files into an
+[Overleaf project and set the compiler to LuaLaTeX.
+
+Use it in your own document:
+
+\usepackagegrown]{florilegium}      % or plain \usepackage{florilegium} for the authored one
+
+…（内容已截断）

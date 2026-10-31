@@ -69,6 +69,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | ShapelessAI | Write, schedule and publish social posts, carousels and short video to 8 networks | OAuth | stdio, HTTP | Cursor · Glama |
 | Silicon Floor | Who owns AI and chip stocks, what insiders sell, how fast they grow: answers from SEC filings | No | HTTP | Anthropic · Glama |
 | SkyAccess | Search 5,000+ live empty leg flights, get charter price estimates and booking links | No | HTTP | Cursor · Glama |
+| Toolalize | Unit and live currency conversion tools for agents, no key needed | No | HTTP | Glama · MCP Registry |
 | Twinbay | Spin up stateful API twins, read request logs and grade agent runs | OAuth | HTTP | – |
 | US Recalls | Check US recalls from 9 agencies by UPC, model, NDC, lot or VIN; 4 read-only tools | apiKey | HTTP | Glama · MCP Registry |
 | Vuntum | Sourced, dated data on consumer robots and physical AI: specs, prices, evidence | No | HTTP | Glama |
@@ -162,6 +163,5 @@ API | Description | Auth | HTTPS | CORS
 | Cats | Pictures of cats from Tumblr | apiKey | Yes | No |
 | Dog Facts | Random dog facts | No | Yes | Yes |
 | Dog Facts | Random facts of Dogs | No | Yes | Yes |
-| Dogs | Based on the Stanford Dogs Dataset | No | Yes | Yes |
 
 …（内容已截断）
