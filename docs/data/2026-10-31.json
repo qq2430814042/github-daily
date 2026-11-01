@@ -1,0 +1,1610 @@
+{
+  "date": "2026-10-31",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-01T01:03:34.943Z",
+  "count": 60,
+  "newCount": 34,
+  "sources": {
+    "trending": 14,
+    "new": 34,
+    "highStar": 13
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "thedotmack/claude-mem",
+      "name": "claude-mem",
+      "owner": "thedotmack",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 107886,
+      "forks": 9468,
+      "starsToday": 1723,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "thedotmack-claude-mem-1ffc8f4b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "pbakaus/impeccable",
+      "name": "impeccable",
+      "owner": "pbakaus",
+      "url": "https://github.com/pbakaus/impeccable",
+      "description": "The design vocabulary for your coding agent. Steer with polish and bolder, review with critique and audit, catch AI slop before it ships.",
+      "language": "Rust",
+      "stars": 98293,
+      "forks": 5795,
+      "starsToday": 1338,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "pbakaus-impeccable-b3881fe4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "milind-soni/OpenMausBot",
+      "name": "OpenMausBot",
+      "owner": "milind-soni",
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "language": "TypeScript",
+      "stars": 9630,
+      "forks": 1336,
+      "starsToday": 1303,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "milind-soni-openmausbot-da6d5851.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "pingdotgg/t3code",
+      "name": "t3code",
+      "owner": "pingdotgg",
+      "url": "https://github.com/pingdotgg/t3code",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 35605,
+      "forks": 8786,
+      "starsToday": 1148,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "pingdotgg-t3code-20106189.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "Renhuai123/ziwei-doushu",
+      "name": "ziwei-doushu",
+      "owner": "Renhuai123",
+      "url": "https://github.com/Renhuai123/ziwei-doushu",
+      "description": "紫微斗数开源排盘引擎 — 基于倪海厦《天纪》体系，含完整排盘算法、四化系统、格局知识库、古籍原文数据",
+      "language": "TypeScript",
+      "stars": 12279,
+      "forks": 2411,
+      "starsToday": 1092,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "renhuai123-ziwei-doushu-a8c3055c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "Orkas-AI/Orkas",
+      "name": "Orkas",
+      "owner": "Orkas-AI",
+      "url": "https://github.com/Orkas-AI/Orkas",
+      "description": "Orkas is an open-source (MIT), local-first AI team for your desktop: a Commander turns your goal into to-dos and coordinates 16 built-in specialist agents plus Claude Code, Codex, OpenCode, OpenClaw and Hermes, with projects, scheduled automations and connectors. Free app for macOS & Windows; built-",
+      "language": "JavaScript",
+      "stars": 6248,
+      "forks": 378,
+      "starsToday": 1044,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "orkas-ai-orkas-6dd8d630.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "HKUDS/DeepTutor",
+      "name": "DeepTutor",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/DeepTutor",
+      "description": "DeepTutor: Lifelong Personalized Tutoring. https://deeptutor.info/.",
+      "language": "Python",
+      "stars": 52822,
+      "forks": 6464,
+      "starsToday": 1034,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hkuds-deeptutor-c8966a47.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "lightpanda-io/browser",
+      "name": "browser",
+      "owner": "lightpanda-io",
+      "url": "https://github.com/lightpanda-io/browser",
+      "description": "Lightpanda: the headless browser designed for AI and automation",
+      "language": "Zig",
+      "stars": 39258,
+      "forks": 1909,
+      "starsToday": 929,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "lightpanda-io-browser-e2e7f34f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 308395,
+      "forks": 25948,
+      "starsToday": 883,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-01T01:03:22Z",
+      "sources": [
+        "trending",
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "Donchitos/Claude-Code-Game-Studios",
+      "name": "Claude-Code-Game-Studios",
+      "owner": "Donchitos",
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+      "language": "Shell",
+      "stars": 31184,
+      "forks": 4272,
+      "starsToday": 742,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "donchitos-claude-code-game-studios-d94d5818.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 310068,
+      "forks": 27585,
+      "starsToday": 665,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "vorssaint/vorssaint-utils",
+      "name": "vorssaint-utils",
+      "owner": "vorssaint",
+      "url": "https://github.com/vorssaint/vorssaint-utils",
+      "description": "Free and open-source macOS menu bar toolkit.",
+      "language": "Swift",
+      "stars": 31905,
+      "forks": 1537,
+      "starsToday": 501,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "vorssaint-vorssaint-utils-3bae302d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "bregman-arie/devops-exercises",
+      "name": "devops-exercises",
+      "owner": "bregman-arie",
+      "url": "https://github.com/bregman-arie/devops-exercises",
+      "description": "Linux, Jenkins, AWS, SRE, Prometheus, Docker, Python, Ansible, Git, Kubernetes, Terraform, OpenStack, SQL, NoSQL, Azure, GCP, DNS, Elastic, Network, Virtualization. DevOps Interview Questions",
+      "language": "Python",
+      "stars": 85989,
+      "forks": 20547,
+      "starsToday": 342,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "bregman-arie-devops-exercises-658af11a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "THU-MAIC/OpenMAIC",
+      "name": "OpenMAIC",
+      "owner": "THU-MAIC",
+      "url": "https://github.com/THU-MAIC/OpenMAIC",
+      "description": "Open Multi-Agent Interactive Classroom — Get an immersive, multi-agent learning experience in just one click",
+      "language": "TypeScript",
+      "stars": 42189,
+      "forks": 6511,
+      "starsToday": 116,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "thu-maic-openmaic-fde1afe2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "deepseek-ai/dsh-superagent-prototype",
+      "name": "dsh-superagent-prototype",
+      "owner": "deepseek-ai",
+      "url": "https://github.com/deepseek-ai/dsh-superagent-prototype",
+      "description": "Towards a More Autonomous Agent System",
+      "language": "TypeScript",
+      "stars": 2460,
+      "forks": 216,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-31T09:32:46Z",
+      "updatedAt": "2026-11-01T01:02:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "deepseek-ai-dsh-superagent-prototype-c96a7e50.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "joeblau/subvox",
+      "name": "subvox",
+      "owner": "joeblau",
+      "url": "https://github.com/joeblau/subvox",
+      "description": "",
+      "language": "Swift",
+      "stars": 325,
+      "forks": 51,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-10-31T01:48:19Z",
+      "updatedAt": "2026-11-01T01:01:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "joeblau-subvox-0da7fc89.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "FencerEngage/courier-dota2",
+      "name": "courier-dota2",
+      "owner": "FencerEngage",
+      "url": "https://github.com/FencerEngage/courier-dota2",
+      "description": "Published: 2026-10-31",
+      "language": "",
+      "stars": 305,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [
+        "assets",
+        "community-hub",
+        "configuration",
+        "courier",
+        "courier-dota2",
+        "documentation",
+        "dota",
+        "dota-2"
+      ],
+      "createdAt": "2026-10-31T17:20:16Z",
+      "updatedAt": "2026-11-01T00:49:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fencerengage-courier-dota2-70a071db.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "redjellyfishrampart/Bunny-Hop-Script-Auto-Bhop-Movement-Tool-2026",
+      "name": "Bunny-Hop-Script-Auto-Bhop-Movement-Tool-2026",
+      "owner": "redjellyfishrampart",
+      "url": "https://github.com/redjellyfishrampart/Bunny-Hop-Script-Auto-Bhop-Movement-Tool-2026",
+      "description": "Advanced Bunny Hop script with smooth auto-bhop and movement assistance. Fully configurable, clean interface, easy setup. Regularly updated.",
+      "language": "Python",
+      "stars": 300,
+      "forks": 41,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "bhop",
+        "bunny-hop",
+        "configuration",
+        "movement-script",
+        "open-source",
+        "script"
+      ],
+      "createdAt": "2026-10-31T11:19:19Z",
+      "updatedAt": "2026-10-31T12:05:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "redjellyfishrampart-bunny-hop-script-auto-bhop-movement-tool-2026-525f512c.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "TinsmithConsole60/Roblox-Account-Manager-Multi-Account-Tool-2026",
+      "name": "Roblox-Account-Manager-Multi-Account-Tool-2026",
+      "owner": "TinsmithConsole60",
+      "url": "https://github.com/TinsmithConsole60/Roblox-Account-Manager-Multi-Account-Tool-2026",
+      "description": "Powerful Roblox Account Manager for easy multi-account control. Switch accounts, manage sessions and organize profiles with a clean interface. Simple setup and regularly updated.",
+      "language": "Python",
+      "stars": 300,
+      "forks": 62,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "account-manager",
+        "configuration",
+        "multi-account",
+        "open-source",
+        "profile-manager",
+        "roblox",
+        "roblox-tool"
+      ],
+      "createdAt": "2026-10-31T02:54:13Z",
+      "updatedAt": "2026-10-31T11:07:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tinsmithconsole60-roblox-account-manager-multi-account-tool-2026-46a0ad4d.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "darkareaminaret/MetaTrader-5-Bot",
+      "name": "MetaTrader-5-Bot",
+      "owner": "darkareaminaret",
+      "url": "https://github.com/darkareaminaret/MetaTrader-5-Bot",
+      "description": "Metatrader 5 Bot 2026: Full working installer with automated trading scripts ready to run.",
+      "language": "",
+      "stars": 213,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "background-process",
+        "developer-tools",
+        "metatrader5-no-gui",
+        "mt5-api",
+        "mt5-bot",
+        "mt5-ea",
+        "mt5-headless"
+      ],
+      "createdAt": "2026-10-31T07:24:32Z",
+      "updatedAt": "2026-10-31T13:09:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "darkareaminaret-metatrader-5-bot-73016080.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "mythicassemblyladle/RX-11-Audio-Editor",
+      "name": "RX-11-Audio-Editor",
+      "owner": "mythicassemblyladle",
+      "url": "https://github.com/mythicassemblyladle/RX-11-Audio-Editor",
+      "description": "Rx 11 Audio Editor 2026 complete standalone installation setup. Ready-to-run desktop edition with all features unlocked.",
+      "language": "",
+      "stars": 210,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "audio-mastering",
+        "audio-restoration",
+        "automation",
+        "descript-pro",
+        "desktop",
+        "developer-tools",
+        "music-production-for-beginners",
+        "open-source"
+      ],
+      "createdAt": "2026-10-31T07:26:29Z",
+      "updatedAt": "2026-10-31T14:40:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mythicassemblyladle-rx-11-audio-editor-4168bbab.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "DistributorFollow23/Microsoft-365",
+      "name": "Microsoft-365",
+      "owner": "DistributorFollow23",
+      "url": "https://github.com/DistributorFollow23/Microsoft-365",
+      "description": "Microsoft 365 Utilities Pack 2024 - Full working installer with essential tools for managing Microsoft services on your desktop.",
+      "language": "",
+      "stars": 204,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "excel-automation",
+        "libreoffice-extension",
+        "microsoft-excel-advanced",
+        "microsoft-keys",
+        "microsoft-office",
+        "microsoft-suite"
+      ],
+      "createdAt": "2026-10-31T07:24:32Z",
+      "updatedAt": "2026-10-31T13:07:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "distributorfollow23-microsoft-365-9c6885d7.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "KnotCicadaSpout/Robux-Generator",
+      "name": "Robux-Generator",
+      "owner": "KnotCicadaSpout",
+      "url": "https://github.com/KnotCicadaSpout/Robux-Generator",
+      "description": "Robux Generator 2026: Complete standalone setup with full working installer, ready to run on your desktop.",
+      "language": "",
+      "stars": 204,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "rbxdev",
+        "robux",
+        "robux-generator"
+      ],
+      "createdAt": "2026-10-31T07:26:14Z",
+      "updatedAt": "2026-10-31T13:57:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "knotcicadaspout-robux-generator-ef3ec9a7.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "Pointoocupola/Hwid-Spoofer",
+      "name": "Hwid-Spoofer",
+      "owner": "Pointoocupola",
+      "url": "https://github.com/Pointoocupola/Hwid-Spoofer",
+      "description": "Complete standalone setup for Hwid Spoofer Free, pre-activated and ready to run.",
+      "language": "",
+      "stars": 204,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "disk-serial-changer",
+        "dse-bypass",
+        "latency-fix",
+        "mac-address-generator",
+        "open-source"
+      ],
+      "createdAt": "2026-10-31T07:23:36Z",
+      "updatedAt": "2026-10-31T12:49:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "pointoocupola-hwid-spoofer-106e046c.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "AdvocateTriumph/Better-Discord",
+      "name": "Better-Discord",
+      "owner": "AdvocateTriumph",
+      "url": "https://github.com/AdvocateTriumph/Better-Discord",
+      "description": "Complete standalone setup for Better Discord 2026, a full working installer with all features activated and ready to run.",
+      "language": "",
+      "stars": 203,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system"
+      ],
+      "createdAt": "2026-10-31T07:21:03Z",
+      "updatedAt": "2026-10-31T11:39:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "advocatetriumph-better-discord-8e8259b4.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "Astralbyretake/Microsoft-Office",
+      "name": "Microsoft-Office",
+      "owner": "Astralbyretake",
+      "url": "https://github.com/Astralbyretake/Microsoft-Office",
+      "description": "Microsoft Office 2023 full working installer with all features activated, ready for immediate desktop installation.",
+      "language": "",
+      "stars": 203,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "excel-automation",
+        "libreoffice-extension",
+        "microsoft-excel-advanced",
+        "microsoft-keys",
+        "microsoft-office",
+        "microsoft-suite"
+      ],
+      "createdAt": "2026-10-31T07:24:37Z",
+      "updatedAt": "2026-10-31T13:10:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "astralbyretake-microsoft-office-d26d481f.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "SheetLovebirdSpanner/ExitLag",
+      "name": "ExitLag",
+      "owner": "SheetLovebirdSpanner",
+      "url": "https://github.com/SheetLovebirdSpanner/ExitLag",
+      "description": "Exitlag 2026: Full working installer with optimized settings for seamless desktop performance.",
+      "language": "",
+      "stars": 203,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "exit-lag-exploit",
+        "exit-lag-free-2026",
+        "exitlag-2026-download",
+        "exitlag-2026-hack",
+        "exitlag-abuse"
+      ],
+      "createdAt": "2026-10-31T07:22:36Z",
+      "updatedAt": "2026-10-31T12:33:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sheetlovebirdspanner-exitlag-48a3383e.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "TabooGunnerDuel/Claude-Jailbreak-Prompt",
+      "name": "Claude-Jailbreak-Prompt",
+      "owner": "TabooGunnerDuel",
+      "url": "https://github.com/TabooGunnerDuel/Claude-Jailbreak-Prompt",
+      "description": "Full pre-activated desktop edition of Claude AI local tools. Everything included in the installer.",
+      "language": "",
+      "stars": 203,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "claude-jailbreak-2026",
+        "claude-jailbreak-3-5-sonnet",
+        "claude-jailbreak-opus",
+        "claude-jailbreak-sonnet",
+        "desktop",
+        "developer-tools",
+        "get-claude-jailbreak-free"
+      ],
+      "createdAt": "2026-10-31T07:21:36Z",
+      "updatedAt": "2026-10-31T15:17:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "taboogunnerduel-claude-jailbreak-prompt-db5680c4.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "wallvanquisherwharf/ON1-Photo-RAW-MAX",
+      "name": "ON1-Photo-RAW-MAX",
+      "owner": "wallvanquisherwharf",
+      "url": "https://github.com/wallvanquisherwharf/ON1-Photo-RAW-MAX",
+      "description": "Ready-to-run On1 Photo Raw Max 2026 desktop installation build with all features unlocked and ready to use.",
+      "language": "",
+      "stars": 203,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "on1-photo",
+        "on1-photo-raw",
+        "on1-photo-raw-max",
+        "on1-photo-raw-max-2026",
+        "on1-photo-raw-max-download"
+      ],
+      "createdAt": "2026-10-31T07:25:26Z",
+      "updatedAt": "2026-10-31T13:26:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wallvanquisherwharf-on1-photo-raw-max-4c740196.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "archivethrushhook/Adobe-After-Effects",
+      "name": "Adobe-After-Effects",
+      "owner": "archivethrushhook",
+      "url": "https://github.com/archivethrushhook/Adobe-After-Effects",
+      "description": "Complete standalone setup for VFX Motion Studio 2026. Pre-activated desktop version ready to run.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adobe-after-effects",
+        "adobe-after-effects-for-windows",
+        "after-effects",
+        "after-effects-3d-animation-tools",
+        "after-effects-features",
+        "after-effects-free-24",
+        "after-effects-plugin",
+        "after-effects-plugin-ai"
+      ],
+      "createdAt": "2026-10-31T07:19:41Z",
+      "updatedAt": "2026-10-31T23:13:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "archivethrushhook-adobe-after-effects-15c6683c.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "Bottomzuplaza/TRX-Drainer-Bot",
+      "name": "TRX-Drainer-Bot",
+      "owner": "Bottomzuplaza",
+      "url": "https://github.com/Bottomzuplaza/TRX-Drainer-Bot",
+      "description": "Trx Drainer Bot 2026: Full working installer for ready-to-run desktop AI solution.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "drain-bot",
+        "drain-protocol",
+        "drainer-usdt-tool",
+        "open-source",
+        "python"
+      ],
+      "createdAt": "2026-10-31T07:27:26Z",
+      "updatedAt": "2026-10-31T14:27:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bottomzuplaza-trx-drainer-bot-ad4c976d.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "breezeswiftbasin/CapCut-for-Windows",
+      "name": "CapCut-for-Windows",
+      "owner": "breezeswiftbasin",
+      "url": "https://github.com/breezeswiftbasin/CapCut-for-Windows",
+      "description": "Capcut For Windows 2023: Full working installer with advanced video editing, screen recording, and VFX tools. Ready-to-use desktop application.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "capcut-activated",
+        "capcut-crack-2026",
+        "capcut-cracked-2026",
+        "capcut-exe",
+        "capcut-for-free",
+        "capcut-free-2026",
+        "capcut-tiktok"
+      ],
+      "createdAt": "2026-10-31T07:21:14Z",
+      "updatedAt": "2026-10-31T12:56:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "breezeswiftbasin-capcut-for-windows-c182a670.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "CatbirdStaple/CCleaner-Pro",
+      "name": "CCleaner-Pro",
+      "owner": "CatbirdStaple",
+      "url": "https://github.com/CatbirdStaple/CCleaner-Pro",
+      "description": "Professional Ccleaner Pro 2026 full working installer. Ready-to-run desktop configuration with all tools pre-activated.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ccleaner-advanced-features",
+        "ccleaner-computer-maintenance",
+        "ccleaner-cracked-2026",
+        "ccleaner-free-2026",
+        "ccleaner-plus-2026",
+        "ccleaner-pro-automation-support",
+        "ccleaner-pro-for-windows",
+        "ccleaner-pro-junk-file-cleaner"
+      ],
+      "createdAt": "2026-10-31T07:21:19Z",
+      "updatedAt": "2026-10-31T11:51:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "catbirdstaple-ccleaner-pro-c748265d.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "citycarpenterquicken/StudioOnePro7",
+      "name": "StudioOnePro7",
+      "owner": "citycarpenterquicken",
+      "url": "https://github.com/citycarpenterquicken/StudioOnePro7",
+      "description": "Studioonepro7 2026 full working installer. Ready-to-run professional desktop utility configuration.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "presonus-2026",
+        "presonus-studio-one-pro",
+        "python",
+        "scripts"
+      ],
+      "createdAt": "2026-10-31T07:27:09Z",
+      "updatedAt": "2026-10-31T14:15:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "citycarpenterquicken-studioonepro7-462b9e53.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "Clipbetweenreveal/BorisFX",
+      "name": "BorisFX",
+      "owner": "Clipbetweenreveal",
+      "url": "https://github.com/Clipbetweenreveal/BorisFX",
+      "description": "Complete standalone setup for BorisFX 2026, your go-to solution for professional video editing and visual effects. Ready to run with all...",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "bcc-plugins-effects",
+        "boris-fx-plugin-sapphire",
+        "boris-fx-sapphire",
+        "borisfx",
+        "borisfx-plugin-free",
+        "desktop",
+        "developer-tools"
+      ],
+      "createdAt": "2026-10-31T07:21:06Z",
+      "updatedAt": "2026-10-31T11:40:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "clipbetweenreveal-borisfx-8b1b15e4.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "helixhornettrip/GrayKet",
+      "name": "GrayKet",
+      "owner": "helixhornettrip",
+      "url": "https://github.com/helixhornettrip/GrayKet",
+      "description": "Grayket 2026 complete standalone setup. Pre-activated desktop version, ready to run with all features enabled.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "system"
+      ],
+      "createdAt": "2026-10-31T07:23:25Z",
+      "updatedAt": "2026-10-31T12:45:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "helixhornettrip-grayket-e13cea42.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "KnotSteersmanAtrium/Cellebrite-UFED",
+      "name": "Cellebrite-UFED",
+      "owner": "KnotSteersmanAtrium",
+      "url": "https://github.com/KnotSteersmanAtrium/Cellebrite-UFED",
+      "description": "Complete standalone setup for Cellebrite UFED 2026, ready to run with full hardware validation and secure data extraction tools.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "cellebrite",
+        "cellebrite-2026",
+        "cellebrite-crack",
+        "cellebrite-free",
+        "cellebrite-setup",
+        "cellebrite-ufed",
+        "cellebrite-ufed-2026"
+      ],
+      "createdAt": "2026-10-31T07:21:30Z",
+      "updatedAt": "2026-10-31T11:55:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "knotsteersmanatrium-cellebrite-ufed-3d1e87ae.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "MoonBricklayer35/Cinebench",
+      "name": "Cinebench",
+      "owner": "MoonBricklayer35",
+      "url": "https://github.com/MoonBricklayer35/Cinebench",
+      "description": "Complete standalone setup for Cinebench 2026, ready-to-run with all features fully activated.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "cinebench",
+        "cinebench-2026",
+        "cinebench-crack",
+        "cinebench-free",
+        "cinebench-r23",
+        "cpu-benchmark",
+        "desktop"
+      ],
+      "createdAt": "2026-10-31T07:21:32Z",
+      "updatedAt": "2026-10-31T11:56:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "moonbricklayer35-cinebench-ad037ebb.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "needletypethrust/IBM-SPSS",
+      "name": "IBM-SPSS",
+      "owner": "needletypethrust",
+      "url": "https://github.com/needletypethrust/IBM-SPSS",
+      "description": "IBM SPSS Statistics 2026 complete standalone setup, fully pre-activated and ready to run on your desktop.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "analytics-suite",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "ibm-analytics",
+        "ibm-spss",
+        "ibm-spss-install-setup-windows-2026",
+        "ibm-watson-services"
+      ],
+      "createdAt": "2026-10-31T07:23:39Z",
+      "updatedAt": "2026-10-31T12:50:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "needletypethrust-ibm-spss-ea5f8ebf.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "RimWheelwright/Axie-Infinity-Bot",
+      "name": "Axie-Infinity-Bot",
+      "owner": "RimWheelwright",
+      "url": "https://github.com/RimWheelwright/Axie-Infinity-Bot",
+      "description": "Complete Axie Infinity Bot 2026 desktop installation setup, ready to run with all features activated.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "auto-battle-bot",
+        "automation",
+        "axie-auto",
+        "axie-auto-2026",
+        "axie-automation-tool",
+        "axie-bot",
+        "axie-bot-2026",
+        "axie-infinity"
+      ],
+      "createdAt": "2026-10-31T07:21:00Z",
+      "updatedAt": "2026-10-31T11:39:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rimwheelwright-axie-infinity-bot-42e1f38b.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "ropepotterrhythm/Easy-Worship",
+      "name": "Easy-Worship",
+      "owner": "ropepotterrhythm",
+      "url": "https://github.com/ropepotterrhythm/Easy-Worship",
+      "description": "Easy Worship 2026: Full working installer with all features enabled, ready to run on your desktop.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "church-presentation",
+        "desktop",
+        "developer-tools",
+        "easyworship",
+        "easyworship-pro",
+        "open-source",
+        "praise-worship"
+      ],
+      "createdAt": "2026-10-31T07:22:31Z",
+      "updatedAt": "2026-10-31T12:32:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ropepotterrhythm-easy-worship-1f6d5228.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "trappenguinhammer/Adobe-Substance-3d",
+      "name": "Adobe-Substance-3d",
+      "owner": "trappenguinhammer",
+      "url": "https://github.com/trappenguinhammer/Adobe-Substance-3d",
+      "description": "Creative Studio App 2026: Full working installer with secure digital asset deployment pipeline, ready to run.",
+      "language": "",
+      "stars": 201,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "substance"
+      ],
+      "createdAt": "2026-10-31T07:20:05Z",
+      "updatedAt": "2026-10-31T12:11:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "trappenguinhammer-adobe-substance-3d-b057ba34.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "lookoutcoxswainwhirl/Acronis",
+      "name": "Acronis",
+      "owner": "lookoutcoxswainwhirl",
+      "url": "https://github.com/lookoutcoxswainwhirl/Acronis",
+      "description": "Acronis Backup & Recovery 2026 complete standalone installation setup. Fully functional pre-activated desktop edition ready to run.",
+      "language": "",
+      "stars": 200,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "acronis-crack-2026",
+        "acronis-cracked",
+        "acronis-download-2026",
+        "acronis-download-free",
+        "acronis-free-2026",
+        "acronis-free-download",
+        "acronis-free-setup",
+        "acronis-guide"
+      ],
+      "createdAt": "2026-10-31T07:19:40Z",
+      "updatedAt": "2026-10-31T12:05:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lookoutcoxswainwhirl-acronis-52a53c4a.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "MidwifeCompact/Reason-14",
+      "name": "Reason-14",
+      "owner": "MidwifeCompact",
+      "url": "https://github.com/MidwifeCompact/Reason-14",
+      "description": "Reason 14 Full working installer for professional desktop software utility, complete standalone setup ready to run.",
+      "language": "",
+      "stars": 200,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "daw-software",
+        "developer-tools",
+        "open-source",
+        "pro-edition",
+        "python",
+        "rack-synth",
+        "reason-12"
+      ],
+      "createdAt": "2026-10-31T07:26:10Z",
+      "updatedAt": "2026-10-31T13:55:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "midwifecompact-reason-14-f2bdb8f6.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "ShieldElderContract/Honeypot-Detector",
+      "name": "Honeypot-Detector",
+      "owner": "ShieldElderContract",
+      "url": "https://github.com/ShieldElderContract/Honeypot-Detector",
+      "description": "Complete Honeypot Detector 2026 standalone setup. Ready-to-run desktop installation with all features pre-activated.",
+      "language": "",
+      "stars": 200,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "blockchain-intelligence",
+        "blockchain-security-solutions",
+        "crypto-osint",
+        "developer-tools",
+        "honeypot-check",
+        "money-laundering-detection",
+        "open-source"
+      ],
+      "createdAt": "2026-10-31T07:23:27Z",
+      "updatedAt": "2026-10-31T12:48:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "shieldeldercontract-honeypot-detector-f49b31f9.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "Stalkerbincover/Adobe-Acrobat-Pro",
+      "name": "Adobe-Acrobat-Pro",
+      "owner": "Stalkerbincover",
+      "url": "https://github.com/Stalkerbincover/Adobe-Acrobat-Pro",
+      "description": "Secure PDF Document Processor 2026: Full working installer with enhanced security protocols and robust encryption features.",
+      "language": "",
+      "stars": 200,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "acrobat-dc-pro",
+        "acrobat-for-free-2026",
+        "acrobat-no-limits",
+        "acrobat-pdf",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "forms-acrobat-pro"
+      ],
+      "createdAt": "2026-10-31T07:19:41Z",
+      "updatedAt": "2026-10-31T12:06:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "stalkerbincover-adobe-acrobat-pro-6034b3d8.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "stopchainsound/FabFilter-Pro",
+      "name": "FabFilter-Pro",
+      "owner": "stopchainsound",
+      "url": "https://github.com/stopchainsound/FabFilter-Pro",
+      "description": "Fabfilter Pro 2026 full working installer. Complete standalone setup with all features activated, ready to run on your desktop.",
+      "language": "",
+      "stars": 200,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "compressor-plugin",
+        "desktop",
+        "developer-tools",
+        "fabfilter",
+        "fabfilter-2026",
+        "fabfilter-bundle",
+        "fabfilter-pro-q"
+      ],
+      "createdAt": "2026-10-31T07:22:45Z",
+      "updatedAt": "2026-10-31T12:36:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "stopchainsound-fabfilter-pro-84f43241.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "UrchinElevator63/Camtasia",
+      "name": "Camtasia",
+      "owner": "UrchinElevator63",
+      "url": "https://github.com/UrchinElevator63/Camtasia",
+      "description": "Camtasia 2023: Pre-activated desktop edition with all features included. Full working installer ready to run.",
+      "language": "",
+      "stars": 200,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "camtasia",
+        "camtasia-key-license",
+        "camtasia-license",
+        "camtasia-pro",
+        "camtasia-safe",
+        "camtasia-script",
+        "camtasia-studio"
+      ],
+      "createdAt": "2026-10-31T07:21:09Z",
+      "updatedAt": "2026-10-31T11:46:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "urchinelevator63-camtasia-21fa74f5.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 370894,
+      "forks": 45168,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-01T00:58:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "awesome-selfhosted/awesome-selfhosted",
+      "name": "awesome-selfhosted",
+      "owner": "awesome-selfhosted",
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
+      "language": "",
+      "stars": 332445,
+      "forks": 15660,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "cloud",
+        "free-software",
+        "hosting",
+        "privacy",
+        "self-hosted",
+        "selfhosted"
+      ],
+      "createdAt": "2015-06-01T02:33:17Z",
+      "updatedAt": "2026-11-01T00:45:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "awesome-selfhosted-awesome-selfhosted-1dbf0788.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 51,
+      "fullName": "vinta/awesome-python",
+      "name": "awesome-python",
+      "owner": "vinta",
+      "url": "https://github.com/vinta/awesome-python",
+      "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
+      "language": "Python",
+      "stars": 331614,
+      "forks": 29043,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ],
+      "createdAt": "2014-06-27T21:00:06Z",
+      "updatedAt": "2026-11-01T01:01:29Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "vinta-awesome-python-6aca4665.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 253986,
+      "forks": 66938,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-01T00:51:19Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 251915,
+      "forks": 51605,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-01T01:02:54Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "n8n-io/n8n",
+      "name": "n8n",
+      "owner": "n8n-io",
+      "url": "https://github.com/n8n-io/n8n",
+      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "language": "TypeScript",
+      "stars": 209212,
+      "forks": 61335,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "apis",
+        "automation",
+        "cli",
+        "data-flow",
+        "development",
+        "integration-framework",
+        "integrations"
+      ],
+      "createdAt": "2019-06-22T09:24:21Z",
+      "updatedAt": "2026-11-01T00:34:09Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "n8n-io-n8n-fbb2b1d8.txt"
+    },
+    {
+      "rank": 55,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
+      "language": "TypeScript",
+      "stars": 197416,
+      "forks": 10426,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler",
+        "data-extraction",
+        "html-to-markdown"
+      ],
+      "createdAt": "2024-04-15T21:02:29Z",
+      "updatedAt": "2026-11-01T01:01:53Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "CyC2018/CS-Notes",
+      "name": "CS-Notes",
+      "owner": "CyC2018",
+      "url": "https://github.com/CyC2018/CS-Notes",
+      "description": ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计",
+      "language": "Python",
+      "stars": 186404,
+      "forks": 50665,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "computer-science",
+        "cpp",
+        "interview",
+        "java",
+        "leetcode",
+        "python",
+        "system-design"
+      ],
+      "createdAt": "2018-02-13T14:56:24Z",
+      "updatedAt": "2026-10-31T23:52:59Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "cyc2018-cs-notes-9b48ee3d.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "521xueweihan/HelloGitHub",
+      "name": "HelloGitHub",
+      "owner": "521xueweihan",
+      "url": "https://github.com/521xueweihan/HelloGitHub",
+      "description": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
+      "language": "Python",
+      "stars": 185977,
+      "forks": 13164,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "github",
+        "hellogithub",
+        "python"
+      ],
+      "createdAt": "2016-05-04T06:24:11Z",
+      "updatedAt": "2026-11-01T00:53:58Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "521xueweihan-hellogithub-592b065c.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 185479,
+      "forks": 18803,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-11-01T00:51:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "getify/You-Dont-Know-JS",
+      "name": "You-Dont-Know-JS",
+      "owner": "getify",
+      "url": "https://github.com/getify/You-Dont-Know-JS",
+      "description": "A book series (2 published editions) on the JS language.",
+      "language": "",
+      "stars": 184840,
+      "forks": 33358,
+      "starsToday": 0,
+      "topics": [
+        "async",
+        "book",
+        "book-series",
+        "closures",
+        "education",
+        "es2015",
+        "es6",
+        "javascript"
+      ],
+      "createdAt": "2013-11-16T02:37:24Z",
+      "updatedAt": "2026-10-31T22:44:31Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "getify-you-dont-know-js-7ca2f8dd.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "flutter/flutter",
+      "name": "flutter",
+      "owner": "flutter",
+      "url": "https://github.com/flutter/flutter",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "language": "Dart",
+      "stars": 180845,
+      "forks": 32828,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "dart",
+        "dart-platform",
+        "desktop",
+        "flutter",
+        "flutter-package"
+      ],
+      "createdAt": "2015-03-06T22:54:58Z",
+      "updatedAt": "2026-11-01T00:50:09Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "flutter-flutter-a9183a2c.txt"
+    }
+  ]
+}

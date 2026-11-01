@@ -1,0 +1,223 @@
+:information_source: &nbsp;This repo contains questions and exercises on various technical topics, sometimes related to DevOps and SRE
+
+:bar_chart: &nbsp;There are currently 2624 exercises and questions
+
+:warning: &nbsp;You can use these for preparing for an interview but most of the questions and exercises don't represent an actual interview. Please read FAQ page for more details
+
+:stop_sign: &nbsp;If you are interested in pursuing a career as DevOps engineer, learning some of the concepts mentioned here would be useful, but you should know it's not about learning all the topics and technologies mentioned in this repository
+
+:pencil: &nbsp;You can add more exercises by submitting pull requests :) Read about contribution guidelines here
+
+DevOps
+
+Git
+
+Network
+
+Hardware
+
+Kubernetes
+
+Software Development
+
+Python
+
+Go
+
+Perl
+
+Regex
+
+Cloud
+
+AWS
+
+Azure
+
+Google Cloud Platform
+
+OpenStack
+
+Operating System
+
+Linux
+
+Virtualization
+
+DNS
+
+Shell Scripting
+
+Databases
+
+SQL
+
+Mongo
+
+Testing
+
+Big Data
+
+CI/CD
+
+Certificates
+
+Containers
+
+OpenShift
+
+Storage
+
+Terraform
+
+Puppet
+
+Distributed
+
+Questions you can ask
+
+Ansible
+
+Observability
+
+Prometheus
+
+Circle CI
+
+Grafana
+
+Argo
+
+Soft Skills
+
+Security
+
+System Design
+
+Chaos Engineering
+
+Misc
+
+Elastic
+
+Kafka
+
+NodeJs
+DevOps Applications
+
+KubePrep
+
+Linux Master
+
+System Design Hero
+
+Network
+
+In general, what do you need in order to communicate?
+
+  - A common language (for the two ends to understand)
+  - A way to address who you want to communicate with
+  - A Connection (so the content of the communication can reach the recipients)
+
+What is TCP/IP?
+
+A set of protocols that define how two or more devices can communicate with each other.
+
+To learn more about TCP/IP, read here
+
+What is Ethernet?
+
+Ethernet simply refers to the most common type of Local Area Network (LAN) used today. A LAN—in contrast to a WAN (Wide Area Network), which spans a larger geographical area—is a connected network of computers in a small area, like your office, college campus, or even home.
+
+What is a MAC address? What is it used for?
+
+A MAC address is a unique identification number or code used to identify individual devices on the network.
+
+Packets that are sent on the ethernet are always coming from a MAC address and sent to a MAC address. If a network adapter is receiving a packet, it is comparing the packet’s destination MAC address to the adapter’s own MAC address.
+
+When is this MAC address used?: ff:ff:ff:ff:ff:ff
+
+When a device sends a packet to the broadcast MAC address (FF:FF:FF:FF:FF:FF​), it is delivered to all stations on the local network. Ethernet broadcasts are used to resolve IP addresses to MAC addresses (by ARP) at the data link layer.
+
+What is an IP address?
+
+An Internet Protocol address (IP address) is a numerical label assigned to each device connected to a computer network that uses the Internet Protocol for communication.An IP address serves two main functions: host or network interface identification and location addressing.
+
+Explain the subnet mask and give an example
+
+A Subnet mask is a 32-bit number that masks an IP address and divides the IP addresses into network addresses and host addresses. Subnet Mask is made by setting network bits to all "1"s and setting host bits to all "0"s. Within a given network, out of the total usable host addresses, two are always reserved for specific purposes and cannot be allocated to any host. These are the first address, which is reserved as a network address (a.k.a network ID), and the last address used for network broadcast.
+
+Example
+
+What is a private IP address? In which scenarios/system designs, one should use it?
+
+Private IP addresses are assigned to the hosts in the same network to communicate with one another. As the name "private" suggests, the devices having the private IP addresses assigned can't be reached by the devices from any external network. For example, if I am living in a hostel and I want my hostel mates to join the game server I have hosted, I will ask them to join via my server's private IP address, since the network is local to the hostel.
+
+What is a public IP address? In which scenarios/system designs, one should use it?
+
+A public IP address is a public-facing IP address. In the event that you were hosting a game server that you want your friends to join, you will give your friends your public IP address to allow their computers to identify and locate your network and server in order for the connection to take place. One time that you would not need to use a public-facing IP address is in the event that you were playing with friends who were connected to the same network as you, in that case, you would use a private IP address. In order for someone to be able to connect to your server that is located internally, you will have to set up a port forward to tell your router to allow traffic from the public domain into your network and vice versa.
+
+Explain the OSI model. What layers there are? What each layer is responsible for?
+
+- Application: user end (HTTP is here)
+- Presentation: establishes context between application-layer entities (Encryption is here)
+- Session: establishes, manages, and terminates the connections
+- Transport: transfers variable-length data sequences from a source to a destination host (TCP & UDP are here)
+- Network: transfers datagrams from one network to another (IP is here)
+- Data link: provides a link between two directly connected nodes (MAC is here)
+- Physical: the electrical and physical spec of the data connection (Bits are here)
+
+You can read more about the OSI model in penguintutor.com
+
+For each of the following determines to which OSI layer it belongs:
+
+  * Error correction
+  * Packets routing
+  * Cables and electrical signals
+  * MAC address
+  * IP address
+  * Terminate connections
+  * 3 way handshake
+
+  * Error correction - Data link
+  * Packets routing - Network
+  * Cables and electrical signals - Physical
+  * MAC address - Data link
+  * IP address - Network
+  * Terminate connections - Session
+  * 3-way handshake - Transport
+
+What delivery schemes are you familiar with?
+
+Unicast: One-to-one communication where there is one sender and one receiver.
+
+Broadcast: Sending a message to everyone in the network. The address ff:ff:ff:ff:ff:ff is used for broadcasting.
+           Two common protocols which use broadcast are ARP and DHCP.
+
+Multicast: Sending a message to a group of subscribers. It can be one-to-many or many-to-many.
+
+What is CSMA/CD? Is it used in modern ethernet networks?
+
+CSMA/CD stands for Carrier Sense Multiple Access / Collision Detection.
+Its primary focus is to manage access to a shared medium/bus where only one host can transmit at a given point in time.
+
+CSMA/CD algorithm:
+
+1. Before sending a frame, it checks whether another host is already transmitting a frame.
+2. If no one is transmitting, it starts transmitting the frame.
+3. If two hosts transmit at the same time, we have a collision.
+4. Both hosts stop sending the frame and they send everyone a 'jam signal' notifying everyone that a collision occurred
+5. They are waiting for a random time before sending it again
+6. Once each host waited for a random time, they try to send the frame again and so the cycle starts again
+
+Describe the following network devices and the difference between them:
+
+  * router
+  * switch
+  * hub
+
+A router, switch, and hub are all network devices used to connect devices in a local area network (LAN). However, each device operates differently and has its specific use cases. Here is a brief description of each device and the differences between them:
+
+1. Router: a network device that connects multiple network segments together. It operates at the network layer (Layer 3) of the OSI model and uses routing protocols to direct data between networks. Routers use IP addresses to identify devices and route data packets to the correct destination.
+
+…（内容已截断）

@@ -1,0 +1,112 @@
+Get an immersive, multi-agent learning experience in just one click
+
+  &nbsp;&nbsp;
+
+  &nbsp;
+
+  English | Simplified Chinese
+
+  Live Demo · Quick Start · Lemonade · FunASR · Features · Use Cases · OpenClaw
+
+🗞️ News
+
+- 2026-10-29 — v1.3.0: knowledge base and Pro workbench upgrade. Every upload is kept in its owner's knowledge base until deleted, organized in folders and parsed once for every conversation; the composer offers it through @, and the agent can read, search and organize it. In the Pro workbench, a request shows a preview of the agent's work before the first page exists, and classroom tabs switch between Learn and Edit. The upgrade has release conditions (stop all old instances first; no rollback below 1.3.0), so read the changelog before upgrading.
+- 2026-10-18 — v1.2.1: web research. Kimi, DeepSeek and Firecrawl join as web-search providers, and a new webFetch slot lets the agent read pages through a hosted reader (DeepSeek, Kimi or Firecrawl) instead of the built-in one; each is opt-in. Classroom chat can offer suggested replies, and retired models are removed from the built-in catalogs. Classroom chat now always runs on Pi and needs a classroom model with tool calling; read the release's Breaking Changes before upgrading.
+- 2026-10-16 — v1.2.0: server-first is stable. Generation runs on the server and survives closed tabs and restarts, models are configured once in openmaic.yml (defaults, locks, and an option to forbid user keys), materials are parsed as soon as they are attached, and the web app and the API share one pipeline. New: classroom export, as a PPTX that keeps every scene or as one offline HTML file that plays the lesson. It needs PostgreSQL and a long-running server; Vercel deployments stay on 1.1.x. Read Upgrading from 1.1.x before upgrading.
+- 2026-09-28 — v1.1.2: security — provider requests connect only to validated addresses and refuse redirects (GHSA-g87c-cm4q-cw5x).
+- 2026-09-27 — v1.1.1: security — hardened MinerU Cloud parsing (GHSA-cpjc-vgjh-c5jp).
+- 2026-09-24 — v1.1.0: agentic classroom chat (ask about any slide element, interactive, or whiteboard drawing); settings rebuilt around the course workflow; Token Plan connections.
+- 2026-09-15 — v1.0.3: security — access-code tokens expire, render-service network policy, pinned audio connections, Next.js RCE patch.
+- 2026-09-14 — v1.0.2: security — SSRF and DNS-rebinding fixes, classroom overwrite fix.
+- 2026-09-06 — v1.0.1: security and stability; tightens two defaults.
+- 2026-08-27 — v1.0.0: agent workbench, durable sessions, reusable skills, session materials, provider-neutral capabilities.
+
+Earlier releases
+
+- 2026-08-14 — v0.3.2: video export hardening, server-backed persistence and asset registry, @openmaic/generation, four new locales, FunASR.
+- 2026-07-21 — v0.3.1: one-click MP4 export, direct slide editing, smarter "Edit with AI", expanded document parsing.
+- 2026-06-28 — v0.3.0: PBL v2, "Edit with AI" editor agent, @openmaic/* SDKs on npm, relicensed to MIT.
+- 2026-06-02 — v0.2.2: MAIC Editor Pro Mode, editable outlines, offline classroom export.
+- 2026-04-26 — v0.2.1: VoxCPM2 TTS with voice cloning, per-model thinking config, course completion page.
+- 2026-04-20 — v0.2.0: Deep Interactive Mode — 3D, simulations, games, mind maps, online programming.
+- 2026-04-14 — v0.1.1: language inference, ACCESS_CODE, classroom ZIP export/import, Ollama.
+- 2026-03-26 — v0.1.0: discussion TTS, immersive mode, keyboard shortcuts.
+
+Full history in the changelog.
+
+📖 Overview
+
+OpenMAIC (Open Multi-Agent Interactive Classroom) is an open-source AI platform that turns any topic or document into a rich, interactive classroom experience. Powered by multi-agent orchestration, it generates slides, quizzes, interactive simulations, and project-based learning activities — all delivered by AI teachers and AI classmates who can speak, draw on a whiteboard, and engage in real-time discussions with you. The built-in OpenMAIC Skill works with OpenClaw as well as agent workbenches such as Codex, DeepSeek, and WorkBuddy, so you can generate classrooms from messaging apps like Feishu, Slack, or Telegram, or right inside your IDE.
+
+https://github.com/user-attachments/assets/8f3f1e5f-1468-4e93-8054-afeeea683a61
+
+Highlights
+
+- One-click lesson generation — Describe a topic or attach your materials; the AI builds a full lesson in minutes
+- Multi-agent classroom — AI teachers and peers lecture, discuss, and interact with you in real time
+- Rich scene types — Slides, quizzes, interactive HTML simulations, and project-based learning (PBL)
+- Whiteboard & TTS — Agents draw diagrams, write formulas, and explain out loud
+- Export anywhere — A .pptx that keeps every scene, one offline .html file that plays the whole lesson, or a classroom ZIP to move it to another deployment
+- Agent workbench integration — The OpenMAIC Skill supports OpenClaw, Codex, DeepSeek, WorkBuddy, and more — generate classrooms from Feishu, Slack, Telegram, 20+ messaging apps, or your IDE
+
+🚀 Quick Start
+
+Prerequisites
+
+- Node.js >= 22.19
+- pnpm >= 10
+- PostgreSQL 16 — courses are stored on the server. For local development
+  pnpm db:up starts one in Docker for you.
+
+1. Clone & Install
+
+git clone https://github.com/THU-MAIC/OpenMAIC.git
+cd OpenMAIC
+pnpm install
+
+2. Configure
+
+cp .env.example .env.local            # API keys and server options
+cp openmaic.example.yml openmaic.yml  # which models the server uses
+
+The copied example needs only OPENAI_API_KEY in .env.local (or change its provider to one you have a key for); everything else in it is commented out until you want it. openmaic.yml declares providers (accounts the server can call) and gives each slot (a use of AI: the outline, slide content, text to speech, web search, …) a model. Keys stay in .env.local and are referenced as ${VAR}:
+
+providers:
+  openai:
+    preset: openai
+    apiKey: ${OPENAI_API_KEY}      # OPENAI_API_KEY=sk-... in .env.local
+  anthropic:
+    preset: anthropic
+    apiKey: ${ANTHROPIC_API_KEY}
+
+slots:
+  llm: openai:gpt-5.5              # the default chat model
+  course.outline: anthropic:claude-sonnet-4-6
+  video: null                      # turn a capability off
+
+The slots you write are the server's defaults; users can change them, or connect services of their own, in the app's model settings unless you lock them or set allowUserKeys: false. The server validates the file at startup and names every mistake by its field (or, for broken YAML, its line).
+
+| To learn about | Read |
+| --- | --- |
+| Slots, presets, fallbacks, lock, allowUserKeys, OPENMAIC_SECRET_KEY | Configuration |
+| Every provider preset and model ID | Supported models |
+| Upgrading: provider variables, server-providers.yml, DEFAULT_MODEL and MODEL_FALLBACK still work without openmaic.yml; MODEL_ROUTES must become slots | Migrating from the legacy configuration |
+| Which models users may pick: a provider whose key the server holds and that selects an upstream model offers only the models in its models list (*_MODELS), plus the slot, default and fallback models | Model authorization |
+
+Providers: OpenAI, Azure OpenAI, Anthropic, Amazon Bedrock, Google Gemini, DeepSeek, Qwen, Kimi, MiniMax, Grok (xAI), OpenRouter, TokenDance, Doubao, Tencent Hunyuan/TokenHub, Xiaomi MiMo, GLM (Zhipu), Ollama, Lemonade and FunASR (local), and any OpenAI-compatible API.
+
+Recommended setup: OpenMAIC is at its best with every modality turned on — generated illustrations, narration, video clips, web search, and web fetch. A token plan configures the capabilities it supports with one key (see the examples below). Choose a fast long-context model such as deepseek-v4.1-flash as the default.
+
+More examples: token plans, Xiaomi MiMo and GLM, Amazon Bedrock
+
+MiniMax token plan quick example (one key for chat, image, video, TTS and web search; tokendance works the same way):
+
+providers:
+  minimax:
+    preset: minimax
+    apiKey: ${MINIMAX_API_KEY}
+
+slots:
+  llm: minimax:MiniMax-M3
+
+…（内容已截断）

