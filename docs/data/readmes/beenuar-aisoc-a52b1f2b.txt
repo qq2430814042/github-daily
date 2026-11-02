@@ -1,0 +1,108 @@
+AiSOC
+
+An open-source, self-hostable AI Security Operations Center. It ingests your security telemetry, detects and correlates threats, investigates them with AI agents whose reasoning is fully auditable, and proposes responses a human approves.
+
+Technical Guide (PDF) · Docs · Architecture · What actually works · Discussions
+
+What AiSOC does
+
+Telemetry arrives from your security tools. AiSOC normalizes it, runs the 2538 executable rules of
+its 7023-rule library, groups what fires into incidents, investigates each one with an AI agent whose
+every prompt and tool call is recorded, and proposes an action. New threat intelligence re-sweeps the
+history you already collected, and a human approves before anything reaches a vendor.
+
+What it looks like running
+
+Watch the full three minutes — install to AI verdict on one
+server against the published images, terminal waits shortened and the recording saying so on screen.
+The stills below are from a v20.1.0 run under the same rules — the recording is older than they are.
+(step by step · what is real)
+
+| | |
+|---|---|
+|  |  |
+| Alerts — each attributed to the connector that fed it. | Automated triage — the bundled local model's verdict, confidence and rationale, verbatim. |
+|  |  |
+| Threat intelligence — the real CISA KEV catalog, minutes after boot, with no API key. | SOC operations — with nothing connected yet, and it says so rather than showing a placeholder. |
+
+Quick start
+
+git clone https://github.com/beenuar/AiSOC && cd AiSOC
+make up
+
+On Windows, or on a machine with nothing installed yet, one line does the prerequisites too: iwr -useb https://raw.githubusercontent.com/beenuar/AiSOC/main/install.ps1 | iex (curl -fsSL https://raw.githubusercontent.com/beenuar/AiSOC/main/install.sh | bash on Linux and macOS). Without Docker at all, pip install aisoc-sandbox && aisoc-sandbox demo walks one alert through the agent funnel offline in under 30 seconds. Without your own machine, open the repo in GitHub Codespaces and run make up in its terminal. All four end at the same console; only the first three install anything.
+
+The Technical Guide covers this in depth: server sizing, where the model runs, every failure mode with its cause and fix, the REST API, MCP, and every console surface.
+
+Needs Docker Compose v2 with 8 GB memory and 20 GB free disk in the Docker VM, plus python3 (3.9+) and bash; make doctor checks all of it and Installation says what each number was measured against. The first run downloads a ~2 GB model into a volume only make clean clears.
+
+make up also creates .env and generates the fifteen secrets in it — the credential vault, the
+session signing key, five service-to-service credentials and four datastore passwords — then creates an
+administrator and prints its password, generated on your machine, shown once and stored nowhere. Lost
+it? make bootstrap ARGS=--reset-password mints another.
+
+A port already in use does not stop the install. AiSOC publishes on a free one, names what held the
+old one, and moves the console address with it: 64 seconds to a signed-in console on a bare clone with
+5432 and 11434 both taken.
+
+Then prove it works. make smoke posts one real event to the ingest API and follows it through
+Kafka, detection, correlation and Postgres, then reads the alert back out of the public API. Every
+stage reports PASS or FAIL:
+
+$ make smoke
+PASS] raw telemetry accepted by ingest
+[PASS] event traversed the spine and became an alert
+PASS: 10/10 stages
+
+Sign in at the address make up printed. A tenant with nothing connected lands on a **setup
+wizard** rather than an all-zero dashboard, and its state is read from your own data so it stays
+right if you connect a source through the API. The spec is
+[docs/openapi.yaml — interactive docs are off in this production-class stack.
+Stuck? make doctor, which on a host where you have not run make up yet says exactly that.
+
+Press Load sample data in the wizard. Five scenarios take the same ingest path a real connector uses — not inserted rows — so watching them become alerts means watching the pipeline work. They span low to critical on purpose, because a first run where everything is a crisis teaches you nothing about how triage separates signal from routine. They are attributed to AiSOC in the source column, refuse to load into a tenant that already has real alerts, and do not mark setup complete. (what each step proves) For the larger fixed corpus used by demos and evals, make demo loads a synthetic dataset — the pipeline shape, never a benchmark, a customer or an incident. Every row is is_synthetic = true and labelled in the console.
+
+Connect real data
+
+Push, with a credential from make ingest-token (the tenant comes from it, not a header):
+
+curl -X POST http://localhost:8081/v1/ingest/batch \
+  -H 'Content-Type: application/json' -H "Authorization: Bearer $AISOC_INGEST_TOKEN" \
+  -d '{"connector_id":"edr-1","connector_type":"crowdstrike","events":{"severity":"high",
+       "title":"Encoded PowerShell from Office","host":"WIN-FIN-01"}]}'
+
+Or pull, by configuring one of 90 click-and-connect data connectors in Settings → Connectors
+— Splunk, Sentinel, Elastic, CrowdStrike, Okta, AWS and Kubernetes audit among those with
+vendor-specific normalization and setup docs
+([coverage). Without a vendor profile
+a connector still ingests through a generic mapping that resolves host, user and source IP.
+
+A real cloud estate does not hand you its logs over a REST call. Four collectors read the
+surfaces one actually emits to: a CloudTrail organisation trail on S3 notified over SQS
+(management events, data events and VPC flow logs), a GCP Pub/Sub subscription on a Cloud Logging
+sink, an Azure Event Hubs capture, and a syslog/CEF listener. Each keeps a resumable cursor
+and a bounded per-poll budget, so a backlog applies backpressure instead of flooding ingest.
+
+Bringing existing detections? packages/aisoc-migrate translates Splunk SPL, Sentinel KQL and
+Elastic EQL and refuses rather than approximating what it cannot carry, because an almost-right
+rule is harder to find than a missing one: of the 2,005 Splunk rules bundled here 1,734 translate and
+1,711 of those are partial (what that means).
+
+How it works
+
+Ingest normalizes to a common shape and stamps an activity projection on every event — actor, action, resource, location, outcome, with actor.kind read from each vendor's own documented field rather than inferred — then Kafka carries it.
+Then fusion runs 2538 executable detection rules, of 7023 on disk, plus 76 sliding-window rules (73 count across events; 3 match an ordered sequence), applies your tenant's own tuning on top — the disables, floors and suppressions the console writes, so a rule you turned off actually stops firing — and decides what becomes an alert.
+Correlation groups related alerts, an agent investigates and writes its reasoning to the Investigation Ledger, and a playbook may start from the result. Separately, new threat intelligence sweeps the lake for sightings you already collected, and a hypothesis becomes a hunt without anyone writing a query — the model fills a closed schema and every value is bound as a parameter, so it cannot express a query at all.
+
+A playbook triggered by an alert previews before it acts. Three switches must agree — the
+deployment, the tenant, the playbook — and every default is off; anything less runs in preview with
+its plan attached to the alert. An approval step is a durable pause: the run suspends to Postgres,
+survives a restart, resumes after the approval, and expires with a recorded outcome rather than
+hanging.
+
+Executable is earned, not declared. A rule joins the compiled ruleset only after a vendor-shaped
+event is replayed through the real connector and engine and that rule is watched to fire — never
+inferred from a directory or an enabled: flag. The proof can fail: --prove-gate reverts the
+Windows connector and requires all 1,687 Windows rules to go silent. It means reachable, not that it
+
+…（内容已截断）

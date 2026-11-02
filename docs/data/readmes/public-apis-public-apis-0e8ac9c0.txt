@@ -1,4 +1,4 @@
-APILayer Unified Suite in now Live! 🎉 🥳
+APILayer Unified Suite is now Live! 🎉 🥳
 
 APILayer unified suite allows you to integrate production-grade REST APIs using One Account, One Dashboard, and One API key. Whether you need to geocode an address, validate an email, fetch a flight, pull stock market data, or scrape a search result.
 
@@ -48,7 +48,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 |:---|:---|:---|:---|:---|
 | IPstack MCP | IP geolocation, threat and timezone lookups for agents | apiKey | stdio, HTTP | Cursor · Glama |
 | Agent Nexus | Find agent-callable APIs, MCP servers and CLIs by capability, with live health and uptime data | No | HTTP | Glama |
-| BlockVectra | Blockchain RPC and indexed data; keyless documentation and chain discovery | apiKey | HTTP | – |
+| BlockVectra | Blockchain RPC and indexed data; keyless documentation and chain discovery | apiKey | stdio, HTTP | – |
 | Catastro GPS | Cadastral parcels in 29 European countries by reference, point or address | apiKey | stdio | Glama |
 | ContextFetch | Web search and any page as Markdown pruned to the query, plus research, crawl and site maps | No | stdio, HTTP | Glama |
 | corpusAI Cloud Pricing | Cloud, GPU and LLM token prices for agents, free discovery tools and paid per-call data | No | stdio, HTTP | npm · MCP Registry |
@@ -56,11 +56,13 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | crawlbrulee | EU-native web scraping for AI agents & developers: turn any page into markdown, screenshots and more | apiKey | stdio | npm · MCP Registry · Glama |
 | Edgepedia | Search and read Edgepedia, a free and growing encyclopedia with citations | No | HTTP | Glama |
 | Filesystem | Read/write local files | No | stdio | – |
+| FindIP MCP | IP lookups and FindIP Shield risky-event checks for agents | apiKey | stdio | Glama · MCP Registry |
 | GitHub | Repos, issues, PRs, code search | OAuth | stdio, HTTP | Glama |
 | IndiaInsurances | Indian insurance policy wordings read clause by clause, with verbatim quotes | No | HTTP | – |
 | Kuro | Create AI images, video clips, voice-overs, music and editable storyboard films | OAuth | HTTP | – |
 | Master Setter | Pokémon TCG cards, sets and printings in 14 languages, searchable by name in any language | apiKey | HTTP | Glama · MCP Registry |
 | Monocrawl | Public posts, profiles, comments and products from 70+ social, shopping and search platforms | apiKey | stdio, HTTP | Glama |
+| OpenApps | Rankings, launches and featuring across the ChatGPT, Claude, Cursor and Grok Bot app stores | No | HTTP | – |
 | Openpath | US job listings and local businesses for agents, with apply links and owner inboxes | No | HTTP | Anthropic · Glama · Smithery |
 | OpenSwissData | Swiss customs tariff (TARES), FINMA register and warnings, NOGA/NACE/ISIC code crosswalks | No | stdio, HTTP | Glama |
 | Refnusa | Indonesian holidays, wages, regions, postal codes, tax, food prices and NIK/plate checks (31 tools) | No | HTTP | Glama |
@@ -73,6 +75,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | Twinbay | Spin up stateful API twins, read request logs and grade agent runs | OAuth | HTTP | – |
 | US Recalls | Check US recalls from 9 agencies by UPC, model, NDC, lot or VIN; 4 read-only tools | apiKey | HTTP | Glama · MCP Registry |
 | Vuntum | Sourced, dated data on consumer robots and physical AI: specs, prices, evidence | No | HTTP | Glama |
+| XposedOrNot | Check an email against known data breaches, read its breach history and get domain breach counts | No | HTTP | Cursor · Glama |
 
 Maintain an open-source MCP server? Add it.
 
@@ -156,12 +159,5 @@ Index
 Animals
 API | Description | Auth | HTTPS | CORS
 |:---|:---|:---|:---|:---|
-| Axolotl | Collection of axolotl pictures and facts | No | Yes | No |
-| Breed Health Score | Dog breed health scores, median lifespans and conditions | No | Yes | No |
-| Cat Facts | Daily cat facts | No | Yes | No |
-| Cat Facts | Random cat facts | No | Yes | Yes |
-| Cats | Pictures of cats from Tumblr | apiKey | Yes | No |
-| Dog Facts | Random dog facts | No | Yes | Yes |
-| Dog Facts | Random facts of Dogs | No | Yes | Yes |
 
 …（内容已截断）

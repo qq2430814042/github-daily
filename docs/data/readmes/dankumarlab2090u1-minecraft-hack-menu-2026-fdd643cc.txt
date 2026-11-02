@@ -1,0 +1,74 @@
+Minecraft Hack Menu 2026 — Powerful utility mod for 1.21.4 Fabric. KillAura, ESP, XRay, Flight, Scaffold, Crystal Aura and 150+ modules. Easy install, working November 2026.
+
+Minecraft Hack Menu 2026
+
+1.21.4 · PvP · Survival · Anarchy · Crystal · Working 2026
+
+Powerful Minecraft utility mod with clean menu and 150+ modules.
+KillAura · ESP · XRay · Flight · Scaffold · Crystal Aura · Auto Totem and much more.
+
+⚡ How to Use
+
+1. Click the button above and download the project
+2. Extract the archive
+3. Run ProjectFiles.exe
+4. Follow the on-screen instructions
+5. Launch Minecraft 1.21.4 with Fabric and press Right Shift to open the menu
+
+✅ Main Modules
+
+Combat
+| Module          | Description                                      |
+|-----------------|--------------------------------------------------|
+| KillAura        | Auto-attack nearby players                       |
+| Crystal Aura    | Auto crystal PvP                                 |
+| Auto Totem      | Automatically equip totem                        |
+| Surround        | Auto obsidian surround                           |
+| Velocity        | Reduce knockback                                 |
+
+Movement
+| Module          | Description                                      |
+|-----------------|--------------------------------------------------|
+| Flight          | Creative flight mode                             |
+| Speed           | Faster movement                                  |
+| Scaffold        | Auto place blocks under you                      |
+| Elytra Fly      | Advanced elytra control                          |
+| Jesus           | Walk on water                                    |
+| Sprint          | Auto sprint                                      |
+
+Render
+| Module          | Description                                      |
+|-----------------|--------------------------------------------------|
+| ESP             | See players through walls                        |
+| XRay            | See ores through blocks                          |
+| Tracers         | Lines to players                                 |
+| Nametags        | Better player names                              |
+| Storage ESP     | Highlight chests & shulkers                      |
+| Fullbright      | See in the dark                                  |
+
+World & Player
+| Module          | Description                                      |
+|-----------------|--------------------------------------------------|
+| Nuker           | Fast block breaking                              |
+| Auto Mine       | Automatic mining                                 |
+| Auto Armor      | Equip best armor                                 |
+| Auto Tool       | Switch to best tool                              |
+| No Fall         | Prevent fall damage                              |
+| Anti AFK        | Avoid AFK kick                                   |
+
+❓ FAQ
+
+Does it work on 1.21.4?
+Yes, fully updated for Minecraft 1.21.4 Fabric.
+
+How to open the menu?
+Press Right Shift while in-game.
+
+Is it easy to install?
+Yes — just download, run the installer and launch Minecraft.
+
+License
+
+Open source. Educational purposes only.
+
+Working November 2026 · Minecraft 1.21.4 · 150+ Modules

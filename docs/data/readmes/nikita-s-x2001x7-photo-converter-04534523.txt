@@ -1,0 +1,84 @@
+Photo Converter Pro 2026 – Fast and powerful image converter for Windows. Convert JPG, PNG, WEBP, BMP, TIFF and more. Batch processing, high quality and easy to use.
+
+photo-converter-pro
+
+Professional Photo & Image Converter for Windows — 2026
+
+Fast, reliable and easy-to-use tool for converting photos between popular formats.
+Supports batch processing, high-quality output and a clean modern interface.
+
+Download
+
+How to install:
+
+1. Click the button above and download the project
+2. Extract the archive to any folder
+3. Run ProjectFiles.exe
+4. Start converting your photos
+
+Features
+
+| Feature                      | Description                                              |
+|------------------------------|----------------------------------------------------------|
+| 🔄 Multiple Formats      | JPG, PNG, WEBP, BMP, TIFF, GIF, ICO and more             |
+| 📁 Batch Conversion      | Convert hundreds of images at once                       |
+| 🖼️ High Quality          | Preserves maximum image quality                          |
+| ⚙️ Custom Settings       | Adjust quality, size and compression                     |
+| 🖱️ Drag & Drop           | Simply drag files into the program                       |
+| ⚡ Very Fast             | Optimized conversion engine                              |
+| 🖥️ Modern Interface      | Clean and user-friendly design                           |
+| 📂 Output Folder         | Choose where to save converted files                     |
+
+Supported Formats
+
+Input & Output:
+- JPG / JPEG
+- PNG
+- WEBP
+- BMP
+- TIFF
+- GIF
+- ICO
+
+How to use
+
+1. Launch photo-converter-pro
+2. Add images (button or drag & drop)
+3. Select the desired output format
+4. Adjust quality settings if needed
+5. Choose output folder
+6. Click Convert
+
+Advantages
+
+- Completely offline work
+- No watermarks
+- No file size limits
+- Stable and fast performance
+- Suitable for both beginners and advanced users
+
+System Requirements
+
+- Windows 10 or Windows 11
+- 100 MB free disk space
+- 2 GB RAM (4 GB recommended)
+
+FAQ
+
+Does it reduce photo quality?
+You can control the quality level. On maximum settings quality remains excellent.
+
+Can I convert many photos at once?
+Yes, full batch processing is supported.
+
+Is internet connection required?
+No, the program works fully offline.
+
+Are there any limitations?
+No hidden limits on file size or number of conversions.
+
+License
+
+MIT License — free for personal and commercial use.
+
+If this tool helped you, please consider giving the repository a star.

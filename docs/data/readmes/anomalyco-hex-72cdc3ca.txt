@@ -1,0 +1,44 @@
+Hex
+
+Hex is local voice dictation for Mac, Windows and Linux. Hold a key, speak, and
+it pastes.
+
+How it works
+
+- hold the shortcut, speak, then let go
+- Hex transcribes on your device and pastes into whatever app you're in
+- the first run downloads a speech model; after that nothing leaves your machine
+- experimental features live in Labs, at the bottom of the sidebar
+
+Downloads
+
+Stable is the current release. Dev is the newest build of dev and updates
+itself from the dev channel.
+
+| Platform | Stable | Dev |
+| --- | --- | --- |
+| macOS (Apple silicon) | DMG | DMG |
+| Windows x64 | Installer | Installer |
+| Windows ARM64 | Installer | Installer |
+| Linux x86_64 | Executable | Executable |
+| Linux x86_64 (Debian, Ubuntu) | .deb | .deb |
+| Linux x86_64 (Fedora, openSUSE) | .rpm | .rpm |
+| Linux ARM64 | Executable | Executable |
+| Linux ARM64 (Debian, Ubuntu) | .deb | .deb |
+| Linux ARM64 (Fedora, openSUSE) | .rpm | .rpm |
+
+Or install with:
+
+- Homebrew: brew install --cask anomalyco/tap/hex
+- AUR: yay -S hex-bin
+- install script (Linux): curl -fsSL https://anoma.ly/hex/install-linux.sh | sh
+- Nix: nix profile install github:anomalyco/hex
+
+More docs are in docs/.
+
+Contributing
+
+We don't take pull requests. Open an issue
+describing the bug or idea, and our agents usually turn it around fast.
+
+MIT licensed.

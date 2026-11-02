@@ -33,7 +33,7 @@ For more installation options, uninstall steps, and troubleshooting, see the set
 
 Plugins
 
-This repository includes several Claude Code plugins that extend functionality with custom commands and agents. See the plugins directory for detailed documentation on available plugins.
+Anthropic's Claude Code plugins are developed in claude-plugins-official. See the plugins directory for more about plugins.
 
 Reporting Bugs
 
