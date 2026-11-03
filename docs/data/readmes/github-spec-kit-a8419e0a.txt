@@ -1,0 +1,194 @@
+🌱 Spec Kit
+
+    Build with a spec, fix a bug, or assess an idea — with your coding agent.
+
+    English ·
+    简体中文 ·
+    日本語 ·
+    한국어
+
+Spec Kit is an open source toolkit that gives AI coding agents structured
+processes, reusable templates, and documented outcomes. Start with a ready-made
+process, customize it, or bring your own.
+
+Choose your process
+
+| What you need | Process | Outcome |
+| --- | --- | --- |
+| Build a feature or application | Spec-Driven Development | A specification carried through planning, implementation, and convergence |
+| Diagnose and repair broken behavior | Bug fixing | An assessed cause, scoped fix, and recorded verification |
+| Decide whether an idea deserves investment | Idea assessment | An evidence-backed go, clarify, or stop decision |
+| Adopt or create a different process | Your own process | A process adapted or assembled from reusable primitives |
+
+These are independent entry points, not mandatory phases. SDD ships in core;
+bug fixing and assessment are bundled extensions you install when needed, and
+the primitives below let you adopt or create other processes.
+
+Capabilities
+
+Spec Kit combines ready-to-use processes with composable mechanisms:
+
+| Capability | Spec Kit mechanism |
+| --- | --- |
+| Connect to or switch between coding agents | Integration |
+| Add a command, quality gate, or complete process | Extension |
+| Connect a process to an external tool or service | Extension |
+| React to coding-agent lifecycle events | Extension runtime event |
+| Run extension commands before or after Spec Kit commands | Extension hook |
+| Adapt templates, commands, terminology, or methodology | Preset |
+| Enforce organizational or regulatory standards | Preset |
+| Override a template for one project | Project-local override |
+| Automate prompts, commands, gates, and shell tasks | Workflow |
+| Modify an installed workflow without forking it | Workflow overlay |
+| Add reusable executable behavior to workflows | Workflow step |
+| Install a curated setup for a role or team | Bundle |
+| Discover community components | Catalog |
+| Host a private catalog of approved components | Catalog |
+| Access private catalogs and component downloads | Authentication |
+| Work offline or behind a firewall | Local sources and self-hosted catalogs |
+| Inspect which layer supplies a command, template, or script | Artifact inventory |
+
+Search the active catalogs with commands such as specify extension search,
+specify preset search, specify workflow search, and specify bundle search.
+Spec Kit includes community catalogs, and organizations can add their own
+curated sources. Catalog listings are not audits or endorsements, so review
+community source code before installing or running it.
+
+Get started
+
+You need Python 3.11+, uv,
+and a supported AI coding agent on Linux, macOS, or Windows.
+
+Run these commands in your terminal to install Spec Kit and create a project.
+This example uses GitHub Copilot.
+
+uv tool install specify-cli
+specify init my-project --integration copilot
+cd my-project
+
+After installing the Specify CLI and creating your project, launch your coding
+agent in the project directory, then choose a process below.
+
+For other setups:
+
+- Installation for pinned releases, other installers, CI, and troubleshooting.
+- Existing projects to start with code you already have.
+- Other agents for integration keys and invocation syntax.
+- Upgrade to update an existing installation.
+
+Spec-Driven Development
+
+Define what to build and why, then turn the specification into a plan, tasks,
+and working code.
+
+The minimal flow is shown below. Create a constitution once per project and
+repeat the remaining steps for each feature. Run these skills in your agent's
+chat, not your terminal, one at a time, reviewing each result before continuing.
+
+This example uses GitHub Copilot's default skills syntax. For another agent,
+use its equivalent invocation syntax.
+
+/speckit-constitution Create principles focused on code quality, testing, and maintainability.
+/speckit-specify Build a photo organizer with albums grouped by date and a tile preview of each album.
+/speckit-plan Use Vite with vanilla JavaScript. Keep images local and store metadata in SQLite.
+/speckit-tasks
+/speckit-implement
+/speckit-converge
+
+Repeat implement and converge until convergence reports Converged.
+For clarification, checklists, and consistency analysis, see the SDD walkthrough.
+
+SDD walkthrough ·
+Command reference
+
+Bug fixing
+
+Assess the cause, fix the bug, and verify the original symptom is resolved.
+No SDD feature workflow is required first.
+
+Install the bug-fixing extension in your terminal, from the project directory:
+
+specify extension add bug
+
+Run these skills in your agent's chat, not your terminal, one at a time,
+reviewing each result before continuing.
+
+This example uses GitHub Copilot's default skills syntax. For another agent,
+use its equivalent invocation syntax.
+
+/speckit-bug-assess "Submitting an empty password crashes the login form." slug=login-crash
+/speckit-bug-fix slug=login-crash
+/speckit-bug-test slug=login-crash
+
+Review the reports in .specify/bugs/login-crash/. The final verdict is
+verified, partial, or failed; only verified confirms a successful fix.
+
+Bug-fixing walkthrough ·
+Command reference
+
+Idea assessment
+
+Gather evidence to decide whether an idea is worth pursuing.
+No source code or SDD feature workflow is required.
+
+Install the assessment extension in your terminal, from the project directory:
+
+specify extension add assess
+
+Run these skills in your agent's chat, not your terminal, one at a time,
+reviewing each result before continuing.
+
+This example uses GitHub Copilot's default skills syntax. For another agent,
+use its equivalent invocation syntax.
+
+/speckit-assess-intake "Let users work offline and sync when they reconnect." slug=offline-mode
+/speckit-assess-research slug=offline-mode
+/speckit-assess-define slug=offline-mode
+/speckit-assess-shape slug=offline-mode
+/speckit-assess-decide slug=offline-mode
+
+Review the artifacts in .specify/assessments/offline-mode/ and the final
+decision: go, needs-clarification, or kill. Resolve unknowns by editing the
+existing Markdown artifacts, directly or with your agent, rather than rerunning
+whole stages. If you choose to build a software idea with a go decision,
+establish a project constitution if needed, then pass the handoff summary from
+decision.md to /speckit-specify. Stopping with a documented reason is also a
+useful outcome.
+
+Assessment walkthrough ·
+Command reference
+
+Customize or bring your own process
+
+Customize Spec-Driven Development, bug fixing, or idea assessment to fit your
+team's standards. Or bring your own process without adopting any of them.
+Combine the capabilities above to match your goal:
+
+- Adapt an existing process with a preset, such as requiring regulatory traceability in plans. Use a project-local override for a one-off template change.
+- Bring your own process by adding its commands through an extension and exposing them to your coding agent through an integration.
+- Automate commands and checks in a workflow. Use overlays to adapt an installed workflow without forking it, or add custom workflow steps when the built-in types are not enough.
+- Share a reusable setup by packaging its extensions, presets, workflows, and workflow steps in a bundle.
+
+Start with the smallest change that meets your needs; you do not have to replace
+the whole process.
+
+Customization guide ·
+Community components and walkthroughs
+
+Documentation
+
+- CLI reference and process commands
+- SDD philosophy, full methodology, and evolving existing specs
+- Project history
+- How Spec Kit uses Spec Kit
+
+In the news
+
+- Open Source Friday: Spec Kit Part 2 (October 16, 2026) — Manfred Riem and Nicole Haugen discuss Spec Kit 1.0 and the expanded toolkit.
+- Open Source Friday with Spec Kit (May 8, 2026) — An introduction and SDD demonstration with Manfred Riem.
+
+Star history
+
+    Thanks to everyone who helps Spec Kit shine.
+
+…（内容已截断）

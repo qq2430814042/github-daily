@@ -1,0 +1,56 @@
+Offline PDF compressor for Windows 2026. Reduce PDF file size up to 90% with minimal quality loss. Supports batch mode, drag & drop and works without internet connection.
+
+pdf-compressor-offline
+
+Offline PDF compressor for Windows 2026
+
+Reduce PDF size significantly while keeping good quality.
+Batch support • Drag & Drop • Fully offline
+
+Download
+
+1. Click the button above and download the project
+2. Extract the archive
+3. Run ProjectFiles.exe
+4. Add PDF files and choose compression level
+5. Click Compress
+
+Features
+
+- Strong compression (up to 90% size reduction)
+- 4 quality presets: Low / Medium / High / Maximum
+- Batch processing (many files at once)
+- Fully offline
+- Drag & Drop support
+- Clean and simple interface
+- Fast compression engine
+
+How to use
+
+1. Launch the program
+2. Add PDF files (or drag them into the window)
+3. Select compression level
+4. Choose output folder
+5. Click Compress
+
+Requirements
+
+- Windows 10 / 11
+- 100 MB free disk space
+
+FAQ
+
+Is it offline?
+Yes, no internet required.
+
+Does quality drop a lot?
+On High and Maximum presets quality stays very good.
+
+Can I compress many files at once?
+Yes, full batch support.
+
+License
+
+MIT License.
+
+Star this repository if you found it useful.

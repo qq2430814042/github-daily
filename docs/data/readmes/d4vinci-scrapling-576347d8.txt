@@ -1,0 +1,116 @@
+Effortless Web Scraping for the Modern Web
+
+    Selection methods
+    &middot;
+    Fetchers
+    &middot;
+    Spiders
+    &middot;
+    Proxy Rotation
+    &middot;
+    CLI
+    &middot;
+    MCP
+
+Scrapling is a Python Web Scraping framework that brings fast HTTP requests, stealth browsers, powerful parsing, and concurrent crawling into one library.
+
+Scrape static pages, render JavaScript, interact with websites, and extract data from the API calls behind them. Build crawlers with reusable sessions, proxy rotation, automatic retries, pause/resume, and built-in data exports.
+
+Use it from Python, the terminal, or your AI agent through its MCP server and Agent Skill. From extracting a few fields to collecting a whole website as clean Markdown, Scrapling covers the full scraping workflow.
+
+What you can do with Scrapling
+
+- Fetch & interact: Fast HTTP requests, stealth browsers, JavaScript rendering, Cloudflare Turnstile/Interstitial handling, persistent sessions, and background API capture.
+- Parse & extract: CSS, XPath, text and regex search, adaptive element tracking, similar-element matching, and clean Markdown output.
+- Crawl & export: Concurrent spiders, proxy rotation, retries, AutoThrottle, pause/resume, streaming, ready-made templates, and JSON/JSONL/CSV/XML exports.
+- Scrape with AI or from your terminal: An MCP server for AI agents to browse and extract data, an Agent Skill, CLI commands, and an interactive shell.
+
+Start with a single page:
+
+from scrapling.fetchers import Fetcher
+
+page = Fetcher.get('https://quotes.toscrape.com/')
+quotes = page.css('.quote .text::text').getall()
+print(quotes)
+
+Or scale up with a spider:
+
+from scrapling.spiders import Spider, Response
+
+class QuotesSpider(Spider):
+    name = "quotes"
+    start_urls = "https://quotes.toscrape.com/"]
+
+    async def parse(self, response: Response):
+        for quote in response.css('.quote'):
+            yield {
+                "text": quote.css('.text::text').get(),
+                "author": quote.css('.author::text').get(),
+            }
+
+result = QuotesSpider().start()
+print(len(result.items))
+result.items.to_json("quotes.json")
+
+This prints 10 and saves the quotes and authors to quotes.json.
+
+Platinum Sponsors
+
+    NodeMaven - The most efficient proxy provider for Web Scraping and Automation with the Highest Quality IP on the market. Use code SCRAPLING35 for 35% discount.
+
+     Scrapling handles Cloudflare Turnstile. For enterprise-grade protection,
+        Hyper Solutions
+       provides API endpoints that generate valid antibot tokens for Akamai, DataDome, Kasada, and Incapsula. Simple API calls, no browser automation required.
+
+        Evomi
+      : residential proxies from $0.49/GB. Scraping browser with fully spoofed Chromium, residential IPs, auto CAPTCHA solving, and anti-bot bypass.
+      Scraper API for hassle-free results. MCP and N8N integrations are available.
+
+    Read a full review of Scrapling on The Web Scraping Club (Nov 2025), the #1 newsletter dedicated to Web Scraping.
+
+    Swiftproxy provides scalable residential proxies with 80M+ IPs across 195+ countries, delivering fast, reliable connections, automatic rotation, and strong anti-block performance. Free trial available.
+
+    Byteful supplies ethical residential, mobile, ISP, and datacenter proxies, plus scraping and AI automation tools. Use code SCRAPLING10: 10% off residential proxies.
+
+    ProxyLane: 90% fewer CAPTCHAs on your Scrapling runs. 28M real P2P residential devices, 98.7% clean IPs, 195 countries. City/ISP/ZIP targeting, sticky/rotating sessions, traffic never expires. Try 350 MB for $1.95. Code SCRAPEANDTAKE: 25% off.
+
+    LundProxy: Stop paying per GB. Unlimited residential traffic, 100M+ IPs, 190+ countries. Pay by bandwidth. Request a free 50 Mbps residential proxies trial.
+
+    Resolvr: Scraping at scale means CAPTCHAs at scale. Resolvr solves reCAPTCHA and Cloudflare challenges on real devices through one API. Free beta access is available now.
+
+    hCaptcha in your Scrapling runs? NoneCap returns valid hCaptcha tokens, Enterprise sitekeys included, through one API. 1,300 free credits on signup.
+
+    $1/GB at DataImpulse. Ethical first-party proxies. 90M+ IPs, 195+ countries. Residential, datacenter, mobile. Pay-as-you-go = no subscription. Traffic never expires.
+
+Do you want to show your ad here? Click [here
+Sponsors
+
+Do you want to show your ad here? Click here and choose the tier that suits you!
+
+Key Features
+
+Spiders - A Full Crawling Framework
+- 🕷️ Scrapy-like Spider API: Define spiders with start_urls, async parse callbacks, and Request/Response objects.
+- ⚡ Concurrent Crawling: Configurable concurrency limits, per-domain throttling, and download delays.
+- 🔄 Multi-Session Support: Unified interface for HTTP requests, and stealthy headless browsers in a single spider - route requests to different sessions by ID.
+- 💾 Pause & Resume: Save pending requests and seen URLs with crawldir. Press Ctrl+C to stop gracefully and restart with the same directory.
+- 📡 Streaming Mode: Stream scraped items as they arrive via async for item in spider.stream() with real-time stats - ideal for UI, pipelines, and long-running crawls.
+- 🛡️ Blocked Request Detection: Automatic detection and retry of blocked requests with customizable logic.
+- 🚦 AutoThrottle: Stop guessing delays. The spider tunes the delay of each domain on its own from how fast the website responds, then doubles it (or waits what Retry-After asks) whenever the website starts blocking or rate-limiting you, and speeds back up once it stops.
+- 🤖 Robots.txt Compliance: Optional robots_txt_obey flag that respects Disallow, Crawl-delay, and Request-rate directives with per-domain caching.
+- 🧪 Development Mode: Cache responses to disk on the first run and replay them on subsequent runs - iterate on your parse() logic without re-hitting the target servers.
+- 🧩 Ready-made Spider Templates: Skip the boilerplate with CrawlSpider for rule-based link following, SitemapSpider for sitemap/robots.txt-driven crawls, XMLFeedSpider/CSVFeedSpider for iterating XML/RSS and CSV feeds, and ShopifySpider to collect products from public Shopify stores, one item per variant.
+- 🔗 Link Extraction: A standalone LinkExtractor primitive with allow/deny patterns, domain filters, CSS/XPath scoping, extension filtering, and canonicalization - use it inside the templates or on its own.
+- 📦 Built-in Export: Export results through hooks and your own pipeline or the built-in JSON/JSONL/CSV/XML exporters with result.items.to_json(), to_jsonl(), to_csv(), and to_xml().
+
+Advanced Websites Fetching with Session Support
+- HTTP Requests: Fast and stealthy HTTP requests with the Fetcher class. Can impersonate browsers' TLS fingerprint, headers, and use HTTP/3.
+- Dynamic Loading: Fetch dynamic websites with full browser automation through the StealthyFetcher class supporting Playwright's Chromium and Google's Chrome.
+- Anti-bot Bypass: Advanced stealth capabilities with StealthyFetcher and fingerprint spoofing. Can easily bypass all types of Cloudflare's Turnstile/Interstitial with automation.
+- Session Management: Persistent session support with FetcherSession and StealthySession classes for cookie and state management across requests.
+- Proxy Rotation: Built-in ProxyRotator with cyclic or custom rotation strategies across all session types, plus per-request proxy overrides.
+- Domain & Ad Blocking: Block requests to specific domains (and their subdomains) or enable built-in ad blocking (~3,500 known ad/tracker domains) in browser-based fetchers.
+- DNS Leak Prevention: Optional DNS-over-HTTPS support to route DNS queries through Cloudflare's DoH, preventing DNS leaks when using proxies.
+- Remote Browsers: Instead of launching a browser locally, connect to one that's already running through CDP with cdp_url, whether it's on the same machine, another host, or a managed browser provider. You can also point any browser fetcher at your own Chromium build with executable_path.
+
+…（内容已截断）

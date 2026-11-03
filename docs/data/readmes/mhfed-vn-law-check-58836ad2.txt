@@ -1,0 +1,130 @@
+vn-law-check
+
+Bộ luật Việt Nam cho AI coding agent. Bạn gõ "audit pháp lý site này", AI quét code rồi chỉ ra chỗ nào site đang có nguy cơ vi phạm luật Việt Nam, ở file nào, dòng nào, theo điều luật nào. Sau đó bạn bảo nó sửa luôn.
+
+Miễn phí. Chạy được trên Claude Code, Cursor, Copilot, Windsurf, Cline, Codex. Dùng cho cả website lẫn mobile app.
+
+Cái này để làm gì?
+
+Site của bạn có một trong những thứ sau thì đã thuộc phạm vi điều chỉnh của luật:
+
+- ô nhập email, số điện thoại, họ tên
+- Google Analytics, Facebook Pixel
+- đăng nhập, giỏ hàng, thanh toán
+- chatbot AI
+
+Từ 01/01/2026, Luật Bảo vệ dữ liệu cá nhân 91/2025 yêu cầu báo rõ thu dữ liệu để làm gì và xin đồng ý đúng cách. Mức phạt tối đa với tổ chức là 3 tỷ đồng. Site làm nhanh bằng AI thường thiếu trang chính sách, thiếu ô đồng ý, hoặc chèn sẵn tracking từ lúc khách chưa đồng ý. Site cũ thì hay dẫn Nghị định 13, văn bản đã hết hiệu lực.
+
+Bạn không cần đọc luật. Cài vào, bảo AI kiểm tra, nhận về danh sách việc cần sửa.
+
+Kết quả trông như thế nào?
+
+Trích từ báo cáo trên site demo, một shop cà phê giả lập:
+
+🔴 Coi việc "tiếp tục sử dụng website" là đồng ý
+- chinh-sach-bao-mat.html:12: "Bằng việc tiếp tục sử dụng website, bạn được xem là đã đồng ý..."
+- Căn cứ: Điều 9 khoản 4 điểm d Luật 91/2025/QH15: im lặng hoặc không phản hồi không được coi là đồng ý.
+- Đề xuất: bỏ câu này, xin đồng ý rõ ràng tại đúng chỗ thu thập dữ liệu.
+
+Mỗi lỗi được xếp mức: 🔴 cần xử lý ngay, 🟡 nên cải thiện, 🟢 đạt, ⚪ không áp dụng. Blog hay trang tĩnh không thu thập gì thì chỉ nhận về 1 dòng kết luận.
+
+Dùng thế nào?
+
+Bước 1: cài. Chọn theo tool bạn đang dùng.
+
+Claude Code (gõ trong Claude Code, không phải terminal):
+
+/plugin marketplace add mhfed/vn-law-check
+/plugin install vn-law-check
+
+Cursor, Windsurf, Copilot, Cline, Codex (chạy trong thư mục project):
+
+curl -fsSL https://raw.githubusercontent.com/mhfed/vn-law-check/main/install.sh | bash
+
+Cách cài khác
+
+Clone thẳng vào thư mục skills của Claude, không qua marketplace:
+
+git clone --depth=1 https://github.com/mhfed/vn-law-check ~/.claude/skills/vn-law-check
+
+Muốn cài riêng cho 1 project thì đổi ~/.claude/skills/ thành .claude/skills/ trong project đó.
+
+install.sh cài checklist vào .vn-law-check/ và không ghi đè file nào của bạn. Nếu project đã có AGENTS.md, CLAUDE.md... thì script chỉ chèn thêm một đoạn ngắn trỏ tới .vn-law-check/. Chạy lại để cập nhật cũng không bị chèn trùng.
+
+Bước 2: bảo AI kiểm tra. Mở project rồi gõ:
+
+audit pháp lý website này theo luật Việt Nam
+
+Không có source code, chỉ có địa chỉ website cũng được:
+
+audit pháp lý https://ten-mien-cua-ban.vn
+
+Bước 3: sửa. Đọc báo cáo, rồi bảo tiếp: "sửa giúp các mục 🔴".
+
+Hỏi nhanh
+
+Có thay được luật sư không? Không. Đây là bước rà soát ban đầu để biết mình đang thiếu gì. Mục 🔴 nên hỏi lại người làm luật. Xem DISCLAIMER.md.
+
+Mình không dùng AI agent thì sao? Hiện tại cần một trong các tool ở trên. Bạn vẫn có thể đọc thẳng các checklist trong references/ như một danh sách tự kiểm tra.
+
+Có tốn tiền không? Repo miễn phí. Chi phí duy nhất là lượt dùng AI trong tool bạn đang có sẵn.
+
+Theo luật nào? Các văn bản mới nhất tới 11/2026:
+- Luật Bảo vệ dữ liệu cá nhân 91/2025 + NĐ 356/2025
+- Luật Thương mại điện tử 122/2025 + NĐ 248/2026
+- Luật An ninh mạng 116/2025 + NĐ 333/2026
+- Luật Quảng cáo sửa đổi 75/2025 + NĐ 342/2025
+- Luật Trí tuệ nhân tạo 134/2025 + NĐ 142/2026
+- Luật Bảo vệ quyền lợi người tiêu dùng, Luật Giao dịch điện tử
+
+Link toàn văn ở sources/legal-references.md.
+
+Khác gì các skill compliance khác? Các bộ có sẵn gần như toàn GDPR, CCPA. Chưa có bộ nào theo luật Việt Nam, trong khi luật VN vừa thay gần hết trong 2025-2026.
+
+Góp ý: không cần biết code
+
+Mình là dev, không phải luật sư. Chỗ nào chưa đối chiếu được với toàn văn, mình ghi thẳng "CHƯA XÁC MINH". Hiện còn vài chục chỗ như vậy, phần lớn ở mức phạt (references/08-penalties-reference.md) và NĐ 356/2025.
+
+Cách góp ý nhanh nhất là mở issue. Form bằng tiếng Việt, điền mất khoảng 1 phút:
+
+- Báo sai: sai số điều, văn bản hết hiệu lực, mức phạt chưa đúng
+- Đề xuất bổ sung: luật mới, lỗi hay gặp mà checklist chưa có
+- Phân loại sai: tool xếp nhầm loại site của bạn
+
+Kèm link văn bản gốc là mình kiểm tra được ngay. Mọi góp ý được nhận đều ghi tên người góp ý trong bản cập nhật.
+
+Lỗi đầu tiên cộng đồng bắt được: điều khoản miễn trừ cho hộ kinh doanh nằm ở Điều 38 chứ không phải Điều 39. Đã sửa ở v1.3.1.
+
+Dành cho dev: cấu trúc repo, gửi PR
+
+Mỗi tool đọc file nào
+
+Cùng một nội dung, đặt ở nhiều file để mỗi tool tự đọc đúng chỗ:
+
+- AGENTS.md: chuẩn chung (Cursor, Codex, Jules, Amp, Zed...)
+- CLAUDE.md: Claude
+- SKILL.md: Claude Skill
+- .claude-plugin/marketplace.json + plugins/vn-law-check/: plugin Claude Code
+- .cursor/rules/vn-legal-compliance.mdc: Cursor
+- .windsurfrules: Windsurf
+- .github/copilot-instructions.md: GitHub Copilot
+- .clinerules: Cline
+
+Cấu trúc
+
+references/   00-triage (phân loại site trước khi audit) + 9 checklist theo lĩnh vực, có 1 checklist cho mobile app
+scripts/      scan.sh: quét source code hoặc URL, phát hiện form/tracking/giỏ hàng/đăng nhập/AI/hosting,
+              với mobile app: quyền truy cập, SDK tracking/quảng cáo, chức năng xóa tài khoản
+              fetch-site.sh: tải trang công khai của một URL để scan.sh quét
+sources/      văn bản pháp luật dẫn chiếu, ngày hiệu lực, link
+examples/     mẫu báo cáo: rút gọn (site nhỏ) và đầy đủ (bán hàng, nền tảng)
+tests/        site mẫu để kiểm tra scan.sh phân loại đúng
+tools/        sync.sh: sinh các bản copy cho từng tool từ nguồn gốc
+
+scan.sh quét thư mục code thì chỉ đọc file local. Quét theo URL thì gọi fetch-site.sh tải các trang công khai của chính site đó (tối đa 15 trang và 20 file JS cùng tên miền), không gửi dữ liệu đi đâu khác. Quét site người khác thì kết quả nhớ gửi riêng cho chủ site, đừng đem đi bêu tên.
+
+Gửi PR
+
+Chỉ sửa file nguồn gốc: AGENTS.md, SKILL.md, references/, sources/, examples/, scripts/, DISCLAIMER.md. Sau đó chạy tools/sync.sh để sinh lại các bản copy. CI báo lỗi nếu quên đồng bộ. Sửa scripts/scan.sh thì chạy tests/run.sh.
+
+MIT license cho phần code và cấu trúc repo. Văn bản pháp luật được dẫn chiếu là tài liệu công khai của Nhà nước, không thuộc phạm vi license này.

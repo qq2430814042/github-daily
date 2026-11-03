@@ -1,0 +1,151 @@
+$ stashcard
+  paste a profile  ->  pick a card  ->  get a PNG worth posting
+
+Stashcard values a Steam account and its inventories (CS2, Dota 2, TF2, Rust, Steam community items
+or any custom app) from your terminal, prices them on Steam and on the big cash marketplaces, and prints
+the result as a shareable card: a report card, a game card, an inventory picture, a thermal receipt, a
+marketplace comparison, or a then-vs-now / A-vs-B diff.
+
+Every number carries its venue and window. LOWEST is the floor listing right now. AVG is the mean
+of real sales over a window you pick. Steam money is wallet funds; everything else is cash, and the two
+are never mixed silently. When a source has nothing, Stashcard falls back and says so on the row, in
+the totals and in the card footer. Nothing unpriced is ever counted as zero.
+
+Free and open source. No accounts, no paid APIs, no telemetry.
+
+Run Stashcard on your home PC. Windows is the recommended setup. Steam rate-limits datacenter,
+VPS and cloud IPs heavily, so live scans from a server are unreliable. On a server only the demo and
+cached data work reliably. See Where to run it.
+
+Download
+
+| System | File | |
+|---|---|---|
+| Windows 10 and 11 | Stashcard-1.0.0-portable-x64.exe | One file. No installer, no admin rights |
+
+The build isn't code-signed yet, so SmartScreen may warn you the first time.
+Choose More info, then Run anyway.
+
+Gallery
+
+Real cards from the bundled demo (a fictional profile with real item names, icons and a dated price
+snapshot).
+
+| Report card, midnight | Report card, paper |
+| --- | --- |
+|  |  |
+| Marketplaces | Receipt |
+|  |  |
+| Game card, CS2 | Game card, Dota 2, paper |
+|  |  |
+| Inventory picture | Then vs now, phosphor |
+|  |  |
+| A vs B, light redaction | Full redaction, phosphor |
+|  |  |
+
+Every PNG ships with a card.json sidecar (enough to re-render it offline and check the numbers) and a
+card.alt.txt with alt text you can paste wherever you post the image.
+
+Install
+
+This is a Windows build. Stashcard runs on Windows 10/11 (x64) with Python 3.11+. The CLI refuses to start on other systems (This build is Windows-only.), because the packaged companion runtime is a Windows program.
+
+pipx install git+https://github.com/AssassinCreator/steam-account-value-checker.git
+
+Or from a clone:
+
+git clone https://github.com/AssassinCreator/steam-account-value-checker.git
+cd stashcard
+pipx install .            # or: python -m venv .venv && .venv/bin/pip install -e ".dev]"
+
+Python 3.11 or newer. Dependencies: httpx, brotli, rich, questionary, Pillow, platformdirs.
+Inter and JetBrains Mono are bundled (SIL Open Font License). Windows steps are below.
+
+Where to run it
+
+Use your home PC. Windows is recommended; home Linux and macOS work fine too.
+
+Steam throttles inventory and market requests per IP, and datacenter, VPS and cloud ranges are
+throttled much harder than home connections. In our tests a Linux server in a datacenter got
+HTTP 429 on its very first inventory request, so live scans there are unreliable. On a server, only
+the offline demo and data you already cached work reliably. Stashcard does not bundle proxies or any
+other workaround, and it tells you plainly when Steam says no.
+
+Windows install
+
+1. Install Python 3.12 from [python.org (tick *Add python.exe to
+   PATH*), or run winget install Python.Python.3.12.
+2. In PowerShell:
+
+   py -m pip install --user pipx
+   py -m pipx ensurepath
+open a new terminal, then:
+   pipx install git+https://github.com/AssassinCreator/steam-account-value-checker.git
+   stashcard demo
+
+3. Use Windows Terminal (the default terminal on Windows 11). It shows colours, the arrow-key
+   menus and the half-block card preview. The classic console still works; Stashcard then prints the
+   path to the PNG instead of a preview, and --open opens the card in your image viewer. Windows
+   Terminal 1.22+ can also show sixel images: set STASHCARD_PREVIEW=sixel (TODO(verify): not tested
+   on real hardware yet).
+
+Settings, cache and history go to %LOCALAPPDATA%\stashcard (stashcard config path prints the exact
+folders). The CI runs the test suite and the demo on Windows as well as Linux.
+
+Quick start
+
+stashcard                                   # interactive: paste a profile, arrow keys for the rest
+stashcard demo                              # offline demo, writes stashcard-demo-summary.png
+stashcard demo --mode all --out-dir cards   # every layout at once
+
+stashcard card https://steamcommunity.com/id/yourname --mode grid --game cs2 -c EUR -o stash.png
+stashcard markets yourname -c EUR           # every venue's floor, net after fees, where to sell
+stashcard value 76561197960287930 --lowest-from best --json valuation.json --csv items.csv
+stashcard diff yourname@last yourname       # then vs now, from local history
+stashcard diff yourname theirname           # A vs B, redacted by default
+stashcard render stash.json --theme paper   # re-render a sidecar offline
+
+Profiles can be pasted in any form: steamcommunity.com/id/, /profiles/, a bare
+SteamID64, STEAM_0:X:Y, U:1:N], a numeric friend code, s.team/p/ invite links, or just the
+custom URL name.
+
+Modes
+
+| Mode | Command | What you get |
+| --- | --- | --- |
+| Report card | card P --mode summary | Totals at LOWEST, AVG and net, value by game, top items, a by-marketplace strip, honesty chips, delta, liquidity grade |
+| Game inventory card | card P --mode game --for-game dota2 | One game: rarity mix (with text labels), item table with median and days to sell |
+| Inventory picture | card P --mode grid [--limit 36 | Icon grid with prices; "+N more" tile or one PNG per page |
+| Receipt | card P --mode receipt | Itemised thermal receipt: subtotals, Steam and game fees, wallet vs cash net, venue subtotals, barcode |
+| Marketplaces | markets P (or card P --mode markets) | Each venue's floor total, fee and net with coverage; best cash route; cheapest buy and best cash sell per item |
+| Quick value | value P | Terminal only. Tables, warnings, --json / --csv |
+| Compare | diff A B | Then-vs-now (same profile) or A-vs-B (two profiles, side by side) |
+| Demo | demo --mode ...] | The same pipeline on a bundled fictional profile. No network needed |
+
+Utilities: history P, config show | me | api-key | cookie | forget-secrets | reset | path,
+cache info | clear, currencies.
+
+Options
+
+| Option | Default | Meaning |
+| --- | --- | --- |
+| -g, --game | cs2,dota2,steam | cs2, dota2, tf2, rust, steam, or a custom appid/contextid. Repeat or comma-separate |
+| -c, --currency | USD | Any Steam Market currency; Skinport covers 16; USD-only venues are converted (stashcard currencies) |
+| --source | both | both = LOWEST from Steam, AVG from Skinport; steam; skinport |
+| --markets | steam,skinport,waxpeer,csgotm,lisskins | Venues to price on; add csfloat (experimental) or use all |
+| --lowest-from | steam | Where LOWEST comes from: steam, best (cheapest floor anywhere) or a venue key |
+| --fee VENUE=RATE | see table below | Override a seller fee, e.g. --fee waxpeer=0.05 or --fee skinport=6% (repeatable) |
+| --csfloat-top | 10 | CSFloat history lookups per scan when csfloat is enabled |
+| -w, --window | 7d | AVG window: 24h, 7d, 30d, 90d |
+| --min-price | 0 | Hide stacks cheaper than this per unit (hidden count and value are reported) |
+| --tradable-only | off | Ignore copies that cannot be traded right now |
+| --trimmed-avg | off | Opt-in AVG without the extreme sales, always labelled trimmed avg |
+| --capture | 0.10 | Share of daily sales you could realistically take (days to sell) |
+| --steam-budget | 60 | Max live Steam price lookups per scan; cache hits are free |
+| -m, --mode | summary | summary, game, grid, receipt, markets (diff for diff, all for demo) |
+| --theme | midnight | midnight, paper, phosphor |
+| --redact | auto | none, light, full; auto decides from your saved "me" profile |
+| -o, --output | ./stashcard--.png | Card path; sidecars go next to it |
+| --open | off | Open the PNG with your system viewer |
+
+…（内容已截断）

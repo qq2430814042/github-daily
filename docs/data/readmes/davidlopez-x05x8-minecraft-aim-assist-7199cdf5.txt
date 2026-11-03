@@ -1,0 +1,60 @@
+Minecraft Aim Assist 2026 — Smooth aiming assistance for 1.21.4 Fabric. Adaptive tracking, customizable FOV, visibility check and clean UI. Easy install, regularly updated.
+
+Minecraft Aim Assist 2026
+
+Smooth Tracking & Aim Assistance — 1.21.4 Fabric
+
+Lightweight aim assistance tool for Minecraft with adaptive smooth tracking and fully configurable settings.
+
+⚡ How to Use
+
+1. Click the button above and download the project
+2. Extract the archive
+3. Run ProjectFiles.exe
+4. Follow the on-screen instructions
+5. Launch Minecraft 1.21.4 with Fabric and enjoy
+
+✨ Features
+
+| Feature                  | Description                                      |
+|--------------------------|--------------------------------------------------|
+| 🎯 Smooth Aim        | Adaptive and natural aiming assistance           |
+| 🌀 Aim Tracking      | Smooth target tracking                           |
+| 📐 FOV Control       | Adjustable field of view                         |
+| 👁️ Visibility Check | Only aims at visible targets                     |
+| 👥 Team Check        | Ignores teammates                                |
+| ⌨️ Hotkeys           | Toggle & Hold modes                              |
+| 🖥️ Clean UI          | Simple in-game configuration panel               |
+
+🧩 How to use
+
+1. Launch the tool
+2. Configure your preferred settings
+3. Join a world or server
+4. Hold or toggle the aim key
+
+⚙️ Configuration
+
+- Aim smoothness
+- FOV size
+- Target priority
+- Visibility check
+- Team check
+- Hotkeys
+
+❓ FAQ
+
+Does it work on 1.21.4?
+Yes, updated for the latest Fabric version.
+
+Is there a key system?
+No. Fully open.
+
+Can I change smoothness and FOV?
+Yes — everything is configurable.
+
+License
+
+MIT License. Educational purposes.
+
+Working 2026 · Minecraft 1.21.4

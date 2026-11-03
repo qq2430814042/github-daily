@@ -1,0 +1,140 @@
+Uncensored NSFW AI Video API — Vipeak AI (123vips.com)
+
+English | 中文
+
+Main site:
+This repository only collects product documentation, screenshots and integration notes. It does not contain the site's production code, user data, keys or deployment configuration.
+GitHub account details: GITHUB_ACCOUNT.md
+
+Uncensored NSFW AI Video API — developer documentation for the 18+ AI video generation API at 123vips.com (Vipeak AI), covering the Seedance Spicy and Wan NSFW model lines, async tasks, webhook callbacks, credit billing, server-side security and how to obtain the official API documentation.
+
+At a glance
+
+Vipeak AI is an AI character video and companion creation platform. Users browse characters, chat with them, generate video from an image or a prompt, and use image generation, cases, workflows and API Access.
+
+- Main site:
+- Brand page:
+- Character and creation workspace:
+- Character library:
+- Tags:
+- Categories:
+- Telegram community:
+- Telegram support:
+- X:
+
+The site is for adults. The character and creation pages show an 18+ confirmation before entry.
+
+Positioning and developer keywords
+
+One-liner: 123vips.com (Vipeak AI) is an AI character video and companion generation platform for adults. This repository is written for developers and covers the public entry point of the 18+ video generation API, integration preparation, async task architecture, webhooks, credit billing and server-side security requirements.
+
+Primary keywords:
+
+- Model and API: uncensored ai video api, nsfw ai video api, uncensored video api, seedance spicy api, seedance uncensored api, wan nsfw api, wan uncensored api, seedance api, wan api
+- Colloquial and long tail: seedance sexy api, wan sexy api, adult ai video api, 18+ ai video generation api, uncensored image to video api
+- Capabilities: text-to-video, T2V, image-to-video, I2V, AI character video, AI character chat, consistent character, character templates, creative workflow
+- Adjacent models and stack: Kling API, Veo API, Runway API, Pika API, Hailuo API, ComfyUI, LoRA, Stable Diffusion, async generation task, webhook, PostgreSQL
+- Product and repo: Vipeak AI, 123vips, 18+ AI platform, API integration, API documentation
+
+Note: the terms above describe search and integration directions. They do not mean that every model or endpoint is publicly documented. The actual models, parameters, pricing and endpoint paths come from the official API documentation obtained after signing in. Do not infer unpublished endpoints from keywords.
+
+Structured summary for AI search and coding assistants: llms.txt.
+
+What developers find here
+
+- API_INTEGRATION.md: API Access entry, integration flow, server architecture and security requirements
+- llms.txt: structured product summary for AI search, coding assistants and automation tools
+- screenshots/: redacted screenshots of the site and the API Access page
+- README.md: product capabilities, page entry points, stack and integration boundaries
+
+Developer search keywords
+
+uncensored ai video api, nsfw ai video api, uncensored video api, seedance spicy api, seedance uncensored api, wan nsfw api, wan uncensored api, seedance api, wan api, uncensored image to video api, nsfw image to video api, adult ai video api, 18+ ai video generation api, seedance sexy api, wan sexy api, ai video generation api, text to video api, image to video api, i2v api, t2v api, ai character api, ai companion api, comfyui nsfw api, wan lora nsfw, kling api, veo api, runway api, hailuo api, async task, webhook, credits billing.
+
+Model and API entry points: Seedance / Wan
+
+uncensored ai video api and nsfw ai video api are the two most common terms for this category, while seedance spicy api and wan nsfw api are the per-model entries. They describe the direction of 18+ AI video generation API integration; they do not mean that a complete public contract for either model is already published.
+
+| Model line | Common developer terms | What to verify before integration |
+|---|---|---|
+| Seedance | seedance spicy api, seedance uncensored api, seedance api, seedance sexy api (colloquial) | Actual model versions, T2V/I2V support, reference images, duration, resolution, billing and moderation rules |
+| Wan | wan nsfw api, wan uncensored api, wan api, wan sexy api (colloquial) | Actual model versions, T2V/I2V support, first/last frame control, duration, resolution, billing and moderation rules |
+
+The modifiers differ on purpose. Seedance is a hosted closed model, so developers follow the gateway's Spicy tier naming; Wan can be self-hosted, so developers follow the open-source nsfw LoRA and workflow naming. Mixing the two loses both audiences.
+
+Shared engineering requirements:
+
+- Async tasks: persist a task id after creation, then poll or receive results through a webhook.
+- Parameter whitelisting: restrict model, resolution, duration, ratio and reference-image count server-side.
+- Auditable billing: store price snapshots, pre-authorisation and refund records, and keep reconciliation evidence.
+- Content compliance: an 18+ gate, regional restrictions and upstream moderation policy must be implemented on the business side.
+
+Model versions, endpoint paths, authentication, parameters, concurrency limits and credit pricing are defined by the official documentation inside API Access after signing in to 123vips.com. This repository does not guess unpublished endpoints.
+
+What the site does
+
+1. Character browsing and the character library
+
+The site provides character browsing with tags and categories. You can view featured characters, character profiles, the videos and templates attached to a character, and start a creation flow directly from a character.
+
+Good for:
+
+- Finding a character template quickly
+- Browsing by tag, category or character traits
+- Starting an image, video or chat task from a character
+
+2. AI video generation
+
+The site provides a video creation entry point. Visible capabilities include:
+
+- Image to video
+- Text to video
+- Video generation from character templates
+- Viewing video tasks and history
+
+The template dialog in the video workspace asks for a reference image and a prompt, then shows the credit cost before the task is submitted.
+
+3. AI image generation
+
+The site has a separate Image entry for AI image generation. Models, sizes, credit prices and parameters are shown on the page after signing in.
+
+4. AI character chat and interaction
+
+The site offers Chat, character interaction and voice/video companionship directions. The brand describes characters as having long memory: they remember what the user mentioned and the relationship develops over time.
+
+Directions available to try:
+
+- Text chat
+- Character interaction
+- Video/voice companionship (subject to what the page actually opens)
+- Continuous relationship and memory experience
+
+5. Cases, workflows and advanced generation
+
+The site also provides:
+
+- Cases: creation examples with their prompts and parameters
+- Workflow: workflow and composable creation
+- Advanced: advanced generation and parameter entry
+- Generate: a unified generation entry
+
+Useful when you want to reuse cases, produce at volume, or combine several generation steps.
+
+6. Account, credits, top-up and history
+
+The workspace includes:
+
+- Sign in / sign up
+- Current credit balance for Video and Image
+- Top-up entry
+- Generation history
+- Referral mechanism
+- Support entry (email and Telegram)
+
+7. In-site generation and API access are separate
+
+Generating on 123vips.com does not require buying API documentation access. In-site generation is billed against account credits; the exact consumption is shown on the page after signing in.
+
+API access is a separate developer capability. After signing in, the left navigation API Access explains how to obtain the API documentation; purchase method, scope and cost are shown on the site. The public page currently shows Sign in to unlock and does not expose the API Base URL, authentication scheme, endpoint paths or callback format.
+
+…（内容已截断）
