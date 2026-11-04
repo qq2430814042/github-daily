@@ -178,6 +178,7 @@ Community components and walkthroughs
 Documentation
 
 - CLI reference and process commands
+- How-to guides for applying Spec Kit to your project work
 - SDD philosophy, full methodology, and evolving existing specs
 - Project history
 - How Spec Kit uses Spec Kit
@@ -188,7 +189,5 @@ In the news
 - Open Source Friday with Spec Kit (May 8, 2026) — An introduction and SDD demonstration with Manfred Riem.
 
 Star history
-
-    Thanks to everyone who helps Spec Kit shine.
 
 …（内容已截断）

@@ -1,0 +1,145 @@
+Layered like a folder, outlined outside the fill, coloured from a single accent,
+  and moving the way the object itself would when you hover, or exported as static SVG.
+
+  Live gallery ·
+  Install ·
+  Rules ·
+  Skill
+
+  简体中文 |
+  English
+
+What it is
+
+Kubai Icons is a skill for Claude. Give it a feature list or a product's code, and it draws icons that sit next to the 66 in this repository as if the same designer had made them, either with hover motion or as static SVG files. The repository ships everything that makes that repeatable, so the model only has to decide what the icon is and draw its shapes:
+
+| Part | What it does for the model |
+| --- | --- |
+| PROMPT.md | The rules, each one a hard requirement: canvas and keylines, layers, corners and outlines, light, colour, marks and motion. |
+| src/engine.js | Colour derivation, outside outlines, gradients, shadows, interpolation and palettes are already built. New icons reuse them instead of reinventing them. |
+| src/icons.js | 66 worked examples. Each new icon starts from the closest one in structure. |
+| scripts/check.mjs | A headless self-check: rest, hover, every moment in between, 24px, 28px and every palette. The model looks at the screenshots and fixes the icon until the checklist passes. |
+
+Drawn by the skill
+
+These six icons were drawn by a fresh Claude session that had nothing but SKILL.md and PROMPT.md: an alarm clock, a notebook, a QR scanner, an exit door, a calculator and a compass. Each round of these blind tests closes the gaps it finds in the rules, so the next set comes out closer to the rest.
+
+Install
+
+Let Claude install it
+
+Copy this into Claude Code and send it:
+
+Install the Kubai Icons skill for me:
+clone https://github.com/kubai087/kubai-icons into ~/.claude/skills/kubai-icons
+(if it's already there, pull the latest version instead),
+make sure ~/.claude/skills/kubai-icons/SKILL.md exists, and tell me when it's ready.
+
+Then restart Claude Code, and the skill is ready to use.
+
+Or install it yourself
+
+Download kubai-icons-v*.zip from the latest release and unzip it into your skills folder:
+
+unzip kubai-icons-v1.0.0.zip -d ~/.claude/skills/
+
+Or clone the repository there:
+
+git clone https://github.com/kubai087/kubai-icons.git ~/.claude/skills/kubai-icons
+
+Either way, Claude Code picks the skill up the next time it starts.
+
+Publishing to a skill marketplace that asks for a version and display names in SKILL.md? Upload kubai-icons-v*-platform.zip from the same release; it carries those fields at the top of the frontmatter.
+
+Use Claude Opus 5.5
+
+The skill asks for careful geometry, layering across animation frames, and several rounds of looking at its own screenshots. It was developed and blind-tested with Claude Opus 5.5, which gives the most consistent results. Choose it in your client's model picker, or start Claude Code with:
+
+claude --model claude-opus-5-5
+
+Ask for icons
+
+Describe what you need in plain words. The skill triggers on requests about icons, so you don't need to name it.
+
+- "Read this repository and draw dynamic icons for its main features."
+- "Add a scissors icon and a map icon to this set."
+- "We need an icon for Export that matches the others."
+
+What happens next
+
+1. Claude reads PROMPT.md, then writes one line per feature: an everyday object and what it does on hover ("a folder opens", "a lock springs open").
+2. It draws each icon after the closest existing one, reusing the engine.
+3. It runs the self-check with a few existing icons beside the new ones, compares sizes, outlines, layers and colours, and repeats until every item on the checklist passes.
+4. It adds the icons to the gallery and updates the counts.
+
+To start a new set for your own product, the skill copies the engine, gallery and self-check into your project and works there.
+
+Dynamic or static
+
+Tell Claude which one you need, or it will ask.
+
+| | Dynamic (default) | Static |
+| --- | --- | --- |
+| What you get | SVG + JS that changes shape on hover, run by the engine | Self-contained .svg files, one per icon, no script or stylesheet |
+| Where it fits | Web pages and any interface that runs JavaScript | Design tools, native apps, documents, `` tags |
+| Motion | Two keyframes per part, rest and hover | None; the rest pose or the end of the hover |
+
+Ask for "static SVG files" or "icons I can drop into Figma", and the skill draws the icons the same way, then exports them. You can also export any icon in this repository yourself:
+
+node scripts/export.mjs --only 文件夹,日历 --palette 薄荷 --out icons/
+
+| Option | What it does |
+| --- | --- |
+| --palette | 彩色 (default), 蓝灰, 青瓷, 薄荷, 薰衣草, 杏色 or 黑色. |
+| --accent #hex | Paints every icon in one accent colour. |
+| --state hover | Exports the end of the hover instead of the rest pose. |
+| --size 96 | Width and height in pixels. |
+| --pad 2.5 | Room around the canvas, in icon units, so the shadow isn't cut off. |
+| --out dir | Where the files go; export/ by default. |
+
+How an icon is built
+
+Every icon is a back piece, optional white content and a front piece, like a folder holding a sheet of paper. Outlines sit outside the fill, so shapes keep their full size. Every gradient, outline and shadow is derived from one accent colour, so a single value repaints the whole icon. Each part has exactly two keyframes, rest and hover, and the motion is something the object itself does: the folder opens, the envelope unseals, the calendar turns to the next day.
+
+Seven palettes come with the set: one colour per icon, five clear tones built from a single base colour (blue-grey, celadon, mint, lavender, apricot), and black. Changing palette animates the colours too.
+
+Live gallery
+
+www.kubai.design/kubai-icons shows the whole set. Hover any icon, switch palettes, or turn on the demo to watch them all move. Locally, open index.html in a browser.
+
+Self-check
+
+Needs Node.js 18 or later and Chrome. Everything runs headless; no window opens.
+
+node scripts/check.mjs --only 剪刀,地图 --with 文件夹,邮件,下载
+
+| Option | What it does |
+| --- | --- |
+| --only | Checks only these icons. Without it, the whole set. |
+| --with | Adds existing icons beside them for comparison. |
+| --accent #F59E0B | Paints every icon in one accent colour, to check marks on light accents. |
+| --scale 3 | Renders every sheet at 3×, to look for seams. |
+| --out dir | Writes the screenshots somewhere other than check-out/. |
+
+CHROME overrides the browser path. The animations in this README come from node scripts/media.mjs, which also needs ffmpeg and img2webp.
+
+Contributing
+
+There are two ways in:
+
+- Improve the skill. Report a rule that left you guessing, run a blind test with a fresh session, or fix a script. Rule changes start from an issue.
+- Add your own icon. Design an icon with the skill and open a pull request. Once merged, it joins the gallery, credited to you when someone hovers it.
+
+CONTRIBUTING.md has the rules for both. Please read the code of conduct too; security issues go through SECURITY.md.
+
+License
+
+This repository is under the Kubai Icons License. It is source-available, not open source. In short:
+
+- Your icons are yours. Icons you make with the skill belong to you, for any use including commercial, with no credit required.
+- Ship the engine with them. You may copy the engine, the gallery, the example icons and the self-check into your own icon set's project, change them, and ship that project, as long as the copyright notice at the top of each file stays.
+- Use the example icons too. The 66 icons here may go into your products, animated or exported as SVG, without credit, but not into an icon set or pack of their own.
+- Use and share the skill freely. You may run it for any work, change it for your own use, and share exact, unmodified copies for free.
+- Don't republish it as something else. Don't distribute a modified or translated version of the rules (PROMPT.md, SKILL.md), sell the skill, remove its notices, or present it under another name or as your own work.
+
+…（内容已截断）

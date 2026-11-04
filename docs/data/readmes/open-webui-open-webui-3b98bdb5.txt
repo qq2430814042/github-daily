@@ -1,0 +1,108 @@
+Open WebUI
+
+Open WebUI is a home for AI: an extensible, easy-to-use, self-hosted platform built to run entirely offline. Connect local models through Ollama or use OpenAI-compatible APIs for local and cloud models.
+
+English |
+简体中文 |
+繁體中文 |
+한국어 |
+Deutsch |
+Español |
+Français |
+Italiano |
+Dansk |
+日本語 |
+Polski |
+Русский |
+Bosanski |
+العربية |
+Norsk |
+Português (Brasil) |
+ไทย |
+Türkçe |
+Українська |
+বাংলা |
+Ελληνικά |
+Tiếng Việt
+
+Explore Open WebUI →
+
+Installation
+
+Python
+
+Requires Python 3.12.
+
+pip install open-webui
+open-webui serve
+
+Then open http://localhost:8080.
+
+Docker
+
+docker run -d -p 3000:8080 --add-host=host.docker.internal:host-gateway -v open-webui:/app/backend/data --name open-webui --restart always ghcr.io/open-webui/open-webui:main
+
+Then open http://localhost:3000.
+
+| Image tag | Includes                                                                                 |
+| --------- | ---------------------------------------------------------------------------------------- |
+| :main   | Standard image with local AI dependencies                                                |
+| :slim   | Lightweight image using external services for embeddings, document extraction, and voice |
+| :cuda   | Open WebUI with CUDA acceleration                                                        |
+| :ollama | Open WebUI bundled with Ollama                                                           |
+| :dev    | Latest development build                                                                 |
+
+Add these options to docker run before the image name as needed:
+
+| Option                                               | Purpose                                                                                  |
+| ---------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| -e OLLAMA_BASE_URL=http://your-ollama-server:11434 | Connect to Ollama on another server                                                      |
+| -e OPENAI_API_KEY=your_secret_key                  | Set your OpenAI API key                                                                  |
+| -e HF_HUB_OFFLINE=1                                | Disable Hugging Face model downloads for offline use                                     |
+| --gpus all                                         | Enable Nvidia GPU access for :cuda or :ollama; requires the Nvidia Container Toolkit |
+
+See the Docker installation guide for setup instructions and configuration options.
+
+Desktop App
+
+Download the native desktop app for macOS, Windows, and Linux.
+
+Read the docs →
+
+Ecosystem
+
+- Open Terminal / Terminals (Enterprise): The action layer that turns Open WebUI into a full agent harness, with enterprise orchestration for per-user workspaces.
+- Knowledge Base Sync (oikb): Mirror folders, repos, buckets, and wikis into Open WebUI Knowledge Bases with incremental sync.
+- Open WebUI Computer: Your computer in any browser: files, editor, terminal, git, and optional AI agents, running on your real machine.
+
+See the ecosystem documentation for details.
+
+Troubleshooting and Updates
+
+See the troubleshooting guide for connection issues and the updating guide to update your installation.
+
+Documentation
+
+See the docs for configuration and usage, and the roadmap for planned work.
+
+For Docker Compose, Kubernetes, and other setups, see the installation docs.
+
+Support
+
+Open an issue or start a discussion.
+
+Find us on Reddit, X, and Discord.
+
+Security
+
+Report vulnerabilities privately through GitHub security advisories. Security reports are accepted only through GitHub.
+
+Star History
+
+License
+
+Includes code under the Open WebUI License, which requires preserving the Open WebUI branding, and prior contributions under their original licenses. See LICENSE and LICENSE_HISTORY for terms and history.
+
+Enterprise · Careers · Sponsor
+
+Created by Timothy Jaeryang Baek.

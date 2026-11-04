@@ -70,7 +70,9 @@ Replace Qwen/Qwen3-4B-Instruct-2507 with whatever model you want to process.
 By default, Heretic performs censorship removal (refusal suppression).
 If you want to do something else, choose one of the configuration files linked
 above, or write your own. See config.default.toml
-for available configuration options.
+for available configuration options. Heretic loads the configuration from
+config.toml in the working directory by default, or from the file path in the
+HERETIC_CONFIG_FILE environment variable.
 
 Configuration files made for Heretic 1.x are not compatible with Heretic 2.x!
 See the migration guide for what you need to change
@@ -179,7 +181,5 @@ against those stored in the reproduction manifest (they may or may not be identi
 depending on how closely your system resembles the original one).
 
 Many people have uploaded models with reproducibility information to Hugging Face.
-Since a reproduction manifest is only around 9 kilobytes in size, these manifests
-form a portable library of models that can be reproduced at will.
 
 …（内容已截断）

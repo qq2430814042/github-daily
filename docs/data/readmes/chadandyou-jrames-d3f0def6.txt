@@ -1,0 +1,89 @@
+Website · App · pump.fun (soon) · CA: soon
+
+What is JRAMES
+
+$JRAMES is a memecoin on Solana (pump.fun) with a real product behind it. The contract address is not published yet.
+
+- The site tells the story as an interactive engraved graphic novel.
+- The app explains why Solana meme tokens move, and shows its work.
+
+This repository holds the site. The app and its backend are private.
+
+The site
+
+A marble statue wakes in a hall of dead coins, picks the one coin that is still alive, strikes it, and tears it out of the pill. You drive it by scrolling, then by holding.
+
+Hold and mint.
+Hold and tear.
+
+- Scroll story. GSAP and Lenis drive the scenes. Reduced motion is respected.
+- Engraving shaders. Custom GLSL hatching and engraving, rendered with Three.js and React Three Fiber on top of a CC0 mannequin and a public-domain museum scan (see public/models/LICENSES.md).
+- Generative score. An orchestral score built live with the Web Audio API, so it follows the scene instead of looping a recording.
+
+The app
+
+app.jrames.fun explains why Solana meme tokens move. For every move it lists the dated evidence (smart-money and KOL buys, launchpad migrations, posts on X), turns it into hypotheses with a confidence and a base rate, and never gives a verdict.
+
+It also has a live radar of new launchpad tokens, smart-money and KOL feeds, and an X tracker.
+
+Sign-in, in the order you probably want it:
+
+1. Phantom, with Sign-In With Solana. Signing a message costs nothing and moves no funds.
+2. A code in your X bio. No password, no email.
+3. A guest username.
+
+Architecture
+
+Public facts only. Simplified: arrows show the main direction of a request, not every connection.
+
+flowchart LR
+  user(Browser]) --> cf[Cloudflare]
+  cf --> nginx[nginx]
+  nginx --> site["Site
+React 19 · R3F"]
+  nginx --> app["App
+React"]
+  app --> gw["API gateway
+Go"]
+  gw --> auth["Auth
+Fastify · TypeScript
+EdDSA JWT"]
+  gw --> pg[(PostgreSQL)]
+  gw --> rd[(Redis)]
+  ingest["Ingest
+Go"] --> pg
+  ingest --> rd
+  scoring["Scoring
+Go"] --> pg
+  scoring --> rd
+  social["Social
+Python"] --> pg
+  social --> rd
+  auth --> pg
+
+Services run in Docker. The backend is private and is not part of this repository.
+
+Run the site locally
+
+Needs Node 22.12 or newer.
+
+npm install        # or: npm ci
+npm run dev        # http://localhost:5173
+
+npm test           # Vitest, jsdom
+npm run typecheck  # tsc -b
+npm run lint       # Biome
+npm run build      # tsc -b && vite build, output in dist/
+npm run e2e        # Playwright (starts the dev server itself)
+
+Layout: src/features/ holds the scenes, audio and UI, src/lib/ shared helpers, src/styles/tokens.css the design tokens, logo/ brand assets and their sources, public/models/ the 3D models.
+
+The palette is ink #161514, paper #f2efe8, red #c4312a and green #4fe08e. Type is Cinzel Decorative for display, Archivo Black for UI and Jost for captions.
+
+Tech
+
+Backend, private: Go, Python, PostgreSQL, Redis, Fastify, Docker, nginx, Cloudflare.
+
+$JRAMES is a memecoin with no intrinsic value or expectation of financial return. Nothing here is financial advice.
+
+© chadandyou. All rights reserved. See [LICENSE.

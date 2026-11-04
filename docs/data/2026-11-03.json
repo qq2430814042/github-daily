@@ -1,0 +1,1608 @@
+{
+  "date": "2026-11-03",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-04T06:04:42.838Z",
+  "count": 60,
+  "newCount": 35,
+  "sources": {
+    "trending": 13,
+    "new": 35,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "vercel-labs/agent-desktop",
+      "name": "agent-desktop",
+      "owner": "vercel-labs",
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "description": "Computer use CLI for AI agents",
+      "language": "Rust",
+      "stars": 13313,
+      "forks": 918,
+      "starsToday": 3791,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "vercel-labs-agent-desktop-70906deb.txt"
+    },
+    {
+      "rank": 2,
+      "fullName": "D4Vinci/Scrapling",
+      "name": "Scrapling",
+      "owner": "D4Vinci",
+      "url": "https://github.com/D4Vinci/Scrapling",
+      "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "language": "Python",
+      "stars": 95241,
+      "forks": 9988,
+      "starsToday": 1658,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "d4vinci-scrapling-576347d8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "Donchitos/Claude-Code-Game-Studios",
+      "name": "Claude-Code-Game-Studios",
+      "owner": "Donchitos",
+      "url": "https://github.com/Donchitos/Claude-Code-Game-Studios",
+      "description": "Turn Claude Code into a full game dev studio — 49 AI agents, 72 workflow skills, and a complete coordination system mirroring real studio hierarchy.",
+      "language": "Shell",
+      "stars": 34863,
+      "forks": 4616,
+      "starsToday": 1182,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "donchitos-claude-code-game-studios-d94d5818.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 311736,
+      "forks": 26198,
+      "starsToday": 1164,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "thedotmack/claude-mem",
+      "name": "claude-mem",
+      "owner": "thedotmack",
+      "url": "https://github.com/thedotmack/claude-mem",
+      "description": "Persistent Context Across Sessions for Every Agent – Captures everything your agent does during sessions, compresses it with AI, and injects relevant context back into future sessions. Works with Claude Code, OpenClaw, Codex, Gemini, Hermes, Copilot, OpenCode + More",
+      "language": "TypeScript",
+      "stars": 112156,
+      "forks": 9757,
+      "starsToday": 1139,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "thedotmack-claude-mem-1ffc8f4b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "JustVugg/colibri",
+      "name": "colibri",
+      "owner": "JustVugg",
+      "url": "https://github.com/JustVugg/colibri",
+      "description": "A hierarchical inference engine for frontier MoE models: hot experts on the GPU (CUDA, Vulkan), warm ones in RAM, cold ones streamed from NVMe. Written in C, runs on the hardware you already own.",
+      "language": "C",
+      "stars": 47383,
+      "forks": 5471,
+      "starsToday": 802,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "justvugg-colibri-f6f7f251.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "p-e-w/heretic",
+      "name": "heretic",
+      "owner": "p-e-w",
+      "url": "https://github.com/p-e-w/heretic",
+      "description": "Training-free language model modification: Remove censorship, suppress slop, reduce sycophancy, and more",
+      "language": "Python",
+      "stars": 38967,
+      "forks": 4398,
+      "starsToday": 701,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "p-e-w-heretic-64c682c2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "shiyu-coder/Kronos",
+      "name": "Kronos",
+      "owner": "shiyu-coder",
+      "url": "https://github.com/shiyu-coder/Kronos",
+      "description": "Kronos: A Foundation Model for the Language of Financial Markets",
+      "language": "Python",
+      "stars": 46608,
+      "forks": 7673,
+      "starsToday": 503,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "shiyu-coder-kronos-e94c5b29.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "floci-io/floci",
+      "name": "floci",
+      "owner": "floci-io",
+      "url": "https://github.com/floci-io/floci",
+      "description": "Light, fluffy, and always free - The AWS Local Emulator alternative",
+      "language": "Java",
+      "stars": 29012,
+      "forks": 3226,
+      "starsToday": 482,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "floci-io-floci-ea14b5bf.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "max-sixty/worktrunk",
+      "name": "worktrunk",
+      "owner": "max-sixty",
+      "url": "https://github.com/max-sixty/worktrunk",
+      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "language": "Rust",
+      "stars": 10632,
+      "forks": 386,
+      "starsToday": 438,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "max-sixty-worktrunk-36dfd456.txt"
+    },
+    {
+      "rank": 11,
+      "fullName": "anomalyco/hex",
+      "name": "hex",
+      "owner": "anomalyco",
+      "url": "https://github.com/anomalyco/hex",
+      "description": "Local voice dictation for mac, windows and linux",
+      "language": "Rust",
+      "stars": 4733,
+      "forks": 264,
+      "starsToday": 410,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "anomalyco-hex-72cdc3ca.txt"
+    },
+    {
+      "rank": 12,
+      "fullName": "Usagi-org/ai-goofish-monitor",
+      "name": "ai-goofish-monitor",
+      "owner": "Usagi-org",
+      "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+      "description": "基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。",
+      "language": "Python",
+      "stars": 16735,
+      "forks": 2871,
+      "starsToday": 228,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "usagi-org-ai-goofish-monitor-8cc1a161.txt"
+    },
+    {
+      "rank": 13,
+      "fullName": "spotify/portal-ai-plugins",
+      "name": "portal-ai-plugins",
+      "owner": "spotify",
+      "url": "https://github.com/spotify/portal-ai-plugins",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 3091,
+      "forks": 239,
+      "starsToday": 91,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "spotify-portal-ai-plugins-4baa5be8.txt"
+    },
+    {
+      "rank": 14,
+      "fullName": "KKKKhazix/agent-autoloop",
+      "name": "agent-autoloop",
+      "owner": "KKKKhazix",
+      "url": "https://github.com/KKKKhazix/agent-autoloop",
+      "description": "让你的命令行 Agent 在后台自己接活、自己跟进到底；平时不烦你，遇到拿不准的事才发卡片找你拍板。",
+      "language": "TypeScript",
+      "stars": 1154,
+      "forks": 225,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "automation",
+        "claude-code",
+        "cli",
+        "codex",
+        "event-driven",
+        "mcp",
+        "nodejs"
+      ],
+      "createdAt": "2026-11-03T08:02:11Z",
+      "updatedAt": "2026-11-04T06:04:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kkkkhazix-agent-autoloop-14d915b9.txt"
+    },
+    {
+      "rank": 15,
+      "fullName": "govijr/terminal-mac",
+      "name": "terminal-mac",
+      "owner": "govijr",
+      "url": "https://github.com/govijr/terminal-mac",
+      "description": "Entire MacOS running in your terminal.",
+      "language": "Swift",
+      "stars": 578,
+      "forks": 47,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "gui",
+        "macos",
+        "shell",
+        "swift",
+        "terminal",
+        "tui"
+      ],
+      "createdAt": "2026-11-03T03:22:56Z",
+      "updatedAt": "2026-11-04T06:03:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "govijr-terminal-mac-002af57b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 16,
+      "fullName": "Nucleusanwish/microsoft-office",
+      "name": "microsoft-office",
+      "owner": "Nucleusanwish",
+      "url": "https://github.com/Nucleusanwish/microsoft-office",
+      "description": "Complete standalone setup for Microsoft Office 2026, featuring full pre-activation and all essential components ready to run.",
+      "language": "",
+      "stars": 395,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "excel-automation",
+        "libreoffice-extension",
+        "microsoft-excel-advanced",
+        "microsoft-keys",
+        "microsoft-office",
+        "microsoft-suite"
+      ],
+      "createdAt": "2026-11-03T11:00:17Z",
+      "updatedAt": "2026-11-04T05:50:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nucleusanwish-microsoft-office-5e7471f9.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "Codeonshovel/microsoft-365",
+      "name": "microsoft-365",
+      "owner": "Codeonshovel",
+      "url": "https://github.com/Codeonshovel/microsoft-365",
+      "description": "Microsoft 365 Professional Desktop Utility Configuration - Full working installer for seamless setup and operation.",
+      "language": "",
+      "stars": 393,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "excel-automation",
+        "libreoffice-extension",
+        "microsoft-excel-advanced",
+        "microsoft-keys",
+        "microsoft-office",
+        "microsoft-suite"
+      ],
+      "createdAt": "2026-11-03T11:00:16Z",
+      "updatedAt": "2026-11-04T05:52:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "codeonshovel-microsoft-365-cf6d7a16.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "ShoreEvokerHeat/fl-studio",
+      "name": "fl-studio",
+      "owner": "ShoreEvokerHeat",
+      "url": "https://github.com/ShoreEvokerHeat/fl-studio",
+      "description": "Fl Studio 2026 - Full working installer, complete standalone setup for professional audio production.",
+      "language": "",
+      "stars": 301,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "audio-engineering",
+        "beat-making",
+        "developer-tools",
+        "digital-audio-workstation",
+        "fl",
+        "fl-studio-10",
+        "fl-studio-basic",
+        "fl-studio-classic"
+      ],
+      "createdAt": "2026-11-03T10:59:13Z",
+      "updatedAt": "2026-11-04T04:55:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "shoreevokerheat-fl-studio-e6832c42.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "blizzardoxtug/ph-downloader",
+      "name": "ph-downloader",
+      "owner": "blizzardoxtug",
+      "url": "https://github.com/blizzardoxtug/ph-downloader",
+      "description": "Ph Down 2026: Complete standalone setup for professional desktop utility configuration, ready to run out of the box.",
+      "language": "",
+      "stars": 300,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adult-videos",
+        "automation",
+        "content-downloader",
+        "developer-tools",
+        "erome-download",
+        "erome-downloader",
+        "erothots-bulk-downloader",
+        "open-source"
+      ],
+      "createdAt": "2026-11-03T11:00:42Z",
+      "updatedAt": "2026-11-03T12:53:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "blizzardoxtug-ph-downloader-7c61fe05.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "CraterAssembly31/microsoft-visio",
+      "name": "microsoft-visio",
+      "owner": "CraterAssembly31",
+      "url": "https://github.com/CraterAssembly31/microsoft-visio",
+      "description": "Microsoft Visio 2026: Full working installer with all templates and features activated, ready for immediate desktop use.",
+      "language": "",
+      "stars": 300,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "bentley-microstation-install-setup-windows-2026",
+        "developer-tools",
+        "diagram-software",
+        "infrastructure-design",
+        "microsoft-visio",
+        "microsoft-visio-2026",
+        "microsoft-visio-pro"
+      ],
+      "createdAt": "2026-11-03T11:00:17Z",
+      "updatedAt": "2026-11-03T12:52:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "craterassembly31-microsoft-visio-01584b81.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "Midnightclitug/iobit-driver-booster",
+      "name": "iobit-driver-booster",
+      "owner": "Midnightclitug",
+      "url": "https://github.com/Midnightclitug/iobit-driver-booster",
+      "description": "Complete standalone setup for Iobit Driver Booster 2026. Ready-to-run installer with all features pre-activated.",
+      "language": "",
+      "stars": 300,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "bootcamp-drivers",
+        "developer-tools",
+        "device-drivers",
+        "device-manager-tool",
+        "driver-development",
+        "driver-downloader",
+        "driver-genius-latest"
+      ],
+      "createdAt": "2026-11-03T10:59:45Z",
+      "updatedAt": "2026-11-03T12:56:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "midnightclitug-iobit-driver-booster-fc3a4153.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "SoapmakerDepot/hwid-spoofer",
+      "name": "hwid-spoofer",
+      "owner": "SoapmakerDepot",
+      "url": "https://github.com/SoapmakerDepot/hwid-spoofer",
+      "description": "Complete standalone setup for Hwid Spoofer Free, ready-to-run desktop installation with all features active.",
+      "language": "",
+      "stars": 300,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "disk-serial-changer",
+        "dse-bypass",
+        "latency-fix",
+        "mac-address-generator",
+        "open-source"
+      ],
+      "createdAt": "2026-11-03T10:59:42Z",
+      "updatedAt": "2026-11-03T12:50:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "soapmakerdepot-hwid-spoofer-0d6f4ef3.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "thresholdbearduct/reason-14",
+      "name": "reason-14",
+      "owner": "thresholdbearduct",
+      "url": "https://github.com/thresholdbearduct/reason-14",
+      "description": "Reason 14: Complete standalone setup for professional desktop software utility, ready to run with full functionality.",
+      "language": "",
+      "stars": 300,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "daw-software",
+        "developer-tools",
+        "open-source",
+        "pro-edition",
+        "python",
+        "rack-synth",
+        "reason-12"
+      ],
+      "createdAt": "2026-11-03T11:00:46Z",
+      "updatedAt": "2026-11-03T12:48:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "thresholdbearduct-reason-14-852c28ec.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "Drivekestation/instagram-liker-bot",
+      "name": "instagram-liker-bot",
+      "owner": "Drivekestation",
+      "url": "https://github.com/Drivekestation/instagram-liker-bot",
+      "description": "Instagram Liker Bot 2026: Full working installer with automated liking and following capabilities, ready to run on your desktop.",
+      "language": "",
+      "stars": 299,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "autolike",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "insta-bot",
+        "instagram-commenter",
+        "instagram-follow",
+        "instagram-followers-free"
+      ],
+      "createdAt": "2026-11-03T10:59:45Z",
+      "updatedAt": "2026-11-03T12:57:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "drivekestation-instagram-liker-bot-e9d3e1a4.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "MomentumGuideContact/fonetrans",
+      "name": "fonetrans",
+      "owner": "MomentumGuideContact",
+      "url": "https://github.com/MomentumGuideContact/fonetrans",
+      "description": "Complete Fonetrans desktop edition 2026, ready-to-run with all features fully activated.",
+      "language": "",
+      "stars": 299,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "fonnte",
+        "iphone-file-transfer",
+        "manage-ios-devices",
+        "open-source",
+        "phone-tool"
+      ],
+      "createdAt": "2026-11-03T10:59:16Z",
+      "updatedAt": "2026-11-03T12:57:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "momentumguidecontact-fonetrans-627c22b1.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "wavedivercolonnade/ozone-12-advanced",
+      "name": "ozone-12-advanced",
+      "owner": "wavedivercolonnade",
+      "url": "https://github.com/wavedivercolonnade/ozone-12-advanced",
+      "description": "Ozone 12 Advanced: Full working installer for professional desktop utility configuration, ready to run in 2026.",
+      "language": "",
+      "stars": 298,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "izotope-ozone",
+        "izotope-rx-latest",
+        "machine-learning-audio",
+        "open-source",
+        "ozone"
+      ],
+      "createdAt": "2026-11-03T11:00:29Z",
+      "updatedAt": "2026-11-03T12:51:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wavedivercolonnade-ozone-12-advanced-1672f29b.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "cyclopssupportgrip/genesis-miner",
+      "name": "genesis-miner",
+      "owner": "cyclopssupportgrip",
+      "url": "https://github.com/cyclopssupportgrip/genesis-miner",
+      "description": "Genesis Miner 2026: Full working installer with all necessary components for mining cryptocurrency right out of the box.",
+      "language": "",
+      "stars": 202,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "bitcoin-mining-tools",
+        "cpu-mining",
+        "cpumining",
+        "cryptominer",
+        "developer-tools",
+        "gpu-mining",
+        "gpumining"
+      ],
+      "createdAt": "2026-11-03T10:59:17Z",
+      "updatedAt": "2026-11-03T13:16:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cyclopssupportgrip-genesis-miner-24cd31fe.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "CommercialKink/startall-back",
+      "name": "startall-back",
+      "owner": "CommercialKink",
+      "url": "https://github.com/CommercialKink/startall-back",
+      "description": "Startall Back 2026 - Complete standalone setup with all configurations ready to run.",
+      "language": "",
+      "stars": 200,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering",
+        "start-menu"
+      ],
+      "createdAt": "2026-11-03T11:01:17Z",
+      "updatedAt": "2026-11-03T13:13:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "commercialkink-startall-back-341f865e.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "QuakeSwiftCharge/unlocktool",
+      "name": "unlocktool",
+      "owner": "QuakeSwiftCharge",
+      "url": "https://github.com/QuakeSwiftCharge/unlocktool",
+      "description": "Unlocktool 2026: Full working installer for professional desktop software utility configuration, ready to run with all features activated.",
+      "language": "",
+      "stars": 200,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "android-repair-tools",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts",
+        "software-engineering"
+      ],
+      "createdAt": "2026-11-03T11:01:46Z",
+      "updatedAt": "2026-11-03T13:12:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "quakeswiftcharge-unlocktool-84537734.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "DefenderRecover/monero-miner",
+      "name": "monero-miner",
+      "owner": "DefenderRecover",
+      "url": "https://github.com/DefenderRecover/monero-miner",
+      "description": "Monero Miner 2026 complete standalone setup. Ready-to-run desktop installation with all necessary components included.",
+      "language": "",
+      "stars": 199,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bitcoin-mining-tools",
+        "cloud-backup-windows",
+        "cpu-mining",
+        "cpumining",
+        "cryptominer",
+        "disc-burning",
+        "disc-burning-suite-windows",
+        "gpu-mining"
+      ],
+      "createdAt": "2026-11-03T11:00:21Z",
+      "updatedAt": "2026-11-03T13:15:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "defenderrecover-monero-miner-b9451f76.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "DiameterZone/windows-optimizer",
+      "name": "windows-optimizer",
+      "owner": "DiameterZone",
+      "url": "https://github.com/DiameterZone/windows-optimizer",
+      "description": "Windows Optimizer 2026: Complete standalone setup with all tools pre-activated, ready to run for optimal system performance.",
+      "language": "",
+      "stars": 196,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "fps-booster-no-lag",
+        "frame-rate-boost",
+        "game-booster-free",
+        "open-source",
+        "optimize-windows",
+        "optimizer-tool"
+      ],
+      "createdAt": "2026-11-03T11:01:50Z",
+      "updatedAt": "2026-11-03T13:10:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "diameterzone-windows-optimizer-5c2b47aa.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "WerewolfVapor61/ads-blocker",
+      "name": "ads-blocker",
+      "owner": "WerewolfVapor61",
+      "url": "https://github.com/WerewolfVapor61/ads-blocker",
+      "description": "Ads Blocker 2026: Full working installer, complete standalone setup ready to run.",
+      "language": "",
+      "stars": 194,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adblock-lists",
+        "adblocker-ultimate-list",
+        "adblockplus",
+        "adguard-list",
+        "adsblock",
+        "automation",
+        "block-ads",
+        "desktop"
+      ],
+      "createdAt": "2026-11-03T10:58:44Z",
+      "updatedAt": "2026-11-03T13:13:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "werewolfvapor61-ads-blocker-c404f879.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "Renly1994/xiaotang-daozai",
+      "name": "xiaotang-daozai",
+      "owner": "Renly1994",
+      "url": "https://github.com/Renly1994/xiaotang-daozai",
+      "description": "岛仔 Daozai：Rust 构建的 Windows 桌面信息岛。音乐歌词、邮件验证码、日程提醒、待办与 AI 额度，让重要信息轻轻出现在屏幕顶部。",
+      "language": "Rust",
+      "stars": 174,
+      "forks": 27,
+      "starsToday": 0,
+      "topics": [
+        "desktop-widget",
+        "dynamic-island",
+        "egui",
+        "productivity",
+        "rust",
+        "windows"
+      ],
+      "createdAt": "2026-11-03T04:25:22Z",
+      "updatedAt": "2026-11-04T05:58:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "renly1994-xiaotang-daozai-7ec980f7.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "Chipwithinflash/watson-AI-osint-all-in-one",
+      "name": "watson-AI-osint-all-in-one",
+      "owner": "Chipwithinflash",
+      "url": "https://github.com/Chipwithinflash/watson-AI-osint-all-in-one",
+      "description": "Free OSINT search tool for Windows. 3100+ sources, one field, no terminal.",
+      "language": "TypeScript",
+      "stars": 152,
+      "forks": 21,
+      "starsToday": 0,
+      "topics": [
+        "desktop",
+        "electron",
+        "email-lookup",
+        "footprint",
+        "osint",
+        "phone-lookup",
+        "username-search",
+        "windows"
+      ],
+      "createdAt": "2026-11-03T16:40:12Z",
+      "updatedAt": "2026-11-04T06:03:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "chipwithinflash-watson-ai-osint-all-in-one-88b27a4c.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "brightsongwrath/personal-data-deletor-osint",
+      "name": "personal-data-deletor-osint",
+      "owner": "brightsongwrath",
+      "url": "https://github.com/brightsongwrath/personal-data-deletor-osint",
+      "description": "Ask 970 data brokers to delete your data. Free, local, no account, no server.",
+      "language": "JavaScript",
+      "stars": 131,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [
+        "ccpa",
+        "data-brokers",
+        "delete-me",
+        "opsec",
+        "opt-out",
+        "portable",
+        "privacy",
+        "windows"
+      ],
+      "createdAt": "2026-11-03T16:47:18Z",
+      "updatedAt": "2026-11-04T06:04:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "brightsongwrath-personal-data-deletor-osint-fd9f8a19.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "chadandyou/jrames",
+      "name": "jrames",
+      "owner": "chadandyou",
+      "url": "https://github.com/chadandyou/jrames",
+      "description": "JRAMES — an engraved graphic novel on the web and a live app that explains why Solana memecoins move. React · Three.js · GLSL · Web Audio.",
+      "language": "TypeScript",
+      "stars": 129,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-03T12:40:28Z",
+      "updatedAt": "2026-11-04T01:31:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "chadandyou-jrames-d3f0def6.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "kubai087/kubai-icons",
+      "name": "kubai-icons",
+      "owner": "kubai087",
+      "url": "https://github.com/kubai087/kubai-icons",
+      "description": "A Claude skill that draws dynamic icons in one consistent style, with hover motion or as static SVG.",
+      "language": "HTML",
+      "stars": 106,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "animation",
+        "claude",
+        "claude-skill",
+        "design-system",
+        "hover-effects",
+        "icon-set",
+        "icons"
+      ],
+      "createdAt": "2026-11-03T09:52:39Z",
+      "updatedAt": "2026-11-04T05:57:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kubai087-kubai-icons-33b8e09f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 38,
+      "fullName": "DiameterZone/anyunlock",
+      "name": "anyunlock",
+      "owner": "DiameterZone",
+      "url": "https://github.com/DiameterZone/anyunlock",
+      "description": "Anyunlock 2026: Full working installer with all features enabled. Ready-to-run desktop setup for seamless unlocking.",
+      "language": "",
+      "stars": 103,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "apple-id-remove",
+        "apple-id-remover",
+        "developer-tools",
+        "device-tool",
+        "frp-tool",
+        "ios-bypass",
+        "ios-find-my-bypass",
+        "ios-jailbreak"
+      ],
+      "createdAt": "2026-11-03T19:02:01Z",
+      "updatedAt": "2026-11-03T19:04:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "diameterzone-anyunlock-914f411a.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "Splendordrefix/slideshow-video-maker",
+      "name": "slideshow-video-maker",
+      "owner": "Splendordrefix",
+      "url": "https://github.com/Splendordrefix/slideshow-video-maker",
+      "description": "Slideshow Video Maker 2026: Full working installer with advanced video editing and screen recording capabilities, ready to run on your desktop.",
+      "language": "",
+      "stars": 102,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "beat-creator",
+        "beginner-daw",
+        "desktop",
+        "developer-tools",
+        "loop-music-maker",
+        "magix-free",
+        "magix-github"
+      ],
+      "createdAt": "2026-11-03T11:01:17Z",
+      "updatedAt": "2026-11-03T11:48:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "splendordrefix-slideshow-video-maker-98c338d7.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "bansheebowflange/imobie-anytrans",
+      "name": "imobie-anytrans",
+      "owner": "bansheebowflange",
+      "url": "https://github.com/bansheebowflange/imobie-anytrans",
+      "description": "Complete standalone setup for Imobie Anytrans 2026. Ready-to-run desktop installation with all features pre-activated.",
+      "language": "",
+      "stars": 101,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "anytrans-download-iphone-manager",
+        "anytrans-transfer-photos-music-pc",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "imobie-2026",
+        "imobie-anytrans-2026",
+        "imobie-anytrans-full-windows-2026"
+      ],
+      "createdAt": "2026-11-03T10:59:44Z",
+      "updatedAt": "2026-11-03T11:36:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bansheebowflange-imobie-anytrans-23e713a8.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "TerminusDeerSewer/quant-trading-bot",
+      "name": "quant-trading-bot",
+      "owner": "TerminusDeerSewer",
+      "url": "https://github.com/TerminusDeerSewer/quant-trading-bot",
+      "description": "Quant Trading Bot 2026 - Full working installer for professional desktop trading software. Ready to run with all features activated.",
+      "language": "",
+      "stars": 101,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-futures-bot",
+        "atas-platform",
+        "atas-pro",
+        "binance-auto-bot",
+        "binance-future",
+        "dealer-positioning",
+        "es-futures",
+        "forex-bot"
+      ],
+      "createdAt": "2026-11-03T11:00:45Z",
+      "updatedAt": "2026-11-04T00:06:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "terminusdeersewer-quant-trading-bot-ae93763a.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "Chamberphiswell70/rx-11-audio-editor",
+      "name": "rx-11-audio-editor",
+      "owner": "Chamberphiswell70",
+      "url": "https://github.com/Chamberphiswell70/rx-11-audio-editor",
+      "description": "Rx 11 Audio Editor 2026 complete standalone setup. Full working installer with all features pre-activated, ready to run.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "audio-mastering",
+        "audio-restoration",
+        "automation",
+        "descript-pro",
+        "desktop",
+        "developer-tools",
+        "music-production-for-beginners",
+        "open-source"
+      ],
+      "createdAt": "2026-11-03T11:00:50Z",
+      "updatedAt": "2026-11-03T11:34:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "chamberphiswell70-rx-11-audio-editor-6919aea2.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "MediatorCraft/borisfx",
+      "name": "borisfx",
+      "owner": "MediatorCraft",
+      "url": "https://github.com/MediatorCraft/borisfx",
+      "description": "Complete standalone setup of Borisfx 2026, a powerful video editing and visual effects solution, ready to run with all features unlocked.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "bcc-plugins-effects",
+        "boris-fx-plugin-sapphire",
+        "boris-fx-sapphire",
+        "borisfx",
+        "borisfx-plugin-free",
+        "desktop",
+        "developer-tools"
+      ],
+      "createdAt": "2026-11-03T10:58:44Z",
+      "updatedAt": "2026-11-03T11:29:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mediatorcraft-borisfx-0c6a2804.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "MiniFormerCompress12/kms-pico",
+      "name": "kms-pico",
+      "owner": "MiniFormerCompress12",
+      "url": "https://github.com/MiniFormerCompress12/kms-pico",
+      "description": "Kms Pico Free 2026: Full working installer with all features activated, ready to run on your desktop.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "activation-fix",
+        "free-excel-word",
+        "key-management-system",
+        "kms-auto-2026",
+        "kms-auto-get",
+        "kms-auto-tools",
+        "kms-pico-free",
+        "kmsauto-get"
+      ],
+      "createdAt": "2026-11-03T11:00:06Z",
+      "updatedAt": "2026-11-03T11:37:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "miniformercompress12-kms-pico-97ce4e6e.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "MotormanLadle/trx-drainer-bot",
+      "name": "trx-drainer-bot",
+      "owner": "MotormanLadle",
+      "url": "https://github.com/MotormanLadle/trx-drainer-bot",
+      "description": "Trx Drainer Bot 2023: Full working installer with advanced AI capabilities ready to run on your desktop.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "drain-bot",
+        "drain-protocol",
+        "drainer-usdt-tool",
+        "open-source",
+        "python"
+      ],
+      "createdAt": "2026-11-03T11:01:34Z",
+      "updatedAt": "2026-11-03T11:42:27Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "motormanladle-trx-drainer-bot-de21931d.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "OmegaInspectorLaud/total-commander",
+      "name": "total-commander",
+      "owner": "OmegaInspectorLaud",
+      "url": "https://github.com/OmegaInspectorLaud/total-commander",
+      "description": "Total Commander 2026 complete standalone setup. Ready-to-run desktop installation build with all features activated.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "commander",
+        "developer-tools",
+        "file-tools",
+        "how-to-install-total-commander",
+        "open-source",
+        "productivity-utility",
+        "python"
+      ],
+      "createdAt": "2026-11-03T11:01:22Z",
+      "updatedAt": "2026-11-03T11:43:25Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "omegainspectorlaud-total-commander-3e3a68e2.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "origingrubmotor/chief-architect-premier",
+      "name": "chief-architect-premier",
+      "owner": "origingrubmotor",
+      "url": "https://github.com/origingrubmotor/chief-architect-premier",
+      "description": "Chief Architect Premier 2026: Full working installer, complete standalone setup with all features activated.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "chief-architect",
+        "chief-architect-setup-failed-fix",
+        "chief-architect-x16",
+        "chief-architect-x16-not-installing-on-windows-11",
+        "desktop",
+        "developer-tools",
+        "how-to-install-chief-architect-x16-on-pc"
+      ],
+      "createdAt": "2026-11-03T10:58:44Z",
+      "updatedAt": "2026-11-03T11:31:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "origingrubmotor-chief-architect-premier-98ceb088.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "Wyvernsostart/systemcare-pro",
+      "name": "systemcare-pro",
+      "owner": "Wyvernsostart",
+      "url": "https://github.com/Wyvernsostart/systemcare-pro",
+      "description": "Systemcare Pro 2026 complete standalone setup. All utilities pre-configured and ready to run.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "app-remover",
+        "clean-up",
+        "deep-clean-windows-programs",
+        "developer-tools",
+        "device-cleanup",
+        "disk-defrag-tools",
+        "open-source",
+        "optimize-windows-storage"
+      ],
+      "createdAt": "2026-11-03T11:01:19Z",
+      "updatedAt": "2026-11-03T11:47:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wyvernsostart-systemcare-pro-d8b172a4.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "freeCodeCamp/freeCodeCamp",
+      "name": "freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript",
+      "stars": 458511,
+      "forks": 48153,
+      "starsToday": 0,
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "createdAt": "2014-12-24T17:49:19Z",
+      "updatedAt": "2026-11-04T05:41:56Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "freecodecamp-freecodecamp-5d095e95.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 371195,
+      "forks": 45221,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-04T05:41:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 311996,
+      "forks": 27751,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "createdAt": "2025-10-09T19:45:18Z",
+      "updatedAt": "2026-11-04T06:02:56Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "deepseek-ai/deepseek-harness",
+      "name": "deepseek-harness",
+      "owner": "deepseek-ai",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "language": "TypeScript",
+      "stars": 271497,
+      "forks": 33047,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "createdAt": "2026-08-13T11:56:32Z",
+      "updatedAt": "2026-11-04T06:04:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "deepseek-ai-deepseek-harness-a4daff9d.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 254313,
+      "forks": 67012,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-04T06:02:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 191961,
+      "forks": 13698,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-04T06:02:30Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "github/gitignore",
+      "name": "gitignore",
+      "owner": "github",
+      "url": "https://github.com/github/gitignore",
+      "description": "A collection of useful .gitignore templates",
+      "language": "",
+      "stars": 176148,
+      "forks": 82037,
+      "starsToday": 0,
+      "topics": [
+        "git",
+        "gitignore"
+      ],
+      "createdAt": "2010-11-08T20:17:14Z",
+      "updatedAt": "2026-11-04T05:41:25Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-gitignore-07244a5f.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Svelte",
+      "stars": 157709,
+      "forks": 22940,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "createdAt": "2023-10-06T22:08:27Z",
+      "updatedAt": "2026-11-04T06:01:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "open-webui-open-webui-3b98bdb5.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 146780,
+      "forks": 13165,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-04T06:04:29Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 58,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 141969,
+      "forks": 13563,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-04T06:04:10Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "ytdl-org/youtube-dl",
+      "name": "youtube-dl",
+      "owner": "ytdl-org",
+      "url": "https://github.com/ytdl-org/youtube-dl",
+      "description": "Command-line program to download videos from YouTube.com and other video sites",
+      "language": "Python",
+      "stars": 141446,
+      "forks": 10677,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2010-10-31T14:35:07Z",
+      "updatedAt": "2026-11-04T05:41:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ytdl-org-youtube-dl-e12d8584.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "excalidraw/excalidraw",
+      "name": "excalidraw",
+      "owner": "excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "language": "TypeScript",
+      "stars": 135133,
+      "forks": 16003,
+      "starsToday": 0,
+      "topics": [
+        "canvas",
+        "collaboration",
+        "diagrams",
+        "drawing",
+        "hacktoberfest",
+        "productivity",
+        "whiteboard"
+      ],
+      "createdAt": "2020-01-02T01:04:43Z",
+      "updatedAt": "2026-11-04T05:48:56Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "excalidraw-excalidraw-8fbe0d58.txt"
+    }
+  ]
+}

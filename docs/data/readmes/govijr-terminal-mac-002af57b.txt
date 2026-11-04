@@ -1,0 +1,102 @@
+terminal-mac
+
+A separate macOS desktop for computer-use agents, viewed and controlled from a terminal.
+
+iOS simulators and iPhones: see the sibling project terminal-phone.
+
+terminal-mac is an early release candidate for Apple silicon. Apple Virtualization runs a real macOS guest. A bundled helper inside that guest captures its screen and posts input events. A terminal viewer streams that screen using Kitty or iTerm2 graphics. Agent commands use the same helper without moving the physical Mac's pointer or changing its clipboard.
+
+The guest is a separate Mac: it has its own apps, files, accounts and permissions. It does not inherit your running host apps or signed-in sessions. The VM still consumes host CPU, memory and storage.
+
+Requirements
+
+- Apple silicon Mac, macOS 14 or later.
+- No development tools are needed for a prebuilt release. Maintainers need Xcode 16 or later / Swift 6 to build.
+- Internet on first run to download macOS directly from Apple, or an existing compatible .ipsw.
+- Space for the cached restore image and a growing VM disk (64 GiB logical size by default).
+- Ghostty, Kitty or iTerm2 for the inline viewer. Other terminals can use the native VM window and agent CLI. tmux passthrough and automatic terminal splits are not implemented.
+
+Install and run
+
+curl -fsSL https://github.com/govijr/terminal-mac/releases/latest/download/get.sh | bash
+
+The installer downloads the latest release and verifies its SHA-256 before installing. You can also extract a release ZIP and run bash install.sh from it.
+
+The installer places one launcher in /.local/bin and the bundled runtime under /.local/lib/terminal-mac. Add ~/.local/bin to your PATH to use simply terminal-mac. It needs no administrator rights and does not edit your shell configuration. bash install.sh --prefix /absolute/path selects another location.
+
+Running terminal-mac in an interactive terminal starts the guided flow. terminal-mac up does the same explicitly. It automatically downloads/caches a compatible Apple restore image, installs a virtual Mac, boots it and checks the guest helper. Later runs reuse the existing VM and reconnect. Unsupported terminals get the native desktop window.
+
+Current status: early release candidate. Releases are self-signed (no Apple notarization), which the curl installer doesn't need. Live guest acceptance on a clean Mac is still pending.
+
+Use with agents
+
+terminal-mac gives agents computer use in a separate virtual Mac, through MCP tools (screenshot, click, drag, scroll, type, key, status) and a skill that teaches the observe → act → verify loop.
+
+Claude Code, with the MCP server and skill in one plugin:
+
+/plugin install terminal-mac --marketplace govijr/terminal-mac
+
+Or add them separately:
+
+claude mcp add terminal-mac -- terminal-mac mcp
+terminal-mac skills install                 # → ~/.claude/skills/terminal-mac/SKILL.md
+
+Other MCP clients (Cursor, VS Code, Codex, Windsurf…): paste the output of terminal-mac mcp --config into the client's MCP settings. Use terminal-mac mcp NAME for a VM other than default.
+
+Any agent with a skills folder: terminal-mac skills install --dir PATH, or npx skills add govijr/terminal-mac --skill terminal-mac. In an AGENTS.md, a line like "Before using the virtual Mac, run terminal-mac skills get" gives the agent instructions that match the installed version.
+
+The tools only drive the guest helper. They never touch your own desktop. When the guest is at its login screen, they say so, so the agent can ask you to sign in.
+
+One-time guest setup
+
+The first run opens the virtual Mac's window. Complete macOS setup and create its user account. Inside the guest, open Finder → /Volumes/My Shared Files/tools → TerminalMacGuest.app once. The helper installs itself in the guest's ~/Applications, launches that installed copy and registers for future guest logins, subject to macOS approval.
+
+Use its two buttons to grant Screen Recording and Accessibility inside the guest. Reopen it if macOS asks. If needed, its Guest Login Items button opens the startup setting. The host needs neither privacy permission. Once both guest permissions are ready, the CLI automatically continues to the terminal desktop.
+
+This is guided setup, not an unattended guest installation. Apple documents automatic account provisioning for macOS 27 guests; this build targets the APIs available in the installed macOS 26 SDK and does not implement that newer flow. See Apple's provisioning documentation.
+
+terminal-mac up work                  # another virtual Mac
+terminal-mac up --ipsw /path/mac.ipsw  # use a local image
+terminal-mac up --no-view             # wait for agent readiness, then return JSON
+terminal-mac up --detach              # install/boot, return without waiting for guest setup
+terminal-mac up --plan                # show steps without network access or disk changes
+
+The first download may take time; packaging cannot eliminate downloading and installing macOS. The image cache is reused, and URLSession resume data is retained after recoverable network failures. A hard process kill may require the current download to restart. An incomplete installation with recorded hardware can be retried by up using a compatible restore image; an already installed VM is never reinstalled by up.
+
+Build from source
+
+bash scripts/build.sh
+./dist/terminal-mac doctor
+
+The build creates dist/TerminalMac.app, including TerminalMacGuest.app, and the dist/terminal-mac launcher. Virtualization needs the host executable's com.apple.security.virtualization entitlement; use the packaged launcher instead of the unsigned Swift build product.
+
+It is signed with the self-signed "Govijr Code Signing" identity when your keychain has it (bash scripts/create-signing-identity.sh makes one), and ad-hoc otherwise. A stable identity keeps the guest helper's permissions across rebuilds; ad-hoc builds need them granted again. RELEASING.md covers signing and publishing.
+
+Create your first Mac
+
+Show the URL and version without downloading anything:
+./dist/terminal-mac image
+
+Explicitly download Apple's latest supported restore image (several GB):
+./dist/terminal-mac image --output /tmp/RestoreImage.ipsw
+
+Install macOS. The disk is sparse, and the IPSW is not copied into the VM bundle.
+./dist/terminal-mac create default --ipsw /tmp/RestoreImage.ipsw
+./dist/terminal-mac start default --window
+
+Complete macOS Setup Assistant in the VM window and create a guest account. Inside the guest:
+
+1. Open Finder → /Volumes/My Shared Files/tools.
+2. Open TerminalMacGuest.app. It installs itself to the guest's ~/Applications and opens the installed copy.
+3. Use the helper's buttons to grant Screen Recording and Accessibility in the guest's System Settings. Reopen the helper if macOS asks. The host does not need either permission.
+4. Keep the guest logged in and the helper running. It registers itself for guest login; approve that setting if macOS requests it.
+
+On the host:
+
+./dist/terminal-mac action default status
+./dist/terminal-mac hide default
+./dist/terminal-mac view default
+
+The viewer supports typing, left/right clicks, double and triple clicks, dragging, scrolling, arrows and common control keys. Ctrl+G opens a palette of Mac shortcuts (Spotlight, Mission Control, copy/paste, close/quit and more), because terminals keep ⌘ for themselves. Ctrl+] exits the viewer while the VM keeps running. Closing the native VM window hides it and also leaves the VM running.
+
+…（内容已截断）

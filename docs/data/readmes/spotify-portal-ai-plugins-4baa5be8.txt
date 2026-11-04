@@ -1,0 +1,79 @@
+Spotify Portal AI Plugins
+
+Bring Spotify Portal into Claude Code, Codex, Cursor, and pi.
+
+This plugin provides focused workflows for the
+Portal CLI: set up
+authentication, search your software catalog, build service briefings, run
+diagnostics, and invoke Portal actions.
+
+Highlights
+
+- Set up the Portal CLI for your current coding-agent environment.
+- Run read-only diagnostics to verify plugin, CLI, authentication, and action readiness.
+- Search the software catalog and technical documentation using natural language queries.
+- Generate concise service briefings with available ownership, health, incident, and documentation details.
+- Discover and safely invoke Portal actions with built-in help, dry-run, and confirmation safeguards.
+- Create, run, check, and troubleshoot Fleetshift shifts, open PRs from completed runs, and stop a run on request.
+
+The marketplace also ships shunt (Claude Code only for now): a plugin that routes I/O-heavy agent work — bulk file reads and boilerplate generation — to AiKA modes running cheaper worker models, via the Portal CLI actions registry. See plugins/shunt/README.md.
+
+Installation
+
+Claude Code
+
+claude plugin marketplace add spotify/portal-ai-plugins
+claude plugin install portal@portal
+claude plugin install shunt@portal   # optional: token-saving AiKA delegation
+
+Start a new session and run:
+
+/portal:setup
+
+Codex
+
+codex plugin marketplace add spotify/portal-ai-plugins
+codex
+
+Open /plugins, install Spotify Portal, start a new task, and ask:
+
+Set up Spotify Portal for me.
+
+Cursor
+
+Register the spotify/portal-ai-plugins
+repository in your Cursor team marketplace, then install Spotify Portal from
+Cursor Settings → Plugins.
+
+pi
+
+pi install git:github.com/spotify/portal-ai-plugins
+
+Start a new session and run:
+
+/skill:setup
+
+Workflows
+
+| Workflow | Purpose |
+| --- | --- |
+| setup | Configure Portal CLI authentication |
+| doctor | Run read-only readiness diagnostics |
+| search | Search the software catalog and technical documentation |
+| service | Produce a concise operational service briefing |
+| actions | Discover, inspect, preview, and safely invoke Portal actions |
+| feedback | Submit feedback about the Portal CLI to the Portal team |
+| fleetshift-create-shift | Draft and create a Fleetshift shift from a goal, with a dry-run preview |
+| fleetshift-run-shift | Trigger a shift, monitor it with a bounded wait, and stop it on request |
+| fleetshift-check-shift | Report a shift's progress, targets, and PRs (read-only) |
+| fleetshift-troubleshoot-shift | Diagnose failed shift jobs from their status and logs (read-only) |
+| fleetshift-create-prs | Open PRs for completed shift targets after confirmation |
+
+Portal CLI
+
+The workflows invoke the upstream CLI through:
+
+npx @spotify/portal-cli
+
+Setup verifies the required auth, actions, owner, search, and service
+commands before proceeding.

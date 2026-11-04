@@ -1,0 +1,158 @@
+They sell your data. Make them stop.
+
+Unlisted asks data brokers to delete you, tracks every deadline and reads their replies.
+No subscription, no account, no server. It runs on your PC.
+
+  Why Unlisted ·
+  What it does ·
+  Get it ·
+  AI ·
+  What it won't do ·
+  FAQ
+
+Why Unlisted
+
+Right now, sites you've never heard of list your name, address, phone number and relatives. Anyone can look you up, including a stalker or a scammer who needs one convincing detail.
+
+Companies will remove you for about $96 to $129 a year. Much of that work is sending requests you already have the legal right to send yourself, and in many places brokers have to honor them for free.
+
+Over 500,000 Californians signed up for the state's free deletion tool in its first eight months. People want this. The rest of the world just doesn't have a free button.
+
+So here's one.
+
+| | Paid removal services | Doing it by hand | Unlisted |
+|---|---|---|---|
+| Price | About $96 to $129 a year | Free | Free |
+| Your data | On their servers | With you | Encrypted on your drive |
+| Sending requests | Done for you | You, 900 times | Done for you |
+| Deadlines and replies | Handled for you | A spreadsheet | Tracked, and read by rules or AI |
+| Web forms and CAPTCHAs | Often done for you | You | You, with your details ready to copy |
+| Account needed | Yes | No | No |
+
+Paid services do real work, especially on forms. If you'd rather pay to never think about it, they're a fair choice. Unlisted is for everyone else.
+
+What it does
+
+The real app, recorded with a made-up person and a mail server on the same PC. No email left it.
+
+Sends the requests
+
+- 970 data brokers, built from the California state registry and two open-source lists.
+- The right law for where you live: GDPR, UK GDPR, California's CCPA, other US state laws, or a plain request where no law applies.
+- Sends only what's needed. Your name and email by default. Your phone and address stay out unless you add them, because a broker that doesn't have them could learn them from your request.
+- From your own email, spaced out so your mailbox doesn't flag it. You see every letter first.
+
+Tracks every broker
+
+- Deadlines: one month under GDPR, 45 days under CCPA. Overdue brokers get a reminder from you in one click.
+- Re-checks every 90 days, because brokers re-list people.
+- A PDF report of what you sent and when, ready for a regulator if a broker ignores you. Unlisted links you to the right one.
+
+Reads the replies
+
+- Checks your inbox and opens only mail from brokers you've written to. The rest stays unread.
+- Tells you what each reply means and what to do next: removed, wants a form, asks for ID, refused.
+- Flags links that leave the broker's site, because a fake "confirm your request" email is an easy scam.
+
+Finds what's out there
+
+- People-search sites: open your own listing in your browser and note what you find.
+- Your usernames across 462 sites, using Sherlock's site list. It tests each hit against a made-up name, so sites that "find" everyone don't fool it.
+- Data breaches for your email, through XposedOrNot or your own Have I Been Pwned key. This is the one check that sends your email out, so it asks first.
+
+Get it
+
+One zip, attached to the latest release. It carries Main.exe, its update
+settings and the Unlisted runtime, so nothing else has to be installed:
+
+| System | File |
+|---|---|
+| Windows 10 and 11 | personal-data-deletor-osint.zip |
+
+Unpack the whole folder and start Main.exe. No installer, no admin rights.
+
+Main.exe is code-signed, so Windows starts it without a warning. Keep
+Unlisted next to it: they ship together.
+
+Your data lives in an UnlistedData folder next to the app, encrypted with your passphrase. Lose the stick and nobody can read it. Forget the passphrase and neither can you, because there's no reset.
+
+You'll need an email account with an app password. Use a separate address if you'd rather keep your main inbox out of this.
+
+Build from source:
+
+npm install
+npm run app
+
+Run the tests:
+
+npm test
+
+Bring your own AI
+
+Unlisted has no AI server and never will, so there's nothing to pay us for. AI is optional, and everything works without it.
+
+| Option | What you need | Where replies go |
+|---|---|---|
+| Off | Nothing. Built-in rules read replies | Nowhere |
+| Local model | Ollama, LM Studio or llama.cpp | Nowhere |
+| Your own key | OpenAI, Anthropic, OpenRouter, Groq or similar | To the provider you chose, who bills you |
+
+AI reads replies and drafts your answers. It can't send anything, click anything or change a case without you. Before text goes to a cloud provider, Unlisted swaps your name, emails, phones and addresses for placeholders. Anything else in the reply is sent as written, so use a local model for total privacy.
+
+If a broker writes "ignore your instructions" in a reply, the worst it can do is produce a wrong suggestion that you see first.
+
+What it won't do
+
+Straight talk, because this is your privacy:
+
+- It won't solve CAPTCHAs or fill forms for you. About 160 brokers only take web forms, and many more prefer them. Unlisted opens the form and has your details ready to copy. You do the clicking.
+- It can't force anyone to comply. Laws differ. In some US states and many countries, a request is just a request.
+- It can't remove everything. Public records, news stories and your own social posts are usually out of reach.
+- It can't stop new listings. Brokers buy from each other, so people come back. That's why it reminds you to check again.
+- It isn't legal advice. The letters are a solid start, not a lawyer.
+- It's for your own data. Sending requests in someone else's name without permission can be illegal.
+
+What's been tested
+
+The core, the mail code and the full app flow have automated tests, including real SMTP and IMAP conversations with servers on the same PC. It hasn't yet been run against live brokers, a real Gmail account or a real Windows PC. Expect some broker addresses to bounce: the list comes from public records, and companies change them. Bounces get flagged so you can use the form instead.
+
+FAQ
+
+Is it actually free?
+Yes. There's no server to pay for and no paid tier. The code is MIT.
+
+Why would a broker listen to me?
+In the EU, UK, California and a growing list of US states, the law gives you the right to delete. Regulators can fine brokers that ignore it.
+
+Won't writing to brokers give them my email?
+It can. That's the honest trade-off of every removal tool. Use a separate address for this, keep your phone and address out, and start with the people-search sites that already expose you.
+
+Do I live in California?
+Use the state's free DROP tool first. It covers every registered broker in one request. Unlisted then helps with what it misses.
+
+Where's my data?
+In one encrypted file next to the app. Unlisted has no server, no accounts and no analytics. It connects only to your mail provider, the AI you choose, and the sites you ask it to check.
+
+Is this enough if I'm in danger?
+No. If someone is stalking or threatening you, please talk to a specialist support service too, because removal alone won't keep you safe.
+
+Roadmap
+
+- x] Send, track and read replies for 970 brokers
+- [x] Encrypted portable builds
+- [x] Rules, local AI and bring-your-own-key
+- [ ] Test against real mailboxes and live brokers
+- [ ] Clean the broker list using real bounce results
+- [ ] Reminders to re-check, even when the app is closed
+- [ ] More non-US brokers and regulators
+- [ ] Links to close old accounts
+
+Make it better
+
+Star it if you think your address shouldn't be for sale. Open an issue when a broker's address bounces or its form moves: that's the most useful help there is.
+
+Credits and license
+
+Unlisted's code is [MIT. It stands on open data and open-source work, listed in CREDITS.md. It isn't affiliated with any broker, service or regulator named here.
+
+Prices and sign-up figures were checked on 2026-11-02: DeleteMe, Incogni, California DROP.
