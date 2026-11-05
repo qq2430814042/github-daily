@@ -1,0 +1,235 @@
+🌅 Horizon
+
+Enjoy the News itself. Leave others to Horizon
+
+📡 Your own AI-powered news radar. Generates daily briefings in English & Chinese. | 构建你专属的 AI 新闻雷达
+
+📖 Live Demo · 📋 Configuration Guide · 💬 QQ Group · 简体中文 · 日本語
+
+Screenshots
+
+Ranked Daily Briefing
+
+Context, Summary & Discussion
+
+More Screenshots
+
+Terminal Output
+
+Feishu Notification
+
+Email Delivery
+
+WeChat Delivery
+
+Why Horizon?
+
+Good reads are scattered across feeds, forums, and timelines. Your attention isn't unlimited. Horizon collects, filters, and deduplicates them, then brings the worthwhile ones to you with context and community discussion.
+
+Your taste shapes what you read—and what you want from it. A news story calls for “why it matters”; an engineering deep dive calls for “what I can use.” Horizon's profiles give each kind of content its own scoring criteria and output, for a briefing that feels handpicked.
+
+Features
+
+- 📡 Bring Your Sources Together — Follow RSS, Hacker News, Reddit, Telegram, X, GitHub, financial news, and more.
+- 🎯 Decide What's Worth Reading — Define scoring rubrics with profiles, set individual thresholds, and merge repeated stories within each profile.
+- 🧩 Give Every Read the Right Treatment — Choose summaries, context, solutions, or takeaways with Markdown prompts and JSON block definitions.
+- 💬 Go Beyond the Headline — Add web-researched background and community discussion where they help explain the story.
+- ⚖️ Make Room for All Your Interests — Cap the briefing's length and each category's share so one busy topic doesn't crowd out the rest.
+- 📬 Read Where You Already Are — Generate English and Chinese briefings as Markdown, publish to Pages, or deliver by email and webhook.
+
+One Briefing, Different Ways to Read
+
+A profile is a reusable set of editorial rules: what belongs, what's worth keeping, and what to write. Built-in examples:
+
+| What you follow | Profile | What you get |
+|---|---|---|
+| Technology news | tech-news | Events and context, with impact and community discussion when useful |
+| Engineering deep dives | tech-blog | Background, solution, and practical takeaways |
+| AI creator material | ai-creator | A summary, with timely hooks and content angles when useful |
+
+Assign a profile to a source, or let AI choose. Want a different take? Adapt an existing profile—usually without changing Python. Make a profile your own →
+
+How It Works
+
+Editable OmniGraffle source
+
+Profiles define the treatment; runtime settings reflect your reading preferences. Each item routes to one profile. Analysis, filtering, and deduplication happen before enrichment, then the selected items become a briefing grouped by profile.
+
+Run the full pipeline through the CLI, or let an AI assistant call its stages through MCP.
+
+Agent Skill
+
+Let your AI assistant configure sources, customize Profiles, and run Horizon:
+
+npx skills add Thysrael/Horizon --skill horizon -g
+
+Setup and usage · Download Skill ZIP
+
+The command requires Node.js 22.20+. Then ask your assistant to install and configure Horizon, or follow the Quick Start below.
+
+Quick Start
+
+1. Install
+
+Option A: Local Installation
+
+git clone https://github.com/Thysrael/Horizon.git
+cd Horizon
+
+Install with uv (recommended)
+uv sync
+
+Install test/development extras when needed
+uv sync --extra dev
+
+Or with pip
+pip install -e .
+
+dev is currently defined as an optional extra in pyproject.toml, so use uv sync --extra dev for pytest and other development dependencies.
+
+If you want the optional OpenBB financial-news source, install its extra too:
+
+uv sync --extra openbb
+
+If openbb pulls packages without wheels on your machine, install the SDK manually with binaries only:
+
+uv pip install --only-binary=:all: openbb openbb-benzinga
+
+Option B: Docker
+
+git clone https://github.com/Thysrael/Horizon.git
+cd Horizon
+
+Optional: build with comma-separated extras before the first run
+docker compose build --build-arg EXTRAS=openbb horizon
+
+Full-text extraction with trafilatura is included in the base install. The twitter extra also requires a Playwright browser and system packages, which the current Dockerfile does not install.
+
+2. Configure
+
+Option A: Interactive wizard (recommended)
+
+uv run horizon-wizard
+
+The wizard asks about your interests (e.g. "LLM inference", "嵌入式", "web security") and auto-generates data/config.json. See Interactive Wizard for CLI options.
+
+Eligible ChatGPT subscribers can choose openai-chatgpt to use their plan through Sign in with ChatGPT, without an OpenAI API key.
+
+Option B: Manual configuration
+
+cp .env.example .env          # Add your API keys
+cp data/config.example.json data/config.json  # Customize your sources
+
+Minimal manual configuration:
+
+{
+  "ai": {
+    "provider": "openai",
+    "model": "gpt-4",
+    "api_key_env": "OPENAI_API_KEY"
+  },
+  "sources": {
+    "rss":
+      {
+        "name": "Simon Willison",
+        "url": "https://simonwillison.net/atom/everything/",
+        "profile": "tech-news"
+      }
+    ]
+  },
+  "processing": {
+    "profiles_dir": "profiles",
+    "default_profile": "tech-news",
+    "profile_settings": {
+      "tech-news": {
+        "threshold": 7.0,
+        "topic_dedup": true
+      }
+    }
+  }
+}
+
+An explicit source profile uses that profile directly. Omit it or set it to
+"auto" to let AI match the item against all available profiles. Set it to an
+array such as ["tech-news", "finance-news"] to restrict AI matching to those
+profiles. See
+[Processing Profiles for profile structure and behavior.
+Per-profile user preferences such as score thresholds and topic deduplication
+belong in processing.profile_settings, not in the profile files.
+
+Balanced digest (optional)
+
+Limit the final digest size and prevent one category from dominating the
+results. Categories come from source configuration such as
+sources.rss].category.
+
+{
+  "digest": {
+    "max_items": 20,
+    "category_groups": {
+      "ai": {
+        "limit": 5,
+        "categories": ["ai-news", "ai-tools", "machine-learning"]
+      },
+      "finance": {
+        "limit": 5,
+        "categories": ["finance", "business", "equities"]
+      }
+    },
+    "default_group": "other",
+    "default_group_limit": 3
+  }
+}
+
+Group limits are applied after profile filtering and before enrichment. If
+category_groups, max_items, and default_group_limit are omitted, no balanced
+digest limits apply.
+
+api_key_env must be the name of an environment variable, not the API key
+itself. Put the real secret in .env:
+
+OPENAI_API_KEY=sk-your-key
+
+For Gemini, use GOOGLE_API_KEY:
+
+{
+  "ai": {
+    "provider": "gemini",
+    "model": "gemini-2.0-flash",
+    "api_key_env": "GOOGLE_API_KEY"
+  }
+}
+
+Any string value in data/config.json can reference environment variables with ${VAR_NAME}. This is useful for values such as ai.base_url, private RSS feed URLs, webhook endpoints, or custom header templates.
+
+For the full reference, see the [Configuration Guide.
+
+3. Run
+
+A. Local installation
+
+uv run horizon OPTIONS]
+
+B. Docker
+
+docker compose run --rm horizon [OPTIONS]
+
+| Option | Default | Description |
+|--------|---------|-------------|
+| --hours N | 24 | Fetch from last N hours |
+| -d, --data-dir PATH | data | Path to the data directory |
+| -c, --config PATH | /config.json | Path to config file |
+| -l, --log-level LEVEL | WARNING | Logging level (DEBUG/INFO/WARNING/ERROR/CRITICAL) |
+
+--data-dir changes the state directory, including summaries, subscribers, and the default config location; --config changes only the config file. The generated report is saved to data/summaries/ (or /summaries/ if --data-dir is set). See [Configuration Paths for combining both flags and initializing a custom config location.
+
+4. Automate (Optional)
+
+Schedule Horizon with GitHub Actions using the daily workflow template. The template is disabled in this repository; configure it for your deployment and rename it to daily-summary.yml to enable it.
+
+Supported Sources
+
+| Source | What it fetches | Comments |
+|--------|----------------|----------|
+
+…（内容已截断）

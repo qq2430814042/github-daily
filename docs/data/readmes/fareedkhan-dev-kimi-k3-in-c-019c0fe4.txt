@@ -1,0 +1,169 @@
+kimi-k3-in-c
+
+A 2.78-trillion-parameter model. One CPU. 8 GB of RAM.
+
+Kimi K3 inference in portable C99.
+No BLAS. No framework. No GPU.
+
+2.78T
+parameters
+1.56 TB
+checkpoint on disk
+8.24 GB
+peak RSS, measured
+176 KB
+the whole engine
+0
+GPUs
+
+The same 2.78-trillion-parameter model, the same answer, on whatever machine you own.
+More memory only buys speed:
+
+the machine you have
+RAM
+time per token
+what is going on
+
+an ordinary laptop
+8 GB
+26.5 s
+the whole model streams off the disk on every step
+
+a high-end laptop
+32 GB
+24.2 s
+some of the model now sits in memory
+
+a desktop
+64 GB
+19.8 s
+more of it sits in memory
+
+a heavy workstation
+128 GB+
+5.6 s
+the model fits entirely in memory, the disk wait is gone
+
+Same short prompt at every size, and the output is byte-identical from the smallest machine to the largest; only the clock changes. One machine, 124 cores, fast NVMe drive: the first three rows still read the model from disk each step, so a slower drive is slower there, while the 128 GB+ row keeps everything in memory and no longer waits on the disk. On that same machine v1.0.0 made the math per token about 8&times; lighter, a follow-up question in a chat 3.9&times; faster, and long prompts about half as costly. (A token is roughly a short word-piece; the two runnable demos below are the original captures on a slower drive, so their clock reads a little higher.) Full data in docs/data/.
+
+  I am open to AI research roles and PhD positions. CV.
+
+The macOS, Windows and NEON ports, chat mode, the ultra preset, the faster MXFP4 kernels and a long list of parser fixes came from the people below. Who did what.
+
+$ ./bin/k3 /k3model --trunk /k3trunk --preset laptop \
+           --tok ~/k3model --prompt "The capital of France is" --gen 8 --incremental
+
+--- generated text ---
+ Paris.",
++            "The Eiffel
+8 tokens in 261.5 s, 32.69 s/token average
+PEAK RSS for the whole run: 8.24 GB
+
+Slow, and answering correctly, in 8.24 GB, from a checkpoint of 1.56 TB. This particular
+batch command deliberately asks for a raw continuation. The official Kimi K3 checkpoint
+is also chat-capable; use the XTML REPL below when you want answers and multi-turn history.
+Give the same batch request more memory and the answer does not change, only the clock:
+
+$ ./bin/k3 /k3model --trunk /k3trunk --preset server \
+           --tok ~/k3model --prompt "def fibonacci(n):" --gen 28 --incremental
+
+--- generated text ---
+    if n  prompt generation
+
+` is the directory holding the .safetensors` shards. It is required for any
+run, but --help, --version and --list-presets work without it:
+
+./bin/k3 --help
+./bin/k3 --version
+./bin/k3 --list-presets
+
+Prompt options
+
+Outside --chat, exactly one of these is required. Passing none, or more than one, is a
+usage error (exit 2).
+
+| flag | argument | |
+|---|---|---|
+| --prompt | TEXT | tokenize TEXT and run it. Requires --tok. |
+| --prompt-file | PATH | tokenize the file's bytes. Requires --tok. Preferred for anything non-ASCII: the shell re-encodes argv, whereas a file is read verbatim |
+| --ids | 1,2,3 | token ids directly. No tokenizer is loaded at all, so this works on a machine with no tokenizer files. The reproducible channel the tests use |
+
+text in
+./bin/k3 /k3model --tok /k3model --prompt "The capital of France is" ...
+
+text in, from a file. Use this for CJK, emoji, accents
+printf 'La capitale de la France est' > /tmp/p.txt
+./bin/k3 /k3model --tok /k3model --prompt-file /tmp/p.txt ...
+
+ids in, ids out, no tokenizer needed
+./bin/k3 ~/k3model --ids 1008,10484,318,15383,387 ...
+
+Memory options
+
+| flag | argument | default | |
+|---|---|---|---|
+| --preset | NAME | none | laptop · desktop · workstation · server · max. Sets both budgets below |
+| --trunk | DIR | off | the packed trunk directory from step 5. This is what enables streaming. Without it the trunk loads fully resident, around 113.5 GB |
+| --trunk-gb | X | 16 | budget for pinned layers plus the streaming ring |
+| --cache-gb | X | 64 | budget for the routed-expert LRU cache |
+| --trunk-ring | N | 2 | streaming ring slots: one layer being computed on, the rest reads in flight. Each extra slot costs one slot of RAM, and the budget still wins if it does not fit |
+| --threads | N | physical cores | OpenMP threads. On Linux the default is the physical core count rather than OpenMP's one thread per logical CPU, which is slower here on SMT parts. OMP_NUM_THREADS, if set, is respected |
+| --ultra-low-memory | none | off | stream exact embedding rows and lm_head chunks; full recompute also reuses one recurrent-state slot. Requires --trunk |
+
+The ultra preset selects --ultra-low-memory with a 2.5 GB trunk ring and a
+0.31 GB expert cache. It is a proof-of-life path for 8 GB-class machines, not an
+interactive-speed preset; model precision, Top-K routing and all 93 layers are unchanged.
+
+--preset and the two -gb flags set the same two numbers, so a preset is just a
+shorthand. Order matters if you mix them: a later flag wins, so
+--preset server --cache-gb 40 gives you the server trunk budget with a 40 GB cache.
+
+--preset without --trunk does nothing useful. Every preset assumes the trunk is
+streamed. Omit --trunk and the engine loads all 113.5 GB resident regardless of the
+budget you asked for.
+
+Generation options
+
+| flag | argument | default | |
+|---|---|---|---|
+| --gen | N | 8 | tokens to generate. Ceiling 4096; prompts may be up to 32768 tokens. --gen 0 --incremental --save-state PATH runs only the prefill and saves its exact state, to warm a prefix once and resume it many times |
+| --stop-id | N | off | stop as soon as the model emits id N; repeatable, up to 8. The released checkpoint declares two end ids that disagree (163586 in config.json, 163585 in tokenizer_config.json) and emits both, so pass both |
+| --incremental | none | off | carry the KV cache and the recurrent state between tokens instead of re-running the whole prefix |
+| --tok | DIR | none | directory holding tiktoken.model and tokenizer_config.json |
+
+Pass --incremental for any generation of length. Without it every step re-runs the
+entire prefix, which is O(T²); with it, step 0 pays for the prompt and every later step
+costs the same fixed amount. Both paths are gated on producing identical tokens, so this
+is a pure speed choice.
+
+Text chat (official Kimi K3 XTML)
+
+K3 is chat-capable. --chat uses the official XTML segments and tokenizer control tokens;
+it does not fall back to ChatML or a handwritten generic prompt. Version one is text-only:
+there are no tools, images, server, or context compaction.
+
+./bin/k3 /k3model --trunk /k3trunk --preset desktop --tok ~/k3model \
+  --chat --system "You are a helpful assistant." \
+  --history my-session.jsonl --incremental
+
+The REPL accepts ordinary text plus /help, /reset, and /exit. It prints the complete
+canonical record, including … and …. When
+--history is supplied, it writes a portable, human-readable JSONL file such as:
+
+{"role":"system","content":"You are a helpful assistant."}
+{"role":"user","content":"Explain cache locality."}
+{"role":"assistant","content":"…","reasoning_content":"…"}
+
+Treat that file as sensitive: it can contain every user message and the complete assistant
+reasoning record, which K3 requires to continue a conversation faithfully. On restart the
+engine validates, re-renders, and re-prefills the transcript; it deliberately does not
+serialize opaque KV, MLA, or KDA state. Within one session under --incremental the
+state a turn built is kept, and the next turn prefills only its new tail when the
+rendered transcript begins with exactly the ids that state was fed (the REPL prints how
+many positions were reused); /reset or any other divergence starts over. A supplied --system must exactly match an existing
+initial system record. Literal control-marker text in user messages is encoded as ordinary
+text, never as an XTML control token.
+
+Chat defaults to --gen 4096 and, like batch generation, to greedy decoding. Passing any
+
+…（内容已截断）

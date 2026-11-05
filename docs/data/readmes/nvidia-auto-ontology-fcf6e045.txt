@@ -1,0 +1,150 @@
+Auto Ontology
+
+Agents can retrieve documents and query databases, but reliability gates agentic analytics: a revenue metric answered faster is worth nothing if the number is wrong. Agents need a context layer that tells them where data lives, what it means, whether to use it, how to use it, where it came from, and what is similar. NVIDIA Auto Ontology is an open library that builds that layer from enterprise metadata, reconciles definitions across systems, and exposes it to any agent harness through MCP, CLI, and API. It complements the semantic models customers already own.
+
+It enables developers to:
+
+- Discover: generate enterprise ontologies from metadata; connect existing ontologies and semantic models; build AI-ready knowledge graphs.
+- Ground: give agents trusted business meaning for metrics, entities, and relationships; reconcile inconsistent definitions across systems.
+- Validate: check generated queries against certified definitions and lineage; return provenance with every answer.
+- Expose: serve context to any agent harness through MCP, CLI, and API.
+Learn: fold certified corrections and usage back into the ontology, so shared context improves with every question.
+
+Benchmarks
+
+To run a text-to-SQL benchmark such as BIRD, refer to the
+ontology SQL evaluation repository.
+
+Licensing & contributions. Auto Ontology is distributed under the
+Apache License 2.0. Third-party open-source components
+bundled, linked, or otherwise used by this project are listed in
+THIRD_PARTY_NOTICES.md. **This project
+is currently not accepting external contributions.**
+
+Key Features
+
+- Natural-language querying of structured data — questions are translated to
+  SQL and executed against connected databases, powered by NVIDIA NIM.
+- Semantic catalog / ontology layer over relational sources, stored in
+  Postgres alongside the catalog it describes.
+- Authentication & RBAC —using Better Auth.
+- Web UI for chat, analysis, data catalog, analytics, and settings.
+- Flexible deployment — Helm chart for Kubernetes or Docker Compose for a
+  local stack.
+
+Software Components
+
+| Component           | Technology                                                             | Role                                       | Default port |
+| ------------------- | ---------------------------------------------------------------------- | ------------------------------------------ | ------------ |
+| Frontend            | Next.js 16 (React 19, TypeScript, Tailwind CSS 4), Better Auth, Prisma | Web UI, authentication, API gateway        | 3000         |
+| Backend             | FastAPI (Python 3.12+), LangChain                                      | Chat / NL-to-SQL, catalog, datasource APIs | 3001         |
+| Ingestion worker    | FastAPI (Python 3.12+)                                                 | Ingests tabular data and writes embeddings | 3002         |
+| Postgres + pgvector | Relational Database                                                    | App metadata, the catalog and ontology, vector store | 5432 |
+| HashiCorp Vault     | Optional                                                               | Secure storage of connection credentials   | —            |
+
+NVIDIA NIM
+
+Auto Ontology uses NVIDIA NIM endpoints for inference — either the hosted
+NVIDIA API catalog (integrate.api.nvidia.com) or
+self-hosted NIMs. The defaults in .env.example are:
+
+- LLM: nvidia/nemotron-3.5-lightning-30b-a3b
+- Embeddings: nvidia/nemotron-3-embed-1b
+- Reranking: nvidia/llama-nemotron-rerank-vl-1b-v2
+
+The endpoints and models are configured via the DEFAULT_MODELS_ENDPOINT, DEFAULT_MODELS_MODEL,
+EMBED_ENDPOINT, and EMBED_MODEL environment variables and require a
+DEFAULT_MODELS_API_KEY.
+
+Model triplets
+
+Each model role is configured by a triplet of environment variables —
+_ENDPOINT (URL), _API_KEY, and _MODEL:
+
+| Prefix           | Role                                                        |
+| ---------------- | ----------------------------------------------------------- |
+| DEFAULT_MODELS | Shared default; every field below falls back to it.         |
+| REASONING      | Main chat / NL-to-SQL model.                                |
+| NON_REASONING  | Lighter model used for entity extraction.                   |
+| EMBED          | Text-embedding model (must match between ingest and query). |
+| RERANK         | Reranker used by the retrieval flow.                        |
+
+You can set a full triplet, only some of its fields, or none at all — any field
+left unset falls back to the matching DEFAULT_MODELS_. So the simplest
+setup is to fill in DEFAULT_MODELS_* and override per-triplet fields only where
+they differ (e.g. EMBED_MODEL, NON_REASONING_MODEL). *_API_KEY also falls
+back to the legacy NVIDIA_API_KEY for backward compatibility.
+
+Quickstart
+
+This runs Auto-Ontology with Docker Compose against Wide World Importers,
+Microsoft's sample sales database. You need Docker with Compose v2,
+uv, and an NVIDIA API key (nvapi-...) from
+build.nvidia.com.
+
+1. Clone the repository and create .env:
+
+   git clone https://github.com/NVIDIA/auto-ontology.git && cd auto-ontology
+   cp .env.example .env
+
+   Then set these values in .env:
+
+   DEFAULT_MODELS_API_KEY=nvapi-...
+   AUTH_SECRET=
+   APP_URL=http://localhost:3000
+   POSTGRES_PASSWORD=
+   CONNECTION_STRINGS=postgresql://postgres:@postgres:5432/wideworldimporters
+   AUTO_ONTOLOGY_ADMIN_PASSWORD=
+   PGADMIN_PASSWORD=
+
+   Compose publishes Postgres, pgAdmin, and the web app on the host, so replace
+   each default password before you start it. .env.example also sets an API
+   key per model role: replace each nvapi-your-api-key-here with your key, or
+   delete those lines so they fall back to DEFAULT_MODELS_API_KEY.
+
+2. Start Postgres and load the sample database. The seed script lives in
+   auto-ontology-eval; pass it the Postgres password you set:
+
+   docker compose up -d --wait postgres
+   git clone https://github.com/NVIDIA/auto-ontology-eval.git ../auto-ontology-eval
+   (cd ../auto-ontology-eval && uv sync && cp .env.example .env && \
+     POSTGRES_PASSWORD='' \
+     uv run python scripts/seed/seed_wwi.py --database-name wideworldimporters --drop)
+
+3. Build and start the rest of the stack:
+
+   docker compose up -d --build
+
+4. Open  and sign in with AUTO_ONTOLOGY_ADMIN_EMAIL and
+   AUTO_ONTOLOGY_ADMIN_PASSWORD from .env. Go to **Settings → Semantic
+   Compilation** and turn it on. Ingestion runs at startup; compilation starts
+   immediately and reports Semantic compilation is ready when it finishes.
+
+5. Ask a question in Chat:
+
+What was revenue for the USB food flash drive - sushi roll in Pennsylvania
+in June 2015?
+
+   The agent resolves revenue, product, and state to terms in the
+   ontology, follows their relationships to the joins it needs, and runs the
+   query. The answer comes back with its SQL and the steps that produced it,
+   so you can check the result against the source:
+
+   Answer:  Revenue for USB food flash drive - sushi roll in Pennsylvania in
+            June 2015 was $588.80, from 3 invoice lines.
+
+   SQL:     SELECT SUM(il.extendedprice) AS revenue, COUNT(*) AS invoice_lines
+            FROM sales.invoicelines il
+            JOIN sales.invoices i             ON il.invoiceid = i.invoiceid
+            JOIN warehouse.stockitems si      ON il.stockitemid = si.stockitemid
+            JOIN sales.customers c            ON i.customerid = c.customerid
+            JOIN application.cities ct        ON c.deliverycityid = ct.cityid
+            JOIN application.stateprovinces sp ON ct.stateprovinceid = sp.stateprovinceid
+            WHERE si.stockitemname = 'USB food flash drive - sushi roll'
+              AND sp.stateprovincename = 'Pennsylvania'
+              AND i.invoicedate >= '2015-06-01' AND i.invoicedate  invoice -> customer -> city -> state province
+            Validated the filter values against the data, then executed
+
+6. Ask something the data can't answer. Wide World Importers has no
+
+…（内容已截断）

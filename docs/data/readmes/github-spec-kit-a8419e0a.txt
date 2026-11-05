@@ -186,8 +186,5 @@ Documentation
 In the news
 
 - Open Source Friday: Spec Kit Part 2 (October 16, 2026) — Manfred Riem and Nicole Haugen discuss Spec Kit 1.0 and the expanded toolkit.
-- Open Source Friday with Spec Kit (May 8, 2026) — An introduction and SDD demonstration with Manfred Riem.
-
-Star history
 
 …（内容已截断）

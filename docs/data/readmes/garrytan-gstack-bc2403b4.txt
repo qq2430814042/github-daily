@@ -1,0 +1,82 @@
+gstack
+
+gstack turns Claude Code (and other coding agents) into a virtual engineering team: a CEO who rethinks the product, an eng manager who locks architecture, a designer who catches AI slop, a reviewer who finds production bugs, a QA lead who opens a real browser, a security officer who runs OWASP + STRIDE audits, and a release engineer who ships the PR. All slash commands, all Markdown, all free, MIT license.
+
+I'm Garry Tan, President & CEO of Y Combinator. This is the open source software factory I use every day, and I'm sharing it because these tools should be available to everyone. The story, the productivity numbers and how I run ten sprints at once are in Why gstack.
+
+Fork it. Improve it. Make it yours. And if you want to hate on free open source software — you're welcome to, but I'd rather you just try it first.
+
+Who this is for:
+- Founders and CEOs — especially technical ones who still want to ship
+- First-time Claude Code users — structured roles instead of a blank prompt
+- Tech leads and staff engineers — rigorous review, QA, and release automation on every PR
+
+Quick start
+
+1. Install gstack (two pastes, about 30 seconds of setup; see below).
+2. Run /office-hours and describe what you're building. It pushes back on your framing and writes a design doc the other skills read.
+3. Run /review on any branch with changes. It finds the bugs that pass CI but break in production, and fixes the obvious ones.
+4. Run /qa on your staging URL, or on an isolated local API, CLI, job or webhook. It opens a real browser, reproduces bugs and fixes them.
+
+Stop there. You'll know if this is for you. When you want the whole sprint, /autoplan reviews a plan end to end and /ship runs tests, review and the PR.
+
+Install — about 30 seconds
+
+Requirements: Claude Code, Git, Bun v1.4.2+ (the tested version; setup refuses Bun older than 1.3.3, which would let compiled tools read a project's .env), and Node.js on Windows. Recommended on macOS: the Aside browser (macOS 15+), which the browser skills, /make-pdf and /diagram drive first with your real logged-in sessions; without it, ./setup builds gstack's own bundled browser. /cso needs a native toolchain as well; setup says so and leaves it unavailable when the toolchain is absent. Timing, the /cso prerequisites and the hooks setup registers: docs/install.md.
+
+Step 1: Install on your machine
+
+Open Claude Code and paste this. Claude does the rest.
+
+Install gstack: run git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git /.claude/skills/gstack && cd /.claude/skills/gstack && ./setup then add a "gstack" section to CLAUDE.md that says to use the /browse skill from gstack for all web browsing and never use mcp\\_claude-in-chrome\\_\* tools. Claude Code lists the installed skills itself, so the section needs no skill list. Then ask the user if they also want to add gstack to the current project so teammates get it.
+
+Step 2: Team mode — auto-update for shared repos (recommended)
+
+From inside your repo, paste this. Switches you to team mode, bootstraps the repo so teammates get gstack automatically, and commits the change:
+
+(cd /.claude/skills/gstack && ./setup --team) && /.claude/skills/gstack/bin/gstack-team-init required && git add .claude/ CLAUDE.md && git commit -m "require gstack for AI-assisted work"
+
+No vendored files in your repo, no version drift, no manual upgrades. Every Claude Code session starts with a fast auto-update check (throttled to once/hour, network-failure-safe, completely silent). Team mode follows the stable channel: the twice-weekly tagged release (Monday and Thursday, at most once every 72 hours, plus verified security and regression fixes), not every merge to main. gstack-config set update_channel main follows every merge instead; see docs/releases.md.
+
+Swap required for optional if you'd rather nudge teammates than block them.
+
+Team mode's required hook runs on Node.js, so every teammate needs Node.js on PATH (details). To remove gstack later: docs/uninstall.md.
+
+Other AI Agents
+
+gstack runs on more agents than Claude. Bare ./setup installs for Claude
+Code only (run inside OpenClaw, Hermes or a Dot, it also registers gstack's
+skills with that harness: docs/hosts.md).
+Pick another agent with --host , or install for every agent setup
+detects on this machine with --host auto:
+
+git clone --single-branch --depth 1 https://github.com/garrytan/gstack.git ~/gstack
+cd ~/gstack && ./setup --host auto      # or: ./setup --host codex
+./setup --status                         # one row per install: host, tier, scope, version, path
+
+An explicit --host X installs for X only and never changes another agent's
+install. /gstack-upgrade refreshes every install it registered, one row per
+host, and says which ones failed.
+
+Tiers: full is certified by a real workflow run (see
+Certify your host); experimental
+installs and passes the conformance tests but has no certification run yet;
+instruction-only installs nothing: setup prints what to copy.
+
+| Agent | Tier | Install | First invocation | Safety skills | Outside review needs | Repair |
+|-------|------|---------|------------------|---------------|----------------------|--------|
+| Claude Code | full | --host claude (default) | /office-hours | enforced (hooks block) | Codex CLI, signed in | ./setup --host claude |
+| OpenAI Codex CLI | experimental | --host codex → ${CODEX_HOME:-~/.codex}/skills/gstack-*/ | ask for gstack-office-hours | advisory, not blocked | Claude Code CLI, signed in | ./setup --host codex |
+| OpenCode | experimental | --host opencode → ~/.config/opencode/skills/gstack-/ + /gstack- commands | /gstack-office-hours | advisory, not blocked | Codex CLI, signed in | ./setup --host opencode |
+| Cursor | experimental | --host cursor → ~/.cursor/skills/gstack-*/ | ask for gstack-office-hours | advisory, not blocked | Codex CLI, signed in | ./setup --host cursor |
+| Factory Droid | experimental | --host factory → ~/.factory/skills/gstack-*/ | ask for gstack-office-hours | advisory, not blocked | Codex CLI, signed in | ./setup --host factory |
+| Kiro | experimental | --host kiro → ~/.kiro/skills/gstack-*/ | ask for gstack-office-hours | advisory, not blocked | Codex CLI, signed in | ./setup --host kiro |
+| GitHub Copilot CLI | experimental | --host copilot → ~/.copilot/skills/gstack-*/ | /gstack-office-hours | advisory, not blocked | Codex CLI, signed in | ./setup --host copilot |
+| Antigravity CLI | experimental | --host agy (or --host antigravity) → ~/.gemini/antigravity-cli/skills/gstack-*/ | /gstack-office-hours | advisory, not blocked | Codex CLI, signed in | ./setup --host agy |
+| Gemini CLI | experimental | --host gemini (or --host gemini-cli) → ~/.gemini/skills/gstack-*/ | ask for gstack-office-hours | advisory, not blocked | Codex CLI, signed in | ./setup --host gemini |
+| Slate | instruction-only | --host slate (points at the Claude install; Slate reads .claude/skills) | /office-hours via the Claude install | advisory, not blocked | — | ./setup --host claude |
+| OpenClaw | experimental | --host openclaw (five task skills and one gstack router skill in OpenClaw's skills folder; automatic when setup runs inside OpenClaw; ACP route in docs/OPENCLAW.md) | ask for the task; the agent opens the matching task skill or the gstack router | advisory, not blocked | — | ./setup --host openclaw |
+| Hermes | experimental | --host hermes (every skill in $HERMES_HOME/skills/gstack; automatic when setup runs inside Hermes) | ask for the task, or /gstack-review | advisory, not blocked | — | ./setup --host hermes |
+| GBrain (mod) | instruction-only | --host gbrain (brain-aware variants ship from the GBrain repo) | — | advisory, not blocked | — | — |
+
+…（内容已截断）

@@ -48,12 +48,23 @@ Each command prints one JSON envelope. A trimmed snapshot:
   }
 }
 
-- Refs carry their snapshot id. A bare @e8 fails with INVALID_ARGS.
-- If the UI changed, an action returns STALE_REF or AMBIGUOUS_TARGET. Take a new snapshot and use its refs.
-- Actions are headless by default: no pointer movement, no focus change. Pass --headed for physical input.
-- In PowerShell, quote every ref ('@s8f3k2p9:e8'), because a bare @token is the splatting operator.
+- Refs belong to their snapshot. A bare @e8 is rejected with INVALID_ARGS. When the UI changes, an action
+  returns STALE_REF or AMBIGUOUS_TARGET: take a new snapshot and use its refs.
+- Several windows give AMBIGUOUS_TARGET; snapshot lists the candidate window ids in error.details. Pass one
+  with --window-id.
+- Dense apps: map first with snapshot --skeleton --app Slack -i --compact, then drill into one region with
+  snapshot --root @s8f3k2p9:e3 -i --compact.
+- Headless by default. Ref actions use the accessibility API without moving the pointer or taking focus. The global
+  --headed flag allows physical input.
+- Post-action waits observe the ref's original process. Window-owned refs stay pinned to their original window,
+  including refs captured from a sheet, alert, popover, focused view, or Linux menu. macOS application menus keep
+  their application-owned surface and need no document window. The wait reads the whole pinned window, so overlay
+  selectors share its scope. [Wait scope and results
+  describe the selector limits.
+- type, set-value, and clipboard-set accept --stdin for piped text, keeping it out of process arguments. Run secret steps as separate commands; batch JSON text appears in process arguments.
+- PowerShell. Quote every ref ('@s8f3k2p9:e8'), because a bare @token is the splatting operator.
 
-The full walkthrough is in the [quick start.
+The full walkthrough is in the quick start.
 
 How it works
 

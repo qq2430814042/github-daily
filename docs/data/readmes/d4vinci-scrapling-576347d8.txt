@@ -66,6 +66,9 @@ Platinum Sponsors
       : residential proxies from $0.49/GB. Scraping browser with fully spoofed Chromium, residential IPs, auto CAPTCHA solving, and anti-bot bypass.
       Scraper API for hassle-free results. MCP and N8N integrations are available.
 
+      TikHub.io provides 900+ stable APIs across 16+ platforms including TikTok, X, YouTube & Instagram, with 40M+ datasets.
+ Also offers DISCOUNTED AI models - Claude, GPT, GEMINI & more up to 71% off.
+
     Read a full review of Scrapling on The Web Scraping Club (Nov 2025), the #1 newsletter dedicated to Web Scraping.
 
     Swiftproxy provides scalable residential proxies with 80M+ IPs across 195+ countries, delivering fast, reliable connections, automatic rotation, and strong anti-block performance. Free trial available.
@@ -111,6 +114,5 @@ Advanced Websites Fetching with Session Support
 - Proxy Rotation: Built-in ProxyRotator with cyclic or custom rotation strategies across all session types, plus per-request proxy overrides.
 - Domain & Ad Blocking: Block requests to specific domains (and their subdomains) or enable built-in ad blocking (~3,500 known ad/tracker domains) in browser-based fetchers.
 - DNS Leak Prevention: Optional DNS-over-HTTPS support to route DNS queries through Cloudflare's DoH, preventing DNS leaks when using proxies.
-- Remote Browsers: Instead of launching a browser locally, connect to one that's already running through CDP with cdp_url, whether it's on the same machine, another host, or a managed browser provider. You can also point any browser fetcher at your own Chromium build with executable_path.
 
 …（内容已截断）

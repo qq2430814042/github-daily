@@ -1,0 +1,110 @@
+Scenario Agent Skills
+
+Agent Skills that teach AI coding agents (Claude Code, Cursor, Codex, Copilot, and 70+ others) how
+to create production-ready content with Scenario through the
+Scenario MCP server: images, video, audio, textures, skyboxes, 3D
+assets, and custom-trained models, for games, entertainment, and any creative vertical.
+
+The expert tools at the bottom of the list work differently: teams of skills that drive DCC (digital
+content creation) software and game engines installed on your machine (ZBrush, Blender, Maya, Unreal
+Engine, Unity, Godot, Roblox Studio), distilled from expert tutorials, conference talks, and
+official documentation. They need the application, not the Scenario MCP server, and each family
+folder's README records how it was built and how far it was verified.
+
+Skills follow the Agent Skills format.
+
+Install
+
+Everything for Scenario. Every Scenario skill, without the expert tools: the default for working
+through the Scenario MCP.
+
+Every Scenario skill, without the expert tools
+npx skills add scenario-labs/skills --skill scenario scenario-inspiration scenario-image scenario-multi-reference scenario-product-shots scenario-brand-kit scenario-image-editing scenario-text-overlay scenario-storyboards scenario-game-assets scenario-sprite-animation scenario-side-view-game-kit scenario-blender-2d-animation scenario-textures scenario-skyboxes scenario-3d scenario-video-to-motion scenario-blender scenario-patina-retexture scenario-orbit-views scenario-walkable-room scenario-video scenario-video-editing scenario-video-color-grade scenario-seedance-music-video scenario-kinetic-music-video scenario-chatgpt-pet-create scenario-chatgpt-pet-update scenario-seedance-storyboard scenario-seedance-drafts scenario-video-ads scenario-ugc scenario-fan-cam scenario-reel-recast scenario-audio scenario-video-assembly scenario-motion-loops scenario-caption-studio scenario-consistency scenario-identity-library scenario-model-training scenario-asset-analysis scenario-quality-gate scenario-refine-loop scenario-model-comparison scenario-formats scenario-workflows scenario-workflow-authoring scenario-moderation scenario-report scenario-team-admin scenario-admin-analytics scenario-gpt-image scenario-mai-image scenario-seedream scenario-gemini-image scenario-reve scenario-ideogram scenario-grok-imagine-image scenario-luma-image scenario-minimax-video scenario-gemini-omni scenario-grok-imagine-video scenario-veo scenario-seedance scenario-kling scenario-vidu scenario-wan scenario-runway scenario-luma-video scenario-minimax-music scenario-elevenlabs scenario-ace-step scenario-sonilo scenario-meshy scenario-rodin scenario-sparc3d scenario-3d-worlds scenario-ad-variants scenario-thumbnails
+
+By role or goal. INSTALL.md groups the skills by job, from 2D artist to producer,
+and by outcome, from game art to ChatGPT pets, with one command each.
+
+Expert tools. A family installs as one set, since its specialists import the lead skill's
+scripts: select its "Expert tools" group in the installer menu, or run the command in its family
+README (ZBrush, Blender,
+Maya, Unreal Engine,
+Unity, Godot,
+Roblox Studio).
+
+Pick, or install one skill.
+
+Pick from the installer menu, grouped by topic (it opens with nothing preselected: select before pressing enter)
+npx skills add scenario-labs/skills
+
+A single skill
+npx skills add scenario-labs/skills --skill scenario
+
+Pin a reviewed release. The commands above fetch the latest copy of each skill from main. To
+install a reviewed state instead, pin both the installer and the commit, taken from a release's tag.
+Run it again with a newer commit to move.
+
+npx skills@1.7.4 add scenario-labs/skills# --skill
+
+The menu's topic groups cannot be selected from the command line: the CLI matches --skill against
+exact skill names only, and a group flag is an open request upstream
+(vercel-labs/skills#992). From a script or CI,
+run the default command above or a role command from INSTALL.md with -y, which skips every prompt.
+
+The Scenario skills need the Scenario MCP server connected:
+
+claude mcp add --transport http scenario https://mcp.scenario.com/mcp
+
+Or add https://mcp.scenario.com/mcp to any MCP client and sign in with a Scenario account (OAuth),
+or use an API key. Full setup lives in the scenario
+skill.
+
+Staying up to date
+
+Releases are how changes become visible: every feature, fix, and documentation change merged to
+main lands in the next release, staged by release-please as an open release PR. Merging that PR
+tags a version, updates CHANGELOG.md in this repository, publishes a
+GitHub release, and posts the notes to the
+Scenario changelog.
+
+- To learn that a skill changed, watch this repository's releases (Watch, then Custom, then Releases
+  on GitHub) or check any of the changelog pages above. An entry scoped to a single skill carries
+  that skill's name; changes spanning several skills appear under broader scopes such as skills.
+- To pull the changes, run npx skills update where you installed, or re-run your original
+  npx skills add command.
+- To stay on a reviewed state, pin the install (see Install).
+
+Skills
+
+Getting started
+
+Connect the Scenario MCP server and learn the core generation loop every other skill builds on.
+
+| Skill                                | Use it for                                                                                                  |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------- |
+| scenario | Connecting to the Scenario MCP and the core generation loop: discover, schema, run, wait, display, download |
+
+Finding a direction
+
+Turn a blank brief into references, options someone can choose between, and a moodboard the next
+batch runs from.
+
+| Skill                                                        | Use it for                                                                                                            |
+| ------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------- |
+| scenario-inspiration | Finding a direction before generating: serendipity, reference hunting, A/B/C/D concept options, moodboard collections |
+
+Images
+
+Generate and edit images: model choice, sizing, references, masked edits, post-processing tools, and
+letter-perfect text overlay cards.
+
+| Skill                                                                | Use it for                                                                                                            |
+| -------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------- |
+| scenario-image                     | Text-to-image and image editing: model choice, sizing fields, prompt limits, reference images, masked inpainting      |
+| scenario-multi-reference | One image composed from several references, each with one job (subject, place, pose, style, palette), leaks checked   |
+| scenario-product-shots     | Product photography from a real photo: packshots, lifestyle scenes, relighting, label-fidelity gates                  |
+| scenario-brand-kit             | Visual identities: SVG logos and wordmarks, palette and type specs, gated variants and applications, the filed kit    |
+| scenario-image-editing     | Tool-model image edits: 3D LUT grades, effects, expand and reframe, resize, slicing, layers, background removal       |
+| scenario-text-overlay       | Letter-perfect text overlays: templated transparent PNG cards (taglines, CTAs, legal supers, rich cards) to composite |
+| scenario-storyboards         | Comic pages, storybooks, and pre-viz storyboards: script first, one run per panel, a locked cast, lettering in post   |
+
+…（内容已截断）

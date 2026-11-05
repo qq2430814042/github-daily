@@ -1,0 +1,323 @@
+MoneyPrinterTurbo 💸
+
+一站式 AI 短视频生成工具
+
+只需提供视频主题或关键词，即可自动生成视频脚本、匹配素材、生成字幕和背景音乐，并合成高清短视频。
+
+简体中文 | English | 日本語 | 版本发布 | 问题反馈
+
+界面预览 🖥️
+
+WebUI
+
+API
+
+特别感谢 ❤️
+
+感谢 Kimi 赞助本项目！Kimi K3.1 Pro 是 Moonshot AI 迄今能力最强的 3T 级开放权重模型，拥有原生视觉能力与 100 万 Token 上下文，在知识工作、推理和长周期任务中展现前沿性能。在 MoneyPrinterTurbo 中，K3.1 Pro 能直接驱动视频创作，不仅撰写视频文案，还会提炼素材搜索关键词、决定成片画面；对内容理解越准确，匹配到的素材就越贴题。
+
+MoneyPrinterTurbo 用户专属优惠：新用户通过专属链接注册，首次成功充值可获充值金额 10% 的 API 额度。活动截至 2026 年 12 月 31 日。前往 Kimi 开放平台（中文站｜Global）体验 API。
+
+      火山引擎
+
+      感谢字节火山引擎赞助本项目！火山方舟 Agent/Coding Plan 国模套餐首购 9.9，支持 GLM-5.3、Kimi-K3、DeepSeek、MiniMax、Doubao 等，注册免费领 2500w Token，统一 API，适配编码与智能体开发。立即前往
+
+      感谢 APIMart 赞助了本项目！APIMart 是专注 AI 图片/视频生成的低价 API 平台，GPT-Image-2 低至 &#36;0.006/张，1 美元可出图 160+ 张。图片、视频一套异步 API 通吃，换模型不改代码；提交任务拿 ID，通过轮询或回调获取结果，支持万张级批量生成。按量付费、无月费，通过此注册链接注册即可开用。
+
+      秘塔科技
+
+      MiniMax H3 视频生成 API｜秘塔科技
+
+      秘塔科技提供高性价比的 MiniMax H3 视频生成服务：768P 仅 0.09 元/秒，2K 仅 0.15 元/秒。支持原生 2K、音画同步，API 兼容 OpenAI 协议，同时支持 ComfyUI，无需自行部署 GPU。
+
+      🎁 通过 MoneyPrinterTurbo专属链接注册，即可领取赠送额度及专属优惠。
+
+      Infistar.cc 无限星河
+
+      感谢 Infistar.cc 无限星河 赞助本项目！Infistar.cc 提供高性价比的大模型 API 服务：大模型低至官方 0.1 折，AI 生图低至 ¥0.06/张。
+
+      一个 API Key，覆盖文案、图片与视频创作，支持 GPT、Claude、Gemini、DeepSeek、通义千问、可灵等主流模型，无需分组。
+
+      全模型支持验真，价格透明，正规备案，人民币实时计费，支持对公发票。
+
+      🎁 MPT 专属福利：通过专属链接注册即送 &#36;5 体验额度，并享首充特惠。
+
+      感谢 OfoxAI 赞助本项目！MoneyPrinterTurbo 已集成 Ofox 多模型文生视频，配置 API Key 即可使用。Seedance、MiniMax H3、Wan 生成视频素材，GPT Image 2.5、Seedream 制作封面配图，GPT、Claude、Gemini、DeepSeek 打磨脚本、辅助开发。一个 Key，文本、图像、视频共用余额；提供 OpenAI 兼容接口及 Anthropic、Gemini 原生接口。按量付费、价格公开、官方渠道接入，稳定高速不限量，前往 OfoxAI 查看模型与价格。
+
+      胜算云
+
+      感谢胜算云对本项目的赞助！胜算云是面向 AI 原生团队的模型 API 聚合平台，汇集 Claude、ChatGPT、Gemini 等海内外大语言模型及多媒体模型，支持统一接入与按量调用。
+
+      平台坚持合规 API 服务，杜绝逆向工程和资源稀释。此外平台提供企业级定制网关，包括团队成本与权限管理、智能路由、安全防护及 BYOK 密钥托管，并提供发票服务。
+
+      🎁新用户通过此链接注册，即可领取 10 元 Token 体验额度。
+
+      星图 AstraFlow
+
+      感谢 星图 AstraFlow 赞助本项目！点击领取 50 元算力金
+
+      🎬 视频模型一站式调用：聚合 MiniMax-H3，Seedance-2.5 等主流视频生成模型，文案生成 + 视频生成一个平台全搞定，无需多端注册、多处对接
+
+      🚀 200+ 大模型一键调用，新模型当日上架：聚合 DeepSeek V4.1、Kimi K3、Qwen 3.8 Max、GLM 5.3 等 200+ 主流大模型，新模型上线当天即可接入
+
+      💰 UCloud 上市公司出品，调用计费透明可控：按 Key 级别计费，调用明细全程可查
+
+      🎁 MoneyPrinterTurbo 用户专属福利：通过专属推广链接注册，即享新用户赠送额度，开箱即用！
+
+      RunningHub API
+
+      感谢 RunningHub API 赞助本项目！
+
+      • Seedance 满血版 API 接入全网骨折价，在线工具低至 0.21元/秒，节省 60%-80%成本！
+
+      • 超稳定高并发高折扣，随用随充按需弹性付费，不捆绑不排队不抽卡
+
+      • 无限画布、ComfyUI、Agent 等在线工具从剧本到成片全链路制作
+
+      • 一站式接入LLM API、多模态API、工作流API、Al应用
+
+      • 400+ 主流模型（支持国际版权限）8000+版本任选
+
+      • 数千家企业信赖，500万C端月活验证
+
+      折扣与免费测试可联系 zhenyuedong@haima.me，或查看模型与接口。
+
+      Jalapeno Cloud
+
+      感谢 Jalapeno Cloud 赞助本项目！
+
+      一站式接入多种 AI 模型，兼容 OpenAI 与 Anthropic API，满足 AI 应用开发与内容创作需求。
+
+      新用户注册领免费额度，充值额外赠送最高 20%；DeepSeek-V4.1-flash、GLM-5.3-flash 等模型低至 5 折，Doubao-Seedance-2.5 长期 9 折。官方源头，品质保证。
+
+      👉 立即注册，领取专属体验金
+
+      录咖 AI
+
+      感谢 录咖（AI 智能多媒体服务平台） 基于本项目提供免费的 AI 视频生成器，无需部署，在线即可使用，对新手更加友好。
+
+      佐糖
+
+      感谢 佐糖 对本项目的支持与赞助！佐糖提供丰富的在线图像处理工具，操作简单，帮助用户轻松完成各类图片处理。
+作者的另一个开源项目：MangoDisk ⭐
+
+  面向 macOS 和 Windows 的开源磁盘清理、空间分析与系统优化工具
+
+  一站式清理缓存、大文件、重复文件和应用残留，并提供磁盘空间分析、应用卸载、启动项管理、系统优化与维护
+
+  访问 MangoDisk 官网 · 查看 GitHub 开源项目
+
+功能特性 🎯
+
+创作入口与工作流
+
+- x] 提供 AI Agent、WebUI、API 和 CLI 四种使用方式，既能快速上手，也能接入自动化流程
+- [x] 从主题自动完成脚本、配音、素材、字幕、配乐和剪辑，也支持在每个环节使用自定义内容
+- [x] 支持 批量生成多条成片、任务历史记录，以及生成设置与 API Key 的导入、导出和恢复
+
+脚本与模型服务
+
+- [x] 支持 AI 自动生成或改写 多语言视频脚本，也可以直接使用自定义脚本
+- [x] 支持 [Kimi / Moonshot AI、OpenAI、Anthropic Claude、Google Gemini、DeepSeek、阿里云通义千问、Microsoft Azure OpenAI、火山引擎方舟、xAI Grok、MiniMax 和 小米 MiMo 等主流模型服务
+- x] 兼容 [胜算云、APIMart、Cloudflare AI Gateway、魔搭 ModelScope、AIHubMix、AIML API、EvoLink、OpenRouter、API Route、Ollama、Claude Code 订阅、OneAPI、LiteLLM、Groq 和 Pollinations AI 等统一网关、聚合平台和本地运行环境
+
+视频与图片素材
+
+- x] 支持上传自己的 本地图片和视频，也可从 [Pexels（免费）、Pixabay（免费） 和 Coverr 获取高清库存素材
+- x] 支持 [秘塔 MiniMax H3 文生视频，可生成 768P/2K、4～15 秒的原始素材，并适配 9:16、16:9 和 1:1 三种画幅
+- x] 支持 [胜算云 AI 视频，可生成多段 AI 视频素材，并沿用项目的配音、字幕和剪辑流程合成成片
+- x] 原生接入 [火山引擎方舟 Seedance，可根据脚本片段生成连贯的视频画面
+- x] 支持 [WaveSpeed AI 文生视频，可根据脚本关键词快速生成原创素材
+- x] 支持 [OFox 多模型文生视频，一个 API Key 即可调用 Seedance、Wan 等模型
+- x] 通过异步 [MuAPI 文生视频接口生成 3～12 秒 AI 视频素材，并支持配置 Endpoint、画幅、分辨率和轮询参数
+- x] 支持 [OpenAI 兼容文生图，可连接云端服务或自定义图片网关，并将生成图片转换为动态视频片段
+- x] 支持调整片段时长、画面适配方式和素材匹配顺序，以适配不同画幅和叙事节奏
+
+配音、字幕与配乐
+
+- [x] 支持自动配音、上传配音和无配音三种方式，并提供音色试听与完整配音预览
+- [x] 集成 Edge TTS（免费、无需 API Key）、Azure Speech、SiliconFlow、Google Gemini、小米 MiMo、MiniMax、ElevenLabs、Chatterbox、Kokoro、Fish Audio 和 ModelBest VoxCPM 等配音服务
+- [x] 支持自动生成字幕，可调整字体、位置、颜色、大小、描边和背景样式
+- [x] 支持随机、本地及 AI 生成背景音乐，并可独立控制音量
+
+成片与发布
+
+- [x] 支持竖屏 9:16（1080×1920）、横屏 16:9（1920×1080） 和方形 1:1（1080×1080）
+- [x] 支持一键 跨平台发布，生成完成后可自动上传至 TikTok、Instagram 和 YouTube Shorts
+
+作品展示 🎬
+
+以下示例均由 MoneyPrinterTurbo 实际生成。
+
+竖屏 9:16
+
+城市醒来的时刻
+中文 · 14 秒
+
+清洁能源的未来
+中文 · 24 秒
+
+为什么我们仍要探索太空
+中文 · 27 秒
+
+一粒种子的旅程
+中文 · 44 秒
+
+The Future of Everyday Robotics
+English · 21 sec
+
+Small Habits, Lasting Change
+English · 19 sec
+
+Making Space for Creative Work
+English · 20 sec
+
+The Science Inside Coffee
+English · 23 sec
+
+横屏 16:9
+
+深海里的微光
+中文 · 23 秒
+
+阅读如何塑造我们
+中文 · 23 秒
+
+一杯手冲咖啡的细节
+中文 · 23 秒
+
+春天适合出发
+中文 · 14 秒
+
+Why Ocean Conservation Matters
+English · 25 sec
+
+Designing More Sustainable Cities
+English · 27 sec
+
+What Mountains Teach Us
+English · 18 sec
+
+A Brief History of Human Flight
+English · 59 sec
+
+配置要求 📦
+
+- 建议系统：Windows 10、macOS 11.0 或更高版本，以及主流 Linux 发行版
+- 本地部署需要 Python 3.11 或更高版本，推荐使用 Python 3.11
+- GPU 不是必需项，但如果你希望本地转录、更快的视频处理或更顺畅的批量生成体验，建议使用带显存的独立显卡
+
+| 项目 | 最低配置 | 推荐配置        | 理想配置        |
+| ---- | -------- | --------------- | --------------- |
+| CPU  | 4 核     | 6 到 8 核       | 8 核及以上      |
+| RAM  | 4 GB     | 8 GB            | 16 GB 及以上    |
+| GPU  | 非必须   | 4 GB 显存及以上 | 8 GB 显存及以上 |
+
+- 如果你主要依赖云端 LLM、云端 TTS 和在线素材源，CPU 与内存比 GPU 更重要
+- 如果你启用 faster-whisper、批量生成或更重的本地处理链路，GPU 会明显提升速度
+
+快速开始 🚀
+
+推荐使用方式
+
+- 不想手动安装和配置：直接使用 AI Agent 生成视频
+- 已有 Python 环境，想直接安装使用：[通过 pip 安装官方包
+- Windows 用户：优先使用一键启动包，适合快速体验
+- 需要源码部署或二次开发：使用 uv 管理环境和依赖
+- 想要隔离运行环境：优先使用 Docker 部署
+
+使用 AI Agent 生成视频
+
+如果你的 AI Agent 支持读取 Skill 文档并操作本地终端，可以直接发送下面这段话。Agent 会自动完成安装、配置和视频生成；只有缺少必要的 API Key 时才会向你询问，完成后会返回生成的视频文件路径。目前支持 macOS 和 Windows。
+
+使用这个 Skill：https://raw.githubusercontent.com/harry0703/MoneyPrinterTurbo/main/docs/skill/SKILL.md
+帮我生成一个主题为“人工智能如何改变普通人的日常生活”的视频。
+
+在 Google Colab 中运行
+
+免去本地环境配置，点击直接在 Google Colab 中快速体验 MoneyPrinterTurbo
+
+Windows 一键启动包
+
+下载一键启动包，解压直接使用（路径不要有 中文、特殊字符、空格）
+
+- 下载最新 Windows 一键启动包
+
+请在页面下方的 Assets 区域下载 .7z 压缩包。GitHub 自动生成的
+Source code (zip) / Source code (tar.gz) 只是源码，解压后只有 webui.bat，
+不含 start.bat 和 update.bat。
+
+下载后，建议先双击执行 update.bat 更新到最新代码，然后双击 start.bat 启动
+
+启动后，会自动打开浏览器（如果打开是空白，建议换成 Chrome 或者 Edge 打开）
+
+安装部署 📥
+
+通过 pip 安装官方包
+
+官方 PyPI 包名为 mpt，由 harry0703 维护。
+PyPI 上名为 MoneyPrinterTurbo 的包由第三方维护。
+
+无需克隆仓库，需要 Python 3.11 或更高版本，推荐使用 Python 3.11。
+
+① 创建并激活虚拟环境
+
+macOS / Linux：
+
+python3 -m venv .venv
+source .venv/bin/activate
+
+Windows PowerShell：
+
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+
+② 安装并启动
+
+python -m pip install mpt
+mpt webui
+
+WebUI 会自动打开浏览器。指定端口且不自动打开浏览器时，运行
+mpt webui --port 8503 --headless；使用 CLI 生成视频前，可查看 mpt cli --help。
+
+③ 配置服务与管理文件
+
+首次启动会自动创建 config.toml。使用在线模型、素材或语音服务前，请在 WebUI
+基础设置中填写相应的 API Key。安装版默认将配置和生成文件保存在：
+
+| 系统    | 数据目录                                                                  |
+| ------- | ------------------------------------------------------------------------- |
+| macOS   | ~/Library/Application Support/MoneyPrinterTurbo                         |
+| Windows | %LOCALAPPDATA%\MoneyPrinterTurbo                                        |
+| Linux   | ~/.local/share/MoneyPrinterTurbo，或 $XDG_DATA_HOME/MoneyPrinterTurbo |
+
+可在启动前设置 MPT_HOME 更改目录，生成的视频位于其中的 storage/tasks 下。
+后续升级时，在已激活的虚拟环境中运行 python -m pip install --upgrade mpt。
+
+源码部署前提条件
+
+- 本地部署需要 Python 3.11 或更高版本
+- Windows 用户建议避免使用包含中文、特殊字符或空格的项目路径
+
+① 克隆代码
+
+git clone https://github.com/harry0703/MoneyPrinterTurbo.git
+
+② 首次配置
+
+首次启动时，项目会根据 config.example.toml 自动创建 config.toml，无需手动创建配置文件。使用云端大模型、在线素材或 AI 视频等服务前，请在 WebUI 的基础设置中填写对应的 API Key。
+
+Docker 部署 🐳
+
+① 启动 Docker
+
+如果尚未安装 Docker，请先下载并安装 Docker Desktop。
+
+Windows 用户可以参考微软的文档：
+
+1. 安装 WSL
+2. 在 WSL 中使用 Docker 容器
+
+cd MoneyPrinterTurbo
+
+…（内容已截断）

@@ -58,13 +58,17 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | Filesystem | Read/write local files | No | stdio | – |
 | FindIP MCP | IP lookups and FindIP Shield risky-event checks for agents | apiKey | stdio | Glama · MCP Registry |
 | GitHub | Repos, issues, PRs, code search | OAuth | stdio, HTTP | Glama |
+| iGaming Tools | Online slot specs, RTP variants, providers, regulators, news, jobs and search demand | No | HTTP | – |
 | IndiaInsurances | Indian insurance policy wordings read clause by clause, with verbatim quotes | No | HTTP | – |
+| InjectScan | Scores text, web pages and MCP tool definitions for prompt injection with deterministic rules | No | stdio, HTTP | Glama · MCP Registry |
 | Kuro | Create AI images, video clips, voice-overs, music and editable storyboard films | OAuth | HTTP | – |
+| LucyESL | English-teaching jobs in South Korea with pay, hours and housing as facts, plus salary statistics | No | HTTP | Anthropic · Glama · MCP Registry |
 | Master Setter | Pokémon TCG cards, sets and printings in 14 languages, searchable by name in any language | apiKey | HTTP | Glama · MCP Registry |
 | Monocrawl | Public posts, profiles, comments and products from 70+ social, shopping and search platforms | apiKey | stdio, HTTP | Glama |
 | OpenApps | Rankings, launches and featuring across the ChatGPT, Claude, Cursor and Grok Bot app stores | No | HTTP | – |
 | Openpath | US job listings and local businesses for agents, with apply links and owner inboxes | No | HTTP | Anthropic · Glama · Smithery |
 | OpenSwissData | Swiss customs tariff (TARES), FINMA register and warnings, NOGA/NACE/ISIC code crosswalks | No | stdio, HTTP | Glama |
+| PourWire | New US liquor license filings: restaurants and bars about to open in 7 metros, plus metro stats | No | HTTP | Glama · MCP Registry |
 | Refnusa | Indonesian holidays, wages, regions, postal codes, tax, food prices and NIK/plate checks (31 tools) | No | HTTP | Glama |
 | RegSentry | Inspect authorized static tracking signals and review supplied consent evidence | No | HTTP | Glama |
 | Scalekit | Manage auth for AI agents and MCP servers: environments, orgs, users, SSO connections and roles | OAuth | stdio, HTTP | Glama |
@@ -120,44 +124,5 @@ Index
 * Data Validation
 * Development
 * Dictionaries
-* Documents & Productivity
-* Email
-* Entertainment
-* Environment
-* Events
-* Finance
-* Food & Drink
-* Games & Comics
-* Geocoding
-* Government
-* Health
-* Jobs
-* Machine Learning
-* Music
-* News
-* Open Data
-* Open Source Projects
-* Patent
-* Personality
-* Phone
-* Photography
-* Programming
-* Science & Math
-* Security
-* Shopping
-* Social
-* Sports & Fitness
-* Test Data
-* Text Analysis
-* Tracking
-* Transportation
-* URL Shorteners
-* Vehicle
-* Video
-* Weather
-
-Animals
-API | Description | Auth | HTTPS | CORS
-|:---|:---|:---|:---|:---|
 
 …（内容已截断）
