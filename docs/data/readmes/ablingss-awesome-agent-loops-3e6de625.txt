@@ -1,0 +1,165 @@
+Awesome Agent Loops
+
+面向 DSH、Codex、Claude Code 及兼容 Agent 的 Loop Skills、工作流自动化和云端交付配方目录。
+
+一键安装精选 Skills：
+
+curl -fsSL https://raw.githubusercontent.com/ABLingss/awesome-agent-loops/main/install-skills.sh | bash
+
+同时安装 DSH 插件：
+
+git clone https://github.com/ABLingss/awesome-agent-loops
+cd awesome-agent-loops
+./install-skills.sh --dsh
+
+DSH Skills / DSH 技能
+
+- dsh-loop — 为 DSH 增加 /loop、状态查看、恢复和停止。
+- dsh-mnemon-source-skills — 管理、演化和评估可复用 Skill。
+- dsh-skill-mcp-panel — 在面板中管理 DSH Skills 和 MCP。
+- dsh-research-report — 把重复调研整理成带证据的报告。
+- dsh-permission-rules — 为长期运行的 Agent 增加权限和网络边界。
+- dsh-context — 查看和管理长任务中的上下文增长。
+- dsh-deja — 搜索并回忆之前 Coding Agent 的会话历史。
+- dsh-undo-savepoint — 回滚损坏的插件树和配置变更。
+- cc-safety-net — 阻止危险命令和敏感文件访问。
+- dsh-computer-use — 为 DSH 提供受保护的 macOS Computer Use。
+- dsh-vision-toolkit — 提供 OCR、视觉定位、UI 恢复和像素对比。
+- dsh-subagent-codex — 让 DSH 委派任务给 Codex。
+- dsh-subagent-claude-code — 让 DSH 委派任务给 Claude Code。
+- dsh-tool-subagent — 把子 Agent 委派暴露成工具。
+- dsh-mnemon-source-documents — 把项目文档接入记忆源。
+- dsh-mnemon-source-runtime — 把运行时状态接入上下文。
+- dsh-mnemon-source-memory-spaces — 把持久化记忆空间接入 DSH。
+- dsh-mnemon-strategy-auto-capture — 在回合中捕获可复用记忆。
+- dsh-mnemon-strategy-default-three-tier — 用三层策略选择上下文。
+- dsh-mnemon-strategy-light-context — 限制上下文投影，保护 Loop 预算。
+
+Workflow Skills / 工作流技能
+
+- find-skills — 在 Agent 会话中搜索和安装其他 Skills。
+- grill-me — 在自动运行前压力测试计划。
+- to-spec — 把想法转换成可执行规格。
+- to-tickets — 把规格拆成可追踪任务。
+- implement — 驱动实现、修改和检查流程。
+- handoff — 为下一轮 Agent 留下持久交接信息。
+- triage — 在执行前分类和分流任务。
+- agent-browser — 在多轮 Agent 命令之间保持浏览器会话。
+
+Cloud & Delivery Skills / 云端与交付技能
+
+- google-agents-cli-workflow — 在 Google Cloud 上构建、评估、部署和观测 Agent。
+- google-agents-cli-scaffold — 添加 Cloud Run、GKE 和 CI/CD 项目脚手架。
+- google-agents-cli-deploy — 使用 Terraform、Secrets、发布和回滚流程部署 Agent。
+- cloud-operator — 处理 GCP 基础设施、发布、事故和成本操作。
+- design-deploy — 用 Terraform 设计和验证 GCP 基础设施。
+- research-to-deploy — 把云端调研转换成 Terraform、Pulumi、Docker 或 Kubernetes 配置。
+- senior-devops — 生成 CI/CD、容器、Kubernetes、Terraform 和回滚流程。
+- cc-devops-skills — 覆盖交付流水线、Kubernetes、观测、事故和可靠性。
+- Devops Cloud Bundle — 集合 Docker、Kubernetes、Helm、Terraform、Ansible、Pulumi 和 CI/CD。
+- full-stack DevOps skills — 提供 Kubernetes、Terraform、GitLab CI、GitHub Actions、Ansible 和 CloudFormation。
+- flutter-ci-cd — 构建保留现有发布方式和密钥边界的 CI/CD 流程。
+
+Engineering Skills / 工程技能
+
+- tdd — 把每轮工作固定成 red、green、refactor。
+- code-review — 在 Loop 宣布成功前检查变更。
+- diagnosing-bugs — 用观察、假设、测试、验证定位 Bug。
+- improve-codebase-architecture — 发现架构摩擦并提出可测试重构。
+- systematic-debugging — 用假设驱动调试替代盲目重试。
+- frontend-design — 生成有明确设计方向的前端界面。
+- web-design-guidelines — 按具体规则审查 Web UI 质量。
+- webapp-testing — 通过浏览器自动化测试本地 Web 应用。
+
+Research & Automation Skills / 调研与自动化技能
+
+- research — 在限定范围内完成带来源的调研。
+- grill-with-docs — 用仓库文档反向检查设计。
+- ui-test — 在 Loop 停止前运行对抗式 UI 检查。
+- web-quality-audit — 检查性能、无障碍、SEO 和最佳实践。
+- variant-analysis — 从一个漏洞继续搜索相似漏洞。
+- yeet — 自动完成 Git 暂存到 Pull Request 的流程。
+- remotion-best-practices — 保证多轮视频生成的一致性。
+- skill-creator — 创建、测试和发布可复用 Skill。
+- Ralph Loop plugin — 让 Claude Code 围绕目标持续迭代并在条件满足时停止。
+
+Awesome Agent Loops
+
+A practical directory of agent loop skills, workflow automations, and cloud delivery recipes for DSH, Codex, Claude Code, and compatible agents.
+
+Install the curated skills in one pass:
+
+curl -fsSL https://raw.githubusercontent.com/ABLingss/awesome-agent-loops/main/install-skills.sh | bash
+
+For DSH plugins too, clone the repository and run ./install-skills.sh --dsh.
+
+DSH Skills
+
+- dsh-loop — Adds /loop 30m , status, resume, and stop to DeepSeek Harness.
+- dsh-mnemon-source-skills — Stores, evolves, and evaluates reusable DSH skills.
+- dsh-skill-mcp-panel — Manages DSH skills and MCP servers from one panel.
+- dsh-research-report — Turns repeated research runs into evidence-backed reports.
+- dsh-permission-rules — Adds allow, deny, and ask boundaries around long-running DSH work.
+- dsh-context — Inspects and manages context growth during long agent runs.
+- dsh-deja — Recalls searchable history from previous coding-agent sessions.
+- dsh-undo-savepoint — Rolls back broken plugin trees and configuration changes.
+- cc-safety-net — Blocks destructive commands and secret-file access from coding agents.
+- dsh-computer-use — Adds guarded macOS computer-use actions for agent workflows.
+- dsh-vision-toolkit — Adds OCR, grounding, UI restoration, and pixel-diff actions.
+- dsh-subagent-codex — Lets DSH delegate a bounded task to Codex.
+- dsh-subagent-claude-code — Lets DSH delegate a bounded task to Claude Code.
+- dsh-tool-subagent — Exposes subagent delegation as a model-facing tool.
+- dsh-mnemon-source-documents — Makes project documents available as a memory source.
+- dsh-mnemon-source-runtime — Provides runtime state as a composable memory source.
+- dsh-mnemon-source-memory-spaces — Connects durable memory spaces to DSH context.
+- dsh-mnemon-strategy-auto-capture — Captures useful durable memory during a turn.
+- dsh-mnemon-strategy-default-three-tier — Selects context through an explicit three-tier strategy.
+- dsh-mnemon-strategy-light-context — Caps projected context to protect loop budgets.
+
+Workflow Skills
+
+- find-skills — Finds and installs another skill from the open ecosystem.
+- grill-me — Stress-tests a plan before an autonomous run starts.
+- to-spec — Converts an idea into an executable specification.
+- to-tickets — Breaks a specification into trackable implementation tasks.
+- implement — Drives an implementation task through code and checks.
+- handoff — Leaves a durable handoff for the next agent or loop iteration.
+- triage — Classifies incoming work before choosing an execution path.
+- agent-browser — Runs persistent browser actions across sequential agent commands.
+
+Cloud & Delivery Skills
+
+- google-agents-cli-workflow — Scaffolds, evaluates, deploys, and observes agents on Google Cloud.
+- google-agents-cli-scaffold — Adds Cloud Run, GKE, and CI/CD scaffolding to an agent project.
+- google-agents-cli-deploy — Deploys agents with Terraform, secrets, rollout, and rollback workflows.
+- cloud-operator — Delegates GCP infrastructure, rollout, incident, and cost operations.
+- design-deploy — Designs and validates GCP infrastructure through Terraform before deployment.
+- research-to-deploy — Turns cloud research into reviewed Terraform, Pulumi, Docker, or Kubernetes output.
+- senior-devops — Generates CI/CD, container, Kubernetes, Terraform, rollout, and rollback workflows.
+- cc-devops-skills — Covers delivery pipelines, Kubernetes, observability, incidents, and reliability.
+- Devops Cloud Bundle — Bundles Docker, Kubernetes, Helm, Terraform, Ansible, Pulumi, and CI/CD skills.
+- full-stack DevOps skills — Provides Kubernetes, Terraform, GitLab CI, GitHub Actions, Ansible, and CloudFormation skills.
+- flutter-ci-cd — Builds provider-preserving CI/CD workflows with release and secret boundaries.
+
+Engineering Skills
+
+- tdd — Keeps each loop on a red, green, refactor testing cycle.
+- code-review — Reviews a change set before a loop declares success.
+- diagnosing-bugs — Applies an observe, hypothesize, test, verify debugging loop.
+- improve-codebase-architecture — Finds architectural friction and proposes testable refactors.
+- systematic-debugging — Uses hypothesis-driven debugging instead of repeated guessing.
+- frontend-design — Produces deliberate UI direction instead of generic agent output.
+- web-design-guidelines — Audits web UI against concrete quality rules.
+- webapp-testing — Tests local web applications through browser automation.
+
+Research & Automation Skills
+
+- research — Runs bounded research with explicit sources and outputs.
+- grill-with-docs — Questions a design against its repository documentation.
+- ui-test — Runs adversarial UI checks before a loop stops.
+- web-quality-audit — Verifies performance, accessibility, SEO, and best practices.
+- variant-analysis — Searches for related vulnerabilities after one is found.
+- yeet — Automates the final Git staging-to-pull-request path.
+- remotion-best-practices — Keeps repeated video-generation runs consistent.
+
+…（内容已截断）

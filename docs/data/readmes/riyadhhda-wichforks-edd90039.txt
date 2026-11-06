@@ -1,0 +1,111 @@
+Which Forks?
+
+A use-case guide to Nintendo Switch 2 emulator forks and adjacent native ports: which build to pick for your GPU, OS, and the game you want to play.
+
+Everything here is experimental. Builds land several times a day, regress without notice, and fork rankings depend on the game and driver. "Best" below means "best documented starting point for that use case on 6 Nov 2026", nothing more.
+
+The page is ordered by what people ask first: which fork to use, what has been tested, then setup and trust checks.
+
+Which fork should I use?
+
+| Your situation | Start here | Why |
+|---|---|---|
+| Windows/Linux, NVIDIA, first install | Djihads80/Eglantine | The central upstream: most tested, most builds, all-round compatibility |
+| AMD GPU (RDNA2+) | MythosOfs/Orchid | Independent fork with AMD-focused shader and GPU fixes; developed on an RX 9070 XT |
+| Mario Kart World above all | SmileyTatsu/Eglantine | Recent builds 11/12; 45-50 FPS average and near 60 on AMD docked in independent reports |
+| Donkey Kong Bananza | selevet-eglantine or PokeDinner | Selevet: 30 FPS cap and 60 smooth motion; PokeDinner 2.5: 30 FPS option on AMD |
+| Pokémon Pokopia | notsapinho/Eglantine or PokeDinner | Both list Pokopia as a target; notsapinho calls it playable |
+| Splatoon Raiders | PokeDinner | Textbox, texture and HDR fixes |
+| Online play (MKW, Splatoon Raiders) | Droplet | Private Reservoir servers for online and LAN; emulators only |
+| Zelda OoT remake, Star Fox, Mario Tennis | zortos293/Lichii | Community-reported game-focused builds |
+| Hyrule Warriors: Age of Imprisonment | Djihads80 build 202+ or rdenno | Build 202 was the Hyrule Warriors fix set (46-49 FPS median reported) |
+| Android 13+, Snapdragon 12 GB+ | Banana Native | Native port, not an emulator; DK Bananza works, Pokopia about 60 FPS, MKW in progress |
+| PS5 | heydemoura/EglantinePS5 | Experimental PS5 port of Eglantine |
+| Zen 3 CPU, chasing FPS | selevet-eglantine | PGO + ThinLTO build tuned for Zen 3 |
+| MKW, frame generation, 30 FPS lock | ZendNevs/Eglantine-ZendNevs | FSR 3 / LSFG, DynamicFPS, 30 FPS lock; release-only repo, so verify the source |
+
+If you only read one line: install Djihads80/Eglantine first. Switch forks only when a specific game or your GPU is broken, and keep the build that worked.
+
+Stats at a glance
+
+114 reports, 14 games, 63 CPU and GPU setups, and 37 reports in the 3-5 Nov window used for the first picks. 57 reports are NVIDIA, 34 AMD, 6 Steam Deck, and 17 have no named GPU.
+
+The full coverage page has the game-by-GPU, game-by-CPU, build and setup tables. The normalized data is in data/performance-reports.json.
+
+Decision tree
+
+flowchart TD
+    AWhere are you playing?] --> B{Platform}
+    B -->|Android| C[Banana Native]
+    B -->|PS5| D[EglantinePS5]
+    B -->|Windows / Linux / macOS| E{GPU vendor}
+    E -->|AMD| F{Main game?}
+    F -->|Mario Kart World| G[SmileyTatsu]
+    F -->|Donkey Kong Bananza| G2[Selevet or PokeDinner]
+    F -->|Everything else| H[Orchid]
+    E -->|NVIDIA| I{Main game?}
+    I -->|Mario Kart World| J[SmileyTatsu]
+    I -->|Bananza| K[Selevet or PokeDinner]
+    I -->|Pokopia / Splatoon| K2[PokeDinner or notsapinho]
+    I -->|OoT remake / Star Fox / Tennis| L[Lichii]
+    I -->|Hyrule Warriors| M[Djihads80 build 202+ or rdenno]
+    I -->|Everything else| N[Djihads80 Eglantine]
+
+The tree covers offline play. For private online Mario Kart World or Splatoon Raiders, see Droplet below.
+
+Confidence legend
+
+Claims here are labelled, because the scene is full of "60 FPS trust me bro":
+
+| Label | Meaning |
+|---|---|
+| Documented | The fork's README or release notes state it. |
+| Corroborated | Two or more independent [experience reports on the same game, fork and GPU class agree. |
+| Community-reported | Comes from the 5 Nov 2026 community update or third-party posts; not independently reproduced here. |
+| Source-only | No prebuilt binary at check time; build it yourself. |
+
+The forks
+
+Djihads80/Eglantine: the central fork
+
+Runs on Windows, Linux and macOS, with NVIDIA, AMD and Intel GPUs. Claims here are documented.
+
+The reference Eglantine build, derived from Eden, Yuzu and Sudachi and started by Camille LaVey. At check time it had 4.1k stars, GPL-3.0, pre-release build-212 (4 Nov 2026), a daily-20261105 build and a v0.1.0-rc1 tag. Recent builds added NUP packaging (135), rumble (168) and DLSS through Streamline (189).
+
+Stability is split. One tester reports 202 to 212 force-closing and calls 196 their last stable, while another reports 212 working after a rebuild. Build 202 was the Hyrule Warriors fix set. Build-by-build notes from community reports are in project notes.
+
+Start here if you want the default, the widest game coverage, and the build most forks rebase on. One caveat: "stable" is relative here. These are pre-releases, so pin a build that works for your game and don't update mid-playthrough.
+
+SmileyTatsu/Eglantine: Mario Kart World specialist
+
+Windows, Linux and macOS builds for AMD and NVIDIA. Documented.
+
+A fork of Djihads80 with pipeline-cache changes, guest-RAM release work and a Mario Kart World frame-rate fix that are not all merged upstream. Latest at check: build-16 (5 Nov 2026), 10 release assets. The fork's README still points to upstream for downloads, but its own Releases tab is populated.
+
+This is the one if Mario Kart World is your main game, on either GPU vendor. The catch: it is a small fork (6 stars) moving fast, so changes may be rebased or dropped.
+
+MythosOfs/Orchid: AMD and independent
+
+Windows and Linux builds, plus an experimental macOS arm64 build. AMD only. Documented.
+
+Started as an Eglantine fork and now independent. It adds Ampere shader-instruction lowerings, Switch 2 font handling, kernel thread-race fixes, and graphics fixes for texture copies, descriptor buffers and geometry shaders. Latest at check: v0.7.4 (5 Nov 2026), GPL-3.0, with Windows zip, Linux AppImage and tar.gz (PGO variants), and an experimental macOS 15+ arm64 build.
+
+Ocarina of Time is the current focus: v0.7.2 brought gameplay rendering, v0.7.3 fixed exposure, haze and sky ambient light, and v0.7.4 restored trees, bushes, vines and grass. The exposure and fog change is a visual workaround; it also thins fog in interiors and can be disabled with EDEN_NX2_OOT_VISUAL_WORKAROUND=0. No FPS report for OoT on Orchid was available at check time.
+
+If you want the OoT fog, exposure and vegetation fixes, try v0.7.4; performance on OoT is still unmeasured.
+
+Go for Orchid if you're on AMD. The performance table was measured on a 5800X3D with an RX 9070 XT and Mesa RADV from git, with 60 FPS reported in Mario Tennis Fever and Super Mario Bros. Wonder, and 30-40 FPS in MKW with asset glitches. Keep in mind: release builds can lag commits, so self-build for the newest code.
+
+PokeDinner (Franseven): the game-specific lab
+
+Windows, Linux and macOS builds. The author warns about AMD GPUs. Documented.
+
+Hosted on the Eden Forgejo. Release notes read like a per-game changelog: initial OoT support, Splatoon Raiders textboxes, textures and HDR, MKW "now goes ingame", Donkey Kong terrain fixes, Pokopia invisible items, sky and reflections, and initial but not ready Fire Emblem Fortune's Weave support. Latest tag 2.7.7 is Windows-only and explicitly broken/experimental; 1.x and 2.0.0 tags include Linux AppImage and macOS arm64.
+
+PokeDinner is a compatibility lab, not the default performance pick. Use it when a game boots or renders better here. PokeDinner 2.5 with the 30 FPS option is a recent DK result on AMD; Selevet is the other recent option. The catch: the author asks for a 32 GB pagefile or swap plus 12 GB DRAM, and only one dynamic or 30 FPS lock can be active at a time.
+
+notsapinho/Eglantine: Pokopia build
+
+Windows x64 and Linux x86_64/arm64 builds. Documented.
+
+…（内容已截断）

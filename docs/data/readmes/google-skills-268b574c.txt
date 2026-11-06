@@ -1,0 +1,203 @@
+Agent Skills
+
+This repository contains Agent Skills for Google
+products and technologies, including Google Cloud.
+
+Installation
+
+npx skills add google/skills
+
+When prompted, select specific skills or all skills, the target agents to
+configure, and the installation scope (project or global).
+
+If npx is not available in your environment, install
+Node.js, which includes npm and npx.
+
+Updating Skills
+
+To update previously installed skills to the latest versions, run the following
+command.
+
+npx skills update
+
+This command gives you an option to also remove obsolete skills.
+
+Available Skills
+
+- Getting started with Google Cloud
+  - Authenticating and Authorizing to Google Cloud (IAM)
+  - Google Cloud Recipe: Foundation Builder
+  - Onboarding to Google Cloud
+- Multi-product solution skills
+  - Google Cloud solution-architecture workflow
+  - Agent Gateway multi-agent security
+  - Agentic analytics across cloud providers and data types
+  - Borderless open data lakehouse agentic AI system
+  - Build and deploy AI agents on Google Cloud
+  - Data science workflow with AI agents solution
+  - Dynamic Hybrid Search using AlloyDB
+  - Google Skill Finder
+  - Live bidirectional multimodal streaming agentic AI solution
+  - Migrate AI Workloads to GKE Inference
+  - RAG for enterprise search using GKE and AlloyDB
+  - Secure n-tier serverless web application with strict private application tiers
+- AI/ML
+  - Agent Access Audit
+  - Agent Platform Alert Configuration
+  - Agent Platform Endpoint Management
+  - Agent Platform Eval Flywheel Skill
+  - Agent Platform GenAI Inference Skill
+  - Agent Platform Model Garden Deploy Skill
+  - Agent Platform Model Registry Management
+  - Agent Platform Model Tuning
+  - Agent Platform Prompt Management
+  - Agent Platform RAG Engine Management
+  - Agent Platform Troubleshooting
+  - Agent Platform Tuning Management
+  - API Gateway Remote MCP Server (Public Preview)
+  - Apigee as an Agent Gateway Service Extension
+  - BigQuery AI & ML
+  - Gemini API in Agent Platform
+  - Gemini Enterprise Agent Platform - Managed Agents API Skill
+  - Gemini Interactions API Skill
+  - Gemini platform Architecture and Engineering Guide
+  - Genkit Dart
+  - Genkit Go
+  - Genkit JS
+  - Genkit Python
+  - LiveAPI Service Skill
+  - Migrating from Gemini API in AI Studio to Agent Platform
+  - Skill Registry
+  - Troubleshoot GKE TPU multi-slice hangs with the MXLA Hang Analyzer
+  - Troubleshoot GKE TPU performance degradation with ML Diagnostics Workload Monitoring
+- Infrastructure
+  - Cloud Network Insights
+  - Cloud Storage Basics
+  - Cloud Storage Bucket Architect
+  - Cloud Storage Diagnostic
+  - Cloud Storage FUSE
+  - Compute Engine Future Reservations & Calendar-Mode Feasibility
+  - Compute Engine On-Demand Reservations
+  - Designing and Deploying GCP Infrastructure with Application Design Center
+  - Filestore Auditing Skill
+  - Filestore Autoscale
+  - Filestore Log-Based Troubleshooting
+  - Filestore NFS File Browser
+  - GKE AI/ML Inference
+  - GKE Alert Configuration
+  - GKE App Onboarding
+  - GKE Backup & Disaster Recovery
+  - GKE Basics & Critical Gotchas
+  - GKE Batch & HPC Workloads
+  - GKE Cluster Autoscaler
+  - GKE Cluster Creation
+  - GKE ComputeClasses
+  - GKE Golden Base Image Discovery Expert
+  - GKE Golden Path Configuration
+  - GKE JobSet Interruption Troubleshooting
+  - GKE Manifest Generation Skill
+  - GKE Multi-Tenancy
+  - GKE Networking
+  - GKE Node NotReady Troubleshooting Skill
+  - GKE Productionize Skill
+  - GKE Reliability
+  - GKE Service Networking Skill
+  - GKE Storage
+  - GKE Storage Troubleshooting Skill
+  - GKE TPU Dynamic Slices Monitoring & Management
+  - GKE Upgrades & Maintenance
+  - GKE Workload Scaling
+  - GKE Workload Scaling Troubleshooting Skill
+  - GKE Workload Troubleshooting Skill
+  - Google Cloud global external Application Load Balancer Configuration Skill
+  - Google Cloud Networking Observability Expert
+  - Troubleshoot GKE TPU reservation stockouts caused by leaked node pool capacity
+  - Troubleshoot GKE TPU slice creation blocked by an unstable MIG
+  - Troubleshoot GKE TPU VMs stuck in Compute Engine repair (REPAIRING)
+  - Troubleshoot TPU slice creation failures caused by partition overlap
+  - Troubleshoot unresponsive GKE TPU and GPU nodes (NodeStatusUnknown)
+- Databases and analytics
+  - AlloyDB Basics
+  - BigFrames (BigQuery DataFrame) basics
+  - BigQuery Asset Impact Analysis
+  - BigQuery Basics
+  - BigQuery Migration Service (BQMS) SQL Translator
+  - BigQuery Observability
+  - BigQuery Optimization Workflow
+  - BigQuery Troubleshooting
+  - BigQuery User-Defined Functions (UDFs)
+  - Bigtable Basics
+  - Cloud SQL Basics
+  - Data Lineage Summary
+  - dbt Snowflake to BigQuery Translator
+  - GCP Managed Airflow DAG Authoring Guide
+  - Google Cloud Database Onboarding Skill
+  - Managed Service for Apache Airflow (formerly Cloud Composer) DAG troubleshooting guide
+  - Managed Service for Apache Airflow (formerly Cloud Composer) Migration Guide
+  - Managed Service for Apache Airflow (formerly Cloud Composer) recommendations
+  - Spanner Basics
+- Developer tools
+  - Cloud Build Basics
+  - Cloud Operator
+  - Developer Device Platform
+  - gcloud CLI Skill for AI Agents
+  - Google Agents CLI Onboarding
+  - Google Developer Knowledge
+- Application development
+  - API Gateway OpenAPI Spec Authoring
+  - Application Integration Authoring
+  - Application Integration Basics
+  - Application Integration Troubleshooting
+  - Migrate Legacy Codebases to Safe Rust
+- Management tools
+  - Cloud Logging Finops
+  - Cloud Monitoring Chart Generation Skill (cloud-monitoring-chart-generation)
+  - Cloud Monitoring ListTimeSeries Request Generator
+  - Cloud Monitoring Notification Channels Configuration
+  - Cloud Monitoring PromQL Generator
+  - Cloud Trace Querying Skill (cloud-trace-querying)
+  - Configure Cloud Monitoring Alerts
+  - Configuring Cloud Logging
+  - Configuring Cross-Project Logging
+  - Generate Logging Query Language queries
+  - GKE Cost Analysis
+  - GKE Cost Optimization
+  - GKE Observability
+  - GKE TPU Metrics Monitoring Guide
+  - Handle Disruption on GPUs and TPUs Troubleshooting
+  - Metric Selection (Service Query & Local Keyword Filtering)
+  - SLO Alert Configuration Setup Wizard
+  - TPU Connection Failure and VBAR OOM Troubleshooting
+  - Workload Manager Basics
+- Well-Architected Framework
+  - Google Cloud Well-Architected Framework skill for the Cost Optimization pillar
+  - Google Cloud Well-Architected Framework skill for the Operational Excellence pillar
+  - Google Cloud Well-Architected Framework skill for the Performance Optimization pillar
+  - Google Cloud Well-Architected Framework skill for the Reliability pillar
+  - Google Cloud Well-Architected Framework skill for the Security pillar
+  - Google Cloud Well-Architected Framework skill for the Sustainability pillar
+- Security and identity
+  - API Gateway Backend Security and Rate Limiting
+  - Cloud Armor OWASP Rule Upgrader (CRS 3.0/3.3 -> 4.22)
+  - Compliance Environment Assessor Skill
+  - Custom Resource Authoring & Synthesis Skill (assuredworkloads-frameworks-author)
+  - Data Boundary Framework Navigator (assuredworkloads-frameworks-navigator)
+  - DPoP Adoption & Identity Security Architecture
+  - GKE Platform Security
+  - GKE Workload Identity Federation Troubleshooting Skill
+  - GKE Workload Security
+  - Google Cloud Assured Workloads Basics (V1 GA)
+  - Google Cloud Security Command Center Remediation
+  - Google SecOps Case Management Skill for AI Agents
+  - Google SecOps Detection Engineering Skill
+  - Google SecOps Incident & Entity Investigation Skill
+  - Google SecOps Security Alert Triage Specialist
+  - Google SecOps Threat Hunting Skill
+  - IAM Access Troubleshooter & Remediation Orchestrator on Google Cloud
+  - IAM Helper for Policy Management
+  - IAM Policy Simulator (v1 Allow)
+  - Privileged Access Manager (PAM)
+  - SecOps Detection Coverage Skill
+  - Security Command Center Query Skill on Google Cloud
+
+…（内容已截断）

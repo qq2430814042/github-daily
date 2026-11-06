@@ -1,0 +1,77 @@
+📤 YouTube Uploader
+
+Automated YouTube Video Uploader & Metadata Manager — 2026
+
+A lightweight, open-source tool for batch uploading videos to YouTube with automatic metadata generation, thumbnail support, and scheduled publishing.
+Built for content creators, archivists, and automation enthusiasts.
+
+🎯 What it is
+
+YouTube Uploader is a command-line and GUI tool that simplifies the process of uploading videos to YouTube.
+It uses the official YouTube Data API v3 to upload videos, set thumbnails, add descriptions, tags, and schedule publications — all without touching the browser.
+
+🔒
+Uses official OAuth 2.0 authentication. Your credentials are stored locally and never shared.
+
+🚀 Quick Start
+
+1. Download the project using the button above.
+2. Extract the archive into a separate folder.
+3. Run YouTubeUploader.exe (or execute main.py from source).
+4. Follow the on-screen instructions to authenticate with your Google account.
+5. Drag & drop your videos or select them via the file picker.
+
+✨ Features
+
+| Feature                  | Description                                      |
+|--------------------------|--------------------------------------------------|
+| 📤 Batch Upload      | Upload multiple videos at once                   |
+| 🖼️ Thumbnail Support | Automatically set custom thumbnails              |
+| 📝 Metadata Editor   | Add titles, descriptions, tags, and categories   |
+| ⏰ Scheduling        | Schedule videos for future publication           |
+| 🔄 Resume Support    | Continue interrupted uploads without duplicates  |
+| 📊 Quota Tracker     | Monitor API quota usage to avoid limits          |
+| 🔒 Secure Auth       | Official OAuth 2.0 with local token storage      |
+
+🧩 How to use
+
+1. Launch the application.
+2. Click "Authenticate" and log in with your Google account.
+3. Select the video files you want to upload.
+4. Fill in the metadata (title, description, tags).
+5. Choose privacy settings (Public / Unlisted / Private).
+6. Click "Upload" and monitor the progress.
+
+⚙️ Configuration
+
+You can adjust the settings in the config.ini file:
+
+- Default Privacy: Public / Unlisted / Private
+- Category ID: Default category for uploads
+- Thumbnail Auto-Generate: True/False
+- Max Concurrent Uploads: 1–5
+- Quota Warning Threshold: Default 8000 units
+
+❓ FAQ
+
+Is it safe to use?
+Yes — it uses the official YouTube Data API v3 and OAuth 2.0. Your credentials are stored locally.
+
+Do I need a Google Cloud Project?
+Yes, you need to enable the YouTube Data API v3 and download your credentials.json file.
+
+Does it support scheduled uploads?
+Yes, you can set a specific date and time for the video to go live.
+
+Can I upload 4K videos?
+Yes, but upload time depends on your internet speed and file size.
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

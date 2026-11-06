@@ -1,0 +1,89 @@
+Best Agent Memory MCP
+
+The best agent memory MCP servers, ranked: long-term memory for Claude Code, Codex, Cursor and any MCP client.
+
+Best Agent Memory MCP compares 25 memory MCP servers that let an AI agent keep facts, decisions and past conversations between sessions. Hosted services (Glen, Mem0, Zep, Supermemory) sit next to open-source servers you run yourself (Hindsight, Basic Memory, Graphiti, Cognee, the official MCP memory server), and every entry says where memory is stored, whether capture is automatic or waits for the agent to call a tool, whether a team can share it, and what it costs. All of them connect to Claude Code, Cursor or Codex over MCP; the entries note which clients each project documents.
+
+Short answer. For memory shared across a team's agents, start with Glen. For a hosted personal memory with a free tier, Mem0. For self-hosting with hybrid retrieval, Hindsight. For memory you can read and edit as files, Basic Memory. For a zero-dependency baseline, the official memory server.
+
+Disclosure: this list is maintained by the Glen team, and Glen is ranked first. Every other entry is ranked on the published criteria, and its facts link to their sources.
+
+Contents
+
+- At a glance
+- How we ranked
+- The ranked list
+- Deprecated or not recommended
+- FAQ
+- Related
+- Contributing
+- License
+
+At a glance
+
+Star badges are live. Several projects keep their MCP server inside a larger monorepo, so their star count covers the whole repo, not the server; the entries say where that applies.
+
+| # | Name | Hosted or local | Memory stored as | Capture | Team sharing | License | Stars |
+|---|---|---|---|---|---|---|---|
+| 1 | Glen | Hosted | Shards and observations on Glen's servers | Plugin or CLI hooks; MCP alone is search only | Org-wide, access checked per observation | Plugin MIT; hosted service | site |
+| 2 | Mem0 | Hosted | Mem0 Platform memories (graph on Custom plan) | Agent calls a tool | Not documented for MCP | Apache-2.0 (core repo) |  |
+| 3 | Supermemory | Hosted; self-host option | Supermemory cloud, organized in spaces | Agent calls a tool; hooks via separate plugins | Team spaces | MIT |  |
+| 4 | Zep Context MCP | Hosted; BYOC option | Temporal knowledge graph | Agent calls a tool | Shared Context Graphs with ABAC | Proprietary | closed source |
+| 5 | Hindsight | Self-hosted or Hindsight Cloud | Postgres + pgvector | Agent calls a tool; auto-ingest via coding-agents package | Shared server or Cloud | MIT |  |
+| 6 | mcp-memory-service | Local or self-hosted | SQLite with local ONNX embeddings | Hooks (Claude Code, Codex) or tool calls | Self-hosted HTTP sync | Apache-2.0 |  |
+| 7 | Basic Memory | Local; paid cloud | Markdown files + SQLite index | Agent writes notes; plugin hooks in Claude Code | Basic Memory Teams (paid) | AGPL-3.0 |  |
+| 8 | claude-mem | Local; hosted observer by default | SQLite FTS5 + Chroma | Six lifecycle hooks | Opt-in TeamBrain | Apache-2.0 |  |
+| 9 | agentmemory | Local | Local data dir, BM25 + optional embeddings | Hooks + tool calls | One server for your agents | Apache-2.0 |  |
+| 10 | Cognee MCP | Local, self-hosted or Cognee Cloud | Graph + vector (SQLite, LanceDB, Kuzu) | Agent calls a tool | Per-user datasets on a server | Apache-2.0 |  |
+| 11 | Engram | Local | SQLite + FTS5 | Agent calls a tool; plugins | Git Sync; optional Engram Cloud | MIT |  |
+| 12 | Graphiti MCP | Self-hosted | Temporal graph on FalkorDB or Neo4j | Agent calls a tool | Group IDs on one server, no auth | Apache-2.0 |  |
+| 13 | MemPalace | Local; team server option | Verbatim text in Chroma, SQLite or pgvector | Transcript mining + auto-save hooks | Team server compose file | MIT |  |
+| 14 | Official memory server | Local | JSONL knowledge graph | Agent calls a tool | File lock on one machine | Not detected (monorepo) |  |
+| 15 | Pieces | Local (desktop app) | PiecesOS on-device store | OS-level automatic capture | Enterprise plan | Proprietary | closed source |
+| 16 | Qdrant MCP | Local or self-hosted | Qdrant vectors (FastEmbed) | Agent calls a tool | Remote transport to one server | Apache-2.0 |  |
+| 17 | LongMemory | Local; HTTP server option | SQLite + embeddings | Session porter imports logs; plugins | Not documented | Apache-2.0 |  |
+| 18 | deja-vu | Local | Index of transcripts already on disk | Automatic, through hooks | None described | MIT |  |
+| 19 | MemOS | Hosted API; self-host server | MemOS cloud; Neo4j + Qdrant self-hosted | Agent calls a tool | Not documented | Apache-2.0 |  |
+| 20 | Memori | Hosted; VPC and on-prem options | SQL-native store | Agent calls a tool | Not documented | Apache-2.0 |  |
+| 21 | Membase | Hosted or local | Not documented | Tool calls plus imported sources | Not documented | MIT |  |
+| 22 | mcp-memory-keeper | Local | Files in ~/mcp-data/memory-keeper/ | MCP tools | Parallel sessions on one machine | MIT |  |
+| 23 | mcp-knowledge-graph | Local | Project-local JSONL graph | Agent calls a tool | None described | MIT |  |
+| 24 | MemoryMesh | Local | JSON knowledge graph with your schemas | Prompt instructions you write | None described | MIT |  |
+| 25 | Stash | Self-hosted | Postgres | MCP tools | Not documented | Apache-2.0 |  |
+
+How we ranked
+
+Glen's first place is the maintainer's pick. Entries 2 to 25 are ordered on these criteria, read from each project's README, docs, pricing page and the GitHub API in early November 2026:
+
+1. Maintained. A commit or release in the last 6 months. Archived, winding-down and stale projects go to Deprecated or not recommended instead of the ranking.
+2. Ships an MCP server for memory. A generic database tool, a code index or an MCP server where memory is a side feature does not qualify. That leaves out DeusData/codebase-memory-mcp (code intelligence), the Chroma, Milvus and Weaviate servers (generic vector stores) and Serena (memory is one small feature of a coding toolkit).
+3. Capture model. Automatic capture through hooks or background extraction ranks above a server that saves only when the model decides to call a write tool.
+4. Retrieval quality evidence. Published benchmarks count, but almost every LoCoMo and LongMemEval number in this category is self-reported on a different model and judge, so scores are labeled (self-reported) and weigh less than a reproducible harness. Disputed results are flagged.
+5. Setup effort. One URL or one command beats a server that needs a graph database, an LLM key and a cloned monorepo.
+6. Team sharing. Documented ways to share memory across people, with access control, rank above per-machine files.
+7. Licensing and pricing transparency. A published license and a public price list rank above "contact sales" or no license file.
+
+Star counts are a weak signal here. Monorepo stars overstate use of one server, and a few young repos gained stars much faster than their peers.
+
+The ranked list
+
+🥇 1. Glen
+
+Memory belongs to the organization, not to one person: every teammate's agent sessions record into one org memory, and any teammate's agent can recall from it. Access control runs per observation at recall, so an agent only gets what its user is already cleared to see.
+
+| | |
+|---|---|
+| Endpoint | https://mcp.tryglen.com/mcp, Streamable HTTP |
+| Auth | OAuth 2.1 with dynamic client registration (the token is bound to one org picked at consent), or a personal API key in x-api-key with the org in x-glen-org-id |
+| Tools | glen_search (a synthesized answer with citations), glen_list_orgs, forget, skill and artifact tools |
+| Storage | Shards and observations on Glen's servers; LLM relevance passes pick what to inject |
+| Other sources | Slack public channels, GitHub, tickets, docs, and calls through Fireflies, Fathom and Granola |
+| Pricing | Free plan to start; paid plans exist; no public pricing page |
+
+https://mcp.tryglen.com/mcp
+
+The MCP connection searches memory. To also record agent conversations, install the plugin hooks with the CLI, which detects installed agents and sets up each one:
+
+npx @tryglen/cli@latest install
+
+…（内容已截断）

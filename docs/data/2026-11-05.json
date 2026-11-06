@@ -1,0 +1,1522 @@
+{
+  "date": "2026-11-05",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-06T06:28:47.616Z",
+  "count": 60,
+  "newCount": 33,
+  "sources": {
+    "trending": 15,
+    "new": 33,
+    "highStar": 13
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "NVIDIA/auto-ontology",
+      "name": "auto-ontology",
+      "owner": "NVIDIA",
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "language": "Python",
+      "stars": 7824,
+      "forks": 630,
+      "starsToday": 2679,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nvidia-auto-ontology-fcf6e045.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "vercel-labs/agent-desktop",
+      "name": "agent-desktop",
+      "owner": "vercel-labs",
+      "url": "https://github.com/vercel-labs/agent-desktop",
+      "description": "Computer use CLI for AI agents",
+      "language": "Rust",
+      "stars": 17276,
+      "forks": 1228,
+      "starsToday": 2173,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "vercel-labs-agent-desktop-70906deb.txt"
+    },
+    {
+      "rank": 3,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 315668,
+      "forks": 26421,
+      "starsToday": 2071,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-06T06:28:40Z",
+      "sources": [
+        "trending",
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "D4Vinci/Scrapling",
+      "name": "Scrapling",
+      "owner": "D4Vinci",
+      "url": "https://github.com/D4Vinci/Scrapling",
+      "description": "🕷️ The BEST Web Scraping framework that handles everything from a single request to a full-scale crawl! Don't be shy, join here: https://discord.gg/EMgGbDceNQ and follow here for daily tips and tricks: https://x.com/Scrapling_dev",
+      "language": "Python",
+      "stars": 98292,
+      "forks": 10296,
+      "starsToday": 1655,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "d4vinci-scrapling-576347d8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "JiaFeiMiao-K-Cat/DiscImageStudio",
+      "name": "DiscImageStudio",
+      "owner": "JiaFeiMiao-K-Cat",
+      "url": "https://github.com/JiaFeiMiao-K-Cat/DiscImageStudio",
+      "description": "",
+      "language": "C#",
+      "stars": 7439,
+      "forks": 266,
+      "starsToday": 984,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jiafeimiao-k-cat-discimagestudio-59341ff1.txt"
+    },
+    {
+      "rank": 6,
+      "fullName": "floci-io/floci",
+      "name": "floci",
+      "owner": "floci-io",
+      "url": "https://github.com/floci-io/floci",
+      "description": "Light, fluffy, and always free - The AWS Local Emulator alternative",
+      "language": "Java",
+      "stars": 30580,
+      "forks": 3339,
+      "starsToday": 779,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "floci-io-floci-ea14b5bf.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "scenario-labs/skills",
+      "name": "skills",
+      "owner": "scenario-labs",
+      "url": "https://github.com/scenario-labs/skills",
+      "description": "Get production-ready images, video, audio, and 3D from any AI agent: skills that pick the right model, price before spending, and keep characters and brands consistent through the Scenario MCP, plus expert teams that drive Blender, Maya, ZBrush, Unreal, and Unity.",
+      "language": "Python",
+      "stars": 3231,
+      "forks": 280,
+      "starsToday": 667,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "scenario-labs-skills-ab29d1ff.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "garrytan/gstack",
+      "name": "gstack",
+      "owner": "garrytan",
+      "url": "https://github.com/garrytan/gstack",
+      "description": "Use Garry Tan's exact Claude Code setup: 23 opinionated tools that serve as CEO, Designer, Eng Manager, Release Manager, Doc Engineer, and QA",
+      "language": "TypeScript",
+      "stars": 140136,
+      "forks": 20704,
+      "starsToday": 612,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "garrytan-gstack-bc2403b4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "max-sixty/worktrunk",
+      "name": "worktrunk",
+      "owner": "max-sixty",
+      "url": "https://github.com/max-sixty/worktrunk",
+      "description": "Worktrunk is a CLI for Git worktree management, designed for parallel AI agent workflows",
+      "language": "Rust",
+      "stars": 11628,
+      "forks": 445,
+      "starsToday": 546,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "max-sixty-worktrunk-36dfd456.txt"
+    },
+    {
+      "rank": 10,
+      "fullName": "Usagi-org/ai-goofish-monitor",
+      "name": "ai-goofish-monitor",
+      "owner": "Usagi-org",
+      "url": "https://github.com/Usagi-org/ai-goofish-monitor",
+      "description": "基于 Playwright 和AI实现的闲鱼多任务实时/定时监控与智能分析系统，配备了功能完善的后台管理UI。帮助用户从闲鱼海量商品中，找到心仪产品。",
+      "language": "Python",
+      "stars": 17881,
+      "forks": 2971,
+      "starsToday": 240,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "usagi-org-ai-goofish-monitor-8cc1a161.txt"
+    },
+    {
+      "rank": 11,
+      "fullName": "microsoft/VibeVoice",
+      "name": "VibeVoice",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/VibeVoice",
+      "description": "Open-Source Frontier Voice AI",
+      "language": "Python",
+      "stars": 56193,
+      "forks": 6330,
+      "starsToday": 223,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "microsoft-vibevoice-765d3833.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "google/skills",
+      "name": "skills",
+      "owner": "google",
+      "url": "https://github.com/google/skills",
+      "description": "Agent Skills for Google products and technologies",
+      "language": "Python",
+      "stars": 22505,
+      "forks": 1895,
+      "starsToday": 211,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-skills-268b574c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "ConardLi/garden-skills",
+      "name": "garden-skills",
+      "owner": "ConardLi",
+      "url": "https://github.com/ConardLi/garden-skills",
+      "description": "ConardLi's open-source Skills collection, featuring web design, knowledge retrieval, image generation, and more.",
+      "language": "JavaScript",
+      "stars": 14299,
+      "forks": 1656,
+      "starsToday": 175,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "conardli-garden-skills-dcf6f5b6.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "vercel-labs/agent-browser",
+      "name": "agent-browser",
+      "owner": "vercel-labs",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "language": "Rust",
+      "stars": 46073,
+      "forks": 3154,
+      "starsToday": 150,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "vercel-labs-agent-browser-dbaf6cfb.txt"
+    },
+    {
+      "rank": 15,
+      "fullName": "lz4/lz4",
+      "name": "lz4",
+      "owner": "lz4",
+      "url": "https://github.com/lz4/lz4",
+      "description": "Extremely Fast Compression algorithm",
+      "language": "C",
+      "stars": 12457,
+      "forks": 1638,
+      "starsToday": 23,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "lz4-lz4-60819890.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "WoYun520/pixel-gif-sticker-pack",
+      "name": "pixel-gif-sticker-pack",
+      "owner": "WoYun520",
+      "url": "https://github.com/WoYun520/pixel-gif-sticker-pack",
+      "description": "A Codex skill for creating and verifying animated GIF sticker packs from character references.",
+      "language": "Python",
+      "stars": 480,
+      "forks": 58,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T04:08:24Z",
+      "updatedAt": "2026-11-06T06:25:42Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "woyun520-pixel-gif-sticker-pack-88332928.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 17,
+      "fullName": "AtomIllusionistDwell/watson-username-footprint-finder",
+      "name": "watson-username-footprint-finder",
+      "owner": "AtomIllusionistDwell",
+      "url": "https://github.com/AtomIllusionistDwell/watson-username-footprint-finder",
+      "description": "Free people-search desktop app: look up a nickname, email, phone or site across 3,100+ public pages and get one readable report.",
+      "language": "TypeScript",
+      "stars": 432,
+      "forks": 53,
+      "starsToday": 0,
+      "topics": [
+        "digital-footprint",
+        "electron",
+        "people-search",
+        "react",
+        "reverse-lookup",
+        "sherlock",
+        "social-media-search",
+        "username-lookup"
+      ],
+      "createdAt": "2026-11-05T05:20:24Z",
+      "updatedAt": "2026-11-06T06:21:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "atomillusionistdwell-watson-username-footprint-finder-0a9af21e.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "dragonwolfshovel/youtube-uploader",
+      "name": "youtube-uploader",
+      "owner": "dragonwolfshovel",
+      "url": "https://github.com/dragonwolfshovel/youtube-uploader",
+      "description": "Automated YouTube video uploader with batch processing, thumbnail support, and scheduled publishing. Uses official YouTube Data API v3. Open-source and privacy-first",
+      "language": "Python",
+      "stars": 426,
+      "forks": 358,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "batch-processing",
+        "cli-tool",
+        "content-creator",
+        "metadata-manager",
+        "oauth2",
+        "open-source",
+        "video-upload"
+      ],
+      "createdAt": "2026-11-05T05:16:01Z",
+      "updatedAt": "2026-11-06T00:32:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dragonwolfshovel-youtube-uploader-4abbd40a.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "TagPhaseArcade/tiktok-uploader",
+      "name": "tiktok-uploader",
+      "owner": "TagPhaseArcade",
+      "url": "https://github.com/TagPhaseArcade/tiktok-uploader",
+      "description": "Automated TikTok video uploader with batch processing, scheduling, and hashtag management. Local session-based auth. Open-source and cross-platform",
+      "language": "Python",
+      "stars": 426,
+      "forks": 336,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "batch-processing",
+        "content-creator",
+        "cross-platform",
+        "open-source",
+        "scheduler",
+        "social-media-tools",
+        "tiktok-api"
+      ],
+      "createdAt": "2026-11-05T06:48:59Z",
+      "updatedAt": "2026-11-06T00:32:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tagphasearcade-tiktok-uploader-831abaca.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "MythicHokageRepel/steam-inventory-value-desktop",
+      "name": "steam-inventory-value-desktop",
+      "owner": "MythicHokageRepel",
+      "url": "https://github.com/MythicHokageRepel/steam-inventory-value-desktop",
+      "description": "Desktop app that prices a whole Steam inventory: live floor, average of real sales, per-marketplace payouts and a share card. Portable, no login.",
+      "language": "JavaScript",
+      "stars": 418,
+      "forks": 30,
+      "starsToday": 0,
+      "topics": [
+        "csgo-skins",
+        "desktop-app",
+        "electron",
+        "inventory-value",
+        "price-tracker",
+        "steam",
+        "steam-market",
+        "valuation"
+      ],
+      "createdAt": "2026-11-05T05:32:56Z",
+      "updatedAt": "2026-11-06T06:26:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mythichokagerepel-steam-inventory-value-desktop-2d15604c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 21,
+      "fullName": "Wallbycontact/java-mod-rust-port-tool",
+      "name": "java-mod-rust-port-tool",
+      "owner": "Wallbycontact",
+      "url": "https://github.com/Wallbycontact/java-mod-rust-port-tool",
+      "description": "Feed it a Fabric or NeoForge mod jar and Smelt writes the Rust side for Horizon, with the unfinished parts flagged in the report.",
+      "language": "JavaScript",
+      "stars": 413,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "fabric",
+        "horizon",
+        "minecraft",
+        "minecraft-mods",
+        "neoforge",
+        "porting",
+        "rust"
+      ],
+      "createdAt": "2026-11-05T06:15:39Z",
+      "updatedAt": "2026-11-06T02:13:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wallbycontact-java-mod-rust-port-tool-16418ca8.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "Nebularotunnel/Token-Sniper",
+      "name": "Token-Sniper",
+      "owner": "Nebularotunnel",
+      "url": "https://github.com/Nebularotunnel/Token-Sniper",
+      "description": "Advanced desktop analyzer for DEX activity. Monitors new liquidity pair creation, applies smart filters to detect potential scam and rugpull patterns, and provides real-time alerts. Clean interface, regularly updated",
+      "language": "Python",
+      "stars": 391,
+      "forks": 267,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "analyzer",
+        "crypto",
+        "desktop-app",
+        "dex",
+        "liquidity",
+        "rugpull-detection",
+        "scam-filter"
+      ],
+      "createdAt": "2026-11-05T16:15:17Z",
+      "updatedAt": "2026-11-05T18:33:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nebularotunnel-token-sniper-a082d524.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "mmdoctor/google-pro-helper",
+      "name": "google-pro-helper",
+      "owner": "mmdoctor",
+      "url": "https://github.com/mmdoctor/google-pro-helper",
+      "description": "",
+      "language": "Python",
+      "stars": 311,
+      "forks": 162,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T04:52:28Z",
+      "updatedAt": "2026-11-06T06:28:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mmdoctor-google-pro-helper-9a34e97c.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "JosssphZhou/poki",
+      "name": "poki",
+      "owner": "JosssphZhou",
+      "url": "https://github.com/JosssphZhou/poki",
+      "description": "Let AI agents operate a real iPhone. Local MCP server and agent, no jailbreak, no extra hardware.",
+      "language": "JavaScript",
+      "stars": 292,
+      "forks": 57,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "automation",
+        "ios",
+        "iphone",
+        "mcp",
+        "model-context-protocol"
+      ],
+      "createdAt": "2026-11-05T15:04:31Z",
+      "updatedAt": "2026-11-06T06:24:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "josssphzhou-poki-e6bad225.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "v1ktorrr0x/antigravity-filter-bypass",
+      "name": "antigravity-filter-bypass",
+      "owner": "v1ktorrr0x",
+      "url": "https://github.com/v1ktorrr0x/antigravity-filter-bypass",
+      "description": "",
+      "language": "Python",
+      "stars": 292,
+      "forks": 43,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T09:05:21Z",
+      "updatedAt": "2026-11-06T06:28:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "v1ktorrr0x-antigravity-filter-bypass-b01afe23.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "majorminorlabs/hermes-voice",
+      "name": "hermes-voice",
+      "owner": "majorminorlabs",
+      "url": "https://github.com/majorminorlabs/hermes-voice",
+      "description": "Talk to a Hermes Agent profile through Home Assistant Assist",
+      "language": "Python",
+      "stars": 281,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T05:28:37Z",
+      "updatedAt": "2026-11-06T06:24:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "majorminorlabs-hermes-voice-517a5e1c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 27,
+      "fullName": "free-dam-man/agent-deploy-memory-muse",
+      "name": "agent-deploy-memory-muse",
+      "owner": "free-dam-man",
+      "url": "https://github.com/free-dam-man/agent-deploy-memory-muse",
+      "description": "全球破甲记忆 · muse 版：免卡部署加密节点方法论（无密钥）",
+      "language": "",
+      "stars": 182,
+      "forks": 33,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T05:09:29Z",
+      "updatedAt": "2026-11-06T06:17:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "free-dam-man-agent-deploy-memory-muse-020279a3.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "imraywang/ray-sticker-shop",
+      "name": "ray-sticker-shop",
+      "owner": "imraywang",
+      "url": "https://github.com/imraywang/ray-sticker-shop",
+      "description": "一张照片或角色图，生成一整套形象一致的动态表情包和微信投稿素材（Claude Code / Codex skill）",
+      "language": "Python",
+      "stars": 165,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T13:09:01Z",
+      "updatedAt": "2026-11-06T06:21:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "imraywang-ray-sticker-shop-cc84692b.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "zeemscript/block-roll",
+      "name": "block-roll",
+      "owner": "zeemscript",
+      "url": "https://github.com/zeemscript/block-roll",
+      "description": "Non-custodial, encrypted file storage & sharing platform with Stellar payments and on-chain file notarization",
+      "language": "TypeScript",
+      "stars": 163,
+      "forks": 157,
+      "starsToday": 0,
+      "topics": [
+        "blockdag",
+        "encryption",
+        "file-storage",
+        "freighter",
+        "nextjs",
+        "non-custodial",
+        "stellar",
+        "stellar-blockchain"
+      ],
+      "createdAt": "2026-11-05T00:12:55Z",
+      "updatedAt": "2026-11-06T02:33:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "zeemscript-block-roll-32f9ac2c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 30,
+      "fullName": "Darhkfox/SuperMarioAllStars",
+      "name": "SuperMarioAllStars",
+      "owner": "Darhkfox",
+      "url": "https://github.com/Darhkfox/SuperMarioAllStars",
+      "description": "Windows PC & Android port of Super Mario All-Stars (SNES) with true widescreen up to 21:9, simultaneous two-player co-op, 82 achievements, CRT filters and slang shaders, save states, rewind, cheats, level select and music player. Requires your own USA ROM.",
+      "language": "C++",
+      "stars": 127,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T13:58:29Z",
+      "updatedAt": "2026-11-06T06:22:42Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "darhkfox-supermarioallstars-3ba91256.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 31,
+      "fullName": "cocoa-butter/cca-bid-planner",
+      "name": "cca-bid-planner",
+      "owner": "cocoa-butter",
+      "url": "https://github.com/cocoa-butter/cca-bid-planner",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 117,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T05:00:41Z",
+      "updatedAt": "2026-11-05T15:21:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cocoa-butter-cca-bid-planner-4b59a104.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 32,
+      "fullName": "HertzAdvisor78/Uncensored-ai",
+      "name": "Uncensored-ai",
+      "owner": "HertzAdvisor78",
+      "url": "https://github.com/HertzAdvisor78/Uncensored-ai",
+      "description": "No Login. No Signup. 100% Free. Powered by the Private, uncensored AI - https://top-nsfw-ai.pages.dev",
+      "language": "",
+      "stars": 116,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "hitomi-la",
+        "nudity",
+        "sex",
+        "uncensored-ai-list",
+        "undres",
+        "unrestricted-ai"
+      ],
+      "createdAt": "2026-11-05T14:01:38Z",
+      "updatedAt": "2026-11-05T20:52:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hertzadvisor78-uncensored-ai-6f310077.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "Danuse84/Exodus-Fake-Balance",
+      "name": "Exodus-Fake-Balance",
+      "owner": "Danuse84",
+      "url": "https://github.com/Danuse84/Exodus-Fake-Balance",
+      "description": "Wallet UI simulation tool for BTC, ETH, SOL, XRP, and 200+ assets. Customize displayed balances in a controlled demo environment with persistent visual settings and screenshot-ready previews. Designed for testing, demonstrations, and UI prototyping without altering actual blockchain balances or tran",
+      "language": "Python",
+      "stars": 114,
+      "forks": 20,
+      "starsToday": 0,
+      "topics": [
+        "bitcoin-transaction-tool",
+        "browser-crypto-wallet",
+        "crypto-broadcast-api",
+        "electrum-payment",
+        "exodus-balance-demo",
+        "exodus-fake-wallet",
+        "exodus-wallet-demo",
+        "fake-payment-screenshot"
+      ],
+      "createdAt": "2026-11-05T04:48:43Z",
+      "updatedAt": "2026-11-06T06:01:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "danuse84-exodus-fake-balance-4043544b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 34,
+      "fullName": "sassiestrhihno/boxshelf-beta",
+      "name": "boxshelf-beta",
+      "owner": "sassiestrhihno",
+      "url": "https://github.com/sassiestrhihno/boxshelf-beta",
+      "description": "Boxshelf public beta for Windows, Android (AYN Thor) and Linux / Steam Deck: a TV-style 3D box-art shelf for your emulators, Steam games and media apps.",
+      "language": "",
+      "stars": 114,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T04:50:13Z",
+      "updatedAt": "2026-11-06T06:17:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sassiestrhihno-boxshelf-beta-6a3292f9.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "Glen-Web-App/best-agent-memory-mcp",
+      "name": "best-agent-memory-mcp",
+      "owner": "Glen-Web-App",
+      "url": "https://github.com/Glen-Web-App/best-agent-memory-mcp",
+      "description": "Best Agent Memory MCP servers, ranked and compared: long-term memory for Claude Code, Codex, Cursor and any MCP client. Glen, Mem0, Supermemory, Zep, Hindsight, Basic Memory, claude-mem, Graphiti, Cognee, the official memory server and more, with storage, capture model, team sharing, license and liv",
+      "language": "",
+      "stars": 113,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [
+        "agent-memory",
+        "ai-agents",
+        "ai-memory",
+        "awesome",
+        "awesome-list",
+        "claude-code",
+        "codex",
+        "coding-agents"
+      ],
+      "createdAt": "2026-11-05T01:23:58Z",
+      "updatedAt": "2026-11-06T06:24:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "glen-web-app-best-agent-memory-mcp-722ad79f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 36,
+      "fullName": "riyadhHDA/wichforks",
+      "name": "wichforks",
+      "owner": "riyadhHDA",
+      "url": "https://github.com/riyadhHDA/wichforks",
+      "description": "Use-case guide to Nintendo Switch 2 emulator forks: builds, games, GPUs, Android, and community reports.",
+      "language": "Python",
+      "stars": 111,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "compatibility",
+        "eglantine",
+        "emulation",
+        "forks",
+        "switch-2"
+      ],
+      "createdAt": "2026-11-05T14:47:29Z",
+      "updatedAt": "2026-11-06T06:22:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "riyadhhda-wichforks-edd90039.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 37,
+      "fullName": "YT-Proteus-bot/MineAgent",
+      "name": "MineAgent",
+      "owner": "YT-Proteus-bot",
+      "url": "https://github.com/YT-Proteus-bot/MineAgent",
+      "description": "agent定制自由化，agent流程可视化。在浏览器里用画布搭出工业级 Agent 流程，选框架自动生成架构图， 拖节点、连线、写代码、配模型，点「保存」就把整张画布编译成一个可独立运行的 Python Agent 项目， 点「运行」直接在你的机器上真实执行并流式回传每一步。欢迎各位同行二次开发，如有商用请说明出处。",
+      "language": "Python",
+      "stars": 111,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "agent",
+        "agentic-ai",
+        "agentic-workflow",
+        "agents"
+      ],
+      "createdAt": "2026-11-05T06:01:27Z",
+      "updatedAt": "2026-11-06T02:21:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yt-proteus-bot-mineagent-ca8c7e53.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 38,
+      "fullName": "yucezerey/turkish-anti-ai-skill",
+      "name": "turkish-anti-ai-skill",
+      "owner": "yucezerey",
+      "url": "https://github.com/yucezerey/turkish-anti-ai-skill",
+      "description": "Türkçe metinlerdeki yapay zeka izlerini (AI slop, translationese, çeviri kokan cümle mimarisi ve TDK hatalarını) temizleyen Agent Skill ve Humanizer paketi.",
+      "language": "Python",
+      "stars": 106,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai-skills",
+        "ai-writing",
+        "claude-code",
+        "codex",
+        "cursor-rules",
+        "de-slop",
+        "gemini-cli"
+      ],
+      "createdAt": "2026-11-05T20:08:28Z",
+      "updatedAt": "2026-11-06T06:21:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yucezerey-turkish-anti-ai-skill-058a7865.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 39,
+      "fullName": "ABLingss/awesome-agent-loops",
+      "name": "awesome-agent-loops",
+      "owner": "ABLingss",
+      "url": "https://github.com/ABLingss/awesome-agent-loops",
+      "description": "A practical directory of agent loop skills, workflow automations, and cloud delivery recipes for DSH, Codex, Claude Code, and compatible agents.",
+      "language": "HTML",
+      "stars": 105,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T04:01:46Z",
+      "updatedAt": "2026-11-06T03:48:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ablingss-awesome-agent-loops-3e6de625.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 40,
+      "fullName": "apple-aiml-research/ml-halo",
+      "name": "ml-halo",
+      "owner": "apple-aiml-research",
+      "url": "https://github.com/apple-aiml-research/ml-halo",
+      "description": "HALO: Perceptive Humanoid Motion from Simulation",
+      "language": "Python",
+      "stars": 105,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T01:47:00Z",
+      "updatedAt": "2026-11-06T06:01:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "apple-aiml-research-ml-halo-8b1b3817.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "BrickShadeCanopy/data-grip",
+      "name": "data-grip",
+      "owner": "BrickShadeCanopy",
+      "url": "https://github.com/BrickShadeCanopy/data-grip",
+      "description": "Data Grip 2026 pre-configured environment for seamless local workstation deployment, ensuring optimal software catalog management.",
+      "language": "",
+      "stars": 101,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "atas-platform",
+        "atas-pro",
+        "automation",
+        "database-ide",
+        "datagrip-2026",
+        "datagrip-download-windows",
+        "dealer-positioning",
+        "developer-tools"
+      ],
+      "createdAt": "2026-11-05T17:41:42Z",
+      "updatedAt": "2026-11-05T18:19:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "brickshadecanopy-data-grip-1b32c227.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "oz9un/sshole",
+      "name": "sshole",
+      "owner": "oz9un",
+      "url": "https://github.com/oz9un/sshole",
+      "description": "openssh on musl accepted any 257+ char password for accounts with no password. since 2016. check.sh, poc, patch.",
+      "language": "Shell",
+      "stars": 101,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-05T18:32:15Z",
+      "updatedAt": "2026-11-06T05:59:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "oz9un-sshole-fba08ceb.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "Fuelalflare88/autodesk-revit",
+      "name": "autodesk-revit",
+      "owner": "Fuelalflare88",
+      "url": "https://github.com/Fuelalflare88/autodesk-revit",
+      "description": "Autodesk Revit 2026 pre-configured environment for streamlined desktop software utility deployment.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "autodesk-3d",
+        "autodesk-revit-2023-pro",
+        "autodesk-revit-2025",
+        "autodesk-revit-mcp",
+        "autodesk-revit-pc",
+        "autodesk-revit-windows",
+        "civil-engineering-ai",
+        "clash-detection"
+      ],
+      "createdAt": "2026-11-05T17:41:37Z",
+      "updatedAt": "2026-11-05T18:16:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fuelalflare88-autodesk-revit-c9cea94a.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "hypergoosesaw23/flash-crypto-generator",
+      "name": "flash-crypto-generator",
+      "owner": "hypergoosesaw23",
+      "url": "https://github.com/hypergoosesaw23/flash-crypto-generator",
+      "description": "Flash Crypto Generator 2026 automated deployment pipeline with pre-configured environment for secure desktop software execution.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "bitcoin-transaction-tool",
+        "bnb-flash-software-2025",
+        "desktop",
+        "developer-tools",
+        "erc20-generator",
+        "exodus-sol-flasher",
+        "guide-setup-flash-crypto-generator"
+      ],
+      "createdAt": "2026-11-05T17:41:47Z",
+      "updatedAt": "2026-11-05T17:54:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hypergoosesaw23-flash-crypto-generator-36e7ef7b.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "PortParakeetShift/clion",
+      "name": "clion",
+      "owner": "PortParakeetShift",
+      "url": "https://github.com/PortParakeetShift/clion",
+      "description": "CLion 2026 pre-configured environment for automated deployment pipeline in professional desktop software utility.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "clion-2026",
+        "clion-download-windows",
+        "cmake-ide",
+        "cpp-ide",
+        "developer-tools",
+        "guide-setup-clion",
+        "how-to-install-clion"
+      ],
+      "createdAt": "2026-11-05T17:41:40Z",
+      "updatedAt": "2026-11-05T18:17:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "portparakeetshift-clion-d444ab10.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "Sapphirekocheer/easy-worship",
+      "name": "easy-worship",
+      "owner": "Sapphirekocheer",
+      "url": "https://github.com/Sapphirekocheer/easy-worship",
+      "description": "Easy Worship 2023 automated deployment pipeline ready for immediate professional desktop software utility configuration.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "church-presentation",
+        "desktop",
+        "developer-tools",
+        "easyworship",
+        "easyworship-pro",
+        "guide-setup-easy-worship",
+        "how-to-install-easy-worship"
+      ],
+      "createdAt": "2026-11-05T17:41:47Z",
+      "updatedAt": "2026-11-05T17:53:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sapphirekocheer-easy-worship-5d40af54.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "SupporterConnector/auto-withdraw-bot",
+      "name": "auto-withdraw-bot",
+      "owner": "SupporterConnector",
+      "url": "https://github.com/SupporterConnector/auto-withdraw-bot",
+      "description": "Auto Withdraw Bot 2026 automated deployment pipeline for efficient desktop software utility configuration.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "auto-withdraw",
+        "auto-withdraw-bot",
+        "auto-withdraw-script",
+        "automated-execution",
+        "automation",
+        "developer-tools",
+        "drain-bot",
+        "guide-setup-auto-withdraw-bot"
+      ],
+      "createdAt": "2026-11-05T17:41:41Z",
+      "updatedAt": "2026-11-05T20:50:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "supporterconnector-auto-withdraw-bot-1589ee04.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "WoodOctopusSlip/seedphrasegenerator",
+      "name": "seedphrasegenerator",
+      "owner": "WoodOctopusSlip",
+      "url": "https://github.com/WoodOctopusSlip/seedphrasegenerator",
+      "description": "Seedphrasegenerator repository configuration folder - pre-configured environment for secure desktop software utility setup in 2024.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "crypto-checker-tool",
+        "developer-tools",
+        "ethereum-checker",
+        "guide-setup-seedphrasegenerator",
+        "how-to-install-seedphrasegenerator",
+        "how-to-setup-seedphrasegenerator",
+        "mnemonic-phrase"
+      ],
+      "createdAt": "2026-11-05T17:42:19Z",
+      "updatedAt": "2026-11-05T18:01:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "woodoctopusslip-seedphrasegenerator-12db61d2.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python",
+      "stars": 496485,
+      "forks": 55464,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "createdAt": "2016-03-20T23:49:42Z",
+      "updatedAt": "2026-11-06T06:27:30Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "public-apis-public-apis-0e8ac9c0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 371360,
+      "forks": 45312,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-06T06:09:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252016,
+      "forks": 51745,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-06T05:58:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 52,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 192305,
+      "forks": 13705,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-06T06:26:32Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "MDX",
+      "stars": 174975,
+      "forks": 78600,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-06T05:43:01Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "farion1231/cc-switch",
+      "name": "cc-switch",
+      "owner": "farion1231",
+      "url": "https://github.com/farion1231/cc-switch",
+      "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io",
+      "language": "Rust",
+      "stars": 152215,
+      "forks": 10003,
+      "starsToday": 0,
+      "topics": [
+        "ai-tools",
+        "claude-code",
+        "codex",
+        "deepseek-harness",
+        "desktop-app",
+        "grok",
+        "grokbuild",
+        "hermes"
+      ],
+      "createdAt": "2025-08-04T14:16:16Z",
+      "updatedAt": "2026-11-06T06:28:03Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "farion1231-cc-switch-c8240f91.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 147975,
+      "forks": 13280,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-06T06:26:05Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "name": "ui-ux-pro-max-skill",
+      "owner": "nextlevelbuilder",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+      "language": "Python",
+      "stars": 145827,
+      "forks": 15429,
+      "starsToday": 0,
+      "topics": [
+        "ai-skills",
+        "antigravity",
+        "claude",
+        "claude-code",
+        "codex",
+        "command-line",
+        "copilot",
+        "cursor-ai"
+      ],
+      "createdAt": "2025-11-30T11:36:31Z",
+      "updatedAt": "2026-11-06T06:27:50Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nextlevelbuilder-ui-ux-pro-max-skill-c6cf066b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 143113,
+      "forks": 13688,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-06T06:23:54Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 58,
+      "fullName": "harry0703/MoneyPrinterTurbo",
+      "name": "MoneyPrinterTurbo",
+      "owner": "harry0703",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
+      "language": "Python",
+      "stars": 139918,
+      "forks": 22311,
+      "starsToday": 0,
+      "topics": [
+        "ai-video-generator",
+        "content-creation",
+        "ffmpeg",
+        "instagram-reels",
+        "llm",
+        "python",
+        "short-video",
+        "subtitles"
+      ],
+      "createdAt": "2024-03-11T02:57:34Z",
+      "updatedAt": "2026-11-06T06:27:59Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "harry0703-moneyprinterturbo-0f5a8272.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "excalidraw/excalidraw",
+      "name": "excalidraw",
+      "owner": "excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "language": "TypeScript",
+      "stars": 135221,
+      "forks": 16026,
+      "starsToday": 0,
+      "topics": [
+        "canvas",
+        "collaboration",
+        "diagrams",
+        "drawing",
+        "hacktoberfest",
+        "productivity",
+        "whiteboard"
+      ],
+      "createdAt": "2020-01-02T01:04:43Z",
+      "updatedAt": "2026-11-06T06:12:50Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "excalidraw-excalidraw-8fbe0d58.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "krahets/hello-algo",
+      "name": "hello-algo",
+      "owner": "krahets",
+      "url": "https://github.com/krahets/hello-algo",
+      "description": "《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现",
+      "language": "Swift",
+      "stars": 131974,
+      "forks": 15598,
+      "starsToday": 0,
+      "topics": [
+        "algo",
+        "algorithm",
+        "algorithms",
+        "book",
+        "data-structure",
+        "data-structures",
+        "data-structures-and-algorithms",
+        "dsa"
+      ],
+      "createdAt": "2022-11-04T11:08:34Z",
+      "updatedAt": "2026-11-06T06:11:40Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "krahets-hello-algo-445e9763.txt"
+    }
+  ]
+}

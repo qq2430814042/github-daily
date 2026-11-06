@@ -57,6 +57,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | Edgepedia | Search and read Edgepedia, a free and growing encyclopedia with citations | No | HTTP | Glama |
 | Filesystem | Read/write local files | No | stdio | – |
 | FindIP MCP | IP lookups and FindIP Shield risky-event checks for agents | apiKey | stdio | Glama · MCP Registry |
+| Git | Read, search, diff, and commit to local Git repositories | No | stdio | – |
 | GitHub | Repos, issues, PRs, code search | OAuth | stdio, HTTP | Glama |
 | iGaming Tools | Online slot specs, RTP variants, providers, regulators, news, jobs and search demand | No | HTTP | – |
 | IndiaInsurances | Indian insurance policy wordings read clause by clause, with verbatim quotes | No | HTTP | – |
@@ -78,6 +79,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | Toolalize | Unit and live currency conversion tools for agents, no key needed | No | HTTP | Glama · MCP Registry |
 | Twinbay | Spin up stateful API twins, read request logs and grade agent runs | OAuth | HTTP | – |
 | US Recalls | Check US recalls from 9 agencies by UPC, model, NDC, lot or VIN; 4 read-only tools | apiKey | HTTP | Glama · MCP Registry |
+| Vitalityfit | Cheapest offers for health products from German online shops and pharmacies by name, PZN or EAN | No | HTTP | MCP Registry |
 | Vuntum | Sourced, dated data on consumer robots and physical AI: specs, prices, evidence | No | HTTP | Glama |
 | XposedOrNot | Check an email against known data breaches, read its breach history and get domain breach counts | No | HTTP | Cursor · Glama |
 
@@ -112,17 +114,5 @@ Index
 * Anime
 * Anti-Malware
 * Art & Design
-* Authentication & Authorization
-* Blockchain
-* Books
-* Business
-* Calendar
-* Cloud Storage & File Sharing
-* Continuous Integration
-* Cryptocurrency
-* Currency Exchange
-* Data Validation
-* Development
-* Dictionaries
 
 …（内容已截断）

@@ -1,0 +1,75 @@
+📤 TikTok Uploader
+
+Automated TikTok Video Uploader & Scheduler — 2026
+
+A lightweight, open-source tool for batch uploading videos to TikTok, scheduling posts, and managing metadata.
+Built for content creators, social media managers, and automation enthusiasts.
+
+🎯 What it is
+
+TikTok Uploader is a cross-platform tool that simplifies the process of uploading videos to TikTok.
+It allows you to batch upload videos, set descriptions, add hashtags, and schedule posts — all without manually uploading through the mobile app.
+
+🔒
+Session-based authentication. Your credentials are stored locally and never sent to third-party servers.
+
+🚀 Quick Start
+
+1. Download the project using the button above.
+2. Extract the archive into a separate folder.
+3. Run TikTokUploader.exe (or execute main.py from source).
+4. Follow the on-screen instructions to authenticate.
+5. Select your videos and click "Upload".
+
+✨ Features
+
+| Feature                  | Description                                      |
+|--------------------------|--------------------------------------------------|
+| 📤 Batch Upload      | Upload multiple videos at once                   |
+| 📝 Metadata Editor   | Add descriptions, hashtags, and mentions         |
+| ⏰ Scheduling        | Schedule videos for future publication           |
+| 🔄 Resume Support    | Continue interrupted uploads without duplicates  |
+| 🖥️ Cross-Platform    | Works on Windows, macOS, and Linux               |
+| 🔒 Secure Auth       | Local session storage, no cloud required         |
+
+🧩 How to use
+
+1. Launch the application.
+2. Click "Authenticate" and log in with your TikTok credentials (or provide a sessionid).
+3. Select the video files you want to upload.
+4. Fill in the metadata (description, hashtags).
+5. Choose privacy settings (Public / Friends / Private).
+6. Click "Upload" and monitor the progress.
+
+⚙️ Configuration
+
+You can adjust the settings in the config.ini file:
+
+- Default Privacy: Public / Friends / Private
+- Hashtag Template: Default hashtags for all uploads
+- Max Concurrent Uploads: 1–3
+- Upload Delay: Delay between uploads (seconds)
+
+❓ FAQ
+
+Is it safe to use?
+It uses local session storage. However, automating TikTok may violate their Terms of Service. Use a secondary account and conservative settings.
+
+Do I need a TikTok API key?
+No official API key is required. The tool uses session-based authentication.
+
+Does it support scheduled uploads?
+Yes, you can set a specific date and time for the video to go live.
+
+Can I upload 4K videos?
+Yes, but upload time depends on your internet speed and file size.
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

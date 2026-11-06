@@ -1,0 +1,179 @@
+Garden Skills
+
+A curated collection of production-ready Agent Skills for Claude Code, Cursor, Codex, and other AI coding agents.
+
+motion-showreel
+
+Code-rendered short video
+
+web-video-presentation
+
+Web video / presentation
+
+web-design-engineer
+
+Design / frontend
+
+gpt-image-2
+
+Image generation / prompting
+
+beautiful-article
+
+Any source → beautiful article
+
+kb-retriever
+
+Local knowledge retrieval
+
+English · 中文文档 · 日本語
+
+Table of contents
+
+| Install | Use | Contribute |
+|---|---|---|
+| Install
+skills CLI (npx)
+Claude Code plugin marketplace
+Pinned .zip from Releases
+Manual copy
+Git submodule | Compatibility
+What is a Skill? | Contributing
+Acknowledgments
+License |
+
+motion-showreel
+
+Category: Motion Graphics / Code Video
+
+Best for: showreels, product films, UI motion, kinetic typography, logo/title sequences, generative loops, retrospectives and narrated explainers. Short pieces typically run 5–60 s; chapter-based films support up to 20 minutes.
+
+motion-showreel delivers MP4 plus editable source. It confirms the topic, duration, orientation, independent music/SFX sources and narration mode, then writes a brief and confirms style frames. Deterministic render(t) pages are captured frame by frame on a shared audio/picture timeline. Narration follows a user-supplied script or recording; pictures follow actual speech timings. Long films use persistent chapter caches and technical acceptance.
+
+Highlights:
+
+- Deterministic render(t) pipeline: stills, contact sheets, three-direction boards, proxies and masters all come from the same page. Motion blur, supersampling and film grain are render flags.
+- One timeline for picture and sound: cuts, hits and SFX share the same numbers. Music can be synthesized (a zero-dependency built-in synth, or Tone.js with a sampled piano), or cut to the user's own track with beat and drop detection.
+- A 43-style library as a starting point: swiss-editorial, ink-wash, risograph, synthwave, soft 3D, cinematic title, pixel game, comic panels, guochao patterns, painterly strokes, whiteboard explainers, concept morphs, illuminated manuscripts and more. Each style defines its look, motion, camera grammar and sound palette, and can be adapted, mixed or replaced with your own.
+- A sound direction, not a default song: the brief sets a sound benchmark, groove, harmony, palette and dramatic arc, plus a list of audio defaults to avoid.
+- Two checkpoints: confirm requirements, then style frames (three distinct directions when unspecified), followed by autonomous production. Creative freedom remains available.
+- Narration and long films: Gemini/MiniMax TTS reads only user-supplied scripts; recordings use real timestamps. Music and SFX have independent sources, yield to speech, and chapter builds support up to 20 minutes.
+- Technical acceptance kept separate from taste: size, fps, duration, frame count, black frames, loudness, true peak, loop seam and determinism must all PASS. Review notes go to the user, who makes the final call.
+
+synthwave-neon
+album title
+
+soft-3d-toy
+chain reaction
+
+stick ink
+game trailer
+
+cinematic-title
+film opening
+
+↑ 4-second excerpts of pieces made with the skill. Open the showcase for the full set, including the skill's own 80-second trailer and the style gallery.
+
+Links: README · SKILL.md · Download v0.1.0 .zip
+
+web-video-presentation
+
+Category: Web Video / Presentation Engineering
+Best for: turning scripts, articles, lessons, product demos, and talks into click-driven 16:9 web presentations that can be screen-recorded as cinematic videos.
+
+web-video-presentation builds record-ready Vite + React + TypeScript presentations that behave like video production surfaces. The workflow turns raw articles into narration scripts, maps script beats to full-screen scenes, pauses at required checkpoints, and can optionally synthesize narration audio after the visual outline is approved.
+
+Highlights:
+
+- Fixed 1920×1080 stage that scales to the viewport for stable screen recording
+- Click / keyboard driven (chapter, step) cursor, with one narration beat per visual step
+- Hard collaboration checkpoints for script, theme, outline, implementation mode, and optional audio
+- Hidden hover-only progress controls so the stage stays clean while recording
+- Theme-token architecture with 23 built-in themes, each with its own design signature — editorial, terminal, engineering, Swiss International, and more
+- Pluggable TTS — provider-agnostic audio runner; ships two built-in providers (MiniMax mmx-cli + OpenAI TTS via curl) plus a contract + ready-to-paste snippets for ElevenLabs / edge-tts / Azure / Google Cloud / macOS say
+- Scaffolded Vite + React + TypeScript project with reusable stage primitives and recording guidance
+
+creative-voltage
+creative talks
+
+blueprint
+tech architecture
+
+swiss-ikb
+data reports
+
+chalk-garden
+popular science
+
+↑ All 23 themes at a glance — open the full gallery for live 16:9 previews, design signatures, and best-for tags.
+
+Links: README · SKILL.md · Download v1.2.2 .zip
+
+web-design-engineer
+
+Category: Design / Frontend
+Best for: web pages, landing pages, dashboards, interactive prototypes, HTML slide decks, animations, UI mockups, data visualizations, and design-system explorations.
+
+web-design-engineer turns AI-generated web artifacts from merely functional into polished, deliberate, and visually memorable front-end work. It treats the agent as a design engineer: first understanding product context, then declaring a design system, showing an early v0, building the full experience, and verifying the result.
+
+Highlights:
+
+- Converts the brief into a five-dial Design Read covering variance, motion, density, asset dependence, and brand fidelity
+- Distinguishes extension, preserve, and overhaul redesign modes before changing an existing product
+- Runs executable browser acceptance only when the user explicitly requests acceptance, QA, or browser testing
+- Pushes beyond generic AI UI patterns with an anti-cliché blocklist and stronger visual judgment
+- Ships a Design Direction Advisor (six differentiated schools) + 25 anchored style recipes (Linear / Aesop / Pentagram / Bloomberg / Stripe Press / Mid-Century, etc.) — each recipe carries concrete palette, typography, signature moves, and anti-patterns ready to paste into the design-system declaration
+- Covers HTML / CSS / JavaScript / React prototypes, with guidance for responsive layout, motion, and interaction polish
+- Includes practical implementation rules for inline React + Babel, CSS tokens, oklch() color work, container queries, and reduced-motion handling
+- Ships an advanced patterns reference for device frames, slide engines, animation timelines, dashboards, and other reusable web artifacts
+
+aesop
+apothecary pages
+
+muji-kenya-hara
+object catalogues
+
+monocle-magazine
+magazine contents
+
+stripe-press
+book detail
+
+bloomberg-terminal
+trading dashboards
+
+linear
+dev tool landing
+
+vercel-mesh
+deploy hero
+
+tufte-dataink
+data narratives
+
+mid-century-modern
+poster homage
+
+y2k-retrofuturism
+Y2K portal
+
+businessweek-turley
+editorial covers
+
+active-theory
+cinematic launch
+
+↑ 12 of 25 anchored recipes — open the full gallery for all 25 working artefacts (apothecary pages, trading workstations, magazine covers, Y2K portals, mid-century posters …) with signature moves and best-for tags.
+
+Links: README · SKILL.md · Website · Demo · Download v1.3.0 .zip
+
+gpt-image-2
+
+Category: Image Generation / Prompt Engineering
+Best for: posters, UI mockups, product visuals, infographics, academic figures, technical diagrams, comics, avatars, storyboards, branding boards, and image-editing workflows.
+
+gpt-image-2 is a focused image-generation skill for GPT Image 2 and OpenAI-compatible image APIs. It is designed to work across different agent environments: fully local Garden generation, host-native image-tool delegation, or prompt-only advisor mode when no image tool is available.
+
+Highlights:
+
+…（内容已截断）

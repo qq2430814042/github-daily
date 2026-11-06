@@ -1,0 +1,55 @@
+HALO: Perceptive Humanoid Motion from Simulation
+
+This repository contains the code for data generation, model training, and
+deployment from the HALO paper.
+
+Repository layout
+
+| Folder | What it is | Docs |
+|---|---|---|
+| datagen/ | Synthetic data pipeline: Infinigen scenes, Kimodo motion, Isaac / MuJoCo rendering; training data for the generator (rendered episodes) and the tracker (motion clips) | README |
+| generator/ | Motion generator: training and open-loop evaluation | README |
+| tracker/ | G1 motion-tracking policy: Isaac Lab training, Python and C++ (real-time) deployment | README |
+| orchestrator/ | halo_orchestrator: the orchestrator (language request + egocentric image → plan of subtasks) on a local model co-served with the generator | README |
+| system/ | Closed-loop system: run_sim.py / run_real.py launchers, generator / tracker / orchestrator nodes, live web viewer; system/comm (halo_comm messaging) and system/serve (halo_serve, on-device model scheduling) | README |
+| assets/ | Unitree G1 robot description (MJCF / URDF / USD), scene objects and scenes | robots, objects |
+
+Data generation
+
+To generate the training data, rendered episodes for the generator and motion clips for the tracker, see
+datagen/README.md.
+
+Training
+
+- Generator: generator/README.md, which covers setup and
+  single- / multi-node training.
+- Tracker: tracker/training/README.md, which
+  covers Isaac Lab and the three training phases: privileged experts (PreRL tasks) → multi-teacher distillation
+  → multi-critic fine-tuning (PostRL tasks).
+
+Deployment
+
+The orchestrator runs a local model on the generator's halo_serve engine; see
+orchestrator/README.md.
+
+- Tracker on its own (MuJoCo sim-to-sim, real robot): tracker/deploy/README.md
+  (Python) and tracker/deploy_cpp/README.md (real-time C++)
+- Closed-loop in sim (MuJoCo): system/README.md (run_sim.py)
+- Closed-loop on the real robot (G1): system/README.md (run_real.py)
+
+Citation
+
+If you find this work useful, please cite:
+
+@article{halo2026,
+  title     = {Perceptive Humanoid Motion from Simulation},
+  author    = {Hu, Siyuan and Abuduweili, Abulikemu and Meng, Yue and Liu, Shipeng and Leboutet, Quentin and
+               Chen, Chen and M{\"u}ller, Matthias and Koltun, Vladlen},
+  journal   = {arXiv preprint arXiv:2611.06908},
+  url       = {https://arxiv.org/abs/2611.06908},
+  year      = {2026}
+}
+
+License
+
+Please check out the repository LICENSE before using the provided code.

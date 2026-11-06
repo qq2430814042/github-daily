@@ -1,0 +1,35 @@
+表情包工坊 ray-sticker-shop
+
+一张照片或角色图，生成一整套形象一致的动态表情包，并打包成微信表情开放平台要的全部素材。
+
+ChatGPT 现在能直接做 GIF，但一张一张做，形象容易跑，尺寸也不是微信要的。这个 skill 把剩下的事都做了：
+
+- 一个参考图锁定整套角色
+- 240×240 GIF，自动压到 500KB 以内
+- 封面、图标、横幅、赞赏图一起出
+- 按微信规范自动检查
+- 上架文案和给客户的交付包
+
+安装
+
+把这个文件夹放进你的 Agent 的 skills 目录，比如：
+
+git clone https://github.com/imraywang/ray-sticker-shop ~/.claude/skills/ray-sticker-shop
+
+然后对 Claude Code 或 Codex 说：「把这张猫的照片做成一套表情包。」
+
+需要什么
+
+- Python 3.9+ 和 Pillow：pip install pillow
+- OPENAI_API_KEY（中转站再设 OPENAI_BASE_URL）
+- 没有 key 也行：Agent 会给你提示词，到 ChatGPT 里出图，放回来照样合成
+
+花费
+
+8 张表情加 5 张配套素材，按 OpenAI 官方单价约 $0.7，重抽另算。实际花费记录在项目目录的 costs.jsonl。
+
+注意
+
+只做你有权使用的形象。微信不收未授权的二创和同人。过审由微信决定，本工具不保证过审和收入。
+
+MIT License

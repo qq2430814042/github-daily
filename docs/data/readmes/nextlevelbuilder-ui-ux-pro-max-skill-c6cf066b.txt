@@ -2,10 +2,12 @@ UI UX Pro Max
 
   🇦🇿 Azərbaycanca |
   🇮🇩 Bahasa Indonesia |
+  🇯🇵 日本語 |
   🇰🇷 한국어 |
   🇻🇳 Tiếng Việt |
   🇨🇳 简体中文 |
-  🇺🇸 English
+  🇺🇸 English |
+  🇮🇷 فارسی
 
 An AI skill that provides design intelligence for building professional UI/UX across multiple platforms and frameworks.
 
@@ -90,7 +92,7 @@ How Design System Generation Works
 ┌─────────────────────────────────────────────────────────────────┐
 │  2. MULTI-DOMAIN SEARCH (5 parallel searches)                   │
 │     • Product type matching (192 categories)                    │
-│     • Style recommendations (79 searchable; 50 active)          │
+│     • Style recommendations (80 searchable; 51 active)          │
 │     • Color palette selection (192 palettes)                    │
 │     • Landing page patterns (34 patterns)                       │
 │     • Typography pairing (74 font combinations)                 │

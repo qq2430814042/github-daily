@@ -1,0 +1,262 @@
+🎲 BlockRoll
+
+Own. Encrypt. Share. Control.
+
+The next generation of secure, decentralized file storage and sharing.
+
+Live: blockroll-gold.vercel.app — try the Stellar File Notary directly.
+
+⭐ Stellar Integration
+
+BlockRoll uses Stellar for two real, working features (not just a payment button), both client-side signed with Freighter - no backend, no custody.
+
+1. USDC Premium payments
+
+User clicks "Get Premium"
+        │
+        ▼
+Freighter wallet connects (requestAccess)
+        │
+        ▼
+Browser builds a Payment operation (USDC, Circle's testnet issuer)
+        │
+        ▼
+Freighter prompts the user to sign - private key never leaves the wallet
+        │
+        ▼
+Signed transaction submitted to Horizon → Stellar Testnet ledger
+        │
+        ▼
+Checkout page links the tx hash on Stellar Expert
+Code: new-frontend/src/lib/stellar/payment.ts, StellarPayButton.tsx.
+
+2. Stellar File Notary (try it live)
+
+A free, standalone tool for proving a file existed, unmodified, at a point in time - without ever uploading the file anywhere.
+
+File selected in browser
+        │
+        ▼
+SHA-256 hash computed locally (Web Crypto API) - file itself never leaves the device
+        │
+        ▼
+Hash written into a ManageData operation (key: "blockroll_notary")
+        │
+        ▼
+Freighter signs, transaction submitted to Horizon → Stellar Testnet ledger
+        │
+        ▼
+Anyone can later re-hash the same file and compare it against that transaction
+to verify it is byte-for-byte unchanged
+Code: new-frontend/src/lib/stellar/notary.ts, new-frontend/src/lib/stellar/hash.ts, /notary page/(landing)/notary/page.tsx).
+
+Currently running on Stellar Testnet; see new-frontend/.env.example for configuration, and open issues for what's next (XLM payments, batch notarization, tests).
+
+🎨 Design Philosophy
+
+Using black, silver, and white gradients with glassmorphism and minimal shadows gives BlockRoll that luxury tech vibe, like Apple x Web3.
+
+🔑 Key Features
+
+- ✅ Stellar-native payments & notarization - wallet-signed, non-custodial, verifiable on a public ledger
+- ✅ Non-custodial encrypted storage - files are encrypted client-side; BlockRoll never holds the keys
+- ✅ Share by wallet address, with expiry dates and revocable access
+- ✅ Bank-level security on the backend - see below
+
+📁 Project Structure
+
+BlockRoll/
+├── new-frontend/      # Active Next.js app - live site, Stellar payments & notary (this is what's deployed)
+│
+├── contracts/         # Solidity smart contracts (Foundry), for an EVM-compatible chain
+│   ├── Modular Solidity contracts
+│   ├── BlockDAG RPC configured
+│   └── Complete test suite
+│
+├── server/            # Backend services (TypeScript)
+│   ├── 48 REST API endpoints
+│   ├── 26 WebSocket events
+│   ├── 20+ security features (Bank-level)
+│   ├── 9 database models
+│   └── Comprehensive documentation
+│
+├── frontend/          # Older Next.js client (Reown AppKit wallet auth), being superseded by new-frontend
+│
+├── whatsapp/          # AI-Powered FAQ Bot
+│   ├── Google Gemini AI integration
+│   ├── 50+ FAQ entries
+│   ├── 15+ quick commands
+│   └── 24/7 automated support
+│
+├── blockroll-kit/     # SDKs, CDN, and Plug & Play integration
+│   ├── ✅ Core SDK (@blockroll/core) - BUILT
+│   ├── ✅ React SDK (@blockroll/react-sdk) - BUILT
+│   ├── ✅ Vue SDK (@blockroll/vue-sdk) - BUILT
+│   ├── ✅ CDN Bundle (blockroll.min.js) - BUILT
+│   ├── ✅ 3 Demo Apps (React, Vue, CDN) - BUILT
+│   └── ✅ Complete documentation (5,800+ lines)
+│
+└── README.md          # This file
+
+🛠️ Tech Stack
+
+- Live frontend: Next.js 15 (App Router), TypeScript, Tailwind, Framer Motion
+- Stellar: @stellar/stellar-sdk, @stellar/freighter-api - USDC payments, file notarization via ManageData
+- Backend: Node.js + TypeScript + Express
+- Auth: NextAuth (Google) on the live frontend; Reown AppKit (wallet connect) on the older frontend/
+- Real-Time: Socket.IO WebSocket (server)
+- Database: MongoDB + Mongoose
+- Blockchain: Stellar (payments + file notarization), BlockDAG (smart contracts in contracts/)
+- Storage: IPFS
+- Smart Contracts: Foundry (Solidity)
+- Security: Bank-level (20+ features)
+
+🔒 Security - Bank-Level
+
+BlockRoll implements 20+ enterprise security features used by financial institutions:
+
+✅ httpOnly Cookie Auth - XSS protection
+✅ Auto Token Refresh - Seamless like banking apps
+✅ Brute Force Protection - Auto-lock after 5 attempts
+✅ Device Fingerprinting - Track all devices
+✅ Suspicious Activity Detection - AI-powered anomaly detection
+✅ Real-Time Security Alerts - Instant WebSocket notifications
+✅ Multi-Device Session Management - See all active sessions
+✅ Risk Scoring System - 0-100 security score
+✅ Comprehensive Audit Logs - Full compliance trail
+✅ AES-256-GCM Encryption - Military-grade
+
+Security Rating: 95/100 (Bank-level) 🏆
+
+See server/BANK_LEVEL_SECURITY.md for details.
+
+🤖 AI WhatsApp Support Bot
+
+BlockRoll includes an AI-powered WhatsApp bot for 24/7 customer support!
+
+Features
+- ✅ Google Gemini AI - Advanced natural language understanding
+- ✅ 50+ FAQ Entries - Comprehensive knowledge base
+- ✅ 15+ Quick Commands - Instant answers
+- ✅ Conversation Memory - Context-aware responses
+- ✅ Multilingual Ready - Easy to add languages
+- ✅ Fallback System - Works even if AI is offline
+
+Quick Commands
+!ask     - Ask AI anything
+!help              - Get help menu
+!upload            - How to upload files
+!security          - Security features
+!features          - All features
+!start             - Getting started
+!contact           - Contact info
+
+Setup
+cd whatsapp
+npm install
+cp env.example .env  # Add your GEMINI_API_KEY
+npm run dev          # Scan QR code with WhatsApp
+
+See whatsapp/README.md for complete documentation.
+
+🎨 BlockRoll Kit (SDKs & Developer Tools)
+
+Complete developer integration suite for building apps with BlockRoll!
+
+Available SDKs
+
+- ✅ React SDK - @blockroll/react-sdk - Hooks, TypeScript, SSR
+- ✅ Vue SDK - @blockroll/vue-sdk - Composables, Reactive
+- ✅ CDN Bundle - `
+
+Documentation
+
+| Document | Purpose | Lines |
+|----------|---------|-------|
+| SDK_DESIGN.md | Complete usage guide | 1000+ |
+| ADVANCED_EXAMPLES.md | Production examples | 800+ |
+| TECHNICAL_ARCHITECTURE.md | Implementation guide | 600+ |
+| SDK_COMPARISON.md | SDK comparison | 500+ |
+| COMPLETE_SDK_GUIDE.md | Master reference | 600+ |
+| USAGE_EXAMPLES_MASTER.md | All code examples | 800+ |
+| IMPLEMENTATION_ROADMAP.md | Build roadmap | 400+ |
+
+Total: 4,700+ lines of SDK documentation! 📚
+
+Key Features
+
+✅ API Key-Based - Wallet tied to API key (never pass wallet!)
+✅ Type-Safe - Full TypeScript support
+✅ Real-Time - WebSocket notifications built-in
+✅ Multiple Frameworks - React, Vue, Vanilla JS
+✅ Production-Ready - Battle-tested patterns
+✅ Well-Documented - Complete examples for every operation
+
+See blockroll-kit/README.md for complete SDK documentation.
+
+📦 Getting Started
+
+Prerequisites
+
+- Node.js (v18+)
+- Freighter wallet (for the Stellar payments/notary features)
+- Foundry (for the smart contracts)
+- MongoDB (for the backend API)
+- Google Gemini API Key (for the WhatsApp bot)
+
+Installationbash
+Live frontend (Stellar payments + notary)
+cd new-frontend
+npm install
+cp .env.example .env.local  # set NEXT_PUBLIC_STELLAR_TREASURY_ADDRESS, etc.
+
+Backend API
+cd ../server
+npm install
+cp .env.example .env  # Configure MongoDB, JWT, BlockDAG
+
+Smart contracts
+cd ../contracts
+forge install
+
+WhatsApp bot (optional)
+cd ../whatsapp
+npm install
+cp env.example .env   # Add GEMINI_API_KEY
+
+BlockRoll Kit SDKs (optional)
+cd ../blockroll-kit
+npm install
+Developmentbash
+Run the live frontend
+cd new-frontend
+npm run dev
+
+Run backend (with WebSocket)
+cd server
+npm run dev
+
+Run smart contracts tests
+cd contracts
+forge test
+
+Run WhatsApp bot
+cd whatsapp
+npm run dev  # Scan QR code first time
+`
+
+See CONTRIBUTING.md for the full breakdown of what's active vs. legacy, and known rough edges.
+
+📄 License
+
+MIT - see LICENSE.
+
+🔗 Links
+
+- Live demo
+- Issues & feature requests
+- Server API docs
+- Smart contracts docs
+- Contributing guide
+
+…（内容已截断）
