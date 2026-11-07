@@ -1,0 +1,141 @@
+Ocarina Recomp
+
+Read in English
+
+Ocarina rodando nativo no Windows, sem emulador.
+
+O código do jogo é traduzido para C e compilado como um programa do Windows. Os gráficos do Switch 2 são convertidos para Vulkan. Tudo isso acontece no seu PC, a partir do seu próprio arquivo do jogo.
+
+Este repositório não contém o jogo, keys nem executável, e não explica como obtê-los. Você precisa da sua própria cópia. O que a instalação gera (o ocarina.exe, o código gerado, o cache de shaders e os saves) sai do seu jogo: não compartilhe.
+
+Estado do projeto
+
+Experimental. Só foi testado em um PC (Ryzen 9 9950X3D, RTX 5090), na região do início do jogo.
+
+| O quê | Situação |
+|---|---|
+| Abertura e jogo novo, até a Árvore Deku | ✅ Funciona |
+| Vilarejo Kokiri: árvores, plantas, casas, luz | ✅ Funciona |
+| Som, controle, saves e vídeos | ✅ Funciona |
+| Desempenho na RTX 5090 | ✅ Cerca de 59 fps parado, 51 a 55 fps caminhando |
+| Travadinhas ao entrar em áreas novas | ⚠️ Ainda acontecem, principalmente na primeira vez |
+| Tocar a ocarina | ❓ Correção aplicada, ainda sem teste em jogo |
+| Hyrule Field e o resto do jogo | ❓ Ainda não testados |
+| Placas AMD e Intel | ❓ Nunca testadas |
+
+Como compilar
+
+O jogo não vem pronto: ele é compilado no seu PC, a partir da sua cópia. Escolha um destes três jeitos.
+
+1. Com o instalador em ZIP, o mais fácil: não instala nada no Windows e não pede administrador.
+
+1. Baixe o Ocarina-Setup-...-windows.zip da página de versões.
+2. Extraia o ZIP inteiro para uma pasta e abra o Instalar-Ocarina.exe que está dentro dela.
+3. O executável não tem assinatura digital, então o Windows pode avisar. Clique em Mais informações e depois em Executar assim mesmo.
+4. Na janela, escolha o .nup do seu jogo (ou uma pasta com exefs e romfs) e clique em Instalar.
+5. No fim, clique em Jogar, ou use o atalho Ocarina Recomp na Área de Trabalho.
+
+Para desinstalar, apague a pasta de instalação. Prefere conferir antes? O executável só abre o script instalador\Instalar-Ocarina.ps1, que está ao lado dele no ZIP e pode ser lido em qualquer editor. O código do executável tem poucas linhas. Alguns antivírus reclamam de programas novos sem assinatura e de scripts do PowerShell: é um alarme possível, e o código está todo aqui para quem quiser conferir. A página de versões traz o SHA-256 do arquivo.
+
+A etapa "Preparar os arquivos do jogo" é lenta, principalmente em HD: enquanto o relógio da janela andar, está funcionando.
+
+2. Com os scripts, que você pode ler antes de rodar (instale antes as ferramentas do passo 1 do guia):
+
+git clone https://github.com/sostenesfreitas/ocarina-recomp C:\OcarinaRecomp
+cd C:\OcarinaRecomp
+powershell -ExecutionPolicy Bypass -File .\verificar.ps1 -Jogo "C:\caminho\seu-jogo.nup"
+powershell -ExecutionPolicy Bypass -File .\compilar.ps1 -Simular -Jogo "C:\caminho\seu-jogo.nup"
+powershell -ExecutionPolicy Bypass -File .\compilar.ps1 -Jogo "C:\caminho\seu-jogo.nup"
+
+1. O verificar.ps1 só olha e diz o que falta. Ele não altera nada.
+2. O compilar.ps1 -Simular mostra todos os comandos sem executar nenhum.
+3. O compilar.ps1 executa esses comandos, mostra cada um e pergunta antes de cada etapa. Se parar, rode de novo: ele continua de onde parou.
+
+-ExecutionPolicy Bypass vale só para esse comando e não muda a configuração do Windows.
+
+3. Totalmente à mão: siga o passo a passo para compilar.
+
+No Linux: o compilar.sh faz os mesmos passos e o jogar/jogar-ocarina.sh abre o jogo. Os pacotes e o estado do
+port estão em docs/building.md.
+
+git clone https://github.com/sostenesfreitas/ocarina-recomp
+cd ocarina-recomp
+./compilar.sh --jogo /caminho/seu-jogo.nup
+./jogar/jogar-ocarina.sh
+
+Trazer o save de um emulador
+
+O save do Lichii, do Eden e de emuladores parecidos funciona aqui. No fim da instalação, clique em Importar save de emulador, ou rode depois:
+
+powershell -ExecutionPolicy Bypass -File jogar\importar-save.ps1
+
+Ele acha o save sozinho ou pergunta a pasta, guarda uma cópia do seu save atual e não altera o emulador.
+
+Idioma
+
+O jogo escolhe o idioma pelo do Windows, inclusive português do Brasil. Para trocar, aperte F1 e vá em Jogo → Idioma.
+
+O que isto faz no seu PC
+
+- O instalador em ZIP e os scripts não pedem administrador. Só as ferramentas dos jeitos 2 e 3 podem pedir, e é você quem as instala.
+- Escreve só dentro da pasta do projeto, e nunca altera o seu arquivo do jogo.
+- Baixa os pacotes Python (tools\requirements-build.txt) e .NET do tradutor de shaders e, se o executável do jogo estiver comprimido, o zbic.
+- Para desinstalar, apague a pasta do projeto. As ferramentas do passo 1 saem pelo painel de aplicativos do Windows.
+
+Leva de 30 minutos a 2 horas, e você pode usar o PC enquanto isso. Para atualizar, rode de novo o instalador ou veja o fim do guia.
+
+Na primeira vez que abrir o jogo, a vegetação pode levar alguns minutos para aparecer, enquanto os shaders compilam em segundo plano. Melhora nas próximas vezes.
+
+Do que você precisa
+
+- Windows 10 ou 11 de 64 bits, com processador compatível com AVX2.
+- Placa de vídeo com Vulkan 1.3 e mesh shaders, com o driver atualizado. Recomendamos NVIDIA.
+- Recomendamos 16 GB de RAM ou mais. Com menos, nunca testamos: a compilação ou o jogo podem falhar.
+- 40 GB livres com o instalador em ZIP. Nos outros dois jeitos, 60 GB, mais uns 15 GB no disco C: para as ferramentas.
+- Internet durante a instalação.
+- Sua cópia do jogo na versão 1.1.1. Outras versões não funcionam.
+
+Se algo der errado
+
+| Problema | O que fazer |
+|---|---|
+| "Este jogo não é a versão 1.1.1" | Confira se escolheu o jogo certo e atualizado |
+| O jogo abre e fecha | Atualize o driver da placa de vídeo e veja o arquivo ultima-partida-erros.log na pasta de instalação |
+| Travadinhas na primeira vez | É normal: os shaders estão sendo preparados. Melhora quando você passa de novo pelo mesmo lugar |
+
+Se continuar, abra uma issue com a mensagem de erro e o modelo da sua placa de vídeo. Nunca envie arquivos do jogo.
+
+Controles
+
+Use um controle ou teclado e mouse. F1 ou Esc abre o menu de opções, F11 alterna a tela cheia e F10 mostra o fps. A lista completa está em docs/controls.md.
+
+Como funciona
+
+1. recomp/gen.py traduz o código ARM64 do jogo para C.
+2. tools/build_game.py compila esse C junto com o runtime/, que faz o papel do sistema do console.
+3. runtime/ converte as chamadas gráficas NVN 2 para Vulkan.
+4. Os shaders Ampere do Switch 2 são rebaixados para Maxwell (lower_to_maxwell.h) e traduzidos para SPIR-V por um Ryujinx com patches (tools/xlate/patches).
+
+Quer ajudar?
+
+Leia o guia de contribuição. Testar em outras placas de vídeo e relatar o resultado já ajuda muito.
+
+Créditos
+
+Projeto mantido por Miojo (sostenesfreitas). Dizem que ele deixou um recado escondido no instalador e outro dentro do jogo. 🍜
+
+Este projeto existe graças ao trabalho de muita gente:
+
+- Lucas-blip-png/dkb-pc-recomp e TotK Recomp: a base deste projeto, cujo histórico continua preservado aqui.
+- seedds/nxnative: referência de como o jogo usa task e mesh, e correção do microfone.
+- zortos293/Lichii e Eglantine/Eden: o rebaixamento de shaders Ampere e a referência para comparar os draws.
+- Ryujinx: o tradutor de shaders.
+- kinnay/zbic: descompressão do executável, baixada durante a instalação.
+
+A lista completa está em THIRD_PARTY_NOTICES.md.
+
+Licença
+
+GPL-3.0, como o projeto original. Partes de terceiros mantêm as próprias licenças, listadas em THIRD_PARTY_NOTICES.md.
+
+Projeto de fãs, sem nenhuma relação com a Nintendo. The Legend of Zelda e Ocarina of Time são marcas da Nintendo.

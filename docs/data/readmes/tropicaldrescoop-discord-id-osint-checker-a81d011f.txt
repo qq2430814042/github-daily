@@ -1,0 +1,73 @@
+Spot the flake.
+
+Flake is a free OSINT desktop app for Discord IDs. Paste a user, server, message or invite and see when it was made, who it copies and where it leads.
+Official API with your own bot token. Nothing leaves your PC.
+
+Download: the Windows build is a single Flake-setup.exe — releases. No installer, no admin rights, no account.
+The build isn't code-signed yet, so SmartScreen may warn you the first time. Choose More info, then Run anyway.
+
+Why Flake
+
+Every Discord ID is a snowflake: the first 42 bits are the moment it was created. Scammers count on nobody checking. They copy a trusted name with a look-alike letter, borrow the avatar, and hijack invite links that used to point somewhere safe.
+
+The lookup sites that used to answer this are mostly gone. Flake runs on your PC instead.
+
+| | Lookup websites | Flake |
+|---|---|---|
+| Token | Theirs, shared by everyone | Your own bot |
+| Dates | One ID at a time | Paste 100, plot them, offline |
+| Look-alikes | Not checked | Against IDs you saved |
+| Invites | Server name and count | Changed hands? Phishing links? |
+| Your history | On their server | Case files on your drive |
+
+What you get
+
+Everything public about an ID
+
+- Created, decoded straight from the ID, to the second.
+- Profile: username, display name, avatar, banner, badges, profile color and server tag.
+- Leads: the server a tag points to, one-click avatar search on Google Lens, Bing, Yandex and TinEye, and a username check across other sites that runs on your PC.
+- Since you last looked: your own saved snapshot next to today's, so name and avatar changes stand out.
+
+Look-alikes, caught
+
+Save the real IDs of the middlemen, mods and friends you trust. Any lookup is compared against them: copied display names, look-alike letters from other alphabets and pixel-identical avatars.
+
+Invites that changed hands
+
+Vanity and expired invites get claimed by scam servers that copy the name and icon. Flake remembers where an invite led, checks the server's real age, the inviter's age and the description's links against the FishFish phishing list.
+
+Raids, plotted
+
+Paste IDs from a raid, a giveaway or a member list. Flake plots when each account was made, with no network at all, and highlights the burst.
+
+Case files
+
+Save lookups, invites and timelines into a case. Export it as HTML or PDF with a SHA-256 hash of every snapshot, so you can show what you saw and when. Cases delete themselves after 30 days unless you keep them.
+
+Rules Flake follows
+
+- Official Discord API only, through a bot you create. Never a user token, never a selfbot, never message content.
+- One lookup per click. No bulk crawling, and Discord's rate limits are respected.
+- Your data stays on your drive, encrypted, with one button to delete it all. No shared database.
+- A bot of its own. Flake works with a personal bot token you create, separate from your community's main bot.
+
+How it works
+
+1. Paste an ID or invite. Dates come from the ID itself, so they work offline.
+2. Flake asks Discord's API with your bot token for the public profile, invite or server preview.
+3. It compares and explains: saved IDs, saved invites, the phishing list, and what changed since last time.
+
+Roadmap
+
+- x] Brand, icon and interface direction
+- [x] Snowflake decoder and timeline (offline)
+- [x] User, server and invite lookup with your bot token
+- [x] Saved IDs and look-alike checks
+- [x] Invite history and FishFish check
+- [x] Case files and export
+- [x] Portable Windows build
+
+Legal
+
+Flake isn't affiliated with or endorsed by Discord. Discord and the Discord logo are trademarks of Discord Inc., and the logo appears only to say where Flake's data comes from, as Discord's brand guidelines allow. Use Flake within Discord's Terms of Service and Developer Policy, and only to look at public information. Flake's code and brand assets are [MIT. See CREDITS.md.

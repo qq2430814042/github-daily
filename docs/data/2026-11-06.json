@@ -1,0 +1,1556 @@
+{
+  "date": "2026-11-06",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-07T05:50:26.362Z",
+  "count": 60,
+  "newCount": 30,
+  "sources": {
+    "trending": 18,
+    "new": 30,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "cloudflare/security-audit-skill",
+      "name": "security-audit-skill",
+      "owner": "cloudflare",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 64381,
+      "forks": 4172,
+      "starsToday": 2548,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cloudflare-security-audit-skill-17360b80.txt"
+    },
+    {
+      "rank": 2,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 316903,
+      "forks": 26518,
+      "starsToday": 2070,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "NVIDIA/auto-ontology",
+      "name": "auto-ontology",
+      "owner": "NVIDIA",
+      "url": "https://github.com/NVIDIA/auto-ontology",
+      "description": "Auto Ontology is a Python framework for building semantic, graph-based reasoning layers over data. It enables deterministic query generation, better context retrieval, and more explainable AI for LLM and agent workflows.",
+      "language": "Python",
+      "stars": 9289,
+      "forks": 736,
+      "starsToday": 2015,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nvidia-auto-ontology-fcf6e045.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "google/skills",
+      "name": "skills",
+      "owner": "google",
+      "url": "https://github.com/google/skills",
+      "description": "Agent Skills for Google products and technologies",
+      "language": "Python",
+      "stars": 22933,
+      "forks": 1928,
+      "starsToday": 534,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-skills-268b574c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "lz4/lz4",
+      "name": "lz4",
+      "owner": "lz4",
+      "url": "https://github.com/lz4/lz4",
+      "description": "Extremely Fast Compression algorithm",
+      "language": "C",
+      "stars": 12644,
+      "forks": 1643,
+      "starsToday": 315,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "lz4-lz4-60819890.txt"
+    },
+    {
+      "rank": 6,
+      "fullName": "zed-industries/zed",
+      "name": "zed",
+      "owner": "zed-industries",
+      "url": "https://github.com/zed-industries/zed",
+      "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+      "language": "Rust",
+      "stars": 93793,
+      "forks": 11511,
+      "starsToday": 306,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zed-industries-zed-f6a54558.txt"
+    },
+    {
+      "rank": 7,
+      "fullName": "microsoft/vscode",
+      "name": "vscode",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/vscode",
+      "description": "Visual Studio Code",
+      "language": "TypeScript",
+      "stars": 195072,
+      "forks": 44433,
+      "starsToday": 301,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "microsoft-vscode-46a91727.txt"
+    },
+    {
+      "rank": 8,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252302,
+      "forks": 51825,
+      "starsToday": 248,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 9,
+      "fullName": "rust-lang/rust",
+      "name": "rust",
+      "owner": "rust-lang",
+      "url": "https://github.com/rust-lang/rust",
+      "description": "Empowering everyone to build reliable and efficient software.",
+      "language": "Rust",
+      "stars": 121513,
+      "forks": 17369,
+      "starsToday": 192,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "rust-lang-rust-39046944.txt"
+    },
+    {
+      "rank": 10,
+      "fullName": "astral-sh/ruff",
+      "name": "ruff",
+      "owner": "astral-sh",
+      "url": "https://github.com/astral-sh/ruff",
+      "description": "An extremely fast Python linter and code formatter, written in Rust.",
+      "language": "Rust",
+      "stars": 50743,
+      "forks": 2615,
+      "starsToday": 169,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "astral-sh-ruff-dc9799a8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "prometheus/prometheus",
+      "name": "prometheus",
+      "owner": "prometheus",
+      "url": "https://github.com/prometheus/prometheus",
+      "description": "The Prometheus monitoring system and time series database.",
+      "language": "Go",
+      "stars": 67231,
+      "forks": 10989,
+      "starsToday": 148,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "prometheus-prometheus-6ef92d5c.txt"
+    },
+    {
+      "rank": 12,
+      "fullName": "rails/rails",
+      "name": "rails",
+      "owner": "rails",
+      "url": "https://github.com/rails/rails",
+      "description": "Ruby on Rails",
+      "language": "Ruby",
+      "stars": 59053,
+      "forks": 23833,
+      "starsToday": 142,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "rails-rails-ccfa7855.txt"
+    },
+    {
+      "rank": 13,
+      "fullName": "angular/angular",
+      "name": "angular",
+      "owner": "angular",
+      "url": "https://github.com/angular/angular",
+      "description": "Deliver web apps with confidence 🚀",
+      "language": "TypeScript",
+      "stars": 101415,
+      "forks": 28914,
+      "starsToday": 135,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "angular-angular-0e8340f9.txt"
+    },
+    {
+      "rank": 14,
+      "fullName": "nushell/nushell",
+      "name": "nushell",
+      "owner": "nushell",
+      "url": "https://github.com/nushell/nushell",
+      "description": "A new type of shell",
+      "language": "Rust",
+      "stars": 41015,
+      "forks": 2344,
+      "starsToday": 131,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nushell-nushell-271c52bf.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "etcd-io/etcd",
+      "name": "etcd",
+      "owner": "etcd-io",
+      "url": "https://github.com/etcd-io/etcd",
+      "description": "Distributed reliable key-value store for the most critical data of a distributed system",
+      "language": "Go",
+      "stars": 52638,
+      "forks": 10590,
+      "starsToday": 128,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "etcd-io-etcd-4a15a689.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "symfony/symfony",
+      "name": "symfony",
+      "owner": "symfony",
+      "url": "https://github.com/symfony/symfony",
+      "description": "The Symfony PHP framework",
+      "language": "PHP",
+      "stars": 31472,
+      "forks": 9949,
+      "starsToday": 128,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "symfony-symfony-ea5d7b22.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "mpv-player/mpv",
+      "name": "mpv",
+      "owner": "mpv-player",
+      "url": "https://github.com/mpv-player/mpv",
+      "description": "🎥 Command line media player",
+      "language": "C",
+      "stars": 37925,
+      "forks": 3634,
+      "starsToday": 37,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mpv-player-mpv-f5a73e30.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "openssl/openssl",
+      "name": "openssl",
+      "owner": "openssl",
+      "url": "https://github.com/openssl/openssl",
+      "description": "General purpose TLS and crypto library",
+      "language": "C",
+      "stars": 31328,
+      "forks": 11583,
+      "starsToday": 26,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openssl-openssl-55144e5f.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "JenkinWoo/sheeridVerify",
+      "name": "sheeridVerify",
+      "owner": "JenkinWoo",
+      "url": "https://github.com/JenkinWoo/sheeridVerify",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 1071,
+      "forks": 581,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-06T09:28:09Z",
+      "updatedAt": "2026-11-07T05:49:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jenkinwoo-sheeridverify-b460ffb4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 20,
+      "fullName": "HerdBuilderEstimate/roblox-studio-mcp",
+      "name": "roblox-studio-mcp",
+      "owner": "HerdBuilderEstimate",
+      "url": "https://github.com/HerdBuilderEstimate/roblox-studio-mcp",
+      "description": "Model Context Protocol server for Roblox Studio. Connect AI assistants (Claude, Cursor) to read object trees, edit scripts, and run playtests safely. Open-source and lightweight",
+      "language": "Python",
+      "stars": 427,
+      "forks": 260,
+      "starsToday": 0,
+      "topics": [
+        "ai-tools",
+        "automation",
+        "claude",
+        "cursor",
+        "developer-tools",
+        "game-development",
+        "mcp",
+        "model-context-protocol"
+      ],
+      "createdAt": "2026-11-06T06:16:35Z",
+      "updatedAt": "2026-11-06T15:57:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "herdbuilderestimate-roblox-studio-mcp-95265ad4.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "PulverizeLink/roblox-performance-tool",
+      "name": "roblox-performance-tool",
+      "owner": "PulverizeLink",
+      "url": "https://github.com/PulverizeLink/roblox-performance-tool",
+      "description": "Lightweight performance utility for Roblox on Windows. Boosts FPS, fixes stutter, reduces input lag, and allows custom frame limits. Safe, offline, and open-source",
+      "language": "Python",
+      "stars": 426,
+      "forks": 386,
+      "starsToday": 0,
+      "topics": [
+        "desktop-app",
+        "fps",
+        "gaming",
+        "lag-fix",
+        "open-source",
+        "optimization",
+        "performance",
+        "roblox"
+      ],
+      "createdAt": "2026-11-06T08:03:46Z",
+      "updatedAt": "2026-11-06T16:27:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "pulverizelink-roblox-performance-tool-891ad78d.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "Lowbetweentrim/crypto-portfolio-tracker",
+      "name": "crypto-portfolio-tracker",
+      "owner": "Lowbetweentrim",
+      "url": "https://github.com/Lowbetweentrim/crypto-portfolio-tracker",
+      "description": "Self-hosted, privacy-first crypto portfolio tracker. Import transactions via CSV, track real-time PnL, and manage your assets locally. No cloud, no subscriptions. Open-source",
+      "language": "Python",
+      "stars": 425,
+      "forks": 358,
+      "starsToday": 0,
+      "topics": [
+        "crypto",
+        "crypto-taxes",
+        "finance",
+        "local-first",
+        "open-source",
+        "pnl",
+        "portfolio-tracker",
+        "privacy-first"
+      ],
+      "createdAt": "2026-11-06T09:58:59Z",
+      "updatedAt": "2026-11-06T11:32:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lowbetweentrim-crypto-portfolio-tracker-070230cd.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "phaseboulderfetter/discord-quest-completer",
+      "name": "discord-quest-completer",
+      "owner": "phaseboulderfetter",
+      "url": "https://github.com/phaseboulderfetter/discord-quest-completer",
+      "description": "Auto-complete Discord Quests without installing games. Supports all 5 quest types: game, video, stream, activity, and achievement. Built-in dashboard, safe timing, and privacy-first. Open-source",
+      "language": "Python",
+      "stars": 425,
+      "forks": 332,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "discord",
+        "discord-quest",
+        "discord-tools",
+        "game-booster",
+        "open-source",
+        "python",
+        "quest-completer"
+      ],
+      "createdAt": "2026-11-06T12:01:51Z",
+      "updatedAt": "2026-11-06T18:39:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "phaseboulderfetter-discord-quest-completer-fc7fd401.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "Tropicaldrescoop/discord-id-osint-checker",
+      "name": "discord-id-osint-checker",
+      "owner": "Tropicaldrescoop",
+      "url": "https://github.com/Tropicaldrescoop/discord-id-osint-checker",
+      "description": "Free OSINT app for Discord IDs: paste a user, server or invite and see when it was made and who it copies.",
+      "language": "HTML",
+      "stars": 370,
+      "forks": 80,
+      "starsToday": 0,
+      "topics": [
+        "desktop",
+        "discord",
+        "free",
+        "osint",
+        "snowflake",
+        "username-search",
+        "windows"
+      ],
+      "createdAt": "2026-11-06T08:59:05Z",
+      "updatedAt": "2026-11-07T05:44:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tropicaldrescoop-discord-id-osint-checker-a81d011f.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "sostenesfreitas/ocarina-recomp",
+      "name": "ocarina-recomp",
+      "owner": "sostenesfreitas",
+      "url": "https://github.com/sostenesfreitas/ocarina-recomp",
+      "description": "Ocarina of Time running natively on Windows, no emulator. Built on your PC from your own copy. No game files included.",
+      "language": "C",
+      "stars": 333,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-06T22:24:03Z",
+      "updatedAt": "2026-11-07T05:50:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sostenesfreitas-ocarina-recomp-a05ad82c.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "PackArtisanMold/phone-to-webcam",
+      "name": "phone-to-webcam",
+      "owner": "PackArtisanMold",
+      "url": "https://github.com/PackArtisanMold/phone-to-webcam",
+      "description": "Turn any iPhone or Android into a Windows webcam: scan a code in the phone's browser. No phone app, no watermark.",
+      "language": "HTML",
+      "stars": 240,
+      "forks": 80,
+      "starsToday": 0,
+      "topics": [
+        "camera",
+        "free",
+        "obs",
+        "phone",
+        "streaming",
+        "webcam",
+        "webrtc",
+        "windows"
+      ],
+      "createdAt": "2026-11-06T09:05:51Z",
+      "updatedAt": "2026-11-07T05:41:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "packartisanmold-phone-to-webcam-7957baea.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "devvmhq/devvm",
+      "name": "devvm",
+      "owner": "devvmhq",
+      "url": "https://github.com/devvmhq/devvm",
+      "description": "One VM for every project. An isolated sandbox with your project’s toolchain, ready for you or a coding agent to start coding",
+      "language": "Go",
+      "stars": 225,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [
+        "coding-agent",
+        "coding-agents",
+        "developer-tools",
+        "development",
+        "lima",
+        "lima-vm",
+        "linux",
+        "sandbox"
+      ],
+      "createdAt": "2026-11-06T07:02:30Z",
+      "updatedAt": "2026-11-07T05:39:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "devvmhq-devvm-ac9ef456.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "Fuelflominaret/axie-infinity-bot",
+      "name": "axie-infinity-bot",
+      "owner": "Fuelflominaret",
+      "url": "https://github.com/Fuelflominaret/axie-infinity-bot",
+      "description": "Axie Infinity Bot 1.3.7 automated deployment pipeline for enterprise-grade desktop software utility configuration, ensuring seamless...",
+      "language": "",
+      "stars": 221,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "auto-battle-bot",
+        "axie-auto",
+        "axie-auto-2026",
+        "axie-automation-tool",
+        "axie-bot",
+        "axie-bot-2026",
+        "axie-infinity",
+        "axie-infinity-2026"
+      ],
+      "createdAt": "2026-11-06T17:21:24Z",
+      "updatedAt": "2026-11-06T19:51:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fuelflominaret-axie-infinity-bot-a9f19134.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "MetalHairdresser/slideshow-video-maker",
+      "name": "slideshow-video-maker",
+      "owner": "MetalHairdresser",
+      "url": "https://github.com/MetalHairdresser/slideshow-video-maker",
+      "description": "Slideshow Video Maker 2026 automated deployment pipeline with optimized package deployment for professional video editing and screen...",
+      "language": "",
+      "stars": 221,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "beat-creator",
+        "beginner-daw",
+        "developer-tools",
+        "guide-setup-slideshow-video-maker",
+        "how-to-install-slideshow-video-maker",
+        "how-to-setup-slideshow-video-maker",
+        "instagram-downloader"
+      ],
+      "createdAt": "2026-11-06T17:24:47Z",
+      "updatedAt": "2026-11-06T19:43:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "metalhairdresser-slideshow-video-maker-f5f5fade.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "MeteorShipperLook40/sketchup-pro",
+      "name": "sketchup-pro",
+      "owner": "MeteorShipperLook40",
+      "url": "https://github.com/MeteorShipperLook40/sketchup-pro",
+      "description": "Sketchup Pro 2026 pre-configured production build for professional desktop software utility, ready for seamless local workstation...",
+      "language": "",
+      "stars": 221,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "3d-modeling-software",
+        "architectural-visualization",
+        "blender-3d-download",
+        "design-pipeline",
+        "guide-setup-sketchup",
+        "how-to-install-sketchup",
+        "how-to-setup-sketchup",
+        "measurement-tools"
+      ],
+      "createdAt": "2026-11-06T17:24:46Z",
+      "updatedAt": "2026-11-07T02:37:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "meteorshipperlook40-sketchup-pro-3168ccf8.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "MinisterRoute/sp-flash-tool",
+      "name": "sp-flash-tool",
+      "owner": "MinisterRoute",
+      "url": "https://github.com/MinisterRoute/sp-flash-tool",
+      "description": "Sp Flash Tool 2026 pre-configured environment for automated deployment pipeline, ensuring seamless desktop software utility configuration.",
+      "language": "",
+      "stars": 221,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-sp-flash-tool",
+        "how-to-install-sp-flash-tool",
+        "how-to-setup-sp-flash-tool",
+        "mediatek-2026",
+        "mediatek-flash"
+      ],
+      "createdAt": "2026-11-06T17:24:57Z",
+      "updatedAt": "2026-11-06T19:43:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ministerroute-sp-flash-tool-7be97865.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "Netbetweenacclaim/whale-tracker",
+      "name": "whale-tracker",
+      "owner": "Netbetweenacclaim",
+      "url": "https://github.com/Netbetweenacclaim/whale-tracker",
+      "description": "Whale Tracker 2023 automated deployment pipeline for professional desktop software utility configuration, ensuring seamless local...",
+      "language": "",
+      "stars": 221,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "blockchain-intelligence",
+        "desktop",
+        "developer-tools",
+        "guide-setup-whale-tracker",
+        "high-transaction-tracker",
+        "how-to-install-whale-tracker",
+        "how-to-setup-whale-tracker"
+      ],
+      "createdAt": "2026-11-06T17:25:36Z",
+      "updatedAt": "2026-11-06T19:44:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "netbetweenacclaim-whale-tracker-c5356821.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "Flintfaconceal/ads-blocker",
+      "name": "ads-blocker",
+      "owner": "Flintfaconceal",
+      "url": "https://github.com/Flintfaconceal/ads-blocker",
+      "description": "Ads Blocker utility configuration folder for secure, efficient desktop software deployment in isolated environments.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adblock-lists",
+        "adblocker-ultimate-list",
+        "adblockplus",
+        "adguard-list",
+        "adsblock",
+        "automation",
+        "block-ads",
+        "desktop"
+      ],
+      "createdAt": "2026-11-06T17:20:47Z",
+      "updatedAt": "2026-11-06T19:50:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "flintfaconceal-ads-blocker-e7365e59.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "Flockcleplank/aion-2-trainer-tool",
+      "name": "aion-2-trainer-tool",
+      "owner": "Flockcleplank",
+      "url": "https://github.com/Flockcleplank/aion-2-trainer-tool",
+      "description": "Aion 2: Optimized package deployment for AI-driven prompt engineering tasks, ensuring seamless local workstation execution in 2026.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "aion-2",
+        "aion-2-2026",
+        "aion-2-game",
+        "aion-2-optimizer",
+        "aion-2-trainer",
+        "aion-2-trainer-tool",
+        "aion2-combat-analysis",
+        "aion2-meter"
+      ],
+      "createdAt": "2026-11-06T17:20:49Z",
+      "updatedAt": "2026-11-06T19:51:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "flockcleplank-aion-2-trainer-tool-eb3f0f9f.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "Hairanfollow/discord-quest-completer",
+      "name": "discord-quest-completer",
+      "owner": "Hairanfollow",
+      "url": "https://github.com/Hairanfollow/discord-quest-completer",
+      "description": "Discord Quest Completer 2026 pre-configured environment for seamless local workstation deployment, ensuring optimal utility performance and...",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "discord-automation",
+        "discord-orbs",
+        "discord-quest",
+        "discord-quest-completer-2026",
+        "discord-quest-completer-bot",
+        "discord-quest-completer-free"
+      ],
+      "createdAt": "2026-11-06T17:22:14Z",
+      "updatedAt": "2026-11-06T19:48:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hairanfollow-discord-quest-completer-010d599d.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "HallThrasherVice/discord-server-cloner",
+      "name": "discord-server-cloner",
+      "owner": "HallThrasherVice",
+      "url": "https://github.com/HallThrasherVice/discord-server-cloner",
+      "description": "Discord Server Cloner 2023 pre-configured environment for seamless local workstation deployment, enabling efficient server backup and...",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "discord-channel-cloner",
+        "discord-clone",
+        "discord-cloner",
+        "discord-cloner-bot",
+        "discord-dm-cloner",
+        "discord-exporter"
+      ],
+      "createdAt": "2026-11-06T17:22:15Z",
+      "updatedAt": "2026-11-06T19:48:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hallthrashervice-discord-server-cloner-c395380e.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "Holeshurepresent/fonetrans",
+      "name": "fonetrans",
+      "owner": "Holeshurepresent",
+      "url": "https://github.com/Holeshurepresent/fonetrans",
+      "description": "Fonetrans 2026 automated deployment pipeline for efficient enterprise desktop software utility configuration.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "fonnte",
+        "guide-setup-fonetrans",
+        "how-to-install-fonetrans",
+        "how-to-setup-fonetrans",
+        "iphone-file-transfer",
+        "manage-ios-devices"
+      ],
+      "createdAt": "2026-11-06T17:22:44Z",
+      "updatedAt": "2026-11-06T19:48:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "holeshurepresent-fonetrans-6b12b40d.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "hunternavigatorhunt/genesis-miner",
+      "name": "genesis-miner",
+      "owner": "hunternavigatorhunt",
+      "url": "https://github.com/hunternavigatorhunt/genesis-miner",
+      "description": "Genesis Miner 2023 pre-configured environment for secure desktop software utility deployment on enterprise workstations.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "bitcoin-mining-tools",
+        "cpu-mining",
+        "cpumining",
+        "cryptominer",
+        "developer-tools",
+        "gpu-mining",
+        "gpumining"
+      ],
+      "createdAt": "2026-11-06T17:22:49Z",
+      "updatedAt": "2026-11-06T19:45:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hunternavigatorhunt-genesis-miner-524e6846.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "InertiaCourier/honeypot-detector",
+      "name": "honeypot-detector",
+      "owner": "InertiaCourier",
+      "url": "https://github.com/InertiaCourier/honeypot-detector",
+      "description": "Honeypot Detector 2026 automated deployment pipeline for secure desktop environment monitoring and threat detection.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "blockchain-intelligence",
+        "blockchain-security-solutions",
+        "crypto-osint",
+        "developer-tools",
+        "guide-setup-honeypot-detector",
+        "honeypot-check",
+        "how-to-install-honeypot-detector"
+      ],
+      "createdAt": "2026-11-06T17:23:04Z",
+      "updatedAt": "2026-11-06T19:46:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "inertiacourier-honeypot-detector-96063b62.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "innerdaimyopush/iobit-driver-booster",
+      "name": "iobit-driver-booster",
+      "owner": "innerdaimyopush",
+      "url": "https://github.com/innerdaimyopush/iobit-driver-booster",
+      "description": "Iobit Driver Booster 8.5 pre-configured environment for efficient automated deployment pipeline in enterprise desktop software catalog.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bootcamp-drivers",
+        "device-drivers",
+        "device-manager-tool",
+        "driver-development",
+        "driver-downloader",
+        "driver-genius-latest",
+        "driver-optimizer",
+        "driver-tool"
+      ],
+      "createdAt": "2026-11-06T17:23:20Z",
+      "updatedAt": "2026-11-06T19:45:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "innerdaimyopush-iobit-driver-booster-78b91f15.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "JourneymanStitch/imei-repair",
+      "name": "imei-repair",
+      "owner": "JourneymanStitch",
+      "url": "https://github.com/JourneymanStitch/imei-repair",
+      "description": "Imei Repair Free, an AI-driven device management solution, offers a pre-configured environment for seamless local workstation deployment in 2026.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "chimera",
+        "cpid",
+        "device-unlocking",
+        "digital-product",
+        "how-to-setup-imei-repair-free",
+        "imei-check",
+        "imei-check-myanmar",
+        "imei-masker"
+      ],
+      "createdAt": "2026-11-06T17:23:11Z",
+      "updatedAt": "2026-11-06T19:46:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "journeymanstitch-imei-repair-5f3f3efd.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "KingfisherCreate/instagram-liker-bot",
+      "name": "instagram-liker-bot",
+      "owner": "KingfisherCreate",
+      "url": "https://github.com/KingfisherCreate/instagram-liker-bot",
+      "description": "Instagram Liker Bot 2023 pre-configured environment for automated desktop software utility deployment.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "autolike",
+        "autoliker",
+        "guide-setup-instagram-liker-bot",
+        "how-to-install-instagram-liker-bot",
+        "how-to-setup-instagram-liker-bot",
+        "insta-bot",
+        "instagram-commenter",
+        "instagram-crawler"
+      ],
+      "createdAt": "2026-11-06T17:23:14Z",
+      "updatedAt": "2026-11-06T19:45:25Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kingfishercreate-instagram-liker-bot-0fa42bd8.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "KnitGnatConduit/ios-unlocker",
+      "name": "ios-unlocker",
+      "owner": "KnitGnatConduit",
+      "url": "https://github.com/KnitGnatConduit/ios-unlocker",
+      "description": "iOS Unlocker 1.5.3 automated deployment pipeline for seamless local workstation environment setup, ensuring optimal device management and...",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-ios-unlocker",
+        "how-to-install-ios-unlocker",
+        "how-to-setup-ios-unlocker",
+        "ios-hacking",
+        "ios26iphone"
+      ],
+      "createdAt": "2026-11-06T17:23:17Z",
+      "updatedAt": "2026-11-06T19:45:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "knitgnatconduit-ios-unlocker-f8fd62f0.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "LevelKnightDisengage/microstation-2026",
+      "name": "microstation-2026",
+      "owner": "LevelKnightDisengage",
+      "url": "https://github.com/LevelKnightDisengage/microstation-2026",
+      "description": "Microstation 2026 automated deployment pipeline for seamless local workstation setup.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "bentley-microstation-install-setup-windows-2026",
+        "desktop",
+        "developer-tools",
+        "diagram-software",
+        "guide-setup-microstation-2026",
+        "how-to-install-microstation-2026",
+        "how-to-setup-microstation-2026"
+      ],
+      "createdAt": "2026-11-06T17:23:47Z",
+      "updatedAt": "2026-11-06T19:46:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "levelknightdisengage-microstation-2026-f0b66e5b.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "loudspiritspade/multiaccountmanager",
+      "name": "multiaccountmanager",
+      "owner": "loudspiritspade",
+      "url": "https://github.com/loudspiritspade/multiaccountmanager",
+      "description": "Multiaccountmanager 2023 pre-configured environment for seamless automated deployment pipeline, ensuring robust multi-account management on...",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-multiaccountmanager",
+        "how-to-install-multiaccountmanager",
+        "how-to-setup-multiaccountmanager",
+        "multiaccount",
+        "multiinstance"
+      ],
+      "createdAt": "2026-11-06T17:24:07Z",
+      "updatedAt": "2026-11-06T19:46:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "loudspiritspade-multiaccountmanager-714406f4.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "MetropolisAccountant/solidworks-cad",
+      "name": "solidworks-cad",
+      "owner": "MetropolisAccountant",
+      "url": "https://github.com/MetropolisAccountant/solidworks-cad",
+      "description": "Solidworks Cad 2026 pre-configured environment for streamlined local workstation deployment, ensuring optimal design and simulation capabilities.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "cad-automation",
+        "civil-engineering-ai",
+        "desktop",
+        "developer-tools",
+        "fea",
+        "guide-setup-solidworks-cad",
+        "how-to-install-solidworks-cad"
+      ],
+      "createdAt": "2026-11-06T17:24:49Z",
+      "updatedAt": "2026-11-06T19:43:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "metropolisaccountant-solidworks-cad-eae601d8.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "MindCatMotor/soundpad",
+      "name": "soundpad",
+      "owner": "MindCatMotor",
+      "url": "https://github.com/MindCatMotor/soundpad",
+      "description": "Soundpad 2023 pre-configured environment for seamless digital audio workstation setup and studio audio plugin deployment.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "guide-setup-soundpad",
+        "how-to-install-soundpad",
+        "how-to-setup-soundpad",
+        "open-source",
+        "python",
+        "scripts"
+      ],
+      "createdAt": "2026-11-06T17:24:56Z",
+      "updatedAt": "2026-11-06T19:43:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mindcatmotor-soundpad-220d1c26.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "roadboltspire/fl-studio",
+      "name": "fl-studio",
+      "owner": "roadboltspire",
+      "url": "https://github.com/roadboltspire/fl-studio",
+      "description": "Fl Studio 2023 automated deployment pipeline for professional digital audio workstation setup, ensuring seamless local workstation integration.",
+      "language": "",
+      "stars": 220,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "audio-engineering",
+        "beat-making",
+        "digital-audio-workstation",
+        "fl",
+        "fl-studio-10",
+        "fl-studio-basic",
+        "fl-studio-classic",
+        "fruity-loops"
+      ],
+      "createdAt": "2026-11-06T17:41:14Z",
+      "updatedAt": "2026-11-06T19:50:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "roadboltspire-fl-studio-78bf485b.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "freeCodeCamp/freeCodeCamp",
+      "name": "freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript",
+      "stars": 458682,
+      "forks": 48136,
+      "starsToday": 0,
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "createdAt": "2014-12-24T17:49:19Z",
+      "updatedAt": "2026-11-07T05:36:46Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "freecodecamp-freecodecamp-5d095e95.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 371432,
+      "forks": 45362,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-07T05:40:54Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "jwasham/coding-interview-university",
+      "name": "coding-interview-university",
+      "owner": "jwasham",
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "description": "A complete computer science study plan to become a software engineer.",
+      "language": "",
+      "stars": 364058,
+      "forks": 85335,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "algorithms",
+        "coding-interview",
+        "coding-interviews",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-prep"
+      ],
+      "createdAt": "2016-06-06T02:34:12Z",
+      "updatedAt": "2026-11-07T05:44:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "jwasham-coding-interview-university-28a488d1.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "awesome-selfhosted/awesome-selfhosted",
+      "name": "awesome-selfhosted",
+      "owner": "awesome-selfhosted",
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
+      "language": "",
+      "stars": 334590,
+      "forks": 15755,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "cloud",
+        "free-software",
+        "hosting",
+        "privacy",
+        "self-hosted",
+        "selfhosted"
+      ],
+      "createdAt": "2015-06-01T02:33:17Z",
+      "updatedAt": "2026-11-07T05:43:29Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "awesome-selfhosted-awesome-selfhosted-1dbf0788.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "vinta/awesome-python",
+      "name": "awesome-python",
+      "owner": "vinta",
+      "url": "https://github.com/vinta/awesome-python",
+      "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
+      "language": "Python",
+      "stars": 333049,
+      "forks": 29058,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ],
+      "createdAt": "2014-06-27T21:00:06Z",
+      "updatedAt": "2026-11-07T05:43:41Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "vinta-awesome-python-6aca4665.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 54,
+      "fullName": "affaan-m/ECC",
+      "name": "ECC",
+      "owner": "affaan-m",
+      "url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 298687,
+      "forks": 44142,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "createdAt": "2026-01-18T00:51:51Z",
+      "updatedAt": "2026-11-07T05:50:19Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "affaan-m-ecc-c8b1425e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 254690,
+      "forks": 67176,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-07T05:42:56Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "ultraworkers/claw-code",
+      "name": "claw-code",
+      "owner": "ultraworkers",
+      "url": "https://github.com/ultraworkers/claw-code",
+      "description": "An agent-managed museum exhibit, built in Rust with Gajae-Code / LazyCodex — developed and maintained with no human intervention.",
+      "language": "Rust",
+      "stars": 194953,
+      "forks": 107479,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-03-31T08:58:08Z",
+      "updatedAt": "2026-11-07T04:27:01Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ultraworkers-claw-code-6882ee54.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 192478,
+      "forks": 13711,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-07T05:46:15Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 58,
+      "fullName": "ohmyzsh/ohmyzsh",
+      "name": "ohmyzsh",
+      "owner": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "description": "🙃 A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up wi",
+      "language": "Shell",
+      "stars": 190335,
+      "forks": 27989,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "cli-app",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins"
+      ],
+      "createdAt": "2009-08-28T18:15:37Z",
+      "updatedAt": "2026-11-07T04:47:03Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ohmyzsh-ohmyzsh-0d67c47d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "anthropics/skills",
+      "name": "skills",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 188256,
+      "forks": 22200,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills"
+      ],
+      "createdAt": "2025-09-22T15:53:31Z",
+      "updatedAt": "2026-11-07T05:48:01Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-skills-4cb2062a.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "MDX",
+      "stars": 175015,
+      "forks": 78653,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-07T04:04:36Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    }
+  ]
+}

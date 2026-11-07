@@ -1,0 +1,71 @@
+Symfony is a PHP framework for web and console applications and a set
+of reusable PHP components. Symfony is used by thousands of web
+applications and most of the popular PHP projects.
+
+Installation
+* Install Symfony with Composer (see requirements details).
+* Symfony follows the semantic versioning strictly, publishes "Long Term
+  Support" (LTS) versions and has a release process that is predictable and
+  business-friendly.
+
+Sponsor
+Symfony 8.2 is looking for backers.
+
+Help Symfony by sponsoring its development!
+
+Documentation
+* Read the Getting Started guide if you are new to Symfony.
+* Try the Symfony Demo application to learn Symfony in practice.
+* Discover Symfony ecosystem in detail with Symfony The Fast Track.
+* Master Symfony with the Guides and Tutorials, the Components docs
+  and the Best Practices reference.
+
+Community
+* Join the Symfony Community and meet other members at the Symfony events.
+* Get Symfony support on GitHub Discussions, Slack, etc.
+* Follow us on GitHub, Twitter and Facebook.
+* Read our Code of Conduct and meet the CARE Team.
+
+Contributing
+Symfony is an Open Source, community-driven project with thousands of
+contributors. Join them contributing code or contributing documentation.
+
+Security Issues
+If you discover a security vulnerability within Symfony, please follow our
+disclosure procedure.
+
+About Us
+Symfony development is led by the Symfony Core Team
+and supported by Symfony contributors.
+
+[1]: https://symfony.com
+[2]: https://symfony.com/projects
+[3]: https://symfony.com/doc/current/reference/requirements.html
+[4]: https://symfony.com/doc/current/setup.html
+[5]: https://semver.org
+[6]: https://symfony.com/doc/current/contributing/community/releases.html
+[7]: https://symfony.com/doc/current/page_creation.html
+[8]: https://symfony.com/doc/current/index.html
+[9]: https://symfony.com/doc/current/components/index.html
+[10]: https://symfony.com/doc/current/best_practices/index.html
+[11]: https://symfony.com/community
+[12]: https://symfony.com/events/
+[13]: https://symfony.com/support
+[14]: https://github.com/symfony
+[15]: https://twitter.com/symfony
+[16]: https://www.facebook.com/SymfonyFramework/
+[17]: https://symfony.com/doc/current/contributing/code/index.html
+[18]: https://symfony.com/doc/current/contributing/documentation/index.html
+[19]: https://symfony.com/contributors
+[20]: https://symfony.com/security
+[22]: https://symfony.com/doc/current/contributing/code/core_team.html
+[23]: https://github.com/symfony/symfony-demo
+[24]: https://symfony.com/coc
+[25]: https://symfony.com/doc/current/contributing/code_of_conduct/care_team.html
+[26]: https://symfony.com/book
+[27]: https://symfony.com/backers
+[28]: https://
+[29]: https://
+[30]: https://
+[31]: https://
+[32]: https://symfony.com/sponsor

@@ -1,0 +1,256 @@
+Coding Interview University
+
+I originally created this as a short to-do list of study topics for becoming a software engineer,
+but it grew to the large list you see today. After going through this study plan, I got hired
+as a Software Development Engineer at Amazon!
+You probably won't have to study as much as I did. Anyway, everything you need is here.
+I studied about 8-12 hours a day, for several months. This is my story: Why I studied full-time for 8 months for a Google interview
+Please Note: You won't need to study as much as I did. I wasted a lot of time on things I didn't need to know. More info about that is below. I'll help you get there without wasting your precious time.
+The items listed here will prepare you well for a technical interview at just about any software company,
+including the giants: Amazon, Facebook, Google, and Microsoft.
+Best of luck to you!
+
+Translations:
+
+- Bahasa Indonesia
+- Bulgarian
+- Español
+- German
+- Japanese (日本語)
+- Marathi
+- Polish
+- Português Brasileiro
+- Russian
+- Tiếng Việt - Vietnamese
+- Urdu - اردو
+- Uzbek
+- বাংলা - Bangla
+- ខ្មែរ - Khmer
+- 简体中文
+- 繁體中文
+
+Translations in progress:
+
+- Afrikaans
+- Arabic
+- French
+- Greek
+- Italian
+- Korean(한국어)
+- Malayalam
+- Persian - Farsi
+- Telugu
+- Thai
+- Turkish
+- Українська
+- עברית
+- हिन्दी
+
+What is it?
+
+This is my multi-month study plan for becoming a software engineer for a large company.
+
+Required:
+* A little experience with coding (variables, loops, methods/functions, etc)
+* Patience
+* Time
+
+Note this is a study plan for software engineering, not frontend engineering or full-stack development. There are really
+super roadmaps and coursework for those career paths elsewhere (see https://roadmap.sh/ for more info).
+
+There is a lot to learn in a university Computer Science program, but only knowing about 75% is good enough for an interview, so that's what I cover here.
+For a complete CS self-taught program, the resources for my study plan have been included in Kamran Ahmed's Computer Science Roadmap: https://roadmap.sh/computer-science
+
+Table of Contents
+
+The Study Plan
+
+- What is it?
+- Why use it?
+- How to use it
+- Don't feel you aren't smart enough
+- A Note About Video Resources
+- Choose a Programming Language
+- Books for Data Structures and Algorithms
+- Interview Prep Books
+- Don't Make My Mistakes
+- What you Won't See Covered
+- The Daily Plan
+- Coding Question Practice
+- Coding Problems
+
+Topics of Study
+
+- Algorithmic complexity / Big-O / Asymptotic analysis
+- Data Structures
+    - Arrays
+    - Linked Lists
+    - Stack
+    - Queue
+    - Hash table
+- More Knowledge
+    - Binary search
+    - Bitwise operations
+- Trees
+    - Trees - Intro
+    - Binary search trees: BSTs
+    - Heap / Priority Queue / Binary Heap
+    - balanced search trees (general concept, not details)
+    - traversals: preorder, inorder, postorder, BFS, DFS
+- Sorting
+    - selection
+    - insertion
+    - heapsort
+    - quicksort
+    - mergesort
+- Graphs
+    - directed
+    - undirected
+    - adjacency matrix
+    - adjacency list
+    - traversals: BFS, DFS
+- Even More Knowledge
+    - Recursion
+    - Dynamic Programming
+    - Design Patterns
+    - Combinatorics (n choose k) & Probability
+    - NP, NP-Complete and Approximation Algorithms
+    - How computers process a program
+    - Caches
+    - Processes and Threads
+    - Testing
+    - String searching & manipulations
+    - Tries
+    - Floating Point Numbers
+    - Unicode
+    - Endianness
+    - Networking
+- Final Review
+
+Getting the Job
+
+- Update Your Resume
+- Find a Job
+- Interview Process & General Interview Prep
+- Be thinking of for when the interview comes
+- Have questions for the interviewer
+- Once You've Got The Job
+
+---------------- Everything below this point is optional ----------------
+
+Optional Extra Topics & Resources
+
+- Additional Books
+- System Design, Scalability, Data Handling (if you have 4+ years experience)
+- Additional Learning
+    - Compilers
+    - Emacs and vi(m)
+    - Unix command line tools
+    - Information theory
+    - Parity & Hamming Code
+    - Entropy
+    - Cryptography
+    - Compression
+    - Computer Security
+    - Garbage collection
+    - Parallel Programming
+    - Messaging, Serialization, and Queueing Systems
+    - A*
+    - Fast Fourier Transform
+    - Bloom Filter
+    - HyperLogLog
+    - Locality-Sensitive Hashing
+    - van Emde Boas Trees
+    - Augmented Data Structures
+    - Balanced search trees
+        - AVL trees
+        - Splay trees
+        - Red/black trees
+        - 2-3 search trees
+        - 2-3-4 Trees (aka 2-4 trees)
+        - N-ary (K-ary, M-ary) trees
+        - B-Trees
+    - k-D Trees
+    - Skip lists
+    - Network Flows
+    - Disjoint Sets & Union Find
+    - Math for Fast Processing
+    - Treap
+    - Linear Programming
+    - Geometry, Convex hull
+    - Discrete math
+- Additional Detail on Some Subjects
+- Video Series
+- Computer Science Courses
+- Papers
+
+Why use it?
+
+If you want to work as a software engineer for a large company, these are the things you have to know.
+
+If you missed out on getting a degree in computer science, like I did, this will catch you up and save four years of your life.
+
+When I started this project, I didn't know a stack from a heap, didn't know Big-O anything, or anything about trees, or how to
+traverse a graph. If I had to code a sorting algorithm, I can tell ya it would have been terrible.
+Every data structure I had ever used was built into the language, and I didn't know how they worked
+under the hood at all. I never had to manage memory unless a process I was running would give an "out of
+memory" error, and then I'd have to find a workaround. I used a few multidimensional arrays in my life and
+thousands of associative arrays, but I never created data structures from scratch.
+
+It's a long plan. It may take you months. If you are familiar with a lot of this already it will take you a lot less time.
+
+⬆ back to top
+
+How to use it
+
+Everything below is an outline, and you should tackle the items in order from top to bottom.
+
+I'm using GitHub's special markdown flavor, including tasks lists to track progress.
+  - More about GitHub-flavored markdown
+
+If you don't want to use git
+
+On this page, click the Code button near the top, then click "Download ZIP". Unzip the file and you can work with the text files.
+
+If you're open in a code editor that understands markdown, you'll see everything formatted nicely.
+
+If you're comfortable with git
+
+Create a new branch so you can check items like this, just put an x in the brackets: x]
+
+1. Fork the GitHub repo: https://github.com/jwasham/coding-interview-university by clicking on the Fork button.
+
+1. Clone to your local repo:
+
+    git clone https://github.com//coding-interview-university.git
+    cd coding-interview-university
+    git remote add upstream https://github.com/jwasham/coding-interview-university.git
+    git remote set-url --push upstream DISABLE  # so that you don't push your personal progress back to the original repo
+
+1. Mark all boxes with X after you completed your changes:
+
+    git commit -am "Marked personal progress"
+    git pull upstream main  # keep your fork up-to-date with changes from the original repo
+
+    git push # just pushes to your fork
+
+[⬆ back to top
+
+Don't feel you aren't smart enough
+
+- Successful software engineers are smart, but many have an insecurity that they aren't smart enough.
+- The following videos may help you overcome this insecurity:
+    - The myth of the Genius Programmer
+    - It's Dangerous to Go Alone: Battling the Invisible Monsters in Tech
+
+⬆ back to top
+
+A Note About Video Resources
+
+Some videos are available only by enrolling in a Coursera or EdX class. These are called MOOCs.
+Sometimes the classes are not in session so you have to wait a couple of months, so you have no access.
+
+It would be great to replace the online course resources with free and always-available public sources,
+such as YouTube videos (preferably university lectures), so that you people can study these anytime,
+
+…（内容已截断）

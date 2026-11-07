@@ -1,0 +1,127 @@
+Angular - The modern web developer's platform
+
+  Angular is a development platform for building mobile and desktop web applications
+
+ using TypeScript/JavaScript and other languages.
+
+  angular.dev
+
+  Contributing Guidelines
+  ·
+  Submit an Issue
+  ·
+  Blog
+Documentation
+
+Get started with Angular, learn the fundamentals and explore advanced topics on our documentation website.
+
+- Getting Started
+- Architecture
+- Components and Templates
+- Forms
+- API
+
+Advanced
+
+- Angular Elements
+- Server Side Rendering
+- Schematics
+- Lazy Loading
+- Animations
+
+Local Development
+
+To contribute to the Angular Docs, check out the Angular.dev README
+
+Development Setup
+
+Prerequisites
+
+- Install Node.js] which includes [Node Package Manager
+
+Setting Up a Project
+
+Install the Angular CLI globally:
+
+npm install -g @angular/cli
+
+Create a workspace:
+
+ng new PROJECT NAME]
+
+Run the application:
+
+cd [PROJECT NAME]
+ng serve
+
+Angular is cross-platform, fast, scalable, has incredible tooling, and is loved by millions.
+
+Quickstart
+
+[Get started in 5 minutes.
+
+Ecosystem
+
+- Angular Command Line (CLI)
+- Angular Material
+
+Changelog
+
+Learn about the latest improvements.
+
+Upgrading
+
+Check out our upgrade guide to find out the best way to upgrade your project.
+
+Contributing
+
+Contributing Guidelines
+
+Read through our contributing guidelines to learn about our submission process, coding rules, and more.
+
+Want to Help?
+
+Want to report a bug, contribute some code, or improve the documentation? Excellent! Read up on our guidelines for contributing and then check out one of our issues labeled as help wanted or good first issue.
+
+Code of Conduct
+
+Help us keep Angular open and inclusive. Please read and follow our Code of Conduct.
+
+Community
+
+Join the conversation and help the community.
+
+- X (formerly Twitter)]
+- Bluesky
+- Discord
+- YouTube
+- StackOverflow
+- Find a Local Meetup
+
+Love Angular? Give our repo a star :star: :arrow_up:.
+
+[contributing]: CONTRIBUTING.md
+[quickstart]: https://angular.dev/tutorials/learn-angular
+[changelog]: CHANGELOG.md
+[ng]: https://angular.dev
+[documentation]: https://angular.dev/overview
+[angularmaterial]: https://material.angular.dev/
+[cli]: https://angular.dev/tools/cli
+[architecture]: https://angular.dev/essentials
+[componentstemplates]: https://angular.dev/tutorials/learn-angular/1-components-in-angular
+[forms]: https://angular.dev/tutorials/learn-angular/15-forms
+[api]: https://angular.dev/api
+[angularelements]: https://angular.dev/guide/elements
+[ssr]: https://angular.dev/guide/ssr
+[schematics]: https://angular.dev/tools/cli/schematics
+[lazyloading]: https://angular.dev/guide/routing/define-routes#lazily-loaded-components
+[node.js]: https://nodejs.org/
+[npm]: https://www.npmjs.com/get-npm
+[codeofconduct]: CODE_OF_CONDUCT.md
+[X (formerly Twitter)]: https://www.x.com/angular
+[bluesky]: https://bsky.app/profile/angular.dev
+[discord]: https://discord.gg/angular
+[stackoverflow]: https://stackoverflow.com/questions/tagged/angular
+[youtube]: https://youtube.com/angular
+[meetup]: https://www.meetup.com/find/?keywords=angular
+[animations]: https://angular.dev/guide/animations

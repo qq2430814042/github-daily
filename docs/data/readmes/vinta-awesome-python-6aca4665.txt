@@ -7,6 +7,7 @@ Visit the website to search and filter projects more easily.
 Sponsors
 
 - iPulse AI - Open Agentic Investment Research Platform. Inspect deep multi-agent market forecasts and stock picks.
+- PyUiBuilder - Build your Python GUIs like Canva using drag and drop. Export clean, editable Python code.
 
 Sponsor slots open, from $99/month. The #10 most-starred repo on GitHub. Put your product in front of Python developers. Become a sponsor.
 
@@ -215,7 +216,5 @@ Libraries for machine learning. Also see awesome-machine-learning.
 - Gradient Boosting
   - xgboost - A scalable, portable, and distributed gradient boosting library.
   - lightgbm - A fast, distributed, high-performance gradient boosting framework.
-  - catboost - A fast, scalable, high-performance gradient boosting on decision trees library.
-- Time Series Forecasting
 
 …（内容已截断）

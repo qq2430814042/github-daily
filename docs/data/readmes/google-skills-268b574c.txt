@@ -67,6 +67,7 @@ Available Skills
   - Genkit Python
   - LiveAPI Service Skill
   - Migrating from Gemini API in AI Studio to Agent Platform
+  - Pathways on Cloud Workload Debugging Skill
   - Skill Registry
   - Troubleshoot GKE TPU multi-slice hangs with the MXLA Hang Analyzer
   - Troubleshoot GKE TPU performance degradation with ML Diagnostics Workload Monitoring
