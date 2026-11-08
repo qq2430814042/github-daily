@@ -1,0 +1,1546 @@
+{
+  "date": "2026-11-07",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-08T05:52:51.940Z",
+  "count": 60,
+  "newCount": 33,
+  "sources": {
+    "trending": 15,
+    "new": 33,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "cloudflare/security-audit-skill",
+      "name": "security-audit-skill",
+      "owner": "cloudflare",
+      "url": "https://github.com/cloudflare/security-audit-skill",
+      "description": "A coding-agent skill for multi-phase security audits with independently verified, machine-readable findings",
+      "language": "JavaScript",
+      "stars": 66005,
+      "forks": 4295,
+      "starsToday": 2085,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cloudflare-security-audit-skill-17360b80.txt"
+    },
+    {
+      "rank": 2,
+      "fullName": "milind-soni/OpenMausBot",
+      "name": "OpenMausBot",
+      "owner": "milind-soni",
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "language": "TypeScript",
+      "stars": 17254,
+      "forks": 2434,
+      "starsToday": 1955,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "milind-soni-openmausbot-da6d5851.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "sherlock-project/sherlock",
+      "name": "sherlock",
+      "owner": "sherlock-project",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "description": "Hunt down social media accounts by username across social networks",
+      "language": "Python",
+      "stars": 101015,
+      "forks": 11941,
+      "starsToday": 1766,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "sherlock-project-sherlock-2cd277ce.txt"
+    },
+    {
+      "rank": 4,
+      "fullName": "zed-industries/zed",
+      "name": "zed",
+      "owner": "zed-industries",
+      "url": "https://github.com/zed-industries/zed",
+      "description": "Code at the speed of thought – Zed is a high-performance, multiplayer code editor from the creators of Atom and Tree-sitter.",
+      "language": "Rust",
+      "stars": 94343,
+      "forks": 11554,
+      "starsToday": 1114,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zed-industries-zed-f6a54558.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 317903,
+      "forks": 26598,
+      "starsToday": 1100,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "google/skills",
+      "name": "skills",
+      "owner": "google",
+      "url": "https://github.com/google/skills",
+      "description": "Agent Skills for Google products and technologies",
+      "language": "Python",
+      "stars": 23507,
+      "forks": 1965,
+      "starsToday": 443,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-skills-268b574c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "anthropics/skills",
+      "name": "skills",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 188919,
+      "forks": 22268,
+      "starsToday": 390,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-skills-4cb2062a.txt"
+    },
+    {
+      "rank": 8,
+      "fullName": "astral-sh/ruff",
+      "name": "ruff",
+      "owner": "astral-sh",
+      "url": "https://github.com/astral-sh/ruff",
+      "description": "An extremely fast Python linter and code formatter, written in Rust.",
+      "language": "Rust",
+      "stars": 51022,
+      "forks": 2633,
+      "starsToday": 350,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "astral-sh-ruff-dc9799a8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "prometheus/prometheus",
+      "name": "prometheus",
+      "owner": "prometheus",
+      "url": "https://github.com/prometheus/prometheus",
+      "description": "The Prometheus monitoring system and time series database.",
+      "language": "Go",
+      "stars": 67482,
+      "forks": 11011,
+      "starsToday": 322,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "prometheus-prometheus-6ef92d5c.txt"
+    },
+    {
+      "rank": 10,
+      "fullName": "ranxianglei/billion-context",
+      "name": "billion-context",
+      "owner": "ranxianglei",
+      "url": "https://github.com/ranxianglei/billion-context",
+      "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
+      "language": "TypeScript",
+      "stars": 4703,
+      "forks": 377,
+      "starsToday": 191,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ranxianglei-billion-context-939cd5a2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "vercel-labs/agent-browser",
+      "name": "agent-browser",
+      "owner": "vercel-labs",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "language": "Rust",
+      "stars": 46984,
+      "forks": 3221,
+      "starsToday": 190,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "vercel-labs-agent-browser-dbaf6cfb.txt"
+    },
+    {
+      "rank": 12,
+      "fullName": "mbillow/localthings",
+      "name": "localthings",
+      "owner": "mbillow",
+      "url": "https://github.com/mbillow/localthings",
+      "description": "Control your Samsung appliances from Home Assistant over your home network, with no cloud account.",
+      "language": "Python",
+      "stars": 1096,
+      "forks": 114,
+      "starsToday": 186,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mbillow-localthings-52f83931.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "dsx-ai-factory/nvke",
+      "name": "nvke",
+      "owner": "dsx-ai-factory",
+      "url": "https://github.com/dsx-ai-factory/nvke",
+      "description": "NVIDIA Kubernetes Engine (NVKE). A management plane for GPU Kubernetes on bare metal.",
+      "language": "Go",
+      "stars": 609,
+      "forks": 94,
+      "starsToday": 123,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "dsx-ai-factory-nvke-f7657e93.txt"
+    },
+    {
+      "rank": 14,
+      "fullName": "tailwindlabs/tailwindcss",
+      "name": "tailwindcss",
+      "owner": "tailwindlabs",
+      "url": "https://github.com/tailwindlabs/tailwindcss",
+      "description": "A utility-first CSS framework for rapid UI development.",
+      "language": "TypeScript",
+      "stars": 98553,
+      "forks": 7115,
+      "starsToday": 122,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tailwindlabs-tailwindcss-622fdee1.txt"
+    },
+    {
+      "rank": 15,
+      "fullName": "meta/astryx",
+      "name": "astryx",
+      "owner": "meta",
+      "url": "https://github.com/meta/astryx",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "language": "TypeScript",
+      "stars": 14728,
+      "forks": 1208,
+      "starsToday": 96,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "meta-astryx-7a326e4e.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "Th0rgal/satmux",
+      "name": "satmux",
+      "owner": "Th0rgal",
+      "url": "https://github.com/Th0rgal/satmux",
+      "description": "Accelerate high-latency GEO inflight Wi-Fi via warm BBR TCP multiplexing + 1-RTT Ground-TLS + zlib (zero dependencies)",
+      "language": "Python",
+      "stars": 579,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-07T16:09:41Z",
+      "updatedAt": "2026-11-08T05:52:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "th0rgal-satmux-c413751d.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "Poltergeistlunagrid/Steam-Idler",
+      "name": "Steam-Idler",
+      "owner": "Poltergeistlunagrid",
+      "url": "https://github.com/Poltergeistlunagrid/Steam-Idler",
+      "description": "Steam Idler, Card Farmer & Playtime Booster. Idle multiple games to farm trading cards, boost playtime hours, and manage multiple accounts. Lightweight, open-source, and easy to use.",
+      "language": "Python",
+      "stars": 425,
+      "forks": 313,
+      "starsToday": 0,
+      "topics": [
+        "game-idler",
+        "hourboost",
+        "open-source",
+        "playtime-boost",
+        "steam-bot",
+        "steam-card-farmer",
+        "steam-idler",
+        "steam-playtime"
+      ],
+      "createdAt": "2026-11-07T20:26:32Z",
+      "updatedAt": "2026-11-07T21:38:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "poltergeistlunagrid-steam-idler-7be6ff40.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "sentinelsoldierprize/Minecraft-AFK-Bot",
+      "name": "Minecraft-AFK-Bot",
+      "owner": "sentinelsoldierprize",
+      "url": "https://github.com/sentinelsoldierprize/Minecraft-AFK-Bot",
+      "description": "Lightweight Minecraft Anti-AFK bot with a web dashboard. Keeps your account online 24/7, simulates activity to avoid kicks, and supports auto-reconnect. Perfect for Aternos and survival servers.",
+      "language": "Python",
+      "stars": 425,
+      "forks": 260,
+      "starsToday": 0,
+      "topics": [
+        "afk-bot",
+        "afk-farm",
+        "anti-afk",
+        "aternos",
+        "minecraft",
+        "minecraft-bot",
+        "mineflayer",
+        "nodejs"
+      ],
+      "createdAt": "2026-11-07T18:07:44Z",
+      "updatedAt": "2026-11-07T19:33:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sentinelsoldierprize-minecraft-afk-bot-1f6e8754.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "tangerineturtle1/NX2navi",
+      "name": "NX2navi",
+      "owner": "tangerineturtle1",
+      "url": "https://github.com/tangerineturtle1/NX2navi",
+      "description": "",
+      "language": "C",
+      "stars": 291,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-07T10:01:23Z",
+      "updatedAt": "2026-11-08T05:51:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tangerineturtle1-nx2navi-c6929ea2.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "raygullcrease/axiom-launch-replay",
+      "name": "axiom-launch-replay",
+      "owner": "raygullcrease",
+      "url": "https://github.com/raygullcrease/axiom-launch-replay",
+      "description": "Replay recorded launches offline, count every fee, keep notes on each token.",
+      "language": "HTML",
+      "stars": 209,
+      "forks": 68,
+      "starsToday": 0,
+      "topics": [
+        "axiom",
+        "desktop",
+        "offline",
+        "rust",
+        "windows"
+      ],
+      "createdAt": "2026-11-07T02:03:47Z",
+      "updatedAt": "2026-11-07T19:05:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "raygullcrease-axiom-launch-replay-be247fdd.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "lxe/phoneuse",
+      "name": "phoneuse",
+      "owner": "lxe",
+      "url": "https://github.com/lxe/phoneuse",
+      "description": "See and operate an unmodified iPhone from a Linux PC: AirPlay mirror in, Bluetooth HID mouse/keyboard out, plus a CLI and skill for agents.",
+      "language": "Python",
+      "stars": 203,
+      "forks": 22,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-07T01:28:30Z",
+      "updatedAt": "2026-11-08T05:50:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lxe-phoneuse-6d1833f8.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "drost-ai/tinker-ai-skill",
+      "name": "tinker-ai-skill",
+      "owner": "drost-ai",
+      "url": "https://github.com/drost-ai/tinker-ai-skill",
+      "description": "Agent Skill for fine-tuning an agentic model on your own Claude Code sessions with Tinker. Works in Claude Code, Codex and OpenCode.",
+      "language": "Python",
+      "stars": 169,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-07T16:50:04Z",
+      "updatedAt": "2026-11-08T05:30:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "drost-ai-tinker-ai-skill-088837b4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 23,
+      "fullName": "MajestyPoemFold/ghostclick-mouse-double-click-fix",
+      "name": "ghostclick-mouse-double-click-fix",
+      "owner": "MajestyPoemFold",
+      "url": "https://github.com/MajestyPoemFold/ghostclick-mouse-double-click-fix",
+      "description": "Free mouse double click test and fix for Windows 11/10. Finds ghost clicks (mouse chatter, switch bounce) on a strip chart, learns a debounce threshold from your real double-clicks, filters them system-wide from the tray, catches drag and drop drops, and exports RMA evidence. Open source, no ads.",
+      "language": "Rust",
+      "stars": 159,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [
+        "double-click",
+        "gaming-mouse",
+        "input-lag",
+        "logitech",
+        "mouse-fix",
+        "mouse-tester",
+        "windows"
+      ],
+      "createdAt": "2026-11-07T09:52:25Z",
+      "updatedAt": "2026-11-08T05:37:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "majestypoemfold-ghostclick-mouse-double-click-fix-f6ffb5a1.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 24,
+      "fullName": "dabingfy-dot/solo-to-team-skills",
+      "name": "solo-to-team-skills",
+      "owner": "dabingfy-dot",
+      "url": "https://github.com/dabingfy-dot/solo-to-team-skills",
+      "description": "Skills for human-led AI teams: delegate tasks, verify evidence, explain steps clearly, and learn from real cases. 一个人统筹 AI 团队：派活、核证、清楚说明、经验复用。",
+      "language": "",
+      "stars": 144,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "collaboration",
+        "human-in-the-loop",
+        "workflow"
+      ],
+      "createdAt": "2026-11-07T01:36:28Z",
+      "updatedAt": "2026-11-08T05:38:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dabingfy-dot-solo-to-team-skills-557e91ca.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 25,
+      "fullName": "ngophatneknha/ai-engineering-hub",
+      "name": "ai-engineering-hub",
+      "owner": "ngophatneknha",
+      "url": "https://github.com/ngophatneknha/ai-engineering-hub",
+      "description": "In-depth tutorials on LLMs, RAGs and real-world AI agent applications (Personal learning hub)",
+      "language": "MDX",
+      "stars": 119,
+      "forks": 35,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-07T10:08:24Z",
+      "updatedAt": "2026-11-08T05:49:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ngophatneknha-ai-engineering-hub-6f5f60bd.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 26,
+      "fullName": "ade1256/google-ai-pro-farming-2-years",
+      "name": "google-ai-pro-farming-2-years",
+      "owner": "ade1256",
+      "url": "https://github.com/ade1256/google-ai-pro-farming-2-years",
+      "description": "",
+      "language": "Python",
+      "stars": 107,
+      "forks": 27,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-07T11:06:56Z",
+      "updatedAt": "2026-11-08T05:44:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ade1256-google-ai-pro-farming-2-years-940fb831.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "Goblinmine/homelab-diagram",
+      "name": "homelab-diagram",
+      "owner": "Goblinmine",
+      "url": "https://github.com/Goblinmine/homelab-diagram",
+      "description": "Renders an r/homelab-style network diagram from a YAML inventory (Python → SVG/PNG). Written with Claude.",
+      "language": "Python",
+      "stars": 104,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-07T12:45:46Z",
+      "updatedAt": "2026-11-08T05:41:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "goblinmine-homelab-diagram-109a5679.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "qnguyen3/zalo-swift-re",
+      "name": "zalo-swift-re",
+      "owner": "qnguyen3",
+      "url": "https://github.com/qnguyen3/zalo-swift-re",
+      "description": "A reverse-engineered version of Zalo written in Swift — native macOS client",
+      "language": "Swift",
+      "stars": 100,
+      "forks": 80,
+      "starsToday": 0,
+      "topics": [
+        "macos",
+        "reverse-engineering",
+        "swift",
+        "swiftui",
+        "zalo"
+      ],
+      "createdAt": "2026-11-07T09:12:33Z",
+      "updatedAt": "2026-11-08T05:48:27Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "qnguyen3-zalo-swift-re-ae91db99.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 29,
+      "fullName": "abhinay-h/ai_manus",
+      "name": "ai_manus",
+      "owner": "abhinay-h",
+      "url": "https://github.com/abhinay-h/ai_manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 88,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T06:34:44Z",
+      "updatedAt": "2026-11-07T16:37:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "abhinay-h-ai-manus-bd9c621b.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "Adil-Ijaz7/ai_manus",
+      "name": "ai_manus",
+      "owner": "Adil-Ijaz7",
+      "url": "https://github.com/Adil-Ijaz7/ai_manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 88,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T06:34:18Z",
+      "updatedAt": "2026-11-07T16:36:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "adil-ijaz7-ai-manus-139d9957.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "Adil-Ijaz7/manus-ai",
+      "name": "manus-ai",
+      "owner": "Adil-Ijaz7",
+      "url": "https://github.com/Adil-Ijaz7/manus-ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "Python",
+      "stars": 92,
+      "forks": 88,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T06:34:34Z",
+      "updatedAt": "2026-11-07T16:37:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "adil-ijaz7-manus-ai-c040209d.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "ArcaneAmongglacier73068/ai--manus",
+      "name": "ai--manus",
+      "owner": "ArcaneAmongglacier73068",
+      "url": "https://github.com/ArcaneAmongglacier73068/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:19:45Z",
+      "updatedAt": "2026-11-07T16:39:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "arcaneamongglacier73068-ai-manus-8492bd26.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "BelowChaostroll55451/ai--manus",
+      "name": "ai--manus",
+      "owner": "BelowChaostroll55451",
+      "url": "https://github.com/BelowChaostroll55451/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:24:42Z",
+      "updatedAt": "2026-11-07T16:40:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "belowchaostroll55451-ai-manus-6183c760.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "BesideRaelwave39799/ai--manus",
+      "name": "ai--manus",
+      "owner": "BesideRaelwave39799",
+      "url": "https://github.com/BesideRaelwave39799/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:27:06Z",
+      "updatedAt": "2026-11-07T16:41:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "besideraelwave39799-ai-manus-7258c660.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "CometUniverserage25362/ai--manus",
+      "name": "ai--manus",
+      "owner": "CometUniverserage25362",
+      "url": "https://github.com/CometUniverserage25362/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 28,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:15:11Z",
+      "updatedAt": "2026-11-07T16:38:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cometuniverserage25362-ai-manus-06bc1a67.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "CurebornJade39704/ai--manus",
+      "name": "ai--manus",
+      "owner": "CurebornJade39704",
+      "url": "https://github.com/CurebornJade39704/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:37:54Z",
+      "updatedAt": "2026-11-07T16:41:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "curebornjade39704-ai-manus-b5bb9413.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "CynuraslayerAngel62471/ai--manus",
+      "name": "ai--manus",
+      "owner": "CynuraslayerAngel62471",
+      "url": "https://github.com/CynuraslayerAngel62471/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:20:01Z",
+      "updatedAt": "2026-11-07T16:39:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cynuraslayerangel62471-ai-manus-7cd7d9fa.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "DruidseaHunter22631/ai--manus",
+      "name": "ai--manus",
+      "owner": "DruidseaHunter22631",
+      "url": "https://github.com/DruidseaHunter22631/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:38:09Z",
+      "updatedAt": "2026-11-07T16:41:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "druidseahunter22631-ai-manus-0f531da7.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "GlyphNova19456/ai--manus",
+      "name": "ai--manus",
+      "owner": "GlyphNova19456",
+      "url": "https://github.com/GlyphNova19456/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:43:09Z",
+      "updatedAt": "2026-11-07T16:42:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "glyphnova19456-ai-manus-274bc567.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "Infernogoldep/ai--manus",
+      "name": "ai--manus",
+      "owner": "Infernogoldep",
+      "url": "https://github.com/Infernogoldep/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:47:04Z",
+      "updatedAt": "2026-11-07T16:42:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "infernogoldep-ai-manus-4058df0f.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "LumiVikinggard89137/ai--manus",
+      "name": "ai--manus",
+      "owner": "LumiVikinggard89137",
+      "url": "https://github.com/LumiVikinggard89137/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 50,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:14:49Z",
+      "updatedAt": "2026-11-07T16:38:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lumivikinggard89137-ai-manus-a6a5a5d5.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "NuclearOrlaix26356/ai--manus",
+      "name": "ai--manus",
+      "owner": "NuclearOrlaix26356",
+      "url": "https://github.com/NuclearOrlaix26356/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:43:02Z",
+      "updatedAt": "2026-11-07T16:42:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nuclearorlaix26356-ai-manus-2930aa36.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "OdysseyglassSamurai13935/ai--manus",
+      "name": "ai--manus",
+      "owner": "OdysseyglassSamurai13935",
+      "url": "https://github.com/OdysseyglassSamurai13935/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 13,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:17:08Z",
+      "updatedAt": "2026-11-07T16:38:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "odysseyglasssamurai13935-ai-manus-8b81b175.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "Omegacoral/ai--manus",
+      "name": "ai--manus",
+      "owner": "Omegacoral",
+      "url": "https://github.com/Omegacoral/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:22:19Z",
+      "updatedAt": "2026-11-07T16:40:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "omegacoral-ai-manus-0e792630.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "SinceGalaxyquiver49740/ai--manus",
+      "name": "ai--manus",
+      "owner": "SinceGalaxyquiver49740",
+      "url": "https://github.com/SinceGalaxyquiver49740/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:46:10Z",
+      "updatedAt": "2026-11-07T16:42:42Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sincegalaxyquiver49740-ai-manus-89722d9f.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "SorenMonstersatyr54032/ai--manus",
+      "name": "ai--manus",
+      "owner": "SorenMonstersatyr54032",
+      "url": "https://github.com/SorenMonstersatyr54032/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T07:43:39Z",
+      "updatedAt": "2026-11-07T16:42:27Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sorenmonstersatyr54032-ai-manus-8b01131b.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "thecoderrrer/ai_manus",
+      "name": "ai_manus",
+      "owner": "thecoderrrer",
+      "url": "https://github.com/thecoderrrer/ai_manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 92,
+      "forks": 88,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T06:34:14Z",
+      "updatedAt": "2026-11-07T16:36:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "thecoderrrer-ai-manus-8b909e8a.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "tireddwarf99/manus-ai",
+      "name": "manus-ai",
+      "owner": "tireddwarf99",
+      "url": "https://github.com/tireddwarf99/manus-ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "Python",
+      "stars": 92,
+      "forks": 49,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-07T06:35:05Z",
+      "updatedAt": "2026-11-07T16:38:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tireddwarf99-manus-ai-00e880cb.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python",
+      "stars": 497086,
+      "forks": 55558,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "createdAt": "2016-03-20T23:49:42Z",
+      "updatedAt": "2026-11-08T05:52:39Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "public-apis-public-apis-0e8ac9c0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "EbookFoundation/free-programming-books",
+      "name": "free-programming-books",
+      "owner": "EbookFoundation",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "description": ":books: Freely available programming books",
+      "language": "Python",
+      "stars": 401239,
+      "forks": 67369,
+      "starsToday": 0,
+      "topics": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ],
+      "createdAt": "2013-10-11T06:50:37Z",
+      "updatedAt": "2026-11-08T05:50:29Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ebookfoundation-free-programming-books-c336ecc2.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "jwasham/coding-interview-university",
+      "name": "coding-interview-university",
+      "owner": "jwasham",
+      "url": "https://github.com/jwasham/coding-interview-university",
+      "description": "A complete computer science study plan to become a software engineer.",
+      "language": "",
+      "stars": 364076,
+      "forks": 85442,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "algorithms",
+        "coding-interview",
+        "coding-interviews",
+        "computer-science",
+        "data-structures",
+        "interview",
+        "interview-prep"
+      ],
+      "createdAt": "2016-06-06T02:34:12Z",
+      "updatedAt": "2026-11-08T05:05:29Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "jwasham-coding-interview-university-28a488d1.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "awesome-selfhosted/awesome-selfhosted",
+      "name": "awesome-selfhosted",
+      "owner": "awesome-selfhosted",
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
+      "language": "",
+      "stars": 334900,
+      "forks": 15766,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "cloud",
+        "free-software",
+        "hosting",
+        "privacy",
+        "self-hosted",
+        "selfhosted"
+      ],
+      "createdAt": "2015-06-01T02:33:17Z",
+      "updatedAt": "2026-11-08T05:46:51Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "awesome-selfhosted-awesome-selfhosted-1dbf0788.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252382,
+      "forks": 51946,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-08T05:44:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "ossu/computer-science",
+      "name": "computer-science",
+      "owner": "ossu",
+      "url": "https://github.com/ossu/computer-science",
+      "description": "🎓 Path to a free self-taught education in Computer Science!",
+      "language": "HTML",
+      "stars": 210952,
+      "forks": 26101,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "computer-science",
+        "courses",
+        "curriculum"
+      ],
+      "createdAt": "2014-05-04T00:18:39Z",
+      "updatedAt": "2026-11-08T05:42:19Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ossu-computer-science-368e1467.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "microsoft/markitdown",
+      "name": "markitdown",
+      "owner": "microsoft",
+      "url": "https://github.com/microsoft/markitdown",
+      "description": "Python tool for converting files and office documents to Markdown.",
+      "language": "Python",
+      "stars": 194348,
+      "forks": 14630,
+      "starsToday": 0,
+      "topics": [
+        "autogen",
+        "autogen-extension",
+        "langchain",
+        "markdown",
+        "microsoft-office",
+        "openai",
+        "pdf"
+      ],
+      "createdAt": "2024-11-13T19:56:40Z",
+      "updatedAt": "2026-11-08T05:48:28Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "microsoft-markitdown-4aa99f7d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "ohmyzsh/ohmyzsh",
+      "name": "ohmyzsh",
+      "owner": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "description": "🙃 A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up wi",
+      "language": "Shell",
+      "stars": 190359,
+      "forks": 27989,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "cli-app",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins"
+      ],
+      "createdAt": "2009-08-28T18:15:37Z",
+      "updatedAt": "2026-11-08T05:32:08Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ohmyzsh-ohmyzsh-0d67c47d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "CyC2018/CS-Notes",
+      "name": "CS-Notes",
+      "owner": "CyC2018",
+      "url": "https://github.com/CyC2018/CS-Notes",
+      "description": ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计",
+      "language": "JavaScript",
+      "stars": 186465,
+      "forks": 50640,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "computer-science",
+        "cpp",
+        "interview",
+        "java",
+        "leetcode",
+        "python",
+        "system-design"
+      ],
+      "createdAt": "2018-02-13T14:56:24Z",
+      "updatedAt": "2026-11-08T04:16:48Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "cyc2018-cs-notes-9b48ee3d.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "flutter/flutter",
+      "name": "flutter",
+      "owner": "flutter",
+      "url": "https://github.com/flutter/flutter",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "language": "Dart",
+      "stars": 181091,
+      "forks": 32815,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "dart",
+        "dart-platform",
+        "desktop",
+        "flutter",
+        "flutter-package"
+      ],
+      "createdAt": "2015-03-06T22:54:58Z",
+      "updatedAt": "2026-11-08T04:36:14Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "flutter-flutter-a9183a2c.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "github/gitignore",
+      "name": "gitignore",
+      "owner": "github",
+      "url": "https://github.com/github/gitignore",
+      "description": "A collection of useful .gitignore templates",
+      "language": "",
+      "stars": 176195,
+      "forks": 82021,
+      "starsToday": 0,
+      "topics": [
+        "git",
+        "gitignore"
+      ],
+      "createdAt": "2010-11-08T20:17:14Z",
+      "updatedAt": "2026-11-08T04:39:31Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-gitignore-07244a5f.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "MDX",
+      "stars": 175020,
+      "forks": 78752,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-08T05:01:13Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    }
+  ]
+}

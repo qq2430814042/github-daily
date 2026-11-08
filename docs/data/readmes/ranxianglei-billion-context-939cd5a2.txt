@@ -1,0 +1,104 @@
+billion-context
+
+English | 中文
+
+Context-compression plugin — billion-context is all you need.
+
+small context windows (100K is enough) · 5× fewer tokens · month-long single sessions (billions of tokens) · high compression quality
+
+npm install -g billion-context --prefix=~/.local
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+Cache health at a glance: a healthy session keeps a 95–97% prefix-cache hit rate — compression itself costs ≤2%. Sustained lower? Check attribution with /acp or /acp-cache (see FAQ); usual causes, in order: upstream cache TTL expiry · model switch · a bili bug (please report) · other/unknown.
+
+Community
+
+QQ Group:
+1056132097 (full)
+1108730198 (full)
+1129868472 (open)
+
+📄 Paper / Preprint
+
+- Model-Driven Incremental Hierarchical Compression: Training-Free Multi-Generational Context Management for Long-Lived Coding Agents (English, v0.2)
+
+📝 The paper itself is open-sourced under the MIT License as part of the codebase (paper/). It is a living document — anyone may edit it; improvements are welcome via pull request.
+
+A production-scale longitudinal study: 4.5 months, three hosts, 174,327 model calls, 18.76B cumulative input tokens (~24.7B across all hosts), zero window violations on 204,800-token models, marathon sessions of 8,584–12,049 calls.
+
+📊 Independent Third-Party Benchmarks
+
+- 1,500-Item Cross-Benchmark Evaluation (LongMemEval-S · ContextBench · MemoryAgentBench) (中文版) — head-to-head comparison of billion-context (v0.1.202) against full context and 3 RAG arms (bm25, embedding, embedding-rerank) with DeepSeek V4.1 Flash, Qwen3-Embedding-8B, Qwen3-Reranker-4B, and Pi Agent: #1 on ContextBench (0.3097 Utilized F1, -58.3% cost vs full), +16.6% over best RAG on LongMemEval-S (79.20% vs 62.60%, -71.1% independent-session cost vs full), and 100% survival on 1.48M-token MemoryAgentBench TTL (30× steady-state compression where full fails 199/199).
+
+billion-context sits between any agent and its model API, rewriting Anthropic/OpenAI streams with acp-kernel compression. The model decides when and what to compress into high-fidelity summaries — not a hard truncation limit.
+
+Why
+
+Long coding sessions blow up context. Each provider charges per token, and once you pass the context window the session degrades or dies. billion-context compresses consumed conversation into layered summaries so you can run a single session for days — billions of tokens through one context window.
+
+Unlike a host's built-in summarizer, compression here is incremental, reversible, and prefix-cache friendly: summaries are written in small ranges, can be decompressed on demand, and the cache prefix stays intact.
+
+How it works
+
+Context-management tools
+
+The proxy injects four context-management tools into the conversation; the model calls them itself as context grows, and the proxy executes compress server-side so folded ranges stay summarized in history until restored:
+
+- compress — fold a message range into a detailed summary.
+- decompress — restore a compressed range when exact details are needed again.
+- search_context — keyword search over compressed summaries and visible messages.
+- acp_status — context-usage overview plus which ranges are still compressible.
+
+Which do I need?
+
+Pick by your client:
+
+| Client | Use |
+|---|---|
+| pi | billion-context — bili pi (launcher) or bili plugin install pi (native); standalone billion-context-pi remains usable — details: CLIENTS.md |
+| opencode (1.x / 2.x) | billion-context — bili opencode (launcher) or bili plugin install opencode (native); standalone opencode-acp remains usable on 1.x — full guide: OpenCode |
+| omp | billion-context via bili omp (built-in plugin) or bili plugin install omp (self-spawning native plugin, no launcher) |
+| dsh | bili dsh (launcher — full native plugin via --patch) or bili plugin install dsh ≡ dsh plugin --profile  add billion-context (one unified lane) — details: CLIENTS.md |
+| kimi | bili plugin install kimi (self-spawning native, Kimi Code ≥ 2.0.0) or bili kimi (cert-MITM) or /bili/ prefix — details: CLIENTS.md |
+| hermes | bili plugin install hermes (self-spawning native, Python plugin #958) or bili hermes (cert-MITM) |
+| zcode (Z.ai / bigmodel coding plan) | bili plugin install zcode (self-spawning native, #1145) or cert-MITM via the GUI's Settings → Network or /bili/ prefix — details: CLIENTS.md |
+| claude | bili claude (launcher) or bili plugin install claude (native posture, #964 — managed settings block + session-owned proxy; see the notes below) |
+| codex | bili codex (launcher — the full zero-config posture) or bili plugin install codex (MCP-shell tools companion: start bili first — the shell never spawns a proxy and never routes codex's own traffic) — details: CLIENTS.md |
+| jcode | billion-context via bili jcode (cert-MITM) or /bili/ prefix — no native mode (compiled Rust binary, no plugin seam, #962) |
+| gemini (Gemini CLI) | bili gemini (launcher, GOOGLE_GEMINI_BASE_URL /bili/ rewrite) or /bili/ prefix — launcher-only (no in-loop tool seam, #1043) |
+| iflow (iFlow CLI) | bili iflow (launcher, IFLOW_BASE_URL /bili/ rewrite) or /bili/ prefix |
+| qwen (Qwen Code) | bili qwen (launcher, cert-MITM) or /bili/ prefix |
+| antigravity (Antigravity CLI / agy, Google) | bili antigravity (launcher, CLOUD_CODE_URL /bili/ rewrite of daily-cloudcode-pa.googleapis.com — Antigravity's real default upstream, #3129) or /bili/ prefix — no plugin seam (closed Go language_server; its user-plugin surface is additive-only, #2115) — details: CLIENTS.md |
+| mcode (MiniMax Code) | billion-context via bili mcode (cert-MITM) or /bili/ prefix — no native mode (event hooks only, no model-request seam, #1050) |
+| aider | billion-context via bili aider (cert-MITM) or /bili/ prefix — no native mode (shell-command-only hooks, no tool-injection seam, #1048) |
+| copilot (GitHub Copilot CLI) | bili copilot (launcher, cert-MITM) — closed Go binary, no plugin seam (#1049) |
+| amp (Amp CLI) | bili amp (launcher, cert-MITM) — closed Go binary, no plugin seam (#1049) |
+| kiro (Kiro CLI, AWS) | bili kiro (launcher, cert-MITM) — Rust shell + Node agent server, no plugin seam; model traffic is the Responses wire on runtime..kiro.dev, gateway quirks handled built-in — details: CLIENTS.md |
+| crush (Charm Crush) | bili crush (launcher, cert-MITM) — open-source Go binary, no plugin seam; built-in provider hosts whitelisted, custom base_urls auto-discovered from crush.json (#2340) |
+| zed (Zed editor) | bili zed (launcher, cert-MITM) — open-source Rust editor, no plugin seam; reqwest honors HTTPS_PROXY, CA via SSL_CERT_FILE (Linux env probing); built-in provider hosts whitelisted, custom api_urls auto-discovered from settings.json; loopback providers (ollama/lmstudio) stay direct via NO_PROXY (#2340) |
+| goose (Goose CLI) | bili goose (launcher) — rustls trusts no CA file, so no cert-MITM: openai/anthropic legs via OPENAI_HOST/ANTHROPIC_HOST, custom providers via a regenerated GOOSE_PATH_ROOT overlay (#1049) |
+| everything else (no context hook) | billion-context — bili  (launcher, preferred) or /bili/ prefix |
+
+…（内容已截断）

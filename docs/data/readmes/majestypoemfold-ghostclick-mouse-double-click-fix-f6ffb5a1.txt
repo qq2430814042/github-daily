@@ -1,0 +1,137 @@
+Mouse double clicking on a single click? Test every button, see the ghost clicks on a strip chart, and filter them system-wide on Windows 11 and 10.
+
+  Features &nbsp;·&nbsp;
+  Double click test &nbsp;·&nbsp;
+  Install &nbsp;·&nbsp;
+  How it works &nbsp;·&nbsp;
+  FAQ &nbsp;·&nbsp;
+  Docs &nbsp;·&nbsp;
+  Roadmap
+
+GhostClick is a free, open source mouse double click test and fix for Windows 11 and Windows 10.
+When a mouse switch wears out it starts to chatter: one press reaches Windows as two clicks, the
+left click double clicks on its own, and drag and drop lets go halfway. GhostClick records every
+button on a polygraph-style strip chart, measures each ghost click in milliseconds, and then
+filters them system-wide from the tray with a debounce threshold it learns from your own fastest
+double-click. No account, no ads, nothing sent anywhere.
+
+Screenshots, GIFs and numbers in this README show sample data from a demo session. The mouse
+in them is a generic "HID-compliant mouse"; no statement here is a measurement of any real product.
+
+Strip chart click testEvery button gets its own ink pen: Left, Right, Middle, Back (X1), Forward (X2) and the wheel. A press draws a square pulse. A ghost click shows up as a needle-thin spike, and the recorder circles it in red with its timing, for example 6 ms, ghost
+
+Interval histogram that finds the gapTime between clicks forms two humps: ghost clicks at about 1 to 20 ms and your real fastest double-clicks at about 70 to 200 ms. GhostClick puts the debounce threshold in the empty gap between them, so the fix never eats a real double-click or fast clicking in games
+
+System-wide filter from the trayPer-button debounce with its own threshold, an adaptive mode, per-app exclusions, a weekly counter ("1,284 ghost clicks filtered this week") and start with Windows. Built on the Windows low-level mouse hook
+
+Hold test for drag and dropHold a button for 3 seconds. A healthy switch draws a flat line; a worn one shows release blips that the recorder marks. This finds the "drag and drop not working" fault that click tests miss, and turns on hold protection for it
+
+Switch wear meterCounts clicks per button since install and shows them on an instrument gauge against the rated life of the switch you pick, with the point where chatter began
+
+RMA evidence reportExports a printout-style PNG or PDF for a warranty claim: "37 double-click events under 20 ms during 5 minutes of testing", with the histogram, strip excerpts, timestamps and system info
+
+And the rest
+
+All five buttons and the wheelBack and Forward side buttons chatter too. The wheel channel draws each notch, so a skipping scroll wheel shows up as missing or reversed ticks
+
+Hold protectionA second filter rule for drags: a release followed by a press within a few milliseconds is swallowed, so a held button stays held
+
+Per-app exclusionsThe filter steps aside while a chosen program is in the foreground, for example a rhythm game where you really do tap faster than the threshold
+
+Ghost logEvery ghost click with its time, button and gap, exportable as CSV
+
+Portable buildA zip that runs without installing; settings stay next to the exe
+
+Nothing about youNo telemetry, no account, no network calls. Reports are files you attach yourself
+
+Open Recorder, click in the box at your normal pace for a few minutes, and use every button you
+want to check. The paper scrolls like a polygraph at 20 ms per division. Each press is a square
+pulse; a ghost click is a spike right after a release, circled in red with the gap in milliseconds.
+The counters at the top tell you clicks, ghost doubles, the shortest interval and the chatter rate.
+A healthy switch scores zero ghost doubles.
+
+Find the gap: the debounce threshold sets itself
+
+The Intervals screen plots the time between clicks on a log scale. Ghost clicks pile up on the
+left, real clicks on the right, and nothing lives in between. GhostClick takes the slowest ghost
+(99th percentile) and your fastest real double-click and puts the threshold at their geometric
+middle: with ghosts ending at 15.4 ms and a fastest double-click of 94 ms, that is
+√(15.4 × 94) = 38 ms, 2.5 times away from each side. Turn the filter on and the ghost bars are
+struck out while your real double-click stays.
+
+Hold test: why drag and drop stops working
+
+A worn switch can let go for 2 to 7 ms while you hold it. Windows sees a release and a new press, so
+the file you were dragging drops and a text selection ends. A click test never sees this, because
+nobody clicks for three seconds. The Hold test does: hold for 3 s and every dropout is marked.
+
+Fix it system-wide
+
+The Filter screen turns the result into a fix that runs from the tray for every program:
+per-button threshold, adaptive learning, hold protection, exclusions, and a weekly count of what it
+blocked. It is a workaround for a worn part, so the wear meter and the evidence report are there for
+the day you replace the switch or send the mouse back.
+
+1. Download GhostClick-Setup.exe, a direct link to the latest version
+2. Run it. GhostClick installs for your user only (no administrator rights) and opens the Recorder
+3. Click at your normal pace for five minutes. If ghost clicks show up, open Intervals and press Apply
+
+Portable: GhostClick-Portable.zip,
+unzip anywhere and run GhostClick.exe.
+
+winget (once the package is published):
+
+winget install MajestyPoemFold.GhostClick
+
+Windows SmartScreen may say "Windows protected your PC" because the installer has no paid code
+signing certificate. Click More info, then Run anyway. Every release is built from this
+source by a public GitHub Actions workflow, so you can read the build log for the file you
+downloaded.
+
+Only download GhostClick from this repository's
+Releases page. An app with
+a system-wide mouse hook sees every click you make; do not run a renamed copy from somewhere else.
+
+Check your download. Each release lists SHA-256 hashes in SHA256SUMS, and the release workflow
+attests the files. With the GitHub CLI:
+
+gh attestation verify GhostClick-Setup.exe --repo MajestyPoemFold/ghostclick-mouse-double-click-fix
+
+Or compare the hash yourself in PowerShell:
+
+Get-FileHash .\GhostClick-Setup.exe -Algorithm SHA256
+
+Build from source
+
+Rust core, Tauri 2 shell, WebView2 UI. You need Rust stable (rustup), Visual Studio Build Tools
+with "Desktop development with C++", and the WebView2 runtime, which Windows 11 already has.
+
+cargo test --workspace
+cargo install tauri-cli --version "^2" --locked
+cargo tauri dev      # run the app
+cargo tauri build    # installer in target/release/bundle/nsis
+
+| Folder | Contents |
+|---|---|
+| crates/ghostclick-core/ | Platform-independent logic, unit tested |
+| src-tauri/ | Windows app shell: window, commands, installer config |
+| ui/ | Frontend; port the screens from design/app/ here |
+| design/ | HTML/CSS mockups of every screen and the design tokens |
+| docs/ | Build spec (DESIGN.md) and SEO notes |
+
+What chatter is. A mouse button is a small mechanical switch: a metal leaf snaps onto a contact.
+New, it closes once. Worn, with a tired spring or oxidized contacts, it bounces: closed, open for a
+few milliseconds, closed again. The mouse firmware has its own debounce, but once the bounce lasts
+longer than that window, the extra open-and-close reaches Windows as a real release and a real
+press. That is a ghost click, and in Explorer two fast clicks are a double-click.
+
+The test reads Raw Input. The Recorder registers for Raw Input (RegisterRawInputDevices,
+usage page 0x01, usage 0x02) and reads RAWMOUSE.usButtonFlags from each WM_INPUT, so it sees
+button transitions per device, before any program or filter touches them. Each event is stamped with
+QueryPerformanceCounter. The interval that matters is the gap from a release to the next press of
+the same button.
+
+The threshold comes from your data. Gaps are binned on a log scale, 20 bins per decade, and
+split into two clusters. GhostClick takes G = the 99th percentile of the low cluster (the slowest
+
+…（内容已截断）

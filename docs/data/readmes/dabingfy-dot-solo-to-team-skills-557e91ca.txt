@@ -1,0 +1,188 @@
+Solo to Team · 一人成队
+
+English version: README.en.md
+
+团队组织与协作报告（PDF，17页）：docs/solo-to-team-value.pdf
+
+仓名：solo-to-team-skills
+英文副标题：Skills for human-led AI teams.
+中文说明：一个人统筹 AI 团队的协作技能包。
+署：大冰发起
+
+文档状态：v0.9-draft，非最终发布稿，正式公开前还会改。已在多个 Agent 工具中完成实际使用验证（取得→装／配置→按名调用→产出登记行；另外当前包上八家各有一例有限任务的验收记录（真实成果→对照要求检查→人工验收）：Codex 保留此前单独验证的一例，其余七家按同一会议转写题补验，部分宿主经受阻重跑或退回修订后才通过；不代表稳定性或所有任务都能做成，调用方式各家不同（有的由使用者本人在宿主里发出，有的命令行或代点），部分宿主未保留技能加载的原始轨迹；不表示每家四个技能都逐一被调用，也不证明效果），范围：Codex、WorkBuddy、DeepSeek Harness、Cursor、CodeBuddy、Kimi Work、千问办公（QwenWork） 写「支持」；Grok Bot 写「支持，需手动配置」；Claude Code 结构已备、走通待补，不在首发支持之列。
+
+这是什么
+
+一个人，也能带起一支 AI 团队。
+
+这是一套拿得到、装得上、叫得动的协作技能包：四支技能＋一个模板＋说明＋脱敏案例。它帮你管住「一个人总控、多个长期 AI 助手」时最容易掉链子的几件事：活派出去有人收，说「做好了」有证据，写给新手的步骤照做就成，踩过的坑留下来给下一个人用。
+
+借鉴的是方法思路；交付的是改写后的中文协作包，外加两支原创技能，并已在多个 Agent 工具里实际装上、按名调用过。借鉴来源见 NOTICE 和各技能末尾的来源／借鉴说明。
+
+技能本身不带定时和叫醒（插件清单 hooks: {}）：到点查、记接单／收到成果／验收、叫开工，按技能正文里的步骤，由你或你用的 AI 工具来做。
+
+对我有什么用
+
+- 一人成队：派出去的活，接得住、跟得上、收得回来。 一条线走到底：派 → 收 → 核 → 判。每件活派出去前登记一行「待收」，写明谁在干、谁来收、谁到点查；收回来记「已收到成果」并写明结果在哪，核过证据记「已验收」才算完。登记行让还没人接的活一眼看得见；到点去查、去催，由你或宿主的定时能力来做（分工见下面「首版核心流程」三栏表）。
+- 换工具，不必重学一套协作方法。 四支核心技能的正文各家共用，方法学一次就行；每家从哪装、怎么叫、还要准备什么，按各家真实配置分别写在「各宿主怎么装、怎么叫」。
+- 从一张表开始，迈出带领 AI 团队的第一步。 主示例和登记行模板拿来就能用：先用记事本或表格把「派、收、核」练一遍。这一步练的是方法；想让 AI 助手按名调用技能，还要先装好一个 Agent 工具。
+- 从真活里来。 两个脱敏案例（日更流水线怎样改、验收链怎样抓漏）照实写了问题、改法、结果和仍没解决的地方，见 ops-case-notes。
+
+具体能做到的：
+
+- 活派出去之后有人登记、到点有人查；接单、收到成果、验收完成分开记，只有验收完成或授权取消才从未完清单里拿掉
+- 说「做好了」之前，先有对得上当前版本的有效证据；改过或失败过的部分补核，没变的可复用上一回核验
+- 操作说明写得让不了解内情的人照做一次就成；凡须本人亲自完成的步骤，只写「请本人来」，不写代做办法
+- 运营里踩过的坑，留下脱敏、可复用的方法级记录（真实问题／改法／结果／仍未解决）
+
+首版核心流程
+
+一条线：提目标 → 分工 → 交接 → 核对 → 判断。
+
+| 流程 | 对应技能 |
+|---|---|
+| 分工＋交接 | dispatch-accept-verify（派出去的活要收回来） |
+| 核对 | evidence-before-done（交活前要有证据） |
+| 须人做的那几步怎么写 | beginner-ops-writing（新手操作说明：一次一步、点名唯一、写清做完会看到什么） |
+| 真实弯路参照 | ops-case-notes（脱敏运营记录） |
+
+同一件事，哪部分归技能、哪部分归你用的 AI 工具（下称「宿主」）、哪部分必须人来做：
+
+| 流程 | 本包技能负责 | 宿主能力负责 | 须人做 |
+|---|---|---|---|
+| 提目标 | 给出写法：做什么、结果放哪、几点交（登记行字段） | 开会话、接收你的话 | 定目标、定先后、定做到什么算完 |
+| 分工 | 派之前先登记一行「待收」：谁在干、谁来收、谁到点查 | 开多个会话或子助手；能跨助手发消息的就发 | 决定派给谁；花钱、发出、删除等危险动作由人点头 |
+| 交接 | 到点查、记「已接单」「已收到成果」、续期、没人接时升级、放行后叫开工 | 定时提醒、叫醒——宿主有就用，本包不自带（hooks: {}） | 宿主没有定时，就由人按点去查 |
+| 核对 | 说完成前拿到对得上当前版本的有效证据（打开看、重算、照原步骤再走一遍）；核过记「已验收」 | 打开文件、跑命令、看结果 | 登录、付款、本人确认这类只能本人做的步骤 |
+| 判断 | 把证据和现状照实摆出来；附同类弯路参照 | — | 放行、退回、改方向：最后拍板永远是人 |
+
+怎样开始
+
+按你的情况挑一段读，其余可跳。不需要先读任何团队制度。 核心技能正文各家共用，不另做 App；每家的入口和依赖不同，见下面「各宿主怎么装、怎么叫」。
+
+零基础（刚开始接触 AI 或编程）
+
+这里的「零基础」只指接触 AI／编程的起点。会写清一件事、会安排人干活、会核对结果，就已经够用。
+
+1. 先读 examples/ 主示例，再照 examples/walkthrough-meeting-notes/ 完整跟做一件小事：给定输入 → 成果 → 证据 → 验收，外加一次退回。
+2. 只看一个模板：templates/task-register-line.md，学会写一行「待收」、一行「已收到成果」、一行「已验收」。
+3. 从一张表开始：用记事本或表格把这套方法练一遍——派活前写「待收」，到点去查，收到记「已收到成果」，核过记「已验收」。这一步练的是方法；要让 AI 助手按名调用技能，还得装好一个 Agent 工具，见下面「各宿主怎么装、怎么叫」。
+
+已经在用 AI 助手
+
+1. 在下方找到你的宿主，照「准备 → 取得／加载 → 调用」做一遍。
+2. 先启用两支：dispatch-accept-verify（派收）和 evidence-before-done（交活前证据）。
+3. 照 examples/ 主示例派一件小活，跑一遍「待收 → 已接单 → 到点查 → 已收到成果 → 核过记已验收」。
+4. ops-case-notes 可以等出问题了再翻。
+
+已在跑多个助手、自己搭流程
+
+1. 直接看上面那张三栏表，对照你的宿主补齐「宿主能力负责」那一栏缺什么。
+2. 读 ops-case-notes：两个真实案例里派收、核对在哪漏过、怎么改、哪些仍没解决。
+3. 把登记行字段接进你自己的记录或看板。hooks: {} 意味着自动化要你自己用宿主能力接，本包不替你做。
+
+约十分钟走通？
+
+实测（Cursor CLI，非交互、提示词事先备好）：约 0.5 分钟（29.6 秒）。前提：已装并登录 Cursor（含 CLI）、已取得本包、网络可用；从把四支技能拷进 ~/.cursor/skills/ 算到打出可读的「待收」行。不含装、注册宿主，也不含手动打字的时间。这测的只是已备好环境时用 CLI 打出登记行要多久，不是陌生人从零装宿主到做完一整件任务的总时长。
+
+「约十分钟」仍可作为设计目标，或把「含装宿主」算进用户总时长时的对外口径；不得把约十分钟写成已测保证。其他宿主尚未按同一秒表口径计时。
+
+各宿主怎么装、怎么叫
+
+总原则：列出的宿主已分别完成实际使用验证，但能力与装法不同；不要假定装完就能自动组队。 每家的验证标准一样：取得 → 装／配置 → 调用 → 有可检查的产出（例如照主示例写出一行可读的「待收」登记行）。这几步的终点是登记行。另外，当前包上八家各有一例有限任务的验收记录（真实成果→对照要求检查→人工验收）：Codex 保留此前单独验证的一例，其余七家按同一会议转写题补验，部分宿主经受阻重跑或退回修订后才通过；不代表稳定性或所有任务都能做成，调用方式各家不同（有的由使用者本人在宿主里发出，有的命令行或代点），部分宿主未保留技能加载的原始轨迹；不表示每家四个技能都逐一被调用，也不证明效果。主示例 walkthrough 本身是教学样例，不是实测记录。
+
+八家都不等于功能相同。装上技能，只说明助手能按这套方法干活；定时检查、跨助手发消息、叫醒这类事，要看宿主本身有没有，没有就由人来做。
+
+所有宿主共同的准备：
+
+- 取得本包：下载或克隆本仓库，拿到 skills/ 目录（四个子目录，每个里面一个 SKILL.md）。
+- 已装好对应宿主、能正常登录使用。
+- 对要拷入的目录有写权限（多数在你自己的用户目录下）。
+- 手动拷贝时整目录拷（skills// 整个文件夹），不要只拷 SKILL.md：dispatch-accept-verify 要连同它的 templates/ 一起拷，否则登记行模板会丢。宿主只收一份正文时（如 Grok Bot 存私有技能），把模板一并贴进去。
+- 单装怎么挑：dispatch-accept-verify 的「已验收」一步依赖 evidence-before-done，这两支建议一起装；evidence-before-done 单装也能独立用。beginner-ops-writing、ops-case-notes 是可选搭配，不装不影响主流程。
+- 下面写的命令和界面入口，以各宿主官方当日文档为准；本页写的是有走通记录的做法，不保证换个版本一字不差。
+
+一览
+
+| 宿主 | 状态 | 怎么装（摘要） | 怎么叫 |
+|---|---|---|---|
+| Codex | 支持 | 本机目录作源：marketplace add → plugin add solo-to-team-skills@solo-to-team-skills（本包自带 .agents/plugins/marketplace.json） | 新开会话或 codex exec 按技能名调用 |
+| WorkBuddy | 支持 | 拷入 ~/.workbuddy/skills/ 或项目 .workbuddy/skills/，或界面上传 zip | 按技能名调用 |
+| DeepSeek Harness | 支持 | 拷入 .dsh/skills/、~/.dsh/skills/ 或 .agents/skills/ | 打开／刷新后按名调用 |
+| Cursor | 支持 | 拷入 ~/.cursor/skills/ | Agent 或 CLI 按名调用 |
+| CodeBuddy | 支持 | 拷入 ~/.codebuddy/skills/ 或项目 .codebuddy/skills/ | 界面或 CLI 按名调用 |
+| Grok Bot | 支持，需手动配置 | 在对话里把 SKILL.md Save 为私有技能 | 按名调用 |
+| Kimi Work | 支持 | 拷入 daimon-share/daimon/skills/（见下），或官方上传／商店 | 界面 / 选技能 |
+| 千问办公（QwenWork） | 支持 | 拷入 ~/.qwenworkcn/skills/ | 界面 / 选技能或对话指名 |
+| Claude Code | 结构已备，走通待补 | .claude-plugin/ | 未纳入首发支持 |
+
+Codex（支持）
+
+- 入口：本包自带 .agents/plugins/marketplace.json（市场名 solo-to-team-skills）；另有 .codex-plugin/plugin.json（skills: "./skills/"，hooks: {}）。根目录还有 Agent Plugins 风格的 plugin.json，宿主读哪一份以官方当日行为为准。
+- 准备：已装并登录 Codex CLI；已取得本开源包到本机目录（含 skills/ 与 .agents/plugins/marketplace.json 那一层）。正式公开建仓前，源＝本机目录，不要填 GitHub URL。
+- 取得／加载（把 /path/to/solo-to-team-skills 换成你本机的包根绝对路径）：
+
+cd /path/to/solo-to-team-skills
+codex plugin marketplace add "$(pwd)"
+codex plugin add solo-to-team-skills@solo-to-team-skills
+
+  marketplace add／plugin add 非 0 → 停，检查是否指到含 .agents/plugins/marketplace.json 的包根。装完新开一次会话（或用下面的 codex exec）。撤回：codex plugin remove solo-to-team-skills@solo-to-team-skills，再 codex plugin marketplace remove solo-to-team-skills。
+- 调用：新会话里点名技能，例如「用 dispatch-accept-verify 帮我登记一件待收的活」。非交互示例：
+
+codex exec -s workspace-write --skip-git-repo-check -C "$(pwd)" '请使用技能 dispatch-accept-verify，写一行待收登记到 T044_dispatch_line.md'
+
+- 能得到：照主示例写出的登记行和核对结论（可打开文件检查）。
+- 靠宿主或人工：hooks: {}＝无自动叫醒；到点查由你或宿主自带的定时能力来做。
+
+WorkBuddy（支持）
+
+- 入口／落点：用户 ~/.workbuddy/skills//，或项目 /.workbuddy/skills//；也可在界面用「上传本地技能包」（单个技能目录，或含 SKILL.md 的 zip）。
+- 准备：已装 WorkBuddy 并能登录。
+- 取得／加载：选一个技能目录（或打成 zip）→ 上传，或整目录拷入上面的路径。
+- 调用：在 WorkBuddy 里按技能名调用。
+- 能得到：照 examples/ 主示例跑出的可检查产出。
+- 注意：WorkBuddy ≠ CodeBuddy，名字相近，产品和目录都不同，别串装。
+- 官方 Skills 文档：https://www.workbuddy.ai/docs/zh/workbuddy/From-Beginner-to-Expert-Guide/Function-Description/Skills
+
+DeepSeek Harness（支持）
+
+- 入口／落点：项目 .dsh/skills//，或用户 ~/.dsh/skills//，也可放 .agents/skills/（Harness 能读）。
+- 准备：已装 DeepSeek Harness；自备 DeepSeek 账号或 API（本包不提供密钥）。
+- 取得／加载：把 skills// 整目录拷到上面任一处，再打开或刷新 Harness。注意：dsh plugin add 不是装技能正文的办法，本包走目录拷入。
+- 调用：按技能名调用。
+- 能得到：照主示例跑出的可检查产出。
+- 上游参考：https://github.com/deepseek-ai/deepseek-harness/blob/master/docs/subsystems/skills.md
+
+Cursor（支持）
+
+- 入口／落点：用户 ~/.cursor/skills//。
+- 准备：已装 Cursor（编辑器或 CLI）并能登录。
+- 取得／加载：把四支技能（或先拷要用的两支）整目录拷入上面的路径。
+- 调用：在 Cursor Agent 里按技能名调用；CLI 形态如 cursor agent --print。对自己新建的工作区做非交互运行时，可能要加 --trust——这是信任这个工作区，不是关掉安全开关。
+- 能得到：照主示例跑出的可检查产出。
+
+CodeBuddy（支持）
+
+- 入口／落点：用户 ~/.codebuddy/skills//SKILL.md，或项目 .codebuddy/skills//。
+- 准备：已装 CodeBuddy（界面或 CLI）并能登录。
+- 取得／加载：把 skills// 整目录拷入上面的路径。首版不做 .codebuddy-plugin，也不上架市场，拷目录即可。
+- 调用：在 CodeBuddy 界面或 CLI 里按技能名调用（CLI 写法以官方当日为准）。
+- 能得到：照主示例跑出的可检查产出。
+- 注意：CodeBuddy ≠ WorkBuddy，目录是 /.codebuddy/…，不是 /.workbuddy/…。
+- 官方 Skills 文档：https://www.codebuddy.ai/docs/cli/skills
+
+Grok Bot（支持，需手动配置）
+
+- 入口：Grok Bot 云端对话里的「私有技能」。这里说的只是 Grok Bot 这一款产品，不代表 Grok 的其他客户端或产品线能用同样办法装。
+- 准备：有可用的 Grok Bot 账号，且该账号能保存私有技能。
+- 取得／加载：不是一键安装，也不走「Connect apps」一类上架入口。打开本包某一支的 SKILL.md → 在对话里请它把这份正文 Save 为私有技能（名称、简介照正文开头的 name／description）→ 确认技能已出现在私有技能库里。四支要分别存；存 dispatch-accept-verify 时把 templates/登记行模板.md 一起贴进去。
+- 调用：在对话里按技能名调用。
+- 能得到：照主示例跑出的可检查产出（例如写一行「待收」登记行）。
+- 分清：这和 Cursor 的 /.cursor/skills/、和本机某个 /.grok/skills 目录不是同一种装法。
+- 靠宿主或人工：加载技能 ≠ 整套自动运行。定时检查、跨助手发消息、叫醒、群聊、共享文件读写，靠的是 Grok Bot 原有能力，本包不提供。这套方法最早就是在 Grok Bot 上的真实运转中练出来的，本包是从中提炼出的可复用部分。
+
+Kimi Work（支持）
+
+- 产品：Kimi Work（桌面端）。≠ Kimi Code CLI（那是编程侧工具，装法不同）。
+
+…（内容已截断）

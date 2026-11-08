@@ -10,7 +10,7 @@ MarkItDown currently supports the conversion from:
 - PowerPoint
 - Word
 - Excel
-- Images (EXIF metadata and OCR)
+- Images (EXIF metadata and captioning)
 - Audio (EXIF metadata and speech transcription)
 - HTML
 - Text-based formats (CSV, JSON, XML)
@@ -18,6 +18,8 @@ MarkItDown currently supports the conversion from:
 - YouTube URLs
 - EPubs
 - ... and more!
+
+NOTE: Image captioning and speech transcription rely on web-hosted services.
 
 Why Markdown?
 
@@ -181,10 +183,5 @@ md = MarkItDown(
 )
 result = md.convert("invoice.pdf")
 print(result.markdown)
-Output includes YAML front matter with extracted fields:
----
-contentType: document
-fields:
-VendorName: CONTOSO LTD.
 
 …（内容已截断）

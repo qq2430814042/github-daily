@@ -1,0 +1,126 @@
+AI Engineering & Autonomous Agents Learning Hub
+
+Không gian tổng hợp tài liệu, giáo trình thực hành và mã nguồn được thu thập, đúc kết trong quá trình tự học và nghiên cứu về AI Engineering, Large Language Models (LLM), Hệ thống tác tử tự hành (Autonomous Agents) và MLOps.
+
+Kho lưu trữ này được xây dựng với mục đích chính là làm nơi tự học, lưu trữ các dự án thực nghiệm cá nhân, đồng thời chia sẻ một thư viện tham khảo có hệ thống cho cộng đồng những người đang tìm hiểu và theo đuổi con đường AI Engineering.
+
+1. Đôi Nét Về Kho Lưu Trữ
+
+Trong quá trình tìm tòi và học tập về AI, các tài liệu chất lượng cao từ lý thuyết toán, mô hình ngôn ngữ lớn đến các framework điều phối tác tử thường nằm rải rác ở rất nhiều nguồn khác nhau. Việc vừa học vừa tổng hợp lại giúp người học:
+* Có cái nhìn liền mạch từ nền tảng toán học, cách xây dựng mô hình từ đầu cho đến ứng dụng vào thực tế sản xuất.
+* Lưu trữ mã nguồn mẫu để có thể trực tiếp chạy, chỉnh sửa, thử nghiệm và gộp các ý tưởng lại với nhau.
+* Tạo ra một danh mục tham chiếu thuận tiện để khi cần giải quyết một bài toán cụ thể (RAG, Multi-Agent, Tool Use, Evaluation) có thể tra cứu và đối chiếu nhanh chóng.
+
+Kho lưu trữ được chia làm hai khu vực chính:
+* Thư mục gốc: Tuyển tập 93+ dự án thực hành mã nguồn mở về Computer Vision, OCR, Chat UI, Reasoning UI, RAG đa phương thức và hệ thống Multi-Agent MCP.
+* Thư mục curated-courses/: 50 bộ giáo trình, dự án và tài liệu được gom lại từ các chuyên gia, trường đại học và tổ chức mã nguồn mở trên thế giới.
+
+2. Cấu Trúc Tổ Chức Thư Mục
+
+AI-ENGINEERING-HUB/
+|-- 93+ Root Projects]             # Các ứng dụng và dự án mẫu thực hành độc lập
+|-- curated-courses/                # 50 bộ giáo trình và tài nguyên chuyên sâu
+|   |-- aie-book-chiphuyen/         # Tài nguyên sách AI Engineering của Chip Huyen
+|   |-- langchain-framework/       # Framework LangChain
+|   |-- langgraph-orchestration/    # Framework LangGraph điều phối tác tử dạng đồ thị
+|   |-- crewai-multi-agent/         # Framework CrewAI cho hệ đa tác tử
+|   |-- qdrant-vector-database/     # Cơ sở dữ liệu vector Qdrant
+|   |-- ragas-eval-framework/       # Thư viện đánh giá chất lượng RAG
+|   |-- ollama-local-llms/          # Công cụ chạy LLM trên máy cá nhân
+|   |-- awesome-mcp-servers-catalog/# Danh mục Model Context Protocol
+|   |-- mcp-reference-servers/      # Bộ máy chủ MCP mẫu chuẩn hóa
+|   |-- superpowers-coding-skills/  # Khung kỹ năng cho coding agent
+|   |-- claude-code-agents-suite/   # Bộ công cụ điều phối tác tử cho Claude Code
+|   |-- claude-mem-plugin/          # Plugin nén và ghi nhớ phiên làm việc
+|   |-- claude-flow-orchestration/  # Điều phối workflow đa tác tử ruFlo
+|   |-- planning-with-files/        # Quản trị kế hoạch làm việc bằng Markdown
+|   |-- claude-scientific-skills/   # Kỹ năng phân tích số liệu và nghiên cứu
+|   |-- claude-code-guide/          # Hướng dẫn cấu hình Claude Code và SKILL.md
+|   |-- oh-my-claudecode/           # Tiện ích mở rộng đa tác tử dựng sẵn
+|   |-- ecc-agent-harness/          # Tối ưu harness, bộ nhớ và bảo mật agent
+|   |-- teamai-cli-tencent/         # CLI chia sẻ kỹ năng và cấu hình nhóm
+|   |-- pi-desktop-agent-env/       # Môi trường desktop local-first cho agent
+|   |-- openai-plugins/             # Tài liệu và mẫu plugin từ OpenAI
+|   |-- diagram-design/             # Mẫu thiết kế sơ đồ hệ thống cho AI tools
+|   |-- system-design-notes/        # Ghi chú thiết kế hệ thống phân tán
+|   |-- ultimate-ai-engineer-roadmap-2026/ # Lộ trình tham khảo AI Engineer 2026
+|   |-- microsoft-ml-for-beginners/ # 12 tuần Machine Learning qua Scikit-Learn
+|   |-- microsoft-ai-for-beginners/ # Mạng neural, Computer Vision, NLP
+|   |-- microsoft-generative-ai-for-beginners/ # 21 bài học xây dựng ứng dụng GenAI
+|   |-- microsoft-ai-agents-for-beginners/ # 18 bài học về hệ thống AI Agents
+|   |-- microsoft-autogen/          # Framework đàm thoại đa tác tử của Microsoft
+|   |-- karpathy-nn-zero-to-hero/   # Xây dựng mạng neuron từ micrograd đến GPT
+|   |-- karpathy-nanochat/          # Quy trình huấn luyện và giao diện chat
+|   |-- rasbt-llms-from-scratch/    # Tự lập trình GPT từ đầu bằng PyTorch
+|   |-- llm-course/                 # Lộ trình LLM Scientist & Engineer (Maxime Labonne)
+|   |-- huggingface-llm-course/     # Giáo trình chính thức từ Hugging Face
+|   |-- ai-engineering-from-scratch/# Tự code Transformer, Vector DB, RAG từ số 0
+|   |-- rag-techniques-nirdiamant/  # Tổng hợp các kỹ thuật RAG nâng cao
+|   |-- genai-agents/               # Kiến trúc Agent thực tế (Planning, Memory)
+|   |-- llama-index-core/           # Framework kết nối dữ liệu riêng với LLM
+|   |-- awesome-llm-apps/           # Bộ sưu tập hơn 100 ứng dụng Agent và RAG
+|   |-- claude-cookbooks/           # Hướng dẫn thực hành gọi công cụ và đánh giá
+|   |-- anthropic-agent-skills/     # Tiêu chuẩn đóng gói kỹ năng cho Agent
+|   |-- agentic-loop-engineering/   # Thiết kế vòng lặp điều khiển trạng thái
+|   |-- deep-learning-paper-implementations/ # 60+ mô hình PyTorch theo paper
+|   |-- dive-into-deep-learning/    # Sách tương tác D2L kèm mã nguồn
+|   |-- deep-learning-book/         # Sách Deep Learning của Ian Goodfellow
+|   |-- prompt-engineering-guide/   # Cẩm nang kỹ thuật prompt quốc tế
+|   |-- made-with-ml/               # MLOps, CI/CD và vận hành mô hình
+|   |-- learn-ai-engineering/       # Bản đồ kiến trúc hệ thống AI Engineer
+|   |-- ai-expert-roadmap/          # Sơ đồ kỹ năng Machine Learning & AI
+|   `-- awesome-machine-learning/   # Danh bạ thư viện ML theo ngôn ngữ
+|-- README.md                       # Tài liệu hướng dẫn trung tâm
+`-- LICENSE                         # Giấy phép mã nguồn mở MIT
+
+3. Lộ Trình Tham Khảo Khi Tự Học
+
+Dưới đây là sơ đồ gợi ý lộ trình học tập được tổng kết từ các giáo trình có trong kho lưu trữ, giúp người học định hình các bước đi từ cơ bản đến phức tạp:
+
+flowchart TD
+    subgraph Stage1["Chặng 1: Nền Tảng Toán Học & Deep Learning"]
+        A1["Đại số tuyến tính & Giải tích"] --> A2["Machine Learning cơ bản với Scikit-Learn"]
+        A2 --> A3["Mạng nơ-ron, CNN & RNN"]
+        A3 --> A4["Thực hành triển khai Paper kinh điển (D2L & PyTorch)"]
+    end
+
+    subgraph Stage2["Chặng 2: Hiểu Sâu LLM & Tự Xây Dựng Từ Đầu"]
+        B1["Cơ chế Tự chú ý (Self-Attention)"] --> B2["Transformer Decoder (GPT from Scratch)"]
+        B2 --> B3["Tokenization & Quy trình Huấn luyện"]
+        B3 --> B4["Tinh chỉnh mô hình: LoRA/QLoRA, DPO & Lượng tử hóa"]
+    end
+
+    subgraph Stage3["Chặng 3: Kỹ Thuật Prompt & Ứng Dụng GenAI"]
+        C1["Kỹ thuật Prompt: CoT, ReAct, Few-shot"] --> C2["Gọi Hàm (Function Calling) & Định Dạng Đầu Ra"]
+        C2 --> C3["Xây dựng Ứng Dụng Chat & Tìm Kiếm Đa Phương Thức"]
+    end
+
+    subgraph Stage4["Chặng 4: Hệ Thống RAG & Vector Database"]
+        D1["Phân mảnh dữ liệu & Embedding Models"] --> D2["Vector Search & Hybrid Search (Qdrant)"]
+        D2 --> D3["Kỹ thuật RAG Nâng cao: Re-ranking, HyDE, GraphRAG"]
+        D3 --> D4["Đo lường & Đánh giá RAG (Ragas Framework)"]
+    end
+
+    subgraph Stage5["Chặng 5: Tác Tử Tự Hành & Hệ Thống Đa Agent"]
+        E1["Vòng lặp Agent, Lập kế hoạch & Bộ nhớ"] --> E2["Sử dụng Công cụ Ngoài (Tool Use)"]
+        E2 --> E3["Điều phối Đa Tác tử (LangGraph, CrewAI, AutoGen)"]
+        E3 --> E4["Kiểm soát Trạng thái & Tương tác Người Dùng"]
+    end
+
+    subgraph Stage6["Chặng 6: Chuẩn Giao Thức MCP & Công Cụ Tác Tử"]
+        F1["Giao thức Model Context Protocol (MCP)"] --> F2["Đóng gói Kỹ năng Agent (Skills)"]
+        F2 --> F3["Môi trường Tác tử Lập trình (Coding Agents)"]
+        F3 --> F4["Chạy Mô hình Cục bộ với Ollama"]
+    end
+
+    subgraph Stage7["Chặng 7: Thiết Kế Hệ Thống & MLOps Vận Hành"]
+        G1["Thiết Kế Hệ Thống Quy Mô Lớn (System Design)"] --> G2["Trực quan hóa Kiến trúc Bằng Sơ đồ"]
+        G2 --> G3["Nguyên lý Kỹ thuật AI (Chip Huyen AIE Book)"]
+        G3 --> G4["CI/CD, Giám sát & Phục vụ Mô hình (Made With ML)"]
+    end
+
+    Stage1 --> Stage2
+    Stage2 --> Stage3
+    Stage3 --> Stage4
+
+…（内容已截断）

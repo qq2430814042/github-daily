@@ -1,0 +1,101 @@
+GaiConsole
+
+Konsol lokal (127.0.0.1) untuk otomasi browser multi-akun di macOS.
+Python 3.13, Playwright pakai Chrome asli via channel="chrome".
+
+Postur keamanan
+
+Dependensi langsung dijaga seminimal mungkin — 8 paket, semuanya
+repositori kanonik:
+
+| paket | pemelihara |
+|---|---|
+| fastapi, uvicorn | Encode / fastapi/fastapi |
+| jinja2 | Pallets |
+| pydantic, pydantic-settings | pydantic/* |
+| aiosqlite | omnilib |
+| psutil | Giampaolo Rodola |
+| playwright | Microsoft |
+
+Yang sengaja tidak dipakai:
+
+- keyring → pakai CLI security bawaan macOS. Secret masuk lewat stdin
+  (dua baris: prompt + retype), jadi tidak pernah muncul di argv/ps.
+- pyotp → TOTP RFC 6238 ditulis dengan hmac+base64 stdlib, diuji
+  terhadap vektor RFC 6238 Appendix B (tests/selftest.py).
+- email-validator → regex sederhana, cukup untuk alamat Google.
+- uvicorn[standard] → uvicorn polos, membuang httptools/uvloop/watchfiles/
+  websockets/pyyaml.
+
+Pengerasan lain:
+
+- requirements.lock di-pin penuh dengan sha256, dipasang lewat
+  pip install --require-hashes. Rilis baru yang dibajak tidak bisa masuk
+  tanpa hash cocok. Regenerasi: tools/make_lock.py.
+- Console butuh token 43-char (?t= → cookie), dibandingkan constant-time.
+  Tanpa token, daftar akun tidak bisa dibaca proses lokal lain.
+- Data dir 0700, db.sqlite3 dan console.token 0600.
+- Password, seed TOTP, nomor kartu, dan CVC hanya di Keychain. Tabel
+  accounts menyimpan handle (secret_ref, totp_ref), bukan nilai.
+- privacy: /api tidak pernah mengembalikan nomor kartu utuh atau CVC.
+
+Yang dibutuhkan
+
+- macOS dengan Google Chrome asli terpasang.
+- Egress US (VPN). Alur menunggu sampai 120 detik lalu berhenti kalau bukan US.
+- Python 3.13 (/opt/homebrew/bin/python3.13).
+- Stok akun (email|password|seed TOTP) dan kartu (nomor|MM/YY|CVC) — keduanya
+  masuk lewat UI, nilainya disimpan di Keychain.
+
+Jalankan
+
+git clone https://github.com/ade1256/google-ai-pro-farming-2-years.git && cd google-ai-pro-farming-2-years
+./run.sh
+
+run.sh membuat venv dan memasang dependensi hash-pinned bila belum ada, lalu
+menyajikan konsol di 127.0.0.1:8765. Buka:
+
+http://127.0.0.1:8765/?t=
+
+Token dicetak di log saat boot. Tanpa token, daftar akun tidak bisa dibaca.
+
+Cara pakai
+
+1. Impor kartu: nomor|MM/YY|CVC (satu per baris atau satu per satu).
+2. Impor akun: email|password|seed_totp (format sama).
+3. Tekan jalankan pada akun, atau run-all untuk antrean berurutan.
+
+Alur per akun: login → discovery term berjalan → layer 1–4 → guard tanggal →
+cancel → lepas kartu dari akun (kartu tetap di vault untuk akun berikutnya).
+
+Discovery memilih titik mulai sendiri: 0 bulan → layer 1, 12 → layer 2, 18 → layer 3,
+24 → hanya mencoba layer 4 lalu cancel. Jadi run yang terputus aman diulang.
+
+Dua titik tetap butuh tangan manusia di HP, dan keduanya ditunggu (5 menit login,
+300 detik hapus kartu): device prompt saat login, dan persetujuan verifikasi saat
+menghapus kartu. Kalau tidak disetujui, langganan tetap aktif 24 bulan dan cancel
+tetap berjalan — hanya kartu tertinggal di akun.
+
+Struktur
+
+app/
+  main.py          rute halaman + antrean
+  config.py        settings, data dir, token console
+  db.py            skema SQLite + migrasi idempoten
+  vault.py         akun & kartu (nilai di Keychain)
+  secrets.py       pembungkus CLI security
+  totp.py          TOTP stdlib
+  egress.py        cek negara egress
+  runner/          browser, navigasi berulang, antrean
+  sites/google_one/
+    login.py       login + TOTP + tunggu device prompt
+    checkout.py    hook, arm, baca dialog
+    discover.py    peta term → layer
+    tokens.py      token per layer
+    hook.js        penulisan ulang request
+tasks/
+  subscribe_flow.py  alur utama (login → layer → cancel → lepas kartu)
+  cancel.py          cancel manual
+  probe_pay.py       pemeriksa halaman pembayaran
+tests/selftest.py
+tools/make_lock.py

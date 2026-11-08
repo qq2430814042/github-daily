@@ -1,0 +1,159 @@
+Open Source Society University
+
+  Path to a free self-taught education in Computer Science!
+
+Contents
+
+- Summary
+- Community
+- Curriculum
+- Code of conduct
+- Team
+
+Summary
+
+The OSSU curriculum is a complete education in computer science using online materials.
+It's not merely for career training or professional development.
+It's for those who want a proper, well-rounded grounding in concepts fundamental to all computing disciplines,
+and for those who have the discipline, will, and (most importantly!) good habits to obtain this education largely on their own,
+but with support from a worldwide community of fellow learners.
+
+It is designed according to the degree requirements of undergraduate computer science majors, minus general education (non-CS) requirements,
+as it is assumed most of the people following this curriculum are already educated outside the field of CS.
+The courses themselves are among the very best in the world, often coming from Harvard, Princeton, MIT, etc.,
+but specifically chosen to meet the following criteria.
+
+Courses must:
+- Be open for enrollment
+- Run regularly (ideally in self-paced format, otherwise running multiple times per year)
+- Be of generally high quality in teaching materials and pedagogical principles
+- Match the curricular standards of the CS 2013: Curriculum Guidelines for Undergraduate Degree Programs in Computer Science
+
+When no course meets the above criteria, the coursework is supplemented with a book.
+When there are courses or books that don't fit into the curriculum but are otherwise of high quality,
+they belong in extras/courses or extras/readings.
+
+Organization. The curriculum is designed as follows:
+- Intro CS: for students to try out CS and see if it's right for them
+- Core CS: corresponds roughly to the first three years of a computer science curriculum, taking classes that all majors would be required to take
+- Advanced CS: corresponds roughly to the final year of a computer science curriculum, taking electives according to the student's interests
+- Final Project: a project for students to validate, consolidate, and display their knowledge, to be evaluated by their peers worldwide
+
+Duration. It is possible to finish within about 2 years if you plan carefully and devote roughly 20 hours/week to your studies. Learners can use this spreadsheet to estimate their end date. Make a copy and input your start date and expected hours per week in the Timeline sheet. As you work through courses you can enter your actual course completion dates in the Curriculum Data sheet and get updated completion estimates.
+Warning: While the spreadsheet is a useful tool to estimate the time you need to complete this curriculum, it may not always be up-to-date with the curriculum. Use the OSSU CS website or the repo to see what courses to do.
+
+Cost. All or nearly all course material is available for free. However, some courses may charge money for assignments/tests/projects to be graded.
+Note that both Coursera and edX offer financial aid.
+
+Decide how much or how little to spend based on your own time and budget;
+just remember that you can't purchase success!
+
+Process. Students can work through the curriculum alone or in groups, in order or out of order.
+- We recommend doing all courses in Core CS, only skipping a course when you are certain that you've already learned the material previously.
+- For simplicity, we recommend working through courses (especially Core CS) in order from top to bottom. Some students choose to study multiple courses at a time in order to vary the material they are working on in a day/week. A popular option is to take the math courses in parallel with the introductory courses. Course prerequisites are listed to help you determine if you are prepared for a given course.
+- Courses in Advanced CS are electives. Choose one subject (e.g. Advanced programming) you want to become an expert in and take all the courses under that heading. You can also create your own custom subject; the Discord community may provide feedback on your planned subject.
+
+Content policy. If you plan on showing off some of your coursework publicly, you must share only files that you are allowed to.
+Respect the code of conduct that you signed in the beginning of each course!
+
+How to contribute
+
+Getting help (Details about our FAQ and chatroom)
+
+Community
+
+- We have a Discord server!  This should be your first stop to talk with other OSSU students. Why don't you introduce yourself right now? Join the OSSU Discord
+- You can also interact through GitHub issues. If there is a problem with a course, or a change needs to be made to the curriculum, this is the place to start the conversation. Read more here.
+- Add Open Source Society University to your Linkedin profile!
+
+Warning: There are a few third-party/deprecated/outdated material that you might find when searching for OSSU. We recommend you to ignore them, and only use the OSSU CS website or OSSU CS Github Repo. Some known outdated materials are:
+ - An unmaintained and deprecated firebase app. Read more in the FAQ.
+ - An unmaintained and deprecated trello board
+ - Third-party notion templates
+
+Curriculum
+
+- Prerequisites
+- Intro CS
+- Core CS
+  - Core programming
+  - Core math
+  - CS Tools
+  - Core systems
+  - Core theory
+  - Core security
+  - Core applications
+  - Core ethics
+- Advanced CS
+  - Advanced programming
+  - Advanced systems
+  - Advanced theory
+  - Advanced information security
+  - Advanced math
+- Final project
+
+Prerequisites
+
+- Core CS assumes the student has already taken high school math, including algebra, geometry, and pre-calculus.
+- Advanced CS assumes the student has already taken the entirety of Core CS
+and is knowledgeable enough now to decide which electives to take.
+- Note that Advanced systems assumes the student has taken a basic physics course (e.g. AP Physics in high school).
+
+Intro CS
+
+This course will introduce you to the world of computer science and programming. This course gives you a flavor of the material to come. If you finish the course wanting more, Computer Science is likely for you!
+
+Topics covered:
+computation
+imperative programming
+basic data structures and algorithms
+and more
+
+Courses | Duration | Effort | Prerequisites | Discussion
+:-- | :--: | :--: | :--: | :--:
+Introduction to Computer Science and Programming using Python | 14 weeks | 6-10 hours/week | high school algebra | chat
+
+Core CS
+
+All coursework under Core CS is required, unless otherwise indicated.
+
+Core programming
+Topics covered:
+functional programming
+design for testing
+program requirements
+common design patterns
+unit testing
+object-oriented design
+static typing
+dynamic typing
+ML-family languages (via Standard ML)
+Lisp-family languages (via Racket)
+Ruby
+and more
+
+Courses | Duration | Effort | Prerequisites | Discussion
+:-- | :--: | :--: | :--: | :--:
+Systematic Program Design | 13 weeks | 8-10 hours/week | none | chat: part 1 / part 2
+Class-based Program Design | 13 weeks | 5-10 hours/week | Systematic Program Design, High School Math | chat
+Programming Languages | 11 weeks | 4-8 hours/week | Systematic Program Design | chat
+Object-Oriented Design | 13 weeks | 5-10 hours/week | Class-based Program Design | chat
+Software Architecture | 4 weeks | 2-5 hours/week | Object Oriented Design | chat
+
+Core math
+Discrete math (Math for CS) is a prerequisite and closely related to the study of algorithms and data structures. Calculus both prepares students for discrete math and helps students develop mathematical maturity.
+
+Topics covered:
+discrete mathematics
+mathematical proofs
+basic statistics
+O-notation
+discrete probability
+and more
+
+Courses | Duration | Effort | Notes | Prerequisites | Discussion
+:-- | :--: | :--: | :--: | :--: | :--:
+Calculus 1A: Differentiation (alternative) | 13 weeks | 6-10 hours/week | The alternate covers this and the following 2 courses | high school math | chat
+Calculus 1B: Integration | 13 weeks | 5-10 hours/week | - | Calculus 1A | chat
+
+…（内容已截断）

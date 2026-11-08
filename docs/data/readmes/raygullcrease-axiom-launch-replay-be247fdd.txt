@@ -1,0 +1,70 @@
+See the numbers before you trade.
+
+Lemma is a free, open-source desktop companion for Axiom traders: replay real launches, count every fee, check a token in one paste.
+No login. No browser extension. Nothing to connect.
+
+Download: the Windows build is a single Lemma-setup.exe — releases. One file, no installer, no login.
+The build isn't code-signed yet, so SmartScreen may warn you the first time. Choose More info, then Run anyway.
+
+Stick to this repo. Lemma never asks for a login, ships no extension, and connects nothing. If a copy of the app asks for credentials, it is not Lemma.
+
+Why Lemma
+
+Every terminal shows you what to buy. None shows you whether your strategy actually made money once fees, priority fees, tips and slippage were paid.
+
+| | Trading terminals and bots | Lemma |
+|---|---|---|
+| Test a strategy | Live, with real SOL | Replay real launches, paper first |
+| Costs | One fee line | Fee tier, priority, tips and slippage, per trade |
+| Login | Often required | None |
+| Token check | Spread over tabs | One paste, plain words |
+| Taxes | Not offered | CSV for Koinly and Awaken |
+
+What you get
+
+Backtest on real launches
+
+Lemma records every new launch from the chain on your PC. Write rules for when to buy and when to sell, replay weeks of launches in seconds, and compare the curve before and after costs. Then paper-trade it live, with nothing connected.
+
+One-paste token check
+
+Mint and freeze authority, the real pool, same-slot bundles, holder concentration, the dev's past launches, copied names and pictures, and X accounts renamed this week. Every check says what it means.
+
+What trading really cost you
+
+Paste a public address. Lemma rebuilds every trade with its real cost and exports a tax-ready CSV. Read-only, nothing to connect.
+
+Extension check
+
+Lemma keeps a local list of browser extensions that read trading pages, so you can check yours.
+
+How it works
+
+1. Lemma reads the chain through your own RPC and free public APIs, and records new launches in its folder.
+2. It replays and checks on your PC: backtests, paper trades, token checks and your trade history.
+3. You trade as usual. Lemma never places trades for you.
+
+FAQ
+
+Is this made by Axiom?
+No. Lemma is an independent, open-source project that works alongside Axiom. It doesn't use any private API.
+
+Will it trade for me?
+Backtests, paper trading and token checks are in your hands today, with nothing connected. An opt-in exit manager with spending caps and a transaction allowlist is next on the roadmap.
+
+How do I know a download is real?
+Take it from this repo's releases page only. A build that asks for credentials is not Lemma.
+
+Roadmap
+
+- x] Brand, icon and interface direction
+- [x] Launch recorder and cost model
+- [x] Backtest and paper trading
+- [x] Token check
+- [x] Trade journal and tax CSV
+- [x] Extension check
+- [x] Portable Windows build
+
+Legal
+
+Lemma isn't affiliated with or endorsed by Axiom, pump.fun, Koinly or Awaken. Their names appear only to say what Lemma works with. Nothing here is financial advice. Lemma's code and brand assets are [MIT. See CREDITS.md.

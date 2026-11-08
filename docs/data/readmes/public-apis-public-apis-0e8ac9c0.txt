@@ -53,7 +53,9 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | ContextFetch | Web search and any page as Markdown pruned to the query, plus research, crawl and site maps | No | stdio, HTTP | Glama |
 | corpusAI Cloud Pricing | Cloud, GPU and LLM token prices for agents, free discovery tools and paid per-call data | No | stdio, HTTP | npm · MCP Registry |
 | Council of AI | Read a signed AI measurement board and verify its signed records and Merkle proofs | No | HTTP | Glama |
+| CoworkingView | Search coworking spaces, private offices and operator-published prices in 70+ cities | No | HTTP | – |
 | crawlbrulee | EU-native web scraping for AI agents & developers: turn any page into markdown, screenshots and more | apiKey | stdio | npm · MCP Registry · Glama |
+| Data and APIs | Search, read and call 125+ data APIs: sanctions, barcodes, IP intelligence, companies, holidays | apiKey | HTTP | – |
 | Edgepedia | Search and read Edgepedia, a free and growing encyclopedia with citations | No | HTTP | Glama |
 | Filesystem | Read/write local files | No | stdio | – |
 | FindIP MCP | IP lookups and FindIP Shield risky-event checks for agents | apiKey | stdio | Glama · MCP Registry |
@@ -72,10 +74,12 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | PourWire | New US liquor license filings: restaurants and bars about to open in 7 metros, plus metro stats | No | HTTP | Glama · MCP Registry |
 | Refnusa | Indonesian holidays, wages, regions, postal codes, tax, food prices and NIK/plate checks (31 tools) | No | HTTP | Glama |
 | RegSentry | Inspect authorized static tracking signals and review supplied consent evidence | No | HTTP | Glama |
+| Requstory | Map how a company works, who owns each process, and which steps AI agents can run | No | HTTP | – |
 | Scalekit | Manage auth for AI agents and MCP servers: environments, orgs, users, SSO connections and roles | OAuth | stdio, HTTP | Glama |
 | ShapelessAI | Write, schedule and publish social posts, carousels and short video to 8 networks | OAuth | stdio, HTTP | Cursor · Glama |
 | Silicon Floor | Who owns AI and chip stocks, what insiders sell, how fast they grow: answers from SEC filings | No | HTTP | Anthropic · Glama |
 | SkyAccess | Search 5,000+ live empty leg flights, get charter price estimates and booking links | No | HTTP | Cursor · Glama |
+| TextKit | Send and receive SMS, verify phones and buy US and Canada numbers from an agent | OAuth | HTTP | MCP Registry |
 | Toolalize | Unit and live currency conversion tools for agents, no key needed | No | HTTP | Glama · MCP Registry |
 | Twinbay | Spin up stateful API twins, read request logs and grade agent runs | OAuth | HTTP | – |
 | US Recalls | Check US recalls from 9 agencies by UPC, model, NDC, lot or VIN; 4 read-only tools | apiKey | HTTP | Glama · MCP Registry |
@@ -92,27 +96,5 @@ Prefer a website? Browse this list at publicapis.lol
 Everything in this README, rebuilt as a searchable site. It's the official home of public-apis: 2,000+ free APIs in 50+ categories, synced from this repo and tested daily.
 
 * Browse the directory: every category, featured picks and the latest from the blog
-* Search and filter every API by auth, HTTPS and CORS
-* APIs with no key: call them right now, no sign-up
-* Live status: which APIs are up, slow or down today
-* MCP servers for AI agents
-* Free developer tools: JSON formatter, JWT decoder, cURL converter and more
-* Blog: tutorials and roundups built on the APIs in this list
-* Can't decide? Get a random API 🎲
-
-Get Involved
-
-* Contributing Guide
-* API for this project
-* Issues
-* Pull Requests
-* LICENSE
-
-Index
-
-* Animals
-* Anime
-* Anti-Malware
-* Art & Design
 
 …（内容已截断）
