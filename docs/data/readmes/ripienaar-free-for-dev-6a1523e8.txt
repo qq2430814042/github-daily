@@ -128,7 +128,7 @@ Major Cloud Providers
   * Oracle Cloud
     * Compute
        - 2 AMD-based Compute VMs with 1/8 OCPU and 1 GB memory each
-       - 4 Arm-based Ampere A1 cores and 24 GB of memory usable as one VM or up to 4 VMs
+       - 2 Arm-based Ampere A1 cores and 12 GB of memory usable as one VM or up to 2 VMs
        - Instances will be reclaimed when deemed idle
     * Block Volume - 2 volumes, 200 GB total (used for compute)
     * Object Storage - 10 GB

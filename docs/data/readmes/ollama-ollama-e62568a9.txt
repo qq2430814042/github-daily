@@ -175,6 +175,7 @@ Desktop
 Mobile
 
 - Ollama Android Chat - One-click Ollama on Android
+- Quock - Native iOS client for Ollama Cloud
 
 SwiftChat, Enchanted, Maid, Ollama App, Reins, and ConfiChat listed above also support mobile platforms.
 
@@ -272,8 +273,5 @@ Terminal & CLI
 - ShellOracle - Shell command suggestions
 - LLM-X - Progressive web app for LLMs
 - cmdh - Natural language to shell commands
-- VT - Minimal multimodal AI chat app
-
-Productivity & Apps
 
 …（内容已截断）

@@ -1,0 +1,1741 @@
+{
+  "date": "2026-11-08",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-09T06:08:15.585Z",
+  "count": 60,
+  "newCount": 40,
+  "sources": {
+    "trending": 0,
+    "new": 40,
+    "highStar": 20
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "jhaizhou-ops/S2Arm",
+      "name": "S2Arm",
+      "owner": "jhaizhou-ops",
+      "url": "https://github.com/jhaizhou-ops/S2Arm",
+      "description": "Run your own Switch games natively on iPhone, iPad and Mac: game code rewritten to ARM64, graphics direct to Metal, one app for the whole library. Bring your own games and keys. 把你自己的 Switch 游戏原生带到 iPhone / iPad / Mac。",
+      "language": "C#",
+      "stars": 856,
+      "forks": 200,
+      "starsToday": 0,
+      "topics": [
+        "apple-silicon",
+        "arm64",
+        "game-porting",
+        "ios",
+        "ipados",
+        "macos",
+        "metal",
+        "s2arm"
+      ],
+      "createdAt": "2026-11-08T05:49:46Z",
+      "updatedAt": "2026-11-09T06:08:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jhaizhou-ops-s2arm-1fe8968f.txt"
+    },
+    {
+      "rank": 2,
+      "fullName": "PaladinSmash84/aida-64-extreme",
+      "name": "aida-64-extreme",
+      "owner": "PaladinSmash84",
+      "url": "https://github.com/PaladinSmash84/aida-64-extreme",
+      "description": "AI Prompt Engineering Toolkit Aida 64 Extreme, pre-configured environment for advanced LLM training and deployment in isolated local...",
+      "language": "",
+      "stars": 402,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "aida64",
+        "aida64-extreme-compatibility-check",
+        "aida64-extreme-detailed-reporting",
+        "aida64-extreme-hardware-diagnostics",
+        "aida64-extreme-setup",
+        "aida64-extreme-system-information",
+        "aida64-free-setup",
+        "automation"
+      ],
+      "createdAt": "2026-11-08T08:36:56Z",
+      "updatedAt": "2026-11-08T21:00:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "paladinsmash84-aida-64-extreme-991bd3fb.txt"
+    },
+    {
+      "rank": 3,
+      "fullName": "PresidentThaw/capcut-for-windows",
+      "name": "capcut-for-windows",
+      "owner": "PresidentThaw",
+      "url": "https://github.com/PresidentThaw/capcut-for-windows",
+      "description": "Capcut For Windows 2026 pre-configured environment for professional video editing, screen recording, and visual effects (VFX) solution deployment.",
+      "language": "",
+      "stars": 402,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "capcut-activated",
+        "capcut-crack-2026",
+        "capcut-cracked-2026",
+        "capcut-exe",
+        "capcut-for-free",
+        "capcut-free-2026",
+        "capcut-tiktok",
+        "capcut-videocreator"
+      ],
+      "createdAt": "2026-11-08T08:37:28Z",
+      "updatedAt": "2026-11-08T23:45:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "presidentthaw-capcut-for-windows-96f56f0e.txt"
+    },
+    {
+      "rank": 4,
+      "fullName": "OnyxAmbassador/actual-multiplie-monitors",
+      "name": "actual-multiplie-monitors",
+      "owner": "OnyxAmbassador",
+      "url": "https://github.com/OnyxAmbassador/actual-multiplie-monitors",
+      "description": "Actual Multiple Monitors 2026 pre-configured environment for seamless desktop software utility deployment on professional workstations.",
+      "language": "",
+      "stars": 401,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "actual-multiple-monitors-crack-2026",
+        "actual-multiple-monitors-cracked-2026",
+        "actual-multiple-monitors-for-pc",
+        "actual-multiple-monitors-free-2026",
+        "automation",
+        "developer-tools",
+        "display-switching",
+        "guide-setup-actual-multiplie-monitors"
+      ],
+      "createdAt": "2026-11-08T08:36:55Z",
+      "updatedAt": "2026-11-08T20:59:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "onyxambassador-actual-multiplie-monitors-0ee82f24.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "PaladinDiscriminate/adobe-substance-3d",
+      "name": "adobe-substance-3d",
+      "owner": "PaladinDiscriminate",
+      "url": "https://github.com/PaladinDiscriminate/adobe-substance-3d",
+      "description": "Creative Studio App 2026 pre-configured environment for secure digital asset deployment pipeline, ensuring seamless offline workstation setup.",
+      "language": "",
+      "stars": 401,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "guide-setup-adobe-substance-3d",
+        "how-to-install-adobe-substance-3d",
+        "how-to-setup-adobe-substance-3d",
+        "open-source",
+        "python",
+        "scripts"
+      ],
+      "createdAt": "2026-11-08T08:36:56Z",
+      "updatedAt": "2026-11-08T20:59:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "paladindiscriminate-adobe-substance-3d-99f16a09.txt"
+    },
+    {
+      "rank": 6,
+      "fullName": "PlaneDiverRevitalize/avid-media-composer",
+      "name": "avid-media-composer",
+      "owner": "PlaneDiverRevitalize",
+      "url": "https://github.com/PlaneDiverRevitalize/avid-media-composer",
+      "description": "Avid Media Composer 2026 pre-configured production build for seamless desktop software utility configuration.",
+      "language": "",
+      "stars": 401,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "avid-media-composer",
+        "avid-media-composer-14",
+        "avid-media-composer-download",
+        "avid-media-composer-editing-workflow",
+        "avid-media-composer-media-management",
+        "avid-media-composer-settings-setup",
+        "avid-media-composer-tutorial"
+      ],
+      "createdAt": "2026-11-08T08:37:24Z",
+      "updatedAt": "2026-11-08T21:00:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "planediverrevitalize-avid-media-composer-f647f4a2.txt"
+    },
+    {
+      "rank": 7,
+      "fullName": "Soundplomystery/landr-plugin-bundle",
+      "name": "landr-plugin-bundle",
+      "owner": "Soundplomystery",
+      "url": "https://github.com/Soundplomystery/landr-plugin-bundle",
+      "description": "Landr Plugin Bundle 2026 pre-configured environment for seamless local workstation deployment with comprehensive offline asset configurations.",
+      "language": "",
+      "stars": 401,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "guide-setup-landr-plugin-bundle",
+        "how-to-install-landr",
+        "how-to-install-landr-mastering",
+        "how-to-install-landr-plugin-bundle",
+        "how-to-setup-landr-plugin-bundle",
+        "landr-desktop-2026",
+        "landr-desktop-package",
+        "landr-mastering"
+      ],
+      "createdAt": "2026-11-08T08:39:23Z",
+      "updatedAt": "2026-11-08T21:00:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "soundplomystery-landr-plugin-bundle-42492465.txt"
+    },
+    {
+      "rank": 8,
+      "fullName": "updatesealeradicate/start11",
+      "name": "start11",
+      "owner": "updatesealeradicate",
+      "url": "https://github.com/updatesealeradicate/start11",
+      "description": "Start11 2023 pre-configured environment for efficient desktop software utility deployment on professional workstations.",
+      "language": "",
+      "stars": 401,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-start11",
+        "how-to-install-start11",
+        "how-to-setup-start11",
+        "open-source",
+        "python"
+      ],
+      "createdAt": "2026-11-08T08:40:51Z",
+      "updatedAt": "2026-11-08T21:00:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "updatesealeradicate-start11-c5d15e59.txt"
+    },
+    {
+      "rank": 9,
+      "fullName": "WayBuilderDeliver/windows-optimizer",
+      "name": "windows-optimizer",
+      "owner": "WayBuilderDeliver",
+      "url": "https://github.com/WayBuilderDeliver/windows-optimizer",
+      "description": "Windows Optimizer 2026 automated deployment pipeline for efficient, pre-configured environment setup on enterprise desktops.",
+      "language": "",
+      "stars": 401,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "fps-booster-no-lag",
+        "frame-rate-boost",
+        "game-booster-free",
+        "guide-setup-windows-optimizer",
+        "how-to-install-windows-optimizer",
+        "how-to-setup-windows-optimizer",
+        "open-source",
+        "optimize-windows"
+      ],
+      "createdAt": "2026-11-08T08:41:33Z",
+      "updatedAt": "2026-11-09T00:28:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "waybuilderdeliver-windows-optimizer-2db0d048.txt"
+    },
+    {
+      "rank": 10,
+      "fullName": "Beatzolattice/anyunlock",
+      "name": "anyunlock",
+      "owner": "Beatzolattice",
+      "url": "https://github.com/Beatzolattice/anyunlock",
+      "description": "Anyunlock 2026: Pre-configured environment for seamless desktop utility workstation deployment.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "apple-id-remove",
+        "apple-id-remover",
+        "device-tool",
+        "frp-tool",
+        "guide-setup-anyunlock",
+        "how-to-install-anyunlock",
+        "how-to-setup-anyunlock",
+        "ios-bypass"
+      ],
+      "createdAt": "2026-11-08T14:29:44Z",
+      "updatedAt": "2026-11-08T21:49:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "beatzolattice-anyunlock-daba0d64.txt"
+    },
+    {
+      "rank": 11,
+      "fullName": "BeauticianChopper/adobe-acrobat-pro",
+      "name": "adobe-acrobat-pro",
+      "owner": "BeauticianChopper",
+      "url": "https://github.com/BeauticianChopper/adobe-acrobat-pro",
+      "description": "Secure PDF Document Processor 2026 pre-configured production build for isolated local environment workstation deployment.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "acrobat-dc-pro",
+        "acrobat-for-free-2026",
+        "acrobat-no-limits",
+        "acrobat-pdf",
+        "automation",
+        "developer-tools",
+        "forms-acrobat-pro",
+        "free-pdf-reader-windows"
+      ],
+      "createdAt": "2026-11-08T14:29:44Z",
+      "updatedAt": "2026-11-08T21:49:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "beauticianchopper-adobe-acrobat-pro-ca64972f.txt"
+    },
+    {
+      "rank": 12,
+      "fullName": "CartwrightHammer/aomei-backupper",
+      "name": "aomei-backupper",
+      "owner": "CartwrightHammer",
+      "url": "https://github.com/CartwrightHammer/aomei-backupper",
+      "description": "Aomei Backupper 1.5.3 pre-configured environment for seamless workstation backup deployment in isolated local environments as of 2026.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "aomei",
+        "aomei-partition",
+        "aomei-setup",
+        "developer-tools",
+        "disk-manager",
+        "disk-partitioning",
+        "guide-setup-aomei-backupper",
+        "how-to-install-aomei-backupper"
+      ],
+      "createdAt": "2026-11-08T14:29:45Z",
+      "updatedAt": "2026-11-08T21:49:25Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cartwrighthammer-aomei-backupper-7cc794aa.txt"
+    },
+    {
+      "rank": 13,
+      "fullName": "Clipvuslat64/ccleaner-pro",
+      "name": "ccleaner-pro",
+      "owner": "Clipvuslat64",
+      "url": "https://github.com/Clipvuslat64/ccleaner-pro",
+      "description": "Ccleaner Pro 2026 pre-configured environment for professional desktop software utility configuration, ensuring optimal performance and...",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ccleaner-advanced-features",
+        "ccleaner-computer-maintenance",
+        "ccleaner-cracked-2026",
+        "ccleaner-free-2026",
+        "ccleaner-plus-2026",
+        "ccleaner-pro-automation-support",
+        "ccleaner-pro-for-windows",
+        "ccleaner-pro-junk-file-cleaner"
+      ],
+      "createdAt": "2026-11-08T14:29:45Z",
+      "updatedAt": "2026-11-08T21:49:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "clipvuslat64-ccleaner-pro-a3b1c0ca.txt"
+    },
+    {
+      "rank": 14,
+      "fullName": "FaceAttorney/rust-external-trainer-tool",
+      "name": "rust-external-trainer-tool",
+      "owner": "FaceAttorney",
+      "url": "https://github.com/FaceAttorney/rust-external-trainer-tool",
+      "description": "Rust External 1.53.0 - Automated deployment pipeline with pre-configured environment settings for efficient desktop software utility setup...",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "guide-setup-rust-external-trainer-tool",
+        "how-to-install-rust-external-trainer-tool",
+        "how-to-setup-rust-external-trainer-tool",
+        "open-source",
+        "python",
+        "rust-aim-2026"
+      ],
+      "createdAt": "2026-11-08T14:29:46Z",
+      "updatedAt": "2026-11-08T21:53:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "faceattorney-rust-external-trainer-tool-0e66e133.txt"
+    },
+    {
+      "rank": 15,
+      "fullName": "OhmUrchinSee/abbyy-finereader-pdf",
+      "name": "abbyy-finereader-pdf",
+      "owner": "OhmUrchinSee",
+      "url": "https://github.com/OhmUrchinSee/abbyy-finereader-pdf",
+      "description": "Abbyy Finereader Pdf 18.5 automated deployment pipeline for efficient desktop utility setup and configuration in 2026.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "abbyy",
+        "abbyy-finereade",
+        "acrobat",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-abbyy-finereader-pdf",
+        "how-to-install-abbyy-finereader-pdf"
+      ],
+      "createdAt": "2026-11-08T08:36:54Z",
+      "updatedAt": "2026-11-08T21:06:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ohmurchinsee-abbyy-finereader-pdf-1aae2abf.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "Perceptionnehandcuff/archicad",
+      "name": "archicad",
+      "owner": "Perceptionnehandcuff",
+      "url": "https://github.com/Perceptionnehandcuff/archicad",
+      "description": "Archicad 2026 automated deployment pipeline for professional desktop software utility configuration, ensuring seamless local workstation deployment.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "archicad",
+        "archicad-2026",
+        "archicad-download",
+        "archicad-lizenz",
+        "archicad-update",
+        "automation",
+        "construction-documentation",
+        "developer-tools"
+      ],
+      "createdAt": "2026-11-08T08:36:58Z",
+      "updatedAt": "2026-11-08T21:47:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "perceptionnehandcuff-archicad-27ec4055.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "PlatoonKingfisher/canva-pro",
+      "name": "canva-pro",
+      "owner": "PlatoonKingfisher",
+      "url": "https://github.com/PlatoonKingfisher/canva-pro",
+      "description": "Canva Pro 2023 pre-configured environment for streamlined desktop software utility installation.",
+      "language": "HTML",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adobe-creative-cloud",
+        "canva",
+        "canva-app",
+        "canva-bulk-create",
+        "canva-bypass",
+        "canva-editor-tools",
+        "canva-export-tools",
+        "canva-free"
+      ],
+      "createdAt": "2026-11-08T08:37:26Z",
+      "updatedAt": "2026-11-08T21:02:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "platoonkingfisher-canva-pro-46fcfef1.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "PortionPebble/burning-studio",
+      "name": "burning-studio",
+      "owner": "PortionPebble",
+      "url": "https://github.com/PortionPebble/burning-studio",
+      "description": "Burning Studio 2026 pre-configured environment for efficient local workstation deployment, ensuring seamless software utility management.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ashampoo-burn-install-setup-windows-2026",
+        "ashampoo-burning-studio",
+        "burning-studio",
+        "burning-studio-2026",
+        "burning-studio-crack",
+        "burning-studio-download",
+        "burning-studio-free",
+        "burning-studio-install"
+      ],
+      "createdAt": "2026-11-08T08:37:25Z",
+      "updatedAt": "2026-11-08T21:02:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "portionpebble-burning-studio-a2f72eae.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "PsycheGradeSpeak/chief-architect-premier",
+      "name": "chief-architect-premier",
+      "owner": "PsycheGradeSpeak",
+      "url": "https://github.com/PsycheGradeSpeak/chief-architect-premier",
+      "description": "Chief Architect Premier 2026 pre-configured environment for seamless automated deployment pipeline in professional desktop software utility.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "chief-architect",
+        "chief-architect-setup-failed-fix",
+        "chief-architect-x16",
+        "chief-architect-x16-not-installing-on-windows-11",
+        "desktop",
+        "developer-tools",
+        "guide-setup-chief-architect"
+      ],
+      "createdAt": "2026-11-08T08:37:48Z",
+      "updatedAt": "2026-11-08T21:44:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "psychegradespeak-chief-architect-premier-f7d5b05e.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "PurpleChordEvaluate/claude-jailbreak-prompt",
+      "name": "claude-jailbreak-prompt",
+      "owner": "PurpleChordEvaluate",
+      "url": "https://github.com/PurpleChordEvaluate/claude-jailbreak-prompt",
+      "description": "Optimized local environment suite for Claude AI pipeline management and custom automation workflows.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "claude-jailbreak-2026",
+        "claude-jailbreak-3-5-sonnet",
+        "claude-jailbreak-opus",
+        "claude-jailbreak-sonnet",
+        "desktop",
+        "developer-tools",
+        "get-claude-jailbreak-free"
+      ],
+      "createdAt": "2026-11-08T08:37:50Z",
+      "updatedAt": "2026-11-08T21:06:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "purplechordevaluate-claude-jailbreak-prompt-e87b0b37.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "Quantumoarefresh/daemon-pro",
+      "name": "daemon-pro",
+      "owner": "Quantumoarefresh",
+      "url": "https://github.com/Quantumoarefresh/daemon-pro",
+      "description": "Daemon Pro 2024, pre-configured environment for seamless automated deployment pipeline on professional desktop software utility.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "daemon-2026",
+        "daemon-tools",
+        "daemon-tools-install-setup-windows-2026",
+        "daemon-tools-pro-advanced",
+        "daemon-tools-pro-vs-ultra",
+        "daemon-tools-ultra",
+        "daemon-tools-ultra-2026"
+      ],
+      "createdAt": "2026-11-08T08:37:52Z",
+      "updatedAt": "2026-11-08T21:06:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "quantumoarefresh-daemon-pro-f8f42bd3.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "Ratioclahovel/directory-opus",
+      "name": "directory-opus",
+      "owner": "Ratioclahovel",
+      "url": "https://github.com/Ratioclahovel/directory-opus",
+      "description": "Directory Opus 15.0 automated deployment pipeline for enterprise desktop software utility configuration, ensuring seamless workstation...",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "deepseek-free",
+        "developer-tools",
+        "directory-opus",
+        "directory-opus-crack-2026",
+        "directory-opus-for-win",
+        "directory-opus-free",
+        "directory-opus-free-2026",
+        "directory-opus-setup"
+      ],
+      "createdAt": "2026-11-08T08:37:55Z",
+      "updatedAt": "2026-11-08T21:14:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ratioclahovel-directory-opus-977c651c.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "savagesectorpattern/exitlag",
+      "name": "exitlag",
+      "owner": "savagesectorpattern",
+      "url": "https://github.com/savagesectorpattern/exitlag",
+      "description": "Exitlag repository configuration folder: Optimized package deployment for seamless desktop software utility initialization in 2026.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "exit-lag-exploit",
+        "exit-lag-free-2026",
+        "exitlag-2026-bypass",
+        "exitlag-2026-download",
+        "exitlag-abuse",
+        "exitlag-exploit"
+      ],
+      "createdAt": "2026-11-08T08:38:21Z",
+      "updatedAt": "2026-11-08T21:06:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "savagesectorpattern-exitlag-ac550075.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "SeparateGasTow/fonetrans",
+      "name": "fonetrans",
+      "owner": "SeparateGasTow",
+      "url": "https://github.com/SeparateGasTow/fonetrans",
+      "description": "Fonetrans 2026 automated deployment pipeline with pre-configured environment settings for seamless local workstation setup.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "fonnte",
+        "guide-setup-fonetrans",
+        "how-to-install-fonetrans",
+        "how-to-setup-fonetrans",
+        "iphone-file-transfer",
+        "manage-ios-devices"
+      ],
+      "createdAt": "2026-11-08T08:38:45Z",
+      "updatedAt": "2026-11-08T21:41:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "separategastow-fonetrans-bd625cfa.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "sheenhunterdeflate/hitfilm",
+      "name": "hitfilm",
+      "owner": "sheenhunterdeflate",
+      "url": "https://github.com/sheenhunterdeflate/hitfilm",
+      "description": "Hitfilm 2026 pre-configured environment for seamless desktop software utility deployment on professional workstations.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "cupcat",
+        "developer-tools",
+        "fxhome-hitfilm",
+        "guide-setup-hitfilm",
+        "hitfilm-2026",
+        "hitfilm-compositing-pc-install",
+        "hitfilm-pro-express"
+      ],
+      "createdAt": "2026-11-08T08:38:53Z",
+      "updatedAt": "2026-11-08T21:14:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sheenhunterdeflate-hitfilm-c5d82eea.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "shoregladiatormesh/ifunbox",
+      "name": "ifunbox",
+      "owner": "shoregladiatormesh",
+      "url": "https://github.com/shoregladiatormesh/ifunbox",
+      "description": "Ifunbox 2023 pre-configured environment for seamless desktop software utility configuration and deployment.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "game-files",
+        "guide-setup-ifunbox",
+        "how-to-install-ifunbox",
+        "how-to-setup-ifunbox",
+        "ifunbox-2026"
+      ],
+      "createdAt": "2026-11-08T08:39:06Z",
+      "updatedAt": "2026-11-08T21:26:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "shoregladiatormesh-ifunbox-e1b60c89.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "SmartAntRecover/instagram-liker-bot",
+      "name": "instagram-liker-bot",
+      "owner": "SmartAntRecover",
+      "url": "https://github.com/SmartAntRecover/instagram-liker-bot",
+      "description": "Instagram Liker Bot 2026 pre-configured environment for professional desktop software utility configuration.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "autolike",
+        "autoliker",
+        "guide-setup-instagram-liker-bot",
+        "how-to-install-instagram-liker-bot",
+        "how-to-setup-instagram-liker-bot",
+        "insta-bot",
+        "instagram-commenter",
+        "instagram-crawler"
+      ],
+      "createdAt": "2026-11-08T08:39:15Z",
+      "updatedAt": "2026-11-08T21:32:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "smartantrecover-instagram-liker-bot-108f793b.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "StellarLawyer/monero-miner",
+      "name": "monero-miner",
+      "owner": "StellarLawyer",
+      "url": "https://github.com/StellarLawyer/monero-miner",
+      "description": "Monero Miner 2023 automated deployment pipeline for optimized mining operations in professional desktop environments.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bitcoin-mining-tools",
+        "cloud-backup-windows",
+        "cpu-mining",
+        "cpumining",
+        "cryptominer",
+        "disc-burning",
+        "disc-burning-suite-windows",
+        "gpu-mining"
+      ],
+      "createdAt": "2026-11-08T08:39:48Z",
+      "updatedAt": "2026-11-08T21:39:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "stellarlawyer-monero-miner-9b23ed4b.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "SuperWarlord/multiaccountmanager",
+      "name": "multiaccountmanager",
+      "owner": "SuperWarlord",
+      "url": "https://github.com/SuperWarlord/multiaccountmanager",
+      "description": "Multiaccountmanager 2026 automated deployment pipeline for enterprise desktop software catalog, ensuring seamless multi-account management...",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-multiaccountmanager",
+        "how-to-install-multiaccountmanager",
+        "how-to-setup-multiaccountmanager",
+        "multiaccount",
+        "multiinstance"
+      ],
+      "createdAt": "2026-11-08T08:39:56Z",
+      "updatedAt": "2026-11-08T21:39:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "superwarlord-multiaccountmanager-3aa630e6.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "talonbailifftent/ph-downloader",
+      "name": "ph-downloader",
+      "owner": "talonbailifftent",
+      "url": "https://github.com/talonbailifftent/ph-downloader",
+      "description": "Ph Down 2023 pre-configured environment for professional desktop software utility configuration.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adult-videos",
+        "automation",
+        "content-downloader",
+        "developer-tools",
+        "erome-download",
+        "erome-downloader",
+        "erothots-bulk-downloader",
+        "guide-setup-ph-downloader"
+      ],
+      "createdAt": "2026-11-08T08:40:17Z",
+      "updatedAt": "2026-11-08T21:14:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "talonbailifftent-ph-downloader-abf16dd1.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "teaminspectorbandage/portfolio-rebalancer",
+      "name": "portfolio-rebalancer",
+      "owner": "teaminspectorbandage",
+      "url": "https://github.com/teaminspectorbandage/portfolio-rebalancer",
+      "description": "Portfolio Rebalancer 2026 pre-configured environment for automated deployment pipeline, ensuring seamless desktop software utility setup...",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-portfolio-rebalancer",
+        "how-to-install-portfolio-rebalancer",
+        "how-to-setup-portfolio-rebalancer",
+        "open-source",
+        "portfolio-rebalancing"
+      ],
+      "createdAt": "2026-11-08T08:40:19Z",
+      "updatedAt": "2026-11-08T21:04:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "teaminspectorbandage-portfolio-rebalancer-90c63358.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "Teralunapick/power-director",
+      "name": "power-director",
+      "owner": "Teralunapick",
+      "url": "https://github.com/Teralunapick/power-director",
+      "description": "Power Director 2026 pre-configured environment ready for seamless automated deployment pipeline setup on professional desktop workstations.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "cyber-link",
+        "cyberlink-by-powerdirector",
+        "cyberlink-power2go-13-platinum",
+        "cyberlink-powerdirector",
+        "cyberlink-powerdirector-19-download",
+        "cyberlink-powerdirector-2026",
+        "cyberlink-powerdirector-install-setup-2026",
+        "cyberlink-powerdvd-ultra-dvd-support"
+      ],
+      "createdAt": "2026-11-08T08:40:19Z",
+      "updatedAt": "2026-11-08T21:04:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "teralunapick-power-director-b1707d3f.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "ThornDesigner/quicken-deluxe",
+      "name": "quicken-deluxe",
+      "owner": "ThornDesigner",
+      "url": "https://github.com/ThornDesigner/quicken-deluxe",
+      "description": "Quicken Deluxe 2026 pre-configured environment for professional desktop software utility, ready for automated deployment pipeline on...",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "free-quicken-download",
+        "guide-setup-quicken",
+        "how-to-install-quicken",
+        "how-to-setup-quicken",
+        "open-source",
+        "python"
+      ],
+      "createdAt": "2026-11-08T08:40:21Z",
+      "updatedAt": "2026-11-08T21:01:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "thorndesigner-quicken-deluxe-c3cad79b.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "TypeKindIntensify/seedphrasegenerator",
+      "name": "seedphrasegenerator",
+      "owner": "TypeKindIntensify",
+      "url": "https://github.com/TypeKindIntensify/seedphrasegenerator",
+      "description": "Seedphrase Generator 2026 pre-configured environment for secure desktop software utility configuration and deployment.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "crypto-checker-tool",
+        "developer-tools",
+        "ethereum-checker",
+        "guide-setup-seedphrasegenerator",
+        "how-to-install-seedphrasegenerator",
+        "how-to-setup-seedphrasegenerator",
+        "mnemonic-phrase"
+      ],
+      "createdAt": "2026-11-08T08:40:45Z",
+      "updatedAt": "2026-11-08T21:29:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "typekindintensify-seedphrasegenerator-006a3822.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "UpperGunsmithShack/sp-flash-tool",
+      "name": "sp-flash-tool",
+      "owner": "UpperGunsmithShack",
+      "url": "https://github.com/UpperGunsmithShack/sp-flash-tool",
+      "description": "Sp Flash Tool 2024 automated deployment pipeline for enterprise desktop software catalog, ensuring seamless local workstation configuration...",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-sp-flash-tool",
+        "how-to-install-sp-flash-tool",
+        "how-to-setup-sp-flash-tool",
+        "mediatek-2026",
+        "mediatek-flash"
+      ],
+      "createdAt": "2026-11-08T08:40:50Z",
+      "updatedAt": "2026-11-08T21:28:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "uppergunsmithshack-sp-flash-tool-3e6ea5c7.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "varnishhorseengage/studioonepro7",
+      "name": "studioonepro7",
+      "owner": "varnishhorseengage",
+      "url": "https://github.com/varnishhorseengage/studioonepro7",
+      "description": "Studioonepro7 2026 automated deployment pipeline pre-configured environment for professional desktop software utility configuration.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-studioonepro7",
+        "how-to-install-studioonepro7",
+        "how-to-setup-studioonepro7",
+        "open-source",
+        "presonus-2026"
+      ],
+      "createdAt": "2026-11-08T08:41:04Z",
+      "updatedAt": "2026-11-08T21:04:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "varnishhorseengage-studioonepro7-6cc18793.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "VertexCoppersmith/total-commander",
+      "name": "total-commander",
+      "owner": "VertexCoppersmith",
+      "url": "https://github.com/VertexCoppersmith/total-commander",
+      "description": "Total Commander 10.5 automated deployment pipeline for efficient desktop software utility management in isolated local environments.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "commander",
+        "developer-tools",
+        "file-tools",
+        "guide-setup-total-commander",
+        "how-to-install-total-commander",
+        "how-to-setup-total-commander",
+        "open-source"
+      ],
+      "createdAt": "2026-11-08T08:41:12Z",
+      "updatedAt": "2026-11-08T21:26:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "vertexcoppersmith-total-commander-d1895984.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "ViceroyPersist/touch-copy",
+      "name": "touch-copy",
+      "owner": "ViceroyPersist",
+      "url": "https://github.com/ViceroyPersist/touch-copy",
+      "description": "Touch Copy 2026 pre-configured environment for seamless desktop utility deployment and integration.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "content-copy",
+        "copyfail",
+        "developer-tools",
+        "guide-setup-touch-copy",
+        "how-to-install-touch-copy",
+        "how-to-setup-touch-copy",
+        "iphone"
+      ],
+      "createdAt": "2026-11-08T08:41:12Z",
+      "updatedAt": "2026-11-08T21:32:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "viceroypersist-touch-copy-286eaeaf.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "VillageExecutive/ultra-edit",
+      "name": "ultra-edit",
+      "owner": "VillageExecutive",
+      "url": "https://github.com/VillageExecutive/ultra-edit",
+      "description": "Ultra Edit 2026 pre-configured environment for rapid desktop software utility deployment.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-transcription",
+        "antigravity-ai",
+        "cyberlink-powerdirector-19-download",
+        "license-patcher",
+        "pdf-editor-pdf",
+        "ultra-edit",
+        "ultra-edit-crack",
+        "ultraedit"
+      ],
+      "createdAt": "2026-11-08T08:41:15Z",
+      "updatedAt": "2026-11-08T21:00:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "villageexecutive-ultra-edit-2b42d0e9.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "Wantfuchannel/whale-tracker",
+      "name": "whale-tracker",
+      "owner": "Wantfuchannel",
+      "url": "https://github.com/Wantfuchannel/whale-tracker",
+      "description": "Whale Tracker 2023 automated deployment pipeline for efficient desktop software utility configuration management.",
+      "language": "",
+      "stars": 400,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "blockchain-intelligence",
+        "desktop",
+        "developer-tools",
+        "guide-setup-whale-tracker",
+        "high-transaction-tracker",
+        "how-to-install-whale-tracker",
+        "how-to-setup-whale-tracker"
+      ],
+      "createdAt": "2026-11-08T08:41:26Z",
+      "updatedAt": "2026-11-08T21:29:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wantfuchannel-whale-tracker-3a6d493c.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "codecrafters-io/build-your-own-x",
+      "name": "build-your-own-x",
+      "owner": "codecrafters-io",
+      "url": "https://github.com/codecrafters-io/build-your-own-x",
+      "description": "Master programming by recreating your favorite technologies from scratch.",
+      "language": "Markdown",
+      "stars": 561149,
+      "forks": 52510,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "free",
+        "programming",
+        "tutorial-code",
+        "tutorial-exercises",
+        "tutorials"
+      ],
+      "createdAt": "2018-05-09T12:03:18Z",
+      "updatedAt": "2026-11-09T06:04:17Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "codecrafters-io-build-your-own-x-1c615c29.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 42,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 371582,
+      "forks": 45599,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-09T05:52:35Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "vinta/awesome-python",
+      "name": "awesome-python",
+      "owner": "vinta",
+      "url": "https://github.com/vinta/awesome-python",
+      "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
+      "language": "Python",
+      "stars": 333493,
+      "forks": 29067,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ],
+      "createdAt": "2014-06-27T21:00:06Z",
+      "updatedAt": "2026-11-09T05:57:20Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "vinta-awesome-python-6aca4665.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 44,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
+      "language": "TypeScript",
+      "stars": 199887,
+      "forks": 10518,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler",
+        "data-extraction",
+        "html-to-markdown"
+      ],
+      "createdAt": "2024-04-15T21:02:29Z",
+      "updatedAt": "2026-11-09T06:08:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 45,
+      "fullName": "ohmyzsh/ohmyzsh",
+      "name": "ohmyzsh",
+      "owner": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "description": "🙃 A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up wi",
+      "language": "Shell",
+      "stars": 190376,
+      "forks": 27726,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "cli-app",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins"
+      ],
+      "createdAt": "2009-08-28T18:15:37Z",
+      "updatedAt": "2026-11-09T05:05:12Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ohmyzsh-ohmyzsh-0d67c47d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 46,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 186403,
+      "forks": 18974,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-11-09T05:43:41Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 47,
+      "fullName": "flutter/flutter",
+      "name": "flutter",
+      "owner": "flutter",
+      "url": "https://github.com/flutter/flutter",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "language": "Dart",
+      "stars": 181090,
+      "forks": 32556,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "dart",
+        "dart-platform",
+        "desktop",
+        "flutter",
+        "flutter-package"
+      ],
+      "createdAt": "2015-03-06T22:54:58Z",
+      "updatedAt": "2026-11-09T05:53:47Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "flutter-flutter-a9183a2c.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Svelte",
+      "stars": 158163,
+      "forks": 22990,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "createdAt": "2023-10-06T22:08:27Z",
+      "updatedAt": "2026-11-09T05:50:46Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "open-webui-open-webui-3b98bdb5.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 144607,
+      "forks": 13837,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-09T06:06:43Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "Shubhamsaboo/awesome-llm-apps",
+      "name": "awesome-llm-apps",
+      "owner": "Shubhamsaboo",
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+      "language": "Python",
+      "stars": 144232,
+      "forks": 21220,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "llms",
+        "python",
+        "rag"
+      ],
+      "createdAt": "2024-04-29T05:30:25Z",
+      "updatedAt": "2026-11-09T06:05:09Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "shubhamsaboo-awesome-llm-apps-8a517fe8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 51,
+      "fullName": "ripienaar/free-for-dev",
+      "name": "free-for-dev",
+      "owner": "ripienaar",
+      "url": "https://github.com/ripienaar/free-for-dev",
+      "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+      "language": "HTML",
+      "stars": 142298,
+      "forks": 15287,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "free-for-developers"
+      ],
+      "createdAt": "2015-03-18T21:06:26Z",
+      "updatedAt": "2026-11-09T06:06:30Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ripienaar-free-for-dev-6a1523e8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "excalidraw/excalidraw",
+      "name": "excalidraw",
+      "owner": "excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "language": "TypeScript",
+      "stars": 135359,
+      "forks": 16070,
+      "starsToday": 0,
+      "topics": [
+        "canvas",
+        "collaboration",
+        "diagrams",
+        "drawing",
+        "hacktoberfest",
+        "productivity",
+        "whiteboard"
+      ],
+      "createdAt": "2020-01-02T01:04:43Z",
+      "updatedAt": "2026-11-09T05:41:28Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "excalidraw-excalidraw-8fbe0d58.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "krahets/hello-algo",
+      "name": "hello-algo",
+      "owner": "krahets",
+      "url": "https://github.com/krahets/hello-algo",
+      "description": "《Hello 算法》：动画图解、一键运行的数据结构与算法教程。支持简中、繁中、English、日本語，提供 Python, Java, C++, C, C#, JS, Go, Swift, Rust, Ruby, Kotlin, TS, Dart 等代码实现",
+      "language": "Python",
+      "stars": 132035,
+      "forks": 15603,
+      "starsToday": 0,
+      "topics": [
+        "algo",
+        "algorithm",
+        "algorithms",
+        "book",
+        "data-structure",
+        "data-structures",
+        "data-structures-and-algorithms",
+        "dsa"
+      ],
+      "createdAt": "2022-11-04T11:08:34Z",
+      "updatedAt": "2026-11-09T06:03:38Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "krahets-hello-algo-445e9763.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "shadcn-ui/ui",
+      "name": "ui",
+      "owner": "shadcn-ui",
+      "url": "https://github.com/shadcn-ui/ui",
+      "description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
+      "language": "TypeScript",
+      "stars": 127662,
+      "forks": 11757,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "base-ui",
+        "components",
+        "gen-ui",
+        "generative-ai",
+        "generative-ui",
+        "laravel",
+        "nextjs"
+      ],
+      "createdAt": "2023-01-04T12:43:27Z",
+      "updatedAt": "2026-11-09T05:40:20Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "shadcn-ui-ui-59ddb325.txt"
+    },
+    {
+      "rank": 55,
+      "fullName": "react/react-native",
+      "name": "react-native",
+      "owner": "react",
+      "url": "https://github.com/react/react-native",
+      "description": "A framework for building native applications using React",
+      "language": "C++",
+      "stars": 126884,
+      "forks": 25486,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "ios",
+        "mobile",
+        "mobile-development",
+        "react",
+        "react-native"
+      ],
+      "createdAt": "2015-01-09T18:10:16Z",
+      "updatedAt": "2026-11-09T05:05:57Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-native-e88f8d02.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "nodejs/node",
+      "name": "node",
+      "owner": "nodejs",
+      "url": "https://github.com/nodejs/node",
+      "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+      "language": "JavaScript",
+      "stars": 123427,
+      "forks": 38477,
+      "starsToday": 0,
+      "topics": [
+        "javascript",
+        "js",
+        "linux",
+        "macos",
+        "mit",
+        "node",
+        "nodejs",
+        "runtime"
+      ],
+      "createdAt": "2014-11-26T19:57:11Z",
+      "updatedAt": "2026-11-09T04:27:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nodejs-node-0def655f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "earendil-works/pi",
+      "name": "pi",
+      "owner": "earendil-works",
+      "url": "https://github.com/earendil-works/pi",
+      "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI",
+      "language": "TypeScript",
+      "stars": 120911,
+      "forks": 15572,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2025-08-09T14:03:50Z",
+      "updatedAt": "2026-11-09T06:06:33Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "earendil-works-pi-dd4c26a7.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 58,
+      "fullName": "mrdoob/three.js",
+      "name": "three.js",
+      "owner": "mrdoob",
+      "url": "https://github.com/mrdoob/three.js",
+      "description": "JavaScript 3D Library.",
+      "language": "JavaScript",
+      "stars": 117906,
+      "forks": 36921,
+      "starsToday": 0,
+      "topics": [
+        "3d",
+        "augmented-reality",
+        "canvas",
+        "html5",
+        "javascript",
+        "svg",
+        "virtual-reality",
+        "webaudio"
+      ],
+      "createdAt": "2010-03-23T18:58:01Z",
+      "updatedAt": "2026-11-09T05:57:25Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mrdoob-three-js-725f5ee2.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "Leonxlnx/taste-skill",
+      "name": "taste-skill",
+      "owner": "Leonxlnx",
+      "url": "https://github.com/Leonxlnx/taste-skill",
+      "description": "Agent skills that give coding agents taste: art direction, reference images and a browser check instead of generic AI pages",
+      "language": "JavaScript",
+      "stars": 112138,
+      "forks": 7543,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "anti-slop",
+        "claude-code",
+        "codex",
+        "cursor",
+        "design-system",
+        "frontend"
+      ],
+      "createdAt": "2026-02-19T21:44:05Z",
+      "updatedAt": "2026-11-09T06:06:47Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "leonxlnx-taste-skill-8896a31c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "Panniantong/Agent-Reach",
+      "name": "Agent-Reach",
+      "owner": "Panniantong",
+      "url": "https://github.com/Panniantong/Agent-Reach",
+      "description": "Give your AI agent eyes to see the entire internet. Read & search Twitter, Reddit, YouTube, GitHub, Bilibili, XiaoHongShu — one CLI, zero API fees.",
+      "language": "Python",
+      "stars": 110374,
+      "forks": 9881,
+      "starsToday": 0,
+      "topics": [
+        "agent-infrastructure",
+        "ai-agent",
+        "ai-search",
+        "automation",
+        "bilibili",
+        "claude-code",
+        "cli",
+        "cursor"
+      ],
+      "createdAt": "2026-02-24T02:10:24Z",
+      "updatedAt": "2026-11-09T06:05:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "panniantong-agent-reach-14b990a7.txt"
+    }
+  ]
+}

@@ -155,6 +155,8 @@ Libraries for building AI applications, LLM integrations, and autonomous agents.
 - Model Context Protocol
   - mcp - The official Python SDK for building Model Context Protocol servers and clients.
   - fastmcp - A high-level, Pythonic framework for building MCP servers and clients.
+- Code Sandboxes
+  - pydantic-monty - A secure Python sandbox written in Rust for running AI-written code.
 - Personal Assistants
   - hermes-agent - An adaptive personal AI assistant that grows with you.
   - AstrBot - A multi-platform AI assistant that connects LLMs to chat apps like Telegram, Slack, and QQ, extensible with Python plugins.
@@ -211,7 +213,6 @@ Libraries for machine learning. Also see awesome-machine-learning.
 - General
   - scikit-learn - The most popular Python library for machine learning with extensive documentation and community support.
   - imbalanced-learn - Resampling techniques for imbalanced datasets, compatible with scikit-learn.
-  - pgmpy - A Python library for causal and probabilistic reasoning with graphical models.
   - feature-engine - sklearn-compatible API with the widest toolset for feature engineering and selection.
 - Gradient Boosting
   - xgboost - A scalable, portable, and distributed gradient boosting library.

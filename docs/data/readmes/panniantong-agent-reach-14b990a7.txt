@@ -2,7 +2,7 @@
 
   让 AI Agent 够得着它自己上不去的互联网
 
-  登录墙后的平台、视频里的内容、中文平台、干净的结构化数据，一条命令拿到
+  让你的 Agent 直接搜索和阅读 X、Reddit、YouTube、小红书……
 
   快速开始 · English
 
@@ -21,10 +21,6 @@ RapidProxy 是专为开发者打造的数据采集代理解决方案，提供稳
 BrowserAct 支持从 Amazon、LinkedIn、X、Google Maps 等复杂网站提取你需要的任意数据。你只需用自然语言描述抓取需求，Agent 就会基于真实浏览器自动探索并测试页面流程，生成可靠、可复用的数据采集 Bot，并返回结构化结果。无需手动构建爬虫，无需编写代码。BrowserAct 内置隐身浏览、验证码处理和高质量住宅代理，帮助你更稳定地完成复杂网页数据采集。新用户注册即送 1000 积分，立即免费试用。
 
 在腾讯云 Lighthouse 秒级部署 OpenClaw 全能助手，可通过对话丝滑接入 Agent Reach，给你的 OpenClaw 一键装上互联网能力。
-
-CoreClaw | 网页抓取平台与现成数据采集工具，CoreClaw 提供 100+ 现成数据采集工具，支持 Amazon、TikTok、Google Maps、Instagram、Facebook、YouTube 等平台，无需代码，支持 JSON/CSV 导出，仅对成功结果计费。免费$3测试！
-
-优刻得星图astraflow大模型，支持200+模型一键调用：内置 Kimi K3、DeepSeek V4/V3、Qwen 3、GLM5.2、happyhorse等全球领先开源大模型，无需自训，开箱即用
 
 为什么需要 Agent Reach？
 
@@ -154,7 +150,6 @@ Star 一下，下次需要的时候能找到。⭐
 联系
 
 - 📧 Email: pnt01@foxmail.com
-- 🐦 Twitter/X: @Neo_Reidlab
 
 业务合作 / 交流群
 

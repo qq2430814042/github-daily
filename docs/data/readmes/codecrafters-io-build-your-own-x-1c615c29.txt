@@ -1,0 +1,210 @@
+Build your own &lt;insert-technology-here&gt;
+
+This repository is a compilation of well-written, step-by-step guides for re-creating our favorite technologies from scratch.
+
+What I cannot create, I do not understand — Richard Feynman.
+
+It's a great way to learn.
+
+* 3D Renderer
+* AI Model
+* Augmented Reality
+* BitTorrent Client
+* Blockchain / Cryptocurrency
+* Bot
+* Command-Line Tool
+* Database
+* Docker
+* Emulator / Virtual Machine
+* Front-end Framework / Library
+* Game
+* Git
+* Memory Allocator
+* Network Stack
+* Neural Network
+* Operating System
+* Physics Engine
+* Processor
+* Programming Language
+* Regex Engine
+* Search Engine
+* Shell
+* Template Engine
+* Text Editor
+* Visual Recognition System
+* Voxel Engine
+* Web Browser
+* Web Server
+* Uncategorized
+
+Tutorials
+
+Build your own Distributed Systems
+* Java: Building Your Own Kafka-like System From Scratch: A Step-by-Step Guide
+
+Build your own 3D Renderer
+
+* C++: Introduction to Ray Tracing: a Simple Method for Creating 3D Images
+* C++: How OpenGL works: software rendering in 500 lines of code
+* C++: Raycasting engine of Wolfenstein 3D
+* C++: Physically Based Rendering:From Theory To Implementation
+* C++: Ray Tracing in One Weekend
+* C++: Rasterization: a Practical Implementation
+* C# / TypeScript / JavaScript: Learning how to write a 3D soft engine from scratch in C#, TypeScript or JavaScript
+* Java / JavaScript: Build your own 3D renderer
+* Java: How to create your own simple 3D render engine in pure Java
+* JavaScript / Pseudocode: Computer Graphics from scratch
+* Python: A 3D Modeller
+
+Build your own AI Model
+* Python: A Large Language Model (LLM)
+* Python: Diffusion Models for Image Generation
+* Python: RAG for Document Search
+
+Build your own Augmented Reality
+
+* C#: How To: Augmented Reality App Tutorial for Beginners with Vuforia and Unity 3D video]
+* [C#: How To Unity ARCore video]
+* [C#: AR Portal Tutorial with Unity video]
+* [C#: How to create a Dragon in Augmented Reality in Unity ARCore video]
+* [C#: How to Augmented Reality AR Tutorial: ARKit Portal to the Upside Down video]
+* [Python: Augmented Reality with Python and OpenCV
+
+Build your own BitTorrent Client
+
+* C#: Building a BitTorrent client from scratch in C#
+* Go: Building a BitTorrent client from the ground up in Go
+* Nim: Writing a Bencode Parser
+* Node.js: Write your own bittorrent client
+* Python: A BitTorrent client in Python 3.5
+
+Build your own Blockchain / Cryptocurrency
+
+* ATS: Functional Blockchain
+* Crystal: Write your own blockchain and PoW algorithm using Crystal
+* Go: Building Blockchain in Go
+* Go: Code your own blockchain in less than 200 lines of Go
+* Java: Creating Your First Blockchain with Java
+* JavaScript: A cryptocurrency implementation in less than 1500 lines of code
+* JavaScript: Build your own Blockchain in JavaScript
+* JavaScript: Learn & Build a JavaScript Blockchain
+* JavaScript: Creating a blockchain with JavaScript
+* JavaScript: How To Launch Your Own Production-Ready Cryptocurrency
+* JavaScript: Writing a Blockchain in Node.js
+* Kotlin: Let’s implement a cryptocurrency in Kotlin
+* Python: Learn Blockchains by Building One
+* Python: Build your own blockchain: a Python tutorial
+* Python: A Practical Introduction to Blockchain with Python
+* Python: Let’s Build the Tiniest Blockchain
+* Ruby: Programming Blockchains Step-by-Step (Manuscripts Book Edition)
+* Scala: How to build a simple actor-based blockchain
+* TypeScript: Naivecoin: a tutorial for building a cryptocurrency
+* TypeScript: NaivecoinStake: a tutorial for building a cryptocurrency with the Proof of Stake consensus
+* Rust: Building A Blockchain in Rust & Substrate
+
+Build your own Bot
+
+* Haskell: Roll your own IRC bot
+* Node.js: Creating a Simple Facebook Messenger AI Bot with API.ai in Node.js
+* Node.js: How to make a responsive telegram bot
+* Node.js: Create a Discord bot
+* Node.js: gifbot - Building a GitHub App
+* Node.js: Building A Simple AI Chatbot With Web Speech API And Node.js
+* Python: How to Build Your First Slack Bot with Python
+* Python: How to build a Slack Bot with Python using Slack Events API & Django under 20 minute
+* Python: Build a Reddit Bot
+* Python: How To Make A Reddit Bot video]
+* [Python: How To Create a Telegram Bot Using Python
+* Python: Create a Twitter Bot in Python Using Tweepy
+* Python: Creating Reddit Bot with Python & PRAW video]
+* [R: Build A Cryptocurrency Trading Bot with R
+* Rust: A bot for Starcraft in Rust, C or any other language
+
+Build your own Command-Line Tool
+
+* Go: Visualize your local git contributions with Go
+* Go: Build a command line app with Go: lolcat
+* Go: Building a cli command with Go: cowsay
+* Go: Go CLI tutorial: fortune clone
+* Nim: Writing a stow alternative to manage dotfiles
+* Node.js: Create a CLI tool in Javascript
+* Rust: Command line apps in Rust
+* Rust: Writing a Command Line Tool in Rust
+* Zig: Build Your Own CLI App in Zig from Scratch
+
+Build your own Database
+
+* C: Let's Build a Simple Database
+* C++: Build Your Own Redis from Scratch
+* C#: Build Your Own Database
+* Clojure: An Archaeology-Inspired Database
+* Crystal: Why you should build your own NoSQL Database
+* Go: Build Your Own Database from Scratch: From B+Tree To SQL in 3000 Lines
+* Go: Code a database in 45 steps: a series of test-driven small coding puzzles
+* Go: Build Your Own Redis from Scratch
+* JavaScript: Dagoba: an in-memory graph database
+* Python: DBDB: Dog Bed Database
+* Python: Write your own miniature Redis with Python
+* Ruby: Build your own fast, persistent KV store in Ruby
+* Rust: Build your own Redis client and server
+* Rust: Vector Database from Scratch
+
+Build your own Docker
+
+* C: Linux containers in 500 lines of code
+* Go: Build Your Own Container Using Less than 100 Lines of Go
+* Go: Building a container from scratch in Go video]
+* [Python: A workshop on Linux containers: Rebuild Docker from Scratch
+* Python: A proof-of-concept imitation of Docker, written in 100% Python
+* Shell: Docker implemented in around 100 lines of bash
+
+Build your own Emulator / Virtual Machine
+
+* C: Home-grown bytecode interpreters
+* C: Virtual machine in C
+* C: Write your Own Virtual Machine
+* C: Writing a Game Boy emulator, Cinoop
+* C++: How to write an emulator (CHIP-8 interpreter)
+* C++: Emulation tutorial (CHIP-8 interpreter)
+* C++: Emulation tutorial (GameBoy emulator)
+* C++: Emulation tutorial (Master System emulator)
+* C++: NES Emulator From Scratch video]
+* [Common Lisp: CHIP-8 in Common Lisp
+* JavaScript: GameBoy Emulation in JavaScript
+* Python: Emulation Basics: Write your own Chip 8 Emulator/Interpreter
+* Rust: 0dmg: Learning Rust by building a partial Game Boy emulator
+
+Build your own Front-end Framework / Library
+
+* JavaScript: WTF is JSX (Let's Build a JSX Renderer)
+* JavaScript: A DIY guide to build your own React
+* JavaScript: Building React From Scratch video]
+* [JavaScript: Gooact: React in 160 lines of JavaScript
+* JavaScript: Learn how React Reconciler package works by building your own lightweight React DOM
+* JavaScript: Build Yourself a Redux
+* JavaScript: Let’s Write Redux!
+* JavaScript: Redux: Implementing Store from Scratch video]
+* [JavaScript: Build Your own Simplified AngularJS in 200 Lines of JavaScript
+* JavaScript: Make Your Own AngularJS
+* JavaScript: How to write your own Virtual DOM
+* JavaScript: Building a frontend framework, from scratch, with components (templating, state, VDOM)
+* JavaScript: Build your own React
+* JavaScript: Building a Custom React Renderer video]
+
+Build your own Game
+
+* [C: Handmade Hero
+* C: How to Program an NES game in C
+* C: Chess Engine In C video]
+* [C: Let's Make: Dangerous Dave video]
+* [C: Learn Video Game Programming in C
+  video]
+* [C: Coding A Sudoku Solver in C video]
+* [C: Coding a Rogue/Nethack RPG in C video]
+* [C: On Tetris and Reimplementation
+* C++: Breakout
+* C++: Beginning Game Programming v2.0
+* C++: Tetris tutorial in C++ platform independent focused in game logic for beginners
+* C++: Remaking Cavestory in C++ video]
+
+…（内容已截断）

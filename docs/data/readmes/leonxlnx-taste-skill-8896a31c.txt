@@ -1,0 +1,106 @@
+&nbsp;
+
+  &nbsp;
+
+  &nbsp;
+
+Sponsors
+
+    interfaces.dev · A design engineering magazine by Jakub Krehel
+
+    React Bits · animated React components for creative interfaces
+
+    IMG.LY · CreativeEditor SDK
+
+    Sent.dm · messaging APIs for SMS, WhatsApp, and RCS
+
+Become a sponsor
+
+Taste Skill (tasteskill 2.5.1) is an Agent Skill that makes coding agents build professional company websites at the figma.com and x.ai level instead of assembling a generic landing page. Every build uses plain copy, one design system, one section per screen, equal left and right edges, real photographs (licensed stand-ins when the client has none), real brand icons and real product UI, a hero entrance and one or two dealt moments on every page, quiet micro-interactions, and shader effects and scroll scenes kept strictly for tech, gaming and software pages, all verified in a real browser by a checker and a finish gate that enforce the rules.
+
+Pages built from a single brief in earlier v2 runs:
+
+The photographs are real, found in open archives and credited by the skill (credits). Watch the launch film.
+
+Install
+
+npx skills add https://github.com/Leonxlnx/taste-skill --skill "design-taste-frontend"
+
+That installs the skill with the npx skills CLI.
+
+The skill runs its scripts with Node 22+ and an installed Chrome, Edge or Chromium (set CHROME_PATH if it is in a non-standard place). Optional: ffmpeg on the PATH, for WebP output and the phone crop of a hero photograph in photos.mjs. It installs nothing and needs no API keys. Bundled Wikimedia Commons photographs work offline; fetching additional photographs or icons uses network access.
+
+Claude Code plugin
+
+Run these inside Claude Code. The skill is namespaced under taste-skill:, so it does not collide with your other skills.
+
+/plugin marketplace add Leonxlnx/taste-skill
+/plugin install taste-skill@taste-skill
+
+/plugin update upgrades it later.
+
+Codex plugin
+
+codex plugin marketplace add Leonxlnx/taste-skill
+codex plugin add taste-skill@taste-skill
+
+Start a new Codex session afterwards so the skill is loaded.
+
+From a clone, linked instead of copied
+
+./install.sh symlinks the skill into Claude Code (--codex for Codex, --all-agents for both), so a git pull updates it in place. On Windows (Git Bash) it makes a real link, or a directory junction when symlinks are not allowed, and it reports an older copied folder instead of skipping it silently.
+
+Already have the skill? Run the install command again; the install name did not change. Looking for one of the older skills? See Moved skills.
+
+How 2.5 works
+
+Use it by asking your agent to build or redesign a company site; the agent loads the skill, copies assets/ into the project, starts from assets/starter.html and runs the checker before it hands the page over. Every build starts by classifying the client's business (software, gaming, tech, product, service or place) and planning the page screen by screen before writing markup:
+
+1. Deal tokens and layout. scripts/start.mjs deals a palette made for the trade and a Google Fonts pairing for the page kind (library/palettes.json, library/type.json), and assets/layout/deal.mjs deals a hero layout (split, centred, product, photo, place, collage, editorial, word, film, statement or triptych).
+2. Start from one system. assets/starter.html, assets/system.css and assets/layout/layout.css enforce one section per screen at desktop (1440x900), equal left and right content edges, a fixed navigation bar and a single-screen closing footer (footer.closing).
+3. Show real product UI and real photographs. Software and tech pages populate lit feature cards (assets/ui/cards.css) with rewritten HTML UI fragments (assets/ui/) and node-and-line diagrams (assets/diagrams/), with real brand and interface SVGs resolved locally by scripts/icons.mjs. Place, shop, hospitality and non-technical product pages lead with curated photographs (scripts/photos.mjs, assets/photos/), typography and flat colour, crediting sources in one expandable footer line with no captions under images.
+4. Keep effects for tech and gaming pages. Shader grounds (scripts/effects.mjs), scroll scenes (assets/scenes/) and procedural 3D prints (assets/objects/) are dealt only on software, tech and gaming pages within a four-context WebGL cap, with static fallbacks for phones and reduced motion. Every page gets a hero entrance and one or two moments from scripts/moments.mjs; cafes, hotels, shops, studios and services get only the photo- and type-led ones, and zero WebGL.
+5. Check in a real browser over HTTP. scripts/consistency.mjs, assets/layout/check.mjs, scripts/perf.mjs and scripts/shoot.mjs render the built page in headless Chrome across 1440, 1024, 768 and 390, catching empty visuals, broken shaders, contrast drops, misaligned columns, section-height drift, placeholder text, invented street numbers and slow-network image gaps before the build ships. scripts/gate.mjs then holds the finish until no fixable FAIL is left, three rounds at most.
+
+Details of what changed from 2.1.x are in the changelog.
+
+The tools
+
+Everything is a plain Node 22+ script in the skill folder; none installs anything.
+
+| Tool | What it does |
+| --- | --- |
+| scripts/start.mjs | Deals a palette and a Google Fonts pairing for the page kind and prints the ` links and :root` tokens. |
+| assets/layout/deal.mjs | Deals one of eleven tested hero layouts; assets/layout/check.mjs checks it with long-headline stress tests. |
+| scripts/photos.mjs | Deals vetted photographs by trade, enforces image weight and writes the one footer credit line. |
+| scripts/icons.mjs | Resolves real brand and interface icons into local SVG files. |
+| scripts/effects.mjs, scripts/moments.mjs | Deal shader grounds for tech, gaming and software pages, and the moments for every kind. |
+| scripts/gate.mjs, scripts/copy-lint.mjs | The finish gate (also a Stop hook) and the copy linter it runs. |
+| scripts/consistency.mjs | The checker: renders the page in headless Chrome over HTTP at 1440, 1024, 820, 768 and 390 and prints PASS, WARN or FAIL per rule. |
+| scripts/perf.mjs, scripts/shoot.mjs | Page weight and speed, and full-page and per-section screenshots. |
+
+First run, from the project folder (a deal also arms the finish gate there): node scripts/start.mjs deal --page software (kinds: software, gaming, tech, product, service, place). Check a built page with node scripts/consistency.mjs  --page .
+
+Moved skills
+
+This repo holds one skill, design-taste-frontend. The others moved to repos of their own and kept their install names:
+
+| Install name | Where it lives now |
+| --- | --- |
+| high-end-visual-design, minimalist-ui, industrial-brutalist-ui, gpt-taste, stitch-design-taste, design-taste-frontend-v1, design-taste-frontend-v2-experimental | Leonxlnx/taste-skill-classics |
+| imagegen-frontend-web, imagegen-frontend-mobile, brandkit, image-to-code | Leonxlnx/imagegen-skills |
+| redesign-existing-projects | Part of design-taste-frontend, which audits an existing page in a real browser before changing anything |
+| full-output-enforcement | Removed. For the same problem, see Leonxlnx/unlazy |
+
+Install a moved skill from its new repo under the same name:
+
+npx skills add https://github.com/Leonxlnx/taste-skill-classics --skill "high-end-visual-design"
+
+Common Questions
+
+What does the skill need?
+Node 22 or newer and Chrome, Edge or Chromium; ffmpeg is optional (WebP photographs and the phone crop of a hero photograph). It installs nothing and uses no API keys. Bundled Commons photographs are stored locally; network access is used only when downloading additional photographs, Google Fonts or brand icons.
+
+Where do the pictures come from, and can I use them?
+
+…（内容已截断）
