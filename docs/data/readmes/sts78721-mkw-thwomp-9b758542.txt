@@ -1,0 +1,134 @@
+MKW Recomp
+
+MKW Recomp is a static recompilation of Mario Kart World (Nintendo Switch 2, 2025) into a native Windows
+x86-64 application with a Vulkan renderer. There is no emulator at run time: the game's ARM64 code is translated to C
+ahead of time and compiled into one executable, and its graphics calls are answered by a host implementation of
+NVN 2. It is built on TotK Recomp and the DKB Recomp Switch 2 work.
+
+As far as we know, this is the first public static recompilation of Mario Kart World.
+
+No game files are included, and none ever will be. You need your own copy of Mario Kart World, dumped
+from your own console. Instructions for obtaining those files will not be provided. There are no downloadable
+builds: everyone builds from their own dump.
+
+Status
+
+Not playable yet. The game boots, initializes Horizon OS services, advances through the intro sequence, renders
+3D graphics with Ampere shaders lowered to Maxwell SPIR-V, but has graphical issues (lighting/textures and render pipeline).
+
+| Phase | | State |
+| --- | --- | --- |
+| F0 CPU | ✅ | main and sdk lift with no unsupported instruction (ARMv8.3 pointer authentication and LDAPR added). All functions translate cleanly to C. |
+| F1 OS | ✅ | Boots on Horizon host with Switch 2 differences: RomFS, save, audio, controller, system memory mapping. |
+| F2 NVN 2 | ✅ | NVN 2 entry points answered; the game loop runs. Command buffer calls accepted and executed. |
+| F3 Shaders | ✅ | Ampere shader stages go through Ampere-to-Maxwell lowering (ISBERD, ISBEWR, SUST.D.2D extended support) and translator to SPIR-V. |
+| F4 Vulkan | ✅ | The intro and 3D scenes render. Massive 8K ASTC texture arrays auto-fallback to BC3 compression to fit within VRAM. |
+| F5 Playable | 🚧 | In progress: Graphical issues, track lighting, in-race physics and gameplay controls. |
+
+How it works
+
+flowchart LR
+    subgraph offline"At build time, on your PC"]
+        exefs["Your dump: main + sdk
+(ARM64)"] --> lifter["Lifter
+recomp/"] --> c["C code"] --> clang["Clang"] --> exe["mkw.exe"]
+    end
+    subgraph runtime["At run time"]
+        exe --> host["Horizon host
+threads, files, audio, input"]
+        exe --> nvn["NVN 2 front end
+runtime/nvn_*"] --> vk["Vulkan back end"]
+        sass["Ampere shaders"] --> lower["Eglantine lowering
+Ampere → Maxwell"] --> xlate["Translator
+tools/xlate"] --> spirv["SPIR-V"] --> vk
+    end
+
+The longer version is in [docs/architecture.md (shared with TotK Recomp) and
+docs/bananza-shaders.md (the NVN 2 shader work).
+
+How to help
+
+Each open problem is a separate, well-bounded job with its own issue. Pick one, say in the issue that you are on it,
+and keep each pull request to one topic.
+
+No code needed, only your PC and your own copy of the game:
+
+- Test on your GPU. Runs on AMD, Intel and different NVIDIA cards, with logs, show what breaks there.
+- Graphical issue debugging: Report visual differences, missing render targets, or shader issues with log output.
+
+Code (help wanted):
+
+- Texture & lighting shaders: Investigate remaining black surfaces and material render states.
+- NVN 2 entry points: Complete recording of new Switch 2 NVN 2 command buffer calls.
+
+Your first contribution, step by step:
+
+1. Build from your own dump (Building from source).
+2. Run it and note how far it gets on your machine.
+3. Report your findings in Issues or Discussions.
+
+Before you open a pull request, read CONTRIBUTING.md. Its hard rule: nothing that came out of the
+game goes into the repository, not in commits, issues or pull requests. Run python tools/check_content.py --staged
+before committing; CI runs the same check. Questions go to
+Discussions. Everyone taking part follows the
+code of conduct.
+
+Building from source
+
+The toolchain is based on MSYS2 UCRT64 Clang, Ninja, Python 3.10+ and the .NET SDK for the shader translator. With the ExeFS and RomFS from your own dump:
+
+.venv\Scripts\python tools\build_xlate.py
+.venv\Scripts\python recomp\gen.py --exefs  --out generated\mkw180 --modules main,subsdk0,subsdk1,sdk
+.venv\Scripts\python tools\mkw_expected.py --exefs  --name mkw180 --display 1.8.0
+.venv\Scripts\python tools\mkw_pack_romfs.py --dir  --out build\extracted\mkw180\romfs
+.venv\Scripts\python tools\build_game.py --version mkw180 --expected tools\data\expected-mkw180.json --exefs  --romfs build\extracted\mkw180\romfs
+
+Everything the build writes stays under build\ and generated\, which git ignores. Running and testing logs are stored in logs/mkw.log.
+
+FAQ
+
+Can I play it? Not yet. The intro renders with graphical issues and work is underway to reach full gameplay. Follow the Issues and Discussions.
+
+Will there be a download? No. The executable is made from the game's own code, so it cannot be shared. Everyone
+builds it from their own dump.
+
+Which version of the game? Base 1.8.0 (Title ID 0400C3F00006E000).
+
+Linux? The recompilation toolchain supports Linux; testing on Linux with native Vulkan is welcome.
+
+Why GPL? The shader lowering comes from Eglantine (Eden Emulator Project), which is GPL. Files that came from TotK
+Recomp keep their MIT terms.
+
+How is AI used? Portions of the code and documentation are written with AI coding assistance, as in TotK
+Recomp, and checked by running the game and tests. AI-assisted pull requests are welcome; you are
+responsible for having read and run them.
+
+Credits, Acknowledgments & Special Thanks
+
+MKW Recomp stands on the shoulders of giants in the emulation, static recompilation, and graphics research communities. Without their years of groundbreaking work, reverse engineering, and open-source contributions, a native PC recompilation of Mario Kart World would not exist.
+
+Static Recompilation Foundations
+- TotK Recomp by valentderah and its contributors: The direct architectural foundation of this project—providing the ahead-of-time ARM64-to-C lifter, the native Horizon OS runtime environment, differential Unicorn testing, and Vulkan execution engine.
+- DKB Recomp by Lucas-blip-png, sagaopc, and sostenesfreitas: The pioneers of Nintendo Switch 2 static recompilation on PC—answering hundreds of Switch 2 NVN 2 API entry points, integrating Ampere lowering, and proving that Switch 2 titles can run natively on modern PC hardware.
+- LAS Recomp by peiikai: Foundational work in AArch64 function lifting, SIMD/FP translation, and Vulkan format bindings.
+- MacNativeGames by ly05010419: Essential Horizon runtime implementation, audio renderer, NPDM loader, and dynamic link mechanisms.
+- SavageWindRecomp by Revivedx: Early Switch recompilation research and Vulkan runtime optimizations.
+- nxnative by seedds: Early native Horizon execution groundwork.
+
+GPU, Shader Translation & Emulation Research
+- Eglantine (Eden Emulator Project) by Franseven: The indispensable Ampere-to-Maxwell shader lowering implementation and Switch 2 GPU architectural reverse engineering.
+- Mesa NAK by Faith Ekstrand and Collabora: The open-source SM70+ (Volta/Turing/Ampere) instruction encodings that power our shader lowering pipelines.
+- Ryujinx Team: The industry-standard GPU shader translator and SPIR-V emitter architecture.
+- deko3d by FinCS and the devkitPro team: Low-level NVN hardware documentation and register definitions.
+
+Horizon OS, File Formats & Research
+- hactool & Atmosphère by SciresM and the Reswitched team: Critical file format specifications (ExeFS, RomFS, NPDM, PFS0) and system service documentation.
+- Switchbrew and the Switch homebrew community: Exhaustive documentation of Horizon OS system calls, IPC protocols, and hardware specifications.
+
+Libraries & Standards
+- The Khronos Group: The Vulkan 1.3 graphics API standard.
+- Simple DirectMedia Layer (SDL3) by Sam Lantinga and contributors: Cross-platform windowing, high-precision event handling, and audio backends.
+- Vulkan Memory Allocator (VMA) by Adam Sawicki and AMD / GPUOpen: High-performance GPU memory and pool allocation.
+- libvpx by the WebM Project / Google: VP9 movie playback and video decoding.
+
+…（内容已截断）

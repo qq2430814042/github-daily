@@ -1,0 +1,80 @@
+GestaltX
+
+English · 简体中文
+
+A MobileGestalt editor for iPhone and iPad. Developed by huamidev.
+
+Features
+
+| Category | Presets and tools |
+| --- | --- |
+| Display | Dynamic Island capability and layout, Always-On Display, AOD Vibrancy, Liquid Glass low-power rendering |
+| Device | Model name, boot/shutdown chime, charge limit, tap to wake, Camera Control settings, Action Button settings |
+| iPad | Apple Pencil settings, Stage Manager capability, iPad app compatibility |
+| Intelligence | Independent region-code options, Apple Intelligence capability flag, and sales-region options for activation attempts on China-mainland devices |
+| Advanced | Apple internal feature flags, internal storage view, Security Research Device flag |
+| Field editor | Read, search, add, edit, and remove CacheExtra fields; local plist import/export; String, Integer, Real, Boolean, Data, Date, Array, and Dictionary values |
+| Changes | Automatic reading and manual re-read, staged before/after review, verified writes, per-preset restore |
+| Backups | Automatic initial backup before device editing, backup before every write, original-value records; open, export, restore, and delete |
+| Logs & respring | Actual exploit-stage logs and manual NeoSpring respring |
+
+Usually, changing the region code is enough to try enabling AI; there is no need to change Sales Region. Selecting United States for Region Code sets RegionCode to LL and keeps the sales-region suffix. You can also choose China (Mainland), Hong Kong, Taiwan, Japan or the United Kingdom. Sales Region and Region Code can be applied together: the sales suffix follows Sales Region, while the code follows Region Code.
+
+If you previously changed Sales Region, restore your device’s original sales region and apply it first.
+
+Disabling a preset or using its Revert button restores the recorded original values and types. Keys that were originally absent are removed. If an older change has no original record, use Remove Added Fields only when you know those fields were added.
+
+Presets modify capability flags; actual effects depend on the device and OS. China-mainland devices can use the Apple Intelligence and region options to attempt activation; availability also depends on the model, OS version, and Apple services.
+
+Compatibility
+
+Supports iOS / iPadOS 27.x. iOS / iPadOS 26.x is not supported for on-device MobileGestalt access. Powered by worse_query. SystemGroup access requires iOS 27; available features depend on the device and OS. Local plist editing is also supported.
+
+Signing requires a certificate and provisioning profile with at least one usable App Group. Sign the app and its embedded share extension with at least one common App Group, and keep the extension when re-signing. Both processes detect their actual signed App Groups at runtime. Distributed IPAs carry ad-hoc signatures with these entitlements embedded so SideStore and AltStore can detect them when re-signing; they are not signed with a developer certificate.
+
+Import a plist
+
+In Files or another app, select a MobileGestalt plist, tap Share, and choose GestaltX. The share extension reads the supplied file and hands it to the app through the shared App Group. Return to GestaltX if it does not open automatically. The app checks a device-bound proof from a GestaltX export, or at least two unique identifiers obtained from this device, then asks you to confirm the import. Files that cannot be verified are rejected. Previously imported files are never used as the reference for device identity.
+
+Some original plists contain no unique device identifiers. Export a copy from GestaltX on this device first: its verification key stays in the device-only Keychain and is never included in the file.
+
+Shared files are checked at launch and on return to the foreground. Pending edits are preserved until you save or discard them. Confirmed imports open as local documents. MG Control supports adding, editing, renaming and deleting typed keys and values. Use Restore Imported Plist to restore a verified file to this device; restoration requires a matching system cache layout and an additional confirmation, backs up the current file, and verifies the write. Restart the device afterward.
+
+Language support
+
+GestaltX follows your iOS language settings, with English as the default and fallback. Persian includes right-to-left layout support.
+
+| Language | Locale |
+| --- | --- |
+| English | en |
+| 简体中文 — Simplified Chinese | zh-Hans |
+| 繁體中文（台灣）— Traditional Chinese (Taiwan) | zh-Hant-TW |
+| 繁體中文（香港）— Traditional Chinese (Hong Kong) | zh-Hant-HK |
+| Tiếng Việt — Vietnamese | vi |
+| Русский — Russian | ru |
+| فارسی — Persian | fa |
+| 한국어 — Korean | ko |
+
+Credits
+
+- forcequitOS / Taj C — worse_query
+- neonmodder123
+- skadz108
+- rooootdev — NeoSpring
+- Nouvborne — Ketamine
+- PoomSmart — MGKeys
+- leminlimez — Nugget
+- rooootdev — mond
+- frs0n — GestaltEdit
+
+Disclaimer
+
+For security research and educational purposes only. Use only on devices you own or are authorized to manage.
+
+Back up your data before making changes. Modifying MobileGestalt may cause system instability or require a device restore. You are responsible for the changes you apply and the resulting risks.
+
+License
+
+GNU GPL v3 · Copyright © 2026 huamidev.
+
+Star History

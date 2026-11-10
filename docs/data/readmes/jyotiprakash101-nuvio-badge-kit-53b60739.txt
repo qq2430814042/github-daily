@@ -1,0 +1,91 @@
+Nuvio Badge Kit
+
+261 stream badges in 13 styles for Nuvio: quality, HDR, audio, 83 languages, streaming services and Live TV, plus red warnings for CAM rips and bad copies.
+
+How to install
+
+1. Pick a style below and copy its link. Each link has all 261 badges, Live TV included.
+2. In Nuvio, open Profile → Layout → Streams → Fusion badge URLs.
+3. Paste the link, then open any stream list.
+
+To switch styles later, paste the new link and restart Nuvio.
+
+Already using it? Paste your link again to get the latest, bigger badges.
+
+Language badges always come last in the row, so quality badges stay up front.
+
+Styles
+
+Obsidian
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/obsidian.json
+
+Prism
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/prism.json
+
+Neon
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/neon.json
+
+Cinema
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/cinema.json
+
+Liquid
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/liquid.json
+
+Pixel
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/pixel.json
+
+VHS
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/vhs.json
+
+Keycap
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/keycap.json
+
+Enamel
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/enamel.json
+
+Glitch
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/glitch.json
+
+Line
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/line.json
+
+Dot
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/dot.json
+
+Glyph
+
+https://raw.githubusercontent.com/jyotiprakash101/nuvio-badge-kit/main/glyph.json
+
+Every badge
+
+Colours
+
+- Gold: the best quality (REMUX, 4K, Dolby Vision, Atmos, Cached).
+- Red: a warning (CAM, telesync, upscaled, Dolby Vision with no HDR fallback).
+- Other colours show the group: blue for resolution, amber for HDR, violet for audio, orange for language.
+
+Something wrong?
+
+- No badges: check the link starts with raw.githubusercontent.com, then restart Nuvio.
+- Badges look small or old: paste your link again in Nuvio.
+- A badge is wrong or missing: open an issue with the stream's full title.
+
+Make it your own
+
+Fork this repo and change "isEnabled" in a style's file to turn badges on or off, then use your fork's link. To change the designs, see source.
+
+Credits
+
+Icons by Phosphor (MIT). Flags by flag-icons (MIT). Fonts: Geist, Archivo and Noto Sans (SIL Open Font Licence). Tag research from AIOStreams and TRaSH Guides. Not affiliated with Dolby, DTS, IMAX or any streaming service. Released under the MIT licence.

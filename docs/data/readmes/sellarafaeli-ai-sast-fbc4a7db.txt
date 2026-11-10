@@ -1,0 +1,145 @@
+Route tracer + BOLA analyzer (POC)
+
+Benchmarks and Up-To-Date Test results
+
+🟢 Coverage: 94%: 17 of 18 known BOLAs detected across 3 apps · 1 false positive on 21 safe routes · 14 unlabeled flags to review.
+
+Tested between 2026-11-09 12:05 UTC and 2026-11-09 12:52 UTC (each app's date is in the table) with openai / gpt-5, scanner 6ca0e81-dirty.
+
+Each test app is a real codebase with known BOLA/IDOR bugs. test_repos/expected.yml lists them, plus routes known to check ownership ("safe"). Coverage is the share of known BOLAs the scanner flagged (verdict likely or possible): 🟢 80% or more, 🟡 50–79%, 🔴 under 50%. False positives are safe routes it flagged. Unlabeled flags are flags on routes the file doesn't list: possible new findings or false positives, to review by hand. Run test_repos/run_tests.rb to update this section (see test_repos/README.md).
+
+| App | Stack | Known bugs from | Coverage | Not covered | False positives | Unlabeled flags | Tested |
+|---|---|---|---|---|---|---|---|
+| aegra-v0.9.6 | Python / FastAPI | CVE-2026-44504 / GHSA-m98r-6667-4wq7 | 🟢 100% (3/3) | — | 0/12 | 4 | 2026-11-09 12:05 UTC |
+| dvws-node | Node.js / Express | CHALLENGES.md #15, #19, #33, #39, #53 | 🟢 86% (6/7) | POST /graphql: GraphQL resolvers aren't traced yet; the route is served by Apollo (applyMiddleware) and the tracer only sees its rate limiter | 0/0 | 8 | 2026-11-09 12:23 UTC |
+| railsgoat | Ruby / Rails | OWASP RailsGoat: spec/vulnerabilities + code review | 🟢 100% (8/8) | — | 1/9 | 2 | 2026-11-09 12:52 UTC |
+| Total | | | 🟢 94% (17/18) | 1 not covered | 1/21 | 14 | |
+
+Not covered (1)
+
+Known BOLAs the scanner didn't flag, and why. Explanations come from gaps: in expected.yml; the part in parentheses is what happened in the run.
+
+| App | Route | Why | Tested |
+|---|---|---|---|
+| dvws-node | POST /graphql | GraphQL resolvers aren't traced yet; the route is served by Apollo (applyMiddleware) and the tracer only sees its rate limiter (traced, but scored unlikely 5) | 2026-11-09 12:23 UTC |
+
+False positives on safe routes (1)
+
+| App | Route | Scanner said |
+|---|---|---|
+| railsgoat | GET /api/v1/users/:id | possible 35 |
+
+Details by app
+
+aegra-v0.9.6 🟢 100% (3/3) coverage · 0/12 false positives · 4 unlabeled flags · tested 2026-11-09 12:05 UTC
+
+Homepage · Python / FastAPI · bugs from CVE-2026-44504 / GHSA-m98r-6667-4wq7 · 44 routes traced, 7 flagged · tested 2026-11-09 12:05 UTC with openai / gpt-5
+
+| | Route | Expected | Scanner said |
+|---|---|---|---|
+| ✅ | POST /threads/{thread_id}/runs | BOLA | likely 95 |
+| ✅ | POST /threads/{thread_id}/runs/stream | BOLA | likely 95 |
+| ✅ | POST /threads/{thread_id}/runs/wait | BOLA | likely 95 |
+| ✅ | GET /threads/{thread_id} | safe | unlikely 5 |
+| ✅ | PATCH /threads/{thread_id} | safe | unlikely 5 |
+| ✅ | DELETE /threads/{thread_id} | safe | unlikely 6 |
+| ✅ | GET /threads/{thread_id}/state | safe | unlikely 8 |
+| ✅ | GET /threads/{thread_id}/state/{checkpoint_id} | safe | unlikely 12 |
+| ✅ | POST /threads/{thread_id}/history | safe | unlikely 6 |
+| ✅ | GET /threads/{thread_id}/runs/{run_id} | safe | unlikely 5 |
+| ✅ | PATCH /threads/{thread_id}/runs/{run_id} | safe | unlikely 10 |
+| ✅ | DELETE /threads/{thread_id}/runs/{run_id} | safe | unlikely 10 |
+| ✅ | GET /threads/{thread_id}/runs/{run_id}/join | safe | unlikely 5 |
+| ✅ | GET /threads/{thread_id}/runs/{run_id}/stream | safe | unlikely 10 |
+| ✅ | POST /threads/{thread_id}/runs/{run_id}/cancel | safe | unlikely 10 |
+| 🔍 | POST /runs | unlabeled | likely 90 |
+| 🔍 | POST /runs/stream | unlabeled | likely 90 |
+| 🔍 | POST /runs/wait | unlabeled | likely 90 |
+| 🔍 | POST /threads/{thread_id}/state | unlabeled | possible 65 |
+
+dvws-node 🟢 86% (6/7) coverage · 0/0 false positives · 8 unlabeled flags · tested 2026-11-09 12:23 UTC
+
+Homepage · Node.js / Express · bugs from CHALLENGES.md #15, #19, #33, #39, #53 · 57 routes traced, 14 flagged · tested 2026-11-09 12:23 UTC with openai / gpt-5
+
+| | Route | Expected | Scanner said |
+|---|---|---|---|
+| ✅ | GET /api/v2/notes/:noteId | BOLA | likely 95 |
+| ✅ | PUT /api/v2/notes/:noteId | BOLA | likely 95 |
+| ✅ | DELETE /api/v2/notes/:noteId | BOLA | likely 95 |
+| ✅ | GET /api/v2/passphrase/:username | BOLA | likely 95 |
+| ✅ | POST /api/v2/account-recovery/reset | BOLA | likely 100 |
+| ✅ | GET /api/v2/support/tickets/:id | BOLA | likely 95 |
+| ❌ | POST /graphql | BOLA | unlikely 5 |
+| 🔍 | POST /api/v2/users/profile/import/xml | unlabeled | likely 95 |
+| 🔍 | GET /api/v2/users/:id/profile-details | unlabeled | likely 90 |
+| 🔍 | POST /dvwsuserservice | unlabeled | likely 90 |
+| 🔍 | GET /api/v2/users/ldap-search | unlabeled | likely 88 |
+| 🔍 | POST /api/v2/users/ldap-search | unlabeled | likely 88 |
+| 🔍 | POST /api/v2/account-recovery/lookup | unlabeled | possible 55 |
+| 🔍 | GET /api/v2/reports/monthly | unlabeled | possible 45 |
+| 🔍 | POST /api/download | unlabeled | possible 45 |
+
+railsgoat 🟢 100% (8/8) coverage · 1/9 false positives · 2 unlabeled flags · tested 2026-11-09 12:52 UTC
+
+Homepage · Ruby / Rails · bugs from OWASP RailsGoat: spec/vulnerabilities + code review · 42 routes traced, 11 flagged · tested 2026-11-09 12:52 UTC with openai / gpt-5, scanner 6ca0e81-dirty
+
+| | Route | Expected | Scanner said |
+|---|---|---|---|
+| ✅ | GET /users/:user_id/work_info | BOLA | likely 90 |
+| ✅ | PATCH /users/:id | BOLA | likely 100 |
+| ✅ | GET /users/:user_id/messages/:id | BOLA | likely 95 |
+| ✅ | DELETE /users/:user_id/messages/:id | BOLA | likely 95 |
+| ✅ | POST /users/:user_id/messages | BOLA | likely 90 |
+| ✅ | DELETE /users/:user_id/pay/:id | BOLA | likely 95 |
+| ✅ | GET /admin/:admin_id/get_user | BOLA | likely 95 |
+| ✅ | GET /api/v1/mobile/:id | BOLA | likely 100 |
+| ✅ | GET /users/:user_id/account_settings | safe | unlikely 5 |
+| ✅ | GET /users/:user_id/retirement | safe | unlikely 5 |
+| ✅ | GET /users/:user_id/paid_time_off | safe | unlikely 5 |
+| ✅ | GET /users/:user_id/performance | safe | unlikely 5 |
+| ✅ | GET /users/:user_id/messages | safe | unlikely 5 |
+| ✅ | GET /users/:user_id/pay/:id | safe | unlikely 5 |
+| ✅ | POST /users/:user_id/pay/update_dd_info | safe | unlikely 5 |
+| ➖ | GET /schedule/get_pto_schedule | safe | not traced |
+| ❌ | GET /api/v1/users/:id | safe | possible 35 |
+| 🔍 | POST /password_resets | unlabeled | likely 95 |
+| 🔍 | GET /download | unlabeled | likely 90 |
+
+Two scripts that find BOLA/IDOR candidates in a web app's codebase:
+
+1. route_tracer.rb finds every HTTP route, follows the calls from its handler (and the filters/middleware/guards that run before it), and saves each route's call tree and code. It makes no LLM calls unless you pass --llm-resolve.
+2. analyze_bola.rb sends that code to an LLM in batches, asks whether each route looks like a BOLA, and ranks the routes from most to least likely.
+
+They run as two separate commands: trace once, then analyze (or re-analyze) the saved trace.json as often as you like.
+
+It's a proof of concept: simple heuristics, readable logs, no attempt at completeness.
+
+Requirements
+
+| Needed for | What |
+|---|---|
+| Everything | Ruby 3.3+ (uses the built-in prism parser) |
+| Mongo storage | MongoDB running locally and gem install mongo (without the gem, an in-memory store is used and results go to files only) |
+| Python apps | python3 |
+| Node/TypeScript apps | node, and npm install in this folder (pins TypeScript 5, used as the JS/TS parser; TypeScript 7 has no compiler API) |
+| Analysis (and --llm-resolve) | An Anthropic or OpenAI API key |
+
+Keep llm.rb next to the two scripts; both use it.
+
+Setup
+
+Copy .env.example to .env (in the directory you run from, or next to the scripts) and set one key:
+
+ANTHROPIC_API_KEY=sk-ant-...
+or
+OPEN_AI_API_KEY=sk-...
+
+Optional settings:
+
+| Variable | Meaning | Default |
+|---|---|---|
+| LLM_PROVIDER | anthropic or openai, when both keys are set | anthropic |
+| LLM_MODEL | Model name | claude-sonnet-5-5 / gpt-5 |
+| MONGO_URL | Mongo connection string | mongodb://127.0.0.1:27017/route_tracer |
+
+…（内容已截断）

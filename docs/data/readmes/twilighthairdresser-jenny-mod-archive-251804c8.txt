@@ -1,0 +1,66 @@
+🎯 Jenny Mod (Fapcraft) — Community Archive
+
+The ultimate interactive companion experience for Minecraft Java & Bedrock.
+Upgraded AI, restored models, and full compatibility with Forge 1.21 & MCPE.
+
+.png)
+
+🧐 What is this Archive?
+
+The Jenny Mod (also known as Fapcraft) is one of the most famous and sought-after mods in Minecraft history. It introduces fully interactive NPCs, a complex gift system, and a virtual girlfriend experience that goes far beyond standard villagers.
+
+However, the original mod was abandoned on version 1.12.2. This repository serves as a Community Archive—a stable port that brings the full Jenny experience to modern versions of Minecraft (Forge 1.18 - 1.21.11) and Bedrock Edition (MCPE).
+
+👥 Meet the Characters
+
+Our archive includes all the classic characters, fully voiced and animated with upgraded AI pathfinding.
+
+| Character | Role | Supported Platforms |
+| :--- | :--- | :--- |
+| Jenny | The iconic virtual girlfriend | Java, Bedrock |
+| Ellie | The supportive companion | Java, Bedrock |
+| Bia | The playful plush bear | Java |
+| Slime Girl | The friendly slime hybrid | Java, Bedrock |
+| Goblin Girl | The mischievous trader | Java |
+| Luna | The neko fishergirl | Java |
+
+📦 Installation Guide
+
+We provide separate files for Java Edition (Forge) and Bedrock Edition (MCPE).
+
+🟢 For Java Edition (Forge 1.18 - 1.21.11)
+1. Go to the Releases page.
+2. Click the Download button in the latest release description.
+3. Extract the ZIP file and find the .jar file for your version.
+4. Place the .jar file into your %appdata%\.minecraft\mods folder.
+5. Launch the game using the Forge profile.
+
+🔵 For Bedrock Edition (MCPE)
+1. Download the .mcaddon file from the Releases page.
+2. Open the file with Minecraft to install it automatically.
+3. Activate the behavior pack and resource pack in your world settings.
+
+💬 Community Reviews
+
+"I've tried many Jenny Mod ports, but this is the only one that doesn't crash on 1.21. The gift system works flawlessly." — Miner_Guy
+
+"Finally, a working version for Bedrock! The Slime Girl model looks amazing in MCPE." — CraftQueen
+
+"The AI is so much better. Jenny actually follows you around and interacts with the environment. 10/10." — Alex_The_Builder
+
+❓ Frequently Asked Questions
+
+Is this the official Jenny Mod?
+No, this is an unofficial community archive. We are fans of the original concept and wanted to make it playable on modern versions of Minecraft.
+
+Why does my antivirus block the file?
+It's a standard false positive. Because the mod modifies game files and uses custom AI hooks, Windows Defender may flag it. Add the file to your exclusions if needed. This is safe.
+
+Will I get banned on servers?
+This is a client-side mod. As long as you don't use it on public servers that specifically ban it, you are safe. Always check server rules.
+
+⚠️ Disclaimer
+This is a fan-made project. It is not affiliated with the original developer or Mojang. Use at your own risk.
+
+🔎 Search Tags (Indexing)
+Jenny Mod download, Fapcraft, Jenny Mod Minecraft, Jenny Mod 1.12.2, Jenny Mod 1.21, Jenny Mod Java, Jenny Mod Bedrock, Jenny Mod MCPE, Jenny Mod Forge, Jenny, Ellie, Bia, Slime Girl, Goblin Girl, Allie Bee, Luna, virtual girlfriend, interactive NPC, gift system, Jenny Mod APK.

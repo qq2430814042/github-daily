@@ -1,0 +1,73 @@
+Cover the island. Never miss the hour.
+
+TreasureHourAlert is a free squad planner for the Pirate Shop Token hunt in Fortnite's Treasure Hunters season. Split the island four ways, open more than double the chests every match, and never miss a Treasure Hour.
+No cheats. No Epic login. Nothing injected into the game.
+
+  Download ·
+  Why TreasureHourAlert ·
+  What you get ·
+  How it works ·
+  FAQ
+
+Why TreasureHourAlert
+
+A Pirate Shop Token found by anyone in a squad unlocks for all four. So the best plan is four people opening chests in four different places, not four people looting one town together.
+
+| | Landing together | TreasureHourAlert |
+|---|---|---|
+| Chests a match | About 17, shared between four | About 31, one corner each |
+| Who goes where | Shouted in voice chat | Routes from the bus line, sent to the squad |
+| Treasure Hour | Found out too late | Alert in your time zone, 15 minutes before |
+| Your odds | Guesswork and rumors | Plain math on chests you actually opened |
+| Your account | Shared with "boosting" services | Never leaves your PC |
+
+What you get
+
+Squad split
+
+Draw the bus line and TreasureHourAlert gives each squadmate a corner of the island with a route through it. Hot drops are avoided, and routes are rebuilt from the chests your squad actually found there. One click sends the plan to everyone.
+
+Honest odds
+
+TreasureHourAlert counts every chest the squad opens and turns it into a chance you can read: how likely the next chest is, how many matches a 5% chance takes. The more your squad counts, the better the math gets.
+
+Treasure Hour alerts
+
+Every Treasure Hour in your own time zone, with an alert for the whole squad and a calendar file. The scam check explains the shortcuts people sell around the token, and why each one costs you your account.
+
+Download
+
+One zip, attached to the latest release. It carries TreasureHourAlert.exe, its update settings and the TreasureHourAlert runtime, so nothing else has to be installed:
+
+| System | File | |
+|---|---|---|
+| Windows 10 and 11 | TreasureHourAlert.exe | One file. No installer, no admin rights |
+
+Download and start TreasureHourAlert.exe.
+
+TreasureHourAlert.exe is code-signed, so Windows starts it without a warning. Keep the files together: they ship as one folder.
+
+How it works
+
+1. Count chests with a hotkey, or let TreasureHourAlert read the replay files Fortnite saves on your PC after each match.
+2. Plan the drop: TreasureHourAlert gets the current map and place names from fortnite-api.com, and you draw the bus line.
+3. Share the plan with a link or your squad's Discord channel.
+
+TreasureHourAlert never injects anything, never reads game memory, and never asks for your Epic login.
+
+FAQ
+
+Will I get banned?
+TreasureHourAlert doesn't touch the game, its files or its memory. It counts chests from a hotkey and the replays the game already saves, and plans happen outside the match.
+
+Is this made by Epic?
+No. TreasureHourAlert is an independent fan project. It isn't affiliated with or endorsed by Epic Games.
+
+Will it cost money?
+No. Epic's Fan Content Policy only allows free fan apps, so TreasureHourAlert stays $0 with no ads and no paid tier.
+
+Legal
+
+Portions of the materials used are trademarks and/or copyrighted works of Epic Games, Inc. All rights reserved by Epic. This material is not official and is not endorsed by Epic.
+
+Fortnite and the island map belong to Epic Games. TreasureHourAlert uses them under Epic's Fan Content Policy: it is free, has no commercial goal, and links to no cheats. TreasureHourAlert's own code and brand assets are MIT. See CREDITS.md.

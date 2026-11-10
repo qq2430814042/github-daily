@@ -1,0 +1,68 @@
+Claude Opus 5.5 Astra ✨
+Independent AI chat assistant for writing, learning, brainstorming, and everyday tasks. Model access depends on your provider and configuration.
+Claude Opus 5.5 Astra is an AI chat assistant for asking questions, writing, learning, brainstorming, and everyday tasks. 💬
+
+The application’s available models and features depend on its implementation and the AI provider you configure. The project name does not imply that Claude Opus 5.5, a particular model, paid subscription, or service is included.
+
+Features 🌟
+
+- Chat interface for natural conversations
+- Help with questions, writing, learning, and brainstorming
+- Optional integrations, such as web search or image generation, if configured
+- Provider and model options based on the project’s implementation
+- OAuth or remote-control features only if implemented and configured
+
+✅ Requirements
+
+- Git
+- The runtime and package manager required by this project
+- Credentials for a supported AI provider, if required
+- Additional credentials for optional integrations, such as web search or image generation
+
+Check the project files for the exact runtime version and configuration requirements.
+
+HOW DOWNLOAD 📥
+
+Download the latest version
+
+Project Status 🚧
+
+This project is under active development. Features, configuration options, and supported providers may change.
+
+Before relying on a feature, check the latest documentation and open issues. If a feature is not documented or implemented in the repository, do not assume it is available.
+
+Contributing 🤝
+
+Contributions are welcome.
+
+1. Check existing issues before starting substantial work.
+2. Describe the proposed change in an issue or pull request.
+3. Keep changes focused and include tests or documentation where appropriate.
+
+Disclaimer ⚠️
+
+Claude Opus 5.5 Astra is an independent project. Unless explicitly stated otherwise, it is not affiliated with, endorsed by, or sponsored by Anthropic, OpenAI, Google, DeepSeek, or any other AI provider.
+
+The project name does not guarantee access to Claude Opus 5.5, a specific model, subscription, API, or paid service. Available models and features depend on the project implementation, provider availability, account permissions, and your configuration. Provider fees or usage limits may apply.
+
+AI-generated content can be incorrect, incomplete, outdated, or misleading. Verify important information before relying on it. Do not use the application as a substitute for professional medical, legal, financial, or other expert advice.
+
+Security 🔐
+
+- Keep API keys and OAuth secrets private.
+- Use environment variables or an untracked local configuration file for credentials.
+- Do not publish tokens, passwords, or other secrets in issues, commits, or screenshots.
+
+License 📄
+
+No open-source license has been selected or published for this project at this time. This section describes the project’s current status and is not itself a license or grant of permission to use the project.
+
+Publishing source code in this repository does not, by itself, mean that you are permitted to copy, modify, distribute, incorporate it into other products, or use it for commercial purposes. Unless a separate license or written permission is provided, you should not assume that any such rights have been granted.
+
+Rights to the project materials belong to their respective rights holders. These materials may include source code, documentation, graphics, design, names, and other materials, if present in the repository.
+
+RESPONSIBLE USE 🌱
+
+Use Claude Opus 5.5 Astra in a lawful and considerate manner. Do not use the project to facilitate fraud, harassment, unauthorized access, privacy violations, or other harmful activity.
+
+AI-generated content should not be treated as automatically accurate. Verify important claims using reliable sources, especially when the information may affect health, safety, finances, legal decisions, employment, or other significant matters.

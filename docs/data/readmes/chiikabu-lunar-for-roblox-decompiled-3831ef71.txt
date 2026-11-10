@@ -1,0 +1,27 @@
+lunar-for-roblox-decompiled
+
+Decompiled output for Lunar for Roblox 1.0.16 (the Roblox launcher by
+Moonsworth, not the Minecraft Lunar Client) - the Electron app, the NSIS
+installer around it, and the native DLLs it ships with.
+
+Layout
+
+- src/ - main / preload / renderer bundles, cleaned up
+- installer/ - the NSIS script dumped to text, plus the uninstaller's
+- native/ - decompiled output (.c): owutility*/integrity.c up top,
+  installer/, addons/ and chromium/ for the rest
+- docs/ - index of IPC channels/services, bundle outlines, owutility notes
+- tools/ - the scripts used to pull it apart
+- build/ - source + script to rebuild a portable exe (see BUILDING.md)
+
+Reproducing
+
+installer blocks + script dump
+python tools/extract_nsis.py lunar-for-roblox-1.0.16-setup.exe out/
+python tools/nsis_dump.py lunar-for-roblox-1.0.16-setup.exe script.txt
+
+the actual app payload (dead servers now, use a local copy - see BUILDING.md)
+tar -xf lunar-for-roblox-1.0.16-x64.nsis.7z
+npx @electron/asar extract resources/app.asar app
+
+All code here belongs to Moonsworth / Overwolf / whoever wrote it

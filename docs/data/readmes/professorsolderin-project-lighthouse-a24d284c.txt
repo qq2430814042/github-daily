@@ -1,0 +1,100 @@
+Project Lighthouse — shining AI on the pages history never read
+
+Famous scientists left behind huge piles of handwritten pages that are digitized but essentially unread.
+This is an open, shared effort to read them at scale with AI, look for anything the record missed —
+unfinished threads, finished results nobody credited, missed connections — and then try very hard to kill
+every candidate before calling it a find. Anyone can contribute pages, translations, readings, reviews or
+expert verdicts; the data and the ledger are shared so no page is read twice and no dead end is rediscovered.
+
+Status (2026-11-09): about 12,000 pages deep-read so far (Gauss, Riemann, Hilbert, Dedekind, Grothendieck).
+One lead stands: L-019, Riemann's shock-wave sheets (7/10, awaiting a palaeographer). Everything else
+checked so far was history already known under another name. The dead candidates are in the ledger too,
+with the sources that killed them — that is half the value of the repo.
+
+The one that held
+
+Riemann's published 1860 paper on air waves is famous for getting the energy part of the shock conditions
+wrong (Rankine 1870 and Hugoniot 1887 fixed it). Two sets of unpublished sheets in his Nachlass at
+SUB Göttingen (Cod. Ms. B. Riemann 26 fol. 70–71; Cod. Ms. B. Riemann 19 fol. 3v) contain, in his own
+1856–60 notation, the energy-conserving shock relations, Prandtl's relation (1906), the Prandtl–Meyer
+function with a sketch (1908), oblique-shock relations with a wedge sketch, the characteristics method for
+steady supersonic flow (1929) and a vorticity–entropy relation (Crocco 1937). Date bracket: 1856 – July 1866.
+The algebra is verified by computer (verify/); a blind AI handwriting comparison with Riemann/Weber/Weierstraß controls assigns the
+pages to Riemann. Not yet confirmed by a human palaeographer. Full record: ledger/LEADS.md, entry L-019;
+the request to experts: docs/L019_expert_request_draft.md.
+
+Scope
+
+Any author, any field, any language, any century. Manuscripts, notebooks, letters, or printed works nobody
+reads any more (most of Euler is printed and still unread). The only conditions: public domain, digitized,
+and on a host whose terms permit fetching. Add a row to queue/QUEUE.md and a folder under data//.
+
+How it works
+
+1. Transcribe every page (image → verbatim text, formulas in LaTeX, struck text marked). src/transcribe.py
+   (IIIF image URLs) or src/read_source.py (scan PDFs → page JPEGs → pages).
+2. Deep-read every maths page with its neighbours: reconstruct the argument, name the modern equivalent and
+   who is credited, score 0–10 for how surprising it would be to a specialist. src/deep.py, src/read_source.py.
+3. Candidate protocol (all four, in order, before any size is stated):
+   1. a human reads the page against the scan;
+   2. the maths is re-derived by code (verify/);
+   3. a literature search on the meaning — the author's own publications first, then older sources (the
+      model's "first credited to" dates run late);
+   4. an independent, unanchored review: a second agent/person given only the facts, never the conclusion.
+4. Ledger (ledger/LEADS.md): every candidate with its verdict, including duplicates and errors.
+5. False-positive guard (docs/FALSE_POSITIVES.md): the twelve standard ways a "find" turns out to be
+   nothing, and the check for each; its checklist is required in every candidate file.
+
+Cost: about $0.25 per page (transcription + deep read, Claude Opus 5.5). Bring your own API key
+(~/.config/hunt/anthropic_key, never in the repo).
+
+Labels
+
+Every contribution carries a label that says what was done, not what anyone believes:
+
+| label | meaning | who can set it |
+|---|---|---|
+| transcribed | page JSON exists | anyone |
+| read | deep read exists | anyone |
+| self-checked | finder read the scan, ran the maths, searched the literature | the finder |
+| reviewed | the four checks were redone independently of the finder — by another contributor, or by an unanchored agent given only the facts — and a verdict with sources is written; the file says which | not the finder's own reading |
+| expert | a named specialist signed off on the scan | that specialist |
+
+Votes sort what gets reviewed first. They never set a label.
+
+Contribute
+
+Fastest way in: docs/HOT_PAGES.md — pages the model rated surprising that no human has checked. Read the
+scan, kill it or open a candidate.
+
+See CONTRIBUTING.md. Six ways: share transcriptions or translations you already have (any tool, any model, by hand —
+no analysis required); run the scripts on a new source; fix transcriptions by hand; review a candidate;
+give an expert verdict. data//STATUS.tsv shows which bundles are only transcribed and still
+need deep reads. The scarce input is not tokens — it is people who can read the page and
+know the literature.
+
+Priority and citation
+
+Everything here is public the moment it is pushed. For any finding, the date of the first commit or release
+containing its ledger entry is its public date; a GitHub release archived on Zenodo gives it a DOI and an
+independent timestamp. Cite the repository via CITATION.cff. Transcriptions are CC BY: use them, but say
+where they came from.
+
+Sources and rights
+
+Scans belong to the libraries (SUB Göttingen / GDZ for Gauss, Riemann, Hilbert, Dedekind — public domain;
+Université de Montpellier for Grothendieck). Scans are linked, never hosted. Transcriptions and analyses in
+this repo are CC BY 4.0; code is MIT (see LICENSE). Grothendieck exception: per his 2010 declaration
+this repo carries only analyses and short quotations of his unpublished notes, not full transcriptions.
+
+Data
+
+data//transcripts//cNNN.json and data//deep/_cNNN.json; formats in
+data/FORMAT.md. Gauss 6,300 files, Riemann 5,800, Hilbert 1,200, Dedekind 175, Grothendieck deep reads
+~5,000 (transcripts withheld).
+
+Next targets
+
+Euler's 866 published works (public domain, scanned at the Euler Archive, mostly Latin, mostly untranslated and
+unread) — queue in queue/. Ramanujan's notebooks (public domain; fully proved by Berndt and Andrews–Berndt,
+so only missed connections are plausible).

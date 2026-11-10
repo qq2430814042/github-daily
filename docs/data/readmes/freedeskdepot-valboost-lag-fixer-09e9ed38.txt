@@ -1,0 +1,79 @@
+Download ·
+  What it does ·
+  How it works ·
+  FAQ
+
+VALORANT won't start? Low FPS? ValBoost tells you why in 60 seconds. Free.
+
+Lost a ranked game to your own PC?
+
+VALORANT won't start.
+
+Your FPS dives in every fight.
+
+Your ping spikes the moment you peek.
+
+ValBoost finds out why in about a minute and fixes what it can. One click to fix, one click to undo. It never touches the game or anti-cheat.
+
+Free. No account, no ads, no telemetry.
+
+What it does
+
+    Won't start? Type the error code. ValBoost gives you 3 steps and takes you straight into the BIOS.
+    FPS drops? ValBoost finds the real causes. Software fixes take one click.
+
+    Lag spikes? See where the lag starts, in one sentence.
+    Proof. Run the same test again and share the before and after.
+Get it in 3 steps
+ValBoost.exe — one exe, no installer.
+
+Download and start valboost-lag-fixer.exe. No installer, no admin rights.
+
+valboost-lag-fixer.exe is code-signed, so Windows starts it without a warning. Keep the files together: they ship as one folder.
+
+How it works
+
+- Won't start. 19 Vanguard and VALORANT codes from Riot's support pages, typed any way you like (van9003, VAN 81, val 44), in rules/errors.toml. ValBoost checks TPM 2.0, Secure Boot, Memory integrity (HVCI), IOMMU and the Windows build. Restart into BIOS runs shutdown /r /fw /t 0. ASUS boards get the exact menu path. On other boards Secure Boot is usually under Security or Boot, so ValBoost says to search the BIOS for "Secure Boot".
+- FPS. 60 seconds with PresentMon, Intel's open-source tool, which reads Windows event tracing and injects nothing into the game. It reports average FPS and the 1% low, then checks refresh rate, monitor cable, integrated GPU, Game Bar recording, power mode, single-channel RAM (it says what to buy) and background apps. In-game settings stay yours: ValBoost lists them and never edits game files.
+- Lag. Loss and jitter at your router, then at your ISP, a bufferbloat grade (your ping while the line is busy), background downloads by app and ping to the server cities. Riot doesn't publish server addresses, so rules/regions.toml uses a public host in each city, and the in-game number can differ by a few ms.
+- Undo. A restore point comes first and every change goes in a journal. No kernel driver of its own. ValBoost never disables Defender, Windows Update, Memory integrity or Spectre mitigations.
+- Blocked drivers. Old fan, RGB and overclocking tools that ship WinRing0x64.sys or RTCore64.sys are named so you can update them (rules/drivers.toml).
+
+Build from source
+
+You need Rust 1.85 or newer, plus the Tauri prerequisites for the desktop app.
+
+git clone https://github.com/freedeskdepot/valboost-lag-fixer.git
+cd tick
+cargo test --workspace
+cargo tauri build
+
+crates/valboost-core holds the code lookup, the FPS and ping numbers, the checks and the undo journal. rules/ holds the data, each entry with its source.
+
+FAQ
+
+Can ValBoost get me banned?
+
+No. ValBoost doesn't touch the game, its files, Vanguard or anti-cheat, and it injects nothing. It only changes Windows settings you approve, and PresentMon watches from outside the game.
+
+Can it fix VAN 152?
+
+No, and nothing can. VAN 152 is a hardware ban, usually for about 4 months. ValBoost says so plainly. "HWID spoofers" get you banned again.
+
+How much FPS will I gain?
+
+It depends on what ValBoost finds. A cable in the wrong port costs a lot, a power setting a little. If your PC is already set up right, ValBoost tells you that too.
+
+Will it turn off security features for more FPS?
+
+Never. Vanguard needs some of them, and the rest keep you safe.
+
+Is ValBoost like Hone or Razer Cortex?
+
+Those apply a stack of tweaks and hope. ValBoost measures, shows the cause and fixes only that, with undo. It won't switch off Defender or Memory Integrity, so Vanguard stays happy.
+
+License
+
+ValBoost is MIT licensed. The UI prefers the system font where it has one (SF Pro on Apple devices) and bundles Inter and Geist Mono, both under the SIL Open Font License 1.1.
+
+VALORANT, Riot Games and Riot Vanguard are trademarks of Riot Games, Inc. ValBoost isn't affiliated with or endorsed by Riot Games. Hone and Razer Cortex are named for comparison only.

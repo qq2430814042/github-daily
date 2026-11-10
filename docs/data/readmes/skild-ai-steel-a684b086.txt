@@ -1,0 +1,22 @@
+Steel
+
+Steel is Skild's physics solver for scalable simulation of manipulation, built with NVIDIA and open-sourced as part of Newton. Across 20 robot-learning benchmarks it delivers 3.8× PhysX's simulation throughput (geometric mean), and up to 13× on heterogeneous batches that mix different robots and tasks, while using less GPU memory.
+
+We are actively accepting contributions from you and your agents, and are committed to maintaining Steel as a shared foundation for diverse, scalable simulation.
+
+Updates
+
+- November 9, 2026 — The open-source launch of Steel.
+
+Code and demos
+
+- Steel in Newton — the solver implementation.
+- WebGPU implementation — the browser implementation.
+- Playground — interactive demos.
+- Blog — the launch write-up.
+
+License
+
+Steel is licensed under the Apache License, Version 2.0. The solver is distributed as part of Newton, which is also licensed under Apache-2.0.
+
+Third-party assets and media retain their own licenses.

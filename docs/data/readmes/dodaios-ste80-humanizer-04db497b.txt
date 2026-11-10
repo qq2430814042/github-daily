@@ -1,0 +1,132 @@
+STE80 Humanizer
+
+STE80 Humanizer makes AI-written text read like a careful person wrote it, without changing what it says. It combines two methods:
+
+1. The humanizer method. Remove the 26 tells from Wikipedia's Signs of AI writing, in the catalog of blader/humanizer.
+2. Karpathy's STE80 method. Rebuild the sentences "80% of the way to ASD-STE100", the controlled English of aircraft maintenance manuals.
+
+Before:
+Great question! Kubernetes liveness probes are a powerful mechanism that enables the kubelet to determine whether a container is healthy — and it's not just a health check, it's your first line of defense. When a probe fails, the container will be automatically restarted by the kubelet, ensuring that your application remains available. However, it's important to note that misconfigured probes could potentially cause cascading restarts, so parameters like initialDelaySeconds and failureThreshold should be carefully tuned.
+Get this right, and your cluster heals itself.
+
+After:
+A liveness probe tells the kubelet if a container is healthy. If the probe fails, the kubelet restarts the container. This keeps the application available.
+A bad probe can also cause many restarts. For example, a timeout that is too short makes healthy containers fail the probe. To prevent this, set initialDelaySeconds and failureThreshold to values that fit your application.
+
+The goal is text that people read easily. Getting past AI detectors is not a goal.
+
+Why two passes
+
+Most humanizers only remove phrases. The text loses "Great question!" and "seamless", but it keeps long sentences that carry three ideas, hide the actor and stack hedges. It still reads like AI. You can see it in the worked example in SKILL.md:
+
+| Step | What is left |
+|---|---|
+| Original | Chatbot opener, dash, "not just X", "-ing" rider, "however", "could potentially", dramatic closer |
+| After Pass 1 (tells) | "...the container will be automatically restarted by the kubelet, which keeps your application available. Misconfigured probes can cause cascading restarts, so parameters ... should be carefully tuned." Clean words, but heavy sentences. |
+| After Pass 2 (STE80) | Short sentences, one idea each, active voice, the instruction apart from the description. |
+
+The method: what Karpathy said
+
+On 2 October 2026, Andrej Karpathy posted tips for one problem: as LLMs do more of the work, people spend more time reading and understanding what the models produce. His first tip:
+
+Ask your LLM to explain something in ASD-STE100, it's a controlled language specification originally developed for aerospace maintenance documentation. LLMs well-versed in this language and it comes with heavy constraints on clean writing style that I often find a lot more readable. Sometimes I've tried to soften it a bit e.g. ask for "80% of the way to ASD-STE100" because the spec is quite stringent.
+
+The post then goes up a ladder: diagrams, then HTML pages, then explainer videos. His conclusion is that our work moves "up the abstractions into oversight and understanding". Clear output is the bottleneck, and writing is the first step.
+
+The STE overview graphic from Karpathy's post. Click to enlarge. Note: a later fact check found errors in the dictionary panel (D). In ASD-STE100 Issue 9, "approximately" is approved, "TEST" is approved only as a noun (not as a verb), and there is no entry for "in order to". This skill follows Issue 9.
+
+ASD-STE100 (Simplified Technical English) is from the 1980s aerospace industry. It was made for mechanics whose first language is not English, because a misread step on an aircraft can kill. Its rules:
+
+- 20 words per instruction and 25 per description
+- one instruction per sentence
+- active voice and simple tenses
+- one meaning per word, with about 900 approved words
+- one topic per paragraph, and six sentences at most
+
+Why "80%"? At 100%, "check" and "test" are nouns only, "may" and "should" are banned and many common words are not allowed. Normal prose sounds stiff. At 80%, you keep the full structure and only as much vocabulary as still sounds natural:
+
+| STE rule | 100% (Strict mode) | 80% (default) |
+|---|---|---|
+| Sentence length 20 / 25 | Hard limit | A few words over is fine |
+| One idea per sentence | Always | Always |
+| Active voice, simple tenses | Always | Always |
+| Approved dictionary only | Yes | No, use the plain common word |
+| "check", "test" as verbs | No | Yes |
+| "may", "should" | No | Yes, for real uncertainty |
+| Contractions | No | Yes, in casual text |
+| Semicolons | No | No |
+
+Karpathy talks about readability, not about sounding human. This skill adds that part, because the two methods cover each other's gaps.
+
+How to read the skill
+
+SKILL.md has two numbered lists:
+
+- §1 to §26: the AI tells (Pass 1).
+- S1 to S15: the STE80 structure rules (Pass 2).
+
+Every entry has the same fields: Watch for, Problem, Before and After. Pass 2 entries also say what changes between 80% and Strict. Weak alone means: act only if other tells are near. The skill reports its edits by number, for example "§1, §8, S2", so you can look each one up.
+
+Installation
+
+Once installed, the skill answers to /ste80-humanizer. It also starts by itself when you ask to humanize, simplify or de-AI a text, or ask for STE.
+
+Any agent (skills.sh)
+
+npx skills add Dodaios/ste80-humanizer
+
+Global install for one agent, or for all of them:
+
+npx skills add Dodaios/ste80-humanizer --global --agent claude-code
+npx skills add Dodaios/ste80-humanizer --global --agent codex
+npx skills add Dodaios/ste80-humanizer --global --agent cursor
+npx skills add Dodaios/ste80-humanizer --global --agent '*'
+
+Without --global, the skill goes into the current project only. The skills CLI from Vercel works with Claude Code, Codex, Cursor, OpenCode and many more agents.
+
+Claude Code plugin
+
+/plugin marketplace add Dodaios/ste80-humanizer
+/plugin install ste80-humanizer@ste80-humanizer
+
+Claude.ai and Claude Desktop
+
+Download this repo as a ZIP (Code → Download ZIP). Upload it in Settings → Capabilities → Skills.
+
+Usage
+
+/ste80-humanizer
+
+Or just ask:
+
+This sounds like ChatGPT wrote it. Make it sound like a person.
+Rewrite this README 80% of the way to ASD-STE100.
+Explain how TLS handshakes work in STE.
+Light touch: just remove the AI stuff from docs/intro.md.
+Convert docs/runbook.md to strict STE.
+Does this email sound like AI? Just tell me, don't rewrite it.
+
+| Mode | When | What it does |
+|---|---|---|
+| Humanize (default) | Normal requests | Pass 1 fully, Pass 2 at 80%. Keeps your voice. |
+| Light | "light touch", "just remove the AI stuff" | Pass 1, plus only the worst sentences from Pass 2. |
+| Strict STE | "strict", "full STE", procedures, safety notes | Pass 1 and all of Pass 2 at 100%. |
+
+Match your voice. Add a sample of your own writing. The skill then matches your sentence length, words and punctuation.
+
+Fidelity first. The skill keeps every fact, keeps "may" as "may", keeps "40+" as "40+", adds nothing and flags contradictions in the source. In our tests, this was the clearest difference from a plain prompt (see Tests).
+
+Pass 1: the 26 AI tells
+
+| # | Tell | Before | After |
+|---|---|---|---|
+| A. Staging instead of stating ||||
+| 1 | Not X but Y | It's not just a faster build tool, it's a new way to think. | The build tool caches each step. |
+| 2 | One-line closers | ...No cold starts. No excuses. That's the power of the edge. | Latency dropped to 40 ms. |
+| 3 | Sayings that sound deep | At its core, observability is the language of trust. | Shared dashboards show both teams the same data. |
+| 4 | Staged run-up | Let's dive in. Here's what you need to know. | The API allows 100 requests per minute. |
+| 5 | Arguing with no one | To be clear, I'm not saying microservices are bad... | We split the billing service out first. |
+| B. Rhythm by rule ||||
+| 6 | Forced triads | fast, intuitive, and powerful | loads in under a second |
+
+…（内容已截断）

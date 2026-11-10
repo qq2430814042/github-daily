@@ -1,0 +1,71 @@
+IDEmu: a BMW iDrive head-unit emulator for macOS
+
+IDEmu runs the original head-unit software of BMW iDrive systems (HMI, window system and services) inside QEMU virtual machines, with its own
+web interface, a virtual iDrive controller, virtual CAN bus and GPS, and a coding editor. It is a research and learning tool: you bring your own
+firmware packages, IDEmu builds the disk images locally.
+
+Português: README.pt-BR.md · License: PolyForm Noncommercial 1.0.0 · See NOTICE for what is not in this repo.
+
+Supported systems
+
+| System | Hardware / OS emulated | Level* | What works | What does not (yet) |
+|---|---|---|---|---|
+| iDrive 6 (NBT Evo, 2016–2020) | OMAP5 board, QNX 6.5, ARM | 75% High | Real HMI, touch, rotor and buttons, virtual CAN and GPS, cluster and HUD, connected phone, SSH, coding editor (1,333 parameters), V850 emulation, fast boot (~1 s) | Radio/media/audio, USB stick, some vehicle menu items |
+| iDrive 5 (NBT / NBT Evo) | Same as iDrive 6 (same packages, HMI_ID_VERSION=id5) | 54% Medium | Real HMI, touch, rotor, CAN, cluster and HUD, SSH, phone, coding editor | Maps, media, USB; the HMI crashes now and then in navigation menus; slow reaction to input |
+| iDrive 8 (MGU22, BMW i7 G70) | Qualcomm SA8155 class, Linux 5.15, ARM64 (QEMU virt + HVF) | 46% Medium | Real HMI at 2880×960, touch, rotor and buttons, phone screens, clock and temperature, coding editor (1,264 parameters), boot in ~25 s | CAN, maps/GPS, cluster, SSH, media, USB stick |
+| iDrive 7 (MGU, Linux x86-64) | Intel Apollo Lake class, Linux 4.14, x86-64 (QEMU TCG) | 29% Low | Center screen (HU) and rear-seat entertainment screen (RSE), touch, rotor and buttons, coding editor (1,288 parameters), first boot 2 min then 1 s from a snapshot | CAN, GPS/maps, cluster, SSH, media, USB stick; many vehicle services are not faked yet |
+| iDrive 4 (CIC High, "BMW L6") | SH7785 (SH-4A) board, QNX 6.3 | 17% Minimum | Real HMI (Hauptmenü), rotor, push, tilt, MENU/BACK/OPTION/MEDIA/MAP keys | Touch (the CIC has none), CAN, GPS, SSH, coding editor, fast boot; NAV and COM keys do nothing; boot ~1 min |
+
+\* Functionality level as shown in the "New environment" assistant (average over 12 features). Maps and route guidance are not available on any
+system: the firmware packages do not carry map data and the navigation engine does not run.
+
+What you need
+
+* A Mac with Apple Silicon (iDrive 8 uses the Hypervisor framework) and macOS 14 or later. Python 3 (the system one is enough).
+* Your own firmware packages (PSdZData / SWFL files). The assistant tells you which exact files each iDrive version needs and can scan a folder
+  for them. Nothing is modified; images are built in the project folder.
+* A QEMU build: the project uses custom QEMU 11.1.2 builds (OMAP5, SH7785 and idemu-shm devices). Source and recipe: src/qemu and
+  tools/qemu/build.sh. Homebrew qemu provides qemu-img (needed for the iDrive 7 snapshot) and qemu-system-aarch64 (iDrive 8).
+* Renderer helpers (glhost, glhost7, mguhost) are built from src with clang. iDrive 8 also needs ANGLE (libEGL.dylib and libGLESv2.dylib),
+  found in any installed Chromium-based app, or set IDEMU_ANGLE.
+
+Quick start
+
+./IDEmu.command        # opens IDEmu in an Electron window (cd electron && npm install once); without Electron it opens your browser
+python3 -m idemu gui   # the same, web interface at http://127.0.0.1:8765
+
+New environment → iDrive version → car model → required files → parameters → create → build (~20 s for iDrive 5/6) → start. Command line:
+python3 -m idemu list | build  | run .
+
+Highlights
+
+* Real software: the original HMI binaries run unmodified; hardware that is missing in the VM is replaced by small shims (graphics, window system,
+  coding, vehicle services) kept outside the system images.
+* Virtual controller: rotor, push, tilt and buttons on screen and on the keyboard; mouse as touch screen.
+* Virtual car: CAN signals, scenarios, record/replay and a TCP server; GPS with NMEA/UBX output and GPX routes; cluster and HUD views (iDrive 5/6).
+* Your own car from its VIN: the type key (VIN characters 4–7) is decoded with the KIS database of your PSdZData into chassis, body, engine, model year,
+  market and iDrive generation, and the new environment is set up to match. iDrive 5/6 head units can be Navigation Professional, Business or EntryNav.
+* System files, unpacked: one click extracts the SWFL/HAR packages (or the built image) into normal files you can browse in the app or open in Finder.
+* Coding editor: parameters with their factory values from the firmware, backups, import/export, flash and verified restart.
+* Fast boot: the booted state is saved and restored in about a second (iDrive 5, 6 and 7).
+* Tools: SSH into the head unit, phone link over Wi-Fi, V850 firmware viewer, live statistics (CPU, RAM, GPU, FPS).
+
+Repository map
+
+| Path | Content |
+|---|---|
+| idemu/ | Python package: build, runtime, web server and interface (idemu/web) |
+| src/ | C sources: QEMU patches and boards, GL renderers, guest shims, V850 emulation |
+| tools/ | Image builders, analysers and test helpers (tools/mgu, tools/cic, tools/qemu) |
+| electron/ | Desktop wrapper |
+| docs/ | Technical notes: architecture, API, other generations, iDrive 4, touch, V850, cluster and HUD (in Portuguese) |
+| tests/ | python3 -m unittest discover -s tests |
+
+License and legal
+
+IDEmu is licensed under the PolyForm Noncommercial License 1.0.0: you may use, study, change and share it for noncommercial purposes
+(personal use, research, education, hobby). Commercial use needs a separate license from the licensor. Files in src/qemu are derived from QEMU and
+stay under GPL-2.0-or-later (see NOTICE).
+
+IDEmu is not affiliated with or endorsed by BMW AG or any supplier. This repository contains no BMW software, firmware or map data; use only files
+you are entitled to use, and respect the licenses that come with them.

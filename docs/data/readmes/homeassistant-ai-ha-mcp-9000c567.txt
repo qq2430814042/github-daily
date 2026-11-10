@@ -1,0 +1,69 @@
+Breaking change (v7.3.0): ha_config_set_yaml has been moved to beta.
+
+HA-MCP — Manage Home Assistant with AI
+
+    Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.
+🚀 Get Started
+
+The recommended way to run ha-mcp is the HA-MCP integration. It installs into Home Assistant through HACS (the built-in Marketplace on Home Assistant 2026.11+), runs the full server in-process, and works on every Home Assistant installation type — Home Assistant OS, Supervised, Container, and Core — with full feature parity. It is the easiest setup in every case: setup asks for an administrator access token and how clients may connect.
+
+Add it to Home Assistant via HACS or, on Home Assistant 2026.11+, the Marketplace (the preferred install):
+
+Quick start:
+
+The setup below is for version 9.0.0 (October 28, 2026) and later; earlier versions show a shorter setup form without the administrator account step.
+
+1. Install the HA-MCP integration (requires Home Assistant 2026.8.0 or newer; see compatibility details). On Home Assistant 2026.8–2026.10, open HACS, search for HA-MCP, then Download.
+   On Home Assistant 2026.11 or newer, open Settings → Marketplace, accept its first-run warning, and search for HA-MCP, then Install. HA-MCP is in the default catalog, so installing it and receiving its updates do not require connecting GitHub or adding a custom repository. The badge above also opens its catalog page.
+   Already installed from the earlier homeassistant-ai/ha-mcp-integration repository? It keeps receiving the same releases. On the Marketplace, keep GitHub connected for its background checks on that custom repository.
+   Older installed releases may still appear as HA-MCP Custom Component; searching for HA-MCP matches both names.
+2. Restart Home Assistant.
+3. Decide which administrator account the server acts as. Either create a long-lived access token on your own account (your profile → Security → Long-lived access tokens → Create token; it works from anywhere if it leaks, and the server's changes show under your name), or, safer, create an account just for HA-MCP under Settings → People → Add person with Allow login, Local access only and Administrator on. Never use your own login for the second option.
+4. Go to Settings → Devices & Services → Add Integration, search for HA-MCP and choose HA-MCP Server. Paste your token, or enter the user name and password of the account you made for HA-MCP (HA-MCP creates its token), pick how clients may connect — Remote access through Home Assistant (start with Secret URL, the simplest; Home Assistant sign-in adds a login) and/or Network access: Local network — then click Submit. Both start disabled, so a client on another device needs one of them.
+5. Copy the connect URL from the entry's Configure screen (Settings → Devices & Services → “HA-MCP — Manage Home Assistant with AI” → HA-MCP Server → Configure). A notification confirms the server started and points you there.
+6. Paste that URL into your AI client — done.
+
+Connect URL. The Configure screen gives you a Home Assistant webhook URL for remote clients — https:///api/webhook/ through Nabu Casa or any reverse proxy already pointed at Home Assistant (locally, http://:8123/api/webhook/). For clients on the same network, the server is also reachable directly at http://:9584/private_.
+
+- Replaces other install methods: the in-process server is a complete, standalone ha-mcp install — it takes the place of the app (add-on), Docker, and uvx/PyPI (stdio) methods. Run only one; do not run the in-process server alongside another install.
+- Local only? Leave remote access disabled at setup (or turn off Remote access via webhook in the entry options) — no webhook is registered at all, while the direct port and sidebar panel keep working.
+- Settings panel: while the server runs, an admin-only HA-MCP panel appears in the Home Assistant sidebar for managing tools, feature flags, backups, and themes.
+- Optional authentication: set Authentication mode to ha_auth to require a Home Assistant account sign-in instead of using the secret URL as the credential.
+- Manual install (no HACS or Marketplace): copy custom_components/ha_mcp_tools/ from this repository into your Home Assistant config/custom_components/ directory, then restart and add the integration as above.
+
+The component's second entry type, the File & YAML services entry (HA-MCP File & YAML Tools), is only needed if you enable ha-mcp's opt-in file and YAML editing tools (feature flags, off by default) — skip it otherwise; you can add it later at any time. It works with any server type (in-process, app, Docker, or stdio).
+
+Full in-process server documentation → · Setup Wizard for client-specific config →
+
+🏠 Home Assistant app (add-on)
+
+Prefer to run ha-mcp as a Home Assistant app (add-on)? On Home Assistant OS and Supervised installs it is a close second — no access token to manage, and it works with Claude Desktop, Claude.ai, ChatGPT, and any other MCP client on your local network or configured for remote access.
+
+1. Add the repository to your Home Assistant instance:
+
+   If that opens the App store without an add-repository dialog (a known Home Assistant issue), add it manually: Settings → Apps → Install app → ⋮ → Repositories, then paste https://github.com/homeassistant-ai/ha-mcp.
+
+2. Install "Home Assistant MCP Server" from Settings → Apps → Install app and click Start. (Home Assistant 2026.2 renamed "Add-ons" to "Apps"; on older versions this is the Add-on store.)
+3. Open the Logs tab to find your unique MCP URL.
+4. Connect your AI client to that URL — no token or credential setup needed.
+
+Full app documentation →
+
+⚠️ Configure exactly one install method per client. The custom component, the app, Docker/PyPI, and local stdio are independent ways to run the same server — pick one and point your AI client at that single URL. Keeping two entries for the same server in one client (for example a local uvx ha-mcp@latest entry with HOMEASSISTANT_URL / HOMEASSISTANT_TOKEN alongside an app or component URL) is a known cause of connection hangs.
+
+Other install methods
+
+These run the server outside Home Assistant — useful for Container / Core installs (which can't run apps) or a separate host. The Setup Wizard generates the exact client-specific config for each.
+
+- Docker (HTTP server): run ghcr.io/homeassistant-ai/ha-mcp in HTTP mode, pointed at your Home Assistant URL and a long-lived token (an administrator's is recommended; non-admin tokens work with limitations), and connect your client to its secret URL. See the Setup Wizard for the full command and per-client config.
+- PyPI / uvx (HTTP server): run the published ha-mcp package with uvx ha-mcp@latest (or pip) as a streamable-HTTP server the same way. Details in the Setup Wizard.
+- Local stdio (not recommended): runs ha-mcp on your own machine over stdio. The one-command installers in the Demo server section below use this path; the Setup Wizard covers connecting it to your own Home Assistant.
+- OIDC authentication: gate remote access behind an external identity provider (Authentik, Keycloak, Auth0, etc.) instead of a secret URL — all authenticated users share the server's Home Assistant credentials. See OIDC Mode.
+
+⚠️ stdio has known transport issues. The stdio transport has connection problems that streamable HTTP does not (#1713). It is recommended only for demo/testing tinkering — for a real setup, use the custom component or an HTTP method above.
+
+🌐 Remote access (Nabu Casa / Webhook Proxy app / OpenAI Tunnel)
+
+Using the HA-MCP custom component? You do not need the Webhook Proxy — the component has its own built-in webhook for remote access (see the Get Started quick start at the top). The proxy is for the app (it can also front another external server via its mcp_server_url option). The OpenAI Tunnel below is different: it applies to any install method when Home Assistant isn't publicly reachable at all (no Nabu Casa or reverse proxy).
+
+…（内容已截断）

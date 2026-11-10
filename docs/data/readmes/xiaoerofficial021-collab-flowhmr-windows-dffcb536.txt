@@ -1,0 +1,149 @@
+Windows 桌面版
+
+这是基于 FlowHMR 上游项目 的独立 Windows 桌面发行版。原项目的论文、署名和 许可证 保留于本仓库。
+
+下载最新版 FlowHMR-Windows.zip，解压后双击 FlowHMR.exe。基础包自带 Python、界面和 FBX 导出组件。生成前从右上角 运行环境 下载并启用一个 CUDA 版本，再在 模型 中下载公开模型。
+
+登录 MANO 官网下载页，选择 Extended SMPL+H model（smplh.tar.xz），直接解压到 models/body_models/smplh/。要用手指精修或切换体型，再选 Models & Code（mano_v1_2.zip），直接解压到 models/。
+
+支持多人选取与同步预览、原声播放、手指精修、接触修正和多人 FBX 导出。模型在首次运行生成时才加载。见 Windows 使用与源码构建说明 和 模型目录说明。
+
+Blender 重定向插件：FlowHMR 2 MMR
+
+下载 FlowHMR 2 MMR v1.3.1（ZIP） · Blender 3.6 及以上 · 作者：小二, GPT
+
+把 FlowHMR 导出的 FBX 动作重定向到 MMR 控制骨架。支持在同一场景预览和烘焙多人动作，保留各自的入场时间和相对站位。
+
+在 Blender 的 编辑 → 偏好设置 → 插件 中直接安装 ZIP 并启用。回到 3D 视图按 N，打开 FlowHMR 2 MMR 页签。需要预先用 MMR 生成目标控制骨架，详见 发布页安装说明。
+
+Overview
+
+- 🎉🎉🎉 2026-10-31] Our [Hugging Face demo is now live!
+  Reconstruct and preview 3D motion in your browser, with NPZ/FBX export.
+- 🚀🚀🚀 2026-10-30] Updated inference acceleration: approximately 10× faster SAM feature extraction
+  (with compile) and over 5× faster end-to-end inference (static camera, with compile) on our 300-frame A100 benchmark.
+  See the [resource and performance report.
+  Get started with CLI inference or the Web demo.
+
+We are releasing the full workflow, from data synthesis to training and evaluation, step by step.
+
+- x] Inference code and checkpoints ([guide, models)
+- x] Pretraining and GRPO post-training code ([guide)
+- x] Web demo ([guide)
+- x] Synthetic data generation code ([guide)
+- x] Wild-4K evaluation clip list ([list)
+- x] Hugging Face demo ([Space)
+
+Model Zoo
+
+| Model | Description | Params | Tracking Success ↑ | Download |
+|---|---|:---:|:---:|:---:|
+| flowhmr_base | Base model | 0.46B | 78.79% | 🤗 HF |
+| flowhmr_latest | flowhmr_base + GRPO with PHC+ physics reward (recommended) | 0.46B | 82.47% | 🤗 HF |
+
+Tracking Success: the rate at which the PHC+ controller successfully tracks the predicted motion in simulation, measured on Wild-4K.
+
+Getting Started
+
+Follow the guide for each step, or paste the prompt into your coding agent.
+
+Installation
+
+Installation guide
+
+FlowHMR supports two setups:
+
+- V2M: inference, web demo, and base model training in a single environment
+  (tested with Python 3.10 + PyTorch 2.5.1, cu118).
+- Full pipeline: V2M plus the PHC+ physics simulator for GRPO post-training and
+  physics tracking. The simulator runs in a separate Isaac Gym environment (tested with
+  Isaac Gym Preview 4, Python 3.8 + PyTorch 1.13, cu117). The two environments share no
+  imports and communicate through files on /dev/shm.
+
+SMPL-family downloads require license acceptance. Use the ModelScope links in the installation guide for VGGT-Omega and SAM 3D Body.
+
+V2M:
+
+Install FlowHMR from https://github.com/flowhmr/flowhmr following docs/install.md with the V2M setup.
+
+Full pipeline:
+
+Install FlowHMR from https://github.com/flowhmr/flowhmr following docs/install.md with the full pipeline setup.
+
+Web Demo
+
+Web demo guide
+
+Upload a video and reconstruct its 3D motion; when several people are detected,
+select one or more for reconstruction. Requires the V2M setup.
+
+Launch the FlowHMR web demo following docs/web_demo.md.
+
+Inference
+
+Inference guide
+
+Reconstruct motion from a video on the command line. The pipeline runs person detection
+(YOLOX), camera estimation (VGGT-Omega), body feature extraction (SAM 3D Body), and
+FlowHMR, and saves the motion as .npz (plus .fbx if FBX export is installed).
+
+Run FlowHMR on my video following docs/inference.md.
+
+Data
+
+Data guide
+
+- Training data is not bundled. Bring your own in the
+  documented format, or render synthetic videos
+  from SMPL-H motions with the Blender toolkit in data/rendering_data.
+- Wild-4K is the 4182-clip in-the-wild evaluation set behind Tracking Success.
+  We release the clip list (clip IDs from Koala-36M-v1),
+  not the videos.
+
+Training
+
+Training guide
+
+Training has two stages: pretraining the base model, then GRPO post-training with a physics reward.
+Prepare training data first (see Data and Prepare data).
+
+Pretraining (V2M setup) trains the flow-matching base model, flowhmr_base.
+
+Train the FlowHMR base model following docs/training.md.
+
+GRPO post-training (full pipeline setup) fine-tunes flowhmr_base with the PHC+
+simulator as the reward: each generated motion is scored by how well the PHC+ controller
+tracks it. This produces flowhmr_latest.
+
+Run FlowHMR GRPO post-training following docs/training.md.
+
+Acknowledgements
+
+We thank the authors of these projects for releasing their code and models:
+
+- HY-Motion 1.0: MMDiT flow-matching backbone
+- MixGRPO: GRPO post-training for flow matching
+- PHC: PHC+ controller for physics reward and tracking evaluation
+- GVHMR: world-grounded human motion recovery
+- VGGT-Omega: camera estimation
+- SAM 3D Body: body features
+- YOLOX: person detection
+- Kimodo and toyxyz_RGBMocap: motion and contact correction
+
+Citation
+
+If you find FlowHMR useful in your research, please cite:
+
+@misc{wang2026flowhmr,
+      title={FlowHMR: Physically Plausible Motion Capture from Video},
+      author={Zhanke Wang and Chengfeng Zhao and Qing Shuai and Jingzhong Lin and Heng Li and Zeyu Ling and Yuxin Wen and Jing Li and Di Kang and Chunchao Guo and Linchao Bao},
+      year={2026},
+      eprint={2610.03691},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV},
+      url={https://arxiv.org/abs/2610.03691},
+}
+
+License
+
+The FlowHMR source code is licensed under the Apache License 2.0. Third-party libraries and components are subject to their respective licenses. For model weights, please refer to the license specified in the model card.

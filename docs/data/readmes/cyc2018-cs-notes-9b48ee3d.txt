@@ -40,6 +40,7 @@
 - MySQL
 - Redis
 - Redis - 进阶
+- Elasticsearch
 
 :coffee: Java
 

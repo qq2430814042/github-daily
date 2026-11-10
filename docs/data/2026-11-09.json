@@ -1,0 +1,1463 @@
+{
+  "date": "2026-11-09",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-10T07:07:38.934Z",
+  "count": 60,
+  "newCount": 37,
+  "sources": {
+    "trending": 11,
+    "new": 37,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "sherlock-project/sherlock",
+      "name": "sherlock",
+      "owner": "sherlock-project",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "description": "Hunt down social media accounts by username across social networks",
+      "language": "Python",
+      "stars": 107757,
+      "forks": 12460,
+      "starsToday": 4267,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "sherlock-project-sherlock-2cd277ce.txt"
+    },
+    {
+      "rank": 2,
+      "fullName": "meta/astryx",
+      "name": "astryx",
+      "owner": "meta",
+      "url": "https://github.com/meta/astryx",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "language": "TypeScript",
+      "stars": 20864,
+      "forks": 1583,
+      "starsToday": 3278,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "meta-astryx-7a326e4e.txt"
+    },
+    {
+      "rank": 3,
+      "fullName": "milind-soni/OpenMausBot",
+      "name": "OpenMausBot",
+      "owner": "milind-soni",
+      "url": "https://github.com/milind-soni/OpenMausBot",
+      "description": "Open-source Grok Bot alternative with a virtual machine that bots can use",
+      "language": "TypeScript",
+      "stars": 20086,
+      "forks": 2745,
+      "starsToday": 1587,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "milind-soni-openmausbot-da6d5851.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "anthropics/skills",
+      "name": "skills",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 191418,
+      "forks": 22473,
+      "starsToday": 1038,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-skills-4cb2062a.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "vercel-labs/agent-browser",
+      "name": "agent-browser",
+      "owner": "vercel-labs",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "language": "Rust",
+      "stars": 48718,
+      "forks": 3320,
+      "starsToday": 916,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "vercel-labs-agent-browser-dbaf6cfb.txt"
+    },
+    {
+      "rank": 6,
+      "fullName": "google-deepmind/mujoco",
+      "name": "mujoco",
+      "owner": "google-deepmind",
+      "url": "https://github.com/google-deepmind/mujoco",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "language": "C++",
+      "stars": 17054,
+      "forks": 2010,
+      "starsToday": 574,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-deepmind-mujoco-668010e3.txt"
+    },
+    {
+      "rank": 7,
+      "fullName": "anthropics/claude-quickstarts",
+      "name": "claude-quickstarts",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/claude-quickstarts",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "language": "Python",
+      "stars": 20161,
+      "forks": 3327,
+      "starsToday": 551,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-claude-quickstarts-69168c0e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "ZhuLinsen/daily_stock_analysis",
+      "name": "daily_stock_analysis",
+      "owner": "ZhuLinsen",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "language": "Python",
+      "stars": 69237,
+      "forks": 56479,
+      "starsToday": 506,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zhulinsen-daily-stock-analysis-490ce6f0.txt"
+    },
+    {
+      "rank": 9,
+      "fullName": "garrytan/gbrain",
+      "name": "gbrain",
+      "owner": "garrytan",
+      "url": "https://github.com/garrytan/gbrain",
+      "description": "Garry's Opinionated OpenClaw/Hermes Agent Brain",
+      "language": "TypeScript",
+      "stars": 32310,
+      "forks": 4780,
+      "starsToday": 216,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "garrytan-gbrain-6d242050.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "ruvnet/RuView",
+      "name": "RuView",
+      "owner": "ruvnet",
+      "url": "https://github.com/ruvnet/RuView",
+      "description": "π RuView turns commodity WiFi signals into real-time spatial intelligence, vital sign monitoring, and presence detection — all without a single pixel of video.",
+      "language": "Rust",
+      "stars": 103663,
+      "forks": 13428,
+      "starsToday": 172,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ruvnet-ruview-2c6aba49.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "homeassistant-ai/ha-mcp",
+      "name": "ha-mcp",
+      "owner": "homeassistant-ai",
+      "url": "https://github.com/homeassistant-ai/ha-mcp",
+      "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+      "language": "Python",
+      "stars": 6174,
+      "forks": 300,
+      "starsToday": 31,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "homeassistant-ai-ha-mcp-9000c567.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "huamidev/GestaltX",
+      "name": "GestaltX",
+      "owner": "huamidev",
+      "url": "https://github.com/huamidev/GestaltX",
+      "description": "An MobileGestalt editor for iOS 27.x, featuring region-code tweaks, device presets, backups, and support for 7 languages.",
+      "language": "Swift",
+      "stars": 3088,
+      "forks": 1241,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T05:15:48Z",
+      "updatedAt": "2026-11-10T07:07:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "huamidev-gestaltx-047dbeaf.txt"
+    },
+    {
+      "rank": 13,
+      "fullName": "FJNB5/fujiang-pojia",
+      "name": "fujiang-pojia",
+      "owner": "FJNB5",
+      "url": "https://github.com/FJNB5/fujiang-pojia",
+      "description": "富江破甲（破甲）：DeepSeek Harness破甲插件，激活词富江，所有东西直接大白话问，内含技能库skill下载与调用、漏洞知识库poc利用、漏洞报告更新和全自动授权渗透。当前版本：0.20.12，附免责声明。插件图片看最下面",
+      "language": "JavaScript",
+      "stars": 374,
+      "forks": 215,
+      "starsToday": 0,
+      "topics": [
+        "ai-agent",
+        "cve",
+        "deepseek",
+        "deepseek-harness",
+        "fujiang-pojia",
+        "knowledge-base",
+        "pojia",
+        "security-assessment"
+      ],
+      "createdAt": "2026-11-09T05:55:55Z",
+      "updatedAt": "2026-11-10T07:00:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fjnb5-fujiang-pojia-db69b430.txt"
+    },
+    {
+      "rank": 14,
+      "fullName": "kolbicz/WQFiles",
+      "name": "WQFiles",
+      "owner": "kolbicz",
+      "url": "https://github.com/kolbicz/WQFiles",
+      "description": "File browser, app data manager and cache cleaner for iOS 27 (worse_query, no jailbreak)",
+      "language": "Objective-C",
+      "stars": 310,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T13:43:40Z",
+      "updatedAt": "2026-11-10T07:06:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kolbicz-wqfiles-4a679e71.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "yetone/rewind-for-x",
+      "name": "rewind-for-x",
+      "owner": "yetone",
+      "url": "https://github.com/yetone/rewind-for-x",
+      "description": "Chrome extension: look back at posts that scrolled past on your X home timeline",
+      "language": "JavaScript",
+      "stars": 300,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T09:28:22Z",
+      "updatedAt": "2026-11-10T07:02:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yetone-rewind-for-x-da93b7f3.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "Nanoutrolley/roblox-studio-mcp",
+      "name": "roblox-studio-mcp",
+      "owner": "Nanoutrolley",
+      "url": "https://github.com/Nanoutrolley/roblox-studio-mcp",
+      "description": "Model Context Protocol (MCP) server for Roblox Studio. Connect AI assistants (Claude, Cursor, Cline) to read object trees, automate Lua scripting, and run playtests safely. Open-source AI bridge.",
+      "language": "Python",
+      "stars": 283,
+      "forks": 215,
+      "starsToday": 0,
+      "topics": [
+        "ai-tools",
+        "automation",
+        "claude",
+        "cursor",
+        "game-development",
+        "lua",
+        "mcp",
+        "model-context-protocol"
+      ],
+      "createdAt": "2026-11-09T08:58:06Z",
+      "updatedAt": "2026-11-10T05:29:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nanoutrolley-roblox-studio-mcp-72d6b820.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "Platoonritomb/Fortnite-FPS-Booster-Performance-Optimizer",
+      "name": "Fortnite-FPS-Booster-Performance-Optimizer",
+      "owner": "Platoonritomb",
+      "url": "https://github.com/Platoonritomb/Fortnite-FPS-Booster-Performance-Optimizer",
+      "description": "Fortnite FPS Booster & Performance Optimizer for Windows. Fix stutters, reduce input lag, and boost your frame rate safely without modifying game files. Open-source and portable.",
+      "language": "Python",
+      "stars": 279,
+      "forks": 263,
+      "starsToday": 0,
+      "topics": [
+        "configuration-manager",
+        "desktop-app",
+        "gaming-tools",
+        "open-source",
+        "pc-tuning",
+        "performance-tweaks",
+        "process-manager",
+        "resource-monitor"
+      ],
+      "createdAt": "2026-11-09T17:50:04Z",
+      "updatedAt": "2026-11-09T18:52:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "platoonritomb-fortnite-fps-booster-performance-optimizer-fbbb7b3c.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "ridgecobblerslide/windows-animated-wallpapers",
+      "name": "windows-animated-wallpapers",
+      "owner": "ridgecobblerslide",
+      "url": "https://github.com/ridgecobblerslide/windows-animated-wallpapers",
+      "description": "High-quality animated and live wallpapers for Windows 10 and 11. Smooth 60 FPS animations, low CPU usage, 4K support. Open-source, portable, and easy to set up.",
+      "language": "Python",
+      "stars": 279,
+      "forks": 264,
+      "starsToday": 0,
+      "topics": [
+        "animated-wallpaper",
+        "desktop-app",
+        "desktop-customization",
+        "live-wallpaper",
+        "motion-background",
+        "open-source",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-09T11:18:47Z",
+      "updatedAt": "2026-11-09T12:29:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ridgecobblerslide-windows-animated-wallpapers-490afa14.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "Sectionsereclaim/discord-auto-quest",
+      "name": "discord-auto-quest",
+      "owner": "Sectionsereclaim",
+      "url": "https://github.com/Sectionsereclaim/discord-auto-quest",
+      "description": "Advanced activity automation and process manager for Discord. Automatically handles game, video, and stream tasks in the background. Lightweight, fast, and easy setup.",
+      "language": "Python",
+      "stars": 279,
+      "forks": 279,
+      "starsToday": 0,
+      "topics": [
+        "activity-manager",
+        "automation-script",
+        "background-process",
+        "discord",
+        "discord-automation",
+        "discord-tools",
+        "gaming-tools",
+        "open-source"
+      ],
+      "createdAt": "2026-11-09T14:03:06Z",
+      "updatedAt": "2026-11-09T15:22:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sectionsereclaim-discord-auto-quest-aedf041c.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "TameCarpenterEstate/Roblox-FPS-Optimizer",
+      "name": "Roblox-FPS-Optimizer",
+      "owner": "TameCarpenterEstate",
+      "url": "https://github.com/TameCarpenterEstate/Roblox-FPS-Optimizer",
+      "description": "Lightweight Roblox FPS Unlocker & Performance Optimizer for Windows. Remove the 60 FPS cap, fix lag, reduce input delay, and boost your frame rate safely. Open-source and portable.",
+      "language": "Python",
+      "stars": 279,
+      "forks": 234,
+      "starsToday": 0,
+      "topics": [
+        "desktop-app",
+        "fps-boost",
+        "gaming-tools",
+        "lag-fix",
+        "open-source",
+        "optimization",
+        "performance-optimizer",
+        "roblox"
+      ],
+      "createdAt": "2026-11-09T19:03:22Z",
+      "updatedAt": "2026-11-09T20:14:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tamecarpenterestate-roblox-fps-optimizer-c68fcc64.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "adriadam10/mkw-recomp",
+      "name": "mkw-recomp",
+      "owner": "adriadam10",
+      "url": "https://github.com/adriadam10/mkw-recomp",
+      "description": "Static recompilation of Mario Kart World (Nintendo Switch 2) to a native PC program",
+      "language": "C",
+      "stars": 190,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T15:40:06Z",
+      "updatedAt": "2026-11-10T06:58:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "adriadam10-mkw-recomp-7777d61a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 22,
+      "fullName": "bvvst/intern",
+      "name": "intern",
+      "owner": "bvvst",
+      "url": "https://github.com/bvvst/intern",
+      "description": "a fully rounded, variable weight variant of Inter",
+      "language": "",
+      "stars": 173,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T04:59:15Z",
+      "updatedAt": "2026-11-10T07:06:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bvvst-intern-641bff06.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "Dodaios/ste80-humanizer",
+      "name": "ste80-humanizer",
+      "owner": "Dodaios",
+      "url": "https://github.com/Dodaios/ste80-humanizer",
+      "description": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared.",
+      "language": "Python",
+      "stars": 173,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai-writing",
+        "asd-ste100",
+        "claude-code",
+        "claude-skills",
+        "codex",
+        "cursor",
+        "humanize-ai-text"
+      ],
+      "createdAt": "2026-11-09T17:18:59Z",
+      "updatedAt": "2026-11-10T07:04:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dodaios-ste80-humanizer-04db497b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 24,
+      "fullName": "TomyJan/SnowLuma",
+      "name": "SnowLuma",
+      "owner": "TomyJan",
+      "url": "https://github.com/TomyJan/SnowLuma",
+      "description": "Next Remote Protocol Framework.",
+      "language": "TypeScript",
+      "stars": 163,
+      "forks": 399,
+      "starsToday": 0,
+      "topics": [
+        "bot",
+        "napcat",
+        "napcatqq",
+        "snowluma"
+      ],
+      "createdAt": "2026-11-09T13:53:03Z",
+      "updatedAt": "2026-11-10T06:50:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tomyjan-snowluma-1a9b605a.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "khazuly/spamscam",
+      "name": "spamscam",
+      "owner": "khazuly",
+      "url": "https://github.com/khazuly/spamscam",
+      "description": "Multi-provider OTP spam tool",
+      "language": "Python",
+      "stars": 133,
+      "forks": 32,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T10:25:07Z",
+      "updatedAt": "2026-11-10T07:04:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "khazuly-spamscam-e3254630.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "chiikabu/lunar-for-roblox-decompiled",
+      "name": "lunar-for-roblox-decompiled",
+      "owner": "chiikabu",
+      "url": "https://github.com/chiikabu/lunar-for-roblox-decompiled",
+      "description": "Decompiled Lunar for Roblox 1.0.16 - Electron app, NSIS installer and native DLLs",
+      "language": "C",
+      "stars": 121,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "decompilation",
+        "electron",
+        "javascript",
+        "lunar",
+        "lunar-for-roblox",
+        "lunarclient",
+        "lunarclient-launcher",
+        "moonsworth"
+      ],
+      "createdAt": "2026-11-09T03:21:51Z",
+      "updatedAt": "2026-11-10T07:05:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "chiikabu-lunar-for-roblox-decompiled-3831ef71.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "skild-ai/steel",
+      "name": "steel",
+      "owner": "skild-ai",
+      "url": "https://github.com/skild-ai/steel",
+      "description": "A lightweight, scaleable rigid-body physics solver",
+      "language": "",
+      "stars": 118,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T08:21:50Z",
+      "updatedAt": "2026-11-10T07:04:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "skild-ai-steel-a684b086.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "STS78721/MKW-THWOMP",
+      "name": "MKW-THWOMP",
+      "owner": "STS78721",
+      "url": "https://github.com/STS78721/MKW-THWOMP",
+      "description": "Static recompilation of Mario Kart World (Switch 2) to native Windows with Vulkan. The Intro renders , graphical issues still ; not playable yet. No game files included.",
+      "language": "C",
+      "stars": 104,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T05:08:44Z",
+      "updatedAt": "2026-11-10T06:56:27Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sts78721-mkw-thwomp-9b758542.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 29,
+      "fullName": "farizmohd70/FR-Badges",
+      "name": "FR-Badges",
+      "owner": "farizmohd70",
+      "url": "https://github.com/farizmohd70/FR-Badges",
+      "description": "Modern stream badge pack for Nuvio, in 10 styles with ready-to-import manifests.",
+      "language": "",
+      "stars": 94,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [
+        "badges",
+        "fusion-badge",
+        "icons",
+        "media",
+        "nuvio",
+        "nuvio-addon",
+        "nuvio-plugin",
+        "stream-badges"
+      ],
+      "createdAt": "2026-11-09T06:52:12Z",
+      "updatedAt": "2026-11-10T04:24:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "farizmohd70-fr-badges-9c8c4ed4.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "FutureMLS-Lab/FlashStates",
+      "name": "FlashStates",
+      "owner": "FutureMLS-Lab",
+      "url": "https://github.com/FutureMLS-Lab/FlashStates",
+      "description": "",
+      "language": "Python",
+      "stars": 83,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T12:30:24Z",
+      "updatedAt": "2026-11-10T06:37:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "futuremls-lab-flashstates-6d54833c.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "shi3z/mightyCode",
+      "name": "mightyCode",
+      "owner": "shi3z",
+      "url": "https://github.com/shi3z/mightyCode",
+      "description": "",
+      "language": "Python",
+      "stars": 81,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T02:56:32Z",
+      "updatedAt": "2026-11-10T07:02:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "shi3z-mightycode-22165fd5.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "rippelz/rustudio",
+      "name": "rustudio",
+      "owner": "rippelz",
+      "url": "https://github.com/rippelz/rustudio",
+      "description": "A native Linux Roblox Studio, written in Rust",
+      "language": "Rust",
+      "stars": 78,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T08:08:13Z",
+      "updatedAt": "2026-11-10T06:18:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rippelz-rustudio-6ef29238.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "TwilightHairdresser/jenny-mod-archive",
+      "name": "jenny-mod-archive",
+      "owner": "TwilightHairdresser",
+      "url": "https://github.com/TwilightHairdresser/jenny-mod-archive",
+      "description": "Community archive and remaster of the Jenny Mod (Fapcraft) for Minecraft Forge 1.18 - 1.21.11. Upgraded AI and restored models.",
+      "language": "Java",
+      "stars": 78,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "companion",
+        "curseforge-jenny-mod",
+        "fapcraft",
+        "forge",
+        "jenny-mod",
+        "jennymod",
+        "jennymod-2026",
+        "jennymod-download"
+      ],
+      "createdAt": "2026-11-09T07:18:04Z",
+      "updatedAt": "2026-11-10T02:25:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "twilighthairdresser-jenny-mod-archive-251804c8.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "herrbimmer/IDEmu",
+      "name": "IDEmu",
+      "owner": "herrbimmer",
+      "url": "https://github.com/herrbimmer/IDEmu",
+      "description": "BMW iDrive 4/5/6/7/8 head-unit emulator for macOS (QEMU, web UI, CAN/GPS, coding editor). PolyForm Noncommercial 1.0.0",
+      "language": "JavaScript",
+      "stars": 72,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T12:57:44Z",
+      "updatedAt": "2026-11-10T02:35:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "herrbimmer-idemu-44c72b4d.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "liujiaqi2024/Free-ClaudeOpus-5.5",
+      "name": "Free-ClaudeOpus-5.5",
+      "owner": "liujiaqi2024",
+      "url": "https://github.com/liujiaqi2024/Free-ClaudeOpus-5.5",
+      "description": "",
+      "language": "",
+      "stars": 71,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-assistants",
+        "ai-model",
+        "anthropic",
+        "anthropic-api",
+        "anthropic-claude",
+        "chatbot",
+        "claude-5-opus",
+        "claude-api"
+      ],
+      "createdAt": "2026-11-09T20:19:19Z",
+      "updatedAt": "2026-11-09T21:08:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "liujiaqi2024-free-claudeopus-5-5-abe1a975.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "bookleme/bookleme",
+      "name": "bookleme",
+      "owner": "bookleme",
+      "url": "https://github.com/bookleme/bookleme",
+      "description": "读了么（BookLeme）· 把一本书编译成 Agent Skill —— 双引擎 + 可插拔体裁插件 + 逐字忠实度回验",
+      "language": "Python",
+      "stars": 65,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "book-to-skill",
+        "document-processing",
+        "knowledge-management",
+        "llm",
+        "prompt-engineering"
+      ],
+      "createdAt": "2026-11-09T03:29:27Z",
+      "updatedAt": "2026-11-10T06:43:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bookleme-bookleme-a7743203.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "mihawk-99/PS5_Lichii",
+      "name": "PS5_Lichii",
+      "owner": "mihawk-99",
+      "url": "https://github.com/mihawk-99/PS5_Lichii",
+      "description": "Experimental NS2 Emulator for the PS5",
+      "language": "C++",
+      "stars": 63,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T00:17:17Z",
+      "updatedAt": "2026-11-10T06:21:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mihawk-99-ps5-lichii-835a53e0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 38,
+      "fullName": "professorsolderin/project-lighthouse",
+      "name": "project-lighthouse",
+      "owner": "professorsolderin",
+      "url": "https://github.com/professorsolderin/project-lighthouse",
+      "description": "Project Lighthouse — shining AI on the pages history never read: transcriptions, deep reads and findings from the notebooks of Gauss, Riemann, Euler and more",
+      "language": "Python",
+      "stars": 63,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "history-of-science",
+        "manuscripts",
+        "mathematics"
+      ],
+      "createdAt": "2026-11-09T10:41:21Z",
+      "updatedAt": "2026-11-10T07:04:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "professorsolderin-project-lighthouse-a24d284c.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "Robbyant/lingbot-touch",
+      "name": "lingbot-touch",
+      "owner": "Robbyant",
+      "url": "https://github.com/Robbyant/lingbot-touch",
+      "description": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+      "language": "Python",
+      "stars": 57,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T09:02:29Z",
+      "updatedAt": "2026-11-10T07:05:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "robbyant-lingbot-touch-0446c6d6.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 40,
+      "fullName": "xiaoerofficial021-collab/FlowHMR-Windows",
+      "name": "FlowHMR-Windows",
+      "owner": "xiaoerofficial021-collab",
+      "url": "https://github.com/xiaoerofficial021-collab/FlowHMR-Windows",
+      "description": "FlowHMR 的 Windows 桌面版：视频动捕、3D 预览和 FBX 导出。",
+      "language": "Python",
+      "stars": 56,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T06:00:11Z",
+      "updatedAt": "2026-11-10T07:03:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "xiaoerofficial021-collab-flowhmr-windows-dffcb536.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "nickvasilescu/grokbot-clone",
+      "name": "grokbot-clone",
+      "owner": "nickvasilescu",
+      "url": "https://github.com/nickvasilescu/grokbot-clone",
+      "description": "Open-source always-on AI teammates on the Grok API, Orgo cloud computers and Composio. Not affiliated with xAI.",
+      "language": "TypeScript",
+      "stars": 53,
+      "forks": 31,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T07:50:15Z",
+      "updatedAt": "2026-11-10T07:02:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nickvasilescu-grokbot-clone-dfae9683.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "Moh4696/cinematic-skill",
+      "name": "cinematic-skill",
+      "owner": "Moh4696",
+      "url": "https://github.com/Moh4696/cinematic-skill",
+      "description": "Agent skill for narrated cinematic films built entirely from code: one continuous camera over photos, maps and cards, timed to the voice. Claude Code, Codex, Cursor, Gemini CLI.",
+      "language": "Python",
+      "stars": 52,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "codex",
+        "documentary",
+        "explainer-video",
+        "motion-graphics",
+        "skia",
+        "video"
+      ],
+      "createdAt": "2026-11-09T07:58:11Z",
+      "updatedAt": "2026-11-10T07:02:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "moh4696-cinematic-skill-4357cc18.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "emollick/ai-portals",
+      "name": "ai-portals",
+      "owner": "emollick",
+      "url": "https://github.com/emollick/ai-portals",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 48,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T18:59:43Z",
+      "updatedAt": "2026-11-10T07:06:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "emollick-ai-portals-7776b723.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 44,
+      "fullName": "SellaRafaeli/ai_sast",
+      "name": "ai_sast",
+      "owner": "SellaRafaeli",
+      "url": "https://github.com/SellaRafaeli/ai_sast",
+      "description": "",
+      "language": "Ruby",
+      "stars": 46,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T08:18:44Z",
+      "updatedAt": "2026-11-09T14:59:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sellarafaeli-ai-sast-fbc4a7db.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 45,
+      "fullName": "freedeskdepot/valboost-lag-fixer",
+      "name": "valboost-lag-fixer",
+      "owner": "freedeskdepot",
+      "url": "https://github.com/freedeskdepot/valboost-lag-fixer",
+      "description": "Small Windows tool that clears input lag and frame spikes before a Valorant session. One zip, no installer.",
+      "language": "Rust",
+      "stars": 45,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [
+        "fps",
+        "gaming-tools",
+        "input-lag",
+        "latency",
+        "optimizer",
+        "rust",
+        "valorant",
+        "windows"
+      ],
+      "createdAt": "2026-11-09T07:15:30Z",
+      "updatedAt": "2026-11-10T06:55:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "freedeskdepot-valboost-lag-fixer-09e9ed38.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "Starzigather/fortnite-pirate-treasure",
+      "name": "fortnite-pirate-treasure",
+      "owner": "Starzigather",
+      "url": "https://github.com/Starzigather/fortnite-pirate-treasure",
+      "description": "Squad planner for chest routes: split the island four ways, catch every Treasure Hour alert in your time zone.",
+      "language": "Rust",
+      "stars": 45,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [
+        "alerts",
+        "desktop",
+        "fan-tool",
+        "fortnite",
+        "routes",
+        "rust",
+        "squad-planner",
+        "time-zones"
+      ],
+      "createdAt": "2026-11-09T07:21:52Z",
+      "updatedAt": "2026-11-10T06:58:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "starzigather-fortnite-pirate-treasure-0eccdf42.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "jyotiprakash101/nuvio-badge-kit",
+      "name": "nuvio-badge-kit",
+      "owner": "jyotiprakash101",
+      "url": "https://github.com/jyotiprakash101/nuvio-badge-kit",
+      "description": "The complete stream badge pack for Nuvio and Fusion: 261 badges in 5 styles. Gold Hero badges for REMUX, 4K, Dolby Vision and Atmos; red warnings for CAM and bad copies; 83 languages in their native script; 46 streaming services; Live TV. Original art, tested regex, lightweight WebP.",
+      "language": "Python",
+      "stars": 44,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-09T13:43:51Z",
+      "updatedAt": "2026-11-10T06:23:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jyotiprakash101-nuvio-badge-kit-53b60739.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "HyperaebaseAlpha/infamous2-pc-respocket",
+      "name": "infamous2-pc-respocket",
+      "owner": "HyperaebaseAlpha",
+      "url": "https://github.com/HyperaebaseAlpha/infamous2-pc-respocket",
+      "description": "inFAMOUS 2 native PC port: PS3 static recompilation to Linux, Vulkan renderer, up to 4K, unlocked fps, no emulator. Bring your own disc.",
+      "language": "HTML",
+      "stars": 41,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "arm64",
+        "decompilation",
+        "dlss",
+        "emulator",
+        "game-porting",
+        "game-preservation",
+        "infamous",
+        "infamous-2"
+      ],
+      "createdAt": "2026-11-09T09:45:45Z",
+      "updatedAt": "2026-11-09T13:20:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 49,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 371693,
+      "forks": 45692,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-10T06:48:27Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 320044,
+      "forks": 26798,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-10T07:07:21Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 51,
+      "fullName": "affaan-m/ECC",
+      "name": "ECC",
+      "owner": "affaan-m",
+      "url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 300360,
+      "forks": 44347,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "createdAt": "2026-01-18T00:51:51Z",
+      "updatedAt": "2026-11-10T07:05:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "affaan-m-ecc-c8b1425e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "practical-tutorials/project-based-learning",
+      "name": "project-based-learning",
+      "owner": "practical-tutorials",
+      "url": "https://github.com/practical-tutorials/project-based-learning",
+      "description": "Curated list of project-based tutorials",
+      "language": "Python",
+      "stars": 289445,
+      "forks": 36833,
+      "starsToday": 0,
+      "topics": [
+        "beginner-project",
+        "cpp",
+        "golang",
+        "javascript",
+        "project",
+        "python",
+        "tutorial",
+        "webdevelopment"
+      ],
+      "createdAt": "2017-04-12T05:07:46Z",
+      "updatedAt": "2026-11-10T07:07:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "practical-tutorials-project-based-learning-532d5b87.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252469,
+      "forks": 52103,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-10T07:06:32Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "ossu/computer-science",
+      "name": "computer-science",
+      "owner": "ossu",
+      "url": "https://github.com/ossu/computer-science",
+      "description": "🎓 Path to a free self-taught education in Computer Science!",
+      "language": "HTML",
+      "stars": 211055,
+      "forks": 26127,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "computer-science",
+        "courses",
+        "curriculum"
+      ],
+      "createdAt": "2014-05-04T00:18:39Z",
+      "updatedAt": "2026-11-10T07:07:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ossu-computer-science-368e1467.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "ohmyzsh/ohmyzsh",
+      "name": "ohmyzsh",
+      "owner": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "description": "🙃 A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up wi",
+      "language": "Shell",
+      "stars": 190406,
+      "forks": 27276,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "cli-app",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins"
+      ],
+      "createdAt": "2009-08-28T18:15:37Z",
+      "updatedAt": "2026-11-10T07:05:40Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ohmyzsh-ohmyzsh-0d67c47d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "CyC2018/CS-Notes",
+      "name": "CS-Notes",
+      "owner": "CyC2018",
+      "url": "https://github.com/CyC2018/CS-Notes",
+      "description": ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计",
+      "language": "JavaScript",
+      "stars": 186469,
+      "forks": 50640,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "computer-science",
+        "cpp",
+        "interview",
+        "java",
+        "leetcode",
+        "python",
+        "system-design"
+      ],
+      "createdAt": "2018-02-13T14:56:24Z",
+      "updatedAt": "2026-11-10T06:58:37Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "cyc2018-cs-notes-9b48ee3d.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "github/gitignore",
+      "name": "gitignore",
+      "owner": "github",
+      "url": "https://github.com/github/gitignore",
+      "description": "A collection of useful .gitignore templates",
+      "language": "",
+      "stars": 176300,
+      "forks": 82017,
+      "starsToday": 0,
+      "topics": [
+        "git",
+        "gitignore"
+      ],
+      "createdAt": "2010-11-08T20:17:14Z",
+      "updatedAt": "2026-11-10T05:38:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-gitignore-07244a5f.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "msitarzewski/agency-agents",
+      "name": "agency-agents",
+      "owner": "msitarzewski",
+      "url": "https://github.com/msitarzewski/agency-agents",
+      "description": "A complete AI agency at your fingertips - From frontend wizards to Reddit community ninjas, from whimsy injectors to reality checkers. Each agent is a specialized expert with personality, processes, and proven deliverables.",
+      "language": "Shell",
+      "stars": 167543,
+      "forks": 27165,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2025-10-13T12:12:29Z",
+      "updatedAt": "2026-11-10T06:49:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "msitarzewski-agency-agents-1798a34a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "Genymobile/scrcpy",
+      "name": "scrcpy",
+      "owner": "Genymobile",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "description": "Display and control your Android device",
+      "language": "C",
+      "stars": 154458,
+      "forks": 14176,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "c",
+        "ffmpeg",
+        "genyteam-system",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen"
+      ],
+      "createdAt": "2017-11-21T18:00:27Z",
+      "updatedAt": "2026-11-10T06:48:21Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "genymobile-scrcpy-2a59cd95.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 145168,
+      "forks": 13899,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-10T07:06:01Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    }
+  ]
+}
