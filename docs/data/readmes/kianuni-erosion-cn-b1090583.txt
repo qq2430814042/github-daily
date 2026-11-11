@@ -1,0 +1,92 @@
+Erosion-CN
+
+  基于 worse_query 的 iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）
+
+  支持 iOS / iPadOS 27.0 – 27.2 / 27.3 beta 1（完整支持）以及 iOS / iPadOS 26.x（部分支持）。
+
+项目简介与核心改进
+
+Erosion-CN 分支衍生自官方上游项目 jailbreakdotparty/Erosion，完成了 100% 简体中文界面本地化，修复了原版多项严重真机 Bug，并进行了系统级防白苹果安全加固与底层能力扩展：
+
+1. 修复重启后修改自动失效还原（反弹回原厂状态）的严重 Bug
+   - 原版在未手动切换过设置开关时，mgWriteAtomically 默认返回 false，导致实际走了临时文件替换（replaceItemAt），破坏了系统缓存文件的 Inode 与 _mobilegestalt POSIX 属主权限，设备一重启即被系统丢弃重建；同时原版在 iOS 27 上额外注入了非缓存键 RegionInfo（zHeENZu+wbg7PUprwNwBWg），触发开机缓存合法性校验整包重置。
+   - 本分支已默认强制锁定原位覆盖写入，严格遵循 iOS 27 原厂缓存键结构，并自动匹配写入对应机型的监管型号（RegulatoryModelNumber），真正做到持久化生效、重启不反弹。
+2. 修复内置 Plist 编辑器破坏布尔值与相机浮点参数导致「相机黑屏」的严重 Bug
+   - 原版 PlistManager 将 CFBoolean（` / ）以及整数值 Double（如相机变焦倍率 1.0、2.0、5.0 等）误判转换为了  整型，导致编辑保存 MobileGestalt` 后系统相机取景直接黑屏。
+   - 本分支改用 CFBooleanGetTypeID() 与 CFNumberIsFloatType() 精确识别底层 CoreFoundation 类型，保留原始 Plist 根类型与编码格式，并对未修改项执行 100% 原样无损直通（Lossless Pass-through），彻底解决相机黑屏问题。
+3. 零 0 字节窗口原位写入协议（pwrite + 按需尾截断 + F_FULLFSYNC）
+   - 重构底层文件 I/O：不再先执行 ftruncate(fd, 0) 清空系统文件，而是直接从偏移 0 原位覆盖写入、写完后按需裁剪尾部，并调用 fcntl(fd, F_FULLFSYNC) 强制刷新 APFS 与物理闪存缓存，断电或异常中断绝不留空文件。
+4. 写入前变更对比预览（Diff Preview）+ 写后全量读回校验与自动回滚
+   - 点击「应用」时逐条展示所有待修改键值与十六进制槽位对比（修改前 → 修改后）；
+   - 写入前自动保存 PreApplyGestalt.plist 快照，写入后立即从磁盘读回并做二进制 Plist 反序列化与严格类型校验，一旦出现任何不一致立即自动原位回滚。
+5. 本机 libMobileGestalt.dylib 运行时动态偏移解析（零硬编码）
+   - 在设备运行时只读扫描内存中加载的 /usr/lib/libMobileGestalt.dylib 查询描述符表，实时计算当前机型与当前系统版本的 CacheUUID、总槽位数及布尔槽位偏移（green-tea、not-green-tea、wapi）；
+   - 严格多重校验门控：仅当本机 CacheUUID 唯一匹配、总长度精确等于 槽位数 × 9、有效位 validity == 1、8 字节槽位填充全为 0 且无任何无关字节变动时才允许修改；解析未通过时自动锁定开关并拦截写入。
+6. 双重原厂金库备份（跨卸载重装不丢备份）、四重指纹防呆与一键恢复原机出厂参数
+   - 沙盒 + 系统安全金库双冗余备份：生成原始备份 OriginalGestalt.plist 时同步计算 SHA-256 摘要并镜像锁定至系统级共享容器安全金库（标记 isExcludedFromBackup = true 防换机污染）——即使侧载证书过期卸载重装应用，也能自动无损找回最初未修改的原厂备份，并支持手动导入/导出外部 .plist 备份及首次备份脏状态检测；
+   - 全模块一键恢复原机出厂参数：主页与 MobileGestalt 页顶均内置「一键恢复原机出厂参数」，强制核对 SHA-256、CacheVersion、CacheUUID、CacheData 长度与真实内核硬件 ProductType，同步清空本地自定义开关残留、锁屏文字/铭牌、伪监管文件与拨号盘缓存；跨 iOS 版本 OTA 升级拦截时可直接一键联动「重建系统纯净原厂缓存」。
+7. 重签证书 App Group 自动探测与高危软砖项拆除
+   - 运行时通过 SecTaskCopyValueForEntitlement 与纯 Swift Mach-O LC_CODE_SIGNATURE 签名段解析自动匹配任意重签工具注入的可用 group.* 容器；
+   - 默认移除并拦截上游版本中存在软砖/无限设置向导隐患的高危功能（如 iPhone 正则盲改切片的 iPadOS 模式、个人零售设备的监管模式开关、非缓存键注入等）。
+8. 完善机型适配、iOS 27 进阶 AI 能力解锁与实用工具优化
+   - 补全 iPhone 15 / 16 / 17 / Air / 18 / Duo 全系列及 M 系列 iPad 监管型号映射与硬件特征表，修复原版“80% 充电上限”与“开机提示音”硬件判断互换笔误及自定义键值恒写入 true 的 Bug；
+   - Apple 智能子能力打包与 iOS 27 进阶 AI 解锁：「启用 Apple 智能开关」自动联动解锁旧机型缺失的相册「消除」(Clean Up) 与备忘录「手写体合成」能力；常驻展示 「解锁 iOS 27 进阶 AI 能力 测试特性]」 开关，实时检测本机系统库与原厂 CacheData 槽位状态，按需解锁个人实时翻译 (Personal Translator) 与 iOS 27 音频智能 (Audio Intelligence)（原厂已开启机型自动显示原生锁定保护，早期 27.0 未内置槽位的固件也会明确标注）；
+   - 新增 iOS 26/27「液态玻璃低功耗渲染（省电模式）」开关与机型外层描述同步；
+   - 修复文件浏览器搜索栏失效与失焦清空问题，采用 stat() 动态探测本机实时最大 Inode 基线配合 pathleak 加速容器扫描（并为动态壁纸与拨号盘页面加入异步加载进度动画），同时新增核心缓存目录 0 秒一键直达入口；
+9. 新增应用存档管理与容器缓存清理模块（v0.6.0）
+   - 应用与游戏存档备份、还原与修改器 (AppDataBackupView)：自动扫描本机第三方应用与单机游戏容器，支持一键将 Documents 与 Library/Preferences 打包备份为 .zip、导出分享、跨重装自动匹配最新容器 UUID 原位还原存档，并支持一键跳入存档目录调用内置无损 Plist/文本编辑器修改；
+   - 容器级缓存扫描与清理 (CacheCleanerView)：专治 iOS「系统数据（其他）」暴涨，按体积排行展示各应用容器的 Library/Caches 与 tmp 可释放空间，支持单应用或批量一键清理（严格保护 Documents、聊天记录数据库与登录态）。
+10. 新增真机底层生效核验探针、Apple 智能四要素一键体检、影像/健康硬件槽位解锁与全链路沙盒审计加固（v0.7.2）
+    - 真机 MobileGestalt 底层生效核验与动态槽位实时探针 (MGInspectorView)：纯只读调用系统库 MGCopyAnswer 实时读取当前真机生效值，并与 OriginalGestalt.plist 原厂备份、当前 CacheData / CacheExtra 待写配置进行三源同屏对比；同时提供本机全量 720+ 个二进制 CacheData 槽位的动态解析检索与自由键名实时探针；
+    - Apple 智能 (Apple Intelligence) 激活四要素一键体检面板 (AppleIntelligenceCheckupCard)：实时聚合核验「销售地区 LL/LL/A」、「美版监管型号 Axxxx（基于真实主板型号防伪装误判）」、「端侧 AI 芯片准入」及「系统实时生效回读」，并在原生 AI 机型上自动锁定 InternalInstall 互斥开关，支持一键自动配齐全部缺失项；
+    - 影像与健康进阶能力解锁（CacheData 二进制硬件槽位直写）：针对 libMobileGestalt.dylib 中 _MGCacheSetValueForKey 的 validity 短路机制（仅写 CacheExtra 会被系统直接忽略的硬件设备树属性），通过运行时动态槽位解析直接写入 CacheData，新增 相册与相机「混音 (Audio Mix)」、空间音频录制与 FaceTime 空间音频、按下快门瞬间抓拍 (Responsive Shutter) 与 健康「高血压趋势评估模式」 4 项开关，并内置本机原生硬件防降级保护锁；
+    - 全链路沙盒逃逸与文件编辑安全加固（v0.7.2）：修复内置 Plist 编辑器因 @Binding 原地变异导致保存回旧值的 Bug；重构 WorseQuerySwift 支持只读容器令牌保留（requireWrite: false），修复 System / AppGroup 容器浏览、容器排序重复扫描、符号链接类型识别、壁纸与拨号盘父容器授权、存档备份还原 xattr 核验与 Zip Slip 防护等 24 个文件的边界缺陷。
+11. 全量 MobileGestalt 槽位双写晋升、14 项底层硬件实验开关与 6 大跨容器系统模块（v0.8.0 测试特性）
+    - 14 项既有功能晋升 CacheData + CacheExtra 全量双写：将灵动岛、全天候显示、液态玻璃低功耗渲染、80% 充电上限、开机提示音、车祸检测、PWM 防频闪、相机控制键、操作按钮、轻点唤醒、台前调度等 14 项既有功能全面纳入运行时 CacheData 槽位双写表，彻底突破 _MGCacheSetValueForKey 槽位短路；
+    - 新增 14 项 [测试特性] 二进制 CacheData 硬件特性包（均经真机 libMobileGestalt.dylib 校验 slot >= 0, queryType == 11 且带原生硬件防降级锁）：日韩版真·相机快门静音（3 槽联动）、高低功耗双麦并发拾音（录音棚叠录底座）、相册局部光影重绘与新一代色调映射、超取景框捕获与 P3 广色域立体声视频、相机控制电容滑动变焦与触觉阻尼完整面板、旧机型显示电池循环次数与生产日期、户外高亮全天候显示与 Flipbook 帧缓冲、CarPlay Ultra 多屏车载协议、120Hz 触控采样事件投递、AirPods 临床听力均衡与低功耗助听器模式（3 槽联动）、睡眠呼吸暂停风险趋势检测、解除美版血氧软件专利限制、户外极限运动模式与日光照射监测、端侧 Siri Hub 路由与指令模型动态剪枝，并附「国行普通话来电询问 + 海外 Apple 智能」共存配置指南；
+    - 6 大跳出 MobileGestalt 的跨容器实验模块（[测试特性]）：
+      1. CSStore2 极速容器与中文应用名映射引擎 (CSStoreResolver / CSStoreEngine)：解析 LaunchServices "bdsl" 二进制数据库，` 操作前请务必通过电脑完整备份设备重要数据！修改系统底层配置存在潜在风险，仅供安全研究与学习交流，请仅在本人持有的设备上使用并自行承担风险。
+
+- iOS / iPadOS 27.0 – 27.2.1、27.3 beta 1（完整支持所有功能，包括 MobileGestalt 读取与安全写入）
+- iOS / iPadOS 26.0 – 26.7.2（部分支持：可使用锁屏壁纸、拨号键盘美化、锁屏底部签名文字与部分容器浏览；受底层沙盒限制，iOS 26 不支持写入系统 MobileGestalt）
+
+安装与签名要求
+
+本项目底层依赖至少一个有效的 App Group 容器权限。请使用支持保留或注入 App Group 的个人 Apple ID 自签工具（如 SideStore / AltStore / Feather / Sideloadly / Impactor / iLoader）或带 App Group 权限的开发者证书签名安装。
+
+1. 前往 [Releases 页面 下载最新的 Erosion_v0.8.0_zh-Hans.ipa。
+2. 使用上述签名工具安装至设备；首次运行可在「主页」日志确认已成功识别 App Group。
+3. 详细使用说明与原厂状态恢复教程请查阅：
+   - 📘 USAGE_GUIDE.md（安装与使用指南）
+   - 🔄 RESTORE_CHA.md（无损恢复出厂状态指南）
+
+常见问题与排障指南 (FAQ / Q&A)
+
+Q1：为什么打开了开关，eSIM 还是没生效？或者国行 18 Pro Max 改完后「添加 eSIM」反而消失了？
+请按以下 5 种情况逐一排查：
+1. 只点了「注销 (Respring)」，没有「手动关机重启」（最常见！）
+   「解除国行底层限制」修改的是二进制 CacheData（green-tea 槽位）。负责蜂窝基带与 eUICC 芯片的守护进程（CommCenter、ctkd）在注销桌面时不会重载缓存，甚至会因新旧区域参数半同步导致「添加 eSIM」入口临时隐藏。写入后必须手动滑动关机、等待黑屏后再按电源键开机（冷重启） 才会生效。
+2. 漏开了「解除国行底层限制 (eSIM / FaceTime 音频)」
+   必须将 「解除地区限制（国行 AI / 美版 LL/A）」 与下方的 「解除国行底层限制 (eSIM / FaceTime 音频)」 两个开关同时打开并冷重启；若只改了上方的 LL/A 而未解开下方的 green-tea 硬件锁，系统校验区域冲突反而会屏蔽 eSIM 菜单。
+3. 误开了「机型伪装 (ProductType)」或曾用其他改机工具盲改过缓存
+   原生 AI 机型严禁修改机型标识符（如把国行主板 iPhone19,7 强改成美版 iPhone19,3），否则基带校验失配会导致整个 eSIM 菜单消失。若之前被其他工具改坏，请点击 MobileGestalt 右上角 ⋯ →「清除并重建缓存」 并重启恢复纯净原厂基线，再重新只勾选上述两项开关。
+4. 在中国大陆境内扫码添加海外 eSIM 时提示“不支持 / 无法激活”
+   若「添加 eSIM」按钮已出现，但扫码瞬间被拦截，是系统激活时通过境内基站/定位触发了位置校验。扫码写卡时请开启 飞行模式 + 连接 Wi-Fi（挂全局海外代理）（必要时临时关闭 设置 → 隐私与安全性 → 定位服务 → 系统服务 中的「蜂窝网络搜索 / 无线局域网与蓝牙」），写卡成功后再恢复正常即可长期双待使用。
+5. 老款纯双实体卡槽国行机型的物理硬件限制
+   仅自带物理 eUICC 安全芯片的国行机型（如 国行 iPhone Air、内置物理 eSIM 的 iPhone 18 系列 等）支持解锁海外 eSIM 自由扫码；早期纯双实体 nano-SIM 卡槽且主板物理空焊 eUICC 芯片的常规国行机型属于硬件缺失，开启该开关仅用于解锁 FaceTime 音频（语音通话） 与 AI 区域准入，无法凭空生成物理 eSIM 芯片。
+
+Q2：需要开启「监管模式 (Supervision)」吗？以前别的工具留下的伪监管怎么清理？
+* 完全不需要，且严禁在个人零售设备上开启伪监管！ Erosion-CN 的所有解锁均直接安全作用于 MobileGestalt 缓存，零监管依赖。
+* 许多早期改机工具注入的伪造 CloudConfigurationDetails.plist 缺失合法的 MDM 证书链，一旦后续 OTA 升级系统，极易在开机激活向导卡死 403「远程管理」白屏死锁。你可随时进入本应用 功能修改 → 系统配置与监管 一键体检并安全清除伪监管残留（真实企业/教育 MDM 会被自动识别保护）。
+
+Q3：满血使用 Apple Intelligence + ChatGPT（同时保留国行普通话「询问来电原因」）怎么设地区和代理规则？
+* 系统语言与地区黄金组合（⚠️ 切勿将系统地区设为「美国」，否则会丢失中文普通话「询问来电原因」来电筛选！）：
+  1. 在 Erosion-CN 开启 「解除地区限制 (LL / LL/A)」+「解除国行底层限制」 并冷重启；
+  2. 设置 → 通用 → 语言与地区：地区改为「台湾」，首选语言第一项保持 「简体中文」；
+  3. 设置 → Apple 智能与 Siri：Siri 语言设为 「中文（普通话 - 中国大陆）」（若 ChatGPT 扩展偶发回复繁体，在 扩展 → ChatGPT 登录并在自定义指令写一句“始终使用简体中文回答”即可）。
+* 代理分流规则（Surge / Stash / Loon / Shadowrocket 通用铁律）：
+  1. Siri 核心域名必须 DIRECT 直连 + 真实 IP（严禁走代理或 Fake-IP）：将 guzzoni.apple.com、.siri.apple.com、dejavu.apple.com、sequoia.apple.com、.smoot.apple.com 设为 DIRECT，并在 Surge General] 中把 guzzoni.apple.com, *.guzzoni.apple.com, *.siri.apple.com 加入 skip-proxy 与 always-real-ip（否则 Siri 必报「碰到了一点问题」）；
+  2. 仅将 AI 准入与中继走低延迟美区节点：将 gspe1-ssl.ls.apple.com、apple-relay.apple.com、apple-relay.cloudflare.com、apple-relay.fastly-edge.com、apple-relay.akamaized.net、cp4.cloudflare.com 及 OpenAI 域名分流至低延迟美国节点（切勿屏蔽 apple-relay.* 的 UDP 443 QUIC 流量）；
+  3. 关闭冲突重写模块：硬件级改好 LL/A 后，请关闭 iRingo / NSRingo 的「定位」与「Siri」模块，防止 MitM 劫持导致断连；
+
+…（内容已截断）

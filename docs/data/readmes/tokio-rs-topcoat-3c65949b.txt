@@ -1,0 +1,212 @@
+The full full-stack framework for Rust
+
+crates-badge]: https://img.shields.io/crates/v/topcoat.svg?style=flat-square
+[crates-url]: https://crates.io/crates/topcoat
+[docs-badge]: https://img.shields.io/docsrs/topcoat?style=flat-square
+[docs-url]: https://docs.rs/topcoat/latest/topcoat
+[mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square
+[mit-url]: https://github.com/tokio-rs/topcoat/blob/main/LICENSE
+[actions-badge]: https://img.shields.io/github/actions/workflow/status/tokio-rs/topcoat/ci.yml?branch=main&style=flat-square
+[actions-url]: https://github.com/tokio-rs/topcoat/actions?query=workflow%3ACI+branch%3Amain
+[discord-badge]: https://img.shields.io/discord/500028886025895936.svg?logo=discord&style=flat-square
+[discord-url]: https://discord.gg/tokio
+
+Topcoat is a modular, batteries-included Rust framework for building full-stack apps. It prioritizes simplicity and productivity. See [Learn Topcoat to get started, or the Roadmap for what's coming next.
+
+Early-stage and experimental. Expect breaking changes.
+
+use topcoat::{
+    Result,
+    context::Cx,
+    router::{module_router, page},
+    view::{View, component, view},
+};
+
+#tokio::main]
+async fn main() {
+    topcoat::start(module_router!().build()).await.unwrap();
+}
+
+#[page]
+async fn home(cx: &Cx) -> Result {
+    Ok(view! {
+
+                hello(name: "World")
+
+    })
+}
+
+#[component]
+async fn hello(cx: &Cx, name: &str) -> Result {
+    Ok(view! { "Hello, " (name) "!"
+ })
+}
+
+What makes Topcoat different
+
+Client reactivity without the boilerplate
+
+Topcoat renders all markup on the server: components can be async and query the database directly, eliminating all the traditional boilerplate needed for a separate API layer. Interactivity does not have to cost a round-trip, though. A $(...) expression is ordinary type-checked Rust that Topcoat evaluates on the server for the initial render and also translates to JavaScript, so it re-runs instantly in the browser. No wasm bundle, no client build step:
+
+#[component]
+async fn faq(cx: &Cx) -> Result {
+    let open = signal(cx, || false);
+
+    Ok(view! {
+        // Runs entirely in the browser; no server round-trip.
+        "What is Topcoat?"
+        "A full-stack Rust framework."
+
+    })
+}
+
+When an update does need the server, like fresh search results, mark the component as a #[shard]. Topcoat re-renders it on the server whenever one of its $(...) arguments changes and swaps the new HTML in place:
+
+#[component]
+async fn search(cx: &Cx) -> Result {
+    let query = signal(cx, String::new);
+
+    Ok(view! {
+
+        // Updates as the user types.
+        search_results(query: $(query.get()))
+    })
+}
+
+#[shard]
+async fn search_results(cx: &Cx, query: String) -> Result {
+    Ok(view! {
+
+            // Your own server-side code, like a database query:
+            for product in search_products(cx, &query).await? {
+                (product.name)
+
+            }
+
+    })
+}
+
+Powerful, unsurprising HTML templates
+
+The view! macro stays true to HTML and Rust. Use familiar Rust control flow as part of your templates:
+
+view! {
+
+        for item in nav_items {
+
+                (item.label)
+
+        }
+
+}
+
+Use the topcoat fmt CLI command to automatically format view! snippets (and other macros) across your codebase.
+
+Module-based routing
+
+Topcoat can optionally infer your route tree from your app's module structure (without a build step):
+
+src/
+|-- app.rs              -> /            (and the root  layout)
+`-- app/
+    |-- about.rs        -> /about
+    |-- _marketing.rs                  (layout, no URL segment)
+    |-- _marketing/
+    |   `-- pricing.rs  -> /pricing
+    |-- posts.rs        -> /posts
+    |-- posts/
+    |   `-- id.rs       -> /posts/{post_id}
+    `-- api/
+        `-- health.rs   -> GET /api/health
+
+Premade components you can edit
+
+Topcoat UI is a component library based on [Tailwind inspired by shadcn/ui. Components are copied into your project via the topcoat ui CLI command, meaning you can freely change their design and functionality to fit your use case:
+
+#component]
+async fn delete_card(cx: &Cx) -> Result {
+    Ok(view! {
+        card(
+            card_header(
+                card_title("Delete workspace")
+                card_description(
+                    "This permanently removes the workspace and all of its data."
+                )
+            )
+            card_footer(
+                attrs: attributes! { class="justify-end" },
+                button(variant: ButtonVariant::Ghost, "Cancel")
+                button(variant: ButtonVariant::Destructive, "Delete workspace")
+            )
+        )
+    })
+}
+
+Asset bundling
+
+The bundler scans your compiled binary for asset! calls, copies (or even downloads) every file into a local asset directory, and allows Topcoat to serve them efficiently with aggressive browser caching.
+
+const FERRIS: Asset = asset!("./ferris.png");
+
+view! {  }
+
+Topcoat also ships with utilities for web fonts and icons, as well as easy integrations for [Fontsource (Google Fonts) and Iconify.
+
+Built-in Tailwind support
+
+Enable the tailwind feature to integrate Tailwind into your project:
+
+view! {  }
+
+Learn Topcoat
+
+Start here
+
+- Getting started: create an app with topcoat new and run the dev server.
+- Manual setup: add dependencies and wire up a minimal app yourself.
+- Source code formatting: topcoat fmt for macro bodies.
+
+Rendering
+- view! mixes HTML, Rust expressions, control flow, and component calls.
+- #[component] makes async functions callable from markup with named arguments and child content.
+- attributes! collects attributes to pass through components and spread onto elements.
+- class! joins base, optional, and conditional CSS classes.
+- suspense shows a fallback while content loads. error_boundary shows one if rendering fails.
+- live! and emit! replace part of a page as async work produces new HTML.
+
+Routing
+- Router: pages, layouts, and API routes; manual and auto-discovered.
+- Module-based routing: derive the route table from your module tree.
+- Linking to handlers: use href! for navigation links, form actions, and redirects.
+
+Working with requests
+- Context (Cx): read request data and values stored by type. Add shared values with the router builder's .with, or use cx.with to add a value for part of a request.
+- Memoization: #memoize] for per-request caching and fan-out dedup.
+- [Cookies: read and write the request cookie jar, with signed, encrypted, and prefixed cookies.
+- Sessions: bring-your-own-storage session authentication: login/logout lifecycle, sliding expiration, and token rotation.
+
+Asset system
+- Assets: declare assets in Rust, serve them with content-hashed URLs.
+- Fonts: bundle and serve web fonts.
+- Icons: download Iconify icon sets or declare your own.
+
+Client reactivity
+- The runtime: signals, $(...) expressions, @ event handlers, and : bind attributes.
+- Expressions: the dual Rust/JavaScript expression language and its vocabulary.
+- Procedures: async server functions callable from the browser.
+- Shards: components that re-render on the server when their arguments change.
+- Client-side navigation: links, prefetching, and navigation without a full document reload.
+
+Miscellaneous
+- Topcoat UI: premade components vendored into your project for you to edit.
+- Metadata: titles, descriptions, and link previews for search engines and social networks, set per layout and page.
+- Localization: choose the language for each request and display translations from Fluent files.
+- Mail: build mail with Mail::builder, deliver through SMTP, file, or in-memory transports.
+- OpenAPI: describe API routes where they are declared and generate an OpenAPI document from the router.
+
+Third-party integrations
+- Tailwind: Tailwind CSS without Node, wired into the asset pipeline.
+- htmx: drive partial HTML swaps from the server with request/response header helpers.
+- Alpine AJAX: drive partial HTML swaps from the server with Alpine AJAX's request-header conventions.
+
+…（内容已截断）

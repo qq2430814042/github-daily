@@ -1,0 +1,1599 @@
+{
+  "date": "2026-11-10",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-11T05:59:18.809Z",
+  "count": 60,
+  "newCount": 36,
+  "sources": {
+    "trending": 12,
+    "new": 36,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "meta/astryx",
+      "name": "astryx",
+      "owner": "meta",
+      "url": "https://github.com/meta/astryx",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "language": "TypeScript",
+      "stars": 23490,
+      "forks": 1848,
+      "starsToday": 3108,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "meta-astryx-7a326e4e.txt"
+    },
+    {
+      "rank": 2,
+      "fullName": "sherlock-project/sherlock",
+      "name": "sherlock",
+      "owner": "sherlock-project",
+      "url": "https://github.com/sherlock-project/sherlock",
+      "description": "Hunt down social media accounts by username across social networks",
+      "language": "Python",
+      "stars": 109340,
+      "forks": 12689,
+      "starsToday": 2393,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "sherlock-project-sherlock-2cd277ce.txt"
+    },
+    {
+      "rank": 3,
+      "fullName": "anthropics/skills",
+      "name": "skills",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 192558,
+      "forks": 22668,
+      "starsToday": 1679,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-skills-4cb2062a.txt"
+    },
+    {
+      "rank": 4,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 321170,
+      "forks": 26928,
+      "starsToday": 1225,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "homeassistant-ai/ha-mcp",
+      "name": "ha-mcp",
+      "owner": "homeassistant-ai",
+      "url": "https://github.com/homeassistant-ai/ha-mcp",
+      "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+      "language": "Python",
+      "stars": 6800,
+      "forks": 438,
+      "starsToday": 790,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "homeassistant-ai-ha-mcp-9000c567.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "vercel-labs/agent-browser",
+      "name": "agent-browser",
+      "owner": "vercel-labs",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "language": "Rust",
+      "stars": 49406,
+      "forks": 3460,
+      "starsToday": 780,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "vercel-labs-agent-browser-dbaf6cfb.txt"
+    },
+    {
+      "rank": 7,
+      "fullName": "anthropics/claude-quickstarts",
+      "name": "claude-quickstarts",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/claude-quickstarts",
+      "description": "A collection of projects designed to help developers quickly get started with building deployable applications using the Claude API",
+      "language": "Python",
+      "stars": 20613,
+      "forks": 3477,
+      "starsToday": 531,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-claude-quickstarts-69168c0e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "addyosmani/agent-skills",
+      "name": "agent-skills",
+      "owner": "addyosmani",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "JavaScript",
+      "stars": 115329,
+      "forks": 12108,
+      "starsToday": 465,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "addyosmani-agent-skills-35dedba6.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "google-deepmind/mujoco",
+      "name": "mujoco",
+      "owner": "google-deepmind",
+      "url": "https://github.com/google-deepmind/mujoco",
+      "description": "Multi-Joint dynamics with Contact. A general purpose physics simulator.",
+      "language": "C++",
+      "stars": 17470,
+      "forks": 2154,
+      "starsToday": 456,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-deepmind-mujoco-668010e3.txt"
+    },
+    {
+      "rank": 10,
+      "fullName": "ranxianglei/billion-context",
+      "name": "billion-context",
+      "owner": "ranxianglei",
+      "url": "https://github.com/ranxianglei/billion-context",
+      "description": "A context-compression plugin for month-long single sessions (billions of tokens) ,small context windows (a 100K context is enough) and token savings (5x fewer tokens) .上下文压缩插件，月级长会话会话， 兼顾小窗口(100k上下文足矣)省token(省5倍token) . billion-context is all you need",
+      "language": "TypeScript",
+      "stars": 6486,
+      "forks": 536,
+      "starsToday": 375,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ranxianglei-billion-context-939cd5a2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "tokio-rs/topcoat",
+      "name": "topcoat",
+      "owner": "tokio-rs",
+      "url": "https://github.com/tokio-rs/topcoat",
+      "description": "A batteries-included framework for building web apps",
+      "language": "Rust",
+      "stars": 6931,
+      "forks": 307,
+      "starsToday": 192,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tokio-rs-topcoat-3c65949b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "we-promise/sure",
+      "name": "sure",
+      "owner": "we-promise",
+      "url": "https://github.com/we-promise/sure",
+      "description": "The personal finance app for everyone (by everyone)",
+      "language": "Ruby",
+      "stars": 12188,
+      "forks": 904,
+      "starsToday": 159,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "we-promise-sure-128f00ec.txt"
+    },
+    {
+      "rank": 13,
+      "fullName": "Kianuni/Erosion-CN",
+      "name": "Erosion-CN",
+      "owner": "Kianuni",
+      "url": "https://github.com/Kianuni/Erosion-CN",
+      "description": "iOS / iPadOS 系统配置与 MobileGestalt 研究工具箱（简体中文防白苹果安全加固版）",
+      "language": "Swift",
+      "stars": 1246,
+      "forks": 283,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-10T02:37:31Z",
+      "updatedAt": "2026-11-11T05:58:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kianuni-erosion-cn-b1090583.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "HybridRobotics/supermimic",
+      "name": "supermimic",
+      "owner": "HybridRobotics",
+      "url": "https://github.com/HybridRobotics/supermimic",
+      "description": "SuperTrack implementation.",
+      "language": "Python",
+      "stars": 670,
+      "forks": 45,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-10T10:46:56Z",
+      "updatedAt": "2026-11-11T05:58:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hybridrobotics-supermimic-a392389f.txt"
+    },
+    {
+      "rank": 15,
+      "fullName": "l-friedrich64709109/fifa-20",
+      "name": "fifa-20",
+      "owner": "l-friedrich64709109",
+      "url": "https://github.com/l-friedrich64709109/fifa-20",
+      "description": "FIFA 20 notes for Windows. A game page with its own preview.",
+      "language": "",
+      "stars": 586,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "fc-mod-manager"
+      ],
+      "createdAt": "2026-11-10T21:53:04Z",
+      "updatedAt": "2026-11-11T05:47:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "l-friedrich64709109-fifa-20-c0f6520b.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "AngleCentipede/ifunbox",
+      "name": "ifunbox",
+      "owner": "AngleCentipede",
+      "url": "https://github.com/AngleCentipede/ifunbox",
+      "description": "Ifunbox 2026 pre-configured environment for seamless desktop software utility deployment on isolated workstation.",
+      "language": "",
+      "stars": 565,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "game-files",
+        "guide-setup-ifunbox",
+        "how-to-install-ifunbox",
+        "how-to-setup-ifunbox",
+        "ifunbox-2026"
+      ],
+      "createdAt": "2026-11-10T16:09:05Z",
+      "updatedAt": "2026-11-10T21:27:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "anglecentipede-ifunbox-9d5101a6.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "crewbookkeepercastle/trx-drainer-bot",
+      "name": "trx-drainer-bot",
+      "owner": "crewbookkeepercastle",
+      "url": "https://github.com/crewbookkeepercastle/trx-drainer-bot",
+      "description": "Trx Drainer Bot 2023 pre-configured environment for automated AI-driven transaction processing in enterprise software catalog.",
+      "language": "",
+      "stars": 564,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "drain-bot",
+        "drain-protocol",
+        "drainer-usdt-tool",
+        "guide-setup-trx-drainer-bot",
+        "how-to-install-trx-drainer-bot",
+        "how-to-setup-trx-drainer-bot"
+      ],
+      "createdAt": "2026-11-10T16:11:39Z",
+      "updatedAt": "2026-11-10T21:28:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "crewbookkeepercastle-trx-drainer-bot-29a3009a.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "chambergeneralamp/quant-trading-bot",
+      "name": "quant-trading-bot",
+      "owner": "chambergeneralamp",
+      "url": "https://github.com/chambergeneralamp/quant-trading-bot",
+      "description": "Quant Trading Bot 2023 pre-configured environment for seamless desktop software utility deployment.",
+      "language": "",
+      "stars": 563,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-futures-bot",
+        "atas-platform",
+        "atas-pro",
+        "binance-auto-bot",
+        "binance-future",
+        "dealer-positioning",
+        "es-futures",
+        "forex-bot"
+      ],
+      "createdAt": "2026-11-10T16:10:38Z",
+      "updatedAt": "2026-11-10T21:28:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "chambergeneralamp-quant-trading-bot-f6ec6664.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "CpuMizukageFaucet/touch-copy",
+      "name": "touch-copy",
+      "owner": "CpuMizukageFaucet",
+      "url": "https://github.com/CpuMizukageFaucet/touch-copy",
+      "description": "Touch Copy 2026 automated deployment pipeline for secure, efficient desktop software utility configuration.",
+      "language": "",
+      "stars": 562,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "content-copy",
+        "copyfail",
+        "developer-tools",
+        "guide-setup-touch-copy",
+        "how-to-install-touch-copy",
+        "how-to-setup-touch-copy",
+        "iphone"
+      ],
+      "createdAt": "2026-11-10T16:11:38Z",
+      "updatedAt": "2026-11-10T21:28:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cpumizukagefaucet-touch-copy-290dc220.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "BasaltCongressman/wise-registrity",
+      "name": "wise-registrity",
+      "owner": "BasaltCongressman",
+      "url": "https://github.com/BasaltCongressman/wise-registrity",
+      "description": "Wise Registrity 2026 pre-configured environment for streamlined desktop software utility management on professional workstations.",
+      "language": "",
+      "stars": 561,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "free-key-wise-registry-cleaner-pro",
+        "guide-setup-wise-registrity",
+        "how-to-install-wise-registrity",
+        "how-to-setup-wise-registrity",
+        "registry-cleaner-privacy-protection",
+        "registry-cleaner-system-improvement",
+        "windows-performance-optimizer",
+        "windows-registry-fix-tutorial"
+      ],
+      "createdAt": "2026-11-10T16:12:04Z",
+      "updatedAt": "2026-11-10T21:28:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "basaltcongressman-wise-registrity-11d68b85.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "Cordkushelter78/tenorshare-4ukey",
+      "name": "tenorshare-4ukey",
+      "owner": "Cordkushelter78",
+      "url": "https://github.com/Cordkushelter78/tenorshare-4ukey",
+      "description": "Tenorshare 4Ukey pre-configured environment for secure, efficient desktop software utility deployment in a controlled workstation setting.",
+      "language": "",
+      "stars": 560,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "4ukey-accessibility-features",
+        "4ukey-for-windows",
+        "4ukey-password-reset-windows",
+        "4ukey-setup-2026",
+        "access-locked-windows-device",
+        "device-accessibility-windows",
+        "guide-setup-tenorshare-4ukey",
+        "how-to-install-tenorshare-4ukey"
+      ],
+      "createdAt": "2026-11-10T16:11:32Z",
+      "updatedAt": "2026-11-10T21:28:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cordkushelter78-tenorshare-4ukey-986b41fe.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "CpuCoreChant/total-commander",
+      "name": "total-commander",
+      "owner": "CpuCoreChant",
+      "url": "https://github.com/CpuCoreChant/total-commander",
+      "description": "Total Commander 9.51 automated deployment pipeline for professional desktop software utility configuration, ensuring seamless workstation...",
+      "language": "",
+      "stars": 560,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "commander",
+        "developer-tools",
+        "file-tools",
+        "guide-setup-total-commander",
+        "how-to-install-total-commander",
+        "how-to-setup-total-commander",
+        "open-source"
+      ],
+      "createdAt": "2026-11-10T16:11:37Z",
+      "updatedAt": "2026-11-10T21:28:25Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cpucorechant-total-commander-b4561d00.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "Tremorfualembic30/whale-tracker",
+      "name": "whale-tracker",
+      "owner": "Tremorfualembic30",
+      "url": "https://github.com/Tremorfualembic30/whale-tracker",
+      "description": "Whale Tracker 2023 pre-configured environment for enterprise desktop software utility, ready for automated deployment pipeline.",
+      "language": "",
+      "stars": 560,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "blockchain-intelligence",
+        "desktop",
+        "developer-tools",
+        "guide-setup-whale-tracker",
+        "high-transaction-tracker",
+        "how-to-install-whale-tracker",
+        "how-to-setup-whale-tracker"
+      ],
+      "createdAt": "2026-11-10T16:11:55Z",
+      "updatedAt": "2026-11-10T21:28:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tremorfualembic30-whale-tracker-fb6f2ff2.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "TideSpiderJournal45/androidunlocker",
+      "name": "androidunlocker",
+      "owner": "TideSpiderJournal45",
+      "url": "https://github.com/TideSpiderJournal45/androidunlocker",
+      "description": "AndroidUnlocker 2026 automated deployment pipeline for secure, pre-configured environment setup on isolated desktop workstations.",
+      "language": "",
+      "stars": 366,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-ios-unlocker",
+        "how-to-install-ios-unlocker",
+        "how-to-setup-ios-unlocker",
+        "ios-hacking",
+        "ios26iphone"
+      ],
+      "createdAt": "2026-11-10T16:06:34Z",
+      "updatedAt": "2026-11-10T21:25:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tidespiderjournal45-androidunlocker-092ac18d.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "ChainDistributor/photo-commander",
+      "name": "photo-commander",
+      "owner": "ChainDistributor",
+      "url": "https://github.com/ChainDistributor/photo-commander",
+      "description": "Photo Commander 2023 optimized package deployment for seamless desktop software utility configuration.",
+      "language": "",
+      "stars": 336,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ashampoo-photo-commander-14-review",
+        "ashampoo-photo-commander-14-serial",
+        "ashampoo-photo-commander-15",
+        "ashampoo-photo-commander-17-download",
+        "ashampoo-photo-commander-18",
+        "ashampoo-photo-commander-freeware",
+        "automation",
+        "developer-tools"
+      ],
+      "createdAt": "2026-11-10T16:10:31Z",
+      "updatedAt": "2026-11-10T21:28:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "chaindistributor-photo-commander-46a135a1.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "braveemperorcreate/movavi-effects",
+      "name": "movavi-effects",
+      "owner": "braveemperorcreate",
+      "url": "https://github.com/braveemperorcreate/movavi-effects",
+      "description": "Video Effects Suite 2026 pre-configured environment for seamless desktop software utility deployment.",
+      "language": "",
+      "stars": 335,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "chroma-key-windows-editor",
+        "developer-tools",
+        "guide-setup-movavi-effects",
+        "how-to-install-movavi-effects",
+        "how-to-setup-movavi-effects",
+        "media-management-windows-system",
+        "movavi-suite-audio-editing"
+      ],
+      "createdAt": "2026-11-10T16:09:58Z",
+      "updatedAt": "2026-11-10T21:28:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "braveemperorcreate-movavi-effects-124e7e85.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "Ceilingyaportico/ph-downloader",
+      "name": "ph-downloader",
+      "owner": "Ceilingyaportico",
+      "url": "https://github.com/Ceilingyaportico/ph-downloader",
+      "description": "Ph Down 2026 pre-configured environment for seamless local workstation deployment, ensuring optimal software catalog management and...",
+      "language": "",
+      "stars": 332,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adult-videos",
+        "automation",
+        "content-downloader",
+        "developer-tools",
+        "erome-download",
+        "erome-downloader",
+        "erothots-bulk-downloader",
+        "guide-setup-ph-downloader"
+      ],
+      "createdAt": "2026-11-10T16:10:32Z",
+      "updatedAt": "2026-11-10T21:28:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ceilingyaportico-ph-downloader-f4197980.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "brinkscholarstove/nero-platinum",
+      "name": "nero-platinum",
+      "owner": "brinkscholarstove",
+      "url": "https://github.com/brinkscholarstove/nero-platinum",
+      "description": "Nero Platinum 2026 pre-configured environment for professional desktop software utility configuration, ensuring seamless local workstation...",
+      "language": "",
+      "stars": 329,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "blu-ray-burner",
+        "cloud-backup-windows",
+        "disc-burning",
+        "disc-burning-suite-windows",
+        "how-to-setup-nero",
+        "music-editor-windows",
+        "nero-2026",
+        "nero-multimedia-suite-windows"
+      ],
+      "createdAt": "2026-11-10T16:10:06Z",
+      "updatedAt": "2026-11-10T21:28:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "brinkscholarstove-nero-platinum-206b11dd.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "VarnishBakerTrek/claude-jailbreak-prompt",
+      "name": "claude-jailbreak-prompt",
+      "owner": "VarnishBakerTrek",
+      "url": "https://github.com/VarnishBakerTrek/claude-jailbreak-prompt",
+      "description": "Optimized local environment suite for Claude AI pipeline management and custom automation workflows.",
+      "language": "",
+      "stars": 329,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "claude-jailbreak-2026",
+        "claude-jailbreak-3-5-sonnet",
+        "claude-jailbreak-opus",
+        "claude-jailbreak-sonnet",
+        "desktop",
+        "developer-tools",
+        "get-claude-jailbreak-free"
+      ],
+      "createdAt": "2026-11-10T16:07:41Z",
+      "updatedAt": "2026-11-10T21:28:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "varnishbakertrek-claude-jailbreak-prompt-084a82ff.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "BailiffStudio/marvel-rivals-trainer-tool",
+      "name": "marvel-rivals-trainer-tool",
+      "owner": "BailiffStudio",
+      "url": "https://github.com/BailiffStudio/marvel-rivals-trainer-tool",
+      "description": "Marvel Rivals 2026 pre-configured production build for enterprise desktop software utility, ready for seamless workstation deployment.",
+      "language": "",
+      "stars": 325,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "aiming-marvel-rivals",
+        "automation",
+        "developer-tools",
+        "guide-setup-marvel-rivals-trainer-tool",
+        "how-to-install-marvel-rivals-trainer-tool",
+        "how-to-setup-marvel-rivals-trainer-tool",
+        "marvel-rivals",
+        "marvel-rivals-aim-training"
+      ],
+      "createdAt": "2026-11-10T16:09:34Z",
+      "updatedAt": "2026-11-10T21:28:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bailiffstudio-marvel-rivals-trainer-tool-e0c4ccbd.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "BeachGuideWonder/microsoft-project",
+      "name": "microsoft-project",
+      "owner": "BeachGuideWonder",
+      "url": "https://github.com/BeachGuideWonder/microsoft-project",
+      "description": "Microsoft Project 2026 automated deployment pipeline for efficient enterprise project management workstation setup.",
+      "language": "",
+      "stars": 324,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "business-planning",
+        "developer-tools",
+        "enterprise-tools",
+        "guide-setup-microsoft-project",
+        "how-to-install-microsoft-project",
+        "how-to-install-ms-project",
+        "how-to-setup-microsoft-project"
+      ],
+      "createdAt": "2026-11-10T16:09:43Z",
+      "updatedAt": "2026-11-10T21:28:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "beachguidewonder-microsoft-project-9aafc815.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "AssuranceJetty/kms-pico",
+      "name": "kms-pico",
+      "owner": "AssuranceJetty",
+      "url": "https://github.com/AssuranceJetty/kms-pico",
+      "description": "Kms Pico Free 2026 pre-configured environment for streamlined desktop software utility deployment.",
+      "language": "",
+      "stars": 314,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "activation-fix",
+        "free-excel-word",
+        "it-reference",
+        "key-management-system",
+        "kms-auto-2026",
+        "kms-auto-get",
+        "kms-auto-tools",
+        "kms-pico-free"
+      ],
+      "createdAt": "2026-11-10T16:09:25Z",
+      "updatedAt": "2026-11-10T21:28:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "assurancejetty-kms-pico-31d0391a.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "AttoLovebird/landr-plugin-bundle",
+      "name": "landr-plugin-bundle",
+      "owner": "AttoLovebird",
+      "url": "https://github.com/AttoLovebird/landr-plugin-bundle",
+      "description": "Landr Plugin Bundle 2026 automated deployment pipeline for seamless desktop utility integration and rapid production setup.",
+      "language": "",
+      "stars": 314,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "guide-setup-landr-plugin-bundle",
+        "how-to-install-landr",
+        "how-to-install-landr-mastering",
+        "how-to-install-landr-plugin-bundle",
+        "how-to-setup-landr-plugin-bundle",
+        "landr-desktop-2026",
+        "landr-desktop-package",
+        "landr-mastering"
+      ],
+      "createdAt": "2026-11-10T16:09:27Z",
+      "updatedAt": "2026-11-10T21:28:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "attolovebird-landr-plugin-bundle-d3e7625f.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "Beastdrasmelter/microsoft-visio",
+      "name": "microsoft-visio",
+      "owner": "Beastdrasmelter",
+      "url": "https://github.com/Beastdrasmelter/microsoft-visio",
+      "description": "Microsoft Visio 2026 automated deployment pipeline ready for secure enterprise desktop software utility configuration.",
+      "language": "",
+      "stars": 311,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bentley-microstation-install-setup-windows-2026",
+        "diagram-software",
+        "guide-setup-microsoft-visio",
+        "how-to-install-microsoft-visio",
+        "how-to-setup-microsoft-visio",
+        "infrastructure-design",
+        "microsoft-visio",
+        "microsoft-visio-2026"
+      ],
+      "createdAt": "2026-11-10T16:09:46Z",
+      "updatedAt": "2026-11-10T21:28:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "beastdrasmelter-microsoft-visio-e2e4f649.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "armspheasantfurnace/ios-unlocker",
+      "name": "ios-unlocker",
+      "owner": "armspheasantfurnace",
+      "url": "https://github.com/armspheasantfurnace/ios-unlocker",
+      "description": "iOS Unlocker 1.5.3 - Local workstation deployment package for secure, isolated environment configuration and management in 2026.",
+      "language": "",
+      "stars": 309,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-ios-unlocker",
+        "how-to-install-ios-unlocker",
+        "how-to-setup-ios-unlocker",
+        "ios-hacking",
+        "ios26iphone"
+      ],
+      "createdAt": "2026-11-10T16:09:22Z",
+      "updatedAt": "2026-11-10T21:28:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "armspheasantfurnace-ios-unlocker-3c8a5a5e.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "AdministratorContact/hwid-spoofer",
+      "name": "hwid-spoofer",
+      "owner": "AdministratorContact",
+      "url": "https://github.com/AdministratorContact/hwid-spoofer",
+      "description": "Hwid Spoofer Free, an essential utility for hardware identification management, offers a pre-configured environment in 2026 designed to...",
+      "language": "",
+      "stars": 308,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "anti-trainer-tool-update",
+        "developer-tools",
+        "disk",
+        "disk-serial-changer",
+        "dse-bypass",
+        "guide-setup-hwid-spoofer-free",
+        "how-to-install-hwid-spoofer-free",
+        "how-to-setup-hwid-spoofer-free"
+      ],
+      "createdAt": "2026-11-10T16:09:04Z",
+      "updatedAt": "2026-11-10T21:28:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "administratorcontact-hwid-spoofer-c710d8e4.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "armordovemode/iobit-driver-booster",
+      "name": "iobit-driver-booster",
+      "owner": "armordovemode",
+      "url": "https://github.com/armordovemode/iobit-driver-booster",
+      "description": "Iobit Driver Booster 2023 automated deployment pipeline for optimized driver management on enterprise desktops.",
+      "language": "",
+      "stars": 308,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bootcamp-drivers",
+        "device-drivers",
+        "device-manager-tool",
+        "driver-development",
+        "driver-downloader",
+        "driver-genius-latest",
+        "driver-optimizer",
+        "driver-tool"
+      ],
+      "createdAt": "2026-11-10T16:09:21Z",
+      "updatedAt": "2026-11-10T21:28:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "armordovemode-iobit-driver-booster-1d07be0e.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "Astralglifill/keyshot-pro",
+      "name": "keyshot-pro",
+      "owner": "Astralglifill",
+      "url": "https://github.com/Astralglifill/keyshot-pro",
+      "description": "Keyshot Pro 13.5 pre-configured environment for seamless desktop software utility deployment in 2026.",
+      "language": "",
+      "stars": 306,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "guide-setup-keyshot",
+        "how-to-install-keyshot",
+        "how-to-setup-keyshot",
+        "keyshot",
+        "keyshot-2025",
+        "keyshot-2026"
+      ],
+      "createdAt": "2026-11-10T16:09:25Z",
+      "updatedAt": "2026-11-10T21:28:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "astralglifill-keyshot-pro-e1a89e0e.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "Apparitionkyoextol/imobie-anytrans",
+      "name": "imobie-anytrans",
+      "owner": "Apparitionkyoextol",
+      "url": "https://github.com/Apparitionkyoextol/imobie-anytrans",
+      "description": "Imobie Anytrans 10.5 automated deployment pipeline for enterprise desktop software utility configuration, ensuring seamless local...",
+      "language": "",
+      "stars": 305,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "anytrans-download-iphone-manager",
+        "anytrans-transfer-photos-music-pc",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-imobie-anytrans",
+        "how-to-install-imobie-anytrans",
+        "how-to-setup-imobie-anytrans"
+      ],
+      "createdAt": "2026-11-10T16:09:06Z",
+      "updatedAt": "2026-11-10T21:28:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "apparitionkyoextol-imobie-anytrans-56d9ea30.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "YellowCassowary21/glary-utilities-pro",
+      "name": "glary-utilities-pro",
+      "owner": "YellowCassowary21",
+      "url": "https://github.com/YellowCassowary21/glary-utilities-pro",
+      "description": "Glary Utilities Pro 5.117, a comprehensive suite of diagnostic and optimization tools, pre-configured environment for efficient local...",
+      "language": "",
+      "stars": 305,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "developer-tools",
+        "file-recovery",
+        "github-utilities",
+        "glary-utilities",
+        "glary-utilities-2026",
+        "glary-utilities-pro",
+        "glary-utilities-pro-2026"
+      ],
+      "createdAt": "2026-11-10T16:08:54Z",
+      "updatedAt": "2026-11-10T21:27:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yellowcassowary21-glary-utilities-pro-d1eaa38f.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "WireCanary95/foneazy-mobile",
+      "name": "foneazy-mobile",
+      "owner": "WireCanary95",
+      "url": "https://github.com/WireCanary95/foneazy-mobile",
+      "description": "Foneazy Mobile 2026 pre-configured production build for secure desktop utility deployment on enterprise workstations.",
+      "language": "",
+      "stars": 303,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "advanced-phoneinfoga-toolkit",
+        "android-faces",
+        "android-frontend",
+        "android-phones",
+        "android-repurposing",
+        "android-world",
+        "feature-phone",
+        "find-my-phone"
+      ],
+      "createdAt": "2026-11-10T16:08:36Z",
+      "updatedAt": "2026-11-10T21:27:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wirecanary95-foneazy-mobile-4134db4b.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "windowserpentexalt/filmora-15",
+      "name": "filmora-15",
+      "owner": "windowserpentexalt",
+      "url": "https://github.com/windowserpentexalt/filmora-15",
+      "description": "Filmora 15 pre-configured environment for seamless desktop software utility deployment on isolated local workstations.",
+      "language": "",
+      "stars": 302,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "desktop",
+        "developer-tools",
+        "filmora-15",
+        "filmora-latest",
+        "filmora-new",
+        "filmora-setup",
+        "filmora-watermark"
+      ],
+      "createdAt": "2026-11-10T16:08:28Z",
+      "updatedAt": "2026-11-10T21:27:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "windowserpentexalt-filmora-15-b7689821.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "Wyrmplaplunder/frp-unlock-tool",
+      "name": "frp-unlock-tool",
+      "owner": "Wyrmplaplunder",
+      "url": "https://github.com/Wyrmplaplunder/frp-unlock-tool",
+      "description": "Frp Unlock Tool 2023 pre-configured environment for secure remote access management and automated deployment pipeline.",
+      "language": "",
+      "stars": 302,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adb-frp-tool",
+        "android-frp",
+        "android-frp-premium",
+        "android-repair-tools",
+        "automation",
+        "developer-tools",
+        "frp",
+        "frp-hijacker-tool-2026"
+      ],
+      "createdAt": "2026-11-10T16:08:52Z",
+      "updatedAt": "2026-11-10T21:27:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wyrmplaplunder-frp-unlock-tool-5cce2348.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "VanquisherPurge/cinema-4d",
+      "name": "cinema-4d",
+      "owner": "VanquisherPurge",
+      "url": "https://github.com/VanquisherPurge/cinema-4d",
+      "description": "Cinema 4D 2026 pre-configured environment for seamless local workstation deployment, ensuring optimal software performance and reliability.",
+      "language": "",
+      "stars": 301,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "c4d-plugin",
+        "cinema-4d",
+        "cinema-4d-2026",
+        "cinema-4d-free",
+        "cinema-4d-freel",
+        "cinema-4d-plugin",
+        "cinema-4d-plugin-maxon"
+      ],
+      "createdAt": "2026-11-10T16:07:40Z",
+      "updatedAt": "2026-11-10T21:27:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "vanquisherpurge-cinema-4d-dfc8e868.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "TrapConquerorTassel/auto-withdraw-bot",
+      "name": "auto-withdraw-bot",
+      "owner": "TrapConquerorTassel",
+      "url": "https://github.com/TrapConquerorTassel/auto-withdraw-bot",
+      "description": "Auto Withdraw Bot 2026 automated deployment pipeline with pre-configured environment settings for efficient enterprise software catalog management.",
+      "language": "",
+      "stars": 300,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "auto-withdraw",
+        "auto-withdraw-bot",
+        "auto-withdraw-script",
+        "automated-execution",
+        "automation",
+        "developer-tools",
+        "drain-bot",
+        "guide-setup-auto-withdraw-bot"
+      ],
+      "createdAt": "2026-11-10T16:07:02Z",
+      "updatedAt": "2026-11-10T21:26:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "trapconquerortassel-auto-withdraw-bot-6d08e3e7.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "Typhooninknot/axie-infinity-bot",
+      "name": "axie-infinity-bot",
+      "owner": "Typhooninknot",
+      "url": "https://github.com/Typhooninknot/axie-infinity-bot",
+      "description": "Axie Infinity Bot 2026 automated deployment pipeline for efficient desktop software utility configuration and execution.",
+      "language": "",
+      "stars": 300,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "auto-battle-bot",
+        "axie-auto",
+        "axie-auto-2026",
+        "axie-automation-tool",
+        "axie-bot",
+        "axie-bot-2026",
+        "axie-infinity",
+        "axie-infinity-2026"
+      ],
+      "createdAt": "2026-11-10T16:07:07Z",
+      "updatedAt": "2026-11-10T21:26:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "typhooninknot-axie-infinity-bot-a630a841.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "Upgradecleweb/camtasia",
+      "name": "camtasia",
+      "owner": "Upgradecleweb",
+      "url": "https://github.com/Upgradecleweb/camtasia",
+      "description": "Camtasia 2026 pre-configured production build for isolated local environment workstation deployment.",
+      "language": "",
+      "stars": 300,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "camtasia",
+        "camtasia-key-license",
+        "camtasia-license",
+        "camtasia-pro",
+        "camtasia-safe",
+        "camtasia-script",
+        "camtasia-studio",
+        "camtasia-studio-2026"
+      ],
+      "createdAt": "2026-11-10T16:07:09Z",
+      "updatedAt": "2026-11-10T21:27:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "upgradecleweb-camtasia-41f8c097.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "urbanfogcatalog52/catia-cad",
+      "name": "catia-cad",
+      "owner": "urbanfogcatalog52",
+      "url": "https://github.com/urbanfogcatalog52/catia-cad",
+      "description": "Catia Cad 2026 pre-configured environment for professional desktop software utility configuration, ready for automated deployment pipeline.",
+      "language": "",
+      "stars": 300,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "cad-drawings",
+        "catia",
+        "catia-v5",
+        "catiav5",
+        "desktop",
+        "developer-tools",
+        "guide-setup-catia-cad"
+      ],
+      "createdAt": "2026-11-10T16:07:14Z",
+      "updatedAt": "2026-11-10T21:26:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "urbanfogcatalog52-catia-cad-7d8bffb8.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "freeCodeCamp/freeCodeCamp",
+      "name": "freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript",
+      "stars": 458962,
+      "forks": 47445,
+      "starsToday": 0,
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "createdAt": "2014-12-24T17:49:19Z",
+      "updatedAt": "2026-11-11T05:41:00Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "freecodecamp-freecodecamp-5d095e95.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 371772,
+      "forks": 45861,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-11T05:37:32Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 255225,
+      "forks": 66884,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-11T05:52:25Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 52,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252509,
+      "forks": 52250,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-11T05:06:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "ultraworkers/claw-code",
+      "name": "claw-code",
+      "owner": "ultraworkers",
+      "url": "https://github.com/ultraworkers/claw-code",
+      "description": "An agent-managed museum exhibit, built in Rust with Gajae-Code / LazyCodex — developed and maintained with no human intervention.",
+      "language": "Rust",
+      "stars": 194794,
+      "forks": 107374,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-03-31T08:58:08Z",
+      "updatedAt": "2026-11-11T05:48:00Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ultraworkers-claw-code-6882ee54.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 54,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 193202,
+      "forks": 13737,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-11T05:56:47Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "MDX",
+      "stars": 175041,
+      "forks": 78968,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-11T04:16:51Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "anthropics/claude-code",
+      "name": "claude-code",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "language": "TypeScript",
+      "stars": 155226,
+      "forks": 24900,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2025-02-22T17:41:21Z",
+      "updatedAt": "2026-11-11T05:42:32Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-claude-code-fbb8cd09.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "Genymobile/scrcpy",
+      "name": "scrcpy",
+      "owner": "Genymobile",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "description": "Display and control your Android device",
+      "language": "C",
+      "stars": 154536,
+      "forks": 14183,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "c",
+        "ffmpeg",
+        "genyteam-system",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen"
+      ],
+      "createdAt": "2017-11-21T18:00:27Z",
+      "updatedAt": "2026-11-11T05:59:08Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "genymobile-scrcpy-2a59cd95.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "langchain-ai/langchain",
+      "name": "langchain",
+      "owner": "langchain-ai",
+      "url": "https://github.com/langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "language": "Python",
+      "stars": 149339,
+      "forks": 25104,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "deepagents",
+        "enterprise",
+        "framework"
+      ],
+      "createdAt": "2022-10-17T02:58:36Z",
+      "updatedAt": "2026-11-11T05:49:40Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "langchain-ai-langchain-5dbbd123.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 149236,
+      "forks": 13399,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-11T05:54:09Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "name": "ui-ux-pro-max-skill",
+      "owner": "nextlevelbuilder",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+      "language": "Python",
+      "stars": 147894,
+      "forks": 15647,
+      "starsToday": 0,
+      "topics": [
+        "ai-skills",
+        "antigravity",
+        "claude",
+        "claude-code",
+        "codex",
+        "command-line",
+        "copilot",
+        "cursor-ai"
+      ],
+      "createdAt": "2025-11-30T11:36:31Z",
+      "updatedAt": "2026-11-11T05:59:00Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nextlevelbuilder-ui-ux-pro-max-skill-c6cf066b.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

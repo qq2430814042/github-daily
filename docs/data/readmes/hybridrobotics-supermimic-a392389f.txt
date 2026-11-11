@@ -1,0 +1,48 @@
+SuperMimic
+
+A SuperTrack
+implementation for training world models and policies to mimic motion data, built on mjlab.
+
+Setup
+
+Install uv:
+
+curl -LsSf https://astral.sh/uv/install.sh | sh
+
+Clone both repos as siblings:
+
+mkdir supermimic_ws && cd supermimic_ws
+git clone git@github.com:HybridRobotics/supermimic.git
+git clone git@github.com:kevinzakka/mjlab_research.git
+cd supermimic
+
+Usage
+
+Available task IDs:
+
+- SuperMimic-GenCoord-G1 — generalized coordinates representation
+- SuperMimic-MaxCoord-G1 — maximal coordinates representation
+
+Train a world model and policy:
+
+CUDA_VISIBLE_DEVICES= uv run src/supermimic/scripts/train.py \
+   --runner.run_name
+
+Play back a trained model:
+
+uv run src/supermimic/scripts/play.py \
+   --wandb-path
+
+Acknowledgements
+
+SuperMimic contains code inspired by these projects:
+
+- ControlVAE (BSD-3-Clause)
+- robotic_world_model (Apache-2.0)
+- DreamerV3 (MIT)
+
+License
+
+Copyright 2026 The SuperMimic Authors.
+
+Released under the Apache License 2.0.
