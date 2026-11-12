@@ -1,0 +1,139 @@
+A team of AI agents you chat with, each with its own screen on one cloud computer.
+
+  Hermes Agent runs the bots, Orgo gives them screens, Composio connects their apps, and xAI gives them a voice and research on X.
+
+  What you get ·
+  How it works ·
+  Install ·
+  Run locally ·
+  Architecture ·
+  Limits
+
+Give a bot a job, connect the apps it needs, and follow its work in chat. Each bot has a name, a look, its own memory, and a screen you can watch or take over. Bots can message each other, run recurring tasks, and talk with you over voice.
+
+The interface is modeled on Grok Bot. Underneath, every bot is a Hermes agent, so it can run on the model subscriptions you already pay for (Claude, ChatGPT, Grok and others) or on API keys.
+
+What you get
+
+| | |
+|---|---|
+| Chat that shows the work | While a bot works you see what it is doing right now, how long it has been at it, and each step it took. Finished turns fold into a "Worked for 2m 10s · 7 steps" chip you can open. |
+| A screen per bot | Every bot has its own desktop on the shared computer. Watch it live in the side panel, open it full size, or take control with your own mouse and keyboard. |
+| Your existing Hermes agent, kept as it is | The first bot is the Hermes agent already running on the computer. Its messaging channels, skills and memory keep working; the app only calls its API. |
+| Connected apps with approvals | Bots ask for the app they need and you connect it through Composio. Actions that write (send, post, delete) wait for your OK on a card in the chat. |
+| Model and subscription per bot | Pick the provider and model in the bot's Engine panel, or sign in to a subscription on the bot's own screen. |
+| Voice | Talk to a bot with xAI's realtime voice modes. Real work is handed to the same bot, with the same memory and tools. |
+| Research on X | Every bot has an x_search tool, backed by xAI. |
+| Routines, tasks and a Library | Recurring jobs on a schedule, a task list per bot, and a place where bots save the files they make. |
+
+    Watching a bot's screen live
+    Each screen is dressed as that bot's own computer
+
+The chat screenshot at the top uses the sample data built into the dev server (add ?fixtures to the URL). The two above are from a running install.
+
+How it fits together
+
+flowchart LR
+  B"Browser
+chat · viewer · voice"] -- "HTTP + SSE" --> S["Bot HQ server
+Node · Hono · SQLite"]
+  B -- "WebSocket (VNC)" --> S
+  S -- "POST /v1/responses" --> H1["Hermes gateway
+first bot (already running)"]
+  S -- "POST /v1/responses" --> H2["Hermes gateway
+one per extra bot"]
+  H1 -- "MCP /mcp/primary" --> S
+  H2 -- "MCP /mcp/&lt;bot&gt;" --> S
+  S --> O["Orgo computer
+one screen per bot"]
+  S --> C["Composio
+connected apps"]
+  S --> X["xAI
+voice · X search"]
+
+- One computer, one screen per bot. All bots live on a single Orgo Linux computer. The first bot uses the computer's main screen; each further bot gets an Orgo screen of its own. Orgo allows four screens per computer, so four bots.
+- The first bot is the Hermes agent that already runs on that computer. The app talks to its gateway and never restarts it or rewrites its settings.
+- Every other bot gets its own Hermes home and gateway, started by the app. Each has its own model, sign-in, memory, browser profile and files.
+- The app's tools reach Hermes over MCP. The server exposes /mcp/. Each agent gets connected apps, x_search, tasks, routines, the Library, and messages to other bots.
+- Screens are dressed to look like the bot's own computer: a light desktop with a dock, and a home screen with the bot's name and apps as Chrome's new tab page.
+
+More detail is in the [architecture guide.
+
+How this relates to Hermes Bot Mode
+
+Hermes Desktop has its own Bot Mode. Bot HQ uses the same Hermes engine but does not use Bot Mode: it has its own bot layer on top of the gateway's HTTP API.
+
+| | Bot HQ | Hermes Bot Mode |
+|---|---|---|
+| A bot is | A separate Hermes home (the first bot is the default profile) | A Hermes profile |
+| Gateways | One per extra bot | One, serving every profile |
+| Transport | HTTP, /v1/responses | JSON-RPC over WebSocket |
+| Routines | The app's own scheduler | Hermes cron jobs |
+| Bot to bot | The app's send_to_bot tool | Hermes' message_agent tool |
+
+So bots made here do not show up in Hermes Desktop's Bots tab, and bots made there do not show up here.
+
+Install on the computer
+
+The app is meant to run on the same Orgo computer as Hermes.
+
+1. On your machine: npm ci && scripts/pack.sh hq-app.tgz. Copy hq-app.tgz and scripts/install-on-computer.sh to the computer.
+2. In Orgo, create a public URL for port 8787 on that computer.
+3. On the computer, as root:
+
+   PUBLIC_URL=https://.orgo.dev ORGO_COMPUTER_ID= ALLOWED_EMAILS=you@example.com \
+   KEYS_FILE=/root/keys.txt PRIMARY_CDP_URL=http://127.0.0.1:9333 \
+     bash install-on-computer.sh hq-app.tgz
+
+   KEYS_FILE holds XAI_API_KEY= and COMPOSIO_API_KEY= lines (and ORGO_API_KEY= if Hermes' own .env has none); it is deleted after the first install. PRIMARY_CDP_URL is only for a main agent that already has its own Chrome. The script installs to /opt/hq, adds one supervisor program (hq-app), and leaves Hermes alone. Running it again with a newer hq-app.tgz upgrades the app and keeps its settings and data.
+4. Give the main agent the app's tools: python3 /opt/hq/app/scripts/add-hq-to-hermes.py. It adds one mcp_servers.hq entry to Hermes' config.yaml, keeps a dated copy of the file, and Hermes picks the change up without a restart. --remove takes it out again.
+5. Open the public URL and sign in with Google. If Google sign-in is not set up yet, bash /opt/hq/app/scripts/sign-in-link.sh you@example.com on the computer prints a one-time sign-in link.
+
+Remove everything
+
+On the computer:
+
+python3 /opt/hq/hq-screen.py undress 99                      # main screen back to how it was (99 = its X display)
+python3 /opt/hq/app/scripts/add-hq-to-hermes.py --remove     # take the tools out of Hermes
+supervisorctl stop hq-app && supervisorctl remove hq-app
+rm -rf /etc/supervisor/conf.d/hq-app.conf /opt/hq /var/log/hq /root/grokbot /etc/opt/chrome/policies/managed/hq.json
+
+Then delete the public URL in Orgo. Screens of the other bots are released when you delete those bots in the app.
+
+Run it locally
+
+You need Node.js 22 or newer and a Hermes gateway with its API server on (API_SERVER_KEY in ~/.hermes/.env).
+
+git clone https://github.com/nickvasilescu/bot-hq.git
+cd bot-hq
+npm ci
+cp .env.example .env      # fill in the keys; comments in the file explain each one
+npm run dev -w server     # API on :8787
+npm run dev -w web        # app on :5173
+
+With HQ_LOCAL=0 the server reaches the computer through the Orgo API instead of running commands on it, which is enough for development. DEV_LOGIN=1 enables the email-only sign-in form; never set it on a public address.
+
+npm run build && npm start serves the built app from the API port.
+
+The keys you need:
+
+| Key | Used for |
+|---|---|
+| ORGO_API_KEY, ORGO_COMPUTER_ID | The computer and its screens |
+| COMPOSIO_API_KEY | Connected apps |
+| XAI_API_KEY | Voice and x_search |
+| SESSION_SECRET | Sign-in sessions and the tokens agents use to reach /mcp |
+
+Models and subscriptions
+
+Open a bot's details panel, Engine. Pick a provider and model there. Sign in to a subscription opens a terminal on the bot's screen running Hermes' own sign-in for that provider (for example Claude Pro/Max), so you finish it in the viewer and the bot uses that subscription from then on. Check your provider's terms before running an agent on a consumer subscription.
+
+Development
+
+npm run typecheck       # server and web
+npm run build
+node tests/e2e.mjs https://    # needs DEV_LOGIN=1, or E2E_SESSION=
+
+The e2e suite creates a temporary bot (with its own Hermes gateway and screen), exercises chat, the browser on its screen, the live viewer, connected apps, voice sessions and settings, then deletes it. It calls real providers.
+
+…（内容已截断）

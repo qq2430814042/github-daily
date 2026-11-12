@@ -1,0 +1,217 @@
+Codex Security
+
+Codex Security helps you find, investigate, and fix vulnerabilities in your code.
+Use its security workflows in Codex, or automate them with the
+@openai/codex-security CLI and TypeScript SDK.
+
+- In Codex: choose a security workflow.
+- In a terminal: install the CLI and scan your repository.
+- In automation: use the TypeScript SDK or
+  GitHub Action.
+
+Features
+
+- Scan repositories, selected paths, or Git changes. Deep scans repeat Standard scans and return their deduplicated findings.
+- Validate candidate findings, generate patches, and verify existing fixes.
+- Draft SECURITY.md policies and save threat models for later review.
+- Browse saved scans and findings, identify duplicates, assess severity against
+  your own rubric, and suggest owners from source and Git history.
+- Preview third-party scanner findings, save them locally, or publish supported reports to Codex Security Cloud. Scanner import guides.
+- Track findings in Linear, Jira, or GitHub, publish completed scans, or export SARIF, JSON, and CSV. Integration workflows.
+- Automate scans across repositories or project components, including in CI and
+  containers.
+
+Use in Codex
+
+Open your repository in a Codex session with the Codex Security plugin enabled,
+then ask:
+
+Run a Codex Security scan on this repository, focusing on authentication and
+authorization. Return the saved report, source evidence, and coverage limits.
+
+A completed scan saves a report and findings. Read the report for source
+evidence and exclusions, then request a patch or ask Codex to verify an
+existing fix. See the agent workflow guide for setup,
+task selection, and recovery.
+
+Quick start
+
+Requires Node.js 22.13.0+ within 22.x, or Node.js 24.x or 26.x, and Python 3.10+.
+Python 3.10 also requires tomli.
+
+Install the CLI globally and sign in:
+
+npm install --global @openai/codex-security
+cs login
+
+Run your first scan from the repository directory:
+
+cs scan .
+
+When the scan completes, open the Markdown file at the REPORT path in the
+terminal. Run cs scans show from the same repository to find its latest
+completed scan again. See scan scope and follow-up work
+for how to interpret exclusions in the report.
+
+cs and codex-security run the same CLI. If the short name conflicts with
+another command, use codex-security. To skip the global install, or if npm
+reports an EEXIST conflict, use npx @openai/codex-security in place of
+cs for both login and scanning.
+
+For CI, set OPENAI_API_KEY or CODEX_API_KEY in the scan process's environment.
+For a headless machine, see device or SSH login.
+
+Scan options
+
+Choose a scope and scan mode:
+
+Scan selected paths.
+cs scan . --path src --path tests
+
+Scan committed changes from a base revision to HEAD.
+cs scan . --diff origin/main
+
+Run a deep scan of the repository.
+cs scan . --mode deep
+
+Use cs scan . --max-time 15 for an advisory 15-minute Standard investigation
+allowance. See investigation time
+for timing semantics and Deep Scan limits.
+
+Use cs --help to browse commands, or cs scan --help
+for scan options, cost limits, and patching after a scan.
+
+For an application spread across repositories, see
+review one system across repositories.
+Use bulk scans for independent repository
+reviews in one resumable campaign.
+
+Scans use existing root and component SECURITY.md guidance. To write or
+revise it, see Generate SECURITY.md.
+
+Some cybersecurity requests and protected findings require
+Trusted Access for Cyber. For accounts with Daybreak
+access, see Daybreak opt-in for the
+Codex toggle and Cyber access programs
+to select a program explicitly.
+
+TypeScript SDK
+
+Install the package locally in your TypeScript project:
+
+npm install @openai/codex-security
+
+Then import it:
+
+import { CodexSecurity } from "@openai/codex-security";
+
+const security = new CodexSecurity();
+
+try {
+  const result = await security.run("/path/to/repository");
+  console.log(result.reportPath);
+} finally {
+  await security.close();
+}
+
+The SDK guide includes deep-scan configuration,
+validation, severity classification, owner suggestions, and result handling.
+
+Linked Git worktrees share scan history and saved findings when they use the same
+Codex Security state directory. Keep CODEX_SECURITY_STATE_DIR stable to retain
+that shared history and sign-in scope. See the scan history guide.
+
+Read existing Cloud findings
+
+When Codex Security Cloud is available to your account, the Security plugin's
+$cloud-findings skill can read findings, reports, recorded assignment and
+verification, and scan status in Codex desktop or the Codex CLI. Cloud is an
+optional connection; local scans work without it.
+
+See Cloud connection setup and CLI reads
+for authentication requirements and a read-only example.
+
+Generate SECURITY.md
+
+Use policy to draft a new SECURITY.md or update an existing one. Use --path
+to select a component:
+
+cs policy .
+cs policy . --path services/api --knowledge-base architecture.md
+
+The command saves its draft outside the repository and leaves existing files
+unchanged. Review the diff and notes, edit the draft, then copy only SECURITY.md
+to the displayed Policy target. Keep the saved architecture and threat-model
+documents outside the repository.
+
+Scans already use root and component SECURITY.md files. Keep your current policy
+if it needs no changes. When updating it, preserve its vulnerability-reporting
+instructions. If the command says the policy is already up to date, no copy is
+needed.
+
+Files at .github/SECURITY.md or docs/SECURITY.md often contain reporting
+instructions. Preserve them when drafting a policy; those locations do not
+automatically provide repository-wide scan guidance. See the
+policy guide for policy
+locations, unanswered questions, saved artifacts, and SDK usage.
+
+Save and export threat models
+
+Scans and policy generation save threat models with their results. Export a saved
+model without starting another analysis:
+
+cs export --scan SCAN_ID --artifact threat-model --output threatmodel.md
+
+Omit --scan to use the current repository's latest completed scan. The
+export guide also covers findings,
+SARIF output for CI, and the offline TypeScript API. For ServiceNow Application
+Vulnerability Response, see Export findings for ServiceNow.
+
+GitHub Actions
+
+To run a weekly repository scan on GitHub-hosted Ubuntu:
+
+1. Add an OpenAI API key as the repository secret CODEX_SECURITY_API_KEY.
+2. Copy the weekly workflow to
+   .github/workflows/codex-security.yml. Replace REPLACE_WITH_REVIEWED_COMMIT
+   with the reviewed distribution commit SHA from an Action release.
+3. To try the workflow before the next scheduled run, open **Actions → Codex
+   Security repository → Run workflow**.
+
+The example uses an estimated $5 limit per scan and reports findings without
+failing the job. Requests in progress can exceed the limit. For a severity
+threshold, pull request checks, or runner requirements, see the
+Action guide. For eligible accounts, see
+Daybreak access.
+
+Containerized bulk scans
+
+Scan a list of repositories with the included Docker Compose configuration,
+which keeps results and authentication between runs. See the
+container quick start.
+The workflow runner runs individual CLI stages
+in containers and can connect to a separately deployed findings service.
+
+Findings storage and deduplication
+
+The findings guide covers local
+storage, deduplication, and compatibility with independently operated endpoints
+through publish scan --to custom and explicit --findings-url. The local
+serve command and browser dashboard have been removed; existing databases and
+scan artifacts remain available.
+
+Other providers
+
+Scans support OpenAI, Amazon Bedrock, OpenRouter, Fireworks AI, and Cheaper Inference. Bedrock uses
+AWS credentials and does not require a separate OpenAI login. See
+Bedrock setup for AWS profiles, regions, and model access.
+
+For OpenRouter, Fireworks AI, and Cheaper Inference, set the provider's API key and choose a supported
+model. See provider configuration
+for examples.
+
+Documentation
+
+- Online documentation
+
+…（内容已截断）

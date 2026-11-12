@@ -2,7 +2,9 @@ Read this in other languages
 
 English | 简体中文 | 日本語 | 한국어 | Deutsch | Français | Español | हिन्दी | Português | Русский | العربية | فارسی | Italiano | Polski | Nederlands | Türkçe | Українська | Tiếng Việt | Bahasa Indonesia | Svenska | Ελληνικά | Română | Čeština | Suomi | Dansk | Norsk | Magyar | ภาษาไทย | Oʻzbekcha | 繁體中文 | Filipino | עברית
 
-  Cut agent token spend by 80%. Graphify Cloud is always-on memory that governs your agents, keeps code quality high, and proves correctness with formal verification. Start a free 14-day trial &rarr;
+  Start free, no card required &rarr;
+
+  Cut agent token spend by 80%. Graphify Cloud is always-on memory that governs your agents, keeps code quality high, and proves correctness with formal verification.
 
 Type /graphify in your AI coding assistant and it maps your entire project (code, docs, PDFs, images, videos) into a knowledge graph you can query instead of grepping through files.
 
@@ -10,7 +12,7 @@ Type /graphify in your AI coding assistant and it maps your entire project (code
 - Every edge is explained. Each connection is tagged EXTRACTED (explicit in the source) or INFERRED (resolved by graphify), so you can tell what was read directly from what was inferred.
 - Not a vector index. No embeddings, no vector store: a real graph you traverse. Ask a question, trace the path between two things, or explain one concept.
 
-Want this always-on? Graphify Cloud keeps the graph live across your entire SDLC: monorepo and cross-repo support, formal verification, and code review with a bird's-eye view of your SDLC, plus connectors for Sentry, Jira, and more so incidents and tickets sit in the same graph as your code. Start a free 14-day trial at app.graphify.com.
+Want this always-on? Graphify Cloud keeps the graph live across your entire SDLC: monorepo and cross-repo support, formal verification, and code review with a bird's-eye view of your SDLC, plus connectors for Sentry, Jira, and more so incidents and tickets sit in the same graph as your code. Start free, no card required.
 
   The FastAPI codebase mapped by graphify. Every node is a concept, colors are detected communities, and the whole thing is clickable in graph.html.
 
@@ -68,7 +70,7 @@ What you get out of the box:
 | Beyond code | Docs, PDFs, images, and video/audio all map into the same graph |
 | Local-first | Code is parsed locally with tree-sitter (no LLM, nothing leaves your machine); only the semantic pass over docs/media calls a backend, and only if you configure one |
 
-Running this across many repos or a monorepo? Graphify Cloud does it continuously and cuts agent token spend by 80%, with cross-repo links, SDLC-wide code review, formal verification, and Sentry/Jira connectors. Start a free 14-day trial &rarr;
+Running this across many repos or a monorepo? Graphify Cloud does it continuously and cuts agent token spend by 80%, with cross-repo links, SDLC-wide code review, formal verification, and Sentry/Jira connectors. Start free, no card required &rarr;
 
 Benchmarks: 0.497 recall@10, 0 LLM credits
 
@@ -109,9 +111,10 @@ Windows quick install:
 winget install astral-sh.uv
 
 Ubuntu/Debian:
-sudo apt install python3.12 python3-pip pipx
-or install uv:
+uv manages its own Python, so this is the only step you need:
 curl -LsSf https://astral.sh/uv/install.sh | sh
+or use the system Python with pipx:
+sudo apt install python3 python3-pip pipx
 
 Install
 

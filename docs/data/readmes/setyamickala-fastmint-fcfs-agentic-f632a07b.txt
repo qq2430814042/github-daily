@@ -1,0 +1,146 @@
+fastmint-fcfs
+
+English · Bahasa Indonesia
+
+FCFS mint on BNB Smart Chain through Binance Agentic Wallet, landed in a block ±2 seconds after the sale opens.
+
+A skill for AI agents (Claude Code, Codex, Cursor, OpenClaw, and any other agent that reads SKILL.md) that fires a single mint/claim/buy transaction at the exact moment a sale opens, using a Binance Agentic Wallet (baw CLI). No private key on the machine: signing happens in Binance's backend through Developer Mode, the agent only prepares calldata and picks the moment.
+
+sale opens (T)    T+0.05s          T+0.6–0.8s        T+1.3–1.5s       T+2.1–2.2s
+   │                 │                  │                  │                 │
+   ▼                 ▼                  ▼                  ▼                 ▼
+ start ───► preview sent ───► simulation OK ───► BROADCASTED ───► in a block
+         (NTP clock trigger)    (requestId)     (baw execute)     (receipt)
+
+The numbers above were measured 11 Nov 2026 from Indonesia: 3 time-gated dry-runs plus one real mint (Pocket Moons, 2 free NFTs, trigger→receipt 2.0 seconds). The previous sequential version took 5–6 seconds.
+
+Table of contents
+
+1. How it works
+2. Installation
+3. Usage flow
+4. Command reference
+5. Dynamic arguments
+6. Safety rails
+7. Measured numbers
+8. Troubleshooting
+9. File layout
+10. FAQ
+
+1. How it works
+
+Why the old version was slow
+
+baw has no direct-send command for a contract call. The flow is two steps by design: contract-call preview (the backend simulates and returns a requestId) and then contract-call execute --requestId. The old version waited for a public RPC to report a successful eth_call (±1 second after the opening block), then previewed, then executed. Every stage waited on the previous one: T+5–6 seconds.
+
+Three parallel triggers
+
+fire.js does not wait on a single signal. During the 3-second burst window after the sale opens, three triggers may each launch a preview independently (minimum spacing --gap 350ms, at most --inflight 3 at a time):
+
+| trigger | when | source |
+|---|---|---|
+| clock | exactly T+0 by the NTP-corrected clock | sntp to time.apple.com / pool.ntp.org |
+| head | the first block with timestamp ≥ start is seen | WebSocket newHeads (QuikNode, publicnode, drpc) + HTTP polling every 150ms |
+| eth_call OK | a simulation from the wallet succeeds on one of the 4 fastest RPCs | eth_call on tags latest and pending, every 100ms |
+
+The first preview that comes back with simulationCode 000000000 is executed immediately, exactly once. Other previews still in flight are ignored. Previews that fail because the backend has not seen the opening block yet (error 351805) are cheap and harmless; the next trigger retries.
+
+Once the burst is over, only eth_call OK triggers previews, so a sale that opens late does not burn --maxPreviews; the eth_call spin keeps watching until --timeout (600 seconds).
+
+The ranked RPC pool
+
+The RPC list is measured at start and re-ranked at T-10s (latency and block lag). From Indonesia: QuikNode 31ms, bloXroute 32ms, 48.club 45ms, official dataseed ±105ms, publicnode ±200ms. Nodes that strip revert data (zon, for example) are left out, because a revert with no data cannot be told apart from "not open yet".
+
+eth_call race: the first success wins; a revert with data wins (deterministic); a revert with no data only counts after every node has answered and is never treated as fatal.
+
+Revert classification
+
+Error names are decoded from the contract's Sourcify ABI, a built-in list of common errors, then 4byte. Every name maps to:
+
+- wait: NotStarted, NotOpen, NotLive, TooEarly, Paused, … → keep retrying until --timeout
+- fatal: SoldOut, FreeGone, AlreadyClaimed, AgentIdRequired, NotEligible, WrongValue, Insufficient… → stop immediately (±50ms)
+- unknown: treated as wait until start + --grace (10s), fatal after that. Before the opening time only the hard-terminal names (sold/gone/already/agent/eligible/expired) are considered fatal.
+
+Override with --waitOn  and --fatalOn .
+
+2. Installation
+
+Prerequisites
+
+- Node.js ≥ 20 (v26 in use). No npm install: ethers 6.13 is already bundled.
+- Binance Agentic Wallet CLI: npm install -g @binance/agentic-wallet@1.12.0
+- Binance App with Agentic Wallet and Developer Mode on (Agentic Wallet → Settings → Developer Mode). The wallet balance must be under the Developer Mode cap.
+- The binance-agentic-wallet skill from https://github.com/binance/binance-skills-hub (optional but recommended, for other wallet operations).
+- Optional: an Agent ID (yourname.ai) for mints that require one.
+
+Installing the skill
+
+Extract the zip, then put the fastmint-fcfs folder wherever your agent reads skills from:
+
+Claude Code (per project)
+mkdir -p .claude/skills && cp -r fastmint-fcfs .claude/skills/
+
+Claude Code (global)
+mkdir -p /.claude/skills && cp -r fastmint-fcfs /.claude/skills/
+
+skills CLI / .agents (Codex, Cursor, etc.)
+mkdir -p .agents/skills && cp -r fastmint-fcfs .agents/skills/
+chmod +x fastmint-fcfs/fastmint.sh
+
+Wallet sign-in (once, session lasts 2 days / 48 hours idle)
+
+baw auth signin --json
+
+Open the urlForWeb that appears, match the pairingCode in the Binance App, approve, then:
+
+baw auth verify --qrCodeId  --json
+baw wallet status --json      # must be CONNECTED
+
+Checking the environment
+
+cd fastmint-fcfs
+./fastmint.sh bench
+
+Expected output: RPC ranking, WebSocket delay, clock offset, wallet status CONNECTED, devMode ON, BNB balance, Agent ID, three previews in ±0.6s, and a time estimate. All read-only.
+
+.env (premium RPC)
+
+The .env file in the skill folder is sourced automatically by fastmint.sh:
+
+FASTMINT_RPCS_EXTRA=https://     # prepended to the pool, still ranked
+FASTMINT_WS_EXTRA=wss://         # used for newHeads
+
+This repo ships a .env with a QuikNode BSC endpoint. The host is masked in every log. Other variables: FASTMINT_RPCS (replace the whole pool), FASTMINT_WS, FASTMINT_TZ (default Asia/Jakarta), FASTMINT_CA (CA bundle for Node, see troubleshooting).
+
+3. Usage flow
+
+This is the flow the agent runs when you say "mint free at 23:00 https://mint-site":
+
+┌──────────┐    ┌──────────┐    ┌──────────────┐    ┌──────────────┐    ┌──────────┐
+│  bench   │───►│  recon   │───►│  fire --dry  │───►│    fire      │───►│  report  │
+│ env OK?  │    │ CA, ABI, │    │ 10s rehearsal│    │ background,  │    │ tx, link,│
+│ ~10s     │    │ getters, │    │ before open  │    │ 1x execute   │    │ TIMELINE │
+│          │    │ calldata │    │ stop at prev │    │              │    │          │
+└──────────┘    └──────────┘    └──────────────┘    └──────────────┘    └──────────┘
+
+Step 0, bench (once per session). UNCONNECTED → sign in first. devMode OFF → turn it on in the app.
+
+Step 1, recon (~5–10s):
+
+./fastmint.sh recon https://mint-site            # or --contract 0x... if the CA is known
+
+Recon fetches the HTML, the JS bundles, and agent documents (llms.txt, skill.md, handbook.md, …), extracting addresses, chainId, mint function names, ABI signatures, and unix times. It then runs eth_getCode, pulls the ABI from Sourcify v2 (or from the site bundle filtered down to selectors that actually exist in the bytecode), reads every view getter (0-arg, (wallet), (agentId)), and prints MINT CANDIDATES with guessed arguments, calldata, simulation results, a START HINT from start getters, and ready-to-use fire: commands.
+
+Read from the output: opening time, free supply left, price, per-wallet limit, agentIdOf(wallet), and error names (SoldOut, FreeGone, …).
+
+Step 2, rehearsal (always):
+
+./fastmint.sh fire --to 0xSALE --data 0x195ad114 --start 23:00 --dry
+
+Does everything up to the preview, then stops. Check that the call = … line decodes to the right function and arguments. Add --gateSim if the call can already be simulated now, so the rehearsal exercises the real time-gated path.
+
+Step 3, fire (in the background so the chat stays responsive):
+
+./fastmint.sh fire --to 0xSALE --data 0x195ad114 --start 23:00 --label project_free
+
+…（内容已截断）

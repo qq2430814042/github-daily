@@ -1,0 +1,74 @@
+AA Plus
+
+A Chrome and Firefox extension that puts Priors controls on artificialanalysis.ai, inline and in AA's own look. Chrome Web Store item fhbfiaogiefochmlpcchdepheecbanip (submitted for review 2026-11-11; until it is approved, load it unpacked).
+
+Unofficial. Not made by or affiliated with Artificial Analysis; their name, look and logo belong to them.
+
+What it does
+
+- A control row where AA's "Effort: Max | API Default" switch was, and again (sticky) above the main charts: Pricing (API | Subscription), Effort (Highest, API default, or any set of None to Max), Plans (the plan each lab is priced on; picking one switches to Subscription pricing). The row above the cards is one line beside AA's tabs when it fits (its labels go first); on a narrower window it takes a row of its own above the cards. It never wraps upward, where AA's sticky tab row would cover it.
+- Subscription pricing on AA's own cost charts. Each model a first-party plan sells is priced at that plan's share of API price, the figures Priors uses. Models with no plan stay at API price. Every cost chart that really follows the setting gets an API | Subscription switch beside its title.
+- Effort selection. Highest is each model's top effort (AA's "Max"). API default is the effort AA marks, where it marks one. Picking efforts shows the charted models at those efforts; the headline cards keep one bar per model (its best at the picked efforts), AA's interactive charts show every picked configuration.
+- Nothing reloads. AA's own charts redraw with AA's animation; the three headline cards are redrawn by AA Plus and tween between states.
+- An added chart, "Plan Price vs. API Price", under the headline cards.
+- A strengths radar, "Strengths by Evaluation", in AA's Benchmarks section: the top 3, 4 or 6 charted models across the evaluations inside the Intelligence Index. Hovering an evaluation says what it measures and gives each model's score. It follows the effort and model selection.
+- Dark mode, which AA does not have: the moon button in the control row, or Auto / Light / Dark in the popup (Auto follows the system). The page is inverted with its hues turned back, so chart colours stay recognisable; photos and videos are turned back to normal.
+- Select all follows the search in AA's model picker: with something typed ("openai"), Select all adds just the models the search lists, so Clear then Select all gives one lab's models. With the search empty it selects everything, as AA's does.
+- One GitHub star ask, shown once ever: on a second visit to AA (after half an hour or more away) by someone who has clicked an AA Plus control.
+- Toolbar popup with the same settings (plus the switch for the added chart). The page and the popup stay in step.
+
+Install
+
+1. Download aa-plus.zip from the latest release and unzip it, or clone this repo. Every push to main updates the release.
+2. Open chrome://extensions, turn on Developer mode.
+3. "Load unpacked", pick the unzipped folder (or this repo's folder). After updating, press the reload arrow on the extension card.
+4. Open https://artificialanalysis.ai.
+
+Firefox (140 or later) runs the same files: open about:debugging#/runtime/this-firefox, "Load Temporary Add-on…", and pick the downloaded zip or this repo's manifest.json. Firefox removes a temporary add-on when it closes. In the manifest, background.scripts and browser_specific_settings are for Firefox; Chrome ignores them, and Firefox ignores background.service_worker.
+
+How it works
+
+| File | Job |
+| --- | --- |
+| page.js | Runs in the page's own JavaScript world. Nothing is rewritten while the page loads. It finds the React context AA's charts read from (selected rows, full list, setter) and hands it new rows: repriced copies for Subscription pricing, other configurations of the same models for an effort choice. The "by release" chart has its own store with no setter for rows, so those rows are repriced in place and the store is nudged. The scatter's Pareto line and off-selection points come from AA's full model list, which is repriced the same way (in place, then the store's filters are handed back to it) so the line passes through the repriced points. It reports rows and state to content.js. |
+| content.js | The inline UI: control rows, switches on cost charts, the headline cards (redrawn from page.js's rows so they follow the controls), the added chart. Settings live in chrome.storage.local. |
+| chart.js | Animated SVG bar charts in AA's look. Bars keep their identity, so a change slides, resizes and counts instead of redrawing. |
+| shared.js | Effort parsing and choice, plan share lookup, settings. shared.page.js is a byte-for-byte copy for the page world (the browser injects one file into one world only): run cp shared.js shared.page.js after editing; the test fails if they differ. |
+| popup.html, popup.js | The toolbar popup. |
+| background.js | Fetches https://mypriors.com/api/plan-prices and /api/aa-strengths (cached 30 minutes). |
+| icons/logo.svg | AA's mark with a plus. node test/icons.mjs renders the PNGs. |
+
+Where the data comes from
+
+Nothing about models, plans or benchmarks is written into the extension (the test greps the source for names).
+
+- Plan prices: GET https://mypriors.com/api/plan-prices, answered from Priors' live snapshot (its scrape job rebuilds it every 15 minutes; the answer carries generatedAt).
+- The index's evaluations, their descriptions and every model's score on them: GET https://mypriors.com/api/aa-strengths, same snapshot. The evaluation list follows AA's index version.
+- Everything else (which models are charted, their costs, times, efforts, colours, logos) is read from the AA page being viewed.
+
+Test
+
+npm install                       # Playwright, for the test and the demo scripts only; the extension itself has no dependencies
+npx playwright install chromium
+node test/run.mjs                 # against the live AA site and mypriors.com
+node test/run.mjs --shots /tmp/aaplus-shots
+
+Loads the extension in a headless Chromium with a throwaway profile. It checks that the controls replace AA's switch, that a pricing change updates the cards in place (a frame in between shows a value in between, and the page never reloads), that an effort pick changes configurations, that every control in the row above the cards can be clicked at either pricing and at 1440, 1280 and 1024 px wide, that every chart carrying the switch really shows different figures at API and plan prices (home and /models), that the Pareto line passes through the repriced points, that the radar, dark mode, the plan picker and the popup work, and that both Priors endpoints were fetched from a snapshot under six hours old. No window opens.
+
+The demo film is made the same way, in three steps (demo/CREDITS.md has the music and its licence):
+
+node demo/shots.mjs                       # the footage: one shot per subject, with the time of every click (the browser really at 3x pixel density, the page filmed in 4x slow motion so there are about 60 lossless pictures per film second)
+the music cut: cinetic's track.py analyze + edit, written to /audio/music/.edit.json
+node demo/film.mjs  /film.mp4       # cuts on the track's beats, logo open and close; writes film.silent.mp4 (2560x1440) and cues.json
+ demo/sound.py   /soundtrack.wav   # the track as edited, clicks on the cues, master
+
+node demo/record.mjs  out.mp4] records the older single-take walkthrough.
+
+Known limits
+
+- It depends on AA's internals (the names in its React context, the shape of its rows). The code never throws into the page; when a shape changes, AA's own cards and switch come back untouched and the test fails.
+- Only charts are covered. A sentence, table or model detail page on AA that quotes a cost still shows the API price.
+- "API default" is known only for the models AA marks (the headline set); others stay at their highest effort.
+- A free tier is not treated as a price: a model free today uses its paid plan, or stays at API price.
+
+…（内容已截断）

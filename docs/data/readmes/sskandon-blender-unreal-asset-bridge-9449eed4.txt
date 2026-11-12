@@ -1,0 +1,84 @@
+blender-unreal-asset-bridge
+
+An AI-assisted asset bridge from Blender to Unreal Engine — batch-export static and skeletal meshes, animations, collisions, sockets and cameras into a UE-ready folder tree, rebuild everything with generated import scripts, and let the built-in AI assistant take the routine off your hands on Windows.
+
+download-url]: https://github.com/SsKanDon/blender-unreal-asset-bridge/releases
+
+[
+
+The bridge in one scene: forty props, two characters and a cinematic camera live in one Blender file — one batch export writes a clean Unreal-ready folder tree to disk, the generated import script rebuilds all of it in the Unreal Engine Content Browser, and the AI assistant is one message away when a name or a collision needs fixing.
+
+Why
+
+Moving a Blender project into Unreal Engine by hand is a grind: one asset at a time through the FBX dialog, scales and axes that only look wrong after import, collision boxes rebuilt in the engine, and animations that arrive detached from their skeletons. blender-unreal-asset-bridge compresses that pipeline into the 3D viewport — mark the assets, export the whole scene at once into the folder tree Unreal expects, and the bridge checks every object for problems first, then hands you a Python import script that rebuilds the Content Browser structure for you — so a full environment, cast and cinematic travel from Blender to Unreal in one sitting.
+
+Without / With
+
+| Without | With |
+|---|---|
+| Exporting assets one by one through the FBX dialog | One batch export writes the whole scene into a UE-ready folder tree |
+| Wrong scale, axes and pivots discovered only after import | Units, axes and pivots are transformed for Unreal Engine, and problems are flagged before export |
+| Rebuilding collision boxes and sockets in the engine | Collisions and sockets are created in Blender and travel with the mesh |
+| Re-importing and re-naming files by hand in the Content Browser | A generated Python import script rebuilds the whole structure in Unreal Engine |
+| Routine naming, checking and settings burn your evening | The AI assistant runs the routine from one chat message |
+
+Quick Start
+
+1. Download the release ZIP for Windows x64 — the bundle targets Blender 4.2 or later.
+2. Unblock the downloaded ZIP, then open Blender's extension installer — launch PowerShell, copy the command below, paste it and press Enter:
+   powershell Unblock-File -Path "$HOME\Downloads\blender-unreal-asset-bridge.zip"
+   In Blender open Edit → Preferences → Get Extensions → menu → Install from Disk.
+3. Select the ZIP in the file dialog, enable blender-unreal-asset-bridge and open the panel: 3D Viewport → N → blender-unreal-asset-bridge.
+4. Choose a provider, add your connection details and select a model.
+5. Send a message in Blender or click Open Studio Window — keep Blender open while using Studio or an external client.
+
+Features
+
+- Batch-export whole scenes — static meshes, skeletal meshes, NLA tracks and Action animations, Alembic caches, splines, cameras and Sequencer content leave Blender in one run, organized in a folder tree that matches the Unreal Engine pipeline.
+- Build collisions and sockets in Blender — box, convex, sphere and capsule shapes follow the mesh into Unreal Engine, with no rebuild in the engine.
+- Catch errors before they reach the engine — the checker explains every problem and, where possible, fixes it with one click.
+- Rebuild Unreal with one script — the generated Python import script recreates the whole Content Browser structure, cameras included, as a Level Sequence with cuts, aspect ratio, focal distance and lens shift intact (Unreal Engine 4.26+).
+- Paste straight into the editor — cameras, splines and sockets can be copied to the clipboard and pasted directly into Unreal Engine.
+- Keep control of the details — unit scale, axis transforms, pivots, LODs, UV and light maps, vertex colors, morph targets and naming nomenclature stay in your hands with sane defaults.
+- Delegate the routine to AI — pick a provider, select a model and describe the task; the assistant drives naming, checking and export settings while you keep modeling.
+
+How it works
+
+blender-unreal-asset-bridge runs as a single Blender add-on: the N-panel routes your scene into the Batch Export Engine, which writes FBX and Alembic assets into a UE folder tree, while the Error Checker screens every object for naming, scale and animation problems before they reach the engine. The Import Script Generator then produces the Python script that rebuilds the whole tree — cameras included, as a Level Sequence — inside the Unreal Engine Content Browser, and the AI Assistant layer connects your provider and model, with the Studio Window and the external client bridge keeping the session in sync while Blender stays open.
+
+Usage
+
+- Environment pack in one run — mark the prop collection, hit batch export, then run the generated import script in Unreal Engine: every static mesh lands in its folder with collisions and sockets already attached.
+- Character with animations — export the skeletal mesh with only the Actions you picked; the skeleton, animations and morph targets arrive in Unreal Engine together, named to the nomenclature.
+- Cinematic cameras — export the camera rig with its Sequencer content and rebuild it in Unreal Engine as a Level Sequence with cuts, aspect ratio and focal distance intact, or copy a camera to the clipboard and paste it straight into the Sequencer.
+
+Configuration
+
+| Setting | Default | Description |
+|---|---|---|
+| Target engine | Unreal Engine 5 | Flavor of the folder tree and import script; Unreal Engine 4 (4.26+) supported |
+| Export format | FBX | Alembic available for caches and simulation-driven meshes |
+| Unit scale | Auto | Converts Blender units to Unreal Engine scale on export |
+| Axis transform | Auto | Rotates transforms and pivots to the Unreal Engine axis convention |
+| Animation mode | Actions | Switch to NLA when a single mixed track should export |
+| Collision shapes | Box / Convex / Sphere / Capsule | Created in Blender with Unreal Engine-recognized naming |
+| Import script | On | Generates the Python script that rebuilds assets in Unreal Engine |
+| Error checker | On | Screens naming, scales, materials and animation setups before export |
+| Provider | OpenAI-compatible | AI provider for the assistant; endpoint URL and key live in the same panel |
+| Model | — | Model used for chat-driven operations |
+
+Troubleshooting / FAQ
+
+- The ZIP will not install. Windows marks downloaded files — run powershell Unblock-File -Path "$HOME\Downloads\blender-unreal-asset-bridge.zip" and install again.
+- No blender-unreal-asset-bridge panel in the sidebar. Check Edit → Preferences → Get Extensions: the add-on must be enabled, and the bundle requires Blender 4.2 or later on Windows x64.
+- Assets land at the wrong scale or rotation. Keep Unit scale and Axis transform on Auto and re-run the Error Checker — it points at the object that breaks the transform chain.
+- The import script does nothing in Unreal Engine. Import scripts need Unreal Engine 4.26 or later; run the generated script inside the engine's Python console.
+- The AI assistant does not respond. Verify the provider endpoint and key in the N-panel, confirm the model name, and keep Blender open — Studio and external clients talk to a running Blender session.
+
+Contributing
+
+Bug reports, nomenclature presets and workflow ideas are welcome — open an issue or a pull request. If blender-unreal-asset-bridge saves you an evening of re-importing, tap the ★ Star button: it helps other artists find the bridge.
+
+Keywords
+
+…（内容已截断）

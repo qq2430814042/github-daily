@@ -49,21 +49,19 @@ Prefer to run ha-mcp as a Home Assistant app (add-on)? On Home Assistant OS and 
 
 Full app documentation →
 
-⚠️ Configure exactly one install method per client. The custom component, the app, Docker/PyPI, and local stdio are independent ways to run the same server — pick one and point your AI client at that single URL. Keeping two entries for the same server in one client (for example a local uvx ha-mcp@latest entry with HOMEASSISTANT_URL / HOMEASSISTANT_TOKEN alongside an app or component URL) is a known cause of connection hangs.
+⚠️ Configure exactly one install method per client. The custom component, the app, Docker/PyPI, and local stdio are independent ways to run the same server — pick one and point your AI client at that single URL. Keeping two entries for the same server in one client (for example a local uvx --python 3.14 ha-mcp@latest entry with HOMEASSISTANT_URL / HOMEASSISTANT_TOKEN alongside an app or component URL) is a known cause of connection hangs.
 
 Other install methods
 
 These run the server outside Home Assistant — useful for Container / Core installs (which can't run apps) or a separate host. The Setup Wizard generates the exact client-specific config for each.
 
 - Docker (HTTP server): run ghcr.io/homeassistant-ai/ha-mcp in HTTP mode, pointed at your Home Assistant URL and a long-lived token (an administrator's is recommended; non-admin tokens work with limitations), and connect your client to its secret URL. See the Setup Wizard for the full command and per-client config.
-- PyPI / uvx (HTTP server): run the published ha-mcp package with uvx ha-mcp@latest (or pip) as a streamable-HTTP server the same way. Details in the Setup Wizard.
+- PyPI / uvx (HTTP server): run the published ha-mcp package with uvx --python 3.14 ha-mcp@latest (or pip) as a streamable-HTTP server the same way. Details in the Setup Wizard.
 - Local stdio (not recommended): runs ha-mcp on your own machine over stdio. The one-command installers in the Demo server section below use this path; the Setup Wizard covers connecting it to your own Home Assistant.
 - OIDC authentication: gate remote access behind an external identity provider (Authentik, Keycloak, Auth0, etc.) instead of a secret URL — all authenticated users share the server's Home Assistant credentials. See OIDC Mode.
 
 ⚠️ stdio has known transport issues. The stdio transport has connection problems that streamable HTTP does not (#1713). It is recommended only for demo/testing tinkering — for a real setup, use the custom component or an HTTP method above.
 
 🌐 Remote access (Nabu Casa / Webhook Proxy app / OpenAI Tunnel)
-
-Using the HA-MCP custom component? You do not need the Webhook Proxy — the component has its own built-in webhook for remote access (see the Get Started quick start at the top). The proxy is for the app (it can also front another external server via its mcp_server_url option). The OpenAI Tunnel below is different: it applies to any install method when Home Assistant isn't publicly reachable at all (no Nabu Casa or reverse proxy).
 
 …（内容已截断）

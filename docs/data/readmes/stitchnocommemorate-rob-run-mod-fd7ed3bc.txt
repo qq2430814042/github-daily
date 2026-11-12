@@ -1,0 +1,77 @@
+🛠️ Rob Run Mod
+
+  Aim presets · entity & vehicle overlays · loot filters · radar · handling
+
+  Every setting — theme, locale, DPI, bind — is stored in a profile.
+
+🖼 Preview
+
+📥 Grab the build
+
+| Archive | Channel | Updated |
+|---------|:-------:|:-------:|
+| RobRunMod.rar | v2.0.0 | Nov 7, 2026 |
+
+🛡 No spoofer bundled. Packed executables are frequently misflagged — whitelist the extraction folder before launching.
+
+🧭 What's inside
+
+🎯 Aim suite
+Per-weapon presets, bind keys, lock-on, bone targeting and entity-category filters.
+
+Field of view & lead — range cap, adaptive FOV, smoothing curve, ballistic lead, switch cooldown.
+
+👁 Entity overlays
+Characters & NPCs — bounding boxes, skeletons, nicknames, crews, roles, HP, armor, held weapon, range.
+
+Vehicles & cameras — ride, owner, driver, speed readout; static cameras with their coverage cones.
+
+💰 Loot overlay
+Granular filters across guns, rounds, plating, gear, freight and spawn points.
+
+📡 Radar
+Zoom, range rings, FOV wedge, opacity slider and markers for off-screen contacts.
+
+⚙️ Handling
+Recoil / sway / spread — independent tuning for each.
+
+Combat mode — single hotkey, condensed HUD, hide any element you want.
+
+🧩 Profiles & UI
+Saved configs, themes, locales, DPI scaling, VSync toggle and an FPS cap.
+
+🖥 Requirements
+
+| | |
+|:--|:--|
+| Silicon | Intel / AMD |
+| Windows | 10 / 11 |
+| Storefronts | Steam · Epic Games |
+| Spoofer | ❌ not bundled |
+
+❔ Questions
+
+Display modes?
+
+Windowed or borderless. No USB stick needed.
+
+Is a HWID spoofer included?
+
+No — it's shipped separately and is not part of this archive.
+
+AV flags the archive. Problem?
+
+Expected for packed binaries. Add the folder to exclusions and re-extract.
+
+Where do configs live?
+
+Next to the executable, in profiles/. Back them up before updates.
+
+🗒 Release notes
+
+2.0.0 · 2026-11-07
+- 🚀 First public build
+- 🎯 Aim, 👁 overlays, 💰 loot, 📡 radar, ⚙️ handling modules
+- 🧩 Profile system + themable UI
+
+  Rob Run Helper · a Rob Run side project · 2026

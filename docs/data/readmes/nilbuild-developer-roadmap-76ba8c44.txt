@@ -16,6 +16,7 @@ Have a look at the get started page that might help you pick up a path.
 - DevSecOps Roadmap
 - Full Stack Roadmap
 - Claude Code Roadmap
+- Codex Roadmap
 - OpenClaw Roadmap
 - Vibe Coding Roadmap
 - Forward Deployed Engineer Roadmap

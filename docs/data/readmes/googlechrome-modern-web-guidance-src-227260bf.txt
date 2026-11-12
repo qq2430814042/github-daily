@@ -1,0 +1,163 @@
+Modern Web Guidance (Source)
+
+This repo is the source repository for GoogleChrome/modern-web-guidance and includes the code and documentation for authoring, calibrating, and evaluating its contents.
+
+Modern Web Guidance is a set of skills that embed web platform expertise, best practices, and browser compatibility data directly into your coding agents. It helps to steer your coding agents away from legacy patterns, and instead toward solutions that harness the power and capabilities of the modern web platform.
+
+See CONTRIBUTING.md and GOVERNANCE.md for how we work on the project and orientation of the codebase.
+
+Stewarded by the Google Chrome, Microsoft Edge, Mozilla Firefox, and MDN teams, alongside the web development community.
+
+Documentation · Eval Dashboard · Source Code · Report an Issue
+
+Quickstart
+
+npx modern-web-guidance@latest install
+
+This command runs an interactive wizard to install Modern Web Guidance. See Alternative Installation Methods below.
+
+Try it out (without installing)
+
+Search for relevant guides
+npx modern-web-guidance@latest search "animate a dialog modal backdrop"
+
+Retrieve a guide by ID
+npx modern-web-guidance@latest retrieve "animate-to-from-top-layer"
+
+Scan a codebase for legacy patterns to modernize
+npx modern-web-guidance@latest legacy-scan .
+
+Why?
+
+Coding agents often default to older patterns because LLM training data contains vast amounts of legacy code. This often leads them to generate bloated JavaScript for tasks that now have native, high-performance web platform solutions.
+
+Even if a model knows an API exists, it often lacks the density of real-world, modern implementation patterns required for production-ready code.
+
+Modern Web Guidance bridges this gap. Our skill's CLI returns targeted, expert-curated guidelines directly into your agent's context window, focusing on:
+* Modern Browser APIs: Helping models correctly structure APIs they frequently misuse.
+* Performance & Accessibility: Preferring platform-level APIs that can be optimized by the browser and include built-in accessibility affordances.
+* Responsible Fallbacks: Guiding models to use sensible, lightweight fallbacks instead of heavy polyfills or legacy libraries.
+
+What's Included?
+
+We cover the past several years of the web platform's new features, all the way up to the cutting edge. The guides are designed to be token-efficient; we run evals enabling us to prune lowest-common-denominator content that models already know.
+
+Core Disciplines
+
+      🎨 User Experience
+
+      Smooth visual states (View Transitions, entry/exit animations, parallax scroll, CSS scrollbar-color).
+
+      📐 CSS Layout
+
+      Modern layout systems (container queries, subgrid, modern color spaces like oklch, text-wrap tuning, and line-height trimming).
+
+      ⚡ Performance
+
+      Speed optimizations (instant preloading, Interaction to Next Paint (INP) diagnostics, and scheduling tasks via scheduler.yield).
+
+      📝 Forms & UI
+
+      Native components (Anchor Positioning for tooltips, Popover API, dialogs, :user-invalid validation, and auto-sizing fields).
+
+      ♿ Accessibility
+
+      Important considerations (screen reader and keyboard operability, content navigation and discoverability).
+
+      🤖 Built-in AI
+
+      Local client models (native translation, summarization, and language detection APIs).
+
+View an example: the navigation-drawer guide.
+
+The full list
+
+250 modern web features
+
+CSS & Layout (140 features)
+
+| | | |
+| :--- | :--- | :--- |
+| ::backdrop | content-visibility | progress() |
+| ::details-content | contrast-color() | reading-flow |
+| ::file-selector-button | Cross-document view transitions | Relative colors |
+| ::placeholder | currentColor | rem |
+| ::selection | Custom highlights | resize (CSS property) |
+| :dir() | Custom properties | revert |
+| :focus-visible | display animation | revert-rule |
+| :focus-within | Element-scoped view transitions | Safe area inset environment variables |
+| :has() | em unit | Scroll marker target pseudo-classes |
+| :host-context() | field-sizing | Scroll method promises |
+| :is() | filter | Scroll snap |
+| :modal | flex-wrap: balance | Scroll snap events |
+| :not() | Flexbox | scroll-axis-lock |
+| :nth-child() of &lt;selector> | font-size | scroll-behavior |
+| :placeholder-shown | font-size-adjust | Scroll-driven animations |
+| :user-valid and :user-invalid | Forced colors | scroll-initial-target |
+| :where() | Gradient interpolation | scroll-target-group |
+| @function | Gradients | scrollbar-color |
+| @scope | Grid | scrollbar-gutter |
+| @starting-style | Grid lanes | scrollbar-width |
+| @supports | Hyphenation | scrollend |
+| abs() and sign() | image-set() | scrollIntoView() |
+| accent-color | Individual transform properties | Shadow parts |
+| Active view transition | inherit | sibling-count() and sibling-index() |
+| Alt text for generated content | initial | Sticky positioning |
+| Anchor position container queries | Interaction media queries | Subgrid |
+| Anchor positioning | interpolate-size | System colors |
+| Animations (CSS) | isolation | Text overflow |
+| appearance | Lab and LCH | Text stroke and fill  (compatibility prefixes) |
+| aspect-ratio | light-dark() | text-box |
+| at-rule() | line-clamp | text-decoration |
+| attr() | line-height | text-decoration-skip-ink |
+| background-blend-mode | linear() easing | text-decoration-skip-ink: all |
+| background-clip: border-area | Logical properties | text-decoration-skip-spaces |
+| border-radius | Masks | text-wrap |
+| box-shadow | min(), max(), and clamp() | text-wrap: balance |
+| calc-size() | mix-blend-mode | text-wrap: pretty |
+| Cascade layers | Nesting | transition-behavior |
+| ch unit | Oklab and OkLCh | Transitions (CSS) |
+| clip-path | overflow-clip-margin | Trigonometric functions (CSS) |
+| color-mix() | overflow-wrap | unset |
+| color-scheme | overflow: clip | user-select |
+| Conic gradients | overlay | View transitions |
+| Container queries (size) | overscroll-behavior | view-transition-class |
+| Container scroll-state queries | prefers-color-scheme media query | Viewport units |
+| Container style queries | prefers-contrast media query | Web animations |
+| Content | prefers-reduced-motion media query |  |
+
+HTML & DOM (36 features)
+
+| | | |
+| :--- | :--- | :--- |
+| :autofill | &lt;slot> | HTML streaming setters |
+| :indeterminate | &lt;video> | HTML-in-canvas |
+| &lt;audio> | Autonomous custom elements | inert |
+| &lt;details> | blocking="render" | Interest invokers |
+| &lt;dialog closedby> | Customizable &lt;select> | Invoker commands |
+| &lt;dialog> | Declarative shadow DOM | Lazy-loading media |
+| &lt;input type="checkbox" switch> | Email, telephone, and URL &lt;input> types | moveBefore() |
+| &lt;input type="range"> | Fetch priority | MutationObserver |
+| &lt;input> | focusgroup | Mutually exclusive &lt;details> elements |
+| &lt;link rel="expect"> | Form-associated custom elements | Popover |
+| &lt;link rel="preload"> | hidden="until-found" | popover="hint" |
+| &lt;progress> | HTML setter methods | Shadow DOM |
+
+JavaScript & APIs (74 features)
+
+| | | |
+| :--- | :--- | :--- |
+| &lt;install> | integrity() for url() | Sanitizer API |
+| &lt;meta name="text-scale"> | Interaction contentful paint performance entries | Scheduler API |
+| &lt;template for> | Intersection observer | Small, large, and dynamic viewport units |
+| AbortController and AbortSignal | Intl.DurationFormat | Soft navigation performance entries |
+| ARIA attribute reflection | Keyboard events | Speculation rules |
+| ariaNotify() | Language detector | Subresource integrity |
+| Async clipboard | LanguageModel | Summarizer |
+| autocorrect | Lazy-loading images and iframes | SVG |
+| beforeinstallprompt | light-dark() image values | Temporal |
+| border-shape | Local network access | text-decoration-inset |
+| Connection allowlists | Long animation frames performance entries | text-fit |
+| corner-shape | long-animation-frames-style-layout | Top-level await |
+
+…（内容已截断）

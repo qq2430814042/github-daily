@@ -1,0 +1,178 @@
+c6 —— 带语言扩展的 TinyCC
+
+先看一眼：defer / errdefer 管资源
+
+C 里最容易写错的不是功能，而是每条出口都得把已拿到的资源还回去。c6 让你在拿到资源的
+那一行就把它登记给 defer，函数出口只剩一处；「失败才需要撤销」的那部分单独交给 errdefer：
+
+/* 以前：出口有几条，清理就写几遍；再添一个资源，所有出口都得重排 */
+int save(const char *path, const char *data, int n)
+{
+    FILE *f = fopen(path, "w");
+    if (!f) return -1;
+    char *tmp = malloc((size_t)n);
+    if (!tmp) { fclose(f); return -1; }
+    if (fwrite(data, 1, (size_t)n, f) != (size_t)n) { free(tmp); fclose(f); remove(path); return -1; }
+    free(tmp); fclose(f);
+    return 0;
+}
+
+/* c6：拿到就登记，清理只写一次；出错时的回滚写在 errdefer 里 */
+int!error save(const char *path, const char *data, int n)
+{
+    FILE *f = fopen(path, "w");
+    if (!f)
+        return err(1, "open failed");
+    errdefer remove(path);                 /* 只有失败才删半成品 */
+    defer fclose(f);                       /* 正常返回、err 返回都执行 */
+
+    char *tmp = malloc((size_t)n);
+    if (!tmp)
+        return err(2, "out of memory");
+    defer free(tmp);                       /* LIFO：free 先于 fclose */
+
+    if (fwrite(data, 1, (size_t)n, f) != (size_t)n)
+        return err(3, "short write");      /* 跑 free → fclose → remove */
+    return 0;
+}
+
+记住三条：登记顺序的倒序执行（defer 与 errdefer 混在一起排队）；defer 覆盖所有出口
+（return / break / continue / goto / err）；errdefer 只在本次调用真的 err 过时跑，
+正常返回跳过。清理状态放在函数帧里而不是 TLS，所以 tcc -run 和裸机上一样能用。
+细节见错误处理，可运行示例 ./tcc/c6 -B tcc -run examples/err_demo.c6。
+
+这是什么
+
+c6 是 TinyCC 的一个分支，在不破坏原有 C 语义的前提下加入
+一组系统编程友好的语言扩展。开关只有两个：编译器打开 C6_EXT、源文件用 .c6 后缀
+（.c 文件永远是普通 C，没有 -std=c6 这个选项）。
+
+| 扩展 | 作用 | 详情 |
+|---|---|---|
+| defer / errdefer | 作用域/函数退出时逆序清理；errdefer 只在错误路径执行（状态在函数帧里，不需要 TLS） | 错误处理 |
+| T!error + try / catch | 声明可能失败的函数；try 原样传播，catch e { ... } 就地处理并清空错误槽 | 错误处理 |
+| return err(id, "msg") | 设置错误槽、就地展开清理并直接返回（只能写在 T!error 函数里） | 错误处理 |
+| 错误码号段 | 每个模块一个号段（(areaf() / v.f() 都是调用（符号是 T_f） | 方法与 interface |
+| interface | 胖指针 {void *self; const VT *vt;} + 自动生成的 vtable | 方法与 interface |
+| 省略 struct | tag 本身就是类型名：Vec v;、sizeof(Vec)、Vec:] | [声明 |
+| 变量必须初始化 | 每个变量定义都带初始化器（static 与 VLA 除外） | 声明 |
+| T:] 切片 | 带长度与边界检查的数组视图，两个机器字 {元素指针, 长度} | [切片 |
+| foreach | 遍历数组、切片、整数区间，以及实现 has()/next() 的迭代器 | foreach |
+| 元组 (T1, T2, ...) | 函数多返回值：return {q, r};、(int q, int r) = f();、t0] | [元组 |
+| 函数字面量 / 闭包 | void(int x) { ... } 是表达式；closure RET (P…) 按值捕获外层块作用域 | 函数字面量 |
+| async / await / co / task | 无栈协程：co f(); 顶层跑，task t = f(); 拿句柄 | 并发 |
+| spawn | OS 线程（pthread_create），语句立刻返回、真并发 | 并发 |
+| 托管引用 @T | 引用计数 GC：@T / weak / own / shared / drop，环是硬错误 | 托管引用 |
+| f"..{expr}.." | 零分配栈缓冲的字符串插值；@f".." 产出托管字符串 | 字符串插值 |
+| 宏 expr/stmt/ident/type | 像函数一样写宏，角色词说明展开结果怎么用，局部变量自动卫生重命名 | 宏 |
+| 泛型 @ | struct Vect@T { ... } 定义模板，Vect@int 建实例；\|T\| 前缀绑定形参；单态化导出普通 C | 泛型设计 |
+| 无 libc | freestanding：运行库外部依赖全是 weak，一直到 512 字节引导扇区的裸机 | 无 libc |
+| test "描述" { ... } + -test | 顶层测试块与内建测试运行器 | 测试 |
+
+扩展默认不启用，且是编译期可裁剪的：不定义 C6_EXT 构建出的编译器与上游 TCC 行为完全一致。
+C6_EXT 只决定「有没有这套扩展」，真正启用哪一份代码由源文件后缀决定：.c6 文件开启扩展
+（并定义 C6），.c 文件不会因为同一次编译里出现 .c6 而被连带开启。import NAME;
+优先查找 NAME.c6，找不到才回退到 NAME.c。
+
+快速开始
+
+依赖：git、make、C 编译器（gcc/clang）、binutils。
+
+1. 配置（只有第一次需要；tcc/ 源码就在仓库里，不用联网拉取）
+./scripts/bootstrap.sh          # 等价于 make bootstrap
+
+2. 构建（打开扩展；会先自动执行 bootstrap）
+make build                      # 等价于 make -C tcc -j EXTRA-DEFS=-DC6_EXT
+
+3. 运行（-B tcc 让编译器找到未安装的 libtcc1.a 与运行时头文件）
+./tcc/c6 -B tcc -run hello.c6   # c6 代码放在 .c6 文件里，后缀就是开关
+
+4. 提交前验证：一条命令跑完整回归（最慢的一条，见「构建与验证」）
+make check-all
+
+make build / make selftest / make test-all / make check-all 都会先跑 bootstrap：
+tcc/ 已经配置过（有 config.mak）就直接跳过，没有才跑一次 ./configure。
+
+tcc/ 是普通源码：上游 TinyCC 的基线提交 2d3eea2 先整体导入，之后每个 c6 补丁一个提交
+（提交说明就是补丁标题）。要改 TCC 就直接改 tcc/ 里的文件、按普通提交提交——没有
+“重新同步工作树”这回事，手改不会被覆盖。make distclean 清理构建产物和 configure 结果，
+不会删源码。
+
+目录结构
+
+.
+├── README.md           本文件：落地页与总索引
+├── CHANGELOG.md        版本与特性变更史
+├── docs/               文档（入口：docs/README.md）
+│   ├── manual/         语言手册：一个特性一篇，讲怎么用
+│   ├── reference/      规范与参考：语法、诊断码、命令行、后端
+│   ├── design/         设计文档与实现说明：讲为什么这么做
+│   ├── history/        实施记录与状态：讲做到哪一步了
+│   └── stdlib.md       标准库 std/ 的设计、API 与写法约定
+├── scripts/            bootstrap.sh，以及裸机/wasm 辅助脚本
+├── std/                标准库：一个文件一个 module（std/container/vec.c6 -> std.container.vec）
+├── tests/              c6 全部自测：test 块、编译期诊断、上游 tests2
+├── examples/           可运行示例：每个特性一个 *_demo.c6，wordcount 是集成示例
+├── Makefile            构建入口（make help 看全部目标）
+└── tcc/                TCC 源码树：上游基线 + 每个 c6 补丁一个提交
+
+文档地图
+
+| 你是…… | 从这里读 |
+|---|---|
+| 第一次接触 c6 | 上面的快速开始 → 语言手册 挑要用的特性 |
+| 写 c6 代码 | docs/manual/（语法与陷阱）+ docs/stdlib.md（标准库 API） |
+| 查语法规范 | docs/reference/grammar.md（EBNF 增量语法、静态约束、重写规则） |
+| 查报错信息 | docs/reference/diagnostics.md（C1–C134 约束与诊断文本） |
+| 查命令行/构建目标 | docs/reference/cli.md（编译器选项 + 全部 make 目标） |
+| 改编译器 | docs/design/plan.md → docs/design/implementation-notes.md → grammar.md §11（实现位置表） |
+| 看实现进度 | docs/history/status.md（分阶段状态）+ CHANGELOG.md |
+| 后端（C99 / LLVM） | docs/reference/c99-backend.md、docs/reference/llvm-backend.md |
+| 裸机 / freestanding | docs/manual/freestanding.md |
+
+完整索引（按读者路径分三条）见 docs/README.md。
+
+构建与验证
+
+make build        # 扩展模式（EXTRA-DEFS=-DC6_EXT）
+make build-plain  # 上游模式（不定义 C6_EXT）
+make test         # tests2 上游全量（扩展模式）
+make test-all     # selftest + tests2 + c6selfcheck + 标准库 + freestanding/裸机
+make check-all    # 提交/发布前跑这一条：test-all + errcheck + C99 后端 + 三条自举路线
+
+每个目标的含义、自举三条路线怎么比对、make help 的完整目标表，见
+docs/reference/cli.md；测试怎么组织、诊断用例怎么写，见
+docs/manual/testing.md。
+
+标准库 std/
+
+标准库按「一个文件一个 module、模块名就是它的路径」组织，再按领域分七个子目录
+（目录是模块名的一部分：std/container/vec.c6 就是 std.container.vec）：
+
+std/core/                   基础：定宽类型、错误码、内存、数学、位运算、哈希、随机
+  std/core/bits.c6          std.core.bits          popcount/clz/ctz、rotl/rotr、bswap、bit_get/set/clear、mask/sign_extend/is_pow2
+  std/core/err.c6           std.core.err           错误码 enum Error（OK…BUSY）+ msg()/msg_of()/is_ok()
+  std/core/hash.c6          std.core.hash          FNV-1a 32/64、CRC32、Adler-32 + 流式 Hasher
+  std/core/math.c6          std.core.math          整数 gcd/lcm/ipow/clamp/floor_div/mod + 浮点 sqrt/floor/ceil/round（不链 libm）
+  std/core/mem.c6           std.core.mem           借用式内存池 Arena、托管堆包装 alloc_new/dealloc、按元素的 copy/fill/swap/rotate/align
+  std/core/rand.c6          std.core.rand          xorshift64*：可重放序列、无偏区间 below/int_range、next_f64/next_bool、fill/shuffle
+  std/core/types.c6         std.core.types         定宽类型 u8/i32/u64…、usize、f32/f64、Limits/Bool
+
+std/text/                   文本：字符串视图与缓冲、格式化、UTF-8、ASCII、浮点与 glob
+  std/text/ascii.c6         std.text.ascii         ASCII 判别/大小写/忽略大小写比较（收 int，EOF 与负 char 安全）
+  std/text/fmt.c6           std.text.fmt           定长格式化缓冲 Buf@(N)：write_int/u64/hex/hex64/bin/bool/ptr、write_pad（共用 digits_* 原语）
+  std/text/num.c6           std.text.num           浮点格式化（固定/%e/%g）与解析（inf/nan、RANGE/PARSE 错误码）
+  std/text/str.c6           std.text.str           字符串视图 Str + 零成本字面量宏 S()：split/lines/join、find/last_find、trim、to_int/to_u64、strip_prefix/suffix、fields、replace/split_once、hash
+  std/text/strbuf.c6        std.text.strbuf        会长的字符缓冲 StrBuf（托管引用）：write/write_int/write_hex、reserve/truncate/cstr
+  std/text/utf8.c6          std.text.utf8          UTF-8 解码/编码/校验/计数 + Rune 迭代器（拒绝过长编码、代理区、截断）
+  std/text/glob.c6          std.text.glob          shell 风格 glob（零分配）：Glob 的 match/match_path/has_magic、* ? ] 字符类与转义
+  std/text/semver.c6        std.text.semver        语义化版本 2.0.0：semver_parse、Semver 的 compare/is_prerelease/format（严格前导零与标识校验）
+  std/text/utf16.c6         std.text.utf16         UTF-16 解码/编码/计数：代理对、BMP、非法代理与截断（零分配）
+  std/text/ansi.c6          std.text.ansi          ANSI 转义构造器 Ansi：SGR/基础与 256 色/清屏/光标移动/隐藏光标
+
+std/container/              容器与算法：向量、位集合、跨度、映射、集合、双端队列、优先队列、区间、排序
+  std/container/deque.c6    std.container.deque    环形缓冲双端队列 Deque@T + DIter：push/pop 两端 O(1)、first/last/at/get/set
+  std/container/map.c6      std.container.map      开放寻址哈希表 Map@(K,V) + Entry/Iter：put/get/get_or/set/put_new/remove
+  std/container/pqueue.c6   std.container.pqueue   二叉堆 PQueue@T（托管容器）：push/pop/peek/push_pop/heapify/clear、count/capacity/is_empty/is_valid、init/set_cmp/set_max（比较器与 std.container.sort 的 cmp_int/cmp_str 通用）
+
+…（内容已截断）

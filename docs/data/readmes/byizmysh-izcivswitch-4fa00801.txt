@@ -1,0 +1,188 @@
+IZCIVSwitch 0.2.0 — Reliable
+
+IZCIVSwitch is a PC-side research toolkit for Nintendo Switch 2 and Civilization VII.
+
+PC compatibility. The bundled Lobby runtime targets Linux x86_64.
+
+Release notes · Safety notice
+
+Use with caution. This research software can modify game save data and cause the console to freeze. Back up your saves before use. A freeze may require a full power cycle. Use the software only with hardware and content you are authorized to access. It comes without a warranty.
+
+Reliability update (0.2.0)
+
+The Civ7 engine copy in kit/ carries a retry/release fix built from a replay
+of all 14 Civ7 boots on the test machine (36 acquisition attempts, 1 success).
+The geometry and target constants are those of the verified switch2-nTDhp6
+run; the upstream civswitch-integration/kit is untouched.
+
+- retries that followed a retained failure: 0 successes in 16, and each
+  one wedged the console at abort-control (13 unjoined threads) or lost it;
+- retries that followed a proven-clean failure: 1 success in 6;
+- 7 of 10 historical canary misses had a proven restore and can now be released
+  cleanly instead of retaining threads and scratch.
+
+0.2.0 keeps the verified geometry and changes only the retry/release logic:
+release after a proven restore, stop when ownership cannot be proven, 4 attempts
+by default, 900 s per attempt, 1800 s global (the verified run took 721 s
+against the old 720 s limit).
+
+Full evidence, replay tables and rollback switches:
+RELEASE-NOTES-RELIABLE.md and
+CIV7-ACQUIRE-PORT.md. The first hardware run of this
+build has not been performed yet. The 0.1.0 verified chain is documented in
+docs/VERIFIED-RUN.md.
+
+Installation
+
+Checksums. The repository's SHA256SUMS records the files at tag v0.2.0. For release archives, use the separate SHA-256 checksum file under Assets on the release page.
+
+Read this section first. The release archive does not contain prod.keys. You must supply your own console dump for the PC-side Lobby injection.
+
+1. Download and extract
+
+| Package | Use |
+|---|---|
+| IZCIVSwitch-0.2.0-linux-x86_64.tar.gz | Full package: kit + PC Lobby runtime + launcher; Linux x86_64 |
+| IZCIVSwitch-0.2.0-source.zip | Scripts + kit + launcher, no Lobby runtime; use with an existing iz2s-panel or the Switch 1 NRO |
+
+Extract the entire archive to a writable folder. Do not run from inside the archive.
+
+IZCIVSwitch-0.2.0/
+├── IZCIVSwitch.py
+├── pc-install-trigger.py
+├── kit/                         # original civswitch-kit
+├── panel/                       # PC-side CivSwitchLDN (full archive only)
+│   └── data/
+│       ├── runtime/civswitchldn/
+│       └── private/civswitchldn/   :9026
+
+Force it if needed:
+
+python3 IZCIVSwitch.py --lobby --yes --console-ip 10.42.0.190
+
+If the Wi-Fi radio changes
+
+USB adapters re-enumerate as phyN. If the stored radio is gone and exactly one is available, the script selects it automatically. With several radios:
+
+python3 IZCIVSwitch.py --lobby --yes --phy phy27
+
+Persistent mode: XSTRIG + Load Game
+
+This is the original kit's validated loop. It needs one install and a reboot, but no Lobby afterwards.
+
+Install once
+
+With the PC Lobby runtime and prod.keys:
+
+S2 must be in Host Lobby
+python3 pc-install-trigger.py --yes
+
+The script injects core.js, waits for the loader, then runs the original
+kit/save-tools/restore_save.py kit/save-tools/trigger-recreate  and writes:
+
+save:/saves/Single/XSTRIG.Civ7Save
+1 195 911 bytes
+sha256 c53a04e4ce432727c0e24348be240051b846595103ed06865b34c16bba810e7c
+
+Other saves are not deleted. The Switch 1 NRO's ZR is the path that wipes single-player saves; this PC installer does not.
+
+Reboot and run
+
+1. Hard power-cycle S2: hold power for 12 seconds, wait 5 seconds, boot.
+2. Civ7 → Load Game → XSTRIG.Civ7Save.
+3. Wait for Awaiting payload at :9026.
+4. PC:
+
+python3 IZCIVSwitch.py --no-lobby
+
+On failure: hard power-cycle, Load Game → XSTRIG, repeat. The kit reports roughly 30% success per boot; 3–4 boots are normal.
+
+Optional: IZlauncher menu
+
+izlauncher/ installs a menu entry into save:/saves/Single/IZ2S.Civ7Save.
+The main FS session works without this optional menu.
+
+python3 izlauncher/install.py --ip
+
+After INSTALL DONE:
+
+1. Reboot S2.
+2. Civ7 → Load Game → IZ2S.Civ7Save → menu.
+3. Double-press R3 (right stick) to start the embedded loader.
+4. PC: python3 IZCIVSwitch.py --no-lobby.
+
+Rollback:
+
+python3 izlauncher/install.py --ip  \
+  --restore izlauncher/receipts//receipt.json
+
+Observing and stopping
+
+While IZCIVSwitch.py is alive:
+
+node kit/port/engine/rpc.cjs  status
+
+The bridge is up during 2/4, so status can answer before FS is fully acquired.
+Inspect a run without starting a new engine:
+
+python3 IZCIVSwitch.py --inspect kit/port/engine/runs/
+
+Monitor prefixes:
+
+| Prefix | Meaning |
+|---|---|
+| engine] | selected run.cjs lines |
+| [run] | run.log: pipeline stages |
+| [fs] profile / [fs] retry | fs-race sweep |
+| [fs] heartbeat | stage, attempt, elapsed, RPC calls, idle |
+| [fs] WARNING | no acquisition progress for 180 s |
+| RUN SUMMARY | verified/error, stages, last retries |
+
+Ctrl-C releases the endpoint. If the process does not exit, kill ; the console may be wedged.
+
+What you can do
+
+- Hold a live Stage 2 FS RPC endpoint on the console.
+- Use the kit's RPC tooling (rpc.cjs, low-level call/read/write/query).
+- Dump system CodeFS with --dump-firmware (needs ≥512 MiB free).
+- Install the optional IZlauncher menu.
+- Use XSTRIG + Load Game for a persistent entry without Lobby or Switch 1.
+
+This is not a graphical file manager. FS operations are exposed through the original kit's RPC/RO pipeline.
+
+Troubleshooting
+
+| Symptom | Check |
+|---|---|
+| prod.keys not ready | Put your own dump at panel/data/private/civswitchldn/prod.keys; required entries in step 2. |
+| capabilitiesReady: false | Re-run the setcap command from step 3. |
+| radio phyN is absent | Reconnect the USB Wi-Fi adapter; one radio → auto; several → --phy. |
+| loader did not answer | S2 is not in Host Lobby, or the IP changed; pass --console-ip. |
+| Got unstable rw primitive + 604:48 / 657:28 | Initial Civ7 JS exploit failed at the stable-primitive layer; no :9026. Hard reset and retry. |
+| FS acquisition did not complete | Probabilistic fs-race miss; 0.2.0 retries only proven-clean failures. no automatic retry means restart the console app. |
+| Stuck at 2/4, idle grows | Wedge; hard power-cycle 12 s. |
+| rpc.cjs status → ECONNREFUSED | Engine stopped or bridge busy; use --inspect. |
+| RUN SUMMARY verified: False | Read the summary and switch2/acquisition.log. |
+| PC platform and bundled Python | PC Lobby mode requires Linux. The bundled runtime targets Linux x86_64 and uses Python 3.14. |
+
+Acquisition budgets. 0.2.0
+allows 4 attempts of 900 s (--attempts, --attempt-timeout) inside a
+1800 s global limit
+(--max-runtime). Only a failure with a proven clean release consumes another
+attempt; if the run prints no automatic retry, restart the console application
+before the next launch.
+
+Privacy and security
+
+- The scripts run locally and do not contact a cloud service.
+- Keep console-specific keys private. Never commit or share them. The release archives exclude console keys and the Switch 1 NRO.
+- The toolkit can write to game saves and create temporary data under save:/. See the [safety notice for the risks of running it.
+- The release includes no Nintendo branding or game assets.
+
+Credits and license
+
+- civswitch-kit by mza1010. civswitch-kit provides the filesystem support used by IZCIVSwitch. The bundled kit retains its GPL-2.0 license and upstream notices, which credit kurumuz/ns2jb and the CivSwitch port by slapah.
+- CivSwitchLDN by ItsNerisma. The PC Lobby mode uses CivSwitchLDN by ItsNerisma. The bundled application and ItsNerisma's original code are licensed under GPL-3.0-only. Reused components retain the licenses documented in the bundled third-party notices.
+- IZCIVSwitch. The original integration code is licensed under GPL-2.0. Bundled projects retain their own licenses. IZCIVSwitch repository
+
+…（内容已截断）

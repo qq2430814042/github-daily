@@ -50,6 +50,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | Agent Nexus | Find agent-callable APIs, MCP servers and CLIs by capability, with live health and uptime data | No | HTTP | Glama |
 | BlockVectra | Blockchain RPC and indexed data; keyless documentation and chain discovery | apiKey | stdio, HTTP | – |
 | Catastro GPS | Cadastral parcels in 29 European countries by reference, point or address | apiKey | stdio | Glama |
+| Company Facts | New US businesses from state registers, company registers, tech stack and hiring, each sourced | No | HTTP | MCP Registry · Glama |
 | ContextFetch | Web search and any page as Markdown pruned to the query, plus research, crawl and site maps | No | stdio, HTTP | Glama |
 | corpusAI Cloud Pricing | Cloud, GPU and LLM token prices for agents, free discovery tools and paid per-call data | No | stdio, HTTP | npm · MCP Registry |
 | Council of AI | Read a signed AI measurement board and verify its signed records and Merkle proofs | No | HTTP | Glama |
@@ -72,29 +73,20 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | Openpath | US job listings and local businesses for agents, with apply links and owner inboxes | No | HTTP | Anthropic · Glama · Smithery |
 | OpenSwissData | Swiss customs tariff (TARES), FINMA register and warnings, NOGA/NACE/ISIC code crosswalks | No | stdio, HTTP | Glama |
 | PourWire | New US liquor license filings: restaurants and bars about to open in 7 metros, plus metro stats | No | HTTP | Glama · MCP Registry |
+| RealMarket | Live gold, forex, crypto and stock prices, indicators and market analysis for AI agents | apiKey | HTTP | – |
 | Refnusa | Indonesian holidays, wages, regions, postal codes, tax, food prices and NIK/plate checks (31 tools) | No | HTTP | Glama |
 | RegSentry | Inspect authorized static tracking signals and review supplied consent evidence | No | HTTP | Glama |
 | Requstory | Map how a company works, who owns each process, and which steps AI agents can run | No | HTTP | – |
 | Scalekit | Manage auth for AI agents and MCP servers: environments, orgs, users, SSO connections and roles | OAuth | stdio, HTTP | Glama |
 | ShapelessAI | Write, schedule and publish social posts, carousels and short video to 8 networks | OAuth | stdio, HTTP | Cursor · Glama |
+| Signal Lab | Catalog of free market, macro, weather, news and OSINT data sources, with terms links and skills | No | HTTP | Glama · MCP Registry |
 | Silicon Floor | Who owns AI and chip stocks, what insiders sell, how fast they grow: answers from SEC filings | No | HTTP | Anthropic · Glama |
 | SkyAccess | Search 5,000+ live empty leg flights, get charter price estimates and booking links | No | HTTP | Cursor · Glama |
 | TextKit | Send and receive SMS, verify phones and buy US and Canada numbers from an agent | OAuth | HTTP | MCP Registry |
 | Toolalize | Unit and live currency conversion tools for agents, no key needed | No | HTTP | Glama · MCP Registry |
+| Transcript Dock | Transcripts of YouTube, TikTok and Instagram videos in one tool call, with SRT and VTT exports | OAuth | stdio, HTTP | Glama · npm |
 | Twinbay | Spin up stateful API twins, read request logs and grade agent runs | OAuth | HTTP | – |
 | US Recalls | Check US recalls from 9 agencies by UPC, model, NDC, lot or VIN; 4 read-only tools | apiKey | HTTP | Glama · MCP Registry |
 | Vitalityfit | Cheapest offers for health products from German online shops and pharmacies by name, PZN or EAN | No | HTTP | MCP Registry |
-| Vuntum | Sourced, dated data on consumer robots and physical AI: specs, prices, evidence | No | HTTP | Glama |
-| XposedOrNot | Check an email against known data breaches, read its breach history and get domain breach counts | No | HTTP | Cursor · Glama |
-
-Maintain an open-source MCP server? Add it.
-
-Learn more about Public APIs
-
-Prefer a website? Browse this list at publicapis.lol
-
-Everything in this README, rebuilt as a searchable site. It's the official home of public-apis: 2,000+ free APIs in 50+ categories, synced from this repo and tested daily.
-
-* Browse the directory: every category, featured picks and the latest from the blog
 
 …（内容已截断）

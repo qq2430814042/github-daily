@@ -1,0 +1,154 @@
+A personalized mRNA cancer vaccine for Yash
+
+rnafoundry.com/yash, Made at the RNA Foundry.
+
+In January 2025, 32-year-old Yashdeep Bindal was diagnosed with stage IV pancreatic cancer. He had just returned to work after the birth of his daughter, Maya.
+
+At the RNA Foundry, we are developing a personalized cancer vaccine for Yash. We’re sharing his tumour sequencing data and our vaccine design so that other researchers can help refine it.
+
+Design #2 is our lead vaccine design for Yash.
+It was generated using matched-normal white-blood-cell DNA alongside tumour
+DNA and RNA. We share the code, methods, results and sequencing-data access
+instructions so others can reproduce the work and explore alternative designs.
+
+| Design | DNA analysis | Selected regions | Protein | Status |
+|---|---|---:|---:|---|
+| Design #2 | Paired tumour and matched-normal DNA | 24 | 724 aa | Lead |
+| Design #1 | Tumour-only; generated without matched-normal DNA | 29 | 852 aa | Earlier design retained for comparison |
+
+Design #2 combines 12 mutation, 5 splice, 5 CTA/self and 2 fusion regions.
+Independent paired Mutect2 discovery, direct normal evidence and tumour-RNA
+reconstruction support its mutation selection. All 12 eligible mutation regions
+are included, with no top-N expression-weighted cutoff. Seven original mutation
+targets were detected in normal DNA and removed; AQP3 and TGFBR2 regions were added.
+Patient-supported SEC/MITD routing sequences and jointly optimized order/linkers
+form the protein, which is synonymously encoded with the recorded PopRNA settings.
+PolyA and any downstream extension are unspecified; nucleotide files contain
+known upstream segments, not complete molecular sequences. This is one research
+approach; alternative analyses, antigen selections and designs are welcome.
+
+See the lead design
+
+- Selected antigens and sequences.
+- Final protein,
+  antigen order and
+  component coordinates.
+- Known RNA segment,
+  coding DNA and
+  annotated DNA segment.
+- Methods, every-antigen review
+  and comparison with Design #1.
+- Junction check,
+  hydropathy screen,
+  nucleotide verification
+  and completion audit.
+
+FASTA and TSV files are plain text. JSON records inputs, methods and checks.
+The individual evidence review retains sparse RNA support, RNA-source uncertainties
+and the encoder's unmet soft folding target alongside the checks that passed.
+
+Verify and reproduce
+
+Use Python 3.11 or 3.12, from the repository root:
+
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install -e '.mrna]'
+yash-vaccine verify
+yash-vaccine reproduce --output work/design-2-replay
+
+The first command checks Design #2’s recorded evidence and annotations. The second
+replays selection, joint order/linker optimization from recorded costs, independent
+junction checks and synonymous encoding. It compares the selected, protein and
+nucleotide outputs byte for byte. Neither downloads patient reads, runs new
+model inference or starts cloud jobs. Repeating raw-read processing or model
+inference is a separate scope; the [Design #2 guide
+records the Modal controllers, dependencies and large-data locations.
+
+yash-vaccine reproduce defaults to the lead Design #2. Use
+yash-vaccine reproduce designs/initial for Design #1. Its
+guide and the usage guide explain the
+earlier workflow. yash-vaccine compare designs/initial designs/design-2 compares
+the two complete proteins by stable region identity.
+
+Make another candidate
+
+yash-vaccine init my-candidate
+
+This creates a README and a starter run.py in designs/my-candidate/. Describe your
+question and implement your approach using any code or tools you need. Reuse our
+data and helpers where useful, or develop a different workflow. Then run your
+script as described in its README, for example:
+
+python designs/my-candidate/run.py
+
+Keep your results with your notes: an antigen table, analysis, cassette or whatever
+you produced. There is no required recipe or pipeline. A design might contain:
+
+designs/my-candidate/
+  README.md          Question, methods, inputs, commands and findings
+  run.py             Your analysis (or another script/workflow)
+  selected.tsv       Chosen antigens, if produced
+  cassette.fasta     Construct, if assembled
+
+To change the lead Design #2, use its methods,
+candidate pool and
+selected regions as starting points
+for your own script. reproduce checks the recorded lead; it is not a configurable
+runner for a changed antigen set.
+
+The optional Design #1 recipe runner varies the earlier
+tumour-only selection and internal cassette. It does not use Design #2's
+matched-normal evidence or produce its complete SEC/MITD and RNA stages.
+
+Have a vaccine design for Yash? Submit a pull request. Fork the repository,
+create a branch and add your work under designs/. Include your selected antigens
+and rationale, sequences where produced, code and reproduction instructions, and
+results. Label unspecified components explicitly. The
+contribution guide explains what to include and how to submit it.
+
+Find the data and methods
+
+- Clinical reports: Stanford pathology/IHC and STAMP, Caris tumour profiling, and Guardant360 liquid biopsy PDFs.
+- Data: what is included, what is stored externally, and how to obtain it.
+- Matched-normal DNA and Design #2 data: final normal BAM, scoped genotypes, paired calls, QC and exact references; original normal FASTQs excluded.
+- Design #2 methods: scientific decisions and evidence behind the lead design.
+- Design #1 methods: the earlier design generated without matched-normal DNA.
+- Usage: reproduce our candidate or develop your own approach.
+- Contribute a design: what to include in a design pull request.
+- Upstream stages: DNA/RNA discovery and native scoring contracts.
+- AGENTS.md: a short map for coding agents.
+
+Other directions to explore
+
+The shared data support many approaches beyond these designs:
+
+- MHC class II: class-II presentation and CD4 T-cell targets.
+- Immunogenicity: predictions of T-cell responses alongside binding scores.
+- Processing and presentation: antigen order and linkers optimized for intended
+  target presentation, alongside the current unwanted-junction binding objective.
+- Antigen trafficking: compare the current SEC–antigens–MITD architecture
+  with other routing elements or a cassette without them.
+
+Repository map
+
+| Location | Purpose |
+|---|---|
+| designs/ | design-2/ is the lead matched-normal design; initial/ records Design #1 without matched-normal DNA |
+| data/ | Shared evidence, file catalog and access instructions |
+| config/ | Case context and regression definitions |
+| src/yash_vaccine/ | Maintained local selection, assembly and comparison code |
+| workflow/ | Source-specific upstream jobs and runtime contracts |
+| docs/ | Shared usage, contribution and upstream workflow guides |
+| tests/ | Existing checks |
+| work/ | Ignored temporary outputs and experiments |
+
+Provenance maps the input, model and verification records.
+Large sequencing files and case-analysis outputs are available through a
+public read-only endpoint.
+Download instructions and the
+file catalog describe the files, sizes and checksums. Third-party tools, models and references
+come from their providers. Full upstream RNA modules
+are not bundled; local replay uses included evidence and recorded predictions.
+Required credits and
+retained-source notices cover the materials used here.

@@ -1,0 +1,118 @@
+inFamous2Recomp
+
+A native Windows build of Sucker Punch's inFamous 2 (PlayStation 3, 2011), made by **statically
+recompiling** the game's own PowerPC and SPU code into C++ with the
+ps3recomp toolkit and compiling that into a Windows
+executable. There is no emulator underneath: the game's code runs as x86-64 code, the PS3's system
+libraries are reimplemented, and the RSX graphics chip's commands are translated to Direct3D 12.
+
+You need your own copy of the game. This repository contains no game code, no game assets, no
+firmware, no keys and nothing generated from them. You build the executable on your own PC from your
+own disc and title update; the result stays on your machine.
+
+Target: BCUS98125 (North America), title update 1.04. European copies (BCES01143 Europe,
+BCES01144 UK): beta -- see European copies (beta).
+
+Screenshots
+
+Captured from the port running on Windows (2560x1080 monitor); cropped and resized only.
+
+True ultrawide (Hor+, 64:27) in borderless fullscreen at 2560x1080: Cole firing a bolt on the New Marais pier, HUD spread to the screen edges.
+
+New Marais from the pier, right after the boat ride (ultrawide).
+
+The same cutscene frame: stock 16:9 (aspect = off, top) and Hor+ ultrawide (aspect = auto, bottom) -- same vertical view, more at the sides.
+
+| | |
+|---|---|
+|  |  |
+| The game's own pause menu gains *PC Settings* and *Quit Game*. | PC Settings, Display: window mode, aspect ratio (field of view), HUD layout, LOD, movies. |
+|  |  |
+| Graphics: preset, brightness, anti-aliasing, sharpening, AF, texture packs, shadow filtering, internal resolution, upscaling. | Controls: mouse sensitivity, stick deadzones, vibration. |
+|  |  |
+| The F1 options overlay (Frame tab: frame-rate limit, vsync, VRR, frame pacing, FPS counter), windowed with the FPS counter on. | The window's *Load* menu: save-state slots labelled with time, mission and play time. |
+
+The launcher's first-run game-files screen. After that it checks the build tools, builds, and starts the game.
+
+Features
+
+- The PS3 game, natively on PC: the game's own saves (in the PS3 format: they copy to and from
+  RPCS3), its HDD install, movies and audio, the 1.04 update's content; DLC unlock files work with your
+  own licence (game/README.md).
+- Ultrawide and any window shape. True Hor+ widescreen: the game renders a wider view (same vertical
+  view, more at the sides), the HUD spreads to the screen edges (or stays 16:9), movies are fitted;
+  auto follows the monitor (21:9, 32:9, 16:10, 4:3, any W:H). Resizable window and borderless
+  fullscreen (F11 / Alt+Enter). config/display.ini.
+- Controllers. Xbox / XInput pads, DualShock 4, DualSense and DualSense Edge, DualShock 3, Switch Pro
+  and "Switch mode" pads, other HID gamepads -- over USB or Bluetooth, hot-plugged. Motion (SIXAXIS),
+  rumble, lightbar and player LEDs, pressure-sensitive buttons where the pad has them; remapper copies
+  (Steam Input, DS4Windows, ...) are recognised so one pad never shows up twice. docs/CONTROLLERS.md.
+- Keyboard and mouse, at the same time as a controller, fully rebindable, with mouse camera and
+  sensitivity settings. config/input.ini.
+- Save states. Save the whole game at any moment and load it back in a fraction of a second: F5 / F9
+  quick slot, ten slots on Ctrl+F1..F10, labelled with the mission and play time, Undo last load.
+  docs/SAVESTATES.md.
+- Options in the game. F1, the PS / Guide / Home button or L3+R3 opens the PC options overlay
+  (display, graphics, frame rate, controls, audio, system), and the game's own pause menu gains
+  PC Settings and Quit Game: frame-rate cap and frame pacing, variable refresh, anisotropic
+  filtering, anti-aliasing and sharpening, upscaling filters, shadow filtering, an FPS counter, volume
+  and more -- applied live and saved to config/options.ini.
+- Language, as a PS3's system language picks it: English, French, Latin American Spanish or Brazilian
+  Portuguese, text and voices -- the languages this edition (BCUS98125) plays in. Auto (the default)
+  follows the Windows display language; PC Settings > System > Language or language = ... in
+  options.ini (IF2_LANGUAGE) chooses one, from the next launch. Opt-in, beyond what a US console does:
+  Language edition: Europe (language_edition = europe, IF2_LANGUAGE_EDITION) gives the game's own
+  European language list instead -- English (UK), French, Italian, German, Spanish, Dutch, Polish, Portuguese
+  and Russian, text and voices, all on your US disc; only the language list changes (saves stay US saves).
+- Performance work. RSX command processing with a separate render thread, lifted and
+  register-cached SPU job code, shader and pipeline caches (no compile hitches after the first time),
+  write-watched texture caching, CPU core placement for big-cache CPUs. On the test PC (Ryzen 7 9800X3D,
+  RTX 5080) the heaviest prologue fight measures about 50 fps and New Marais streets 60+ fps; the PS3
+  version runs at up to 30.
+- Texture dumps and replacement packs (tools/texpack/README.md) and resolution scaling
+  (experimental).
+- Problem reports built in: every play session writes a small issues file (stutters, slow
+  stretches, crashes, F8 marks with a screenshot) that holds no personal names; py tools\play_triage.py
+  ranks them.
+
+What you need
+
+- Your own inFamous 2 (BCUS98125) dumped from your own disc, plus title update 1.04 installed
+  from your own console or PSN (the updates in order, or their 1.04 files). A European (BCES01143) or UK
+  (BCES01144) copy works as a beta (below); other editions are refused at the
+  file check. Russian and the other European languages are also available on a US copy with
+  Language edition: Europe (see Features).
+- RPCS3 (free) to decrypt two files you own: the update's EBOOT.BIN -> EBOOT.elf, and the
+  firmware's dev_flash/sys/external/libsre.sprx -> libsre.prx (install the official PS3 firmware in
+  RPCS3 first: 4.92 or newer; a build with 4.80's libsre failed). Step by step: game/README.md.
+- A Windows 10/11 x64 PC that meets the system requirements below. About
+  20 GB of free disk space (the disc stays where it is; the build takes about 5 GB and the game's own
+  HDD install about 2.5 GB).
+- Build tools -- the launcher checks them and offers to install missing ones with winget:
+  Git for Windows (with Git Bash), Python 3.10+, CMake 3.20+, Ninja, Visual Studio 2022 Build Tools
+  with the C++ workload, LLVM (clang-cl).
+
+System requirements
+
+So far the port has been tested on one PC. The hard requirements come from the build itself; the
+minimum and recommended tiers are estimates scaled from the test PC. Reports from other hardware are
+very welcome (each session's logs\play-*-issues.txt records your CPU, GPU and frame rate).
+
+| | Minimum (estimate, ~30 fps) | Recommended (60+ fps in most areas) |
+|---|---|---|
+| OS | Windows 10 64-bit | Windows 11 64-bit |
+| CPU | 6 cores / 12 threads with AVX2, Ryzen 5 5600 / Core i5-11400 class | 8 cores / 16 threads, Ryzen 7 7700 / Core i7-12700 class or newer |
+| GPU | Direct3D 12 (feature level 11_0), 2 GB VRAM, GTX 1050 Ti / RX 570 class | 4 GB+ VRAM, GTX 1660 / RX 5600 XT class (more for a higher internal resolution) |
+| RAM | 8 GB | 16 GB |
+| Disk | 20 GB free, plus 10 GB for the build tools if you don't have them | same, on an SSD |
+
+- Hard requirements: 64-bit Windows 10 or 11, a CPU with AVX2 (Intel 4th gen / Haswell or
+  newer, any AMD Ryzen), and a Direct3D 12 GPU with current drivers.
+- The CPU matters most. The game's PS3 code (the PPU and five SPU workers) runs as several busy
+  threads, so per-core speed and core count decide the frame rate. The GPU is rarely the limit: at the
+  default resolution the game used under 1 GB of VRAM on the test PC.
+- GPU vendors: tested on NVIDIA only. AMD and Intel GPUs should work through Direct3D 12 but are
+  untested.
+- Test PC: Ryzen 7 9800X3D, RTX 5080, 2560x1080 at 75 Hz: about 52 fps in the heaviest fight tested,
+
+…（内容已截断）

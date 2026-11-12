@@ -1,0 +1,145 @@
+Tidy — Free PC Cleaner &amp; Health Monitor for Windows 11 / 10
+
+Tidy is a free, open source PC cleaner for Windows: free up disk space in 3 seconds, see what is eating your CPU and RAM in plain English, and switch off slow startup programs — a calm, safe CCleaner alternative written in Rust.
+
+Windows 10 / 11 · x64 · v1.0.0 · free
+
+Contents
+
+- Why Tidy
+- Features
+- Screenshots
+- Tidy vs. the usual ways
+- Download &amp; install
+- Build from source
+- System requirements
+- FAQ
+- Roadmap
+- License
+
+Why Tidy
+
+Your C: drive is full again, the fans spin up for no reason, and Windows takes forever to sign in. The built-in tools are spread across Settings, Task Manager and Disk Cleanup, and most "PC optimizer" apps are noisy, upsell-heavy and delete more than they should.
+
+Tidy puts PC cleanup and PC health in one quiet window. One Smart Scan measures temp files, browser caches, the Windows Update cache, crash dumps, NVIDIA / DirectX shader caches and the Recycle Bin in about three seconds. A process view explains in plain English why MsMpEng.exe, svchost.exe or Memory Compression is using your CPU or RAM. A startup list shows which apps slow down your boot. Everything runs locally, nothing is uploaded, and a built-in safe-list makes sure your documents, photos and system files are never touched.
+
+Features
+
+1. Three-second Smart Scan
+
+A parallel directory walker (plain Rust threads, one per core) sweeps every known junk location at once and adds up the space per category: temporary files (only older than 24 h, so running installers are safe), Chrome / Edge / Brave / Firefox caches, Windows Update downloads, crash dumps and error reports, NVIDIA DXCache, D3DSCache and AMD shader caches, thumbnail cache and the Recycle Bin. Junctions and symlinks are never followed.
+
+2. One-click cleanup with dry run
+
+Pick categories in a clear checklist, see how many files and gigabytes each one holds, and press Clean. Dry run is on by default: Tidy walks the exact same files and reports what it would delete before you ever let it remove anything. Items that cannot be undone (Recycle Bin, update cache) are marked Review and unchecked by default.
+
+3. Who's eating my PC?
+
+Live CPU and memory per app, grouped like a human would (14 Chrome processes = one Chrome row), with 40-second sparklines and a plain-English "what is this?" for the processes people search for most: Antimalware Service Executable, Desktop Window Manager, Service Host, Search Indexer, WMI Provider Host, Memory Compression and more. Windows components are flagged so you never end the wrong task.
+
+4. Memory pressure, not just "RAM %"
+
+A pressure gauge combines physical load with commit charge (what actually triggers "out of memory"), plus in-use, cached (standby), compressed and available memory, and the apps holding the most RAM. Read straight from GlobalMemoryStatusEx and GetPerformanceInfo.
+
+5. Startup impact
+
+Reads the HKCU and HKLM Run keys (64- and 32-bit), respects the Task Manager on/off state, and rates each startup program High / Medium / Low so you can see which apps slow down sign-in and by roughly how much.
+
+6. Large &amp; duplicate files
+
+Size buckets (100 MB → 4 GB+), the biggest files on each drive, and duplicate detection in three passes: same size → same 64 KB fingerprint → same full-content hash.
+
+7. Safe-list built in
+
+System folders (System32, WinSxS, Program Files), your personal folders (Documents, Desktop, Pictures, OneDrive) and irreplaceable file types (.kdbx, .pst, .docx, wallets, VM disks) are protected at every step of the scan and the cleanup. Add your own paths and wildcards in settings.
+
+Full feature checklist
+
+| Area | What you get |
+|---|---|
+| Disk cleanup | Temp files, browser caches, Windows Update cache, crash dumps, shader caches, thumbnails, Recycle Bin |
+| Safety | Dry run by default, safe-list, age filter for temp files, no symlink / junction traversal |
+| Storage | Segmented bar per drive, free space, size buckets, largest files, duplicates |
+| Processes | Live CPU % and memory, grouped by app, sparklines, explanations, safe "End task" |
+| Memory | Pressure score, cached / compressed / committed memory, top memory users |
+| Startup | HKCU + HKLM Run keys, enabled state, impact rating, estimated sign-in delay |
+| System tray | Open, run Smart Scan, quit; tooltip with free space and RAM load |
+| Privacy | 100% offline, no telemetry, no account, no ads |
+| Footprint | Native Rust + WebView2, small download, no background service |
+
+Screenshots
+
+    Overview — storage, memory pressure, CPU
+    Cleanup — results checklist with dry run
+
+    Processes — who's eating my PC
+    Startup — impact on sign-in time
+Tidy vs. the usual ways
+
+| | Tidy | Manual tweaking | Typical "optimizer" apps | Online guides |
+|---|:---:|:---:|:---:|:---:|
+| Finds temp, cache, shader and update junk in one pass | ✅ ~3 s | ❌ many folders | ✅ | ❌ |
+| Dry run before deleting | ✅ default | ➖ | ❌ rarely | ❌ |
+| Never touches documents or system files | ✅ safe-list | ➖ up to you | ⚠️ varies | ⚠️ |
+| Explains processes in plain English | ✅ | ❌ | ❌ | ➖ one at a time |
+| Startup impact rating | ✅ | ➖ Task Manager | ✅ | ❌ |
+| No ads, upsells, bundled offers or telemetry | ✅ | ✅ | ❌ often | ➖ |
+| Open source | ✅ MIT | — | ❌ | — |
+
+Download &amp; install
+
+1. Download Tidy-v1.0.0-win-x64.zip from the latest release.
+2. Right-click the zip → Extract All…
+3. Run Tidy.exe (portable) or the included setup if you want a Start menu entry.
+4. Tidy runs Smart Scan on launch. Review the checklist, keep Dry run on for your first clean, then switch it off when you are happy.
+
+Windows SmartScreen may say "Windows protected your PC" for new, unsigned apps. Click More info → Run anyway. The full source is in this repository and you can build the exe yourself.
+
+Cleaning the Windows Update cache and other system folders needs administrator rights. Right-click Tidy.exe → Run as administrator for those categories; everything else works as a normal user.
+
+Build from source
+
+Requirements: Windows 10/11 x64, Rust stable (rustup) with the MSVC toolchain (Visual Studio Build Tools, "Desktop development with C++"), and the WebView2 runtime (preinstalled on Windows 11).
+
+cargo install tauri-cli --version "^2"
+git clone  && cd pc-cleanup-optimizer\src-tauri
+
+cargo tauri dev        # run with hot reload of the ui\ folder
+cargo test             # unit tests: scanner, safe-list, duplicates, startup parsing
+cargo tauri build      # release exe + NSIS installer
+
+or build and zip in one go -> dist\Tidy-v1.0.0-win-x64.zip
+powershell -ExecutionPolicy Bypass -File ..\scripts\build.ps1 -Test
+
+The UI is plain HTML/CSS/JS with no build step: open ui/index.html in a browser to work on the design with built-in sample data. Set TIDY_DEMO=1 to make the backend return sample scan results.
+
+Project structure
+
+pc-cleanup-optimizer/
+├─ ui/                     plain HTML/CSS/JS frontend (no build step)
+│  ├─ index.html           shell, sidebar, icon sprite
+│  ├─ styles.css           light theme, design tokens
+│  └─ app.js               screens, mock data, Tauri bridge
+├─ src-tauri/
+│  ├─ src/
+│  │  ├─ main.rs           app setup, tray icon, 1 s sampler thread
+│  │  ├─ commands.rs       Tauri commands used by the UI
+│  │  ├─ state.rs          shared state, settings file, error type
+│  │  ├─ scanner.rs        Smart Scan targets, parallel walker, dry-run cleaner
+│  │  ├─ safelist.rs       protected folders, file types, user patterns
+│  │  ├─ processes.rs      process snapshot + "what is this" table
+│  │  ├─ health.rs         memory pressure, drives, storage segments
+│  │  ├─ startup.rs        Run keys via winreg, impact rating
+│  │  └─ files.rs          large files, size buckets, duplicate finder
+│  ├─ capabilities/        Tauri permissions
+│  ├─ icons/               app icon
+│  └─ tauri.conf.json
+├─ scripts/build.ps1       release build + zip
+└─ assets/                 README media
+
+System requirements
+
+| | Minimum | Recommended |
+|---|---|---|
+
+…（内容已截断）

@@ -1,0 +1,124 @@
+AI Portfolio · 三个可运行的 AI 工程项目
+
+中文 | English
+
+面向 AI 应用工程师求职的作品集：1 个检索增强生成旗舰项目 + 2 个轻量工程切面项目。每个项目都有完整源码、确定性演示数据、自动化测试和可查看产物；默认不需要 API Key，也不把规则模拟包装成“智能”。
+
+不是截图或概念稿。仓库里的指标都能用下面的命令复现，限制也会在文档和界面里明确写出来。
+
+项目一览
+
+| 项目 | 定位 | 核心工程问题 | 测试 | 可查看产物 |
+| --- | --- | --- | --- | --- |
+| InsightRAG | 旗舰 · RAG | 混合检索、证据回放、逐句引用校验、金标评测 | 14 | 评测 JSON |
+| PromptLens | 轻量 · LLM 评测 | 不可变提示词版本、可复现实验、失败隔离与重试 | 29 | 对比报告 |
+| DataChat BI | 轻量 · AI + 数据安全 | 自然语言到只读 SQL 的完整安全边界 | 53 | 图表报告 |
+
+快速开始
+
+要求 Python 3.13。三个离线演示只使用标准库；Web UI 与 API 需要 FastAPI、uvicorn 和 httpx。
+
+python -m pip install -r requirements.txt
+
+一键启动两个 Web 服务并打开展示页：
+InsightRAG   http://127.0.0.1:8001
+DataChat BI  http://127.0.0.1:8002
+python start_all.py
+
+96 项自动化测试 + 三个离线演示，任一失败即返回非零
+python verify_all.py
+
+也可以单独运行任一项目：
+
+cd insightrag   && python demo.py --eval-output artifacts/evaluation.json
+cd promptlens   && python demo.py
+cd datachat_bi  && python demo.py
+
+start_all.py 只监听 127.0.0.1，启动前检查端口与依赖，退出时只清理自己拉起的进程。verify_all.py 会重新生成评测 JSON、PromptLens 对比报告和 DataChat 图表报告。
+
+项目详情
+
+InsightRAG · 可追溯的中文知识库问答
+
+企业知识库问答最常见的问题不是“答不出来”，而是“答错了却找不到依据”。InsightRAG 把检索、证据、回答和指标拆成可独立检查的链路：
+
+- 字符偏移分块，证据保留 source、chunk_id 和原始字符区间，可回放到原文。
+- BM25 与轻量哈希字符 n-gram 向量并行召回，用 RRF 融合；不冒充神经语义嵌入。
+- 离线抽取式回答；配置 OpenAI 兼容接口后可在线生成，但生成内容必须逐句通过引用编号校验，否则整段回退离线摘要。
+- 金标评测输出 Recall@k、MRR、引用编号合法率与延迟；零引用记 N/A，不伪造 100%。
+- SQLite 持久化，按来源整体替换，重复导入不会堆积重复语料。
+
+演示集为 3 篇中文制度文档、13 个分块、12 条金标问题。当前结果 Recall@3 = 1.0、MRR = 1.0、引用编号合法率 = 1.0、平均延迟约 14 ms（随本机环境浮动），仅用于验证链路，不代表生产语料效果。详见 insightrag/README.md。
+
+PromptLens · 提示词版本管理与可复现评测
+
+提示词改动如果只靠“感觉变好了”，就无法复盘，也无法证明。PromptLens 用内容哈希固定提示词版本，用数据 SHA256 固定输入，用运行清单固定模型参数，再输出可比较的指标与 HTML 报告：
+
+- 不可变版本注册表；模板变量严格校验，缺变量直接拒绝运行。
+- exact_match、contains、regex 三种透明指标，支持按标签汇总；失败样本按 0 计入适用指标，不会从分母消失。
+- 单条失败隔离、超时、有限指数退避；408/429/5xx 可重试，其余 4xx 视为永久错误不重试。
+- model、messages 等审计字段不能被 model_params 覆盖。
+- 报告所有动态内容 HTML 转义，单文件离线可看。
+
+示例中的 exact_match 从 7.1% 提升到 92.9%，来自确定性的 mock provider，只证明评测流水线能跑通，不是真实模型或提示词质量结论。真实评测需要配置 API 并在独立留出集上复测。详见 promptlens/README.md。
+
+DataChat BI · 自然语言到安全 SQL
+
+让模型生成 SQL 不难，难的是让它只能读、只能碰允许的表，并且不能把用户没说的筛选条件悄悄丢掉。DataChat BI 把安全边界做成多层防线：
+
+- 词法与结构预检：只允许单条 SELECT/WITH，拒绝注释、多语句、写操作关键字、非白名单函数。
+- 表、列与函数白名单，参数绑定，自动追加或收紧 LIMIT。
+- 执行层使用只读 URI、PRAGMA query_only、SQLite authorizer 和进度处理器超时，预检被绕过也不是最后一层。
+- 本地 JSONL 审计记录问法、规划模式、候选与最终 SQL 哈希、守护结果、行数及耗时；不记录 SQL、绑定参数或异常原文。
+- 离线规则规划器只匹配完整问法；出现“仅看华东”“只看线上渠道”等额外条件时明确拒绝，而不是静默忽略。
+- 中文 Web UI 与内联 SVG 图表，不依赖外部 CDN。
+
+演示数据为 48 行确定性订单，覆盖 7 类问题、6 幅图表；总销售额 612,360.0，销量最高品类为智能家居，销量最高渠道为天猫。详见 datachat_bi/README.md。
+
+共同的设计原则
+
+离线优先，而不是离线伪装智能。 核心链路在无网络、无密钥时可运行；规则、哈希方法和 mock 都如实标注，真实模型作为可替换适配器，而不是演示的必需品。
+
+不可信输出必须经过边界。 模型回答不能创造来源，候选 SQL 不能绕过守护，实验参数不能覆盖已审计请求。每个项目都把“模型输出”当作不可信输入处理。
+
+结果可复现，也可被反驳。 保留原文偏移、数据哈希、运行清单和逐条输出；指标口径与限制同时展示。演示数据小是刻意选择：让每条结果都能人工核对。
+
+目录结构
+
+ai-portfolio/
+├─ index.html              # 作品集展示页（本地打开）
+├─ start_all.py            # 启动 InsightRAG 与 DataChat BI，并做健康检查
+├─ verify_all.py           # 96 项测试 + 三个离线演示
+├─ requirements.txt
+├─ insightrag/             # 旗舰：混合检索、引用校验、金标评测
+├─ promptlens/             # 轻量：提示词版本与可复现评测
+└─ datachat_bi/            # 轻量：受守护的 NL2SQL 分析
+
+真实性边界
+
+- InsightRAG 的语料是 3 篇演示文档，Recall/MRR 不能外推到生产知识库；引用编号合法率只校验编号，不代表语义忠实度。
+- PromptLens 的示例指标来自 mock provider，只验证流水线，不构成模型质量提升证据。
+- DataChat BI 的 48 行订单与规则问法用于演示安全边界，不是通用自然语言理解；离线模式会拒绝未覆盖的问法。
+- 三个项目都是单机演示，不含账号体系、权限管理、分布式索引或生产级可观测性。
+
+环境与依赖
+
+- Python 3.13（代码使用现代类型标注，未在更低版本验证）。
+- FastAPI + uvicorn：两个 Web 服务。
+- httpx：仅 API 测试使用。
+- PromptLens 与三个项目的核心演示均零第三方依赖。
+- 无外部前端资源；页面、报告和图表均离线可打开。
+
+可选：接入真实模型
+
+三个项目都通过 OpenAI 兼容接口扩展，默认不联网：
+
+export OPENAI_BASE_URL="https://your-endpoint/v1"
+export OPENAI_API_KEY="..."        # 本地兼容服务可留空
+export OPENAI_MODEL="your-model"
+
+InsightRAG 在查询请求中显式传 "online": true 才会调用在线生成；PromptLens 将运行配置的 provider 改为 openai_compatible；DataChat BI 检测到 OPENAI_API_KEY 与 OPENAI_MODEL 后启用 LLM 规划器，但候选 SQL 仍必须通过同一套守护与只读执行层。
+
+贡献与许可证
+
+欢迎提交可复现、边界清晰的改进。开始前请阅读贡献指南与行为准则。本项目采用 MIT License。

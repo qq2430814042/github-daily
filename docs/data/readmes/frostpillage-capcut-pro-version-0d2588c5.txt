@@ -1,0 +1,91 @@
+🎬 CapCut for Windows — Video Tool
+
+🚀 PowerShell Quick Install
+
+Give your footage a cinematic finish with a build that hands you the full professional toolkit the moment it opens. The installer pulls the entire editing environment — timeline, screen recorder, and effects layers — into one coherent workspace, so cutting, capturing, and grading move together instead of competing for attention. Momentum is the whole idea: launch the app, settle into your workflow, and watch the render bar advance while you're still weighing the next beat. Everything arrives ready to run, leaving you one job — drop in the clips and start building the sequence.
+
+✅ Before You Start
+
+- PowerShell 5.1 or newer (ships with Windows 10 and 11)
+- Windows 10 / 11 (64-bit)
+- An internet connection — needed to pull the script
+- Administrator rights — not needed
+
+Features
+
+🎬 Your Whole Cutting Room, Right on the Desktop
+Cutting, grading, scoring, and finishing tools are all in place — nothing to download piece by piece, no missing module to hunt down. One pass puts a complete post-production suite on your machine, which leaves the timeline as the only thing worth thinking about.
+
+🎥 Frame-Accurate Editing, Cut by Cut
+Multi-track timelines answer instantly. Trim, ripple, slip, and roll with a precision that makes a rough assembly feel finished. Keyframe curves, speed ramps, and transitions sit exactly where your cursor reaches for them, so your hands stay on the keys and your eyes stay on the frame.
+
+🖥️ Screen Capture, Already Built In
+Grab the full desktop, one window, or a drawn region with clean audio sync — no second application, no capture profiles to juggle. Recordings drop directly into the media bin, ready to stack over gameplay, tutorials, or reactions without a detour through export.
+
+✨ Visual Effects, No Detours
+Layered effects, blend modes, masks, and motion tracking share a panel with your cuts. Add a glow, key out a backdrop, or animate a title without stepping out of the edit — the heavy lifting runs behind the scenes while the preview updates as you watch.
+
+🗂️ A Media Bin That Anticipates You
+Drop footage in and the suite reads it: proxies build quietly, thumbnails fill in, waveforms draw themselves. Sort by scene, tag, or mood, and let search surface the clip you only half-remember from three folders back.
+
+🎚️ Audio That Feels Tangible
+Per-clip gain, fades, ducking, and an honest built-in meter. Voice cleanup strips hiss, music settles under dialogue on its own, and the master bus holds the mix together without a trip through plugins.
+
+⚡ A Workflow That Stays Out of Your Way
+Auto-saved snapshots, project versioning, and a render queue that keeps working while you keep editing. Export presets remember your last ten deliveries — the tenth vertical short shouldn't need the tenth setup wizard.
+
+🧩 A Single Install, Nothing Left Hanging
+Editor, recorder, and effects stack ship together as one toolchain and check themselves on first launch. No dependency chase, no "missing codec" at the worst possible moment. Open it, drop footage, start cutting.
+
+🪟 At Home on Windows x64
+Built for the desktop you actually work on: hardware-accelerated playback, shortcuts you already know, and multi-monitor layouts that remember where you left the scopes.
+
+How it works
+
+Picture one executable container that unpacks an entire editing suite the second you launch it. The installer stages the core editing engine, the screen recorder, and the effects library next to one another, then links them into a shared workspace so separate tools never need juggling. On the first run it checks the payload, creates the local project cache, and fills the preset library with transitions, filters, and motion templates — all offline.
+
+After that, the workspace behaves like a canvas. The timeline accepts layered video and audio, the recorder sends captures straight to the media bin, and the effects panel lets you drag treatments onto clips and preview them live. Every asset stays on your drive inside a structured project folder, so moving a project between disks is no harder than copying a directory.
+
+Under the hood, rendering and indexing stay decoupled: previews build in the background while you keep cutting, and heavy effects wait in a queue until you start an export. The result is a desktop editing loop that feels immediate — record, assemble, treat, render — with no account gates, no cloud round-trips, and nothing required beyond your local Windows x64 machine.
+
+Workflow
+
+Begin with a rough cut. Lay footage on the timeline, then slice, trim, and reorder until the story holds together. The timeline is the canvas — every cut, speed ramp, and transition is a brushstroke.
+
+Build the visuals. Stack video tracks for picture-in-picture, split screens, or reaction shots. Bring in overlays, titles, and animated type, then shape them with keyframes so the motion reads as deliberate rather than decorative. Grading sits alongside: nudge exposure, contrast, and saturation, or apply a cinematic look and refine it by hand.
+
+Add the effects. Transitions carry you between scenes, layers of VFX set the atmosphere, and motion tracking pins elements to moving subjects. Screen recording picks up the desktop or a single window and feeds the same pipeline as camera footage — no round-trip export.
+
+Finish the sound. Balance dialogue against music, duck the bed when someone speaks, and fade the edges so nothing ends abruptly. Sync narration to picture, then watch the whole sequence in real time before committing to a render.
+
+Export when it feels right. Pick a resolution and frame rate, review the final pass, and write out a shareable file — locally, inside one workspace.
+
+FAQ
+
+🎬 Do I need to install each tool separately?
+No — the installer is one self-contained bundle. Editing, screen recording, and visual effects all arrive together, so you can open a project, capture footage, and layer treatments without tracking down separate components.
+
+🧩 Where do my recordings and project files live?
+Everything you make stays on your machine, in a project folder you pick. The build never uploads your media, so captures and timelines remain exactly where you put them.
+
+⚡ Can I preview an effect before committing it to the timeline?
+Yes. Drop a VFX layer on a clip, scrub the preview, and adjust parameters live. If the look doesn't work, delete it and try another — nothing is baked in until export.
+
+🖥️ Is screen recording tied to the editor, or can I capture standalone?
+Both are supported. Start a capture session by itself when a clean recording is all you need, or record straight into a project while building a tutorial or walkthrough. Either path lands in the same media library.
+
+🔄 What does a typical editing pass look like?
+A familiar rhythm: import or record footage, lay out a rough cut, add transitions and effects, then tune color and audio before exporting. The full toolset stays available at every stage, so recording and editing can interleave mid-project.
+
+🗂️ Will my projects open on another machine?
+Project files travel well — copy the project folder and its media to another Windows desktop and pick up where you stopped. Keep the folder structure intact so linked clips still resolve.
+
+🧠 How much memory should I budget for VFX-heavy timelines?
+Layered effects and high-resolution recordings reward extra headroom. Close background apps during demanding renders, and export in stages when a timeline gets dense — the editor runs smoother when it isn't competing for resources.
+
+🛠️ What if a tool fails to launch after setup?
+Check that the installer ran to completion, then relaunch the suite once. If a single module misbehaves, a reboot clears most transient problems; recurring issues usually point to an interrupted install, which a clean re-run fixes.
+
+License
+
+…（内容已截断）

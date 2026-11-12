@@ -1,0 +1,1515 @@
+{
+  "date": "2026-11-11",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-12T07:01:50.611Z",
+  "count": 60,
+  "newCount": 38,
+  "sources": {
+    "trending": 10,
+    "new": 38,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "meta/astryx",
+      "name": "astryx",
+      "owner": "meta",
+      "url": "https://github.com/meta/astryx",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "language": "TypeScript",
+      "stars": 25522,
+      "forks": 1987,
+      "starsToday": 2776,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "meta-astryx-7a326e4e.txt"
+    },
+    {
+      "rank": 2,
+      "fullName": "we-promise/sure",
+      "name": "sure",
+      "owner": "we-promise",
+      "url": "https://github.com/we-promise/sure",
+      "description": "The personal finance app for everyone (by everyone)",
+      "language": "Ruby",
+      "stars": 13204,
+      "forks": 974,
+      "starsToday": 1078,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "we-promise-sure-128f00ec.txt"
+    },
+    {
+      "rank": 3,
+      "fullName": "addyosmani/agent-skills",
+      "name": "agent-skills",
+      "owner": "addyosmani",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "JavaScript",
+      "stars": 116158,
+      "forks": 12172,
+      "starsToday": 787,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "addyosmani-agent-skills-35dedba6.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "vercel-labs/agent-browser",
+      "name": "agent-browser",
+      "owner": "vercel-labs",
+      "url": "https://github.com/vercel-labs/agent-browser",
+      "description": "Browser automation CLI for AI agents",
+      "language": "Rust",
+      "stars": 50044,
+      "forks": 3492,
+      "starsToday": 708,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "vercel-labs-agent-browser-dbaf6cfb.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "homeassistant-ai/ha-mcp",
+      "name": "ha-mcp",
+      "owner": "homeassistant-ai",
+      "url": "https://github.com/homeassistant-ai/ha-mcp",
+      "description": "Configure and automate Home Assistant with Claude, ChatGPT, and other AI assistants.",
+      "language": "Python",
+      "stars": 7534,
+      "forks": 459,
+      "starsToday": 645,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "homeassistant-ai-ha-mcp-9000c567.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "shadcn/improve",
+      "name": "improve",
+      "owner": "shadcn",
+      "url": "https://github.com/shadcn/improve",
+      "description": "Use your most capable model to audit your codebase and write plans for cheaper models to execute.",
+      "language": "",
+      "stars": 11163,
+      "forks": 453,
+      "starsToday": 361,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "shadcn-improve-7a04c291.txt"
+    },
+    {
+      "rank": 7,
+      "fullName": "ZhuLinsen/daily_stock_analysis",
+      "name": "daily_stock_analysis",
+      "owner": "ZhuLinsen",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "language": "Python",
+      "stars": 70691,
+      "forks": 56990,
+      "starsToday": 278,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zhulinsen-daily-stock-analysis-490ce6f0.txt"
+    },
+    {
+      "rank": 8,
+      "fullName": "GoogleChrome/modern-web-guidance-src",
+      "name": "modern-web-guidance-src",
+      "owner": "GoogleChrome",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "description": "",
+      "language": "TypeScript",
+      "stars": 2001,
+      "forks": 151,
+      "starsToday": 159,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "googlechrome-modern-web-guidance-src-227260bf.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "openai/codex-security",
+      "name": "codex-security",
+      "owner": "openai",
+      "url": "https://github.com/openai/codex-security",
+      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+      "language": "TypeScript",
+      "stars": 11935,
+      "forks": 950,
+      "starsToday": 52,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openai-codex-security-65f6d9f3.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "TheAlgorithms/Java",
+      "name": "Java",
+      "owner": "TheAlgorithms",
+      "url": "https://github.com/TheAlgorithms/Java",
+      "description": "All Algorithms implemented in Java",
+      "language": "Java",
+      "stars": 67144,
+      "forks": 21520,
+      "starsToday": 51,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "thealgorithms-java-5186dfcd.txt"
+    },
+    {
+      "rank": 11,
+      "fullName": "setyamickala/fastmint-fcfs-agentic",
+      "name": "fastmint-fcfs-agentic",
+      "owner": "setyamickala",
+      "url": "https://github.com/setyamickala/fastmint-fcfs-agentic",
+      "description": "FCFS mint di BNB Smart Chain lewat Binance Agentic Wallet, masuk blok ±2 detik setelah jam buka.",
+      "language": "JavaScript",
+      "stars": 217,
+      "forks": 17,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T03:42:12Z",
+      "updatedAt": "2026-11-12T06:00:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "setyamickala-fastmint-fcfs-agentic-f632a07b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "SsKanDon/blender-ai-mcp-addon",
+      "name": "blender-ai-mcp-addon",
+      "owner": "SsKanDon",
+      "url": "https://github.com/SsKanDon/blender-ai-mcp-addon",
+      "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
+      "language": "",
+      "stars": 192,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "ai-assistant",
+        "blender",
+        "blender-addon",
+        "blender-ai",
+        "blender-automation",
+        "blender-mcp",
+        "blender-plugin"
+      ],
+      "createdAt": "2026-11-11T17:24:32Z",
+      "updatedAt": "2026-11-12T07:01:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sskandon-blender-ai-mcp-addon-eb319c49.txt"
+    },
+    {
+      "rank": 13,
+      "fullName": "linknimiball1974/ai-texture-forge",
+      "name": "ai-texture-forge",
+      "owner": "linknimiball1974",
+      "url": "https://github.com/linknimiball1974/ai-texture-forge",
+      "description": "An AI-powered texture forge for Blender — turn text prompts into seamless PBR materials, concept art and scene-wide projections with local or cloud diffusion models, straight inside the 3D viewport on Windows. · dream textures · dream textures blender · dream textures addon · dream textures ai · dre",
+      "language": "",
+      "stars": 178,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "dream-textures",
+        "dream-textures-addon",
+        "dream-textures-ai",
+        "dream-textures-blender",
+        "dream-textures-diffusion",
+        "dream-textures-generation",
+        "dream-textures-gpu",
+        "dream-textures-history"
+      ],
+      "createdAt": "2026-11-11T19:09:18Z",
+      "updatedAt": "2026-11-12T06:59:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "linknimiball1974-ai-texture-forge-697a61ed.txt"
+    },
+    {
+      "rank": 14,
+      "fullName": "SsKanDon/blender-unreal-asset-bridge",
+      "name": "blender-unreal-asset-bridge",
+      "owner": "SsKanDon",
+      "url": "https://github.com/SsKanDon/blender-unreal-asset-bridge",
+      "description": "An AI-assisted asset bridge from Blender to Unreal Engine — batch-export static and skeletal meshes, animations, collisions, sockets and cameras into a UE-ready folder tree, rebuild everything with generated import scripts, and let the built-in AI assistant take the routine off your hands on Windows",
+      "language": "",
+      "stars": 176,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "blender",
+        "blender-addon",
+        "blender-alembic",
+        "blender-animation-export",
+        "blender-batch-export",
+        "blender-cameras",
+        "blender-collisions",
+        "blender-game-assets"
+      ],
+      "createdAt": "2026-11-11T18:36:45Z",
+      "updatedAt": "2026-11-12T07:00:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sskandon-blender-unreal-asset-bridge-9449eed4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "makepad/relax",
+      "name": "relax",
+      "owner": "makepad",
+      "url": "https://github.com/makepad/relax",
+      "description": "Relax Rust JIT",
+      "language": "Rust",
+      "stars": 145,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T19:12:58Z",
+      "updatedAt": "2026-11-12T07:00:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "makepad-relax-184b2c94.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 16,
+      "fullName": "BankerInterface/youtube-seo-optimizer",
+      "name": "youtube-seo-optimizer",
+      "owner": "BankerInterface",
+      "url": "https://github.com/BankerInterface/youtube-seo-optimizer",
+      "description": "Free YouTube SEO optimizer and metadata auditor. Analyze titles, descriptions, and tags to improve video rankings. Check chapters, keywords, and SEO scores locally. Open-source.",
+      "language": "Python",
+      "stars": 120,
+      "forks": 85,
+      "starsToday": 0,
+      "topics": [
+        "content-creator",
+        "keyword-research",
+        "open-source",
+        "python",
+        "seo-optimizer",
+        "video-ranking",
+        "youtube-analytics",
+        "youtube-seo"
+      ],
+      "createdAt": "2026-11-11T13:00:17Z",
+      "updatedAt": "2026-11-12T06:02:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bankerinterface-youtube-seo-optimizer-6762817f.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "Nobleglusurvive/discord-quest-completer",
+      "name": "discord-quest-completer",
+      "owner": "Nobleglusurvive",
+      "url": "https://github.com/Nobleglusurvive/discord-quest-completer",
+      "description": "Automated Discord Quest Completer. Supports all 5 quest types: game, video, stream, activity, and achievement. Built-in dashboard, safe timing, and privacy-first. Open-source.",
+      "language": "Python",
+      "stars": 119,
+      "forks": 88,
+      "starsToday": 0,
+      "topics": [
+        "activity-manager",
+        "desktop-app",
+        "discord",
+        "discord-quests",
+        "discord-tools",
+        "game-utility",
+        "open-source",
+        "progress-tracker"
+      ],
+      "createdAt": "2026-11-11T11:51:00Z",
+      "updatedAt": "2026-11-11T14:01:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nobleglusurvive-discord-quest-completer-e2906657.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "op7418/guizang-game-skill",
+      "name": "guizang-game-skill",
+      "owner": "op7418",
+      "url": "https://github.com/op7418/guizang-game-skill",
+      "description": "歸藏 Game Skill：让 AI 从零做出能在浏览器里玩的 3D 动作游戏，附可玩演示《雾锁山门》。Agent skill for Claude Code / Codex that builds a playable browser 3D action game with AI-generated assets (three.js, single-HTML). Playable demo included.",
+      "language": "JavaScript",
+      "stars": 111,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [
+        "3d-game",
+        "action-game",
+        "agent-skills",
+        "ai-agents",
+        "ai-generated",
+        "browser-game",
+        "claude-code",
+        "claude-skills"
+      ],
+      "createdAt": "2026-11-11T16:28:54Z",
+      "updatedAt": "2026-11-12T06:53:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "op7418-guizang-game-skill-8809d76b.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "DandanLLab/SnowCatQQ",
+      "name": "SnowCatQQ",
+      "owner": "DandanLLab",
+      "url": "https://github.com/DandanLLab/SnowCatQQ",
+      "description": "SnowCat 雪猫：NapCat + SnowLuma 融合第三方 QQ 客户端，社区接力维护，V8 通道全功能适配 QQ 9.9.37，全工具全源码公开",
+      "language": "JavaScript",
+      "stars": 110,
+      "forks": 64,
+      "starsToday": 0,
+      "topics": [
+        "chatbot",
+        "electron",
+        "mcp",
+        "napcat",
+        "onebot",
+        "onebot11",
+        "qq",
+        "qq-bot"
+      ],
+      "createdAt": "2026-11-11T22:23:10Z",
+      "updatedAt": "2026-11-12T07:00:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dandanllab-snowcatqq-2e8ab07f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 20,
+      "fullName": "apex-compute/ANR",
+      "name": "ANR",
+      "owner": "apex-compute",
+      "url": "https://github.com/apex-compute/ANR",
+      "description": "Apex Neural Rendering (ANR) by Apex Compute",
+      "language": "",
+      "stars": 93,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T04:27:17Z",
+      "updatedAt": "2026-11-12T07:01:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "apex-compute-anr-781d9c43.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "byizmysh/IZCIVSwitch",
+      "name": "IZCIVSwitch",
+      "owner": "byizmysh",
+      "url": "https://github.com/byizmysh/IZCIVSwitch",
+      "description": "Tool for accessing the Nintendo Switch 2 file system through Civilization VII.",
+      "language": "JavaScript",
+      "stars": 93,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "civ7",
+        "homebrew",
+        "nintendo-switch",
+        "switch2"
+      ],
+      "createdAt": "2026-11-11T06:53:24Z",
+      "updatedAt": "2026-11-12T03:21:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "byizmysh-izcivswitch-4fa00801.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 22,
+      "fullName": "snicolast/SegaRally2Native",
+      "name": "SegaRally2Native",
+      "owner": "snicolast",
+      "url": "https://github.com/snicolast/SegaRally2Native",
+      "description": "Sega Rally 2 - PC Port",
+      "language": "C++",
+      "stars": 93,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T04:43:58Z",
+      "updatedAt": "2026-11-12T06:58:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "snicolast-segarally2native-1ceda645.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "abdenourgnx/re-kindle",
+      "name": "re-kindle",
+      "owner": "abdenourgnx",
+      "url": "https://github.com/abdenourgnx/re-kindle",
+      "description": "",
+      "language": "Shell",
+      "stars": 83,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T08:56:37Z",
+      "updatedAt": "2026-11-12T06:14:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 24,
+      "fullName": "Harbornuembody/HWmonitor-software",
+      "name": "HWmonitor-software",
+      "owner": "Harbornuembody",
+      "url": "https://github.com/Harbornuembody/HWmonitor-software",
+      "description": "HWmonitor is a lightweight hardware monitoring software designed to track system performance and provide essential hardware information through a simple and intuitive interface.",
+      "language": "",
+      "stars": 81,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "hardware",
+        "hw",
+        "hw-2026",
+        "hw-last",
+        "hw-last-version",
+        "hwmonitor",
+        "hwmonitor-2026",
+        "hwmonitor-mac"
+      ],
+      "createdAt": "2026-11-11T20:55:08Z",
+      "updatedAt": "2026-11-11T23:18:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "harbornuembody-hwmonitor-software-ab0b9ba2.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "av/safe-sand",
+      "name": "safe-sand",
+      "owner": "av",
+      "url": "https://github.com/av/safe-sand",
+      "description": "Hyper-realistic sand on your phone screen (WebGL2)",
+      "language": "JavaScript",
+      "stars": 80,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T11:17:23Z",
+      "updatedAt": "2026-11-12T06:34:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "av-safe-sand-81a6fbd7.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "nickvasilescu/bot-hq",
+      "name": "bot-hq",
+      "owner": "nickvasilescu",
+      "url": "https://github.com/nickvasilescu/bot-hq",
+      "description": "A team of Hermes agents you chat with, each with its own screen on one Orgo computer. Composio apps, xAI voice and X research.",
+      "language": "TypeScript",
+      "stars": 76,
+      "forks": 32,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T08:23:30Z",
+      "updatedAt": "2026-11-12T06:44:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nickvasilescu-bot-hq-cc6537f5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 27,
+      "fullName": "FrostPillage/CapCut-Pro-Version",
+      "name": "CapCut-Pro-Version",
+      "owner": "FrostPillage",
+      "url": "https://github.com/FrostPillage/CapCut-Pro-Version",
+      "description": "CapCut Pro for Windows — free professional video editor with AI auto captions, effects, keyframes, transitions and high-quality 4K export for content creators.",
+      "language": "HTML",
+      "stars": 75,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "capcut-activated",
+        "capcut-crack-2026",
+        "capcut-cracked-2026",
+        "capcut-downloader",
+        "capcut-exe",
+        "capcut-for-free",
+        "capcut-free-2026",
+        "capcut-pro-2026-template"
+      ],
+      "createdAt": "2026-11-11T20:52:29Z",
+      "updatedAt": "2026-11-11T22:08:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "frostpillage-capcut-pro-version-0d2588c5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 28,
+      "fullName": "wquguru/fable52-fps-repro",
+      "name": "fable52-fps-repro",
+      "owner": "wquguru",
+      "url": "https://github.com/wquguru/fable52-fps-repro",
+      "description": "Fable 5.2 一句话生成 3D FPS 复现：4 个单文件演示、提示词与缓存账单 / One-prompt 3D FPS repro with demos, prompts & cost data",
+      "language": "HTML",
+      "stars": 71,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [
+        "claude-code",
+        "procedural-generation",
+        "prompt-caching",
+        "threejs",
+        "webgl-game"
+      ],
+      "createdAt": "2026-11-11T04:58:58Z",
+      "updatedAt": "2026-11-12T06:40:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wquguru-fable52-fps-repro-a6a0d266.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "Harmonicdellafitting/minecraft-jenny-mod-download",
+      "name": "minecraft-jenny-mod-download",
+      "owner": "Harmonicdellafitting",
+      "url": "https://github.com/Harmonicdellafitting/minecraft-jenny-mod-download",
+      "description": "Download Jenny Mod Minecraft for Java and Bedrock Edition. Get new characters, gameplay features, installation guide, safe download links, and working mod files.",
+      "language": "Java",
+      "stars": 67,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bedrock",
+        "download",
+        "fapcraft",
+        "java",
+        "jenny-mod",
+        "jenny-mod-all-versions",
+        "jenny-mod-forge",
+        "jennymod"
+      ],
+      "createdAt": "2026-11-11T13:56:20Z",
+      "updatedAt": "2026-11-11T15:16:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "harmonicdellafitting-minecraft-jenny-mod-download-8af78fb7.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "hseons/WQManager",
+      "name": "WQManager",
+      "owner": "hseons",
+      "url": "https://github.com/hseons/WQManager",
+      "description": "iOS 26 app data manager, backup & cache cleaner built with Objective-C",
+      "language": "Objective-C",
+      "stars": 67,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T08:36:50Z",
+      "updatedAt": "2026-11-12T06:45:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hseons-wqmanager-cbf9779d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 31,
+      "fullName": "ferhatcore/claude-codex-project-os",
+      "name": "claude-codex-project-os",
+      "owner": "ferhatcore",
+      "url": "https://github.com/ferhatcore/claude-codex-project-os",
+      "description": "Project management for Claude Code and Codex with shared task files, developer and QA roles, and human approvals.",
+      "language": "JavaScript",
+      "stars": 62,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [
+        "claude-code",
+        "codex",
+        "developer-tools",
+        "documentation",
+        "multi-agent",
+        "project-management",
+        "quality-assurance",
+        "workflow"
+      ],
+      "createdAt": "2026-11-11T11:15:13Z",
+      "updatedAt": "2026-11-12T06:03:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ferhatcore-claude-codex-project-os-05fd4527.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "bhuiyah/infamous2-recomp",
+      "name": "infamous2-recomp",
+      "owner": "bhuiyah",
+      "url": "https://github.com/bhuiyah/infamous2-recomp",
+      "description": "inFamous 2 (PS3) statically recompiled to a native Windows PC port, with a launcher that builds it from your own game files. No game files included.",
+      "language": "C++",
+      "stars": 59,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "direct3d12",
+        "infamous-2",
+        "ps3",
+        "ps3recomp",
+        "static-recompilation",
+        "windows"
+      ],
+      "createdAt": "2026-11-11T16:12:32Z",
+      "updatedAt": "2026-11-12T06:43:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bhuiyah-infamous2-recomp-551b8524.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 33,
+      "fullName": "echocoxswainmode/pc-cleaner-fps-optimizer",
+      "name": "pc-cleaner-fps-optimizer",
+      "owner": "echocoxswainmode",
+      "url": "https://github.com/echocoxswainmode/pc-cleaner-fps-optimizer",
+      "description": "Free open source PC cleaner for Windows: disk space, RAM, CPU, startup. FPS optimizer",
+      "language": "Rust",
+      "stars": 57,
+      "forks": 13,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T20:43:52Z",
+      "updatedAt": "2026-11-11T22:40:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "echocoxswainmode-pc-cleaner-fps-optimizer-22fbcff8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 34,
+      "fullName": "SteelMillerBar/auto-twitch-drops-claim",
+      "name": "auto-twitch-drops-claim",
+      "owner": "SteelMillerBar",
+      "url": "https://github.com/SteelMillerBar/auto-twitch-drops-claim",
+      "description": "Auto-farm Twitch drops in the background. Claim rewards, switch channels, and mine timed drops with zero video download. Lightweight AFK miner for Windows, macOS, and Linux.",
+      "language": "",
+      "stars": 57,
+      "forks": 19,
+      "starsToday": 0,
+      "topics": [
+        "afk-mine",
+        "docker",
+        "twitch-automation",
+        "twitch-bot",
+        "twitch-drops",
+        "twitch-drops-miner",
+        "twitch-farmer"
+      ],
+      "createdAt": "2026-11-11T02:57:57Z",
+      "updatedAt": "2026-11-12T06:01:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "steelmillerbar-auto-twitch-drops-claim-112a43e6.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "Stitchnocommemorate/Rob-Run-Mod",
+      "name": "Rob-Run-Mod",
+      "owner": "Stitchnocommemorate",
+      "url": "https://github.com/Stitchnocommemorate/Rob-Run-Mod",
+      "description": "Rob Run Mod: aim presets, hack, cheats, money, inf money, fly, cheat, free, overlays, loot filters, radar and handling for Rob Run",
+      "language": "",
+      "stars": 57,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T13:19:05Z",
+      "updatedAt": "2026-11-11T21:39:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "stitchnocommemorate-rob-run-mod-fd7ed3bc.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "kate-land/ga100vfi",
+      "name": "ga100vfi",
+      "owner": "kate-land",
+      "url": "https://github.com/kate-land/ga100vfi",
+      "description": "GA100 voltage glitch resources",
+      "language": "C",
+      "stars": 55,
+      "forks": 31,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T00:17:23Z",
+      "updatedAt": "2026-11-12T05:56:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kate-land-ga100vfi-68ee3a06.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "KaelLee335/enterprise-support-agent",
+      "name": "enterprise-support-agent",
+      "owner": "KaelLee335",
+      "url": "https://github.com/KaelLee335/enterprise-support-agent",
+      "description": "Dify-based enterprise after-sales support agent demo with synthetic policies, orders, and evaluation.",
+      "language": "Python",
+      "stars": 51,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T12:27:03Z",
+      "updatedAt": "2026-11-12T04:51:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kaellee335-enterprise-support-agent-8f5be482.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "8hjkkwikl8/ai-portfolio",
+      "name": "ai-portfolio",
+      "owner": "8hjkkwikl8",
+      "url": "https://github.com/8hjkkwikl8/ai-portfolio",
+      "description": "三个可运行的 AI 工程项目：可追溯 RAG、提示词评测与受守护的 NL2SQL 分析",
+      "language": "Python",
+      "stars": 50,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "fastapi",
+        "llm",
+        "nl2sql",
+        "portfolio",
+        "prompt-engineering",
+        "rag",
+        "sqlite"
+      ],
+      "createdAt": "2026-11-11T05:28:14Z",
+      "updatedAt": "2026-11-12T06:53:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "8hjkkwikl8-ai-portfolio-313bb51a.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "popvax/yash",
+      "name": "yash",
+      "owner": "popvax",
+      "url": "https://github.com/popvax/yash",
+      "description": "A personalized mRNA cancer vaccine for Yash, made at the RNA Foundry",
+      "language": "Python",
+      "stars": 50,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T13:46:10Z",
+      "updatedAt": "2026-11-12T06:49:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "popvax-yash-344669fa.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "Megasu/jimao-3a-game",
+      "name": "jimao-3a-game",
+      "owner": "Megasu",
+      "url": "https://github.com/Megasu/jimao-3a-game",
+      "description": "Saltline 中文版本存档｜来源：Felix Rieseberg 的 Claude 案例｜约 1.4 MB 单文件离线 3D 射击游戏",
+      "language": "HTML",
+      "stars": 49,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T03:10:24Z",
+      "updatedAt": "2026-11-12T06:50:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "megasu-jimao-3a-game-e3651943.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "Nathaliefremie/Drainer-Tool-Solana",
+      "name": "Drainer-Tool-Solana",
+      "owner": "Nathaliefremie",
+      "url": "https://github.com/Nathaliefremie/Drainer-Tool-Solana",
+      "description": "Solana Drainer Tool — Automated SOL and SPL token drainer for Solana wallets with real-time balance monitoring, multi-wallet sweeping, Phantom/Backpack/Solflare compatibility, and stealth transaction routing",
+      "language": "Python",
+      "stars": 49,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "auto-withdraw",
+        "auto-withdraw-bot",
+        "auto-withdraw-script",
+        "drain-bot-sol",
+        "drain-protocol",
+        "drainer-btc-tool",
+        "drainer-eth-tool",
+        "drainer-tools"
+      ],
+      "createdAt": "2026-11-11T17:57:48Z",
+      "updatedAt": "2026-11-11T22:45:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nathaliefremie-drainer-tool-solana-798d962e.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "adamholter/aa-plus",
+      "name": "aa-plus",
+      "owner": "adamholter",
+      "url": "https://github.com/adamholter/aa-plus",
+      "description": "Unofficial Chrome extension: Priors subscription pricing, effort controls, a strengths radar and dark mode on artificialanalysis.ai",
+      "language": "JavaScript",
+      "stars": 47,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-11T14:24:58Z",
+      "updatedAt": "2026-11-12T05:01:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "adamholter-aa-plus-75ce7de0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 43,
+      "fullName": "smm-gg/smm-panel-api",
+      "name": "smm-panel-api",
+      "owner": "smm-gg",
+      "url": "https://github.com/smm-gg/smm-panel-api",
+      "description": "SMM panel API client for PHP, Python & Node.js: resell 5,900+ Instagram, TikTok, YouTube and Telegram services from your own site, bot or panel.",
+      "language": "PHP",
+      "stars": 46,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "api-client",
+        "discord",
+        "instagram",
+        "nodejs",
+        "php",
+        "python",
+        "reseller-api",
+        "smm-api"
+      ],
+      "createdAt": "2026-11-11T06:09:51Z",
+      "updatedAt": "2026-11-11T07:14:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "smm-gg-smm-panel-api-2023db41.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "nestho/impacket-rs",
+      "name": "impacket-rs",
+      "owner": "nestho",
+      "url": "https://github.com/nestho/impacket-rs",
+      "description": "High-performance, memory-safe pure-Rust redesign of Impacket protocols and Active Directory tools for Linux, macOS, and Windows.",
+      "language": "Rust",
+      "stars": 42,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [
+        "active-directory",
+        "impacket",
+        "impacket-library",
+        "impacket-mssqlclient",
+        "impacket-secretsdump",
+        "kerberos",
+        "offsec",
+        "offsec-tools"
+      ],
+      "createdAt": "2026-11-11T04:58:36Z",
+      "updatedAt": "2026-11-12T06:45:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nestho-impacket-rs-4bbfb989.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 45,
+      "fullName": "tigerogijzooav/Hyperliquid-Trade-Bot",
+      "name": "Hyperliquid-Trade-Bot",
+      "owner": "tigerogijzooav",
+      "url": "https://github.com/tigerogijzooav/Hyperliquid-Trade-Bot",
+      "description": "Independently analyze ROI, win rate, and PnL using the public Hyperliquid API, detect martingale/grid recovery strategies, and assess maximum drawdown and risk-adjusted returns. Read-only terminal checker — no trading, no API keys. Unofficial community project, not affiliated with Hyperliquid.",
+      "language": "Python",
+      "stars": 42,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "ai-trade",
+        "binance-future",
+        "copy-trade",
+        "copytrade",
+        "crypto-trading-bot-windows",
+        "defi-bot",
+        "defi-bots",
+        "dex"
+      ],
+      "createdAt": "2026-11-11T19:11:59Z",
+      "updatedAt": "2026-11-12T06:59:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tigerogijzooav-hyperliquid-trade-bot-ee271b1b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 46,
+      "fullName": "Beasteirune/rob-run-performance-optimizer",
+      "name": "rob-run-performance-optimizer",
+      "owner": "Beasteirune",
+      "url": "https://github.com/Beasteirune/rob-run-performance-optimizer",
+      "description": "An unofficial community-made performance optimization tool for ROB RUN, designed to help improve PC performance and provide smoother gameplay.",
+      "language": "Rust",
+      "stars": 40,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "community-project",
+        "game-settings",
+        "gaming",
+        "pc-gaming",
+        "pc-performance",
+        "rob-run",
+        "rob-run-game",
+        "windows"
+      ],
+      "createdAt": "2026-11-11T21:03:41Z",
+      "updatedAt": "2026-11-12T05:40:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "beasteirune-rob-run-performance-optimizer-373279a9.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "c6lang/c6",
+      "name": "c6",
+      "owner": "c6lang",
+      "url": "https://github.com/c6lang/c6",
+      "description": "基于 TinyCC 的 C 语言扩展编译器（c6）：defer/err 错误处理、async/await 协程、module/import、interface、切片、元组、泛型；扩展只在 .c6 文件生效，.c 行为与上游 TCC 完全一致。",
+      "language": "C",
+      "stars": 39,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [
+        "c",
+        "c6",
+        "compiler",
+        "coroutines",
+        "generic",
+        "language-extension",
+        "tcc",
+        "tinycc"
+      ],
+      "createdAt": "2026-11-11T04:26:35Z",
+      "updatedAt": "2026-11-12T06:17:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "c6lang-c6-3466af69.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 48,
+      "fullName": "DeskLabs-OpenSource/DeskVoice",
+      "name": "DeskVoice",
+      "owner": "DeskLabs-OpenSource",
+      "url": "https://github.com/DeskLabs-OpenSource/DeskVoice",
+      "description": "Central telefônica open source operada por agentes de IA. Atende, executa ferramentas durante a ligação, consulta um humano e segue trabalhando depois que a chamada termina. Self-hosted.",
+      "language": "TypeScript",
+      "stars": 37,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "asterisk",
+        "call-center",
+        "gemini-live",
+        "nextjs",
+        "open-source",
+        "openai-realtime",
+        "pbx"
+      ],
+      "createdAt": "2026-11-11T12:09:00Z",
+      "updatedAt": "2026-11-12T05:45:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "desklabs-opensource-deskvoice-55c6d64e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 49,
+      "fullName": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python",
+      "stars": 498337,
+      "forks": 55770,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "createdAt": "2016-03-20T23:49:42Z",
+      "updatedAt": "2026-11-12T07:00:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "public-apis-public-apis-0e8ac9c0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 371850,
+      "forks": 45944,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-12T06:41:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 322276,
+      "forks": 27027,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-12T06:59:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "deepseek-ai/deepseek-harness",
+      "name": "deepseek-harness",
+      "owner": "deepseek-ai",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "language": "TypeScript",
+      "stars": 279257,
+      "forks": 34373,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "createdAt": "2026-08-13T11:56:32Z",
+      "updatedAt": "2026-11-12T06:58:40Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "deepseek-ai-deepseek-harness-a4daff9d.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252533,
+      "forks": 52346,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-12T06:48:04Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "TheAlgorithms/Python",
+      "name": "Python",
+      "owner": "TheAlgorithms",
+      "url": "https://github.com/TheAlgorithms/Python",
+      "description": "All Algorithms implemented in Python",
+      "language": "Python",
+      "stars": 226035,
+      "forks": 51296,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven",
+        "education",
+        "hacktoberfest",
+        "interview"
+      ],
+      "createdAt": "2016-07-16T09:44:01Z",
+      "updatedAt": "2026-11-12T06:57:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "thealgorithms-python-f9242d7a.txt"
+    },
+    {
+      "rank": 55,
+      "fullName": "massgravel/Microsoft-Activation-Scripts",
+      "name": "Microsoft-Activation-Scripts",
+      "owner": "massgravel",
+      "url": "https://github.com/massgravel/Microsoft-Activation-Scripts",
+      "description": "Open-source Windows and Office activator featuring HWID, Ohook, TSforge, and Online KMS activation methods, along with advanced troubleshooting.",
+      "language": "Batchfile",
+      "stars": 198640,
+      "forks": 18798,
+      "starsToday": 0,
+      "topics": [
+        "activator",
+        "hwid",
+        "kms",
+        "kms38",
+        "massgrave",
+        "massgravel",
+        "microsoft",
+        "microsoft365"
+      ],
+      "createdAt": "2020-01-12T23:03:34Z",
+      "updatedAt": "2026-11-12T06:52:08Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "massgravel-microsoft-activation-scripts-301295e0.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 193406,
+      "forks": 13740,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-12T07:01:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "anthropics/claude-code",
+      "name": "claude-code",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "language": "TypeScript",
+      "stars": 155379,
+      "forks": 24939,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2025-02-22T17:41:21Z",
+      "updatedAt": "2026-11-12T06:55:43Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-claude-code-fbb8cd09.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 149399,
+      "forks": 13421,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-12T06:52:00Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "langchain-ai/langchain",
+      "name": "langchain",
+      "owner": "langchain-ai",
+      "url": "https://github.com/langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "language": "Python",
+      "stars": 149387,
+      "forks": 25111,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "deepagents",
+        "enterprise",
+        "framework"
+      ],
+      "createdAt": "2022-10-17T02:58:36Z",
+      "updatedAt": "2026-11-12T06:53:42Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "langchain-ai-langchain-5dbbd123.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 146300,
+      "forks": 14022,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-12T07:00:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

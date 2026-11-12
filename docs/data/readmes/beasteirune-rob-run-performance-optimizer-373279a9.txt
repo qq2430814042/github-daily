@@ -1,0 +1,34 @@
+👑 ROB RUN Performance Optimizer
+
+A community-made Windows utility for ROB RUN, featuring convenient game configuration, PC settings management and performance-related tools.
+
+🎮 About
+
+ROB RUN Performance Optimizer is an independent community project designed to provide a convenient way to manage supported game-related settings and PC configuration options.
+
+✨ Features
+
+- 🎮 Game-related configuration options
+- ⚙️ PC settings management
+- 🖥️ Simple and user-friendly interface
+- 📊 Performance-related tools
+
+📥 Download
+
+Latest version: v1.0.0
+
+1. Click the Download button above.
+2. Extract RobRunOptimizer.zip.
+3. Follow the included instructions.
+
+View all releases
+
+💙 Thanks for supporting the project!
+
+- ROB RUN
+- Windows
+- PC Gaming
+- Gaming Community
+- Game Configuration
+- PC Settings
+- Performance Tools

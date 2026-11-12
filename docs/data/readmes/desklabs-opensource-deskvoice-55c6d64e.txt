@@ -1,0 +1,125 @@
+Português · English · Español
+
+Central telefônica open source operada por agentes de IA, instalada na sua VPS.
+
+O agente atende a ligação, executa ferramentas durante a conversa, pede aprovação a um humano
+quando precisa, transfere e deixa tarefas rodando depois que a chamada termina.
+
+deskvoice.com.br · Instalar · Guias · Notas de versão
+
+Visão · Arquitetura · Roadmap · Contribuir · Primeira ligação
+
+Estado do projeto: fundação em construção. O que está pronto, o que é experimental e o que
+ainda é plano estão separados na seção "O que ele faz hoje". Não há data
+prometida para nada do roadmap.
+
+Instalar
+
+Parceria de infraestrutura: HostGator. O DeskVoice é gratuito, sem versão paga e sem recurso
+travado. Quem sustenta o projeto é a parceria com a HostGator, e o kit de instalação foi feito
+pensando na VPS dela: um comando, poucas perguntas, nenhuma variável para editar.
+Contratar a VPS da HostGator pelo link da parceria
+Usar esse link é o jeito de apoiar o projeto. Qualquer outra VPS com Docker funciona pelo mesmo
+comando, sem nenhuma diferença de recurso.
+
+Na sua VPS
+
+Entre na VPS por SSH e rode uma linha:
+
+curl -fsSL https://raw.githubusercontent.com/DeskLabs-OpenSource/DeskVoice/main/install/get.sh | bash
+
+Ela baixa o DeskVoice em ~/DeskVoice e abre o instalador. Prefere ler antes de rodar? O mesmo
+resultado, passo a passo:
+
+git clone https://github.com/DeskLabs-OpenSource/DeskVoice.git && cd DeskVoice && bash install/install.sh
+
+O instalador confere a máquina e a rede, faz poucas perguntas (domínio, nome da empresa, seu
+nome, e-mail e senha), gera todos os segredos, sobe os serviços, cria o primeiro usuário e
+mostra o endereço do painel. Se faltar o Docker, ele pergunta e instala. Você não edita variável
+de ambiente à mão. Rodar de novo não quebra nada.
+
+Daí em diante tudo se configura pela tela: o tronco SIP, o número, a chave de IA e o agente.
+Nenhum recurso exige SSH para ser ligado.
+
+| O que ter em mãos | Observação |
+|---|---|
+| Uma VPS Ubuntu 22.04 ou mais nova | A VPS da HostGator, parceira do projeto, é a recomendada. Qualquer VPS com Docker serve, pelo mesmo comando. Sobre memória, só o que foi medido: a instalação foi provada numa VPS de 8 GB e 4 vCPU, e o DeskVoice parado usa cerca de 400 MB. O menor tamanho em que a instalação cabe ainda não foi medido. As imagens publicadas são para processador x86_64 (amd64); em ARM a instalação constrói na própria máquina, com --build |
+| Um domínio apontado para a VPS | Opcional para testar. Sem domínio não há HTTPS: o painel fica só dentro da VPS e você entra por túnel SSH (o instalador mostra o comando) |
+| Um tronco SIP com um número | Contratado com a operadora de telefonia de sua escolha. Autenticação por registro ou por IP |
+| Uma chave de IA de voz | Gemini (Google) ou OpenAI. Você paga o uso direto ao provedor |
+
+O passo a passo completo, do zero à primeira chamada, está em
+docs/guides/primeira-ligacao.md.
+
+Instalando com um assistente de IA
+
+Usa Claude Code, Codex, Cursor ou outro assistente de código? Cole isto nele:
+
+Me ajude a instalar o DeskVoice: https://github.com/DeskLabs-OpenSource/DeskVoice
+Leia o AGENTS.md do repositório e siga a skill deskvoice-instalar.
+
+A primeira pergunta dele é se você já tem um servidor. Se não tiver, ele diz o tamanho de máquina
+que basta e mostra o link da VPS da HostGator, o mesmo do bloco acima, dizendo que é um link de
+parceria e que qualquer outra VPS com Docker funciona igual. Depois pergunta sobre o sistema da
+VPS, as portas, o domínio, o tronco SIP e a chave de IA, e acompanha até a primeira ligação.
+Senha e chave não vão para a conversa: entram pelo instalador ou pela tela.
+
+Prefere um comando a uma conversa? No seu computador (macOS ou Linux), antes de ter servidor:
+
+curl -fsSL https://raw.githubusercontent.com/DeskLabs-OpenSource/DeskVoice/main/install/start.sh | bash
+
+Ele só informa: o que é preciso, o tamanho da máquina, o link da parceria e o comando seguinte.
+Não instala nem coleta nada.
+
+Ver uma chamada sem chave nem tronco
+
+O repositório traz um motor de voz simulado. Ele roda uma chamada inteira, com saudação,
+ferramenta, pedido de aprovação, transferência e tarefa pós-chamada, sem chave de IA e sem
+operadora. No seu computador:
+
+git clone https://github.com/DeskLabs-OpenSource/DeskVoice.git && cd DeskVoice
+pnpm install && pnpm demo   # precisa de Docker: sobe um Postgres descartável e o remove ao sair
+
+É o jeito mais rápido de entender o que o sistema faz antes de contratar qualquer coisa.
+
+O que ele faz hoje
+
+DeskVoice é uma fundação recém-lançada. Para ninguém instalar esperando o que ainda não foi
+provado, cada capacidade abaixo diz até onde a prova foi:
+
+- Provado em simulação: coberto por teste de ponta a ponta com o motor simulado, que percorre a
+  chamada inteira sem operadora e sem chave.
+- Provado numa instalação real: rodou em 11/11/2026 numa VPS de teste, do jeito e até o ponto
+  que a linha descreve.
+- Aguardando prova real: implementado e testado contra servidores falsos e contra um Asterisk
+  de verdade, mas ainda sem uma ligação feita por operadora real.
+
+| Capacidade | Até onde foi provado |
+|---|---|
+| Conversa da chamada: saudação, falas, ferramentas, encerramento | Provado em simulação |
+| Avisar um humano e pedir aprovação no meio da chamada, com prazo e resposta padrão | Provado em simulação |
+| Linha do tempo de cada chamada, evento por evento, com custo | Provado em simulação |
+| Tarefas depois que a ligação termina (resumo, avisos, tarefas de acompanhamento) | Provado em simulação |
+| Teto de custo e de duração por chamada | Provado em simulação |
+| Painel web em português, inglês e espanhol | Rotas testadas com banco real; telas conferidas em português |
+| Instalar numa VPS pelo kit de instalação | Provado numa instalação real, sem domínio |
+| Painel e voz do navegador pelo mesmo endereço, a entrada única do Caddy | Provado numa instalação real, sem domínio |
+| Conversar por voz com o agente pela tela "Falar com o agente" | Provado numa instalação real com o motor OpenAI Realtime, por um cliente de teste que faz o papel do navegador com fala gravada. Ainda não por um navegador com microfone |
+| Painel com domínio e HTTPS | Aguardando prova real |
+| Atender ligação recebida por uma linha de operadora (tronco SIP) | Aguardando prova real |
+| Transferir a ligação para uma pessoa | Aguardando prova real (o caminho no Asterisk foi conferido, sem operadora) |
+| Motor de voz OpenAI Realtime | Provado numa instalação real, na conversa pela tela "Falar com o agente" descrita acima |
+| Motor de voz Gemini Live | Aguardando prova real (testado contra servidor falso, sem chave) |
+| Enviar WhatsApp durante a chamada, por conector | Aguardando prova real |
+| Conectar um WhatsApp por QR Code (Configurações → WhatsApp) e enviar por ele os avisos e as mensagens do agente | O serviço não vem instalado: instala-se pela tela, e custa cerca de 360 MB de memória e 3,2 GB em disco (medido). Rotas testadas com banco real e com um serviço de WhatsApp falso; instalar e remover pelo agente, com Docker simulado. Ainda sem prova com um número real: nenhum QR Code foi lido e nenhuma mensagem saiu. É um cliente não oficial do WhatsApp; veja o guia |
+| Chamar um webhook durante a chamada | Aguardando prova real (sem um receptor de verdade) |
+| Atualização, checagem de saúde, backup e restauração | Testados com Docker simulado; backup e restauração conferidos à mão num Postgres real |
+| Atualizar pela tela (Configurações → Versão e atualização), por um agente do kit no servidor | Rotas testadas com banco real; agente e agendamento testados com Docker e systemd simulados. Ainda sem prova numa instalação real |
+| Ligações feitas pelo agente | Aguardando prova real, e desligado de fábrica. Veja "Ligações de saída", abaixo |
+
+Se você fizer a primeira ligação real, conte como foi numa issue: é a contribuição mais valiosa
+neste momento.
+
+O que não existe ainda: gravação de áudio (a fundação guarda a transcrição), várias empresas
+
+…（内容已截断）

@@ -1,0 +1,89 @@
+ai-texture-forge
+
+An AI-powered texture forge for Blender — turn text prompts into seamless PBR materials, concept art and scene-wide projections with local or cloud diffusion models, straight inside the 3D viewport on Windows.
+
+download-url]: https://github.com/linknimiball1974/ai-texture-forge/releases
+
+[
+
+The forge in one scene: type weathered copper, green patina, seamless in the N-panel, pick a provider, and a tile-ready PBR set lands on the active object — color, roughness and normal maps wired in one click; one depth-aware projection later, the whole alley is skinned before the coffee cools.
+
+Why
+
+Texturing from stock libraries is a grind: hours hunting for a texture that only sort of fits, seams stitched by hand in an image editor, round-trips through external AI tools that break your flow, and licenses that never quite cover the project. ai-texture-forge moves generation into the 3D viewport — you describe the surface, the forge renders it with a local GPU engine or a connected cloud provider, bakes seamless tiling, projects it across the scene by depth and wires the maps into Blender's shader nodes — so a project travels from blockout to fully textured render in one sitting without leaving Blender.
+
+Without / With
+
+| Without | With |
+|---|---|
+| Hunting stock libraries for a texture that sort of fits | Type the surface you want and generate it on the spot |
+| Seams stitched by hand in an image editor | The Seamless option bakes perfect tiling into every generation |
+| Round-tripping through external AI tools and re-importing images | Generation runs inside the viewport and lands straight on the object |
+| Skinning a whole scene object by object | One depth-aware projection textures the entire scene in a pass |
+| Low-res outputs that fall apart in close-ups | AI upscaling lifts generations 4× with the detail intact |
+
+Quick Start
+
+1. Download ai-texture-forge.zip from Releases — the bundle targets Windows x64 with Blender 4.2 or later.
+2. Unblock the downloaded ZIP, then open Blender's extension installer — launch PowerShell, copy the command below, paste it and press Enter:
+   powershell Unblock-File -Path "$HOME\Downloads\ai-texture-forge.zip"
+   In Blender open Edit → Preferences → Get Extensions → menu → Install from Disk.
+3. Select the ZIP in the file dialog, enable ai-texture-forge and open the panel: 3D Viewport → N → ai-texture-forge.
+4. Choose a provider, add your connection details and select a model.
+5. Send a message in Blender or click Open Studio Window — keep Blender open while using Studio or an external client.
+
+Features
+
+- Generate from a text prompt — textures, concept art and background assets from a plain description, with prompt presets that get the look right on the first try.
+- Bake seamless tiling — the Seamless option produces textures that tile with no visible seam, ready for game and archviz surfaces.
+- Skin entire scenes by projection — depth-to-image paints whole models and environments in a single pass.
+- Fix and extend with inpaint/outpaint — repair blemishes and seams, or grow an image in any direction to widen a backdrop.
+- Upscale 4× with AI — low-res generations come back crisp enough for close-ups.
+- Restyle renders — the render pass and node system re-style stills and animations inside the compositor.
+- Choose your engine — run diffusion locally on your GPU or connect a cloud provider, and keep every result in a history you can recall, export and import.
+
+How it works
+
+ai-texture-forge runs as a single Blender add-on: the N-panel and Studio Window route your prompt to the Provider Layer, which drives a local Diffusion Engine on your GPU or a connected cloud API, while the Texture Pipeline handles seamless wrapping, depth projection, inpainting and 4× upscaling and the Material Builder wires the result into Blender's shader nodes as color, roughness and normal maps. The History store keeps every generation recallable, and the external client bridge keeps a remote session in sync while Blender stays open.
+
+Usage
+
+- Game-ready brick wall — type "weathered red brick, mortar, seamless", enable Seamless and generate: the PBR set lands on the wall mesh with roughness and normal maps, tiling across the whole facade with no visible seam.
+- Concept art in the viewport — block out a sci-fi alley, pick a concept preset and generate background assets straight into the camera view, iterating variants without leaving Blender.
+- Scene-wide projection — select the environment, run a depth-aware projection with "abandoned factory, rust and dust" and the whole scene is skinned in one pass; inpaint the spots that need care, then upscale to final resolution.
+
+Configuration
+
+| Setting | Default | Description |
+|---|---|---|
+| Provider | Local GPU | Diffusion backend: local engine or cloud API; endpoint URL and key live in the same panel |
+| Model | — | Diffusion model used for generations |
+| Resolution | 1024 | Base size of generated images |
+| Steps | 30 | Diffusion steps per generation; more steps add detail and time |
+| Seed | Random | Fix the seed to iterate on the same look |
+| Seamless | Off | Bakes tiling into the result with no visible seam |
+| Depth strength | 0.6 | How tightly the projection follows scene depth |
+| Upscale | 4× | AI upscaling factor applied to final outputs |
+| Render pass blend | 0.5 | Mix between the Cycles render and the restyled result |
+| History | On | Recall, export and import past generations |
+
+Troubleshooting / FAQ
+
+- The ZIP will not install. Windows marks downloaded files — run powershell Unblock-File -Path "$HOME\Downloads\ai-texture-forge.zip" and install again.
+- No ai-texture-forge panel in the sidebar. Check Edit → Preferences → Get Extensions: the add-on must be enabled, and the bundle requires Blender 4.2 or later on Windows x64.
+- Generations fail or stall. Verify the provider endpoint and key in the N-panel and confirm the model name; the local engine needs a supported GPU with enough VRAM, and a cloud provider can take over when it cannot.
+- Seams are still visible. Enable Seamless before generating; inpaint can also repair the seams of an existing texture automatically.
+- Results look soft in close-ups. Run the 4× AI upscale on the final generation — detail returns without a re-render.
+- The AI assistant does not respond. Keep Blender open — Studio and external clients talk to a running Blender session.
+
+Contributing
+
+Prompt presets, provider configs and workflow ideas are welcome — open an issue or a pull request. If ai-texture-forge saves you a stock-library hunt, tap the ★ Star button: it helps other artists find the forge.
+
+Keywords
+
+dream textures · dream textures blender · dream textures addon · dream textures ai · dream textures seamless · dream textures pbr · dream textures prompt · dream textures generation · dream textures diffusion · dream textures projection · dream textures inpainting · dream textures outpainting · dream textures upscaling · dream textures render · dream textures material · dream textures windows · dream textures python · dream textures gpu · dream textures local · dream textures history · stable diffusion · ai texture generator · text to texture · seamless textures · tileable textures · pbr textures · texture generation · blender addon · blender ai · ai materials · material generator · concept art · background assets · depth to image · texture projection · inpainting · outpainting · ai upscaling · render pass · cycles render · prompt engineering · prompt presets · negative prompt · image to image · texture painting · 3d texturing · game textures · archviz textures · procedural materials · shader nodes · local ai · cloud ai · nvidia cuda · gpu acceleration · offline generation · python addon · blender 4.2 · windows x64 · studio window · ai assistant
+
+License
+
+Released under the MIT license.
