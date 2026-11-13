@@ -1,0 +1,121 @@
+quire
+
+A plain editor for folders of Markdown files.
+
+Each note is a .md file on your disk, so any other app can open it.
+
+  Website ·
+  Install ·
+  Sync ·
+  MCP server ·
+  Video
+
+What you get
+
+Quire opens a folder and edits the Markdown files in it. There is no database, no import step and no lock-in.
+
+- Write in Markdown. Source mode highlights the syntax as you type, in a monospaced font. Ctrl+E switches to a preview that reads like a printed page.
+- Format with a click. A floating toolbar at the top of the note stays in view while you scroll. It makes text bold, italic or struck through, adds headings, links, lists, tasks, quotes and code, and inserts images. Ctrl+B, Ctrl+I and Ctrl+K work too. Settings, Editor can hide it.
+- Lock a note. The lock button in the toolbar encrypts a note with its own password. A locked note shows nothing until you enter the password, and it syncs encrypted.
+- Add images. Drag an image onto a note, paste one, or use the image button in the toolbar. Quire copies it into attachments/ and links it. The preview shows ` and ![name.png]]` images, and web images too.
+- Link notes. Write [[Note name]] and Ctrl-click to follow it. A link to a missing note creates the note. Renaming a note rewrites the links to it.
+- Find anything. Ctrl+O opens any note by a fuzzy name. Ctrl+P runs any command. Ctrl+Shift+F searches every note. Tags (#idea) get their own list.
+- Keep folders tidy. Make folders in the file tree, drag notes into them, and use the + on a folder to make a note there. To delete a folder, right-click it. The folder moves to .trash with its files. In the quick switcher, Drafts/Idea makes the note in Drafts.
+- Sync your devices. Keep a notes folder the same on your computers and your phone, through object storage that you control, with optional encryption.
+- Focus. Ctrl+. or the focus button hides everything but the text, dims the other paragraphs and keeps the line you type near the middle.
+- Look at home. Pick a theme for light mode and one for dark mode from 14 themes, such as White, Black, Nord, Gruvbox, Catppuccin, Tokyo Night, Rosé Pine and Solarized. Pick an accent colour, or type any hex value. "Match system" switches between your two themes. On Omarchy, your Omarchy theme is one of the choices.
+- Work with AI tools. A built-in MCP server lets Claude Desktop, Cursor and other MCP clients read and search your notes.
+
+    Source, light
+    Preview, dark
+
+    Quick switcher
+    Focus mode
+On your phone
+
+The Android app is the same editor for a phone: one pane, a drawer for the files, and tabs for open notes.
+
+Install
+
+Download the build for your system from the [latest release:
+
+| System | File |
+| --- | --- |
+| Linux, x86-64 | quire--linux-x86_64.tar.gz. Unpack it and run ./install.sh. |
+| macOS, Apple silicon | quire--macos-arm64.zip. The app is not notarized, so right-click it and choose Open the first time. |
+| Windows, x86-64 | quire--windows-x86_64.zip. The app is not signed, so SmartScreen can warn you. |
+| Android 8.0 and later | quire--android.apk |
+
+Quire is pre-release. To build it yourself, follow the steps below.
+
+Desktop (Linux)
+
+You need Rust and, on Linux, the libxkbcommon and wayland development packages. rustup installs the pinned toolchain on the first build.
+
+git clone https://github.com/bjarneo/quire
+cd quire/desktop
+./install.sh        # builds, then installs quire, its icon and a launcher entry for your user
+quire ~/notes       # or open Quire from the app launcher
+
+The desktop app is built with Rune, a GPU-rendered Rust UI framework. Rune also targets macOS and Windows, but Quire is tested on Linux only. See desktop/README.md.
+
+Android
+
+You need JDK 21 and the Android SDK.
+
+cd quire/android
+./gradlew assembleDebug
+adb install -r app/build/outputs/apk/debug/app-debug.apk
+
+See android/README.md.
+
+Use it with your AI tools
+
+Turn on the server in Settings, MCP. Then paste the client configuration from that page into your AI app. With the stdio transport, the AI app starts Quire's helper itself:
+
+{
+  "mcpServers": {
+    "quire": { "command": "quire", "args": "mcp", "--folder", "/path/to/notes"] }
+  }
+}
+
+Access is read-only by default. Each tool has its own switch, and hidden folders stay out of listings and search. The HTTP transport serves http://127.0.0.1:3917/mcp while the app is open and needs the access token from Settings.
+
+Sync your devices
+
+Quire keeps a copy of your notes in object storage that you control. The desktop and Android apps use the same format, so a note you write on one device opens on the other.
+
+1. Make a bucket at your provider and an access key for it.
+2. Open Settings, Sync & backup, and select the provider.
+3. Fill in the bucket and the key.
+4. Select Test connection. Sync starts when the test passes.
+
+Quire works with Amazon S3, Hetzner, Azure Blob Storage, Google Cloud Storage, Cloudflare R2, Backblaze B2, DigitalOcean Spaces, Wasabi, Scaleway, OVHcloud and any other S3-compatible server, such as MinIO.
+
+- Encrypt before upload encrypts each note with AES-256-GCM before upload. The key comes from your passphrase, so the provider stores neither note names nor note text. If you lose the passphrase, nobody can open the remote copy.
+- When to sync is On save, Every 5 min or Manually. Sync now is also in the command palette.
+- When two devices change the same note, Quire keeps both versions. The other device's text goes to  (conflict ).md next to the note.
+- Images in the notes folder sync too, up to 50 MB each.
+- Folders sync too, empty ones included. A note or a folder that you delete on one device moves to .trash on the other devices.
+
+Each notes folder syncs to its own remote folder, quire// unless you set another one in Remote folder. To sync one notes folder between two devices, give it the same remote folder on both.
+
+[SYNC.md describes the remote format, so other tools can read and write it.
+
+Not in this version
+
+- With "Ask before changes" on, MCP tools that write return an error, because there is no approval prompt yet.
+- The macOS and Windows builds come from CI and are not tested on those systems yet.
+- On Android, a paste from the context menu inserts no image, and SVG images do not show in the preview.
+
+In this repository
+
+| Folder | What it holds |
+| --- | --- |
+| desktop/ | The desktop app, in Rust with Rune. |
+| android/ | The Android app, in Kotlin with Jetpack Compose. |
+| site/ | The website, static files served by GitHub Pages. |
+| design/ | The design prototype that both apps follow. |
+| assets/ | The brand marks and the fonts, which keep their SIL Open Font License. |
+
+Quire is MIT licensed.

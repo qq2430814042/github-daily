@@ -1,0 +1,165 @@
+Emissor de NFS-e Nacional
+
+Emissor de NFS-e que fala direto com a API do Sistema Nacional NFS-e, sem intermediários e sem custo por nota. Ele roda
+na sua conta da Cloudflare: o seu sistema envia os dados da venda e recebe a nota autorizada, com o XML, o PDF e links
+prontos para mandar ao cliente.
+
+Ele já emite notas em produção para uma ME/EPP do Simples Nacional. Para MEI e empresas fora do Simples, o código segue
+o leiaute oficial, mas ainda não foi testado em produção.
+
+O que ele faz
+
+- Emite a NFS-e e devolve o número, a chave de acesso e o XML autorizado.
+- Nunca emite duas notas para a mesma venda: você escolhe o id, e repetir o pedido devolve a mesma nota.
+- Se a resposta do governo se perder, ele confere se a nota foi emitida antes de enviar de novo.
+- Cancela notas.
+- Gera o PDF (DANFSe): usa o do governo quando o serviço dele responde; se não, gera um a partir do XML autorizado,
+  com QR code para a consulta pública.
+- Cria links assinados do PDF e do XML, que podem ir no e-mail do cliente.
+
+Os testes validam os documentos contra os XSDs oficiais e conferem as assinaturas com o xmlsec1.
+
+Quanto custa
+
+| Item | Custo |
+|---|---|
+| Emissão | Nada: a API do governo é gratuita. |
+| Cloudflare | Plano Workers Paid, de US$ 5 por mês, que inclui uma cota de uso de containers. No tipo lite, a cota cobre cerca de 100 horas de container ligado por mês, e o container desliga depois de 10 minutos sem uso. Veja os preços atuais. |
+| Certificado digital A1 (e-CNPJ) | Você compra de uma autoridade certificadora e renova todo ano. Se já emite notas, provavelmente já tem um. |
+
+Como funciona
+
+flowchart LR
+    sistema"Seu sistema"] -->|"POST /v1/notas"| worker["Worker: API e banco D1"]
+    worker -->|"DPS em XML"| container["Container: assina e envia"]
+    container -->|"mTLS com o certificado A1"| governo["Sistema Nacional NFS-e"]
+
+- O Worker (src/) recebe as chamadas, guarda as notas num banco D1 e monta os documentos (src/dps.ts).
+- O container (container/) assina os documentos (XMLDSig, RSA-SHA256) e fala com o governo usando o
+  certificado. Ele existe porque os servidores do governo só pedem o certificado do cliente depois que a conexão já
+  está aberta (renegociação TLS), e o fetch dos Workers não faz isso.
+- O número da DPS vem de um contador no D1 e nunca se repete. Se um número já tiver sido usado fora daqui (no portal do
+  governo, por exemplo), o emissor passa para o próximo.
+
+Antes de começar
+
+Você vai precisar de:
+
+1. Município ativo no Sistema Nacional NFS-e. Depois da instalação, o /health?deep=1 confirma isso com uma
+   consulta real ao governo.
+2. Certificado A1 (e-CNPJ) do prestador: o arquivo .pfx e a senha.
+3. Dados do seu contador: a situação no Simples Nacional, a alíquota aproximada do Simples (para ME/EPP), o código
+   de tributação nacional do serviço e, se ele pedir, o código NBS.
+4. Conta na Cloudflare no plano Workers Paid.
+5. Node.js 22.12 ou mais recente, o pnpm (rode corepack enable) e o Docker aberto, porque o deploy monta a
+   imagem do container na sua máquina.
+
+Instalação
+
+git clone https://github.com/gabrielbuzziv/emissor-nfse-nacional.git
+cd emissor-nfse-nacional
+pnpm install
+pnpm wrangler login
+
+1. Configure os dados do emissor
+
+Preencha os vars do wrangler.jsonc:
+
+| Variável | O que é |
+|---|---|
+| NFSE_ENVIRONMENT | restricted (produção restrita, o ambiente de testes do governo) ou production (notas de verdade). Comece com restricted. |
+| ISSUER_CNPJ | O CNPJ do prestador. |
+| ISSUER_CITY_CODE | O código IBGE do município do CNPJ, com 7 dígitos ([consulte no IBGE). |
+| ISSUER_MUNICIPAL_SUBSCRIPTION | A inscrição municipal. Deixe vazio, a menos que o município tenha cadastrado a empresa no Cadastro Nacional de Contribuintes (CNC); sem esse cadastro, a nota é recusada com o erro E0120. |
+| ISSUER_SIMPLES_OPTION | A situação no Simples Nacional: 1 = não optante; 2 = MEI; 3 = ME/EPP. |
+| ISSUER_SIMPLES_APURATION | Só para ME/EPP. 1 = tributos federais e municipal apurados pelo Simples Nacional, o caso mais comum. As outras opções estão no wrangler.jsonc. |
+| ISSUER_SIMPLES_TOTAL_TAX_PERCENT | Só para ME/EPP. A alíquota aproximada dos tributos do Simples (Lei 12.741/2012), com ponto e 2 casas decimais, por exemplo 6.00. |
+| DPS_SERIES | A série das DPS, com até 5 dígitos. O padrão é 1. |
+
+Por padrão, a API fica em https://emissor-nfse..workers.dev. Para usar um domínio próprio, siga o
+comentário de routes no wrangler.jsonc.
+
+2. Faça o deploy e crie as tabelas
+
+pnpm run deploy
+pnpm run migrate
+
+O primeiro deploy cria o banco D1 emissor-nfse, e o migrate cria as tabelas.
+
+3. Envie o certificado e crie o token
+
+pnpm run certificate caminho/do/certificado.pfx
+
+O script pede a senha e confere se o certificado abre, se está na validade e se é do CNPJ configurado. Depois, envia
+tudo como secrets do Worker. Ele também aceita os arquivos .pfx mais antigos (RC2/3DES), comuns em certificados A1.
+
+Gere um token para os seus sistemas chamarem a API e salve-o como secret (cole o token quando o Wrangler pedir):
+
+node -e "console.log(require('node:crypto').randomBytes(32).toString('hex'))"
+pnpm wrangler secret put API_TOKEN
+
+Guarde o token num lugar seguro: ele protege a API e também assina os links públicos das notas. Trocar o token
+invalida os links já enviados.
+
+4. Confira a instalação
+
+curl -H "Authorization: Bearer $API_TOKEN" "https://emissor-nfse..workers.dev/health?deep=1"
+
+Com tudo certo, a resposta traz "ok": true, a validade do certificado em container.certNotAfter e o convênio do
+município em cityAgreement. Se faltar alguma variável, ela aparece em config.
+
+5. Teste e vá para a produção
+
+Com NFSE_ENVIRONMENT em restricted, as notas vão para a produção restrita e não têm valor fiscal. Troque o
+serviceCode pelo código do seu serviço:
+
+curl -X POST "https://emissor-nfse..workers.dev/v1/notas" \
+  -H "Authorization: Bearer $API_TOKEN" \
+  -H "content-type: application/json" \
+  -d '{"id":"teste-1","serviceCode":"080201","description":"Nota de teste","valueCents":100}'
+
+A produção restrita não tem todos os municípios. Se o seu não estiver lá (o /health?deep=1 mostra), não dá para
+testar a emissão antes da produção.
+
+Para emitir notas de verdade:
+
+1. Apague as notas de teste e zere a numeração. Os testes ficam no mesmo banco, e um id usado no teste devolveria a
+   nota de teste. Faça isso só agora, nunca depois de ir para a produção:
+   pnpm wrangler d1 execute emissor-nfse --remote --command "DELETE FROM notas; DELETE FROM counters;"
+2. Mude NFSE_ENVIRONMENT para production e rode pnpm run deploy.
+3. Rode o /health?deep=1 de novo.
+4. Emita a primeira nota de uma venda real e confira os dados na consulta pública (o link links.lookup da resposta)
+   antes de ligar a emissão automática.
+
+API
+
+Todas as rotas pedem o cabeçalho Authorization: Bearer , menos os links públicos das notas.
+
+| Rota | O que faz |
+|---|---|
+| POST /v1/notas | Emite uma nota. Repetir o pedido com o mesmo id devolve a mesma nota. |
+| GET /v1/notas/:id | Mostra a nota; com ?xml=1, inclui o XML da NFS-e. |
+| GET /v1/notas/:id/pdf | Devolve o PDF da nota (DANFSe). |
+| POST /v1/notas/:id/cancel | Cancela a nota. |
+| GET /v1/notas | Lista as notas, das mais recentes para as mais antigas. |
+| GET /health | Confere a configuração, o container e a validade do certificado; com ?deep=1, também consulta o município no governo. |
+
+Emitir
+
+POST /v1/notas
+{
+  "id": "pedido-1001",
+  "competence": "2026-11-10",
+  "taker": { "taxId": "123.456.789-09", "name": "Maria Silva", "email": "maria@example.com" },
+  "serviceCode": "080201",
+  "nbsCode": "122051900",
+  "description": "Curso online de fotografia",
+  "valueCents": 9700
+}
+
+| Campo | O que é |
+|---|---|
+| id | Obrigatório. O identificador da venda no seu sistema, com até 200 caracteres. É ele que impede notas duplicadas. |
+| competence | A data da prestação do serviço (AAAA-MM-DD), que não pode ser posterior à emissão. Se ficar de fora, vale a data de hoje em Brasília. |
+
+…（内容已截断）

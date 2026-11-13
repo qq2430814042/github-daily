@@ -1,0 +1,1517 @@
+{
+  "date": "2026-11-12",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-13T06:29:22.898Z",
+  "count": 60,
+  "newCount": 35,
+  "sources": {
+    "trending": 13,
+    "new": 35,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "meta/astryx",
+      "name": "astryx",
+      "owner": "meta",
+      "url": "https://github.com/meta/astryx",
+      "description": "An open source design system that's fully customizable and agent ready",
+      "language": "TypeScript",
+      "stars": 26853,
+      "forks": 2083,
+      "starsToday": 1830,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "meta-astryx-7a326e4e.txt"
+    },
+    {
+      "rank": 2,
+      "fullName": "we-promise/sure",
+      "name": "sure",
+      "owner": "we-promise",
+      "url": "https://github.com/we-promise/sure",
+      "description": "The personal finance app for everyone (by everyone)",
+      "language": "Ruby",
+      "stars": 14148,
+      "forks": 1066,
+      "starsToday": 967,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "we-promise-sure-128f00ec.txt"
+    },
+    {
+      "rank": 3,
+      "fullName": "addyosmani/agent-skills",
+      "name": "agent-skills",
+      "owner": "addyosmani",
+      "url": "https://github.com/addyosmani/agent-skills",
+      "description": "Production-grade engineering skills for AI coding agents.",
+      "language": "JavaScript",
+      "stars": 116831,
+      "forks": 12218,
+      "starsToday": 816,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "addyosmani-agent-skills-35dedba6.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "GoogleChrome/modern-web-guidance-src",
+      "name": "modern-web-guidance-src",
+      "owner": "GoogleChrome",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "language": "TypeScript",
+      "stars": 3561,
+      "forks": 221,
+      "starsToday": 739,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "googlechrome-modern-web-guidance-src-227260bf.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "openai/codex-security",
+      "name": "codex-security",
+      "owner": "openai",
+      "url": "https://github.com/openai/codex-security",
+      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+      "language": "TypeScript",
+      "stars": 12634,
+      "forks": 986,
+      "starsToday": 643,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openai-codex-security-65f6d9f3.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "Alishahryar1/free-claude-code",
+      "name": "free-claude-code",
+      "owner": "Alishahryar1",
+      "url": "https://github.com/Alishahryar1/free-claude-code",
+      "description": "Use Claude Code, Codex, Antigravity, VSCode, Pi, and OpenCode (and 6 other harnesses) for free (1.3B+ free tokens) from your terminal, app, IDE, or phone, and now from the browser with native browser sessions (multi-harness + multi-model) like OpenClaw (voice supported + ToS friendly)",
+      "language": "Python",
+      "stars": 69509,
+      "forks": 10793,
+      "starsToday": 415,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "alishahryar1-free-claude-code-fbb852fa.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "CopilotKit/OpenBot",
+      "name": "OpenBot",
+      "owner": "CopilotKit",
+      "url": "https://github.com/CopilotKit/OpenBot",
+      "description": "Open-source AI coworkers that each get a computer of their own: a browser, files and tools, with every action decided before it happens and recorded after. Bring any AG-UI agent.",
+      "language": "TypeScript",
+      "stars": 11814,
+      "forks": 1453,
+      "starsToday": 298,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "copilotkit-openbot-24301d66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "pookjw/HermesEnabler",
+      "name": "HermesEnabler",
+      "owner": "pookjw",
+      "url": "https://github.com/pookjw/HermesEnabler",
+      "description": "Enable Hermès Watch Faces on any Apple Watch devices",
+      "language": "Objective-C",
+      "stars": 1638,
+      "forks": 145,
+      "starsToday": 218,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "pookjw-hermesenabler-0c193101.txt"
+    },
+    {
+      "rank": 9,
+      "fullName": "ggml-org/llama.cpp",
+      "name": "llama.cpp",
+      "owner": "ggml-org",
+      "url": "https://github.com/ggml-org/llama.cpp",
+      "description": "LLM inference in C/C++",
+      "language": "C++",
+      "stars": 134700,
+      "forks": 25522,
+      "starsToday": 176,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ggml-org-llama-cpp-2cf5fdb9.txt"
+    },
+    {
+      "rank": 10,
+      "fullName": "QwenLM/qwen-code",
+      "name": "qwen-code",
+      "owner": "QwenLM",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "description": "An open-source AI coding agent that lives in your terminal.",
+      "language": "TypeScript",
+      "stars": 29969,
+      "forks": 3409,
+      "starsToday": 151,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "qwenlm-qwen-code-221ba71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "nvm-sh/nvm",
+      "name": "nvm",
+      "owner": "nvm-sh",
+      "url": "https://github.com/nvm-sh/nvm",
+      "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+      "language": "Shell",
+      "stars": 96054,
+      "forks": 10761,
+      "starsToday": 63,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nvm-sh-nvm-8490b630.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "nodejs/node",
+      "name": "node",
+      "owner": "nodejs",
+      "url": "https://github.com/nodejs/node",
+      "description": "Node.js JavaScript runtime ✨🐢🚀✨",
+      "language": "JavaScript",
+      "stars": 123644,
+      "forks": 38060,
+      "starsToday": 62,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nodejs-node-0def655f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "ashhart/TensorFold",
+      "name": "TensorFold",
+      "owner": "ashhart",
+      "url": "https://github.com/ashhart/TensorFold",
+      "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+      "language": "Zig",
+      "stars": 2010,
+      "forks": 397,
+      "starsToday": 54,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ashhart-tensorfold-c9768b12.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "AIRzZ90/study-materials-fork",
+      "name": "study-materials-fork",
+      "owner": "AIRzZ90",
+      "url": "https://github.com/AIRzZ90/study-materials-fork",
+      "description": "A cross-platform Tauri 2 interface and interaction practice project",
+      "language": "TypeScript",
+      "stars": 428,
+      "forks": 624,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T10:52:32Z",
+      "updatedAt": "2026-11-13T06:23:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "airzz90-study-materials-fork-eacec39e.txt"
+    },
+    {
+      "rank": 15,
+      "fullName": "rivet-dev/open-orange",
+      "name": "open-orange",
+      "owner": "rivet-dev",
+      "url": "https://github.com/rivet-dev/open-orange",
+      "description": "Run Cloudflare Workers and Durable Objects unchanged on AWS, GCP, Azure or your own servers.",
+      "language": "TypeScript",
+      "stars": 285,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [
+        "cloudflare",
+        "cloudflare-workers",
+        "durable-objects",
+        "nodejs",
+        "rivet",
+        "self-hosted",
+        "serverless",
+        "sqlite"
+      ],
+      "createdAt": "2026-11-12T00:44:12Z",
+      "updatedAt": "2026-11-13T06:28:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rivet-dev-open-orange-654d80f1.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 16,
+      "fullName": "Simon3Sarkis/super-odyssey-pc-recomp",
+      "name": "super-odyssey-pc-recomp",
+      "owner": "Simon3Sarkis",
+      "url": "https://github.com/Simon3Sarkis/super-odyssey-pc-recomp",
+      "description": "A native Windows PC port of Super Mario Odyssey by static recompilation. Bring your own game: no game files included.",
+      "language": "C",
+      "stars": 195,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [
+        "recomp"
+      ],
+      "createdAt": "2026-11-12T01:49:10Z",
+      "updatedAt": "2026-11-13T06:21:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "simon3sarkis-super-odyssey-pc-recomp-3f930595.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 17,
+      "fullName": "DevedevT/FFmpeg-GUI-Editor-Windows",
+      "name": "FFmpeg-GUI-Editor-Windows",
+      "owner": "DevedevT",
+      "url": "https://github.com/DevedevT/FFmpeg-GUI-Editor-Windows",
+      "description": "Lightweight portable FFmpeg GUI & lossless video trimmer for Windows (ready-to-use .exe). Supports English, Russian, Chinese, German, French & Italian.",
+      "language": "Visual Basic .NET",
+      "stars": 143,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T20:49:07Z",
+      "updatedAt": "2026-11-12T21:59:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "devedevt-ffmpeg-gui-editor-windows-9d204f96.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "lawandrorder/mate",
+      "name": "mate",
+      "owner": "lawandrorder",
+      "url": "https://github.com/lawandrorder/mate",
+      "description": "Mate, your mate while you shop. A text-first shopping agent for cashback, personal discount codes, package tracking and price-drop alerts. Includes a starter agent, web chat, original icon set and docs. mate.fm",
+      "language": "Python",
+      "stars": 138,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T14:05:28Z",
+      "updatedAt": "2026-11-13T01:50:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lawandrorder-mate-c9b3ab7e.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "Superkechaos/Roblox-FPS-Optimizer",
+      "name": "Roblox-FPS-Optimizer",
+      "owner": "Superkechaos",
+      "url": "https://github.com/Superkechaos/Roblox-FPS-Optimizer",
+      "description": "Lightweight Roblox FPS Unlocker & Performance Optimizer for Windows. Remove the 60 FPS cap, fix lag, reduce input delay, and boost your frame rate safely. Open-source and portable.",
+      "language": "Python",
+      "stars": 119,
+      "forks": 44,
+      "starsToday": 0,
+      "topics": [
+        "desktop-app",
+        "fps-boost",
+        "gaming-tools",
+        "lag-fix",
+        "open-source",
+        "optimization",
+        "performance-optimizer",
+        "roblox"
+      ],
+      "createdAt": "2026-11-12T08:33:33Z",
+      "updatedAt": "2026-11-13T05:18:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "superkechaos-roblox-fps-optimizer-e7daec3b.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "Urbanziflourish/Fortnite-FPS-Booster-Performance-Optimizer",
+      "name": "Fortnite-FPS-Booster-Performance-Optimizer",
+      "owner": "Urbanziflourish",
+      "url": "https://github.com/Urbanziflourish/Fortnite-FPS-Booster-Performance-Optimizer",
+      "description": "Fortnite FPS Booster & Performance Optimizer for Windows. Fix stutters, reduce input lag, and boost your frame rate safely without modifying game files. Open-source and portable.",
+      "language": "Python",
+      "stars": 119,
+      "forks": 97,
+      "starsToday": 0,
+      "topics": [
+        "configuration-manager",
+        "desktop-app",
+        "gaming-tools",
+        "open-source",
+        "pc-tuning",
+        "performance-tweaks",
+        "process-manager",
+        "resource-monitor"
+      ],
+      "createdAt": "2026-11-12T08:43:08Z",
+      "updatedAt": "2026-11-13T05:59:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "urbanziflourish-fortnite-fps-booster-performance-optimizer-cca7ee4b.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "bikini/telejam",
+      "name": "telejam",
+      "owner": "bikini",
+      "url": "https://github.com/bikini/telejam",
+      "description": "telegram RCE",
+      "language": "HTML",
+      "stars": 106,
+      "forks": 35,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T07:22:22Z",
+      "updatedAt": "2026-11-13T06:19:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bikini-telejam-9f292b2a.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "gabrielbuzziv/emissor-nfse-nacional",
+      "name": "emissor-nfse-nacional",
+      "owner": "gabrielbuzziv",
+      "url": "https://github.com/gabrielbuzziv/emissor-nfse-nacional",
+      "description": "Emissor de NFS-e direto na API do Sistema Nacional NFS-e, sem custo por nota, rodando na sua conta da Cloudflare.",
+      "language": "TypeScript",
+      "stars": 105,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [
+        "cloudflare-workers",
+        "nfse",
+        "nfse-nacional",
+        "nota-fiscal",
+        "self-hosted"
+      ],
+      "createdAt": "2026-11-12T23:02:35Z",
+      "updatedAt": "2026-11-13T06:06:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "gabrielbuzziv-emissor-nfse-nacional-7da12850.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 23,
+      "fullName": "kociden/sakurai-skill",
+      "name": "sakurai-skill",
+      "owner": "kociden",
+      "url": "https://github.com/kociden/sakurai-skill",
+      "description": "桜井政博のゲーム作るには 全本編257本の字幕から作ったゲーム制作の Agent Skill（非公式・日本語）",
+      "language": "Python",
+      "stars": 91,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "game-design",
+        "gamedev"
+      ],
+      "createdAt": "2026-11-12T15:54:56Z",
+      "updatedAt": "2026-11-13T06:09:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kociden-sakurai-skill-69d0125b.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "routerhubSI/kimi-uncensored",
+      "name": "kimi-uncensored",
+      "owner": "routerhubSI",
+      "url": "https://github.com/routerhubSI/kimi-uncensored",
+      "description": "Every uncensored and abliterated Kimi build — Kimi K3.1 Pro Uncensored via API at 0.30/1.50 USD per million tokens, abliterated open-weight checkpoints for K3.1 Pro and K3, license notes and a red-team prompt library. Maintained by RouterHub.",
+      "language": "",
+      "stars": 84,
+      "forks": 13,
+      "starsToday": 0,
+      "topics": [
+        "abliterated",
+        "abliterated-models",
+        "ai-gateway",
+        "anthropic-compatible",
+        "gguf",
+        "kimi",
+        "kimi-api",
+        "kimi-k3-0"
+      ],
+      "createdAt": "2026-11-12T04:21:39Z",
+      "updatedAt": "2026-11-12T05:37:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "routerhubsi-kimi-uncensored-4082995b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 25,
+      "fullName": "simonklee/opencode-native-preview",
+      "name": "opencode-native-preview",
+      "owner": "simonklee",
+      "url": "https://github.com/simonklee/opencode-native-preview",
+      "description": "OpenCode Native CLI Preview builds",
+      "language": "TypeScript",
+      "stars": 84,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T08:50:58Z",
+      "updatedAt": "2026-11-13T05:03:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "simonklee-opencode-native-preview-a7cf6328.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "higurashi-ai/Haru",
+      "name": "Haru",
+      "owner": "higurashi-ai",
+      "url": "https://github.com/higurashi-ai/Haru",
+      "description": "Haru: a low-latency, multilingual, full-duplex spoken dialogue model",
+      "language": "Python",
+      "stars": 77,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T11:15:42Z",
+      "updatedAt": "2026-11-13T06:10:27Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "higurashi-ai-haru-c4a7aebd.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "StitchSerfJump/Microsoft-Visio-For-Windows",
+      "name": "Microsoft-Visio-For-Windows",
+      "owner": "StitchSerfJump",
+      "url": "https://github.com/StitchSerfJump/Microsoft-Visio-For-Windows",
+      "description": "Microsoft Visio for Windows — diagramming and vector graphics application for flowcharts, org charts, network maps, floor plans and professional diagrams.",
+      "language": "",
+      "stars": 76,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "download-microsoft-visio",
+        "guide-setup-microsoft-visio",
+        "how-to-install-microsoft-visio",
+        "how-to-setup-microsoft-visio",
+        "microsoft-computer-vision",
+        "microsoft-visio",
+        "microsoft-visio-2026",
+        "microsoft-visio-compatibility"
+      ],
+      "createdAt": "2026-11-12T13:42:23Z",
+      "updatedAt": "2026-11-12T13:49:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "stitchserfjump-microsoft-visio-for-windows-23bab03b.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "precygtrucqui1981/blender-ai-copilot-lab",
+      "name": "blender-ai-copilot-lab",
+      "owner": "precygtrucqui1981",
+      "url": "https://github.com/precygtrucqui1981/blender-ai-copilot-lab",
+      "description": "An AI lab for Blender where manager–worker–reviewer agent teams run multi-step scene briefs as supervised experiments—a live task board, review findings, one correction attempt per blocked task, named undo, and a built-in MCP server. · blender-ai-copilot-lab · blender · blender 3d · blender addon · ",
+      "language": "",
+      "stars": 73,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation"
+      ],
+      "createdAt": "2026-11-12T19:33:16Z",
+      "updatedAt": "2026-11-13T06:18:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "precygtrucqui1981-blender-ai-copilot-lab-f26572a5.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "CatchArtisanDone86/Movavi-Video-Editor-For-Windows",
+      "name": "Movavi-Video-Editor-For-Windows",
+      "owner": "CatchArtisanDone86",
+      "url": "https://github.com/CatchArtisanDone86/Movavi-Video-Editor-For-Windows",
+      "description": "Movavi Video Editor for Windows — desktop video editing application for cutting clips, adding effects, transitions, titles and exporting videos for social media and everyday projects.",
+      "language": "",
+      "stars": 72,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "chroma-key-windows-editor",
+        "media-management-windows-system",
+        "movavi-suite-audio-editing",
+        "movavi-suite-screen-recording",
+        "movavi-video-editor-mac",
+        "movavi-video-suite-15",
+        "movavi-video-suite-media-management",
+        "on1-photo"
+      ],
+      "createdAt": "2026-11-12T19:12:12Z",
+      "updatedAt": "2026-11-12T19:50:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "catchartisandone86-movavi-video-editor-for-windows-1b441518.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "fumbdendade19718/blender-ai-copilot-desk",
+      "name": "blender-ai-copilot-desk",
+      "owner": "fumbdendade19718",
+      "url": "https://github.com/fumbdendade19718/blender-ai-copilot-desk",
+      "description": "A visual AI desk for Blender—chat, scene objects, viewport snapshots, approvals and a live task board in one companion window, backed by your choice of models and a built-in MCP server. · blender-ai-copilot-desk · blender · blender 3d · blender addon · blender plugin · blender extension · blender sc",
+      "language": "",
+      "stars": 71,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation"
+      ],
+      "createdAt": "2026-11-12T19:37:25Z",
+      "updatedAt": "2026-11-13T06:20:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fumbdendade19718-blender-ai-copilot-desk-fc61ddd3.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "IluvatarLabs/sitrep",
+      "name": "sitrep",
+      "owner": "IluvatarLabs",
+      "url": "https://github.com/IluvatarLabs/sitrep",
+      "description": "One live console to monitor Claude Code and Codex agents across machines, track context and spend, and unblock sessions that need you.",
+      "language": "TypeScript",
+      "stars": 71,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "coding-agents",
+        "dashboard",
+        "monitoring",
+        "observability",
+        "self-hosted"
+      ],
+      "createdAt": "2026-11-12T09:34:39Z",
+      "updatedAt": "2026-11-13T05:30:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "iluvatarlabs-sitrep-50d6077a.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "racdeufindurch198812/Blender-AI-MCP-Studio",
+      "name": "Blender-AI-MCP-Studio",
+      "owner": "racdeufindurch198812",
+      "url": "https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio",
+      "description": "Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved and reversible 3D scene operations — with a visual chat workspace, multi-agent teams and your choice of AI models. · blender ai mcp studio · m",
+      "language": "",
+      "stars": 71,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation"
+      ],
+      "createdAt": "2026-11-12T19:28:20Z",
+      "updatedAt": "2026-11-13T06:28:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "racdeufindurch198812-blender-ai-mcp-studio-3b1712b0.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "baiblinocun1986/blender-ai-copilot-hub",
+      "name": "blender-ai-copilot-hub",
+      "owner": "baiblinocun1986",
+      "url": "https://github.com/baiblinocun1986/blender-ai-copilot-hub",
+      "description": "A multi-provider AI copilot hub for Blender—bring OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama and custom endpoints into one hub of saved connections, with 27 supervised scene tools and a built-in MCP server. · blender-ai-copilot-hub · blender · blender 3d · blender addo",
+      "language": "",
+      "stars": 70,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation"
+      ],
+      "createdAt": "2026-11-12T19:32:22Z",
+      "updatedAt": "2026-11-13T06:24:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "baiblinocun1986-blender-ai-copilot-hub-8bd4bbd6.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "credoksopho1984/blender-ai-copilot-studio",
+      "name": "blender-ai-copilot-studio",
+      "owner": "credoksopho1984",
+      "url": "https://github.com/credoksopho1984/blender-ai-copilot-studio",
+      "description": "An AI copilot and MCP server for Blender that turns plain-language briefs into scene operations—inside a visual chat studio with multi-agent teams, your choice of AI models, and 27 built-in scene tools. · blender-ai-copilot-studio · blender ai · ai for blender · blender copilot · blender ai copilot ",
+      "language": "",
+      "stars": 69,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation"
+      ],
+      "createdAt": "2026-11-12T19:30:32Z",
+      "updatedAt": "2026-11-13T06:17:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "credoksopho1984-blender-ai-copilot-studio-2aa1efc4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 35,
+      "fullName": "hitkeeen/blender-ai-mcp-addon",
+      "name": "blender-ai-mcp-addon",
+      "owner": "hitkeeen",
+      "url": "https://github.com/hitkeeen/blender-ai-mcp-addon",
+      "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
+      "language": "",
+      "stars": 69,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "ai-assistant",
+        "blender",
+        "blender-addon",
+        "blender-ai",
+        "blender-automation",
+        "blender-mcp",
+        "blender-plugin"
+      ],
+      "createdAt": "2026-11-12T14:32:15Z",
+      "updatedAt": "2026-11-13T06:22:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hitkeeen-blender-ai-mcp-addon-944dd6d2.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "routerhubSI/deepseek-uncensored",
+      "name": "deepseek-uncensored",
+      "owner": "routerhubSI",
+      "url": "https://github.com/routerhubSI/deepseek-uncensored",
+      "description": "Every uncensored and abliterated DeepSeek build — V4.1 Flash 1017 Abliterated (the pinned, reproducible build that ranks third on the AA Cyber benchmark), V4 Pro, the tuned variants, abliterated GGUF builds and a cyber red-team prompt library. Maintained by RouterHub.",
+      "language": "Python",
+      "stars": 69,
+      "forks": 20,
+      "starsToday": 0,
+      "topics": [
+        "abliterated",
+        "abliterated-models",
+        "ai-gateway",
+        "anthropic-compatible",
+        "cybersecurity",
+        "deepseek",
+        "deepseek-api",
+        "deepseek-v4"
+      ],
+      "createdAt": "2026-11-12T04:44:07Z",
+      "updatedAt": "2026-11-13T04:58:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "routerhubsi-deepseek-uncensored-c35b38f5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 37,
+      "fullName": "tiobeharxi1987/blender-ai-copilot-flow",
+      "name": "blender-ai-copilot-flow",
+      "owner": "tiobeharxi1987",
+      "url": "https://github.com/tiobeharxi1987/blender-ai-copilot-flow",
+      "description": "A controlled AI workflow for Blender: every copilot edit is a supervised tool call—proposed, approved, executed in sequence, cancellable after the current step and undoable by name—inside a visual studio with a built-in MCP server. · blender-ai-copilot-flow · blender · blender 3d · blender addon · b",
+      "language": "",
+      "stars": 69,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation"
+      ],
+      "createdAt": "2026-11-12T19:38:53Z",
+      "updatedAt": "2026-11-13T06:18:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tiobeharxi1987-blender-ai-copilot-flow-a7eb2d05.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "findavoulot1973/Blender-AI-MCP-Suite",
+      "name": "Blender-AI-MCP-Suite",
+      "owner": "findavoulot1973",
+      "url": "https://github.com/findavoulot1973/Blender-AI-MCP-Suite",
+      "description": "Blender AI MCP Suite is an AI assistant and built-in Model Context Protocol MCP server for Blender that turns plain-language briefs into inspected, approved and reversible 3D scene operations — with a visual Studio workspace, multi-agent teams, 21+ scene tools and your choice of AI models. · blender",
+      "language": "",
+      "stars": 68,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation"
+      ],
+      "createdAt": "2026-11-12T19:26:22Z",
+      "updatedAt": "2026-11-13T06:26:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "findavoulot1973-blender-ai-mcp-suite-9a13648c.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "Doug-218/blender-ai-copilot-forge",
+      "name": "blender-ai-copilot-forge",
+      "owner": "Doug-218",
+      "url": "https://github.com/Doug-218/blender-ai-copilot-forge",
+      "description": "A scene-forging AI copilot for Blender—describe the layout and watch primitives, cameras, lights, materials and parenting assemble in ordered steps, with approvals, named undo and a built-in MCP server. · blender-ai-copilot-forge · blender · blender 3d · blender addon · blender plugin · blender exte",
+      "language": "",
+      "stars": 66,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation"
+      ],
+      "createdAt": "2026-11-12T19:35:10Z",
+      "updatedAt": "2026-11-13T06:23:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "doug-218-blender-ai-copilot-forge-d13cad2f.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "zovulrira1974/blender-ai-copilot-assets",
+      "name": "blender-ai-copilot-assets",
+      "owner": "zovulrira1974",
+      "url": "https://github.com/zovulrira1974/blender-ai-copilot-assets",
+      "description": "An asset-savvy AI copilot for Blender—search Poly Haven, Sketchfab and Poly Pizza mid-conversation, check what fits, import after your confirmation, with 27 scene tools and a built-in MCP server alongside. · blender-ai-copilot-assets · blender · blender 3d · blender addon · blender plugin · blender ",
+      "language": "",
+      "stars": 66,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation"
+      ],
+      "createdAt": "2026-11-12T19:39:54Z",
+      "updatedAt": "2026-11-13T06:16:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "zovulrira1974-blender-ai-copilot-assets-afb5eca1.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "benzgasfuncring197110/blender-ai-copilot-bridge",
+      "name": "blender-ai-copilot-bridge",
+      "owner": "benzgasfuncring197110",
+      "url": "https://github.com/benzgasfuncring197110/blender-ai-copilot-bridge",
+      "description": "An MCP bridge for Blender that exposes 27 supervised scene tools to OpenCode and any compatible client—authenticated Streamable HTTP on a local endpoint, with the visual chat studio and agent teams on the inside. · blender-ai-copilot-bridge · blender · blender 3d · blender addon · blender plugin · b",
+      "language": "",
+      "stars": 65,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "3d-automation",
+        "3d-modeling",
+        "blender",
+        "blender-addon",
+        "blender-agents",
+        "blender-ai",
+        "blender-assistant",
+        "blender-automation"
+      ],
+      "createdAt": "2026-11-12T19:36:26Z",
+      "updatedAt": "2026-11-13T06:17:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "benzgasfuncring197110-blender-ai-copilot-bridge-43e02997.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "DarkAspect1/Nudge",
+      "name": "Nudge",
+      "owner": "DarkAspect1",
+      "url": "https://github.com/DarkAspect1/Nudge",
+      "description": "An app that shows edge pops/animation when you press volume or power buttons, and a custom volume slider inspired by a concept design is now a reality",
+      "language": "Kotlin",
+      "stars": 65,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T12:57:55Z",
+      "updatedAt": "2026-11-13T06:10:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "darkaspect1-nudge-7924d82f.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "siwen-121/agent-shared-facts",
+      "name": "agent-shared-facts",
+      "owner": "siwen-121",
+      "url": "https://github.com/siwen-121/agent-shared-facts",
+      "description": "An agent-first reference implementation for sharing reviewed facts across devices with Git and read-only MCP.",
+      "language": "Python",
+      "stars": 64,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T06:22:10Z",
+      "updatedAt": "2026-11-13T06:26:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "siwen-121-agent-shared-facts-c2e02868.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "gitcommit90/1Helm",
+      "name": "1Helm",
+      "owner": "gitcommit90",
+      "url": "https://github.com/gitcommit90/1Helm",
+      "description": "A personal AI workspace on your own Cloudflare account, with persistent memory, channel computers, and your choice of AI provider.",
+      "language": "JavaScript",
+      "stars": 62,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agent",
+        "ai-agents",
+        "ai-tools",
+        "automation",
+        "claude",
+        "claude-code",
+        "codex"
+      ],
+      "createdAt": "2026-11-12T23:35:30Z",
+      "updatedAt": "2026-11-13T06:21:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "gitcommit90-1helm-0a2d31fc.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "bjarneo/quire",
+      "name": "quire",
+      "owner": "bjarneo",
+      "url": "https://github.com/bjarneo/quire",
+      "description": "A plain editor for folders of Markdown files. Desktop (Rust + Rune) and Android.",
+      "language": "Rust",
+      "stars": 58,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T10:04:55Z",
+      "updatedAt": "2026-11-13T04:38:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bjarneo-quire-f15eb24e.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "toyxyz/toyxyz-blender-retargeter",
+      "name": "toyxyz-blender-retargeter",
+      "owner": "toyxyz",
+      "url": "https://github.com/toyxyz/toyxyz-blender-retargeter",
+      "description": "Live humanoid animation retargeting for Blender.",
+      "language": "Python",
+      "stars": 57,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T02:27:28Z",
+      "updatedAt": "2026-11-13T06:28:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "toyxyz-toyxyz-blender-retargeter-0dc4931f.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "jackson-cmd/risk-aware-trading-agents",
+      "name": "risk-aware-trading-agents",
+      "owner": "jackson-cmd",
+      "url": "https://github.com/jackson-cmd/risk-aware-trading-agents",
+      "description": "AI trading agents for US stocks with news backtesting that can't see the future: a point-in-time 2026 dataset (prices, VIX, news), a look-ahead check on every run, LLM agents over MCP, FOMC/CPI/VIX-aware regimes, and paper/live trading on 10 brokers. 风险感知美股交易智能体 · 新闻回测",
+      "language": "Python",
+      "stars": 53,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "ai-trading",
+        "algorithmic-trading",
+        "alpaca",
+        "backtesting",
+        "financial-news",
+        "interactive-brokers",
+        "llm",
+        "llm-agents"
+      ],
+      "createdAt": "2026-11-12T02:29:31Z",
+      "updatedAt": "2026-11-13T06:19:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jackson-cmd-risk-aware-trading-agents-48482b94.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 48,
+      "fullName": "Meetovergate/Rob-Run-ESP",
+      "name": "Rob-Run-ESP",
+      "owner": "Meetovergate",
+      "url": "https://github.com/Meetovergate/Rob-Run-ESP",
+      "description": "ESP tool for Rob Run with player, cheat, aim, hack, esp, wallhack, inf money, fly, free, vehicle and loot overlays, radar, aim assist and recoil tuning.",
+      "language": "",
+      "stars": 53,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-12T17:40:42Z",
+      "updatedAt": "2026-11-12T21:26:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "meetovergate-rob-run-esp-f328a4da.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "EbookFoundation/free-programming-books",
+      "name": "free-programming-books",
+      "owner": "EbookFoundation",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "description": ":books: Freely available programming books",
+      "language": "Python",
+      "stars": 401514,
+      "forks": 67742,
+      "starsToday": 0,
+      "topics": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ],
+      "createdAt": "2013-10-11T06:50:37Z",
+      "updatedAt": "2026-11-13T06:11:56Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ebookfoundation-free-programming-books-c336ecc2.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 371930,
+      "forks": 46152,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-13T06:11:54Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 323201,
+      "forks": 27115,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-13T06:27:00Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 255540,
+      "forks": 67157,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-13T06:26:01Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252565,
+      "forks": 52504,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-13T06:06:57Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 193613,
+      "forks": 13738,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-13T06:26:33Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "MDX",
+      "stars": 175051,
+      "forks": 79174,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-13T06:11:31Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Svelte",
+      "stars": 158528,
+      "forks": 23046,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "createdAt": "2023-10-06T22:08:27Z",
+      "updatedAt": "2026-11-13T06:26:41Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "open-webui-open-webui-3b98bdb5.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "Genymobile/scrcpy",
+      "name": "scrcpy",
+      "owner": "Genymobile",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "description": "Display and control your Android device",
+      "language": "C",
+      "stars": 154704,
+      "forks": 14198,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "c",
+        "ffmpeg",
+        "genyteam-system",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen"
+      ],
+      "createdAt": "2017-11-21T18:00:27Z",
+      "updatedAt": "2026-11-13T06:17:37Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "genymobile-scrcpy-2a59cd95.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 149581,
+      "forks": 13437,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-13T06:29:15Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "langchain-ai/langchain",
+      "name": "langchain",
+      "owner": "langchain-ai",
+      "url": "https://github.com/langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "language": "Python",
+      "stars": 149429,
+      "forks": 25113,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "deepagents",
+        "enterprise",
+        "framework"
+      ],
+      "createdAt": "2022-10-17T02:58:36Z",
+      "updatedAt": "2026-11-13T06:07:50Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "langchain-ai-langchain-5dbbd123.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 146863,
+      "forks": 14087,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-13T06:27:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+AI trading agents for US stocks that check the macro calendar, the fear index and verified news before they buy.
+
+Market regimes from VIX and the FOMC / CPI calendar · dip buying with an earnings check · a 30% cash floor · cross-verified news · paper-trading agents ranked against SPY · news backtests that cannot see the future · a frozen 2026 dataset for research · LLM agents over MCP · paper and live trading on 10 brokers.
+
+🌐 Website · 中文说明 → README_zh.md · 🚀 Quick start · 🆕 What's new · 🔬 Research kit · 🔗 MCP · 📸 Screenshots · Changelog
+
+Screens from the dashboard and from riskaware research run on the bundled 2026 data. A backtest shows what a strategy would have done, not what it will do.
+
+🚀 Quick start
+
+pip install "risk-aware-trading-agentsdashboard,mcp]"   # Python 3.10+
+riskaware dashboard          # the web UI on http://localhost:8501, English and 中文
+
+Then, in another terminal:
+
+riskaware init                        # 2-minute wizard: language, risk profile, broker, watchlist
+riskaware regime                      # market regime, VIX, fear & greed, next FOMC / CPI / jobs report
+riskaware scan                        # today's signals, each with its reasons
+riskaware analyze NVDA                # what every agent thinks about one stock
+riskaware news AAPL                   # cross-verified headlines
+riskaware backtest --compare buy_and_hold,ema_bounce
+riskaware run                         # one paper-trading cycle (built-in paper account)
+riskaware agents init                 # four starter paper-trading agents
+riskaware agents run                  # let them trade once now
+riskaware agents schedule --install   # ...and every trading day from now on
+riskaware research run -s swing_trend # a strategy on the frozen 2026 market, with a look-ahead check
+
+No account or API key is needed for any of these. Add --lang zh to any command for Chinese output. For the newest code before it is released, use pip install "risk-aware-trading-agents[dashboard,mcp] @ git+https://github.com/jackson-cmd/risk-aware-trading-agents"; to change the code, clone the repository and run pip install -e ".[dashboard,mcp]".
+
+Docker, for x86-64 and ARM:
+
+docker run --rm -p 8501:8501 ghcr.io/jackson-cmd/risk-aware-trading-agents dashboard   # http://localhost:8501
+docker run -i --rm ghcr.io/jackson-cmd/risk-aware-trading-agents mcp                   # MCP server over stdio
+
+For the daily paper-trading scheduler as well, put riskaware.yaml (from riskaware init) and, if you use broker keys, .env in the repository root, then run docker compose -f docker/docker-compose.yml up -d (or make docker).
+
+Nothing to install: [ opens the repository in your browser with every extra installed. Run riskaware dashboard there and port 8501 opens by itself.
+
+Is it for you?
+
+- You trade US stocks over days to weeks and want rules you can read: buy quality names on pullbacks, keep cash, and never sell in a panic.
+- You want backtests that cannot cheat: news replayed as it was published, orders at the next open, and a look-ahead check on every research run.
+- You study LLM trading agents and need data and a setup that others can repeat: a frozen 2026 market, a blind mode, and a saved record of every run.
+- You use Claude, Codex or Gemini and want them to test a strategy you describe in words, on your own plan, with no API key.
+- You want to paper trade first: several strategies side by side on simulated money, ranked against SPY every trading day.
+- You read English or Chinese: the CLI, the dashboard, the reports and the docs come in both.
+
+If you were looking for an AI trading bot for US stocks, a backtester with historical news and no look-ahead bias, a point-in-time dataset of 2026 prices, VIX and headlines, a benchmark for LLM trading agents, an MCP server for trading research, or paper-trading agents for Alpaca and other brokers: it is all here, open source.
+
+Contents
+
+- 🚀 Quick start · Is it for you? · 🆕 What's new · 💡 The idea · Four ways to use it
+- ✨ Feature tour: How it works · Cross-verified news · Paper-trading agents · MCP server · Strategy lab · Research kit · Backtest · Strategy library · Write your own strategy
+- 📸 Screenshots · 🔌 Brokers · 🔒 Safety · 🔧 Configuration · 🧰 Under the hood: CLI · Project layout
+- ❓ FAQ · 🧭 Roadmap · 🤝 Contributing · 📝 Citation · ❗ Disclaimer · 📜 License
+
+🆕 What's new
+
+- 0.7.1 · 📦 On PyPI and Docker: pip install risk-aware-trading-agents, or run the dashboard or the MCP server from ghcr.io/jackson-cmd/risk-aware-trading-agents without installing Python; GitHub Codespaces opens the repository with everything installed. How →
+- 0.7.0 · 🔬 A frozen 2026 market for research: point-in-time prices, VIX and news for the whole year ship with the package. Ask what was known at any close, let Claude turn a strategy you describe into code and test it, or let an LLM trade the year step by step. Every run gets a look-ahead check and a record for papers; trend following made +21.1% against SPY's +12.1%. How →
+- 0.6.3 · ⏳ Long runs keep going in the background: scans, backtests, agent runs and news fetches go on when you switch pages or reload, and a bar takes you back to the result.
+- 0.6.2 · ❓ Every number explains itself: a ? next to every card, column and field says what it is, how it is calculated and how to use it, in English and 中文. See it →
+
+Earlier releases
+
+- 0.6.1 · 🔎 The news behind every backtest trade: pick a trade and see the headlines the backtest had at that close and the order it placed. How →
+- 0.6.0 · 🗞️ 2026 news in the box: 16,945 headlines and SEC filings for the 64 built-in stocks, so riskaware backtest --news works with nothing to download. The agent with news made +15.9% against SPY's +12.1%, with a -5.3% drawdown against -8.9%. Results →
+- 0.6.0 · 🧪 Describe a strategy, the AI writes and tests it: over MCP, Claude, Codex or Gemini write the strategy as code; it is checked for look-ahead and side effects and runs in a separate process. How →
+- 0.6.0 · 🔭 No peeking at the future: each backtest day sees only news published before its close, and a strategy cannot reach later prices. Details →
+- 0.5.0 · 🔑 No API key needed: agent reviews run on your Claude, ChatGPT or Gemini plan with --llm claude-cli, codex-cli or gemini-cli. How →
+- 0.5.0 · 🔌 MCP in one command: riskaware mcp-setup claude-desktop (or claude-code, codex, gemini, antigravity). Set it up →
+- 0.5.0 · 🗄️ Your own news archive for other years: SEC 8-K filings for free, your Benzinga key, or any CSV, replayed the same way. How →
+- 0.4.0 gave each agent its own LLM review with every decision on record, 0.3.0 added daily paper-trading agents, the MCP server and the new dashboard, and 0.2.0 added options backtests and four stock strategies.
+
+The full history is in the changelog.
+
+💡 The idea
+
+Most trading bots either chase every signal or need a quant team to configure. This one follows a simple, explainable discipline that long-term investors already use: buy quality stocks when they pull back to their moving averages, add when fear is high and the earnings still hold up, trim when prices run too far, never panic-sell into uncertainty, and always keep a cash reserve. Four agents check the market, the calendar, the company and the news; a deterministic risk manager has the final word on every order.
+
+How it did. On 2026 so far, reading the news that ships with the package, the agent made +15.9% against SPY's +12.1%, with a Sharpe ratio of 1.70 against 0.77, and its worst drop was -5.3% against SPY's -8.9% (details). From 2018 to 2026 it earned less than SPY in the long bull market, 10.4% a year against 14.1%, and fell about half as far, -18.2% against -33.7% (details).
+
+Not financial advice. It starts in paper mode, and live trading needs three explicit switches.
+
+Four ways to use it
+
+| | Dashboard | Command line | AI assistants (MCP) | Python |
+|---|---|---|---|---|
+
+…（内容已截断）

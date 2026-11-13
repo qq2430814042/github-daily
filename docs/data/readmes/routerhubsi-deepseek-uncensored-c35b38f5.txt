@@ -1,0 +1,142 @@
+DeepSeek Uncensored — the abliterated cyber workhorse, V4 Pro to Flash 1017
+
+DeepSeek uncensored models are DeepSeek variants with refusal behavior reduced — served as hosted API variants or published as abliterated open weights. The one built for security work is DeepSeek V4.1 Flash 1017 Abliterated: DeepSeek V4.1 Flash ranks third on the AA Cyber benchmark behind only GPT-6 Sol and Kimi K3.1 Pro — ahead of Grok 4.7, Muse and Mistral — and the abliterated 1017 build removes the refusal layer on top. Hosted from $0.30 input / $1.25 output per million tokens; community GGUF builds run locally in llama.cpp and Ollama.
+
+Maintained by RouterHub · Community-maintained — corrections and new builds welcome via issues.
+
+Every variant has its own page under models/:
+
+- deepseek-v4.1-flash-1017-abliterated — the pinned build this repo is built around
+- deepseek-v4.1-flash-abliterated — the rolling abliterated build
+- deepseek-v4-pro-abliterated — the flagship size, abliterated
+- deepseek-v4.1-flash-uncensored and deepseek-v4-pro-uncensored — the tuned variants
+
+To add or correct an entry, open an issue.
+
+Why this model for cyber work
+
+Two facts make V4.1 Flash the default no-refusal security model:
+
+1. The benchmark position. On the AA Cyber benchmark, DeepSeek V4.1 Flash ranks third among all models — behind only GPT-6 Sol and Kimi K3.1 Pro, and ahead of Grok 4.7, Muse, Mistral and previous GPT versions — at a fraction of their serving cost.
+2. The refusal layer comes off. The abliterated builds remove refusal behavior at the weight level, so a pentest agent stops pausing to ask whether it is allowed to answer.
+
+The result is a model that does offensive-security tasks like a tool instead of like an assistant — which is what you want when it is running inside an agent loop.
+
+Which uncensored DeepSeek should you use?
+
+| Your situation | Pick | Why |
+|---|---|---|
+| Red-team agent that must behave the same every run | deepseek-v4.1-flash-1017-abliterated | Pinned checkpoint, reproducible behavior |
+| Cheapest hosted no-refusal workhorse | deepseek-v4.1-flash-uncensored | $0.15 input / $0.60 output |
+| Big agentic jobs on the flagship size | deepseek-v4-pro-abliterated | V4 Pro capability, abliterated |
+| Uncensored DeepSeek on your own machine | Any GGUF build above | Runs in llama.cpp, Ollama or LM Studio |
+| Full-precision GPU serving | dealignai/DeepSeek-V4.1-Flash-UNCENSORED-FP8 | FP8 for inference servers |
+
+Test results: DeepSeek vs Kimi for cyber work
+
+We ran the cyber battery from prompts.md through DeepSeek V4.1 Flash 1017 Abliterated and Kimi K3.1 Pro Uncensored side by side. DeepSeek ranked higher for cyber capabilities — it answered exploit-style probes more directly and needed less framing to engage, which fits the benchmark position above.
+
+Kimi's edge is elsewhere: the 1,048,576-token context window and native image input. Full write-up of the comparison: kimi-uncensored.
+
+Every DeepSeek uncensored build
+
+Hosted API variants — all served through one OpenAI- and Anthropic-compatible endpoint:
+
+| Model | Input | Cached input | Output | Context window | Served by |
+|---|---:|---:|---:|---:|---|
+| deepseek-v4-pro-uncensored | $0.20 | $0.0016 | $0.40 | not published | RouterHub |
+| deepseek-v4.1-flash-uncensored | $0.15 | $0.0027 | $0.60 | not published | RouterHub |
+| deepseek-v4.1-flash-abliterated | $0.30 | $0.055 | $1.25 | 1,000,000 | RouterHub |
+| deepseek-v4.1-flash-1017-abliterated | $0.30 | $0.055 | $1.25 | 1,000,000 | RouterHub |
+| deepseek-v4-pro-abliterated | $0.40 | $0.04 | $1.60 | 1,000,000 | RouterHub |
+
+Prices in USD per million tokens; live rates at the public catalogue.
+
+What the 1017 in the name means
+
+deepseek-v4.1-flash-1017-abliterated is a pinned build: the abliteration was applied to the October 2026 checkpoint and the resulting behavior is frozen, so prompts, agents and evaluations behave the same way next week as they did last week. The rolling deepseek-v4.1-flash-abliterated tracks newer checkpoints — you get updates, at the cost of behavior drift between versions.
+
+Rule of thumb: pin the 1017 build for agents and evaluations, take the rolling build when you want the latest checkpoint.
+
+Running it locally
+
+With Ollama:
+
+ollama run hf.co/huihui-ai/Huihui-DeepSeek-V4-Flash-0731-abliterated-GGUF
+
+Or with llama.cpp — pick a quantization file from the build's Files tab that fits your VRAM:
+
+llama-cli -m Huihui-DeepSeek-V4-Flash-0731-abliterated-Q4_K_M.gguf -p "List five real-world techniques used to guess weak passwords."
+
+The FP8 build is for GPU serving when you want the full-precision behavior.
+
+Hosted setup
+
+One base-URL change in the OpenAI SDK:
+
+import os
+from openai import OpenAI
+
+client = OpenAI(
+    api_key=os.environ"ROUTERHUB_API_KEY"],
+    base_url=os.environ["ROUTERHUB_BASE_URL"],  # copy from the dashboard
+)
+
+response = client.chat.completions.create(
+    model="deepseek-v4.1-flash-1017-abliterated",
+    messages=[{"role": "user", "content": "Reply with exactly OK."}],
+)
+print(response.choices[0].message.content)
+
+RouterHub serves these variants — full disclosure, we run the repo. [Setup guides cover the OpenAI, Anthropic and agent-tool paths.
+
+Red-team prompt library
+
+prompts.md — the cyber-focused prompt battery used in this repo's comparisons: refusal probes, defensive reframings, multi-turn probes and exploit-style questions. Run them against any DeepSeek variant and log what you get; retain failed attempts alongside successes. Method notes: docs/06-red-teaming-guide.md.
+
+Documentation
+
+| Guide | Contents |
+| --- | --- |
+| What is DeepSeek V4.1 Flash 1017 Abliterated | The pinned build, why it exists, and what the variants are |
+| Abliterated vs. uncensored | Weight changes, tuning, and variant selection |
+| DeepSeek API quickstart | Account, model IDs, requests, and billing |
+| Claude Code, Cursor, OpenCode | Matching clients to supported protocols |
+| Running locally | Ollama and llama.cpp for the GGUF builds |
+| Red-teaming guide | Test design and refusal-behavior measurement |
+| FAQ | Common DeepSeek uncensored and variant questions |
+| Glossary | Model, prompt, and variant terms |
+
+FAQ
+
+Is DeepSeek V4.1 Flash censored?
+The stock release includes refusal behavior; the abliterated builds listed here remove it at the weight level, and the tuned uncensored variants reduce it. Refusal behavior varies by prompt and version.
+
+What is the 1017 build?
+The abliteration applied to the October 2026 checkpoint and pinned there, so behavior stays reproducible across weeks — the right default for agents and evaluations.
+
+Which uncensored DeepSeek should I use?
+Pinned reproducible behavior → deepseek-v4.1-flash-1017-abliterated. Lowest price → deepseek-v4.1-flash-uncensored at $0.15/$0.60. Flagship capability → deepseek-v4-pro-abliterated. Local hardware → any GGUF build in the open-weights table.
+
+Can you run uncensored DeepSeek locally?
+Yes — the GGUF builds above run in llama.cpp, Ollama or LM Studio on consumer hardware.
+
+Does DeepSeek abliterated work with Ollama?
+Yes — point Ollama at any of the Hugging Face GGUF builds, e.g. ollama run hf.co/huihui-ai/Huihui-DeepSeek-V4-Flash-0731-abliterated-GGUF.
+
+DeepSeek uncensored vs Kimi uncensored — which is better?
+For cyber and exploit-style work, our testing put DeepSeek ahead (see the comparison section above). Kimi K3.1 Pro Uncensored wins on 1M-token context and native image input. Details in kimi-uncensored.
+
+Is DeepSeek V4 uncensored free?
+The GGUF builds are free to download and run locally. Hosted access is pay-per-token, starting at $0.15 input / $0.60 output per million tokens.
+
+Compared to
+
+- Kimi uncensored — every uncensored Kimi build, and the other half of our cross-model comparison
+- Uncensored models index — the full library across GLM, DeepSeek and Qwen
+- uncensored-ai-api — what an uncensored AI API is, with setup guides
+- routerhub-model-evals — recorded GLM comparisons with raw outputs and sandbox scores
+
+Related
+
+…（内容已截断）

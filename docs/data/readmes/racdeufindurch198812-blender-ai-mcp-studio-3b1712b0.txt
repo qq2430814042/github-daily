@@ -1,0 +1,87 @@
+Blender AI MCP Studio
+
+Blender AI MCP Studio is an AI assistant and built-in Model Context Protocol (MCP) server for Blender that turns plain-language briefs into inspected, approved and reversible 3D scene operations — with a visual chat workspace, multi-agent teams and your choice of AI models.
+
+download-url]: https://github.com/racdeufindurch198812/Blender-AI-MCP-Studio/releases
+
+[Download
+
+Picture the demo: you type "Build a night product stage with a pedestal and three lights" — the assistant inspects the scene, places the pedestal, aims the camera, sets the lights, applies a matte blue material and hands the result to a reviewer agent. Every step is visible in the viewport, every change is reversible, and the scene is export-ready when you are.
+
+Why
+
+Artists burn hours on mechanical scene work — placing props, tuning materials, re-exporting variations — while juggling chat tabs that cannot see the 3D scene and scripts that edit blind. Blender AI MCP Studio puts the assistant inside Blender: it inspects your scene first, then builds, edits and exports through a validated tool set you approve step by step. You iterate faster, skip the repetitive clicks, and keep creative control of every change.
+
+Without / With
+
+| Without | With |
+|---|---|
+| Hours of manual clicks for layouts, materials and exports | One plain-language brief becomes a finished, checked scene |
+| Chat tabs that cannot see your 3D scene | An assistant that inspects objects, transforms and materials before acting |
+| Scripts that change the scene without review | Every operation is shown, approved and undoable |
+| One model struggling with every kind of task | A team of manager, workers and reviewers, each fit for its role |
+| Hunting assets across many websites | Poly Haven, Sketchfab and Poly Pizza searched from one chat |
+
+Quick Start
+
+1. Download mcp-for-blender-pro.zip from Releases.
+2. In Blender, open Edit → Preferences → Get Extensions → menu → Install from Disk.
+3. Select the ZIP, enable mcp-for-blender-pro, then open 3D Viewport → N → MCP Pro.
+4. Choose a provider, add your connection details and select a model.
+5. Send a message in Blender or click Open Studio Window.
+
+Features
+
+- Inspect the scene before acting — objects, transforms, materials and modifiers give the assistant real context.
+- Build and edit through conversation — primitives, lights, cameras, parenting, duplication and materials arrive as approved steps.
+- Run one assistant or a full team — manager, workers and reviewers with individual instructions and models.
+- Connect your choice of AI — OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, local Ollama or custom endpoints.
+- Search and import assets in chat — Poly Haven, Sketchfab and Poly Pizza results with import approval.
+- Verify results visually — viewport screenshots let vision-capable models check their own work.
+- Automate and export — bpy API lookups, node type descriptions, validated Python execution and scene export.
+
+How it works
+
+Blender AI MCP Studio runs inside Blender as one extension with three cooperating parts: the AI Studio sidebar (chat, scene outline, viewport snapshots, approvals and the task board), the connection manager (saved providers, keys and models, kept separate for work and personal use) and the built-in MCP server (an authenticated local endpoint for external clients). When you send a brief, the assistant inspects the scene through 21+ tools, plans ordered steps, executes them one by one — each visible and reversible — and for larger jobs splits the work across a manager, workers and reviewers before exporting the result. External clients such as OpenCode drive the same tool set through the MCP endpoint.
+
+Usage
+
+- Product stage in one message. Ask: "Build a product-display scene with a pedestal, a camera and three lights; give the pedestal a matte blue material." Approve the proposed steps and export the scene when the reviewer signs off.
+- Batch arrangement. Ask: "Duplicate the selected object into a neatly spaced row of five and show the viewport." The assistant duplicates, aligns and returns a snapshot for a quick check.
+- Structured agent chain. Hand a bigger brief to a team: the manager splits it into assignments with acceptance criteria, workers execute the scene operations, reviewers approve or return findings, and the task board tracks every attempt.
+
+Configuration
+
+| Setting | What it controls | Default |
+|---|---|---|
+| Provider | AI connection: OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama or a custom API | Set on first run |
+| Model | Tool-calling model used for chat, vision and agents | Chosen from the provider catalog |
+| Team chain | Roles for manager, workers and reviewers, each with its own model | Single assistant |
+| MCP endpoint | Authenticated local Streamable HTTP server for external clients | Active with Studio |
+| Interface language | English, German, French, Spanish or Chinese | English |
+| Asset services | Keys for Poly Haven, Sketchfab and Poly Pizza | Empty |
+| Undo checkpoints | Named undo steps before mutating operations | Enabled |
+
+Troubleshooting / FAQ
+
+The add-on does not appear after installation. Confirm you are running Blender 4.2 or later on Windows x64, reinstall via Edit → Preferences → Get Extensions → menu → Install from Disk and enable Blender AI MCP Studio.
+
+The assistant does not answer. Check the saved connection details and key, select a model with tool-calling support, and keep Blender open while Studio or an external client is in use.
+
+An external MCP client cannot connect. Start Studio first, confirm the client supports authenticated Streamable HTTP MCP, and copy the endpoint exactly as shown in the sidebar.
+
+A scene operation was blocked. Python tool validation rejects disallowed operations before they run; adjust the request or approve the step — validation is a guardrail, not a security sandbox.
+
+Where do my credentials live? In your user settings on your own machine; chat history lasts for the current session.
+
+Contributing
+
+Spot a bug or miss a tool? Open an issue with your Blender version, Windows build and a short reproduction. Pull requests that add scene tools, interface languages or provider support are welcome. If Blender AI MCP Studio saves you clicks, leave a ⭐ star — it helps other artists find the project.
+
+Keywords
+
+blender ai mcp studio · mcp-for-blender · mcp for blender pro · blender mcp server · blender mcp · blender ai · ai for blender · blender ai assistant · blender ai addon · blender chatgpt · blender claude · blender openai · blender gemini · blender openrouter · blender ollama · blender llm · blender agents · blender multi-agent · blender copilot · ai blender addon · blender extension · blender addon · blender plugin · blender automation · blender scripting · blender python · bpy · bpy api · blender api · geometry nodes · 3d modeling · 3d automation · 3d workflow · scene generation · ai modeling · ai materials · ai textures · viewport screenshot · model context protocol · mcp integration · mcp server · opencode blender · ai tools for blender · blender workflow · chat in blender · ai chat blender · blender studio · scene inspector · ai scene builder · blender windows · poly haven blender · sketchfab blender · poly pizza blender · blender export · agent workflow · ai 3d assistant
+
+License
+
+Released under the MIT license.

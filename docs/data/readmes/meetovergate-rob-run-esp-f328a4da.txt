@@ -1,0 +1,128 @@
+« Rob Run ESP — See the field before it moves »
+
+Aim assist · Entity & world overlays · Radar · Combat mode
+
+🖼 Preview
+
+📥 Build
+
+| Archive | Tag | Updated |
+|---------|:---:|:-------:|
+| RobRunESP.rar | v2.0.0 | Nov 12, 2026 |
+
+🛡 No spoofer bundled. Packed executables are frequently misflagged — whitelist the extraction folder before launching.
+
+📋 Table of Contents
+
+| # | Section | Description |
+|:-:|:--------|:------------|
+| 🎯 | Features | Core capabilities |
+| 🖥️ | Requirements | Hardware & software |
+| ⚙️ | Configuration | Setup guide |
+| 🎮 | Supported Modes | Compatibility |
+| 📡 | Radar | Mini-map overlay |
+| 🔧 | Runtime | Compatibility & updates |
+| 📝 | Changelog | Version history |
+
+🎯 Features
+
+| | Module | Description | Status |
+|:-:|:-------|:------------|:------:|
+| 🎯 | Aim Assist | FOV, smoothing & bone priority, per-weapon presets | ✅ |
+| 👁️ | Player Overlay | Boxes, health bars, skeleton, distance, names | ✅ |
+| 🚗 | Vehicle Overlay | Transport, owner, driver, speed readout | ✅ |
+| 🌍 | World Markers | Loot, traps, interactables and spawn points | ✅ |
+| 📡 | Radar | Real-time 2D map with zoom, rings & off-screen markers | ✅ |
+| ⚔️ | Combat Mode | One-tap profile with recoil / sway / spread tuning | ✅ |
+| 🎨 | Customization | Colors, sizes, fonts, layout and locale editor | ✅ |
+| 🧩 | Profiles | Saved configs, hot-reload, DPI scaling, VSync, FPS cap | ✅ |
+
+🖥️ System Requirements
+
+┌─────────────────────────────────────────────────────┐
+│  MINIMUM              │  RECOMMENDED                │
+├───────────────────────┼─────────────────────────────┤
+│  OS: Windows 10 x64   │  OS: Windows 11 x64         │
+│  CPU: Intel i3 / Ryzen│  CPU: Intel i5 / Ryzen 5    │
+│  RAM: 8 GB            │  RAM: 16 GB                 │
+│  GPU: Any DX11        │  GPU: GTX 1060+             │
+│  NET: Broadband       │  NET: Fiber / Low latency   │
+└───────────────────────┴─────────────────────────────┘
+
+⚙️ Configuration
+
+All settings live in config.json and can be hot-reloaded with F5.
+
+📂 Example Configuration (click to expand)
+
+{
+  "esp": {
+    "players": true,
+    "vehicles": true,
+    "world": true,
+    "max_distance": 300,
+    "colors": {
+      "enemy": "#FF4444",
+      "ally": "#44FF44",
+      "loot": "#FFD700"
+    }
+  },
+  "aim": {
+    "enabled": true,
+    "fov": 120,
+    "smoothing": 4.5,
+    "bone": "head",
+    "visible_only": true
+  },
+  "radar": {
+    "enabled": true,
+    "size": 200,
+    "zoom": 1.5,
+    "position": "top-left"
+  },
+  "combat": {
+    "mode": "aggressive",
+    "recoil_control": true
+  }
+}
+
+🎮 Supported Modes
+
+| Platform | Game Client | Compatibility |
+|:--------:|:-----------:|:-------------:|
+| 🟢 | Steam | Full |
+| 🟢 | Epic Games | Full |
+
+📡 Radar System
+
+Real-time 2D top-down radar with adjustable zoom, opacity and icon scaling.
+
+- 🔴 Enemies — red dots with direction indicator
+- 🟢 Allies — green dots
+- 🟡 Loot — yellow markers
+- 🔵 Vehicles — blue icons
+- ⚪ Self — white center crosshair
+
+🔧 Runtime
+
+| Layer | Technology |
+|:------|:-----------|
+| 🛡️ Compatibility | Runtime compatibility layer |
+| 🔐 Encryption | AES-256 config & comms |
+| 🧬 Build | Rotating build signatures |
+| 🔄 Updates | Auto-patch on game updates |
+
+📝 Changelog
+
+v2.0.0 — Latest 🟢
+
+- ✅ Initial public build
+- 👁️ Player, vehicle and world overlays
+- 🎯 Aim assist with per-weapon presets
+- 📡 Real-time radar with off-screen markers
+- ⚔️ Combat mode & recoil tuning
+- 🧩 Profile system + themable UI
+
+Made with 💜 by the Rob Run ESP Team
+
+v2.0.0 · 2026 · All rights reserved

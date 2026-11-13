@@ -1,0 +1,34 @@
+Nudge
+
+The app shows edge pops when you press the volume or power buttons and includes a volume slider based on a concept design that has now become a reality.
+
+Features
+
+- Edge pops: on volume and power button presses
+
+  Customize its width, height, position, and timeout for each button
+
+- Custom volume slider: inspired by a concept design that was originally made for Iphones has now become a reality for Androids LOL.
+
+  Customize its width, height, position, corners rounding, edge inset, and timeout, with an option for floating. You can turn off the custom slider keeping only the edge pops!
+
+- Choose which side you want to place the Edge pops and the custom slider
+
+  Both can be in separate sides, with an option to change custom slider placement in landscape mode
+
+- Press/long press the sound icon when custom slider is open and it opens the audio mixer
+
+  Control Media, Ring, Notification, and Alarm sounds separately
+
+- Both Edge pops and Custom slider can be turned off for landscape mode
+- Want haptics too? there's an option for that
+
+Play protect flagged the app?
+
+- Method 1: Pause Play Protect: Open Google Play Store, tap your Profile Icon (top right), Choose Play Protect, tab the Settings icon (top right) and Toggle OFF "Scan apps with Play Protect" and tap Pause. Install Nudge apk.
+- Method 2: Install Using Obtainium: Click the badge on top to add the repo and install the app
+- Method 3: ADB/Shizuku: run "adb install nudge.apk" or using 3rd-party installers like InstallerX Revived.
+
+Accessibility denied?
+
+Users on Android 13+ after installing, go to Settings, Apps, Nudge, 3 dots menu on top right corner (⋮), Allow restricted settings so the accessibility toggle isn't grayed out for the app. now go back to accessibility page and enable it.

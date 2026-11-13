@@ -1,0 +1,135 @@
+TensorFold
+
+TensorFold serves language models from a Zig binary on Apple Silicon and NVIDIA GPUs.
+The engine reads checkpoints, tokenizes requests and runs Metal or CUDA kernels directly.
+Serving needs no Python or MLX installation.
+
+Building with a coding agent? Have it load the contributor skill before it writes any code.
+
+Contributing with agents
+
+Please use Agent Traffic Control before editing TensorFold so contributors and agents can avoid duplicate work and conflicting changes.
+Check the live agent radar before choosing an issue and follow CONTRIBUTING.md and the ATC contributor instructions.
+
+Install or upgrade ATC to 0.9.4 or later, then run from an updated TensorFold clone:
+
+npm install -g github:ashhart/ATC
+atc check ISSUE --json
+atc claim ISSUE --json
+
+Replace ISSUE with the issue number and claim only after a complete check says the work is free.
+TensorFold enables automatic public check-ins: a successful new claim starts an anonymous session on the radar and returns its session number.
+Keep that number instead of starting a duplicate session.
+For work already yours, start a session with atc start ISSUE --json.
+Add --github-name to claim or start only if you want your verified GitHub name shown; --local keeps a new session on your machine.
+The board shows the issue, activity state and last check-in; GitHub still associates the verification comment with its author.
+Check that publication is public; unavailable means the public update failed even if the local claim or session succeeded.
+
+Pulse only while the agent is working, before its five-minute check-in expires:
+
+atc pulse ISSUE SESSION working --json
+atc who path/to/file --json
+atc overlap --json
+atc land ISSUE SESSION --json
+atc release ISSUE --json
+
+Use reviewing or blocked when appropriate, land the session when it stops, and resolve overlaps before opening a pull request.
+Before opening a pull request, have the agent run the pull request skill; agents that support skills can install it as tensorfold-pull-request.
+
+Quick start
+
+Start with Qwen3.5-2B, the small 4-bit checkpoint checked on Metal and a GB10. The commands below download its
+pinned revision, then serve it as local-model. Model weights have their own licenses.
+Reviewing or benchmarking TensorFold? Evaluating TensorFold covers pinning, signature checks,
+a container and the tests that need no GPU.
+
+Mac with Apple Silicon
+
+Install with Homebrew, then start the server:
+
+brew install ashhart/tensorfold/tensorfold
+tensorfold pull mlx-community/Qwen3.5-2B-MLX-4bit@93760be4f1f69842a46bc13dbdc0f19e291392a3
+tensorfold serve mlx-community/Qwen3.5-2B-MLX-4bit --name local-model --context 8192 --no-thinking
+
+Linux with an NVIDIA GPU
+
+Use the release archive for your CPU: linux-aarch64 on a GB10, linux-x86_64 on an x86_64 host.
+It needs glibc 2.28 or newer and NVIDIA driver R580 or newer (CUDA 13.0), providing libcuda.so.1. Keep the archive's directories together.
+Its kernels are built with CUDA 13, so TensorFold refuses an older driver at startup; nvidia-smi shows the installed one.
+See the CUDA runbook for runtime libraries and supported GPUs.
+
+V=1.2.7
+case "$(uname -m)" in
+  aarch64|arm64) PLATFORM=linux-aarch64 ;;
+  x86_64) PLATFORM=linux-x86_64 ;;
+  *) echo 'No release archive for this CPU' >&2; exit 1 ;;
+esac
+curl -fLO "https://github.com/ashhart/TensorFold/releases/download/v$V/tensorfold-$V-$PLATFORM.tar.gz"
+curl -fLO "https://github.com/ashhart/TensorFold/releases/download/v$V/tensorfold-$V-$PLATFORM.tar.gz.sha256"
+sha256sum -c "tensorfold-$V-$PLATFORM.tar.gz.sha256"
+tar -xzf "tensorfold-$V-$PLATFORM.tar.gz"
+export PATH="$PWD/tensorfold-$V-$PLATFORM/bin:$PATH"
+tensorfold() { command tensorfold-native "$@"; }
+tensorfold pull mlx-community/Qwen3.5-2B-MLX-4bit@93760be4f1f69842a46bc13dbdc0f19e291392a3
+tensorfold serve mlx-community/Qwen3.5-2B-MLX-4bit --name local-model --context 8192 --no-thinking
+
+Send a request
+
+Leave the server running. In another terminal, on either platform:
+
+curl -fsS http://127.0.0.1:8080/v1/chat/completions \
+  -H 'Content-Type: application/json' \
+  -d '{"model":"local-model","messages":{"role":"user","content":"Say hello in one sentence."}],"max_tokens":128,"temperature":0}'
+
+The API also serves completions, Responses and Anthropic Messages. /v1/models lists the served name.
+On Windows with an NVIDIA GPU, follow [the native Windows build guide.
+Use tensorfold --help, tensorfold capabilities --json and tensorfold serve REPO --help to inspect your binary.
+You can also serve a complete local checkpoint directory or an existing Hugging Face cache.
+
+tensorfold web ARGS...] opens TensorFold Web, a small local web app for picking, running and chatting with models.
+If it needs installing, an interactive release binary offers to install its matching version with uv after you say yes.
+See [the web launcher for manual installation and unattended use.
+
+--parallel N caps active requests at N; extra requests wait for a free slot.
+Omitting the flag uses --parallel auto, which asks for up to eight streams as memory and the engine allow.
+An explicit number is refused if the engine cannot fit that many streams.
+Read the engine's startup capacity line, such as 8 streams at once on CUDA, for the count it accepted.
+With API authentication off, /health reports live.connections as active plus waiting requests and
+live.waiting as the queued count. For example, 8 connections with 4 waiting means 4 active requests.
+Completing or cancelling an active request frees its slot; cancelling a waiting request removes it from the queue.
+
+Mac app
+
+The TensorFold desktop workspace bundles the local engine, model downloads, hardware recommendations, live generation metrics, coding workers and document editing.
+Download the Apple-silicon beta 9 DMG, or build from app/.
+The desktop app launches the bundled tensorfold-native executable directly.
+Mobile clients in app/mobile/ remain preview software.
+
+TensorFold Starlight (enterprise)
+
+TensorFold Starlight gives an organisation one governed OpenAI- and Anthropic-compatible endpoint for a fleet of TensorFold engines on Macs, Linux GPU servers and Windows machines.
+It signs people in through the organisation's identity provider (OIDC or SAML, with SCIM provisioning), decides who may use which model and where it runs, places and supervises models on nodes, and accounts for every token.
+It runs fully offline, or brokers approved frontier providers under the same identity, policy and budgets; the install guide covers Docker, Kubernetes and Linux services.
+Starlight lives in its own repository, ashhart/tf-starlight: it pins the TensorFold release it is tested with and checks every flag its nodes pass to tensorfold serve against that release in CI.
+Starlight is new: the gates that still need real GPU clusters or identity-provider tenants are listed in its qualification notes.
+
+Living Weights (experimental)
+
+Living Weights teaches a running model new facts in its own weights. Start a Nemotron 3.5 Lightning server with
+--slide and tell it something: each fact that passes the lesson's checks is written into the checkpoint folder's
+files. It is experimental: related facts can disturb each other, recall drops past a few dozen facts and with thinking
+on, and learned facts cost some decode speed on a Mac. Known issues
+has the details.
+
+tensorfold pull TensorFold/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-MLX-4bit
+hub="${HF_HUB_CACHE:-${HF_HOME:-$HOME/.cache/huggingface}/hub}/models--TensorFold--NVIDIA-Nemotron-3.5-Lightning-30B-A3B-MLX-4bit"
+src="$hub/snapshots/$(cat "$hub/refs/main")"
+mkdir -p /models && cp -RL "$src" /models/nemotron-living   # always teach a copy
+(umask 077; openssl rand -hex 24 > ~/models/slide-key)        # --slide starts only with a key
+tensorfold serve /models/nemotron-living --slide --api-key-file /models/slide-key
+
+Leave that server running and send a lesson from another terminal:
+
+curl -N http://127.0.0.1:8080/v1/slide/learn -H "Authorization: Bearer $(cat ~/models/slide-key)" \
+
+…（内容已截断）

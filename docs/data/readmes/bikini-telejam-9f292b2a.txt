@@ -1,0 +1,75 @@
+Findings
+
+| # | Root cause | Upstream status on 2026-11-12 | Demonstrated impact |
+| --- | --- | --- | --- |
+| 1 | await using in an ordinary QuickJS frame leaves JSVarRef pointers on a returned C stack frame | Fixed by ca3594d | Calculator from stock Telegram Desktop 7.4.2 |
+| 2 | Generator parameter-prologue closures are created before the coroutine owner is installed | Public quickjs-ng #1910, open and still present in Telegram's current pins | Calculator from stock Telegram Desktop 7.4.2 |
+| 3 | A failed constant-pool growth returns -1, which is later used as an array index | No exact public match found; current upstream branches remain affected | 16-byte heap underwrite and STATUS_HEAP_CORRUPTION; RCE not demonstrated |
+
+The first two findings are independent RCE roots. The third is an apparently unreported memory-corruption issue, not an RCE claim.
+
+1. Ordinary-frame await using use-after-return
+
+Summary
+
+A bot-delivered widget launched Windows Calculator from the official signed Telegram Desktop 7.4.2 x64 process. Telegram remained alive and responsive. This is distinct from the earlier RegExp bytecode UAF.
+
+Desktop 7.4.2 embeds widget-sandbox a74626d6768b5d14e0dc0b8435a7df44a980a8e7 and QuickJS 8f0d3b6193a01bda29d69b0cab4f03320bcaa027, which predates the fix.
+
+Root cause and chain
+
+QuickJS accepts for (await using ...) inside a non-async class static block. Disposal emits OP_await; the normal interpreter frame exits through done_generator without close_var_refs(), leaving captured JSVarRef pointers into a returned C stack frame.
+
+poc.html turns deterministic frame reuse into a forged string-backed JSVarRef, corrupts a string length to obtain a heap leak and address-selected JSValue access, and corrupts a Uint8Array for byte-precise arbitrary read/write. A native function pointer reveals the image base. A forged JS_CLASS_C_CLOSURE record calls Telegram's resolved WinExec import with calc.exe and returns cleanly.
+
+- PoC SHA-256: 6B385FBF009B6923727B84448D3C460351733A8EEA953479279E30EBFF4FDF90
+- Fix: reject suspending opcodes in ordinary frames and ensure every frame-closing path closes its variable references.
+
+2. Generator-prologue use-after-free
+
+Summary
+
+The second RCE uses the generator lifetime bug described in quickjs-ng #1910, not the await using path. The issue was open without a linked fix when this package was updated. The vulnerable ordering is present in the QuickJS revisions pinned by Telegram Desktop 7.4.0, 7.4.1, 7.4.2, the inspected Desktop development tip, and current widget-sandbox main.
+
+The exact comments-free poc2.html was sent through the production Bot API to an authorized private test chat. Starting with no Calculator process, stock Telegram Desktop 7.4.2 rendered the widget and launched CalculatorApp 4.29 seconds after delivery. The original Telegram process remained responsive. No modified client or widget harness was involved.
+
+Root cause and chain
+
+During a generator's initial parameter prologue, a default expression can create a closure over arguments. get_var_ref() sees sf->cur_gc_obj == NULL, so the open variable reference is neither registered with the cycle collector nor given a counted edge to the generator. js_call_generator_function() creates the generator object and assigns cur_gc_obj only after the first resume has already run that prologue.
+
+The PoC stores the generator in its own arguments object and drops the ordinary iterator reference. Automatic collection then frees the generator cycle while a reachable closure can still return the dangling arguments object. A 120-byte resizable ArrayBuffer reclaims the freed allocation, yielding a forged object, pointer disclosure, and arbitrary byte read/write. The payload resolves WinExec from Telegram's PE imports and invokes it through a forged C-closure finalizer.
+
+- PoC size: 4,077 bytes; zlib level 9: 1,520 bytes
+- PoC SHA-256: 3E2CBC65F8DCB29E2AE78879554F72AD7F3BF48509467D43D60E1E2F346D3347
+- Stock target SHA-256: 3864695188C5D564C7A6036B04ADB4E67D589F7843C51891155EA4905EB41963
+- Proposed fix: install the generator or async-generator owner before any user-observable prologue work, or promote every prologue-created open variable reference immediately after the owner is created.
+
+3. Apparently unreported constant-pool OOM underwrite
+
+Summary
+
+Telegram's current QuickJS tip b526a817f188ef861eea7666d68361c7851673a0, current widget-sandbox v0.6.5 at 1cde0068daba8437f53eac0b61c395d29b8f89e3, quickjs-ng master, and Bellard QuickJS master all retained this source pattern when inspected. Telegram Desktop 7.4.2's older QuickJS pin contains the same operations, although this trigger was not delivered to the stock client.
+
+Public issue, pull-request, and commit searches found no exact match for the cpool_add() / parent_cpool_idx failure path. That supports “apparently unreported,” not proof that no private report exists.
+
+Root cause
+
+cpool_add() returns -1 when js_resize_array() cannot grow a function's constant pool. js_parse_function_decl2() stores that unchecked value in fd->parent_cpool_idx and continues. Release js_create_function() relies only on an assert(cpool_idx >= 0) and later executes:
+
+fd->cpool[cpool_idx] = func_obj;
+
+With cpool_idx == -1, the 16-byte JSValue is written immediately before the pool. On tested 64-bit builds, the first qword is a child-bytecode heap pointer and the second is the fixed JS_TAG_FUNCTION_BYTECODE tag (-2). This overwrites allocator metadata, but neither the destination nor the stored pointer bits are freely selected.
+
+Validation and limits
+
+An exact-current full widget host reached the failed pool growth, negative index, and underwrite in 20/20 logging-only diagnostic runs. An unmodified Release host produced Windows STATUS_HEAP_CORRUPTION in 5/100 fresh runs; the other runs followed the sandbox memory-limit death path. Pristine ASan builds reproduced the out-of-bounds write 10/10.
+
+No arbitrary read/write, indirect-call control, sandbox escape, command execution, or Calculator launch was obtained from this root. Its demonstrated impact is native heap corruption and denial of service.
+
+The direct fix is to check every cpool_add() result before storing or emitting the index, propagate OOM from the function and class helper callers, and add a Release runtime bounds check in js_create_function() as defense in depth.
+
+Reproduction safety
+
+Use only an isolated, authorized test environment. Send the exact contents of poc.html or poc2.html as the raw html string of a Bot API sendWidget request to a private test chat, then display the widget in an affected Desktop client. Both files intentionally cross the JavaScript/native boundary and are restricted to launching Calculator on the tested image. No token, chat identifier, account data, or other secret is included.
+
+Delete test messages afterward and rotate any bot credential that was exposed during testing.

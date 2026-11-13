@@ -1,0 +1,95 @@
+blender-ai-copilot-lab
+
+An AI lab for Blender where manager–worker–reviewer agent teams run multi-step scene briefs as supervised experiments—a live task board, review findings, one correction attempt per blocked task, named undo, and a built-in MCP server.
+
+download-url]: https://github.com/precygtrucqui1981/blender-ai-copilot-lab/releases
+
+[download-url]
+
+Set the brief and watch the board: the manager splits it, workers build, reviewers return findings—and one approved correction later, the scene passes.
+
+Why
+
+Big briefs die in a single chat thread—no structure, no checks, no record of what actually failed. blender-ai-copilot-lab turns the brief into a supervised experiment: a manager agent breaks it into assignments with acceptance criteria, worker agents execute each one as ordered scene operations, and reviewer agents approve the result or return specific findings. You watch the whole run on the task board, correct once when a task blocks, and keep a clean, undoable scene at the end of every experiment.
+
+Without / With
+
+| Without | With |
+|---|---|
+| One endless chat thread that loses the plan | A manager that splits the brief into assignments and acceptance criteria |
+| No idea what the agent did or why | A task board showing assignments, attempts and review findings |
+| Failed steps silently skipped | One correction attempt per blocked task, then an honest stop |
+| Edits landing out of order | Tasks run sequentially so scene edits stay ordered |
+| Review by eyeballing only | Reviewer agents that approve or return specific findings |
+| Doing it all solo anyway | A team chain of named agents, each with its own model |
+
+Quick Start
+
+Every command below is self-contained: open PowerShell, copy it, paste it, press Enter.
+
+1. Download mcp-for-blender-pro.zip from [Releases.
+2. In Blender, open Edit → Preferences → Get Extensions → menu → Install from Disk.
+3. Select the ZIP, enable mcp-for-blender-pro, then open 3D Viewport → N → MCP Pro.
+4. Choose a provider, add your connection details and select a model.
+5. Send a message in Blender or click Open Studio Window.
+
+Features
+
+- Break briefs into assignments—a manager agent defines tasks and acceptance criteria before anything moves.
+- Build with worker agents that execute each assignment through 27 supervised scene tools.
+- Review every result—reviewer agents approve work or return specific findings.
+- Watch the run live—assignments, attempts and findings stay visible on the task board.
+- Correct once—a blocked task gets exactly one correction attempt, then the chain stops honestly.
+- Configure each agent—names, responsibilities, instructions, providers and models per agent.
+- Keep every edit reversible—named undo steps and per-operation approvals across the whole run.
+
+How it works
+
+blender-ai-copilot-lab runs inside Blender as an extension: your brief becomes a sequence on the task board—a manager agent splits it into assignments with acceptance criteria, worker agents execute them through 27 supervised scene tools, and reviewer agents approve each result or return findings. A blocked task gets one correction attempt; a second failed review stops the chain after the current step, and every mutation leaves a named undo step.
+
+Usage
+
+A staged environment brief. "Build a product-display scene: pedestal and camera first, three lights second, matte blue material last." The manager sequences the stages, workers deliver each one, reviewers sign off in order.
+
+A review loop you can read. A reviewer returns "pedestal material too glossy"—the worker gets one correction attempt, and the finding stays on the board for you to inspect.
+
+Mixed models per role. Give workers a local Ollama model for the heavy lifting and the reviewer a cloud model for judgment; each agent keeps its own connection.
+
+Configuration
+
+| Setting | Default | What it does |
+|---|---|---|
+| Workflow mode | Single assistant | Single assistant for plain chat, or a Team chain for supervised experiments |
+| Team chain | One manager, workers, reviewers | Exactly one enabled manager, one or more workers, one or more reviewers |
+| Agent fields | Per agent | Name, responsibility, instructions, provider, model, manager and enabled switch |
+| Model inheritance | Workspace setting | Blank provider and model fields fall back to the workspace connection |
+| Provider | OpenAI | OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama or Custom API |
+| MCP endpoint | http://127.0.0.1:9876/mcp | Local Streamable HTTP endpoint for external MCP clients; enable in extension preferences |
+| Access token | Generated when enabled | Bearer token for the MCP endpoint; keep it in the client's secret store |
+| Interface language | English | English, German, French, Spanish or Chinese for the main interface |
+| Asset services | Optional keys | Service keys for asset providers that require them |
+| Custom endpoint | One shared | The single saved custom endpoint is shared by custom-protocol agents |
+
+Troubleshooting / FAQ
+
+How many managers can I enable? Exactly one—the chain refuses to run with two enabled managers, so responsibilities stay clear.
+
+What happens on a second failed review? The chain stops after the current step; nothing fails silently, and the board shows both findings.
+
+Can agents use different models? Yes—each agent has its own provider and model; blank fields inherit the workspace setting.
+
+Do tasks run in parallel? No—tasks run sequentially so scene edits stay ordered and reviewable.
+
+Can I work without a team? Yes—Single assistant keeps the normal chat workflow for quick edits.
+
+Contributing
+
+Spotted a chain behaving badly? Open an issue with the brief, the board state and what you expected, or send a pull request. If blender-ai-copilot-lab saves you an afternoon of redo loops, a star helps other artists find it.
+
+Keywords
+
+blender-ai-copilot-lab · blender · blender 3d · blender addon · blender plugin · blender extension · blender scripting · blender automation · blender mcp · blender ai · blender assistant · blender copilot · blender chatgpt · blender llm · blender agents · bpy · 3d modeling · 3d automation · mcp · mcp server · model context protocol · ai for blender · agent teams · multi agent · task board · manager worker reviewer · agent review · acceptance criteria · scene tools · scene generation · scene inspection · ai modeling · ai materials · viewport screenshot · studio workspace · product visualization · geometry nodes · 3d workflow · 3d rendering · 3d scene builder · windows 3d · ai 3d · ollama · openai · anthropic claude · google gemini · opencode zen · model catalog · connection profiles · custom api · poly haven · sketchfab · asset search · blender workflow · chat in blender · ai chat blender
+
+License
+
+Released under the MIT license.

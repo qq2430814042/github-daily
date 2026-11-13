@@ -1,0 +1,94 @@
+blender-ai-copilot-bridge
+
+An MCP bridge for Blender that exposes 27 supervised scene tools to OpenCode and any compatible client—authenticated Streamable HTTP on a local endpoint, with the visual chat studio and agent teams on the inside.
+
+download-url]: https://github.com/benzgasfuncring197110/blender-ai-copilot-bridge/releases
+
+[download-url]
+
+Your coding agent gets a Blender hand: authenticate once, and the scene answers to get_scene_info, add_cube and export_scene like the rest of your toolchain.
+
+Why
+
+Your agents can read repos, write code and run tests—until the task says "now make it in Blender". blender-ai-copilot-bridge gives every MCP client a safe door into your scene: a local, authenticated Streamable HTTP endpoint that exposes the full supervised toolset—inspect, create, edit, capture, script, export—while approvals and undo stay in Blender. The bundled OpenCode launcher wires the connection for you; other compatible clients plug into the same endpoint with your token.
+
+Without / With
+
+| Without | With |
+|---|---|
+| Agents that stop at "open Blender and..." | A local endpoint they can call directly |
+| Screen-scraping and screenshot hacks | Clean tool calls with structured results |
+| Granting tools your whole machine | One authenticated endpoint, scoped by its token |
+| No record of what an outside tool did | Every operation visible and undoable in Blender |
+| Hand-copying scene data into prompts | get_scene_info feeds real context to the agent |
+| Working with one client only | Any client that speaks MCP over Streamable HTTP |
+
+Quick Start
+
+Every command below is self-contained: open PowerShell, copy it, paste it, press Enter.
+
+1. Download mcp-for-blender-pro.zip from [Releases.
+2. In Blender, open Edit → Preferences → Get Extensions → menu → Install from Disk.
+3. Select the ZIP, enable mcp-for-blender-pro, then open 3D Viewport → N → MCP Pro.
+4. Choose a provider, add your connection details and select a model.
+5. Send a message in Blender or click Open Studio Window.
+
+Features
+
+- Expose 27 supervised scene tools to any compatible MCP client.
+- Authenticate every request—a generated Bearer token, kept in the client's secret store or environment.
+- Launch OpenCode preconfigured—the bundled Portable launcher sets the Blender connection up for you.
+- Inspect scenes for your agents—object lists, structure and details returned as structured context.
+- Capture the viewport—screenshots that image-capable agents can actually see.
+- Keep control in Blender—approvals, cancellation and named undo apply to external calls too.
+- Export results—export_scene hands the finished scene to your pipeline.
+
+How it works
+
+blender-ai-copilot-bridge runs inside Blender as an extension: the MCP server publishes the supervised toolset on a local Streamable HTTP endpoint (http://127.0.0.1:9876/mcp) that authorized clients call with a Bearer token, and every call lands as a visible, undoable operation in Blender. Inside, the same toolset powers the visual Studio chat and optional manager–worker–reviewer agent chains; OpenCode Portable gets its connection configured automatically at launch.
+
+Usage
+
+OpenCode in one click. Launch OpenCode Portable from the sidebar, sign in to your providers, pick a model—and ask it to build in Blender; the bridge connection is already wired.
+
+A build brief from your coding agent. Point any MCP client at the endpoint with your token, then let it run get_scene_info, create the layout, set materials and finish with export_scene.
+
+Context, not screenshots. Feed real scene structure to your agents through the inspection tools instead of pasting viewport grabs into chat.
+
+Configuration
+
+| Setting | Default | What it does |
+|---|---|---|
+| MCP endpoint | http://127.0.0.1:9876/mcp | Local Streamable HTTP endpoint; enable the server in extension preferences and adjust the port if needed |
+| Access token | Generated when enabled | Bearer token for the endpoint; keep it in the client's secret store or environment |
+| Client examples | OpenCode and compatible apps | Any client that supports authenticated Streamable HTTP MCP |
+| Provider | OpenAI | OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama or Custom API |
+| Model | Provider catalog | Pick a tool-calling model; enter the model ID manually when needed |
+| Workflow mode | Single assistant | Plain chat or a Team chain with one manager, workers and reviewers |
+| Approvals | Client policy + Blender controls | External clients manage their own approval policies; Blender keeps undo available |
+| Interface language | English | English, German, French, Spanish or Chinese |
+| Asset services | Optional keys | Service keys for asset providers that require them |
+
+Troubleshooting / FAQ
+
+What is the endpoint address? http://127.0.0.1:9876/mcp by default—enable the MCP server in the extension preferences first and keep Blender open.
+
+How does authentication work? Every request carries an Authorization: Bearer header with your access token; treat it like a password.
+
+Can clients other than OpenCode connect? Yes—any client that supports authenticated Streamable HTTP MCP; configure the endpoint and token in that client.
+
+Is my scene exposed to the network? The endpoint is local; the token gates every call, and operations remain visible and undoable in Blender.
+
+Do approvals apply to external calls? External clients manage their own approval policies—Blender-side undo and operation visibility still apply.
+
+Contributing
+
+Using the bridge with a client we should document? Open an issue with your setup and the call flow, or send a pull request. If blender-ai-copilot-bridge connects your agents to scenes, a star helps others find it.
+
+Keywords
+
+blender-ai-copilot-bridge · blender · blender 3d · blender addon · blender plugin · blender extension · blender scripting · blender automation · blender mcp · blender ai · blender assistant · blender copilot · blender chatgpt · blender llm · blender agents · bpy · 3d modeling · 3d automation · mcp · mcp server · model context protocol · ai for blender · mcp integration · streamable http · authenticated endpoint · access token · local server · opencode · external clients · coding agents · agent workflow · scene tools · scene inspection · structured context · viewport screenshot · execute code · export scene · bpy api · blender python · scripting · studio workspace · task board · agent teams · multi agent · model catalog · connection profiles · custom api · ollama · openai · anthropic claude · google gemini · openrouter · opencode zen · 3d automation · 3d workflow · windows 3d
+
+License
+
+Released under the MIT license.

@@ -1,0 +1,94 @@
+blender-ai-copilot-assets
+
+An asset-savvy AI copilot for Blender—search Poly Haven, Sketchfab and Poly Pizza mid-conversation, check what fits, import after your confirmation, with 27 scene tools and a built-in MCP server alongside.
+
+download-url]: https://github.com/zovulrira1974/blender-ai-copilot-assets/releases
+
+[download-url]
+
+Skip the tab-hopping: describe the mood, get the shortlist, approve the import—the asset lands in the scene with its license noted.
+
+Why
+
+Finding one good HDR or model means three sites, twenty tabs and a license you meant to check. blender-ai-copilot-assets searches the big free libraries from inside the chat: describe what the scene needs, compare what comes back, and import only after you confirm—assets, licenses and placement handled as part of the same supervised workflow that builds, lights and materials the scene around them.
+
+Without / With
+
+| Without | With |
+|---|---|
+| Three sites, twenty tabs, one HDR | One search in the chat, results compared in place |
+| Imports that surprise you | Every import waits for your confirmation |
+| License anxiety at publish time | Asset terms surfaced with the results |
+| Assets dropped at the origin | Placement handled by the same scene tools |
+| Re-typing service keys in every tool | Keys stored once in user settings |
+| Search that breaks the build flow | Search, build and light in one conversation |
+
+Quick Start
+
+Each command below is self-contained: open PowerShell, copy it, paste it and press Enter.
+
+1. Download mcp-for-blender-pro.zip from [Releases.
+2. In Blender, open Edit → Preferences → Get Extensions → menu → Install from Disk.
+3. Select the ZIP, enable mcp-for-blender-pro, then open 3D Viewport → N → MCP Pro.
+4. Choose a provider, add your connection details and select a model.
+5. Send a message in Blender or click Open Studio Window.
+
+Features
+
+- Search three libraries mid-conversation—Poly Haven, Sketchfab and Poly Pizza.
+- Confirm before importing—nothing lands in the scene without your approval.
+- Respect the licenses—asset terms are surfaced with the results so usage stays clean.
+- Store service keys once—per-service keys live in user settings, not in every tool.
+- Compose assets into scenes—the same 27 tools arrange, light and material around what you import.
+- Inspect what you already have—existing objects are read before anything imports.
+- Serve the toolset over MCP—external clients search and import through the same endpoint.
+
+How it works
+
+blender-ai-copilot-assets runs inside Blender as an extension: the copilot inspects your scene, searches the configured libraries for what the brief needs, and imports the chosen asset as an approved operation—then continues building, lighting and materializing around it with the 27 supervised scene tools. The whole flow is exposed to OpenCode and other compatible clients through a local authenticated endpoint (http://127.0.0.1:9876/mcp).
+
+Usage
+
+A matched environment. "Find an appropriate Poly Haven asset for this scene and ask before importing it." Compare the shortlist, approve the pick, and let the copilot place and light around it.
+
+A license-clean import. Ask for the asset's terms before approving—the copilot surfaces them with the result, so nothing enters the scene unlicensed.
+
+Assets plus build. Import the model, then keep going in the same chat: pedestal, three-point light, matte material, viewport snapshot—one brief, one flow.
+
+Configuration
+
+| Setting | Default | What it does |
+|---|---|---|
+| Asset services | Poly Haven, Sketchfab, Poly Pizza | Search and import across the three libraries |
+| Service keys | Optional | Keys for providers that require them, stored in user settings |
+| Import approvals | Per asset | Every import waits for your confirmation |
+| Workflow mode | Single assistant | Plain chat or a Team chain for larger builds |
+| Provider | OpenAI | OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama or Custom API |
+| Model | Provider catalog | Pick a tool-calling model; enter the model ID manually when needed |
+| MCP endpoint | http://127.0.0.1:9876/mcp | Local Streamable HTTP endpoint for external MCP clients |
+| Access token | Generated when enabled | Bearer token for the MCP endpoint |
+| Interface language | English | English, German, French, Spanish or Chinese |
+
+Troubleshooting / FAQ
+
+A service returns no results. Check the service key in preferences for that provider—some libraries require a key even for free assets.
+
+Where did the import land? Imports are placed by the scene tools as approved steps; ask the copilot to reposition if the spot is wrong.
+
+Can I use the assets commercially? Follow each asset's license—the copilot surfaces the terms, but the usage decision is yours.
+
+Does search interrupt the build? No—search, build and light run in the same conversation with the same approvals.
+
+Can external clients import assets? Yes—through the MCP endpoint, with the same supervised tool calls.
+
+Contributing
+
+Found an asset flow that could be smoother? Open an issue with the library, the brief and what you expected, or send a pull request. If blender-ai-copilot-assets ends your tab-hopping, a star helps others find it.
+
+Keywords
+
+blender-ai-copilot-assets · blender · blender 3d · blender addon · blender plugin · blender extension · blender scripting · blender automation · blender mcp · blender ai · blender assistant · blender copilot · blender chatgpt · blender llm · blender agents · bpy · 3d modeling · 3d automation · mcp · mcp server · model context protocol · ai for blender · asset search · asset import · poly haven · sketchfab · poly pizza · free assets · 3d assets · hdri · textures · 3d models · asset library · license aware · service keys · scene tools · scene inspection · scene generation · ai modeling · ai materials · viewport screenshot · studio workspace · task board · agent teams · product visualization · geometry nodes · 3d workflow · 3d rendering · windows 3d · ai 3d · ollama · openai · anthropic claude · google gemini · opencode zen
+
+License
+
+Released under the MIT license.

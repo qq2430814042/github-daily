@@ -1,0 +1,94 @@
+blender-ai-copilot-desk
+
+A visual AI desk for Blender—chat, scene objects, viewport snapshots, approvals and a live task board in one companion window, backed by your choice of models and a built-in MCP server.
+
+download-url]: https://github.com/fumbdendade19718/blender-ai-copilot-desk/releases
+
+[download-url]
+
+Chat on the left, scene on the right: send a brief, approve the step, watch the snapshot change—without leaving your desk.
+
+Why
+
+AI help for 3D usually means a browser tab beside the viewport, screenshots pasted by hand and change lists you cannot verify. blender-ai-copilot-desk puts the whole conversation inside one companion window: the chat, the objects actually in your scene, viewport snapshots after each step, approvals before each edit and the task board for longer runs. You see what the copilot sees, approve what it plans, and keep both hands in Blender the entire time.
+
+Without / With
+
+| Without | With |
+|---|---|
+| AI chat in a detached browser tab | One companion window beside your viewport |
+| Pasting screenshots into prompts by hand | Viewport snapshots captured and shown automatically |
+| "Trust me, it worked" changes | A snapshot after every step you can compare |
+| Approving edits blind | Each operation proposed before it runs |
+| Losing track of long tasks | A task board with assignments, attempts and findings |
+| Provider lock-in | Every major provider, plus Ollama and custom endpoints |
+
+Quick Start
+
+Each command below is self-contained: open PowerShell, copy it, paste it and press Enter.
+
+1. Download mcp-for-blender-pro.zip from [Releases.
+2. In Blender, open Edit → Preferences → Get Extensions → menu → Install from Disk.
+3. Select the ZIP, enable mcp-for-blender-pro, then open 3D Viewport → N → MCP Pro.
+4. Choose a provider, add your connection details and select a model.
+5. Send a message in Blender or click Open Studio Window.
+
+Features
+
+- Chat beside the scene—the full conversation in a companion Studio window.
+- See your real scene objects—names and structure straight from the open file.
+- Get viewport snapshots after steps—visual proof, not prose promises.
+- Approve operations before they run—nothing lands unseen.
+- Track team runs on a task board—assignments, attempts and review findings in one place.
+- Choose the interface language—English, German, French, Spanish or Chinese.
+- Serve MCP clients too—the same toolset behind a local authenticated endpoint.
+
+How it works
+
+blender-ai-copilot-desk runs inside Blender as an extension: the copilot inspects your scene through 27 supervised tools and applies each brief as ordered operations, while the desk window shows the chat, scene objects, viewport snapshots, approvals and the task board for single-assistant or team runs. The same toolset is exposed to OpenCode and other compatible clients through a local authenticated endpoint (http://127.0.0.1:9876/mcp).
+
+Usage
+
+Approve a build, see the proof. Ask for a product display with three lights, approve each step, and compare the snapshots before and after—the desk keeps both one glance apart.
+
+Review without guessing. After a multi-step brief, walk the snapshot sequence to see exactly when the scene changed and what each step did.
+
+Work in your language. Switch the interface to German, French, Spanish or Chinese for the main menus—model IDs and provider errors stay as they are.
+
+Configuration
+
+| Setting | Default | What it does |
+|---|---|---|
+| Studio window | Opens from the sidebar | Companion window with chat, scene objects, snapshots and approvals |
+| Workflow mode | Single assistant | Plain chat or a Team chain with a task board |
+| Provider | OpenAI | OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama or Custom API |
+| Model | Provider catalog | Pick a tool-calling model; enter the model ID manually when needed |
+| Connection profiles | One per provider | Save multiple keys and accounts and switch anytime |
+| MCP endpoint | http://127.0.0.1:9876/mcp | Local Streamable HTTP endpoint for external MCP clients |
+| Access token | Generated when enabled | Bearer token for the MCP endpoint |
+| Interface language | English | English, German, French, Spanish or Chinese for the main interface |
+| Asset services | Optional keys | Service keys for asset providers that require them |
+
+Troubleshooting / FAQ
+
+Why is the snapshot not updating? Snapshots follow approved steps—check that the operation ran and the viewport is not in a local-only view mode.
+
+Where did my chat history go? Chat history lasts for the current session; the scene and your saved connections persist.
+
+Can the desk run without the sidebar panel? The sidebar panel is the entry point—open the desk from there; both share one connection.
+
+Do approvals slow the work down? You can approve several steps in a row—approvals are there so nothing lands unseen, not to interrupt every click.
+
+How do external clients fit in? Enable the MCP server in preferences and point compatible clients at the local endpoint with the Bearer token.
+
+Contributing
+
+Ideas for the desk layout or snapshot flow? Open an issue with what you would change, or send a pull request. If blender-ai-copilot-desk keeps your eyes on the scene, a star helps others find it.
+
+Keywords
+
+blender-ai-copilot-desk · blender · blender 3d · blender addon · blender plugin · blender extension · blender scripting · blender automation · blender mcp · blender ai · blender assistant · blender copilot · blender chatgpt · blender llm · blender agents · bpy · 3d modeling · 3d automation · mcp · mcp server · model context protocol · ai for blender · visual workspace · studio window · chat workspace · scene objects · viewport screenshot · visual feedback · approvals · task board · agent teams · multi agent · operation approvals · named undo · scene tools · scene inspection · scene generation · ai modeling · ai materials · product visualization · geometry nodes · 3d modeling · 3d workflow · 3d rendering · windows 3d · ai 3d · multilingual · five languages · ollama · openai · anthropic claude · google gemini · openrouter · opencode zen · model catalog · connection profiles
+
+License
+
+Released under the MIT license.

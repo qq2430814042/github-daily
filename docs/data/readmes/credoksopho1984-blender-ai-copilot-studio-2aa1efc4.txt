@@ -1,0 +1,91 @@
+blender-ai-copilot-studio
+
+An AI copilot and MCP server for Blender that turns plain-language briefs into scene operations—inside a visual chat studio with multi-agent teams, your choice of AI models, and 27 built-in scene tools.
+
+download-url]: https://github.com/credoksopho1984/blender-ai-copilot-studio/releases
+
+[download-url]
+
+Picture your next scene: you type the brief, the copilot inspects the viewport, builds the pedestal, camera and lights, assigns the materials, and answers with a finished snapshot on the Studio task board.
+
+Why
+
+Building in Blender still means menus, mouse miles and copy-pasted Python snippets—hours of mechanical work between you and the idea. blender-ai-copilot-studio puts a scene-aware AI copilot inside Blender: it reads your scene first, then carries out multi-step briefs as supervised tool calls with approvals, cancellation and named undo. You keep creating in Blender and let plain language handle the repetitive parts—so a full layout takes one sentence instead of an afternoon.
+
+Without / With
+
+| Without | With |
+|---|---|
+| Hours of manual clicks to block out and polish a scene | One plain-language brief executed step by step |
+| Copy-pasting bpy snippets from forums and hoping they run | 27 validated scene tools with per-operation approvals and named undo |
+| Chatting with an AI in one window, rebuilding by hand in another | One Studio workspace: chat, scene objects, viewport snapshots and a task board |
+| One assistant locked to a single vendor | OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama or custom endpoints |
+| External tools with no safe path into your scene | An authenticated local MCP endpoint any compatible client can call |
+| Solo grinding through multi-part briefs | Manager–worker–reviewer agent teams that sequence and check the work |
+
+Quick Start
+
+Open PowerShell, copy a command, paste it and press Enter—every command below is self-contained and needs no preparation.
+
+1. Download mcp-for-blender-pro.zip from [Releases.
+2. In Blender, open Edit → Preferences → Get Extensions → menu → Install from Disk.
+3. Select the ZIP, enable mcp-for-blender-pro, then open 3D Viewport → N → MCP Pro.
+4. Choose a provider, add your connection details and select a model.
+5. Send a message in Blender or click Open Studio Window.
+
+Features
+
+- Inspect the scene before every change—the copilot reads objects, structure and materials before it acts.
+- Build complete layouts from a brief—27 supervised scene tools create primitives, lights, cameras, materials, parenting and transforms in ordered steps.
+- Run multi-agent team chains—a manager splits the brief into assignments, workers execute, reviewers approve or return findings, and the task board tracks every attempt.
+- Connect the model that fits the job—OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, local Ollama or custom endpoints, with saved connection profiles.
+- Serve any MCP client from Blender—an authenticated Streamable HTTP endpoint exposes the full toolset to OpenCode and compatible apps.
+- Find and import assets mid-conversation—search Poly Haven, Sketchfab and Poly Pizza and import after your confirmation.
+- Stay in control—per-operation approvals, cancellation after the current step, named undo steps, and menus in English, German, French, Spanish or Chinese.
+
+How it works
+
+blender-ai-copilot-studio runs inside Blender as an extension: the copilot inspects your scene through its 27 built-in tools, plans each brief as ordered operations, and applies them with your approval while the Studio window shows the chat, scene objects, viewport snapshots and the task board. The same toolset is served to external clients—OpenCode and any compatible MCP app—through a local authenticated Streamable HTTP endpoint (http://127.0.0.1:9876/mcp), and larger briefs can be delegated to a manager–worker–reviewer agent chain.
+
+Usage
+
+Product display from one brief. Ask the copilot: "Inspect this scene, then build a product display with a pedestal, a camera and three lights—give the pedestal a matte blue material." It reads the scene first, creates the layout, assigns the material and returns a viewport snapshot for your review.
+
+Batch arrangements without tedium. Ask: "Duplicate the selected object into a neatly spaced row of five and show the viewport." One approved tool sequence replaces a dozen manual transforms.
+
+Automation through MCP. Point OpenCode or another compatible client at the authenticated local endpoint and drive the same 27 scene tools from your agent workflow—inspect, build, then export_scene—while approvals and undo stay available in Blender.
+
+Configuration
+
+| Setting | Default | What it does |
+|---|---|---|
+| MCP endpoint | http://127.0.0.1:9876/mcp | Local Streamable HTTP endpoint for external MCP clients; enable it in the extension preferences and adjust the port if needed |
+| Access token | Generated when enabled | Bearer token for the MCP endpoint; keep it in the client's secret store or environment |
+| Provider | OpenAI | OpenAI, Anthropic Claude, Google Gemini, OpenRouter, OpenCode Zen, Ollama or Custom API |
+| API protocol | OpenAI Chat Completions | Custom-endpoint protocol: OpenAI Chat Completions, Anthropic Messages or Ollama |
+| Base URL | — | Custom-endpoint base URL (for example https://your-service.example/v1), not a full completion endpoint |
+| Model | Provider catalog | Pick a model with tool-calling support; enter the model ID manually when the catalog does not load |
+| Connection profiles | One per provider | Save work and personal keys side by side and switch without re-entering credentials |
+| Workflow mode | Single assistant | Single assistant for quick edits, or a Team chain with one manager, workers and reviewers |
+| Interface language | English | English, German, French, Spanish or Chinese for the main interface |
+| Asset services | Optional keys | Service keys for providers that require them (Poly Haven, Sketchfab, Poly Pizza) |
+
+Troubleshooting / FAQ
+
+The model replies but never touches my scene. Copilot actions are tool calls, not chat text—switch to a model that supports tool calling and reload the model list.
+
+My external MCP client cannot connect. Enable the MCP server in the extension preferences, keep Blender open, and configure the client with the local endpoint plus an Authorization: Bearer header carrying your access token.
+
+The custom API model catalog is empty. Use the provider's base URL rather than a full completion endpoint, pick the matching API protocol, and enter the model ID manually if the catalog still does not load.
+
+How do I undo a copilot edit? Use the named undo steps the copilot creates for its mutations, or Blender's own undo controls.
+
+Where are my keys and history stored? Credentials live in your Blender user settings on your machine; chat history lasts for the current session, and Studio runs locally with authenticated requests.
+
+Contributing
+
+Issues, ideas and pull requests are welcome: open an issue to report a bug or propose a new scene tool or workflow, and include the steps to reproduce what you saw. If blender-ai-copilot-studio saves you time, a star helps other artists find it.
+
+Keywords
+
+…（内容已截断）

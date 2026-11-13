@@ -269,6 +269,8 @@ Collaborators
   Christian Clauss > (he/him)
 * ChALkeR -
   Сковорода Никита Андреевич > (he/him)
+* christianaurichzm -
+  Christian Aurich Zanettini Martins > (he/him)
 * cjihrig -
   Colin Ihrig > (he/him)
 * codebytere -
@@ -281,6 +283,8 @@ Collaborators
   Dario Piotrowicz > (he/him)
 * deokjinkim -
   Deokjin Kim > (he/him)
+* efekrskl -
+  Efe Karasakal > (he/him)
 * ErickWendel -
   Erick Wendel > (he/him)
 * Ethan-Arrowood -
@@ -297,10 +301,5 @@ Collaborators
   Geoffrey Booth > (he/him)
 * gireeshpunathil -
   Gireesh Punathil > (he/him)
-* gurgunday -
-  Gürgün Dayıoğlu > (he/him)
-* guybedford -
-  Guy Bedford > (he/him)
-* H4ad -
 
 …（内容已截断）
