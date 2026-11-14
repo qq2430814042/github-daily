@@ -1,0 +1,33 @@
+A PS5 ELF payload. It finds games on the internal SSD and on USB or extended drives.
+
+It mounts debug FPKG .pkg files, game folders (plain, or packed with zstd or LZ4).
+
+How to
+
+1. ampr-emu-ng comes bundled and is installed into
+   /data/krakenmount/ampr/ at start. To run another build, put its libSceAmpr.sprx there; it is
+   kept until you delete it.
+2. Put each game in a scan root: /data/homebrew, /data/etaHEN/games, or homebrew,
+   etaHEN/games or the root of a USB drive. A .pkg must be a plaintext debug FPKG from
+   dump-forge. A folder needs eboot.bin and sce_sys/param.json. Backports go in
+   /backports/*.
+3. Download kraken-mount.elf from Releases
+   and send it once to the ELF loader (elfldr, port 9021):
+   `nc -w 3  9021  registered" notification and its own home-screen tile.
+5. Open the Kraken Mount tile, or http://:8097/ from a computer, to see the games,
+   rebuild or delete them, change settings and read the log.
+
+Caches live in /data/krakenmount/caches/, settings in
+/data/krakenmount/config.toml and the log in /data/krakenmount/kraken.log.
+
+To build it yourself: ps5/build.sh (needs Docker), output target/ps5/kraken-mount.elf.
+
+Thanks
+
+- drakmor/ShadowMountPlus: home-screen
+  registration, the fakelib sandbox overlay and backports are ported from it.
+- ps5-payload-sdk: the PS5 toolchain.
+
+License
+
+GPL-3.0-or-later (LICENSE). Third-party notices are in THIRD_PARTY_NOTICES.

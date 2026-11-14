@@ -1,0 +1,52 @@
+ScanDot
+
+ScanDot is an experimental Android app for capturing and viewing 3D point clouds on a supported phone. It combines ARCore camera tracking and depth estimates, saves scans locally, and provides an interactive viewer.
+
+The repository also contains a separate video photogrammetry pipeline that runs on a workstation using FFmpeg and COLMAP. The Android app does not reconstruct ordinary video with photogrammetry on the phone.
+
+Current status
+
+- Capture, save and reopen point clouds on devices that support ARCore Depth.
+- Rotate, pan and zoom scans in the viewer. An optional full-depth mode interpolates missing depth and can distort surfaces.
+- Prepare video frames and run a sparse or dense COLMAP reconstruction on a workstation.
+
+This is an early prototype. Results can contain gaps, drift and noise; they are not textured meshes or validated measurements. Reflective, transparent and textureless subjects are difficult. Capture quality and device compatibility need further testing.
+
+Try the preview
+
+Download the preview APK. The release notes describe compatibility and signing limitations.
+
+Build the Android app
+
+You need JDK 17, Android SDK 36, and an Android device with ARCore Depth support. Camera permission is required; Google Play Services for AR may require installation or an update.
+
+cd android-app
+./gradlew assembleDebug lintDebug testDebugUnitTest
+
+On Windows, use gradlew.bat in place of ./gradlew. The debug APK is written to android-app/app/build/outputs/apk/debug/app-debug.apk. Install it as an update to preserve existing app data.
+
+In the app, name the scan, tap Start scan, and move slowly around the subject in good light. Save it, then open it from Results. Scans are stored in the app's private storage; uninstalling the app removes them.
+
+Workstation video pipeline
+
+The benchmark requires Python 3.12 or newer, FFmpeg, FFprobe and a compatible COLMAP installation. Dense reconstruction requires a compatible COLMAP configuration. From the repository root:
+
+python -m processing.benchmark prepare "path/to/input.mp4" --output "path/to/new-run" --fps 5
+python -m processing.benchmark reconstruct "path/to/new-run" --colmap "path/to/colmap" --dense
+
+The output directory must not already exist. Omit --dense for a sparse-only run. See the subcommand --help output for options. A successful run does not establish complete or accurate geometry.
+
+The Python tests use the standard library:
+
+python -m unittest discover -s tests -v
+
+Project structure
+
+android-app/  Android capture, local storage and point-cloud viewer
+processing/   Video preparation and COLMAP orchestration
+tests/        Python tests with synthetic fixtures
+tools/        Workstation utilities
+
+CI runs the Android build, lint and JVM tests, plus the Python unit tests. It does not exercise a camera, ARCore tracking, GPU reconstruction or measurement accuracy.
+
+See the wiki for installation, capture and troubleshooting guides. See CONTRIBUTING.md for development checks and LICENSE for reuse terms.

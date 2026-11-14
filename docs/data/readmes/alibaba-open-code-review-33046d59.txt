@@ -80,6 +80,9 @@ Quick Start
 
 You must configure an LLM before reviewing code, unless you use Delegation Mode.
 
+- OCR calls the model: ocr review, the /open-code-review:review command, and the open-code-review skill use OCR's own provider configuration, not your Claude Code Team/Pro subscription login. Authentication requirements depend on the provider; see Configuration.
+- The host agent calls the model: the /open-code-review:delegate-review command and the open-code-review-delegate skill use the host agent's configured model and authentication. No separate LLM configuration or credentials are needed in OCR. See the Claude Code install steps.
+
 ocr config provider          # Select a built-in provider or add a custom one
 ocr config model             # Pick a model for the active provider
 
@@ -133,11 +136,5 @@ Full documentation lives at open-codereview.ai/docs:
   - Cursor — install a plugin with portable review skills
   - Kimi Code — install a plugin with review slash commands and skills
   - OpenCode — install native review tools and slash commands
-  - QCA Forward — run delegation mode with the QCA host model and a ready-to-publish template
-  - Skill-compatible agents — install the portable agent skill
-- Review Execution Modes — after integration, choose which LLM performs the review
-  - Default (OCR-managed) — OCR runs the review using its configured LLM
-  - Delegation Mode — your coding agent runs the review using its own LLM; no OCR API key required
-- CI/CD Integration — GitHub Actions, GitLab CI, GitFlic CI, and Gerrit integration
 
 …（内容已截断）

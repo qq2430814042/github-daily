@@ -1,0 +1,207 @@
+"Tailscale without Tailscale, by Tailscale"
+
+Tailcat
+
+Tailcat is a remix of Tailscale open source pieces to act like
+netcat, but over Tailscale's data plane,
+without Tailscale's control plane. Tailscale's data plane (magicsock,
+internally) gives you point-to-point WireGuard®-encrypted tunnels between two
+machines with DERP as the NAT-hole-punching communication side channel and the
+ultimate relay-of-last-resort if NAT traversal fails. Instead of using the
+Tailscale control plane, all tailcat connection metadata is exchanged out of
+band, however you want.
+
+The tailcat CLI (in cmd/tailcat) is built on the tailcat Go library
+(importable as github.com/tailscale/tailcat).
+
+Whether you use tailcat as a CLI tool or library, one side runs a tailcat
+server (listener) and gets back a short tailcat address. The other side passes
+that tailcat address to tailcat's client side to connect. All traffic between
+the two is
+encrypted end-to-end with WireGuard. The initial connection bootstraps through
+a DERP server (see below), and then magicsock performs NAT traversal to
+upgrade to a direct peer-to-peer UDP connection when possible (usually!).
+
+You don't need a Tailscale account, root/admin access on the machine
+(it doesn't alter your machine's routing tables, DNS, etc.). It's just
+a userspace library and CLI tool.
+
+And it's all open source.
+
+You can use our free rate-limited DERP relays (the default DERP map is
+https://tailcat.dev/derpmap.json) or you can run your own.
+
+There's also an experimental in-browser web demo (tailcat compiled to
+WebAssembly) at https://tailscale.github.io/tailcat/ that can send and
+receive files or text, interoperating with the CLI. Browser traffic is
+relayed over DERP only, with no direct connections until WebRTC
+support (#4).
+
+Install
+
+See INSTALL.md for details on each, including notes
+for packagers building from source:
+
+| Method | Linux | macOS | Windows | FreeBSD,
+OpenBSD | Browser
+(js/wasm) |
+|--------|:-----:|:-----:|:-------:|:-------------------:|:--------------------:|
+| Static binaries | ✅ | | ✅ | | |
+| .deb packages | Debian, Ubuntu, ... | | | | |
+| .rpm packages | Red Hat, Fedora, ... | | | | |
+| Homebrew | | ✅ | | | |
+| Scoop | | | ✅ | | |
+| Snap | ✅ | | | | |
+| Container image | ✅ | | | | |
+| Nix | ✅ | ✅ | | | |
+| AUR | Arch | | | | |
+| conda-forge | ✅ | ✅ | ✅ | | |
+| Build from source | ✅ | ✅ | ✅ | ✅ | ✅ |
+
+Usage
+
+Pipe stdin/stdout between two machines
+
+Server starts, printing out its ephemeral address:
+$ tailcat
+Selected bootstrap relay region 302, San Francisco
+🐈 Server listening with new address: tcomFwWCCcjS5nKNqAod034nWoJZW0LZqDhhC8U_dKdnDRYQ8uNGFpGQEu
+(hangs, waiting...)
+
+And then the client can:
+
+$ echo hello | tailcat tcomFwWCCcjS5nKNqAod034nWoJZW0LZqDhhC8U_dKdnDRYQ8uNGFpGQEu
+$
+
+Then the server unblocks:
+
+$ tailcat
+Selected bootstrap relay region 302, San Francisco
+🐈 Server listening with new address: tcomFwWCCcjS5nKNqAod034nWoJZW0LZqDhhC8U_dKdnDRYQ8uNGFpGQEu
+hello
+$
+
+Expose local ports through the tunnel
+
+Or you can serve a local TCP port, forwarded to localhost:
+
+$ tailcat serve 8080,8443 # or: tailcat serve all
+🐈 Server listening with new address: tcXXXXXXXXX
+
+And then the client:
+
+$ tailcat tcXXXXXXXXX 8080
+GET / HTTP/1.1
+Host: foo
+
+HTTP/1.1 200 OK
+....
+
+A port mapping proxies a port somewhere other than the same port on localhost: to a different local port, or to a host and port elsewhere on the server's network. This serves port 5555 by proxying it to an Android device's adb port on the LAN, without exposing the rest of the network the way exit-node would:
+
+$ tailcat serve 5555:10.2.200.213:5555
+Proxying port 5555 to 10.2.200.213:5555
+🐈 Server listening with new address: tcXXXXXXXXX
+
+Then on the client, tailcat forward tcXXXXXXXXX 5555 followed by adb connect 127.0.0.1:5555. Write IPv6 targets in brackets: 5555:fd7a::1]:5555.
+
+Forward local ports to a tailcat server
+
+To make ports served by a tailcat server available as ordinary local TCP ports (for browsers, database clients, or other tools that do not support SOCKS or stdio), run forward with the server's tailcat address:
+
+$ tailcat serve 8080,3306
+🐈 Server listening with new address: tcXXXXXXXXX
+
+$ tailcat forward tcXXXXXXXXX 18080:8080 3306
+
+A local port of 0 asks the operating system for a free port; each listener prints its address once it's listening.
+
+To forward local ports to assets on the network reachable by an exit-node server, run the server in exit-node mode and specify each remote IP address and port in the mapping:
+
+$ tailcat serve exit-node
+🐈 Server listening with new address: tcXXXXXXXXX
+
+$ tailcat forward tcXXXXXXXXX \
+    3001:172.23.52.30:3001 \
+    17170:172.23.52.31:17170
+
+This forwards 127.0.0.1:3001 to 172.23.52.30:3001 and 127.0.0.1:17170 to 172.23.52.31:17170 through the exit-node server.
+
+By default, listeners bind to 127.0.0.1 and diagnostic logs are suppressed. Pass --verbose before the subcommand to enable verbose networking logs. Use --bind=0.0.0.0 only when clients on other machines should be able to connect:
+
+$ tailcat forward --bind=0.0.0.0 tcXXXXXXXXX 18080:8080
+
+Press Ctrl-C to stop forwarding.
+
+Open a browser to a tailcat server
+
+To view a web server behind a tailcat server, run browse:
+
+$ tailcat serve 80
+🐈 Server listening with new address: tcXXXXXXXXX
+
+$ tailcat browse tcXXXXXXXXX
+
+This is an alias for tailcat forward --open-browser  0:80: it opens http://127.0.0.1:/ in a web browser once the local listener is ready, then blocks, forwarding connections, until interrupted. The --open-browser flag works with any single forward port mapping.
+
+Public-key-authenticated SSH server
+
+Run an SSH server that accepts keys from local authorized_keys files,
+literal OpenSSH public key lines, or GitHub accounts:
+
+$ tailcat serve --ssh-authorized-keys=~/.ssh/authorized_keys ssh
+🐈 Server listening with new address: tcXXXXXXXXX
+
+Multiple sources can be comma-separated. A user@github source fetches
+https://github.com/user.keys once, before the server starts:
+
+$ tailcat serve --ssh-authorized-keys=bradfitz@github,./contractor.pub ssh
+
+Every source must exist, fetch successfully, and contain valid public key
+lines or startup fails. Authorized-key options such as command= and
+from= are rejected because the built-in server does not implement them.
+Running tailcat serve ssh without --ssh-authorized-keys also fails; use the
+explicit no-auth-ssh service when the tunnel identity alone is sufficient.
+
+Auth-free SSH server
+
+On Linux, macOS, and Windows, you can also explicitly run the SSH server with
+no client authentication. The encrypted tunnel provides the client identity.
+
+$ tailcat serve no-auth-ssh
+🐈 Server listening with new address: tcXXXXXXXXX
+
+With no-auth-ssh, the address is the credential: anyone who
+learns it gets a shell as the user running the server. Share it only
+over private channels, and never publish it, in a DNS TXT record or
+anywhere else public. If you want an SSH server reachable by DNS
+name, it must require client authentication: --allow at the tunnel
+layer, --ssh-authorized-keys at the SSH layer, or both.
+
+And on the client side:
+
+$ tailcat ssh tcXXXXXXXXX
+$ tailcat ssh tcXXXXXXXXX ls -la
+
+Run a command per connection
+
+Like inetd, the exec service runs a command for each incoming
+connection, with the connection as the command's stdin and stdout.
+The command comes after --:
+
+$ tailcat serve exec -- /usr/bin/fortune
+🐈 Server listening with new address: tcXXXXXXXXX
+
+$ tailcat tcXXXXXXXXX 80  server, 1 stream, 10s
+[   1.0s]  sent    118 MB    943 Mbit/s  rtt 2.1ms
+...
+sent        1.18 GB in   10.0s    943 Mbit/s
+received    1.18 GB in   10.0s    942 Mbit/s
+rtt under load  min 1.9ms  avg 2.3ms  max 4.1ms  (50 samples)
+
+The test first waits for a direct path (up to --timeout) and refuses
+to run through a DERP relay otherwise, since a throughput test through
+a shared relay mostly measures its rate limit while crowding out
+everyone else. --via-derp allows a relayed test through [a relay you
+
+…（内容已截断）

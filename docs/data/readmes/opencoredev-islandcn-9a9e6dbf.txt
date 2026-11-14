@@ -1,0 +1,48 @@
+islandcn
+
+A Dynamic Island-style component for any React app, installed with shadcn. Show an upload, a timer, a song, a ride on its way, an incoming call or a recording in one island at the top of your app, and shape each activity around your app's own actions.
+
+npx shadcn@latest add https://islandcn.dev/r/island-core.json
+
+"use client";
+
+import { Island, IslandProvider, useIsland } from "@/lib/island";
+
+// Mount once near the root.
+
+;
+
+// Then, from any component inside it:
+const island = useIsland();
+const upload = island.start({
+  id: "upload",
+  label: "Uploading report.pdf",
+  compact: { leading: , trailing:  },
+  expanded: { center: report.pdf, bottom:  },
+});
+upload.update({ compact: { trailing:  } });
+upload.end();
+
+What's here
+
+- The engine (lib/island/, registry item island-core): the activity stack, four presentations (idle, compact, the split, expanded), springs fitted to frame-by-frame recordings of the real island, long-press, alerts and reduced motion. React only.
+- Presets (components/islandcn/): upload, timer, now playing, incoming call, ride or delivery ETA, recording, nearby transfer, battery and the split, each one file on the engine, plus the content kit they share.
+- The playground (/playground): build an island for your app from a preset or a blank activity, fire every action, tune the motion and copy the install command and the code.
+- The site and docs (app/, docs/content/).
+
+Coding agents can use the optional islandcn-skill registry item as an install helper; see /docs/agent-skill.
+
+Develop
+
+pnpm install
+pnpm dev           # http://localhost:3000
+pnpm typecheck
+pnpm build         # builds the registry into public/r, then the site
+
+Read AGENTS.md before changing anything.
+
+The recordings the motion was fitted to are not in this repo. /lab still plays every transition from its built-in sequences in pnpm dev; /compare, which sets the web side against the recordings, has nothing to show, and the one test that reads them is skipped.
+
+License
+
+MIT, copyright (c) 2026 Leo. See LICENSE. islandcn copies the look and motion of Apple's island, but none of Apple's assets. It is not affiliated with Apple. Dynamic Island is a trademark of Apple Inc.

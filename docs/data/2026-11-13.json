@@ -1,0 +1,1613 @@
+{
+  "date": "2026-11-13",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-14T06:08:28.600Z",
+  "count": 60,
+  "newCount": 36,
+  "sources": {
+    "trending": 12,
+    "new": 36,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "GoogleChrome/modern-web-guidance-src",
+      "name": "modern-web-guidance-src",
+      "owner": "GoogleChrome",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "language": "TypeScript",
+      "stars": 5055,
+      "forks": 277,
+      "starsToday": 1925,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "googlechrome-modern-web-guidance-src-227260bf.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "we-promise/sure",
+      "name": "sure",
+      "owner": "we-promise",
+      "url": "https://github.com/we-promise/sure",
+      "description": "The personal finance app for everyone (by everyone)",
+      "language": "Ruby",
+      "stars": 14874,
+      "forks": 1131,
+      "starsToday": 925,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "we-promise-sure-128f00ec.txt"
+    },
+    {
+      "rank": 3,
+      "fullName": "openai/codex-security",
+      "name": "codex-security",
+      "owner": "openai",
+      "url": "https://github.com/openai/codex-security",
+      "description": "OpenAI's Codex Security CLI and TypeScript SDK for finding, validating, and fixing security vulnerabilities. npm: https://www.npmjs.com/package/@openai/codex-security",
+      "language": "TypeScript",
+      "stars": 13248,
+      "forks": 1027,
+      "starsToday": 751,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openai-codex-security-65f6d9f3.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "ZhuLinsen/daily_stock_analysis",
+      "name": "daily_stock_analysis",
+      "owner": "ZhuLinsen",
+      "url": "https://github.com/ZhuLinsen/daily_stock_analysis",
+      "description": "LLM 驱动的多市场股票智能分析系统：多源行情、实时新闻、决策看板与自动推送，支持零成本定时运行。 LLM-powered multi-market stock analysis system with multi-source market data, real-time news, decision dashboard, automated notifications, and cost-free scheduled runs.",
+      "language": "Python",
+      "stars": 71841,
+      "forks": 57355,
+      "starsToday": 256,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zhulinsen-daily-stock-analysis-490ce6f0.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "tailscale/tailcat",
+      "name": "tailcat",
+      "owner": "tailscale",
+      "url": "https://github.com/tailscale/tailcat",
+      "description": "like netcat, but over Tailscale's data plane, without Tailscale's control plane",
+      "language": "Go",
+      "stars": 9562,
+      "forks": 435,
+      "starsToday": 256,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tailscale-tailcat-d2c63a3b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "Likely7/Veyra-NRVideo",
+      "name": "Veyra-NRVideo",
+      "owner": "Likely7",
+      "url": "https://github.com/Likely7/Veyra-NRVideo",
+      "description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experie",
+      "language": "C++",
+      "stars": 1709,
+      "forks": 76,
+      "starsToday": 256,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "likely7-veyra-nrvideo-dfabdeb5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "alibaba/open-code-review",
+      "name": "open-code-review",
+      "owner": "alibaba",
+      "url": "https://github.com/alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "language": "Go",
+      "stars": 50811,
+      "forks": 3782,
+      "starsToday": 215,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "alibaba-open-code-review-33046d59.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "backnotprop/plannotator",
+      "name": "plannotator",
+      "owner": "backnotprop",
+      "url": "https://github.com/backnotprop/plannotator",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+      "language": "TypeScript",
+      "stars": 10556,
+      "forks": 791,
+      "starsToday": 108,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "backnotprop-plannotator-5b00db19.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "block/buzz",
+      "name": "buzz",
+      "owner": "block",
+      "url": "https://github.com/block/buzz",
+      "description": "A hive mind communication platform",
+      "language": "Rust",
+      "stars": 37351,
+      "forks": 4944,
+      "starsToday": 97,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "block-buzz-c732f352.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "louislam/uptime-kuma",
+      "name": "uptime-kuma",
+      "owner": "louislam",
+      "url": "https://github.com/louislam/uptime-kuma",
+      "description": "A fancy self-hosted monitoring tool",
+      "language": "JavaScript",
+      "stars": 93950,
+      "forks": 8727,
+      "starsToday": 71,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "louislam-uptime-kuma-ace6bac5.txt"
+    },
+    {
+      "rank": 11,
+      "fullName": "tradermonty/claude-trading-skills",
+      "name": "claude-trading-skills",
+      "owner": "tradermonty",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "language": "Python",
+      "stars": 4286,
+      "forks": 880,
+      "starsToday": 69,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tradermonty-claude-trading-skills-e3f63850.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "ChromeDevTools/chrome-devtools-mcp",
+      "name": "chrome-devtools-mcp",
+      "owner": "ChromeDevTools",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "description": "Chrome DevTools for coding agents",
+      "language": "TypeScript",
+      "stars": 55647,
+      "forks": 4614,
+      "starsToday": 67,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "chromedevtools-chrome-devtools-mcp-2a9517b9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "opencoredev/islandcn",
+      "name": "islandcn",
+      "owner": "opencoredev",
+      "url": "https://github.com/opencoredev/islandcn",
+      "description": "The open-source Dynamic Island for React, installed with shadcn.",
+      "language": "TypeScript",
+      "stars": 403,
+      "forks": 38,
+      "starsToday": 0,
+      "topics": [
+        "dynamic-island",
+        "nextjs",
+        "react",
+        "shadcn",
+        "typescript",
+        "ui-components"
+      ],
+      "createdAt": "2026-11-13T11:50:50Z",
+      "updatedAt": "2026-11-14T05:59:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "opencoredev-islandcn-9a9e6dbf.txt"
+    },
+    {
+      "rank": 14,
+      "fullName": "faizfahmi77/ScanDot",
+      "name": "ScanDot",
+      "owner": "faizfahmi77",
+      "url": "https://github.com/faizfahmi77/ScanDot",
+      "description": "Experimental Android 3D scanning and point-cloud viewer",
+      "language": "Kotlin",
+      "stars": 400,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [
+        "3d-scanning",
+        "android",
+        "photogrammetry",
+        "point-cloud"
+      ],
+      "createdAt": "2026-11-13T04:07:57Z",
+      "updatedAt": "2026-11-14T05:55:27Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "faizfahmi77-scandot-c91c19b8.txt"
+    },
+    {
+      "rank": 15,
+      "fullName": "quer3q/kraken-mount",
+      "name": "kraken-mount",
+      "owner": "quer3q",
+      "url": "https://github.com/quer3q/kraken-mount",
+      "description": "Minimalist PS5 game mounter supporting PKG, folder dumps, lz4, and zstd",
+      "language": "Rust",
+      "stars": 265,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [
+        "homebrew",
+        "ps5"
+      ],
+      "createdAt": "2026-11-13T07:25:37Z",
+      "updatedAt": "2026-11-14T06:04:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "quer3q-kraken-mount-811e709a.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "Forward-Future/scarlet",
+      "name": "scarlet",
+      "owner": "Forward-Future",
+      "url": "https://github.com/Forward-Future/scarlet",
+      "description": "Scarlet is an AI video editor for macOS and Windows.",
+      "language": "TypeScript",
+      "stars": 154,
+      "forks": 25,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-13T17:02:31Z",
+      "updatedAt": "2026-11-14T06:05:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "forward-future-scarlet-ebfc7c56.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "AcgBoss/ai--manus",
+      "name": "ai--manus",
+      "owner": "AcgBoss",
+      "url": "https://github.com/AcgBoss/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:45:26Z",
+      "updatedAt": "2026-11-13T17:57:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "acgboss-ai-manus-ce65ae6a.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "AcgBoss/manus--ai",
+      "name": "manus--ai",
+      "owner": "AcgBoss",
+      "url": "https://github.com/AcgBoss/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:45:45Z",
+      "updatedAt": "2026-11-13T17:57:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "acgboss-manus-ai-fe03550d.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "agdinis/ai--manus",
+      "name": "ai--manus",
+      "owner": "agdinis",
+      "url": "https://github.com/agdinis/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:44:09Z",
+      "updatedAt": "2026-11-13T17:57:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "agdinis-ai-manus-0c0db5dd.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "agdinis/manus--ai",
+      "name": "manus--ai",
+      "owner": "agdinis",
+      "url": "https://github.com/agdinis/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:44:29Z",
+      "updatedAt": "2026-11-13T17:57:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "agdinis-manus-ai-f4f1dee8.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "alphafalcongamer-creator/ai--manus",
+      "name": "ai--manus",
+      "owner": "alphafalcongamer-creator",
+      "url": "https://github.com/alphafalcongamer-creator/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:46:57Z",
+      "updatedAt": "2026-11-13T17:57:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "alphafalcongamer-creator-ai-manus-528d4667.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "alphafalcongamer-creator/manus--ai",
+      "name": "manus--ai",
+      "owner": "alphafalcongamer-creator",
+      "url": "https://github.com/alphafalcongamer-creator/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:47:15Z",
+      "updatedAt": "2026-11-13T17:57:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "alphafalcongamer-creator-manus-ai-ada2de4f.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "bk9cj/manus--ai",
+      "name": "manus--ai",
+      "owner": "bk9cj",
+      "url": "https://github.com/bk9cj/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:46:00Z",
+      "updatedAt": "2026-11-13T17:57:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bk9cj-manus-ai-36fb5c93.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "buttheadtrenton16-byte/ai--manus",
+      "name": "ai--manus",
+      "owner": "buttheadtrenton16-byte",
+      "url": "https://github.com/buttheadtrenton16-byte/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:45:35Z",
+      "updatedAt": "2026-11-13T17:57:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "buttheadtrenton16-byte-ai-manus-0d53ced0.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "datrify/ai--manus",
+      "name": "ai--manus",
+      "owner": "datrify",
+      "url": "https://github.com/datrify/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:50:27Z",
+      "updatedAt": "2026-11-13T17:57:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "datrify-ai-manus-785905f5.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "eagrafki-byte/ai--manus",
+      "name": "ai--manus",
+      "owner": "eagrafki-byte",
+      "url": "https://github.com/eagrafki-byte/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:46:15Z",
+      "updatedAt": "2026-11-13T17:57:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "eagrafki-byte-ai-manus-931bd1a4.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "elpepe200086/ai--manus",
+      "name": "ai--manus",
+      "owner": "elpepe200086",
+      "url": "https://github.com/elpepe200086/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:44:46Z",
+      "updatedAt": "2026-11-13T17:57:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "elpepe200086-ai-manus-9ab9955c.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "elpepe200086/manus--ai",
+      "name": "manus--ai",
+      "owner": "elpepe200086",
+      "url": "https://github.com/elpepe200086/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:45:05Z",
+      "updatedAt": "2026-11-13T17:57:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "elpepe200086-manus-ai-bb3fb48d.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "jose-perez-thecloudgroup/ai--manus",
+      "name": "ai--manus",
+      "owner": "jose-perez-thecloudgroup",
+      "url": "https://github.com/jose-perez-thecloudgroup/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:46:06Z",
+      "updatedAt": "2026-11-13T17:57:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jose-perez-thecloudgroup-ai-manus-c4f24584.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "lebronstx-collab/manus--ai",
+      "name": "manus--ai",
+      "owner": "lebronstx-collab",
+      "url": "https://github.com/lebronstx-collab/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:47:47Z",
+      "updatedAt": "2026-11-13T17:57:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lebronstx-collab-manus-ai-c72976a5.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "lloweryfn-rgb/manus--ai",
+      "name": "manus--ai",
+      "owner": "lloweryfn-rgb",
+      "url": "https://github.com/lloweryfn-rgb/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:46:39Z",
+      "updatedAt": "2026-11-13T17:57:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lloweryfn-rgb-manus-ai-9e0c36f4.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "melchersimon011-bot/ai--manus",
+      "name": "ai--manus",
+      "owner": "melchersimon011-bot",
+      "url": "https://github.com/melchersimon011-bot/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:46:20Z",
+      "updatedAt": "2026-11-13T17:57:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "melchersimon011-bot-ai-manus-5c442838.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "mtn-imran-khan/ai--manus",
+      "name": "ai--manus",
+      "owner": "mtn-imran-khan",
+      "url": "https://github.com/mtn-imran-khan/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:47:36Z",
+      "updatedAt": "2026-11-13T17:57:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mtn-imran-khan-ai-manus-878c7754.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "Obasideyvid/ai--manus",
+      "name": "ai--manus",
+      "owner": "Obasideyvid",
+      "url": "https://github.com/Obasideyvid/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:44:04Z",
+      "updatedAt": "2026-11-13T17:57:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "obasideyvid-ai-manus-9111ada4.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "PrathmeshYa/ai--manus",
+      "name": "ai--manus",
+      "owner": "PrathmeshYa",
+      "url": "https://github.com/PrathmeshYa/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:50:38Z",
+      "updatedAt": "2026-11-13T17:57:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "prathmeshya-ai-manus-b87f8c21.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "rambotronado112-sudo/ai--manus",
+      "name": "ai--manus",
+      "owner": "rambotronado112-sudo",
+      "url": "https://github.com/rambotronado112-sudo/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:46:53Z",
+      "updatedAt": "2026-11-13T17:57:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rambotronado112-sudo-ai-manus-dfe80f63.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "rambotronado112-sudo/manus--ai",
+      "name": "manus--ai",
+      "owner": "rambotronado112-sudo",
+      "url": "https://github.com/rambotronado112-sudo/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:47:12Z",
+      "updatedAt": "2026-11-13T17:57:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rambotronado112-sudo-manus-ai-00165c8d.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "SandyPandyMandy/manus--ai",
+      "name": "manus--ai",
+      "owner": "SandyPandyMandy",
+      "url": "https://github.com/SandyPandyMandy/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:45:11Z",
+      "updatedAt": "2026-11-13T17:57:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sandypandymandy-manus-ai-d75728c0.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "sidvvkk/ai--manus",
+      "name": "ai--manus",
+      "owner": "sidvvkk",
+      "url": "https://github.com/sidvvkk/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:44:48Z",
+      "updatedAt": "2026-11-13T17:57:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sidvvkk-ai-manus-376a12dc.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "sidvvkk/manus--ai",
+      "name": "manus--ai",
+      "owner": "sidvvkk",
+      "url": "https://github.com/sidvvkk/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:45:09Z",
+      "updatedAt": "2026-11-13T17:57:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sidvvkk-manus-ai-6ca6b2fe.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "sofixleon-arch/manus--ai",
+      "name": "manus--ai",
+      "owner": "sofixleon-arch",
+      "url": "https://github.com/sofixleon-arch/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:45:53Z",
+      "updatedAt": "2026-11-13T17:57:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sofixleon-arch-manus-ai-94f1c815.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "stancaedy10-glitch/ai--manus",
+      "name": "ai--manus",
+      "owner": "stancaedy10-glitch",
+      "url": "https://github.com/stancaedy10-glitch/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:47:05Z",
+      "updatedAt": "2026-11-13T17:57:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "stancaedy10-glitch-ai-manus-99a32d3d.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "stancaedy10-glitch/manus--ai",
+      "name": "manus--ai",
+      "owner": "stancaedy10-glitch",
+      "url": "https://github.com/stancaedy10-glitch/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:47:22Z",
+      "updatedAt": "2026-11-13T17:57:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "stancaedy10-glitch-manus-ai-5fc13b9e.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "tonikriegers14-hue/ai--manus",
+      "name": "ai--manus",
+      "owner": "tonikriegers14-hue",
+      "url": "https://github.com/tonikriegers14-hue/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:47:41Z",
+      "updatedAt": "2026-11-13T17:57:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tonikriegers14-hue-ai-manus-9fb29a2b.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "tyesheh/ai--manus",
+      "name": "ai--manus",
+      "owner": "tyesheh",
+      "url": "https://github.com/tyesheh/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:48:14Z",
+      "updatedAt": "2026-11-13T17:57:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tyesheh-ai-manus-d26d8bec.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "tyesheh/manus--ai",
+      "name": "manus--ai",
+      "owner": "tyesheh",
+      "url": "https://github.com/tyesheh/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:48:30Z",
+      "updatedAt": "2026-11-13T17:57:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tyesheh-manus-ai-e5bf49e8.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "XTwiNSaraX/ai--manus",
+      "name": "ai--manus",
+      "owner": "XTwiNSaraX",
+      "url": "https://github.com/XTwiNSaraX/ai--manus",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:45:01Z",
+      "updatedAt": "2026-11-13T17:57:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "xtwinsarax-ai-manus-765a60a7.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "XTwiNSaraX/manus--ai",
+      "name": "manus--ai",
+      "owner": "XTwiNSaraX",
+      "url": "https://github.com/XTwiNSaraX/manus--ai",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 146,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-13T14:45:22Z",
+      "updatedAt": "2026-11-13T17:57:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "xtwinsarax-manus-ai-741bb912.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python",
+      "stars": 498833,
+      "forks": 55873,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "createdAt": "2016-03-20T23:49:42Z",
+      "updatedAt": "2026-11-14T05:57:34Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "public-apis-public-apis-0e8ac9c0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 371974,
+      "forks": 46333,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-14T05:47:58Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "vinta/awesome-python",
+      "name": "awesome-python",
+      "owner": "vinta",
+      "url": "https://github.com/vinta/awesome-python",
+      "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
+      "language": "Python",
+      "stars": 334612,
+      "forks": 29100,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ],
+      "createdAt": "2014-06-27T21:00:06Z",
+      "updatedAt": "2026-11-14T06:06:05Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "vinta-awesome-python-6aca4665.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 323941,
+      "forks": 27188,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-14T06:05:31Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "deepseek-ai/deepseek-harness",
+      "name": "deepseek-harness",
+      "owner": "deepseek-ai",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "language": "TypeScript",
+      "stars": 280677,
+      "forks": 34628,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "createdAt": "2026-08-13T11:56:32Z",
+      "updatedAt": "2026-11-14T06:08:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "deepseek-ai-deepseek-harness-a4daff9d.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 255610,
+      "forks": 67310,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-14T05:20:30Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 55,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252593,
+      "forks": 52676,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-14T06:07:17Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "TheAlgorithms/Python",
+      "name": "Python",
+      "owner": "TheAlgorithms",
+      "url": "https://github.com/TheAlgorithms/Python",
+      "description": "All Algorithms implemented in Python",
+      "language": "Python",
+      "stars": 226093,
+      "forks": 51326,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "algorithm-competitions",
+        "algorithms-implemented",
+        "algos",
+        "community-driven",
+        "education",
+        "hacktoberfest",
+        "interview"
+      ],
+      "createdAt": "2016-07-16T09:44:01Z",
+      "updatedAt": "2026-11-14T05:42:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "thealgorithms-python-f9242d7a.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Supercharge your AI agents with data from the web and beyond. Building the library for superintelligence. 🔥",
+      "language": "TypeScript",
+      "stars": 201622,
+      "forks": 10576,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-crawler",
+        "ai-scraping",
+        "ai-search",
+        "crawler",
+        "data-extraction",
+        "html-to-markdown"
+      ],
+      "createdAt": "2024-04-15T21:02:29Z",
+      "updatedAt": "2026-11-14T06:02:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 58,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 193809,
+      "forks": 13740,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-14T06:06:13Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "farion1231/cc-switch",
+      "name": "cc-switch",
+      "owner": "farion1231",
+      "url": "https://github.com/farion1231/cc-switch",
+      "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io",
+      "language": "Rust",
+      "stars": 154284,
+      "forks": 10119,
+      "starsToday": 0,
+      "topics": [
+        "ai-tools",
+        "claude-code",
+        "codex",
+        "deepseek-harness",
+        "desktop-app",
+        "grok",
+        "grokbuild",
+        "hermes"
+      ],
+      "createdAt": "2025-08-04T14:16:16Z",
+      "updatedAt": "2026-11-14T06:01:03Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "farion1231-cc-switch-c8240f91.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "harry0703/MoneyPrinterTurbo",
+      "name": "MoneyPrinterTurbo",
+      "owner": "harry0703",
+      "url": "https://github.com/harry0703/MoneyPrinterTurbo",
+      "description": "利用 AI 大模型和自动化工作流，根据主题或关键词一键生成高清短视频。Generate HD short videos from a topic or keyword with an automated AI workflow.",
+      "language": "Python",
+      "stars": 143362,
+      "forks": 22949,
+      "starsToday": 0,
+      "topics": [
+        "ai-video-generator",
+        "content-creation",
+        "ffmpeg",
+        "instagram-reels",
+        "llm",
+        "python",
+        "short-video",
+        "subtitles"
+      ],
+      "createdAt": "2024-03-11T02:57:34Z",
+      "updatedAt": "2026-11-14T06:02:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "harry0703-moneyprinterturbo-0f5a8272.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

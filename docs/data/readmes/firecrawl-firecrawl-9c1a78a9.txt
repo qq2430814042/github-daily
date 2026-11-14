@@ -35,6 +35,7 @@ More
 | Map | Discover all URLs on a website instantly |
 | Batch Scrape | Scrape thousands of URLs asynchronously |
 | Monitor | Get notified when content on a website changes |
+| Alexandria | Give your agent 400+ data providers and specialized indexes (via Firecrawl Cloud) |
 
 Quick Start
 
@@ -218,6 +219,14 @@ curl -s https://firecrawl.dev/agent-onboarding/SKILL.md
 
 See the [Skill + CLI documentation for all available commands. For MCP, see firecrawl-mcp-server.
 
+Alexandria
+
+Alexandria gives your agents 400+ data providers and specialized indexes through one API, MCP, or CLI. Agents discover a tool alongside their web results, inspect its inputs and pricing, then run it to get structured data. Discovery is free; execution uses the credits listed on the tool.
+
+Install it in your agent from alexandria.firecrawl.dev, or see the Alexandria documentation for CLI, MCP, SDK, and API usage.
+
+Note: Alexandria runs on Firecrawl Cloud. Firecrawl Local can use it once you sign in with firecrawl-local login. The self-hosted server does not include it.
+
 More Endpoints
 
 Agent
@@ -265,30 +274,5 @@ result = app.agent(
 print(result.data)
 {
   "founders": [
-    {"name": "Eric Ciarla", "role": "Co-founder"},
-    {"name": "Nicolas Camara", "role": "Co-founder"},
-    {"name": "Caleb Peffer", "role": "Co-founder"}
-  ]
-}
-
-Agent with URLs (Optional)
-
-Focus the agent on specific pages:
-result = app.agent(
-    urls=["https://docs.firecrawl.dev", "https://firecrawl.dev/pricing"],
-    prompt="Compare the features and pricing information"
-)
-
-Effort Selection
-
-Set how much reasoning the agent spends on the task:
-
-| Effort | Best For |
-|--------|----------|
-| low | Simple lookups on one site |
-| medium | Multi-step tasks on a few pages |
-| high | Deep research, complex navigation, critical data |
-
-result = app.agent(
 
 …（内容已截断）

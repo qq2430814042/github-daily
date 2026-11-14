@@ -49,6 +49,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | IPstack MCP | IP geolocation, threat and timezone lookups for agents | apiKey | stdio, HTTP | Cursor · Glama |
 | Agent Nexus | Find agent-callable APIs, MCP servers and CLIs by capability, with live health and uptime data | No | HTTP | Glama |
 | BlockVectra | Blockchain RPC and indexed data; keyless documentation and chain discovery | apiKey | stdio, HTTP | – |
+| CartViral | AI product videos, photos and ads for e-commerce from a product link or photos | OAuth | HTTP | Glama · MCP Registry |
 | Catastro GPS | Cadastral parcels in 29 European countries by reference, point or address | apiKey | stdio | Glama |
 | Company Facts | New US businesses from state registers, company registers, tech stack and hiring, each sourced | No | HTTP | MCP Registry · Glama |
 | ContextFetch | Web search and any page as Markdown pruned to the query, plus research, crawl and site maps | No | stdio, HTTP | Glama |
@@ -58,10 +59,12 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | crawlbrulee | EU-native web scraping for AI agents & developers: turn any page into markdown, screenshots and more | apiKey | stdio | npm · MCP Registry · Glama |
 | Data and APIs | Search, read and call 125+ data APIs: sanctions, barcodes, IP intelligence, companies, holidays | apiKey | HTTP | – |
 | Edgepedia | Search and read Edgepedia, a free and growing encyclopedia with citations | No | HTTP | Glama |
+| EU Nordic Open Data | EU tenders, sanctions, VIES VAT, ECB FX, ENISA EUVD, GLEIF LEI and Finnish/Norwegian registries | No | stdio | npm · MCP Registry · Glama |
 | Filesystem | Read/write local files | No | stdio | – |
 | FindIP MCP | IP lookups and FindIP Shield risky-event checks for agents | apiKey | stdio | Glama · MCP Registry |
 | Git | Read, search, diff, and commit to local Git repositories | No | stdio | – |
 | GitHub | Repos, issues, PRs, code search | OAuth | stdio, HTTP | Glama |
+| HEY Research Lab | Is a Robinhood Chain token or project still being built? Ships and contracts, each with its source | No | stdio, HTTP | Anthropic · Glama · MCP Registry · npm |
 | iGaming Tools | Online slot specs, RTP variants, providers, regulators, news, jobs and search demand | No | HTTP | – |
 | IndiaInsurances | Indian insurance policy wordings read clause by clause, with verbatim quotes | No | HTTP | – |
 | InjectScan | Scores text, web pages and MCP tool definitions for prompt injection with deterministic rules | No | stdio, HTTP | Glama · MCP Registry |
@@ -72,6 +75,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | OpenApps | Rankings, launches and featuring across the ChatGPT, Claude, Cursor and Grok Bot app stores | No | HTTP | – |
 | Openpath | US job listings and local businesses for agents, with apply links and owner inboxes | No | HTTP | Anthropic · Glama · Smithery |
 | OpenSwissData | Swiss customs tariff (TARES), FINMA register and warnings, NOGA/NACE/ISIC code crosswalks | No | stdio, HTTP | Glama |
+| OptimistFi | Perps funding, open interest, liquidations, Hyperliquid positions, prop firms and US stock theses | No | HTTP | Glama · MCP Registry |
 | PourWire | New US liquor license filings: restaurants and bars about to open in 7 metros, plus metro stats | No | HTTP | Glama · MCP Registry |
 | RealMarket | Live gold, forex, crypto and stock prices, indicators and market analysis for AI agents | apiKey | HTTP | – |
 | Refnusa | Indonesian holidays, wages, regions, postal codes, tax, food prices and NIK/plate checks (31 tools) | No | HTTP | Glama |
@@ -81,12 +85,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | ShapelessAI | Write, schedule and publish social posts, carousels and short video to 8 networks | OAuth | stdio, HTTP | Cursor · Glama |
 | Signal Lab | Catalog of free market, macro, weather, news and OSINT data sources, with terms links and skills | No | HTTP | Glama · MCP Registry |
 | Silicon Floor | Who owns AI and chip stocks, what insiders sell, how fast they grow: answers from SEC filings | No | HTTP | Anthropic · Glama |
+| Site-Shot | Website screenshots for AI agents: full-page, country proxies, ad and cookie removal; free plan | apiKey | stdio | Glama · MCP Registry |
 | SkyAccess | Search 5,000+ live empty leg flights, get charter price estimates and booking links | No | HTTP | Cursor · Glama |
-| TextKit | Send and receive SMS, verify phones and buy US and Canada numbers from an agent | OAuth | HTTP | MCP Registry |
-| Toolalize | Unit and live currency conversion tools for agents, no key needed | No | HTTP | Glama · MCP Registry |
-| Transcript Dock | Transcripts of YouTube, TikTok and Instagram videos in one tool call, with SRT and VTT exports | OAuth | stdio, HTTP | Glama · npm |
-| Twinbay | Spin up stateful API twins, read request logs and grade agent runs | OAuth | HTTP | – |
-| US Recalls | Check US recalls from 9 agencies by UPC, model, NDC, lot or VIN; 4 read-only tools | apiKey | HTTP | Glama · MCP Registry |
-| Vitalityfit | Cheapest offers for health products from German online shops and pharmacies by name, PZN or EAN | No | HTTP | MCP Registry |
 
 …（内容已截断）
