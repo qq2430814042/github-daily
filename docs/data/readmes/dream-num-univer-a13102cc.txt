@@ -1,0 +1,162 @@
+Build your own AI office with Univer Office SDK.
+
+Start with open-source Sheets and Docs, then connect your own application or agent.
+
+🚀 Quick start · 📚 Documentation · ⚖️ Feature comparison · 🌐 Website · 🎮 Showcase · 🔧 API Reference · 📝 Blog
+
+English · Français · Deutsch · Español · 简体中文 · 繁體中文 · 日本語 · 한국어
+
+Table of contents
+
+- 💡 What is Univer?
+  - Open-source capabilities
+- 🚀 Build on the open-source foundation
+  - Quick start: an open-source spreadsheet editor
+  - Connect your application to editable content
+- 🏗️ Explore the open-source architecture
+  - Give custom features clear boundaries
+  - Compose cross-feature edits and undo/redo
+  - Connect applications and agents through Facade APIs and events
+- 🧩 Extend your application with Univer Office SDK
+  - Scope and licensing
+- 🌐 Application patterns and ecosystem
+  - Univer Workspace: an Office SDK reference application
+  - CLI, agent integrations, and developer skills
+- 📚 Documentation and contributing
+  - Runtime compatibility
+- 💬 Community
+- 🔒 Security
+- ❤️ Sponsors
+- 📄 License
+
+💡 What is Univer?
+
+Univer is an Office SDK for building Office applications inside your own product. It provides Office editing, calculation, collaboration, and file processing for people and existing agents, using your data and permissions. The product family covers spreadsheets, documents, presentations, relational tables, canvases, and PDFs.
+
+Univer Office SDK has three parts:
+
+- Web SDK is the foundation: content models, editing, rendering, formula calculation, and Facade APIs (application-facing APIs). Compose its plugins into an embedded editor or your own Office application, and reuse the content models, commands, and calculation for Headless processing without an interactive editor.
+- Server SDK adds backend services for real-time collaboration, edit history, and Office file import and export.
+- AI SDK connects Office capabilities to existing agents and workflows, with content tools, execution, and review integrations.
+
+This repository provides the Web SDK's core architecture and engine implementations under Apache-2.0: content models and snapshot formats, plugin and dependency management, the command system, formula and rendering engines, Facade APIs, UI foundation, and Sheets and Docs editing capabilities. Commercial Web SDK plugins, Server SDK, and commercial AI SDK extensions are distributed and licensed separately.
+
+Agents can use the same open-source APIs; your application supplies the model and tool orchestration. The quotation example demonstrates editing, calculation, and saving without an AI SDK dependency.
+
+Open-source capabilities
+
+Area
+Selected capabilities
+
+Sheets · Editing and layout
+Cell styles, merged cells, in-cell rich text, freeze panes, floating images, and undo/redo.
+
+Sheets · Data and calculation
+Formulas, defined names, filtering, sorting, data validation, conditional formatting, hyperlinks, comments, and find and replace.
+
+Docs
+Rich-text editing, paragraph formatting, lists, hyperlinks, comments, and drawing integration.
+
+Features are composed through plugins and presets; the quick start uses only the Sheets Core preset. Images use the corresponding drawing plugins. See the feature comparison for detailed open-source and commercial coverage.
+
+The demos below showcase the wider Univer Office SDK, including commercial capabilities. They show more than the default open-source setup; see open source and commercial extensions for scope.
+
+🚀 Build on the open-source foundation
+
+Your goal
+Use the open-source foundation
+Start here
+
+Embed Sheets or Docs
+Add an editable Office surface to your application or agent product, and connect your data through Facade APIs.
+Quick start
+
+Process content without an editor
+Reuse content plugins, models, commands, and calculation in Node.js for editing, snapshots, and automated tasks.
+Headless guide
+
+Develop custom features or editors
+Reuse the engines, UI components, plugin boundaries, dependency injection, and command/undo systems. Follow existing features to extend Sheets and Docs or develop your own editors.
+Open-source architecture
+
+Coordinate edits and undo/redo across features. Inserting a row inside a filter range changes both the base content and the filter range; undo needs to restore both. Each feature supplies its own changes and undo data, and the command composes their execution and history. The architecture walkthrough explains how to extend these editing workflows.
+
+Quick start: an open-source spreadsheet editor
+
+In a browser application using a bundler such as Vite:
+
+pnpm add @univerjs/presets @univerjs/preset-sheets-core
+
+Create the container before initializing Univer:
+
+import { UniverSheetsCorePreset } from '@univerjs/preset-sheets-core'
+import UniverPresetSheetsCoreEnUS from '@univerjs/preset-sheets-core/locales/en-US'
+import { createUniver, LocaleType, mergeLocales } from '@univerjs/presets'
+import '@univerjs/preset-sheets-core/lib/index.css'
+
+const { univerAPI } = createUniver({
+  locale: LocaleType.EN_US,
+  locales: {
+    LocaleType.EN_US]: mergeLocales(UniverPresetSheetsCoreEnUS),
+  },
+  presets: [
+    UniverSheetsCorePreset({
+      container: 'app',
+    }),
+  ],
+})
+
+univerAPI.createWorkbook({})
+
+Your page now contains a spreadsheet editor. Use the returned univerAPI to work with its content. This example uses open-source packages and needs no commercial Univer license or Server SDK.
+
+For component frameworks, retain the univer instance returned by createUniver and call univer.dispose() when the component unmounts. See the [lifecycle guide.
+
+Presets compose plugins and register their Facade APIs. For manual control, see the Plugin Mode example below. The installation guide covers both modes, peer dependencies, and framework integrations.
+
+Keep coordinated @univerjs/* packages on the same version. Commercial packages must use the matching release line; independently released packages such as icons follow their declared compatibility. See the API Stability Policy.
+
+Connect your application to editable content
+
+Facade APIs are the application-facing interface to workbooks, worksheets, and ranges. Continue from the quick start to populate a quotation, update a quantity from application code, and read the recalculated total:
+
+// Wait for formula controllers before editing a newly created workbook.
+await new Promise((resolve) => {
+  if (univerAPI.getCurrentLifecycleStage() >= univerAPI.Enum.LifecycleStages.Steady) {
+    resolve()
+    return
+  }
+  const listener = univerAPI.addEvent(univerAPI.Event.LifeCycleChanged, ({ stage }) => {
+    if (stage === univerAPI.Enum.LifecycleStages.Steady) {
+      listener.dispose()
+      resolve()
+    }
+  })
+})
+
+const workbook = univerAPI.getActiveWorkbook()!
+const sheet = workbook.getActiveSheet()
+
+sheet.getRange('A1:D4').setValues(
+  ['Item', 'Quantity', 'Unit price', 'Amount'],
+  ['Seats', 2, 25, '=B2*C2'],
+  ['Support', 1, 100, '=B3*C3'],
+  ['Total', '', '', '=SUM(D2:D3)'],
+])
+
+// An application control or agent can make the same edit.
+sheet.getRange('B2').setValue(4)
+
+univerAPI.getFormula().onCalculationResultApplied().then(() => {
+  console.log(sheet.getRange('D4').getValue()) // 200
+  localStorage.setItem('quotation', JSON.stringify(workbook.save()))
+}).catch(console.error)
+
+The editor and your application operate on the same workbook; formula changes are recalculated automatically. workbook.save() returns a JSON snapshot containing the workbook and its registered plugin data. Your application owns persistence; this example uses browser storage. On a later page load, after initialization, restore the snapshot instead of creating a blank workbook:
+
+const saved = localStorage.getItem('quotation')
+if (saved) {
+  univerAPI.createWorkbook(JSON.parse(saved))
+}
+
+…（内容已截断）

@@ -1,0 +1,173 @@
+New: Caveman Code. Free.
+
+The most efficient coding agent. Same model, same work, smaller bill.
+
+21% cheaper
+than Codex
+Terminal-Bench 4, per solved task
+14% cheaper
+than Claude Code
+Terminal-Bench 4, 97 vs 83 solved
+76% cheaper
+than Claude Code
+full workday, 4 connected apps
+
+Same model on both sides: GPT-6.1 Sol against Codex, Opus 5.5 against Claude Code. Our own runs, November 2026, at list prices. How we measured
+
+Every coding agent in one window. Free on the subscriptions and keys you already have.
+
+Download Caveman Code for Mac · Read the launch post
+
+why many token when few do trick
+
+Caveman make your AI agent say less and read less. Code stay exact. Brain still big.
+
+33.2% fewer
+input tokens, whole sessions
+54 Claude Code runs, 18 of 18 answers right
+54% cheaper
+with Auto, same score
+85 coding tasks vs Opus 5.5 at xhigh, interim
+397 → 76
+tokens for one test run
+Blocks vs | tail -20
+1.4 to 2.4× cheaper
+with caveman-style output
+Adobe Research, eight models
+
+Cited by Adobe Research · A/B tested by JetBrains · Remade for Elasticsearch on Elasticsearch Labs
+
+#1 on Hacker News · #1 on GitHub Trending · "No way this actually works." ThePrimeagen
+
+Install · Six rocks · Proof · Say less · Read less · Auto · Blocks · Commands · Caveman Cloud
+
+Normal agent · 63 tokens
+ Caveman agent · 20 tokens
+
+The reason your React component is re-rendering is likely because you're creating a new object reference on each render cycle. When you pass an inline object as a prop, React's shallow comparison sees it as a different object every time, which triggers a re-render. I'd recommend using useMemo to memoize the object.
+
+New object ref each render, so React re-renders. Wrap the prop in useMemo.
+
+Same fix. 63 token become 20. Brain still big.
+
+Pick your club:
+
+| Skill | Same answer | Tokens |
+|---|---|---:|
+| /caveman | New object ref each render, so React re-renders. Wrap the prop in useMemo. | 20 |
+| /ultracave | Inline object prop, new ref, re-render. useMemo. | 14 |
+| /megacave | 新參照致重繪。useMemo。 | 13 |
+
+Token counts: tiktoken o200k.
+
+Install
+
+npx @caveman-ai/cli@latest
+
+One command. Mac, Linux, Windows. Caveman find your agents and your logins, show what it change. Press Enter. Done. Needs Node.js 22.13+.
+
+After that, plain claude stays caveman'd. So do Codex, Gemini CLI, OpenCode, and 30+ more. It runs on your machine, with your keys and your Claude Pro/Max login. One rock. That it.
+
+Had caveman before 4.0? Say @latest, or the old copy on your machine wins. Already set up? caveman setup opens the screen again. Only want shorter answers? Get just the skill.
+
+Six rocks, one install
+
+New in 4.0: caveman is six parts. All on after install. Each has its own switch.
+
+| Rock | What it does | Measured |
+|---|---|---|
+| Say less | Agent answers short. Code stays exact | 63 → 20 tokens, same fix |
+| Read less | Logs, JSON, CSV, test output shrink before the model reads them | 33.2% fewer input tokens per session |
+| Auto · new | Picks the model and the effort for each ask | 54% cheaper than Opus at xhigh, same score |
+| Blocks · new | Code mode: agent keeps the scripts it writes and runs them again | 397 → 76 tokens for one test run |
+| Waste fixes | Finds where your tokens go and fixes it. New: keeps the prompt cache warm while you pause | Not measured yet |
+| Browse | Web pages come back compressed | 129.8× smaller page |
+
+caveman status shows what is on. caveman off browse turns one off. Only Auto needs an account, and it is free. 4.0.0 release notes
+
+Proof
+
+Outside labs first. Ours come with each rock below. Nothing rounded up. Red rows stay red.
+
+| Who | Setup | Result |
+|---|---|---|
+| Adobe Research, CAVEWOMAN paper (cites this repo) | Caveman-style output, eight models, five datasets | Cost cut 1.4 to 2.4× per model, up to 3× |
+| Elastic, Elasticsearch Labs | Caveman mode remade for Elasticsearch, eight live MCP scenarios | 63.6% fewer response tokens. "Zero information loss." |
+| JetBrains | 86 real coding tasks, paired A/B | No measurable quality loss (p = 0.82). 8.5% fewer output tokens |
+
+Two findings shaped caveman. Adobe: cavemanning your prompt makes answers worse, so caveman never touches your prompt. JetBrains: agent sessions are mostly code and tool calls, which the voice leaves alone. So caveman grew rocks that shrink what the agent reads and what it runs on.
+
+Say less: the caveman voice
+
+A voice, not broken grammar. Every reply follows the same structure.
+
+| Rule | What it means |
+|---|---|
+| Answer first | thing reason]. [next step]. No greeting, no "let me", no recap |
+| One idea per sentence | Built on [ASD-STE100, the controlled English of aircraft maintenance manuals: 20 words max, active voice, one term per thing |
+| Meaning never dropped | Articles can go. not, never, no, only never go. Numbers and units stay exact |
+| Payload verbatim | Code, commands, paths, and error messages untouched, character for character |
+| No theater | No "me think". No chatter between tool calls. If caveman phrasing isn't shorter, plain wins |
+| Knows when to stop | Security warnings, irreversible actions, and confused users get full sentences. Then grunt resumes |
+| Your prompts stay yours | Never rewritten. Research say that backfire |
+
+Ten dev questions on claude-opus-5-5:
+
+| Instruction | Output tokens |
+|---|---:|
+| None | 6,983 |
+| Answer concisely. | 4,334 |
+| /caveman | 4,119 |
+| /ultracave | 2,693 |
+
+"Be concise" is the real baseline; new models already know it. On top of it, /caveman cuts 3% more at the median and /ultracave 35% more. Measured on the 3.1.0 rules, not yet re-run. The rules cost about 1,160 tokens of input, and if you pay per request (GitHub Copilot), shorter answers save nothing. Harness · Every case where caveman loses
+
+Only want this rock? The skill alone, no proxy:
+
+npx skills add JuliusBrussee/caveman -g
+
+Type /caveman ($caveman in Codex) if it doesn't start on its own. Say stop caveman to go back.
+
+Other ways in: Claude app and phone, Claude Code plugin, Gemini, every agent at once, Windows, uninstall
+
+Claude on the web, the phone app, or Cowork? No terminal. Add caveman to your Claude account once, in Customize > Plugins: steps. Not tested end to end yet.
+
+Claude Code plugin, auto-starts every interactive session, subagents too
+claude plugin marketplace add JuliusBrussee/caveman && claude plugin install caveman@caveman
+
+Gemini CLI
+gemini extensions install https://github.com/JuliusBrussee/caveman
+
+Every agent on your machine at once, plus the Claude Code statusline badge (Node.js 22.13+)
+curl -fsSL https://raw.githubusercontent.com/JuliusBrussee/caveman/v4.1.0/install.sh | bash
+
+Already inside Claude Code? Same rock, slash form. Type these where you talk to Claude:
+
+/plugin marketplace add JuliusBrussee/caveman
+/plugin install caveman@caveman
+
+Windows, PowerShell 5.1+:
+
+irm https://raw.githubusercontent.com/JuliusBrussee/caveman/v4.1.0/install.ps1 | iex
+
+On npm 12 or newer, new npm block git install. One-liners above handle it themselves from v3.2.0 on. Old one-liner pinned to v3.1.0 or older still fail there: use one above, or this:
+npx --allow-git=root -y github:JuliusBrussee/caveman#v4.1.0
+
+Changed your mind: npx -y github:JuliusBrussee/caveman -- --uninstall (on npm 12+, add --allow-git=root too)
+
+Only grabbed the skill? npx skills remove JuliusBrussee/caveman -g take it back out.
+
+Install broke? Open your agent in this repo and say "Read CLAUDE.md and INSTALL.md, install caveman for me." Agent fix own brain.
+
+Read less: 33.2% fewer input tokens
+
+The voice shrinks what the agent says. This shrinks what it reads. Same answers: 18 of 18 right.
+
+| File type | The file, through caveman | File saved | Whole Claude Code session, 3 runs | Session saved |
+|---|---:|---:|---:|---:|
+| CSV | 28,041 → 314 | 98.9% | 165,823 → 74,484 | 55.1% |
+| Logs | 22,810 → 348 | 98.5% | 148,807 → 74,068 | 50.2% |
+| YAML | 20,447 → 178 | 99.1% | 132,124 → 71,027 | 46.2% |
+| Test output | 18,806 → 203 | 98.9% | 150,377 → 108,514 | 27.8% |
+
+…（内容已截断）

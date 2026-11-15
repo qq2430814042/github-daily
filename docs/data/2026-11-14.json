@@ -1,0 +1,1606 @@
+{
+  "date": "2026-11-14",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-15T06:16:10.423Z",
+  "count": 60,
+  "newCount": 33,
+  "sources": {
+    "trending": 15,
+    "new": 33,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "GoogleChrome/modern-web-guidance-src",
+      "name": "modern-web-guidance-src",
+      "owner": "GoogleChrome",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "language": "TypeScript",
+      "stars": 6265,
+      "forks": 463,
+      "starsToday": 1231,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "googlechrome-modern-web-guidance-src-227260bf.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "alibaba/open-code-review",
+      "name": "open-code-review",
+      "owner": "alibaba",
+      "url": "https://github.com/alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "language": "Go",
+      "stars": 51558,
+      "forks": 3967,
+      "starsToday": 893,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "alibaba-open-code-review-33046d59.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "ChromeDevTools/chrome-devtools-mcp",
+      "name": "chrome-devtools-mcp",
+      "owner": "ChromeDevTools",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "description": "Chrome DevTools for coding agents",
+      "language": "TypeScript",
+      "stars": 56448,
+      "forks": 4777,
+      "starsToday": 664,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "chromedevtools-chrome-devtools-mcp-2a9517b9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "we-promise/sure",
+      "name": "sure",
+      "owner": "we-promise",
+      "url": "https://github.com/we-promise/sure",
+      "description": "The personal finance app for everyone (by everyone)",
+      "language": "Ruby",
+      "stars": 15419,
+      "forks": 1309,
+      "starsToday": 659,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "we-promise-sure-128f00ec.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "tradermonty/claude-trading-skills",
+      "name": "claude-trading-skills",
+      "owner": "tradermonty",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "language": "Python",
+      "stars": 4969,
+      "forks": 1039,
+      "starsToday": 553,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tradermonty-claude-trading-skills-e3f63850.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "dream-num/univer",
+      "name": "univer",
+      "owner": "dream-num",
+      "url": "https://github.com/dream-num/univer",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "language": "TypeScript",
+      "stars": 25077,
+      "forks": 2294,
+      "starsToday": 495,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "dream-num-univer-a13102cc.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "louislam/uptime-kuma",
+      "name": "uptime-kuma",
+      "owner": "louislam",
+      "url": "https://github.com/louislam/uptime-kuma",
+      "description": "A fancy self-hosted monitoring tool",
+      "language": "JavaScript",
+      "stars": 94314,
+      "forks": 8835,
+      "starsToday": 430,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "louislam-uptime-kuma-ace6bac5.txt"
+    },
+    {
+      "rank": 8,
+      "fullName": "Likely7/Veyra-NRVideo",
+      "name": "Veyra-NRVideo",
+      "owner": "Likely7",
+      "url": "https://github.com/Likely7/Veyra-NRVideo",
+      "description": "Bring PS5 GTA6 to 120FPS with DLSS 5. An advanced Windows video player and capture enhancement tool featuring real-time preview for videos, images, and capture card sources. Combine AI-powered Super Resolution, DLSS5 image enhancement, and Frame Generation to deliver a next-generation visual experie",
+      "language": "C++",
+      "stars": 2399,
+      "forks": 201,
+      "starsToday": 420,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "likely7-veyra-nrvideo-dfabdeb5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "backnotprop/plannotator",
+      "name": "plannotator",
+      "owner": "backnotprop",
+      "url": "https://github.com/backnotprop/plannotator",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+      "language": "TypeScript",
+      "stars": 11329,
+      "forks": 965,
+      "starsToday": 408,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "backnotprop-plannotator-5b00db19.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "martin-olivier/airgorah",
+      "name": "airgorah",
+      "owner": "martin-olivier",
+      "url": "https://github.com/martin-olivier/airgorah",
+      "description": "A WiFi security auditing software",
+      "language": "Rust",
+      "stars": 6009,
+      "forks": 1043,
+      "starsToday": 270,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "martin-olivier-airgorah-75d8d989.txt"
+    },
+    {
+      "rank": 11,
+      "fullName": "JuliusBrussee/caveman",
+      "name": "caveman",
+      "owner": "JuliusBrussee",
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "description": "🪨 why use many token when few token do trick. Viral skill + proxy for coding agents that cuts 65% of tokens by talking like a caveman.",
+      "language": "Go",
+      "stars": 120168,
+      "forks": 7006,
+      "starsToday": 227,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "juliusbrussee-caveman-e388ab9f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "QwenLM/qwen-code",
+      "name": "qwen-code",
+      "owner": "QwenLM",
+      "url": "https://github.com/QwenLM/qwen-code",
+      "description": "An open-source AI coding agent that lives in your terminal.",
+      "language": "TypeScript",
+      "stars": 30413,
+      "forks": 3523,
+      "starsToday": 64,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "qwenlm-qwen-code-221ba71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "ashhart/TensorFold",
+      "name": "TensorFold",
+      "owner": "ashhart",
+      "url": "https://github.com/ashhart/TensorFold",
+      "description": "LLM Inference Engine for Metal, CUDA and Vulkan.",
+      "language": "Zig",
+      "stars": 2198,
+      "forks": 516,
+      "starsToday": 37,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ashhart-tensorfold-c9768b12.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "Tencent/LoopForge",
+      "name": "LoopForge",
+      "owner": "Tencent",
+      "url": "https://github.com/Tencent/LoopForge",
+      "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+      "language": "Go",
+      "stars": 1004,
+      "forks": 231,
+      "starsToday": 33,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tencent-loopforge-6c94ff52.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "ag-ui-protocol/ag-ui",
+      "name": "ag-ui",
+      "owner": "ag-ui-protocol",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "language": "TypeScript",
+      "stars": 17449,
+      "forks": 1713,
+      "starsToday": 9,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ag-ui-protocol-ag-ui-d4035501.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "Topkiflare74/ai--manus2.0",
+      "name": "ai--manus2.0",
+      "owner": "Topkiflare74",
+      "url": "https://github.com/Topkiflare74/ai--manus2.0",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 678,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-14T19:15:24Z",
+      "updatedAt": "2026-11-15T02:16:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "topkiflare74-ai-manus2-0-4577f867.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "WarriorRemember/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "WarriorRemember",
+      "url": "https://github.com/WarriorRemember/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 673,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:25:25Z",
+      "updatedAt": "2026-11-15T04:50:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "warriorremember-iptv-player-2-0-1a3b0144.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "trackboatwrightplan/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "trackboatwrightplan",
+      "url": "https://github.com/trackboatwrightplan/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 672,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:16:41Z",
+      "updatedAt": "2026-11-14T23:32:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "trackboatwrightplan-github-copilot-app-ab801988.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "TrapAccountant/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "TrapAccountant",
+      "url": "https://github.com/TrapAccountant/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 670,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:16:47Z",
+      "updatedAt": "2026-11-14T23:32:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "trapaccountant-github-copilot-app-4912e088.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "tornadonovicewhirl40/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "tornadonovicewhirl40",
+      "url": "https://github.com/tornadonovicewhirl40/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 669,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:15:43Z",
+      "updatedAt": "2026-11-14T23:32:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tornadonovicewhirl40-iptv-player-2-0-6d957408.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "TurquoiseDetective/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "TurquoiseDetective",
+      "url": "https://github.com/TurquoiseDetective/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 669,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:25:17Z",
+      "updatedAt": "2026-11-14T23:32:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "turquoisedetective-iptv-player-2-0-14cad7a2.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "WattBeetleLearn/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "WattBeetleLearn",
+      "url": "https://github.com/WattBeetleLearn/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 667,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:25:28Z",
+      "updatedAt": "2026-11-14T23:32:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wattbeetlelearn-iptv-player-2-0-ac741bd1.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "topapothecarycanal/ai--manus2.0",
+      "name": "ai--manus2.0",
+      "owner": "topapothecarycanal",
+      "url": "https://github.com/topapothecarycanal/ai--manus2.0",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 666,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-14T19:15:24Z",
+      "updatedAt": "2026-11-14T23:32:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "topapothecarycanal-ai-manus2-0-0b08ce0d.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "trackersnailgrip/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "trackersnailgrip",
+      "url": "https://github.com/trackersnailgrip/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 666,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:16:41Z",
+      "updatedAt": "2026-11-14T23:32:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "trackersnailgrip-github-copilot-app-8bf2cfce.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "Trapbraneedle/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "Trapbraneedle",
+      "url": "https://github.com/Trapbraneedle/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Go",
+      "stars": 666,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:25:19Z",
+      "updatedAt": "2026-11-14T23:32:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "trapbraneedle-iptv-player-2-0-d2565268.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "Titanlushrink/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "Titanlushrink",
+      "url": "https://github.com/Titanlushrink/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 665,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:25:19Z",
+      "updatedAt": "2026-11-14T23:32:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "titanlushrink-iptv-player-2-0-4805bdd2.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "toppatronweave/ai--manus2.0",
+      "name": "ai--manus2.0",
+      "owner": "toppatronweave",
+      "url": "https://github.com/toppatronweave/ai--manus2.0",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 665,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-14T19:15:25Z",
+      "updatedAt": "2026-11-14T23:32:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "toppatronweave-ai-manus2-0-4061c21b.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "toppatronweave/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "toppatronweave",
+      "url": "https://github.com/toppatronweave/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 665,
+      "forks": 309,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:25:20Z",
+      "updatedAt": "2026-11-14T23:32:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "toppatronweave-github-copilot-app-118edc0a.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "Torusdrasocket/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "Torusdrasocket",
+      "url": "https://github.com/Torusdrasocket/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 665,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:15:48Z",
+      "updatedAt": "2026-11-14T23:32:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "torusdrasocket-iptv-player-2-0-da7a17b0.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "TowerStalker/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "TowerStalker",
+      "url": "https://github.com/TowerStalker/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 665,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:15:52Z",
+      "updatedAt": "2026-11-14T23:32:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "towerstalker-iptv-player-2-0-56b60aa8.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "TradesmanRecord/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "TradesmanRecord",
+      "url": "https://github.com/TradesmanRecord/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 665,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:16:41Z",
+      "updatedAt": "2026-11-14T23:32:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tradesmanrecord-github-copilot-app-44319440.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "TrapBladesmith/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "TrapBladesmith",
+      "url": "https://github.com/TrapBladesmith/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 664,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:16:50Z",
+      "updatedAt": "2026-11-14T23:32:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "trapbladesmith-github-copilot-app-2bee107f.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "TurkeyDesignate/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "TurkeyDesignate",
+      "url": "https://github.com/TurkeyDesignate/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 664,
+      "forks": 387,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:25:18Z",
+      "updatedAt": "2026-11-14T23:32:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "turkeydesignate-github-copilot-app-66fa587f.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "TurquoiseConsultant/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "TurquoiseConsultant",
+      "url": "https://github.com/TurquoiseConsultant/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 664,
+      "forks": 263,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:25:20Z",
+      "updatedAt": "2026-11-14T23:32:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "turquoiseconsultant-github-copilot-app-0e2ed213.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "Tealplesense/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "Tealplesense",
+      "url": "https://github.com/Tealplesense/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 663,
+      "forks": 327,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:25:19Z",
+      "updatedAt": "2026-11-14T23:32:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tealplesense-github-copilot-app-ddd2dfd9.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "topconstableinlet67/ai--manus2.0",
+      "name": "ai--manus2.0",
+      "owner": "topconstableinlet67",
+      "url": "https://github.com/topconstableinlet67/ai--manus2.0",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 663,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-14T19:15:24Z",
+      "updatedAt": "2026-11-14T23:32:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "topconstableinlet67-ai-manus2-0-fecad49d.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "Tornadovonmodify/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "Tornadovonmodify",
+      "url": "https://github.com/Tornadovonmodify/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 663,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:15:57Z",
+      "updatedAt": "2026-11-14T23:32:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tornadovonmodify-iptv-player-2-0-0c0cf900.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "WebBookkeeper/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "WebBookkeeper",
+      "url": "https://github.com/WebBookkeeper/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 663,
+      "forks": 317,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:25:26Z",
+      "updatedAt": "2026-11-14T23:32:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "webbookkeeper-github-copilot-app-d9a64647.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "topconstableinlet67/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "topconstableinlet67",
+      "url": "https://github.com/topconstableinlet67/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 661,
+      "forks": 335,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:25:19Z",
+      "updatedAt": "2026-11-14T23:32:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "topconstableinlet67-github-copilot-app-ade3326e.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "TorrentArrow/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "TorrentArrow",
+      "url": "https://github.com/TorrentArrow/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 661,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:15:46Z",
+      "updatedAt": "2026-11-14T23:32:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "torrentarrow-iptv-player-2-0-0cb9d66a.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "tremorbuffalospire/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "tremorbuffalospire",
+      "url": "https://github.com/tremorbuffalospire/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 661,
+      "forks": 25,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:25:18Z",
+      "updatedAt": "2026-11-14T23:32:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tremorbuffalospire-iptv-player-2-0-9474bffe.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "unitsenseimonitor/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "unitsenseimonitor",
+      "url": "https://github.com/unitsenseimonitor/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 661,
+      "forks": 332,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:25:19Z",
+      "updatedAt": "2026-11-14T23:32:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "unitsenseimonitor-github-copilot-app-83ab2ed9.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "Topkiflare74/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "Topkiflare74",
+      "url": "https://github.com/Topkiflare74/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 660,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:25:17Z",
+      "updatedAt": "2026-11-14T23:32:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "topkiflare74-iptv-player-2-0-eba5bd97.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "Trapkrostride/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "Trapkrostride",
+      "url": "https://github.com/Trapkrostride/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 660,
+      "forks": 341,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:25:19Z",
+      "updatedAt": "2026-11-14T23:32:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "trapkrostride-github-copilot-app-b032f43f.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "TrueDefenderRouter/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "TrueDefenderRouter",
+      "url": "https://github.com/TrueDefenderRouter/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 660,
+      "forks": 323,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:25:20Z",
+      "updatedAt": "2026-11-14T23:32:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "truedefenderrouter-github-copilot-app-53cb9647.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "TurquoiseFarmer/IPTV_Player_2.0",
+      "name": "IPTV_Player_2.0",
+      "owner": "TurquoiseFarmer",
+      "url": "https://github.com/TurquoiseFarmer/IPTV_Player_2.0",
+      "description": "🎬 A powerful, intuitive IPTV streaming app supporting M3U playlists, EPG, and community lists. Available for Windows, macOS, Linux, Android & TV Boxes.",
+      "language": "Rust",
+      "stars": 660,
+      "forks": 17,
+      "starsToday": 0,
+      "topics": [
+        "dash",
+        "ip-tv",
+        "iptv",
+        "iptv-channels",
+        "iptv-m3u8",
+        "iptv-player",
+        "iptv-player-application",
+        "iptvtools"
+      ],
+      "createdAt": "2026-11-14T19:25:18Z",
+      "updatedAt": "2026-11-14T23:32:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "turquoisefarmer-iptv-player-2-0-a4b2c639.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "TarantulaCorrect/GitHub-Copilot-app",
+      "name": "GitHub-Copilot-app",
+      "owner": "TarantulaCorrect",
+      "url": "https://github.com/TarantulaCorrect/GitHub-Copilot-app",
+      "description": "The GitHub Copilot app is an agent-native desktop experience for finding, running, steering, and landing software work across your GitHub repositories.",
+      "language": "",
+      "stars": 659,
+      "forks": 339,
+      "starsToday": 0,
+      "topics": [
+        "adminlte",
+        "agent-skills",
+        "ai",
+        "awesome",
+        "chatgpt",
+        "copilot",
+        "github-copilot",
+        "hacktoberfest"
+      ],
+      "createdAt": "2026-11-14T19:25:19Z",
+      "updatedAt": "2026-11-14T23:32:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tarantulacorrect-github-copilot-app-cc305aee.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "tornadonovicewhirl40/ai--manus2.0",
+      "name": "ai--manus2.0",
+      "owner": "tornadonovicewhirl40",
+      "url": "https://github.com/tornadonovicewhirl40/ai--manus2.0",
+      "description": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+      "language": "",
+      "stars": 659,
+      "forks": 521,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-agents",
+        "ai-sdk",
+        "anthropic",
+        "chatbot",
+        "function-calling",
+        "gemeni",
+        "generative-ai"
+      ],
+      "createdAt": "2026-11-14T19:25:17Z",
+      "updatedAt": "2026-11-14T23:32:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tornadonovicewhirl40-ai-manus2-0-1df95abd.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "freeCodeCamp/freeCodeCamp",
+      "name": "freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript",
+      "stars": 459145,
+      "forks": 47472,
+      "starsToday": 0,
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "createdAt": "2014-12-24T17:49:19Z",
+      "updatedAt": "2026-11-15T06:06:31Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "freecodecamp-freecodecamp-5d095e95.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "vinta/awesome-python",
+      "name": "awesome-python",
+      "owner": "vinta",
+      "url": "https://github.com/vinta/awesome-python",
+      "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
+      "language": "Python",
+      "stars": 334827,
+      "forks": 29107,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ],
+      "createdAt": "2014-06-27T21:00:06Z",
+      "updatedAt": "2026-11-15T06:08:49Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "vinta-awesome-python-6aca4665.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 51,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 255721,
+      "forks": 67395,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-15T06:03:36Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 52,
+      "fullName": "yt-dlp/yt-dlp",
+      "name": "yt-dlp",
+      "owner": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "language": "Python",
+      "stars": 207903,
+      "forks": 18330,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "createdAt": "2020-10-26T04:22:55Z",
+      "updatedAt": "2026-11-15T06:02:21Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "yt-dlp-yt-dlp-54c7d6d8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "anthropics/skills",
+      "name": "skills",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 194713,
+      "forks": 22905,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills"
+      ],
+      "createdAt": "2025-09-22T15:53:31Z",
+      "updatedAt": "2026-11-15T06:15:53Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-skills-4cb2062a.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 193972,
+      "forks": 13746,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-15T06:02:21Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 186998,
+      "forks": 19088,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-11-15T06:11:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "CyC2018/CS-Notes",
+      "name": "CS-Notes",
+      "owner": "CyC2018",
+      "url": "https://github.com/CyC2018/CS-Notes",
+      "description": ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计",
+      "language": "JavaScript",
+      "stars": 186515,
+      "forks": 50630,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "computer-science",
+        "cpp",
+        "interview",
+        "java",
+        "leetcode",
+        "python",
+        "system-design"
+      ],
+      "createdAt": "2018-02-13T14:56:24Z",
+      "updatedAt": "2026-11-15T06:06:59Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "cyc2018-cs-notes-9b48ee3d.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "flutter/flutter",
+      "name": "flutter",
+      "owner": "flutter",
+      "url": "https://github.com/flutter/flutter",
+      "description": "Flutter makes it easy and fast to build beautiful apps for mobile and beyond",
+      "language": "Dart",
+      "stars": 181279,
+      "forks": 32168,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "app-framework",
+        "cross-platform",
+        "dart",
+        "dart-platform",
+        "desktop",
+        "flutter",
+        "flutter-package"
+      ],
+      "createdAt": "2015-03-06T22:54:58Z",
+      "updatedAt": "2026-11-15T05:08:25Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "flutter-flutter-a9183a2c.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "github/gitignore",
+      "name": "gitignore",
+      "owner": "github",
+      "url": "https://github.com/github/gitignore",
+      "description": "A collection of useful .gitignore templates",
+      "language": "",
+      "stars": 176339,
+      "forks": 82015,
+      "starsToday": 0,
+      "topics": [
+        "git",
+        "gitignore"
+      ],
+      "createdAt": "2010-11-08T20:17:14Z",
+      "updatedAt": "2026-11-15T04:10:32Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-gitignore-07244a5f.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "MDX",
+      "stars": 175063,
+      "forks": 79356,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-15T05:55:04Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Svelte",
+      "stars": 158681,
+      "forks": 23074,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "createdAt": "2023-10-06T22:08:27Z",
+      "updatedAt": "2026-11-15T06:10:15Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "open-webui-open-webui-3b98bdb5.txt"
+    }
+  ]
+}

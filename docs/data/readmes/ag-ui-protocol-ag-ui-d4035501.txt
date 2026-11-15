@@ -1,0 +1,175 @@
+AG-UI: The Agent-User Interaction Protocol
+
+AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications.
+Built for simplicity and flexibility, it enables seamless integration between AI agents, real time user context, and user interfaces.
+
+ Join our Discord →  &nbsp;&nbsp;&nbsp;  Read the Docs →  &nbsp;&nbsp;&nbsp;  Go to the AG-UI Dojo →  &nbsp;&nbsp;&nbsp;  Follow us →
+
+🚀 Getting Started
+Create a new AG-UI application in seconds:
+npx create-ag-ui-app my-agent-app
+
+ Useful Links:
+
+- The AG-UI Dojo
+- Build AG-UI-powered applications(Quickstart)
+- Build new AG-UI framework integrations (Quickstart)
+- Book a call to discuss an AG-UI integration with a new framework
+- Join the Discord Community
+
+What is AG-UI?
+
+AG-UI is an open, lightweight, event-based protocol for agent-human interaction, designed for simplicity & flexibility:
+
+- During agent executions, agent backends emit events compatible with one of AG-UI's ~16 standard event types
+- Agent backends can accept one of a few simple AG-UI compatible inputs as arguments
+
+AG-UI includes a flexible middleware layer that ensures compatibility across diverse environments:
+
+- Works with any event transport (SSE, WebSockets, webhooks, etc.)
+- Allows for loose event format matching, enabling broad agent and app interoperability
+
+It also ships with a reference HTTP implementation and default connector to help teams get started fast.
+
+Learn more about the specs →
+
+Why AG-UI?
+
+AG-UI was developed based on real-world requirements and practical experience building in-app agent interactions.
+
+Where does AGUI fit in the agentic protocol stack?
+AG-UI is complementary to the other 2 top agentic protocols
+- MCP gives agents tools
+- A2A allows agents to communicate with other agents
+- AG-UI brings agents into user-facing applications
+
+🚀 Features
+
+- 💬 Real-time agentic chat with streaming
+- 🔄 Bi-directional state synchronization
+- 🧩 Generative UI and structured messages
+- 🧠 Real-time context enrichment
+- 🛠️ Frontend tool integration
+- 🧑‍💻 Human-in-the-loop collaboration
+
+🛠 Supported Integrations
+
+AG-UI was born from CopilotKit's initial partnership with LangChain and CrewAI - and brings the incredibly popular agent-user-interactivity infrastructure to the wider agentic ecosystem.
+
+1st party = the platforms that have AG‑UI built in and provide documentation for guidance.
+
+Frameworks
+
+| Framework                                                          | Status                   | AG-UI Resources                                                                 |
+| ------------------------------------------------------------------ | ------------------------ | -------------------------------------------------------------------------------- |
+| Built-in Agent                                                | ✅ Supported             | ➡️ Docs  |
+
+🤝 Partnerships
+| Framework | Status | AG-UI Resources |
+| ---------- | ------- | ---------------- |
+| LangChain | ✅ Supported | ➡️ Docs 🎮 Demos |
+| CrewAI | ✅ Supported | ➡️ Docs 🎮 Demos |
+
+🧩 1st Party
+| Framework | Status | AG-UI Resources |
+| ---------- | ------- | ---------------- |
+| Microsoft Agent Framework | ✅ Supported | ➡️ Docs 🎮 Demos |
+| Google ADK | ✅ Supported | ➡️ Docs 🎮 Demos |
+| Google Antigravity | ✅ Supported | ➡️ Docs 🎮 Demos |
+| AWS Strands Agents | ✅ Supported | ➡️ Docs 🎮 Demos |
+| Mastra | ✅ Supported | ➡️ Docs 🎮 Demos |
+| Pydantic AI | ✅ Supported | ➡️ Docs 🎮 Demos |
+| Agno | ✅ Supported | ➡️ Docs 🎮 Demos |
+| LlamaIndex | ✅ Supported | ➡️ Docs 🎮 Demos |
+| AG2 | ✅ Supported | ➡️ Docs  🎮 Demos |
+| AWS Bedrock Agents | 🛠️ In Progress | – |
+
+🌐 Community
+| Framework | Status | AG-UI Resources |
+| ---------- | ------- | ---------------- |
+| Claude Agent SDK | ✅ Supported | 🎮 Demos |
+| Claude Managed Agents SDK | ✅ Supported | 🎮 Demos |
+| Langroid | ✅ Supported | 🎮 Demos |
+| Omnara | ✅ Supported | ➡️ Docs 🎮 Demos |
+| OpenAI Agents SDK | 🛠️ In Progress | – |
+| Cloudflare Agents | ✅ Supported | ➡️ Integration |
+
+Agent Interaction Protocols
+
+| Protocols | Status | AG-UI Resources | Integrations |
+| ---------- | ------- | ---------------- | ------------- |
+| A2A | ✅ Supported | ➡️ Docs | Partnership |
+
+Infrastructure / Deployment
+| Platform | Status | AG-UI Resources | Integrations |
+| ---------- | ------- | ---------------- | ------------- |
+| Amazon Bedrock AgentCore | ✅ Supported | ➡️ Docs | 1st Party |
+
+Specification (standard)
+| Framework | Status | AG-UI Resources |
+| ---------- | ------- | ---------------- |
+| Oracle Agent Spec | ✅ Supported | ➡️ Docs 🎮 Demos |
+
+Generative UI
+| Framework | Status | AG-UI Resources |
+| ---------- | ------- | ---------------- |
+| MCP Apps | ✅ Supported | ➡️ Docs 🎮 Demos |
+
+SDKs
+
+| SDK | Status | AG-UI Resources | Integrations |
+| --- | ------- | ---------------- | ------------- |
+| Kotlin | ✅ Supported | ➡️ Getting Started | Community |
+| Golang | ✅ Supported | ➡️ Getting Started | Community |
+| Dart | ✅ Supported | ➡️ Getting Started | Community |
+| Java | ✅ Supported | ➡️ Getting Started | Community |
+| Rust | ✅ Supported | ➡️ Getting Started | Community |
+| Ruby | ✅ Supported | ➡️ Getting Started | Community |
+| C++ | ✅ Supported | ➡️ GitHub Source | Community |
+| .NET | ✅ Supported | ➡️ Getting Started | Community |
+| Nim | 🛠️ In Progress | ➡️ PR | Community |
+| Flowise | 🛠️ In Progress | ➡️ GitHub Source | Community |
+| Langflow | 🛠️ In Progress | ➡️ GitHub Source | Community |
+
+Clients
+
+| Client | Status | AG-UI Resources | Integrations |
+| --- | ------- | ---------------- | ------------- |
+| CopilotKit | ✅ Supported | ➡️ Getting Started | 1st Party |
+| Terminal + Agent | ✅ Supported | ➡️ Getting Started | Community |
+| Chat platforms (Slack, Microsoft Teams) | ✅ Supported | ➡️ Channels SDK 🎮 OpenTag example | 1st Party |
+| React Native | ✅ Supported | ➡️ Example | 1st Party |
+| OpenBot | ✅ Supported | ➡️ Getting Started 🎮 Source | 1st Party |
+
+View all supported integrations →
+
+Examples
+Hello World App
+
+Video:
+
+https://github.com/user-attachments/assets/18c03330-1ebc-4863-b2b8-cc6c3a4c7bae
+
+https://agui-demo.vercel.app/
+
+The AG-UI Dojo (Building-Blocks Viewer)
+The AG-UI Dojo demonstrates AG-UI's core building blocks through simple, focused examples—each just 50-200 lines of code.
+
+View the source code for the Dojo and all framework integrations here.
+
+https://github.com/user-attachments/assets/c298eea8-3f39-4a94-b968-7712429b0c49
+
+🙋🏽‍♂️ Contributing to AG-UI
+
+Check out the Contributing guide
+
+- Biweekly AG-UI Working Group
+  📅 Follow the CopilotKit Luma Events Calendar
+
+Roadmap
+
+Check out the AG-UI Roadmap to see what's being built and where you can jump in.
+
+📄 License
+
+AG-UI is open source software licensed as MIT.
