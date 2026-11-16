@@ -29,24 +29,19 @@ Review documents, plans, and agent messages
 
 Annotate plans, specs, messages, html, then send the feedback to your agent.
 
-Demo: Plan review with Pi
-
 Code Review
 
 Review local changes or remote PRs. Comment on diffs, suggest code. Your comments go back to the agent. Works with Git, GitButler, Jujutsu (jj), Perforce (p4), GitHub, and GitLab.
 
-  AI built in: ask AI about anything you're reviewing,
-or launch AI reviews that post comments to the diff.
-
-Annotate HTML Artifacts
-
 Plannotator Inbox
+
+  Watch the demo · More on the Inbox · Docs
 
 The Plannotator Inbox is one local window where your agents leave you messages, questions, files, and guided reviews while they keep working. Answer a question with a click, annotate a file, and press Send when you can. Nothing holds an agent session open while you do, and your reply goes back to the session that asked.
 
 plannotator inbox
 
-Claude Code, Pi, and OpenCode connect through Plannotator's plugins, and your replies arrive as their next turn. Any other agent reaches it over MCP with plannotator inbox mcp, and plannotator inbox --help is the guide an agent reads. Watch the demo · More on the Inbox · Docs
+Claude Code, Pi, and OpenCode connect through Plannotator's plugins, and your replies arrive as their next turn. Any other agent reaches it over MCP with plannotator inbox mcp, and plannotator inbox --help is the guide an agent reads.
 
 Herdr Annotate: Plannotator in the Terminal
 
@@ -57,6 +52,8 @@ Herdr Annotate brings Plannotator-style review to the terminal: annotate termina
 herdr plugin install plannotator/herdr-annotate
 
 Prefer it standalone? Plannotator TUI powers the document review and runs without Herdr: brew install plannotator/tap/plannotator-tui.
+
+Annotate HTML Artifacts
 
 Commands
 
@@ -92,40 +89,46 @@ plannotator sessions                   # List active Plannotator sessions
 plannotator sessions --open 1          # Reopen a session in the browser
 plannotator archive                    # Browse saved plan decisions read-only
 
-Privacy and network behavior
+AI built in
 
-Plannotator does not collect usage telemetry or analytics. Plans, diffs, annotations, drafts, history, and configuration stay local by default.
+Ask AI about anything you're reviewing, or launch AI reviews that post comments to the diff.
 
-Each plan review, annotate, archive, share-portal, and code-review app surface checks GitHub for the latest Plannotator release when it loads. This sends no plan or review content and gives the Plannotator project owner no usage analytics, although GitHub receives an ordinary request. There is currently no opt-out setting for the release check. Local Git code review can also query the configured origin with git ls-remote to detect the default branch and a stale baseline; it does not send the local diff. That remote query runs when the review opens, when the page loads its diff, when you switch the diff type or base (including the "Diff out of date &middot; Refresh" button), and when you press Fetch &mdash; never on a timer, so an idle review page makes no network calls. Turn it off entirely with plannotator review --no-git-remote-check, PLANNOTATOR_GIT_REMOTE_CHECK=0, or { "gitRemoteCheck": false } in ~/.plannotator/config.json; the compare target then comes from local refs only and the "behind GitHub" banner never appears.
+Sharing
 
-Content leaves the local workflow only when a network feature needs it:
+Send a plan as a link. A teammate annotates it, and you import their feedback for your agent.
 
-- URL annotation fetches the requested site, through Jina Reader by default for public pages or directly when Jina is disabled or unavailable.
-- GitHub and GitLab review uses your authenticated CLI and Git remote to retrieve PR or MR data.
-- Ask AI and review agents send the selected question and relevant plan, document, repository, or diff context to your configured provider. When Ask AI is answered by the agent session that opened Plannotator ("Ask this session"), the question goes to that session instead.
-- Sharing sends the complete link to whoever or whatever service you use to deliver it. Encrypted short links upload ciphertext to the paste service.
-- Workspaces is a separate hosted product, so the open source app's local-storage model does not apply to content placed there.
-
-The privacy policy documents these boundaries and the hosted website and waitlist data.
-
-Link sharing
-
-Open source asynchronous link sharing remains available for compatibility but is moving to deprecated support. Workspaces is the primary direction for team sharing. No removal date has been announced.
-
-  Legacy link-sharing demo: room.plannotator.ai
-
-Share a plan with a teammate and they can annotate it themselves. Import their feedback and send it straight back to your agent.
-
-Small markdown shares are compressed into the URL fragment. The fragment is not included in the browser's request to the share portal, but it is not encrypted. Anyone or any messaging service with the complete link can read the shared content. The portal host still receives ordinary request metadata.
-
-Large markdown and raw HTML shares use a short-link service. The share payload is encrypted with AES-256-GCM before upload, the server stores only ciphertext, and the key is kept in the URL fragment rather than sent in the paste request. Anyone with the complete link can decrypt it. Hosted pastes expire after 7 days.
-
-Same model as PrivateBin. The paste service is self-hostable.
-
-Sharing can be disabled entirely with PLANNOTATOR_SHARE=disabled.
-
-Workspaces is the primary path for hosted team collaboration.
+Small shares live in the link itself. Large ones are encrypted before upload and expire after 7 days. Anyone with the full link can read it. Turn sharing off with PLANNOTATOR_SHARE=disabled. How sharing works
 
 Install
+
+One installer covers almost every agent. It installs the plannotator binary, auto-detects your installed agents, and configures hooks, skills, and slash commands for each:
+
+macOS / Linux / WSL
+curl -fsSL https://plannotator.ai/install.sh | bash
+
+Windows PowerShell
+irm https://plannotator.ai/install.ps1 | iex
+
+The installer downloads the binary from GitHub Releases. A full install can also contact GitHub for release resolution and agent files, Ataraxy-Labs/sem for the optional sem sidecar, and npm for Pi, selected extra skills, or the managed agent-terminal runtime. Pinning --version skips only GitHub API release resolution, not the release download. See the privacy policy for the complete network boundaries.
+
+Want just the binary and nothing else? Pass --minimal (or export PLANNOTATOR_MINIMAL=1) to install only the plannotator binary to ~/.local/bin, skipping every skill, hook, slash command, and per-agent config:
+
+curl -fsSL https://plannotator.ai/install.sh | bash -s -- --minimal
+
+Then finish the step for your agent:
+
+| Agent | After the installer | Details |
+|---|---|---|
+| Amp | Copy plannotator.ts into ~/.config/amp/plugins/, then plugins: reload. Workflows live in the command palette. | README |
+| Claude Code | /plugin marketplace add backnotprop/plannotator, then /plugin install plannotator@plannotator. Restart Claude Code. | README |
+| Codex | Nothing. Plan review is enabled automatically via Codex's experimental Stop hook (macOS/Linux/WSL; on native Windows, Codex hooks are experimental and the installer prints manual setup steps). $plannotator-review, $plannotator-annotate, and $plannotator-last skills included. | README |
+| Copilot CLI | /plugin marketplace add backnotprop/plannotator, then /plugin install plannotator-copilot@plannotator. Restart. Plan review activates in plan mode (Shift+Tab). | README |
+| DeepSeek Harness | Add @plannotator/dsh on DSH's Plugins page, or run dsh plugin --profile  add @plannotator/dsh. Plan review opens on exit_plan_mode. The plugin adds /plannotator-review, /plannotator-annotate and /plannotator-last, which open without blocking the session. | README |
+| Droid | droid plugin marketplace add https://github.com/backnotprop/plannotator, then droid plugin install plannotator@plannotator. Commands only, no plan interception yet. | README |
+| Gemini CLI | Nothing. The hook, policy, and slash commands are configured automatically. Requires Gemini CLI 0.36.0+. | README |
+| Kiro CLI | Nothing. Skills and an example agent are installed automatically. Try kiro-cli chat --agent plannotator. | README |
+| OpenCode | Add "plugin": "@plannotator/opencode@latest"] to opencode.json. Restart OpenCode. | [README |
+| Pi | Skip the installer. Just pi install npm:@plannotator/pi-extension. Start Pi with --plan, or toggle with /plannotator-plan-mode. | README |
+| T3 Code | For Claude threads in T3: run plannotator t3 --help and follow its two steps (sign in to T3 once, add the --t3 MCP entry). Your Inbox replies then arrive in the thread as new turns. | README |
 
 …（内容已截断）

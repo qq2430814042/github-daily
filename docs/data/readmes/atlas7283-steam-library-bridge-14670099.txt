@@ -1,0 +1,168 @@
+Steam Library Bridge is a free, open-source Windows desktop app that brings your PC games, emulator collections, and games from other storefronts into your Steam library. Enjoy a more unified gaming experience with automatically discovered games, custom artwork, detailed game pages, achievement notifications, and playtime tracking — without using command-line tools.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release files:
+   - Steam-Library-Bridge.exe — Main desktop application.
+   - libvlc.dll — Required media playback library.
+3. Create a folder on your computer for the application.
+4. Place both downloaded files inside the same folder.
+5. Double-click Steam-Library-Bridge.exe to launch the editor.
+
+✨ Features
+
+- 🎮 One Unified Steam Library — Bring PC games, emulator titles, and games from Epic Games, GOG, EA, Ubisoft, Xbox, Battle.net, Rockstar, Riot, and other platforms together in one convenient Steam collection.
+
+- 🔍 Automatic Game Discovery — Scan supported installation locations, identify installed games, and discover ROMs, ISOs, standalone PC games, and emulator collections without manually creating every Steam shortcut.
+
+- 🕹️ Emulator and Retro Gaming Support — Organize games from multiple console generations and emulator systems alongside your regular Windows PC games.
+
+- 📚 Rich Steam Game Pages — Give non-Steam games a more complete presentation with descriptions, game information, artwork, and achievement details.
+
+- 🏆 Steam Achievement Notifications — Display supported achievement unlocks through Steam-style notifications, helping your achievements feel integrated with your regular gaming activity.
+
+- 🖼️ Automatic Game Artwork — Find and display game covers, backgrounds, logos, and icons to create a visually consistent Steam library without manually collecting image files.
+
+- ⏱️ Playtime Tracking — Keep track of gaming sessions for supported titles and make non-Steam games feel more like part of your everyday Steam collection.
+
+- 🌍 Multilingual Interface — Use the application in English, Portuguese, Spanish, French, or German.
+
+- 🧹 Duplicate-Aware Organization — Identify games that are already represented in your library to help prevent unnecessary duplicate entries.
+
+- ✏️ Custom Game Information — Review and adjust game details and artwork to make your personal collection look the way you want.
+
+🖼️ Overview
+
+A better way to organize PC gaming
+
+Steam Library Bridge is designed for players who use more than one gaming platform.
+
+Instead of maintaining separate shortcuts and collections, you can bring supported titles into Steam and enjoy a more consistent browsing and launching experience.
+
+| Capability | What it provides |
+|---|---|
+| Game discovery | Finds supported installed games and emulator files |
+| Store integration | Organizes games from multiple PC storefronts |
+| Emulator support | Adds supported ROM and ISO collections |
+| Game presentation | Provides artwork and richer game information |
+| Achievements | Integrates supported achievement notifications |
+| Playtime | Tracks supported non-Steam gaming sessions |
+| Customization | Lets you review and edit game information |
+
+🚀 Usage
+
+Getting your gaming collection organized is straightforward.
+
+1. Open Steam Library Bridge — Start the Windows desktop application.
+2. Discover your games — Let the application examine supported game installations, folders, and emulator collections.
+3. Review detected titles — Check the discovered games and their available information.
+4. Customize your collection — Adjust artwork, descriptions, and other supported game details.
+5. Open Steam — Find your imported titles alongside your existing Steam games.
+6. Start playing — Launch supported games from your unified library and enjoy available tracking and notifications.
+
+🎮 Supported gaming platforms
+
+Steam Library Bridge is intended for players with diverse gaming collections.
+
+| Game source | Supported use cases |
+|---|---|
+| Steam | Existing Steam library |
+| Epic Games | Installed PC games |
+| GOG | DRM-free and launcher-managed games |
+| EA | Installed EA titles |
+| Ubisoft | Ubisoft Connect games |
+| Xbox / Microsoft Store | Supported installed PC games |
+| Battle.net | Installed launcher games |
+| Rockstar | Supported Rockstar PC titles |
+| Riot Games | Supported installed games |
+| Emulators | ROMs, ISOs, and retro game collections |
+| Standalone PC games | Independently installed Windows titles |
+
+Integration capabilities can vary depending on the storefront, emulator, game installation method, and available metadata.
+
+🏅 Achievements and game activity
+
+A unified library should feel unified while you play, not just when you browse.
+
+Steam Library Bridge brings supported achievement information and notifications into your Steam gaming experience. Where integrations permit, it also helps record playtime for games that are not purchased through Steam.
+
+🎨 Artwork and customization
+
+Make your collection easier to browse with automatically discovered game artwork.
+
+Supported artwork types include:
+
+- Game covers and library posters.
+- Background and hero artwork.
+- Game logos.
+- Application icons.
+- Game descriptions and metadata.
+
+You can also review and customize available information when automatic identification needs adjustment.
+
+💻 Why use Steam Library Bridge?
+
+Managing multiple gaming platforms can make your collection feel fragmented.
+
+Steam Library Bridge helps solve that problem by offering:
+
+- Less manual organization: Discover supported games instead of building every shortcut yourself.
+- One familiar interface: Browse games from different sources in Steam.
+- Better presentation: Give non-Steam games more complete pages and visual identities.
+- More gaming context: Access supported achievement information and playtime tracking.
+- More flexibility: Keep PC gaming, retro gaming, and multiple storefronts together.
+- No command-line workflow: Use a Windows desktop interface instead of manually configuring scripts.
+
+🪟 Windows Desktop Compatibility
+
+Steam Library Bridge is built for Windows gamers who want to manage their gaming collections through a graphical application.
+
+It is particularly useful for:
+
+- PC gamers with multiple game launchers.
+- Retro gaming and emulation enthusiasts.
+- Players maintaining large ROM and ISO collections.
+- Users who prefer Steam as their central game launcher.
+- Gamers who want consistent artwork and metadata.
+- Players who enjoy tracking achievements and playtime.
+
+🔒 Security and Privacy
+
+Your gaming library should remain under your control.
+
+Steam Library Bridge is developed as an open-source desktop application, making its implementation available for inspection.
+
+- Open-source code: Review the project and understand how it works.
+- No telemetry or tracking: The application is designed without hidden usage analytics or advertising trackers.
+- Local game discovery: Supported game installations and emulator folders can be examined locally.
+- Transparent development: Bugs and improvement requests can be discussed publicly.
+- Issue reporting: Report unexpected behavior, compatibility problems, or security concerns through GitHub Issues.
+
+For security-sensitive reports, avoid publishing personal information, account credentials, or private game-library data in public discussions.
+
+🌍 Languages
+
+The application supports five languages:
+
+- 🇺🇸 English
+- 🇧🇷 Portuguese (Brazil)
+- 🇪🇸 Spanish
+- 🇫🇷 French
+- 🇩🇪 German
+
+Language support includes the application interface and supported localized game information.
+
+🛠️ Troubleshooting and Support
+
+Having trouble discovering a game or displaying its artwork?
+
+Try these general troubleshooting steps:
+
+1. Confirm that the game is installed and accessible.
+2. Check that the relevant game or emulator directory is available.
+3. Review the detected title and its metadata.
+
+…（内容已截断）

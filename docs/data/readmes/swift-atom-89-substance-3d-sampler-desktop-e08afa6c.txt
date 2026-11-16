@@ -1,0 +1,124 @@
+🧊 Substance 3D Sampler 2026: Standalone Offline Build for Windows 11
+
+📦 Intro
+
+This repository publishes a standalone offline Windows x64 distribution intended for the Substance 3D Sampler workflow, packaged as a self-contained setup for Windows 10 and 11. The distribution bundles the required runtime components and material authoring assets so the workflow can be deployed without repeated retrieval steps. Nothing here is an upstream vendor release; it is a third-party deployment bundle maintained for offline convenience.
+
+The deployment audience is offline-first: air-gapped workstations, bandwidth-constrained labs, and environments where reproducible installs matter more than rolling updates. Because the build ships as a single versioned package, the same artifact can be validated once and deployed across many hosts without drift. This makes the standalone setup practical for teaching labs, content pipelines, and isolated render farms.
+
+The package supports material import and export across common texture formats and bundles the usual authoring components in one distribution surface. A single Substance 3D Sampler on Windows deployment covers both portable and installed modes, selected at launch.
+
+01 · ⬇️ Download
+
+02 · ✨ Features
+
+📦 Self-contained package
+
+Ships runtime, libraries and assets in one versioned archive for repeatable deployment.
+
+🛰️ Offline deployment
+
+Runs without a network connection after the initial retrieval step completes.
+
+🧱 Material authoring surface
+
+Bundled texture, scan and material workflows for the image-based authoring pipeline.
+
+🔐 SHA256 verification
+
+Each artifact ships with a published hash so hosts can be validated before rollout.
+
+💼 Portable mode
+
+Optional portable layout keeps configuration beside the binary instead of the profile.
+
+🌐 Multilingual resources
+
+Bundled language resources cover twelve or more locale packs at install time.
+
+03 · ⚙️ How it works
+
+The installer places application binaries under the per-user program directory and writes configuration into the user profile, so no system directories are touched during default deployment. Bundled runtime libraries and asset packs are unpacked into the same tree, keeping the distribution relocatable. A manifest file records the exact component versions shipped with the release.
+
+On first launch the build registers its shell integration entries under the current user hive, writes default preferences, and creates the working project folder. No background service or scheduled task is installed. If portable mode is selected, registration is skipped and configuration is read from a local file beside the executable.
+
+Day to day, the build operates fully offline: it reads and writes project files from the local disk and does not contact network endpoints. Because updates are a manual step, operators control exactly when a host moves to a newer versioned package. This keeps long-running pipelines stable across the deployment window.
+
+Integration is limited to Windows shell entries, optional file associations, and a standard uninstall registry key for the current user. Coexistence with other authoring tools is uncomplicated because the build uses a versioned install directory and does not overwrite shared libraries. Multiple side-by-side versions can be installed under separate directories.
+
+04 · 🧩 Compatibility
+
+The build targets Windows 10 and Windows 11 on the x64 architecture only. Both the current release channel and the long-term servicing channel of Windows 11 are supported, along with Windows 10 version 1809 and later. 32-bit targets, ARM hosts and older Windows releases are not supported.
+
+Installation scripts are plain PowerShell and run under PowerShell 5.1 and PowerShell 7 or later. Optional cmdlets used during install are limited to Get-FileHash, Expand-Archive and Start-Process. No external module gallery access is required.
+
+Hardware expectations are modest: the build runs on any recent x64 CPU and is comfortable on systems with typical amounts of memory and free disk space for material libraries. No GPU is strictly required for the installer or the basic authoring surface.
+
+Coexistence is supported: the build installs into a versioned directory and does not modify shared system components. Portable and installed modes can both exist on the same host without conflict. File association entries are user-scoped and can be reassigned at any time.
+
+05 · 🔧 Requirements
+
+| Component | Supported | Preferred |
+| --- | --- | --- |
+| OS | Windows 10 | Windows 11 |
+| Shell | PowerShell 5.1+ | PowerShell 7+ |
+| Network | Required to download | Stable broadband |
+| Privileges | Standard user access | Standard user access |
+
+06 · ❓ FAQ
+
+🔒 Is this standalone build safe to install on Windows?
+
+On first run, Windows SmartScreen may warn for unsigned installers. Click More info, then Run anyway to continue. The build is an offline setup file; keep your antivirus enabled as usual.
+
+🪟 Which Windows versions does the build support?
+
+The build runs on Windows 10 and Windows 11 on x64. Older Windows releases and 32-bit targets are not supported.
+
+📡 Can I use the build offline?
+
+Yes. After install, the build runs without a network connection. Only the initial retrieval step needs internet access.
+
+🔄 How do updates work?
+
+Updates ship as a newer versioned installer; running it over the existing install preserves your projects, templates, and preferences. No separate updater service is required.
+
+🗑️ How do I uninstall it on Windows?
+
+Open Settings, then Apps, then Installed apps, find the entry in the list, and choose Uninstall. Personal project files remain on disk unless you remove them manually.
+
+⚙️ What are the technical specifications?
+
+- System load: Light for the installer, moderate during material bake operations.
+- File formats: Common image, scan and material formats are supported on import and export.
+- Portable build: A portable variant is included and keeps configuration beside the binary.
+
+🔐 How do I verify the file with SHA256?
+
+Open PowerShell in the folder with the installer and run Get-FileHash setup.exe -Algorithm SHA256. Compare the output with the hash published alongside the release. If they do not match, delete the file and fetch it again.
+
+🛡️ Does the build require administrator rights?
+
+Standard user access is sufficient for the default install location. Administrator rights are only requested if you choose a system-wide install path during setup.
+
+📂 Where does the build place its files?
+
+By default, the installer uses the per-user program directory for the application and the user profile for configuration. No files are written to Windows system directories.
+
+📶 Does the build collect telemetry?
+
+This standalone build does not include telemetry or usage reporting. All processing happens locally on the Windows host.
+
+🐛 How do I report an issue?
+
+Open a new issue on this repository with Windows version, build hash, and the reproduction steps. Include any installer log lines from %TEMP% if available.
+
+❔ How is this build different from an upstream release?
+
+This repository publishes a standalone offline distribution packaged by this project. It is independent from any upstream vendor release and is not endorsed by or affiliated with any third-party trademark holder. See the Disclaimer section below for full details.
+
+07 · 📜 Disclaimer
+
+Independent distribution. This repository publishes a standalone offline build packaged by independent maintainers. It is not an official release from any third-party vendor and is not sponsored, endorsed by, or affiliated with any trademark holder whose product name may be referenced in this documentation.
+
+…（内容已截断）

@@ -110,7 +110,7 @@ Major Cloud Providers
     * Active Directory - 500,000 objects
     * Active Directory B2C - 50,000 monthly stored users
     * Azure DevOps - 5 active users, unlimited private Git repos
-    * Azure Pipelines - 10 free parallel jobs with unlimited minutes for open source for Linux, macOS, and Windows
+    * Azure Pipelines - 1 free job limited to 60 minutes per job, 1800 minutes per month for Linux, macOS, and Windows
     * Microsoft IoT Hub - 8,000 messages per day
     * Load Balancer - 750 hours, 15GB data processing and 5 rules (12mo)
     * Notification Hubs - 1 million push notifications

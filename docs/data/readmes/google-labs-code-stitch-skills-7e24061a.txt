@@ -1,0 +1,159 @@
+Stitch Design Skills
+
+A collection of agent skills and plugins for Google Stitch, following the Agent Skills open standard. Compatible with coding agents such as Codex, Antigravity, Gemini CLI, Claude Code, Cursor, and OpenCode (manual install).
+
+Quick Start
+
+1. Install Plugins (Recommended)
+The fastest way to set up the full Stitch plugin suite globally.
+
+Codex
+
+Add the Stitch Skills marketplace, then install the plugins you need.
+
+Via CLI (recommended)
+
+codex plugin marketplace add google-labs-code/stitch-skills --ref main \
+  --sparse .agents/plugins \
+  --sparse plugins/stitch-design \
+  --sparse plugins/stitch-build \
+  --sparse plugins/stitch-utilities
+
+The --sparse flags are optional — they limit the checkout to only the
+listed paths for a faster clone. Omit them to pull the entire repository.
+
+Via the Codex UI
+
+Navigate to Settings → Plugin Marketplaces → Add and fill in:
+
+| Field | Value |
+|---|---|
+| Source | https://github.com/google-labs-code/stitch-skills |
+| Git ref | main |
+| Sparse paths | (optional) .agents/plugins, plugins/stitch-design, plugins/stitch-build, plugins/stitch-utilities |
+
+Once the marketplace is registered, install any combination of:
+
+- stitch-design — design-focused skills
+- stitch-build — build and component skills
+- stitch-utilities — utility and helper skills
+
+Claude Code & Cursor
+
+Claude Code — installs into the current project
+npx plugins add google-labs-code/stitch-skills --scope project --target claude-code
+
+Cursor — installs into the current workspace
+npx plugins add google-labs-code/stitch-skills --scope workspace --target cursor
+
+OpenCode
+
+OpenCode does not use npx plugins / npx skills or the Codex/Claude marketplace layout.
+Install skills and the Stitch MCP server manually:
+
+1. Skills — copy the skill folders you need into a discoverable path:
+
+Project-local (recommended)
+mkdir -p .opencode/skills
+cp -R plugins/stitch-design/skills/generate-design .opencode/skills/generate-design
+repeat for other skills under plugins/*/skills/
+
+OpenCode also discovers .claude/skills/ and .agents/skills/ (see OpenCode skills docs).
+
+Naming: OpenCode requires skill name frontmatter to be lowercase kebab-case and match the directory name. Skills that use stitch::… names (or other non-kebab forms) need the name field and folder renamed before OpenCode will load them. Extra frontmatter such as allowed-tools is ignored.
+
+2. Stitch MCP — add a remote MCP entry in project opencode.json or ~/.config/opencode/opencode.json after completing the Stitch MCP setup:
+
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "stitch": {
+      "type": "remote",
+      "url": "YOUR_STITCH_MCP_URL",
+      "enabled": true
+    }
+  }
+}
+
+Replace YOUR_STITCH_MCP_URL with the endpoint from the Stitch MCP setup flow (credentials/env vars from that guide still apply).
+
+Tool names inside skill instructions may differ from OpenCode builtins (webfetch / bash instead of web_fetch / run_command). Prefer the OpenCode tool names when adapting a skill for OpenCode.
+
+2. Install Skills Selectively
+Choose only the specific skills you need.
+
+Stitch Design Skills often have inter-dependencies. If you choose to install skills selectively, ensure you include all required dependencies.
+
+npx skills add google-labs-code/stitch-skills
+
+You can run the following commands to see the help documentation for plugins and skills:
+
+npx plugins --help
+
+npx skills --help
+
+Prerequisites
+
+These skills require the Stitch MCP server to be configured and running in your agent's environment. Make sure you have followed the Stitch MCP Setup Instructions to register the server and set up appropriate environment variables and credentials.
+
+Docs navigation: If a link on stitch.withgoogle.com/docs redirects incorrectly, open the target path under the same host (e.g. https://stitch.withgoogle.com/docs/learn/device-types/).
+
+Available Plugins
+
+Design (stitch-design)
+
+Core design workflows for creating, managing, and optimizing designs within Stitch.
+
+| Skill | Description | Prompt Example |
+|---|---|---|
+| stitch::code-to-design | Convert frontend code (React, Vue, etc.) to a Stitch Design via HTML extraction + design system + upload | "Upload the frontend code at /path/to/dashboard into a Stitch project named 'Dashboard-Migration-2026'." |
+| stitch::generate-design | Generate new screens from text or images, edit existing screens, and create design variants | · "Make a browse tab for a mobile app for romance and date night ideas."
+· "Edit the login screen to add a 'Remember Me' checkbox and change the button color to blue."
+· "Generate 3 design variants of the home screen with dark mode and high-density layouts." |
+| stitch::manage-design-system | Manage design systems in Stitch — upload DESIGN.md and apply themes to screens | "Upload our design system from .stitch/DESIGN.md and apply it to all screens." |
+| stitch::extract-design-md | Extract a comprehensive DESIGN.md directly from frontend source code | "Scan /src and extract the design system into .stitch/DESIGN.md." |
+| stitch::extract-static-html | Extract self-contained static HTML from running web apps, inlining CSS and images | "Extract a static HTML snapshot of http://localhost:3000/profile." |
+| stitch::upload-to-stitch | Upload local assets (images, mockups, HTML) to a Stitch project | "Upload .stitch/landing_page.html to Stitch project projects/987654321." |
+
+Build (stitch-build)
+
+Code generation, framework integration, and asset compilation from Stitch designs.
+
+| Skill | Description | Prompt Example |
+|---|---|---|
+| stitch::react-components | Convert Stitch screens to React component systems with automated validation and design token consistency | · "Convert all screens in Stitch project projects/123 to React components."
+· "Sync the app to the last updates of the Stitch project 13039335308618232534." |
+| stitch::react-native | Convert Stitch HTML designs to production-ready React Native components with StyleSheet and platform-specific code | · "Convert the Stitch design to React Native components with proper theme and navigation."
+· "Sync the app to the last updates of the Stitch project 13039335308618232534." |
+| remotion | Generate walkthrough videos from Stitch projects using Remotion with smooth transitions and zooming | "Generate a walkthrough video of the Stitch project projects/456." |
+| shadcn-ui | Expert guidance for integrating and building applications with shadcn/ui components | "Set up shadcn/ui and build a data table with sorting and filtering." |
+| react-vite-dashboard | Convert Stitch screens to React + Vite dashboards with TanStack Query, DESIGN.md tokens, and Web3 read patterns | "Build a DeFi portfolio dashboard from this Stitch screen using our DESIGN.md." |
+
+Utilities (stitch-utilities)
+
+Supporting tools for enhancing prompts, generating design specs, and enforcing design standards.
+
+| Skill | Description | Prompt Example |
+|---|---|---|
+| design-md | Analyze Stitch projects and generate comprehensive DESIGN.md files in semantic language | "Analyze Stitch project projects/123 and generate a DESIGN.md." |
+| enhance-prompt | Transform vague UI ideas into polished, Stitch-optimized prompts with UI/UX keywords | "Enhance this prompt: 'make a settings page'." |
+| stitch-loop | Generate complete multi-page websites from a single prompt with automated validation | "Build a 5-page portfolio website with Stitch." |
+| taste-design | Generate DESIGN.md files enforcing premium, anti-generic UI standards | "Generate a premium DESIGN.md with strict typography and calibrated colors." |
+
+Repository Structure
+
+plugins/
+├── stitch-design/          — Core design workflow plugin
+│   ├── plugin.json
+│   └── skills/
+│       ├── code-to-design/
+│       ├── generate-design/
+│       ├── manage-design-system/
+│       ├── extract-design-md/
+│       ├── extract-static-html/
+│       └── upload-to-stitch/
+├── stitch-build/           — Code generation & build plugin
+│   ├── plugin.json
+│   └── skills/
+
+…（内容已截断）

@@ -1,0 +1,111 @@
+💀 Rob Run Cheat Client — REVENANT
+
+  SEE EVERYTHING. CONTROL EVERYTHING. FEAR NOTHING.
+
+  REVENANT is an advanced Rob Run client featuring customizable gameplay utilities, visual enhancements, player information and a modern modular interface.
+
+📖 About REVENANT
+
+REVENANT is an advanced client project designed for Rob Run.
+
+Built around customization and functionality, it brings together multiple feature categories in one organized environment.
+
+The client focuses on providing a modern interface, flexible configuration and a wide range of gameplay-related tools.
+
+⚡ Features & Modules
+
+🎯 Aim Assistance
+A dedicated category for configurable aiming-related tools.
+
+- Aim Assist — customizable aiming assistance.
+- Target Selection — configurable target selection preferences.
+- FOV Settings — adjustable field-of-view visualization.
+- Smoothness — customizable aiming smoothness.
+- Aim Visualization — visual indicators for configured aiming settings.
+
+👁️ ESP & Player Information
+A visual information category designed to organize player-related information.
+
+- Player ESP — player information visualization.
+- Box ESP — configurable player box display.
+- Name ESP — player name indicators.
+- Distance ESP — distance information.
+- Health ESP — health information display.
+- Skeleton ESP — skeletal visualization.
+- Team Check — team-based filtering options.
+
+🔍 Visuals
+Customize the way information is displayed.
+
+- Custom ESP Colors.
+- Adjustable Visual Elements.
+- Distance Indicators.
+- Player Information Labels.
+- Configurable Display Options.
+- Visual Settings Presets.
+
+🏃 Movement
+A category dedicated to movement-related customization.
+
+- Movement Settings.
+- Speed Configuration.
+- Jump Configuration.
+- Movement Indicators.
+- Customizable Movement Options.
+
+📡 Player Tracker
+Player information and tracking interface.
+
+- Player List.
+- Player Identification.
+- Distance Information.
+- Player Status Indicators.
+- Target Information Panel.
+
+⚙️ Miscellaneous
+Additional client configuration and convenience options.
+
+- Custom Keybinds.
+- Feature Toggles.
+- Configuration Profiles.
+- UI Customization.
+- Settings Management.
+- Notification System.
+
+🎨 Modern Interface
+
+Interface highlights:
+
+- Dark-themed design.
+- Organized feature categories.
+- Individual feature controls.
+- Customizable colors.
+- Adjustable interface scale.
+- Easy navigation.
+- Responsive settings layout.
+
+🛠️ Configuration System
+
+Customize the client according to your preferences.
+
+- Save and load configurations.
+- Customize individual modules.
+- Manage feature keybinds.
+- Adjust visual preferences.
+- Configure interface settings.
+
+🚀 Development Roadmap
+
+- [ ] Core client interface.
+- [ ] Visual module.
+- [ ] Player information system.
+- [ ] Configuration management.
+- [ ] Additional customization.
+- [ ] Stability improvements.
+- [ ] Future feature expansions.
+
+💀 REVENANT
+
+RISE AGAIN. DOMINATE THE GAME.
+
+Built with passion for the Rob Run community.

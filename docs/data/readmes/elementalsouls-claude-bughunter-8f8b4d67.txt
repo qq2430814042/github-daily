@@ -1,0 +1,132 @@
+claude-bughunter
+
+A self-contained Claude skill bundle for bug hunting and external red-team work · 83 skills · 15 slash commands · 681 disclosed-report patterns (433 now individually cited & auditable) across 24 core vulnerability classes · enterprise identity + infrastructure attack matrices · engagement-folder scaffolding · Burp MCP integration · battle-tested across authorized red-team and bug-hunting engagements, plus public training platforms (DVWA, OWASP Juice Shop, Hacker101, testphp.vulnweb.com).
+
+Built by Sachin Sharma — Bug Hunting & GenAI Security Research.
+
+  SPONSORED BY
+
+  &nbsp;&nbsp;&nbsp;&nbsp;
+What is this?
+
+claude-bughunter is a drop-in skill bundle for the Claude Code skills system. Install once and Claude Code stops being a chatbot and starts behaving like a senior bug-hunting researcher or red-team operator: it knows the techniques, the chain templates, the VRT mappings, the platform CVE chains, and the hygiene — and it stays in scope.
+
+Four layers stack:
+
+- Think — bb-methodology + redteam-mindset: the 5-phase non-linear workflow, critical-thinking framework, and red-team operator discipline.
+- Hunt webapps — 58 hunt-* skills curated from 681 disclosed HackerOne reports: per-class detection patterns, payloads, bypass tables, and chain templates.
+- Hit the perimeter — enterprise platform chains (M365/Entra, Okta, vCenter, SSL-VPN appliances, SharePoint, cloud IAM): current 2024–2026 CVE chains + post-credential escalation.
+- Ship it — triage-validation + reporting + evidence-hygiene: the 7-Question Gate, VRT-aware severity, OOS rebuttals, PII redaction, and red-team deliverables.
+
+All triggered automatically by topic — describe what you're testing in plain English and the relevant skill loads. No invocation by name.
+
+Quickstart
+
+Option A — install as a Claude Code plugin (recommended). From inside Claude Code:
+
+/plugin marketplace add elementalsouls/Claude-BugHunter
+/plugin install claude-bughunter@elementalsouls
+
+All 83 skills + 15 commands load namespaced under claude-bughunter: and update when you bump the plugin version — no files copied into ~/.claude/.
+
+Option B — copy install (no plugin system / pin to a clone):
+
+git clone https://github.com/elementalsouls/Claude-BugHunter.git
+cd Claude-BugHunter
+
+macOS / Linux
+bash scripts/install.sh
+
+Windows (PowerShell)
+pwsh ./scripts/install.ps1
+
+Both copy the skills + commands into ~/.claude/ (macOS/Linux) or %USERPROFILE%\.claude\ (Windows) and wire the hunt engagement scaffolder.
+
+What each install path gives you:
+
+| Path | 83 skills + 15 slash commands | cbh CLI | hunt scaffolder |
+|---|---|---|---|
+| A — plugin | ✅ namespaced under claude-bughunter: | ➕ separate pipx install | ❌ clone-only |
+| B — copy install | ✅ copied into ~/.claude/ | ✅ from the clone | ✅ from the clone |
+
+The plugin is the fastest path to the skills + slash commands. The terminal-native
+cbh runner installs standalone — pipx install git+https://github.com/elementalsouls/Claude-BugHunter
+— so plugin users can add it without a full clone (see cbh CLI).
+The hunt engagement scaffolder ships with the clone (Option B).
+
+That's it. Open Claude Code and describe what you're testing in plain English — the right skill loads automatically, no invocation by name:
+
+Testing acme.com — an in-scope HackerOne target. Run recon and rank the surface.
+
+  ⟳ loading skills: web2-recon, offensive-osint, bb-methodology …
+    → subdomain enum (subfinder + crt.sh) … 47 hosts
+    → live hosts (httpx) … 12 · tech fingerprint … 6 distinct stacks
+    → ranked surface: api.acme.com (GraphQL, introspection ON)  ← start here
+                      auth.acme.com (OAuth, SSO)               ← hunt-oauth
+
+  Next: want me to probe the GraphQL introspection + OAuth redirect_uri?
+
+→ Full Installation guide · Usage guide · searchable skill catalog.
+
+The block above is an illustrative transcript. To record a real demo of your own session: asciinema rec demo.cast → upload to asciinema.org and drop the badge here.
+
+Runs on multiple agent harnesses
+
+The skills are plain Agent Skills — the same SKILL.md format that Claude Code · OpenCode · OpenAI Codex CLI · Hermes Agent · Google AntiGravity all load. One command installs them everywhere:
+
+macOS / Linux
+bash scripts/install.sh --all --burp-mcp
+
+Windows (PowerShell)
+pwsh ./scripts/install.ps1 -All -BurpMcp
+
+| Harness | Target Skill Directory | Flag |
+|---|---|---|
+| Claude Code (baseline) | ~/.claude/skills/ | (default) |
+| OpenCode | reads /.claude/skills/ & /.agents/skills/ | (default) / --agents |
+| OpenAI Codex CLI | ~/.agents/skills/ | --agents |
+| Hermes Agent | ~/.hermes/skills/ | --hermes |
+| Google AntiGravity | ~/.gemini/config/skills/ | --antigravity |
+
+--all (-All) detects installed harnesses and copies skills to each harness's path (/.claude/skills, /.agents/skills, /.hermes/skills, /.gemini/config/skills); --burp-mcp (-BurpMcp) wires the Burp MCP server into each. The full knowledge layer ports to all five — the slash commands and /hunt engine stay Claude-Code-only by design.
+
+→ Multi-harness guide
+
+Star History
+
+Chart is self-hosted — regenerate with python3 scripts/gen_star_history.py (needs gh auth login).
+Refreshes automatically each day via .github/workflows/star-history.yml.
+
+Scope — what this bundle is for, and what it isn't
+
+This bundle covers the external attack surface — anything reachable from the internet without first compromising an internal endpoint.
+
+In scope
+
+- Bug bounty hunting — web apps, APIs, SaaS, GraphQL, OAuth, JWT, file upload, IDOR, SSRF, RCE chains
+- Web application pentesting — full hunt-* coverage of OWASP-mapped bug classes + discipline rules
+- External red-team engagements — initial-access against internet-facing enterprise estate: M365 / Entra ID, Okta-as-IdP, SharePoint on-prem (ToolShell + legacy SOAP), VMware vCenter / Workspace ONE, SSL VPN appliances (Cisco / Fortinet / Citrix / Palo Alto / Pulse / SonicWall / F5), Android APK red-team, supply-chain recon
+- Cloud misconfig + post-credential escalation — public S3, IMDS chains, STS AssumeRole, cross-account confused-deputy
+- Recon + OSINT — subdomain enum, identity-fabric mapping, certificate transparency, JS analysis, secret scanning
+- Reporting — H1, Bugcrowd (VRT-aware), Intigriti, Immunefi, plus client-facing red-team deliverable format
+
+Out of scope (deliberate — not gaps, design decisions)
+
+- Internal Active Directory attacks — BloodHound, Kerberoasting, ASREProast, DCSync, Pass-the-Hash, AD CS abuse, ntlmrelayx, Responder, PetitPotam, etc. Different operational risk profile; needs different tooling and judgment. Future bundle, not this one.
+- C2 frameworks — Cobalt Strike, Sliver, Mythic, Havoc, BRC4 tradecraft. Out of scope for external-only engagement model.
+- Post-exploit / persistence / lateral — Mimikatz/comsvcs LSASS dumping, golden/silver tickets, named-pipe impersonation, persistence (registry, scheduled tasks, WMI events, COM hijacking), token theft. These start after the perimeter has already broken — different bundle territory.
+- Evasion — AMSI bypass, ETW patching, AV/EDR bypass. Tied to C2 tradecraft above.
+- iOS pentesting / hardware / RF / ICS — out of scope by design.
+- Binary exploitation / kernel pwn / browser internals — different skill universe.
+
+If you're running an internal red team that includes domain-takeover chains via Kerberos or lateral movement, this bundle won't help you in those phases — and we'd rather say that up front than have you find out mid-engagement. The external surface handoff to internal-RT tooling (Impacket, NetExec, CrackMapExec, Rubeus, Certify, BloodHound) is intentionally outside our scope. Coverage for internal AD and post-exploit may come in a future update.
+
+What's inside
+
+83 skills, auto-loaded by topic — no invocation by name. Coverage across the external attack surface:
+
+| Category | # | Examples |
+|---|---|---|
+| Hunt — web app vuln classes | 58 | XSS, SQLi, SSRF, IDOR, LFI, SSTI, XXE, CSRF, CORS, open-redirect, SharePoint, ASP.NET/NTLM |
+
+…（内容已截断）

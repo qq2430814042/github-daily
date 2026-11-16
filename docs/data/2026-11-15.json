@@ -1,0 +1,1625 @@
+{
+  "date": "2026-11-15",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-16T06:14:21.862Z",
+  "count": 60,
+  "newCount": 36,
+  "sources": {
+    "trending": 12,
+    "new": 36,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "GoogleChrome/modern-web-guidance-src",
+      "name": "modern-web-guidance-src",
+      "owner": "GoogleChrome",
+      "url": "https://github.com/GoogleChrome/modern-web-guidance-src",
+      "description": "Keep your coding agent up to date with the latest web best practices",
+      "language": "TypeScript",
+      "stars": 7429,
+      "forks": 638,
+      "starsToday": 1219,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "googlechrome-modern-web-guidance-src-227260bf.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "dream-num/univer",
+      "name": "univer",
+      "owner": "dream-num",
+      "url": "https://github.com/dream-num/univer",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "language": "TypeScript",
+      "stars": 26548,
+      "forks": 2415,
+      "starsToday": 988,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "dream-num-univer-a13102cc.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "backnotprop/plannotator",
+      "name": "plannotator",
+      "owner": "backnotprop",
+      "url": "https://github.com/backnotprop/plannotator",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+      "language": "TypeScript",
+      "stars": 12030,
+      "forks": 1113,
+      "starsToday": 866,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "backnotprop-plannotator-5b00db19.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "ChromeDevTools/chrome-devtools-mcp",
+      "name": "chrome-devtools-mcp",
+      "owner": "ChromeDevTools",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "description": "Chrome DevTools for coding agents",
+      "language": "TypeScript",
+      "stars": 57183,
+      "forks": 4822,
+      "starsToday": 717,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "chromedevtools-chrome-devtools-mcp-2a9517b9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "tradermonty/claude-trading-skills",
+      "name": "claude-trading-skills",
+      "owner": "tradermonty",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "language": "Python",
+      "stars": 5768,
+      "forks": 1202,
+      "starsToday": 706,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tradermonty-claude-trading-skills-e3f63850.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "alibaba/open-code-review",
+      "name": "open-code-review",
+      "owner": "alibaba",
+      "url": "https://github.com/alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "language": "Go",
+      "stars": 52358,
+      "forks": 4174,
+      "starsToday": 691,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "alibaba-open-code-review-33046d59.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "Tencent/LoopForge",
+      "name": "LoopForge",
+      "owner": "Tencent",
+      "url": "https://github.com/Tencent/LoopForge",
+      "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+      "language": "Go",
+      "stars": 1801,
+      "forks": 303,
+      "starsToday": 423,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tencent-loopforge-6c94ff52.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "ag-ui-protocol/ag-ui",
+      "name": "ag-ui",
+      "owner": "ag-ui-protocol",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "language": "TypeScript",
+      "stars": 18123,
+      "forks": 1856,
+      "starsToday": 355,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ag-ui-protocol-ag-ui-d4035501.txt"
+    },
+    {
+      "rank": 9,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 9448,
+      "forks": 1164,
+      "starsToday": 247,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "NVIDIA/SkillEvaluator",
+      "name": "SkillEvaluator",
+      "owner": "NVIDIA",
+      "url": "https://github.com/NVIDIA/SkillEvaluator",
+      "description": "Multi-tier framework for evaluating AI agent skills with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+      "language": "Python",
+      "stars": 1926,
+      "forks": 264,
+      "starsToday": 122,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nvidia-skillevaluator-64de6697.txt"
+    },
+    {
+      "rank": 11,
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "name": "Claude-BugHunter",
+      "owner": "elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars": 6705,
+      "forks": 1020,
+      "starsToday": 98,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elementalsouls-claude-bughunter-8f8b4d67.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "ggml-org/ggml",
+      "name": "ggml",
+      "owner": "ggml-org",
+      "url": "https://github.com/ggml-org/ggml",
+      "description": "Tensor library for machine learning",
+      "language": "C++",
+      "stars": 15991,
+      "forks": 2047,
+      "starsToday": 43,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ggml-org-ggml-f735c290.txt"
+    },
+    {
+      "rank": 13,
+      "fullName": "YellowLaborerMarket/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "YellowLaborerMarket",
+      "url": "https://github.com/YellowLaborerMarket/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 474,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:48:18Z",
+      "updatedAt": "2026-11-16T03:40:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yellowlaborermarket-gemini-config-checker-42f684d7.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "TrooperFilter/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "TrooperFilter",
+      "url": "https://github.com/TrooperFilter/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:46:04Z",
+      "updatedAt": "2026-11-15T21:07:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "trooperfilter-gemini-config-checker-390bf986.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "TurtleReside/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "TurtleReside",
+      "url": "https://github.com/TurtleReside/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Go",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:46:04Z",
+      "updatedAt": "2026-11-15T21:07:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "turtlereside-gemini-config-checker-b40ef3df.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 16,
+      "fullName": "TypeTyrantScheme/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "TypeTyrantScheme",
+      "url": "https://github.com/TypeTyrantScheme/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:46:04Z",
+      "updatedAt": "2026-11-15T21:07:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "typetyrantscheme-gemini-config-checker-570bb2f7.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 17,
+      "fullName": "Violetnyudress/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "Violetnyudress",
+      "url": "https://github.com/Violetnyudress/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Go",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:46:04Z",
+      "updatedAt": "2026-11-15T21:07:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "violetnyudress-gemini-config-checker-fb24f855.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 18,
+      "fullName": "Visionbeyondtrack/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "Visionbeyondtrack",
+      "url": "https://github.com/Visionbeyondtrack/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:46:05Z",
+      "updatedAt": "2026-11-15T21:07:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "visionbeyondtrack-gemini-config-checker-66cec0db.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 19,
+      "fullName": "VisionWormStudio/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "VisionWormStudio",
+      "url": "https://github.com/VisionWormStudio/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Go",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:46:04Z",
+      "updatedAt": "2026-11-15T21:07:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "visionwormstudio-gemini-config-checker-3d65bc87.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 20,
+      "fullName": "VortexHostFeel/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "VortexHostFeel",
+      "url": "https://github.com/VortexHostFeel/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:46:07Z",
+      "updatedAt": "2026-11-15T21:07:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "vortexhostfeel-gemini-config-checker-eb6bf6a2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 21,
+      "fullName": "Watchlespeed/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "Watchlespeed",
+      "url": "https://github.com/Watchlespeed/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:47:11Z",
+      "updatedAt": "2026-11-15T21:07:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "watchlespeed-gemini-config-checker-8455d5e5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 22,
+      "fullName": "weightcashiercupola/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "weightcashiercupola",
+      "url": "https://github.com/weightcashiercupola/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:47:11Z",
+      "updatedAt": "2026-11-15T21:07:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "weightcashiercupola-gemini-config-checker-7c693c89.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 23,
+      "fullName": "weldbladesmithwharf/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "weldbladesmithwharf",
+      "url": "https://github.com/weldbladesmithwharf/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:47:11Z",
+      "updatedAt": "2026-11-15T21:07:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "weldbladesmithwharf-gemini-config-checker-beed80ef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 24,
+      "fullName": "WerewolfEmuHub/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "WerewolfEmuHub",
+      "url": "https://github.com/WerewolfEmuHub/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Go",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:47:11Z",
+      "updatedAt": "2026-11-15T21:07:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "werewolfemuhub-gemini-config-checker-6b4f59b5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 25,
+      "fullName": "WestLocksmithSpout/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "WestLocksmithSpout",
+      "url": "https://github.com/WestLocksmithSpout/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Go",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:47:12Z",
+      "updatedAt": "2026-11-15T21:07:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "westlocksmithspout-gemini-config-checker-6e5d27f4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 26,
+      "fullName": "WharfBoulderColander/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "WharfBoulderColander",
+      "url": "https://github.com/WharfBoulderColander/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:47:12Z",
+      "updatedAt": "2026-11-15T21:07:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wharfbouldercolander-gemini-config-checker-46450f76.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 27,
+      "fullName": "WindGatorRise37/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "WindGatorRise37",
+      "url": "https://github.com/WindGatorRise37/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:47:17Z",
+      "updatedAt": "2026-11-15T21:07:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "windgatorrise37-gemini-config-checker-8506ae8b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 28,
+      "fullName": "WindowStaffGate11/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "WindowStaffGate11",
+      "url": "https://github.com/WindowStaffGate11/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:47:18Z",
+      "updatedAt": "2026-11-15T21:07:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "windowstaffgate11-gemini-config-checker-9756cea3.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 29,
+      "fullName": "WingDataVacuum/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "WingDataVacuum",
+      "url": "https://github.com/WingDataVacuum/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:47:17Z",
+      "updatedAt": "2026-11-15T21:07:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wingdatavacuum-gemini-config-checker-0afee9b8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 30,
+      "fullName": "WinnerSpecialist/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "WinnerSpecialist",
+      "url": "https://github.com/WinnerSpecialist/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:47:17Z",
+      "updatedAt": "2026-11-15T21:07:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "winnerspecialist-gemini-config-checker-2c5b26fc.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 31,
+      "fullName": "WireProvostPucker/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "WireProvostPucker",
+      "url": "https://github.com/WireProvostPucker/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:48:15Z",
+      "updatedAt": "2026-11-15T21:07:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wireprovostpucker-gemini-config-checker-4bbdce04.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 32,
+      "fullName": "wisemeadowlarkspike/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "wisemeadowlarkspike",
+      "url": "https://github.com/wisemeadowlarkspike/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Go",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:48:18Z",
+      "updatedAt": "2026-11-15T21:07:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wisemeadowlarkspike-gemini-config-checker-3e4ea01f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 33,
+      "fullName": "WyrmClimberManacle/Gemini-Config-Checker-",
+      "name": "Gemini-Config-Checker-",
+      "owner": "WyrmClimberManacle",
+      "url": "https://github.com/WyrmClimberManacle/Gemini-Config-Checker-",
+      "description": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android)",
+      "language": "Makefile",
+      "stars": 473,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "ai-search",
+        "aichecker",
+        "chatgpt",
+        "cli",
+        "config-checker",
+        "gemeni",
+        "gemeni-checker"
+      ],
+      "createdAt": "2026-11-15T16:48:18Z",
+      "updatedAt": "2026-11-15T21:07:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wyrmclimbermanacle-gemini-config-checker-3bd447a0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 34,
+      "fullName": "OceanChandlerSewer/rob-run-cheat-private",
+      "name": "rob-run-cheat-private",
+      "owner": "OceanChandlerSewer",
+      "url": "https://github.com/OceanChandlerSewer/rob-run-cheat-private",
+      "description": "",
+      "language": "",
+      "stars": 236,
+      "forks": 65,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-15T18:10:56Z",
+      "updatedAt": "2026-11-16T03:39:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "oceanchandlersewer-rob-run-cheat-private-994f6b24.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "atlas7283/steam-library-bridge",
+      "name": "steam-library-bridge",
+      "owner": "atlas7283",
+      "url": "https://github.com/atlas7283/steam-library-bridge",
+      "description": "Free Windows app to add emulator, Epic, GOG and PC games to Steam with artwork, achievements and playtime tracking.",
+      "language": "JavaScript",
+      "stars": 177,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "achievement-tracker",
+        "emulation",
+        "emulator",
+        "epic-games",
+        "game-collection",
+        "game-launcher",
+        "game-library",
+        "game-manager"
+      ],
+      "createdAt": "2026-11-15T21:11:32Z",
+      "updatedAt": "2026-11-16T02:38:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "atlas7283-steam-library-bridge-14670099.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 36,
+      "fullName": "SandstoneShoutMoon/ROB-RUN-cheat-client",
+      "name": "ROB-RUN-cheat-client",
+      "owner": "SandstoneShoutMoon",
+      "url": "https://github.com/SandstoneShoutMoon/ROB-RUN-cheat-client",
+      "description": "",
+      "language": "",
+      "stars": 175,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-15T11:59:22Z",
+      "updatedAt": "2026-11-15T13:44:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sandstoneshoutmoon-rob-run-cheat-client-aee9a942.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "cnrad/interspace",
+      "name": "interspace",
+      "owner": "cnrad",
+      "url": "https://github.com/cnrad/interspace",
+      "description": "a fast, customizable macOS space switcher",
+      "language": "Swift",
+      "stars": 149,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-15T02:39:42Z",
+      "updatedAt": "2026-11-16T05:54:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cnrad-interspace-2d621df6.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "Dart-veider01/TradingAgents-crypto",
+      "name": "TradingAgents-crypto",
+      "owner": "Dart-veider01",
+      "url": "https://github.com/Dart-veider01/TradingAgents-crypto",
+      "description": "",
+      "language": "Python",
+      "stars": 140,
+      "forks": 64,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-15T10:26:44Z",
+      "updatedAt": "2026-11-15T19:30:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dart-veider01-tradingagents-crypto-48f694e0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 39,
+      "fullName": "drew-butler-43/autodesk-inventor-desktop",
+      "name": "autodesk-inventor-desktop",
+      "owner": "drew-butler-43",
+      "url": "https://github.com/drew-butler-43/autodesk-inventor-desktop",
+      "description": "Autodesk Inventor 2026 desktop setup with full parametric modeling suite, assembly design, drawing generation and portable mode for Windows 11",
+      "language": "C++",
+      "stars": 119,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "autodesk-inventor",
+        "autodesk-inventor-2026",
+        "autodesk-inventor-activated",
+        "autodesk-inventor-download",
+        "autodesk-inventor-for-free-2026",
+        "autodesk-inventor-free",
+        "autodesk-inventor-installer",
+        "autodesk-inventor-key"
+      ],
+      "createdAt": "2026-11-15T11:12:29Z",
+      "updatedAt": "2026-11-16T06:13:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "drew-butler-43-autodesk-inventor-desktop-0be2c691.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 40,
+      "fullName": "sharp-coral-20/final-cut-desktop",
+      "name": "final-cut-desktop",
+      "owner": "sharp-coral-20",
+      "url": "https://github.com/sharp-coral-20/final-cut-desktop",
+      "description": "Final Cut 2026 standalone bundle with timeline editing, media transcode pipeline and portable mode for Windows 11.",
+      "language": "C++",
+      "stars": 119,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-video",
+        "final-cut",
+        "final-cut-2026",
+        "final-cut-activated",
+        "final-cut-download",
+        "final-cut-free",
+        "final-cut-installer",
+        "final-cut-key"
+      ],
+      "createdAt": "2026-11-15T11:13:04Z",
+      "updatedAt": "2026-11-16T06:07:25Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sharp-coral-20-final-cut-desktop-0b2b3319.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 41,
+      "fullName": "soft-stream-wing/keyshot-studio-desktop",
+      "name": "keyshot-studio-desktop",
+      "owner": "soft-stream-wing",
+      "url": "https://github.com/soft-stream-wing/keyshot-studio-desktop",
+      "description": "KeyShot Studio 2026 desktop setup with bundled material library, scene staging, portable mode and offline rendering support.",
+      "language": "C++",
+      "stars": 119,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "3d-modeling",
+        "3d-rendering",
+        "cad",
+        "camera-control",
+        "download-keyshot",
+        "industrial-design",
+        "keyshot",
+        "keyshot-2026"
+      ],
+      "createdAt": "2026-11-15T11:12:27Z",
+      "updatedAt": "2026-11-16T06:13:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "soft-stream-wing-keyshot-studio-desktop-b46bf637.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 42,
+      "fullName": "silent-foam-03/heygen-desktop",
+      "name": "heygen-desktop",
+      "owner": "silent-foam-03",
+      "url": "https://github.com/silent-foam-03/heygen-desktop",
+      "description": "HeyGen 2026 desktop setup with offline video generation, multilingual voice assets, template library and portable mode for Windows 11.",
+      "language": "C++",
+      "stars": 118,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "heygen",
+        "heygen-2026",
+        "heygen-activated",
+        "heygen-download",
+        "heygen-for-free-2026",
+        "heygen-free",
+        "heygen-full",
+        "heygen-installer"
+      ],
+      "createdAt": "2026-11-15T11:13:10Z",
+      "updatedAt": "2026-11-16T06:13:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "silent-foam-03-heygen-desktop-e61a26f8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 43,
+      "fullName": "super-quail-dev/project-zomboid-desktop",
+      "name": "project-zomboid-desktop",
+      "owner": "super-quail-dev",
+      "url": "https://github.com/super-quail-dev/project-zomboid-desktop",
+      "description": "Project Zomboid -- gaming client / mod toolkit 2026 standalone bundle with mod tooling, portable mode and offline catalog for Windows 11",
+      "language": "C++",
+      "stars": 118,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "modding",
+        "project-zomboid",
+        "project-zomboid-2026",
+        "project-zomboid-activated",
+        "project-zomboid-download",
+        "project-zomboid-free",
+        "project-zomboid-installer",
+        "project-zomboid-key"
+      ],
+      "createdAt": "2026-11-15T11:13:00Z",
+      "updatedAt": "2026-11-16T06:11:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "super-quail-dev-project-zomboid-desktop-a759ea3a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 44,
+      "fullName": "susan-edwards-29/rhino-8-desktop",
+      "name": "rhino-8-desktop",
+      "owner": "susan-edwards-29",
+      "url": "https://github.com/susan-edwards-29/rhino-8-desktop",
+      "description": "Rhino 8 2026 desktop setup with full plugin suite, NURBS modeling core, drafting tools and bundled render engine for Windows 11.",
+      "language": "C++",
+      "stars": 118,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "3d-modeling",
+        "3d-models",
+        "architecture",
+        "drawing",
+        "dxf",
+        "rhino",
+        "rhino-8",
+        "rhino-8-2026"
+      ],
+      "createdAt": "2026-11-15T11:13:30Z",
+      "updatedAt": "2026-11-16T06:08:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "susan-edwards-29-rhino-8-desktop-64a212ce.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 45,
+      "fullName": "swift-atom-89/substance-3d-sampler-desktop",
+      "name": "substance-3d-sampler-desktop",
+      "owner": "swift-atom-89",
+      "url": "https://github.com/swift-atom-89/substance-3d-sampler-desktop",
+      "description": "Substance 3D Sampler 2026 standalone bundle with material authoring modules, texture workflow and portable mode for Windows 11",
+      "language": "C++",
+      "stars": 118,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adobe-desktop",
+        "adobe-substance-3d-sampler-installer",
+        "adobe-substance-3d-sampler-official",
+        "adobe-substance-3d-sampler-windows",
+        "creative-suite",
+        "substance-3d-sampler",
+        "substance-3d-sampler-2026",
+        "substance-3d-sampler-activated"
+      ],
+      "createdAt": "2026-11-15T11:12:44Z",
+      "updatedAt": "2026-11-16T06:13:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "swift-atom-89-substance-3d-sampler-desktop-e08afa6c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 46,
+      "fullName": "cameronchase-co72/android-studio-desktop",
+      "name": "android-studio-desktop",
+      "owner": "cameronchase-co72",
+      "url": "https://github.com/cameronchase-co72/android-studio-desktop",
+      "description": "Android Studio 2026 standalone bundle with full plugin suite, bundled SDK tooling, emulator staging and portable mode for Windows 11.",
+      "language": "C++",
+      "stars": 117,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "android-application",
+        "android-emulator",
+        "android-performance",
+        "android-studio",
+        "android-studio-2026",
+        "android-studio-activated",
+        "android-studio-download"
+      ],
+      "createdAt": "2026-11-15T11:12:36Z",
+      "updatedAt": "2026-11-16T06:02:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cameronchase-co72-android-studio-desktop-768c3c32.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 47,
+      "fullName": "tedbarnes70/unreal-5-4-desktop",
+      "name": "unreal-5-4-desktop",
+      "owner": "tedbarnes70",
+      "url": "https://github.com/tedbarnes70/unreal-5-4-desktop",
+      "description": "Unreal 5.4",
+      "language": "C++",
+      "stars": 117,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "editor-plugin",
+        "game-development",
+        "gamedev",
+        "lumen",
+        "modding",
+        "sequencer",
+        "ue5",
+        "unreal-5-4"
+      ],
+      "createdAt": "2026-11-15T11:12:15Z",
+      "updatedAt": "2026-11-16T06:10:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tedbarnes70-unreal-5-4-desktop-e4837e1c.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "the-jen-edwards/houdini-20-desktop",
+      "name": "houdini-20-desktop",
+      "owner": "the-jen-edwards",
+      "url": "https://github.com/the-jen-edwards/houdini-20-desktop",
+      "description": "Houdini 20",
+      "language": "C++",
+      "stars": 117,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "houdini-20",
+        "houdini-20-2026",
+        "houdini-20-activated",
+        "houdini-20-download",
+        "houdini-20-for-free-2026",
+        "houdini-20-free",
+        "houdini-20-full",
+        "houdini-20-installer"
+      ],
+      "createdAt": "2026-11-15T11:13:29Z",
+      "updatedAt": "2026-11-16T06:11:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "the-jen-edwards-houdini-20-desktop-0f311913.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python",
+      "stars": 499377,
+      "forks": 55968,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "createdAt": "2016-03-20T23:49:42Z",
+      "updatedAt": "2026-11-16T06:12:05Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "public-apis-public-apis-0e8ac9c0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 372106,
+      "forks": 46408,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-16T06:12:08Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 255829,
+      "forks": 67425,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-16T06:12:29Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 52,
+      "fullName": "yt-dlp/yt-dlp",
+      "name": "yt-dlp",
+      "owner": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "language": "Python",
+      "stars": 208176,
+      "forks": 18361,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "createdAt": "2020-10-26T04:22:55Z",
+      "updatedAt": "2026-11-16T06:13:48Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "yt-dlp-yt-dlp-54c7d6d8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "ohmyzsh/ohmyzsh",
+      "name": "ohmyzsh",
+      "owner": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "description": "🙃 A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up wi",
+      "language": "Shell",
+      "stars": 190648,
+      "forks": 27284,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "cli-app",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins"
+      ],
+      "createdAt": "2009-08-28T18:15:37Z",
+      "updatedAt": "2026-11-16T06:12:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ohmyzsh-ohmyzsh-0d67c47d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 54,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 187145,
+      "forks": 19113,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-11-16T06:12:57Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "anthropics/claude-code",
+      "name": "claude-code",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "language": "TypeScript",
+      "stars": 155818,
+      "forks": 25013,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2025-02-22T17:41:21Z",
+      "updatedAt": "2026-11-16T06:11:32Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-claude-code-fbb8cd09.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "langchain-ai/langchain",
+      "name": "langchain",
+      "owner": "langchain-ai",
+      "url": "https://github.com/langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "language": "Python",
+      "stars": 149603,
+      "forks": 25143,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "deepagents",
+        "enterprise",
+        "framework"
+      ],
+      "createdAt": "2022-10-17T02:58:36Z",
+      "updatedAt": "2026-11-16T06:07:41Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "langchain-ai-langchain-5dbbd123.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 148559,
+      "forks": 14256,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-16T06:09:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 58,
+      "fullName": "Shubhamsaboo/awesome-llm-apps",
+      "name": "awesome-llm-apps",
+      "owner": "Shubhamsaboo",
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+      "language": "Python",
+      "stars": 144799,
+      "forks": 21315,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "llms",
+        "python",
+        "rag"
+      ],
+      "createdAt": "2024-04-29T05:30:25Z",
+      "updatedAt": "2026-11-16T06:13:12Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "shubhamsaboo-awesome-llm-apps-8a517fe8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "iptv-org/iptv",
+      "name": "iptv",
+      "owner": "iptv-org",
+      "url": "https://github.com/iptv-org/iptv",
+      "description": "Collection of publicly available IPTV channels from all over the world",
+      "language": "TypeScript",
+      "stars": 144137,
+      "forks": 8608,
+      "starsToday": 0,
+      "topics": [
+        "iptv",
+        "m3u",
+        "playlist",
+        "streams",
+        "tv"
+      ],
+      "createdAt": "2018-11-14T22:00:57Z",
+      "updatedAt": "2026-11-16T06:05:54Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "iptv-org-iptv-06300032.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "ripienaar/free-for-dev",
+      "name": "free-for-dev",
+      "owner": "ripienaar",
+      "url": "https://github.com/ripienaar/free-for-dev",
+      "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+      "language": "HTML",
+      "stars": 142945,
+      "forks": 15369,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "free-for-developers"
+      ],
+      "createdAt": "2015-03-18T21:06:26Z",
+      "updatedAt": "2026-11-16T06:08:45Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ripienaar-free-for-dev-6a1523e8.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

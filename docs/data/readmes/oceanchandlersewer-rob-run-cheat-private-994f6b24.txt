@@ -1,0 +1,176 @@
+🌑 ABOUT NOX PRIVATE
+
+NOX PRIVATE is a private ROB RUN project focused on customization, interface design and convenience.
+
+Precision. Control. A different experience.
+
+🛡️ IMPORTANT NOTICE
+
+- No spoofer is included.
+- Packed executables may trigger antivirus false positives.
+
+🗂️ CONTENTS
+
+| Section | Description |
+|:---|:---|
+| 🎯 Modules | Available modules and features |
+| 🖥️ Requirements | Minimum and recommended specifications |
+| ⚙️ Configuration | Configuration settings |
+| 🎮 Platforms | Supported game clients |
+| 📡 Radar | Radar interface and indicators |
+| 🔧 Runtime | Compatibility components |
+| 📝 Changelog | Release history |
+.
+🎯 MODULES
+
+| Module | Description | Status |
+|:---|:---|:---:|
+| 🎯 Aim Presets | Weapon profiles, FOV and smoothing | ✅ |
+| 👁️ Player Overlay | Boxes, skeletons, names, HP and armor | ✅ |
+| 🚗 Vehicle Overlay | Vehicle information and speed | ✅ |
+| 🌍 World Markers | Loot and interactive objects | ✅ |
+| 📡 Radar | Zoom, distance rings and indicators | ✅ |
+| ⚔️ Combat Mode | Configurable combat profiles | ✅ |
+| 🎨 Themes | Colors, fonts and interface scaling | ✅ |
+| 🧩 Profiles | Saved configurations | ✅ |
+
+🖥️ SYSTEM REQUIREMENTS
+
+| Component | Minimum | Recommended |
+|:---|:---|:---|
+| OS | Windows 10 x64 | Windows 11 x64 |
+| CPU | Intel i3 / Ryzen 3 | Intel i5 / Ryzen 5 |
+| RAM | 8 GB | 16 GB |
+| GPU | DirectX 11 compatible | GTX 1060+ |
+| Network | Broadband | Low latency |
+
+⚙️ CONFIGURATION
+
+Configuration file: config.json
+
+Settings can be managed through the configuration file.
+
+Example Configuration
+
+{
+  "aim": {
+    "enabled": true,
+    "preset": "ar",
+    "fov": 120,
+    "smoothing": 4.5,
+    "bone": "head",
+    "visible_only": true,
+    "switch_delay_ms": 120
+  },
+  "overlay": {
+    "players": true,
+    "vehicles": true,
+    "world": true,
+    "max_distance": 300,
+    "colors": {
+      "enemy": "#FF4444",
+      "ally": "#44FF44",
+      "loot": "#FFD700"
+    }
+  },
+  "radar": {
+    "enabled": true,
+    "size": 200,
+    "zoom": 1.5,
+    "rings": true,
+    "offscreen_pins": true
+  },
+  "combat": {
+    "mode": "aggressive",
+    "recoil_control": true,
+    "sway": 0.2
+  },
+  "ui": {
+    "locale": "en",
+    "dpi_scale": 1.0,
+    "vsync": false,
+    "fps_cap": 240
+  }
+}
+
+🎮 PLATFORMS
+
+| Platform | Compatibility |
+|:---|:---:|
+| Steam | 🟢 Full |
+| Epic Games | 🟢 Full |
+
+📡 RADAR SYSTEM
+
+A configurable top-down radar interface with adjustable zoom and visual indicators.
+
+| Indicator | Description |
+|:---:|:---|
+| 🔴 | Enemies |
+| 🟢 | Allies |
+| 🟡 | Loot |
+| 🔵 | Vehicles |
+| ⚪ | Local player |
+
+Radar Features:
+- Adjustable zoom
+- Distance indicators
+- Custom display size
+- Direction indicators
+- Off-screen markers
+- Adjustable opacity
+
+🔧 RUNTIME
+
+| Component | Description |
+|:---|:---|
+| 🛡️ Compatibility | Runtime compatibility layer |
+| 🔐 Configuration | Configuration encryption |
+| 🧬 Build System | Build signature management |
+| 🔄 Updates | Update compatibility |
+
+🎮 MENU CONTROLS
+
+| Key | Action |
+|:---:|:---|
+| INSERT | Open / Close Menu |
+| F5 | Reload Configuration |
+
+📝 CHANGELOG
+
+v3.0.0 — Initial Release
+
+- Fix the issue with opening the menu when the INSERT key is pressed
+
+v2.0.0 — Initial Release
+
+- Fix Bugs
+
+v1.0.0 — Initial Release
+
+- Initial NOX PRIVATE release
+- Modern interface
+- Configurable modules
+- Player and vehicle overlays
+- Radar interface
+- Configuration profiles
+- Steam and Epic support
+- INSERT menu control
+
+📥 DOWNLOAD
+
+File: Nox_Private.zip
+
+Version: 1.0.0
+
+Game: ROB RUN
+
+Edition: PRIVATE
+
+🌑 NOX PRIVATE
+
+PRECISION • CUSTOMIZATION • CONTROL
+
+Built for a different experience.
+
+NOX PRIVATE © 2026

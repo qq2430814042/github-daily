@@ -1,0 +1,122 @@
+💻 Android Studio 2026: Standalone Offline Build for Windows 11
+
+📦 Intro
+
+This repository publishes a standalone offline Windows x64 distribution package intended for the Android Studio workflow. The build ships as a self-contained setup for Windows 10 and 11, with all runtime components bundled so the deployment does not depend on a network connection at install time. It is packaged and maintained by independent contributors, not by the upstream vendor.
+
+The distribution targets offline deployment scenarios: air-gapped workstations, bandwidth-constrained lab environments, and reproducible developer-machine provisioning where a pinned, versioned setup is more useful than an online retrieval step. In these environments a single deterministic package reduces variance between machines and makes later audits of installed tooling straightforward.
+
+The build is x64 only and covers both portable and installed deployment modes through one package. A single Android Studio on Windows deployment can be staged side by side with an existing installation without disturbing file associations or shared configuration directories.
+
+01 · ⬇️ Download
+
+02 · ✨ Features
+
+📦 Bundled Runtime
+
+All required runtime components and SDK dependencies are inside the package, no external retrieval step at install.
+
+🔌 Portable Mode
+
+Runs from a per-user directory without writing to system locations, useful for staged or disposable workstations.
+
+🧩 SDK Integrations
+
+Bundled build, emulator, and platform tooling are pre-staged so the workflow starts on first launch.
+
+🔐 SHA256 Manifest
+
+Every release ships a published hash for the setup file so the artifact can be validated before deployment.
+
+🗂️ Versioned Releases
+
+Pinned version numbers with an archive of earlier builds for reproducible or rollback deployments.
+
+🌐 Multilingual Setup
+
+The installer interface and bundled runtime documentation ship with twelve language packs included.
+
+03 · ⚙️ How it works
+
+The distribution package is a single versioned setup file. Running it extracts the application into the per-user program directory by default, or into a chosen system path if elevated privileges are provided. A side-by-side portable mode can be selected at first launch, in which case all files remain inside the extracted directory.
+
+On first launch the build registers shell integration for the current user only: Start menu shortcuts, optional file associations (for project and Gradle file extensions), and a per-user configuration directory under the profile. No machine-wide registry keys are written unless a system-wide install path is selected. The default configuration directory is created on demand and can be redirected through an environment variable.
+
+Day to day, the build requires no network access once installed. It launches offline, opens existing projects, and runs the bundled toolchain locally. Update checking is disabled by default; newer versions are distributed as newer versioned setup files rather than through an in-app updater. The application makes no background calls to external services unless the user explicitly runs a remote operation.
+
+The build coexists with other installations by using distinct per-user configuration directories and by deferring file associations to the most recently launched installation. It integrates with Windows through standard shell associations and the usual Windows Runtime APIs the upstream application relies on; no additional system-level services or kernel drivers are installed.
+
+04 · 🧩 Compatibility
+
+The build targets Windows 10 (version 1809 or later) and Windows 11 on the x64 architecture. It is not available for ARM64 or 32-bit targets, and it is not supported on Windows 8.1 or earlier. A clean Windows 10 or Windows 11 installation with current cumulative updates is the recommended base.
+
+The installer can run from the standard PowerShell 5.1 shipped with Windows 10 and 11; PowerShell 7 or later is supported but not required. The optional hash-verification step uses the built-in Get-FileHash cmdlet, which works in PowerShell 5.1 and later. No external PowerShell modules are needed.
+
+The build runs on any x64 CPU with at least two cores, and it is comfortable on machines with 8 GB of memory or more. Disk usage depends on which workloads you enable, so the setup reserves sufficient space in the target directory during installation.
+
+Coexistence with existing installations is supported through portable mode, which does not touch shell integration or per-user configuration paths outside its own directory. Installing side by side with a system-wide installation is possible; file associations follow the most recently launched installation and can be reassigned through the Windows Settings app.
+
+05 · 🔧 Requirements
+
+| Component | Supported | Preferred |
+| --- | --- | --- |
+| OS | Windows 10 | Windows 11 |
+| Shell | PowerShell 5.1+ | PowerShell 7+ |
+| Network | Required to download | Stable broadband |
+| Privileges | Standard user access | Standard user access |
+
+06 · ❓ FAQ
+
+🔒 Is this standalone build safe to install on Windows?
+
+On first run, Windows SmartScreen may warn for unsigned installers. Click More info, then Run anyway to continue. The build is an offline setup file; keep your antivirus enabled as usual.
+
+🪟 Which Windows versions does the build support?
+
+The build runs on Windows 10 and Windows 11 on x64. Older Windows releases and 32-bit targets are not supported.
+
+📡 Can I use the build offline?
+
+Yes. After install, the build runs without a network connection. Only the initial retrieval step needs internet access.
+
+🔄 How do updates work?
+
+Updates ship as a newer versioned installer; running it over the existing install preserves your projects, templates, and preferences. No separate updater service is required.
+
+🗑️ How do I uninstall it on Windows?
+
+Open Settings, then Apps, then Installed apps, find the entry in the list, and choose Uninstall. Personal project files remain on disk unless you remove them manually.
+
+⚙️ What are the technical specifications?
+
+- System load: Runs on a standard modern x64 CPU, with heavier Gradle builds benefiting from more memory.
+- File formats: Handles Gradle project files, Kotlin and Java sources, Android resources, and bundled emulator images.
+- Portable build: A portable mode is available at first launch and writes nothing outside its extracted directory.
+
+🔐 How do I verify the file with SHA256?
+
+Open PowerShell in the folder with the installer and run Get-FileHash setup.exe -Algorithm SHA256. Compare the output with the hash published alongside the release. If they do not match, delete the file and fetch it again.
+
+🛡️ Does the build require administrator rights?
+
+Standard user access is sufficient for the default install location. Administrator rights are only requested if you choose a system-wide install path during setup.
+
+📂 Where does the build place its files?
+
+By default, the installer uses the per-user program directory for the application and the user profile for configuration. No files are written to Windows system directories.
+
+📶 Does the build collect telemetry?
+
+This standalone build does not include telemetry or usage reporting. All processing happens locally on the Windows host.
+
+🐛 How do I report an issue?
+
+Open a new issue on this repository with Windows version, build hash, and the reproduction steps. Include any installer log lines from %TEMP% if available.
+
+❔ How is this build different from an upstream release?
+
+This repository publishes a standalone offline distribution packaged by this project. It is independent from any upstream vendor release and is not endorsed by or affiliated with any third-party trademark holder. See the Disclaimer section below for full details.
+
+07 · 📜 Disclaimer
+
+…（内容已截断）

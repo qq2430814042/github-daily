@@ -1,0 +1,127 @@
+English · فارسی
+
+Gemini Config Checker
+
+Find proxy configs that actually get you into Google AI Studio and Gemini, by testing each one the way a person would: in a
+signed-in browser, through the route you will really use.
+
+Version 0.1.0, early pre-release. It works end to end on Windows (the only platform it has been run on so far). The macOS,
+Linux and Android builds come from the CI pipeline and have not been exercised on real devices yet. Please report what you find.
+
+Two modes, one switch
+
+The big Simple / Advanced switch in the header decides what is tested. The route diagram under the title morphs to show it.
+
+| | Simple | Advanced |
+|---|---|---|
+| Question it answers | Which of my configs work? | Which free configs work through my config? |
+| Route | you → config → AI Studio / Gemini | you → base config → free config → AI Studio / Gemini |
+| You provide | your configs (links, a subscription URL or base64), or pick a ready-made free list | one working base config, plus a free list or pasted configs |
+| Anti-DPI profile is applied to | every config under test (each one connects from your machine) | the base config's first hop (free configs run inside its tunnel) |
+| Typical use | check a pile of configs you already have; test a config before you rely on it | your Cloudflare config works, but you need a different exit that Google accepts |
+| Export | links, base64, a full Xray config of one config | links, base64, a chain Xray config (base → free) |
+
+Contents
+Credits · Why a signed-in browser · Download and install ·
+User guide · Troubleshooting · Privacy and security ·
+Build from source · Releases and CI
+
+Credits and references
+
+This project exists because of other people's work. Please go and use and star them.
+
+| Project | What it gave us |
+|---|---|
+| 0xRadikal/Free-v2ray-Configs | The auto-updated lists of free configs (verified, fast, secure, ...) that this tool scans |
+| patterniha | PattN (Windows / Linux / macOS client) and PattNG (Android): the anti-DPI recipe, plus the fragment finalmask semantics from his Xray-core fork that our fragmenting forwarder reproduces |
+| bia-pain-bache/BPB-Worker-Panel | The Cloudflare Worker panel that produces many of the base configs this tool chains behind (patterniha maintains a fork) |
+| Anti-DPI recipe post | The exact Finalmask / fingerprint / ALPN / cipher values used as defaults |
+| MatinSenPai/SenPaiScanner | Companion tool for finding clean Cloudflare IPs to use as a config's address |
+| XTLS/Xray-core | The proxy engine embedded in the app |
+| 2dust/v2rayN | The config layout the "Copy with chain" export follows (PattN is a fork of it) |
+| Wails | The native desktop shell |
+| Vazirmatn and JetBrains Mono | The fonts used in the UI (SIL Open Font License) |
+
+Why a signed-in browser?
+
+Google decides region availability per signed-in account, after the page has loaded. A plain HTTP request (even to the Gemini API
+with a dummy key) answers "fine" from every country, so connectivity probes mark every live config as healthy. Measured while building
+this tool: exits geolocated to the US, HK and SG were blocked, and the same exit can flip over time. The only reliable signal is what
+Google shows a signed-in user, so that is what this tool reads:
+
+| Product | "Blocked" looks like |
+|---|---|
+| AI Studio | redirect to /docs/available-regions |
+| Gemini | "Gemini isn't currently supported in your country" |
+
+Download and install
+
+Get the build for your system from the Releases page. Every release ships SHA256SUMS.txt.
+
+| Platform | Desktop app (native window) | Web server (UI in your browser) | Region check |
+|---|---|---|---|
+| Windows | amd64, arm64 | amd64, arm64 | ✅ needs Chrome / Edge / Brave |
+| macOS | universal (Intel + Apple Silicon) | amd64, arm64 | ✅ needs Chrome / Edge / Brave |
+| Linux | amd64 (GTK 3 + WebKitGTK 4.1) | amd64, arm64, armv7 | ✅ needs Chrome / Chromium / Edge / Brave |
+| Android 8+ | APK (arm64-v8a) | build from source for Termux (GOOS=android) | ❌ connectivity mode only |
+
+Windows
+
+1. Download gemini-config-checker-desktop__windows_amd64.zip (or arm64) and unzip it anywhere.
+2. Run GeminiConfigChecker.exe. WebView2 is built into Windows 10/11; if SmartScreen warns, choose More info → Run anyway (the build is unsigned).
+
+macOS
+
+1. Download ..._macos_universal.zip, unzip, and move the .app to Applications.
+2. First launch: right-click the app → Open. If macOS still refuses: xattr -dr com.apple.quarantine "/Applications/GeminiConfigChecker.app".
+
+Linux
+
+1. Install the runtime libraries once: sudo apt install libgtk-3-0 libwebkit2gtk-4.1-0 (Debian/Ubuntu; use your distribution's equivalents).
+2. tar -xzf gemini-config-checker-desktop__linux_amd64.tar.gz, then run ./GeminiConfigChecker.
+3. No desktop environment? Use the web server build instead: ./gemini-config-checker and open http://localhost:8787.
+
+Android
+
+1. Download gemini-config-checker__android_arm64.apk on the phone.
+2. Allow Install unknown apps for your browser or file manager, then open the APK.
+3. Launch the app. A persistent notification ("Scanner engine is running") is expected: the engine runs as a foreground service so long scans survive the screen turning off. Use its Stop action to quit the engine.
+4. The APK runs the connectivity-only mode (see Settings reference). Android does not let apps drive a signed-in Chromium, so the region cannot be verified there.
+5. The release APK is signed with the repository key when one is configured, otherwise with a throw-away key: it installs, but a later build cannot update it in place, so uninstall first.
+
+Web server (any OS, servers, Termux)
+
+./gemini-config-checker serves the same UI on http://localhost:8787 and opens your browser. Flags: -addr 127.0.0.1:8787, -no-open, -version.
+The UI has no authentication: keep it on localhost, or tunnel it (ssh -L 8787:localhost:8787 your-server) instead of exposing it.
+
+User guide
+
+1. First start
+The window has three tabs: Scan (what to test and how), Results (live list, filters, copy buttons) and Export.
+The header holds the Simple / Advanced switch, the scan status, and a light/dark theme button. Everything you type is remembered on this
+device when "remember" is ticked (untick it on a shared computer).
+
+2. Pick a mode
+* Use Simple when you already have configs and want to know which ones work, or to verify the config you are about to rely on.
+* Use Advanced when your Cloudflare config connects fine but Google blocks its exit: free configs chained behind it give you other exits.
+* You can flip the switch at any time. Results keep the mode of the scan that produced them; Export and the copy buttons follow that.
+
+3. Sign in with Google (region check)
+The region check opens AI Studio and Gemini as you. Click Sign in with Google once:
+1. A Chrome / Edge / Brave window opens in a separate profile that only this app uses. Sign in normally. The app never sees your password.
+2. When sign-in is detected the window closes by itself and the card turns to "Google account connected". The sign-in is remembered for next time.
+3. Prefer a secondary account: requests come from many IPs, so Google may show a "suspicious sign-in" notice.
+4. Remove account from app deletes only that private profile. It never touches your everyday browser or accounts.
+
+No browser installed, or on Android? Switch the check type (Settings) to connectivity only: no sign-in or browser needed.
+
+4. Simple mode, step by step
+1. Paste your configs into the box, one per line: vless://, vmess://, trojan://, ss://. A subscription URL (https://…) or base64 text also works.
+   Leave the box empty to test a ready-made free list instead (pick one below).
+2. Keep Anti-DPI on if you are inside a network where plain Cloudflare configs do not connect (see section 6).
+3. Sign in (region check) or choose connectivity only.
+4. Press Start scan (or Ctrl+Enter). Watch the Results tab fill in.
+
+5. Advanced mode, step by step
+
+…（内容已截断）

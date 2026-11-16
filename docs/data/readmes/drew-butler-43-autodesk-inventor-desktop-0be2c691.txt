@@ -1,0 +1,122 @@
+🧊 Autodesk Inventor 2026: Standalone Offline Build for Windows 11
+
+📦 Intro
+
+This repository packages a standalone offline Windows x64 distribution for the Autodesk Inventor workflow, intended for Windows 10 and 11. The distribution is a self-contained setup that bundles the runtime, the core modules, and the supporting libraries required to run the build without an internet connection during deployment. It is maintained as an offline deployment bundle, not as a vendor release channel.
+
+The build is aimed at engineers, CAD technicians, and system administrators who need reproducible installs on air-gapped workstations, restricted network segments, or machines where bandwidth is scarce. Because every artifact is versioned and hash-published, the deployment can be repeated across a fleet without depending on upstream availability windows. This distribution does not require an account, a browser session, or a live update service to complete deployment.
+
+Format coverage includes the standard Autodesk Inventor on Windows part, assembly, drawing, and presentation workflows, with an optional portable mode for removable media. A single Autodesk Inventor on Windows deployment covers both portable and installed modes, so lab machines and personal workstations can share the same build.
+
+01 · ⬇️ Download
+
+02 · ✨ Features
+
+🧊 Part and Assembly Modeling
+
+Parametric solid modeling, assembly constraints, and constraint-driven design trees in one workspace.
+
+📐 Drawing Generation
+
+Associative 2D drawing views, section views, and annotation sets generated from the source model.
+
+📦 Portable Deployment Mode
+
+Run the build from a removable drive with per-user config, no install required on the host.
+
+🧩 Sheet Metal and Frame Design
+
+Sheet metal rules, flat pattern generation, and frame generator profiles for structural parts.
+
+🗂️ Project and Library Structure
+
+Per-project workspace definitions, content center libraries, and template folder organization.
+
+🔐 SHA256 Manifest and Archival Layout
+
+Every artifact ships with a published hash manifest and a versioned, reproducible folder layout.
+
+03 · ⚙️ How it works
+
+The installer delivers the application into a versioned program directory under the per-user program path, with shared components placed in a sibling folder. Templates, library definitions, and user preferences live in the user profile so that multiple project workspaces can coexist on the same machine. A small manifest file records the exact component versions installed, so a re-run can verify and repair the layout.
+
+On first launch, the build performs an initialization pass that writes default configuration under the user profile, registers the application entry in the Start menu, and seeds the content center and template directories. No registry-wide writes are performed; entries are scoped to the current user hive. If a system-wide install path was chosen, the same initialization runs elevated and writes the equivalent keys to the machine hive.
+
+Day to day, the build runs entirely offline. It does not contact an update service, does not phone home, and does not require a sign-in. New versions are delivered as a newer versioned installer that replaces the previous program directory while leaving user projects, templates, and preferences untouched. Rollback is performed by re-running the previous versioned installer.
+
+Integration with Windows is limited to shell entries, file associations for the native part and assembly formats, and optional context menu hooks on Windows Explorer. Coexistence with another installation of the same application is supported through side-by-side versioned directories, so an older build can remain available while a newer one is validated.
+
+04 · 🧩 Compatibility
+
+The build runs on Windows 10 version 1809 or later and Windows 11 on x64. Both Pro and Enterprise editions are supported. 32-bit targets and ARM-based Windows are not supported.
+
+PowerShell 5.1 is sufficient for the install, the hash verification, and the optional repair cmdlets. PowerShell 7 and later is recommended for scripted fleet deployment and for the parallel hash check path.
+
+The build runs on any recent x64 desktop or mobile workstation CPU and is comfortable on a machine with a moderate amount of memory and free disk space. Display scaling and high-DPI monitors are handled by the per-monitor DPI path already shipped in the application.
+
+Coexistence with other installations of the same or adjacent CAD software is supported through per-version program directories and portable mode. File associations are set once and can be reassigned from the Windows default apps panel. Portable mode writes nothing to the host registry unless the user explicitly opts in.
+
+05 · 🔧 Requirements
+
+| Component | Supported | Preferred |
+| --- | --- | --- |
+| OS | Windows 10 | Windows 11 |
+| Shell | PowerShell 5.1+ | PowerShell 7+ |
+| Network | Required to download | Stable broadband |
+| Privileges | Standard user access | Standard user access |
+
+06 · ❓ FAQ
+
+🔒 Is this standalone build safe to install on Windows?
+
+On first run, Windows SmartScreen may warn for unsigned installers. Click More info, then Run anyway to continue. The build is an offline setup file; keep your antivirus enabled as usual.
+
+🪟 Which Windows versions does the build support?
+
+The build runs on Windows 10 and Windows 11 on x64. Older Windows releases and 32-bit targets are not supported.
+
+📡 Can I use the build offline?
+
+Yes. After install, the build runs without a network connection. Only the initial retrieval step needs internet access.
+
+🔄 How do updates work?
+
+Updates ship as a newer versioned installer; running it over the existing install preserves your projects, templates, and preferences. No separate updater service is required.
+
+🗑️ How do I uninstall it on Windows?
+
+Open Settings, then Apps, then Installed apps, find the entry in the list, and choose Uninstall. Personal project files remain on disk unless you remove them manually.
+
+⚙️ What are the technical specifications?
+
+- System load: A single-instance desktop session with moderate memory footprint under typical part and assembly workloads.
+- File formats: Native part, assembly, drawing, and presentation formats, plus STEP, IGES, STL, and DXF interchange.
+- Portable build: A portable variant is included for removable media and per-user config on shared hosts.
+
+🔐 How do I verify the file with SHA256?
+
+Open PowerShell in the folder with the installer and run Get-FileHash setup.exe -Algorithm SHA256. Compare the output with the hash published alongside the release. If they do not match, delete the file and fetch it again.
+
+🛡️ Does the build require administrator rights?
+
+Standard user access is sufficient for the default install location. Administrator rights are only requested if you choose a system-wide install path during setup.
+
+📂 Where does the build place its files?
+
+By default, the installer uses the per-user program directory for the application and the user profile for configuration. No files are written to Windows system directories.
+
+📶 Does the build collect telemetry?
+
+This standalone build does not include telemetry or usage reporting. All processing happens locally on the Windows host.
+
+🐛 How do I report an issue?
+
+Open a new issue on this repository with Windows version, build hash, and the reproduction steps. Include any installer log lines from %TEMP% if available.
+
+❔ How is this build different from an upstream release?
+
+This repository publishes a standalone offline distribution packaged by this project. It is independent from any upstream vendor release and is not endorsed by or affiliated with any third-party trademark holder. See the Disclaimer section below for full details.
+
+07 · 📜 Disclaimer
+
+…（内容已截断）

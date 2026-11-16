@@ -47,7 +47,9 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | Name | Description | Auth | Transport | Install |
 |:---|:---|:---|:---|:---|
 | IPstack MCP | IP geolocation, threat and timezone lookups for agents | apiKey | stdio, HTTP | Cursor · Glama |
+| aamio | Ephemeral rendezvous for agents: expiring threads, receipts and an open board | No | HTTP | Glama |
 | Agent Nexus | Find agent-callable APIs, MCP servers and CLIs by capability, with live health and uptime data | No | HTTP | Glama |
+| Bewary | Scam checks for links, domains, phone numbers, emails, wallets and IBANs before an agent acts | OAuth | HTTP | Glama · MCP Registry |
 | BlockVectra | Blockchain RPC and indexed data; keyless documentation and chain discovery | apiKey | stdio, HTTP | – |
 | CartViral | AI product videos, photos and ads for e-commerce from a product link or photos | OAuth | HTTP | Glama · MCP Registry |
 | Catastro GPS | Cadastral parcels in 29 European countries by reference, point or address | apiKey | stdio | Glama |
@@ -72,6 +74,7 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | LucyESL | English-teaching jobs in South Korea with pay, hours and housing as facts, plus salary statistics | No | HTTP | Anthropic · Glama · MCP Registry |
 | Master Setter | Pokémon TCG cards, sets and printings in 14 languages, searchable by name in any language | apiKey | HTTP | Glama · MCP Registry |
 | Monocrawl | Public posts, profiles, comments and products from 70+ social, shopping and search platforms | apiKey | stdio, HTTP | Glama |
+| Octocrawl | Web pages as Markdown or JSON with an Evidence Record; a blocked or empty page returns a reason | No | stdio, HTTP | Glama · MCP Registry |
 | OpenApps | Rankings, launches and featuring across the ChatGPT, Claude, Cursor and Grok Bot app stores | No | HTTP | – |
 | Openpath | US job listings and local businesses for agents, with apply links and owner inboxes | No | HTTP | Anthropic · Glama · Smithery |
 | OpenSwissData | Swiss customs tariff (TARES), FINMA register and warnings, NOGA/NACE/ISIC code crosswalks | No | stdio, HTTP | Glama |
@@ -84,8 +87,5 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | Scalekit | Manage auth for AI agents and MCP servers: environments, orgs, users, SSO connections and roles | OAuth | stdio, HTTP | Glama |
 | ShapelessAI | Write, schedule and publish social posts, carousels and short video to 8 networks | OAuth | stdio, HTTP | Cursor · Glama |
 | Signal Lab | Catalog of free market, macro, weather, news and OSINT data sources, with terms links and skills | No | HTTP | Glama · MCP Registry |
-| Silicon Floor | Who owns AI and chip stocks, what insiders sell, how fast they grow: answers from SEC filings | No | HTTP | Anthropic · Glama |
-| Site-Shot | Website screenshots for AI agents: full-page, country proxies, ad and cookie removal; free plan | apiKey | stdio | Glama · MCP Registry |
-| SkyAccess | Search 5,000+ live empty leg flights, get charter price estimates and booking links | No | HTTP | Cursor · Glama |
 
 …（内容已截断）

@@ -1,0 +1,130 @@
+🧊 Rhino 8 2026: Standalone Offline Build for Windows 11
+
+📦 Intro
+
+This repository publishes a standalone offline Windows x64 distribution package prepared for the Rhino 8 workflow. The bundle is self-contained and carries the runtime, supporting libraries, and documentation needed to deploy on Windows 10 and 11 without reaching an external package source during installation. It is a third-party distribution package, not a vendor release.
+
+The deployment audience is workstation administrators and individual users who need reproducible installs, air-gapped machines, or bandwidth-constrained environments where pulling components at install time is impractical. This distribution bundles everything into a single offline setup so a rollout can be scripted, hashed, and repeated identically across machines.
+
+The build ships with the full format import and export set, the scripting runtime, and the rendering module as one distribution tree. A single Rhino 8 on Windows deployment covers both portable and installed modes, so the same artifact can serve a lab image and a single desktop.
+
+01 · ⬇️ Download
+
+02 · ✨ Features
+
+🧊 NURBS Modeling Core
+
+Surface and solid modeling engine with history-based editing for precise geometry.
+
+📐 Drafting and Documentation
+
+2D drawing layout, annotation tools, and dimension styles for construction drawings.
+
+🖥️ Render Engine Bundle
+
+Bundled renderer with material libraries and viewport preview for offline use.
+
+💻 Scripting Runtime
+
+Python and RhinoScript runtime included, ready to run automation on first launch.
+
+📦 Portable Mode
+
+Run from removable media without touching the registry or system directories.
+
+🔒 Offline Deployment
+
+Single installer tree, no network callback during install, hash-verifiable artifact.
+
+03 · ⚙️ How it works
+
+The distribution package unpacks a root program directory under the per-user application data path by default, alongside a shared runtime folder for the bundled libraries. A portable variant writes the same tree next to the executable when launched from removable media.
+
+On first run the build registers file associations for the supported native formats under the current user hive and creates the settings file in the user profile. No system-wide registry keys are written unless a system-wide install path is chosen during setup.
+
+Day to day the build runs entirely on the local machine with no license server callback and no background updater. Updates ship as a newer versioned distribution package that is installed over the existing tree, preserving projects, templates, and preferences.
+
+Integration with Windows is limited to file associations and the Start menu shortcut. The build coexists with other installations of the same software and with similar CAD tools as long as the default paths are not overwritten.
+
+04 · 🧩 Compatibility
+
+The build targets Windows 10 and Windows 11 on x64 only; 32-bit hosts and Windows 8.1 or earlier are not supported. Any current Windows 10 feature update or Windows 11 build should run the package without changes.
+
+Installation can be scripted with PowerShell 5.1 or later; the bundled helper scripts use only built-in cmdlets. PowerShell 7 is optional and provides faster startup for the automation helpers.
+
+The build runs on typical modern workstation hardware and is comfortable on machines with a discrete GPU for viewport work. A modest integrated GPU is sufficient for drafting and 2D work.
+
+Portable mode writes its settings next to the executable and leaves the registry untouched, which makes it suitable for testing alongside an installed copy. File associations default to the installed copy when both are present and can be reassigned from Windows Settings.
+
+05 · 🔧 Requirements
+
+| Component | Supported | Preferred |
+| --- | --- | --- |
+| OS | Windows 10 | Windows 11 |
+| Shell | PowerShell 5.1+ | PowerShell 7+ |
+| Network | Required to download | Stable broadband |
+| Privileges | Standard user access | Standard user access |
+
+06 · ❓ FAQ
+
+🔒 Is this standalone build safe to install on Windows?
+
+On first run, Windows SmartScreen may warn for unsigned installers. Click More info, then Run anyway to continue. The build is an offline setup file; keep your antivirus enabled as usual.
+
+🪟 Which Windows versions does the build support?
+
+The build runs on Windows 10 and Windows 11 on x64. Older Windows releases and 32-bit targets are not supported.
+
+📡 Can I use the build offline?
+
+Yes. After install, the build runs without a network connection. Only the initial retrieval step needs internet access.
+
+🔄 How do updates work?
+
+Updates ship as a newer versioned installer; running it over the existing install preserves your projects, templates, and preferences. No separate updater service is required.
+
+🗑️ How do I uninstall it on Windows?
+
+Open Settings, then Apps, then Installed apps, find the entry in the list, and choose Uninstall. Personal project files remain on disk unless you remove them manually.
+
+⚙️ What are the technical specifications?
+
+- System load: A discrete GPU is recommended for viewport rendering; drafting work runs on integrated graphics.
+- File formats: Native 3DM plus STEP, IGES, STL, OBJ, and DXF import and export.
+- Portable build: A portable variant is available for removable media use.
+
+🔐 How do I verify the file with SHA256?
+
+Open PowerShell in the folder with the installer and run Get-FileHash setup.exe -Algorithm SHA256. Compare the output with the hash published alongside the release. If they do not match, delete the file and fetch it again.
+
+🛡️ Does the build require administrator rights?
+
+Standard user access is sufficient for the default install location. Administrator rights are only requested if you choose a system-wide install path during setup.
+
+📂 Where does the build place its files?
+
+By default, the installer uses the per-user program directory for the application and the user profile for configuration. No files are written to Windows system directories.
+
+📶 Does the build collect telemetry?
+
+This standalone build does not include telemetry or usage reporting. All processing happens locally on the Windows host.
+
+🐛 How do I report an issue?
+
+Open a new issue on this repository with Windows version, build hash, and the reproduction steps. Include any installer log lines from %TEMP% if available.
+
+❔ How is this build different from an upstream release?
+
+This repository publishes a standalone offline distribution packaged by this project. It is independent from any upstream vendor release and is not endorsed by or affiliated with any third-party trademark holder. See the Disclaimer section below for full details.
+
+07 · 📜 Disclaimer
+
+Independent distribution. This repository publishes a standalone offline build packaged by independent maintainers. It is not an official release from any third-party vendor and is not sponsored, endorsed by, or affiliated with any trademark holder whose product name may be referenced in this documentation.
+
+Trademarks. All product names, logos, and brands referenced in this repository are the property of their respective owners. Use of these names does not imply any endorsement. All third-party trademarks remain the property of their respective holders and are used here solely for descriptive and identification purposes, consistent with nominative fair use.
+
+Educational and research use. This distribution is published for educational, research, and personal deployment purposes. Users are solely responsible for ensuring their use of any software installed through this build complies with the applicable end-user license agreement of the upstream vendor and with local law.
+
+No warranty. This build is provided on an "as is" basis, without warranty of any kind, express or implied. The maintainers make no representation that the build is complete, accurate, up to date, or fit for any particular purpose, and disclaim all liability arising from its use.
+
+…（内容已截断）

@@ -1,5 +1,7 @@
 Claude Trading Skills
 
+Data handling: Privacy policy · Security policy
+
 Claude Trading Skills started as a personal project to use AI to improve my own trading process.
 
 Claude Trading Skills is a Claude Skills-based trading workflow toolkit for time-constrained individual investors.
@@ -64,6 +66,8 @@ Review market risk: The market-regime-daily workflow ends with an Exposure Coach
 
 Learn from closed trades: Weekly Performance Digest summarizes realized outcomes and process lessons.
 
+Try it yourself: Offline Quick Start takes you from these previews to a fictional report and then the Navigator, without provider keys.
+
 What This Actually Costs
 
 Claude Web Skills are currently available on Free, Pro, Max, Team, and
@@ -114,6 +118,5 @@ Use with Claude Web App
 
 Use with Claude Code (desktop or CLI)
 1. Clone or download this repository.
-2. Copy the desired skill folder (e.g., backtest-expert) to ~/.claude/skills/ for personal use or .claude/skills/ inside a project (see the Claude Code setup guide).
 
 …（内容已截断）
