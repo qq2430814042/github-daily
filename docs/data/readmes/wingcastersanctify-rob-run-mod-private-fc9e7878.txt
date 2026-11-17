@@ -1,0 +1,112 @@
+🚔 ECLIPSE PRIVATE — The Ultimate Guide to the Cheat & Mod Ecosystem
+
+Welcome to ECLIPSE PRIVATE, your central hub for the cheat and mod ecosystem of ROB RUN. Whether you're researching private mods like NOX PRIVATE for aim presets and ESP overlays, evaluating third-party providers like CheatVault and CosmoCheats, or trying to understand what Kefir's kernel-level Easy Anti-Cheat actually blocks—this guide puts every working feature and critical context into one streamlined reference.
+
+📦 INCLUDED MODULES
+
+- 🎯 AIM PRESETS & TARGETING — weapon profiles, FOV, smoothing
+- 👁️ ESP & OVERLAYS — players, vehicles, loot, and world markers
+- 🗺️ RADAR — zoom, distance rings, off-screen markers
+- 💎 LOOT FILTERS — granular categories for gear and freight
+- ⚙️ HANDLING TWEAKS — recoil, sway, and spread tuning
+- ⚠️ EAC & BAN AWARENESS — kernel-level enforcement
+
+🎯 AIM PRESETS & TARGETING — CONFIGURE → LOCK → ELIMINATE
+
+The core of private ROB RUN mods—per-weapon aim presets with configurable FOV, smoothing, and bone targeting.
+
+- Per-Weapon Presets — separate profiles for ARs, SMGs, and pistols
+- FOV Control — adjustable capture radius (e.g., 120 in NOX PRIVATE)
+- Smoothing — humanized aim paths (e.g., 4.5 smoothing)
+- Bone Targeting — head, neck, chest, or closest bone
+- Visible Only — only target enemies you can actually see
+- Switch Delay — configurable pause between targets (e.g., 120 ms)
+
+PRESET → FOV → LOCK
+
+👁️ ESP & OVERLAYS — SEE → TRACK → DOMINATE
+
+Full visual awareness of every player, vehicle, and loot item through walls. Private mods like NOX PRIVATE and Stitchnocommemorate Rob-Run-Mod both include comprehensive overlay systems.
+
+- Player Overlay — boxes, skeletons, names, HP, and armor
+- Vehicle Overlay — vehicle information and speed readout
+- World Markers — loot and interactive objects highlighted
+- Custom Colors — separate colors for enemies, allies, and loot
+- Max Distance — configurable render range (e.g., 300 meters)
+
+WALLS → REVEAL → TARGET
+
+🗺️ RADAR — SCAN → ROTATE → CONTROL
+
+A configurable top-down radar that turns off-screen chaos into readable intel.
+
+- Zoom & Distance Rings — adjustable scale and proximity rings
+- Off-Screen Markers — track threats and contacts outside your camera
+- Direction Indicators — see where enemies are facing
+- Adjustable Opacity — tune the radar to blend with your HUD
+- Custom Size — resize to fit your screen
+
+MAP → ROTATE → CONTROL
+
+💎 LOOT FILTERS — FILTER → PRIORITIZE → EXTRACT
+
+Track every valuable item with granular filters. NOX PRIVATE and Stitchnocommemorate both include loot overlay systems.
+
+- Granular Categories — guns, rounds, plating, gear, freight, and spawn points
+- Custom Priorities — show only the loot categories you care about
+- Distance Indicators — see how far loot is before committing to a detour
+
+LOOT → FILTER → PROFIT
+
+⚙️ HANDLING TWEAKS — TUNE → STABILIZE → CONTROL
+
+Weapon handling adjustments for more consistent firefights.
+
+- Recoil Control — reduce vertical and horizontal kick
+- Sway Reduction — remove idle weapon movement
+- Spread Control — tighten bullet grouping
+- Combat Mode — single-hotkey activation with condensed HUD
+
+FIRE → CONTROL → ACCURACY
+
+⚠️ EAC & BAN AWARENESS — MONITOR → UNDERSTAND → RISK
+
+ROB RUN uses Easy Anti-Cheat (EAC) at the kernel level, and Kefir's Terms of Service prohibit cheats and unauthorized mods. The Steam store page lists EAC as kernel-level anti-cheat, and Kefir states: "Easy Anti-Cheat protects the game from cheats. Using them results in a permanent ban" reference:0].
+
+Critical enforcement context (2026):
+
+- EAC is mandatory. ROB RUN launched into Early Access on November 17, 2026, and requires agreeing to a third-party EULA and installing kernel-level Easy Anti-Cheat on first launch [reference:1].
+- No built-in cheats exist. There are no cheat codes, no console commands, and no offline or private mode where cheats would be allowed—the game runs only on Kefir's official servers [reference:2].
+- Server checks block many cheats. Kefir's November 9 Telegram post states the server checks key actions and limits the information sent to your PC. It rules out: moving faster than allowed, walking through walls, flying or teleporting, making yourself immortal, seeing health of players outside your party, and opening containers from a distance [reference:3].
+- "No spoofer bundled" means hardware bans are permanent. Private mods like NOX PRIVATE and Stitchnocommemorate explicitly ship without an HWID spoofer, so a hardware ban will follow you to new accounts [reference:4.
+- "Undetected" claims are vendor marketing. Cheat trackers list 7 of 7 tracked ROB RUN cheats as "undetected" right now, but these are the vendors' own claims, not verified by Kefir or EAC [reference:6].
+- Use an alternate account. Even private mods carry risk. The only safe environment for testing is offline or a private lobby with consenting friends.
+
+This README is provided for informational and hypothetical purposes only. Use only on accounts you are willing to lose.
+
+💡 Why Choose ECLIPSE PRIVATE?
+
+ROB RUN is a brutal crime sandbox where every death as a Criminal wipes your bag and the server resets every seven days [reference:7]. Private mods like NOX PRIVATE and Stitchnocommemorate give you aim presets, ESP overlays, radar, and loot filters in one package—but they ship without a spoofer, and Kefir's EAC enforces permanent bans. This guide maps every documented feature and every critical risk so you can make an informed decision.
+
+🎮 Why Use It?
+
+- Every Feature, One Guide — Aim presets, ESP, radar, loot filters, handling
+- Adapt to Any Setup — Private mods, third-party providers, or Cheat Engine research
+- See Everything — Player, vehicle, and loot ESP through walls
+- Control Your Radar — Zoom, distance rings, and off-screen markers
+- Stay Aware — Kernel-level EAC and hardware ban risk documented
+
+🎛️ Control Panel
+
+| Module | Primary Function | Highlights |
+|---|---|---|
+| Aim Presets & Targeting | Pinpoint accuracy | Per-weapon profiles, FOV, smoothing, bone targeting |
+| ESP & Overlays | Visual awareness | Player, vehicle, loot, world markers |
+| Radar | Map control | Zoom, distance rings, off-screen markers |
+| Loot Filters | Value tracking | Guns, rounds, plating, gear, freight |
+| Handling Tweaks | Weapon control | Recoil, sway, spread, combat mode |
+| EAC & Ban Awareness | Risk landscape | Kernel-level EAC, server checks, hardware bans |
+
+🔍 SEO Keywords
+
+ECLIPSE PRIVATE, ROB RUN cheat, ROB RUN hack, ROB RUN aim presets, ROB RUN ESP, ROB RUN radar, ROB RUN loot filter, ROB RUN NOX PRIVATE, ROB RUN Stitchnocommemorate, ROB RUN CheatVault, ROB RUN CosmoCheats, ROB RUN mod menu, ROB RUN hack 2026, ROB RUN cheat download, ROB RUN EAC bypass

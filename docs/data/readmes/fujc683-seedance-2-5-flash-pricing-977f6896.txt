@@ -1,0 +1,56 @@
+Seedance 2.5 Flash Pricing — cost per second of video
+
+What Seedance 2.5 Flash costs per output second, with comparisons and volume planning.
+
+👉 Try Seedance 2.5 Flash on APIMart
+
+https://gola.apimart.ai/k-GMgDyn
+
+💰 Pricing · 🔑 Get an API key
+
+Price model: per second, not per task
+
+Seedance 2.5 Flash bills by output second, so clip length is the main cost lever.
+
+| Duration | 720p cost (measured) |
+|---:|---:|
+| 4 s | $0.57 |
+| 6 s | $0.86 |
+| 8 s | $1.15 |
+| 15 s | $2.15 |
+| 30 s | $4.30 |
+
+Numbers use the measured rate of $0.143/s at 720p. Your bill is
+data.cost on the finished task — always reconcile against that.
+
+How it compares
+
+| Model | Price / second | Max length | Resolutions |
+|---|---:|---:|---|
+| Seedance 2.5 Flash | $0.1836 | 30 s | 480p / 720p |
+| Seedance 2.0 | $0.20 | 12 s | 480p / 720p |
+| Kling 4.0 Flash | $0.19 | 10 s | 720p |
+| Veo 3 | $0.35 | 8 s | 720p / 1080p |
+
+Cost planning
+
+| Monthly videos | Avg length | Cost |
+|---:|---:|---:|
+| 100 | 5 s | ~$72 |
+| 1,000 | 5 s | ~$715 |
+| 10,000 | 5 s | ~$7,150 |
+
+Where the money actually goes
+
+- Iteration is the cost, not the final render — draft at 480p, finish at 720p
+- Reference-video requests are billed at a separate (higher) rate
+- Failed tasks are refunded automatically
+
+Related
+
+- Prompt library: awesome-seedance-2-5-flash-prompts
+- Other video models: all collections
+
+License
+
+CC BY 4.0

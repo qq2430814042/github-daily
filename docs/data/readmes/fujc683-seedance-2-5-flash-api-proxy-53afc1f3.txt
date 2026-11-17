@@ -1,0 +1,67 @@
+Seedance 2.5 Flash 中转 API — one key, Alipay, no VPN
+
+What an API relay changes: payment, network, keys and billing for Seedance 2.5 Flash.
+
+👉 Get a video API key
+
+https://gola.apimart.ai/k-Xn4AIl
+
+💰 Pricing · 🔑 API key · 📘 Docs
+
+What "中转" means here
+
+Calling a Chinese or overseas video model directly usually means: a foreign
+credit card, an overseas phone number, an unstable direct connection, and one
+key per vendor. A 中转 (relay) puts all of that behind one domestic endpoint.
+
+| | Direct to vendor | Relay (APIMart) |
+|---|---|---|
+| Payment | foreign card required | Alipay / WeChat / card |
+| Network | direct, often throttled | domestic-optimised relay |
+| Keys | one per vendor | one key for all models |
+| Model switch | rewrite code | change one string |
+| Invoice | overseas | domestic invoice available |
+| Failure handling | per-vendor | unified retry + fallback |
+
+Endpoint
+
+curl -X POST https://api.apimart.ai/v1/videos/generations \
+  -H "Authorization: Bearer $APIMART_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model":"seedance-2-5-flash","prompt":"slow orbit around a ceramic mug","duration":4,"ratio":"16:9","resolution":"720p"}'
+
+The relay is OpenAI-compatible in shape, so existing clients work by
+changing base_url and model only.
+
+Which models are behind it
+
+| Category | Models |
+|---|---|
+| Video | Seedance 2.5 Flash / 2.0, Kling 4.0, Wan 3.0, PixVerse 6, Veo 3 |
+| Image | GPT Image 2.6, Nano Banana 2 / Pro, Seedream 5.0, FLUX 2, Z-Image |
+| LLM | DeepSeek V3.2 and others |
+
+Latency and reliability
+
+- Video tasks are asynchronous — poll task_id, do not block a request
+- A 4s 720p Seedance clip typically finishes in 40-90 seconds
+- Failed tasks are refunded automatically
+- The relay retries upstream 5xx internally before surfacing an error
+
+Common questions
+
+Do I need a VPN? No — the relay is reachable from mainland China directly.
+
+Can I pay monthly? Yes, prepaid balance with per-second video billing.
+
+Is it stable for production? Use a queue on your side; treat every task as
+retryable, and store the MP4 immediately (URLs expire after 72h).
+
+Related
+
+- Seedance prompt library: awesome-seedance-2-5-flash-prompts
+- Seedance API docs: seedance-2-5-flash-api
+
+License
+
+CC BY 4.0

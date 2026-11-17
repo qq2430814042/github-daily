@@ -1,0 +1,46 @@
+Chronicles of the Realm · 江山时序
+
+  English · 简体中文 (Chinese) · 繁體中文 (Traditional Chinese) · 日本語 (Japanese)
+
+An Interactive Historical Atlas of China from the Warring States (403 BCE) to the Present — Scrub Through Time, Trace Ancient Cities, and Walk in the Footsteps of History
+
+Play Live Demo (English UI) → https://deanchen.me/jiangshan-map/?lang=en
+
+The story behind it (in Chinese): From textbook maps to 1k GitHub stars
+
+Why It's Fun to Explore
+
+Have you ever wondered while reading Chinese history or classical poetry:
+- "Where exactly on today's map are Jiankang (the Six Dynasties capital), Huangzhou (where Su Dongpo composed the Red Cliffs Rhapsody in exile), Languan Pass in the Qinling Mountains (where Han Yu halted his horse in the snow), or Zhuxianzhen (Yue Fei's northern campaign frontier)?"
+- "How many names did Chang'an hold across two millennia, and what pivotal events unfolded on that soil?"
+- "How did the realm evolve step by step—from the Partition of Jin and the Seven Warring States at the opening of Sima Guang's Zizhi Tongjian (403 BCE), Qin's unification campaigns, Emperor Wu of Han opening the Hexi Corridor, High Tang's Four Garrisons of Anxi, and Yuan's Xuanzhengyuan jurisdiction over Tibet, to Zeng Jize's recovery of Ili (1881 CE) and the 20th-century shift from the 'Begonia Leaf' (秋海棠) map to the 'Rooster' (雄鸡) map?"
+
+Chronicles of the Realm (jiangshan-map) brings together 2,400+ years of Chinese history across 18 historical periods into a single interactive parchment atlas—featuring multi-stage territorial and prefecture snapshots, ancient cities, strategic mountain passes, poetic and battlefield landmarks, chronological milestones, and reigning monarchs & imperial eras. No heavy print atlases required—just drag the timeline and click any city to travel through space and time.
+
+Feature 1: Scrub the Timeline to Watch Realms Rise & Fall, Track Monarchs, and Compare Ancient & Modern Borders
+
+- Multi-Polity Confrontations on a Single Canvas: From the Seven Warring States (Qin, Chu, Qi, Yan, Zhao, Wei, Han) alongside Zhou, Yue, Ba-Shu, Zhongshan, and Yiqu, to the Three Kingdoms warlords (Yuan Shao, Cao Cao, Liu Bei, Sun Quan, Gongsun's Liaodong), Northern & Southern Dynasties, Five Dynasties & Ten Kingdoms, and Song, Liao, Western Xia, Dali, Jin, and the Mongols—all rendered side-by-side in high-contrast traditional parchment hues. Hover over any polity in the bottom-left legend to highlight its territory, or click to open that polity's profile (lifespan, capitals and a short history) and zoom to its territory.
+- Multi-Stage Territorial Evolution & Dashed "Ghost Boundary Diffs": At every major territorial milestone—such as Qin's conquest of Ba-Shu (316 BCE), Yan General Qin Kai's expansion into Liaodong (300 BCE), Ma Yuan's bronze pillars in Jiaozhi (43 CE), Sima Yi's campaign in Liaodong (238 CE), Li Jing's conquest of Tuyuhun (635 CE), the Four Garrisons of Anxi & Wang Xuance's campaign in Central India (648 CE), Yuan's Xuanzhengyuan rule over Tibet (1288 CE), Ming's Jiaozhi Province in Annam (1407 CE), the 1881 Treaty of Saint Petersburg recovering Ili, the 1898 foreign leased territories, the 1945 retrocession of Taiwan, and the 1946 transition from the "Begonia Leaf" (秋海棠) map to the "Rooster" (雄鸡) map—click any milestone or phase dot to switch maps and reveal the previous phase's dashed vermilion Ghost Boundary Diff so territorial gains and losses are immediately visible.
+- Reigning Monarch on the Timeline: The bubble above the timeline names the monarch on the throne in the current year (e.g. 100 BCE · Western Han · Emp. Wu, 630 CE · Tang · Emp. Taizong, 1700 CE · Qing · Kangxi Emp. (Shengzu)); the Chinese interface also shows the regnal era year (唐太宗·贞观四年).
+- Ancient Prefecture Hover Inspection & Modern Province Overlay: First-level administrative divisions (Commanderies, Circuits, Routes, and Provinces) are rendered with deduplicated Parchment Casing borders. Zoom in and hover over any prefecture (e.g., Ming Yingtian Prefecture or Three Kingdoms Jingzhou) to inspect its jurisdiction and modern provincial equivalents. In the top-right Layers menu, Provinces (on by default) draws today's provincial boundaries over the historical map, and Prov. Names adds their names.
+- Dynamic River Courses, Ancient Lakes & Grand Engineering Works: As you scrub through time, historical shifts of the Yellow River, expanding and shrinking ancient lakes (Yunmeng Marsh, Lop Nur / Puchanghai), Warring States/Qin/Han/Ming Great Walls, Sui-Tang & Grand Canals, the Silk Road, and Zheng He's maritime routes evolve in lockstep with each era; ancient coastlines around the Bohai Gulf, northern Jiangsu, the Yangtze estuary, and the Pearl River Delta also advance and retreat by era.
+- Zoomable Timeline: Drag the handles at either end of the timeline inward to zoom into one stretch of history (handy for short eras such as Qin, the Three Kingdoms, or the Five Dynasties); double-click the timeline to return to the full overview.
+- Voice Narration: Turn on the narration toggle next to the play button and autoplay reads out each year and its events in the browser's built-in voice; it also follows a person's chronicle on autoplay (requires a browser with speech synthesis).
+
+Try It Live: Ming Dynasty Yongle 13 (1415 CE) · Two Capitals, Thirteen Provinces & "Yingtian Prefecture" Inspection →
+
+Feature 2: Click Any Ancient City or Strategic Pass to Uncover 2,400 Years of History (Trace Place)
+
+Click any ancient city or mountain pass on the map (or double-click anywhere on the canvas) to open its Trace Place genealogy card:
+- Bilingual City Lore Banner & 2,400-Year Administrative Genealogy: At the top of the card, read a curated poetic epigraph and historical biography for the city; below, trace how its name and administrative jurisdiction evolved across all 18 historical eras—from Warring States and Qin commanderies, Han regional inspectorates, Tang circuits, and Song routes to Yuan/Ming/Qing provinces and modern municipalities—complete with Capital badges and dynastic seat remarks.
+- Site-Specific Landmark Events: Beneath each dynasty row, inspect major historical events that took place right on that spot (e.g., Shang Yang's Reforms and Qin's Unification at Xianyang, Guan Yu Flooding the Seven Armies at Fancheng, the Xuanwu Gate Incident at Chang'an, or Yue Fei's Martyrdom at Lin'an). Click the Chronicles pill in the top-right of the card to filter for dynasties with major events, and click any event to time-travel straight to that year!
+- Strategic Mountain Passes & Poetic / Battlefield Landmarks: Explore famous mountain passes—including Hangu Pass, Tongguan, Jianmen Pass, Yanmen Pass, Yumen Pass, Yangguan, and Shanhai Pass—rendered with traditional Hanque gatehouse icons and strategic terrain notes, alongside famous battlefields and literary landmarks such as Red Cliffs (Chibi), Gaixia, Wuzhang Plains, Orchid Pavilion (Lanting), Yueyang Tower, Pavilion of Prince Teng, Languan Pass, Loulan, Lop Nur, and Issyk-Kul.
+
+Try It Live: High Tang Kaiyuan 29 (741 CE) · Open Chang'an's 2,400-Year Genealogy Card →
+
+Feature 3: Person Chronicles — Trace Any Historical Figure Across Time & Space
+
+Click the top-left Universal Search Box (with a rotatable e.g. figure preview and quick-search chips, or type any monarch, general, statesman, monk, or poet such as Cao Cao, Huo Qubing, Sima Qian, Yue Fei, or Zheng He) to open Person Chronicle (点人溯事), marking every milestone of their life with numbered pins across changing dynastic borders:
+- Qin Shi Huang's Unification Campaigns (238–221 BCE): From suppressing the rebellion at Xianyang and Wang Jian's attack on Ye, to the fall of Han, Zhao, Yan, Wei, Chu, and Dai, culminating in the surrender of Qi at Linzi—as you advance stop by stop, watch the six rival kingdoms merge into the Qin Empire right on the map!
+
+…（内容已截断）

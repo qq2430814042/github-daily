@@ -1,0 +1,203 @@
+Systems to AI: A Reading Map
+
+112 topics from 8 well-known engineering books, in a suggested reading order.
+
+From how a CPU runs your code, to operating systems, distributed data, system design, reliability, ML systems, and building and shipping LLMs.
+
+Every topic below is a real chapter or section of its book.
+
+How to use this
+
+- Go in order. Each stage builds on the one before it. Topic 1 is bits and bytes; topic 112 is shipping AI products.
+- One topic at a time. Read the chapter, then explain it to someone (or write it down) without looking.
+- Start with what's free. OSTEP and the Google SRE book are completely free online, by their authors. The LLM book's code is free on GitHub.
+- Buy or borrow the rest. These books are worth owning. The links go to the official pages.
+
+The 8 books
+
+| # | Stage | Book | Author(s) | Free? |
+|---|---|---|---|---|
+| 1 | The Machine | Computer Systems: A Programmer's Perspective (3rd ed.) | Randal E. Bryant, David R. O'Hallaron | — |
+| 2 | The Operating System | Operating Systems: Three Easy Pieces | Remzi & Andrea Arpaci-Dusseau | Free online, by the authors |
+| 3 | Data Systems | Designing Data-Intensive Applications (2nd ed.) | Martin Kleppmann, Chris Riccomini | — |
+| 4 | System Design | System Design Interview: An Insider's Guide, Vol. 1 | Alex Xu | — |
+| 5 | Reliability | Site Reliability Engineering | Betsy Beyer, Chris Jones, Jennifer Petoff, Niall Richard Murphy (Google) | Free online, by Google |
+| 6 | ML Systems | Designing Machine Learning Systems | Chip Huyen | Chapter summaries & resources on the author's GitHub |
+| 7 | LLMs from Scratch | Build a Large Language Model (From Scratch) | Sebastian Raschka | All code & notebooks free on the author's GitHub |
+| 8 | AI Engineering | AI Engineering: Building Applications with Foundation Models | Chip Huyen | Table of contents & resources on the author's GitHub |
+
+Stage 1 · The Machine
+
+Computer Systems: A Programmer's Perspective, 3rd ed.: How code actually runs: bits, assembly, memory, linking, I/O.
+
+| # | Topic |
+|---|---|
+| 1 | Bits, bytes & integers |
+| 2 | IEEE floating point |
+| 3 | x86-64 assembly |
+| 4 | Procedures & the run-time stack |
+| 5 | Buffer overflow attacks |
+| 6 | Pipelining (Y86-64) |
+| 7 | The memory hierarchy |
+| 8 | Locality & cache memories |
+| 9 | Linking: static vs dynamic |
+| 10 | Exceptions & signals |
+| 11 | Dynamic memory allocation |
+| 12 | System-level I/O |
+| 13 | Internet basics: IP, DNS, HTTP |
+| 14 | The sockets interface |
+
+Stage 2 · The Operating System
+
+Operating Systems: Three Easy Pieces: Processes, memory, concurrency and file systems, from first principles.
+
+| # | Topic |
+|---|---|
+| 15 | Processes |
+| 16 | Process API: fork / exec / wait |
+| 17 | System calls & traps |
+| 18 | Limited direct execution |
+| 19 | Scheduling: MLFQ & lottery |
+| 20 | Address spaces |
+| 21 | Paging & TLBs |
+| 22 | Swapping: mechanisms & policies |
+| 23 | Threads |
+| 24 | Locks |
+| 25 | Condition variables & semaphores |
+| 26 | Concurrency bugs & deadlock |
+| 27 | File systems: inodes & journaling |
+
+Stage 3 · Data Systems
+
+Designing Data-Intensive Applications, 2nd ed.: Storage, replication, sharding, transactions and consensus: the backbone of every backend.
+
+| # | Topic |
+|---|---|
+| 28 | Trade-offs in data systems architecture |
+| 29 | Defining nonfunctional requirements |
+| 30 | Data models: SQL, document, graph |
+| 31 | Storage: LSM-trees vs B-trees |
+| 32 | Encoding & schema evolution |
+| 33 | Replication: leader, multi, leaderless |
+| 34 | Sharding |
+| 35 | Transactions & isolation levels |
+| 36 | Trouble with distributed systems |
+| 37 | Consistency & consensus |
+| 38 | Batch processing |
+| 39 | Stream processing |
+| 40 | A philosophy of streaming systems |
+| 41 | Doing the right thing |
+
+Stage 4 · System Design
+
+System Design Interview: An Insider's Guide, Vol. 1: Turning the theory into real designs: rate limiters, feeds, chat, video, storage.
+
+| # | Topic |
+|---|---|
+| 42 | Scale from zero to millions of users |
+| 43 | Back-of-the-envelope estimation |
+| 44 | Framework for system design interviews |
+| 45 | Rate limiter |
+| 46 | Consistent hashing |
+| 47 | Key-value store |
+| 48 | Unique ID generator |
+| 49 | URL shortener |
+| 50 | Web crawler |
+| 51 | Notification system |
+| 52 | News feed system |
+| 53 | Chat system |
+| 54 | Search autocomplete |
+| 55 | Design YouTube |
+| 56 | Design Google Drive |
+
+Stage 5 · Reliability
+
+Site Reliability Engineering: Keeping systems up: SLOs, error budgets, on-call, incidents, overload.
+
+| # | Topic |
+|---|---|
+| 57 | Embracing risk & error budgets |
+| 58 | SLIs, SLOs & SLAs |
+| 59 | Eliminating toil |
+| 60 | The four golden signals |
+| 61 | Release engineering |
+| 62 | Being on-call |
+| 63 | Effective troubleshooting |
+| 64 | Managing incidents |
+| 65 | Postmortem culture |
+| 66 | Testing for reliability |
+| 67 | Load balancing in the datacenter |
+| 68 | Handling overload |
+| 69 | Addressing cascading failures |
+
+Stage 6 · ML Systems
+
+Designing Machine Learning Systems: ML as an engineering discipline: data, features, deployment, drift, monitoring.
+
+| # | Topic |
+|---|---|
+| 70 | ML in research vs production |
+| 71 | Data engineering fundamentals |
+| 72 | Sampling & labeling |
+| 73 | Class imbalance |
+| 74 | Feature engineering |
+| 75 | Data leakage |
+| 76 | Model development & ensembles |
+| 77 | Model offline evaluation |
+| 78 | Batch vs online prediction |
+| 79 | Data distribution shifts |
+| 80 | Monitoring & observability |
+| 81 | Continual learning |
+| 82 | Test in production: shadow, A/B, canary |
+| 83 | ML platform & feature store |
+
+Stage 7 · LLMs from Scratch
+
+Build a Large Language Model (From Scratch): Build a GPT yourself: tokenizer, attention, training, finetuning.
+
+| # | Topic |
+|---|---|
+| 84 | Tokenization & byte pair encoding |
+| 85 | Token embeddings & word positions |
+| 86 | Data sampling with a sliding window |
+| 87 | Self-attention |
+| 88 | Causal attention |
+| 89 | Multi-head attention |
+| 90 | LayerNorm, GELU & shortcut connections |
+| 91 | The transformer block |
+| 92 | Coding the GPT model |
+| 93 | Decoding: temperature & top-k |
+| 94 | Training loop: autograd & AdamW |
+| 95 | Pretraining & cross-entropy loss |
+| 96 | Loading pretrained weights |
+| 97 | Finetuning for classification |
+| 98 | Finetuning to follow instructions |
+
+Stage 8 · AI Engineering
+
+AI Engineering: Building Applications with Foundation Models: Shipping on top of foundation models: evaluation, prompting, RAG, agents, finetuning, inference.
+
+| # | Topic |
+|---|---|
+| 99 | Foundation models: data, modeling, size |
+| 100 | Sampling strategies |
+| 101 | Evaluation & AI as a judge |
+| 102 | Prompt engineering |
+| 103 | Prompt injection & defenses |
+| 104 | RAG & retrieval optimization |
+| 105 | Embeddings & vector search |
+| 106 | Agents: tools & planning |
+| 107 | Memory |
+| 108 | Parameter-efficient finetuning |
+| 109 | Dataset engineering & synthesis |
+| 110 | Inference optimization |
+| 111 | Guardrails, model router & gateway |
+| 112 | User feedback |
+
+Contributing
+
+Spotted a mistake or a topic that belongs here? Open an issue or a pull request.
+
+License
+
+The topic list is MIT licensed. The books belong to their authors and publishers; this repo only points to them.

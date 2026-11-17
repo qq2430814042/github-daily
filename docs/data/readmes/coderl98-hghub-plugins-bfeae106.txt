@@ -1,0 +1,105 @@
+HGhub 插件订阅源
+
+按 HGhub 插件开发教程 编写的 HPP 1.0 单文件源合集。
+
+当前应用 0.0.1 / HPP 1.0.0-dev。协议仍是草案，导入前请对照当前支持状态。
+
+站点行为参考 xptv-extensions 的 JS 蜘蛛，映射到 HPP：tabs → 分类，cards → MediaItem，tracks → 播放列表/分集，playinfo → streams。作品与分集 ID 使用路径或上游编号，不把会过期的播放地址当 ID。
+
+订阅地址
+
+在 HGhub 插件中心 → 导入与订阅 粘贴下面任一 HTTPS 地址。列表里的插件路径是相对路径，会按列表最终 URL 解析。
+
+| 列表 | 内容 | GitHub Raw | jsDelivr |
+| --- | --- | --- | --- |
+| 全部 | 21 个源（含成人） | https://raw.githubusercontent.com/CoderL98/hghub-plugins/main/manifest.json | https://cdn.jsdelivr.net/gh/CoderL98/hghub-plugins@main/manifest.json |
+| 影视 | 14 个影视 / 动漫 / 短剧 | https://raw.githubusercontent.com/CoderL98/hghub-plugins/main/subs/vod.json | https://cdn.jsdelivr.net/gh/CoderL98/hghub-plugins@main/subs/vod.json |
+| 成人 | 7 个成人源（mature） | https://raw.githubusercontent.com/CoderL98/hghub-plugins/main/subs/18.json | https://cdn.jsdelivr.net/gh/CoderL98/hghub-plugins@main/subs/18.json |
+
+推荐先订 影视源。成人列表需在设置里打开成人内容后再导入。GitHub Raw 若打不开，改用 jsDelivr。
+
+仓库首页：
+
+导入步骤
+
+1. 打开 HGhub → 插件中心 → 导入与订阅
+2. 粘贴上表中的 HTTPS 地址（不要选本地 manifest.json：Android 文件选择器读不到同目录的 plugins/*.js）
+3. 预览元信息后勾选要安装的条目
+4. 确认状态为 已就绪
+5. 从首页、分类或搜索进入详情，点集播放
+
+订阅后可手动刷新列表。同 ID 更高版本会更新，同版本覆盖用于调试。
+
+单独导入某个源时，使用对应 JS 的 raw 地址，例如：
+
+https://raw.githubusercontent.com/CoderL98/hghub-plugins/main/plugins/huangguo.js
+
+插件
+
+| 文件 | ID | 能力 | 备注 |
+| --- | --- | --- | --- |
+| plugins/4kav.js | 4kav | 首页、分类、搜索、详情、直链 | 4kmp |
+| plugins/hjkk.js | hjkk | 分类、搜索、详情、播放 | 韩剧看看 |
+| plugins/jpyy.js | jpyy | 分类、搜索、详情、播放 | 金牌影视，MD5+SHA1 签名 |
+| plugins/saohuo.js | saohuo | 分类、搜索、详情、播放 | 烧火电影 |
+| plugins/apple.js | apple | 分类、搜索、详情、HLS | 小苹果，allowInsecureHttp |
+| plugins/xingya.js | xingya | 分类、搜索、详情、直链 | 星芽短剧，JWT 存 hg.storage |
+| plugins/anfuns.js | anfuns | 分类、搜索、详情、播放 | 动漫 |
+| plugins/duanjutt.js | duanjutt | 分类、详情、播放 | 搜索页有验证码，未接搜索 |
+| plugins/tiantian.js | tiantian | 分类、搜索、详情、播放 | 天天影视，allowInsecureHttp |
+| plugins/hdmoli.js | hdmoli | 分类、搜索、详情、播放 | XOR 解密播放地址 |
+| plugins/aowu.js | aowu | 分类、搜索、详情、播放 | DS 接口 + AES |
+| plugins/xiaohys.js | xiaohys | 分类、搜索、详情、播放 | DS 接口 + AES |
+| plugins/jdys.js | jdys | 分类、搜索、详情、播放 | AES 播放配置 |
+| plugins/wwgz.js | wwgz | 分类、搜索、详情、播放 | 农民影视 |
+| plugins/huangguo.js | huangguo | 首页、信息流、分类、搜索、详情、HLS、图文、评论 | JSON API，mature |
+| plugins/madou.js | madou | 分类、搜索、详情、HLS | mature |
+| plugins/hkdoll.js | hkdoll | 分类、搜索、详情、播放 | mature，XOR |
+| plugins/hanime.js | hanime | 分类、搜索、详情、直链 | mature |
+| plugins/avtoday.js | avtoday | 分类、搜索、详情、HLS | mature |
+| plugins/xhamster.js | xhamster | 分类、搜索、详情、多清晰度 | mature |
+| plugins/pornhub.js | pornhub | 分类、搜索、详情、HLS | mature |
+
+标了 mature: true 的源，宿主默认隐藏，需在设置里打开成人内容后再导入或启用。
+
+重新生成订阅列表
+
+增删 plugins/*.js 后执行：
+
+node scripts/build-subs.mjs
+
+会写入 manifest.json、subs/all.json、subs/vod.json、subs/18.json。插件 url 使用相对路径 plugins/.js，同一份 JSON 可挂在 GitHub Raw 或 jsDelivr 上。不要给 meta.updateUrl 写死地址，宿主会用来源列表或 JS 的 URL 做更新。
+
+尚未转换
+
+这些 xptv 源本轮没有做成 HPP 插件：
+
+- 混淆：gzys.js（瓜子）、laodifang.js（老地方）、xptv 的 huangguo.js（本仓库已有独立 JSON 实现）
+- 依赖页面脚本 / eval：novipnoad.js、subaibai.js 播放第二路
+- 鉴权较重：iyftv.js（页面注入密钥）、zero.js（设备 token）
+- 网盘 / Alist / 直播：alist_.js、yunpan.js、douyu.js、huya.js、bililive.js 等
+- 其余 HTML 蜘蛛：czzy.js、taohuazu.js、hdys.js、avdb.js、kbjfan.js 等可按同样模式继续加
+
+验证
+
+黄果（不经过宿主）
+
+curl -s "https://huangguoai.com/api/videos?page=1" | head -c 300
+curl -s "https://huangguoai.com/api/videos/12" | head -c 300
+curl -s -X POST -H "Content-Type: application/json" -d "{}" \
+  "https://huangguoai.com/api/videos/12/episodes/1/playback"
+
+成功时播放接口返回 data.streams.main（HLS）以及可选的 hevc / preview。请求体里不要带 id / ep。
+
+真实宿主
+
+- 搜索任意关键词，应出现分页结果
+- 打开一部作品，选集 ID 为路径或编号，不是过期播放地址
+- 播放返回 HLS 或 MP4；需要 Referer 的流已写在 streams.headers 或 meta.defaultHeaders
+- 滑到分类第二页后重载插件，游标仍是页码字符串
+
+本仓库没有 HGhub 假宿主，QuickJS 运行时验收需要在应用内完成。
+
+说明
+
+不提供、不存储音视频内容。使用第三方站点请自行判断合规性。

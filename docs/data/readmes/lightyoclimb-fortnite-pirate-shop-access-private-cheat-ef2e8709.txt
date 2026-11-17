@@ -1,0 +1,41 @@
+🏴‍☠️ Fortnite Pirate Chest Private Cheat
+
+⚓ Smart Pirate Chest Detection & Loot Probability Analysis
+
+A private Fortnite tool designed to analyze the game map and identify chest locations with the highest estimated probability of obtaining Pirate Shop Access.
+
+⚓ Features
+
+- 🗺️ Map Analysis — analyzes the Fortnite map when the launcher starts the game.
+- 📦 Chest Detection — identifies potential chest locations.
+- 🎯 Loot Probability — estimates which chests have the highest chance of containing Pirate Shop Access.
+- ⚡ Automated Scanning — performs map analysis automatically on launch.
+
+🛡️ Status
+
+Private Build — Current Version
+
+Compatibility and functionality may vary between Fortnite updates. Each release should be tested before publishing.
+
+🚀 How to Launch
+
+1. Download the latest release.
+2. Extract the archive.
+3. Review the executable before running it.
+4. Follow the included setup instructions.
+
+⭐ Support
+
+If you find the project useful, leave a review and share your feedback.
+
+Your feedback helps improve future releases and track compatibility with new game versions.
+
+🎯 Purpose
+
+Find promising Pirate Chest locations and make loot exploration more convenient.
+
+📥 Download
+
+Ready to find the treasure?
+
+🏴‍☠️ FIND THE CHEST. CLAIM THE TREASURE.

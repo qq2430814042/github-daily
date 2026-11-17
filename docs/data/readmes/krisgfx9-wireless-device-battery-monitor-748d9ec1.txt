@@ -1,0 +1,89 @@
+Wireless Battery
+
+Battery levels of your wireless mouse, headset, keyboard and controller, right on the Windows taskbar.
+
+Just want it working? Download WirelessBattery-Setup from the latest release, run it and click through. That's it.
+Experienced users can grab the portable zip, use the command-line options, or build it from source with make or build.bat.
+
+- Tiny: a ~350 KB app using about 2 MB of RAM. It's plain C++/Win32, with no runtime and no background service, and installs in seconds without admin rights.
+- No vendor software needed: it talks to the devices directly. G HUB, Synapse, iCUE, GG and NGenuity can stay closed (or keep running; they don't conflict).
+- Many brands: Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PlayStation and Xbox controllers, any Bluetooth device Windows knows a battery level for, and every headset the bundled HeadsetControl supports.
+
+Display
+
+On the taskbar (default): 🎧 30%  🖱 93% next to the notification area, drawn with the Windows icon font.
+- Low battery: a red number means 15% or less.
+- Charging: a blue ⚡ appears next to the number.
+- Asleep: dimmed text means the device is asleep and the last known value is shown.
+- Theme: it follows light/dark mode and DPI scaling.
+
+Tray icons: one icon per device with the number drawn in it, plus a "Low battery" notification at 15%. The app switches to this automatically when the taskbar is vertical or can't be found.
+
+Hover for details. Click for the menu: every device (click one to hide or show it), display mode, Refresh now, Start with Windows, and Exit. Levels refresh every 60 seconds, and right away when a device is plugged in or the PC wakes up.
+
+Supported devices
+
+| Vendor | Devices | How |
+|---|---|---|
+| Logitech | Mice and keyboards on Unifying, Bolt, Lightspeed and Nano receivers, over USB or Bluetooth; G headsets (G533, G535, G633/G635/G733/G933/G935, G PRO/PRO X) | HID++ 1.0 / 2.0 with feature discovery: unified battery, battery level, voltage, ADC |
+| Razer | Wireless mice, keyboards and dongles; BlackShark V3 / V3 Pro headsets | Razer feature-report protocol; headset envelope protocol (queried every 5 min) |
+| SteelSeries | Arctis 1/7/7+/9/Pro/Pro Wireless, Arctis Nova 3P/5/7/7X/7P/Pro Wireless, GameBuds; Aerox 3/5/9 Wireless, Prime Wireless, Rival 3 Wireless (Gen 2), Rival 650, Rival Pro | Vendor HID reports |
+| Corsair | Void / Void Pro / Void Elite / HS70 / HS80 wireless; Bragi devices (Virtuoso, Void V2, HS80 MAX, Slipstream mice and keyboards) | Vendor HID reports, Bragi GET (read-only) |
+| Cooler Master | MM712, MM731 (2.4 GHz dongle or USB cable) | Vendor HID status report (read-only) |
+| HyperX | Cloud III Wireless, Cloud III S Wireless, Cloud II Wireless (HP, Kingston, DTS), Cloud II Core Wireless, Cloud Alpha Wireless, Cloud Alpha 2 Wireless, Cloud Flight, Cloud Flight S | Vendor HID reports |
+| Glorious | Model O / O- / D / D- Wireless, Model O 2 / D 2 PRO | Vendor feature report |
+| Hitscan | Hyperlight X, Hyperlight N | Vendor feature report (same protocol as Glorious) |
+| Kysona / Pulsar / ATK (VXE) / Hitscan | Kysona M600 / Mercury, Pulsar and ATK VXE wireless mice (e.g. VXE X3 Pro, ATK F1 Extreme), Hitscan Hyperlight | Shared vendor protocol with checksummed replies |
+| ATK headsets | ATK N9 Pro | Virtual COM port protocol (the ATK desktop app must be closed) |
+| G-Wolves | Fenrir, Fenrir Pro / Max / Asym, HTX, HTS, HSK, HTR, HT-S2, Lycan, WARG, VUK and their 8K dongles | Glorious or Kysona protocol, depending on the model |
+| Keychron mice | M4 and other Keychron mice on the 2.4 GHz receiver; 8K mice (M5 8K, G6 HE 8K ...) on the TurboLink 8K receiver | Vendor report from Keychron Launcher |
+| LAMZU | Maya X, Maya, Maya M, Tachi, Inca, Paro, Thorn, Atlantis Mini / OG Champion, Orcus (cable, 1K and 4K/8K dongles) | Vendor feature report from LAMZU Aurora |
+| Redragon | Compx-based wireless mice: M916 Pro 1K (tested), M913 Impact Elite (tri-mode), G49 (receiver or cable) | Kysona protocol |
+| AULA | F75 / F87 Pro / F99 wireless keyboards on the 2.4 GHz receiver | Report 0x13 frame, command 0x4A, sum checksum (Bluetooth and wired modes untested) |
+| ASUS ROG | Strix Scope II 96 (RX), Azoth, Falchion keyboards; Keris, Harpe, Gladius, Chakram, Spatha, Pugio, Strix Impact mice; the Omni Receiver | ROG HID battery query |
+| ZOWIE | EC1/EC2/EC3-CW and DW series (U2-DW, S2-DW ...) | Community-documented read-only vendor commands |
+| Rapoo VT | VT3 Max Gen 2 (tested); other Nordic 54L VT mice exposing the same status interface; legacy VT3 Pro (experimental) | Passive HID status report 07 on FF00:0002; legacy BB restricted to VT3 Pro 1215/4415. Receiver and USB cable, with charging state |
+| Motospeed / Delux / Ajazz | Motospeed X6, Delux M900 Pro, Ajazz AJ179 family; AJ159 and other AJ-series mice on the 3151 receiver | Vendor reports (Delux: passive status broadcasts; AJ-series: 0xF7 status poll, then feature report 0x05) |
+| Attack Shark and other Chinese brands | Rongyuan receivers (81 models: Attack Shark R3, X82 PRO HE, Ajazz keyboards, some MSI and others); Xenta receivers (Attack Shark X6 / R1, X11, X3 Max, V3 Pro) | Rongyuan status report; Xenta passive broadcasts |
+| Sony | DualShock 4, DualSense, DualSense Edge (USB, Bluetooth, wireless adapter); INZONE H9 II and H5 headsets | Input report; INZONE vendor protocol |
+| GameSir | Nova Lite, Nova 2, Nova 2 Lite on the 2.4 GHz receiver; Nova 2 Lite on USB | Vendor device-info query (usage page FF7A) |
+| Xbox | Controllers on the Xbox Wireless adapter, USB or Bluetooth; headsets plugged into a controller | Windows.Gaming.Input battery report (real %), XInput fallback |
+| Bluetooth | Anything that shows a battery in Settings → Bluetooth & devices (earbuds, headphones, BLE mice and keyboards) | Windows device property |
+| Generic HID | Devices reporting the standard HID Battery Strength usage | HID usage page 0x06 / 0x85 |
+| HeadsetControl | Every headset it supports (Audeze, Jabra, Sony INZONE, newer Logitech and more) | Bundled; runs headsetcontrol -o json |
+
+Tested on real hardware: Glorious Model O Wireless, HyperX Cloud III Wireless, Cooler Master MM712 (dongle), Rapoo VT3 Max Gen 2 (receiver 24AE:1417 and USB cable 24AE:4617; other Rapoo models are untested, see Rapoo protocol notes) and Redragon M916 Pro 1K (receiver 3554:F55D).
+Implemented from protocol documentation and other projects, not yet tested: everything else. If you own one of these devices, please report whether it works by opening an issue.
+
+Install
+
+1. Download WirelessBattery-Setup-.exe from the latest release.
+2. Run it and click through. It needs no administrator rights and nothing else installed: no
+   runtimes, no drivers, no vendor apps. HeadsetControl comes bundled.
+
+The installer adds a Start menu entry and an uninstaller (Settings → Apps), and can start the app
+when you sign in. Prefer no installer? Download WirelessBattery--portable.zip, unzip it
+anywhere and run WirelessBattery.exe.
+
+Notes:
+- SmartScreen warning: the exe is not code-signed, so Windows may say "Windows protected your PC". Click More info → Run anyway, or build it yourself.
+- Tray-icon mode on Windows 11: new tray icons go to the ^ overflow. Drag them onto the taskbar or enable them in Settings → Personalization → Taskbar → Other system tray icons.
+
+Command line
+
+WirelessBattery.exe --list   # print every device and its battery level, then exit
+WirelessBattery.exe --dump   # print every HID collection (useful when asking for a new device)
+WirelessBattery.exe --quit   # close the running instance
+
+Build
+
+You need MinGW-w64, e.g. from MSYS2 (pacman -S mingw-w64-x86_64-gcc make).
+
+make            # MSYS2 / any shell with make
+build.bat       # plain cmd with g++ and windres on PATH
+
+To build the installer and portable zip, install Inno Setup and run
+powershell -File installer\build-installer.ps1 -Version 1.0.0. It downloads the pinned
+HeadsetControl release and verifies its checksum. GitHub Actions does all of this automatically:
+
+…（内容已截断）

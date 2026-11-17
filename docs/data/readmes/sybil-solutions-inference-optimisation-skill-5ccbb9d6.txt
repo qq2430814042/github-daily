@@ -1,0 +1,154 @@
+inference-optimisation
+
+An agent skill for hill-climbing the speed of a local LLM server on any hardware and any quantization. It covers:
+
+- single-user and concurrent decode
+- speculative decoding
+- prefill
+- KV cache size
+- startup time and time to first token
+
+It works under a memory cap, and every result has to survive a full-context stability check.
+
+It encodes how we actually got these speedups. It is not a list of flags. The workflow:
+
+1. Compute the theoretical ceiling.
+2. Change one thing at a time.
+3. Measure against interleaved controls.
+4. Log every result, including the failures.
+5. Gate on long-context retrieval.
+6. Qualify a clean, pinned build before publishing.
+
+It works with Claude Code and any agent that loads SKILL.md-style skills. Any model can also follow it from PROMPT.md.
+
+What we've been able to accomplish
+
+Results from the hill-climbs this skill was distilled from. Every number was measured on the hardware named; see the linked sources for methods and raw data.
+
+| Hardware | Model / quant / engine | Before → after |
+|---|---|---|
+| Intel Arc B390 iGPU (laptop, 64 GB unified LPDDR5X, ~115 GB/s) | Ornith-1.5-35B-A3B, EXL3 4 bpw, SGLang XPU + MTP | Decode, 1 user: 43.6 → 53 tok/s (median)
+Decode, 4 users: 84.7 → 103 tok/s
+Prefill 32K: 1,037 → 1,660 tok/s
+Prefill 256K: 297 → 628 tok/s (2.1×)
+KV cache: 264K tokens → 4 × 256K
+Startup: 113 → 43 s
+Registry Lab gates: decode 28.6 → 41.0, prefill 255 → 667 |
+| Intel Arc Pro B70 | Qwen3.8-27B, EXL3 4 bpw, vLLM + custom XPU kernels | Decode: 91.2 tok/s at 1 user, 365 at 16 (prose, thinking on)
+Same card with llama.cpp Q4_K_M: 25.0
+Prefill 4K/32K/128K/254K: 1,654/1,434/928/650 → 2,421/2,259/1,415/911
+Agent-session replay: 193 → 147 s |
+| Intel Arc Pro B70 | Same model, SGLang + the same kernels | Decode, 1 user: 82.6 tok/s, vs vLLM 75.7 on the same card and day |
+| RTX 3090 | Qwen3.8-27B EXL3 3 bpw + MTP | 96.2 tok/s prose / 141.1 code, 1 user |
+| RTX 3090 | Qwen3.6-35B-A3B EXL3 3 bpw + MTP | 251.7 / 357.9 tok/s, 1 user |
+| RTX 3090 | Flash-Next EXL3, 256K context | MTP: 45.5 → 65.6 tok/s |
+| 4× H200 NVL | DeepSeek-V4.1-Flash, vLLM + speculative decoding | Crashed under load → 229.1 tok/s decode, 17,546 tok/s prefill; all six gates pass |
+
+Sources:
+
+- local-ai-registry:
+  - Ornith B390 recipe, with the full hill-climb log in PR #453
+  - the RTX 3090 and H200 recipes
+- trellis-serve:
+  - xpu/README.md, xpu/docs/PROGRESS.md and xpu/docs/SGLANG.md for B70
+  - cuda/README.md for the RTX 3090
+- qwen-serve
+
+Reading the B390 result
+
+That run is the one this skill grew out of. Its ceiling calculation said:
+
+- Decode: 100 tok/s for one user was only reachable with two useful speculative drafts. This model's draft head accepts 14% at depth 2, so the practical target was 88–97 tok/s. We reached ~55% of it; the rest is GEMV kernel efficiency.
+- Prefill at 256K: we reached 628 tok/s against a ~670–684 tok/s ceiling.
+
+The skill makes the agent compute this up front, so it can tell you early when a target is above the physics.
+
+How it works
+
+┌────────────────────────────────────────────────────────────────┐
+  measure HW ─▶ │ THEORY.md: bytes/token ÷ bandwidth, FLOPs/token ÷ 50% peak, KV │
+                └────────────────────────────────────────────────────────────────┘
+                                         │
+    baseline ─▶ profile ─▶ pick lever (ceiling gap × likelihood) ─▶ configs/NEW.json
+                    ▲                                                     │
+                    │                                    queue.sh ctl NEW ctl (serialized, AC-only,
+                    │                                    memory watchdog, ≥6 samples, medians)
+                    │                                                     │
+   PLAN.md + ledger.jsonl ◀── accept only if it beats BOTH neighbouring controls ──┘
+          │                    and regresses nothing by >3%
+          ▼
+  long-context needle gate ─▶ concurrent full-KV soak ─▶ plateau? ─▶ pinned clean build
+                                                                      ─▶ acceptance gates ─▶ publish
+
+The skill has three parts:
+
+SKILL.md: the procedure.
+- Inventory, ceilings, ground rules, the loop and lever order.
+- When to stop, how to qualify and publish, and how to report.
+
+references/: loaded only when needed.
+- ceilings.md: how to compute decode, prefill, TTFT, startup and KV maxima, with a worked example.
+- methodology.md: measurement traps. Chunk-counted tokens, mis-sized prompts, acceptance counters, drift, unified-memory accounting.
+- levers.md: every lever with measured evidence. It is tagged general vs stack-specific.
+- gotchas.md: known traps in vLLM, SGLang, llama.cpp and ExLlama, and on Intel, NVIDIA, Apple and AMD hardware.
+- publishing.md: pinning, clean builds, the six acceptance gates, proving the build matches the best, results cards.
+
+scripts/: a small, engine-agnostic harness. It is standard-library Python plus bash.
+- bench.py benchmarks any OpenAI-compatible server. It measures:
+  - startup and short-prompt TTFT;
+  - c1 decode (median of N) and cN aggregate decode;
+  - cold prefill at several lengths;
+  - long-context needle retrieval;
+  - peak memory, with a cap watchdog.
+
+  It flags looping output, failed requests and runs on battery. Token counts come from server usage stats, never from streamed chunks, and everything lands in ledger.jsonl.
+- ceiling.py computes the theoretical ceilings from a JSON of measured bandwidth and FLOPs plus component sizes.
+- queue.sh is a serialized, detachable run queue, for interleaving control/candidate/control runs.
+- mem.sh reports a container's real footprint. That includes driver residency on unified-memory GPUs, which cgroups don't see.
+
+Install
+
+Claude Code (user-level):
+
+git clone https://github.com/sybil-solutions/inference-optimisation-skill
+mkdir -p ~/.claude/skills
+cp -r inference-optimisation-skill/skills/inference-optimisation ~/.claude/skills/
+
+Then ask, for example:
+
+- "hill-climb decode and prefill for the model on :8000 under a 40 GiB cap"
+- "what's the theoretical max tok/s for this model on this machine?"
+
+Other agents: point them at skills/inference-optimisation/SKILL.md, or paste PROMPT.md as the task prompt.
+
+Quick start without an agent
+
+S=skills/inference-optimisation
+python3 $S/scripts/ceiling.py $S/examples/ceiling-ornith-b390.json        # ceilings
+mkdir -p configs && cp $S/examples/config-existing-server.json configs/base.json   # edit base_url/model
+python3 $S/scripts/bench.py run configs/base.json --long 131072            # one run
+bash $S/scripts/queue.sh base cand base                                     # interleaved A/B
+python3 $S/scripts/bench.py show                                            # ledger table
+
+Principles that carried the most weight
+
+- Ceilings first. If you don't know the maximum, you can't tell whether 53 tok/s is great or bad, or whether "100 tok/s" is possible.
+- Noise is ±5–10%. Most single-run "wins" are drift. Interleave controls and use medians.
+- Measure what matters:
+  - real tokens, not stream chunks;
+  - real prompt lengths, from the tokenizer;
+  - real memory, including GPU residency on unified memory.
+- Speculative decoding is about per-step cost, not acceptance.
+  - Prune the draft head's vocabulary.
+  - Sweep draft length per concurrency and context.
+  - Keep sampling on the GPU.
+- Prove full-context stability with exact-match needles and a concurrent full-KV soak before calling anything "best".
+- Write down failures. Most of the value in PLAN.md is the list of things that did not work and why.
+
+Contributing
+
+PRs with new levers, gotchas or results are welcome. Each needs the hardware, model, quantization, engine version, before → after numbers, how they were measured, and a link to raw data.
+
+License
+
+MIT

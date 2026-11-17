@@ -33,6 +33,8 @@ Code Review
 
 Review local changes or remote PRs. Comment on diffs, suggest code. Your comments go back to the agent. Works with Git, GitButler, Jujutsu (jj), Perforce (p4), GitHub, and GitLab.
 
+For a big change, start a guided review: an agent sorts the diff into chapters, the most important first.
+
 Plannotator Inbox
 
   Watch the demo · More on the Inbox · Docs
@@ -53,7 +55,17 @@ herdr plugin install plannotator/herdr-annotate
 
 Prefer it standalone? Plannotator TUI powers the document review and runs without Herdr: brew install plannotator/tap/plannotator-tui.
 
-Annotate HTML Artifacts
+HTML artifacts, live sites, and guided reviews
+
+Annotate HTML artifacts and live sites
+
+Annotate rendered HTML files, or any site running on your machine. A local address opens your app live through a local proxy: you comment on the real page, and hot reload keeps working.
+
+plannotator annotate http://localhost:5173
+
+Guided reviews
+
+In code review, press Guide (or Cmd/Ctrl+Shift+G) and an agent sorts the diff into chapters: the heart of the change first, then its effects, then the glue. Each chapter puts a short overview next to the real diff. Comments you leave there go back to the agent with the rest of your review. More on guided reviews
 
 Commands
 
@@ -99,6 +111,8 @@ Send a plan as a link. A teammate annotates it, and you import their feedback fo
 
 Small shares live in the link itself. Large ones are encrypted before upload and expire after 7 days. Anyone with the full link can read it. Turn sharing off with PLANNOTATOR_SHARE=disabled. How sharing works
 
+  For teams: join the Workspaces waitlist
+
 Install
 
 One installer covers almost every agent. It installs the plannotator binary, auto-detects your installed agents, and configures hooks, skills, and slash commands for each:
@@ -125,10 +139,5 @@ Then finish the step for your agent:
 | Copilot CLI | /plugin marketplace add backnotprop/plannotator, then /plugin install plannotator-copilot@plannotator. Restart. Plan review activates in plan mode (Shift+Tab). | README |
 | DeepSeek Harness | Add @plannotator/dsh on DSH's Plugins page, or run dsh plugin --profile  add @plannotator/dsh. Plan review opens on exit_plan_mode. The plugin adds /plannotator-review, /plannotator-annotate and /plannotator-last, which open without blocking the session. | README |
 | Droid | droid plugin marketplace add https://github.com/backnotprop/plannotator, then droid plugin install plannotator@plannotator. Commands only, no plan interception yet. | README |
-| Gemini CLI | Nothing. The hook, policy, and slash commands are configured automatically. Requires Gemini CLI 0.36.0+. | README |
-| Kiro CLI | Nothing. Skills and an example agent are installed automatically. Try kiro-cli chat --agent plannotator. | README |
-| OpenCode | Add "plugin": "@plannotator/opencode@latest"] to opencode.json. Restart OpenCode. | [README |
-| Pi | Skip the installer. Just pi install npm:@plannotator/pi-extension. Start Pi with --plan, or toggle with /plannotator-plan-mode. | README |
-| T3 Code | For Claude threads in T3: run plannotator t3 --help and follow its two steps (sign in to T3 once, add the --t3 MCP entry). Your Inbox replies then arrive in the thread as new turns. | README |
 
 …（内容已截断）

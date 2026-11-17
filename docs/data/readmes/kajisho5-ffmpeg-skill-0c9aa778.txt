@@ -1,0 +1,94 @@
+Give your coding agent a video editor.
+
+Claude Code, Cursor, Codex or any MCP client edits your footage with local FFmpeg, then checks its own output.
+
+No cloud · No API keys · Python standard library
+
+  Website ·
+  Quick start ·
+  Demos ·
+  Tools ·
+  MCP ·
+  npm
+
+npx ffmpeg-skill
+
+caption.py --animate pop --karaoke
+
+fit.py --aspect 9:16 --fit crop
+
+silence.py --threshold -35
+
+loudness.py -I -14 --tp -1
+
+Left half is the input, right half is what the command produced. Every before/after demo, with the exact command under each one → — all of it built by python3 demos/build.py, so you can rebuild every frame of it yourself. The footage is synthetic (FFmpeg's own test sources) except in three demos, reframe_talk, filler_en and pauses_en, which use two AI-generated clips of people who do not exist (demos/footage/).
+
+ffmpeg-skill is an Agent Skill for Claude Code, Cursor, Codex and any agent that reads SKILL.md. It teaches the agent a fixed workflow (probe → edit losslessly where possible → check → verify) and ships 42 tools that do the actual work with ffmpeg / ffprobe: cut, join, silence removal, fit to duration and aspect, captions and karaoke, overlays and motion graphics, HDR → SDR and LUTs, audio clean-up and typed dynamics, sync with drift correction, multicam, loudness, delivery checks, whole-edit project rendering, batch folders. Every tool is also callable as an MCP tool (tools/list advertises a core 12 by default to keep client context small, with FFMPEG_SKILL_MCP_FULL=1 listing all 42; every tool is reachable by name through tools/call either way), and the whole set is described by a machine-readable contract.
+
+If ffmpeg and python3 are on your PATH, it works: offline, on footage you would rather not upload.
+
+SPEC (Self-Producing Execution Contract): each tool's input_schema — the part of its
+contract and MCP tool definition that has to track the CLI flag-for-flag — is never
+hand-authored beside the code. It is derived, at run time, from the same argparse parser that
+already defines the CLI, and CI fails the build if any of it drifts.
+→ full explanation
+
+Standalone, and in an ecosystem
+
+Standalone, this is a local FFmpeg engine: probe → edit → verify, npx ffmpeg-skill and nothing else. No API key, no account, no other repo required. Everything above and below this section describes that standalone tool, and none of it changes if you never read the rest of this one.
+
+In kajisho5's wider video-production ecosystem, this repo is the hands: it cuts, measures and exports files, and reports back in structured JSON. It does not decide what to cut, whether a deliverable is approvable, what makes a highlight interesting, or what a caption should say (the user's cue text is burned as written, never rewritten to fit) — those are a brain's job, sitting in front of this engine, not inside it.
+
+| You want to... | Use |
+|---|---|
+| Cut / join / measure / export a file right now | this repo (ffmpeg-skill), standalone |
+| Decide cut points, approve a deliverable, plan a whole edit | video-production-agent / AI-video-production-OS |
+| Build a typed editing graph across a workspace, without writing raw ffmpeg | video-editing-skill / audio-production-skill |
+| Put Remotion motion graphics (animated captions, silence jump cuts, audio-peak motion) on a real recording | remotion-ffmpeg-skill: its compositions take their length, fps, frame, silences, scene cuts, audio peaks and beats from this repo's probe.py, silence.py and scenes.py. It verifies its render with check.py and look.py, composites a graphics layer with overlay.py (--place for its --sparse mode), and delivers through render.py --template |
+
+Other repos in the ecosystem — media-analysis-skill, transcription-skill, subtitle-skill, thumbnail-skill, color-grading-skill, motion-graphics-skill, qc-skill — read this repo's contract --json, its tools' --json output and doctor, the same way any agent framework would; this repo does not call into any of them. The dependency runs one way.
+
+Contents
+Standalone, and in an ecosystem · Why · Quick start · How it works · Design principles · Tools · Audio · Built for agents · FAQ · FFmpeg compatibility · Tested on real footage · Install · Requirements · Development · Docs
+
+Why
+
+An agent that "knows FFmpeg" still guesses: it assumes a frame rate, picks a codec the container cannot hold, re-encodes a file that only needed a stream copy, and reports "done" without opening the result. This skill takes the guessing out:
+
+- Real files first. Every job starts with probe.py; the agent decides from the measured duration, fps, resolution, colour and audio layout, not from the file name.
+- Structured tools, not shell strings. Each operation is a script with typed arguments. Nothing runs through a shell; no filter graph is accepted from the caller.
+- A contract the agent can read. contract --json states, for every tool, what it takes, what it writes, which FFmpeg components it needs and how the result is verified. The MCP surface is derived from it.
+- Verification after execution. The result is probed, checked against the destination's spec and, when the picture changed, looked at as a contact sheet.
+- Local first. No cloud, no API keys, no Python dependencies. Optional local transcription is used when a speech engine (Parakeet or a whisper) is installed, never required — by caption.py --transcribe and, since 1.17, by silence.py --transcribe (with --filler, or since 3.6 with --sentence-min-silence / --sentence-margin-tail); both take a transcript you already have instead, and both refuse with the install lines rather than guessing. Both take --engine and --model; FFMPEG_SKILL_ASR_ENGINE and FFMPEG_SKILL_ASR_MODEL set this machine's defaults (e.g. large-v3-turbo where that whisper.cpp model is installed; without either, auto and base). The engine runs on your machine and the audio is never uploaded; parakeet-mlx, faster-whisper and openai-whisper download their model weights the first time they run (parakeet-mlx's default from Hugging Face).
+
+Paper
+
+The design discipline behind this skill — per-operation verification for AI agents — is written up as a position paper. The paper scores ffmpeg-skill itself as only partially conformant with the discipline it defines.
+
+Kajiyama, S. (2026). What Is Verification-Driven Coding? — A Discipline for Not Trusting Generation. Zenodo. https://doi.org/10.5281/zenodo.23720216
+
+Quick start
+
+0. FFmpeg itself, once (Ubuntu/Debian shown; macOS and Windows are in the Install table below)
+sudo apt install ffmpeg
+
+1. install the skill for Claude Code (Cursor: --cursor, Codex: --codex, all three: --all)
+npx ffmpeg-skill
+
+2. check the machine: ffmpeg, ffprobe and every FFmpeg component the tools need
+npx ffmpeg-skill doctor
+
+3. (for agent frameworks) read the machine-readable contract
+npx ffmpeg-skill contract --json | head -40
+
+Captions from speech (caption.py --transcribe) need one local speech engine, installed separately. pip install faster-whisper is the simplest; the first run downloads its model, and the audio never leaves the machine. Without an engine, everything else works, doctor lists the engine as missing optional, and --transcribe refuses with the install line for each engine it supports.
+
+Already installed? re-run npx ffmpeg-skill to refresh ~/.claude/skills/ffmpeg-skill. Copies are not updated automatically.
+
+doctor's overall ok and a single tool's usable are different signals: ok is false when anything some tool requires is missing, so one missing filter (a plain Homebrew ffmpeg without subtitles, or a build without libvidstab) turns it false even though most tools still run. Check doctor --json's tools field for the per-tool answer, not just ok.
+
+Then talk to your agent:
+
+"Take interview.mp4, keep 0:45–3:10 and 5:00–6:30, and make it exactly 60 seconds for Reels."
+
+…（内容已截断）

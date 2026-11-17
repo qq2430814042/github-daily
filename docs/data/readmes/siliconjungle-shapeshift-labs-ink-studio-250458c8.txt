@@ -1,0 +1,177 @@
+@shapeshift-labs/ink-studio
+
+A JavaScript toolkit for sculpting signed-distance solids, baking them into pixel-art Gaussian splats, and making them move, react, break, grow and remember what happened to them. Use it from Node, drive it through the ink-studio command, or embed the source bundle in an Inkwell or browser application.
+
+The package includes geometry, materials, lighting, animation, character controls, particles, physics, procedural environment tools and a headless renderer. Scene authors can use JavaScript or JSON. A host application supplies its own interactive viewport and editor interface.
+
+Contents
+
+- Install and run
+- First sculpted scene
+- Using the library in Node
+- Scene lifecycle and splat data
+- Geometry and materials
+- Scenes as JSON
+- Animation and puppets
+- Particles and interaction
+- Physics and persistent effects
+- Importing meshes
+- Procedural worlds
+- Rendering and command reference
+- Embedding and custom scene collections
+- Module reference
+- Validation and development
+
+Install and run
+
+Requires Node 18 or later. There are no declared runtime dependencies. This is a private package; the scoped package name does not mean it has been published to a package registry.
+
+From a checkout:
+
+node cli/ink-studio.js help
+node cli/ink-studio.js scenes
+node cli/ink-studio.js render watcher --t 2.6
+node cli/ink-studio.js render watcher --t 2.6 --colored
+npm test
+
+Install from GitHub with credentials that can read the private repository:
+
+npm install github:siliconjungle/shapeshift-labs-ink-studio
+npx ink-studio help
+
+To install a local checkout into another project:
+
+npm install /absolute/path/to/ink-studio
+npx ink-studio help
+npx ink-studio render watcher --colored
+
+The installed package is named @shapeshift-labs/ink-studio; its executable remains ink-studio. A private Git repository install requires Git access to that repository. The private setting prevents accidental registry publication.
+
+Generated pictures normally go into studio/out/. Image baselines go into studio/snaps/. Use --out file.png for an explicit output path, or configure the directories with ink-studio.config.js.
+
+The examples below use npx ink-studio from a consuming project. In this checkout, replace that prefix with node cli/ink-studio.js.
+
+First sculpted scene
+
+Save this as model.js. A JavaScript scene exports a function receiving the toolkit and returning { id, name, seed, build(seed) }. build returns the finished world.
+
+module.exports = ({ makeBuilder, makeSculpt, KIT: K }) => ({
+  id: 'sculpt-example',
+  name: 'Carved stone',
+  seed: 7,
+  build(seed) {
+    const palette = 0x080b10, 0x26313d, 0x566778, 0x9baeb8, 0xe5e9dc, 0x387548, 0x8fc75e];
+    const B = makeBuilder(seed, palette);
+    const S = K.sculpt(makeSculpt(B));
+    const stone = { r: [1, 2, 3, 4] };
+
+    S.ground({ r: [1, 1, 2] }, { rad: 4, res: 0.18 });
+    S.box([0, 1.2, 0], [1, 1.2, 1], stone, { res: 0.12 });
+    S.ball([0, 1.4, 0.9], 0.65, stone, { neg: true });
+    S.ball([0, 2.7, 0], 0.5, { r: [1, 5, 6] }, { res: 0.1 });
+    S.bake();
+
+    return B.finish({
+      cam: { target: [0, 1.4, 0], dist: 12, pitch: 0.2, yaw: 0.45 },
+      detail: 14,
+      dither: 0.25,
+      radius: 5
+    });
+  }
+});
+
+Render it without opening a browser:
+
+npx ink-studio render model.js --colored
+npx ink-studio turn model.js --n 8
+npx ink-studio stats model.js
+
+The same runnable scene is included as [examples/sculpt.js. Position vectors use x, y, z], with Y up. S.box takes half-extents, so [1, 1.2, 1] makes a box 2 units wide, 2.4 high and 2 deep. res is the surface sampling spacing: smaller values generally create more splats and cost more to bake and render.
+
+Using the library in Node
+
+const studio = require('@shapeshift-labs/ink-studio');
+const { makeBuilder, makeSculpt, KIT: K, SCENES } = studio.load();
+
+const B = makeBuilder(7);
+const S = K.sculpt(makeSculpt(B));
+S.ball([0, 1, 0], 1, { r: [1, 2, 3, 4] }, { res: 0.15 });
+S.bake();
+const world = B.finish({
+  cam: { target: [0, 1, 0], dist: 10, pitch: 0.2, yaw: 0.4 },
+  detail: 14
+});
+
+console.log(world.count, world.data instanceof Float32Array);
+console.log(SCENES.map(scene => scene.id));
+
+makeSculpt(B) creates the base sculptor. K.sculpt(...) adds the toolkit's extended shape operations. load() compiles and caches a concatenated CommonJS bundle in the package's dist/standalone.js; it needs a writable package directory on first use or after source changes.
+
+The package entry point exposes:
+
+| Export | Result / purpose |
+| --- | --- |
+| load() | { makeBuilder, makeSculpt, KIT, SCENES, PixelLook, VOX, ... } ready for Node. |
+| files() | Absolute source paths in dependency order. |
+| demoFiles() | Absolute demo source paths. |
+| bundle() | Toolkit source as one script string, without demo scenes. |
+| demos() | Demo source that appends to an existing SCENES array. |
+| readMesh(file) | Read an OBJ, glTF or GLB file and its supported companion files. |
+| lint(files) | Return lines rejected by the source comment guard. |
+| EXPORTS | Comma-separated names defined by the source bundle. |
+| version | Package version string. |
+
+load() also exports basis, flame, motes, pondMat, lilies, courses, PALETTES and PAL_HEX. Use the KIT namespace for the main authoring APIs.
+
+Scene lifecycle and splat data
+
+1. Create the builder and sculptor with a stable seed and palette.
+2. Install hooks such as a rig, light capture or deformation tags before baking the solids they must capture.
+3. Add solids and call S.bake() to sample their surfaces, light them and write splats.
+4. Allocate particle pools, cloth, hair and other systems that emit splats before B.finish() fixes the world's data span.
+5. Finish with camera and rendering metadata.
+6. Attach a stage, puppet or other animation driver to the finished world.
+
+Bake static scenery before adding moving objects when scenery should not contain holes or baked shadows from those moving objects. The puppet example uses this pattern.
+
+A world includes data, count, pal, seed, rendering metadata, and optionally anim. data is a Float32Array with 16 floats per splat:
+
+[x, y, z, density
+c11, c12, c22, kind
+
+The c values encode a symmetric covariance matrix describing the splat's shape. Use toolkit systems to modify the data when possible so covariance, color and changed-row tracking stay consistent.
+
+K.stage(world) installs world.anim. Systems run in the order added; painters combine color effects in their own addition order. A stage normalizes its clock to its first update and clamps individual simulation steps to 0.05 seconds. For reproducible simulation, initialize at zero and use fixed forward steps:
+
+const { KIT: K, SCENES } = require('@shapeshift-labs/ink-studio').load();
+const scene = SCENES.find(scene => scene.id === 'burn');
+const world = scene.build(scene.seed);
+world.anim.update(0, 0);
+for (let frame = 1; frame  ({
+  id: 'arch-example', name: 'Carved arch', seed: 1,
+  build(seed) {
+    const B = makeBuilder(seed);
+    const S = K.sculpt(makeSculpt(B));
+    const material = { r: 1, 2, 3, 4] };
+    const held = { hold: true };
+    const block = S.box([0, 1, 0], [1.2, 1, 0.45], material, held);
+    const opening = S.tube([[0, 0.7, -1], [0, 0.7, 1]], 0.65, 0.65, material, held);
+    S.join('cut', block, opening, { res: 0.12 });
+    S.bake();
+    return B.finish({
+      cam: { target: [0, 1, 0], dist: 10, pitch: 0.2, yaw: 0.4 },
+      detail: 14
+    });
+  }
+});
+
+Useful options include tag for ownership, neg for subtraction, ghost for geometry that is drawn without ordinary solid occlusion, and ax for an orientation frame. Join kinds include union, cut, common, round, chamfer, stairs, columns, pipe, engrave, groove and tongue.
+
+Materials normally use palette indices in a dark-to-light ramp:
+
+const stone = { r: [1, 2, 3, 4] };
+const glow = { r: [5, 6, 7], em: true };
+const bands = { r: [1, 2, 3, 4], mod: K.tex.range(K.tex.wave(5), 0, 1, -0.2, 0.2) };
+const wax = K.look.wax([1, 2, 3, 4], { depth: 0.5 });
+
+…（内容已截断）

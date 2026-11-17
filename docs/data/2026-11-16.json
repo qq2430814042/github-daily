@@ -1,0 +1,1520 @@
+{
+  "date": "2026-11-16",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-17T07:47:03.614Z",
+  "count": 60,
+  "newCount": 33,
+  "sources": {
+    "trending": 15,
+    "new": 33,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "dream-num/univer",
+      "name": "univer",
+      "owner": "dream-num",
+      "url": "https://github.com/dream-num/univer",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "language": "TypeScript",
+      "stars": 28467,
+      "forks": 2567,
+      "starsToday": 1828,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "dream-num-univer-a13102cc.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "name": "Claude-BugHunter",
+      "owner": "elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars": 7785,
+      "forks": 1215,
+      "starsToday": 1094,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elementalsouls-claude-bughunter-8f8b4d67.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "alibaba/open-code-review",
+      "name": "open-code-review",
+      "owner": "alibaba",
+      "url": "https://github.com/alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "language": "Go",
+      "stars": 53208,
+      "forks": 4361,
+      "starsToday": 951,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "alibaba-open-code-review-33046d59.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "NVIDIA/SkillEvaluator",
+      "name": "SkillEvaluator",
+      "owner": "NVIDIA",
+      "url": "https://github.com/NVIDIA/SkillEvaluator",
+      "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior.",
+      "language": "Python",
+      "stars": 3012,
+      "forks": 430,
+      "starsToday": 873,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nvidia-skillevaluator-64de6697.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "ChromeDevTools/chrome-devtools-mcp",
+      "name": "chrome-devtools-mcp",
+      "owner": "ChromeDevTools",
+      "url": "https://github.com/ChromeDevTools/chrome-devtools-mcp",
+      "description": "Chrome DevTools for coding agents",
+      "language": "TypeScript",
+      "stars": 57838,
+      "forks": 4857,
+      "starsToday": 841,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "chromedevtools-chrome-devtools-mcp-2a9517b9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "tradermonty/claude-trading-skills",
+      "name": "claude-trading-skills",
+      "owner": "tradermonty",
+      "url": "https://github.com/tradermonty/claude-trading-skills",
+      "description": "Claude Code skills for equity investors and traders — market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "language": "Python",
+      "stars": 6576,
+      "forks": 1378,
+      "starsToday": 837,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tradermonty-claude-trading-skills-e3f63850.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "ag-ui-protocol/ag-ui",
+      "name": "ag-ui",
+      "owner": "ag-ui-protocol",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "language": "TypeScript",
+      "stars": 19510,
+      "forks": 2019,
+      "starsToday": 791,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ag-ui-protocol-ag-ui-d4035501.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "backnotprop/plannotator",
+      "name": "plannotator",
+      "owner": "backnotprop",
+      "url": "https://github.com/backnotprop/plannotator",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+      "language": "TypeScript",
+      "stars": 12798,
+      "forks": 1271,
+      "starsToday": 696,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "backnotprop-plannotator-5b00db19.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 9843,
+      "forks": 1279,
+      "starsToday": 529,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "kajisho5/ffmpeg-skill",
+      "name": "ffmpeg-skill",
+      "owner": "kajisho5",
+      "url": "https://github.com/kajisho5/ffmpeg-skill",
+      "description": "Local video editor for coding agents: 42 FFmpeg tools with a machine-readable contract and an MCP server, for Claude Code, Cursor and Codex. Cut, captions, reframe, loudness, platform exports. No cloud, no API keys.",
+      "language": "Python",
+      "stars": 7239,
+      "forks": 655,
+      "starsToday": 367,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "kajisho5-ffmpeg-skill-0c9aa778.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "google-research/paper-orchestra",
+      "name": "paper-orchestra",
+      "owner": "google-research",
+      "url": "https://github.com/google-research/paper-orchestra",
+      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+      "language": "Python",
+      "stars": 1864,
+      "forks": 300,
+      "starsToday": 313,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-research-paper-orchestra-bae17b42.txt"
+    },
+    {
+      "rank": 12,
+      "fullName": "DeanChensj/jiangshan-map",
+      "name": "jiangshan-map",
+      "owner": "DeanChensj",
+      "url": "https://github.com/DeanChensj/jiangshan-map",
+      "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+      "language": "JavaScript",
+      "stars": 7321,
+      "forks": 878,
+      "starsToday": 288,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "deanchensj-jiangshan-map-256dfeef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "mvanhorn/last30days-skill",
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 68385,
+      "forks": 6084,
+      "starsToday": 135,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mvanhorn-last30days-skill-ce334b66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "sveltejs/svelte",
+      "name": "svelte",
+      "owner": "sveltejs",
+      "url": "https://github.com/sveltejs/svelte",
+      "description": "web development for the rest of us",
+      "language": "JavaScript",
+      "stars": 89122,
+      "forks": 6139,
+      "starsToday": 115,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "sveltejs-svelte-60223ff9.txt"
+    },
+    {
+      "rank": 15,
+      "fullName": "getarcaneapp/arcane",
+      "name": "arcane",
+      "owner": "getarcaneapp",
+      "url": "https://github.com/getarcaneapp/arcane",
+      "description": "Modern Docker Management, Designed for Everyone",
+      "language": "Go",
+      "stars": 8931,
+      "forks": 461,
+      "starsToday": 46,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "getarcaneapp-arcane-3e15b365.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "krisgfx9/Wireless-Device-Battery-Monitor",
+      "name": "Wireless-Device-Battery-Monitor",
+      "owner": "krisgfx9",
+      "url": "https://github.com/krisgfx9/Wireless-Device-Battery-Monitor",
+      "description": "Show the battery level of wireless mice, headsets, keyboards and controllers on the Windows 10/11 taskbar. Lightweight tray app, no vendor software needed. Supports Logitech, Razer, SteelSeries, Corsair, HyperX, Glorious, PS4/PS5 DualSense, Xbox and Bluetooth devices.",
+      "language": "C++",
+      "stars": 530,
+      "forks": 39,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T19:28:29Z",
+      "updatedAt": "2026-11-17T07:46:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "krisgfx9-wireless-device-battery-monitor-748d9ec1.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 17,
+      "fullName": "sybil-solutions/inference-optimisation-skill",
+      "name": "inference-optimisation-skill",
+      "owner": "sybil-solutions",
+      "url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+      "description": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization",
+      "language": "Python",
+      "stars": 397,
+      "forks": 45,
+      "starsToday": 0,
+      "topics": [
+        "agent-skill",
+        "benchmarking",
+        "claude-code",
+        "inference",
+        "llm",
+        "speculative-decoding"
+      ],
+      "createdAt": "2026-11-16T18:40:04Z",
+      "updatedAt": "2026-11-17T07:44:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sybil-solutions-inference-optimisation-skill-5ccbb9d6.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "boringmarketer/boring-marketing-skills",
+      "name": "boring-marketing-skills",
+      "owner": "boringmarketer",
+      "url": "https://github.com/boringmarketer/boring-marketing-skills",
+      "description": "31 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT.",
+      "language": "Python",
+      "stars": 277,
+      "forks": 122,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude-code",
+        "codex",
+        "copywriting",
+        "local-seo",
+        "marketing",
+        "seo"
+      ],
+      "createdAt": "2026-11-16T15:09:46Z",
+      "updatedAt": "2026-11-17T07:45:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "boringmarketer-boring-marketing-skills-f8e4ab97.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "chuanqisun/spaceship",
+      "name": "spaceship",
+      "owner": "chuanqisun",
+      "url": "https://github.com/chuanqisun/spaceship",
+      "description": "Steer your ideas in realtime",
+      "language": "HTML",
+      "stars": 275,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T14:43:45Z",
+      "updatedAt": "2026-11-17T07:20:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "chuanqisun-spaceship-a7d43cdd.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "siliconjungle/shapeshift-labs-ink-studio",
+      "name": "shapeshift-labs-ink-studio",
+      "owner": "siliconjungle",
+      "url": "https://github.com/siliconjungle/shapeshift-labs-ink-studio",
+      "description": "Sculpting, animation and simulation toolkit for pixel-art Gaussian splats",
+      "language": "JavaScript",
+      "stars": 264,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T07:44:00Z",
+      "updatedAt": "2026-11-17T07:45:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "siliconjungle-shapeshift-labs-ink-studio-250458c8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 21,
+      "fullName": "Phantomstawaken/rob-run-advanced-cheat",
+      "name": "rob-run-advanced-cheat",
+      "owner": "Phantomstawaken",
+      "url": "https://github.com/Phantomstawaken/rob-run-advanced-cheat",
+      "description": "",
+      "language": "",
+      "stars": 257,
+      "forks": 24,
+      "starsToday": 0,
+      "topics": [
+        "rob-run",
+        "rob-run-cheat",
+        "rob-run-es",
+        "rob-run-mod"
+      ],
+      "createdAt": "2026-11-16T22:26:51Z",
+      "updatedAt": "2026-11-17T06:48:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "phantomstawaken-rob-run-advanced-cheat-f40b3a48.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "Lightyoclimb/Fortnite-Pirate-Shop-Access-private-cheat",
+      "name": "Fortnite-Pirate-Shop-Access-private-cheat",
+      "owner": "Lightyoclimb",
+      "url": "https://github.com/Lightyoclimb/Fortnite-Pirate-Shop-Access-private-cheat",
+      "description": "",
+      "language": "",
+      "stars": 255,
+      "forks": 24,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T22:49:19Z",
+      "updatedAt": "2026-11-17T02:38:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lightyoclimb-fortnite-pirate-shop-access-private-cheat-ef2e8709.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "WingCasterSanctify/rob-run-mod-private",
+      "name": "rob-run-mod-private",
+      "owner": "WingCasterSanctify",
+      "url": "https://github.com/WingCasterSanctify/rob-run-mod-private",
+      "description": "",
+      "language": "",
+      "stars": 251,
+      "forks": 24,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T23:05:11Z",
+      "updatedAt": "2026-11-17T02:46:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wingcastersanctify-rob-run-mod-private-fc9e7878.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "edgerunners2/capri-ai-desktop",
+      "name": "capri-ai-desktop",
+      "owner": "edgerunners2",
+      "url": "https://github.com/edgerunners2/capri-ai-desktop",
+      "description": "Capri — Free open-source AI desktop pet, gaming overlay & voice companion for Windows. Visual GUI for Claude Code, Ollama, DeepSeek & MCP. Joins Discord calls, launches Steam games, comments on gameplay & automates screen tasks offline.",
+      "language": "Python",
+      "stars": 216,
+      "forks": 65,
+      "starsToday": 0,
+      "topics": [
+        "ai-agent",
+        "ai-companion",
+        "ai-girlfriend",
+        "ai-waifu",
+        "anime",
+        "automation",
+        "claude",
+        "claude-code"
+      ],
+      "createdAt": "2026-11-16T18:29:04Z",
+      "updatedAt": "2026-11-17T06:59:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "edgerunners2-capri-ai-desktop-5c9bfda3.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 25,
+      "fullName": "waw666waw666/RegisterHub",
+      "name": "RegisterHub",
+      "owner": "waw666waw666",
+      "url": "https://github.com/waw666waw666/RegisterHub",
+      "description": "万能注册机模板 | Universal Auto-Registration Template",
+      "language": "Python",
+      "stars": 198,
+      "forks": 181,
+      "starsToday": 0,
+      "topics": [
+        "anti-bot",
+        "automation",
+        "playwright",
+        "python",
+        "registration",
+        "scaffolding",
+        "stealth"
+      ],
+      "createdAt": "2026-11-16T07:10:32Z",
+      "updatedAt": "2026-11-17T07:33:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "waw666waw666-registerhub-80055858.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "scottsturrock/mate-wayland-desktop",
+      "name": "mate-wayland-desktop",
+      "owner": "scottsturrock",
+      "url": "https://github.com/scottsturrock/mate-wayland-desktop",
+      "description": "MATE Wayland Desktop: the MATE desktop on Wayland with labwc, on an Ubuntu 26.04 base. Sources and build system.",
+      "language": "Shell",
+      "stars": 139,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T03:12:11Z",
+      "updatedAt": "2026-11-16T18:38:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "scottsturrock-mate-wayland-desktop-446fa573.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "staryone/motlab",
+      "name": "motlab",
+      "owner": "staryone",
+      "url": "https://github.com/staryone/motlab",
+      "description": "Video as code: canvas scenes rendered with WebCodecs in headless Chrome, a review viewer, and agent skills that build the video from your references.",
+      "language": "JavaScript",
+      "stars": 119,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "canvas",
+        "claude-code",
+        "headless-chrome",
+        "motion-graphics",
+        "video",
+        "webcodecs"
+      ],
+      "createdAt": "2026-11-16T13:45:47Z",
+      "updatedAt": "2026-11-17T07:46:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "staryone-motlab-3ea25f3c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 28,
+      "fullName": "fujc683/seedance-2-5-flash-free-tier",
+      "name": "seedance-2-5-flash-free-tier",
+      "owner": "fujc683",
+      "url": "https://github.com/fujc683/seedance-2-5-flash-free-tier",
+      "description": "How many seconds of Seedance 2.5 Flash free credits buy.",
+      "language": "",
+      "stars": 116,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-video",
+        "ai-video-generation",
+        "api",
+        "apimart",
+        "awesome",
+        "prompt-engineering",
+        "seedance",
+        "text-to-video"
+      ],
+      "createdAt": "2026-11-16T09:40:41Z",
+      "updatedAt": "2026-11-17T07:45:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fujc683-seedance-2-5-flash-free-tier-2d3a757d.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "fujc683/ai-video-api-gateway",
+      "name": "ai-video-api-gateway",
+      "owner": "fujc683",
+      "url": "https://github.com/fujc683/ai-video-api-gateway",
+      "description": "One OpenAI-compatible endpoint for Seedance, Kling, Wan, PixVerse and Veo.",
+      "language": "",
+      "stars": 115,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-api",
+        "ai-video",
+        "api-gateway",
+        "api-proxy",
+        "apimart",
+        "awesome",
+        "cheap-api",
+        "openai-compatible"
+      ],
+      "createdAt": "2026-11-16T09:43:12Z",
+      "updatedAt": "2026-11-17T07:46:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fujc683-ai-video-api-gateway-b55cbc26.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "fujc683/cheap-video-api",
+      "name": "cheap-video-api",
+      "owner": "fujc683",
+      "url": "https://github.com/fujc683/cheap-video-api",
+      "description": "Every video model ranked by price per second, with a realistic workflow budget.",
+      "language": "",
+      "stars": 114,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-api",
+        "ai-video",
+        "api-gateway",
+        "api-proxy",
+        "apimart",
+        "awesome",
+        "cheap-api",
+        "openai-compatible"
+      ],
+      "createdAt": "2026-11-16T09:44:13Z",
+      "updatedAt": "2026-11-17T07:43:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fujc683-cheap-video-api-18384a9a.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "nagavineerpasam/systems-to-ai-reading-map",
+      "name": "systems-to-ai-reading-map",
+      "owner": "nagavineerpasam",
+      "url": "https://github.com/nagavineerpasam/systems-to-ai-reading-map",
+      "description": "112 topics from 8 well-known engineering books, in a suggested reading order.",
+      "language": "",
+      "stars": 113,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T04:41:43Z",
+      "updatedAt": "2026-11-17T06:55:42Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nagavineerpasam-systems-to-ai-reading-map-6c4c9ee9.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "liangdabiao/seedance-storyboard-generator-realman",
+      "name": "seedance-storyboard-generator-realman",
+      "owner": "liangdabiao",
+      "url": "https://github.com/liangdabiao/seedance-storyboard-generator-realman",
+      "description": "真人实拍质感AI短剧分镜生成器 - Seedance Realman Storyboard Skill 一个帮你把故事/剧本变成真人实拍质感 AI 视频的技能包。 简单说：你给它一个故事，它帮你走完从剧本到成片的全过程，而且生成的画面尽量像真人拍的电影，而不是卡通、动画或塑料感的游戏画面。",
+      "language": "",
+      "stars": 110,
+      "forks": 28,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T07:49:20Z",
+      "updatedAt": "2026-11-17T07:43:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "liangdabiao-seedance-storyboard-generator-realman-cf7933a6.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "fujc683/seedance-2-5-flash-api-proxy",
+      "name": "seedance-2-5-flash-api-proxy",
+      "owner": "fujc683",
+      "url": "https://github.com/fujc683/seedance-2-5-flash-api-proxy",
+      "description": "Seedance 2.5 Flash relay API: one key, Alipay payment, no VPN needed.",
+      "language": "",
+      "stars": 109,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-api",
+        "ai-video",
+        "api-gateway",
+        "api-proxy",
+        "apimart",
+        "awesome",
+        "cheap-api",
+        "openai-compatible"
+      ],
+      "createdAt": "2026-11-16T09:42:11Z",
+      "updatedAt": "2026-11-17T07:44:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fujc683-seedance-2-5-flash-api-proxy-53afc1f3.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "fujc683/seedance-2-5-flash-alternatives",
+      "name": "seedance-2-5-flash-alternatives",
+      "owner": "fujc683",
+      "url": "https://github.com/fujc683/seedance-2-5-flash-alternatives",
+      "description": "Seedance 2.5 Flash vs Seedance 2.0, Kling 4.0 Flash and Veo 3.",
+      "language": "",
+      "stars": 103,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-video",
+        "ai-video-generation",
+        "api",
+        "apimart",
+        "awesome",
+        "prompt-engineering",
+        "seedance",
+        "text-to-video"
+      ],
+      "createdAt": "2026-11-16T09:39:47Z",
+      "updatedAt": "2026-11-17T07:46:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fujc683-seedance-2-5-flash-alternatives-e709a47c.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "fujc683/seedance-2-5-flash-camera-movements",
+      "name": "seedance-2-5-flash-camera-movements",
+      "owner": "fujc683",
+      "url": "https://github.com/fujc683/seedance-2-5-flash-camera-movements",
+      "description": "12 camera moves for text-to-video, with copy-paste prompt phrases.",
+      "language": "",
+      "stars": 103,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-video",
+        "ai-video-generation",
+        "api",
+        "apimart",
+        "awesome",
+        "prompt-engineering",
+        "seedance",
+        "text-to-video"
+      ],
+      "createdAt": "2026-11-16T09:41:36Z",
+      "updatedAt": "2026-11-17T07:45:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fujc683-seedance-2-5-flash-camera-movements-7494a352.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "fujc683/seedance-2-5-flash-api",
+      "name": "seedance-2-5-flash-api",
+      "owner": "fujc683",
+      "url": "https://github.com/fujc683/seedance-2-5-flash-api",
+      "description": "Seedance 2.5 Flash API: text-to-video endpoint, parameters and errors.",
+      "language": "",
+      "stars": 102,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-video",
+        "ai-video-generation",
+        "api",
+        "apimart",
+        "awesome",
+        "prompt-engineering",
+        "seedance",
+        "text-to-video"
+      ],
+      "createdAt": "2026-11-16T09:37:55Z",
+      "updatedAt": "2026-11-17T07:45:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fujc683-seedance-2-5-flash-api-d36b972b.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "championkazekagemold/wallpaper-engine-free",
+      "name": "wallpaper-engine-free",
+      "owner": "championkazekagemold",
+      "url": "https://github.com/championkazekagemold/wallpaper-engine-free",
+      "description": "Wallpaper Engine Free is a free desktop wallpaper project designed to bring your screen to life. Discover beautiful animated wallpapers, customize your desktop environment, and create a unique visual experience without unnecessary complexity. Our goal is to make desktop customization accessible to e",
+      "language": "JavaScript",
+      "stars": 101,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "free-theme",
+        "open-source-wallpaper",
+        "theme-customization",
+        "theme-customizer",
+        "wallpaper-crack",
+        "wallpaper-customization",
+        "wallpaper-engine-community",
+        "wallpaper-free-tools"
+      ],
+      "createdAt": "2026-11-16T18:59:33Z",
+      "updatedAt": "2026-11-16T22:42:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "championkazekagemold-wallpaper-engine-free-d768e6f7.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "fujc683/seedance-2-5-flash-reference-video",
+      "name": "seedance-2-5-flash-reference-video",
+      "owner": "fujc683",
+      "url": "https://github.com/fujc683/seedance-2-5-flash-reference-video",
+      "description": "Control Seedance 2.5 Flash motion with a first frame or reference clip.",
+      "language": "",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-video",
+        "ai-video-generation",
+        "api",
+        "apimart",
+        "awesome",
+        "prompt-engineering",
+        "seedance",
+        "text-to-video"
+      ],
+      "createdAt": "2026-11-16T09:42:31Z",
+      "updatedAt": "2026-11-17T07:38:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fujc683-seedance-2-5-flash-reference-video-980dc3d8.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "oujingzhou/agent-interview-questions",
+      "name": "agent-interview-questions",
+      "owner": "oujingzhou",
+      "url": "https://github.com/oujingzhou/agent-interview-questions",
+      "description": "AI Agent Developer Interview Questions",
+      "language": "",
+      "stars": 100,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T12:34:28Z",
+      "updatedAt": "2026-11-17T07:15:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "oujingzhou-agent-interview-questions-aa498a35.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 40,
+      "fullName": "Orderchodrag/smelt-minecraft-mods-to-rust-converter",
+      "name": "smelt-minecraft-mods-to-rust-converter",
+      "owner": "Orderchodrag",
+      "url": "https://github.com/Orderchodrag/smelt-minecraft-mods-to-rust-converter",
+      "description": "Point Smelt at a Java mod jar and it starts the Rust port for Horizon: crates, traits and a build that runs. Unfinished parts are marked, so you know exactly what is left.",
+      "language": "JavaScript",
+      "stars": 93,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "fabric",
+        "horizon",
+        "minecraft",
+        "minecraft-mods",
+        "neoforge",
+        "porting",
+        "rust"
+      ],
+      "createdAt": "2026-11-16T15:44:12Z",
+      "updatedAt": "2026-11-17T07:46:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "orderchodrag-smelt-minecraft-mods-to-rust-converter-536ca7af.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "stvlynn/spines",
+      "name": "spines",
+      "owner": "stvlynn",
+      "url": "https://github.com/stvlynn/spines",
+      "description": "Turn apps & albums into CD jewel case spines | 把 App 与专辑做成实体 CD 盒侧脊收藏图",
+      "language": "TypeScript",
+      "stars": 91,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T05:14:53Z",
+      "updatedAt": "2026-11-17T07:44:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "stvlynn-spines-d832feea.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "CoderL98/hghub-plugins",
+      "name": "hghub-plugins",
+      "owner": "CoderL98",
+      "url": "https://github.com/CoderL98/hghub-plugins",
+      "description": "HGhub HPP 1.0 单文件插件与订阅源",
+      "language": "JavaScript",
+      "stars": 90,
+      "forks": 20,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-16T03:33:57Z",
+      "updatedAt": "2026-11-17T07:46:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "coderl98-hghub-plugins-bfeae106.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "fedesanchez0/shader-lab",
+      "name": "shader-lab",
+      "owner": "fedesanchez0",
+      "url": "https://github.com/fedesanchez0/shader-lab",
+      "description": "A playground for live Metal shaders on iPhone, iPad, iPhone Duo, Apple TV, Apple Vision Pro and Apple Watch. Save any shader as a wallpaper.",
+      "language": "Swift",
+      "stars": 90,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [
+        "homeview",
+        "iphone-duo",
+        "metal",
+        "shaders",
+        "swiftui",
+        "tvos",
+        "visionos",
+        "wallpaper"
+      ],
+      "createdAt": "2026-11-16T19:35:21Z",
+      "updatedAt": "2026-11-17T07:41:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fedesanchez0-shader-lab-ecdd6e56.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 44,
+      "fullName": "Chen-Yu-Qing2005/tuomin",
+      "name": "tuomin",
+      "owner": "Chen-Yu-Qing2005",
+      "url": "https://github.com/Chen-Yu-Qing2005/tuomin",
+      "description": "脱敏 — Android 本地截图隐私处理工具",
+      "language": "Kotlin",
+      "stars": 88,
+      "forks": 13,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "jetpack-compose",
+        "kotlin",
+        "offline",
+        "privacy",
+        "redaction",
+        "screenshot"
+      ],
+      "createdAt": "2026-11-16T10:13:14Z",
+      "updatedAt": "2026-11-17T07:43:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "chen-yu-qing2005-tuomin-07e067a9.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "memoryswordsmanlaud/watson-username-footprint-finder",
+      "name": "watson-username-footprint-finder",
+      "owner": "memoryswordsmanlaud",
+      "url": "https://github.com/memoryswordsmanlaud/watson-username-footprint-finder",
+      "description": "Type one nickname, see every public trace it left: forums, repos, boards, archives. Free, from watsonfind.icu.",
+      "language": "TypeScript",
+      "stars": 88,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [
+        "desktop",
+        "digital-footprint",
+        "electron",
+        "osint",
+        "privacy",
+        "socmint",
+        "username-osint",
+        "username-search"
+      ],
+      "createdAt": "2026-11-16T14:41:20Z",
+      "updatedAt": "2026-11-17T07:46:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "memoryswordsmanlaud-watson-username-footprint-finder-c9c049ab.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "fujc683/awesome-seedance-2-5-flash-prompts",
+      "name": "awesome-seedance-2-5-flash-prompts",
+      "owner": "fujc683",
+      "url": "https://github.com/fujc683/awesome-seedance-2-5-flash-prompts",
+      "description": "140 curated Seedance 2.5 Flash video prompts with preview frames, grouped by use case.",
+      "language": "",
+      "stars": 86,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-video",
+        "ai-video-generation",
+        "apimart",
+        "awesome",
+        "bytendance",
+        "prompt-engineering",
+        "prompts",
+        "seedance"
+      ],
+      "createdAt": "2026-11-16T09:34:29Z",
+      "updatedAt": "2026-11-17T07:46:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fujc683-awesome-seedance-2-5-flash-prompts-bc073d5e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 47,
+      "fullName": "andyhuo520/beanpod",
+      "name": "beanpod",
+      "owner": "andyhuo520",
+      "url": "https://github.com/andyhuo520/beanpod",
+      "description": "豆仓 BeanPod：原生 macOS 录音豆管理 App — 本机转写、纪要待办、知识库问答、逐句回听与英语学习、MCP 接入 Claude / Codex",
+      "language": "Swift",
+      "stars": 76,
+      "forks": 19,
+      "starsToday": 0,
+      "topics": [
+        "claude",
+        "english-learning",
+        "macos",
+        "mcp",
+        "podcast",
+        "renoise",
+        "speech-to-text",
+        "swiftui"
+      ],
+      "createdAt": "2026-11-16T08:56:19Z",
+      "updatedAt": "2026-11-17T07:26:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "andyhuo520-beanpod-abe0df8d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 48,
+      "fullName": "fujc683/seedance-2-5-flash-pricing",
+      "name": "seedance-2-5-flash-pricing",
+      "owner": "fujc683",
+      "url": "https://github.com/fujc683/seedance-2-5-flash-pricing",
+      "description": "Seedance 2.5 Flash cost per second of video, with comparisons.",
+      "language": "",
+      "stars": 75,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-video",
+        "ai-video-generation",
+        "api",
+        "apimart",
+        "awesome",
+        "prompt-engineering",
+        "seedance",
+        "text-to-video"
+      ],
+      "createdAt": "2026-11-16T09:38:51Z",
+      "updatedAt": "2026-11-17T07:45:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fujc683-seedance-2-5-flash-pricing-977f6896.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 372197,
+      "forks": 46501,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-17T07:21:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "awesome-selfhosted/awesome-selfhosted",
+      "name": "awesome-selfhosted",
+      "owner": "awesome-selfhosted",
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
+      "language": "",
+      "stars": 337823,
+      "forks": 15868,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "cloud",
+        "free-software",
+        "hosting",
+        "privacy",
+        "self-hosted",
+        "selfhosted"
+      ],
+      "createdAt": "2015-06-01T02:33:17Z",
+      "updatedAt": "2026-11-17T07:38:25Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "awesome-selfhosted-awesome-selfhosted-1dbf0788.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 51,
+      "fullName": "practical-tutorials/project-based-learning",
+      "name": "project-based-learning",
+      "owner": "practical-tutorials",
+      "url": "https://github.com/practical-tutorials/project-based-learning",
+      "description": "Curated list of project-based tutorials",
+      "language": "Python",
+      "stars": 289883,
+      "forks": 36839,
+      "starsToday": 0,
+      "topics": [
+        "beginner-project",
+        "cpp",
+        "golang",
+        "javascript",
+        "project",
+        "python",
+        "tutorial",
+        "webdevelopment"
+      ],
+      "createdAt": "2017-04-12T05:07:46Z",
+      "updatedAt": "2026-11-17T07:39:48Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "practical-tutorials-project-based-learning-532d5b87.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "anthropics/skills",
+      "name": "skills",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/skills",
+      "description": "Public repository for Agent Skills",
+      "language": "Python",
+      "stars": 196263,
+      "forks": 23035,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills"
+      ],
+      "createdAt": "2025-09-22T15:53:31Z",
+      "updatedAt": "2026-11-17T07:44:42Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-skills-4cb2062a.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 194347,
+      "forks": 13757,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-17T07:46:32Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 54,
+      "fullName": "ohmyzsh/ohmyzsh",
+      "name": "ohmyzsh",
+      "owner": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "description": "🙃 A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up wi",
+      "language": "Shell",
+      "stars": 190641,
+      "forks": 27278,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "cli-app",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins"
+      ],
+      "createdAt": "2009-08-28T18:15:37Z",
+      "updatedAt": "2026-11-17T07:24:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ohmyzsh-ohmyzsh-0d67c47d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "MDX",
+      "stars": 175074,
+      "forks": 79575,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-17T06:38:57Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "name": "ui-ux-pro-max-skill",
+      "owner": "nextlevelbuilder",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+      "language": "Python",
+      "stars": 150576,
+      "forks": 15915,
+      "starsToday": 0,
+      "topics": [
+        "ai-skills",
+        "antigravity",
+        "claude",
+        "claude-code",
+        "codex",
+        "command-line",
+        "copilot",
+        "cursor-ai"
+      ],
+      "createdAt": "2025-11-30T11:36:31Z",
+      "updatedAt": "2026-11-17T07:45:35Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nextlevelbuilder-ui-ux-pro-max-skill-c6cf066b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 150168,
+      "forks": 13489,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-17T07:46:29Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 58,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 149197,
+      "forks": 14339,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-17T07:42:54Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "ripienaar/free-for-dev",
+      "name": "free-for-dev",
+      "owner": "ripienaar",
+      "url": "https://github.com/ripienaar/free-for-dev",
+      "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+      "language": "HTML",
+      "stars": 143011,
+      "forks": 15381,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "free-for-developers"
+      ],
+      "createdAt": "2015-03-18T21:06:26Z",
+      "updatedAt": "2026-11-17T07:17:05Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ripienaar-free-for-dev-6a1523e8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "excalidraw/excalidraw",
+      "name": "excalidraw",
+      "owner": "excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "language": "TypeScript",
+      "stars": 135839,
+      "forks": 16198,
+      "starsToday": 0,
+      "topics": [
+        "canvas",
+        "collaboration",
+        "diagrams",
+        "drawing",
+        "hacktoberfest",
+        "productivity",
+        "whiteboard"
+      ],
+      "createdAt": "2020-01-02T01:04:43Z",
+      "updatedAt": "2026-11-17T07:36:27Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "excalidraw-excalidraw-8fbe0d58.txt"
+    }
+  ]
+}

@@ -1,0 +1,378 @@
+Awesome Seedance 2.5 Flash Prompts
+
+🎨 140 curated Seedance 2.5 Flash prompts across 7 categories, with preview images.
+
+English | 简体中文 | 日本語
+
+👉 Generate with Seedance 2.5 Flash on APIMart · apimart.ai/model/seedance-2-5-flash
+
+https://gola.apimart.ai/k-tPdr6X
+💰 Pricing · 🔑 Get an API key
+
+Table of Contents
+
+1. Cinematic & Action — 20
+2. Nature & Landscape — 20
+3. Food & Beverage — 20
+4. Architecture & Space — 20
+5. Abstract & Motion — 20
+6. Product & Commercial — 20
+7. Portrait & Character — 20
+8. All Prompts
+
+What is Seedance 2.5 Flash?
+
+Seedance 2.5 Flash is ByteDance's fast text-to-video model: 480p/720p output, 4-30 second clips, strong prompt adherence for camera and subject motion. This collection curates 140 prompts that are known to work well, each with a preview frame generated from the same prompt.
+
+Statistics
+
+- 140 prompts in this collection
+- 7 Category
+- Last updated: 2026-11-17
+- apimart.ai/model/seedance-2-5-flash
+
+Browse by Category
+
+Cinematic & Action, Nature & Landscape, Food & Beverage, Architecture & Space, Abstract & Motion, Product & Commercial, Portrait & Character
+
+All Prompts
+
+Cinematic & Action
+
+No. 1: A Rally Car Launching Over A Crest
+
+Prompt
+
+a rally car launching over a crest, aerial style, shot on 24mm wide, overcast soft light, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 2: A Submarine Descending Into The Deep
+
+Prompt
+
+a submarine descending into the deep, studio style, shot on 100mm macro, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 3: A Train Crossing A Desert Bridge At Dusk
+
+Prompt
+
+a train crossing a desert bridge at dusk, macro style, shot on 35mm, window light, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 4: An Explosion Reflected In A Visor
+
+Prompt
+
+an explosion reflected in a visor, slow motion, studio style, shot on 35mm, hard rim light, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 5: A City Street Exploding Into Dust
+
+Prompt
+
+a city street exploding into dust, slow motion, macro style, shot on 35mm, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 6: A Detective Entering A Foggy Alley
+
+Prompt
+
+a detective entering a foggy alley, tracking, slow motion style, shot on 50mm, overcast soft light, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 7: A Drone Swarm Forming A Shape
+
+Prompt
+
+a drone swarm forming a shape, night sky, handheld documentary style, shot on 50mm, window light, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 8: A Helicopter Skimming A Canyon At Sunset
+
+Prompt
+
+a helicopter skimming a canyon at sunset, aerial style, shot on 100mm macro, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 9: A Knight Walking Through A Torchlit Hall
+
+Prompt
+
+a knight walking through a torchlit hall, macro style, shot on 85mm, window light, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 10: A Spaceship Banking Through An Asteroid Field
+
+Prompt
+
+a spaceship banking through an asteroid field, studio style, shot on 35mm, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 11: A Samurai Drawing A Blade
+
+Prompt
+
+a samurai drawing a blade, slow motion, rain, aerial style, shot on 85mm, hard rim light, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 12: A Plane Banking Over Mountains
+
+Prompt
+
+a plane banking over mountains, lens flare, slow motion style, shot on 100mm macro, neon night, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 13: A Car Drifting Around A Wet Corner
+
+Prompt
+
+a car drifting around a wet corner, spray flying, cinematic style, shot on 35mm, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 14: A Warehouse Chase
+
+Prompt
+
+a warehouse chase, handheld, dust in light beams, cinematic style, shot on 85mm, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 15: A Skydiver Falling Through Clouds
+
+Prompt
+
+a skydiver falling through clouds, POV, macro style, shot on 35mm, golden hour, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 16: A Motorcycle Jump Over A Ridge
+
+Prompt
+
+a motorcycle jump over a ridge, dust trail, slow motion style, shot on 100mm macro, overcast soft light, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 17: A Rooftop Chase At Night
+
+Prompt
+
+a rooftop chase at night, neon reflections, studio style, shot on 35mm, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 18: A Surfer Carving A Wave
+
+Prompt
+
+a surfer carving a wave, water spray, macro style, shot on 35mm, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 19: A Sword Fight In A Bamboo Forest
+
+Prompt
+
+a sword fight in a bamboo forest, slow motion style, shot on 50mm, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 20: A Mech Stepping Through A Ruined City
+
+Prompt
+
+a mech stepping through a ruined city, aerial style, shot on 100mm macro, overcast soft light, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Cinematic & Action
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+Nature & Landscape
+
+No. 21: Snow Drifting Through Bare Branches
+
+Prompt
+
+snow drifting through bare branches, slow motion, aerial style, shot on 100mm macro, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Nature & Landscape
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 22: Wildflowers Swaying In Breeze
+
+Prompt
+
+wildflowers swaying in breeze, macro, macro style, shot on 85mm, practical lamps, 24fps, shallow depth of field, high detail
+
+Generated Images
+
+Details
+- Category: Nature & Landscape
+- Aspect Ratio: 1:1
+- Prompt Language: en
+
+👉 Try this prompt
+
+No. 23: Waves Crashing On Volcanic Rock
+
+Prompt
+
+…（内容已截断）

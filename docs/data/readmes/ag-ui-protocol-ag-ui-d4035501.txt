@@ -1,175 +1,197 @@
-AG-UI: The Agent-User Interaction Protocol
+The open protocol that connects any agent to any app.
+
+Docs · Examples · Spec · Discord
 
 AG-UI is an open, lightweight, event-based protocol that standardizes how AI agents connect to user-facing applications.
-Built for simplicity and flexibility, it enables seamless integration between AI agents, real time user context, and user interfaces.
 
- Join our Discord →  &nbsp;&nbsp;&nbsp;  Read the Docs →  &nbsp;&nbsp;&nbsp;  Go to the AG-UI Dojo →  &nbsp;&nbsp;&nbsp;  Follow us →
+Agents don't fit the request/response model. They stream tokens, call tools mid-response, update shared state, pause for a human, and spawn subagents, and every framework does it differently. AG-UI replaces that custom wiring with one bi-directional event stream: the agent emits typed events, and any client can render them, no matter which framework built the agent. The same agent can power a web app, a mobile app, a terminal, or Slack.
 
-🚀 Getting Started
-Create a new AG-UI application in seconds:
-npx create-ag-ui-app my-agent-app
+AG-UI 1.0 is here. The protocol now has a stable, frozen specification backed by a JSON Schema, and the TypeScript, Python, and .NET SDKs are generated from it. 1.0 is backwards compatible in both directions: 0.x agents work with 1.0 clients and vice versa. What changed → · Migration guide →
 
- Useful Links:
+Quick start
 
-- The AG-UI Dojo
-- Build AG-UI-powered applications(Quickstart)
-- Build new AG-UI framework integrations (Quickstart)
-- Book a call to discuss an AG-UI integration with a new framework
-- Join the Discord Community
+Start a new app. The CLI scaffolds a frontend (CopilotKit on Next.js, or a terminal client) wired to the agent framework you pick:
 
-What is AG-UI?
+npx create-ag-ui-app@latest
 
-AG-UI is an open, lightweight, event-based protocol for agent-human interaction, designed for simplicity & flexibility:
+Then follow the printed next steps. The generated templates call OpenAI, so set your key before npm run dev:
 
-- During agent executions, agent backends emit events compatible with one of AG-UI's ~16 standard event types
-- Agent backends can accept one of a few simple AG-UI compatible inputs as arguments
+export OPENAI_API_KEY="sk-..."
 
-AG-UI includes a flexible middleware layer that ensures compatibility across diverse environments:
+Or speak the protocol directly: a 30-line agent server and client
 
-- Works with any event transport (SSE, WebSockets, webhooks, etc.)
-- Allows for loose event format matching, enabling broad agent and app interoperability
+An AG-UI agent is any HTTP endpoint that accepts a RunAgentInput and streams events back. No API keys needed for this one.
 
-It also ships with a reference HTTP implementation and default connector to help teams get started fast.
+1. The agent (Python). Requires Python 3.9+.
 
-Learn more about the specs →
+pip install ag-ui-protocol fastapi uvicorn
 
-Why AG-UI?
+server.py
+import uuid
 
-AG-UI was developed based on real-world requirements and practical experience building in-app agent interactions.
+from fastapi import FastAPI, Request
+from fastapi.responses import StreamingResponse
+from ag_ui.core import (
+    PROTOCOL_VERSION,
+    RunAgentInput,
+    RunStartedEvent,
+    RunFinishedEvent,
+    TextMessageStartEvent,
+    TextMessageContentEvent,
+    TextMessageEndEvent,
+)
+from ag_ui.encoder import EventEncoder
 
-Where does AGUI fit in the agentic protocol stack?
-AG-UI is complementary to the other 2 top agentic protocols
-- MCP gives agents tools
-- A2A allows agents to communicate with other agents
-- AG-UI brings agents into user-facing applications
+app = FastAPI()
 
-🚀 Features
+@app.post("/")
+async def run_agent(input_data: RunAgentInput, request: Request):
+    encoder = EventEncoder(accept=request.headers.get("accept"))
 
-- 💬 Real-time agentic chat with streaming
-- 🔄 Bi-directional state synchronization
-- 🧩 Generative UI and structured messages
-- 🧠 Real-time context enrichment
-- 🛠️ Frontend tool integration
-- 🧑‍💻 Human-in-the-loop collaboration
+    async def events():
+        yield encoder.encode(RunStartedEvent(
+            thread_id=input_data.thread_id,
+            run_id=input_data.run_id,
+            protocol_version=PROTOCOL_VERSION,
+        ))
+        message_id = str(uuid.uuid4())
+        yield encoder.encode(TextMessageStartEvent(message_id=message_id, role="assistant"))
+        for chunk in "Hello ", "from ", "AG-UI!"]:
+            yield encoder.encode(TextMessageContentEvent(message_id=message_id, delta=chunk))
+        yield encoder.encode(TextMessageEndEvent(message_id=message_id))
+        yield encoder.encode(RunFinishedEvent(thread_id=input_data.thread_id, run_id=input_data.run_id))
 
-🛠 Supported Integrations
+    return StreamingResponse(events(), media_type=encoder.get_content_type())
 
-AG-UI was born from CopilotKit's initial partnership with LangChain and CrewAI - and brings the incredibly popular agent-user-interactivity infrastructure to the wider agentic ecosystem.
+uvicorn server:app --port 8000
 
-1st party = the platforms that have AG‑UI built in and provide documentation for guidance.
+2. The client (TypeScript). In a second terminal, in a new folder. Requires Node.js 20+.
 
-Frameworks
+npm init -y && npm pkg set type=module
+npm install @ag-ui/client tsx
 
-| Framework                                                          | Status                   | AG-UI Resources                                                                 |
-| ------------------------------------------------------------------ | ------------------------ | -------------------------------------------------------------------------------- |
-| Built-in Agent                                                | ✅ Supported             | ➡️ Docs  |
+// client.ts
+import { HttpAgent } from "@ag-ui/client";
 
-🤝 Partnerships
-| Framework | Status | AG-UI Resources |
-| ---------- | ------- | ---------------- |
-| LangChain | ✅ Supported | ➡️ Docs 🎮 Demos |
-| CrewAI | ✅ Supported | ➡️ Docs 🎮 Demos |
+const agent = new HttpAgent({ url: "http://localhost:8000/" });
 
-🧩 1st Party
-| Framework | Status | AG-UI Resources |
-| ---------- | ------- | ---------------- |
-| Microsoft Agent Framework | ✅ Supported | ➡️ Docs 🎮 Demos |
-| Google ADK | ✅ Supported | ➡️ Docs 🎮 Demos |
-| Google Antigravity | ✅ Supported | ➡️ Docs 🎮 Demos |
-| AWS Strands Agents | ✅ Supported | ➡️ Docs 🎮 Demos |
-| Mastra | ✅ Supported | ➡️ Docs 🎮 Demos |
-| Pydantic AI | ✅ Supported | ➡️ Docs 🎮 Demos |
-| Agno | ✅ Supported | ➡️ Docs 🎮 Demos |
-| LlamaIndex | ✅ Supported | ➡️ Docs 🎮 Demos |
-| AG2 | ✅ Supported | ➡️ Docs  🎮 Demos |
-| AWS Bedrock Agents | 🛠️ In Progress | – |
+agent.addMessage({ id: crypto.randomUUID(), role: "user", content: "Hi there!" });
 
-🌐 Community
-| Framework | Status | AG-UI Resources |
-| ---------- | ------- | ---------------- |
-| Claude Agent SDK | ✅ Supported | 🎮 Demos |
-| Claude Managed Agents SDK | ✅ Supported | 🎮 Demos |
-| Langroid | ✅ Supported | 🎮 Demos |
-| Omnara | ✅ Supported | ➡️ Docs 🎮 Demos |
-| OpenAI Agents SDK | 🛠️ In Progress | – |
-| Cloudflare Agents | ✅ Supported | ➡️ Integration |
+await agent.runAgent({}, {
+  onRunStartedEvent: ({ event }) => console.log(run started (AG-UI ${event.protocolVersion})),
+  onTextMessageContentEvent: ({ event }) => { process.stdout.write(event.delta); },
+  onRunFinishedEvent: () => console.log("\nrun finished"),
+});
 
-Agent Interaction Protocols
+npx tsx client.ts
 
-| Protocols | Status | AG-UI Resources | Integrations |
-| ---------- | ------- | ---------------- | ------------- |
-| A2A | ✅ Supported | ➡️ Docs | Partnership |
+You should see Hello from AG-UI! stream in. Swap the server for any [supported framework and the client doesn't change.
 
-Infrastructure / Deployment
-| Platform | Status | AG-UI Resources | Integrations |
-| ---------- | ------- | ---------------- | ------------- |
-| Amazon Bedrock AgentCore | ✅ Supported | ➡️ Docs | 1st Party |
+Where AG-UI fits
 
-Specification (standard)
-| Framework | Status | AG-UI Resources |
-| ---------- | ------- | ---------------- |
-| Oracle Agent Spec | ✅ Supported | ➡️ Docs 🎮 Demos |
+AG-UI is one of three open, complementary agentic protocols. MCP gives agents tools and context, A2A lets agents work with other agents, and AG-UI brings agents to users. A single agent often uses all three, and AG-UI can front agents that speak MCP or A2A. Read more →
 
-Generative UI
-| Framework | Status | AG-UI Resources |
-| ---------- | ------- | ---------------- |
-| MCP Apps | ✅ Supported | ➡️ Docs 🎮 Demos |
+AG-UI or A2UI? They work together. A2UI, MCP Apps, and Open-JSON-UI are generative UI specs: they describe what UI an agent wants to show. AG-UI is the runtime protocol that carries those payloads, along with everything else, between the agent and the app. Learn more →
+
+Integrations
+
+AG-UI is adopted by Google, Microsoft, Amazon, and Oracle, and built into most agent frameworks. Every framework below has a live demo in the Dojo.
+
+LangChain
+Docs · Demo
+
+CrewAI
+Docs · Demo
+
+Microsoft Agent Framework
+Docs · Demo
+
+Google ADK
+Docs · Demo
+
+AWS Strands Agents
+Docs · Demo
+
+Mastra
+Docs · Demo
+
+Pydantic AI
+Docs · Demo
+
+LlamaIndex
+Docs · Demo
+
+Agno
+Docs · Demo
+
+AG2
+Docs · Demo
+
+Claude Agent SDK
+Docs · Demo
+
++11 more
+Antigravity, OpenAI Agents, watsonx, Spring AI, and others in the full list
+
+Protocols: A2A · MCP · MCP Apps · A2UI\
+Clients: CopilotKit (React, Angular, Vue, React Native) · Slack & Teams · Terminal · OpenBot
+
+Don't see your framework? Build an integration →
+
+Full list of integrations
+
+Show all integrations
+
+- Partners: LangChain · CrewAI
+- Built in: Microsoft Agent Framework · Google ADK (JS) · Google Antigravity · AWS Strands Agents · Mastra · Pydantic AI · Agno · LlamaIndex · AG2
+- More frameworks: Claude Agent SDK · Claude Managed Agents · IBM watsonx Orchestrate · Langroid · Spring AI · Cloudflare Agents · Omnara · Genkit (Go) · OpenAI Agents
+- Specs: Oracle Agent Spec
+- Deployment: Amazon Bedrock AgentCore
+
+Source for every integration lives in integrations/ and middlewares/, and the demos in apps/dojo.
 
 SDKs
 
-| SDK | Status | AG-UI Resources | Integrations |
-| --- | ------- | ---------------- | ------------- |
-| Kotlin | ✅ Supported | ➡️ Getting Started | Community |
-| Golang | ✅ Supported | ➡️ Getting Started | Community |
-| Dart | ✅ Supported | ➡️ Getting Started | Community |
-| Java | ✅ Supported | ➡️ Getting Started | Community |
-| Rust | ✅ Supported | ➡️ Getting Started | Community |
-| Ruby | ✅ Supported | ➡️ Getting Started | Community |
-| C++ | ✅ Supported | ➡️ GitHub Source | Community |
-| .NET | ✅ Supported | ➡️ Getting Started | Community |
-| Nim | 🛠️ In Progress | ➡️ PR | Community |
-| Flowise | 🛠️ In Progress | ➡️ GitHub Source | Community |
-| Langflow | 🛠️ In Progress | ➡️ GitHub Source | Community |
+| Language | Install | Reference |
+| --- | --- | --- |
+| TypeScript | npm install @ag-ui/client | Docs · Source |
+| Python | pip install ag-ui-protocol | Docs · Source |
+| .NET | dotnet add package AGUI.Client | Docs · Source |
 
-Clients
+Community SDKs: Kotlin · Go · Java · Dart · Rust · Ruby · C++ · Swift
 
-| Client | Status | AG-UI Resources | Integrations |
-| --- | ------- | ---------------- | ------------- |
-| CopilotKit | ✅ Supported | ➡️ Getting Started | 1st Party |
-| Terminal + Agent | ✅ Supported | ➡️ Getting Started | Community |
-| Chat platforms (Slack, Microsoft Teams) | ✅ Supported | ➡️ Channels SDK 🎮 OpenTag example | 1st Party |
-| React Native | ✅ Supported | ➡️ Example | 1st Party |
-| OpenBot | ✅ Supported | ➡️ Getting Started 🎮 Source | 1st Party |
+Features: what you can build
 
-View all supported integrations →
+Each building block maps to events in the spec, and each has a live demo in the AG-UI Dojo.
 
-Examples
-Hello World App
+| Building block | What it does | Try it |
+| --- | --- | --- |
+| Streaming chat | Token-by-token messages across multi-turn sessions, with cancel and resume | Demo |
+| Generative UI | Agents render typed components, or declarative UI with A2UI and MCP Apps | Demo |
+| Shared state | A typed store the agent and app both read and write, synced with snapshots and JSON Patch deltas | Demo |
+| Frontend tools | The agent calls tools that run in the app, and gets the result back | Demo |
+| Human in the loop | Runs end with an interrupt outcome; the user approves, edits, or rejects, and the next run resumes | Demo |
+| Reasoning | Show the agent's reasoning as it works, including encrypted reasoning round-trips | Demo |
+| Subagents | Nested delegation, with every event attributed to the subagent run that produced it | Demo |
+| Multimodal | Images, audio, video, and documents in user input and tool results | Demo |
 
-Video:
-
-https://github.com/user-attachments/assets/18c03330-1ebc-4863-b2b8-cc6c3a4c7bae
-
-https://agui-demo.vercel.app/
-
-The AG-UI Dojo (Building-Blocks Viewer)
-The AG-UI Dojo demonstrates AG-UI's core building blocks through simple, focused examples—each just 50-200 lines of code.
-
-View the source code for the Dojo and all framework integrations here.
+Tool output streaming, backend tool rendering, activity progress, token usage, and custom events are covered in the docs. Here's a quick tour of the Dojo:
 
 https://github.com/user-attachments/assets/c298eea8-3f39-4a94-b968-7712429b0c49
 
-🙋🏽‍♂️ Contributing to AG-UI
+How it works
 
-Check out the Contributing guide
+Your app starts a run by sending the agent a single RunAgentInput: the conversation, the tools the frontend offers, shared state, and context. The agent answers with a stream of typed events from eight families: run lifecycle, text messages, tool calls, state, reasoning, activity, subagents, and custom events (full list). Only the run lifecycle is required, so a minimal agent emits a handful of events and grows from there.
 
-- Biweekly AG-UI Working Group
-  📅 Follow the CopilotKit Luma Events Calendar
+AG-UI is transport-agnostic. The spec defines HTTP + SSE and a binary HTTP + Protobuf binding, and middleware can adapt events from any source. Read the architecture overview for the full picture.
 
-Roadmap
+Event reference
 
-Check out the AG-UI Roadmap to see what's being built and where you can jump in.
+AG-UI 1.0 defines 31 event types in eight families. See the spec for every field.
 
-📄 License
+| Event family | Events |
+| --- | --- |
+| Runs and steps | RUN_STARTED RUN_FINISHED RUN_ERROR STEP_STARTED STEP_FINISHED |
+| Text messages | TEXT_MESSAGE_START TEXT_MESSAGE_CONTENT TEXT_MESSAGE_END TEXT_MESSAGE_CHUNK |
 
-AG-UI is open source software licensed as MIT.
+…（内容已截断）

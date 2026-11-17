@@ -1,0 +1,119 @@
+Shader Lab
+
+Shader Lab is a playground for live Metal shaders. Pick one of fifteen effects, drag its parameters and watch the canvas change as you go. There are full-screen generators (gradients, dithering, a fractal plant printed as a cyanotype, an iridescent sphere) and effects that work on a photo: warp, ripple, pinch, fluted glass, chromatic aberration and rain on a window. You can lay text over the result, save any shader as a wallpaper, and read or share the Metal source of the shader on screen.
+
+It runs on iPhone, iPad, iPhone Duo, Apple TV, Apple Vision Pro and Apple Watch, with a layout made for each.
+
+Platforms
+
+| Platform | What it does | Minimum |
+| --- | --- | --- |
+| iPhone | Full-screen canvas with a drawer of controls that you drag up or tap away. | iOS 26 |
+| iPad | The canvas with two floating glass panels: effects on the left, parameters and canvas settings on the right. Editor, Nodes and Code tabs, a touch magnifier, and text and dithered-label overlays. | iPadOS 26 |
+| iPhone Duo | The outer display works like iPhone and the inner display like iPad. In book and tabletop poses the panels stay clear of the crease, and in tabletop the picture sits on the upright half above the panels. | iOS 26; hinge-aware layout needs iOS 27.1 |
+| Apple TV | One shader fills the screen, with a glass picker for the shader and, for Rain, the photo it falls on. The Siri Remote moves focus, and Play/Pause hides the controls and keeps the screen awake. The layout is sized to also fit HomeView's square touch panel. | tvOS 26 |
+| Apple Vision Pro | A lobby window, and an immersive space with a floating canvas and controls. | visionOS 26 |
+| Apple Watch | A companion app with seven presets drawn with SwiftUI Canvas and a speed control. | watchOS 11 |
+
+Design & Examples
+
+One goal of the design was controls that sit concentric with the screen: each sheet and panel keeps its corners an even distance from the display's own. You can see it in the iPhone's drawer, the iPhone Duo shots and the iPad's floating panels, which are all SwiftUI ConcentricRectangles.
+
+The controls are dynamic too, inspired by DialKit. When you switch shaders, the panel updates from the bottom up, replacing only what changes. Controls the two shaders share stay where they are, and keep their values when the ranges match. The ones the new shader doesn't have fade out, and its new ones fade in below the rest. Nothing jumps, so you can flip between effects without losing your place. The order is kept in updateParamOrder and the values in carryOverSharedParams, both in ShaderModel.swift.
+
+iPhone
+
+iPad
+
+iPhone Duo
+
+Apple TV
+
+HomeView
+
+The Apple TV layout comes from this HomeView screen: the same pickers, sized for a 544-point square and tapped directly.
+
+This HomeView screen runs on Apple's internal HomeView SDK, inside a virtual machine. Apple hasn't opened that SDK to developers, though it might in the future. Until then, this screen can't run on a real HomeView. That's also why it's built as a tvOS app: tvOS is what the virtual machine's internal SDK takes. What a real HomeView runs today is CarPlay: it has no App Store, and its third-party apps are CarPlay audio and video apps shown from a paired iPhone nearby, like Spotify. Bitrig can build that kind of app today. To try this screen in the virtual machine, see Run on a HomeView virtual machine.
+
+Shaders
+
+Generators fill the canvas. Photo effects work on one of the bundled photos or one you pick from your library. The Code tab shows the selected shader's Metal function with the current parameter values filled in, and Export shares it as a .metal file.
+
+Each shader below is shown at its default settings, captured on iPad with the controls hidden. The photo effects are shown on the default El Capitan photo.
+
+  Generators
+
+Heatmap
+Layered noise in thermal-camera colours, flowing in bands.
+
+Wave
+Silky ribbons in four colours, flowing at an angle, straight or radial.
+
+Mesh
+A soft gradient of drifting hues, shaped by layered noise.
+
+Grain Grad
+A noisy colour gradient with fine film grain.
+
+Dithering
+Noise drawn as an 8 × 8 Bayer dither, with an optional pixel-font label.
+
+Grain
+Animated film grain over the canvas colour, optionally colourised.
+
+Fractal
+Seaweed printed as a cyanotype, swaying gently, after the cover of Michael Frame’s Geometry of Grief. Organic straightens it into a symmetric tree; Seed grows another plant; Grow plays its life on a loop, from holdfast to developed print.
+
+Sphere
+An iridescent sphere with two moving lights and a slowly turning surface.
+
+Vortex
+Spiral arms twisting around the centre, fading toward the edges.
+
+  Photo effects
+
+Warp
+Bends the photo with crossing sine waves.
+
+Ripple
+Rings spreading out from the centre of the photo.
+
+Pinch
+Pulls the photo toward its centre and lets go, over and over.
+
+Fluted Glass
+The photo through ribbed glass: lines, irregular, wave, zigzag or pattern.
+
+Chromatic
+Splits red, green and blue apart from the centre, along an angle.
+
+Rain
+Drops on the glass, with the photo blurred behind it. Window picks where you watch from: a house, where they run down; a car, where the wind pushes them up; or a plane on a late-night flight, where they streak back past a row of dimmed windows.
+Shaders as wallpapers
+
+In the editor on iPhone, iPad or iPhone Duo, tap Export to save the shader on screen to Photos as a still, with any text overlay included. It renders at full quality, at your screen's own size and pixel density: 1206 × 2622 on iPhone 18 Pro, and the full display on iPad and on each of the Duo's displays. On iPhone the image is always upright, even if you export in landscape. So it drops straight in as a Lock Screen or Home Screen wallpaper: in Photos, tap Share, then Use as Wallpaper.
+
+How it works
+
+- Shaders. Every effect is a [stitchable]] function in [App/Shaders.metal, applied with SwiftUI's colorEffect, distortionEffect and layerEffect. ShaderModel.swift lists the shaders, their parameters, ranges and units.
+- One clock. CanvasClock ticks about 30 times a second and stops when the scene isn't active. Every canvas reads it, so the main canvas, the magnifier and the tabletop reflection stay in step.
+- Render quality. Soft gradients are rendered on a smaller surface and scaled up (ReducedResolution). Point-sized parameters, like the dither cell size, shrink with the surface so the result looks the same.
+- Photos. CanvasImageStore decodes each photo once, at the size the canvas can show, and caches it.
+- iPhone Duo. DuoRuntime reads the hinge with onHingeChange. The layout uses the system's reserved regions for the crease and the camera, so controls never sit under either.
+- Apple TV. App/TV reuses the same CanvasView. Sizes are in units of a 544-point square, so the layout reads on a square panel and, scaled up, on a television. Opening shaderlab://shader/?photo=&chrome=hidden shows a given shader, which is handy for scripted captures.
+
+Build and run
+
+1. Use Xcode 27.1 or later (iOS 27.1 SDK), or Bitrig.
+2. Open Shader Lab.xcodeproj. The Shader Lab scheme builds iPhone, iPad, Apple TV and Apple Vision Pro. The Watch app is embedded in the iPhone app. Shader Lab Watch App builds the watch app on its own.
+3. To run on a device, set your development team. The bundle identifier is a placeholder, so change it to one of your own.
+
+No packages or setup scripts are needed.
+
+Run on a HomeView virtual machine
+
+The HomeView screen runs on a virtual HomeView made with vphone-cli. That's an open-source project (MIT) that runs Apple's device systems in virtual machines on an Apple silicon Mac, with Virtualization.framework and Apple's Private Cloud Compute research VMs. It isn't affiliated with Apple or Bitrig.
+
+1. Set up vphone with its Quick Start. Install the notarized vphone-launchpad from the latest release. In Launchpad, grant Developer Tools access, install the helper and install the Core Bundle. Then put vphone-launchpad-cli on your PATH.
+
+…（内容已截断）

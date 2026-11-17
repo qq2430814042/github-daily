@@ -16,7 +16,7 @@ Want this always-on? Graphify Cloud keeps the graph live across your entire SDLC
 
   The FastAPI codebase mapped by graphify. Every node is a concept, colors are detected communities, and the whole thing is clickable in graph.html.
 
-Get started (30 seconds). Needs Python 3.10+ and uv (or pipx):
+Get started (30 seconds). Needs Python 3.11+ and uv (or pipx):
 
 uv tool install graphifyy      # install the CLI (or: pipx install graphifyy)
 graphify install               # detects your assistant and registers the skill
@@ -100,7 +100,7 @@ Prerequisites
 
 | Requirement | Minimum | Check | Install |
 |---|---|---|---|
-| Python | 3.10+ | python --version | python.org |
+| Python | 3.11+ | python --version | python.org |
 | uv (recommended) | any | uv --version | curl -LsSf https://astral.sh/uv/install.sh \| sh |
 | pipx (alternative) | any | pipx --version | pip install pipx |
 

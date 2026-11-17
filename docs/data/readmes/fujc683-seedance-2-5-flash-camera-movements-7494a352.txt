@@ -1,0 +1,80 @@
+Seedance Camera Movements — 12 moves and their prompt phrases
+
+Camera language for text-to-video: the moves worth knowing, with copy-paste phrases.
+
+👉 Try Seedance 2.5 Flash on APIMart
+
+https://gola.apimart.ai/k-064kfA
+
+💰 Pricing · 🔑 Get an API key
+
+Why camera language matters for video models
+
+A text-to-video model has to invent motion. If you do not specify the camera,
+it picks one for you — usually a slow push-in. Naming the move gives you control.
+
+The 12 moves worth knowing
+
+| Move | Prompt phrase | Best for |
+|---|---|---|
+| Dolly in | slow dolly-in toward the subject | reveal, tension |
+| Dolly out | dolly out to reveal the full scene | context, endings |
+| Orbit | slow orbit around the product | product, hero shots |
+| Tracking | tracking shot following the runner | action, motion |
+| Crane up | crane up over the skyline | scale, establishing |
+| Handheld | handheld, subtle shake | documentary, realism |
+| Whip pan | whip pan to the second subject | transitions |
+| Tilt up | tilt up from feet to face | character reveal |
+| Push-through | push through the doorway into the room | immersion |
+| Drone reveal | aerial drone pull-back revealing the valley | landscape |
+| Static | locked-off static camera | product, dialogue |
+| Rack focus | rack focus from foreground flower to subject | depth |
+
+Prompt template
+
+subject + action], [camera move], [lens], [light], [pace]
+
+Example:
+
+a ceramic mug rotating on a pedestal, slow orbit, 85mm, hard rim light, 24fps
+
+Mistakes that waste renders
+
+| Mistake | Fix |
+|---|---|
+| Two camera moves at once | pick one, or split into two shots |
+| No subject motion | add what the subject is doing |
+| "cinematic" alone | name lens + light + pace |
+| 30 s first try | draft at 4 s |
+
+20 camera phrases you can paste
+
+slow dolly-in, shallow depth of field
+handheld tracking shot, natural shake
+crane up revealing the city skyline
+static locked-off shot, subject moves
+slow orbit around the product, 360 degrees
+whip pan transition to the second subject
+aerial drone pull-back over the valley
+push through the doorway into the room
+rack focus from foreground to subject
+tilt up from shoes to face
+low-angle hero shot, slow rise
+overhead top-down orbit
+side-scrolling tracking with the subject
+backward dolly as the subject walks forward
+slow zoom out from a detail to the full scene
+parallel tracking beside the moving subject
+arc shot around the seated subject
+crash zoom into the eyes
+steadicam follow through the corridor
+time-lapse of the crowd, static camera
+
+Related
+
+- Prompt library: [awesome-seedance-2-5-flash-prompts
+- Other video models: all collections
+
+License
+
+CC BY 4.0

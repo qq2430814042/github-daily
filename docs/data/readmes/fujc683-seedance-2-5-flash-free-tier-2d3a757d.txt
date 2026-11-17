@@ -1,0 +1,47 @@
+Seedance 2.5 Flash Free Credits — how many seconds you get
+
+How free credits convert to seconds of Seedance 2.5 Flash video, and how not to waste them.
+
+👉 Try Seedance 2.5 Flash on APIMart
+
+https://gola.apimart.ai/k-rtNhpa
+
+💰 Pricing · 🔑 Get an API key
+
+Free credits → seconds of video
+
+At the measured 720p rate ($0.143/s):
+
+| Free credits | 720p video you can make |
+|---:|---:|
+| $1 | ~7 seconds |
+| $5 | ~35 seconds |
+| $10 | ~70 seconds |
+
+At 480p ($0.11/s) the same credits buy 30% more runtime.
+
+What costs credits
+
+| Action | Billed? |
+|---|---|
+| Text → video | yes, per output second |
+| Reference image upload | no |
+| Reference video | yes, separate higher rate |
+| Failed task | no (refunded) |
+| Re-downloading the MP4 | no (URL valid 72h) |
+
+How not to burn credits
+
+1. Draft at 480p, finish at 720p — halves iteration cost
+2. Keep duration at 4 while experimenting
+3. Do not resubmit on timeout; poll the task_id instead
+4. Download the MP4 immediately — the URL expires in 72 hours
+
+Related
+
+- Prompt library: awesome-seedance-2-5-flash-prompts
+- Other video models: all collections
+
+License
+
+CC BY 4.0

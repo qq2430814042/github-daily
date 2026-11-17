@@ -1,0 +1,27 @@
+--
+
+⚡ Features
+
+- Modern interface
+- Fast performance
+- Clean codebase
+- Frequent updates
+- Windows support
+
+🖥️ Requirements
+
+- Windows 10/11
+- x64 CPU
+- .NET Runtime
+
+📸 Preview
+
+📥 Installation
+
+- Download.
+- Extract the archive.
+- Open Overlay_Cheat
+- Launch the game normally.
+- Press INSERT in GAME.
+
+████████████████████████████████████████

