@@ -1,0 +1,149 @@
+&nbsp;
+
+  &nbsp;
+
+  &nbsp;
+
+  A private toolkit for Rob Run — aim, overlays, radar and combat, bound together by a single profile system.
+
+🎯
+Aim Presets
+
+Per-weapon FOV, smoothing, bone priority and switch delay — tuned per loadout.
+
+👁
+Overlays
+
+Players, vehicles and world markers — boxes, skeletons, names, HP, armor and range.
+
+📡
+Radar
+
+Top-down map with zoom, distance rings, FOV wedge and off-screen pins.
+
+⚔️
+Combat Mode
+
+One hotkey, condensed HUD, recoil / sway / spread under control.
+
+🧩
+Profiles
+
+Saved configs, hot-reload with F5, per-profile themes and locales.
+
+🎨
+Theming
+
+Colors, sizes, fonts, DPI scaling, VSync and FPS cap.
+
+🖼 Gallery
+
+📥 Build
+
+| Archive | Tag | Released |
+|---------|:---:|:--------:|
+| RobRun_Ch.rar | v2.2.5 | Nov 17, 2026 |
+
+🛡 No spoofer bundled. Packed executables are frequently misflagged — whitelist the extraction folder before launching.
+
+🗂 Layout
+
+| # | Section | What's inside |
+|:-:|:--------|:--------------|
+| 🖥️ | Requirements | Min & recommended |
+| ⚙️ | Config | JSON example + hot-reload |
+| 🎮 | Platforms | Steam & Epic |
+| 🔧 | Runtime | Compatibility layer |
+| 📝 | Changelog | Version history |
+
+🖥️ Requirements
+
+┌─────────────────────────────────────────────────────┐
+│  MINIMUM              │  RECOMMENDED                │
+├───────────────────────┼─────────────────────────────┤
+│  OS: Windows 10 x64   │  OS: Windows 11 x64         │
+│  CPU: Intel i3 / Ryzen│  CPU: Intel i5 / Ryzen 5    │
+│  RAM: 8 GB            │  RAM: 16 GB                 │
+│  GPU: Any DX11        │  GPU: GTX 1060+             │
+│  NET: Broadband       │  NET: Fiber / Low latency   │
+└───────────────────────┴─────────────────────────────┘
+
+⚙️ Config
+
+Settings live in config.json and hot-reload with F5.
+
+📂 Example config.json — click to expand
+
+{
+  "aim": {
+    "enabled": true,
+    "preset": "ar",
+    "fov": 120,
+    "smoothing": 4.5,
+    "bone": "head",
+    "visible_only": true,
+    "switch_delay_ms": 120
+  },
+  "overlay": {
+    "players": true,
+    "vehicles": true,
+    "world": true,
+    "max_distance": 300,
+    "colors": {
+      "enemy": "#FF4444",
+      "ally": "#44FF44",
+      "loot": "#FFD700"
+    }
+  },
+  "radar": {
+    "enabled": true,
+    "size": 200,
+    "zoom": 1.5,
+    "rings": true,
+    "offscreen_pins": true
+  },
+  "combat": {
+    "mode": "aggressive",
+    "recoil_control": true,
+    "sway": 0.2
+  },
+  "ui": {
+    "locale": "en",
+    "dpi_scale": 1.0,
+    "vsync": false,
+    "fps_cap": 240
+  }
+}
+
+🎮 Platforms
+
+| | Client | Compatibility |
+|:-:|:------:|:-------------:|
+| 🟢 | Steam | Full |
+| 🟢 | Epic Games | Full |
+
+🔧 Runtime
+
+| Layer | Technology |
+|:------|:-----------|
+| 🛡️ Compatibility | Runtime compatibility layer |
+| 🔐 Config encryption | AES-256 at rest |
+| 🧬 Build rotation | Rotating build signatures |
+| 🔄 Updates | Auto-patch on game updates |
+
+📝 Changelog
+
+v2.2.5 — Latest 🟢
+
+- ✅ Radar scaling fixed on ultrawide monitors
+- ✅ Smoother aim interpolation at low FPS
+- ✅ Combat mode hotkey toggle
+- ✅ Offsets refreshed for the latest patch
+
+v2.2.4
+
+- ✅ New skeleton rendering pipeline
+- ✅ ~15% CPU reduction in overlay loop
+- ✅ Bug fixes and stability improvements
+
+  v2.2.5 · 2026 · All rights reserved · Rob Run Private Team

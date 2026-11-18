@@ -1,0 +1,1491 @@
+{
+  "date": "2026-11-17",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-18T07:14:34.076Z",
+  "count": 60,
+  "newCount": 33,
+  "sources": {
+    "trending": 15,
+    "new": 33,
+    "highStar": 13
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 319549,
+      "forks": 28487,
+      "starsToday": 1917,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "dream-num/univer",
+      "name": "univer",
+      "owner": "dream-num",
+      "url": "https://github.com/dream-num/univer",
+      "description": "Build your own AI office with Univer Office SDK. Bring editing, calculation, collaboration, and file processing into your product for people and AI agents. Built on an extensible open-source core.",
+      "language": "TypeScript",
+      "stars": 29452,
+      "forks": 2637,
+      "starsToday": 1774,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "dream-num-univer-a13102cc.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "ag-ui-protocol/ag-ui",
+      "name": "ag-ui",
+      "owner": "ag-ui-protocol",
+      "url": "https://github.com/ag-ui-protocol/ag-ui",
+      "description": "AG-UI: the Agent-User Interaction Protocol. Bring Agents into Frontend Applications.",
+      "language": "TypeScript",
+      "stars": 20160,
+      "forks": 2078,
+      "starsToday": 1445,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "ag-ui-protocol-ag-ui-d4035501.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "google-research/paper-orchestra",
+      "name": "paper-orchestra",
+      "owner": "google-research",
+      "url": "https://github.com/google-research/paper-orchestra",
+      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+      "language": "Python",
+      "stars": 3400,
+      "forks": 441,
+      "starsToday": 1072,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-research-paper-orchestra-bae17b42.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "name": "Claude-BugHunter",
+      "owner": "elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars": 9888,
+      "forks": 1399,
+      "starsToday": 1005,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elementalsouls-claude-bughunter-8f8b4d67.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "affaan-m/ECC",
+      "name": "ECC",
+      "owner": "affaan-m",
+      "url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 305827,
+      "forks": 45010,
+      "starsToday": 883,
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "createdAt": "2026-01-18T00:51:51Z",
+      "updatedAt": "2026-11-18T07:14:20Z",
+      "sources": [
+        "trending",
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "affaan-m-ecc-c8b1425e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "alibaba/open-code-review",
+      "name": "open-code-review",
+      "owner": "alibaba",
+      "url": "https://github.com/alibaba/open-code-review",
+      "description": "Secure, fast, efficient, battle-tested at Alibaba's scale. Hybrid architecture code review tool: deterministic pipelines + LLM Agent, precise line-level comments, built-in multi-language ruleset (NPE, thread-safety, XSS, SQL injection), OpenAI & Anthropic compatible.",
+      "language": "Go",
+      "stars": 53953,
+      "forks": 4449,
+      "starsToday": 763,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "alibaba-open-code-review-33046d59.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "mvanhorn/last30days-skill",
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 69375,
+      "forks": 6165,
+      "starsToday": 696,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mvanhorn-last30days-skill-ce334b66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "backnotprop/plannotator",
+      "name": "plannotator",
+      "owner": "backnotprop",
+      "url": "https://github.com/backnotprop/plannotator",
+      "description": "The workspace to stay in the loop and on top of agents - shape, decide, plan, annotate, review code, share with team, and send all feedback to agents with one click.",
+      "language": "TypeScript",
+      "stars": 13181,
+      "forks": 1320,
+      "starsToday": 691,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "backnotprop-plannotator-5b00db19.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "getarcaneapp/arcane",
+      "name": "arcane",
+      "owner": "getarcaneapp",
+      "url": "https://github.com/getarcaneapp/arcane",
+      "description": "Modern Docker Management, Designed for Everyone",
+      "language": "Go",
+      "stars": 9479,
+      "forks": 520,
+      "starsToday": 618,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "getarcaneapp-arcane-3e15b365.txt"
+    },
+    {
+      "rank": 11,
+      "fullName": "Tencent/LoopForge",
+      "name": "LoopForge",
+      "owner": "Tencent",
+      "url": "https://github.com/Tencent/LoopForge",
+      "description": "Self-hosted workflows for coding-agent delivery. Orchestrate CodeBuddy, Codex and Claude Code with scripts and human approval gates. Includes Local workflows for coding assistants.",
+      "language": "Go",
+      "stars": 3532,
+      "forks": 480,
+      "starsToday": 591,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tencent-loopforge-6c94ff52.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "sveltejs/svelte",
+      "name": "svelte",
+      "owner": "sveltejs",
+      "url": "https://github.com/sveltejs/svelte",
+      "description": "web development for the rest of us",
+      "language": "JavaScript",
+      "stars": 89665,
+      "forks": 6230,
+      "starsToday": 477,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "sveltejs-svelte-60223ff9.txt"
+    },
+    {
+      "rank": 13,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 10209,
+      "forks": 1335,
+      "starsToday": 350,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "cursor/plugins",
+      "name": "plugins",
+      "owner": "cursor",
+      "url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 16987,
+      "forks": 1841,
+      "starsToday": 201,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cursor-plugins-07a8bcfb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "jingyaogong/minimind",
+      "name": "minimind",
+      "owner": "jingyaogong",
+      "url": "https://github.com/jingyaogong/minimind",
+      "description": "🧠 Train a 64M-parameter LLM from scratch in just 2h!",
+      "language": "Python",
+      "stars": 66252,
+      "forks": 8687,
+      "starsToday": 192,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jingyaogong-minimind-e3acf9ef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 16,
+      "fullName": "gylive/google-ultra",
+      "name": "google-ultra",
+      "owner": "gylive",
+      "url": "https://github.com/gylive/google-ultra",
+      "description": "",
+      "language": "Python",
+      "stars": 2184,
+      "forks": 824,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T10:21:54Z",
+      "updatedAt": "2026-11-18T07:14:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "gylive-google-ultra-23bfd9a2.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "fjorddolphininflate/sims-4-unlcoker-dlc-tool-v2",
+      "name": "sims-4-unlcoker-dlc-tool-v2",
+      "owner": "fjorddolphininflate",
+      "url": "https://github.com/fjorddolphininflate/sims-4-unlcoker-dlc-tool-v2",
+      "description": "",
+      "language": "",
+      "stars": 329,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "sims4-dlc",
+        "sims4-dlc-nulocker",
+        "sims4-tool"
+      ],
+      "createdAt": "2026-11-17T20:40:46Z",
+      "updatedAt": "2026-11-17T23:54:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fjorddolphininflate-sims-4-unlcoker-dlc-tool-v2-01084191.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "Spiralnyoapplaud/rob-run-nox-cheat",
+      "name": "rob-run-nox-cheat",
+      "owner": "Spiralnyoapplaud",
+      "url": "https://github.com/Spiralnyoapplaud/rob-run-nox-cheat",
+      "description": "",
+      "language": "",
+      "stars": 329,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T20:31:41Z",
+      "updatedAt": "2026-11-18T00:29:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "spiralnyoapplaud-rob-run-nox-cheat-eb91eb45.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "FloorTurtleResurrect/free-adobe-activation",
+      "name": "free-adobe-activation",
+      "owner": "FloorTurtleResurrect",
+      "url": "https://github.com/FloorTurtleResurrect/free-adobe-activation",
+      "description": "simple tutorial adobe activation with GenP",
+      "language": "",
+      "stars": 327,
+      "forks": 32,
+      "starsToday": 0,
+      "topics": [
+        "adobe",
+        "adobe-creative-cloud"
+      ],
+      "createdAt": "2026-11-17T14:47:55Z",
+      "updatedAt": "2026-11-17T16:26:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "floorturtleresurrect-free-adobe-activation-a3e72ea6.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 20,
+      "fullName": "GraphSheriff75/fortnite-pirate-shop-access",
+      "name": "fortnite-pirate-shop-access",
+      "owner": "GraphSheriff75",
+      "url": "https://github.com/GraphSheriff75/fortnite-pirate-shop-access",
+      "description": "",
+      "language": "",
+      "stars": 251,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T20:55:45Z",
+      "updatedAt": "2026-11-18T01:31:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "graphsheriff75-fortnite-pirate-shop-access-77487502.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "FiendCobraMystery/GTA6-RemotePlay",
+      "name": "GTA6-RemotePlay",
+      "owner": "FiendCobraMystery",
+      "url": "https://github.com/FiendCobraMystery/GTA6-RemotePlay",
+      "description": "",
+      "language": "",
+      "stars": 240,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "gta6",
+        "gta6-download",
+        "gta6-launcher",
+        "gta6-pc-free"
+      ],
+      "createdAt": "2026-11-17T19:29:44Z",
+      "updatedAt": "2026-11-18T06:04:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fiendcobramystery-gta6-remoteplay-3f032edb.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "xyzww888/muse-JP-Reg",
+      "name": "muse-JP-Reg",
+      "owner": "xyzww888",
+      "url": "https://github.com/xyzww888/muse-JP-Reg",
+      "description": "Muse.ai pure-HTTP registration & invite-code fission WebUI (JP residential proxy ready)",
+      "language": "Python",
+      "stars": 229,
+      "forks": 96,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T00:06:19Z",
+      "updatedAt": "2026-11-18T06:58:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "xyzww888-muse-jp-reg-d181d670.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "free-dam-man/cloud-exit-node-deploy",
+      "name": "cloud-exit-node-deploy",
+      "owner": "free-dam-man",
+      "url": "https://github.com/free-dam-man/cloud-exit-node-deploy",
+      "description": "加载技能",
+      "language": "Python",
+      "stars": 199,
+      "forks": 78,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T14:48:17Z",
+      "updatedAt": "2026-11-18T07:12:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 24,
+      "fullName": "Feralryostride/Fortnite-Pirate-Shop-Access-cheat-private",
+      "name": "Fortnite-Pirate-Shop-Access-cheat-private",
+      "owner": "Feralryostride",
+      "url": "https://github.com/Feralryostride/Fortnite-Pirate-Shop-Access-cheat-private",
+      "description": "",
+      "language": "",
+      "stars": 192,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T21:15:59Z",
+      "updatedAt": "2026-11-17T23:55:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "feralryostride-fortnite-pirate-shop-access-cheat-private-99df3c16.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "Entityglirescue/jenny-mod-official",
+      "name": "jenny-mod-official",
+      "owner": "Entityglirescue",
+      "url": "https://github.com/Entityglirescue/jenny-mod-official",
+      "description": "Official Jenny Mod (Fapcraft) download for Minecraft Java and Bedrock. Get new characters, gameplay features, installation guide, and safe working files.",
+      "language": "Java",
+      "stars": 178,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "companion",
+        "fapcraft",
+        "java",
+        "jenny",
+        "jenny-mod",
+        "jenny-mod-2026",
+        "jennymod",
+        "jennymod-2026"
+      ],
+      "createdAt": "2026-11-17T21:31:12Z",
+      "updatedAt": "2026-11-18T07:08:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "entityglirescue-jenny-mod-official-c88702dc.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "Saadpeng436/plugin-alliance-mega-bundle-desktop",
+      "name": "plugin-alliance-mega-bundle-desktop",
+      "owner": "Saadpeng436",
+      "url": "https://github.com/Saadpeng436/plugin-alliance-mega-bundle-desktop",
+      "description": "Plugin Alliance Mega Bundle 2026 standalone bundle with full plugin suite, multitrack editor workflow and bundled runtime for offline deployment on Windows 11.",
+      "language": "C++",
+      "stars": 156,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "aax",
+        "brainworx",
+        "mixing",
+        "plugin",
+        "plugin-alliance",
+        "plugin-alliance-mega-bundle",
+        "plugin-alliance-mega-bundle-2026",
+        "plugin-alliance-mega-bundle-activated"
+      ],
+      "createdAt": "2026-11-17T20:20:53Z",
+      "updatedAt": "2026-11-18T07:13:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "saadpeng436-plugin-alliance-mega-bundle-desktop-35e8c5ac.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 27,
+      "fullName": "Saadpeng436/neural-dsp-archetype-bundle-desktop",
+      "name": "neural-dsp-archetype-bundle-desktop",
+      "owner": "Saadpeng436",
+      "url": "https://github.com/Saadpeng436/neural-dsp-archetype-bundle-desktop",
+      "description": "Neural DSP Archetype Bundle 2026 standalone bundle with full plugin suite, multitrack workflow, bundled runtime and portable mode for Windows 11",
+      "language": "C++",
+      "stars": 154,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "amp-modeling",
+        "amp-sim",
+        "cab-sim",
+        "guitar-amp",
+        "guitar-plugin",
+        "guitar-processor",
+        "neural-dsp",
+        "neural-dsp-archetype-bundle"
+      ],
+      "createdAt": "2026-11-17T21:36:54Z",
+      "updatedAt": "2026-11-18T07:13:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "saadpeng436-neural-dsp-archetype-bundle-desktop-fb1492b4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 28,
+      "fullName": "xue-roberts02/cthulhu-desktop",
+      "name": "cthulhu-desktop",
+      "owner": "xue-roberts02",
+      "url": "https://github.com/xue-roberts02/cthulhu-desktop",
+      "description": "Cthulhu 2026 desktop setup with full plugin suite, multitrack editor and bundled instruments for Windows 11",
+      "language": "C++",
+      "stars": 154,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "arpeggiator",
+        "chord-trigger",
+        "cthulhu",
+        "cthulhu-2026",
+        "cthulhu-activated",
+        "cthulhu-desktop",
+        "cthulhu-download",
+        "cthulhu-free"
+      ],
+      "createdAt": "2026-11-17T21:32:39Z",
+      "updatedAt": "2026-11-18T07:12:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "xue-roberts02-cthulhu-desktop-fcf68735.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 29,
+      "fullName": "tru3soft/kick-3-desktop",
+      "name": "kick-3-desktop",
+      "owner": "tru3soft",
+      "url": "https://github.com/tru3soft/kick-3-desktop",
+      "description": "Kick 3 2026 desktop setup with full plugin suite, multitrack editor and bundled instruments for Windows 11",
+      "language": "C++",
+      "stars": 150,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bass-drum",
+        "dance-music",
+        "drum-synth",
+        "edm-production",
+        "kick-3",
+        "kick-3-2026",
+        "kick-3-activated",
+        "kick-3-desktop"
+      ],
+      "createdAt": "2026-11-17T21:32:24Z",
+      "updatedAt": "2026-11-18T07:12:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tru3soft-kick-3-desktop-c65a0040.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 30,
+      "fullName": "Yakovlev-hamza/metatune-desktop",
+      "name": "metatune-desktop",
+      "owner": "Yakovlev-hamza",
+      "url": "https://github.com/Yakovlev-hamza/metatune-desktop",
+      "description": "Metatune 2026 desktop setup with multitrack editor, VST plugin suite and bundled instruments for Windows 11",
+      "language": "C++",
+      "stars": 150,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "metatune",
+        "metatune-2026",
+        "metatune-activated",
+        "metatune-desktop",
+        "metatune-download",
+        "metatune-free",
+        "metatune-full",
+        "metatune-full-version"
+      ],
+      "createdAt": "2026-11-17T21:42:12Z",
+      "updatedAt": "2026-11-18T07:11:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yakovlev-hamza-metatune-desktop-ecf2a8dc.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 31,
+      "fullName": "roninbyteobliterate/Lichii",
+      "name": "Lichii",
+      "owner": "roninbyteobliterate",
+      "url": "https://github.com/roninbyteobliterate/Lichii",
+      "description": "Lichii is an experimental, open-source Nintendo Switch and Switch 2 emulator written in C++",
+      "language": "C++",
+      "stars": 141,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "breath-of-the-wild",
+        "breatofthewild",
+        "emularor-switch-2",
+        "emulator-2-switch",
+        "legend-of-zelda",
+        "legend-of-zelda-pc",
+        "lichi",
+        "lichii-22-1-8"
+      ],
+      "createdAt": "2026-11-17T01:05:59Z",
+      "updatedAt": "2026-11-18T06:40:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "roninbyteobliterate-lichii-49af4a34.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "prusa3d/prusa-connect",
+      "name": "prusa-connect",
+      "owner": "prusa3d",
+      "url": "https://github.com/prusa3d/prusa-connect",
+      "description": "Prusa Connect: a local server for your printers",
+      "language": "Go",
+      "stars": 140,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T08:54:51Z",
+      "updatedAt": "2026-11-18T07:12:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "prusa3d-prusa-connect-3167a91f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 33,
+      "fullName": "capllen/Subnook",
+      "name": "Subnook",
+      "owner": "capllen",
+      "url": "https://github.com/capllen/Subnook",
+      "description": "本地优先的 Android 订阅管理 App：自动滚动账单日、到期前每日提醒、30+ 币种实时汇率换算、账单日历、支出统计与桌面小组件，内置 240+ 国内外服务预设",
+      "language": "Kotlin",
+      "stars": 138,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T13:50:27Z",
+      "updatedAt": "2026-11-18T06:45:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "capllen-subnook-023ee898.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "FiremanInverter/cyberpunk2077-trainer-helper",
+      "name": "cyberpunk2077-trainer-helper",
+      "owner": "FiremanInverter",
+      "url": "https://github.com/FiremanInverter/cyberpunk2077-trainer-helper",
+      "description": "🎯 Cyberpunk 2077 Mod Menu 2026 - undetected cheat for Windows 10/11. God Mode, Infinite Health, Stamina, RAM, Oxygen, Zero Cooldowns, Stealth Mode, One Hit Kill, Infinite Ammo, No Reload, Set Level 60, Add Money, Spawn Any Item, Spawn Any Vehicle, Teleport, Time Control, Config System hack trainer.",
+      "language": "C++",
+      "stars": 133,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "cyberpunk",
+        "cyberpunk-2077-features",
+        "cyberpunk-2077-hack",
+        "cyberpunk-2077-trainer"
+      ],
+      "createdAt": "2026-11-17T16:10:30Z",
+      "updatedAt": "2026-11-17T16:47:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "firemaninverter-cyberpunk2077-trainer-helper-433bc6a6.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 35,
+      "fullName": "HallDreamBulwark/web-traffic-simulator",
+      "name": "web-traffic-simulator",
+      "owner": "HallDreamBulwark",
+      "url": "https://github.com/HallDreamBulwark/web-traffic-simulator",
+      "description": "Advanced web traffic generator and SEO testing tool. Simulate human-like browsing behavior, search referrals, and CTR patterns for analytics validation. Playwright-based, stealth, open-source.",
+      "language": "Python",
+      "stars": 121,
+      "forks": 76,
+      "starsToday": 0,
+      "topics": [
+        "analytics-testing",
+        "browser-automation",
+        "ctr-testing",
+        "open-source",
+        "playwright",
+        "seo-tools",
+        "stealth",
+        "traffic-bot"
+      ],
+      "createdAt": "2026-11-17T05:22:06Z",
+      "updatedAt": "2026-11-17T09:33:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "halldreambulwark-web-traffic-simulator-e399a24c.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "VanquisherRepair/duplicate-file-finder",
+      "name": "duplicate-file-finder",
+      "owner": "VanquisherRepair",
+      "url": "https://github.com/VanquisherRepair/duplicate-file-finder",
+      "description": "Fast and lightweight duplicate file finder for Windows. Scan folders to find identical photos, videos, and documents using MD5 hashing. Free up disk space safely. Open-source.",
+      "language": "Python",
+      "stars": 119,
+      "forks": 85,
+      "starsToday": 0,
+      "topics": [
+        "deduplicator",
+        "disk-cleanup",
+        "duplicate-files",
+        "duplicate-photos",
+        "file-finder",
+        "file-management",
+        "open-source",
+        "python"
+      ],
+      "createdAt": "2026-11-17T06:50:02Z",
+      "updatedAt": "2026-11-17T07:33:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "vanquisherrepair-duplicate-file-finder-b7658c20.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "polygondomainport/obs-streamer-stack",
+      "name": "obs-streamer-stack",
+      "owner": "polygondomainport",
+      "url": "https://github.com/polygondomainport/obs-streamer-stack",
+      "description": "Streamer plugin stack for OBS — alerts, plugins and performance filters.",
+      "language": "",
+      "stars": 97,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "broadcast",
+        "obs",
+        "plugins",
+        "streaming",
+        "twitch"
+      ],
+      "createdAt": "2026-11-17T00:20:59Z",
+      "updatedAt": "2026-11-17T11:28:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "polygondomainport-obs-streamer-stack-9c1bdf14.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "SkinJaguarAdapt/gas-fee-tracker",
+      "name": "gas-fee-tracker",
+      "owner": "SkinJaguarAdapt",
+      "url": "https://github.com/SkinJaguarAdapt/gas-fee-tracker",
+      "description": "Gas fee pattern tracker for major EVM chains with alerting recipes.",
+      "language": "",
+      "stars": 97,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "blockchain",
+        "defi",
+        "ethereum",
+        "gas-fees",
+        "tools"
+      ],
+      "createdAt": "2026-11-17T00:47:52Z",
+      "updatedAt": "2026-11-18T06:02:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "skinjaguaradapt-gas-fee-tracker-fb252510.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "OutpostPython/tableau-viz-gallery",
+      "name": "tableau-viz-gallery",
+      "owner": "OutpostPython",
+      "url": "https://github.com/OutpostPython/tableau-viz-gallery",
+      "description": "Gallery-grade dashboard examples and calculations for Tableau Desktop.",
+      "language": "",
+      "stars": 96,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "analytics",
+        "bi",
+        "dashboards",
+        "data-visualization",
+        "tableau"
+      ],
+      "createdAt": "2026-11-17T00:03:13Z",
+      "updatedAt": "2026-11-17T11:26:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "outpostpython-tableau-viz-gallery-6433ba62.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "PupaRectifier/jetbrains-dev-setup",
+      "name": "jetbrains-dev-setup",
+      "owner": "PupaRectifier",
+      "url": "https://github.com/PupaRectifier/jetbrains-dev-setup",
+      "description": "JetBrains IDE tuning notes — keymaps, inspections, AI assist etiquette.",
+      "language": "",
+      "stars": 96,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ides",
+        "intellij",
+        "jetbrains",
+        "phpstorm",
+        "programming"
+      ],
+      "createdAt": "2026-11-17T00:27:37Z",
+      "updatedAt": "2026-11-17T11:30:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "puparectifier-jetbrains-dev-setup-d5c8bf93.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "0xkaka/homeport",
+      "name": "homeport",
+      "owner": "0xkaka",
+      "url": "https://github.com/0xkaka/homeport",
+      "description": "",
+      "language": "HTML",
+      "stars": 90,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T05:39:46Z",
+      "updatedAt": "2026-11-18T07:12:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "0xkaka-homeport-f6c43632.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 42,
+      "fullName": "SamG-Coder/SmartImposter",
+      "name": "SmartImposter",
+      "owner": "SamG-Coder",
+      "url": "https://github.com/SamG-Coder/SmartImposter",
+      "description": "Hardware ray-traced forest renderer (Rust + Vulkan) with parallax octahedral impostors evaluated by the RTX cores",
+      "language": "Rust",
+      "stars": 84,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "foliage",
+        "impostors",
+        "ray-tracing",
+        "rendering",
+        "rust",
+        "vulkan"
+      ],
+      "createdAt": "2026-11-17T12:27:48Z",
+      "updatedAt": "2026-11-18T07:10:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "samg-coder-smartimposter-ea03814a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 43,
+      "fullName": "TempestSwimmer/Capcut-Pro-For-Windows-And-Macos",
+      "name": "Capcut-Pro-For-Windows-And-Macos",
+      "owner": "TempestSwimmer",
+      "url": "https://github.com/TempestSwimmer/Capcut-Pro-For-Windows-And-Macos",
+      "description": "CapCut Pro for Windows and macOS — desktop video editor with AI captions, effects, keyframes, transitions and 4K export tools for content creators on both platforms.",
+      "language": "",
+      "stars": 84,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "capcut-activated",
+        "capcut-crack-2026",
+        "capcut-cracked-2026",
+        "capcut-exe",
+        "capcut-for-free",
+        "capcut-free-2026",
+        "capcut-tiktok"
+      ],
+      "createdAt": "2026-11-17T16:37:22Z",
+      "updatedAt": "2026-11-17T20:31:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tempestswimmer-capcut-pro-for-windows-and-macos-4a05600f.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "dmitrykurash/holospot",
+      "name": "holospot",
+      "owner": "dmitrykurash",
+      "url": "https://github.com/dmitrykurash/holospot",
+      "description": "The holographic materials of holo.spot for your own three.js scenes, made to be handed to an AI agent",
+      "language": "TypeScript",
+      "stars": 82,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T13:38:59Z",
+      "updatedAt": "2026-11-18T06:58:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dmitrykurash-holospot-9e7900d3.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 45,
+      "fullName": "gleameconomicjetty/Adobe-Indesign-For-Windows-And-Macos",
+      "name": "Adobe-Indesign-For-Windows-And-Macos",
+      "owner": "gleameconomicjetty",
+      "url": "https://github.com/gleameconomicjetty/Adobe-Indesign-For-Windows-And-Macos",
+      "description": "Adobe InDesign for Windows and macOS — professional publishing and page layout software for print and digital design, typography, master pages and multi-page documents on both platforms.",
+      "language": "",
+      "stars": 82,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adobe-indesign",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "indesign-document",
+        "indesign-free-soft",
+        "indesign-scripts",
+        "open-source"
+      ],
+      "createdAt": "2026-11-17T19:38:04Z",
+      "updatedAt": "2026-11-17T21:02:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "gleameconomicjetty-adobe-indesign-for-windows-and-macos-0143a6d3.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "TaleFlourish/Rob-run-private-cheat",
+      "name": "Rob-run-private-cheat",
+      "owner": "TaleFlourish",
+      "url": "https://github.com/TaleFlourish/Rob-run-private-cheat",
+      "description": "Rob Run Cheat robrun— aimbot, hack, aim, recoil, money dupe, free, player and vehicle ESP, loot filters, radar and recoil tuning for Rob Run. Profiles keep theme, locale and DPI.",
+      "language": "",
+      "stars": 82,
+      "forks": 10,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T14:11:05Z",
+      "updatedAt": "2026-11-18T02:34:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "taleflourish-rob-run-private-cheat-ba2ff8f3.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "WoodpeckerMaster74/Adobe-After-Effects-For-Windows-And-Macos",
+      "name": "Adobe-After-Effects-For-Windows-And-Macos",
+      "owner": "WoodpeckerMaster74",
+      "url": "https://github.com/WoodpeckerMaster74/Adobe-After-Effects-For-Windows-And-Macos",
+      "description": "Adobe After Effects for Windows and macOS — professional motion graphics and VFX software for animation, compositing, tracking and cinematic effects on both platforms.",
+      "language": "",
+      "stars": 81,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adobe-after-effects",
+        "ae",
+        "ae-templates",
+        "after-effects-alternative",
+        "after-effects-project-files",
+        "automation",
+        "developer-tools",
+        "open-source"
+      ],
+      "createdAt": "2026-11-17T19:17:47Z",
+      "updatedAt": "2026-11-17T20:45:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "woodpeckermaster74-adobe-after-effects-for-windows-and-macos-7fbded89.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "Lemxy/WinRust",
+      "name": "WinRust",
+      "owner": "Lemxy",
+      "url": "https://github.com/Lemxy/WinRust",
+      "description": "Windows shell replacement in Rust: taskbar, file manager, NTFS search, task manager, disk cleaner. One installer exe.",
+      "language": "Rust",
+      "stars": 80,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-17T14:27:06Z",
+      "updatedAt": "2026-11-18T06:55:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lemxy-winrust-f592c2d2.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 372264,
+      "forks": 46509,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-18T06:42:27Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "awesome-selfhosted/awesome-selfhosted",
+      "name": "awesome-selfhosted",
+      "owner": "awesome-selfhosted",
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
+      "language": "",
+      "stars": 338186,
+      "forks": 15877,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "cloud",
+        "free-software",
+        "hosting",
+        "privacy",
+        "self-hosted",
+        "selfhosted"
+      ],
+      "createdAt": "2015-06-01T02:33:17Z",
+      "updatedAt": "2026-11-18T07:12:15Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "awesome-selfhosted-awesome-selfhosted-1dbf0788.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 51,
+      "fullName": "vinta/awesome-python",
+      "name": "awesome-python",
+      "owner": "vinta",
+      "url": "https://github.com/vinta/awesome-python",
+      "description": "The definitive list that answers \"I want to do X in Python, which tool should I use?\"",
+      "language": "Python",
+      "stars": 335550,
+      "forks": 29123,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "python",
+        "python-frameworks",
+        "python-libraries",
+        "python-tools"
+      ],
+      "createdAt": "2014-06-27T21:00:06Z",
+      "updatedAt": "2026-11-18T07:13:46Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "vinta-awesome-python-6aca4665.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 326969,
+      "forks": 27458,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-18T07:13:48Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "deepseek-ai/deepseek-harness",
+      "name": "deepseek-harness",
+      "owner": "deepseek-ai",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "language": "TypeScript",
+      "stars": 283225,
+      "forks": 35107,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "createdAt": "2026-08-13T11:56:32Z",
+      "updatedAt": "2026-11-18T07:11:05Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "deepseek-ai-deepseek-harness-a4daff9d.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252891,
+      "forks": 52856,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-18T07:11:57Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 55,
+      "fullName": "yt-dlp/yt-dlp",
+      "name": "yt-dlp",
+      "owner": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "language": "Python",
+      "stars": 208768,
+      "forks": 18417,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "createdAt": "2020-10-26T04:22:55Z",
+      "updatedAt": "2026-11-18T07:12:28Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "yt-dlp-yt-dlp-54c7d6d8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "MDX",
+      "stars": 175083,
+      "forks": 79606,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-18T05:35:21Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "Genymobile/scrcpy",
+      "name": "scrcpy",
+      "owner": "Genymobile",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "description": "Display and control your Android device",
+      "language": "C",
+      "stars": 155115,
+      "forks": 14249,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "c",
+        "ffmpeg",
+        "genyteam-system",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen"
+      ],
+      "createdAt": "2017-11-21T18:00:27Z",
+      "updatedAt": "2026-11-18T06:59:16Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "genymobile-scrcpy-2a59cd95.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 150345,
+      "forks": 13508,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-18T07:13:36Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 149797,
+      "forks": 14390,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-18T07:11:35Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "ripienaar/free-for-dev",
+      "name": "free-for-dev",
+      "owner": "ripienaar",
+      "url": "https://github.com/ripienaar/free-for-dev",
+      "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+      "language": "HTML",
+      "stars": 143098,
+      "forks": 15400,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "free-for-developers"
+      ],
+      "createdAt": "2015-03-18T21:06:26Z",
+      "updatedAt": "2026-11-18T07:06:49Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ripienaar-free-for-dev-6a1523e8.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

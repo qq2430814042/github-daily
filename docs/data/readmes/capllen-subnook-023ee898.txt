@@ -1,0 +1,59 @@
+Subnook
+
+Subnook 是一个简洁的 Android 订阅管理 App：记录各种会员 / 订阅 / 定期账单，自动滚动扣款日期，到期前提醒，并按周 / 月 / 年统计花费。所有数据只保存在本机。
+
+功能
+
+- 订阅记录：名称、图标、金额、币种、周期（每 N 天 / 周 / 月 / 年）、下次付款日期、付款方式（Google Play、App Store、微信、支付宝、信用卡、PayPal、手动付款等）、分类、备注
+- 自动 / 手动续费：自动续费的订阅过了账单日自动记账并滚动到下一期；手动付款的订阅需点「我已付款」才更新。3 天内到期的订阅都会进入「待付款」，可以提前确认（应对 Google 等提前扣款）
+- 提醒：默认账单日前 3 天开始每天提醒一次（提前天数 0–30 天可调），手动付款逾期每天提醒，通知上可直接点「已付款」
+- 统计：首页按周 / 月 / 年显示平均支出；详细统计页有分类环形图、花费排行、未来 12 个月待付、按付款方式 / 币种分布、已付款记录
+- 多币种：30 种常用货币，显示币种可切换，汇率每 24 小时自动更新（open.er-api.com）
+- 账单日历：每天显示当天扣款的订阅图标，过去显示实际付款记录
+- 220+ 预设：国内外常用软件、游戏、云服务、VPN、通信运营商等，自带图标和参考价格；也可以从相册选图或用内置设计图标
+- 桌面小组件：不用打开 App 就能看到每月支出和即将扣款的订阅
+- 备份：导出 / 导入 JSON（含付款记录、自定义图标和设置）
+- 浅色 / 深色主题
+
+下载
+
+到 Releases 下载 APK（Android 8.0 及以上）。
+
+编译
+
+技术栈：Kotlin、Jetpack Compose（Material 3）、Room、DataStore、WorkManager、Glance。需要 JDK 17+ 和 Android SDK（compileSdk 36）。
+
+用 Android Studio：直接打开 Subnook/ 目录。
+
+命令行：
+
+cd Subnook
+./gradlew assembleDebug      # 输出 app/build/outputs/apk/debug/
+./gradlew testDebugUnitTest  # 单元测试
+
+Release 签名：把 Subnook/keystore.properties.example 复制为 keystore.properties 并填入自己的签名信息；没有这个文件时 release 包使用 debug 签名。
+
+Windows 便携工具链（可选）：scripts/env.ps1 / scripts/env.sh 会把 JDK、SDK、Gradle 及其缓存、临时文件都指向仓库内的 toolchain/ 目录（不在 git 里，需要自己放入 jdk21/、sdk/、gradle-8.14.3/），scripts/build.ps1、scripts/install.ps1 用来编译和通过 adb 安装。
+
+预设与图标
+
+- 预设列表在 Subnook/tools/presets.psv（名称、分类、品牌色、参考价、币种、周期、默认付款方式、图标来源）
+- 修改后在 Subnook/ 下运行（Git Bash / Linux / macOS）：
+  - bash tools/fetch_icons.sh：下载新增预设的图标（来源顺序：Google Play → App Store → 网站 favicon），--force 全部重新下载
+  - bash tools/gen_presets.sh：重新生成 PresetCatalog.kt
+  - java tools/IconSheet.java sheet.png key...]：把图标拼成一张总览图，方便核对
+
+欢迎通过 PR 补充预设。
+
+小提示
+
+- 一些国产系统（如 ColorOS）后台管控较严，建议在 App 设置里开启「准时提醒」和「忽略电池优化」，并在系统设置中允许自启动。
+- ColorOS 不支持 App 内一键添加小组件：请长按桌面空白处 → 卡片 → 插件 → Subnook。
+
+声明
+
+预设中的应用图标和名称是其各自所有者的商标，仅用于帮助用户识别订阅，本项目与这些公司没有任何关联。如果你是权利人并希望移除，请提 issue。
+
+许可证
+
+[MIT

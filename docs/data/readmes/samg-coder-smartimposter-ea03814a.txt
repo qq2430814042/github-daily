@@ -1,0 +1,170 @@
+SmartImposter
+
+**A hardware ray-traced forest renderer, written from scratch in Rust + Vulkan. Every plant beyond
+its mesh distance is a parallax octahedral impostor evaluated by the RTX cores, and NVIDIA DLSS Ray
+Reconstruction turns one noisy sample per pixel into the final image.**
+
+The world holds 440,899 plants of 14 species:
+
+| Layer | Count | Species |
+|---|---|---|
+| Canopy trees | 103,052 | European beech, black alder, black poplar, European aspen, common hazel |
+| Shrubs | 56,512 | heather, huckleberry oak |
+| Ferns | 182,752 | bracken |
+| Grass patches | 98,583 | wild grass, grass clumps, tall grass, tufted grass, dry grass, cotton grass |
+
+Trees, shrubs and ferns are Quixel Megaplants, with every leaf as real geometry: up to
+519 million triangles per tree once all twig instances are expanded. The grass is **Quixel
+Megascans** alpha-tested cards. Near the camera everything is drawn as the real asset. Beyond that,
+each plant collapses to a single AABB in the acceleration structure, and an intersection shader
+ray-marches a baked, BC-compressed hemi-octahedral atlas of it. The bake runs on the same GPU, with
+the same ray tracing pipeline, in about 2 seconds at startup.
+
+At 1440p on an RTX 5080: 8.0 ms per frame with DLSS-RR Quality, 15.4 ms with DLAA.
+
+|  |  |
+|---|---|
+| Beech, aspen and alder over leaf litter, with bracken and huckleberry in the understory | From 55 m up. Every tree past ~50 m is an impostor |
+|  |  |
+| Cotton grass on wet ground, dry grass and heather | Real Megascans grass cards at eye level |
+|  |  |
+| Forest edge: poplar, hazel and huckleberry | Looking down on a meadow: real grass near, grass impostors far |
+
+Contents
+
+- Highlights
+- Performance
+- How it works
+  1. Assets
+  2. Baking and compressing the impostor
+  3. The intersection shader
+  4. Lighting impostors like the real plant
+  5. Grass
+  6. LOD and draw distance
+  7. Forest layout and ground
+  8. Materials
+  9. Frame: DLSS Ray Reconstruction
+  10. Performance work
+- Getting started
+- Tools · Code layout · Limitations · License
+
+Highlights
+
+- Hardware ray tracing end to end. Primary rays, sun shadows, AO and the impostor bake all go
+  through VK_KHR_ray_tracing_pipeline. There's no rasterizer.
+- Impostors as procedural geometry. One AABB per far plant. The RT cores do traversal and
+  culling, and a custom intersection shader marches the baked depth (parallax occlusion mapping in
+  each view's orthographic space).
+- DLSS Ray Reconstruction. NVIDIA's AI denoiser and upscaler replaces TAA + supersampling,
+  through a small C++ shim over the NGX SDK. Without the SDK the engine builds and runs with its
+  own TAA.
+- Shader Execution Reordering. On RTX 40/50 the primary rays are regrouped by what they hit
+  before shading.
+- A mixed forest from data. Every species pack in assets/species is loaded. Four scattered
+  layers (canopy, shrubs, ferns, grass) follow biome fields: beech stands, alder on wet ground,
+  poplar and hazel at forest edges, aspen groves, heather on dry open ground, bracken under the
+  canopy, cotton grass in wet meadows.
+- Megascans grass. Clumps are grouped into 3 m patches. Real alpha-tested cards near the
+  camera, compressed impostors beyond, the ground texture past the draw distance.
+- Compressed, size-aware atlases. Each variant's atlas is sized to the plant and BC-compressed
+  on the GPU right after the bake: 52 variants in 2.05 GB instead of 10.1 GB.
+- Impostors that light like the real plant. Traced, layered self-shadowing, plus the *normal
+  spread* of the leaves or blades baked per texel. Impostor brightness is within a few percent of
+  the real meshes, front-lit, back-lit and from above, for trees and grass alike.
+- Natural ground. Four scanned surfaces with hex-tile stochastic texturing (no visible
+  repetition), blended by a mask built from the actual tree crowns, moisture and dryness.
+- LOD with no popping. Every boundary is a stochastic per-pixel dissolve. The mesh any-hit and
+  the impostor intersection shader share one random number, so exactly one copy of a plant answers
+  each ray.
+
+Performance
+
+RTX 5080, 2560x1440, camera moving or freshly placed every frame. DLAA is the quality reference.
+
+| Scene | DLAA | DLSS-RR Quality | DLSS-RR Balanced |
+|---|---|---|---|
+| Meadow at eye level (hero image) | 15.4 ms | 8.0 ms | 6.5 ms |
+| Meadow from 15 m, looking down | 16.5 ms | 8.7 ms | 7.2 ms |
+| Forest interior | 11.3 ms | 6.1 ms | 5.3 ms |
+| 1.8 km fly-through (median) | 11.0 ms | | |
+
+Quality renders at 1708x960 and is about 2x faster than DLAA. It's a little softer on grass blades:
+
+Where the time goes, DLAA meadow view (GPU timestamps, printed by every screenshot run):
+
+| Pass | Time |
+|---|---|
+| Ray tracing: primary rays and shading | 5.5 ms |
+| Ray tracing: sun shadow rays | 1.9 ms |
+| Ray tracing: ambient occlusion rays | 1.5 ms |
+| DLSS Ray Reconstruction (DLAA, 1440p) | 5.1 ms |
+| TLAS rebuild, tonemap, sharpen, blit | 0.2 ms |
+| CPU: LOD for 440k plants and instance list (overlapped with the GPU) | ~1 ms |
+
+Startup (texture decode, BLAS build, bake and compression of 52 atlases) takes about 5.3 s. GPU
+memory: impostor atlases 2.05 GB, plant textures 0.85 GB, ground textures 0.27 GB.
+
+How it works
+
+flowchart LR
+    UE"Unreal project
+(Fab Megaplants)"] -->|tools/ue_export_megaplants.py| USD["per-species USD meshes,
+assembly.json, textures"]
+    USD -->|tools/megaplant_to_mtree.py| MTREE["assets/species/*.mtree + .json"]
+    FAB["Fab Megascans grass
+(glTF)"] -->|tools/grass_to_mtree.py| MTREE
+    MTREE --> CAT["catalog.rs
+species, variants, LOD scale"]
+    CAT --> WORLD["world.rs
+biome scatter, ground mask"]
+    CAT --> BLAS["BLAS per unique mesh
+AABB BLAS per variant"]
+    BLAS --> BAKE["Impostor bake
+(bake.rgen, alpha-tested)"]
+    BAKE --> ENC["mip.comp + bcenc.comp
+BC3 / BC5 atlases"]
+    WORLD --> FRAME["Per frame (CPU, overlapped):
+LOD per plant, instance list"]
+    ENC --> FRAME
+    FRAME --> TRACE["main.rgen (SER)
+primary + shadow + AO rays,
+G-buffer"]
+    TRACE --> DLSS["DLSS Ray Reconstruction
+(or taa.comp)"] --> RES["resolve.comp
+tonemap"] --> CAS["sharpen.comp"] --> OUT["swapchain"]
+
+1. Assets: keeping half a billion triangles cheap
+
+In UE 5.x a Megaplant is a Nanite assembly: a hierarchy of parts (trunk, branches, twigs, leaf
+clusters) placed by transforms, with the same few meshes reused hundreds to thousands of times.
+ue_export_megaplants.py reads that assembly data inside Unreal and exports each unique mesh, the
+part hierarchy, the textures and the material parameters. megaplant_to_mtree.py flattens the
+hierarchy: small subtrees are merged into one mesh, large ones stay instanced. The result is unique
+meshes plus a list of (mesh, transform) parts per variant.
+
+The engine builds one BLAS per unique mesh: 162 meshes, 9.2M triangles, for 52 variants. A
+near tree costs one TLAS instance per part, not a copy of its geometry:
+
+| Species | Expanded triangles per variant | Parts per variant |
+|---|---|---|
+| Black alder | 71M – 519M | 281 – 2,029 |
+| Black poplar | 59M – 119M | 1,251 – 2,459 |
+| European beech | 1.2M – 27M | 105 – 388 |
+| European aspen | 2.1M – 12M | 131 – 795 |
+| Heather | 3.0M – 15M | 113 – 668 |
+| Grass patch | 0.1M – 1.4M | 10 – 194 clumps |
+
+2. Baking and compressing the impostor
+
+bake.rgen builds a TLAS containing just one full-detail plant and shoots orthographic rays from
+12x12 directions on a hemi-octahedral grid, with 3x3 sub-samples per texel. It's the same ray
+tracing pipeline and the same closest-hit and any-hit shaders used at runtime, so the bake sees
+exactly the materials, and the alpha-tested cut-outs, the meshes have.
+
+Each variant's frame resolution follows its size: 5.5 cm texels for a full-size tree (scaled by
+the variant's LOD scale, since small plants switch to impostors closer; grass gets 1.6x coarser
+texels), rounded to a multiple of 32 and capped at 448 px.
+
+The bake writes an uncompressed scratch atlas shared by all variants. mip.comp builds
+
+…（内容已截断）

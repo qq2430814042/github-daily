@@ -1,6 +1,6 @@
 /last30days
 
-English | Français | Deutsch | Español | Português (Brasil) | 日本語 | 简体中文 | العربية
+English | Français | Deutsch | Español | Português (Brasil) | 日本語 | 简体中文 | العربية | فارسی | Türkçe
 
 An AI agent-led search engine scored by upvotes, likes, and real money - not editors.
 
@@ -70,6 +70,5 @@ Sources, scored by the people
 | DripStack | Financial newsletters and analyst writeups through a public, keyless API. Opt in with --search dripstack or INCLUDE_SOURCES=dripstack. |
 | Jobs / careers pages | What a company is hiring for, read from its own careers page (Workday, Apple, Amazon, Google, Microsoft, Netflix, Oracle, and more). A company run reads it automatically, and roles that hint at something unannounced become Jobs Page Secret Signals. Also selected with --hiring-signals, --search jobs, or the research plan. |
 | Patents | A company's new US patent filings, as evidence of what it is building before it ships. Free, no API key. Shows when your topic is a company. A filing becomes a Patent Secret Signal only when it is out of character for the company or describes something it has not shipped or announced. |
-| Local corpus | Your local Markdown and text files, plus PDFs when pdftotext is on PATH. Opt in with --corpus or LAST30DAYS_CORPUS_DIRS. |
 
 …（内容已截断）

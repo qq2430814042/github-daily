@@ -1,0 +1,349 @@
+homeport
+
+一句话：让 Claude、Google、Stripe 这些网站，在你所有设备上都看到同一个“住宅 IP”。
+
+很多人用机场节点访问 Claude / Google，节点一会儿日本一会儿美国，IP 来回跳，再加上机场 IP 是机房 IP，很容易触发风控：注册要验证、付款失败、身份认证不过、甚至封号。
+
+homeport 做的事情很简单：把这些“敏感网站”单独挑出来，统一走一条固定的住宅代理；其他网站照旧走你的机场，速度不受影响。
+
+⚡ 懒人一键版（推荐小白）
+
+打开 👉 https://0xkaka.github.io/homeport/
+
+1. 把住宅代理那一串（如 p.webshare.io:80:abcd1234-1:xyz789）整串粘进去；
+2. 选你的设备，点「复制」，到 App 里粘贴（iPhone 可以直接扫码加节点）；
+3. 打开 ipv4.webshare.io 看 IP 对不对。
+
+账号密码只在你自己浏览器里处理，不会上传。下面是详细的手动教程，一键版搞不定再看。
+
+目录
+
+1. 原理（看不懂可以跳过）
+2. 开始前要准备什么
+3. Mac：Clash Party
+4. 安卓：FlClash
+5. iPhone / iPad：Shadowrocket（小火箭）
+   - Windows：Clash Verge Rev
+6. 检查是否成功
+7. Claude Code、终端、Chrome 的额外设置
+8. 常见问题
+9. 哪些网站会走住宅出口
+10. 给维护者：修改规则
+
+1. 原理（看不懂可以跳过）
+
+┌──────────────── 敏感网站（Claude / Google / Stripe …）────────────────┐
+你的设备 ──►│  HP_Relay（机场里的台/日/新/美/韩节点，自动选最快）──► 🏠住宅出口-勿选（住宅代理）──► 网站 │
+            └───────────────────────────────────────────────────────────────────────┘
+            其他网站 ──► 照常走你的机场
+
+- 🏠住宅出口-勿选：你买的住宅代理。网站最终看到的就是它的 IP。所有设备填同一个，IP 就一致了。
+- HP_Relay：跳板。国内直连住宅代理，握手内容是明文，容易被干扰断线；先经过一个机场节点再连过去就稳了。跳板换来换去不影响最终 IP。
+- 另外，Claude 的 IPv6 地址走住宅代理会报错（502），这套规则直接把它拦掉，让设备自动改用 IPv4，你不用管。
+
+2. 开始前要准备什么
+
+① 一个机场订阅（你现在翻墙用的那个）
+
+已经能正常翻墙就行。注意节点名字里最好带“台湾 / 日本 / 新加坡 / 美国 / 韩国”或 TW / JP / SG / US / KR 这类字样，程序靠名字自动挑跳板。
+
+② 一条静态住宅 HTTP 代理
+
+去住宅代理服务商购买，选的时候注意三点：
+如果不会 请看教程：https://x.com/0xjackkk/status/2117862295397335283
+
+| 要求 | 说明 |
+| --- | --- |
+| 静态（Static） | IP 固定不变。别买“动态/轮换（Rotating）”的。 |
+| 住宅（Residential / ISP） | 不要买“机房（Datacenter）”的。 |
+| HTTP 或 SOCKS5，带用户名密码 | 两种都支持。后台写的是哪个就用哪个，不确定先试 HTTP，不通换 SOCKS5。 |
+
+买好后，后台能看到这样四项信息，抄下来，后面每台设备都要填同样的：
+
+| 项目 | 举例（假的，别照抄） |
+| --- | --- |
+| 地址 / Host（Proxy Address，不是 Assigned IP） | p.webshare.io |
+| 端口 / Port | 80 |
+| 用户名 / Username | abcd1234-1 |
+| 密码 / Password | xyz789 |
+
+⚠️ 地址怎么填：
+- 后台只给了一个 IP:端口（比如 50.2.71.50:443）：地址就填这个 IP。
+- 后台同时有代理地址和 Assigned IP（比如 Webshare）：填代理地址，不是 Assigned IP / 出口 IP。 比如 Webshare 后台一行里同时有 p.webshare.io（代理地址）和 9.x.x.x（Assigned IP），要填的是 p.webshare.io；那个 IP 是最后网站看到的出口，用来核对结果。
+
+💡 有的服务商给的是一整串，比如 p.webshare.io:80:abcd1234-1:xyz789，按冒号拆开就是 地址:端口:用户名:密码。还有一种是 用户名:密码@地址:端口。一键配置页这几种都能直接识别。
+
+💡 用 SOCKS5 的：Mac / Windows / 安卓配置里把 type: http（或 type: "http"）改成 socks5；小火箭节点类型选 Socks5。一键页上直接选 SOCKS5 就行。
+
+③ 对应的客户端
+
+| 设备 | 客户端 | 怎么装 |
+| --- | --- | --- |
+| Mac | Clash Party | 去官方 GitHub Releases 下载 .dmg |
+| Windows | Clash Verge Rev（或 Clash Party） | 去官方 GitHub Releases 下载 .exe 安装包 |
+| 安卓 | FlClash（版本 ≥ 0.8.85） | 去官方 GitHub Releases 下载 .apk |
+| iPhone / iPad | Shadowrocket | 美区 App Store 购买 |
+
+先确认客户端里机场订阅已经导入、能正常翻墙，再继续下面的步骤。
+
+3. Mac：Clash Party
+
+第 1 步：导入覆写
+
+1. 打开 Clash Party，点左侧菜单 「覆写」。
+2. 点右上角 ＋（新建），选择 从 URL / 链接导入。
+3. 粘贴这个链接，确定：
+
+   https://raw.githubusercontent.com/0xkaka/homeport/main/clash-party/override.yaml
+
+导入失败？说明当前网络打不开 GitHub。先把 Clash Party 打开、连上机场再导入。
+
+第 2 步：填住宅代理
+
+1. 在覆写列表里找到刚导入的这一项，点 编辑（铅笔图标或右键 → 编辑）。
+2. 找到最上面这一段：
+
+   proxies+:
+     - name: 🏠住宅出口-勿选
+       type: http
+       server: ""
+       port: 0
+       username: ""
+       password: ""
+
+3. 把它改成你自己的，例如：
+
+   server: "p.webshare.io"
+       port: 80
+       username: "abcd1234-1"
+       password: "xyz789"
+
+   ⚠️ 注意：
+   - 引号 " 要保留，尖括号 `` 要删掉。
+   - port 后面直接写数字，不加引号，也不能是 0。
+   - 每行开头的空格不要动，YAML 对缩进很敏感。
+4. 保存。
+
+第 3 步：启用并重启
+
+1. 左侧点 「订阅」/「配置」，在你的机场订阅上点编辑（或右键），找到 覆写 一栏，勾选刚才那份覆写，保存。
+2. 左侧点 「内核设置」，点那个 旋转箭头（重启内核） 按钮。
+3. 确认首页的代理模式是 规则（Rule），不是「全局」或「直连」。
+
+⚠️ 以后别点“更新”这份覆写
+
+更新会重新下载链接里的模板，你填的地址密码会被冲回 `` 这些占位符。规则有更新时，要么重新导入后再填一遍，要么手动改。
+
+4. 安卓：FlClash
+
+FlClash 用的是一段 JavaScript 脚本，和 Mac 那份 YAML 不通用，别贴错。
+
+第 1 步：导入脚本
+
+1. 打开 FlClash，底部点 「工具」 → 「进阶配置」 → 「脚本」。
+2. 点 ＋（添加），选 通过 URL 导入，粘贴：
+
+   https://raw.githubusercontent.com/0xkaka/homeport/main/flclash/homeport.js
+
+第 2 步：填住宅代理
+
+1. 点开刚导入的脚本进入编辑。
+2. 文件开头有这一段：
+
+   const HOME = {
+     server: "",
+     port: 0,
+     username: "",
+     password: "",
+   };
+
+3. 改成你自己的，例如：
+
+   const HOME = {
+     server: "p.webshare.io",
+     port: 80,
+     username: "abcd1234-1",
+     password: "xyz789",
+   };
+
+   ⚠️ 引号和逗号都要保留，尖括号删掉；port 写数字，不加引号，不能是 0。
+4. 保存。以后不要再“从 URL 重新导入”，否则会被冲回占位符。
+
+第 3 步：让脚本生效（这一步最容易漏）
+
+1. 底部点 「配置」，在你的机场订阅上点右侧的 ⋮ / 配置按钮。
+2. 进入 「覆写」 → 「脚本」 → 选中刚才那份脚本。
+3. 回到 「仪表盘」，关掉再打开连接（或点重启）。
+
+只导入脚本、没在订阅里选中，等于没装。
+
+5. iPhone / iPad：Shadowrocket（小火箭）
+
+小火箭分两部分：节点里填账号密码，模块里放规则。
+
+⚠️ 顺序很重要：先装模块，再加节点。 整个过程中，首页选中的节点一直保持你平时用的机场节点，不要点选 🏠住宅出口-勿选。
+🏠住宅出口-勿选 只给规则用；选中它会让所有流量都走住宅代理，GitHub 等网站可能打不开，模块就下载失败了。
+
+第 1 步：添加模块（趁网络正常先装）
+
+1. 底部点 「配置」 → 「模块」。
+2. 右上角 ＋，粘贴：
+
+   https://raw.githubusercontent.com/0xkaka/homeport/main/shadowrocket/homeport.module
+
+3. 点 下载，确认模块列表里出现 homeport 且开关是打开的。
+
+第 2 步：添加住宅节点
+
+1. 首页右上角点 ＋。
+2. 类型 选 HTTP（你的住宅代理是 SOCKS5 的话选 Socks5）。
+3. 按下面填：
+
+   | 栏位 | 填什么 |
+   | --- | --- |
+   | 地址 | 代理地址（Proxy Address），如 p.webshare.io，不是出口 IP |
+   | 端口 | 如 80 |
+   | 用户 | 如 abcd1234-1 |
+   | 密码 | 如 xyz789 |
+   | 备注 | 🏠住宅出口-勿选（必须一字不差，带房子图标；名字故意写成“勿选”，提醒大家别在首页点它） |
+
+4. 右上角 完成。
+
+备注填错，规则就找不到这个节点，所有敏感网站都会连不上。
+
+添加完如果小火箭自动选中了 🏠住宅出口-勿选，马上点回你的机场节点。
+
+第 3 步：设置跳板（代理通过）
+
+1. 在首页节点列表里找到 🏠住宅出口-勿选，点它右边的 ⓘ。
+2. 找到 「代理通过」，选一个你机场里的 台湾 / 日本 / 新加坡 / 美国 / 韩国 节点（挑一个稳定的）。
+3. 保存。
+
+不设也能用，但就是手机直连住宅代理，容易断。跳板节点挂了，回来这里换一个就行。
+
+第 4 步：切到“配置”模式
+
+1. 回到首页，全局路由 选 「配置」，并确认选中的是机场节点（不是 🏠住宅出口-勿选）。
+   - 选「代理」= 所有流量走当前选中节点，规则不生效。
+   - 选「直连」= 全部不翻墙。
+2. 首页顶部开关打开，连接。
+
+模块优先级比订阅配置高，以后更新机场订阅不会把规则冲掉；小火箭的模块也可以放心点更新，因为账号密码在节点里，不在模块里。
+
+Windows：Clash Verge Rev
+
+最省事：打开一键配置页，切到「🪟 Windows」，复制生成好的脚本直接粘贴。
+用 Clash Party 的 Windows 版？步骤和 Mac 完全一样。
+
+Clash Verge Rev 用「扩展脚本」，内容和安卓 FlClash 的脚本几乎一样，只是开头那行要写成 function main(config, profileName) {。
+
+1. 打开 Clash Verge Rev → 左侧 「订阅」，确认机场订阅已导入并选中。
+2. 在机场订阅卡片上 右键 → 「扩展脚本」（或者用订阅页里的「全局扩展脚本」卡片 → 右键 → 编辑文件）。
+3. 删掉原有内容，粘贴脚本：
+   - 用一键页：直接粘贴生成好的；
+   - 手动：复制 flclash/homeport.js 的全部内容，把 const main = (config) => { 改成 function main(config, profileName) {，最后一行 }; 改成 }，再按 安卓第 2 步 填好 HOME 里的四项。
+4. 保存 → 左侧 「代理」，模式选 规则；回订阅页重新点选一次订阅，让配置重新加载。
+
+⚠️ Clash Verge Rev 的默认端口是 7897，下文检查和终端设置里的 7890 都换成 7897（以「设置 → 端口设置」里显示的为准）。
+
+6. 检查是否成功
+
+目标：所有设备看到的 IP 一模一样，而且就是你住宅代理的 IP。
+
+手机 / 平板
+
+打开浏览器访问：
+
+https://ipv4.webshare.io/
+
+页面上只有一行 IP。和住宅代理后台显示的 IP 对一下。
+
+Mac
+
+打开「终端」，粘贴回车：
+
+curl -x http://127.0.0.1:7890 https://ipv4.webshare.io/
+
+输出的 IP 应该和手机上一样。
+
+7890 是 Clash Party 默认端口。如果你改过，到 Clash Party 首页 / 设置里看“混合端口（Mixed Port）”是多少，替换掉。
+
+不一样怎么办？
+
+看 8. 常见问题。
+
+7. Claude Code、终端、Chrome 的额外设置
+
+Chrome：关闭 QUIC
+
+Chrome 会用 QUIC（基于 UDP）偷偷绕过代理，导致 IP 不一致。
+
+1. 地址栏输入 chrome://flags/#enable-quic，回车。
+2. 把 Experimental QUIC protocol 改成 Disabled。
+3. 点右下角 Relaunch 重启 Chrome。
+
+终端 / Claude Code：手动指定代理
+
+终端里的程序（包括 Claude Code、git、npm）不会自动走系统代理。
+
+1. 终端里运行 open /.zshrc（没有这个文件就先运行 touch /.zshrc）。
+2. 在文件末尾加上这三行，保存：
+
+   export http_proxy=http://127.0.0.1:7890
+   export https_proxy=http://127.0.0.1:7890
+   export all_proxy=socks5://127.0.0.1:7890
+
+3. 关掉终端重新打开（或运行 source ~/.zshrc）。
+4. 验证：运行 curl https://ipv4.webshare.io/，应显示住宅 IP。
+
+Windows（PowerShell）：Clash Verge Rev 端口 7897，Clash Party 为 7890。当前窗口临时生效：
+
+$env:HTTP_PROXY="http://127.0.0.1:7897"
+$env:HTTPS_PROXY="http://127.0.0.1:7897"
+
+长期生效：运行 setx HTTP_PROXY http://127.0.0.1:7897 和 setx HTTPS_PROXY http://127.0.0.1:7897，然后重开终端。验证用 curl.exe https://ipv4.webshare.io/。
+
+8. 常见问题
+
+Q：Claude / Google 全打不开了。
+A：基本是住宅代理没填对。逐项检查：
+- 地址、端口、用户名、密码有没有抄错，尖括号删了没；
+- port 是不是还是 0；
+- 小火箭的节点备注是不是正好 🏠住宅出口-勿选；
+- 住宅代理有没有到期 / 流量用完（去服务商后台看）。
+
+Q：Clash Party / FlClash 报错，配置加载失败。
+A：
+- 改 YAML 时缩进被弄乱了，或者引号少了一个。最稳的办法：删掉这份覆写，重新导入，只改那四个值。
+- 机场节点名里没有任何地区字样，跳板组 HP_Relay 是空的。见下一条。
+
+Q：我的机场节点名字没有“日本 / 美国”这些字，怎么办？
+A：打开覆写（或脚本），找到 filter:（FlClash 里是 RELAY_FILTER），把你节点名里的关键字加进括号里，用 | 隔开。例如节点叫 Tokyo-01、LA-02，就在最后加上 |Tokyo|LA。
+
+Q：页面能打开，但时不时断线 / 很慢。
+A：多半是跳板节点质量差。
+- Mac / 安卓：HP_Relay 每 5 分钟会自动测速换最快的，一般会自己恢复。也可以在 exclude-filter 里加关键字，排除某些烂节点。
+- iPhone：回到 🏠住宅出口-勿选 的 ⓘ →「代理通过」换一个节点。
+
+Q：所有跳板都挂了，想先凑合用。
+A：
+- Mac：覆写里把 dialer-proxy: HP_Relay 改成 dialer-proxy: DIRECT，并删掉 proxy-groups+: 那一整段。
+- 安卓：脚本里把 "dialer-proxy": RELAY 改成 "dialer-proxy": "DIRECT"。
+- iPhone：「代理通过」改成不选。
+
+代价是直连住宅代理，可能会被干扰断线。
+
+Q：手机和电脑的 IP 不一样。
+A：
+- 三台设备填的是不是同一条住宅代理；
+- 小火箭全局路由是不是「配置」，Clash 是不是「规则」模式；
+- Mac 上 Chrome 的 QUIC 关了没。
+
+Q：规则更新了，我要怎么更新？
+A：
+- iPhone：「配置」→「模块」→ 左滑 homeport → 更新。账号在节点里，不受影响。
+- Mac / 安卓：更新会冲掉你填的账号。先把四个值记好，更新（或重新导入）后再填一遍。
+
+9. 哪些网站会走住宅出口
+
+…（内容已截断）

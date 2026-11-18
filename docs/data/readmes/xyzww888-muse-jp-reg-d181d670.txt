@@ -1,0 +1,63 @@
+Muse JP Reg (muse.ai 批量自动注册与邀请码裂变系统)
+
+基于 duwqijlk/muse-protocol 纯 HTTP 协议链路实现，集成独立管理控制台（WebUI）、粘性代理调度、多接码源与邀请码裂变池，专用于 muse.ai 的批量注册、会话激活、邀请码兑换与自有码自动回收。
+
+节点地区建议：请优先使用 日本 (JP) 代理节点（免绑卡直接通过引导）；非开放地区引导后会进入 waitlist 候补状态。
+
+一、核心功能
+
+1. 纯 HTTP 浏览器对齐协议栈 (musepy/ + auth_flow.py)
+   - GET /：按真实 Chrome 跨站重定向规则跟随 aymh 跳转链路，获取 datr / ig_did 等基础 Cookie，并校验客户端态标识。
+   - POST /api/auth/native/restart：生成全程共用的 X-Hatch-Waterfall-Id 并获取 csrf_token。
+   - POST /api/auth/native/send-otp + 幂等 OTP 轮询（mail_providers/）：支持本地 4173 iCloud 中转工作台、[{"otp","time"}] 标准化 JSON 源、第三方中转链接、Cloudflare Temp Mail 及 Outlook IMAP/Graph。
+   - POST /api/auth/native/confirm-otp：自动提取服务端动态 tos.content_version。
+   - POST /api/auth/native/register-completion：自动生成成年日本用户档案，成功后立即早落盘核心凭证（frl_account_id、frl_access_token、hatch_sess）。
+   - POST auth.meta.com/hatch/session/bootstrap/：手动跟随受信 3xx 跳转，离线解析 Next Flight 动态披露（disclosureText / disclosureVersion）与地区状态门。
+   - POST /api/hatch/accept-tos + vm/wake + stateful-sharing：激活 Hatch 会话并唤醒云端 VM。
+   - POST /api/hatch/invite-code/redeem + POST /api/hatch/invite：兑换池内邀请码并取回本账号专属 own_code，支持自动入池裂变（1 裂变 30）。
+
+2. Sticky 代理调度与停批保护 (webui/auto_loop.py)
+   - Worker 独占认领代理节点，兼容 host:port:user:pass、http://、socks5://（自动转远端 DNS socks5h://）。
+   - 支持 max_per_ip 成号计数轮换；发码前传输层失败自动黑名单并同邮箱换代理重试（最多 3 次）。
+   - 遇 region_waitlist、服务端拒绝或邀请码耗尽自动暂停并推送告警横幅，防止烧号。
+
+3. Vue 3 + Element Plus 管理后台 (webui/)
+   - 仪表盘、邮箱导入与同步、邀请码池管理、单次注册实时日志流、全自动批量调度、已注册账号存货检测与补兑/导出、代理池测试与管理。
+
+二、快速开始
+
+1. 安装依赖
+
+pip install -r requirements.txt
+
+如需重新构建前端静态资源：
+
+cd webui/frontend
+npm install
+npm run build
+
+2. 启动控制台
+
+python start_webui.py --port 8766
+
+启动后访问：http://127.0.0.1:8766
+
+（Windows 环境也可直接使用根目录下的 启动服务.bat / 停止服务.bat。）
+
+3. 本地 iCloud 邮箱同步（可选）
+
+如果同级目录运行了本地 iCloud 隐藏邮箱服务（默认 ../icloud/data/workbench.db，可通过环境变量 ICLOUD_DB_PATH 覆盖）：
+
+python import_icloud.py --limit 10
+
+脚本仅领取尚未分配取件密钥的新邮箱（token_hash IS NULL），不会覆盖其他系统已使用的密钥。
+
+三、离线冒烟测试
+
+python test_onboarding_smoke.py
+python test_runner_smoke.py
+python test_webui_smoke.py
+
+四、免责声明
+
+本项目仅供个人学习与协议研究使用，请严格遵守目标站点的服务条款及相关法律法规。

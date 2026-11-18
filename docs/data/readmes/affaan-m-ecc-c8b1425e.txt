@@ -14,7 +14,8 @@ Language:
   Español |
   Українська |
   Polski |
-  বাংলা
+  বাংলা |
+  Italiano
 
 Official sources only. Install ECC only from verified channels: the GitHub repository github.com/affaan-m/ECC, the npm packages ecc-universal and ecc-agentshield, the GitHub App, the plugin slug ecc@ecc, and the project website ecc.tools. Third-party re-uploads and unofficial mirrors are not maintained or reviewed by the project and may contain malware.
 
@@ -63,12 +64,12 @@ Optimize the context window. Persist everything else.
 
 ECC is MIT-licensed open source. It works best with Claude Code today, has native Codex and Qoder plugin paths, and provides capability-limited adapters for Cursor, OpenCode, Gemini, Zed, GitHub Copilot, Antigravity, Qwen, and other harnesses. See the support status matrix before assuming feature parity.
 
-Access to 71 agents, 314 skills, and 98 legacy command shims, plus hooks, rules, memory, continuous learning, and AgentShield security scanning. The agents are specialized for planning, review, build repair, security, architecture, and domain work.
+Access to 72 agents, 327 skills, and 98 legacy command shims, plus hooks, rules, memory, continuous learning, and AgentShield security scanning. The agents are specialized for planning, review, build repair, security, architecture, and domain work.
 
 | Included         |       Count | What it gives you                                                                    |
 | ---------------- | ----------: | ------------------------------------------------------------------------------------ |
-| Agents           |   71 agents | Planning, review, build repair, security, architecture, and domain work              |
-| Skills           |  314 skills | TDD, research, security, docs, frontend, data, ML, operations, and more              |
+| Agents           |   72 agents | Planning, review, build repair, security, architecture, and domain work              |
+| Skills           |  327 skills | TDD, research, security, docs, frontend, data, ML, operations, and more              |
 | Commands         | 98 commands | Convenient entry points while ECC moves to a skills-first surface                    |
 | Hooks and memory |     Runtime | Enforcement, session summaries, continuous learning, instincts, and context controls |
 | Rules            |   Selective | Always-loaded standards you choose by language or project                            |
@@ -158,7 +159,7 @@ npx ecc-universal@2.2.3 doctor --target kimi
 
 Do not use npx ecc-install --profile minimal --target claude: ecc-install is a binary name inside ecc-universal, not a separately published npm package.
 
-ECC also ships advanced managed adapters for cursor, antigravity, gemini, opencode, codebuddy, joycode, qwen, zed, hermes, and openclaw. Those targets still use their documented ecc install --target ... paths until each adapter has passed the guided collision, update, repair, and uninstall lifecycle matrix. Neither wizard silently installs into every detected harness.
+ECC also ships advanced managed adapters for cursor, antigravity, antigravity-home, gemini, opencode, codebuddy, joycode, qwen, zed, hermes, openclaw, and mistral-vibe. Those targets still use their documented ecc install --target ... paths until each adapter has passed the guided collision, update, repair, and uninstall lifecycle matrix. Neither wizard silently installs into every detected harness.
 
 Pick one path only (per harness)
 

