@@ -1,0 +1,180 @@
+Appwrite
+
+    The open-source cloud for agents and developers. Appwrite is an MCP and agent-first platform for building and scaling apps. Give your agents Auth, Databases, Storage, Functions, Messaging, Realtime, and Hosting, all in one place.
+
+English | 简体中文
+
+Appwrite is an MCP and agent-first, open-source platform for building and scaling apps. MCP is included, so coding agents can operate on a live Appwrite project. Appwrite is available as a managed cloud platform and can also be self-hosted on infrastructure you control.
+
+It is designed for the AI agents in your workflow as well as for developers. Connect Cursor, Claude Code, Codex, and other agents through the hosted MCP server, or integrate an SDK into your app. Modular products stay unified from the first prototype to production scale.
+
+Find out more at https://appwrite.io.
+
+Table of Contents:
+
+- Products
+- Installation \& Setup
+- Self-Hosting
+  - Unix
+  - Windows
+    - CMD
+    - PowerShell
+  - Docker API version mismatch
+  - Upgrade from an Older Version
+- One-Click Setups
+- Getting Started
+  - Agents
+  - SDKs
+    - Client
+    - Server
+- Architecture
+- Contributing
+- Security
+- Follow Us
+- License
+
+Products
+
+- Appwrite Auth - Authenticate users securely with email, SMS, OAuth, anonymous sessions, and magic URLs.
+
+- Appwrite Databases - Model, query, and scale with Appwrite databases or managed PostgreSQL and MySQL, so you can match your use case and team needs.
+
+- Appwrite Storage - Store files with compression, encryption, image transformations, and access control.
+
+- Appwrite Functions - Deploy serverless functions with secure isolated runtimes and event-driven execution.
+
+- Appwrite Sites - Deploy static, SSR, and CSR frontends from Git with instant previews and Appwrite behind them.
+
+- Appwrite Messaging - Send email, SMS, and push notifications through a unified messaging service.
+
+- Appwrite Firewall - Protect apps with traffic rules, abuse controls, and edge security for every project.
+
+- Appwrite Realtime - Subscribe and react to events across your project as they happen.
+
+- Appwrite MCP - Connect agents to your Appwrite project, APIs, and docs. MCP is included on Cloud, with no local install required.
+
+Installation & Setup
+
+The easiest way to get started with Appwrite is by signing up for Appwrite Cloud. Cloud includes a Free plan so you can start building immediately, with paid plans when you need to scale.
+
+Self-Hosting
+
+Appwrite was designed from the ground up with self-hosting in mind. You can install and run Appwrite on any operating system that can run a Docker CLI. Running your server is as easy as running one command from your terminal.
+
+Before running the installation command, make sure you have Docker installed on your machine. The setup wizard listens on port 20080 and is published on localhost only. It also prints a one-time installer secret to STDOUT — open the printed URL (or send x-appwrite-installer-secret) to complete setup. For a remote host, SSH-tunnel to 127.0.0.1:20080 rather than publishing the port on all interfaces.
+
+Unix
+
+docker run -it --rm \
+    --publish 127.0.0.1:20080:20080 \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
+    --entrypoint="install" \
+    appwrite/appwrite:2.7.2
+
+Windows
+
+CMD
+
+docker run -it --rm ^
+    --publish 127.0.0.1:20080:20080 ^
+    --volume //var/run/docker.sock:/var/run/docker.sock ^
+    --volume "%cd%"/appwrite:/usr/src/code/appwrite:rw ^
+    --entrypoint="install" ^
+    appwrite/appwrite:2.7.2
+
+PowerShell
+
+docker run -it --rm `
+    --publish 127.0.0.1:20080:20080 `
+    --volume /var/run/docker.sock:/var/run/docker.sock `
+    --volume ${pwd}/appwrite:/usr/src/code/appwrite:rw `
+    --entrypoint="install" `
+    appwrite/appwrite:2.7.2
+
+Once the installer is running, open the URL printed in the terminal (it includes a one-time secret) to complete the setup wizard. After installation, go to http://localhost to access the Appwrite console from your browser. Please note that on non-Linux native hosts, the server might take a few minutes to start after completing the installation.
+
+Docker API version mismatch
+
+If install or upgrade fails with an error like client version 1.52 is too new. Maximum supported API version is 1.42, the Docker CLI inside the Appwrite image is newer than your host Docker Engine. Pass DOCKER_API_VERSION set to the maximum API version from the error (or upgrade Docker on the host):
+
+docker run -it --rm \
+    --env DOCKER_API_VERSION=1.42 \
+    --publish 127.0.0.1:20080:20080 \
+    --volume /var/run/docker.sock:/var/run/docker.sock \
+    --volume "$(pwd)"/appwrite:/usr/src/code/appwrite:rw \
+    --entrypoint="install" \
+    appwrite/appwrite:2.7.2
+
+Use the same --env DOCKER_API_VERSION=... flag with --entrypoint="upgrade" when upgrading.
+
+For advanced production and custom installation, check out our Docker environment variables docs. You can also use our public docker-compose.yml and .env files to manually set up an environment.
+
+Upgrade from an Older Version
+
+If you are upgrading your Appwrite server from an older version, you should use the Appwrite migration tool once your setup is completed. For more information regarding this, check out the migration instructions.
+
+One-Click Setups
+
+In addition to running Appwrite locally, you can launch Appwrite using a pre-configured marketplace app for instant setup.
+
+Choose from one of the providers below:
+
+DigitalOcean
+
+Gitpod
+
+Akamai Compute
+
+AWS Marketplace
+
+For custom deployments on a cloud provider or PaaS, see the guides for AWS, DigitalOcean, Google Cloud, Azure, Coolify, and Dokploy.
+
+Getting Started
+
+Getting started with Appwrite is as easy as creating a new project, connecting an agent, or integrating an SDK into your code. You can start from a prompt, a quick start tutorial, or the hosted MCP server.
+
+Agents
+
+Designed for the AI agents in your workflow. Query a database, chart traffic, or ship a change: your agent does it on a live Appwrite project. The hosted MCP server uses OAuth, so you do not need to create or manage API keys. For a self-hosted instance, use the local MCP server instead.
+
+Add the remote server to Cursor, Claude Code, Codex, VS Code, and other MCP clients:
+
+{
+    "mcpServers": {
+        "appwrite": {
+            "url": "https://mcp.appwrite.io/"
+        }
+    }
+}
+
+You can also add the MCP server to Cursor in one click.
+
+Install language-specific agent skills so models generate correct SDK calls:
+
+npx skills add appwrite/agent-skills
+
+Browse quick start prompts, generate an AGENTS.md file for your repo, or see the AI tooling docs for IDE and vibe coding setup.
+
+Getting started with your platform of choice is also covered in the tutorials below.
+
+| Platform              | Technology                                                                         |
+| --------------------- | ---------------------------------------------------------------------------------- |
+| Web app           | Quick start for Web                   |
+|                       | Quick start for Next.js            |
+|                       | Quick start for React               |
+|                       | Quick start for Vue.js                |
+|                       | Quick start for Nuxt                 |
+|                       | Quick start for SvelteKit       |
+|                       | Quick start for Astro               |
+|                       | Quick start for TanStack Start |
+|                       | Quick start for Refine             |
+|                       | Quick start for Angular           |
+| Mobile and Native | Quick start for React Native |
+|                       | Quick start for Flutter           |
+|                       | Quick start for Apple               |
+|                       | Quick start for Android           |
+| Server            | Quick start for Node.js              |
+|                       | Quick start for Python             |
+
+…（内容已截断）

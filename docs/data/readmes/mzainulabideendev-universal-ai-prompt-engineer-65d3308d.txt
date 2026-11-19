@@ -1,0 +1,202 @@
+Universal AI Prompt Engineer
+
+Turn rough prompts into professional, review-ready instructions for AI coding agents — without leaving VS Code.
+
+Table of contents
+
+- Why this extension
+- Features
+- Screenshots
+- Quick start
+- The nine modes
+- Ways to run an enhancement
+- Commands
+- Keyboard shortcuts
+- Settings
+- Output modes
+- How it works
+- Privacy and security
+- Requirements
+- Install from source
+- Testing
+- Packaging and publishing
+- Project structure
+- Troubleshooting
+- Roadmap
+- Contributing
+- License
+
+Why this extension
+
+Short prompts produce vague work. "Fix the save button" gives an agent no scope, no evidence
+requirements and no definition of done, so you get a plausible-looking change that misses the
+actual bug.
+
+Prompt engineering fixes this, but rewriting every request by hand is slow and inconsistent.
+This extension gives you a panel inside VS Code that takes the rough version and returns a
+structured instruction — with the right emphasis for the task at hand (implementation, debugging,
+review, design, gameplay, autonomy) — in a single keystroke.
+
+- No prompt library to memorise. Nine modes encode the structure for you.
+- Bring your own model. Any OpenAI-compatible /chat/completions endpoint works.
+- No secrets in your settings. The API key lives in VS Code SecretStorage.
+- Works where you already work. Selection, clipboard, panel, sidebar, status bar, palette.
+
+Features
+
+| | |
+|---|---|
+| Nine enhancement modes | Quick, Professional, Developer, Architect, Debugging, Code Review, UI/UX, Game Development, Autonomous Agent |
+| Dedicated panel | Two-column editor/result layout that follows your VS Code theme (dark, light, high contrast) |
+| Selection aware | Ctrl+Alt+P enhances the selected text; the sidebar pre-fills it into the panel |
+| Clipboard aware | Enhance whatever you copied from any chat or document |
+| Configurable output | Show in panel, copy to clipboard, or replace the selection in place |
+| Secret-safe | API key stored in SecretStorage, never in settings.json, never echoed back to the UI |
+| Honest errors | Provider failures are surfaced verbatim (HTTP status + provider message), never replaced with a fake success |
+| Guard rails | HTTPS-only endpoints, no credentials in URLs, 20,000 character cap, 90 second timeout |
+| Zero runtime dependencies | Only vscode and Node's built-in fetch |
+
+Screenshots
+
+The sidebar and the enhanced result
+
+The Prompt Engineer panel
+
+| Dark theme | Light theme |
+|---|---|
+|  |  |
+
+Quick start
+
+You need your own API key. The extension does not bundle a key, host a model, or pay for
+provider usage. Any OpenAI-compatible provider works.
+
+1. Install
+
+- VS Code Marketplace: Ctrl+Shift+X → search Universal AI Prompt Engineer → Install
+- From a VSIX file: code --install-extension universal-ai-prompt-engineer-0.2.0.vsix
+
+2. Connect your provider (once)
+
+1. Press Ctrl+Alt+O or click $(sparkle) Prompt Engineer in the status bar.
+2. Expand Provider settings and fill in:
+
+   | Field | Example |
+   |---|---|
+   | HTTPS API endpoint | https://api.openai.com/v1 |
+   | Model | gpt-4o-mini |
+   | API key | your key |
+
+3. Click Save provider settings. The header pill changes to Provider connected.
+
+The key is written to VS Code SecretStorage. Leaving the key field blank on later saves keeps
+the stored key unchanged.
+
+3. Enhance
+
+1. Type or paste your rough prompt.
+2. Pick a mode.
+3. Press Enhance prompt (or Ctrl+Enter).
+4. Press Copy and paste the result into Copilot Chat, Claude, Cursor, or any agent.
+
+The nine modes
+
+| Mode | What it optimises for | Good for |
+|---|---|---|
+| Quick Enhance | Tight, specific wording — no extra structure | one-line asks, follow-up messages |
+| Professional Enhance | Context, scope, deliverables, success criteria | general work, documentation, mixed tasks |
+| Developer Mode | Conventions, error handling, security, focused tests | implementing a feature in an existing codebase |
+| Expert Architect | Requirements, boundaries, data flow, trade-offs, staged delivery | system design, migrations, cross-cutting change |
+| Debugging Mode | Reproduction, evidence, root cause, minimal fix, regression check | "it sometimes breaks" reports |
+| Code Review Mode | Prioritised findings by severity — no unsolicited rewrites | reviewing a PR or a diff |
+| UI/UX Mode | User goals, layout, responsive behaviour, accessibility, states | screens, flows, design-system work |
+| Game Development Mode | Mechanics, controls, feedback, assets, performance, playtesting | gameplay and engine work |
+| Autonomous Agent Mode | Inspect → plan → implement → verify → report actual results | long-running agent tasks |
+
+Every mode preserves your intent. The system prompt explicitly forbids inventing technologies,
+requirements or results, and tells the downstream assistant to inspect the project when context
+is unknown.
+
+Ways to run an enhancement
+
+| Entry point | How | Source text |
+|---|---|---|
+| Panel | Ctrl+Alt+O → paste → Enhance | what you typed |
+| Selection | select text → right-click → Enhance Selected Prompt or Ctrl+Alt+P | the selection |
+| Clipboard | Ctrl+Shift+P → Enhance Prompt from Clipboard | the clipboard |
+| Sidebar | Activity Bar → Prompt Engineer → click a mode | current selection (pre-filled) |
+| Palette | Ctrl+Shift+P → AI Prompt Engineer: … | input box |
+| Status bar | click $(sparkle) Prompt Engineer | opens the panel |
+
+Commands
+
+| Command | Default binding |
+|---|---|
+| AI Prompt Engineer: Enhance Selected Prompt | Ctrl+Alt+P (with selection) |
+| AI Prompt Engineer: Enhance Prompt from Clipboard | — |
+| AI Prompt Engineer: Open Prompt Engineer Panel | Ctrl+Alt+O |
+| AI Prompt Engineer: Set API Key | — |
+| AI Prompt Engineer: Clear API Key | — |
+| AI Prompt Engineer: Quick Enhance | — |
+| AI Prompt Engineer: Professional Enhance | — |
+| AI Prompt Engineer: Developer Mode | — |
+| AI Prompt Engineer: Expert Architect Mode | — |
+| AI Prompt Engineer: Debugging Mode | — |
+| AI Prompt Engineer: Code Review Mode | — |
+| AI Prompt Engineer: UI/UX Mode | — |
+| AI Prompt Engineer: Game Development Mode | — |
+| AI Prompt Engineer: Autonomous Agent Mode | — |
+
+Internal commands used by the sidebar and webview: openPromptPanelWithMode,
+enhanceSelectionWithMode, enhanceClipboardWithMode.
+
+Keyboard shortcuts
+
+| Shortcut | Action |
+|---|---|
+| Ctrl+Alt+O | open / reveal the panel |
+| Ctrl+Alt+P | enhance the current selection |
+| Ctrl+Enter (in panel) | run the enhancement |
+
+All bindings can be changed in Keyboard Shortcuts (Ctrl+K Ctrl+S) by searching for
+universalAIPromptEngineer.
+
+Settings
+
+| Setting | Default | Description |
+|---|---|---|
+| universalAIPromptEngineer.apiEndpoint | https://api.openai.com/v1 | HTTPS base URL of an OpenAI-compatible API. Must use HTTPS, no credentials, query or fragment. |
+| universalAIPromptEngineer.model | gpt-4o-mini | Model name accepted by that provider. |
+| universalAIPromptEngineer.defaultMode | professional | Mode used by selection, clipboard and palette commands. |
+| universalAIPromptEngineer.outputMode | panel | panel, copy, or replace. |
+| universalAIPromptEngineer.showStatusBar | true | Show or hide the status bar item. |
+
+The API key is not a setting. Use the panel, Set API Key, or Clear API Key.
+
+Output modes
+
+| outputMode | Behaviour | Best for |
+|---|---|---|
+| panel | opens/reveals the panel and shows the result | reviewing and iterating |
+| copy | writes the result to the clipboard and shows a notification | fast paste into a chat |
+| replace | overwrites the current editor selection with the result | rewriting prompts inside files |
+
+How it works
+
+Request lifecycle
+
+sequenceDiagram
+    autonumber
+    actor U as You
+    participant W as Webview / Command
+    participant E as extension.ts
+    participant S as SecretStorage
+    participant C as Workspace config
+    participant P as aiProvider.ts
+    participant A as AI provider (HTTPS)
+
+    U->>W: rough prompt + mode
+    W->>E: postMessage { type: "enhance", text, mode }
+    E->>S: read API key
+
+…（内容已截断）

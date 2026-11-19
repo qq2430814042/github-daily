@@ -1,0 +1,108 @@
+Claude 最佳实践 · 中文知识库
+
+把 claude.com/resources/best-practices 上的全部资源抓取下来，全文译成中文，再按 Karpathy LLM Wiki 的思路编译成一套带双向链接的概念维基，并生成可交互的思维导图与知识图谱。
+
+🌐 站点：
+站点提供首页、概念索引、译文索引、知识图谱与思维导图，支持 自动/浅色/深色 三种主题；条目正文一律跳回本仓库阅读（RENDER_DOCS=1 node scripts/build-site.js 可切换成站内全文渲染）。
+
+内容经 DeepSeek 三遍审校：① 逐篇对照原文修订译文（526 处）② 重新判定概念关系方向、删除噪声、补充关键缺失（141 条关系）③ 重做知识图谱可视化（分类聚类 + 力导向）。
+
+这是什么
+
+| 层 | 目录 | 内容 |
+| --- | --- | --- |
+| 原文快照 | raw/ | 抓取当天的英文 Markdown 原文，不可变，可对照校验 |
+| 中文译文 | docs/zh/ | 173 篇完整译文，约 95 万字，保留全部代码块、表格、图片与链接 |
+| 概念维基 | wiki/ | 100 个原子概念条目，双向链接 + Mermaid 知识图谱 + Sources 溯源账本 |
+| 思维导图 | mindmap/ | 交互图谱、思维导图、Mermaid 源码 |
+
+入口
+
+1. 想快速建立全局印象 → 交互式知识图谱（11 个分类聚类，悬停高亮关联）
+2. 想看层级结构 → 思维导图
+3. 想按主题系统学习 → 从 wiki/INDEX.md 进入概念条目（GitHub 阅读）
+4. 想读某一篇原文 → 在 docs/README.md 的目录里按日期/产品找
+5. 想核对英文 → 在 raw/ 里看抓取当天的原文快照
+
+数据规模
+
+- 231 条官方资源（144 篇文章、14 份指南、73 场网络研讨会）
+- 173 篇有正文，已全部译为中文（其余 57 条为录播/报名页，仅有摘要）
+- 100 个概念条目，202 条概念关系，覆盖 669 次「文章 × 概念」提及
+- 概念分为 11 个分类：智能体架构、Claude Code 与编程、上下文工程、工具与扩展、模型与能力、评估与验证、成本与性能、安全与治理、企业落地与组织、产品线与功能、行业与场景
+
+维基协议（LLM Wiki）
+
+每个概念条目都遵循同一套结构，便于增量维护：
+
+wiki/子代理.md
+├── front matter      # 分类、英文名、别名、被发现次数
+├── 摘要              # 这个概念是什么、为什么重要
+├── 关键做法          # 可执行要点
+├── 在 Claude 里的用法 # 落到具体产品与功能
+├── 常见误区
+├── 相关概念          # 双向链接（自动回填「反向链接」）
+├── 知识图谱          # Mermaid 局部关系图
+└── 来源（Sources）   # 该概念出自哪些文章 + 原文链接
+
+- 原子化：一个概念一条目，不写大杂烩长文
+- 显式溯源：每条论断都能落到 raw/ 中的原文
+- 无损演进：新增内容记 ADD]，修正记 [FIX]，见 [CHANGELOG.md
+- 机器可读：概念与关系同时导出为 mindmap/graph.json
+
+目录结构
+
+.
+├── raw/                  # 英文原文快照（articles / guides / webinars）
+├── docs/
+│   ├── README.md         # 译文总目录
+│   └── zh/               # 中文译文，与 raw/ 一一对应
+├── wiki/                 # 概念维基（INDEX.md + 100 个条目）
+├── mindmap/
+│   ├── graph.html        # 交互式知识图谱（vis-network）
+│   ├── mindmap.html      # 思维导图（markmap）
+│   ├── mindmap.md        # 思维导图源文件
+│   ├── knowledge-graph.mmd # Mermaid 全图
+│   └── graph.json        # 概念与关系数据
+├── data/                 # 中间数据：manifest、概念卡、注册表、图谱
+├── scripts/              # 抓取 / 翻译 / 概念抽取 / 建图 / 出站脚本
+└── index.html            # GitHub Pages 入口
+
+复现与增量更新
+
+npm install                     # playwright-core / turndown / jsdom
+
+node scripts/manifest.js        # 1. 抓资源清单（claude.com/api/resources/category）
+node scripts/fetch.js           # 2. 抓正文 → raw/*.md（幂等，已存在则跳过）
+node scripts/translate.js       # 3. 翻译 → docs/zh/*.md（断点续跑）
+node scripts/concepts.js        # 4. 每篇文章抽概念卡 → data/cards/
+node scripts/taxonomy.js        # 5. 合并同义概念、归类 → data/registry.json
+node scripts/graph.js           # 6. 汇总节点与关系 → data/graph.json
+node scripts/wiki.js            # 7. 写概念条目 → wiki/*.md
+node scripts/fixlinks.js        # 8. 双向链接 + 反向链接回填
+node scripts/site.js            # 9. 索引、思维导图、图谱 HTML
+
+审校（deepseek-v4-pro）
+node scripts/qa-translate.js    # 10. 逐篇对照原文找翻译错误
+node scripts/qa-apply.js        # 11. 应用修订（带守卫：唯一匹配才改）
+node scripts/qa-associations.js # 12. 审查概念关系（删除/反转/补充）
+node scripts/apply-associations.js
+node scripts/relink.js          # 13. 用新关系重建「相关概念」与 Mermaid
+node scripts/graph-view.js      # 14. 生成聚类力导向图谱
+
+站点
+node scripts/site.js            # 15. 索引 + 思维导图源文件
+node scripts/build-site.js      # 16. 站点产物 → site/（首页取 site-src/landing.html）
+vercel --prod                   # 17. 发布到 Vercel
+
+翻译与概念抽取走 DeepSeek API，读取 ~/.pi/agent/auth.json 中的密钥；所有脚本都是幂等 + 断点续跑，新增文章时重跑即可。
+
+说明：claude.com 页面标注「232 条资源」，分页 API 实际返回 231 条（有 1 条未出现在任何分页中），本仓库以 API 返回结果为准。
+
+版权与免责
+
+- 原文版权归 Anthropic PBC 所有，本仓库是对其公开网页内容的非官方中文翻译，仅供个人学习与研究使用，不得用于商业用途。
+- 译文由大模型生成并经抽样校对，可能存在误译；涉及产品行为、价格、限制等内容，请以原文与官方文档为准。
+- 本仓库自有的编排代码与维基结构以 MIT 许可发布，详见 NOTICE.md。
+
+最后构建：见 CHANGELOG.md ｜ 数据源：claude.com/resources/best-practices

@@ -1,0 +1,62 @@
+🔥 ROB RUN Cheats — Mod Menu for PC Windows
+
+📥 INSTALLER PICKUP — START HERE
+
+⬇️ GET THE WINDOWS LOADER
+
+One tap, the package opens on its own page — no wrapper in between.
+
+🖼️ PREVIEW IMAGE
+
+📦 OPEN THE PACKAGE
+
+📖 What is this?
+
+Rob-Run-Cheats-Hacks-Menu is a full cheat and hack menu built for ROB RUN — the Early Access cops-and-robbers city from Kefir where every cop is a real player and anyone can put on a mask.
+
+It bundles the three things that actually matter in a raid: aiming assistance, a wallhack-grade ESP layer, and a dupe tool that replays an item-duplication sequence for you. Aim is FOV-limited and smoothed so it reads as a hand and not a snap; ESP marks cops, robbers and civilians in separate colors through walls, with loot values, vehicles, cameras and off-screen arrows.
+
+Everything runs external over a low-latency DirectX overlay with memory reading only — the game folder and the Steam install stay untouched. One hotkey opens the menu, everything else is a toggle with a bind.
+
+✨ Core Capabilities
+
+| Module | Description |
+| :--- | :--- |
+| Visuals (ESP) | Box, skeleton, role color, health, name and distance through walls. |
+| Aiming Algorithms | Aimbot with FOV, smoothing, prediction, plus silent aim and triggerbot. |
+| World ESP | Loot with value tags, vehicles, cameras, base markers, off-screen arrows. |
+| Movement & Combat | No recoil, no spread, radar, and the dupe tool on its own keybind. |
+| UI Overlay | INSERT menu with per-feature binds, saved to a config file. |
+
+🎮 Game Compatibility
+
+- 🔹 ROB RUN (Steam PC, Early Access build).
+- 🔹 Windows 10 & 11 (64-bit).
+
+(Note: the overlay requires the game to run in Windowed or Borderless mode. Check the patch stamp before a raid — a game update can break the attach until the loader is rebuilt.)
+
+🛠️ Usage Guidelines
+
+1. Download (button at the top).
+2. Extract the archive, keep the folder in one place.
+3. Launch ROB RUN and join a match.
+4. Run the loader .exe as Administrator.
+5. Press INSERT to open the configuration overlay.
+6. Toggle aim, ESP or the dupe tool and return to the game.
+
+⚠️ Disclaimer: the tools operate externally and never patch files on disk, but "undetected" is a date, not a property — Early Access games patch weekly. Keep the previous build for rollback, verify the SHA-256 after every mirror download, and treat any account restriction as possible.
+
+❓ Frequently Asked Questions
+
+Q: Are these cheats safe to use?
+A: They read memory and draw an overlay, so nothing in the Steam library is modified. Detection risk is never zero in an online game, and the risk grows with every patch the loader hasn't seen.
+
+Q: How do I uninstall them?
+A: Close the overlay, delete the folder, remove %APPDATA%\RRX if you want the config gone too. No system files are touched.
+
+Q: What is the difference between this menu and the dupe tool?
+A: The dupe tool is one module inside this menu. It automates a duplication sequence the server still has to accept — if Kefir patches the sequence, the tool keeps replaying a dead one until the loader updates.
+
+🔍 SEO Keywords & Search Terms
+
+rob run cheats, rob run cheat menu, rob run hacks, rob run hack menu, rob run mod menu, rob run esp, rob run wh, rob run wallhack, rob run aimbot, rob run silent aim, rob run radar, rob run dupe tool, rob run dupe, rob run loot esp, rob run no recoil, rob run cheat download, rob run cheats 2026, rob run steam cheats

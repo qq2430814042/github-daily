@@ -1,0 +1,14 @@
+NX_Firmware
+Firmware for the Nintendo Switch 2
+
+Utility
+Firmware database for a discord bot
+
+To find us
+
+![Discord](https://img.shields.io/discord/643436008452521984.svg?logo=discord&logoColor=white&label=Discord&color=7289DA
+)
+
+Add our bot Poyo
+
+Our bot, currently developed in Discord JS V13 (click to be redirected to the link to add the bot)

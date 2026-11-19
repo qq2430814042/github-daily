@@ -1,0 +1,101 @@
+🎯 Rob Run Aim
+
+  &nbsp;
+
+  &nbsp;
+
+  &nbsp;
+
+  Aim suite for Rob Run — per-weapon presets, FOV control, bone priority and switch delay, all driven by profiles.
+
+🎯
+Weapon Presets
+
+Each gun gets its own FOV, smoothing and bone target — save and swap per loadout.
+
+🔭
+Field of View
+
+Adaptive FOV that scales with distance, plus a hard range cap for close-quarters.
+
+🦴
+Bone Priority
+
+Head, chest, pelvis — pick the order, set fallback when the primary bone is hidden.
+
+⏱️
+Switch Delay
+
+Cooldown between target switches to avoid jitter — tuned in milliseconds.
+
+👁️
+Visible Only
+
+Lock only on entities in line of sight; ignore players behind walls or smoke.
+
+🧩
+Profiles
+
+Saved configs per weapon and per mode, hot-reload with a single key.
+
+🖼 Gallery
+
+📥 Build
+
+| Archive | Tag | Released |
+|---------|:---:|:--------:|
+| RobRun_AIM.rar | v1.3.1 | Nov 18, 2026 |
+
+🛡 No spoofer bundled. Packed executables are frequently misflagged — whitelist the extraction folder before launching.
+
+⚙️ Config
+
+Aim settings live in aim.json and hot-reload with F5.
+
+📂 Example aim.json — click to expand
+
+{
+  "aim": {
+    "enabled": true,
+    "preset": "ar",
+    "fov": 120,
+    "adaptive_fov": true,
+    "range_cap": 300,
+    "smoothing": 4.5,
+    "bone": "head",
+    "fallback_bone": "chest",
+    "visible_only": true,
+    "switch_delay_ms": 120
+  },
+  "presets": {
+    "ar":     { "fov": 120, "smoothing": 4.5, "bone": "head" },
+    "smg":    { "fov": 90,  "smoothing": 3.0, "bone": "chest" },
+    "sniper": { "fov": 45,  "smoothing": 1.5, "bone": "head" }
+  },
+  "ui": {
+    "theme": "lime",
+    "locale": "en"
+  }
+}
+
+📝 Changelog
+
+v1.3.1 — Latest 🟢
+
+- ✅ Per-weapon aim presets
+- ✅ Adaptive FOV with range cap
+- ✅ Bone priority with fallback
+- ✅ Visible-only lock
+- ✅ Switch delay in milliseconds
+- ✅ Profiles with hot-reload
+- 🔧 Smoother interpolation at low FPS
+- 🐛 Fixed preset swap resetting fov to default
+
+v1.3.0
+
+- ✅ Adaptive FOV
+- ✅ Bone fallback logic
+- ✅ Range cap for close-quarters
+- 🐛 Fixed switch delay ignored on first lock
+
+  v1.3.1 · 2026 · All rights reserved · Rob Run Aim Team

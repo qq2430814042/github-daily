@@ -1,0 +1,155 @@
+jQuery — New Wave JavaScript
+
+Meetings are currently held on the matrix.org platform.
+
+Meeting minutes can be found at meetings.jquery.org.
+
+The latest version of jQuery is available at https://jquery.com/download/.
+
+Version support
+
+| Version | Branch     | Support       |
+| ------- | ---------- | ------------- |
+| 4.x     | main       | Full          |
+| 3.x     | 3.x-stable | Critical-only |
+| 2.x     | 2.x-stable | None          |
+| 1.x     | 1.x-stable | None          |
+
+jQuery 4.0.0 has been released!
+
+The 3.x branch will now only receive critical updates. The 2.x and 1.x branches are no longer supported. We recommend that all users upgrade to the latest version of jQuery to ensure that they have the best performance, security, and features.
+
+Commercial support for previous versions is available from HeroDevs or TuxCare.
+
+Learn more about our version support.
+
+Contribution Guides
+
+In the spirit of open source software development, jQuery always encourages community code contribution. To help you get started and before you jump into writing code, be sure to read these important contribution guidelines thoroughly:
+
+1. Getting Involved
+2. Core Style Guide
+3. Writing Code for jQuery Projects
+
+References to issues/PRs
+
+GitHub issues/PRs are usually referenced via gh-NUMBER, where NUMBER is the numerical ID of the issue/PR. You can find such an issue/PR under https://github.com/jquery/jquery/issues/NUMBER.
+
+jQuery has used a different bug tracker - based on Trac - in the past, available under bugs.jquery.com. It is being kept in read only mode so that referring to past discussions is possible. When jQuery source references one of those issues, it uses the pattern trac-NUMBER, where NUMBER is the numerical ID of the issue. You can find such an issue under https://bugs.jquery.com/ticket/NUMBER.
+
+Environments in which to use jQuery
+
+- Browser support
+- jQuery also supports Node, browser extensions, and other non-browser environments.
+
+What you need to build your own jQuery
+
+To build jQuery, you need to have the latest Node.js/npm and git 1.7 or later. Earlier versions might work, but are not supported.
+
+For Windows, you have to download and install git and Node.js.
+
+macOS users should install Homebrew. Once Homebrew is installed, run brew install git to install git,
+and brew install node to install Node.js.
+
+Linux/BSD users should use their appropriate package managers to install git and Node.js, or build from source
+if you swing that way. Easy-peasy.
+
+How to build your own jQuery
+
+First, clone the jQuery git repo.
+
+Then, enter the jquery directory, install dependencies, and run the build script:
+
+cd jquery
+npm install
+npm run build
+
+The built version of jQuery will be placed in the dist/ directory, along with a minified copy and associated map file.
+
+Build all jQuery release files
+
+To build all variants of jQuery, run the following command:
+
+npm run build:all
+
+This will create all of the variants that jQuery includes in a release, including jquery.js, jquery.slim.js, jquery.module.js, and jquery.slim.module.js along their associated minified files and sourcemaps.
+
+jquery.module.js and jquery.slim.module.js are ECMAScript modules that export jQuery and $ as named exports are placed in the dist-module/ directory rather than the dist/ directory.
+
+Building a Custom jQuery
+
+The build script can be used to create a custom version of jQuery that includes only the modules you need.
+
+Any module may be excluded except for core. When excluding selector, it is not removed but replaced with a small wrapper around native querySelectorAll (see below for more information).
+
+Build Script Help
+
+To see the full list of available options for the build script, run the following:
+
+npm run build -- --help
+
+Modules
+
+To exclude a module, pass its path relative to the src folder (without the .js extension) to the --exclude option. When using the --include option, the default includes are dropped and a build is created with only those modules.
+
+Some example modules that can be excluded or included are:
+
+- ajax: All AJAX functionality: $.ajax(), $.get(), $.post(), $.ajaxSetup(), .load(), transports, and ajax event shorthands such as .ajaxStart().
+- ajax/xhr: The XMLHttpRequest AJAX transport only.
+- ajax/script: The `` AJAX transport only; used to retrieve scripts.
+- ajax/jsonp: The JSONP AJAX transport only; depends on the ajax/script transport.
+- css: The .css() method. Also removes all modules depending on css (including effects, dimensions, and offset).
+- css/showHide: Non-animated .show(), .hide() and .toggle(); can be excluded if you use classes or explicit .css() calls to set the display property. Also removes the effects module.
+- deprecated: Methods documented as deprecated but not yet removed.
+- dimensions: The .width() and .height() methods, including inner- and outer- variations.
+- effects: The .animate() method and its shorthands such as .slideUp() or .hide("slow").
+- event: The .on() and .off() methods and all event functionality.
+- event/trigger: The .trigger() and .triggerHandler() methods.
+- offset: The .offset(), .position(), .offsetParent(), .scrollLeft(), and .scrollTop() methods.
+- wrap: The .wrap(), .wrapAll(), .wrapInner(), and .unwrap() methods.
+- core/ready: Exclude the ready module if you place your scripts at the end of the body. Any ready callbacks bound with jQuery() will simply be called immediately. However, jQuery(document).ready() will not be a function and .on("ready", ...) or similar will not be triggered.
+- deferred: Exclude jQuery.Deferred. This also excludes all modules that rely on Deferred, including ajax, effects, and queue, but replaces core/ready with core/ready-no-deferred.
+- exports/global: Exclude the attachment of global jQuery variables ($ and jQuery) to the window.
+- exports/amd: Exclude the AMD definition.
+
+- selector: The full jQuery selector engine. When this module is excluded, it is replaced with a rudimentary selector engine based on the browser's querySelectorAll method that does not support jQuery selector extensions or enhanced semantics. See the selector-native.js file for details.
+
+Note: Excluding the full selector module will also exclude all jQuery selector extensions (such as effects/animatedSelector and css/hiddenVisibleSelectors).
+
+AMD name
+
+You can set the module name for jQuery's AMD definition. By default, it is set to "jquery", which plays nicely with plugins and third-party libraries, but there may be cases where you'd like to change this. Pass it to the --amd parameter:
+
+npm run build -- --amd="custom-name"
+
+Or, to define anonymously, leave the name blank.
+
+npm run build -- --amd
+
+File name and directory
+
+The default name for the built jQuery file is jquery.js; it is placed under the dist/ directory. It's possible to change the file name using --filename and the directory using --dir. --dir is relative to the project root.
+
+npm run build -- --slim --filename="jquery.slim.js" --dir="/tmp"
+
+This would create a slim version of jQuery and place it under tmp/jquery.slim.js.
+
+ECMAScript Module (ESM) mode
+
+By default, jQuery generates a regular script JavaScript file. You can also generate an ECMAScript module exporting jQuery as the default export using the --esm parameter:
+
+npm run build -- --filename=jquery.module.js --esm
+
+Factory mode
+
+By default, jQuery depends on a global window. For environments that don't have one, you can generate a factory build that exposes a function accepting window as a parameter that you can provide externally (see README of the published package for usage instructions). You can generate such a factory using the --factory parameter:
+
+npm run build -- --filename=jquery.factory.js --factory
+
+This option can be mixed with others like --esm or --slim:
+
+npm run build -- --filename=jquery.factory.slim.module.js --factory --esm --slim --dir="/dist-module"
+
+Custom Build Examples
+
+…（内容已截断）

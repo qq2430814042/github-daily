@@ -5,41 +5,51 @@ Evaluate and improve AI agent skills and plugins: quality, security, overlap, co
 SkillEvaluator checks AI agent skills and plugins, and measures a skill's effect
 on task results: start with quality checks, then compare runs with and without a skill.
 
+Catch skill issues before merge. Connect your repository to SkillEvaluator with a
+CI template
+for automated quality and security gates, without building or maintaining
+evaluation code.
+
 Agent skills are folders of instructions and supporting files defined by the
 Agent Skills specification. SkillEvaluator is part of
 the NVIDIA Verified Skills pipeline.
 
 Get started
 
-Check skills from your terminal, CI, or agent.
-
-1. Run the CLI directly
-2. Add it to your repo via CI
-3. Wire it to your agent
-
-Install with pip:
+Install the CLI in a Python 3.12–3.14 environment:
 
 pip install skillevaluator
 
-Or install with uv
+Or use uv
 
-uv tool install \
-  skillevaluator
+uv tool install --python 3.13 skillevaluator
 
-Then check your skill, no key:
+For uv setup or direct GitHub source installation, see
+Installation.
+
+Then check skills from your terminal, CI, or agent:
+
+Run checks backed by 500+ static rules and detection patterns, without an
+LLM key. Complete scanner setup
+for full coverage:
 
 skillevaluator validate \
   ./my-skill --tiers 1
 
-Other tiers: installation guide.
+Run all three tiers
 
-Our CI template checks every skill change. No evaluation code to maintain.
+After all-tier setup with NVIDIA Build,
+remove --tiers 1 to add deduplication and live agent evaluation to measure
+skill lift:
 
-Run this in your GitHub repository. It opens a setup PR:
+skillevaluator validate \
+  ./my-skill
+
+Check every skill change. Run in your GitHub repo to open a setup PR:
 
 skillevaluator ci init
 
-GitLab details: repository guide.
+Guided setup and CI templates for GitHub and GitLab.
 
 Add the skill to Claude Code, Codex or another agent:
 
@@ -49,11 +59,13 @@ npx skills add \
 Then ask: "Is my skill any good?"
 See the agent guide.
 
-⚡ Harness check: will your agent load your skill? Know in seconds.
+⚡ Harness check: will your agent load your skill?
 
-No LLM inference · No model key · No agent run
+🔑 No API key · 🤖 No agent run
 
 skillevaluator harness-check ./my-skill
+
+Illustrative summary of versioned profiles. Full output can include notes and schema diagnostics.
 
 ╭─ Harness compatibility · my-skill ──────────────────────────────────────────────────────╮
 │  ⚠️ codex        degraded    Description cut to 1,021 chars + '...' in the skill list   │
@@ -64,75 +76,103 @@ skillevaluator harness-check ./my-skill
 │  ❌ copilot-cli  not loaded  description is 1,028 UTF-16 units, 4 over the 1,024 limit  │
 ╰────────────────────────────────────────────────────────────────── ❌ 2 of 6 not loaded ─╯
 
-validate above runs it by default, as part of Tier 1. 🧪 Ready to go deeper? Try a
+skillevaluator validate includes Harness Check in Tier 1 alongside **quality,
+schema, version, PII, license, Unicode and script linting**. Security and code
+integrity checks use SkillSpector, Gitleaks, Bandit and optional Semgrep.
+See all Tier 1 checks;
+use --tiers 1 to run only this tier.
+
+🧪 Ready to go deeper? Try a
 live agent evaluation (Tier 3).
 
 Quickstart
 
-Both use bundled text-analyzer.
+Check your skill without a key
 
-| Start here | Requires | First result |
-| --- | --- | --- |
-| Run without an LLM | Git and uv | A deterministic quality score and findings |
-| Use NVIDIA Build | Git, uv, and a Build API key | Model-backed rubric scores and feedback |
+skillevaluator quality-check ./my-skill
 
-Install uv and Git,
-then get the example:
-
-git clone --depth 1 https://github.com/NVIDIA/SkillEvaluator.git
-cd SkillEvaluator
-
-uv provisions Python 3.13 and dependencies.
-
-Run without an LLM
-
-uv run --python 3.13 skillevaluator quality-check \
-  src/skillevaluator/tier3/reference_skills/text-analyzer \
-  -r cli -r json -o reports/first-quality
-
-No API key, scanner, GPU or Docker is needed. The example scores 88.8/100 (B),
-exits 0 and saves reports/first-quality/skillevaluator-quality.json. The
-passing threshold defaults to 70.
-
-This checks static quality; publication evidence stays INCOMPLETE. Security
-needs scanners; agent impact needs live evaluation. Replace the example path
-with your skill directory. See the
+No API key, scanner, GPU or Docker is needed. It prints a score out of 100 with a
+grade and the findings behind it; the passing threshold defaults to 70. This is
+static quality only; publication evidence stays INCOMPLETE. Security and agent impact need additional checks. See the
 keyless walkthrough.
 
-Use NVIDIA Build
+No skill yet? Clone the repository and use the bundled
+src/skillevaluator/tier3/reference_skills/text-analyzer. Scores can differ by release.
+
+Run all three tiers with a free NVIDIA Build key
 
 Eligible NVIDIA Developer Program members can use NVIDIA-hosted endpoints for
 free prototyping, subject to access terms and rate limits.
 
 1. Sign in at build.nvidia.com and complete enrollment.
 2. Open a model page, select Get API Key, and generate your key.
-3. Set the provider and key in the same terminal, then run the rubric check:
+3. Complete scanner setup, start Docker, and prepare a reviewed dataset. Install every tier, set the provider and key, then validate:
 
+pip install "skillevaluatorall]"
 export SKILL_EVAL_LLM_PROVIDER=nv_build
 export NVIDIA_API_KEY='nvapi-...'
-uv run --python 3.13 --extra llm skillevaluator rubric-eval \
-  src/skillevaluator/tier3/reference_skills/text-analyzer \
-  -r cli -r json -o reports/first-build
+skillevaluator validate ./my-skill
 
-The command sends skill documentation to the model and saves feedback in
-reports/first-build/skillevaluator-rubric.json. No agent runtime or Docker is
-needed. Completed evaluations can still fail rubric thresholds.
+Without --tiers, validate runs all three. The key covers embeddings and chat
+in Tier 2 and supported agents in Tier 3; add --llm for model checks in Tier 1.
+For uv or GitHub installations, use the matching [all-tier install instead of the pip command above. Tier 3 also
+needs Docker running; add --tiers 1,2 to skip it. More in
+Run the combined pipeline, the
+Build walkthrough and provider configuration.
 
-The same key supports Tier 2 embeddings and supported Tier 3 agents. See the
-Build walkthrough or provider configuration.
+Bring skill evaluation to your repository
+
+Minimal setup. No evaluation code to write or maintain. Choose your skill
+folders and thresholds to get automated validation, security scanning and
+downloadable reports for changed skills in GitHub or GitLab.
+
+11 CI checks backed by 500+ static rules and detection patterns:
+quality, schema, version, PII, license, Unicode, script linting,
+Harness Check,
+security, code integrity and dependency auditing.
+
+Scanners: SkillSpector,
+Gitleaks, Bandit and Semgrep,
+and pip-audit.
+
+GitHub guided setup: after installing the CLI, run inside
+your checked-out repository:
+
+skillevaluator ci init
+
+Choose checks and optional hosted feedback, then review the setup PR.
+CLI setup guide.
+
+Manual setup: copy a filled-in template from CI templates.
+No local CLI needed.
+
+| Your repository | Ready-to-use template | Copy destination |
+| --- | --- | --- |
+| GitHub | Skill checks | .github/workflows/skill-checks.yml |
+| GitLab | Skill checks | .gitlab-ci.yml, or merge into your existing pipeline |
+| GitHub PR comments without hosting | Optional comments | Second workflow; complete comment setup |
+| GitHub hosted reports and PR comments | Optional publisher | Second workflow; complete publisher setup |
+
+Choose one optional feedback workflow. These templates run Tier 1 quality and
+security checks without a model key; see all-tier CI setup
+to add deduplication and live agent evaluation.
+
+See GitHub and
+GitLab setup,
+template reference and report examples.
 
 Three-tier overview
 
-Each tier is independent. Add its extra to your command:
+Each tier is independent. Use the all-tier installation for all three:
 
 | Tier | Question | Example after setup | Additional setup |
 | --- | --- | --- | --- |
-| Tier 1: Validation | Is the skill safe, well-formed and harness-compatible? | uv run skillevaluator tier1 ./my-skill --no-llm | External scanners for full static coverage; a provider and model clients enable LLM checks |
-| Tier 2: Deduplication | Does guidance repeat or overlap? | uv run --extra tier2 skillevaluator tier2 ./my-skill | Embeddings and chat; add --catalog ./skill-catalog.json for inter-skill comparison |
-| Tier 3: Live Evaluation | Does the skill help the agent? | uv run --extra tier3 skillevaluator tier3 ./my-skill | Provider access, a supported agent, and a running sandbox (Docker by default) |
+| Tier 1: Validation | Is the skill safe, well-formed and harness-compatible? | skillevaluator tier1 ./my-skill --no-llm | External scanners for full static coverage; a provider and model clients enable LLM checks |
+| Tier 1: Harness Check | Will the agent load the skill? | skillevaluator harness-check ./my-skill | No API key or agent run |
+| Tier 2: Deduplication | Does guidance repeat or overlap? | skillevaluator tier2 ./my-skill | Embeddings and chat; add --catalog ./skill-catalog.json for inter-skill comparison |
+| Tier 3: Live Agent Evaluation | Does the skill help the agent? | skillevaluator tier3 ./my-skill | Provider access, a supported agent, and a running sandbox (Docker by default) |
 
-Tier 1 fetches pinned, verified SkillSpector and Gitleaks releases when they
-are missing; Semgrep is optional. See scanners.
+Prepare scanners for your installed release; Semgrep is optional.
 --no-llm does not remove scanner requirements; a scanner that cannot run is
 INCOMPLETE and exits nonzero.
 SkillSpector provides specialized skill
@@ -147,8 +187,8 @@ Run the combined pipeline
 
 After setting up the provider, scanners, and agent sandbox, run all three tiers:
 
-uv run --python 3.13 --extra all skillevaluator doctor --env-mode docker
-uv run --python 3.13 --extra all skillevaluator validate ./my-skill
+skillevaluator doctor --env-mode docker
+skillevaluator validate ./my-skill
 
 doctor checks readiness, not inference success. validate runs all tiers with
 autopilot for skills. Use --tiers 1,2 to skip live evaluation or --tiers 1 for
@@ -159,68 +199,4 @@ Tier 1 gates validate. Tier 2 gates unless --no-block-on-dedup is set;
 Tier 3 gates only with --block-on-agent-eval. Model and managed-sandbox usage
 can incur charges; see runtime and cost.
 
-Standalone generation needs substantive evals/EVAL.md guidance, a --prompt
-file with task requests and outcomes, or matching retained traces. --force
-below replaces the autopilot starter; --refine refines it. Explicit
---grounding skill permits skill-only starters. Review cases; templates omit
-unauthored negatives.
-
-uv run --python 3.13 --extra tier3 skillevaluator tier3 create-eval-dataset ./my-skill --full --prompt eval-guidance.md --force
-
-Run from a source checkout
-
-Prefix commands with uv run --python 3.13; see extras.
-
-Research and citation
-
-Resources: paper,
-PDF,
-DOI,
-BibTeX, and
-NVIDIA Developer blog.
-Cite the paper and record the SkillEvaluator release or commit; see CITATION.cff.
-
-Documentation
-
-See the documentation for
-setup, tier guides, reports, CI integration, CLI reference, and
-performance dashboard.
-
-Installation and third-party software
-
-This project will download and install additional third-party open source
-software projects. Review the license terms of these open source projects before
-use.
-
-Contributing
-
-Read CONTRIBUTING.md and run:
-
-make lint && make test && make build
-
-See project governance and Code of Conduct.
-
-Support
-
-Support level: Experimental. Community-supported, best-effort, with no SLA
-or NVIDIA enterprise support entitlement. Report bugs and feature requests through
-GitHub Issues; see
-SUPPORT.md.
-
-Security
-
-Report suspected vulnerabilities using the private process in
-SECURITY.md. Do not disclose security issues in a public GitHub
-issue.
-
-Releases
-
-See CHANGELOG.md and
-GitHub Releases.
-
-License
-
-Apache License 2.0: see LICENSE, NOTICE, and
-THIRD_PARTY_NOTICES.md.
-
-Copyright (c) 2026 NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+…（内容已截断）

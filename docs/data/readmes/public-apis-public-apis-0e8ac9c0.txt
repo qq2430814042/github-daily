@@ -68,9 +68,12 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | GitHub | Repos, issues, PRs, code search | OAuth | stdio, HTTP | Glama |
 | HEY Research Lab | Is a Robinhood Chain token or project still being built? Ships and contracts, each with its source | No | stdio, HTTP | Anthropic · Glama · MCP Registry · npm |
 | iGaming Tools | Online slot specs, RTP variants, providers, regulators, news, jobs and search demand | No | HTTP | – |
+| Inbox eSIM | Find and buy travel data eSIMs for 195 countries, compare eSIM prices across brands, check a phone | No | HTTP | Glama · MCP Registry |
 | IndiaInsurances | Indian insurance policy wordings read clause by clause, with verbatim quotes | No | HTTP | – |
 | InjectScan | Scores text, web pages and MCP tool definitions for prompt injection with deterministic rules | No | stdio, HTTP | Glama · MCP Registry |
+| Ironflow | Hyperliquid trades, liquidations, funding and wallet data, SQL and liquidation alerts | No | stdio, HTTP | Glama |
 | Kuro | Create AI images, video clips, voice-overs, music and editable storyboard films | OAuth | HTTP | – |
+| Loupe | US legal citations checked: existence, the case named, pin cites; free lookup, filings by sign-in | No | HTTP | Anthropic · Glama |
 | LucyESL | English-teaching jobs in South Korea with pay, hours and housing as facts, plus salary statistics | No | HTTP | Anthropic · Glama · MCP Registry |
 | Master Setter | Pokémon TCG cards, sets and printings in 14 languages, searchable by name in any language | apiKey | HTTP | Glama · MCP Registry |
 | Monocrawl | Public posts, profiles, comments and products from 70+ social, shopping and search platforms | apiKey | stdio, HTTP | Glama |
@@ -84,8 +87,5 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | Refnusa | Indonesian holidays, wages, regions, postal codes, tax, food prices and NIK/plate checks (31 tools) | No | HTTP | Glama |
 | RegSentry | Inspect authorized static tracking signals and review supplied consent evidence | No | HTTP | Glama |
 | Requstory | Map how a company works, who owns each process, and which steps AI agents can run | No | HTTP | – |
-| Scalekit | Manage auth for AI agents and MCP servers: environments, orgs, users, SSO connections and roles | OAuth | stdio, HTTP | Glama |
-| ShapelessAI | Write, schedule and publish social posts, carousels and short video to 8 networks | OAuth | stdio, HTTP | Cursor · Glama |
-| Signal Lab | Catalog of free market, macro, weather, news and OSINT data sources, with terms links and skills | No | HTTP | Glama · MCP Registry |
 
 …（内容已截断）

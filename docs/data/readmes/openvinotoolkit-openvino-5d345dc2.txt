@@ -1,0 +1,155 @@
+Open-source software toolkit for optimizing and deploying deep learning models.
+
+ Documentation • Blog • Key Features • Tutorials • Integrations • Benchmarks • Generative AI
+
+- Inference Optimization: Boost deep learning performance in computer vision, automatic speech recognition, generative AI, natural language processing with large and small language models, and many other common tasks.
+- Flexible Model Support: Use models trained with popular frameworks such as PyTorch, TensorFlow, ONNX, Keras, PaddlePaddle, and JAX/Flax. Directly integrate models built with transformers and diffusers from the Hugging Face Hub using Optimum Intel. Convert and deploy models without original frameworks.
+- Broad Platform Compatibility: Reduce resource demands and efficiently deploy on a range of platforms from edge to cloud. OpenVINO™ supports inference on CPU (x86, ARM), GPU (Intel integrated & discrete GPU) and AI accelerators (Intel NPU).
+- Community and Ecosystem: Join an active community contributing to the enhancement of deep learning performance across various domains.
+
+Check out the OpenVINO Cheat Sheet and Key Features for a quick reference.
+
+Installation
+
+Get your preferred distribution of OpenVINO or use this command for quick installation:
+
+pip install -U openvino
+
+Verify Installation
+
+After installation, you can verify OpenVINO is installed correctly by running:
+
+import openvino as ov
+print(ov.version)
+
+Check system requirements and supported devices for detailed information.
+
+Tutorials and Examples
+
+OpenVINO Quickstart example will walk you through the basics of deploying your first model.
+
+Learn how to optimize and deploy popular models with the OpenVINO Notebooks 📚:
+- Create an LLM-powered Chatbot using OpenVINO
+- YOLOv11 Optimization
+- Text-to-Image Generation
+- Multimodal assistant with LLaVa and OpenVINO
+- Automatic speech recognition using Whisper and OpenVINO
+
+Discover more examples in the OpenVINO Samples (Python & C++) and Notebooks (Python).
+
+Here are easy-to-follow code examples demonstrating how to run PyTorch and TensorFlow model inference using OpenVINO:
+
+PyTorch Model
+
+import openvino as ov
+import torch
+import torchvision
+
+load PyTorch model into memory
+model = torch.hub.load("pytorch/vision", "shufflenet_v2_x1_0", weights="DEFAULT")
+
+convert the model into OpenVINO model
+example = torch.randn(1, 3, 224, 224)
+ov_model = ov.convert_model(model, example_input=(example,))
+
+compile the model for CPU device
+core = ov.Core()
+compiled_model = core.compile_model(ov_model, 'CPU')
+
+infer the model on random data
+output = compiled_model({0: example.numpy()})
+
+TensorFlow Model
+
+import numpy as np
+import openvino as ov
+import tensorflow as tf
+
+load TensorFlow model into memory
+model = tf.keras.applications.MobileNetV2(weights='imagenet')
+
+convert the model into OpenVINO model
+ov_model = ov.convert_model(model)
+
+compile the model for CPU device
+core = ov.Core()
+compiled_model = core.compile_model(ov_model, 'CPU')
+
+infer the model on random data
+data = np.random.rand(1, 224, 224, 3)
+output = compiled_model({0: data})
+
+OpenVINO supports the CPU, GPU, and NPU devices and works with models from PyTorch, TensorFlow, ONNX, TensorFlow Lite, PaddlePaddle, and JAX/Flax frameworks. It includes APIs in C++, Python, C, NodeJS, and offers the GenAI API for optimized model pipelines and performance.
+
+Generative AI with OpenVINO
+
+Get started with the OpenVINO GenAI installation and refer to the detailed guide to explore the capabilities of Generative AI using OpenVINO.
+
+Learn how to run LLMs and GenAI with Samples in the OpenVINO™ GenAI repo. See GenAI in action with Jupyter notebooks: LLM-powered Chatbot and LLM Instruction-following pipeline.
+
+Documentation
+
+User documentation contains detailed information about OpenVINO and guides you from installation through optimizing and deploying models for your AI applications.
+
+Developer documentation focuses on the OpenVINO architecture and describes building  and contributing processes.
+
+OpenVINO Ecosystem
+
+OpenVINO Tools
+
+-   Neural Network Compression Framework (NNCF) - advanced model optimization techniques including quantization, and sparsity.
+-   GenAI Repository and OpenVINO Tokenizers - resources and tools for developing and optimizing Generative AI applications.
+-   OpenVINO™ Model Server (OVMS) - a scalable, high-performance solution for serving models optimized for Intel architectures.
+-   Intel® Geti™ - an interactive video and image annotation tool for computer vision use cases.
+
+Integrations
+
+-   🤗Optimum Intel - grab and use models leveraging OpenVINO within the Hugging Face API.
+-   Torch.compile - use OpenVINO for Python-native applications by JIT-compiling code into optimized kernels.
+-   ExecuTorch - use ExecuTorch with OpenVINO to optimize and run AI models efficiently.
+-   OpenVINO LLMs inference and serving with vLLM​ - enhance vLLM's fast and easy model serving with the OpenVINO backend.
+-   OpenVINO Execution Provider for ONNX Runtime - use OpenVINO as a backend with your existing ONNX Runtime code.
+-   LLMWare - seamlessly build enterprise AI apps, agentic workflows, RAG pipelines, multimodal use cases, and more, using 100+ inference-ready OpenVINO-optimized SLMs.
+-   LlamaIndex - build context-augmented GenAI applications with the LlamaIndex framework and enhance runtime performance with OpenVINO.
+-   LangChain - integrate OpenVINO with the LangChain framework to enhance runtime performance for GenAI applications.
+-   Keras 3 - Keras 3 is a multi-backend deep learning framework. Users can switch model inference to the OpenVINO backend using the Keras API.
+
+Check out the Awesome OpenVINO repository to discover a collection of community-made AI projects based on OpenVINO!
+
+Performance
+
+Explore OpenVINO Performance Benchmarks to discover the optimal hardware configurations and plan your AI deployment based on verified data.
+
+Contribution and Support
+
+Check out Contribution Guidelines for more details.
+Read the Good First Issues section, if you're looking for a place to start contributing. We welcome contributions of all kinds!
+
+You can ask questions and get support on:
+
+* GitHub Issues.
+* OpenVINO channels on the Intel DevHub Discord server.
+* The openvino tag on Stack Overflow\*.
+
+Resources
+
+* Release Notes
+* OpenVINO Blog
+* OpenVINO™ toolkit on Medium
+
+Telemetry
+
+OpenVINO™ collects software performance and usage data for the purpose of improving OpenVINO™ tools.
+This data is collected directly by OpenVINO™ or through the use of Google Analytics 4.
+You can opt-out at any time by running the command:
+
+opt_in_out --opt_out
+
+More Information is available at OpenVINO™ Telemetry.
+
+License
+
+OpenVINO™ Toolkit is licensed under Apache License Version 2.0.
+By contributing to the project, you agree to the license and copyright terms therein and release your contribution under these terms.
+
+\* Other names and brands may be claimed as the property of others.

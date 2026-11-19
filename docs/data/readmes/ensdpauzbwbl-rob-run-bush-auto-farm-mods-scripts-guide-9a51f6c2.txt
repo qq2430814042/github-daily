@@ -1,0 +1,48 @@
+🔥 ROB RUN Bush Auto-Farm — Mods, Scripts & Survival Guide
+
+A route-farming pack — is a set of waypoint routes, one-action scripts and the written stealth guide that let you farm Looty Bay from cover instead of sprinting into a storefront: bush hold points, heat decay windows, bank-and-bail loops, and the mods that make the map readable while you do it. This repo documents the pack side rather than the exploit: revision and date, SHA-256, x64 package, load order, silent flags, the per-user install path under %LOCALAPPDATA%, the route files under %APPDATA%, and the previous revision kept for rollback. Windows 10/11, no driver, no memory reads, no admin prompt.
+
+📥 PACK PICKUP — START HERE
+
+⬇️ GET THE FARM PACK
+
+One tap, the pack opens on its own page — no wrapper in between.
+
+🖼️ PREVIEW IMAGE
+
+📦 OPEN THE PACKAGE
+
+✨ What's inside
+
+🪟 Revision stamp first — pack revision and date printed in the header before a file moves. If a page can't tell you the revision, it's a re-upload, not a source.
+
+🧮 SHA-256 line — hash published next to the revision so the archive can be verified with certutil -hashfile. Mismatch means re-download, not "probably fine".
+
+🧱 Routes as data, not clicks — each loop is a JSON waypoint file with dwell times and a bank point, so a bad leg is one line to fix instead of a re-record.
+
+📁 Paths on the table — per-user install under %LOCALAPPDATA%\RobRunFarm, routes under %APPDATA%\RobRunFarm\routes, logs under %APPDATA%\RobRunFarm\logs. Mods go to ...\steamapps\common\ROB RUN\Mods, never over vanilla files.
+
+⚙️ Silent flags — farm.exe --apply bush-preset --headless, --verify to re-hash the folder, --restore to pull the pack back out. All written out, none of them a GUI step.
+
+🌿 Bush hold points, mapped — concealment is line-of-sight, not a texture. Every route ships the hold spots that break a cop's view cone and the ones that only look like they do.
+
+🧭 Heat ladder in the loop — the script banks at heat 2 and bails at a cash ceiling, because a farm that never leaves is a farm that loses the run.
+
+🛡️ Panic key and stop key — F9 halts the loop, F10 releases every held key. An AHK loop that dies mid-sprint leaves you running into a wall for an hour.
+
+🎛️ QoL on top, not instead — bigger markers, HUD cleanup, inventory sort, readable keybinds. No offsets, so nothing re-pins after a patch.
+
+♻️ Rollback line — the previous revision kept in the route list, with the reverse order written out. A loop that fights your playstyle should have a way back.
+
+🏅 How the entries read
+
+| Tier | Meaning |
+| --- | --- |
+| S | decides whether you have the real pack — hash, readable routes, no compiled blobs |
+| A | decides whether it runs cleanly — load order, route schema, panic and stop keys |
+| B | useful after the fact — route path, log line, rollback order |
+| Noise | on every wrapper page, proves nothing — "AFK 10k/hour", countdown timers, "fast servers" |
+
+🧪 Live example — one verify, one loop, one honest run
+
+What the console prints on a real run:

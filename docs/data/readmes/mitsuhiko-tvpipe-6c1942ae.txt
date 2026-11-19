@@ -1,0 +1,149 @@
+tvpipe
+
+tvpipe is a command line tool for low-latency mirroring of video and audio
+to AirPlay and Google Cast receivers (Apple TV, smart TVs,
+Chromecast / Google TV) and browser tabs. It uses the real-time mirroring
+protocols of both ecosystems, not URL playback, so the picture on the TV is a
+fraction of a second behind the source.
+
+*Website and manual: *
+
+tvpipe discover                                        # find receivers
+tvpipe pair "Living Room"                              # Apple TV only, once
+tvpipe play --to "Living Room" movie.mp4               # a file or URL
+tvpipe play --to "Living Room" --to Kitchen movie.mp4  # two TVs, one encode
+tvpipe screen --to Kitchen                             # the screen, with sound
+tvpipe screen --to Kitchen --window Keynote            # one window
+tvpipe share --to Kitchen --open                       # a browser tab or the screen
+tvpipe share https://status.example.com --to Kitchen   # a web page
+
+Installing
+
+curl -fsSL https://mitsuhiko.github.io/tvpipe/install.sh | sh     # macOS, Linux
+
+irm https://mitsuhiko.github.io/tvpipe/install.ps1 | iex           # Windows
+
+Playing files, URLs and capture devices needs ffmpeg (and ffprobe); see
+Installation for
+ffmpeg, the release archives and building from source.
+
+From Node.js, npm install @tvpipe/sdk installs an SDK and the binary for your
+platform (npm/tvpipe):
+
+import { play } from "@tvpipe/sdk";
+await play("movie.mp4", { to: "Living Room" });
+
+From Rust, cargo add tvpipe links tvpipe into your program (no binary,
+no async runtime); a game streams its own frames and sound
+(crates/tvpipe,
+From Rust):
+
+let mut s = tvpipe::stream(Options::new().to("Living Room").video(1280, 720, 60, PixelFormat::Rgba))?;
+s.write_video(&frame, s.elapsed())?;
+
+Features
+
+- Plays files and URLs, and mirrors cameras, capture cards and the screen
+  through ffmpeg; suitable MP4/MOV/MKV files are sent without re-encoding.
+- Mirrors a screen or a single window with the computer's sound, captured
+  by a Chromium-based browser it starts (or by ffmpeg).
+- Shares a browser tab, window or screen, or puts a web page on the TV in a
+  headless browser of its own.
+- Sends to several receivers at once, on one timeline, and reconnects one
+  that drops out.
+- Plays to a browser tab too: previews, OBS sources, video calls; and on a
+  public link for people elsewhere, who can also share their screen to
+  your TV.
+- Takes raw or H.264 frames and sound from a game on stdin.
+- One self-contained binary for macOS, Linux and Windows, with its own mDNS,
+  protocol stacks and H.264/AAC encoders.
+
+Public links
+
+tvpipe preview --tunnel                    # anyone with the link watches in a browser
+tvpipe share --to "Living Room" --tunnel   # someone elsewhere shares their screen to the TV
+
+--tunnel also puts the browser player or the share page on a public
+https link. Two providers, both built in (no account, no extra program):
+
+- --tunnel (or --tunnel=cloudflare): a Cloudflare Quick
+  Tunnel on *.trycloudflare.com, about 7 s
+  to set up, a new hostname every run. Cloudflare ends TLS, so it can read
+  the page and the stream.
+- --tunnel=opentunnel: OpenTunnel, with TLS
+  ending in tvpipe (the relay cannot read the page or the stream). The
+  first use creates the machine's tunnel and certificate (about 15 s,
+  once; kept in the config directory under opentunnel/), later runs
+  take 0.2 s.
+
+The link is new every run and has a token of its own; at most 4 viewers
+come in that way. A remote share shows up only after you answer y in the
+terminal (--yes skips the question), and its link lets people in for 60
+minutes (--tunnel-ttl). Details: docs/tunnels.md.
+
+In a terminal, tvpipe also draws the public link as a QR code, so a phone
+can open it by scanning the screen (--no-qr or TVPIPE_NO_QR=1 turns
+that off; never with --machine).
+
+Manual
+
+| Page | Covers |
+|---|---|
+| Overview | what tvpipe does and does not do |
+| Installation | the installers, ffmpeg, building from source |
+| Quick start | find a TV, pair it, play a file |
+| Receivers | discover, pair, unpair, --to, reconnecting |
+| Playing media | files, URLs, cameras |
+| Sharing the screen | screen and share: the screen, a window or a browser tab |
+| A web page on the TV | share URL |
+| Playing to a browser | preview, --to browser, OBS, video calls |
+| Public links | --tunnel |
+| Game input | SLRW frames on stdin |
+| From Node.js | the @tvpipe/sdk npm package |
+| From Rust | the tvpipe crate |
+| Commands and options | every command, the shared options, encoders |
+| Configuration | the config directory, environment variables |
+| Diagnostics | -v, --debug, common problems |
+| Latency | test-pattern, --latency, measuring |
+| ffmpeg and encoding | when ffmpeg runs, debug-pipeline |
+
+Development
+
+cargo build --release        # → target/release/tvpipe (Rust 1.85+, a C compiler)
+cargo fmt --all && cargo clippy --workspace --all-targets -- -D warnings && cargo test --workspace
+
+The workspace has three crates: crates/tvpipe (the
+library, Apache-2.0), crates/tvpipe-cli (the
+tvpipe command on top of it) and
+crates/tvpipe-fairplay (the LGPL FairPlay port,
+behind the library's opt-in fairplay feature).
+
+The Node SDK's tests run against the debug binary: `cargo build && cd
+npm/tvpipe && npm ci && npm run check && npm test`. A release bumps the
+version in Cargo.toml, Cargo.lock and npm/tvpipe/package.json
+together (CI checks), then tags vX.Y.Z; release.yml publishes the GitHub
+release and the npm packages. Programs in other languages can drive tvpipe
+through --machine.
+
+Tests that use ffmpeg as an oracle are skipped without it; tests against
+real receivers or hardware run with --ignored. How and why tvpipe works is
+in ARCHITECTURE.md; protocols, formats, measurements and
+per-OS status are in docs/, and the website's sources in
+site/.
+
+License
+
+tvpipe's source is Apache-2.0 (LICENSE), except the
+FairPlay crate crates/tvpipe-fairplay/, a port
+of doubletake under
+LGPL-3.0-or-later, which is only built with the fairplay feature. The
+distributed binary includes it, so it is under LGPL-3.0-or-later terms.
+
+The root certificates in crates/tvpipe/src/net/roots/ (for the --tunnel service's
+HTTPS) are Mozilla's list from the CCADB, under CDLA-Permissive-2.0 (see
+LICENSES/CDLA-Permissive-2.0-ccadb.txt).
+
+Some H.264 encoder tables (crates/tvpipe/src/media/h264enc/tables.rs) are transcribed
+from openh264 (BSD-2-Clause), and the
+fonts in crates/tvpipe/src/browser/fonts/ (also used by the website) are under the SIL
+Open Font License 1.1. The license texts are in LICENSES/.

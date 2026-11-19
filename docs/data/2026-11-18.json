@@ -1,0 +1,1417 @@
+{
+  "date": "2026-11-18",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-19T07:14:23.199Z",
+  "count": 60,
+  "newCount": 29,
+  "sources": {
+    "trending": 19,
+    "new": 29,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "google-research/paper-orchestra",
+      "name": "paper-orchestra",
+      "owner": "google-research",
+      "url": "https://github.com/google-research/paper-orchestra",
+      "description": "PaperOrchestra is a multi-agent framework for automated AI research paper writing.",
+      "language": "Python",
+      "stars": 4572,
+      "forks": 566,
+      "starsToday": 1524,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-research-paper-orchestra-bae17b42.txt"
+    },
+    {
+      "rank": 2,
+      "fullName": "affaan-m/ECC",
+      "name": "ECC",
+      "owner": "affaan-m",
+      "url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 306762,
+      "forks": 45159,
+      "starsToday": 1108,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "affaan-m-ecc-c8b1425e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "mvanhorn/last30days-skill",
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 70278,
+      "forks": 6260,
+      "starsToday": 1059,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mvanhorn-last30days-skill-ce334b66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 321495,
+      "forks": 28578,
+      "starsToday": 822,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "sveltejs/svelte",
+      "name": "svelte",
+      "owner": "sveltejs",
+      "url": "https://github.com/sveltejs/svelte",
+      "description": "web development for the rest of us",
+      "language": "JavaScript",
+      "stars": 89696,
+      "forks": 6217,
+      "starsToday": 692,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "sveltejs-svelte-60223ff9.txt"
+    },
+    {
+      "rank": 6,
+      "fullName": "getarcaneapp/arcane",
+      "name": "arcane",
+      "owner": "getarcaneapp",
+      "url": "https://github.com/getarcaneapp/arcane",
+      "description": "Modern Docker Management, Designed for Everyone",
+      "language": "Go",
+      "stars": 9956,
+      "forks": 570,
+      "starsToday": 547,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "getarcaneapp-arcane-3e15b365.txt"
+    },
+    {
+      "rank": 7,
+      "fullName": "HKUDS/CLI-Anything",
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 60014,
+      "forks": 5449,
+      "starsToday": 389,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hkuds-cli-anything-c427889b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 10503,
+      "forks": 1372,
+      "starsToday": 365,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "n8n-io/n8n",
+      "name": "n8n",
+      "owner": "n8n-io",
+      "url": "https://github.com/n8n-io/n8n",
+      "description": "Fair-code workflow automation platform with native AI capabilities. Combine visual building with custom code, self-host or cloud, 400+ integrations.",
+      "language": "TypeScript",
+      "stars": 211250,
+      "forks": 61578,
+      "starsToday": 325,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "n8n-io-n8n-fbb2b1d8.txt"
+    },
+    {
+      "rank": 10,
+      "fullName": "cursor/plugins",
+      "name": "plugins",
+      "owner": "cursor",
+      "url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 17329,
+      "forks": 1914,
+      "starsToday": 314,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cursor-plugins-07a8bcfb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "NVIDIA/SkillEvaluator",
+      "name": "SkillEvaluator",
+      "owner": "NVIDIA",
+      "url": "https://github.com/NVIDIA/SkillEvaluator",
+      "description": "Multi-tier framework for evaluating AI agent skills and plugins with quality gates, security scanning, harness compatibility checks, semantic overlap detection, synthetic evaluation dataset generation, and live agent evaluation that measures how skills affect agent behavior. Ships reusable CI templa",
+      "language": "Python",
+      "stars": 3886,
+      "forks": 530,
+      "starsToday": 312,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nvidia-skillevaluator-64de6697.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "jquery/jquery",
+      "name": "jquery",
+      "owner": "jquery",
+      "url": "https://github.com/jquery/jquery",
+      "description": "jQuery JavaScript Library",
+      "language": "JavaScript",
+      "stars": 60061,
+      "forks": 20711,
+      "starsToday": 266,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jquery-jquery-76e0741e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "astral-sh/uv",
+      "name": "uv",
+      "owner": "astral-sh",
+      "url": "https://github.com/astral-sh/uv",
+      "description": "An extremely fast Python package and project manager, written in Rust.",
+      "language": "Rust",
+      "stars": 92313,
+      "forks": 3926,
+      "starsToday": 258,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "astral-sh-uv-ee192a16.txt"
+    },
+    {
+      "rank": 14,
+      "fullName": "nvm-sh/nvm",
+      "name": "nvm",
+      "owner": "nvm-sh",
+      "url": "https://github.com/nvm-sh/nvm",
+      "description": "Node Version Manager - POSIX-compliant bash script to manage multiple active node.js versions.",
+      "language": "Shell",
+      "stars": 96189,
+      "forks": 10789,
+      "starsToday": 237,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nvm-sh-nvm-8490b630.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "appwrite/appwrite",
+      "name": "appwrite",
+      "owner": "appwrite",
+      "url": "https://github.com/appwrite/appwrite",
+      "description": "The open-source cloud for agents & devs. Including Auth, Databases, Storage, Functions, Messaging, Hosting, Realtime, WAF and more",
+      "language": "TypeScript",
+      "stars": 58309,
+      "forks": 5887,
+      "starsToday": 232,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "appwrite-appwrite-9606768f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 16,
+      "fullName": "DeanChensj/jiangshan-map",
+      "name": "jiangshan-map",
+      "owner": "DeanChensj",
+      "url": "https://github.com/DeanChensj/jiangshan-map",
+      "description": "江山时序 · 中国历史交互地图时间轴 (403 BCE – Present) | Interactive Historical Atlas of China across 18 dynasties, 198 territory snapshots, ancient-to-modern place genealogy & classical poetry routes",
+      "language": "JavaScript",
+      "stars": 8221,
+      "forks": 1006,
+      "starsToday": 218,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "deanchensj-jiangshan-map-256dfeef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 17,
+      "fullName": "punkpeye/awesome-mcp-servers",
+      "name": "awesome-mcp-servers",
+      "owner": "punkpeye",
+      "url": "https://github.com/punkpeye/awesome-mcp-servers",
+      "description": "A collection of MCP servers.",
+      "language": "",
+      "stars": 98143,
+      "forks": 20374,
+      "starsToday": 53,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "punkpeye-awesome-mcp-servers-ade9a20a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 18,
+      "fullName": "solidjs/solid",
+      "name": "solid",
+      "owner": "solidjs",
+      "url": "https://github.com/solidjs/solid",
+      "description": "A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+      "language": "TypeScript",
+      "stars": 36686,
+      "forks": 1190,
+      "starsToday": 40,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "solidjs-solid-aa48981b.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "openvinotoolkit/openvino",
+      "name": "openvino",
+      "owner": "openvinotoolkit",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "language": "C++",
+      "stars": 11404,
+      "forks": 3608,
+      "starsToday": 24,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openvinotoolkit-openvino-5d345dc2.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "sfewer-r7/CVE-2026-123007",
+      "name": "CVE-2026-123007",
+      "owner": "sfewer-r7",
+      "url": "https://github.com/sfewer-r7/CVE-2026-123007",
+      "description": "Proof-of-concept (PoC) scripts for CVE-2026-123007, an integer underflow in NGINX HTTP/2.",
+      "language": "Python",
+      "stars": 181,
+      "forks": 82,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T11:16:51Z",
+      "updatedAt": "2026-11-19T07:00:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sfewer-r7-cve-2026-123007-3cf17a79.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "geerlingguy/chronytop",
+      "name": "chronytop",
+      "owner": "geerlingguy",
+      "url": "https://github.com/geerlingguy/chronytop",
+      "description": "A TUI for chrony NTP time server monitoring",
+      "language": "Go",
+      "stars": 125,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T02:51:38Z",
+      "updatedAt": "2026-11-19T05:04:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "geerlingguy-chronytop-1415b150.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "brandbudgietrimmer/Rob-Run-AIM",
+      "name": "Rob-Run-AIM",
+      "owner": "brandbudgietrimmer",
+      "url": "https://github.com/brandbudgietrimmer/Rob-Run-AIM",
+      "description": "Aim cheat tool for Rob Run with per-weapon presets, robrun, hack, free, money dupe, wallhack, fly, adaptive FOV, range cap, bone priority, visible-only lock and switch delay.",
+      "language": "",
+      "stars": 102,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T15:07:51Z",
+      "updatedAt": "2026-11-19T03:33:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "brandbudgietrimmer-rob-run-aim-53ee7ed5.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "Orbmu2k/NvidiaGsyncTweaks",
+      "name": "NvidiaGsyncTweaks",
+      "owner": "Orbmu2k",
+      "url": "https://github.com/Orbmu2k/NvidiaGsyncTweaks",
+      "description": "",
+      "language": "C#",
+      "stars": 92,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T10:50:37Z",
+      "updatedAt": "2026-11-19T06:38:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "orbmu2k-nvidiagsynctweaks-2d15dd15.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "PlasterFlashBegin/ixl-browser-automation",
+      "name": "ixl-browser-automation",
+      "owner": "PlasterFlashBegin",
+      "url": "https://github.com/PlasterFlashBegin/ixl-browser-automation",
+      "description": "IXL Browser Automation is an automated script utility designed to interact with web drivers and programmatically navigate exercises on the IXL learning platform.",
+      "language": "",
+      "stars": 88,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "browser-automation",
+        "ixl",
+        "ixl-api",
+        "ixl-automation",
+        "ixl-bot",
+        "ixl-client",
+        "ixl-driver",
+        "ixl-helper"
+      ],
+      "createdAt": "2026-11-18T04:50:39Z",
+      "updatedAt": "2026-11-18T05:57:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 25,
+      "fullName": "bogdan239/uberdesigner-studio",
+      "name": "uberdesigner-studio",
+      "owner": "bogdan239",
+      "url": "https://github.com/bogdan239/uberdesigner-studio",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 85,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T17:52:32Z",
+      "updatedAt": "2026-11-19T07:09:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bogdan239-uberdesigner-studio-5acc2c9d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 26,
+      "fullName": "shdccehnbfxm/ROB-RUN-Cheats",
+      "name": "ROB-RUN-Cheats",
+      "owner": "shdccehnbfxm",
+      "url": "https://github.com/shdccehnbfxm/ROB-RUN-Cheats",
+      "description": "ROB RUN mod menu",
+      "language": "HTML",
+      "stars": 78,
+      "forks": 79,
+      "starsToday": 0,
+      "topics": [
+        "kefir-rob-run-cheat",
+        "rob-run-aimbot-menu",
+        "rob-run-cheat-2026",
+        "rob-run-cheat-menu",
+        "rob-run-cheat-pc",
+        "rob-run-cheat-setup",
+        "rob-run-cheat-windows",
+        "rob-run-cheats-with-mod-menu"
+      ],
+      "createdAt": "2026-11-18T18:44:51Z",
+      "updatedAt": "2026-11-19T05:34:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "shdccehnbfxm-rob-run-cheats-496a46e7.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "pookjw/Clocky",
+      "name": "Clocky",
+      "owner": "pookjw",
+      "url": "https://github.com/pookjw/Clocky",
+      "description": "Present any Apple Watch face",
+      "language": "Objective-C",
+      "stars": 77,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T08:00:30Z",
+      "updatedAt": "2026-11-19T06:16:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "pookjw-clocky-fba19af3.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "mitsuhiko/tvpipe",
+      "name": "tvpipe",
+      "owner": "mitsuhiko",
+      "url": "https://github.com/mitsuhiko/tvpipe",
+      "description": "Airplay/Chrome Cast anything",
+      "language": "Rust",
+      "stars": 73,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T13:11:31Z",
+      "updatedAt": "2026-11-19T07:12:20Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mitsuhiko-tvpipe-6c1942ae.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "eddiezywang/wemail",
+      "name": "wemail",
+      "owner": "eddiezywang",
+      "url": "https://github.com/eddiezywang/wemail",
+      "description": "Local-first AI email client",
+      "language": "TypeScript",
+      "stars": 72,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T06:18:35Z",
+      "updatedAt": "2026-11-19T04:47:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "eddiezywang-wemail-1b89a908.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "DMTWEAKS/TraySense",
+      "name": "TraySense",
+      "owner": "DMTWEAKS",
+      "url": "https://github.com/DMTWEAKS/TraySense",
+      "description": "",
+      "language": "C",
+      "stars": 68,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T20:35:07Z",
+      "updatedAt": "2026-11-19T07:12:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dmtweaks-traysense-0c11603d.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "yibie/claude-best-practices-zh",
+      "name": "claude-best-practices-zh",
+      "owner": "yibie",
+      "url": "https://github.com/yibie/claude-best-practices-zh",
+      "description": "Claude 官方最佳实践全集：173 篇中文译文 + 100 个概念的 LLM Wiki 知识网 + 交互式知识图谱/思维导图",
+      "language": "HTML",
+      "stars": 67,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "best-practices",
+        "claude",
+        "claude-code",
+        "llmwiki",
+        "mind-map"
+      ],
+      "createdAt": "2026-11-18T02:32:07Z",
+      "updatedAt": "2026-11-19T06:48:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yibie-claude-best-practices-zh-1b66ed67.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "0marContreras/gta6recomp",
+      "name": "gta6recomp",
+      "owner": "0marContreras",
+      "url": "https://github.com/0marContreras/gta6recomp",
+      "description": "A GTA VI PC Port",
+      "language": "",
+      "stars": 58,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T16:49:55Z",
+      "updatedAt": "2026-11-19T07:13:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "0marcontreras-gta6recomp-7787c570.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "THZoria/NX2_Firmware",
+      "name": "NX2_Firmware",
+      "owner": "THZoria",
+      "url": "https://github.com/THZoria/NX2_Firmware",
+      "description": "Firmware for the Nintendo Switch 2",
+      "language": "",
+      "stars": 55,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T12:53:36Z",
+      "updatedAt": "2026-11-19T06:49:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "thzoria-nx2-firmware-e8f786db.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "Dipshet/GracemeriaRecomp",
+      "name": "GracemeriaRecomp",
+      "owner": "Dipshet",
+      "url": "https://github.com/Dipshet/GracemeriaRecomp",
+      "description": "Native PC port of Ace Combat 6: Fires of Liberation using XenonRecomp",
+      "language": "C++",
+      "stars": 50,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T00:05:33Z",
+      "updatedAt": "2026-11-19T07:05:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dipshet-gracemeriarecomp-ac0841ab.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 35,
+      "fullName": "Zenglidescribe/nintendo-switch-yuzu-emulator-free",
+      "name": "nintendo-switch-yuzu-emulator-free",
+      "owner": "Zenglidescribe",
+      "url": "https://github.com/Zenglidescribe/nintendo-switch-yuzu-emulator-free",
+      "description": "Nintendo Switch Yuzu Emulator Free is an open-source emulation software written in C++ that enables users to play Nintendo Switch games on Windows, Linux, and Android devices with enhanced resolution scaling and customizable controller support.",
+      "language": "",
+      "stars": 49,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "free-switch-emu",
+        "switch-emu-free",
+        "switch-emu-tool",
+        "switch-emulator-free",
+        "switch-on-pc",
+        "switch-yuzu",
+        "switch-yuzu-free",
+        "switch-yuzu-pc"
+      ],
+      "createdAt": "2026-11-18T04:53:57Z",
+      "updatedAt": "2026-11-18T15:02:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true
+    },
+    {
+      "rank": 36,
+      "fullName": "cerniq/scrap-tf-raffle-bot2027",
+      "name": "scrap-tf-raffle-bot2027",
+      "owner": "cerniq",
+      "url": "https://github.com/cerniq/scrap-tf-raffle-bot2027",
+      "description": "",
+      "language": "Python",
+      "stars": 44,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T01:13:04Z",
+      "updatedAt": "2026-11-18T01:58:42Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cerniq-scrap-tf-raffle-bot2027-4ad29057.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "Goliathtrevalue20/stretch-custom-resolution",
+      "name": "stretch-custom-resolution",
+      "owner": "Goliathtrevalue20",
+      "url": "https://github.com/Goliathtrevalue20/stretch-custom-resolution",
+      "description": "Stretched, boxed or pixel-exact resolutions for CS2 and other games. 15-second safety revert, EDID untouched by default.",
+      "language": "",
+      "stars": 43,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "cs2",
+        "display",
+        "free",
+        "gaming",
+        "resolution",
+        "stretched-resolution",
+        "utility",
+        "windows"
+      ],
+      "createdAt": "2026-11-18T20:59:01Z",
+      "updatedAt": "2026-11-19T07:13:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "goliathtrevalue20-stretch-custom-resolution-3e7a56c0.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "LocustWrinkle/process-lasso-alternative",
+      "name": "process-lasso-alternative",
+      "owner": "LocustWrinkle",
+      "url": "https://github.com/LocustWrinkle/process-lasso-alternative",
+      "description": "Three-word profiles: Game, Normal, Quiet. Priority and power plans flip when you launch a game and revert when you close it.",
+      "language": "",
+      "stars": 43,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "free",
+        "gaming",
+        "performance",
+        "process-priority",
+        "utility",
+        "windows"
+      ],
+      "createdAt": "2026-11-18T20:55:49Z",
+      "updatedAt": "2026-11-19T07:13:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "locustwrinkle-process-lasso-alternative-190bef4f.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "CrestShell73/input-lag-reducer",
+      "name": "input-lag-reducer",
+      "owner": "CrestShell73",
+      "url": "https://github.com/CrestShell73/input-lag-reducer",
+      "description": "See where the milliseconds go: mouse, OS, game queue, GPU. Then trim them. Measure first, tweak second, no placebo.",
+      "language": "",
+      "stars": 42,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "free",
+        "gaming",
+        "input-lag",
+        "latency",
+        "mouse",
+        "performance",
+        "utility",
+        "windows"
+      ],
+      "createdAt": "2026-11-18T20:52:34Z",
+      "updatedAt": "2026-11-19T07:11:19Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "crestshell73-input-lag-reducer-fb7d91fe.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "guanmo-ai/guanmo-studio",
+      "name": "guanmo-studio",
+      "owner": "guanmo-ai",
+      "url": "https://github.com/guanmo-ai/guanmo-studio",
+      "description": "",
+      "language": "HTML",
+      "stars": 42,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T11:47:13Z",
+      "updatedAt": "2026-11-19T06:51:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "guanmo-ai-guanmo-studio-68464a61.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "wordystepuncl/ai-arbitrage-bot",
+      "name": "ai-arbitrage-bot",
+      "owner": "wordystepuncl",
+      "url": "https://github.com/wordystepuncl/ai-arbitrage-bot",
+      "description": "Scan live crypto arbitrage spreads for BTC, ETH and BNB, altcoins on Binance, OKX, Gate and more. Compare bid and ask prices and estimate route returns after fees, slippage and transfer costs.",
+      "language": "HTML",
+      "stars": 39,
+      "forks": 41,
+      "starsToday": 0,
+      "topics": [
+        "arbitrage-bot-free",
+        "binance-api",
+        "crypto-arbitrage",
+        "crypto-arbitrage-2026",
+        "crypto-arbitrage-bot-2026",
+        "crypto-arbitrage-bot-download",
+        "crypto-arbitrage-bot-free",
+        "crypto-trading-bot"
+      ],
+      "createdAt": "2026-11-18T01:04:35Z",
+      "updatedAt": "2026-11-18T16:49:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wordystepuncl-ai-arbitrage-bot-b27c6655.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "ntu0831/mini-agent",
+      "name": "mini-agent",
+      "owner": "ntu0831",
+      "url": "https://github.com/ntu0831/mini-agent",
+      "description": "",
+      "language": "Python",
+      "stars": 38,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T09:40:43Z",
+      "updatedAt": "2026-11-19T00:29:48Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ntu0831-mini-agent-778078b1.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 43,
+      "fullName": "howznguyen/phonedesk",
+      "name": "phonedesk",
+      "owner": "howznguyen",
+      "url": "https://github.com/howznguyen/phonedesk",
+      "description": "Turn an old phone into a Stream Deck-style control panel and dashboard for your Mac or Windows PC. No app, no account, no cloud.",
+      "language": "TypeScript",
+      "stars": 37,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [
+        "ai-coding",
+        "bun",
+        "claude-code",
+        "control-panel",
+        "dashboard",
+        "home-assistant",
+        "macos",
+        "macro-pad"
+      ],
+      "createdAt": "2026-11-18T06:05:59Z",
+      "updatedAt": "2026-11-19T05:36:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "howznguyen-phonedesk-b3acabc5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 44,
+      "fullName": "mzainulabideendev/Universal-AI-Prompt-Engineer",
+      "name": "Universal-AI-Prompt-Engineer",
+      "owner": "mzainulabideendev",
+      "url": "https://github.com/mzainulabideendev/Universal-AI-Prompt-Engineer",
+      "description": "Turn rough prompts into professional, review-ready instructions for AI coding agents — without leaving VS Code.",
+      "language": "TypeScript",
+      "stars": 37,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T10:17:12Z",
+      "updatedAt": "2026-11-19T07:13:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mzainulabideendev-universal-ai-prompt-engineer-65d3308d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 45,
+      "fullName": "xmqkrtvawnel/ROB-RUN-Aim-WH-Hacks",
+      "name": "ROB-RUN-Aim-WH-Hacks",
+      "owner": "xmqkrtvawnel",
+      "url": "https://github.com/xmqkrtvawnel/ROB-RUN-Aim-WH-Hacks",
+      "description": "ROB RUN aim cheats, Wallhack, ESP, dupe tool",
+      "language": "HTML",
+      "stars": 35,
+      "forks": 33,
+      "starsToday": 0,
+      "topics": [
+        "kefir-rob-run",
+        "rob-run-2026",
+        "rob-run-aimbot",
+        "rob-run-cheat-download",
+        "rob-run-dupe",
+        "rob-run-dupe-tool",
+        "rob-run-early-access",
+        "rob-run-external"
+      ],
+      "createdAt": "2026-11-18T19:56:28Z",
+      "updatedAt": "2026-11-19T07:06:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "xmqkrtvawnel-rob-run-aim-wh-hacks-19bba9e1.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "ensdpauzbwbl/ROB-RUN-Bush-Auto-Farm-Mods-Scripts-Guide",
+      "name": "ROB-RUN-Bush-Auto-Farm-Mods-Scripts-Guide",
+      "owner": "ensdpauzbwbl",
+      "url": "https://github.com/ensdpauzbwbl/ROB-RUN-Bush-Auto-Farm-Mods-Scripts-Guide",
+      "description": "ROB RUN bush auto-farm mods, scripts and survival guide for PC",
+      "language": "HTML",
+      "stars": 34,
+      "forks": 34,
+      "starsToday": 0,
+      "topics": [
+        "bush-hide-spots",
+        "kefir-rob-run-farm",
+        "looty-bay-farm",
+        "rob-run-ahk",
+        "rob-run-auto-farm",
+        "rob-run-auto-farm-2026",
+        "rob-run-bush",
+        "rob-run-bush-farm"
+      ],
+      "createdAt": "2026-11-18T17:52:07Z",
+      "updatedAt": "2026-11-18T22:57:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ensdpauzbwbl-rob-run-bush-auto-farm-mods-scripts-guide-9a51f6c2.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "silverhippoboil/custom-crosshair-overlay-any-game",
+      "name": "custom-crosshair-overlay-any-game",
+      "owner": "silverhippoboil",
+      "url": "https://github.com/silverhippoboil/custom-crosshair-overlay-any-game",
+      "description": "Draw your crosshair over any game in windowed or borderless mode. One code shares it across machines. Free, no ads, no account.",
+      "language": "",
+      "stars": 34,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "crosshair",
+        "dotnet",
+        "fps",
+        "free",
+        "gaming",
+        "overlay",
+        "utility",
+        "windows"
+      ],
+      "createdAt": "2026-11-18T20:49:15Z",
+      "updatedAt": "2026-11-19T07:13:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "silverhippoboil-custom-crosshair-overlay-any-game-28540f20.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "rrobin9/clipper-engine",
+      "name": "clipper-engine",
+      "owner": "rrobin9",
+      "url": "https://github.com/rrobin9/clipper-engine",
+      "description": "Free app for Mac and Windows: clips the hottest GTA 6 streams on Twitch and YouTube automatically (downloads)",
+      "language": "",
+      "stars": 33,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-18T03:14:23Z",
+      "updatedAt": "2026-11-19T06:21:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rrobin9-clipper-engine-b037f9ac.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python",
+      "stars": 500144,
+      "forks": 56114,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "createdAt": "2016-03-20T23:49:42Z",
+      "updatedAt": "2026-11-19T07:13:47Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "public-apis-public-apis-0e8ac9c0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "freeCodeCamp/freeCodeCamp",
+      "name": "freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript",
+      "stars": 459313,
+      "forks": 47478,
+      "starsToday": 0,
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "createdAt": "2014-12-24T17:49:19Z",
+      "updatedAt": "2026-11-19T07:12:08Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "freecodecamp-freecodecamp-5d095e95.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 372326,
+      "forks": 46515,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-19T07:13:16Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 52,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 327642,
+      "forks": 27518,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-19T07:13:54Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "deepseek-ai/deepseek-harness",
+      "name": "deepseek-harness",
+      "owner": "deepseek-ai",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "language": "TypeScript",
+      "stars": 283842,
+      "forks": 35228,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "createdAt": "2026-08-13T11:56:32Z",
+      "updatedAt": "2026-11-19T07:12:47Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "deepseek-ai-deepseek-harness-a4daff9d.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 255994,
+      "forks": 67529,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-19T07:11:19Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 55,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 194719,
+      "forks": 13765,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-19T07:04:34Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 187570,
+      "forks": 19156,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-11-19T06:49:41Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "MDX",
+      "stars": 175088,
+      "forks": 79614,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-19T04:11:12Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Svelte",
+      "stars": 159060,
+      "forks": 23111,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "createdAt": "2023-10-06T22:08:27Z",
+      "updatedAt": "2026-11-19T07:10:46Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "open-webui-open-webui-3b98bdb5.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 150552,
+      "forks": 13525,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-19T07:12:19Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "Shubhamsaboo/awesome-llm-apps",
+      "name": "awesome-llm-apps",
+      "owner": "Shubhamsaboo",
+      "url": "https://github.com/Shubhamsaboo/awesome-llm-apps",
+      "description": "100+ AI Agents, Agent Skills and RAG Apps - Free and Open Source.",
+      "language": "Python",
+      "stars": 145043,
+      "forks": 21360,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "llms",
+        "python",
+        "rag"
+      ],
+      "createdAt": "2024-04-29T05:30:25Z",
+      "updatedAt": "2026-11-19T07:04:56Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "shubhamsaboo-awesome-llm-apps-8a517fe8.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

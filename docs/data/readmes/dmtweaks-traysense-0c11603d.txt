@@ -1,0 +1,39 @@
+TraySense
+
+Small system monitor that sits on the Windows taskbar next to the tray. Shows CPU, RAM, GPU, VRAM and temps.
+
+cpu] 12% 54°   [ram] 61%   [gpu] 4% 44° VRAM 6%   [ssd] 38°
+
+It's one C file using plain Win32, so the exe is around 100 KB and it uses a 1-3 MB of RAM at max. It only redraws when a number changes and it stops polling when the screen is off.
+
+Works on Windows 10 and 11.
+
+PawnIO gets installed automatically when you turn on CPU temp (needed to read the CPU sensor). Since the driver needs admin, TraySense then copies itself to Program Files and starts from there as admin on login.
+
+Temps are white when normal, orange when elevated and red when extremely high. For CPU and GPU that's 80°C and 90°C, for the SSD 65°C and 75°C.
+
+Usage
+
+Download the exe from [releases and run it. Only get it from there, see SECURITY.md for how to check it's the real one. Right click for settings, left click opens Task Manager.
+
+Uninstall
+
+Untick "Start with Windows" (this also removes the copy in Program Files), exit, delete the exe. If you don't need PawnIO anymore, remove it from Settings > Apps.
+
+Building
+
+./build.sh with MinGW-w64, or build.bat on Windows (build.bat msvc for Visual Studio).
+
+License
+
+Copyright (C) 2026 DMTWEAKS
+
+TraySense is licensed under the GNU AGPL-3.0, see LICENSE. You can use it, study it and modify it, but if you share a modified version (including running it as a service), you have to release your full source code under the same license and keep the copyright notice.
+
+Want to use TraySense code in a closed source or commercial app? That needs my written permission and a separate license, contact me first.
+
+The TraySense name and logo aren't covered by the license. If you fork it, give your fork a different name.
+
+Contributions are accepted under the same license. By sending a contribution you also allow DMTWEAKS to license it under other terms, so the project can keep offering separate licenses.
+
+The PawnIO modules in pawnio/ are LGPL-2.1, see THIRD_PARTY.md.

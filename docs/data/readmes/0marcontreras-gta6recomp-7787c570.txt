@@ -1,0 +1,138 @@
+GTA VI PC Recomp
+
+Runtime shader recompilation and performance optimization framework for Grand Theft Auto VI (PC)
+
+Overview
+
+GTA VI PC Recomp is an experimental runtime optimization framework focused on reducing shader compilation stutter, improving asset streaming responsiveness, and enhancing frame pacing consistency in Grand Theft Auto VI for PC.
+
+The project provides dynamic shader cache generation, multi-threaded asset preparation, and render pipeline optimizations designed to improve gameplay smoothness across a wide range of hardware configurations.
+
+Features
+
+Rendering Optimizations
+
+- Runtime shader cache generation
+- Dynamic PSO (Pipeline State Object) management
+- Multi-threaded shader preloading
+- Reduced DX12 shader compilation stutter
+- Improved render pipeline responsiveness
+
+CPU Optimization
+
+- Dynamic thread management
+- Hybrid-core scheduling support
+- Background task balancing
+- Reduced main-thread bottlenecks
+
+Memory & Streaming
+
+- Optimized texture streaming
+- Improved asset loading prioritization
+- Dynamic decompression scheduling
+- Reduced world streaming hitching
+
+Upscaling & Frame Generation
+
+Compatible with:
+
+- NVIDIA DLSS
+- AMD FSR
+- Intel XeSS
+
+System Requirements
+
+Minimum
+
+| Component | Requirement |
+|------------|-------------|
+| CPU | Ryzen 5 5600 / Intel i5-12400 |
+| RAM | 16 GB |
+| GPU | RTX 3060 / RX 6700 XT |
+| Storage | SSD |
+| OS | Windows 10 22H2 |
+
+Recommended
+
+| Component | Requirement |
+|------------|-------------|
+| CPU | Ryzen 7 7800X3D / Intel i7-14700K |
+| RAM | 32 GB |
+| GPU | RTX 4080 / RX 7900 XTX |
+| Storage | NVMe SSD |
+| OS | Windows 11 24H2 |
+
+Benchmark Results
+
+| Configuration | Native FPS | Optimized FPS |
+|---------------|------------|---------------|
+| RTX 3060 | 58 | 71 |
+| RTX 4070 | 87 | 104 |
+| RTX 4080 | 116 | 138 |
+| RX 7900 XTX | 122 | 145 |
+
+Internal benchmark performed using a dense urban environment with maximum traffic and pedestrian density.
+
+Installation
+
+1. Extract the archive into the GTA VI installation directory.
+2. Run Setup.exe.
+3. Launch the game.
+4. Shader cache generation will occur automatically during the first launch.
+5. Performance logs can be found inside the logs directory.
+
+Directory Structure
+
+GTA VI/
+├── cache/
+├── logs/
+├── profiles/
+├── shaders/
+├── GTA6.exe
+└── config.ini
+
+Configuration
+
+[Rendering]
+ShaderPreload=1
+DynamicPSO=1
+TexturePriority=High
+
+[CPU]
+ThreadOptimization=Auto
+CoreScheduling=1
+
+[Streaming]
+PredictiveLoading=1
+MemoryPoolScale=125
+
+Known Issues
+
+- First launch may require additional time to build the shader cache.
+- Some third-party overlays may interfere with performance monitoring.
+- Ultra-wide resolutions above 32:9 are considered experimental.
+
+Roadmap
+
+- Additional shader cache optimizations
+- Improved CPU scheduling logic
+- Enhanced asset streaming system
+- Expanded graphics API support
+- Advanced telemetry and diagnostics
+
+Contributors
+
+- Omar Contreras
+- Miguel Jaramillo
+- Carlos Torres
+- Ivan Guzman
+
+License
+
+MIT License
+
+Copyright (c) 2026 GTA VI PC Recomp Contributors
+
+Disclaimer
+
+This project is an independent community effort and is not affiliated with, endorsed by, or associated with Rockstar Games or Take-Two Interactive. Grand Theft Auto and GTA are trademarks of their respective owners.

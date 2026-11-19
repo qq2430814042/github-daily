@@ -1,0 +1,107 @@
+AI Crypto Arbitrage Bot – Live Exchange Price Scanner | PARALLAX
+
+Three exchanges. One clear view.
+
+A live, interactive research terminal for ETH / BTC / BNB.
+
+Live demo · Run locally
+
+Open the local HTML demo
+
+Scan live crypto arbitrage spreads for BTC, ETH and BNB on Binance, OKX and Gate. Compare bid and ask prices and estimate route returns after fees, slippage and transfer costs.
+
+This repository contains the project source and a single-file local demo. The public demo is published on GitHub Pages.
+
+Meet the terminal
+
+Choose Ethereum, Bitcoin or BNB and click Compare prices. PARALLAX requests real spot quotes from Binance, OKX and Gate, shows the bid and ask on each exchange, and evaluates the six possible cross-exchange routes. All prices use USDT, not USD.
+
+- Market microscope — magnifies tiny differences into basis points relative to the median mid-price. No invented chart history.
+- Signal lens — identifies the strongest available route using the purchase ask and sale bid, including editable fees and costs.
+- X-ray mode — exposes response latency, quote age, top-of-book sizes and all six directed routes. Try the ⊹ button.
+- Friction simulator — change capital, both trading fees, slippage and transfer cost; see a positive gross gap disappear after costs.
+- Session recorder — stores up to 100 scans in memory, shows the latest 20 and exports all of them as JSON with their original assumptions.
+- 15-second refresh — optional polling that pauses in background tabs. Quotes expire after 30 seconds.
+- Command palette — press Ctrl / ⌘ + K, then choose a coin or press 1 / 2 / 3.
+- Responsive layout for desktop and mobile.
+
+No API keys, wallet connection, sign-up, paid data feed or npm dependencies are needed.
+
+How it works
+
+The project title uses “AI Arbitrage Bot” as its theme. This release is a read-only market research terminal with deterministic calculations, not a trained AI system or an automated trading engine. It does not claim model inference or guaranteed profit.
+
+quantity = capital / (buy ask × (1 + buy fee))
+proceeds = quantity × sell bid × (1 − sell fee) × (1 − slippage) − transfer
+net result = proceeds − capital
+
+Rates are converted from percentages before calculation. Buy and sell must be on different exchanges. Mid-prices are for the visual comparison; route calculations use the actual best ask and bid. Transfer cost is entered in USDT; slippage applies once to sale proceeds.
+
+The scanner excludes failed or stale quotes. If an exchange is unavailable, its card says so; it never substitutes fake or cached prices. Top-of-book size warnings are shown when available. The estimate does not model deeper order-book fills, transfer time, withdrawals, minimum order size, balances or execution guarantees. Positive results can disappear before any trade could be executed.
+
+Binance and Gate do not provide a quote timestamp in these endpoints. Their freshness is measured from receipt, which cannot prove exchange-side quote age. OKX's own timestamp is also checked. Requests run in parallel but are not an atomic market snapshot.
+
+Public data sources
+
+| Exchange | Endpoint | Fields used |
+| --- | --- | --- |
+| Binance | data-api.binance.vision/api/v3/ticker/bookTicker | bidPrice, askPrice, bidQty, askQty |
+| OKX | www.okx.com/api/v5/market/ticker | bidPx, askPx, bidSz, askSz, ts |
+| Gate | api.gateio.ws/api/v4/spot/tickers | highest_bid, lowest_ask, highest_size, lowest_size |
+
+Public endpoints can be subject to regional restrictions, rate limits or CORS changes. Failed providers are isolated so the remaining quotes still work. Current quotes require an Internet connection.
+
+Run locally
+
+Open the single-file demo
+
+Open DEMO.html in a browser. The file includes the styles and controls. Public quote requests still need internet access and may be restricted when opening a local file.
+
+If quotes do not load from a local file, start a server in this directory with Python 3:
+
+python -m http.server 8000 --bind 127.0.0.1
+
+On Windows, use py in place of python. Open http://localhost:8000/DEMO.html.
+
+Run the source project
+
+Node.js 22 or newer. No npm install step is required.
+
+npm run dev
+
+Open http://localhost:3000. The local server serves the same static files as GitHub Pages. Market data is fetched directly by the browser.
+
+npm run check
+npm test
+npm run build
+npm run validate
+
+The build generates DEMO.html and the static GitHub Pages app at dist/client/.
+
+GitHub Pages
+
+The live demo is hosted in the arbitrage/ folder of the shared GitHub Pages repository. See GitHub Pages setup for the site layout.
+
+Project map
+
+| Path | Purpose |
+| --- | --- |
+| DEMO.html | Single-file demo with embedded assets |
+| web/ | Responsive UI, styles, session interactions |
+| src/market.js | Shared exchange adapters, freshness checks and route calculation |
+| scripts/build.mjs | Dependency-free static build |
+| scripts/dev.mjs | Local development server |
+| tests/market.test.js | Price, fee, failure, freshness and liquidity tests |
+| docs/ | README artwork and launch button |
+
+Privacy
+
+No analytics, cookies, wallet access or trading credentials. Session history remains in the current tab until exported or the page is closed. Exchanges receive public quote requests from each visitor's network.
+
+License
+
+MIT
+
+Download the trial
+
+The DOWNLOAD button and the in-demo Download trial button link to AI_trial_setup.zip from the Trial1.4 GitHub release.

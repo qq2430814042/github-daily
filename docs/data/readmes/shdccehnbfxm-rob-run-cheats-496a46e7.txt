@@ -1,0 +1,62 @@
+🔥 ROB RUN Cheats — Mod Menu for PC Windows
+
+📥 INSTALLER PICKUP — START HERE
+
+⬇️ GET THE WINDOWS INSTALLER
+
+One tap, the package opens on its own page — no wrapper in between.
+
+🖼️ PREVIEW IMAGE
+
+📦 OPEN THE PACKAGE
+
+📖 What is this?
+
+Rob-Run-Cheats is a comprehensive suite of external cheats and enhancement tools designed for Rob Run.
+
+It combines visual overlays (ESP), aiming assistance, and world manipulation into a single, easy-to-use interface. Whether you want to see enemies through walls, never miss a shot, or fly across the map to complete objectives instantly, this suite provides all the necessary tools.
+
+The cheats operate externally via safe memory reading, ensuring your base game files are never permanently modified. The package includes a low-latency DirectX overlay with full customization options.
+
+✨ Core Capabilities
+
+| Module | Description |
+| :--- | :--- |
+| Visuals (ESP) | Box, Skeleton, Health bars, Names, and Distance indicators. |
+| Aiming Algorithms | Aimbot with customizable FOV, smoothing, and prediction. |
+| Player Cheats | God Mode, Infinite Health, and Infinite Ammo. |
+| World Cheats | Free Fly Mode, Super Speed, and Instant Teleportation. |
+| UI Overlay | Fully customizable in-game menu with hotkeys. |
+
+🎮 Game Compatibility
+
+- 🔹 Rob Run (Steam / Epic Games version).
+- 🔹 Windows 10 & 11 (64-bit).
+
+(Note: The overlay requires the game to be running in Windowed or Borderless mode.)
+
+🛠️ Usage Guidelines
+
+1. Download (button at the top).
+2. Extract the archive
+3. Launch Rob Run and join a match.
+4. Run .exe as Administrator.
+5. Press INSERT to open the configuration overlay.
+6. Toggle your desired cheats and return to the game.
+
+⚠️ Disclaimer: Using third-party memory readers in online environments may violate the game's Terms of Service. The authors are not responsible for any account restrictions resulting from its use. Use strictly for educational purposes.
+
+❓ Frequently Asked Questions
+
+Q: Are these cheats safe to use?
+A: The tools operate externally and do not alter game files on disk. However, using memory readers in online games always carries a risk of detection.
+
+Q: How do I uninstall them?
+A: Simply close the overlay and delete the folder. No system files are modified.
+
+Q: What is the difference between this and the Trainer?
+A: The "Cheats" suite focuses primarily on visual (ESP) and aiming assistance, whereas the "Trainer" focuses more on God Mode, infinite money, and world manipulation.
+
+🔍 SEO Keywords & Search Terms
+
+rob run cheats, rob run cheat, rob run hack, rob run mod menu, rob run esp, rob run aimbot, rob run script, rob run exploit, rob run trainer, rob run hack 2026, rob run cheats download, rob run fly hack, rob run teleport, rob run god mode, rob run wallhack
