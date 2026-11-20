@@ -1,0 +1,98 @@
+NeonClipping
+
+Paste a link. Get captioned 9:16 clips in about two minutes. Free, local, open-source.
+
+NeonClipping turns long YouTube / Twitch / Kick videos (or your own MP4) into vertical, captioned clips with a title and hook for each. Everything runs on your machine: no account, no subscription, no upload.
+
+🌐 Website with one-click Windows setup:
+
+Made by Ajay K Meena (Director, DOP, colorist, DaVinci Resolve educator, Jaipur). If NeonClipping saves you time, please ⭐ star the repo and follow @iamajmeena on Instagram.
+
+📘 Guides (Hindi + English, PDF): docs/NeonClipping-Guide-EN-HI.pdf
+🤖 Let an AI agent install it for you: copy docs/NEONCLIPPING-AGENT-SETUP-PROMPT.txt into Claude Code, Codex CLI or Cursor.
+
+How it finds good moments
+
+Two modes, one button.
+
+⚡ Fast mode (default, videos over 10 min) copies the trick that makes the fastest clippers fast: never look at the whole video.
+
+1. Download audio only (79 MB for an 85-minute video, about 10 s).
+2. Take the transcript for free from YouTube's own captions (word-timed). No speech model needed. For other sources a local Whisper model is used as the fallback.
+3. Score the whole audio track for sudden loudness jumps (vs a 2-minute local baseline), raised voices (2–4 kHz energy) and quiet-to-loud transitions.
+4. Take the best moments, read each one's transcript with a local LLM (Ollama) and let it score the moment, write a title and a hook. Snap the start and end to sentence boundaries inside your Min/Max length.
+5. Download only the chosen sections of the video (not the whole file), trim exactly by matching their sound to the audio track, and render 1080x1920 clips with burned-in captions.
+
+🔬 Deep mode downloads the whole video, adds optical-flow motion (OpenCV Farneback: fast objects, impacts, camera whips) and cut density to the audio signals, shortlists 4× more candidates and gives the LLM 15 seconds of context before and after each one.
+
+Measured on one machine (RTX 2060, 16 threads), Fast mode, 3 clips each:
+
+| Source | Time |
+|---|---|
+| 85-minute YouTube stream (YouTube captions) | 97 s |
+| 3-hour Twitch VOD (no captions, local speech model) | 136 s |
+| 90-second YouTube trailer | 21 s |
+| 90-second local MP4 | 14 s |
+
+Your numbers depend on network and CPU.
+
+How it decides what is a good moment
+
+Every candidate moment is scored from several signals, then the best ones are kept:
+
+| Signal | What it looks for |
+|---|---|
+| Loudness jump | A sudden boom or shout compared with the last two minutes |
+| Raised voice | Energy in the 2–4 kHz band (screaming, yelling) |
+| What is said | "oh my god", "oh shit", "run", "police", "bhaago", "arre yaar" and similar (English, Hinglish, Hindi) |
+| On-screen action | Fast motion (optical flow), explosion-like flashes, red/blue light flicker, scene cuts |
+| AI score | A small local LLM reads the transcript: emotion, punchline, payoff |
+
+It learns from you. Under every clip there are 5 stars. Your ratings stay on your computer (data/feedback.jsonl). After 8 ratings the weights of the signals above are re-fitted (ridge regression pulled toward the defaults, blended in gradually), so a gamer-shouting-heavy taste ranks shouting higher and a calm-explainer taste ranks it lower. Nothing is uploaded.
+
+Features
+
+- One-click Make clips, live progress, clips appear one by one with preview and MP4 download.
+- Min / Max clip length (e.g. 30–80 s). Clips end on a sentence.
+- Facecam position presets (top-left, top-right, bottom-left, bottom-right, bottom-centre, none) for the usual streamer layouts, remembered between sessions. Or draw the face and gameplay boxes yourself in the editor.
+- 11 native layouts: camera above/below gameplay, blurred fill, full-screen crop, gameplay only, four corner overlays, circle facecam and side-by-side. Independent face/game selection and a face-size slider. Preview-only platform safe zones.
+- Caption styles: GTA Neon, Impact, Clean, Hormozi and MrBeast. Word-timed, editable words, SRT export.
+- Opening headings: eight seconds by default, adjustable from 2–60 seconds, with black backing for bright gameplay and facecam layouts. Use Improve opening heading to write a grounded curiosity question from the selected transcript. Existing clips can apply the new look without downloading or finding moments again.
+- Moment mix: Balanced combines activity and transcript-led proposals; Action favours energy; Dialogue favours story, humour and insights. Final selection reduces overlapping and repetitive moments. Balanced/Dialogue prefer an already-installed Gemma 4 local judge; other local models remain a fallback. This changes curation rules and prompts, not foundation-model weights.
+- Custom captions: installed font family, size, text/active/outline colours, words per caption and local saved profiles. Import SRT/ASS/WebVTT or paste subtitle text, adjust word timings, split/merge and shift captions. Within-cue word timings from imported files are estimated. Download WebVTT alongside SRT.
+- Transcript explorer: explicitly generate or import a full-source transcript, search phrases across cues, browse pages, and click the first/last word to export that passage. Cached transcripts are reused by Make clips and invalidated when the source changes.
+- Hinglish captions: Hindi speech is written in English letters ("kya haal hai bhai") by default. Pick Hinglish / हिंदी / English explicitly if you like. Fast uses available source captions; Best Hindi explicitly uses local large-v3 recognition and can be slower on small GPUs. Missing source captions require local recognition.
+- Make clips uses your own setup: facecam preset or the boxes you draw in step 03.
+- Optical-flow motion + audio highlight ranking, frame-accurate NVENC export (falls back to x264).
+- Nothing leaves your computer. The server binds to 127.0.0.1 only.
+
+Change clips after generating them
+
+Open My clips → Edit clip. The saved editor includes all 11 speaker position/shape layouts, a speaker-size slider, editable subtitle words, caption style and caption height.
+
+- Apply to this clip updates the opened clip.
+- Apply to this video's clips updates the currently saved clips associated with the same source URL. Each keeps its own timestamps, transcript, title and hook. New clips still being generated are not included in that snapshot.
+- Source download, highlight discovery and speech recognition are not repeated. Burned-in captions and framing require encoding a new final MP4.
+- Original source files must remain in data/. Previous MP4s are kept; the library displays the latest versions. Old exports missing saved word timings can recover captions from their SRT, with approximate per-word timing.
+- This edits the selected moments; changing the clip's start/end or spoken language requires a separate trim/transcription workflow.
+
+Validation on one 796.9-second source: all 11 layouts and five caption styles exported with audio and decoded successfully. A seven-clip layout/style update took 119.58 seconds while reusing each clip's exact source, range and word list. These are local checks, not guaranteed runtimes or a caption-quality benchmark.
+
+Run the portable regression tests with python -m unittest discover -s tests -v.
+
+Install
+
+Easiest (Windows): download NeonClipping-Setup.bat from the website or the Releases page and double-click it. It checks your PC, installs Python and FFmpeg if missing, installs NeonClipping into %LOCALAPPDATA%\NeonClipping, creates a Desktop shortcut and opens the app. Mac/Linux: install.sh (new, not yet tested on a real Mac). Or follow the steps below.
+
+Requirements: Python 3.10+, FFmpeg on PATH. Optional but recommended: Ollama with ollama pull llama3.2:3b for AI titles, hooks and scores (without it clips are picked by the audio/motion score), and an NVIDIA GPU for NVENC and faster-whisper.
+
+git clone https://github.com/iamajmeena/neonclipping
+cd neonclipping
+Windows
+./run.ps1
+Linux / macOS
+./run.sh
+
+Open , paste a link, press ⚡ Make clips.
+
+…（内容已截断）

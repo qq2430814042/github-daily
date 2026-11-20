@@ -1,0 +1,107 @@
+Game Vault 0.4.5
+
+Graphite-style Switch 2 homebrew for game/save backups, restore, and file transfers.
+
+Latest changes
+
+Mario Kart World update backup no longer uses the packaged metadata size to
+validate the installed NCM record. New backups preserve the entire database
+record and cross-check its archive list. **Restore new backups with v0.4.5 or
+later.** Existing schema-1 backups remain supported.
+
+The user confirmed backup now starts; completion and restore are still pending.
+See CHANGELOG.md and metadata fix notes.
+
+Download and run
+
+Use the release assets: game-vault-v045.nro for an existing supported setup, or
+game-vault-v0.4.5-runtime.zip for the app plus the working kaiHEN fsipc-v1 bundle,
+Windows launcher, and required SD helper files. game-vault-v0.4.5-source.zip
+contains this source tree and bundled dependencies.
+
+1. Preserve your current working homebrew and HEN before updating.
+2. Extract the runtime ZIP on the PC. Merge the contents of its SD directory
+   into the SD root (or transfer them with FTP). Do not replace your backups.
+3. If HEN is already running, open Game Vault 0.4.5. No restart is needed to
+   update the app. Keep the older app until the new version is confirmed.
+4. If starting HEN after a reboot, first set up CivSwitch and open Civilization VII
+   at Awaiting payload. This package does not install the CivSwitch save.
+   Install Node.js on Windows and run, substituting the console address:
+
+   launch-filesystem-ipc-hen.cmd 192.168.0.110
+
+   Keep the command window open. Acquisition can take several minutes. Wait for
+   HEN is running, close Civ7 normally as instructed, then hold R while opening
+   a native game to enter homebrew. Follow any restart requirement reported by a
+   failed acquisition; do not repeatedly relaunch into uncertain retained state.
+
+This is the existing working kaiHEN-20261114d-fsipc-v1, not the experimental
+native-reload build. Its 43 files are checked against the saved fallback manifest.
+No claim is made for untested firmware versions or a fresh console configuration.
+
+Tabs and connections
+
+- Backup: installed games and an inserted cartridge pinned at the top;
+  select base, installed update, and/or saves. Press + to refresh the library.
+- Restore: complete supported snapshots, with separate component selection.
+- Library: game names, icons and available backups.
+- Decrypted Backup: matched base ExeFS/RomFS exports for compatible installed
+  games; does not install NUP packages or guarantee emulator compatibility.
+- Settings: SD/FTP/SMB storage, persistent FTP, main-thread USB MTP and web UI.
+
+Set your own FTP/SMB destination and credentials in Settings. No personal server
+configuration or passwords are included. Remote backup uses SD staging before
+verified upload; restore downloads and verifies a snapshot before console restore.
+Game Vault FTP uses the username/password displayed on the console. The code-free
+web UI is available at the console's displayed address on port 8080 while web
+mode is open. Persistent FTP runs while the app is open; closing the app stops it.
+
+Cartridge support and limits
+
+v0.4.3 added a direct GameCard control-metadata fallback for title/icon lookup after
+the cache/system lookup. It uses the existing bounded read-only control mount and
+closes handles after reading. The cartridge stays at the top of Backup.
+
+Cartridge base archives and metadata are copied with SHA-256 readback verification.
+Keep the card inserted. Installed updates and saves use their separate existing
+paths. Cartridge-contained updates/DLC are not included by this base path.
+Cartridge-distribution archives are not supported as installable digital restores.
+Cartridge-only network snapshots use the server's cartridges/ directory. Use the
+console SD/FTP/SMB destination for cartridge backup, not direct PC streaming.
+
+Validation and limitations
+
+- v0.4.5 native build and metadata regression tests passed; uploaded NRO readback matched SHA-256.
+- Working HEN hash manifest verified; the HEN was not modified for this release.
+- Previous storage tests covered FTP/SMB byte verification and snapshot roundtrips.
+- v0.4.5 direct cartridge title/icon lookup still awaits console confirmation.
+- Restoring game files does not restore licenses or guarantee playability after a
+  factory reset. Profile/save backup is not a Nintendo Account/license backup.
+
+See docs/BUILD.md for builds and THIRD-PARTY.txt for component notices.
+Runtime ZIP includes per-file SHA-256 hashes; release SHA256SUMS.txt covers assets.
+
+Screenshots
+
+Backup — inserted cartridge, installed games, and separate base, update and save options
+
+Decrypted Backup — matched base ExeFS and RomFS exports
+
+Settings — FTP, USB MTP, web interface and storage destinations
+
+Credits and thanks
+
+Game Vault builds on the work of the Switch homebrew community. Credit for the
+underlying projects belongs to their original developers and contributors:
+
+- kaiHEN — kurumuz, the ouncebrew team, and kaiHEN contributors, for the homebrew environment, loader, and supporting libraries.
+- CivSwitch — Gezine and contributors, for the Civilization VII entry point.
+- OunceCake — misshexa66 and contributors, for the original project and game-content mounting/export work that informed this project.
+- OunceCake-Civ7 — BlafKing and contributors, for adapting OunceCake to the Civ7/civswitch-kit route.
+- civ7-fs — HerXayah and contributors; civ7-fs-kaihen developers; civswitch-kit, slapah/Hokage, and pepsipu's ns2jb, for the underlying acquisition and integration work acknowledged by the launcher.
+- The libounce/libnx, devkitPro, mtp-server-nx, libsmb2, stb, and Atkinson Hyperlegible developers and contributors for the libraries, tools, transport, rendering, and font used here.
+
+Thank you to the upstream developers, researchers, testers, and everyone who
+shares fixes and documentation. Their original license and copyright notices
+remain in the source and bundled licenses. These acknowledgements do not imply
+upstream endorsement of Game Vault or responsibility for its modifications.

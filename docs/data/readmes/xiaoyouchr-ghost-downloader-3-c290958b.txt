@@ -1,0 +1,186 @@
+简体中文 | English
+
+Swiftproxy – Premium Global Residential Proxy Network
+Swiftproxy provides 90M+ real residential IPs across 220+ locations worldwide, helping users access global content and manage location-specific network connections. With rotating and static residential proxies, flexible geo-targeting, and HTTP(S)/SOCKS5 support, Swiftproxy is ideal for cross-region downloads, network testing, and browser automation. Free testing available, with 10% off using code PROXY90.
+
+The only downloader you need
+
+Documentation · Watch Video · Report Bug · Request Feature
+
+Features
+
+* Fast where it matters. Every downloader is fast on a good connection. The real test is a bad one. Smart chunking without file merging. Auto-detects bandwidth. Real-browser TLS fingerprints, invisible to anti-bot checks.
+* One app instead of five. Everything in one place, nothing watered down. HTTP, Magnet/BT, FTP, M3U8, MPEG-DASH, eD2k. YouTube and Bilibili with clip selection, any quality and subtitles, playlists and multi-part episodes. GitHub and HuggingFace with mirror acceleration.
+* See it. Sniff it. Download it. A download button follows the video, any quality you want. The extension popup lists every medium on the page. Click it there, or just download as you normally would, the desktop app takes over seamlessly. No copying links, and authentication state carries over.
+* Native on every platform. It shows in the details. One app, four systems, native experience everywhere. On Android, it records live M3U8 streams and keeps downloading in the background.
+* Always in control Effortlessly. aria2-compatible RPC API for third-party tools. Change the URL, headers, or proxy mid-download. Progress is never lost.
+
+About The Project
+
+Started as a passion project to help a Bilibili creator manage resources. Now it ships on four platforms, handles virtually every download protocol, and has a growing Feature Packs plugin ecosystem.
+
+| Platform | Required Version | Architectures |
+|:--|:--|:--|
+|  Windows | 10+ | x86_64 / arm64 |
+|  macOS | 13.0+ | x86_64 / arm64 |
+|  Linux | glibc 2.35+ | x86_64 / arm64 |
+|  Android | 9.0+ | arm64-v8a |
+
+Qt 6.6+ no longer supports CPUs without the AVX instruction set.
+
+Arch Linux AUR support: Community-maintained packages ghost-downloader-bin and ghost-downloader-git are now available (Maintainer: @zxp19821005)
+
+Screenshots
+
+https://github.com/user-attachments/assets/d97dc8c9-f320-4645-8dcd-0d9dc4cf2eab
+
+Translation
+
+We translate Ghost Downloader on Crowdin. Do not send pull requests that change translation files.
+
+- Your language is not on Crowdin? Request it in Discussions.
+- The source text is Simplified Chinese. @i0ntempest reviews the English translation by hand. To see it, open the Other Languages panel in the Crowdin editor.
+- A new language goes into the app when 60% of the desktop text is translated. Text that is not translated shows in English.
+
+Command Line
+
+Install ghd from Settings -> Command Line Tool.
+
+| Command | Description |
+|:--|:--|
+| ghd probe  | Preview a URL without adding a task |
+| ghd add ... | Add and start tasks |
+| ghd tasks | List tasks |
+| ghd task  | Show task details |
+| ghd pause ... | Pause tasks |
+| ghd start ... | Resume tasks |
+| ghd remove ... | Remove tasks and delete unfinished files |
+| ghd wait ... | Wait for tasks to finish |
+
+see which files the torrent contains
+ghd probe "https://example.com/a.torrent"
+download only files 0 and 3 into ./downloads
+ghd add "https://example.com/a.torrent" --select 0,3 -o ./downloads
+wait until the download finishes
+ghd wait tsk_0123
+
+Roadmap
+
+-  ] Make the plugin API public (Feature Packs system is operational, API stabilizing)
+- [ ] Enhanced task editing, such as binding multiple Sessions to one task
+
+Visit [Open issues to see all requested features (and known issues).
+
+Sponsor
+
+| Logo | Description |
+|------|---|
+|  | Free code signing provided by SignPath.io, with certificates by SignPath Foundation |
+|  | Free code signing provided by i0ntempest.com |
+
+Contributing
+
+Contributions make the open source community an amazing place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+
+If you have a suggestion, fork the repo and create a pull request. You can also simply open an issue with the "Enhancement" tag. Don't forget to give the project a star! Thanks again!
+
+1. Fork the Project
+2. Create your Feature Branch (git checkout -b feature/AmazingFeature)
+3. Commit your Changes (git commit -m 'Add some AmazingFeature')
+4. Push to the Branch (git push origin feature/AmazingFeature)
+5. Open a Pull Request
+
+Thanks to all contributors who have participated in this project!
+
+Translation Contributors
+
+          XiaoYouChR
+
+        323770 words
+
+          Daniel Neves
+
+          (Havokdan)
+
+        4443 words
+
+          i0ntempest
+
+        2155 words
+
+          ReM2812
+
+        1010 words
+
+          Kay Xue學昀楷
+
+          (s0990)
+
+        602 words
+
+          R. KETFI
+
+          (mediaket)
+
+        245 words
+
+          Ryuu
+
+          (ryuuDre)
+
+        179 words
+
+          Dima88888
+
+        115 words
+License
+
+Distributed under the GPL v3.0 License. Open LICENSE for more details.
+
+Copyright © 2023-2026 XiaoYouChR.
+
+Contact
+
+Welcome to join the Ghost Downloader user group: 756042420
+
+* E-mail - XiaoYouChR@qq.com
+
+References
+
+* aioftp Ftp client/server for asyncio
+* cat-catch Browser Resource Sniffing Extension
+* desktop-notifier Python library for cross-platform desktop notifications
+* FFmpeg A complete, cross-platform solution to record, convert and stream audio and video
+* Kelpie The eD2k download engine behind Ghost Downloader's eD2k support
+* libtorrent An efficient feature complete C++ bittorrent implementation
+* loguru A library which aims to bring enjoyable logging in Python
+* m3u8 Python m3u8 parser
+* mpegdash MPEG-DASH MPD parser
+* N_m3u8DL-RE Cross-platform DASH/HLS/MSS download tool powering Ghost Downloader's M3U8 support
+* Nuitka The Python compiler
+* PyQt-Fluent-Widgets Powerful, extensible, and elegant Fluent Design-style widget library
+* PySide6 The official Python module
+* QuickJS-NG A small and embeddable JavaScript engine
+* uvloop Ultra fast asyncio event loop
+* winloop An alternative to uvloop for Windows
+* wreq An ergonomic Python HTTP client with TLS fingerprint emulation
+* yt-dlp A feature-rich command-line audio/video downloader
+
+Acknowledgments
+
+* @zhiyiYo is amazing and provided a lot of help for this project.
+* @空糖_SuGar designed the project banner (the current version is a 3D remake based on the original design).
+
+Star History
+
+[forks-shield]: https://img.shields.io/github/forks/XiaoYouChR/Ghost-Downloader-3.svg?style=for-the-badge
+[forks-url]: https://github.com/XiaoYouChR/Ghost-Downloader-3/network/members
+[stars-shield]: https://img.shields.io/github/stars/XiaoYouChR/Ghost-Downloader-3.svg?style=for-the-badge
+[stars-url]: https://github.com/XiaoYouChR/Ghost-Downloader-3/stargazers
+[issues-shield]: https://img.shields.io/github/issues/XiaoYouChR/Ghost-Downloader-3.svg?style=for-the-badge
+[issues-url]: https://github.com/XiaoYouChR/Ghost-Downloader-3/issues
+[release-shield]: https://img.shields.io/github/v/release/XiaoYouChR/Ghost-Downloader-3?style=for-the-badge
+[release-url]: https://github.com/XiaoYouChR/Ghost-Downloader-3/releases/latest
+[downloads-shield]: https://img.shields.io/github/downloads/XiaoYouChR/Ghost-Downloader-3/total?style=for-the-badge
+[atomgit-downloads-shield]: https://img.shields.io/badge/dynamic/xml?style=for-the-badge&label=AtomGit%20Downloads&color=red&url=https%3A%2F%2Fgitcode.com%2FXiaoYouChR%2FGhost-Downloader-3%2Fdownload%2Fbadge.svg&query=string%28%2F%2F*%5Blocal-name%28%29%3D%22span%22%20and%20contains%28%40class%2C%22download-num%22%29%5D%29
+[atomgit-downloads-url]: https://gitcode.com/XiaoYouChR/Ghost-Downloader-3/releases

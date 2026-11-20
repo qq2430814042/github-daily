@@ -1,0 +1,91 @@
+&nbsp;&nbsp;&nbsp;
+
+App Store Compliance Playbook
+
+Stop getting your iOS and Android apps rejected. The enterprise reference and automated guard that turns App Store and Google Play rejection into a designed out failure mode.
+
+Read it as a website at mjmirza.github.io/app-store-compliance.
+
+If this saves you even one rejection, leave a star, fork it, and follow along. That is the whole ask.
+
+Star this repo &nbsp;|&nbsp; Fork it &nbsp;|&nbsp; Follow on GitHub &nbsp;|&nbsp; Follow on X &nbsp;|&nbsp; next8n.com
+
+Start here
+
+Pick one row. The time shown is for that first step.
+
+| You are | Do this first | Time |
+|---|---|---|
+| About to submit, and you can open a terminal | Run the two commands below | 2 minutes |
+| Already rejected | Open the appeal playbook | 10 minutes |
+| Not a developer | Open the checklist and do its first two checks | 5 minutes |
+| Using an AI coding tool (Claude Code, Codex, Gemini CLI, GitHub Copilot, Cursor, Grok, Qwen, Kimi and more), and want this on every submit | Go to the install | 1 minute |
+
+The two commands. Needs git and bash. The first downloads this playbook. The second scans your app. Nothing is installed and nothing in your app is changed.
+
+git clone https://github.com/mjmirza/app-store-compliance ~/repositories/app-store-compliance
+bash ~/repositories/app-store-compliance/agent-os/hooks/app-store-compliance-guard.sh "/path/to/your/app"
+
+Replace only /path/to/your/app, with the folder that holds your Xcode project or your Android app. Keep the quotes, they keep a folder name with a space in it whole. To get the path without typing it, drag the folder from Finder or your file manager into the terminal window. A small project scans in about a second, a large one can take up to a minute, and the guard prints the time it took. Findings print first, critical ones on top, each with the file and line that triggered it when there is one. The last lines tell you where you stand.
+
+| Last line starts with | It means | Do next |
+|---|---|---|
+| BLOCKED. | A critical rejection risk was found | Fix each CRITICAL] line using the fix. line under it, then run the same command again |
+| CLEAR. | No critical risk in your code | Do the account and listing checks in [the checklist |
+| NOT CHECKED. | No iOS or Android project was found in that folder, or the guard could not write its scan files. Run by hand this exits 1. As a hook it lets the command through | Point it at the right folder, and check the temp folder is writable. A managed Expo app with no native folders still gets its app.json or app.config read for purpose strings, the privacy manifest and Android permissions. Run npx expo prebuild to cover the native code too |
+
+What you get
+
+A rejection costs a week. You submit, you wait days in review, you get a one line rejection, you guess at the fix, you resubmit, you wait again. This playbook turns that loop into a check you run before you ever submit.
+
+- You catch the rejection before Apple or Google does. The guard runs against your project and names the risk while you can still fix it cheaply, not after a reviewer has already said no.
+- You stop guessing at the cause. Every rejection pattern maps to the exact guideline and the exact fix, so a one line rejection email becomes a known problem with a known answer.
+- The two checks that cause most rejections are covered first. A working demo account with a live backend, and a privacy declaration that matches what your app actually does at runtime, including every SDK. These are the top modern rejection causes and the playbook holds them above everything else.
+- It works whether or not you write code. A developer wires the guard into the build. A non developer reads the plain English checklist and walks the submission safely.
+- Every claim is real. Guideline numbers and statistics trace to a live Apple or Google source, never invented, so you are acting on the actual rules, not a guess.
+
+If it saves you one rejection, it has paid for the ten minutes it takes to read.
+
+Install it into your AI coding tool
+
+This puts the check in front of every submit. Your agent runs the guard before any submit command, such as an upload to App Store Connect or Google Play, and stops the command when a critical rejection risk stands. For a one-time scan, skip this section and use Start here.
+
+One command per tool, about a minute. Needs git and bash. Every tool other than Claude Code also needs python3.
+
+git clone https://github.com/mjmirza/app-store-compliance ~/repositories/app-store-compliance
+bash ~/repositories/app-store-compliance/scripts/install.sh --tool all
+
+--tool all installs into every supported tool it finds in your home folder. To pick one, pass its name instead.
+
+| Tool | Command | What it gets | One thing to do after |
+|---|---|---|---|
+| Claude Code | install.sh | Hook, skill, /app-store-audit | Restart Claude Code |
+| Codex CLI | install.sh --tool codex | Hook, skill | Run /hooks in Codex once and approve the new hook. Codex runs no new hook until you do |
+| Gemini CLI | install.sh --tool gemini | Hook, skill, /app-store-audit | Restart Gemini CLI. The hook works from 0.22, the skill needs 0.24 or later |
+| OpenCode | install.sh --tool opencode | Plugin, skill, /app-store-audit | Restart OpenCode |
+| Cursor | install.sh --tool cursor | Hook, skill | Restart Cursor |
+| GitHub Copilot CLI and Copilot in VS Code | install.sh --tool copilot | Hook, skill | Start a new Copilot CLI session and reload VS Code |
+| GitHub Copilot cloud agent and Copilot in JetBrains | install.sh --tool copilot-repo --repo "/path/to/your/app" | Hook in your app's .github/hooks | Commit .github/hooks to your default branch. The cloud agent reads hooks only from there |
+| Grok | install.sh --tool grok | Hook, skill | Start a new Grok session |
+| Qwen Code | install.sh --tool qwen | Hook, skill, in $QWEN_HOME when it is set | Restart Qwen Code |
+| Kimi Code | install.sh --tool kimi | Hook, skill | Restart Kimi Code |
+| Factory Droid | install.sh --tool droid | Hook, skill | Start a new Droid session |
+| Augment Auggie | install.sh --tool auggie | Hook, skill | Start a new Auggie session |
+| Windsurf | install.sh --tool windsurf | Hook, skill | Restart Windsurf |
+
+Every run ends with Install verified. only after it has fed a submit command to the hook in that tool's own payload format and seen it blocked. For OpenCode that check runs the plugin under node, so without node the run says Installed, but not fully verified. instead. If you see a FAIL line instead, fix that line and run the same command with doctor added.
+
+What it writes, so you can check it.
+
+- The guard, into that tool's own folder, for example /.codex/hooks/ or /.gemini/hooks/.
+- The skill. Claude Code reads it from /.claude/skills/. Every other tool reads one shared copy in /.agents/skills/.
+- One hook entry in that tool's config (/.claude/settings.json, /.codex/hooks.json, /.gemini/settings.json, /.cursor/hooks.json, /.copilot/hooks/ or $COPILOT_HOME/hooks/), or for OpenCode one plugin file in /.config/opencode/plugins/. Every other setting is kept, and a dated backup sits next to a file that already existed. A config that is not valid JSON or repeats a key is never rewritten. You get the exact block to paste instead.
+- For Gemini CLI it also turns on tools.enableHooks, which Gemini needs before version 0.26 to run any hook.
+- For Kimi Code it appends one marked [hooks]] block to ~/.kimi-code/config.toml (or $KIMI_CODE_HOME/config.toml) and never rewrites or prints the rest of that file, which can hold API keys. Uninstall removes exactly that block.
+- For Factory Droid it writes to /.factory/settings.json when your hooks already live there, because Droid ignores them once /.factory/hooks.json exists.
+
+Tools the installer does not wire, and what to do instead
+
+Each of these was checked against its own documentation. Where a tool can block a command but its format could not be confirmed, you get the manual step rather than a guess.
+
+…（内容已截断）

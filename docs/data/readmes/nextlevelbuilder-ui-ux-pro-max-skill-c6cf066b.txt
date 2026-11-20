@@ -92,9 +92,9 @@ How Design System Generation Works
                               ▼
 ┌─────────────────────────────────────────────────────────────────┐
 │  2. MULTI-DOMAIN SEARCH (5 parallel searches)                   │
-│     • Product type matching (192 categories)                    │
+│     • Product type matching (194 categories)                    │
 │     • Style recommendations (80 searchable; 51 active)          │
-│     • Color palette selection (192 palettes)                    │
+│     • Color palette selection (194 palettes)                    │
 │     • Landing page patterns (34 patterns)                       │
 │     • Typography pairing (74 font combinations)                 │
 └─────────────────────────────────────────────────────────────────┘
@@ -115,7 +115,7 @@ How Design System Generation Works
 │     + Anti-patterns to avoid + Pre-delivery checklist           │
 └─────────────────────────────────────────────────────────────────┘
 
-192 Industry-Specific Reasoning Rules
+194 Industry-Specific Reasoning Rules
 
 The reasoning engine includes specialized rules for:
 

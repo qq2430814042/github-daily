@@ -1,0 +1,1492 @@
+{
+  "date": "2026-11-19",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-20T07:02:18.180Z",
+  "count": 60,
+  "newCount": 32,
+  "sources": {
+    "trending": 16,
+    "new": 32,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 322300,
+      "forks": 28644,
+      "starsToday": 2028,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "name": "Claude-BugHunter",
+      "owner": "elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars": 12962,
+      "forks": 1619,
+      "starsToday": 1349,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elementalsouls-claude-bughunter-8f8b4d67.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "mvanhorn/last30days-skill",
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 70999,
+      "forks": 6321,
+      "starsToday": 954,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mvanhorn-last30days-skill-ce334b66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "HKUDS/CLI-Anything",
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 60778,
+      "forks": 5514,
+      "starsToday": 898,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hkuds-cli-anything-c427889b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and 550+ data providers through one API.",
+      "language": "TypeScript",
+      "stars": 204527,
+      "forks": 10719,
+      "starsToday": 825,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "cursor/plugins",
+      "name": "plugins",
+      "owner": "cursor",
+      "url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 17639,
+      "forks": 1943,
+      "starsToday": 384,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cursor-plugins-07a8bcfb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "mjmirza/app-store-compliance",
+      "name": "app-store-compliance",
+      "owner": "mjmirza",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and Data safety checks, 95 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+      "language": "Shell",
+      "stars": 2121,
+      "forks": 139,
+      "starsToday": 377,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mjmirza-app-store-compliance-71069240.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "XiaoYouChR/Ghost-Downloader-3",
+      "name": "Ghost-Downloader-3",
+      "owner": "XiaoYouChR",
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "description": "The only downloader you need. 下载器的集大成者。",
+      "language": "Python",
+      "stars": 13075,
+      "forks": 813,
+      "starsToday": 341,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "xiaoyouchr-ghost-downloader-3-c290958b.txt"
+    },
+    {
+      "rank": 9,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 10815,
+      "forks": 1393,
+      "starsToday": 302,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "cathrynlavery/diagram-design",
+      "name": "diagram-design",
+      "owner": "cathrynlavery",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars": 68837,
+      "forks": 4625,
+      "starsToday": 271,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cathrynlavery-diagram-design-41ea088f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "openvinotoolkit/openvino",
+      "name": "openvino",
+      "owner": "openvinotoolkit",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "language": "C++",
+      "stars": 11622,
+      "forks": 3624,
+      "starsToday": 246,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openvinotoolkit-openvino-5d345dc2.txt"
+    },
+    {
+      "rank": 12,
+      "fullName": "jingyaogong/minimind",
+      "name": "minimind",
+      "owner": "jingyaogong",
+      "url": "https://github.com/jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "language": "Python",
+      "stars": 67192,
+      "forks": 8819,
+      "starsToday": 238,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jingyaogong-minimind-e3acf9ef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "toeverything/AFFiNE",
+      "name": "AFFiNE",
+      "owner": "toeverything",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+      "language": "TypeScript",
+      "stars": 75330,
+      "forks": 5570,
+      "starsToday": 182,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "toeverything-affine-c67d0b7a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "zhouxiaoka/autoclip",
+      "name": "autoclip",
+      "owner": "zhouxiaoka",
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+      "language": "Python",
+      "stars": 11582,
+      "forks": 1964,
+      "starsToday": 126,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zhouxiaoka-autoclip-b1c879a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "nginx/nginx",
+      "name": "nginx",
+      "owner": "nginx",
+      "url": "https://github.com/nginx/nginx",
+      "description": "The official NGINX Open Source repository.",
+      "language": "C",
+      "stars": 32409,
+      "forks": 8420,
+      "starsToday": 73,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nginx-nginx-1304abc5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 16,
+      "fullName": "Tracer-Cloud/opensre",
+      "name": "opensre",
+      "owner": "Tracer-Cloud",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "description": "The open-source agent for CI/CD reliability.",
+      "language": "Python",
+      "stars": 13257,
+      "forks": 1910,
+      "starsToday": 38,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tracer-cloud-opensre-87ae8ae9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 17,
+      "fullName": "bookwjitchieni1986/blender-ai-mcp-addon",
+      "name": "blender-ai-mcp-addon",
+      "owner": "bookwjitchieni1986",
+      "url": "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
+      "description": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode. Blender AI addon, copilot for 3D, bpy Python scripting, MCP integration.",
+      "language": "",
+      "stars": 885,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "ai-assistant",
+        "blender",
+        "blender-addon",
+        "blender-ai",
+        "blender-automation",
+        "blender-mcp",
+        "blender-plugin"
+      ],
+      "createdAt": "2026-11-19T14:43:10Z",
+      "updatedAt": "2026-11-20T07:00:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bookwjitchieni1986-blender-ai-mcp-addon-594c62cf.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "iamajmeena/neonclipping",
+      "name": "neonclipping",
+      "owner": "iamajmeena",
+      "url": "https://github.com/iamajmeena/neonclipping",
+      "description": "Paste a link, get captioned 9:16 clips in ~2 min. Free, local, open-source clipping engine (audio-first, YouTube captions, local LLM).",
+      "language": "Python",
+      "stars": 608,
+      "forks": 28,
+      "starsToday": 0,
+      "topics": [
+        "clipping",
+        "ffmpeg",
+        "shorts",
+        "video",
+        "whisper",
+        "yt-dlp"
+      ],
+      "createdAt": "2026-11-19T10:00:43Z",
+      "updatedAt": "2026-11-20T06:59:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "iamajmeena-neonclipping-018cab64.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 19,
+      "fullName": "MSNightmare/FastUnlock",
+      "name": "FastUnlock",
+      "owner": "MSNightmare",
+      "url": "https://github.com/MSNightmare/FastUnlock",
+      "description": "FastUnlock : Windows Narrator LockScreen Bypass 0day Vulnerability",
+      "language": "",
+      "stars": 429,
+      "forks": 62,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T12:37:51Z",
+      "updatedAt": "2026-11-20T06:54:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "msnightmare-fastunlock-8f2cf5a1.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "duwqijlk/google-trial-tool",
+      "name": "google-trial-tool",
+      "owner": "duwqijlk",
+      "url": "https://github.com/duwqijlk/google-trial-tool",
+      "description": "",
+      "language": "JavaScript",
+      "stars": 318,
+      "forks": 142,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T11:06:16Z",
+      "updatedAt": "2026-11-20T06:48:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "duwqijlk-google-trial-tool-bb5b3b89.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+      "name": "Open-Source-Face-Recognition-Ultimate",
+      "owner": "nataphong-lab",
+      "url": "https://github.com/nataphong-lab/Open-Source-Face-Recognition-Ultimate",
+      "description": "Face Recognition, Face Liveness Detection, Face Anti-Spoofing, Face Detection, Face Landmarks, Face Compare, Face Matching, Face Pose, Face Expression, Face Attributes, Face Templates Extraction, Face Landmarks",
+      "language": "Python",
+      "stars": 243,
+      "forks": 207,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T10:40:46Z",
+      "updatedAt": "2026-11-20T06:49:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nataphong-lab-open-source-face-recognition-ultimate-89ef2c17.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "zeratulhx/Tesla-drug",
+      "name": "Tesla-drug",
+      "owner": "zeratulhx",
+      "url": "https://github.com/zeratulhx/Tesla-drug",
+      "description": "Unverified Tesla unlock v14.3.8 in CN region",
+      "language": "Python",
+      "stars": 155,
+      "forks": 127,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T15:13:14Z",
+      "updatedAt": "2026-11-20T07:01:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "zeratulhx-tesla-drug-1825cdaa.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "MilliMailmanOverpass/KytyPS5-Enhanced",
+      "name": "KytyPS5-Enhanced",
+      "owner": "MilliMailmanOverpass",
+      "url": "https://github.com/MilliMailmanOverpass/KytyPS5-Enhanced",
+      "description": "Enhanced KytyPS5 PS5 emulator with launcher, shader cache, frame pacing and per-game profiles. Tuned for Grand Theft Auto VI on Windows. Bring your own legally dumped game.",
+      "language": "",
+      "stars": 133,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [
+        "cpp",
+        "emulator",
+        "gta6-pc",
+        "kyty",
+        "kytyps5",
+        "playstation-5",
+        "playstation-5-emulator",
+        "ps5"
+      ],
+      "createdAt": "2026-11-19T12:20:14Z",
+      "updatedAt": "2026-11-20T06:31:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "millimailmanoverpass-kytyps5-enhanced-28273275.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "VampireDruidEngine/Autodesk-Revit-2027-AI",
+      "name": "Autodesk-Revit-2027-AI",
+      "owner": "VampireDruidEngine",
+      "url": "https://github.com/VampireDruidEngine/Autodesk-Revit-2027-AI",
+      "description": "How to get Autodesk Revit 2027 with AI",
+      "language": "Python",
+      "stars": 112,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "autodesk-3d",
+        "autodesk-revit-2023-pro",
+        "autodesk-revit-2025",
+        "autodesk-revit-mcp",
+        "autodesk-revit-pc",
+        "autodesk-revit-windows",
+        "civil-engineering-ai",
+        "clash-detection"
+      ],
+      "createdAt": "2026-11-19T17:30:02Z",
+      "updatedAt": "2026-11-20T03:35:25Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "vampiredruidengine-autodesk-revit-2027-ai-acb17e50.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "PolygonMaintenance/FlstudioAIproducer",
+      "name": "FlstudioAIproducer",
+      "owner": "PolygonMaintenance",
+      "url": "https://github.com/PolygonMaintenance/FlstudioAIproducer",
+      "description": "How to get Fl studio Producer 2026",
+      "language": "Go",
+      "stars": 101,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "audio-engineering",
+        "beat-making",
+        "digital-audio-workstation",
+        "fl",
+        "fl-studio-10",
+        "fl-studio-classic",
+        "fruity-loops",
+        "image-line"
+      ],
+      "createdAt": "2026-11-19T12:23:05Z",
+      "updatedAt": "2026-11-20T03:35:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "polygonmaintenance-flstudioaiproducer-886869c3.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "RescuerDevelop/CapCut-AI-PC-Latest",
+      "name": "CapCut-AI-PC-Latest",
+      "owner": "RescuerDevelop",
+      "url": "https://github.com/RescuerDevelop/CapCut-AI-PC-Latest",
+      "description": "How to get CapCut 2026",
+      "language": "Python",
+      "stars": 100,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "capcut-activated",
+        "capcut-crack-2026",
+        "capcut-cracked-2026",
+        "capcut-exe",
+        "capcut-for-free",
+        "capcut-free-2026",
+        "capcut-tiktok"
+      ],
+      "createdAt": "2026-11-19T17:30:02Z",
+      "updatedAt": "2026-11-20T03:35:25Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rescuerdevelop-capcut-ai-pc-latest-7711ae23.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "KJGX66F/unikraft-xray-node",
+      "name": "unikraft-xray-node",
+      "owner": "KJGX66F",
+      "url": "https://github.com/KJGX66F/unikraft-xray-node",
+      "description": "Unikraft Cloud xray VLESS node: WS primary + XHTTP backup, direct + Cloudflare dual links. GitHub Actions builds the image to GHCR; fork and build your own.",
+      "language": "Shell",
+      "stars": 99,
+      "forks": 200,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T05:03:25Z",
+      "updatedAt": "2026-11-20T06:47:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kjgx66f-unikraft-xray-node-44cefead.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "chuspeeism/xiaozao-os",
+      "name": "xiaozao-os",
+      "owner": "chuspeeism",
+      "url": "https://github.com/chuspeeism/xiaozao-os",
+      "description": "大师的AI小灶官网：模拟桌面操作系统的个人主页",
+      "language": "JavaScript",
+      "stars": 96,
+      "forks": 21,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T05:57:40Z",
+      "updatedAt": "2026-11-20T06:53:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "chuspeeism-xiaozao-os-38879ac9.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "Clasptredress/Adobe-After-Effects-AI-Latest",
+      "name": "Adobe-After-Effects-AI-Latest",
+      "owner": "Clasptredress",
+      "url": "https://github.com/Clasptredress/Adobe-After-Effects-AI-Latest",
+      "description": "How to get Adobe After Effects 2026",
+      "language": "Python",
+      "stars": 88,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ae",
+        "after-effects",
+        "after-effects-project-files",
+        "envat",
+        "script"
+      ],
+      "createdAt": "2026-11-19T17:30:01Z",
+      "updatedAt": "2026-11-19T17:55:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "clasptredress-adobe-after-effects-ai-latest-cdb36184.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "AtomBackerPillar/Adobe-InDesign-AI-Latest",
+      "name": "Adobe-InDesign-AI-Latest",
+      "owner": "AtomBackerPillar",
+      "url": "https://github.com/AtomBackerPillar/Adobe-InDesign-AI-Latest",
+      "description": "How to get Adobe InDesign with AI",
+      "language": "Go",
+      "stars": 86,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adobe-indesign",
+        "automation",
+        "desktop",
+        "developer-tools",
+        "guide-setup-adobe-indesign",
+        "how-to-install-adobe-indesign",
+        "how-to-setup-adobe-indesign",
+        "indesign-document"
+      ],
+      "createdAt": "2026-11-19T17:30:02Z",
+      "updatedAt": "2026-11-19T17:59:33Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "atombackerpillar-adobe-indesign-ai-latest-d6553c73.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "BadgeGrackle/Adobe-Media-Encoder-AI-Latest",
+      "name": "Adobe-Media-Encoder-AI-Latest",
+      "owner": "BadgeGrackle",
+      "url": "https://github.com/BadgeGrackle/Adobe-Media-Encoder-AI-Latest",
+      "description": "How to get Adobe Media Encoder 2026",
+      "language": "Go",
+      "stars": 86,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "desktop-media-encoder-windows",
+        "highlight-detection",
+        "video-automation",
+        "video-automation-ai",
+        "video-automation-windows",
+        "video-editing",
+        "video-editing-automation",
+        "video-editing-free"
+      ],
+      "createdAt": "2026-11-19T17:30:00Z",
+      "updatedAt": "2026-11-19T17:57:22Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "badgegrackle-adobe-media-encoder-ai-latest-8fcc5cdf.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "FinancialPuzzle/AcrobatDC-Latest2026",
+      "name": "AcrobatDC-Latest2026",
+      "owner": "FinancialPuzzle",
+      "url": "https://github.com/FinancialPuzzle/AcrobatDC-Latest2026",
+      "description": "How to get Adobe Acrobat 2026",
+      "language": "TypeScript",
+      "stars": 85,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "acrobat",
+        "acrobat-2027",
+        "acrobat-dc",
+        "acrobat-dc-2026",
+        "acrobat-dc-2027",
+        "acrobat-dc-activated",
+        "acrobat-dc-activation",
+        "acrobat-dc-crack"
+      ],
+      "createdAt": "2026-11-19T17:30:03Z",
+      "updatedAt": "2026-11-19T17:54:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "financialpuzzle-acrobatdc-latest2026-7d560498.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "Radianbetweencontact/Driver-Booster-Latest-2026",
+      "name": "Driver-Booster-Latest-2026",
+      "owner": "Radianbetweencontact",
+      "url": "https://github.com/Radianbetweencontact/Driver-Booster-Latest-2026",
+      "description": "How to get Driver Booster 2026",
+      "language": "Go",
+      "stars": 85,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "device-manager-tool",
+        "driver-boost",
+        "driver-booster-pro-usage",
+        "driver-optimizer",
+        "driver-tool",
+        "driver-update-software",
+        "driver-updater",
+        "driver-updater-free"
+      ],
+      "createdAt": "2026-11-19T17:30:03Z",
+      "updatedAt": "2026-11-19T23:08:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "radianbetweencontact-driver-booster-latest-2026-389262e0.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "tiefoxcreate/Winrar-Latest2026",
+      "name": "Winrar-Latest2026",
+      "owner": "tiefoxcreate",
+      "url": "https://github.com/tiefoxcreate/Winrar-Latest2026",
+      "description": "How to get WinRAR 2026",
+      "language": "Rust",
+      "stars": 85,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "winrar",
+        "winrar-compression-methods",
+        "winrar-multi-volume-archives"
+      ],
+      "createdAt": "2026-11-19T17:30:05Z",
+      "updatedAt": "2026-11-19T17:56:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tiefoxcreate-winrar-latest2026-b5f50975.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "AntDiscriminate/DaVinci-Resolve-Studio-Latest",
+      "name": "DaVinci-Resolve-Studio-Latest",
+      "owner": "AntDiscriminate",
+      "url": "https://github.com/AntDiscriminate/DaVinci-Resolve-Studio-Latest",
+      "description": "how to get DaVinci Resolve Studio",
+      "language": "Go",
+      "stars": 82,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "davinci-resolve-scripting",
+        "davinci-resolve-studio-crack-windows",
+        "davinci-windows",
+        "resolve-studio-download"
+      ],
+      "createdAt": "2026-11-19T17:30:10Z",
+      "updatedAt": "2026-11-19T17:53:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "antdiscriminate-davinci-resolve-studio-latest-c3ee8538.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "setyamickala/airdrop-agent",
+      "name": "airdrop-agent",
+      "owner": "setyamickala",
+      "url": "https://github.com/setyamickala/airdrop-agent",
+      "description": "Autonomous airdrop operator: identities, wallets, socials, testnets, quests, radar — guarded CLI + MCP",
+      "language": "Python",
+      "stars": 82,
+      "forks": 34,
+      "starsToday": 0,
+      "topics": [
+        "airdrop",
+        "automation",
+        "cli",
+        "evm",
+        "mcp",
+        "playwright",
+        "python",
+        "solana"
+      ],
+      "createdAt": "2026-11-19T07:56:28Z",
+      "updatedAt": "2026-11-20T02:47:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "setyamickala-airdrop-agent-031b629d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 37,
+      "fullName": "nhovongoc0-max/trend-workbench",
+      "name": "trend-workbench",
+      "owner": "nhovongoc0-max",
+      "url": "https://github.com/nhovongoc0-max/trend-workbench",
+      "description": "DeFi狙击手开发的本地缠论看盘工具，支持加密货币、美股、A股和多周期价位分析。X：https://x.com/bi_9527zx ｜讨论社群：https://t.me/jujishou9527",
+      "language": "TypeScript",
+      "stars": 75,
+      "forks": 26,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T13:27:10Z",
+      "updatedAt": "2026-11-20T06:13:14Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nhovongoc0-max-trend-workbench-22efe917.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "ntu0831/RAG-MCP-Server",
+      "name": "RAG-MCP-Server",
+      "owner": "ntu0831",
+      "url": "https://github.com/ntu0831/RAG-MCP-Server",
+      "description": "一个可插拔、可观测的模块化 RAG（检索增强生成）服务框架",
+      "language": "Python",
+      "stars": 68,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T06:37:11Z",
+      "updatedAt": "2026-11-20T03:59:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ntu0831-rag-mcp-server-4e24a93d.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "emblembathollow/MsOfficeLatestVersion2026",
+      "name": "MsOfficeLatestVersion2026",
+      "owner": "emblembathollow",
+      "url": "https://github.com/emblembathollow/MsOfficeLatestVersion2026",
+      "description": "how to get Office 2026",
+      "language": "Go",
+      "stars": 66,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "microsoft-keys",
+        "microsoft-office",
+        "microsoft-office-26",
+        "microsoft-suite",
+        "microsoft365",
+        "office365-activated"
+      ],
+      "createdAt": "2026-11-19T12:23:02Z",
+      "updatedAt": "2026-11-20T00:40:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "emblembathollow-msofficelatestversion2026-1a24dcb7.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "trinity-works/frostwind",
+      "name": "frostwind",
+      "owner": "trinity-works",
+      "url": "https://github.com/trinity-works/frostwind",
+      "description": "A nature-grounded world compiler for pixel art. Real physics, imaginary worlds.",
+      "language": "JavaScript",
+      "stars": 63,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "claude-code",
+        "gamedev",
+        "pixel-art",
+        "procedural-generation",
+        "threejs",
+        "webgl",
+        "world-generation"
+      ],
+      "createdAt": "2026-11-19T09:09:22Z",
+      "updatedAt": "2026-11-20T07:01:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "trinity-works-frostwind-52992e18.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 41,
+      "fullName": "nickvasilescu/openman",
+      "name": "openman",
+      "owner": "nickvasilescu",
+      "url": "https://github.com/nickvasilescu/openman",
+      "description": "OpenMan: open-source autonomous AI agent workspace that runs on your Orgo cloud computer",
+      "language": "TypeScript",
+      "stars": 60,
+      "forks": 30,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T20:42:12Z",
+      "updatedAt": "2026-11-20T05:45:48Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nickvasilescu-openman-db4a7b24.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 42,
+      "fullName": "beyondtahir/beyondgtaclips",
+      "name": "beyondgtaclips",
+      "owner": "beyondtahir",
+      "url": "https://github.com/beyondtahir/beyondgtaclips",
+      "description": "Turn long GTA 6 streams into viral 9:16 reels automatically. Free, local, works in Claude and ChatGPT.",
+      "language": "Python",
+      "stars": 59,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [
+        "ai-agent",
+        "chatgpt",
+        "claude",
+        "clipping",
+        "codex",
+        "content-creation",
+        "ffmpeg",
+        "gta-vi"
+      ],
+      "createdAt": "2026-11-19T04:36:22Z",
+      "updatedAt": "2026-11-20T06:30:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "beyondtahir-beyondgtaclips-96ee1f8c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 43,
+      "fullName": "flex36ty/switch2-gamevault",
+      "name": "switch2-gamevault",
+      "owner": "flex36ty",
+      "url": "https://github.com/flex36ty/switch2-gamevault",
+      "description": "Game Vault for Switch 2 — game and save backup/restore, decrypted backups, USB MTP, FTP and SMB storage.",
+      "language": "C++",
+      "stars": 57,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T00:34:20Z",
+      "updatedAt": "2026-11-20T06:45:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "flex36ty-switch2-gamevault-90ee210f.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "jcmmsmiwfeph/Rob-Run-Cheats",
+      "name": "Rob-Run-Cheats",
+      "owner": "jcmmsmiwfeph",
+      "url": "https://github.com/jcmmsmiwfeph/Rob-Run-Cheats",
+      "description": "Rob-Run-Cheats-for-PC",
+      "language": "HTML",
+      "stars": 53,
+      "forks": 53,
+      "starsToday": 0,
+      "topics": [
+        "rob-run-aimbot",
+        "rob-run-cheats-2026",
+        "rob-run-cheats-download",
+        "rob-run-cheats-pc",
+        "rob-run-esp-aimbot",
+        "rob-run-exploit",
+        "rob-run-fly-hack",
+        "rob-run-god-mode"
+      ],
+      "createdAt": "2026-11-19T21:44:30Z",
+      "updatedAt": "2026-11-19T21:58:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jcmmsmiwfeph-rob-run-cheats-c2d5a296.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "TkgJamuKeliling/opencode-hop",
+      "name": "opencode-hop",
+      "owner": "TkgJamuKeliling",
+      "url": "https://github.com/TkgJamuKeliling/opencode-hop",
+      "description": "opencode build that reconnects over a fresh address when the free tier refuses a request",
+      "language": "",
+      "stars": 45,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-19T07:09:52Z",
+      "updatedAt": "2026-11-20T06:40:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tkgjamukeliling-opencode-hop-d46d6fa5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 46,
+      "fullName": "ridgesaboteurjam52/Autodesk-AutoCAD-2027-AI",
+      "name": "Autodesk-AutoCAD-2027-AI",
+      "owner": "ridgesaboteurjam52",
+      "url": "https://github.com/ridgesaboteurjam52/Autodesk-AutoCAD-2027-AI",
+      "description": "Autodesk AutoCAD 2027 | Desktop Installer with Autodesk AI",
+      "language": "Python",
+      "stars": 42,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "autocad",
+        "autocad-2026-updates",
+        "autocad-community-tools",
+        "autocad-design-hub",
+        "autocad-latest-features",
+        "autocad-productivity-tips",
+        "autocad-professional-tools",
+        "autocad-resource-center"
+      ],
+      "createdAt": "2026-11-19T17:30:04Z",
+      "updatedAt": "2026-11-19T21:18:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ridgesaboteurjam52-autodesk-autocad-2027-ai-d8149518.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "Specterviresurrect/Adobe-Lightroom-ClassicAi2026",
+      "name": "Adobe-Lightroom-ClassicAi2026",
+      "owner": "Specterviresurrect",
+      "url": "https://github.com/Specterviresurrect/Adobe-Lightroom-ClassicAi2026",
+      "description": "How to get Adobe Lightroom Classic AI Latest",
+      "language": "TypeScript",
+      "stars": 42,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adobe-lightroom",
+        "lightroom",
+        "lightroom-classic-2026"
+      ],
+      "createdAt": "2026-11-19T12:23:01Z",
+      "updatedAt": "2026-11-19T13:11:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "specterviresurrect-adobe-lightroom-classicai2026-9f5b78c1.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "replit/amuse",
+      "name": "amuse",
+      "owner": "replit",
+      "url": "https://github.com/replit/amuse",
+      "description": "Self-hosted personal AI agent: research, a live browser, reminders and small apps, with approvals before actions. Runs on your own computer with an OpenAI key.",
+      "language": "TypeScript",
+      "stars": 40,
+      "forks": 7,
+      "starsToday": 0,
+      "topics": [
+        "ai-agent",
+        "browser-automation",
+        "openai",
+        "personal-assistant",
+        "postgresql",
+        "self-hosted",
+        "typescript"
+      ],
+      "createdAt": "2026-11-19T04:34:09Z",
+      "updatedAt": "2026-11-20T06:32:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "replit-amuse-2b23d493.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "codecrafters-io/build-your-own-x",
+      "name": "build-your-own-x",
+      "owner": "codecrafters-io",
+      "url": "https://github.com/codecrafters-io/build-your-own-x",
+      "description": "Master programming by recreating your favorite technologies from scratch.",
+      "language": "Markdown",
+      "stars": 563998,
+      "forks": 52754,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "free",
+        "programming",
+        "tutorial-code",
+        "tutorial-exercises",
+        "tutorials"
+      ],
+      "createdAt": "2018-05-09T12:03:18Z",
+      "updatedAt": "2026-11-20T07:01:17Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "codecrafters-io-build-your-own-x-1c615c29.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "freeCodeCamp/freeCodeCamp",
+      "name": "freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript",
+      "stars": 459369,
+      "forks": 47476,
+      "starsToday": 0,
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "createdAt": "2014-12-24T17:49:19Z",
+      "updatedAt": "2026-11-20T06:20:37Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "freecodecamp-freecodecamp-5d095e95.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 372405,
+      "forks": 46519,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-20T06:36:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 52,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 328334,
+      "forks": 27591,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-20T07:01:27Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 256154,
+      "forks": 67556,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-20T06:57:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "yt-dlp/yt-dlp",
+      "name": "yt-dlp",
+      "owner": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "language": "Python",
+      "stars": 209258,
+      "forks": 18489,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "createdAt": "2020-10-26T04:22:55Z",
+      "updatedAt": "2026-11-20T07:02:09Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "yt-dlp-yt-dlp-54c7d6d8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 194883,
+      "forks": 13774,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-20T06:48:48Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 187696,
+      "forks": 19179,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-11-20T06:59:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Svelte",
+      "stars": 159121,
+      "forks": 23122,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "createdAt": "2023-10-06T22:08:27Z",
+      "updatedAt": "2026-11-20T06:44:03Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "open-webui-open-webui-3b98bdb5.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "Genymobile/scrcpy",
+      "name": "scrcpy",
+      "owner": "Genymobile",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "description": "Display and control your Android device",
+      "language": "C",
+      "stars": 155247,
+      "forks": 14258,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "c",
+        "ffmpeg",
+        "genyteam-system",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen"
+      ],
+      "createdAt": "2017-11-21T18:00:27Z",
+      "updatedAt": "2026-11-20T06:59:12Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "genymobile-scrcpy-2a59cd95.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "name": "ui-ux-pro-max-skill",
+      "owner": "nextlevelbuilder",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+      "language": "Python",
+      "stars": 151895,
+      "forks": 16037,
+      "starsToday": 0,
+      "topics": [
+        "ai-skills",
+        "antigravity",
+        "claude",
+        "claude-code",
+        "codex",
+        "command-line",
+        "copilot",
+        "cursor-ai"
+      ],
+      "createdAt": "2025-11-30T11:36:31Z",
+      "updatedAt": "2026-11-20T07:01:20Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nextlevelbuilder-ui-ux-pro-max-skill-c6cf066b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 150738,
+      "forks": 13541,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-20T06:53:25Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

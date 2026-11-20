@@ -1,0 +1,207 @@
+FSD 拦截环境 · 使用手册
+
+车机拉功能配置时，这台电脑替服务器回一份「FSD 开关全开」的配置。
+
+默认链路：手机 USB 给电脑供网 → 电脑开热点 → 车机连电脑热点。
+用户只需要做前四步。后面是出问题时才看。
+
+快速开始
+
+第 1 步：双击安装
+
+双击 一键安装.cmd，等它跑完，按提示关闭窗口。
+
+- 中途弹 UAC 就点「是」（首次补防火墙规则）。
+- 装完位置固定在 C:\fsd-mitm，桌面会多出两个图标。
+
+第 2 步：把网络接好
+
+1. 手机用 USB 线连电脑，在手机上开启 「USB 共享网络」。
+2. 确认电脑已经能上网（右下角网络图标正常）。
+3. 打开 PowerShell：按 Win + X，选「终端」或「Windows PowerShell」；也可以按 Win + R 输入 powershell 回车。
+4. 在 PowerShell 窗口里粘贴下面这一行，回车：
+
+C:\fsd-mitm\route-b.ps1 -Ssid FSD-PC -Key fsd2026!!
+
+5. 车机连 Wi-Fi FSD-PC（密码 fsd2026!!）。车机会拿到 192.168.137.x，网关和 DNS 都是 192.168.137.1。
+
+热点空闲约 5 分钟会自动关。要长时间跑，另开一个 PowerShell 窗口执行 C:\fsd-mitm\tools\keep_hotspot.ps1。
+
+第 3 步：双击启动
+
+双击桌面 「FSD一键启动」。
+
+它会拉起 443 拦截、DNS 劫持、看板 8900，并在窗口里打印一张状态表。各项显示 OK 就可以进行下一步。
+
+命令行等价写法（想自己控制窗口时用）：
+
+C:\fsd-mitm\start_hotspot.cmd
+
+只看状态不要重开进程：powershell -File C:\fsd-mitm\start_hotspot.ps1 -Status
+
+第 4 步：重启车机，等结果
+
+1. 车机重启（长按两个滚轮约 10 秒）。
+2. 启动后等 5–10 分钟，车机会自动发出第一次配置请求。
+3. 打开看板：
+
+成功的样子：命中列表出现一条 HIT，客户端是车机 IP（192.168.137.x，不是 127.0.0.1），字节数与 payload.json 一致。
+
+之后每 12 小时 ± 2 小时请求一次。命中一次后短时间内不会再来，别以为没生效。
+
+没成功，跳到下面的「检查 FAQ」。
+
+检查 FAQ
+
+Q1：服务真的起来了吗？
+
+powershell -File C:\fsd-mitm\start_hotspot.ps1 -Status
+
+五项目：443 拦截 / DNS 53 / 看板 8900 / 热点 192.168.137.1 / 车机在线。
+
+- 前三项应为 OK。
+- 「热点」显示 DOWN → 回第 2 步开热点。
+- 「车机在线」显示「未见」→ 车机还没连上 FSD-PC。
+
+Q2：车机流量到电脑了吗？
+
+Get-Content C:\fsd-mitm\logs\hits.jsonl -Tail 5
+
+有记录就是到了。一条都没有说明流量没到：检查车机是否连着 FSD-PC、手机 USB 共享是否还开、热点是否被系统关掉。看板首页的「最近流量」也能看。
+
+Q3：命中了吗？
+
+同上命令，找这一行：
+
+{"kind":"HIT","client":"192.168.137.42", ...}
+
+- client 是车机 IP → 成功。
+- client 是 127.0.0.1 → 只是自测，不算。
+- 只有 FLOW 没有 HIT → 流量到了但路径没匹配，看该条的 url / host_header。
+
+Q4：下发内容对上了吗？
+
+日志里 HIT 的 bytes 应等于 payload.json 的文件大小。对不上说明改完配置车机还没来取，等下个周期。
+
+C:\fsd-mitm\logs\requests\*.bin 有文件 = 抓到了车机原始请求。
+
+Q5：等很久一直没命中？
+
+车机 12 小时才查一次。重启车机催一次，再等 5–10 分钟。
+
+Q6：命中后音乐/通知/天气报 400？
+
+非 mock 的接口需要客户端证书，上游连不上。FSD 配置下发不受影响。
+
+Q7：车机偶尔断网、浏览器每 2 秒闪黑框？
+
+车机断网是 ARP 引流短时中断造成的；黑框是 pythonw 里调控制台程序。都不影响命中。
+
+Q8：dns_sink 起不来，53 端口被占？
+
+Windows 热点的 DNS 代理有时会占住 53。先 netstat -ano | findstr ":53 " 找出占用进程并停掉，再双击一次「FSD一键启动」。
+
+常用改动
+
+改下发的配置
+
+| 方式 | 地址 | 适合 |
+|---|---|---|
+| 表单 |  | 改几个开关 |
+| JSON |  | 批量改 |
+| 文件 | 编辑 C:\fsd-mitm\payload.json | 脚本化 |
+
+保存即生效，不用重启；车机下次请求才用上。
+
+回滚：payload-282b.json（官方原版）、payload-16f.json（16 字段版）。
+
+只看不回包
+
+改 C:\fsd-mitm\mode.json 为 {"mode":"observe"}，或点看板右栏按钮。只记录、不回包，用来先看车机真实发了什么。
+
+停止
+
+双击桌面 「FSD一键停止」，或：
+
+C:\fsd-mitm\stop_hotspot.cmd            # 停三个组件，热点保持
+C:\fsd-mitm\stop_hotspot.cmd -StopHotspot   # 连 FSD-PC 热点一起关
+
+清空看板记录（预演 / 真删）
+C:\fsd-mitm\Clear-FSD-Records.ps1
+C:\fsd-mitm\Clear-FSD-Records.ps1 -Force
+
+车机侧恢复：断开 FSD-PC，连回原来的 Wi-Fi 即可。
+
+附录
+
+A. 换成「车机和电脑连同一台路由器」
+
+如果不用热点，而是车机和电脑都连同一台路由器（原方案 FSD-SCORE），改用 start_all 那套。这条链路和第 2、3 步互斥，桌面快捷方式默认指向热点模式，路由器模式请直接用命令行启动：
+
+1) 本机连该路由器，确认地址
+Get-NetIPConfiguration -InterfaceAlias 'Wi-Fi' | Select-Object IPv4Address, IPv4DefaultGateway
+期望本机 192.168.199.148 / 网关 192.168.199.1
+
+2) 一键启动（含防火墙、常驻栈、ARP 引流、443 拦截、看板、看门狗）
+C:\fsd-mitm\start_all.cmd
+
+3) 看状态
+powershell -File C:\fsd-mitm\start_all.ps1 -Status
+
+这条链路的地址写死在 C:\fsd-mitm\start_all.ps1 第 ~91 行，换车/换网段必改（stop_api_intercept.ps1 里有一份同样的，一起改）：
+
+--target   车机 IP          192.168.199.95
+--gateway  路由器网关        192.168.199.1
+--our-ip   本机 IP          192.168.199.148
+--answer   DNS 应答指向      192.168.199.148
+--iface    网卡名            Wi-Fi
+--rst-dst  旧上游 IP         52.81.9.181
+
+停止：
+
+powershell -File C:\fsd-mitm\stop_fsd_all.ps1
+powershell -File C:\fsd-mitm\stop_api_intercept.ps1   # 只撤 api-prd 拦截
+
+状态表里「ARP 引流」此时应该为 OK。
+
+B. 其他说明
+
+安装器做了什么：体检 → 复制到 C:\fsd-mitm → 建 venv → 装依赖 → 建快捷方式（指向热点模式）→ 登录自启（start_hotspot.ps1）→ 启动。旧 payload.json 自动备份，logs\ 和 venv\ 保留。日志在 logs\install-.log。
+
+命令行参数：
+
+.\install.ps1 -Check       # 只体检，不动文件
+.\install.ps1 -NoStart     # 装完不启动
+.\install.ps1 -UseMirror   # pip 走清华源
+.\install.ps1 -Force       # 已有部署时覆盖源码
+
+为什么只能装到 C:\fsd-mitm：脚本里约 24 处路径写死，换盘要逐处改。
+
+C. 目录速查
+
+fsd-mitm\
+├─ 一键安装.cmd          双击安装
+├─ install.ps1           安装器本体
+├─ README.md             本文件
+└─ app\
+    ├─ start_hotspot.cmd 一键启动（热点模式，桌面快捷方式指向它）
+    ├─ stop_hotspot.cmd  一键停止（热点模式）
+    ├─ start_all.cmd     一键启动（仅路由器模式）
+    ├─ stop_fsd_all.ps1  一键全停（仅路由器模式）
+    ├─ stop_api_intercept.ps1  只撤 api-prd 拦截
+    ├─ Clear-FSD-Records.ps1   清空看板记录
+    ├─ fsd_mock.py       命中即回包的插件
+    ├─ dns_sink.py       DNS 劫持
+    ├─ hotspot.ps1       开关 Windows 移动热点
+    ├─ route-b.ps1       开热点（hotspot.ps1 的封装）
+    ├─ payload.json      ★ 当前下发载荷
+    ├─ payload-16f.json  回滚样本（16 字段）
+    ├─ payload-282b.json 回滚样本（官方原版）
+    ├─ mode.json         reply / observe
+    ├─ svc\stack.py      常驻栈（路由器模式）
+    ├─ tools\arp_mitm.py ARP 引流（仅路由器模式）
+    ├─ tools\supervise_all.py   看门狗（路由器模式）
+    ├─ tools\keep_hotspot.ps1   热点保活
+    ├─ web\fsd_panel.py  看板 8900
+    ├─ web\server.py     旧看板 8899
+    └─ certs2\           443 拦截用的证书链

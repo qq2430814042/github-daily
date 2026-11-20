@@ -1,0 +1,170 @@
+Frostwind
+
+Frostwind is a nature-grounded world compiler for pixel-art game worlds.
+Real physics, imaginary worlds. It turns explicit models of nature, life,
+culture, craft, and art direction into deterministic, inspectable scenes.
+
+An LLM cannot see. Writing a 2D world, it guesses at every question a human
+artist answers by looking: how big is a deer next to a person, does a head read
+at this height, how far does a foot travel in one frame, what colour is snow in
+shadow at 62 degrees north. Each answer is plausible on its own, and together
+they produce a world where nothing agrees with anything.
+
+Frostwind puts a derivation layer between intent and pixels. Physics settles
+what has a physical answer: 26 px is 1.70 m, a roe buck is 1.18 m, so he is
+20 px. Craft settles what the medium constrains, like the row budget a head needs
+to read. Anything left over is declared as taste and applied consistently. Tests
+hold all three true as the world outgrows what anyone can keep in their head.
+
+Nothing is drawn that can be derived. Nothing is chosen that can be measured.
+Nothing is claimed that cannot be checked.
+
+Sprites store material, normal, occlusion, and thickness, never colour. Terrain
+is queried from analytic fields rather than painted maps. Reality and the pixel
+medium are both authorities; when they conflict, the legibility floor is
+explicit. An LLM may research and propose schema-checked tables, and pixels
+still pass through the same deterministic compiler: **the model is the
+guardrail; the LLM writes tables, not pixels.**
+
+This is a physically grounded world model and reference implementation. It is
+not a general game engine or a runtime prompt-to-image system.
+
+Play it in the browser, or build it
+from source with the three commands below. The code is open source under the
+MIT licence.
+
+Showcase
+
+Frostwood · Sun Meadow · Green Swamp
+
+Amber Waste · the same dunes under blown sand
+
+Amethyst Hollow · the Amethyst Sea and the hall
+
+Pond Court · Swamp Lakehouse
+
+Boreal fauna and folk · Meadow dream-machines
+
+These are deterministic captures from the real renderer, not concept art. The
+capture commands are in tools/shot.mjs.
+
+Quick start and controls
+
+Use a current Node.js LTS release, npm, and a WebGL-capable browser.
+
+git clone https://github.com/trinity-works/frostwind.git
+cd frostwind
+npm install
+npx playwright install chromium   # browser captures and frame tests only
+npm run build
+
+Open dist/frostwood.html directly; it is a self-contained page that works from
+file://. The title screen offers Frostwood, Sun Meadow, Green Swamp, Amber Waste and
+Amethyst Hollow;
+Manifesto opens the project statement. Deep links skip the menu.
+
+- Walk: arrow keys or WASD (touch: drag the stick; diagonals allowed)
+- Run: Shift (keyboard only)
+- Map: M
+- Menu: open the non-destructive world picker over the current scene
+- World controls: the ⚙ panel changes seed, resolution, density, snow, water,
+  fog, wind, light, and render passes
+- Start in Sun Meadow: dist/frostwood.html?at=meadow
+- Start at its settlement: dist/frostwood.html?at=meadow&poi=village
+
+The default scene is Frostwood. Its distant portal rebuilds the resident scene
+as Sun Meadow. Cabins, steadings, and swamp houses are outdoor props; doors do
+not cross into a separate room place.
+
+What is implemented
+
+The compiler is a five-stage pipeline:
+
+1. World model: analytic terrain, water, slope, shore distance, paths,
+places, and affordance fields. 2. Sprite synthesis: growth and
+construction grammars emit material, normal, occlusion, thickness, and contact
+channels. 3. Placement: streamable jittered grids and explicit place plans
+select valid candidates from the fields. 4. Composite: ordered GPU passes
+draw ground, shadows, reflections, sprites, and fire. 5. Quantise: Bayer
+dither and a scene-local locked palette resolve the final pixels.
+
+Current proofs:
+
+- Frostwood: boreal light, snow, lakes, trails, cabins, animals, people,
+  and tracks.
+- Sun Meadow: a separate latitude, derived summer ramps, pond optics,
+  palms, open-grown crowns, sward, steading, wind machines, and dream-machines.
+- Green Swamp: shared hydrology drives travel, rain response, habitat,
+  resident work, pile houses, and the compiled Swamp Lakehouse.
+- Amber Waste: one wind field drives dune shape, where a wall may stand,
+  blown-sand transport above a threshold, and what a worm can swim through. The
+  first world to spend the angle of repose.
+- Amethyst Hollow: a cavern with no sun. Emission bands give the lamp
+  colours, each luminous body lights its own pool of floor, and rooms cut in
+  rock say where a body walks.
+- Pond Court: fields → affordance → cultural plan → candidates → pixels.
+- Built form: one construct layer owns cabinet projection, face values,
+  drawn-base collision, and lift. Cabins, steadings, pavilions, pile houses,
+  lakehouses, and ruins remain explicit vernaculars.
+- Pixel bodies: a grid-authored folk cast with biome-owned dress,
+  displacement-locked walk/run, and transient gaze; two rigged quadrupeds, a
+  roe deer and a wolf, whose measured disagreements decided how much machinery
+  they may share; hand-drawn small animals; botanical grammars; and a parallel
+  non-human machine morphology.
+
+The authored/procedural boundary is deliberate: nature generates continuous
+conditions and variation; authors state culture, landmarks, identity, and
+exceptions that no physical law can choose.
+
+Known limits
+
+- The current scene rosters pack to 1024x2048 for boreal, 1024x1024 for meadow
+  and desert, and 1024x512 for swamp.
+- Sun Meadow has an explicit traveller plus three unique machine lives; its
+  houses remain exterior builders.
+- The construct layer shares mechanics, while each vernacular still has an
+  explicit builder rather than a general architecture grammar.
+- Pond Court and the Swamp Lakehouse are bespoke compiled places. There is no
+  general place search or beauty-search interface.
+- Night is not represented. Dialogue, quests, and persistent game saves remain
+  outside the compiler's scope.
+- Frostwood and Green Swamp have their own music. Amber Waste and Amethyst
+  Hollow borrow Frostwood's piece. Sun Meadow's piece is an optional paid file.
+  A tree without the file plays Frostwood's piece in Sun Meadow. See
+  assets/music/CREDITS.md.
+
+Create a new world
+
+A world is data: plan rows and tables, in the order the add-world skill
+(.claude/skills/add-world/SKILL.md) lists with the check for each step.
+
+1. State the plan. Add a BIOMES row in src/biome.js:
+   scene, latitude, water model, traversal surfaces, ground remap, place ring,
+   settlement slots, cultures, and portals. src/worldgen.js
+   composes the stages in src/world/ from that row. Add a stage
+   branch only for a new model (a new kind of water, a new landform), keyed on
+   the plan.
+2. Declare surfaces and ramps. Append new surface rows in
+   src/surface.js; persisted surface ids must never be
+   reordered. Add physically derived ramps in
+   src/sunlight.js, or a clearly authored ramp in
+   src/palette.js. Ramp ids are also append-only.
+3. Add life as data. Add semantic conditions, resources, activity,
+   sociality, behavior, provenance, and non-claims in
+   src/life.js; add authored human meanings only in
+   src/culture.js. Botanical distributions and growth
+   grammars remain in src/species.js. State the wild cohorts
+   in ROSTER in src/world/life-field.js.
+4. Register the scene. Add a SCENES row in
+   src/scene.js with its biome, output ramps, haze treatment,
+   and water reflection window.
+5. Compile authored places. Follow
+   src/pond-court.js: derive a plan from fields, generate
+   candidates, reject illegal ones, and emit ordinary scene props. A place does
+   not get a branch in the renderer.
+6. Prove the result. Add direct model tests first. Run npm run test:palette
+   to see which ramps moved, then look at a real frame before accepting it.
+
+Keep one sun, palette request, generator, atlas, and bake context per resident
+
+…（内容已截断）

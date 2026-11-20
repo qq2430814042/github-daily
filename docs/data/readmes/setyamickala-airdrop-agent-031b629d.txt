@@ -1,0 +1,171 @@
+airdrop-agent
+
+A local operator for the work that happens before a token exists. Identities, wallets, social
+accounts, quests, testnets and waitlists — driven by one CLI and one policy engine, with an MCP
+surface for other agents.
+
+No server. No telemetry. SQLite plus an encrypted vault in ~/.airdrop-agent.
+
+aa quest probe https://app.example.com/points   # read the page, don't guess
+aa quest run dow-points --identity main        # run it inside policy
+aa cf assist --identity main                   # one visible click when a challenge wins
+aa autopilot tick                              # radar → warm → daily → quests → faucet
+
+New in 4.1 — clearance stored per host and user agent, one persistent browser profile per identity,
+encrypted session restore, quest login pre-flight, nineteen tested targets. Full manual:
+docs/GUIDE.md. New here? Read docs/INTRO.md.
+
+Contents
+
+- What an airdrop agent is
+- What this one does
+- Why it is built this way
+- Architecture
+- Install
+- Sixty-second start
+- Quests
+- Testnets and sending
+- Cloudflare and sessions
+- Wallets and identities
+- Social and email
+- Autopilot
+- Approvals and the kill switch
+- Other surfaces
+- Docs
+- Limits
+- Contributing
+
+What an airdrop agent is
+
+Airdrops pay after the fact. You use a testnet, hold points, fill a waitlist, keep a streak for
+months — and a snapshot decides later whether any of it was worth anything. The work is repetitive,
+time-windowed, spread over many accounts, and easy to get wrong at the exact moment it matters: one
+wrong signature and a wallet is empty.
+
+An airdrop agent is the operations layer for that work. Not a macro that clicks one button — a
+system that holds the whole loop:
+
+| layer | question it answers |
+|---|---|
+| identity graph | who is acting: persona, email, proxy, socials, browser fingerprint |
+| custody | which wallet, which key, what is the value ceiling |
+| browser | how to reach the page and stay logged in |
+| executor | what the task actually is, step by step |
+| policy | may this fire without a human, and for how much |
+| ledger | proof it happened: screenshot, hash, run row |
+
+Three loops run on top: acquire (radar finds candidates), execute (quests, faucets, forms,
+social actions), maintain (warm sessions, keep streaks, respect cooldowns, skip what is done).
+
+The difference between an agent and a pile of scripts is the last two layers. Without policy, an
+agent can drain a wallet. Without a ledger, it can only claim it worked.
+
+What it is not: a profit guarantee, a token picker, a sybil antidote, a botnet, or a replacement
+for judgement. A quiz answer, a deposit size and a fresh signature still need a human.
+
+What this one does
+
+| capability | command surface | behaviour |
+|---|---|---|
+| mass identities and wallets | aa identity new --wallets N, aa wallet new --count, aa identity clone | one 24-word seed per identity, BIP44 EVM + Solana, labels scoped per identity |
+| quests | aa quest probe / import / validate / run | YAML DSL, human-speed steps, proof per step, parks instead of faking |
+| testnets | aa testnet faucets / claim / deploy / campaign | faucet catalog, cooldowns, counter/ERC20/ERC721 deploys |
+| guarded sends | aa wallet send, aa wallet approve | simulate → cap → gate → sign → broadcast → receipt |
+| Cloudflare | aa cf status / assist / clear | clearance cache bound to host + UA, native Turnstile, provider token, FlareSolverr |
+| sessions that hold | aa session status / check / warm / save / restore | one profile per identity, encrypted state mirror, pre-flight parking |
+| social | aa tg, aa x, aa dc | MTProto joins, browser follow/like/repost/post, humanised Discord chat |
+| own mail | aa email add / otp / link | IMAP OTP and verification links, Gmail login assist |
+| discovery | aa radar add / scan / latest | TG/X/web sources, drainer check, scored queue with reasons |
+| daily routine | aa daily plan / run | idempotent check-ins, streak ledger, cooldowns |
+| autonomy | aa autopilot tick / daemon | ordered modules, budgets, active hours, service templates |
+| agent access | aa mcp serve | 21 stdio JSON-RPC tools, same policy engine |
+
+Every command returns one envelope:
+
+{"ok": true, "ts": "…", "data": {"parked": true, "needs_login": "x", "proof": "…"]},
+ "error": null, "next": ["aa social login x --identity id-z4yrky"]}
+
+Exit codes are part of the contract: 0 ok, 2 denied, 3 failed, 10 approval gate, 99 kill.
+A host branches on those, never on prose.
+
+Why it is built this way
+
+One door. The CLI is the only entry point for shell, cron, autopilot and MCP. Policy is checked
+by the caller and again inside the library, so a clever host cannot skip a cap.
+
+Ask once, then run. Risk is a decision, not a dialog. A mode sets how far the agent may go alone;
+above that line the exact payload is frozen behind a hash and a one-time code on your Telegram.
+
+Park, never fake. A captcha, a login wall, an unknown field, a wallet gate — the run stops with a
+screenshot and one next command. A parked quest is not a failed quest and autopilot leaves it alone
+for six hours.
+
+Durable by structure, not retries. Clearance is treated as an IP-bound credential and reused.
+Login is treated as state: one profile, one proxy, warm-up, encrypted mirror. Two problems that
+normally eat a farm are removed at the design level instead of being re-tried in a loop.
+
+Local custody. Keys are decrypted in-process and handed to the browser through a binding; the
+page only ever sees a provider. The vault is AES-256-GCM with scrypt and AAD, logs redact literal
+secrets, .env is 0600.
+
+Architecture
+
+caller (shell · MCP · cron · agent)
+        │
+        ▼
+      aa/cli.py ──► envelope: ok · denied · gate · kill
+        │
+        ├── policy.py    mode, caps, domain + contract allowlists, drainer verdict
+        ├── gates.py     payload hash, single-use code, TTL
+        ├── guard.py     KILL file, exit 99 everywhere
+        ├── vault.py     AES-256-GCM + scrypt, AAD-bound
+        ├── chains.py    RPC with chain-id verification
+        ├── browser/     stealth engine, provider injection, captcha, cf.py
+        ├── session.py   profile reuse, warm-up, encrypted storage_state
+        ├── wallet/      hd, evm, sol, sign, send, extensions
+        ├── quest/       YAML DSL, runner, adapters
+        ├── testnet/     faucets, deploys, campaigns
+        ├── radar/       sources, extract, score, pipeline
+        └── daily.py · autopilot.py
+
+State: ~/.airdrop-agent — policy.yaml, autopilot.yaml, .env (0600), data/state.sqlite3,
+vault/, browser//, proofs/. Move it with AIRDROP_HOME.
+
+Install
+
+macOS or Linux, Python 3.10+ (3.12 recommended), Chromium installed by the script.
+
+git clone https://github.com/setyamickala/airdrop-agent.git
+cd airdrop-agent
+./install.sh              # venv, deps, chromium
+./install.sh --full     # adds Foundry for contract deploys
+./install.sh --no-browser
+./install.sh --service=systemd   # or =launchd
+aa init && aa doctor
+
+aa init generates VAULT_PASSWORD in .env (mode 0600) and copies policy.yaml,
+autopilot.yaml and the quest examples. aa doctor must be green before funded work. No desktop?
+Set BROWSER_HEADLESS=1 and optionally FLARESOLVERR_URL — see [docs/CLOUDFLARE.md.
+
+Sixty-second start
+
+aa identity new main --wallets 2
+aa email add --identity main --address you@yourdomain.tld --password '…'
+aa social login x --identity main --user you --password '…' --totp 'JBSWY…'
+aa session warm --identity main
+aa cf assist --identity main --url https://app.dowprotocol.com/points
+aa quest import config/quests/dow-points.yaml
+aa quest validate dow-points
+aa quest run dow-points --identity main --dry
+aa quest run dow-points --identity main
+
+--dry lists resolved steps without touching the page. A real run writes proof to
+~/.airdrop-agent/proofs/, and either finishes or parks with the exact command to continue.
+
+Quests
+
+aa quest probe https://app.example.com/tasks --identity main   # fields, buttons, challenge state
+aa quest import my-quest.yaml
+aa quest validate my-quest
+
+…（内容已截断）

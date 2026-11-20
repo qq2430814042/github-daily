@@ -1,0 +1,137 @@
+Unikraft Cloud xray VLESS 节点部署包：WS 主用 + XHTTP 备用，直连 + CF 双链
+
+本地包，未部署、未提交到任何仓库，等你审核。对应 2026-11-19 的结论：Unikraft 是唯一能当主力的免费免卡候选，E2B 只能做 1 小时临时节点。
+
+这是 v2：上一版只有 WS + fra，这一版加了 XHTTP 备用、改默认 sin 新加坡、加了 CF 双链，生成链接的工具也换成本包自带的 gen_links.py（不再依赖别的目录）。
+
+一句话：这包是什么
+
+- 主用：VLESS + WS + TLS，443 端口——兼容性最好，v2rayNG / Clash / sing-box 都能用。
+- 备用：VLESS + XHTTP + TLS，8443 端口，客户端 mode=packet-up——WS 被掐或不稳时换这条；Xray 官方现在推荐 XHTTP，WS 在 v26.11.9 启动时已经打弃用警告，但仍能正常工作。
+- 直连 + CF 双链：同一套 UUID / 路径，直连走 xxx.sin.unikraft.app，CF 走你自己的域名，共 4 条链接，客户端里建自动选择组，晚高峰测了留最快的。
+
+为什么只能是这个做法
+
+- 平台在外层终结 TLS：443:8080/http+tls，平台卸掉 TLS 后以明文 HTTP 转给容器内 8080；8443:8081/tls 同理（8443 只能用 tls，不能加 http）。所以 xray 两个入站都不开 TLS、不放证书，也不用 REALITY / Vision / Trojan 原生 TLS——那些要 TLS 握手直达程序，会被网关拦住。
+- UDP 没有：官方文档写明 UDP 服务只对自建（BYOC）/ 本地部署开放，公开云上没有。所以 AWG / WireGuard / Hysteria2 / TUIC / QUIC 都跑不了，别试。
+- UUID / 路径不进镜像：entrypoint.sh 在容器启动时用 -e UUID=… -e WS_PATH=… -e XHTTP_PATH=… 生成配置；deploy.sh 生成的 UUID 只存在本地 .env.local。
+- scale-to-zero 关掉：--scale-to-zero policy=off，节点要接长连接，休眠唤醒会断连。Hobby 免费档有 2 个运行实例名额，常驻 1 个完全够用。
+- 路径随机：不再用固定 /ws，deploy.sh 每次新建时随机生成 WS 和 XHTTP 两条路径。
+
+免费档（2026-11-19 复核）
+
+Hobby：$0/月、免卡，2 个运行实例 / 2vCPU / 4GiB，5 个 standby，8GiB 存储，10GiB 镜像存储，无会话时长上限。数字来自 unikraft.com 定价页（2026-11-19 当日打开复核），注册时以官网定价页为准再确认一次。
+
+没查到的两项，部署前说清楚：
+- 流量额度：Hobby 档没找到公开的月流量上限数字，定价页整页没有流量这一行。别当无限流量用，部署后在控制台看实际用量；只做个人自用，别公开分享。
+- AUP：2026-11-19 核查过 Unikraft Terms 全文，没有明文写禁代理/VPN/隧道，只有不得违法、不得影响服务可用性这类概括禁令。这是灰区，不是许可，部署前注册页的 Terms 自己再扫一眼。
+
+部署步骤（Windows 也能跑）
+
+1. 装两样东西：Unikraft CLI（Windows 用 PowerShell 跑 irm https://unikraft.com/cli/install.ps1 | iex；macOS/Linux 跑 curl --proto '=https' --tlsv1.2 -fsSL https://unikraft.com/cli/install.sh | sh）+ Docker Desktop（unikraft build 需要 BuildKit）。
+2. 注册：去 unikraft.com 注册账号（免卡），记下你的组织名（org，例如 kjgx）。
+3. 跑脚本（WSL / Git Bash / macOS / Linux 终端，在本目录里）：
+   ./deploy.sh kjgx
+   脚本会：生成 UUID + 随机 WS/XHTTP 路径 → unikraft login → unikraft build . → unikraft run --metro sin -m 256M -p 443:8080/http+tls -p 8443:8081/tls --scale-to-zero policy=off --restart always，最后让你粘贴平台给的域名（形如 xxx.sin.unikraft.app），再问你要不要加 CF 域名，自动生成链接到 ./node-out/。要换城市：METRO=fra ./deploy.sh kjgx。
+4. 手动跑也行，每一步命令都在 deploy.sh 里，一行行复制即可。
+
+用 GitHub 打好的镜像部署（fork 的人用这个）
+
+GitHub Actions 会自动打包镜像，不用在本地从 Dockerfile 构建 xray：
+
+1. 镜像怎么来的：推到 main（改了 Dockerfile / entrypoint.sh 时）、发 Release 或手动点 Run workflow，.github/workflows/docker.yml 就会把 Dockerfile 建成镜像，推到 GHCR：ghcr.io/kjgx66f/unikraft-xray-node:latest（另有 sha 短哈希标签）。镜像里只有 xray 二进制 + entrypoint.sh，没有 UUID 和路径——UUID 是部署时用 -e 传进去的，绝不 baked 进镜像。
+2. 第一次推送后，先把包改成公开：GHCR 包默认是 Private，别人拉不到。去包设置里改成 Public：https://github.com/users/KJGX66F/packages/container/unikraft-xray-node/settings
+3. 用它部署（还是要装 Unikraft CLI + Docker Desktop，展平镜像层需要本地 BuildKit）：
+   ./deploy.sh kjgx --from-ghcr
+   这条命令用 Kraftfile.oci 把 GHCR 镜像展平成 Unikraft 镜像，再创建实例；其余步骤（生成 UUID、粘域名、生成链接）和默认模式完全一样。
+4. Fork 后用自己的镜像：Fork 这个仓库 → Actions 标签页点 Enable workflows → 随便推一次 main（或手动 Run workflow），Actions 就会打出你自己的镜像 ghcr.io//:latest（镜像名取自 github.repository，fork 改名叫 1119 就是 ghcr.io/afengxiang/1119:latest，不用改任何代码），然后这样部署：
+   ./deploy.sh  --from-ghcr ghcr.io//:latest
+   你的包第一次推送后同样默认 Private：去你自己的包设置里改成 Public，或者部署前先 docker login ghcr.io。
+
+诚实说明：GHCR 里的镜像是普通 Docker 镜像，不能直接 unikraft run --image ghcr.io/... 跑在公开云上——Unikraft 的外部镜像直跑只对 BYOC / 本地部署开放，公开云必须经过 Kraftfile.oci + 本地 unikraft build 这一步打包。想连本地构建都省掉，看下面一条。
+
+不想在本地构建？用 GitHub Actions 直接打 Unikraft 镜像
+
+.github/workflows/unikraft.yml 会在 GitHub 的服务器上跑 unikraft build，把镜像直接推到 Unikraft 中央仓库，本地什么都不用装：
+
+1. 在 Unikraft Cloud 控制台里创建一个 API token（注意：这个 token 权限很大，能创建、停止、删除你账号下的实例和卷）。
+2. 在 GitHub 仓库 Settings → Secrets and variables → Actions → New repository secret，名字填 UKC_TOKEN，值粘贴那个 token（只放 Secrets 里，绝不要贴到聊天、Issue 或代码里）。
+3. 仓库 Actions → Build Unikraft image → Run workflow，org 留空就行，会从 token 自动识别你那个账号的组织（换别的账号也不用改），点运行。
+4. 跑完去控制台 New Instance，Image 下拉框里就能选到 /:latest 了（主仓库是 kjgx/unikraft-xray-node，fork 之后是你自己的组织/仓库名，比如 afengxiang/1119）。
+
+触发是手动的，不会在每次 push 时自动跑——没配 token 的 fork 不会被打扰。
+
+连控制台表单都不想填？用 GitHub Actions 一键建实例
+
+.github/workflows/deploy.yml 会在 GitHub 的服务器上跑 unikraft run，直接建好实例，连控制台都不用开：
+
+1. 除了 UKC_TOKEN，再加三个 Secrets：NODE_UUID、NODE_WS_PATH、NODE_XHTTP_PATH——就是建实例时要填的那三个环境变量的值。
+2. 仓库 Actions → Deploy Unikraft instance → Run workflow，org 不用填（自动识别），metro 默认 sin，name 默认 xray-node，点运行。
+3. 跑完看日志最后的「实例域名」，就是平台给的域名。
+
+拿到域名后，用 gen_links.py 生成节点链接（或把域名发给 Muse 生成）：
+
+python3 ./gen_links.py --domain  --uuid  --ws-path  --xhttp-path  --out-dir ./node-out
+
+注意：这个 workflow 故意不打印节点链接——仓库是公开的，Actions 日志谁都能看，链接里带着 UUID，打印出来就等于把节点公开了。
+
+加 CF 提速（可选，分两步）
+
+CF 不是必选项：直连 sin 已经快的时候，加 CF 大概率更慢；直连 IP 被干扰、限速的时候，加 CF + 优选 IP 才明显有用。先直连测一次，再决定加不加。
+
+1. 域名托管到 Cloudflare：在 CF 添加你的域名、按提示改 NS（免费套餐即可），加一条 DNS 记录：类型 CNAME，名称填你想用的子域名（例如 v），目标填平台给的域名 xxx.sin.unikraft.app，打开小黄云（Proxied）。SSL/TLS 模式选 Full (Strict)——源站证书是 Unikraft 的通配证书，有效，Strict 能过；别用 Flexible（回源那段会变明文）。
+2. 补生成 CF 链（UUID/路径不变，不用重新部署）：
+   python3 ./gen_links.py --domain xxx.sin.unikraft.app --cf-domain v.example.com \
+     --uuid $(grep ^UUID= .env.local | cut -d= -f2) \
+     --ws-path $(grep ^WS_PATH= .env.local | cut -d= -f2) \
+     --xhttp-path $(grep ^XHTTP_PATH= .env.local | cut -d= -f2) \
+     --out-dir ./node-out
+   原理：CF 回源用客户端同端口——CF 443 → 源站 443（WS），CF 8443 → 源站 8443（XHTTP），8443 是 CF 代理支持的 HTTPS 端口。以后想试优选 IP，再把 CF 域名解析到测出来最快的 CF IP 上，链接不用变。
+
+交付物（./node-out/）
+
+| 文件 | 内容 |
+|---|---|
+| links.txt | 2 条直连（WS 443 + XHTTP 8443），有 CF 域名时再加 2 条 CF 链 |
+| clash.yaml | 全部 4 条，PROXY 组是 url-test 自动选择（300 秒测一次 generate_204）+ 手动选择组；XHTTP 要 mihomo ≥ 1.19.22 |
+| sing-box.json | 只含 WS 的 2 条——sing-box 任何版本都不支持 XHTTP，别把 XHTTP 往里加；XHTTP 请用 v2rayNG / NekoBox / mihomo |
+| node-ws-direct.png | 主用 WS 直连的二维码（有 qrcode 库时才生成；没有也不影响，手机端直接粘贴链接导入） |
+| node.json | 清单：域名、路径、4 条链接、注意事项 |
+
+验收（部署后真机测，不要只看部署成功）
+
+1. v2rayNG 先导入 links.txt 第一条 WS 直连，打开 https://www.google.com/generate_204 应返回 204。
+2. 再逐条测：XHTTP 直连、WS CF、XHTTP CF，四条都测一遍，记下延迟和能否打开视频。
+3. 晚高峰各测一次，留最快的那条日常用，Clash 里 PROXY 组会自动选最快的。
+4. 通过标准：generate_204=204、出口 IP 与 sin（新加坡）一致。没跑过这一步之前，不要说节点能用。
+
+本地已验证 / 未验证（2026-11-19）
+
+已验证（本机实测）：
+- Xray v26.11.9 是 GitHub API 当日复核的 Latest（2026-11-09 发布，非 pre-release），Xray-linux-64.zip 可下载，Xray 26.11.9 … go1.27.3 linux/amd64 能启动。
+- xray run -test -c 对生成的服务端配置返回 Configuration OK（双入站：8080 WS + 8081 XHTTP，mode=auto）。
+- entrypoint.sh 用环境变量生成配置后启动：WS 握手返回 101 Switching Protocols；XHTTP 无会话 GET 返回 404（符合预期，XHTTP 要带会话 UUID 才能建连）。
+- 端到端（本地 xray 客户端 → 服务端 → 本地 HTTP 目标，模拟网关 TLS 终结后的明文形态）：WS 和 XHTTP 都返回 200 + hello-via-proxy，两条传输都通。
+- gen_links.py 生成 4 条链接无误：WS 直连 443、XHTTP 直连 8443（mode=packet-up）、WS CF 443、XHTTP CF 8443；clash.yaml / sing-box.json 结构正确，sing-box 里确实只有 WS。
+- unikraft run 的 -e、-p 443:8080/http+tls、-p 8443:8081/tls、--scale-to-zero policy=off、--restart always 写法都对过官方 CLI 文档（2026-11-13 修订版）；Kraftfile spec v0.7 + runtime: base-compat:latest + EROFS 照官方 Node/C 示例。
+
+未验证（需要你的账号和真机）：
+- unikraft build 没在本机跑过：本沙箱里 dockerd 因 iptables 权限起不来，Docker 构建、镜像推送、实例启动都没跑过，需在你装了 Docker Desktop 的电脑上跑 deploy.sh。
+- 最大不确定点：base-compat 内核 + alpine 用户态里 xray 能不能正常跑 WS/XHTTP 长连接，以及平台 tls+http 的 HTTP 负载均衡会不会打断长连接。--restart always + policy=off 是对冲，但只有真实部署 + 真机 v2rayN 测试能证明。
+- CF 那两条链没实测过：取决于你的域名和 CF 设置，部署后按上面验收逐条测。
+- 如果 build 报错说 Kraftfile / runtime 不认，先把 runtime: base-compat:latest 一行删掉再试（Python 示例就是不带 runtime 的）。
+
+文件
+
+| 文件 | 作用 |
+|---|---|
+| Dockerfile | 两阶段构建：拉 Xray v26.11.9 → alpine 运行镜像 + entrypoint |
+| Kraftfile | spec v0.7，kraftcloud/x86_64，EROFS，cmd: ["/entrypoint.sh"] |
+| Kraftfile.oci | 用 GHCR 镜像部署时的模板（GHCR_IMAGE 由 deploy.sh 替换，生成 Kraftfile.ghcr） |
+| .github/workflows/docker.yml | GitHub Actions：Docker 构建 → 推 GHCR（ghcr.io//:latest）+ xray 冒烟测试 |
+| .github/workflows/unikraft.yml | GitHub Actions（手动触发）：装 Unikraft CLI → UKC_TOKEN 登录 → unikraft build 推到 Unikraft 中央仓库（本地零构建） |
+| LICENSE | MIT（fork 复用） |
+| entrypoint.sh | 启动时用环境变量写 xray 双入站配置（8080 WS + 8081 XHTTP）并启动 |
+| gen_links.py | 生成 4 条链接 + Clash + sing-box + 二维码（只依赖标准库） |
+| deploy.sh | 生成 UUID/路径 → 登录 → 构建 → 创建实例（sin，443+8443）→ 生成交付物 |
+| .gitignore | .env.local / node-out/ 不进仓库 |

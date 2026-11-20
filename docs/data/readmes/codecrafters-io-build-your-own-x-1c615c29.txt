@@ -14,6 +14,7 @@ It's a great way to learn.
 * Bot
 * Command-Line Tool
 * Database
+* Distributed Systems
 * Docker
 * Emulator / Virtual Machine
 * Front-end Framework / Library
@@ -39,9 +40,6 @@ It's a great way to learn.
 
 Tutorials
 
-Build your own Distributed Systems
-* Java: Building Your Own Kafka-like System From Scratch: A Step-by-Step Guide
-
 Build your own 3D Renderer
 
 * C++: Introduction to Ray Tracing: a Simple Method for Creating 3D Images
@@ -50,7 +48,8 @@ Build your own 3D Renderer
 * C++: Physically Based Rendering:From Theory To Implementation
 * C++: Ray Tracing in One Weekend
 * C++: Rasterization: a Practical Implementation
-* C# / TypeScript / JavaScript: Learning how to write a 3D soft engine from scratch in C#, TypeScript or JavaScript
+* C++: Code-It-Yourself! 3D Graphics Engine Part #1 - Triangles & Projection video]
+* [C# / TypeScript / JavaScript: Learning how to write a 3D soft engine from scratch in C#, TypeScript or JavaScript
 * Java / JavaScript: Build your own 3D renderer
 * Java: How to create your own simple 3D render engine in pure Java
 * JavaScript / Pseudocode: Computer Graphics from scratch
@@ -58,8 +57,12 @@ Build your own 3D Renderer
 
 Build your own AI Model
 * Python: A Large Language Model (LLM)
+* Python: A Reasoning Model (LLM with inference-time scaling, GRPO and distillation)
 * Python: Diffusion Models for Image Generation
+* Python: An LLM Evaluation Harness (test cases, runner, rule-based and LLM judges)
 * Python: RAG for Document Search
+* Python: Building a Coding Agent From Scratch
+* Python: Sparse Autoencoders (toy models of superposition, then train your own SAE)
 
 Build your own Augmented Reality
 
@@ -116,8 +119,7 @@ Build your own Bot
 * Python: How To Make A Reddit Bot video]
 * [Python: How To Create a Telegram Bot Using Python
 * Python: Create a Twitter Bot in Python Using Tweepy
-* Python: Creating Reddit Bot with Python & PRAW video]
-* [R: Build A Cryptocurrency Trading Bot with R
+* R: Build A Cryptocurrency Trading Bot with R
 * Rust: A bot for Starcraft in Rust, C or any other language
 
 Build your own Command-Line Tool
@@ -146,8 +148,14 @@ Build your own Database
 * Python: DBDB: Dog Bed Database
 * Python: Write your own miniature Redis with Python
 * Ruby: Build your own fast, persistent KV store in Ruby
+* Rust: Mini-LSM: Build a Database Storage Engine in Rust
 * Rust: Build your own Redis client and server
 * Rust: Vector Database from Scratch
+* Scala: A Practical Guide to Building a Cost-Based Query Planner
+
+Build your own Distributed Systems
+
+* Java: Building Your Own Kafka-like System From Scratch: A Step-by-Step Guide
 
 Build your own Docker
 
@@ -190,21 +198,6 @@ Build your own Front-end Framework / Library
 * JavaScript: Building a frontend framework, from scratch, with components (templating, state, VDOM)
 * JavaScript: Build your own React
 * JavaScript: Building a Custom React Renderer video]
-
-Build your own Game
-
-* [C: Handmade Hero
-* C: How to Program an NES game in C
-* C: Chess Engine In C video]
-* [C: Let's Make: Dangerous Dave video]
-* [C: Learn Video Game Programming in C
-  video]
-* [C: Coding A Sudoku Solver in C video]
-* [C: Coding a Rogue/Nethack RPG in C video]
-* [C: On Tetris and Reimplementation
-* C++: Breakout
-* C++: Beginning Game Programming v2.0
-* C++: Tetris tutorial in C++ platform independent focused in game logic for beginners
-* C++: Remaking Cavestory in C++ video]
+* [JavaScript: Build your own Svelte video]
 
 …（内容已截断）
