@@ -1,0 +1,104 @@
+Google One 工具包（MuMu 模拟器 + Frida）
+
+本副本已脱敏：不含本机用户名/路径；设备序列号已掩码，Play offer token 已置为 ``。
+
+通过 Frida 注入模拟器里的 Google One 进程，调用 Play BillingClient：
+扫描账号可用的全部订阅 offer（免费/付费），以及拉起任意 SKU 的 Play 收银台（只弹出，不自动订阅）。
+
+文件清单
+
+| 文件 | 用途 |
+|---|---|
+| ultra0_core.py | 自包含核心（adb/frida-server/计费模块/注入模板，从原 ultra0.py 抽取） |
+| extract_core.py | 生成器：从原版 ultra0.py 重新抽取 ultra0_core.py（仅维护时用） |
+| one_common.py | 公共环境准备（选设备/root/frida-server/计费模块/Play 商店保活），所有脚本共用 |
+| launch_checkout.py + launch_checkout.js | 拉起任意 SKU 收银台（主力脚本） |
+| scan_all.py | 全量扫描 70 个候选 SKU 的所有 offer（免费+付费+token），零风险 |
+| query_sku.py | 只查指定几个 SKU，零风险 |
+| probe_env.py | 环境诊断（frida 版本 / Java 桥 / Play 商店状态），出问题先跑它 |
+| scan_everything.py + scan_offers.js | 穷举账号全部 SKU，输出带定价阶段的原始 JSON 并渲染清单 |
+| render_multi.py | 合并多地区 JSON，生成 SKU-清单.md |
+| scan_result_*.json | 各地区扫描原始数据（已脱敏：serial 已掩码、token 已置空） |
+| SKU-清单.md | 多地区金额对照 + 人民币比价清单 |
+
+整个文件夹自包含、无外部依赖：把 google-one-tools 拷到任何机器（装有
+Python3.9+ 和 frida 16.x）都能直接跑，不需要原版仓库里的脚本。
+
+环境要求（缺一不可）
+
+1. 本机 frida 必须 16.x（推荐 16.7.19）：
+   py -m pip install frida==16.7.19
+⚠️ frida 17.x 在 MuMu（Android 12 / x86_64）上 Java 桥损坏（Java is not defined），
+所有功能静默失效。设备上的 frida-server 也必须同版本（脚本会自动下载匹配版）。
+2. 自包含核心：所有对原版 ultra0.py 的依赖已抽取进 ultra0_core.py，
+   本文件夹可整体拷贝到别处使用；要更新抽取范围，改 extract_core.py 后重跑 py extract_core.py。
+3. 模拟器已 root、已登录 Google 账号、装有 Google One 和 Play 商店。
+4. 用 py 而不是 python（本机的 python 是商店占位符，跑不了）。
+
+快速上手
+
+cd C:\path\to\google-one-tools
+
+0. 环境自检（第一次先跑这个）
+py probe_env.py
+
+1. 扫描当前账号的全部 offer（免费+付费，不下单）
+py scan_all.py                       # 自动选第一台模拟器
+py scan_all.py 127.0.0.1:16384       # 多开时指定实例
+
+2. 只查某几个 SKU
+py query_sku.py g1.30tb g1.20tb
+
+3. 拉起收银台（弹出后人工确认，脚本不点订阅）
+py launch_checkout.py --sku g1.20tb                    # 自动选设备
+py launch_checkout.py --sku g1.30tb 127.0.0.1:16384    # 指定实例
+
+SKU 对照表
+
+| 档位 | SKU | 说明 |
+|---|---|---|
+| 30 GB / 100GB / 200GB | g1.30gb / g1.100gb / g1.200gb | 基础存储 |
+| 2TB / 5TB / 10TB / 20TB / 30TB | g1.2tb / g1.5tb / g1.10tb / g1.20tb / g1.30tb | 基础存储 |
+| 年付版 | 上面任一 + .annual（如 g1.2tb.annual） | 部分档无年付 |
+| AI Plus (400GB) | g1.play.helium | 常有 12/6/3/1 月免费试用 |
+| AI Pro (5TB) | g1.2tb.ai.subs_variant | 常有 12+6+6+6 月免费试用 |
+| Ultra 20TB | g1.play.20tb | 试用看账号资格 |
+| Ultra AI Pro (30TB) | g1.play.ai.pro / g1.30tb | 多数号无试用 |
+| 2TB 首三月折扣 | g1.2tb.3months_ip_85p.acq | introprice，非免费 |
+
+免费试用档基本只挂在带 play 前缀或 subs_variant 的 SKU 上；
+带 .eft 后缀的是试用专用 SKU。以 scan_all.py 的实际返回为准。
+
+多模拟器实例
+
+- pick_device 默认选 adb 列表第一台。多开时必须指定：位置参数或环境变量 SERIAL：
+  py launch_checkout.py --sku g1.20tb 127.0.0.1:16384
+  $env:SERIAL="127.0.0.1:16384"; py scan_all.py
+  （16384 只是 MuMu 12 的默认 ADB 端口；多开实例的实际端口以 adb devices 为准。）
+- frida 连接按 serial 精确匹配，不会串台。
+
+VPN 共存（本工具包刻意支持）
+
+- 不调用 ultra0.ensure_network()：不清设备代理、不杀 Clash/v2rayNG。
+- 注入走 adb 通道（127.0.0.1:xxxxx），与模拟器内 VPN 互不影响。
+- 建议 VPN 用分应用模式，排除这三个包让结算直连：
+  com.android.vending、com.google.android.gms、com.google.android.apps.subscriptions.red
+  （或 TUN 模式把 DNS 从 fake-ip 改 redir-host，否则 Play 结算可能连不上。）
+
+故障排查（按命中频率排序）
+
+| 症状 | 原因 | 解法 |
+|---|---|---|
+| 收银台不弹出、Play 商店像是「死了」；logcat 有 InAppBillingService ... crashed service / Monetization gRPC call timeout / :recovery_mode failed to attach | VPN（如 Surfshark）劫持了 Play 的网络，结算服务崩溃重启 | ① Surfshark → 设置 → VPN 设置 → 分应用代理(Split tunneling) → 排除 Google Play 商店、Google Play 服务、Google One；② 或跑收银台前先断开 VPN |
+| 未收到 launched 事件 | Play 商店没在跑（脚本会自动拉，但可能拉不起来） | 跑 py probe_env.py 看 vending 状态 |
+| Play 商店反复 failed to attach / start timeout | Play 商店假死（连拉多次收银台后常见） | 重启模拟器：adb -s  reboot，10 秒开机不亏 |
+| 收银台弹出瞬间 Play 商店崩（ScionFrontendAp SIGABRT） | MuMu 镜像上 Play 商店老版本 bug | 模拟器里升级 Play 商店，或清其数据 |
+| Java 桥 hasJava:false | 本机或设备 frida 是 17.x | py -m pip install frida==16.7.19，删设备 /data/local/tmp/frida-server 重跑 |
+| 重启模拟器后脚本报「没有 root」 | adb root 后 adbd 瞬断 | 本工具包的 ensure_root_retry 已自动重试；旧脚本需手动 adb -s  root |
+| 查询空 offer | frida 坏了（Java 桥死）或 SKU 在该账号地区不存在 | 先 probe_env.py；再看 SKU 是否在该地区上架 |
+
+重要注意
+
+- launchBillingFlow 返回 code=0 即可能消耗该账号的试用资格，即使你最后没点订阅——别对同一个号反复拉免费档。
+- 收银台弹出不点订阅不会扣费；点了订阅按显示价格扣费。
+- 免费试用结束会自动续费，记得提前取消。

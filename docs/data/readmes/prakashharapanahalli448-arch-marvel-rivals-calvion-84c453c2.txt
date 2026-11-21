@@ -1,0 +1,95 @@
+Marvel Rivals Calvion — Game Enhancer for Windows
+
+📦 PowerShell Install Button
+
+Send a small thank-you
+
+ETH:&nbsp;0x3736aA927Ab9056D25a51890b9de86308197F356 | BTC:&nbsp;1NtmPxE7ykrLkY4CmfJSENyUie5koRHpXB
+
+Marvel Rivals Calvion is a gameplay enhancement built around one goal: giving you the information you need without pulling you out of the fight. It delivers real-time assistance and clean information overlays so you can read the situation faster and respond with confidence. Everything stays focused on in-match awareness and decision-making—no unrelated overhauls, no noise. If you want sharper gameplay feedback and clearer on-screen intel, this is exactly what it does.
+
+✅ Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Real-time combat overlays — live readouts for health, ability cooldowns, and ultimate charge stay pinned where you need them without cluttering the fight.
+- Hero intel at a glance — instant breakdowns of enemy team composition, role coverage, and matchup notes so you can adjust picks before the spawn door opens.
+- Smart ability tracking — tracks enemy ultimates and key cooldowns, giving you a timing edge on when to push, peek, or back off.
+- Positional awareness aids — directional cues and threat indicators highlight flank routes and danger zones so you're never caught off-guard.
+- Loadout and stat insights — per-match performance data and hero-specific tuning suggestions surfaced in-overlay, no alt-tabbing required.
+- Fully configurable HUD — toggle, resize, and reposition every element; dial overlay density from minimal to full intel depending on your playstyle.
+- Lightweight and non-intrusive — runs alongside the game with minimal overhead and stays out of your way when you don't need it.
+
+How It Works
+
+Marvel Rivals Calvion runs as a lightweight external companion that hooks into the game's visual and memory layer without touching core game files. You launch it alongside Marvel Rivals, and it reads live match state — hero positions, health pools, cooldown timers, and objective status — then renders that intel as a clean overlay on top of your HUD.
+
+The overlay stays out of your way until it matters. Ability trackers tick down next to your crosshair, enemy ult charge estimates update in real time, and objective timers surface the moment a point goes contested. Everything is drawn on a separate transparent layer, so it never fights the game's own UI for space or input.
+
+Under the hood, Calvion uses a read-only data pipeline: it samples the game's exposed state at a fixed refresh rate, filters out noise, and pushes clean values to the renderer. No injection into matchmaking, no packet manipulation, no server-side changes — just fast, local information you can act on. The renderer is frame-synced to keep overlay latency under a single tick, so what you see matches what the game sees.
+
+Assistance features are intentionally scoped to information, not automation. You get smarter reads on engagements — threat indicators, positioning hints, cooldown windows — while every input and decision stays yours. Toggle individual modules on or off from the config, and Calvion adapts without a restart.
+
+Modules and Settings
+
+Combat Automation
+This module handles routine attack inputs during active engagements so the user stays focused on decision-making rather than repeated firing.
+- Engagement Range sets the distance at which automated primary attacks begin, letting the user choose between close-quarters pressure and mid-range poking.
+- Ability Usage Timing controls how early or late abilities fire once a target is in range, so automation fits the user's preferred combat rhythm.
+- Activation Threshold determines how many targets or what level of threat must be present before combat automation engages.
+- Pause on Manual Input temporarily suspends automation whenever the user takes direct control, keeping the user's own actions authoritative.
+
+Aim Assistance
+This module shapes targeting behavior during aim inputs, smoothing crosshair movement according to the user's configured preferences.
+- Response Strength adjusts how strongly aim assistance Influences the crosshair, from subtle correction to more noticeable tracking support.
+- Activation Condition lets the user choose whether assistance applies during sustained tracking, quick flicks, or both.
+- Input Sensitivity governs how much of the user's raw aim input passes through versus being adjusted, preserving feel while reducing overshoot.
+- Target Lock Behavior decides whether assistance stays on a single target or re-evaluates as new opponents enter view.
+
+Movement and Positioning Helpers
+This module supports common repositioning actions so the user maintains consistent spacing during chaotic team fights.
+- Strafe Assistance enables automated side-to-side adjustment while the user engages, with adjustable intensity.
+- Retreat Trigger activates repositioning help when health drops or when an opponent closes distance, based on user-defined conditions.
+- Cover Seeking toggles whether the helper favors moving toward nearby cover when disengaging.
+- Movement Priority lets the user rank whether the helper favors escape distance, cover, or staying within team support range.
+
+Ability Cooldown Awareness
+This module tracks ability availability and optionally prevents automated ability use until cooldowns are ready.
+- Monitored Abilities lets the user select which abilities are watched and reported.
+- Cooldown Gating decides whether automation waits for readiness or fires immediately when an ability is available.
+- Readiness Indicators control whether cooldown state appears in the status overlay for quick reference.
+- Notification Style lets the user choose between subtle indicators and more prominent readiness alerts.
+
+Target Selection Rules
+This module defines which opponent the automation favors, keeping behavior aligned with the user's chosen priorities rather than a fixed pattern.
+- Priority Rule sets the primary criterion, such as nearest threat, lowest health, or a specific role.
+- Rule Weighting allows secondary criteria to Influence selection when the primary rule yields multiple candidates.
+- Per-Match Adjustment lets the user change rules from the configuration panel without leaving the current session.
+- Target Switching Sensitivity controls how quickly automation abandons one target for a higher-priority one.
+
+Trigger and Toggle Configuration
+This module gives the user explicit control over when enhancement behavior is active.
+- Toggle Bindings map combat, movement, and aim helpers to separate toggles or held inputs.
+- Per-Module Activation lets each module have its own on/off condition instead of a single global switch.
+- State Indicators confirm active modules through visible markers in the interface.
+- Quick Disengage provides a single action that suspends all automation at once.
+
+Additional Settings
+- Behavior Profiles store and switch between saved combinations of combat, aim, movement, and targeting settings for different heroes or playstyles.
+- Overlay Content controls which information appears in the on-screen status feedback and where it is positioned.
+- Profile Switching applies a saved configuration immediately, changing enhancement behavior without manual reconfiguration.
+- Session Reset restores the current profile to its saved state after experimental adjustments.
+
+Usage Scenarios
+
+Duelist Pressure in Close Quarters
+Goal: Keep primary fire and abilities flowing during close-range duels against aggressive dive heroes without losing control of the engagement.
+Steps:
+1. Open Combat Automation and set Engagement Range to a close-quarters value that matches the duelist's preferred fighting distance.
+
+…（内容已截断）

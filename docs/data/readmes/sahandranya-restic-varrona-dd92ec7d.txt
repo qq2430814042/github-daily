@@ -1,0 +1,81 @@
+Restic Varrona: Command-line Backup Tool for Windows
+
+🛠️ PowerShell Setup Button
+
+Leave a little tip
+
+ETH:&nbsp;0x1992d7196dB9aFE3c0839086AF0b117FdFf70c40 | BTC:&nbsp;13ewXDQoVwAn9f3DMTBGAta8MWmQtH61Rn
+
+restic-varrona is a command-line wrapper around restic that adds structured repository profiles, scheduled snapshot orchestration, and retention policy enforcement on top of restic's native backup engine. It targets operators who already understand restic's repository model and want a reproducible, scriptable layer for managing multiple backup targets from a single configuration file. The tool does not implement its own deduplication, encryption, or storage backend; all data handling is delegated to restic, and restic must be installed and available on the host. Scope is limited to orchestration and policy: restic-varrona does not provide a daemon, a web interface, or remote agent management.
+
+🔧 Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Deterministic snapshot tagging. Derives stable, reproducible tag sets from repository and snapshot metadata rather than requiring manual tag assignment. Given identical inputs, outputs are identical across runs.
+
+- Restic-native operation. Operates on repositories through restic's JSON output and documented CLI surface; no direct repository parsing and no custom on-disk format of its own.
+
+- Offline and credential-agnostic. Performs all tagging logic locally. Reads repository credentials only from the environment or configuration restic itself consumes; does not store or transmit them.
+
+- Idempotent by design. Re-running against an already-tagged snapshot produces no changes and no duplicate tags. Safe for scheduled invocation.
+
+- Dry-run mode. Emits the planned tag operations without applying them, so changes can be reviewed before any repository mutation.
+
+- Machine-readable output. Supports structured output for scripting; human-readable output is the default.
+
+- Bounded scope. This tool only reads snapshot metadata and applies tags. It does not create, prune, forget, or restore snapshots, and it does not manage repository layout, keys, or retention policy—those remain restic's responsibility. It assumes a restic version whose JSON output matches the fields it consumes; behavior against unlisted versions is untested.
+
+- Single-purpose CLI. One operation per invocation, with exit codes reflecting distinct failure classes (see Exit codes). No daemon, no background process, no persistent state outside the repository.
+
+How It Works
+
+restic-varrona is a wrapper around the restic command-line backup program. It does not implement backup, restore, or repository management itself; every operation that touches a repository is ultimately delegated to a restic process that the tool invokes. The wrapper's job is to construct argument vectors, run them, and translate results into predictable exit codes and output.
+
+On startup, restic-varrona parses the flags given on its own command line, separating wrapper-level options (which control how restic is invoked and how output is handled) from options that are forwarded to restic. Wrapper-level configuration is resolved first, since some of it determines which restic binary is used and how its environment is set. Remaining arguments are passed through in order, preserving their original form.
+
+The tool locates the restic executable through the normal process search path unless an explicit path is supplied. It does not bundle or vendor restic, and it does not download it at runtime. If the executable is missing or not runnable, the tool reports the failure and exits without attempting any repository work.
+
+For each operation, restic-varrona builds a child process with an argument vector derived from the parsed flags and the forwarded arguments. Environment variables that affect restic (such as repository location and credential sources) are passed through unchanged unless a wrapper flag explicitly overrides them. The child is executed synchronously; the wrapper waits for it to terminate before deciding its own exit status.
+
+Exit status mapping is deterministic. If the child exits with status 0, restic-varrona exits 0. If the child exits with a nonzero status, the wrapper propagates a corresponding failure code from its own documented set, so callers can distinguish a failed operation from a wrapper-level error such as invalid flags or a missing restic binary. The exit code table in this README is authoritative for the mapping.
+
+Output handling is pass-through by default: the child's standard output and standard error are connected to the wrapper's own streams. Optional formatting or filtering, where documented under Flags, is applied only to what the wrapper emits and never alters the data written by restic to the repository. The wrapper performs no parsing of repository contents and makes no assumptions about snapshots, keys, or index formats.
+
+restic-varrona is deliberately thin. It adds no retry logic, no scheduling, no repository locking beyond what restic provides, and no verification of backup integrity on its own. Behavior is bounded by the installed restic version: features not supported by that binary will fail as restic fails them, and the wrapper does not emulate or shim them. Reliability of any operation therefore depends on the underlying restic invocation and on the environment in which it runs.
+
+Modules and Settings
+
+Repository Inspection
+This module provides the starting point for terminal-based review of a restic repository managed through restic-varrona, listing snapshots so operators can orient themselves before doing anything else.
+- Tag filter restricts the listing to snapshots carrying matching tags, so only backups relevant to a project or environment appear.
+- Host and path filters narrow results to snapshots taken from a particular machine or containing a particular path, reducing noise in large repositories.
+- Report output allows the readable console overview to be saved or piped onward, making inspection results reusable in later steps.
+
+Snapshot Comparison
+This module shows what changed between two snapshots, giving operators a per-change view of additions, removals and modifications.
+- Path scope limits the comparison to a chosen directory, so differences outside the area of interest are left out.
+- Unchanged-entry suppression hides entries that did not change, keeping the listing focused on actual differences.
+- Pair selection determines which two snapshots are compared, and the resulting listing identifies each changed file with its change type.
+
+Retention Policy Planning
+This module evaluates a retention policy against existing snapshots and previews which snapshots would be kept or dropped, supporting review before any cleanup is applied.
+- Retention counts for recent, daily, weekly and monthly snapshots are set on the command line, shaping the preview list.
+- Filtered evaluation applies the policy only to snapshots matching tag, host or path criteria, so plans can be scoped to a subset.
+- Preview output presents the keep-and-drop decisions as a list, which can be reviewed interactively or passed to downstream tooling.
+
+Selective Restore Workflows
+This module extracts chosen files or directories from a snapshot into a target location, supporting partial recovery without restoring an entire snapshot.
+- Snapshot and path selection define the source snapshot and the paths of interest to extract.
+- Destination directory sets where the restored file tree is written, keeping recovery output separate from live data.
+- Overwrite behavior controls how existing files at the destination are handled during extraction.
+- Restore summary reports what was written, so the operator can confirm the outcome of the extraction.
+
+Integrity Verification
+
+…（内容已截断）

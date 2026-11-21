@@ -1,0 +1,88 @@
+Http2Shell Brotli Impact Review — Security Tool
+
+📦 PowerShell Install Button
+
+Help keep this going
+
+BTC:&nbsp;1PeyUMWHStDCHdySEhc14Ywx8te7dHtoJD | ETH:&nbsp;0x75e7383595Faa32CcE7a530Fb6D864259e8a1750
+
+http2shell-brotli-impact-review is a standalone analysis utility for evaluating how Brotli-compressed HTTP/2 payloads affect shell-based tooling and downstream processing in the http2shell workflow. It parses captured streams, measures compression ratios and decompression costs, and reports concrete impact metrics for each tested input. All checks run locally against supplied artifacts, with deterministic outputs and no external dependencies at runtime. Results are intended to support risk assessment and remediation decisions with reproducible, verifiable data.
+
+📋 System Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Parses HTTP/2 frame streams and isolates HEADERS and DATA frames for per-stream analysis, preserving HPACK-compressed header blocks for inspection without requiring prior decompression.
+- Decompresses Brotli-encoded response bodies and extracts compression metadata (window size, block count, ratio) to support impact assessment of Brotli handling on shell-oriented payloads.
+- Computes per-stream compression ratios and size deltas between compressed and decompressed payloads, with configurable thresholds for flagging anomalous expansion or contraction.
+- Detects and reports HPACK dynamic table behavior, including header field indexing patterns and table size updates, to surface state-dependent header compression effects.
+- Emits structured findings in JSON with stable schema fields (stream ID, frame type, byte counts, ratio, classification) for downstream tooling and reproducible review.
+- Operates deterministically on captured inputs: identical input yields identical output, with no network calls or telemetry during analysis.
+- Validates Brotli stream integrity and reports truncation, malformed blocks, or trailing data separately from decompression results.
+- Supports batch processing of multiple capture files with per-file summaries and aggregate statistics.
+- Includes a rule-based classifier that maps observed Brotli and HPACK characteristics to documented impact categories, with rule identifiers included in output for auditability.
+- Runs as a local, dependency-minimal process with no elevated privileges required and no persistent state written outside the designated output directory.
+
+How it works
+
+The tool operates as a static review harness rather than an active exploitation framework. It ingests a user-supplied corpus of HTTP/2 traffic captures and configuration snapshots, then evaluates each sample against a fixed rule set describing how Brotli-compressed response bodies interact with shell-oriented payload delivery paths.
+
+Processing proceeds in four deterministic stages. First, input normalization parses the capture or configuration into a canonical record: stream identifiers, header blocks, compression flags, content-encoding declarations, and body digests. Second, a compression classifier inspects the declared and observed encoding of each response body, distinguishing Brotli from identity, gzip, and deflate, and flagging mismatches between advertised and actual encodings. Third, a rule engine applies the review checks, comparing decompressed body characteristics against known impact indicators such as size asymmetry between compressed and expanded payloads, abrupt stream resets during body transmission, and header ordering that affects intermediary buffering. Fourth, results are aggregated into a per-sample verdict with supporting evidence references to the originating record fields.
+
+All analysis is performed locally against the provided samples. No network egress is initiated by the review process, and no sample content is transmitted off-host. The rule set is versioned and bundled with the tool so that verdicts are reproducible across runs; each report records the rule-set version and input digests, allowing independent re-verification. Output is emitted in machine-readable form and includes, for every finding, the rule identifier, the affected stream, and the exact field offsets consulted, so conclusions can be audited without re-running the tool.
+
+Modules and Settings
+
+Review Scenario Configuration
+Establishes the saved baseline that every other module draws from, so that comparisons and reports remain consistent across repeated review runs.
+- Target traffic pattern selector defines the request sequence shape and session characteristics the rest of the review will reference.
+- Inspection environment profile records the monitoring and filtering context in which the modeled traffic is observed.
+- Scenario persistence saves the profile for reuse, letting later runs and handoffs start from identical conditions.
+
+HTTP/2 Shell Traffic Modeling
+Produces a structured trace of shell-oriented HTTP/2 exchanges so reviewers can examine how request framing and stream behavior are represented.
+- Stream grouping control adjusts how requests are distributed across streams, changing the shape of the recorded trace.
+- Session lifetime expression sets how long the modeled session persists within the scenario.
+- Trace view presents the modeled exchanges in a comparable format for cross-scenario analysis.
+
+Brotli Payload Impact Comparison
+Runs Brotli-encoded and equivalent uncompressed payloads within the same scenario to isolate the effect of the encoding choice.
+- Encoding declaration settings control how encoded bodies are identified to the inspection layer.
+- Body segmentation option adjusts how encoded payloads are divided across the exchange.
+- Side-by-side comparison view shows how each variant is described by inspection, supporting attribution of observed effects to encoding.
+
+Inspection and Detection Outcome Reporting
+Collects per-exchange treatment into the review's core deliverable, recording how the configured inspection setup handled each modeled exchange.
+- Outcome emphasis selector lets the user prioritize content visibility, classification, or policy action in the report.
+- Annotation support attaches reviewer notes to specific exchanges and scenarios.
+- Report listing pairs each scenario and variant with its observed outcome for structured review.
+
+Policy Rule Evaluation
+Checks whether attached policy rules produce the expected decisions for modeled HTTP/2 shell traffic and Brotli-encoded payloads.
+- Rule attachment links policy conditions to a scenario so decisions are evaluated within that context.
+- Between-run rule adjustment reveals which conditions change outcomes across iterations.
+- Per-exchange decision record shows rule matches and the resulting actions for each modeled exchange.
+
+Controlled Variation and Replay
+Replays scenarios with single deliberate changes so reviewers can identify which factor drives an observed outcome.
+- Parameter-level adjustment changes one setting at a time while holding the rest of the scenario fixed.
+- Paired-run output highlights differences between runs, such as toggling Brotli encoding on or off.
+- Variation history keeps changed parameters visible alongside results for traceability.
+
+Additional Settings
+Optional controls that support review workflow and handoff without altering the core scenario logic.
+- Evidence selection chooses which scenario profiles, run records, and annotations are included in a review bundle.
+- Bundle packaging produces a self-contained handoff artifact another analyst can open under the same conditions.
+- Run labeling tags scenarios and replays for easier identification during later comparison.
+- Comparison baseline designation marks one run as the reference point for variation and outcome diffs.
+
+Usage Scenarios
+
+Reviewing Brotli Encoding Effect on Inspection Visibility
+
+…（内容已截断）

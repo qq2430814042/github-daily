@@ -1,0 +1,94 @@
+🔧 Cyber Engine Tweaks Runtime Workspace — Windows Mod
+
+🛠️ PowerShell Setup Button
+
+Leave a little tip
+
+TRON:&nbsp;TTxXTJtmyGUK731bz829296WZnFHpq33PD
+
+Cyber Engine Tweaks Runtime Workspace is the tinkerer's backroom of Night City—a live scripting surface where the engine stops being a black box and starts taking notes. Built for modders who'd rather poke the runtime than pray to it, this workspace exposes the hooks, events, and internal guts you need to bend the game your way. Drop in, wire up your Lua, and watch your ideas take effect without a single restart ritual. If it runs, it's fair game.
+
+🔧 Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+How It Works
+
+Under the chrome, Cyber Engine Tweaks Runtime Workspace is a thin, fast layer that slides between the game's engine and your own code. It spins up a lightweight runtime harness the moment the game boots, opening a stable channel that lets mods talk to the engine without ripping it apart. No recompiling the core, no fragile binary patching—just a clean hook that hands your scripts a seat at the table.
+
+The workspace watches the engine's event bus, catching signals and state changes as they ripple through Night City's simulated nervous system. Mods register listeners, fire their own events, and pull live values from exposed runtime interfaces, all while the harness keeps things sandboxed so one rogue tweak can't drag the whole session down with it. Configuration lives in plain, human-readable files, so you can hot-swap parameters, flip toggles, and tune behavior between runs without ever touching the engine itself.
+
+When a mod asks for something the runtime understands, the request travels through a unified API surface that translates it into engine-native calls. Results come back as structured data—clean, predictable, and versioning-aware—so your code stays readable even as the game evolves. Think of it as a neural handshake: your mod says what it wants, the workspace negotiates the details, and the engine barely notices anything happened.
+
+Modules and Settings
+
+Runtime Tweak Profiles
+Profiles act as the organizing layer that ties the other modules together, letting the user keep several complete tweak configurations ready and switch between them as gameplay situations change.
+- The profile list shows every saved profile and marks the one currently active, so the workspace always reflects the configuration in effect.
+- Creating a profile captures the current module toggles and parameter values as a single named set.
+- Switching profiles deactivates the previous configuration and applies the selected one, with the active profile name displayed in the workspace.
+- Profile entries can be renamed or removed, helping the user keep experiments separate from everyday setups.
+
+Gameplay Parameter Adjustment
+This module exposes the adjustable values behind movement handling, interaction timings and ability behavior, giving the user direct control over how these systems respond during play.
+- Each parameter has its own control in the workspace, and edited values take effect once the tweak set is applied.
+- Allowed ranges are shown alongside each parameter so the user can see how far an adjustment can go before it becomes inconsistent.
+- Dependencies between related parameters are surfaced, flagging combinations that would pull against each other before the user starts playing.
+- Adjusted parameters feed directly into the active profile, so a value change becomes part of that profile rather than a loose, untracked edit.
+
+Toggleable Behavior Modules
+Each gameplay tweak is packaged as its own module, so the user can isolate a single adjustment and judge its effect without other changes interfering.
+- Every module has an independent on/off control, and disabling one restores only the gameplay behavior it touches.
+- Module descriptions state which part of gameplay they affect, making it easier to pick the right entry for a desired change.
+- The workspace lists modules alongside their current state, so the user can review at a glance what the active profile is doing.
+- Modules can be combined freely, with the compatibility review catching overlaps before a profile is applied.
+
+In-Game Overlay Controls
+The overlay carries frequently used tweaks into the running game, removing the need to leave gameplay just to flip a setting.
+- The overlay presents the current state of each adjustable option it exposes, so the user sees what is active before changing anything.
+- Changes made through the overlay are applied immediately and marked with a visible indication that the setting has been updated.
+- The overlay draws from the same module and parameter set as the workspace, keeping in-game adjustments consistent with the saved configuration.
+
+Preset Management and Sharing
+Presets package a set of tweaks into a reusable bundle that can be loaded later or into a different profile, supporting repeated setups without manual re-entry.
+- Saving a preset records the selected modules and their parameter values as one unit.
+- A preset can be reviewed before loading, showing exactly which modules and values it contains so the outcome is clear in advance.
+- Presets can be loaded into any profile, letting the user build a new configuration on top of a known starting point.
+
+Change Preview and Rollback
+This module keeps configuration changes deliberate by showing pending edits before they take effect and providing a way back if a tweak misbehaves.
+- The pending-change list shows every module toggle and parameter edit waiting to be committed.
+- Committing applies the full set at once, while discarding clears the pending list without touching the active configuration.
+- Reverting restores the previous configuration, or resets a single module to the engine's original behavior for the gameplay it affects.
+- The activity log records each applied, discarded or reverted change, helping the user trace which edit produced a given result in gameplay.
+
+Additional Settings
+- Overlay visibility: controls whether the in-game overlay is shown during play or kept hidden until needed.
+- Conflict reporting detail: sets how much information the compatibility review displays about overlapping modules.
+- Log retention: determines how many recent workspace actions are kept in the activity log for later review.
+- Preset review prompt: toggles whether a preset summary is shown automatically before loading.
+- Profile switch confirmation: adds a confirmation step when switching profiles so an active configuration is not replaced accidentally.
+
+Usage Scenarios
+
+Isolating a Single Tweak Before Building a Full Profile
+Goal: Determine whether one specific behavior module actually produces the change the user wants, without other adjustments muddying the outcome.
+
+Steps:
+1. Open the workspace and create a new profile so existing setups stay untouched.
+2. Disable all modules except the single behavior module under investigation, using the module list and its on/off controls.
+3. Launch the game and play briefly, then check the module description again to confirm it affects the gameplay area the user expected.
+4. If the change is confirmed, return to the workspace and add the module to an everyday profile; if not, leave it disabled and remove the test profile.
+5. Review the activity log to confirm the toggles made during the test are recorded as expected.
+
+Expected result: The user ends up with a clear answer about that one module's effect, an everyday profile that includes it only if it was useful, and a log entry trail of the toggles made during testing.
+
+Tuning Movement and Interaction Timings for a Play Session
+Goal: Adjust movement handling, interaction timings and ability behavior to a preferred feel, then lock those values into a profile that can be reused.
+
+Steps:
+
+…（内容已截断）

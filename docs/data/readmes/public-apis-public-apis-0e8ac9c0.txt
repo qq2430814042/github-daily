@@ -60,10 +60,12 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | CoworkingView | Search coworking spaces, private offices and operator-published prices in 70+ cities | No | HTTP | – |
 | crawlbrulee | EU-native web scraping for AI agents & developers: turn any page into markdown, screenshots and more | apiKey | stdio | npm · MCP Registry · Glama |
 | Data and APIs | Search, read and call 125+ data APIs: sanctions, barcodes, IP intelligence, companies, holidays | apiKey | HTTP | – |
+| Dispola | Same-day appointment openings at Quebec salons and clinics: hair, nails, massage, physio | No | HTTP | Glama · MCP Registry |
 | Edgepedia | Search and read Edgepedia, a free and growing encyclopedia with citations | No | HTTP | Glama |
 | EU Nordic Open Data | EU tenders, sanctions, VIES VAT, ECB FX, ENISA EUVD, GLEIF LEI and Finnish/Norwegian registries | No | stdio | npm · MCP Registry · Glama |
 | Filesystem | Read/write local files | No | stdio | – |
 | FindIP MCP | IP lookups and FindIP Shield risky-event checks for agents | apiKey | stdio | Glama · MCP Registry |
+| FMCSA Carrier Intelligence | FMCSA carrier authority, insurance and identity data; free MC lookup, paid per-call records | No | HTTP | MCP Registry |
 | Git | Read, search, diff, and commit to local Git repositories | No | stdio | – |
 | GitHub | Repos, issues, PRs, code search | OAuth | stdio, HTTP | Glama |
 | HEY Research Lab | Is a Robinhood Chain token or project still being built? Ships and contracts, each with its source | No | stdio, HTTP | Anthropic · Glama · MCP Registry · npm |
@@ -85,7 +87,5 @@ Model Context Protocol servers let AI agents call APIs as tools. You install one
 | PourWire | New US liquor license filings: restaurants and bars about to open in 7 metros, plus metro stats | No | HTTP | Glama · MCP Registry |
 | RealMarket | Live gold, forex, crypto and stock prices, indicators and market analysis for AI agents | apiKey | HTTP | – |
 | Refnusa | Indonesian holidays, wages, regions, postal codes, tax, food prices and NIK/plate checks (31 tools) | No | HTTP | Glama |
-| RegSentry | Inspect authorized static tracking signals and review supplied consent evidence | No | HTTP | Glama |
-| Requstory | Map how a company works, who owns each process, and which steps AI agents can run | No | HTTP | – |
 
 …（内容已截断）

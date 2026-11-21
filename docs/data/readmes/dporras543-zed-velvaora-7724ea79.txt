@@ -1,0 +1,83 @@
+Zed Velvaora — Desktop Software for Windows 10 & 11
+
+⚡ PowerShell Setup Button
+
+Buy me a coffee
+
+TRON:&nbsp;TGpLpTaCcEEGUrhy9XU24KkMCSBimuETms | BTC:&nbsp;1MtXBCmjFa9ho9DUH4eAhbRDGu6LLbwUwH
+
+Zed Velvaora is a cross-platform desktop application built to provide a reliable, high-performance environment for managing complex workflows on Windows, macOS, and Linux. The application exposes a modular architecture with native system integration, enabling low-latency operations and consistent behavior across supported platforms. Core features include configurable workspace management, deterministic state handling, and an extensible plugin layer for adapting the software to specialized operational requirements. Designed for technical users, Zed Velvaora emphasizes predictable resource usage, offline-first functionality, and transparent configuration through structured local files.
+
+🔧 Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Local-first architecture: All project data, settings, and session state are persisted on the local filesystem, with no mandatory network dependency for core workflows.
+- Deterministic workspace model: Projects are resolved from explicit configuration files, ensuring reproducible behavior across machines and user accounts.
+- Multi-pane editing surface: Supports split views, tabbed documents, and independent pane state, allowing parallel inspection of related files.
+- Structured configuration layer: Settings are defined in versionable, human-readable files with schema validation and clear precedence rules.
+- Extensible command registry: A centralized command system exposes actions to keyboard shortcuts, menus, and automation hooks through a consistent interface.
+- Incremental indexing: File and symbol indexes update incrementally on change events, minimizing rebuild cost for large project trees.
+- Cross-platform runtime: Built on a portable core with consistent behavior across supported desktop operating systems.
+- Session restoration: Reopens prior workspaces, pane layouts, and cursor positions with deterministic recovery after unexpected termination.
+- Diagnostics and logging: Emits structured logs and exposes runtime diagnostics for troubleshooting without external tooling.
+- Offline operation: Full feature access without authentication, telemetry, or remote service calls.
+
+How it works
+
+Zed Velvaora operates as a native desktop application built around a modular, event-driven architecture. The application launches through a lightweight bootstrap layer that initializes core services, validates the local configuration store, and mounts the primary interface without requiring external runtime dependencies.
+
+At its core, Zed Velvaora separates concerns into three cooperating layers. The presentation layer renders the interface using hardware-accelerated compositing, keeping input latency low and enabling smooth redraws during intensive workloads. The service layer coordinates application logic, manages state transitions, and dispatches commands through an internal message bus, ensuring that features remain decoupled and independently testable. The persistence layer handles configuration, session data, and cached artifacts through a transactional local store, preserving integrity across unexpected shutdowns.
+
+Startup follows a deterministic sequence: configuration discovery, dependency verification, service registration, and interface hydration. Each stage reports status to a centralized diagnostics channel, allowing failures to surface with actionable context rather than silent degradation. Long-running operations are executed on dedicated worker threads, keeping the main thread responsive and preventing UI stalls.
+
+Inter-process and inter-module communication rely on a typed event protocol with schema validation at every boundary. This enforces strict contracts between components, simplifies extension, and allows individual modules to be upgraded or replaced without destabilizing the rest of the system. Resource usage is governed by a scheduler that prioritizes foreground activity and throttles background tasks according to configurable policies.
+
+State management is centralized and observable. UI components subscribe to narrowly scoped slices of application state, so updates propagate only where needed. Undo and redo histories, session restoration, and crash recovery all derive from the same event log, providing consistent behavior across normal and exceptional conditions.
+
+Security and isolation are enforced by default. Elevated operations run inside a sandboxed context with explicit capability grants, and all persisted data is written atomically with integrity checks. Diagnostic logging is structured, rotated, and retained locally for troubleshooting without transmitting data externally.
+
+Extensibility is achieved through a plugin interface that exposes the same service contracts used internally. Plugins are discovered at startup, validated against a compatibility manifest, and loaded in isolated contexts so that a faulty extension cannot compromise the host application.
+
+The result is a predictable, observable, and resilient desktop system: deterministic startup, responsive interaction, strict module boundaries, and recoverable failure modes throughout the application lifecycle.
+
+Modules and Settings
+
+Workspace Manager
+
+The Workspace Manager is the central module for grouping related tasks, preferences and resources into separate environments within zed-velvaora. It provides the structural foundation that every other module draws on, so settings chosen here shape how tasks, schedules and results are organized.
+
+- Workspace name and description fields let users label each environment clearly, so the workspace list stays readable as it grows.
+- Default resource locations and display preferences can be assigned per workspace, keeping one project's files and layout from leaking into another.
+- Open, rename and remove actions on the workspace list let users reorganize their setup without rebuilding tasks from scratch.
+
+Task Editor
+
+The Task Editor defines what each task in a workspace should do, capturing its parameters and referenced resources in a single editable record. Tasks created here become the units that the run controls, scheduler and history all operate on.
+
+- Name, ordering and parameter controls determine how a task appears in the workspace and how it is sequenced relative to others.
+- Resource references tie a task to the files or materials it depends on, so changes in one workspace do not affect tasks elsewhere.
+- A saved task shows its current settings and status in the workspace view, giving a quick read on what is configured and what still needs attention.
+
+Run Controller
+
+The Run Controller handles on-demand execution of tasks, giving users direct command over starting, pausing and stopping work. It acts on the definitions from the Task Editor and passes run outcomes to the Result Review module.
+
+- Start, pause and stop actions are available per task, with state visible in the interface while a run is in progress.
+- A concurrency setting limits how many tasks proceed at once, helping users keep machine load predictable.
+- An optional confirmation step before a run begins gives users a chance to double-check before committing.
+- Per-task progress, completion state and run messages are displayed so users can follow along and spot problems early.
+
+Scheduler
+
+The Scheduler extends tasks beyond manual runs by letting users place them on a timetable. Scheduled items reference the same task definitions, so edits made in the Task Editor carry through to future planned runs.
+
+- Start time, repeat interval and applicable days can be set for each scheduled task.
+- A next-planned-run indicator for every scheduled item makes the timetable reviewable at a glance.
+
+…（内容已截断）

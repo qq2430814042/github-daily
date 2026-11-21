@@ -1,0 +1,110 @@
+Open Webui Private Ai Desk — Web Application
+
+⚡ PowerShell Setup Button
+
+Show your support
+
+TRON:&nbsp;TB7EdBt9PnrsNU2fbfByx8v4byEmRaxV3U | BTC:&nbsp;1LcPgJqd2D7fZsEw3V7KspEBWbuquhbq2J | ETH:&nbsp;0x132b12C0A7EfF6aFCB641dC96D0Bc22C6b427F68
+
+Open Webui Private Ai Desk is a self-contained AI workspace built for teams and individuals who want the power of modern language models without sending their data beyond their own infrastructure. It brings chat, document interaction, and model management together in a single, refined interface that feels effortless from the first session. Every conversation stays private by design, running entirely on your own hardware and terms. The result is a dependable AI desk that blends serious capability with the polish of a product built to be used every day.
+
+✅ Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Private by design: Run your entire AI workspace locally, keeping conversations, documents, and model interactions on your own infrastructure — no third-party exposure.
+
+- Multi-model flexibility: Connect to a wide range of local and compatible model backends, and switch between them from a single, unified interface.
+
+- Polished chat experience: Enjoy a refined, responsive chat UI with conversation history, threaded context, and smooth streaming responses.
+
+- Document-aware assistance: Bring files into the conversation and let the desk reason over your documents for summaries, Q&A, and research support.
+
+- Persistent knowledge base: Organize and retrieve past conversations and reference material, so institutional knowledge stays searchable and reusable.
+
+- Role and access management: Define user roles and permissions to keep sensitive workspaces controlled across teams and individuals.
+
+- Customizable workspace: Tailor prompts, model presets, and interface preferences to match your workflow and brand.
+
+- Self-hosted control: Deploy on your own terms with full ownership of data, configuration, and uptime — built for privacy-conscious teams and individuals.
+
+- Fast, modern interface: A lightweight, responsive front end designed for daily use across desktop and mobile.
+
+- Extensible foundation: A clean architecture that makes it straightforward to integrate additional models, tools, and internal systems as your needs grow.
+
+How It Works
+
+Open Webui Private Ai Desk turns a local large language model into a complete, private workspace that feels as polished as any cloud product—while keeping every conversation, document, and prompt on your own machine.
+
+Connect your model once. Point the app at your local runtime and it discovers what's available. From that moment on, every chat, question, and task flows through a model you control, with no data leaving your environment.
+
+Work the way you think. Start a conversation, drop in a document, or hand off a multi-step task. The interface adapts to what you're doing—streaming answers in real time, keeping context across turns, and letting you branch, revisit, and refine without losing your thread.
+
+Organize and persist. Conversations, prompts, and knowledge live in a structured workspace. Search across everything, pin what matters, and pick up exactly where you left off—across sessions and restarts.
+
+Bring your own knowledge. Add documents and reference material to build a private knowledge base. The assistant draws on your content when you ask, grounding answers in what you've provided rather than the open web.
+
+Stay in control. Roles, permissions, and model settings are yours to shape. Run it for yourself or open it to a small team, with visibility into usage and the confidence that nothing is shared beyond your boundary.
+
+Runs anywhere you do. Lightweight enough for a laptop, capable enough for a dedicated machine. Start it, open it, and your private AI desk is ready—no accounts, no subscriptions, no compromise.
+
+Modules and Settings
+
+Chat Workspace
+This module provides the persistent conversation area where users hold discussions with the configured language model inside open-webui-private-ai-desk.
+- Conversation history stays browsable, so users can reopen earlier sessions and continue where they left off.
+- A per-chat model selector lets users pick among configured models or private backend endpoints and see responses from the chosen one.
+- The chat area reflects the private deployment, keeping the working space self-contained rather than tied to a public hosted service.
+
+Conversation Management
+This module keeps the growing list of sessions organized without leaving the interface.
+- Users can rename sessions to make them easier to recognize later.
+- Conversations can be grouped into folders or categories so related sessions sit together.
+- Removing a conversation takes it out of the visible list, keeping the workspace tidy as usage increases.
+- Title behavior can be adjusted so new sessions are named in a way that fits the user's habits.
+
+Documents and Knowledge
+This module lets the assistant answer questions grounded in the user's own material rather than only general model knowledge.
+- Users attach documents or add reference material to a conversation so replies draw on that content.
+- Where supported, retrieved passages or cited sources appear alongside the answer for verification.
+- Reference material can be scoped to a single chat, letting different sessions draw on different document sets.
+
+Response Behavior Controls
+This module shapes how the assistant replies within each conversation.
+- System instructions set the assistant's role and constraints for a given chat.
+- Tone and response-length options adjust the style and depth of answers, and changes are visible immediately in subsequent replies.
+- Because controls apply per chat, the same workspace can serve drafting tasks and question answering with different settings.
+
+Access and User Administration
+This module governs who can reach the private desk and how their activity is organized.
+- Administrators manage user accounts, determining which individuals can sign in.
+- Conversations are tied to their owners, so administrators can review which sessions belong to which user.
+- Access is gated by the deployment itself, producing a multi-user workspace that is not open to the public.
+
+Data Retention and Privacy
+This module gives users and operators visibility into what the workspace keeps and what it discards.
+- Retention settings adjust how long conversation data is preserved, and the visible history updates to reflect those choices.
+- Users can see which sessions remain after a retention change, making stored data easy to reason about.
+- Local storage preferences let the operator align what is kept with the privacy expectations of the private deployment.
+
+Additional Settings
+- Theme and layout preferences apply across the workspace and update the chat interface when switched.
+- Display density and interface width options help the desk fit different screen sizes and working preferences.
+- Account-level settings let individual users adjust their own workspace experience without affecting others.
+- Operators can review deployment-level options that apply to all users while per-chat controls in the modules above stay with each conversation.
+
+Usage Scenarios
+
+Drafting Internal Policy Documents with Reference Material
+Goal: A compliance officer wants to draft a policy summary that stays consistent with the organization's own handbook rather than relying only on general model knowledge.
+Steps:
+1. Open the private desk in the browser and start a new conversation from the chat workspace.
+2. Attach the relevant handbook sections as reference material scoped to that single chat.
+3. Set system instructions describing the assistant's role as a policy drafting helper and choose a formal tone with a moderate response length.
+
+…（内容已截断）

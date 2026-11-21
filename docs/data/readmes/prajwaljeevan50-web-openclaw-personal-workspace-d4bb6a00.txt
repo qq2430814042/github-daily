@@ -1,0 +1,86 @@
+Openclaw Personal Workspace – community-powered full automation for automated your actions 🤖
+
+🖥️ PowerShell Setup
+
+Help keep this going
+
+ETH:&nbsp;0x0ed36f0d73cEe4e0C0d134d726828b6E66A539A0 | BTC:&nbsp;134PDxtKbDFHJqkyz7NFLk6rweNWt9gcuq | TRON:&nbsp;TUn7h7U73t1uXiBYzWCu8W7mDdy9FJjhbA
+
+Openclaw Personal Workspace is a fully automated bot built to handle the busywork so you can focus on what matters, from organizing your day to keeping your projects moving without constant manual effort. It's designed with the community in mind, packed with rich features that grow and improve through shared ideas and real-world feedback. Whether you're automating routine tasks or exploring new ways to streamline your workflow, this bot is meant to feel like a helpful teammate you can shape alongside others. Dive in, tinker with it, and help make it even better.
+
+🔧 Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Fully automated, hands-off operation — once it's running, the bot handles routine tasks on its own so you can focus on what matters. No babysitting required.
+- Personal workspace built in — a dedicated space that keeps your tasks, notes, and bot context organized in one place, made to feel like your workspace rather than a generic inbox.
+- Friendly command interface — interact with the bot using simple, natural commands. Everything is designed to be approachable, whether you're a first-time user or a power user.
+- Community-driven by design — features grow from real user feedback. Suggestions, bug reports, and ideas from the community directly shape where the project goes next.
+- Highly configurable — tweak behavior, preferences, and automation rules to fit your workflow. Sensible defaults mean it works out of the box, while deep options are there when you need them.
+- Open and transparent — built in the open, with an emphasis on clarity and trust. You can see how it works and understand what it's doing.
+- Lightweight and easy to live with — runs quietly in the background without hogging resources, so it fits naturally into your daily routine.
+- Actively maintained — regular improvements, fixes, and new capabilities, driven by maintainers and contributors who care about the project.
+- Welcoming to contributors — whether you write code, test features, improve docs, or just share ideas, there's a place for you in the community.
+- Privacy-minded — your workspace stays yours; the bot is built with respect for your data and personal setup.
+
+How It Works
+
+Under the hood, Openclaw Personal Workspace is built around a simple idea: your workspace should feel like it belongs to you, not the other way around. When you start the bot, it spins up a lightweight local runtime that watches for commands, events, and workspace changes, then routes each one to the right handler. Everything runs from your own environment, so your files, preferences, and workflow stay exactly where you put them.
+
+The core loop is easy to follow. You interact with the bot through natural commands, and each command is parsed, validated against your current configuration, and dispatched to a dedicated module. Modules are intentionally small and focused, which means one feature can grow or change without dragging the rest of the workspace along with it. Results come back in real time, so you get immediate feedback whether you're organizing files, running quick tasks, or triggering automations.
+
+Configuration is a first-class citizen. Your settings live in a plain, readable config that the bot loads at startup and reloads on demand. Change a preference, toggle a feature, or point the workspace at a new folder, and the bot picks it up without a full restart. Sensible defaults mean you can start working right away, while the deeper options are there whenever you want to fine-tune things.
+
+Community drives the feature set. New commands and modules are added in a way that keeps them discoverable, so you can list what's available, read a short description, and try it out without digging through docs. If something doesn't fit your workflow, it's easy to disable or swap out — the workspace is meant to adapt to you, not the reverse.
+
+Reliability matters too. The bot keeps a lightweight log of what it does, handles errors gracefully instead of crashing, and isolates features so a hiccup in one area doesn't take down the rest. Background tasks are queued and processed in order, and long-running operations report progress so you're never left guessing.
+
+Finally, it's designed to be extended. The module structure, config system, and command dispatcher are all open and consistent, making it straightforward for anyone in the community to add a feature, fix a rough edge, or tailor the workspace to a niche workflow. Whether you're using it as-is or building on top of it, the goal is the same: a personal workspace that works the way you do.
+
+Modules and Settings
+
+Routine Execution Module
+This module turns a defined sequence of workspace steps into an unattended run of openclaw-personal-workspace, drawing its order from the task queue and its conditions from the active automation rules.
+
+- Step sequence editor lets users arrange, reorder, and label the steps a routine should follow, so the same workspace activities repeat consistently.
+- Per-step pause and skip controls let users hold back a single step or bypass it without abandoning the rest of the run.
+- Run summary output shows which steps completed, which were skipped, and where the bot stopped, giving a quick account of each execution.
+
+Task Queue Module
+This module holds pending workspace tasks and decides the order in which the bot works through them, feeding directly into routine execution.
+
+- Priority assignment lets users raise or lower a task so the bot reaches it earlier or later in its working order.
+- Scheduled start times let users defer tasks to a chosen window rather than running them immediately.
+- Cancellation and reordering controls keep the queue view accurate and prevent the bot from starting work the user no longer wants.
+
+Workspace State Tracker
+This module records what the bot has observed and touched in the personal workspace, so routines and rules act on current information rather than stale assumptions.
+
+- Handling markers let users confirm an item as done, and the bot reflects that status in later runs.
+- Review flags let users single out items for their own attention instead of letting the bot continue with them.
+- The state view distinguishes processed items from those still awaiting action, which the queue and rules modules consult when planning the next run.
+
+Automation Rules Module
+This module defines when and how the bot acts, and its rules are evaluated during routine execution to decide which steps should fire.
+
+- Condition-based triggers let users tie bot actions to workspace states the tracker observes.
+- Recurring time windows let users confine automation to expected periods of the day or week.
+- Individual enable, disable, and edit controls let users tune one rule without disturbing the others.
+- A per-run report of fired rules confirms that the intended behavior actually occurred.
+
+Logging and Reporting Module
+This module captures an audit trail of every run, including actions taken, decisions made, and steps skipped, and it draws on routine and rule events to build that record.
+
+- Filtering by task or time period narrows the log to the run or window a user wants to inspect.
+- The activity report is the primary place to verify what the bot did and why, complementing the routine run summary.
+- Logged entries serve as the source for notification digests, so what appears in alerts can always be traced back to the record.
+
+Override and Notification Module
+This module gives users direct control over a running bot and decides how its results reach them.
+
+…（内容已截断）

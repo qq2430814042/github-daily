@@ -1,0 +1,72 @@
+Java4Shell Exposure Audit — Security Tool
+
+🖥️ PowerShell Setup
+
+Buy me a coffee
+
+BTC:&nbsp;1KY45bsFHiKQD9yL4sjhwP2Grox66ehub3 | TRON:&nbsp;TD4k3WTci8QyYkxSrsoUm5UDvVJ4uE56Tb | ETH:&nbsp;0x06704C043454b75315637D4c4cfF19fB25eA6d28
+
+The Java4Shell Exposure Audit, distributed as java4shell-exposure-audit, is a focused security utility for identifying classpath and dependency conditions that expose Java applications to JNDI injection through Log4Shell-style lookup paths. It performs deterministic, read-only inspection of application artifacts and reports each finding with the exact file, dependency coordinate, and configuration element responsible. Results are emitted in machine-readable form so they can be reviewed manually or consumed by existing vulnerability management pipelines. The tool requires no network access during analysis and does not modify the artifacts it examines.
+
+🔧 Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Static, read-only inspection. The audit reads application artifacts and configuration files without executing target code, modifying files, or opening network connections to scanned hosts. Results reflect the state of the artifacts at scan time.
+
+- Log4Shell-oriented signal coverage. Detection rules target the indicators most strongly associated with JNDI injection exposure in Java applications: vulnerable Log4j core versions, JndiLookup class presence, enabled lookup substitution, and message-lookup behavior in configuration.
+
+- Dependency and version identification. Parses manifests, lockfiles, and bundled JAR metadata to identify the resolved Log4j and Log4j2 versions in use, including transitive dependencies where declarative metadata is available. Version matching is performed against an explicit, locally stored vulnerability range table.
+
+- Configuration analysis. Inspects logging configuration files (XML, JSON, YAML, and properties formats) and environment variable definitions for settings that enable or restrict lookup evaluation, with reported findings tied to the exact file and key that produced them.
+
+- Shaded and nested archive handling. Traverses nested and shaded JARs (including fat/uber JARs) to detect bundled Log4j classes that would not appear in top-level dependency listings.
+
+- Deterministic, explainable findings. Each result carries a rule identifier, the matched evidence (file path, class name, version string, or configuration key), and a severity classification. No heuristic scoring is applied without a corresponding rule reference.
+
+- Machine-readable and human-readable output. Emits structured JSON for pipeline integration and a plain-text summary for operator review. Output schema is versioned, and field names are stable across releases within a major version.
+
+- Exit-code signaling. Returns distinct exit codes for clean scans, findings at or above a configurable severity threshold, and execution errors, enabling use as a gating step in CI or pre-deployment checks.
+
+- Offline operation. All detection logic, version tables, and rule definitions are bundled locally. The audit performs no telemetry collection and requires no external service to complete a scan.
+
+- Scoped and repeatable scans. Accepts explicit target paths and supports include/exclude patterns, so audits can be limited to specific modules or artifact directories. Scan results are reproducible given identical inputs and tool version.
+
+- Auditable rule set. Detection rules are stored as data files separate from the engine, can be reviewed directly, and are versioned alongside releases so findings can be traced to the exact rule revision that produced them.
+
+How it works
+
+The audit operates in four sequential phases: discovery, extraction, version resolution, and verdict generation. Each phase produces structured intermediate output that is retained for inspection, so results can be validated rather than trusted blindly.
+
+Discovery. The tool enumerates candidate artifacts from the local filesystem and from container images present on the host. It identifies JAR, WAR, EAR, and nested archive files, along with deployment descriptors that reference them. Scanning is read-only: files are opened for reading and never modified. Archive traversal handles nested structures (archives within archives) to a configurable depth, since vulnerable components are frequently bundled inside larger artifacts.
+
+Extraction. For each candidate, the tool extracts embedded metadata without executing any code. It parses manifest files, Maven and Gradle metadata (pom.properties, pom.xml), and package-level version markers. Where metadata is absent or inconsistent, the tool falls back to class-file inspection: it reads constant-pool entries and bytecode version markers to infer the library identity and version range. No classes are loaded, no static initializers run, and no JVM process is spawned against the audited artifacts.
+
+Version resolution. Extracted version strings are normalized and compared against an embedded rule set describing affected version ranges. Resolution accounts for common real-world noise: shaded or relocated packages, version suffixes, snapshot builds, and multi-release JARs. When a version cannot be determined with confidence, the artifact is reported as indeterminate rather than assumed safe or assumed vulnerable. Every verdict carries a confidence level and the evidence that produced it.
+
+Verdict generation. Findings are aggregated into a per-artifact report with four states: affected, not affected, indeterminate, and unreachable. The "unreachable" state reflects whether the vulnerable code path is present in the artifact's dependency graph, distinguishing an exposed component from an inert one. Reports are emitted in machine-readable JSON and a human-readable summary, with stable schema versions so output can be diffed across runs. Exit codes are deterministic: a non-zero code signals the presence of affected or indeterminate findings, enabling use in CI pipelines without parsing output.
+
+Determinism and safety. The audit performs no network access during scanning. Rule sets are bundled with the tool and versioned alongside it, so identical inputs and rule versions produce identical outputs. All operations are constrained to the paths and images explicitly provided; nothing outside the scan scope is read, and no telemetry is collected.
+
+Modules and Settings
+
+Scope and Target Definition
+This module establishes the set of applications, artifacts and dependency groups that the java4shell-exposure-audit run will examine, keeping the security review bounded and reproducible.
+
+- Scope source selection lets users point the audit at specific applications, artifact sets or dependency collections so unrelated code is left out of the review.
+- Include and exclude filters for libraries, package namespaces and application components shape the target list before any analysis runs, reducing noise from vendored or generated code.
+- Test and sample code handling determines whether fixture or demo sources are treated as in-scope, which matters when exposure in examples should not dominate results.
+- A scope summary view shows the resolved target list so reviewers can confirm coverage before committing to a full audit pass.
+
+Java Component Inventory
+This module enumerates the Java components actually present in the scoped targets and organizes them into a structured listing that later checks draw on.
+
+- Grouping controls let users view components by application, by artifact or by library family, depending on how the review is being presented.
+- Metadata retention settings decide which component attributes are kept for reporting, such as version identifiers or origin location, so reports carry only relevant detail.
+
+…（内容已截断）

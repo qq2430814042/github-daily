@@ -1,0 +1,81 @@
+Wabbajack Curated Playthrough Workspace — Windows Desktop Client
+
+📦 PowerShell Install Button
+
+Leave a little tip
+
+TRON:&nbsp;TA35D3Bq5YC1FubykTYbHx8YXWGkNDGYQw | BTC:&nbsp;1MW1Uo63LMyHDbA27erqyVvXS5M435oDGi
+
+Wabbajack Curated Playthrough Workspace is a desktop application for assembling, managing, and maintaining curated mod playthroughs from reusable modlist definitions. It provides a deterministic build pipeline that resolves dependencies, validates load-order constraints, and produces reproducible workspace states across repeated deployments. The application supports profile isolation, incremental rebuilds, conflict inspection, and structured logging so that complex configurations remain auditable and recoverable. Designed for technical users, it exposes configuration surfaces and diagnostics while keeping runtime behavior predictable across environments.
+
+✅ Before You Start
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Profile isolation – Maintains separate, self-contained workspace profiles for each curated playthrough, preventing cross-contamination of mod lists, configuration files, and save data between different curated setups.
+
+- Deterministic modlist resolution – Resolves and validates curated modlist manifests against declared dependencies, verifying that all referenced packages, versions, and load-order constraints are satisfied before a workspace is activated.
+
+- Load-order-aware deployment – Applies plugin and archive ordering according to the curated manifest’s declared rules, with support for conflict detection and priority reconciliation across the active profile.
+
+- Snapshot and rollback – Captures point-in-time snapshots of a workspace’s resolved state, enabling deterministic restoration of a prior configuration after experimental changes or failed deployments.
+
+- Workspace integrity verification – Performs checksum-based validation of deployed files against manifest records, surfacing drift, missing assets, or unintended local modifications.
+
+- Portable workspace definitions – Stores workspace state in a structured, human-readable format that can be version-controlled, diffed, and transferred between machines without altering the resolved deployment semantics.
+
+- Curated metadata handling – Parses and surfaces curated list metadata, including author notes, required tooling declarations, and per-profile configuration overrides, within the workspace interface.
+
+- Concurrent profile management – Supports multiple active workspaces on a single installation, with isolated state directories and independent resolution contexts per profile.
+
+- Change auditing – Logs deployment, resolution, and snapshot operations with timestamps and affected artifacts, providing a traceable history for troubleshooting and reproducibility.
+
+How it works
+
+Wabbajack Curated Playthrough Workspace operates as a local orchestration layer that sits between your curated modlist archive and the playthrough environment you intend to run. On first launch, the application scans the configured workspace root, indexes every curated list definition it finds, and builds an internal catalog that maps each list to its declared dependencies, load order metadata, and version pins. This catalog is cached locally so subsequent launches resolve instantly without re-parsing the full archive.
+
+When you select a curated list, the workspace performs a resolution pass against the local mod staging area. Each declared archive is checksummed and compared to the list's manifest; missing, mismatched, or superseded archives are flagged rather than silently substituted. The resolver respects the list's declared version constraints and will refuse to assemble a playthrough profile if any hard dependency cannot be satisfied, preventing partial or corrupted deployments.
+
+Profile assembly is non-destructive. Rather than modifying a shared installation, the workspace constructs an isolated profile directory containing generated load-order files, configuration overrides, and symlinked or copied asset references as appropriate for the detected platform. Because profiles are self-contained, multiple curated playthroughs can coexist on the same machine without cross-contamination of plugins, settings, or save directories.
+
+The workspace maintains a transaction log for every assembly operation. Before any files are written, a rollback snapshot records the prior state of affected paths; if assembly fails midway, the workspace restores the snapshot automatically. Completed transactions are retained so you can diff two profiles, verify exactly which archives and configuration values changed between them, and reproduce a prior playthrough deterministically.
+
+At runtime, the workspace exposes a launch handoff: it validates the assembled profile one final time, applies any list-declared runtime flags, and starts the target environment with the correct working directory and argument set. Post-launch, the workspace monitors the session's process tree and records session metadata alongside the profile, giving you a per-playthrough history of what was run, when, and against which manifest version.
+
+All state is stored in a portable workspace format — human-readable manifests plus a local database — so a workspace directory can be backed up, moved, or version-controlled without loss of provenance. The application performs no network operations during assembly; every resolution and validation step is computed against local data only.
+
+Modules and Settings
+
+Workspace Manager
+The Workspace Manager is the central place where each curated playthrough is set up as its own container for profiles, notes and launch configuration.
+- Workspace rename, reorder and archive controls let the user keep active playthroughs at the top and move finished ones out of the way without deleting their history.
+- A status marker per workspace (active, paused or completed) drives the overview so the user can see the state of all playthroughs at a glance.
+- Workspace-level settings hold the launch configuration and default notes view, so opening a workspace immediately reflects how that playthrough is meant to be run.
+
+Profile and Loadout Panel
+This panel manages the profiles inside a workspace so different character builds or mod variations can coexist.
+- Duplicate and adjust controls create a new profile from an existing one while leaving the original untouched.
+- The active profile is highlighted and becomes the reference point for the launch checklist, notes and snapshots in that workspace.
+- Switching the active profile refreshes the workspace view so the matching configuration and notes are shown together.
+
+Curated List Tracker
+The tracker records which curated list version each playthrough is based on and how that setup has changed.
+- Each list entry carries a status (current, outdated or pending review) that the user sets as lists evolve.
+- Free-text notes attached to a list entry capture manual tweaks and known issues for that specific version.
+- The entries stack into a readable history per workspace, linking each profile back to the list version it was built from.
+
+Launch Checklist
+The checklist turns the selected profile's settings into a pre-session confirmation step.
+- Items can be added, removed and reordered per workspace so the checklist matches how that playthrough is actually started.
+- Completed items are checked off visibly, and the pre-launch summary shows exactly what was confirmed before the session begins.
+- Checklist state ties to the active profile, so switching profiles presents the checklist belonging to that configuration.
+
+Session Journal and Milestones
+This module combines dated session logging with milestone tracking for each workspace.
+
+…（内容已截断）

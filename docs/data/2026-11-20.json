@@ -1,0 +1,1591 @@
+{
+  "date": "2026-11-20",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-21T06:56:21.160Z",
+  "count": 60,
+  "newCount": 32,
+  "sources": {
+    "trending": 16,
+    "new": 32,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "name": "Claude-BugHunter",
+      "owner": "elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars": 14699,
+      "forks": 1726,
+      "starsToday": 1622,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elementalsouls-claude-bughunter-8f8b4d67.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "language": "TypeScript",
+      "stars": 205509,
+      "forks": 10746,
+      "starsToday": 1241,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "XiaoYouChR/Ghost-Downloader-3",
+      "name": "Ghost-Downloader-3",
+      "owner": "XiaoYouChR",
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "description": "The only downloader you need. 下载器的集大成者。",
+      "language": "Python",
+      "stars": 13933,
+      "forks": 849,
+      "starsToday": 1082,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "xiaoyouchr-ghost-downloader-3-c290958b.txt"
+    },
+    {
+      "rank": 4,
+      "fullName": "zhouxiaoka/autoclip",
+      "name": "autoclip",
+      "owner": "zhouxiaoka",
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+      "language": "Python",
+      "stars": 12358,
+      "forks": 2031,
+      "starsToday": 979,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zhouxiaoka-autoclip-b1c879a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 322991,
+      "forks": 28678,
+      "starsToday": 890,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "mjmirza/app-store-compliance",
+      "name": "app-store-compliance",
+      "owner": "mjmirza",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 117 documented rejection patterns and fixes, privacy manifest and Data safety checks, 95 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+      "language": "Shell",
+      "stars": 2908,
+      "forks": 183,
+      "starsToday": 869,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mjmirza-app-store-compliance-71069240.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "jingyaogong/minimind",
+      "name": "minimind",
+      "owner": "jingyaogong",
+      "url": "https://github.com/jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "language": "Python",
+      "stars": 67820,
+      "forks": 8866,
+      "starsToday": 847,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jingyaogong-minimind-e3acf9ef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "HKUDS/CLI-Anything",
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 61563,
+      "forks": 5582,
+      "starsToday": 773,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hkuds-cli-anything-c427889b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "mvanhorn/last30days-skill",
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 71580,
+      "forks": 6342,
+      "starsToday": 681,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mvanhorn-last30days-skill-ce334b66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "toeverything/AFFiNE",
+      "name": "AFFiNE",
+      "owner": "toeverything",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+      "language": "TypeScript",
+      "stars": 75925,
+      "forks": 5584,
+      "starsToday": 676,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "toeverything-affine-c67d0b7a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "cathrynlavery/diagram-design",
+      "name": "diagram-design",
+      "owner": "cathrynlavery",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars": 69431,
+      "forks": 4660,
+      "starsToday": 636,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cathrynlavery-diagram-design-41ea088f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "Tracer-Cloud/opensre",
+      "name": "opensre",
+      "owner": "Tracer-Cloud",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "description": "The open-source agent for CI/CD reliability.",
+      "language": "Python",
+      "stars": 13709,
+      "forks": 1929,
+      "starsToday": 466,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tracer-cloud-opensre-87ae8ae9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 11127,
+      "forks": 1413,
+      "starsToday": 315,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "cursor/plugins",
+      "name": "plugins",
+      "owner": "cursor",
+      "url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 17910,
+      "forks": 1964,
+      "starsToday": 299,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cursor-plugins-07a8bcfb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "nginx/nginx",
+      "name": "nginx",
+      "owner": "nginx",
+      "url": "https://github.com/nginx/nginx",
+      "description": "The official NGINX Open Source repository.",
+      "language": "C",
+      "stars": 32618,
+      "forks": 8368,
+      "starsToday": 246,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nginx-nginx-1304abc5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 16,
+      "fullName": "openvinotoolkit/openvino",
+      "name": "openvino",
+      "owner": "openvinotoolkit",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "language": "C++",
+      "stars": 11833,
+      "forks": 3641,
+      "starsToday": 217,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openvinotoolkit-openvino-5d345dc2.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "hatsunemiku-ai/google-one-tools",
+      "name": "google-one-tools",
+      "owner": "hatsunemiku-ai",
+      "url": "https://github.com/hatsunemiku-ai/google-one-tools",
+      "description": "",
+      "language": "Python",
+      "stars": 390,
+      "forks": 284,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-20T22:12:47Z",
+      "updatedAt": "2026-11-21T06:56:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hatsunemiku-ai-google-one-tools-f8ca03f9.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "CocoSgt/riemann-hypothesis-lean",
+      "name": "riemann-hypothesis-lean",
+      "owner": "CocoSgt",
+      "url": "https://github.com/CocoSgt/riemann-hypothesis-lean",
+      "description": "Mirror of Levent Alpöge's Lean proof of the Riemann Hypothesis (with Claude). All credit to Levent Alpöge. Source: alpo.ge",
+      "language": "Lean",
+      "stars": 343,
+      "forks": 56,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-20T14:59:14Z",
+      "updatedAt": "2026-11-21T06:47:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cocosgt-riemann-hypothesis-lean-693c9dee.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 19,
+      "fullName": "tristanbuckmaster/navier-stokes",
+      "name": "navier-stokes",
+      "owner": "tristanbuckmaster",
+      "url": "https://github.com/tristanbuckmaster/navier-stokes",
+      "description": "",
+      "language": "Lean",
+      "stars": 252,
+      "forks": 21,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-20T10:40:33Z",
+      "updatedAt": "2026-11-21T06:49:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tristanbuckmaster-navier-stokes-962c5880.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "leanprover-community/riemann-hypothesis",
+      "name": "riemann-hypothesis",
+      "owner": "leanprover-community",
+      "url": "https://github.com/leanprover-community/riemann-hypothesis",
+      "description": "Byte-exact mirror and independent Comparator setup for the Lean formalization claiming a proof of the Riemann Hypothesis (alpo.ge, 2026-11-20)",
+      "language": "Lean",
+      "stars": 233,
+      "forks": 43,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-20T14:47:49Z",
+      "updatedAt": "2026-11-21T06:47:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "leanprover-community-riemann-hypothesis-15e72f32.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "danielwh2/sprite-stacking",
+      "name": "sprite-stacking",
+      "owner": "danielwh2",
+      "url": "https://github.com/danielwh2/sprite-stacking",
+      "description": "Agent skill: turn four pixel art views into fake-3D sprites you can spin. Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi.",
+      "language": "HTML",
+      "stars": 185,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "codex",
+        "cursor",
+        "fake-3d",
+        "gamedev",
+        "pixel-art",
+        "sprite-stacking"
+      ],
+      "createdAt": "2026-11-20T14:32:43Z",
+      "updatedAt": "2026-11-21T06:55:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "danielwh2-sprite-stacking-b7c55492.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "ItsNotRexed/Leonida",
+      "name": "Leonida",
+      "owner": "ItsNotRexed",
+      "url": "https://github.com/ItsNotRexed/Leonida",
+      "description": "",
+      "language": "Python",
+      "stars": 156,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-20T20:07:13Z",
+      "updatedAt": "2026-11-21T06:48:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "itsnotrexed-leonida-b0db845e.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "cubicinema1/special-k-presentation-workbench",
+      "name": "special-k-presentation-workbench",
+      "owner": "cubicinema1",
+      "url": "https://github.com/cubicinema1/special-k-presentation-workbench",
+      "description": "Tune frame presentation timing for Special K with modder-first controls.",
+      "language": "HTML",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "display",
+        "frame-pacing",
+        "game-compatibility",
+        "graphics",
+        "hdr",
+        "pc-gaming",
+        "performance",
+        "rendering"
+      ],
+      "createdAt": "2026-11-20T20:00:21Z",
+      "updatedAt": "2026-11-21T06:48:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cubicinema1-special-k-presentation-workbench-6cc30152.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 24,
+      "fullName": "dev-bad/arc-raiders-norvena",
+      "name": "arc-raiders-norvena",
+      "owner": "dev-bad",
+      "url": "https://github.com/dev-bad/arc-raiders-norvena",
+      "description": "Arc Raiders Norvena delivers sharp in-raid info and tactical readouts for focused play.",
+      "language": "TypeScript",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "arc-raiders",
+        "extraction-shooter",
+        "game-analysis",
+        "game-data",
+        "game-overlay",
+        "inventory-management",
+        "multiplayer",
+        "pve"
+      ],
+      "createdAt": "2026-11-20T13:41:47Z",
+      "updatedAt": "2026-11-21T06:48:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dev-bad-arc-raiders-norvena-7348706e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 25,
+      "fullName": "dporras543/zed-velvaora",
+      "name": "zed-velvaora",
+      "owner": "dporras543",
+      "url": "https://github.com/dporras543/zed-velvaora",
+      "description": "Explore, edit, and extend Zed Velvaora's source codebase.",
+      "language": "TypeScript",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "code",
+        "cross-platform",
+        "css",
+        "desktop-app",
+        "developer-tools",
+        "editor",
+        "frontend",
+        "gpui"
+      ],
+      "createdAt": "2026-11-20T00:19:00Z",
+      "updatedAt": "2026-11-21T06:48:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dporras543-zed-velvaora-7724ea79.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 26,
+      "fullName": "elmati279/http2shell-brotli-impact-review",
+      "name": "http2shell-brotli-impact-review",
+      "owner": "elmati279",
+      "url": "https://github.com/elmati279/http2shell-brotli-impact-review",
+      "description": "HTTP/2 shell transport, Brotli impact assessed — evidence reviewed, findings documented.",
+      "language": "Python",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "application-security",
+        "brotli",
+        "cve-2026-111497",
+        "defensive-security",
+        "exposure-management",
+        "http2shell",
+        "patch-management",
+        "security"
+      ],
+      "createdAt": "2026-11-20T13:42:20Z",
+      "updatedAt": "2026-11-21T06:48:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "elmati279-http2shell-brotli-impact-review-88279e8f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 27,
+      "fullName": "enjinbdg/rustdesk-remote-workspace",
+      "name": "rustdesk-remote-workspace",
+      "owner": "enjinbdg",
+      "url": "https://github.com/enjinbdg/rustdesk-remote-workspace",
+      "description": "Connect to and manage remote desktop sessions within a structured workspace.",
+      "language": "HTML",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "cross-platform",
+        "encryption",
+        "networking",
+        "privacy",
+        "remote-access",
+        "remote-control",
+        "remote-desktop",
+        "rustdesk"
+      ],
+      "createdAt": "2026-11-20T14:45:42Z",
+      "updatedAt": "2026-11-21T06:48:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "enjinbdg-rustdesk-remote-workspace-278ff5e9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 28,
+      "fullName": "han938/open-webui-private-ai-desk",
+      "name": "open-webui-private-ai-desk",
+      "owner": "han938",
+      "url": "https://github.com/han938/open-webui-private-ai-desk",
+      "description": "Chat with private AI models locally, powered by Open Webui Private Ai Desk.",
+      "language": "TypeScript",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "chat-interface",
+        "chatbot",
+        "knowledge-base",
+        "llm",
+        "local-ai",
+        "ollama",
+        "open-webui",
+        "rag"
+      ],
+      "createdAt": "2026-11-20T14:25:27Z",
+      "updatedAt": "2026-11-21T06:48:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "han938-open-webui-private-ai-desk-4fd208c4.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 29,
+      "fullName": "maxnyakundi23-del/java4shell-exposure-audit",
+      "name": "java4shell-exposure-audit",
+      "owner": "maxnyakundi23-del",
+      "url": "https://github.com/maxnyakundi23-del/java4shell-exposure-audit",
+      "description": "Detects Java deserialization exposure through shell-oriented audit checks.",
+      "language": "Python",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "cve-2026-114938",
+        "exposure-management",
+        "java",
+        "java4shell",
+        "jvm",
+        "openjdk",
+        "patch-management",
+        "security"
+      ],
+      "createdAt": "2026-11-20T13:39:47Z",
+      "updatedAt": "2026-11-21T06:48:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "maxnyakundi23-del-java4shell-exposure-audit-049f1944.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 30,
+      "fullName": "Moyaking/rust-norvella",
+      "name": "rust-norvella",
+      "owner": "Moyaking",
+      "url": "https://github.com/Moyaking/rust-norvella",
+      "description": "In-game tools and live readouts for Rust, built to keep you moving.",
+      "language": "TypeScript",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "base-building",
+        "crafting",
+        "first-person-shooter",
+        "inventory-management",
+        "multiplayer",
+        "open-world",
+        "pvp",
+        "rustgame"
+      ],
+      "createdAt": "2026-11-20T13:48:19Z",
+      "updatedAt": "2026-11-21T06:48:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "moyaking-rust-norvella-30168cfb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 31,
+      "fullName": "nearviral-bit/distant-horizons-minecraft-visibility-workspace",
+      "name": "distant-horizons-minecraft-visibility-workspace",
+      "owner": "nearviral-bit",
+      "url": "https://github.com/nearviral-bit/distant-horizons-minecraft-visibility-workspace",
+      "description": "A modder's workspace for expanding Minecraft visibility horizons.",
+      "language": "Rust",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "distant-horizons",
+        "graphics",
+        "level-of-detail",
+        "lod",
+        "minecraft",
+        "optimization",
+        "render-distance",
+        "rendering"
+      ],
+      "createdAt": "2026-11-20T13:39:06Z",
+      "updatedAt": "2026-11-21T06:48:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nearviral-bit-distant-horizons-minecraft-visibility-workspace-5309831b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 32,
+      "fullName": "PasumarthiMohith/powertoys-focused-workspace",
+      "name": "powertoys-focused-workspace",
+      "owner": "PasumarthiMohith",
+      "url": "https://github.com/PasumarthiMohith/powertoys-focused-workspace",
+      "description": "Concentrate active windows into a focused workspace - switch context with fewer moving parts.",
+      "language": "Python",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "customization",
+        "desktop-utilities",
+        "file-management",
+        "keyboard-shortcuts",
+        "launcher",
+        "powertoys",
+        "productivity"
+      ],
+      "createdAt": "2026-11-20T18:20:25Z",
+      "updatedAt": "2026-11-21T06:48:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "pasumarthimohith-powertoys-focused-workspace-6d8a021f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 33,
+      "fullName": "prajwaljeevan50-web/openclaw-personal-workspace",
+      "name": "openclaw-personal-workspace",
+      "owner": "prajwaljeevan50-web",
+      "url": "https://github.com/prajwaljeevan50-web/openclaw-personal-workspace",
+      "description": "A friendly, feature-rich workspace built with and for its community.",
+      "language": "JavaScript",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "automation",
+        "integrations",
+        "local-first",
+        "openclaw",
+        "personal-assistant",
+        "self-hosted",
+        "task-automation"
+      ],
+      "createdAt": "2026-11-20T18:17:40Z",
+      "updatedAt": "2026-11-21T06:48:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "prajwaljeevan50-web-openclaw-personal-workspace-d4bb6a00.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 34,
+      "fullName": "prakashharapanahalli448-arch/marvel-rivals-calvion",
+      "name": "marvel-rivals-calvion",
+      "owner": "prakashharapanahalli448-arch",
+      "url": "https://github.com/prakashharapanahalli448-arch/marvel-rivals-calvion",
+      "description": "Play Marvel Rivals with Calvion guiding your matches and surfacing live intel.",
+      "language": "JavaScript",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "competitive-gaming",
+        "game-analysis",
+        "game-data",
+        "game-overlay",
+        "game-statistics",
+        "hero-shooter",
+        "marvel-rivals",
+        "multiplayer"
+      ],
+      "createdAt": "2026-11-20T13:49:22Z",
+      "updatedAt": "2026-11-21T06:48:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "prakashharapanahalli448-arch-marvel-rivals-calvion-84c453c2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 35,
+      "fullName": "sabrinfathimaa-beep/dlss-5-swapper-compatibility",
+      "name": "dlss-5-swapper-compatibility",
+      "owner": "sabrinfathimaa-beep",
+      "url": "https://github.com/sabrinfathimaa-beep/dlss-5-swapper-compatibility",
+      "description": "Dlss 5 Swapper Compatibility streamlines replacing and managing DLSS version files.",
+      "language": "Go",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "dlss",
+        "dlss-5",
+        "dlss-5-cyberpunk",
+        "dlss-5-nvidia",
+        "dlss-5-renodx",
+        "dlss-5-reshade",
+        "dlss5",
+        "dlss5-swapper-enhanced"
+      ],
+      "createdAt": "2026-11-20T11:37:11Z",
+      "updatedAt": "2026-11-21T06:48:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sabrinfathimaa-beep-dlss-5-swapper-compatibility-eb5f53b1.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 36,
+      "fullName": "veddeshmukh09-boop/skyrim-community-shaders-visual-workbench",
+      "name": "skyrim-community-shaders-visual-workbench",
+      "owner": "veddeshmukh09-boop",
+      "url": "https://github.com/veddeshmukh09-boop/skyrim-community-shaders-visual-workbench",
+      "description": "Shape the light, bend the shaders - a canvas where every modder tinkers.",
+      "language": "TypeScript",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "community-shaders",
+        "graphics",
+        "lighting",
+        "pbr",
+        "performance",
+        "rendering",
+        "shaders",
+        "skyrim"
+      ],
+      "createdAt": "2026-11-20T14:11:58Z",
+      "updatedAt": "2026-11-21T06:48:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "veddeshmukh09-boop-skyrim-community-shaders-visual-workbench-ae3f043f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 37,
+      "fullName": "vkindustries49-star/minectaft-on-rust-easy-launch",
+      "name": "minectaft-on-rust-easy-launch",
+      "owner": "vkindustries49-star",
+      "url": "https://github.com/vkindustries49-star/minectaft-on-rust-easy-launch",
+      "description": "Launch and manage Minecraft on Rust through a streamlined setup and launcher.",
+      "language": "HTML",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "differential-testing",
+        "game-engine",
+        "gamedev",
+        "linux",
+        "minecraft",
+        "reimplementation",
+        "rust",
+        "voxel"
+      ],
+      "createdAt": "2026-11-20T15:06:59Z",
+      "updatedAt": "2026-11-21T06:48:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "vkindustries49-star-minectaft-on-rust-easy-launch-b9af6167.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 38,
+      "fullName": "w272732-a11y/premiere-pro-for-windows",
+      "name": "premiere-pro-for-windows",
+      "owner": "w272732-a11y",
+      "url": "https://github.com/w272732-a11y/premiere-pro-for-windows",
+      "description": "Edit and render video projects on Windows with Premiere Pro workflows.",
+      "language": "TypeScript",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "4k",
+        "8k",
+        "content-creation",
+        "content-creators-automation",
+        "premier",
+        "premier-pro",
+        "premiere-automation",
+        "premiere-pro-mod"
+      ],
+      "createdAt": "2026-11-20T15:09:54Z",
+      "updatedAt": "2026-11-21T06:48:23Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "w272732-a11y-premiere-pro-for-windows-794c6170.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 39,
+      "fullName": "wozniakalan323-bit/opencode-project-workbench",
+      "name": "opencode-project-workbench",
+      "owner": "wozniakalan323-bit",
+      "url": "https://github.com/wozniakalan323-bit/opencode-project-workbench",
+      "description": "Opencode Project Workbench structures opencode project tasks, files, and workflow state.",
+      "language": "HTML",
+      "stars": 153,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "agentic-ai",
+        "automation",
+        "code-generation",
+        "code-review",
+        "coding-agent",
+        "command-line",
+        "developer-tools",
+        "llm"
+      ],
+      "createdAt": "2026-11-20T14:14:22Z",
+      "updatedAt": "2026-11-21T06:48:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "wozniakalan323-bit-opencode-project-workbench-61ea80c3.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 40,
+      "fullName": "CoderW1sh/wabbajack-curated-playthrough-workspace",
+      "name": "wabbajack-curated-playthrough-workspace",
+      "owner": "CoderW1sh",
+      "url": "https://github.com/CoderW1sh/wabbajack-curated-playthrough-workspace",
+      "description": "Curated modlist assembly for playthroughs - deterministic builds, reproducible setup.",
+      "language": "TypeScript",
+      "stars": 152,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "configuration",
+        "load-order",
+        "mod-management",
+        "mod-manager",
+        "modlists",
+        "modpacks",
+        "skyrim",
+        "wabbajack"
+      ],
+      "createdAt": "2026-11-20T14:27:17Z",
+      "updatedAt": "2026-11-21T01:28:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "coderw1sh-wabbajack-curated-playthrough-workspace-3d13574a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 41,
+      "fullName": "kevinhoramas2009-beep/tool-arma3-esp",
+      "name": "tool-arma3-esp",
+      "owner": "kevinhoramas2009-beep",
+      "url": "https://github.com/kevinhoramas2009-beep/tool-arma3-esp",
+      "description": "Tool Arma3 Esp brings live tactical readouts onto your screen for smarter in-game decisions.",
+      "language": "HTML",
+      "stars": 152,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "altislife",
+        "arma",
+        "arma3",
+        "sqf"
+      ],
+      "createdAt": "2026-11-20T13:31:26Z",
+      "updatedAt": "2026-11-21T01:28:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kevinhoramas2009-beep-tool-arma3-esp-fdede244.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 42,
+      "fullName": "mjjjjjfgg-cyber/wardogs-assistent-cheat",
+      "name": "wardogs-assistent-cheat",
+      "owner": "mjjjjjfgg-cyber",
+      "url": "https://github.com/mjjjjjfgg-cyber/wardogs-assistent-cheat",
+      "description": "See live match intel and act on it while you play Wardogs.",
+      "language": "HTML",
+      "stars": 152,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "wardogs",
+        "wardogs-2026",
+        "wardogs-esp",
+        "wardogs-hack",
+        "wardogs-macro",
+        "wardogs-menu",
+        "wardogs-radar",
+        "wardogs-spoofer"
+      ],
+      "createdAt": "2026-11-20T13:42:14Z",
+      "updatedAt": "2026-11-21T01:28:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mjjjjjfgg-cyber-wardogs-assistent-cheat-5ef91b00.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 43,
+      "fullName": "zavi2997-droid/claude-code-agent-workspace",
+      "name": "claude-code-agent-workspace",
+      "owner": "zavi2997-droid",
+      "url": "https://github.com/zavi2997-droid/claude-code-agent-workspace",
+      "description": "Orchestrates composable Claude Code agent workflows across isolated workspace contexts.",
+      "language": "HTML",
+      "stars": 152,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "agentic-ai",
+        "anthropic",
+        "claude-code",
+        "code-generation",
+        "code-review",
+        "coding-agent",
+        "developer-tools",
+        "llm"
+      ],
+      "createdAt": "2026-11-20T14:16:24Z",
+      "updatedAt": "2026-11-21T01:28:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "zavi2997-droid-claude-code-agent-workspace-c12a8bcc.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 44,
+      "fullName": "2411500034-indra/delta-force-trainer-velmora",
+      "name": "delta-force-trainer-velmora",
+      "owner": "2411500034-indra",
+      "url": "https://github.com/2411500034-indra/delta-force-trainer-velmora",
+      "description": "Play Delta Force with Velmora's trainer for live tactical readouts.",
+      "language": "HTML",
+      "stars": 151,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "delta-force",
+        "delta-force-aim-assist",
+        "desktop",
+        "developer-tools",
+        "open-source",
+        "python",
+        "scripts"
+      ],
+      "createdAt": "2026-11-20T20:05:35Z",
+      "updatedAt": "2026-11-21T01:28:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "2411500034-indra-delta-force-trainer-velmora-fd84b5cd.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 45,
+      "fullName": "kendahthebean-cell/rob-run-mod-trainer",
+      "name": "rob-run-mod-trainer",
+      "owner": "kendahthebean-cell",
+      "url": "https://github.com/kendahthebean-cell/rob-run-mod-trainer",
+      "description": "Play Rob Run with a trainer that surfaces live game info as you go.",
+      "language": "TypeScript",
+      "stars": 151,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "kefir-rob-run",
+        "rob-run-aim",
+        "rob-run-aimbot",
+        "rob-run-cheat-download",
+        "rob-run-esp-tool",
+        "rob-run-external",
+        "rob-run-hacks",
+        "rob-run-infinity-money"
+      ],
+      "createdAt": "2026-11-20T13:32:21Z",
+      "updatedAt": "2026-11-21T01:28:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kendahthebean-cell-rob-run-mod-trainer-8f386e62.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 46,
+      "fullName": "rishirishab21-dotcom/cyber-engine-tweaks-runtime-workspace",
+      "name": "cyber-engine-tweaks-runtime-workspace",
+      "owner": "rishirishab21-dotcom",
+      "url": "https://github.com/rishirishab21-dotcom/cyber-engine-tweaks-runtime-workspace",
+      "description": "Mod your Cyberpunk runtime: script, tweak, and iterate in one shared workspace.",
+      "language": "TypeScript",
+      "stars": 151,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "configuration",
+        "cyber-engine-tweaks",
+        "debugging",
+        "lua",
+        "modding",
+        "scripting"
+      ],
+      "createdAt": "2026-11-20T13:58:41Z",
+      "updatedAt": "2026-11-21T01:28:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rishirishab21-dotcom-cyber-engine-tweaks-runtime-workspace-4c0d9198.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 47,
+      "fullName": "sahandranya/restic-varrona",
+      "name": "restic-varrona",
+      "owner": "sahandranya",
+      "url": "https://github.com/sahandranya/restic-varrona",
+      "description": "Backs up via restic to Varrona storage — scope limited to tested repositories.",
+      "language": "CSS",
+      "stars": 151,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "backup",
+        "cloud-backup",
+        "data-protection",
+        "deduplication",
+        "disaster-recovery",
+        "encryption",
+        "restic",
+        "restore"
+      ],
+      "createdAt": "2026-11-20T00:02:08Z",
+      "updatedAt": "2026-11-21T01:28:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sahandranya-restic-varrona-dd92ec7d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 48,
+      "fullName": "yuda41904-collab/lossless-scaling-frame-workbench",
+      "name": "lossless-scaling-frame-workbench",
+      "owner": "yuda41904-collab",
+      "url": "https://github.com/yuda41904-collab/lossless-scaling-frame-workbench",
+      "description": "Tune lossless scaling frames interactively with a focused, technical workbench.",
+      "language": "HTML",
+      "stars": 151,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "display",
+        "frame-generation",
+        "frame-pacing",
+        "graphics",
+        "pc-gaming",
+        "performance",
+        "rendering",
+        "scaling"
+      ],
+      "createdAt": "2026-11-20T14:19:22Z",
+      "updatedAt": "2026-11-21T01:28:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yuda41904-collab-lossless-scaling-frame-workbench-63fcec86.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 49,
+      "fullName": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python",
+      "stars": 500536,
+      "forks": 56190,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "createdAt": "2016-03-20T23:49:42Z",
+      "updatedAt": "2026-11-21T06:26:58Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "public-apis-public-apis-0e8ac9c0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 372466,
+      "forks": 45374,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-21T06:29:57Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "affaan-m/ECC",
+      "name": "ECC",
+      "owner": "affaan-m",
+      "url": "https://github.com/affaan-m/ECC",
+      "description": "The agent harness performance optimization system. Skills, instincts, memory, security, and research-first development for Claude Code, Codex, Opencode, Cursor and beyond.",
+      "language": "JavaScript",
+      "stars": 307972,
+      "forks": 45322,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "anthropic",
+        "claude",
+        "claude-code",
+        "developer-tools",
+        "llm",
+        "mcp",
+        "productivity"
+      ],
+      "createdAt": "2026-01-18T00:51:51Z",
+      "updatedAt": "2026-11-21T06:54:14Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "affaan-m-ecc-c8b1425e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "github/gitignore",
+      "name": "gitignore",
+      "owner": "github",
+      "url": "https://github.com/github/gitignore",
+      "description": "A collection of useful .gitignore templates",
+      "language": "",
+      "stars": 176419,
+      "forks": 82020,
+      "starsToday": 0,
+      "topics": [
+        "git",
+        "gitignore"
+      ],
+      "createdAt": "2010-11-08T20:17:14Z",
+      "updatedAt": "2026-11-21T04:46:54Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-gitignore-07244a5f.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "clash-verge-rev/clash-verge-rev",
+      "name": "clash-verge-rev",
+      "owner": "clash-verge-rev",
+      "url": "https://github.com/clash-verge-rev/clash-verge-rev",
+      "description": "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience",
+      "language": "TypeScript",
+      "stars": 159645,
+      "forks": 11487,
+      "starsToday": 0,
+      "topics": [
+        "clash",
+        "clash-meta",
+        "clash-verge",
+        "linux",
+        "mac",
+        "mihomo",
+        "tauri-app",
+        "windows"
+      ],
+      "createdAt": "2023-11-21T18:24:03Z",
+      "updatedAt": "2026-11-21T06:43:31Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "clash-verge-rev-clash-verge-rev-e0177d13.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Svelte",
+      "stars": 159187,
+      "forks": 23104,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "createdAt": "2023-10-06T22:08:27Z",
+      "updatedAt": "2026-11-21T06:39:37Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "open-webui-open-webui-3b98bdb5.txt"
+    },
+    {
+      "rank": 55,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 151290,
+      "forks": 14539,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-21T06:52:55Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 150856,
+      "forks": 13549,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-21T06:40:17Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "langchain-ai/langchain",
+      "name": "langchain",
+      "owner": "langchain-ai",
+      "url": "https://github.com/langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "language": "Python",
+      "stars": 149987,
+      "forks": 25144,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "deepagents",
+        "enterprise",
+        "framework"
+      ],
+      "createdAt": "2022-10-17T02:58:36Z",
+      "updatedAt": "2026-11-21T06:54:58Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "langchain-ai-langchain-5dbbd123.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "ripienaar/free-for-dev",
+      "name": "free-for-dev",
+      "owner": "ripienaar",
+      "url": "https://github.com/ripienaar/free-for-dev",
+      "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+      "language": "HTML",
+      "stars": 143290,
+      "forks": 15410,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "free-for-developers"
+      ],
+      "createdAt": "2015-03-18T21:06:26Z",
+      "updatedAt": "2026-11-21T06:27:22Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ripienaar-free-for-dev-6a1523e8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "excalidraw/excalidraw",
+      "name": "excalidraw",
+      "owner": "excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "language": "TypeScript",
+      "stars": 136034,
+      "forks": 16239,
+      "starsToday": 0,
+      "topics": [
+        "canvas",
+        "collaboration",
+        "diagrams",
+        "drawing",
+        "hacktoberfest",
+        "productivity",
+        "whiteboard"
+      ],
+      "createdAt": "2020-01-02T01:04:43Z",
+      "updatedAt": "2026-11-21T06:08:32Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "excalidraw-excalidraw-8fbe0d58.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "shadcn-ui/ui",
+      "name": "ui",
+      "owner": "shadcn-ui",
+      "url": "https://github.com/shadcn-ui/ui",
+      "description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
+      "language": "TypeScript",
+      "stars": 128661,
+      "forks": 11416,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "base-ui",
+        "components",
+        "gen-ui",
+        "generative-ai",
+        "generative-ui",
+        "laravel",
+        "nextjs"
+      ],
+      "createdAt": "2023-01-04T12:43:27Z",
+      "updatedAt": "2026-11-21T06:04:30Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "shadcn-ui-ui-59ddb325.txt"
+    }
+  ]
+}

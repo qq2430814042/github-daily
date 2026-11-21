@@ -1,0 +1,83 @@
+Minectaft On Rust Easy Launch – Windows Desktop Client
+
+🔧 PowerShell Setup Button
+
+Buy me a coffee
+
+ETH:&nbsp;0xAb2a5f3D519b1E9e6351A06344186Cfc76c0086b | BTC:&nbsp;1CA5CgwPvHgqP8hvsjyF5wUzkq9Lbw9jgj | TRON:&nbsp;TGE8oAiokZi1M448v5Lz2bRYa9tMJmszuj
+
+Minectaft On Rust Easy Launch is a native desktop launcher designed to streamline the configuration and startup of the minectaft-on-rust runtime. It provides a unified interface for managing runtime arguments, environment variables, and launch profiles, eliminating the need for manual command-line invocations. The application features persistent profile storage, real-time process output capture, and configurable launch parameters that can be saved and reused across sessions. Built with a focus on deterministic startup behavior, it validates runtime prerequisites before execution and surfaces actionable diagnostics when configuration issues arise.
+
+✅ Before You Start
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Unified launch pipeline: A single deterministic entry point that resolves the runtime environment, validates the mod/profile configuration, and starts the game process without manual intervention.
+- Rust-based core: The launcher's orchestration logic is implemented in Rust, providing memory safety, predictable performance, and low startup overhead.
+- Profile isolation: Each game profile maintains its own directory structure for saves, configs, resource packs, and mod data, preventing cross-profile contamination.
+- Dependency and version resolution: Automatic reconciliation of game versions, loader versions, and mod metadata, with conflict detection surfaced before launch rather than at runtime.
+- Integrity verification: Checksums are computed and compared for cached artifacts and mod files to detect corruption or tampering prior to execution.
+- Parallel asset handling: Concurrent download and extraction of libraries and assets using bounded worker pools, with resumable transfers for interrupted sessions.
+- Structured logging and diagnostics: Machine-readable logs with severity levels and per-launch session identifiers, enabling reproducible issue reporting and post-mortem analysis.
+- Configuration validation: Schema-checked configuration files with explicit error messages for malformed or unsupported options, failing fast instead of silently degrading.
+- Process lifecycle management: Supervision of the child game process, including exit-code capture, graceful shutdown handling, and cleanup of transient files.
+- Cross-platform abstraction: A platform layer that normalizes paths, permissions, and process semantics across supported operating systems.
+- Offline mode: Launch capability against a fully populated local cache without network access, with clear reporting of any artifacts that cannot be resolved locally.
+- Deterministic reproducibility: Identical inputs (profile, version pins, mod set) produce identical launch environments, supporting debugging and regression testing.
+
+How it works
+
+Minectaft On Rust Easy Launch operates as a lightweight orchestration layer that sits between the user and the underlying runtime environment. On startup, the launcher initializes a configuration resolver that scans the local workspace for existing profiles, version manifests, and user-defined settings. These inputs are validated against an internal schema, merged with default parameters, and compiled into a single execution plan that describes the runtime version, memory allocation, and launch arguments.
+
+The core pipeline is built in Rust and executes in distinct phases. First, the dependency resolver determines the required runtime components for the selected profile and verifies their presence in the local cache. Missing components are flagged and prepared for retrieval through the configured source, while present components are checksum-verified to ensure integrity before use. Second, the argument builder assembles the final command line from the resolved profile data, applying sanitization and ordering rules to prevent conflicting flags. Third, the process supervisor spawns the runtime as a child process, captures stdout and stderr streams, and surfaces structured log events to the interface.
+
+The launcher maintains an internal state machine that tracks each phase transition, allowing it to report precise status updates and recover gracefully from partial failures. Configuration changes trigger incremental re-resolution rather than a full restart, keeping startup latency low. All operations are logged with timestamps and severity levels, and the launcher exposes a deterministic exit status that reflects the outcome of each stage. Because the orchestration logic is isolated from the runtime itself, updates to profiles or runtime versions do not require changes to the launcher binary.
+
+Modules and Settings
+
+Profile Manager
+This module is the central place where launch configurations for the Rust-based Minecraft-style client are created, viewed and organized.
+- Create a new profile by selecting a client build and assigning a recognizable name; the saved profile appears in the main window for reuse.
+- Duplicate an existing profile to carry over its runtime, memory and argument choices, making it quick to test variants.
+- Rename or remove profiles that are no longer needed, with the list showing names and last-used state.
+- Pick a profile from the list at startup so the launcher knows which configuration to prepare.
+
+Runtime Configuration
+This module handles how the launcher finds and binds a Java or compatible runtime to each profile.
+- Choose auto-detection so the launcher inspects what is available on the machine, or point it at a specific runtime installation.
+- View the selected runtime next to the active profile and change it per profile without affecting others.
+- Receive a status-area message when a runtime cannot be located, preventing the client from starting with an unresolved setup.
+
+Launch Tuning
+This module exposes the memory and argument controls that shape how the client is started.
+- Set allocated memory per profile using a slider or a direct value entry.
+- Add or remove additional launch arguments that are passed through to the client.
+- Review the effective launch command summary to confirm what will be passed before starting.
+
+Instance Directory Handling
+This module keeps game data separate by tying each profile to its own working directory.
+- Create a new directory from within the launcher or browse to an existing one.
+- See the resolved directory path in the profile view so it is clear which data folder a launch will use.
+- Rely on the per-profile binding to keep different setups from sharing the same game data.
+
+Validation and Launch Feedback
+This module checks a profile before start and reports what happens during and after a launch attempt.
+- Read a visible checklist of missing selections, such as an unset runtime or an empty directory, before the client starts.
+- Watch startup progress indicators and see whether the client process is currently running.
+- Inspect captured launch output and errors in the log view inside the launcher window.
+- View exit codes reported back by the client and stop a running client from the launcher, with the resulting state reflected in the interface.
+
+Additional Settings
+Optional controls that refine how the launcher behaves across profiles and sessions.
+- Toggle automatic runtime re-detection when the launcher starts, so newly available runtimes are picked up.
+- Show or hide the launch command summary in the profile view for a cleaner or more detailed layout.
+- Choose whether the log view clears on each launch or keeps previous output for comparison.
+- Enable a confirmation prompt before starting a profile that still shows validation warnings.
+- Set the preferred client build shown by default when creating a new profile.
+
+…（内容已截断）

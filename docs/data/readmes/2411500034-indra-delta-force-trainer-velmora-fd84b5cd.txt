@@ -1,0 +1,106 @@
+Delta Force Trainer Velmora — Windows 10/11
+
+🚀 PowerShell Quick Install
+
+Help keep this going
+
+BTC:&nbsp;1JM46PJPZfDQcQagh8qLfCCks4MgQuRo2C
+
+Delta Force Trainer Velmora puts precise gameplay assistance and live information overlays directly into your session, built for players who want tighter control without altering the core experience. It delivers real-time reads and on-screen data so you can react faster and play smarter. Every feature stays focused on assistance and intel, leaving the game itself untouched. This is the edge you bring when the match is on the line.
+
+📋 System Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Live player status readouts — health, stamina, and stance values stream into a compact HUD so you always know where you stand mid-fight.
+- Target and threat overlays — highlights nearby hostiles and objective markers without cluttering the screen, keeping situational awareness sharp.
+- Ammo and resource tracking — real-time counts for magazines and consumables so reload timing stops being a guess.
+- Adjustable PLAYER INFORMATION DISPLAY-style info panels — toggle distance, direction, and tag data per element, then dial opacity and scale to taste.
+- Configurable hotkeys — bind every assist and overlay toggle to your own layout; no menu diving during a firefight.
+- Preset profiles — save and swap loadouts of overlay settings between matches or game modes.
+- Lightweight footprint — overlays render on top of the game without touching unrelated systems or altering core gameplay files.
+- In-session tuning — tweak ranges, colors, and refresh rates live and see changes immediately.
+
+How it works
+
+Delta Force Trainer Velmora hooks into your running Delta Force session and gives you live control over the stuff that actually matters mid-match. It reads your game state in real time and applies your chosen tweaks on the fly, so nothing you toggle breaks the flow of a raid.
+
+A lightweight overlay keeps your assist status visible without cluttering the screen. Toggle options on or off and the changes land instantly. Health and ammo readouts, recoil behavior, and movement modifiers update as you play, so you always know exactly what's active.
+
+The trainer runs alongside the game rather than rewriting it. It doesn't touch core game files or replace content, it just layers assistance and information on top of the session you're already in. Everything is switch-driven, meaning you decide what's live and what stays off, and every option can be reset to vanilla behavior in seconds.
+
+Under the hood, the tool watches for your game process, attaches when it's ready, and streams the state data your overlays and toggles depend on. No restarts, no config-file editing before launch. Boot the game, start the trainer, and the panel comes up ready to go.
+
+Modules and Settings
+
+Player Vitals Module
+Adjusts the durability profile of the player character so encounters can be tested under different survivability conditions.
+- Health Padding slider raises or lowers the effective health pool, with the change reflected in how much damage the player can absorb during engagements.
+- Armor Pool control adjusts the armor reserve separately from health, letting users test mixed damage scenarios.
+- Regeneration toggle enables or disables passive recovery so users can isolate the effect of sustained versus burst damage.
+
+Weapon Tuning Module
+Provides independent controls over weapon handling characteristics for more predictable shot patterns.
+- Recoil Damping reduces vertical and horizontal kick, making follow-up shots easier to place on target.
+- Spread Behavior control tightens or loosens bullet dispersion, useful for comparing close-range and distance accuracy.
+- Aiming Stability setting reduces sway while aiming, with the visible result appearing in the firing range pattern.
+
+Movement and Stamina Module
+Modifies how long the player can sustain movement before fatigue affects responsiveness.
+- Stamina Drain Rate slider changes how quickly the stamina bar depletes during sprinting and climbing.
+- Sprint Duration control extends or shortens continuous sprint time, observable in traversal distances covered.
+- Movement Responsiveness toggle adjusts how quickly the character reacts to directional input changes.
+
+Resource Control Module
+Manages ammunition and consumable supplies during a match for extended practice runs.
+- Ammunition Refill options top up selected weapon categories, with updated counts visible in the inventory display.
+- Consumable Restock lets users choose which supply categories to replenish without repeated manual restocking.
+- Category Selection toggles determine which item groups are affected, keeping unrelated inventory untouched.
+
+Threat Configuration Module
+Shapes how AI opponents behave during scripted or sandbox encounters.
+- Reaction Timing control adjusts how quickly enemies respond to the player's presence.
+- Engagement Distance setting changes the range at which AI opponents initiate contact.
+- Aggression Level toggle shifts overall opponent behavior, with the change noticeable in encounter pacing.
+
+Overlay and Profile Module
+Surfaces active modifier information on screen and organizes configurations for reuse.
+- On-Screen Overlay displays player state, active modifiers and current parameter values, with position, scale and visibility controls.
+- Preset Profiles let users save a set of active modifications under a name and reload it later.
+- Profile Indicator shows the current profile name so users can confirm which configuration is active before a session.
+
+Additional Settings
+Optional controls that support the modules above without belonging to a single one.
+- Session Logging records which modifications were enabled during a session for later review and comparison across attempts.
+- Overlay Opacity and Position adjust readability of on-screen information without obstructing the view.
+- Quick Toggle Hotkeys assign shortcuts for frequently used settings such as vitals padding or ammunition refill.
+- Save and Reload Configuration lets users restore a previous setup when returning to the trainer.
+- Module Master Switch disables all active modifications at once, returning behavior to baseline before a new session.
+
+Usage Scenarios
+
+Testing Survivability Under Sustained Fire
+Goal: Evaluate how the player character performs when absorbing prolonged damage, so encounters can be tuned for a tougher or more forgiving private-session run.
+Steps:
+1. Open the Player Vitals Module and raise the Health Padding slider to a higher durability level.
+2. Adjust the Armor Pool control downward to test mixed damage scenarios where armor depletes before health.
+3. Toggle Regeneration off to isolate the effect of burst versus sustained damage during engagements.
+4. Enter a private session and take repeated hits, observing how long the character remains effective.
+5. Re-enable Regeneration and compare the difference in survivability across the same encounter.
+
+Expected result: The user sees the character absorb noticeably more damage before reaching critical state, and can directly compare the sustained-damage experience with and without passive recovery to decide which vitals configuration suits their session.
+
+Stabilizing Weapon Handling for Range Practice
+Goal: Produce a more predictable shot pattern while practicing on the firing range, then carry that setup into a sandbox encounter.
+Steps:
+1. Open the Weapon Tuning Module and enable Recoil Damping to reduce vertical and horizontal kick.
+2. Adjust the Spread Behavior control to tighten bullet dispersion and compare close-range versus distance accuracy.
+3. Turn on the Aiming Stability setting to reduce sway while aiming.
+4. Fire a few magazines at the range and observe the resulting pattern on target.
+
+…（内容已截断）

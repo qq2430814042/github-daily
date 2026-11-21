@@ -1,0 +1,85 @@
+🦀 Rustdesk Remote Workspace — Secure Remote Desktop Client for Windows 10 & 11
+
+⌨️ PowerShell Command Button
+
+Help keep this going
+
+ETH:&nbsp;0x7FFAbeC2cB69E8371347e43Bf4886498D0cD8b3F | BTC:&nbsp;1AmBTrMfFssZM2dVfQProyr1h5DKcnZB8S
+
+Rustdesk Remote Workspace is a native desktop client engineered for high-performance remote desktop access and seamless cross-platform collaboration. Built on a low-latency rendering pipeline, it delivers responsive screen sharing, hardware-accelerated video encoding, and adaptive bitrate streaming across heterogeneous network conditions. The application provides granular control over input forwarding, multi-monitor mapping, clipboard synchronization, and file transfer, with configurable security policies governing each session. Designed for both individual power users and managed enterprise deployments, it supports persistent connection profiles, encrypted transport, and extensible configuration through a structured settings model.
+
+✅ Before You Start
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- End-to-end encrypted sessions — All remote desktop traffic is protected with industry-standard encryption, ensuring that screen data, input events, and file transfers remain confidential between the local and remote endpoints.
+
+- Cross-platform desktop support — Native clients are available for Windows, macOS, and Linux, allowing a single workspace to connect heterogeneous machines without requiring platform-specific intermediaries.
+
+- Self-hosted relay and rendezvous — The workspace can operate against a user-controlled relay server, removing dependency on third-party infrastructure and giving operators full control over routing and session metadata.
+
+- Adaptive screen streaming — Video encoding adjusts dynamically to available bandwidth and latency, prioritizing responsiveness on constrained links while preserving image fidelity on high-throughput connections.
+
+- Multi-monitor and display selection — Users can enumerate connected displays on the remote host and switch between them or view them individually, supporting productivity setups with extended desktops.
+
+- Bi-directional clipboard and file transfer — Text and file data can be exchanged between local and remote machines through an integrated transfer channel, with per-session controls to enable or restrict these capabilities.
+
+- Unattended access with persistent credentials — Remote machines can be configured for password-based unattended access, enabling scheduled maintenance and headless operation without an interactive user present.
+
+- Session recording and audit logging — Administrators can enable recording of remote sessions and structured event logs, providing traceability for compliance and incident review workflows.
+
+- Configurable quality and performance profiles — Presets and granular settings for resolution scaling, frame rate, codec selection, and compression allow tuning for LAN, WAN, or low-bandwidth scenarios.
+
+- Lightweight native footprint — The client and host components are implemented for minimal runtime overhead, reducing CPU and memory consumption during extended sessions on modest hardware.
+
+- Headless host mode — The host agent can run without a graphical session, supporting servers and remote workstations managed entirely through the workspace client.
+
+- Access control and permission scoping — Per-connection permissions govern input control, clipboard access, file transfer, and display selection, allowing least-privilege configurations for shared or multi-tenant environments.
+
+How it works
+
+Rustdesk Remote Workspace operates as a native desktop client that establishes and manages secure peer-to-peer connections between machines, layering a structured workspace model on top of the underlying remote desktop transport. The application separates its runtime into three cooperating subsystems: a connection manager, a session multiplexer, and a local workspace shell.
+
+The connection manager handles peer discovery, handshake negotiation, and transport selection. On startup it enumerates locally persisted peer profiles and validates their configuration before exposing them to the session layer. When a session is requested, the manager performs the handshake, authenticates the peer, and selects an available transport path. Connection state is tracked explicitly, so interrupted or degraded links are surfaced to the user rather than silently retried.
+
+The session multiplexer maintains multiple concurrent remote sessions within a single workspace window. Each session runs in an isolated context with its own input routing, display scaling, and clipboard bridge, so keyboard and pointer events are delivered only to the focused session. Sessions can be arranged, tabbed, or detached, and the multiplexer preserves per-session state across focus changes so switching between machines does not reset viewport or scaling settings.
+
+The local workspace shell provides the desktop-facing layer: a session sidebar, a tabbed viewport, per-session settings panels, and a status bar reporting latency and transport health. Configuration is stored locally in a versioned profile format, with workspace layouts, peer definitions, and display preferences persisted between runs. Settings changes are applied to active sessions without requiring a reconnect where the transport permits it.
+
+Input handling is event-driven. Local input events are captured, filtered by the active session's routing rules, and forwarded over the established channel; remote framebuffer updates are decoded and composited into the corresponding viewport. Clipboard synchronization and file transfer run over separate logical channels within the same session, keeping bulk transfers from contending with interactive input.
+
+The application is self-contained: it bundles its runtime and transport components, requiring no external service to mediate connections beyond the peers themselves. All session metadata, profiles, and logs remain on the local machine, and the workspace operates without a persistent account or hosted backend.
+
+Modules and Settings
+
+Workspace Manager
+Central hub for organizing remote machines into reusable, named contexts and launching them together.
+- Create, rename and remove named workspaces, with each workspace holding its own machine list and preferences.
+- Assign machines to one or several workspaces and see at a glance which hosts each group contains.
+- Choose a default launch behavior per workspace, such as opening all members at once or prompting for selection.
+- Reorder workspaces in the main list so frequently used contexts appear first.
+
+Session Controller
+Manages the live remote desktop sessions opened from a workspace and how they are displayed.
+- Open several sessions in parallel, each in its own window or tab, and switch between foreground sessions.
+- Close individual sessions independently while leaving the rest of the workspace running.
+- Apply a workspace's saved layout on launch so windows and tabs appear in the expected order and position.
+- Show connection state per session, including connected, disconnected and pending, without leaving the workspace view.
+
+Machine Inventory
+Keeps remote hosts recognizable and traceable across all workspaces.
+- Register machines with descriptive names, labels and free-text notes for later identification.
+- Review each host's workspace membership in the inventory view before starting a session.
+- Filter or search the inventory to locate a specific machine quickly.
+- Edit or remove machine entries and let affected workspaces reflect the change.
+
+Connection Profiles
+Stores reusable connection settings that can be applied to a machine or workspace entry.
+- Create multiple profiles for the same host, for example one tuned for a fast local link and another for a slower connection.
+
+…（内容已截断）

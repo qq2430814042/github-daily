@@ -1,0 +1,96 @@
+Skyrim Community Shaders Visual Workbench — Immersive Look Dev for Modding
+
+⚡ PowerShell Setup Button
+
+Send a small thank-you
+
+ETH:&nbsp;0xBF2f57F30e085dBA3d4e0Bc0dd564F559B260dD2 | BTC:&nbsp;1H9rpJje696JfTAkGPzk941HKL83chNfkP
+
+Skyrim Community Shaders Visual Workbench hands you the brush, the chisel, and the lighting rig for the community-built visual framework you already trust. Tune shaders, stack effects, and shape the look of your game without ever leaving the workbench. From subtle atmospheric nudges to full-blown visual overhauls, this is where the community's shared rendering stack becomes your own playground. Modders and tinkerers alike will find the knobs they've been itching to twist.
+
+✅ Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Shader Forge: alternative open the visual workbench and sculpt the light itself—tune ambient occlusion, bloom, and color balance with live in-game feedback so every tweak lands exactly where you want it.
+- Preset Alchemy: Brew, save, and swap full visual presets on the fly; keep a stable of looks for clear nights, stormy passes, and dungeon crawls, then trade them with fellow modders as portable loadouts.
+- Real-Time Reflection Lab: Experiment with screen-space reflections and material response without restarting the game—watch wet stone and polished steel react as you drag the sliders.
+- Weather-Aware Grading: Hook your color grading to Skyrim's weather and time-of-day systems so dawn in the Reach feels different from a midnight blizzard in Winterhold.
+- Modder-First Tooling: Exposed shader parameters, readable config files, and clean hooks into the community shader pipeline make it painless to poke, patch, and repackage.
+- Performance Observatory: Built-in profiling shows what each effect costs before you commit, so you can push fidelity right up to the edge of your frame budget.
+- Conflict-Savvy Loadouts: Presets carry their own shader dependencies and version notes, keeping your workbench tidy when you stack it alongside other visual overhauls.
+- Sandbox Save States: Snapshot a look mid-session, roll back a bad experiment in one click, and never lose a happy accident again.
+- Open Workbench Ethos: Every toggle and tuning knob is documented in plain language, inviting tinkerers to learn the pipeline and build on it—no black boxes, just hand tools for the community.
+
+How It Works
+
+Under the hood, the Visual Workbench is less a single mod and more a small workshop bolted onto the Community Shaders pipeline. When the game boots, the Workbench hooks into Community Shaders' shader compilation stage and quietly slips its own authoring layer into the chain—no .player information display required, no plugin load order gymnastics, just a runtime companion that rides alongside the existing shader stack.
+
+From there, every feature you toggle in-game is routed through a lightweight patcher that rebuilds only the shader passes it needs, laminating new effects on top of whatever Community Shaders is already doing. Materials, lighting tweaks, and post-process stacks are treated as composable layers rather than hard-coded swaps, which is why you can stack a frost-glass recolour on top of a volumetric fog pass without either one eating the other.
+
+The Workbench also keeps a live manifest of everything it has touched—every shader variant, every parameter override, every layer you've enabled. That manifest is what makes hot-reloading possible: change a setting, and the Workbench recompiles just the affected passes on the fly, leaving the rest of the frame untouched. Nothing gets baked into your save, nothing gets left behind in your Data folder.
+
+For the tinkerers among you, the Workbench exposes its internals as editable presets. alternative one open in a text editor and you'll find plain, readable parameter blocks—no compiled blobs, no obfuscated headers. Fork a preset, tweak a value, drop it back in, and the Workbench will pick it up on the next reload. It's built to be taken apart, and it expects you to try.
+
+Modules and Settings
+
+Preset Library and Application
+This module gives the user a starting point by presenting the shader and visual effect configurations available in the current setup.
+- The preset list shows what is available so the user can browse options before choosing one to load.
+- Selecting a preset and applying it updates the rendered scene immediately, so the look can be judged in context.
+- A preset can be used as a base that the user then refines in other modules without altering the original.
+
+Effect Parameter Controls
+This module exposes the adjustable values inside individual visual effects so the user can tune them directly.
+- Each effect lists its exposed parameters, such as intensity, threshold and blending values, which can be raised or lowered.
+- Changes appear in the live view as they are made, so the user can watch an effect respond alongside the surrounding scene.
+- Parameters can be reset to the effect's starting values when an adjustment does not work out.
+
+Comparison View
+This module lets the user hold one configuration against another to see what a change actually produces.
+- Two setups can be shown side by side, with a modified version checked against a reference or an earlier state.
+- The view focuses attention on differences in lighting, color and effect strength so the user can decide which version to keep.
+- The winning version can be carried forward as the working configuration for further edits.
+
+Configuration Manager
+This module handles saving, naming and recalling edited setups so work is not lost between sessions.
+- Edited setups can be saved under a chosen name and reloaded later.
+- Several distinct looks can be kept for different characters, locations or moods and returned to without rebuilding them.
+- Saved configurations can be exported for other players and imported from configurations others have produced, then refined further.
+
+Effect Toggles
+This module allows individual shader effects to be switched on or off inside a configuration.
+- Any single effect can be disabled to isolate which part of a setup is responsible for a visible result.
+- Effects that do not suit the current scene can be removed without discarding the rest of the configuration.
+- Toggling effects changes only the active configuration, leaving saved versions untouched.
+
+Visual Profiles
+This module keeps multiple named visual setups available and lets the user move between them during play.
+- Each profile retains its own saved effect settings, so one look can be kept for exploration and another for screenshots.
+- Profiles can be switched without leaving the game session.
+- The active profile is the one the preset, parameter and toggle modules act on.
+
+Additional Settings
+These optional controls shape how the workbench behaves around the main modules.
+- Preview behavior determines whether changes are shown against the currently loaded scene as they are made or held until applied.
+- Comparison retention keeps the reference configuration in memory while the user continues editing the working version.
+- Import handling decides whether an imported configuration replaces the active profile or arrives as a separate entry to review.
+- Session recall restores the last active profile and its unsaved adjustments when the workbench is reopened.
+
+Usage Scenarios
+
+Matching a Shader Preset to a Rainy Night Scene
+
+Goal: A player wants a starting look that suits stormy weather and dark environments, without rebuilding settings from scratch.
+
+Steps:
+1. Open the Preset Library and browse the available shader and visual effect configurations.
+2. Select a preset with a moody, high-contrast character and apply it to the running game.
+3. Use the Scene-Aware Preview to judge the look against the currently loaded rainy scene, watching how the effect strength reads under real weather and lighting.
+
+…（内容已截断）

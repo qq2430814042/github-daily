@@ -1,0 +1,153 @@
+Riemann Hypothesis in Lean — by Levent Alpöge (with Claude)
+
+The proof in this repository is the work of Levent Alpöge.
+On 2026-11-20 he announced that, working with Claude, he had found a proof of the Riemann Hypothesis that extends to the Generalized Riemann Hypothesis (for Dirichlet L-functions), and that the argument is fully formalized in Lean without assumptions.
+All credit belongs to Levent Alpöge (and Claude). This repository is an unmodified mirror of the Lean code he published, put on GitHub so that people and agents can browse, clone and check it.
+本仓库只是镜像：证明由数学家 Levent Alpöge（和 Claude 合作）完成，署名与一切功劳归他。代码原样搬运，没有改动。
+
+- Announcement (4 pages): https://alpo.ge/remark.pdf
+- Original download: https://alpo.ge/lean.tar.gz.part01 … https://alpo.ge/lean.tar.gz.part14
+- Merged archive in this repo's Releases
+
+Status. As of mirroring (2026-11-20), no independent build or review of this code has been published. Treat it as a claimed proof until it has been compiled and checked.
+
+What is proved
+
+The target statements are short. Read these two files first.
+
+src/Main.lean
+
+import Statements
+import Supplements.Kernels.MainTheoremsAll
+
+theorem riemannHypothesis : RiemannHypothesis := rhOfAll
+
+theorem riemannZeta_eq_zero_re : RiemannZetaZerosOnLine := rhOfAll
+
+theorem LFunction_ne_zero_of_half_lt_re : DirichletLNonvanishingRightOfHalf := allChi
+
+theorem LFunction_eq_zero_re : DirichletLZerosOnLine := claimAll.2.1
+
+theorem LFunction_eq_zero_re_of_isPrimitive : PrimitiveDirichletLZerosOnLine := critAll
+
+- RiemannHypothesis is Mathlib's own definition (Mathlib/NumberTheory/LSeries/RiemannZeta.lean, line 185 at the pinned commit), so the headline statement comes from Mathlib, outside this repository:
+
+  def RiemannHypothesis : Prop :=
+    ∀ (s : ℂ) (_ : riemannZeta s = 0) (_ : ¬∃ n : ℕ, s = -2 * (n + 1)) (_ : s ≠ 1), s.re = 1 / 2
+- src/Statements.lean (16 lines, imports only Mathlib) defines the other four statements:
+  - RiemannZetaZerosOnLine: every zero of riemannZeta other than the trivial zeros -2(n+1) and s = 1 has real part 1/2
+  - DirichletLNonvanishingRightOfHalf: for every Dirichlet character χ mod N, LFunction χ s ≠ 0 when Re s > 1/2 (excluding χ = 1, s = 1)
+  - DirichletLZerosOnLine / PrimitiveDirichletLZerosOnLine: zeros of Dirichlet L-functions in the critical strip lie on Re s = 1/2 (GRH for Dirichlet L-functions)
+- The proof terms come from src/Supplements/Kernels/MainTheorems.lean:
+  allChi := UpperTheory.FinalTheorems.everyCharacter, rhOfAll := Formalism.VW.rh_of_every allChi, critAll, claimAll.
+
+Repository layout
+
+| Path | .lean files | Lines |
+|---|---:|---:|
+| src/Development/ | 141,928 | 12.2 M |
+| src/Formalism/ | 18,254 | 3.2 M |
+| src/GroundTheory/ | 8,507 | 1.1 M |
+| src/ReciprocityTheory/ | 3,845 | 563 K |
+| src/CompanionTheory/ | 2,027 | 194 K |
+| src/PositivityTheory/ | 449 | 55 K |
+| src/Lemmata/ | 167 | 9 K |
+| src/Supplements/ | 3 | 22 |
+| src/BuildAid/ | 5 | 20 |
+| src/Statements.lean, src/Main.lean | 2 | — |
+| Total | 175,187 | ≈ 17.4 M |
+
+- lean-toolchain: leanprover/lean4:v4.33.1
+- lakefile.toml: package tree, srcDir = "src", Mathlib pinned at 0df444a360eaa60ab8c11dca51a86af692955474, global options maxHeartbeats = 4000000, autoImplicit = false, extra arg --tstack=400000
+- Libraries (lean_lib): BuildAid, CompanionTheory, Development, Formalism, GroundTheory, GroundTheoryFields (GroundTheory.LocalFields / GlobalFields), Lemmata, PositivityTheory, ReciprocityTheory, Supplements, Main (roots Statements, Main)
+- src/BuildAid/*.lean only add namespaces to Lean's library-suggestion deny list; they contain no mathematics.
+
+Getting the code
+
+Pick one.
+
+A. Clone this repository (about 234 MB packed, 1.3 GB checked out):
+
+git clone --depth 1 https://github.com/CocoSgt/riemann-hypothesis-lean.git
+cd riemann-hypothesis-lean
+
+B. Download the merged archive from Releases and verify it:
+
+curl -LO https://github.com/CocoSgt/riemann-hypothesis-lean/releases/download/v2026-11-20/lean.tar.gz
+shasum -a 256 lean.tar.gz
+expect 9631b4f020199e580ba86178cb56c6e9b09f690c2369a80dc4334aa93f49c7fc  (239,275,554 bytes)
+tar -xzf lean.tar.gz && cd lean
+
+C. Use the author's original parts (most trustworthy source):
+
+for i in $(seq -w 1 14); do curl -LO https://alpo.ge/lean.tar.gz.part$i; done
+cat lean.tar.gz.part{01..14} > lean.tar.gz
+shasum -a 256 lean.tar.gz   # same hash as above
+tar -xzf lean.tar.gz && cd lean
+
+The src/ tree in this repository is byte-for-byte the content of that archive; this README, .gitignore and nothing else were added.
+
+Building
+
+1. Install elan (Lean version manager) if needed
+curl https://elan.lean-lang.org/elan-init.sh -sSf | sh -s -- -y
+source ~/.elan/env
+
+2. Fetch dependencies and the prebuilt Mathlib cache
+lake exe cache get     # lake-manifest.json already pins Mathlib and every dependency
+
+3. Build the statements first (fast sanity check), then everything
+lake build Statements
+lake build Main        # builds the full dependency tree of the main theorems
+
+Notes:
+
+- This is a very large build (≈ 17 M lines on top of Mathlib). No build time or memory figures have been published yet; use a machine with many cores and plenty of RAM, and expect it to run for a long time.
+- lake build with no target builds every library in defaultTargets, which is more than Main needs.
+
+Checking the proof
+
+After lake build Main succeeds:
+
+1. Axioms used by the main theorems. Create Check.lean in the project root:
+
+import Main
+
+#print axioms riemannHypothesis
+#print axioms riemannZeta_eq_zero_re
+#print axioms LFunction_eq_zero_re_of_isPrimitive
+
+lake env lean Check.lean
+
+A clean result lists only Lean's standard axioms: propext, Classical.choice, Quot.sound. Anything else (sorryAx, Lean.ofReduceBool, a custom axiom) means the proof depends on something unproved.
+
+2. Statement review. Confirm that RiemannHypothesis is Mathlib's definition at the pinned commit and that the four definitions in src/Statements.lean say what their names claim.
+
+3. Independent kernel replay (recommended). Re-check the compiled environment with an external checker such as lean4checker, so the result does not depend on the elaborator or on any metaprogram in the repository.
+
+Static scan done at mirroring time (text search over all 175,187 files, not a substitute for the steps above):
+
+| Pattern | Files |
+|---|---:|
+| sorry | 0 |
+| admit | 0 |
+| axiom declarations | 0 |
+| native_decide | 0 |
+| unsafe, implemented_by, @extern], opaque | 0 |
+| set_option maxHeartbeats 0 | 4 |
+| custom macro / elab / syntax | 22 (tactic shorthands) |
+| addDecl | 1 (Formalism/HermitianCurvature/HermitianCurvatureProofs/CutCptCopy.lean, a command that copies existing declarations under new names; addDecl still goes through the kernel) |
+
+For agents: suggested procedure
+
+1. Read src/Statements.lean and src/Main.lean; look up RiemannHypothesis in Mathlib at commit 0df444a3….
+2. Get the code (option C if you need to trust the source, A or B for speed) and verify the SHA-256.
+3. lake exe cache get, then lake build Statements, then lake build Main. Log time and peak memory.
+4. Run #print axioms on the five theorems in Main.lean; report the exact output.
+5. Optionally replay with lean4checker.
+6. To understand the argument, follow the proof terms downward: Supplements/Kernels/MainTheorems.lean → Formalism.VW.rh_of_every and UpperTheory.FinalTheorems.everyCharacter (search with grep -rn "theorem rh_of_every\|everyCharacter" src). The author's own outline of the ideas (Stepanov-style multiplicity via chains of theta lifts of length about √X, Iwasawa towers, Rallis seesaw, Bost slope inequality, …) is in [remark.pdf.
+7. Report results to the community with the commit hash, toolchain and machine details.
+
+Credit and license
+
+…（内容已截断）

@@ -1,0 +1,115 @@
+Rob Run Mod Trainer — Windows 10/11
+
+📦 PowerShell Install Button
+
+Help keep this going
+
+ETH:&nbsp;0x6709467b1eDE15B61803abF68B055D82444640fd | BTC:&nbsp;1Peehp9w36goHeTb892HgdSAXriKUAp3n2
+
+Rob Run Mod Trainer is a focused gameplay assistance layer built to sharpen how you read and react to every run. It surfaces real-time information overlays so you can track the numbers that matter without breaking your flow or alt-tabbing out of the action. Every feature stays locked to gameplay assistance and on-screen intel, with no unrelated overhauls or content swaps muddying the experience. Drop it in, and the game starts talking back with the data you actually need.
+
+✅ Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Real-time gameplay assistance — toggleable enhancements that kick in during a run, built to keep you in the flow instead of menu-diving.
+- Information overlays — on-screen readouts for the stats and signals that matter, layered cleanly over the action so you never lose sight of the game.
+- Hotkey-driven control — flip features on and off mid-run with configurable binds; no alt-tabbing, no restarts.
+- Per-feature toggles — enable exactly what you want and leave the rest untouched. Everything is opt-in.
+- Lightweight footprint — runs alongside the game without dragging on performance; overlays stay crisp and the frame rate stays where it belongs.
+- Config that sticks — your toggles, binds, and overlay preferences are saved and restored between sessions.
+- Focused scope — this is a trainer, not an overhaul. It assists gameplay and surfaces information; it doesn't rewrite the game.
+
+How it works
+
+Rob Run Mod Trainer hooks into the game's runtime and layers clean, real-time assistance on top of normal play. Nothing gets rewritten behind your back — the trainer reads live game state, applies the tweaks you enable, and renders lightweight overlays so you always know what's active.
+
+Runtime hook layer
+The trainer attaches to the running game process and taps the values it needs — player position, speed, run state, resource counters. It's a read-first design: overlays and indicators pull straight from memory, so what you see matches what the game is actually doing.
+
+Toggle-driven gameplay assistance
+Every assist is its own switch. Speed multipliers, movement tweaks, resource adjustments — flip on what you want, leave the rest untouched. Changes apply instantly, no restart, no reload. Turn an assist off and the game snaps back to vanilla behavior for that system.
+
+Information overlays
+Live readouts sit on top of the action without getting in the way: current speed, active modifiers, run stats, and status flags. Overlays are drawn in a separate layer, so they never block input or interfere with the game's own rendering.
+
+Config that sticks
+Your toggles, overlay placement, and keybinds save to a local config. Boot the trainer and your setup loads exactly as you left it — no re-tuning every session.
+
+Built to stay out of the way
+The trainer only touches the systems tied to its assists. No unrelated overhauls, no forced changes to game files, no surprises. If an assist is off, it's off — the trainer stays a passenger until you tell it otherwise.
+
+Modules and Settings
+
+Movement Modifier Panel
+This module gives players direct control over character movement behavior during practice sessions, with each option acting as an independent switch in the settings panel.
+
+- Speed adjustment changes how fast the character moves, with the effect appearing immediately as you resume play.
+- Jump behavior settings let you alter jump height or responsiveness so you can compare different movement feels.
+- Every modifier has its own on/off state, so you can isolate a single change instead of combining everything at once.
+- Changing a value while the session is active updates the character's behavior without requiring a restart.
+
+Practice Scenario Builder
+This module turns modifier combinations into repeatable practice setups, so you can compare runs under consistent conditions.
+
+- Select which modifiers are active for a scenario, then reset the session to apply that exact combination from the start.
+- Switch between saved configurations between attempts to test how different settings interact during a run.
+- The reset-and-compare loop keeps each attempt aligned with the configuration you intended, reducing accidental variation.
+- Scenarios pair naturally with profiles, since a saved profile can serve as the basis for a scenario's modifier set.
+
+In-Game Overlay
+The overlay keeps your active configuration visible while you play, so you never have to leave the session to check what is enabled.
+
+- Active modifiers and their current values are listed together in one view during gameplay.
+- Individual features can be toggled and values adjusted from the overlay itself.
+- Changes appear in the overlay in real time, confirming instantly which settings are in effect.
+- Because the overlay reflects the same state the movement panel controls, the two views stay consistent.
+
+Modifier Profiles
+Profiles let you organize settings into named groups for different practice goals and reuse them later.
+
+- Create, rename and delete named profiles to keep separate setups for movement practice, timing drills or exploratory testing.
+- Loading a profile applies all of its stored values in one action, replacing the current configuration.
+- Profiles are the backbone of recurring routines: load one, adjust if needed, then reset the session to practice from that baseline.
+- Saved profiles also feed into the scenario builder, so switching practice goals is a matter of loading the right group.
+
+Session State Reset
+This module provides a clean baseline for comparison against modified play.
+
+- A single reset action returns all modifiers to their default or baseline values.
+- Use it to return to unmodified gameplay and compare behavior against a modified session.
+- Resetting avoids reverting each setting individually, which keeps comparisons quick and consistent.
+- After a reset, you can load a profile to jump straight into a different configuration.
+
+Runtime Status Display
+This module summarizes the state of each enhancement feature so you can verify configuration before and during a run.
+
+- Each feature is shown with whether it is active and what value it currently holds.
+- The display updates as settings change, helping you catch unintended combinations before starting a run.
+- Checking the display before a practice attempt confirms the configuration matches your intended setup.
+- It works alongside the overlay, giving you a status-focused view when you want more than a quick glance.
+
+Additional Settings
+These optional controls round out the tool for players who want finer control over how modules behave together.
+
+- Overlay visibility control to hide or show the overlay depending on how much on-screen information you want.
+- Profile management options for choosing which saved configuration loads when a session begins.
+- Baseline behavior selection to decide whether a reset returns to unmodified defaults or to a designated starting profile.
+- Status display detail level to adjust how much per-feature information appears at a glance.
+- Preference persistence so your chosen module and display options carry over between sessions.
+
+Usage Scenarios
+
+Isolating a Single Movement Change During Practice
+Goal: Practice with one movement change at a time to understand how a faster character responds to familiar routes.
+Steps:
+1. Open the Movement Modifier Panel and switch every modifier off except speed adjustment.
+2. Raise the speed value and resume play to observe the immediate change in character movement.
+3. Use the In-Game Overlay to confirm that only the speed modifier is active and check its current value.
+
+…（内容已截断）

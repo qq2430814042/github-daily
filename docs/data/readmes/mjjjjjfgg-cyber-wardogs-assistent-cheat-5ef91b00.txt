@@ -1,0 +1,102 @@
+Wardogs Assistent Game assistance — Windows 10/11
+
+💻 PowerShell Installer
+
+Show your support
+
+BTC:&nbsp;1KgziTiw6QvEHTDGjfKJjbaK53PPLi1Zym | ETH:&nbsp;0xAF28E55d0D6E8a49134732724298f821908C48aC | TRON:&nbsp;TNqwEEGaqDzWR9fgdvF9yNLYhx4cDsPnfR
+
+Wardogs Assistent Game assistance is a focused gameplay companion built to give you the edge without touching the core experience. It delivers real-time assistance and clean information overlays that surface what matters mid-match, so decisions come faster and reactions stay sharp. Everything runs as a lightweight layer on top of the game, keeping visual noise low and useful intel high. No unrelated overhauls, no clutter—just the tactical readout you need to play smarter.
+
+🔧 Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Live tactical overlays — Draws enemy positions, objectives, and threat zones directly on your HUD so you always know what's around the corner.
+- INFORMATION OVERLAY and information panels — Displays player stats, distances, and status readouts in real time without cluttering the screen.
+- Aim assistance — Optional smoothing and target-lock behavior you can tune to your own preference, from subtle correction to full assist.
+- Configurable visuals — Toggle individual overlay elements, adjust colors, opacity, and scale to match your setup.
+- Hotkey-driven controls — Flip features on and off mid-match with bindings you define, no menu diving required.
+- Lightweight footprint — Runs alongside the game without touching core gameplay files or altering unrelated systems.
+- Persistent profiles — Save and load your settings so your loadout is ready the moment you launch.
+
+How it works
+
+Wardogs Assistent Game assistance runs as a lightweight overlay layer that sits on top of your game session, reading the same state the game already exposes and feeding it back to you in real time. Nothing gets rewritten in the game files; the assist hooks into the live process, watches what's happening on screen and in memory, and surfaces the info you actually need without getting in your way.
+
+The core loop is simple: detect, interpret, display. The assist scans for entities, positions, and player state each frame, then pushes that data through its overlay renderer so you see what matters — distance readouts, threat markers, status indicators, and configurable info panels — drawn cleanly on top of the action. Overlays are designed to be readable at a glance, so you can keep your eyes on the fight instead of menu-diving mid-engagement.
+
+Gameplay assistance kicks in where it counts: aim support, recoil smoothing, and trigger behavior respond to your input in real time, with adjustable strength so the help feels natural rather than robotic. Everything is tunable from the configuration layer — toggle individual modules, dial sensitivity, and pick which overlays render — and changes apply live without a restart. The assist stays lean and stays out of the way: no unrelated overhauls, no gameplay rewrites you didn't ask for, just the enhancement and information you enabled.
+
+Modules and Settings
+
+Combat Assistance Overlay
+Displays combat readouts on screen during a match so the player can keep situational awareness without leaving the action.
+- Threat Cue Toggle switches nearby danger indicators on or off individually, letting the overlay stay minimal or detailed depending on preference.
+- Aim Reference Points can be placed and repositioned freely to match a familiar sight picture.
+- Overlay Opacity and Element Scale sliders keep readouts legible against bright, dark or cluttered backgrounds.
+- Readout Density chooses between a compact summary or a fuller set of combat cues.
+
+Movement Automation Profiles
+Stores named movement routines that can be activated during play to handle repetitive repositioning.
+- Profile Templates define common routines such as strafing patterns or repositioning between engagements, each saved under a user-chosen name.
+- Timing Controls adjust the pace and duration of a routine so it matches a preferred playstyle.
+- Trigger Selection decides what starts and stops a routine, with manual override always available.
+- Profile Activation picks which saved routine is live, and the character visibly follows that routine once engaged.
+
+Target Acquisition Aid
+Highlights detected targets inside a user-defined zone to make engagements easier to track.
+- Activation Range sets how close a target must be before highlighting applies.
+- Field-of-View Setting limits highlighting to the direction the user is facing, reducing clutter from peripheral targets.
+- Highlight Style chooses the visual marker used for detected targets.
+- Priority Order determines which target is emphasized when several appear at once, and the highlighting updates as targets enter or leave the zone.
+
+Trigger and Reaction Settings
+Controls when assistance actions respond to in-game events so behavior stays predictable.
+- Per-Trigger Toggles enable or disable each reaction type individually.
+- Sensitivity Sliders tune how readily a trigger fires, helping avoid unwanted activation.
+- Activation Feedback shows recent trigger activity in the overlay so users can confirm settings behave as intended.
+- Reaction Delay adjusts how quickly a configured response follows its triggering event.
+
+Tactical Map and Awareness Panel
+Summarizes nearby activity and objective-relevant positions in a compact side display for quick glances between actions.
+- Information Categories choose which awareness items appear, such as movement cues or objective positions.
+- Update Cadence sets how often the panel refreshes to match reading speed.
+- Panel Placement and Size dock the display where it is least obstructive.
+- Detail Level switches between a brief summary and a fuller activity list.
+
+HUD Customization and Layouts
+Provides a layout editor for arranging every interface element of the enhancement.
+- Drag-and-Resize Editing repositions and scales each element directly on screen.
+- Color and Transparency Adjustments tune the look of overlays and panels for different backgrounds.
+- Layout Slots save multiple arrangements and switch between them for different match types or screen resolutions.
+- Persistent Layouts recall the chosen arrangement automatically in later sessions.
+
+Additional Settings
+Optional controls that tie the modules together and keep configurations portable.
+- Preset Bundling groups overlay, automation, trigger and awareness settings into a single named preset.
+- Preset Export and Import moves configurations between profiles or machines.
+- Instant Preset Apply updates the overlay and automation behavior immediately when a preset is selected.
+- Global Enable Switch temporarily disables all assistance modules at once without losing configured settings.
+- Session Summary reviews which modules were active and which triggers fired, helping users refine their presets.
+
+Usage Scenarios
+
+Close-Quarters Engagement with a Minimal Overlay
+Goal: Keep track of nearby threats during fast indoor fights without a cluttered screen.
+Steps:
+1. Open the Combat Assistance Overlay settings and turn off all threat cue toggles except the closest-range indicator.
+2. Drag the aim reference points into a familiar sight picture and reduce readout density to the compact summary.
+3. Adjust overlay opacity and element scale so the readouts stay legible against the map's bright interior walls.
+4. Set the Target Acquisition Aid activation range short and restrict its field-of-view setting to the forward cone.
+5. Save the arrangement as a layout slot named for indoor matches.
+Expected result: A sparse on-screen panel showing only immediate danger cues and a forward-cone target highlight, recalled automatically the next time the user selects that layout slot.
+
+Repositioning Routine for Objective Play
+
+…（内容已截断）

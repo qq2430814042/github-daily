@@ -2,9 +2,11 @@ Read this in other languages
 
 English | 简体中文 | 日本語 | 한국어 | Deutsch | Français | Español | हिन्दी | Português | Русский | العربية | فارسی | Italiano | Polski | Nederlands | Türkçe | Українська | Tiếng Việt | Bahasa Indonesia | Svenska | Ελληνικά | Română | Čeština | Suomi | Dansk | Norsk | Magyar | ภาษาไทย | Oʻzbekcha | 繁體中文 | Filipino | עברית
 
-  Start free, no card required &rarr;
+  Shared codebase context for agents and humans.
 
-  Cut agent token spend by 80%. Graphify Cloud is always-on memory that governs your agents, keeps code quality high, and proves correctness with formal verification.
+  Turn your codebase into a queryable knowledge graph. Trace dependencies, understand how components connect, and give your coding agent reusable context across sessions.
+
+  Start free, no card required &rarr; &nbsp;&middot;&nbsp; Graphify Cloud keeps that graph always-on across your whole SDLC.
 
 Type /graphify in your AI coding assistant and it maps your entire project (code, docs, PDFs, images, videos) into a knowledge graph you can query instead of grepping through files.
 
@@ -14,12 +16,19 @@ Type /graphify in your AI coding assistant and it maps your entire project (code
 
 Want this always-on? Graphify Cloud keeps the graph live across your entire SDLC: monorepo and cross-repo support, formal verification, and code review with a bird's-eye view of your SDLC, plus connectors for Sentry, Jira, and more so incidents and tickets sit in the same graph as your code. Start free, no card required.
 
-  The FastAPI codebase mapped by graphify. Every node is a concept, colors are detected communities, and the whole thing is clickable in graph.html.
+  The FastAPI codebase mapped by graphify. Every node is a concept, colors are detected subsystems, and the whole thing is clickable in graph.html.
 
-Get started (30 seconds). Needs Python 3.11+ and uv (or pipx):
+Get started (30 seconds). Needs Python 3.11.5–3.14 and uv (or pipx):
 
 uv tool install graphifyy      # install the CLI (or: pipx install graphifyy)
-graphify install               # detects your assistant and registers the skill
+graphify install               # sets up Claude Code (the default)
+
+Using a different assistant? Name it explicitly:
+
+graphify cursor install              # Cursor
+graphify install --platform codex    # Codex (invoke with $graphify, not /graphify)
+
+See pick your platform for all 20+ assistants.
 
 Then, in your AI assistant:
 
@@ -62,15 +71,26 @@ What you get out of the box:
 
 | Capability | What you get |
 |---|---|
-| God nodes | The most-connected concepts, so you see what everything flows through |
-| Communities | The graph split into subsystems (Leiden), with LLM-free labels |
+| Most-connected components | The concepts everything flows through, the hubs of the graph (also called god nodes) |
+| Subsystems | The graph split into cohesive groups (Leiden communities), each with an LLM-free label |
 | Cross-file links | calls / imports / inherits / mixes_in resolved across ~40 languages via tree-sitter AST |
 | Query, path, explain | Ask a question, trace the path between two things, or explain one concept, all against graph.json |
 | Rationale + doc refs | # NOTE: / # WHY: comments and ADR/RFC citations become first-class nodes linked to the code |
 | Beyond code | Docs, PDFs, images, and video/audio all map into the same graph |
 | Local-first | Code is parsed locally with tree-sitter (no LLM, nothing leaves your machine); only the semantic pass over docs/media calls a backend, and only if you configure one |
 
-Running this across many repos or a monorepo? Graphify Cloud does it continuously and cuts agent token spend by 80%, with cross-repo links, SDLC-wide code review, formal verification, and Sentry/Jira connectors. Start free, no card required &rarr;
+Running this across many repos or a monorepo? Graphify Cloud does it continuously, with cross-repo links, SDLC-wide code review, formal verification, and Sentry/Jira connectors. Start free, no card required &rarr;
+
+When to reach for Graphify
+
+Reach for the graph when you need to understand a codebase, not just read through it:
+
+| Situation | What to ask Graphify |
+|---|---|
+| Joining an unfamiliar project | "Explain how the main components connect." |
+| Changing a shared component | "Trace its callers and dependencies." |
+| Investigating a bug | "Show the path between this endpoint and storage." |
+| Revisiting previous work | "Find the relevant design decisions and notes." |
 
 Benchmarks: 0.497 recall@10, 0 LLM credits
 
@@ -100,7 +120,7 @@ Prerequisites
 
 | Requirement | Minimum | Check | Install |
 |---|---|---|---|
-| Python | 3.11+ | python --version | python.org |
+| Python | 3.11.5–3.14 | python --version | python.org |
 | uv (recommended) | any | uv --version | curl -LsSf https://astral.sh/uv/install.sh \| sh |
 | pipx (alternative) | any | pipx --version | pip install pipx |
 
@@ -133,24 +153,5 @@ pip install graphifyy       # may need PATH setup, see Troubleshooting below
 Then run graphify install once. It detects which assistant you run and registers the skill, so there is no per-assistant setup. Open your AI assistant and type /graphify .
 
 To install the assistant skill into the current repository instead of your user
-profile, add --project:
-
-graphify install --project
-graphify install --project --platform codex
-
-Project-scoped installs write under the current directory, for example
-.claude/skills/graphify/SKILL.md or .agents/skills/graphify/SKILL.md (plus a
-references/ sidecar the skill loads on demand), and
-print a git add hint for files that can be committed.
-Per-platform commands that support project-scoped installs accept the same flag,
-for example graphify claude install --project or graphify codex install --project.
-
-Hitting command not found, a pip-on-Mac/Windows issue, PowerShell quoting, uvx usage, git-hook PATH quirks, or strict mode? See Installation and Troubleshooting.
-
-Pick your platform (20+ assistants, click to expand)
-
-| Platform | Install command |
-|----------|----------------|
-| Claude Code (Linux/Mac) | graphify install |
 
 …（内容已截断）

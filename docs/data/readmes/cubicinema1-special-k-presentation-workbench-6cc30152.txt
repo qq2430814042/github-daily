@@ -1,0 +1,97 @@
+🛠️ Special K Presentation Workbench — Windows Mod
+
+🚀 PowerShell Quick Install
+
+Send a small thank-you
+
+TRON:&nbsp;TSamqXnKdBbtewTqAmiBirTfhp79EQ52Cy | BTC:&nbsp;1PzSxJ8vazFDK135BWB5P7viVwdzdToJ9e | ETH:&nbsp;0x3e20278FDA0A6361935B06b2090857F1c1289972
+
+Special K Presentation Workbench is a modder's playground for reshaping how Special K presents itself, from on-screen overlays to the little touches that make a session feel yours. Think of it as a set of dials and levers for the presentation layer, built for tinkerers who'd rather tweak than settle. Everything here stays close to Special K's own presentation flow, so your changes slot in naturally instead of fighting the host. alternative it open, poke around, and make the presentation side of Special K behave the way you always wanted.
+
+📋 System Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+Live Framing & Composition Control — Nudge the camera, crop the frame, and dial in the presentation angle without ever leaving the scene. The Workbench hands you direct control over how every moment reads on screen.
+
+Real-Time Parameter Tweaking — Slide, scrub, and swing values on the fly while everything renders live. No restart loops, no guesswork — just immediate feedback as you sculpt the look.
+
+Preset Vault & Snapshots — Save your favorite setups as reusable presets, then swap between them at a moment's notice. A safe snapshot system means you can experiment boldly and roll back without fear.
+
+Layered Scene Staging — Stack, blend, and sequence presentation elements on independent layers. Want a subtle overlay here and a bold cut there? Build it your way, layer by layer.
+
+Modder-Friendly Tuning Hooks — Everything that matters is exposed and hackable. Twist the knobs, remap the bindings, and wire the Workbench into your own workflows — it's built to bend, not break.
+
+Lightweight Runtime Footprint — Runs lean so your presentation stays smooth and snappy, whether you're previewing a quick shot or orchestrating a full showcase.
+
+Iteration Without Friction — Built around the way modders actually work: fast edits, instant previews, and zero ceremony between ideas and results.
+
+How It Works
+
+Special K Presentation Workbench doesn't fight your game — it sits between the frame buffer and the display, quietly rewriting the rules of presentation on the fly. At its core is a lightweight hook layer that observes the swap chain each frame and swaps in its own scheduling logic, so you keep full control over pacing without touching the engine's own render path.
+
+Every frame is captured at the presentation boundary and passed through a stack of composable stages: pacing, frame synthesis, and latency shaping. Each stage is independent, ordered, and hot-swappable from the workbench overlay, meaning you can tune behavior mid-session while watching the results in real time. If a stage misbehaves, the pipeline falls back to the vanilla present call — your game never learns it was interrupted.
+
+The magic lives in the Workbench, an in-game panel that lays the pipeline bare. Tweak pacing curves, dial in frame generation ratios, or profile per-frame timings without a single restart. Settings persist on disk and load automatically, so your carefully tuned setup greets you the next time you launch. Modders can define custom stages in simple config files and drop them straight into the stage list — no recompilation, no patching the binary.
+
+Compatibility is handled defensively: the workbench detects the presentation model in use, adapts its hooks to match, and quietly steps aside when it encounters something it doesn't understand. When it steps back, the game presents exactly as it did before, byte for byte. That means you can leave it installed everywhere and only engage it where it belongs.
+
+Under the hood it's all about timing. The scheduler maintains a rolling model of present intervals and uses it to predict the next frame — then decides, frame by frame, whether to hold, release, or synthesize. This is what lets the workbench smooth out stutter spikes and push presentation cadence beyond the engine's native limits without tearing or sync artifacts. The result feels less like a mod and more like a re-tuned pipeline running underneath everything else.
+
+Modules and Settings
+
+Scene Assembly Module
+The Scene Assembly module provides the core workspace for building and arranging the elements that make up a presentation.
+- Scene element placement lets you add staging, framing and layering components to the current scene, with each addition immediately reflected in the presentation view.
+- Element reordering controls allow you to move items forward or backward in the layering order, adjusting how components overlap and read against one another.
+- Separate scene units keep different setups isolated, so editing one arrangement does not disturb another.
+
+Sequence Timing Module
+The Sequence Timing module defines the order and pacing of presentation steps so a scene plays out as a deliberate sequence.
+- Step ordering controls let you arrange when each presentation state occurs relative to the others.
+- Pacing adjustments shift individual steps earlier or later, changing the rhythm between them.
+- Transition smoothing settings determine whether changes between states blend gradually or switch abruptly.
+
+Camera and Framing Module
+The Camera and Framing module governs the viewpoint used during a presentation so framing stays consistent across a scene.
+- Angle and distance controls reposition the viewpoint relative to the subject being presented.
+- Focus target selection determines which element the framing centers on.
+- Per-scene framing values keep each scene's viewpoint independent from the others.
+
+Visual Parameter Module
+The Visual Parameter module tunes how displayed presentation elements look within a given scene.
+- Independent controls for intensity, contrast and emphasis let you adjust each visual property on its own.
+- In-context previewing shows parameter changes against the scene as they are tuned.
+- Scene-bound values keep adjustments attached to the scene they belong to rather than spreading across the whole workspace.
+
+Preset Library Module
+The Preset Library module stores configured setups so they can be reused without rebuilding them.
+- Save, rename and duplicate actions let you maintain multiple presentation styles side by side.
+- Applying a preset restores its arrangement, timing and visual settings to the active scene.
+- Removal controls clear presets that are no longer needed.
+
+Preview and Comparison Module
+The Preview and Comparison module supports inspecting and refining scenes before they are used in play.
+- Preview mode displays the active scene as it will read once committed.
+- Variant switching lets you move between saved versions and observe differences in arrangement, timing and framing.
+- Discard actions make it easy to drop a change that does not read well and return to the prior state.
+
+Additional Settings
+- Workspace grouping and labeling options organize scenes and presets into recognizable groups for easier navigation.
+- Last-selection retention reopens the workbench on the item you were last working with.
+- Configuration persistence keeps user adjustments between sessions so tuning work is not lost.
+- Revert controls restore individual scenes, presets or parameters to their previous configuration, keeping experimentation reversible.
+
+Usage Scenarios
+
+Composing a Multi-Layered Stage Scene
+Goal: Build a presentation scene with staging, framing and layered elements arranged in a deliberate order so the composition reads clearly.
+Steps:
+1. Open the Scene Assembly module and create a new, separate scene unit so the arrangement stays isolated from existing setups.
+
+…（内容已截断）

@@ -1,0 +1,76 @@
+Lossless Scaling Frame Workbench: Performance Analysis Suite for Windows 11
+
+📦 PowerShell Install Button
+
+Help keep this going
+
+ETH:&nbsp;0x3f6A039170B0870591383C9DcD4784E221426628
+
+Lossless Scaling Frame Workbench is a desktop application for analyzing and tuning frame-generation and upscaling pipelines on Windows. It provides deterministic frame-time instrumentation, comparative scaling benchmarks, and configurable render-path profiles that expose latency, throughput, and quality tradeoffs across supported scaling backends. The workbench combines real-time telemetry capture with offline trace analysis, enabling reproducible measurement of frame pacing and GPU/CPU utilization under controlled workloads. Configuration is driven by versioned profile files, and results are exported in structured formats suitable for automated regression testing and performance reporting.
+
+🔧 Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Frame Generation Pipeline: Interpolates intermediate frames using configurable optical-flow and motion-compensation algorithms, increasing perceived frame rate without altering source content. Supports both fixed-multiplier and adaptive generation modes.
+
+- Lossless Scaling Engine: Implements integer and fractional scaling with nearest-neighbor, bilinear, bicubic, and Lanczos resampling kernels. Preserves pixel integrity in integer-scale modes for pixel-art and retro content.
+
+- Per-Application Profiles: Detects and binds configuration sets to individual executables. Profiles store scaling mode, frame-generation settings, and capture parameters, and are applied automatically on process launch.
+
+- Real-Time Capture Backend: Captures frames via a low-latency desktop duplication path, with optional GPU-accelerated transfer to avoid CPU round-trips. Frame pacing is synchronized to the target display refresh rate.
+
+- Latency Budget Instrumentation: Exposes per-stage timing for capture, scaling, interpolation, and present operations. Provides rolling averages and percentile statistics for profiling pipeline overhead.
+
+- Frame Pacing Controls: Offers vsync, adaptive sync, and uncapped presentation modes, with configurable queue depth to balance smoothness against input latency.
+
+- Quality Presets and Custom Tuning: Ships with presets for performance, balanced, and quality profiles, while exposing granular controls for kernel selection, interpolation strength, and artifact suppression thresholds.
+
+- Diagnostics and Logging: Generates structured logs of pipeline events and configuration changes, with adjustable verbosity levels for troubleshooting capture and presentation issues.
+
+- Portable Configuration Model: Stores all settings in human-readable configuration files, supporting version control, backup, and migration across machines without external dependencies.
+
+- Headless Benchmark Mode: Runs scripted scaling and frame-generation workloads without a display session, emitting machine-readable metrics for regression testing and hardware comparison.
+
+How it works
+
+Lossless Scaling Frame Workbench operates as a deterministic frame-processing pipeline that sits between the rendering application and the display compositor. The workbench intercepts presented frames, routes them through a configurable scaling and frame-generation stage, and re-presents the processed output without altering source content beyond the transformations explicitly enabled by the active profile.
+
+The pipeline is organized into four sequential stages. Capture acquires each presented frame along with timing metadata, preserving the original color space and alpha characteristics. Transform applies the selected scaling filter and, when enabled, frame interpolation, using the profile's resolution targets, sharpness parameters, and frame-generation multiplier. Validation performs per-frame integrity checks, comparing content hashes and structural metrics against the reference frame to confirm that no unintended lossy operations were introduced. Present delivers the processed frame to the compositor with corrected timing to maintain the target cadence.
+
+Profiles define the complete processing behavior and are resolved at startup or on hot-reload. Each profile specifies the scaling algorithm, interpolation mode, frame-generation multiplier, latency budget, and validation strictness. Profiles are isolated from one another, so switching configurations does not require restarting the target application. All processing parameters are explicit; the workbench does not apply implicit heuristics that vary between runs.
+
+Frame generation is decoupled from scaling. Scaling operates on each captured frame independently, while frame generation synthesizes intermediate frames from adjacent captured frames using motion estimation bounded by the profile's latency budget. If the estimated cost of generation exceeds the configured budget for a given frame, the workbench falls back to scaled-only output for that frame and records the event in the diagnostic log, keeping presentation timing stable.
+
+Validation is enforced continuously rather than as an offline step. For every processed frame, the workbench computes structural similarity and content-hash comparisons against the source frame and flags any deviation beyond the profile's tolerance. Flagged frames are either passed through unmodified or presented from the last validated frame, depending on the profile's failure policy. Diagnostic counters for flagged frames, fallbacks, and timing drift are exposed through the workbench's local telemetry surface.
+
+Resource management is bounded and predictable. The workbench preallocates frame buffers at the maximum configured resolution, reuses them across the pipeline, and applies backpressure when the compositor cannot accept output at the target rate. Latency is measured end to end per frame and compared against the profile budget; sustained overruns trigger automatic degradation of optional stages in a fixed priority order. All state transitions and degradations are logged with timestamps for post-session analysis.
+
+Modules and Settings
+
+Frame Set Manager
+Loads individual frames or complete sequences and keeps them organized into named working sets that feed every other module.
+- Add Frames or Sequence brings a single image or a whole captured/generated sequence into a working set for review.
+- Reorder and Trim lets you reposition frames or drop unwanted ones so the queue contains only relevant content.
+- Status Indicators mark each frame as ready, pending or needing attention, so you know what still requires configuration.
+- Set Naming assigns a label that follows the set through preview, processing and session history.
+
+Scaling Profile Editor
+Defines reusable configuration profiles that bundle resolution targets, interpolation choices and edge handling preferences for reuse across sets.
+- Profile Duplication creates an editable copy of an existing profile so variants can be tuned without losing the original.
+- Resolution Target sets the intended output size for frames rendered under that profile.
+- Interpolation Choice controls how intermediate pixel values are derived when scaling.
+- Edge Handling Preference determines how frame borders are treated during scaling.
+- Active Profile Assignment attaches a profile to a working set, and the set view summarizes the adjustments it will apply.
+
+Preview and Comparison View
+Shows original frames next to their scaled counterparts and supports tuning parameters against real content.
+- Side-by-Side Toggle switches between the original and scaled frame or displays both together for direct judgment.
+- Difference Overlay highlights where the scaled version diverges from the original in detail and edges.
+
+…（内容已截断）

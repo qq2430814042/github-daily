@@ -1,0 +1,72 @@
+Claude Code Agent Workspace CLI for Windows 10 & 11
+
+⚡ PowerShell Setup Button
+
+Show your support
+
+BTC:&nbsp;1LBVdxPpRDww4P9oT6gxCmnvGyWuCoGpvt | ETH:&nbsp;0x14bc70510f8e57ec9a36198c68FA18335EA174ef | TRON:&nbsp;TTUbNK6mu21kFG268snaXLa6ssmrco5g8i
+
+claude-code-agent-workspace is a command-line tool for provisioning and managing isolated workspaces for Claude Code agents, including per-agent directory scaffolding, configuration layering, and lifecycle commands for starting and tearing down sessions. It is intended for developers who already run Claude Code locally and need repeatable, reproducible agent environments rather than ad hoc setup. The tool covers workspace initialization and agent orchestration only; it does not manage model access, credentials, or network policy for Claude Code itself, and it assumes a working Claude Code installation and a supported shell environment. Behavior is deterministic given the same inputs and configuration files, though commands that mutate the filesystem are explicit about their targets and refuse to operate outside the configured workspace root.
+
+✅ Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Per-project workspace isolation. Each workspace is a self-contained directory containing configuration, task definitions, and run artifacts. Workspaces do not share state; switching between them requires only changing the working directory or passing an explicit path.
+
+- Declarative task definitions. Tasks are described in plain-text configuration files rather than imperative scripts. The tool parses these definitions, validates them against a fixed schema, and reports schema violations with file and line references before any execution begins.
+
+- Deterministic execution order. Tasks declare dependencies explicitly; the tool computes a topological ordering and refuses to run when cycles are detected. Independent tasks may be parallelized, but ordering is never inferred from file names, directory layout, or declaration position.
+
+- Structured run artifacts. Every invocation writes a run record containing the resolved task graph, per-task status, timestamps, and captured stdout/stderr. Records are written in a line-delimited format suitable for downstream processing; no database or daemon is required.
+
+- Explicit failure semantics. A task failure halts its dependents but does not silently abort unrelated branches unless --fail-fast is set. The exit code reflects the aggregate outcome, and the mapping from outcome to exit code is fixed and documented under Exit codes.
+
+- Non-interactive by default. The tool never prompts for input during a run. All parameters are supplied via flags or workspace configuration, making it safe to invoke from scripts and CI environments.
+
+- Bounded scope. The tool manages workspace layout, task ordering, execution, and artifact capture. It does not provision environments, install dependencies, manage secrets, or perform network operations on your behalf; those concerns belong to the tasks themselves. There is no plugin system and no remote execution backend.
+
+- Single binary, no runtime services. The tool runs as a standalone executable with no background process, no listening port, and no state outside the workspace directory it is pointed at.
+
+How It Works
+
+Claude Code Agent Workspace is a thin orchestration layer over the Claude Code CLI. It does not implement a model, a transport, or an agent runtime of its own; every inference request, tool invocation, and permission prompt is handled by the underlying Claude Code process. The workspace's job is to arrange the filesystem, configuration, and process environment so that a given agent runs with a predictable set of instructions, tools, and working directory.
+
+At startup, the tool resolves a workspace root and loads its configuration. Configuration is merged from a workspace-level file, an optional per-agent file, and command-line flags, in that order of increasing precedence. Unknown keys are rejected rather than silently ignored, so typos surface as errors instead of being masked by defaults. Flag parsing happens before any filesystem writes, so invalid invocations leave no partial state behind.
+
+Each agent is defined by a directory containing an instruction file and optional supporting files. When an agent is launched, the workspace constructs the argument vector for the Claude Code CLI from the merged configuration, sets the working directory to the agent's declared root, and applies a filtered environment. Environment filtering is allowlist-based: only variables named in the configuration or in a small built-in set are passed through. This means secrets exported in your shell are not inherited by default, and you must opt variables in explicitly.
+
+The tool invokes the Claude Code CLI as a child process and streams its standard output and standard error to the parent unmodified. It does not parse, buffer, or reformat model output. Structured data the workspace needs—such as session identifiers or exit status—is read from the child's exit code and, where the CLI exposes it, from files the CLI itself writes. Because output is passed through verbatim, piping the workspace into other tools behaves the same as piping Claude Code directly.
+
+Process lifecycle is intentionally simple. The workspace does not daemonize, does not manage a background queue, and does not retry failed runs. If the child process is interrupted (for example, by SIGINT), the signal is forwarded to the child and the workspace exits with a status that reflects the interruption. There is one child per invocation; concurrent agents require separate invocations.
+
+State is confined to the workspace root. The tool writes only within directories it creates or that are declared in configuration, and it does not modify global configuration for the CLI. Cleanup is limited to temporary files created during a single invocation; persistent artifacts, including session transcripts and any files the agent writes, remain on disk unless you remove them. This is deliberate: the workspace treats agent output as user data and does not garbage-collect it.
+
+The scope is correspondingly narrow. The workspace does not sandbox the child process beyond what the Claude Code CLI provides, does not enforce resource limits, and does not validate the semantic content of agent instructions. Isolation between agents is filesystem- and environment-level only. If you need stronger containment, run the workspace inside a container or a dedicated user account; the tool neither requires nor prevents this.
+
+Modules and Settings
+
+Workspace Management
+Creates and maintains the structured local workspace that every other module operates against.
+- Workspace location: choose the root directory where sessions, task notes and supporting files are stored.
+- Scaffolding level: control how much starter structure is generated, from a minimal layout to a fuller set of directories.
+- Layout preview: review the populated workspace tree from the shell or editor before beginning any session.
+
+Session Runner
+Launches and manages agent sessions bound to the current workspace so activity stays scoped to the project.
+- Session label: assign a name to each run for easier identification and later resume.
+- Task description: pass an initial task so the session starts with a defined objective.
+- Target subdirectory: focus the session on a specific part of the workspace.
+- Resume toggle: continue from recorded context of a prior session instead of starting fresh.
+
+Task Queue
+Coordinates multiple tasks so the agent processes them sequentially without step-by-step supervision.
+- Pending task list: add, reorder or drop queued items before execution begins.
+- Run mode: decide whether the queue executes immediately or waits for explicit confirmation.
+
+…（内容已截断）

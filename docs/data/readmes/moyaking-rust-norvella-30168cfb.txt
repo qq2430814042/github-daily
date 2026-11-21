@@ -1,0 +1,107 @@
+Rust Norvella — Game Enhancer for Windows 10/11
+
+🖥️ PowerShell Setup
+
+Support my work
+
+TRON:&nbsp;TVykWEgZqbKnWXUDe2UmpxBwamDDBK1oyK | BTC:&nbsp;1ErhPQso5Dasn1hH8hX9tdKmctpjaVYZAb | ETH:&nbsp;0xbeA5145f80Ba7611746661114Ad4c709cbEb14Ff
+
+Rust Norvella delivers gameplay assistance and information overlays that keep you locked into the action while surfacing the intel you actually need. It's built to sharpen awareness and streamline decisions in real time, not to rewrite the game around you. What you get is targeted overlay data and in-game guidance that respect the core experience and cut the guesswork. No unrelated overhauls, no clutter—just the info layer that makes every session more deliberate.
+
+✅ Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Real-time player INFORMATION OVERLAY — see enemy, teammate, and NPC positions through walls with clean, adjustable boxes and distance readouts.
+- Loot and resource highlighting — spot crates, airdrops, ores, and collectibles instantly with distinct color-coded markers.
+- Skeleton and hitbox overlays — track movement and target weak points with precise bone and hitbox visualization.
+- Distance and direction indicators — gauge threats and objectives at a glance with on-screen range and bearing info.
+- Health, armor, and status readouts — keep tabs on nearby players’ condition without guesswork.
+- Configurable overlay HUD — toggle individual elements, tweak colors, opacity, and scale to match your setup.
+- Performance-first rendering — lightweight draw calls and smart culling keep frame rates steady during heavy fights.
+- Hotkey-driven controls — flip features on and off mid-match without breaking your flow.
+- Session-safe design — no permanent game file changes; overlays run cleanly alongside the base client.
+
+How it works
+
+Rust Norvella runs alongside your game and reads what the game already exposes. It does not patch, replace, or rewrite game files. Instead, it hooks into the running process, pulls out the data that matters, and renders it as a clean overlay on top of your screen.
+
+At the core is a lightweight runtime that attaches to the game client on launch. From there, Rust Norvella samples live game state every frame: entity positions, loot containers, player stats, and interaction ranges. That data feeds a small rendering layer that draws directly into the game's window using efficient, low-overhead graphics calls. The result is information that updates in real time without dragging down your frame rate.
+
+Gameplay assistance
+
+Rust Norvella focuses on giving you clearer information, not playing the game for you. Assistance features work by surfacing what's already happening in the world:
+
+- Information overlays — position markers, distance readouts, and status indicators drawn on top of the scene so you can read the situation at a glance.
+- Interaction helpers — highlights for nearby objects and containers within range, with clear visual cues for what you can act on.
+- Live stat panels — health, inventory, and other tracked values shown in a compact HUD that stays out of the way until you need it.
+- Configurable filters — toggle which overlay elements render so the screen stays clean and relevant to what you're doing.
+
+Under the hood
+
+The overlay engine is decoupled from the data layer. Reading game state and drawing to the screen happen on separate paths, so a busy frame doesn't stall your input. All rendering is done in a single pass with minimal draw calls, and the runtime only touches memory the game already uses. No background processes, no external services, no network chatter. Everything runs locally on your machine.
+
+Rust Norvella is built to be predictable: it starts when you start the game, stops when you stop, and stays out of the way in between. The configuration file controls every overlay element individually, so you decide exactly how much information sits on your screen.
+
+Modules and Settings
+
+Overlay Display Module
+This module provides the on-screen heads-up layer that presents gameplay indicators collected by the awareness and targeting modules.
+- Toggle individual overlay elements on or off so only the indicators you care about are shown.
+- Reposition elements within the display area and adjust opacity for readability without blocking the game view.
+- Choose display styles for indicators, such as compact markers versus more detailed labels, to match your preferred level of information.
+
+Targeting Assistance Module
+This module supplies assisted aim movement during gameplay, using preferences configured by the user.
+- Enable or pause assistance at any time and select how activation should behave during play.
+- Adjust smoothing to control how gradually aim movement follows a target.
+- Set target selection preferences, such as prioritizing the nearest or most central candidate, so assistance matches your play style.
+
+Awareness Indicators Module
+This module feeds nearby entity and point-of-interest information into the overlay, giving a clearer picture of the surrounding game world.
+- Choose which indicator categories appear, such as player positions or loot locations.
+- Control how each category is displayed in the overlay, including marker visibility and labeling.
+- Combine categories selectively so the overlay stays focused on the information relevant to the current session.
+
+Automation Routines Module
+This module handles configurable routines for repetitive actions, driven by user-defined triggers and timing.
+- Create routines and bind each to a trigger of your choosing.
+- Enable, disable, and tune timing and repetition settings per routine to match the action being automated.
+- Review the current state of each routine in the tool's interface while it executes according to your configuration.
+
+Profiles and Presets Module
+This module captures overlay, automation, and targeting preferences together so configurations can be reused across play styles or scenarios.
+- Save the current configuration as a named profile.
+- Switch between saved profiles with a single selection to restore a known setup.
+- Keep separate profiles for different scenarios so changes in one do not disturb the others.
+
+Input Bindings Module
+This module connects modules and actions to user-chosen keys so features can be toggled quickly during play.
+- Assign actions and module toggles to keys or key combinations of your choice.
+- Rebind at any time; conflicts between bindings are surfaced in the configuration interface.
+- Adjust bindings alongside overlay and targeting settings so activation speed matches how you play.
+
+Additional Settings
+- Apply and preview changes directly in the settings panel without leaving the tool, iterating on configuration while observing the effect.
+- Use the session activity log to review which modules were active and how the configuration behaved, supporting troubleshooting and fine-tuning.
+- Check module status feedback at a glance to confirm which features are currently enabled before or during a session.
+
+Usage Scenarios
+
+Configuring a Focused Overlay for Loot Hunting
+Goal: Keep the screen centered on loot locations without cluttering the view with other indicators.
+Steps:
+1. Open the settings panel and enable the overlay display module.
+2. In the awareness indicators module, turn off the player position category and enable only the loot location category.
+3. Reposition the loot markers toward the edge of the display area and lower the opacity so the game view stays clear.
+4. Select the compact marker style for loot indicators to avoid detailed labels.
+5. Apply and preview the changes in the settings panel before returning to play.
+
+Expected result: The user sees a minimal heads-up layer showing only compact loot markers in a chosen position with reduced opacity, while other indicator categories no longer appear.
+
+…（内容已截断）

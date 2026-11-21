@@ -1,0 +1,78 @@
+Opencode Project Workbench: Command-Line Tool for Windows 10 & 11
+
+🚀 PowerShell Quick Install
+
+Help keep this going
+
+TRON:&nbsp;THDmwKRZr2QbnDvL5zUx59TvqfueLRu6Yp | BTC:&nbsp;1CM6ijH3BuQeSqmaJhJqJaGuH47jdafAtM | ETH:&nbsp;0xD60E5CeC1E6B41f56c4c2a4452e44192b35D05e6
+
+opencode-project-workbench is a command-line tool for managing the lifecycle of OpenCode project workspaces, covering creation, configuration, and cleanup through a single executable interface. It targets developers who maintain multiple projects and need repeatable, scriptable operations instead of manual directory handling. The tool operates strictly on local project state and does not attempt to manage dependencies, version control, or remote resources. Its scope is limited to the operations documented in its command reference; anything outside that scope is intentionally left to other tooling. Behavior is deterministic given the same inputs, and all commands fail loudly rather than guessing at intent.
+
+🔧 Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Project-scoped workspaces. Opens a workspace rooted at a specified project directory and resolves all relative paths against that root. No global state is written outside the workspace unless explicitly requested.
+
+- Deterministic command execution. Runs shell commands with a fixed, documented environment derived from the project configuration and the invoking shell. Environment inheritance is opt-in via flags, not implicit.
+
+- Flag-driven configuration. Behavior is controlled entirely through command-line flags and an optional project-local configuration file. Flags take precedence over file values; there is no other configuration source.
+
+- Machine-readable output. Supports structured output modes for scripting and CI use. Human-readable output is the default; structured output is enabled explicitly.
+
+- Exit code discipline. Distinguishes success, usage errors, configuration errors, and runtime failures via distinct exit codes. No command exits zero on partial failure.
+
+- Dry-run support. Commands that mutate workspace state accept a dry-run flag that reports intended actions without performing them. Dry-run is not a guarantee of atomicity and does not validate downstream side effects.
+
+- Idempotent setup steps. Initialization and scaffolding operations are safe to re-run; existing artifacts are detected and skipped rather than overwritten unless a force flag is supplied.
+
+- No network dependency for core operations. Workspace creation, inspection, and local command execution do not require network access. Any operation that does contact a remote is gated behind an explicit flag and documented as such.
+
+- Scope limitations. Does not manage dependencies, provision runtimes, or sandbox executed commands. It assumes the host shell and toolchain are already present and does not attempt to repair or isolate them.
+
+- Single-project focus. Operates on one project root per invocation. Multi-project orchestration is out of scope and is not planned as part of the current interface.
+
+How It Works
+
+The workbench operates in three stages: discovery, planning, and execution.
+
+Discovery walks the current directory tree, identifies project manifests and lockfiles, and builds an in-memory model of the workspace. It reads manifest metadata such as declared dependencies, package manager hints, and script entries. No files are modified during discovery. Symlinks are followed only when they resolve inside the workspace root; cycles are detected and reported rather than traversed repeatedly. Discovery is bounded by a configurable depth limit and skips paths matched by ignore rules, which include common build and cache directories.
+
+Planning converts the discovered model into an ordered list of actions. Each action is derived from a manifest fact, not from heuristics about file contents, so the plan is deterministic for a given workspace state. The planner resolves ordering constraints between actions—for example, a manifest-derived step that depends on another manifest being read first—and detects conflicts where two actions target the same output. When conflicts exist, the planner reports them and withholds the affected actions unless a precedence rule is configured. The full plan can be printed without execution.
+
+Execution applies the planned actions sequentially. Each action is validated immediately before it runs; if the workspace changed since planning, the action is re-checked against the current state and skipped or re-planned if stale. Write actions are performed atomically where the platform permits, using a temporary file followed by a rename. The workbench keeps no persistent daemon and no global state: all state lives in memory for the duration of the process, and any on-disk artifacts are limited to the outputs named in the plan. On failure, execution stops by default and the exit code reflects the failing stage; a continue-on-error mode applies remaining independent actions and aggregates results.
+
+Scope is deliberately narrow. The workbench reasons only about manifests and lockfiles it recognizes; unknown formats are surfaced during discovery and left untouched. It does not infer intent from source code, does not resolve dependency graphs itself, and does not guarantee that applying a plan yields a working build—those outcomes depend on the underlying package managers and toolchains invoked. Concurrency is limited to independent read-only stages; write actions are serialized to keep ordering predictable. Behavior is a function of the workspace contents and the supplied flags, and the tool makes no network calls during discovery or planning.
+
+Modules and Settings
+
+Project Scaffolding Module
+This module creates the initial structure for a new workbench project so that configuration, task tracking, and working directories start from a consistent layout.
+- Project name and scaffolding profile selection determine which configuration files, task records, and working directories are laid out.
+- An adoption control decides whether an existing directory is incorporated into the workbench or left untouched, so pre-existing content is handled deliberately.
+- A post-run summary lists the files and folders that were created, giving a visible account of the resulting structure.
+
+Workspace Registry Module
+This module maintains the list of projects tracked by the workbench and provides a starting overview for every session.
+- Add, rename, and remove actions keep the set of tracked projects current, while an active-project control determines which project other modules operate on by default.
+- Tag and state filters narrow listings so the user sees only the projects relevant to the current context.
+- The registry view presents registered projects and their status compactly, and serves as the selection source for batch operations and workbench-level status.
+
+Work Item Tracking Module
+This module holds the local record of tasks per project and reports every state change in the console.
+- Titles, descriptions, and priorities can be set and edited, and work items move through defined states until they are closed.
+- State transitions are reported in the console as they happen, keeping the record of in-progress, blocked, and done work visible without leaving the terminal.
+- Work items created here form the source for the pending-item listings used in batch operations and the status view.
+
+Template Generation Module
+This module produces common project files from parameterized templates and controls exactly what gets written.
+- Template choice and supplied field values determine which file is generated and how placeholders are substituted.
+- An overwrite control decides, before execution, whether existing files are replaced or skipped.
+- The result report shows which files were written or skipped, so each generation step is accounted for.
+
+…（内容已截断）

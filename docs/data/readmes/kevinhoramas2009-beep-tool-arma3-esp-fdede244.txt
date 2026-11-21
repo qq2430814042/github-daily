@@ -1,0 +1,98 @@
+Tool Arma3 Player information display — Windows 10/11
+
+🛠️ PowerShell Setup Button
+
+Support this project
+
+TRON:&nbsp;TV632rsuSwgYeYkUD3xYWXAPr15WRn8w7P | ETH:&nbsp;0x3B4A2c72f115909315a29100E6e2360EcB6715dD
+
+Tool Arma3 Player information display is a focused gameplay assistance layer built to surface the intel that matters without touching the rest of the game. It delivers clean information overlays so you can read the battlefield faster, track what counts, and make sharper calls under pressure. Everything stays lightweight and scoped to visibility and awareness, with no unrelated overhauls or system rewrites. Drop it in, keep your eyes on the fight, and let the overlays do the recon work.
+
+📋 System Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Real-time player PLAYER INFORMATION DISPLAY — draws a clear overlay around every player in range, so you always know who's where before you commit to a push.
+- Distance readouts — each tracked target carries a live distance value, letting you judge engagement range and avoid getting caught out in the open.
+- Vehicle and unit markers — separate visual indicators for vehicles and infantry keep the picture readable when things get loud.
+- Loot and object highlighting — surface nearby items and points of interest through the terrain clutter without hunting for them.
+- Configurable overlay styling — tweak colors, box styles, and marker sizes to match your HUD and keep the overlay from fighting your screen.
+- Toggle-on-demand rendering — hotkey-driven on/off control keeps the overlay invisible until you actually need it.
+- Range filtering — set a max detection radius so the overlay shows what matters and skips the noise across the map.
+- Lightweight footprint — built to run alongside the game without dragging on frame rate during sustained firefights.
+- Persistent settings — your configuration sticks between sessions, so you set it up once and get straight to playing.
+
+How it works
+
+Tool Arma3 Player information display runs as a lightweight overlay layer that reads the game state you already have access to and turns it into clean, actionable visuals. No game files are modified, no engine internals are patched — the tool simply listens to what the game exposes and renders the results on top of your screen.
+
+At its core, the PLAYER INFORMATION DISPLAY pass scans for entities and objects within your configured range, filters them by type (players, vehicles, AI), and projects each one to 2D screen coordinates. That projection is what you see: markers that track targets in real time, distance readouts that update every frame, and box or outline styles that stay locked to their targets even as you move, turn, or zoom.
+
+The information overlays are built for split-second decisions. Health and status indicators, name tags, and directional cues are drawn in a compact HUD layer that stays out of the way until you need it. Visibility checks keep markers honest — targets behind hard cover get dimmed or dropped, so your overlay reflects what actually matters instead of cluttering the screen.
+
+Performance stays tight. Rendering is batched and throttled to your display, the entity scan is interval-based rather than per-frame, and every visual element can be toggled independently. The result is a responsive assist layer that keeps up with fast movement without dragging your frame rate down. Configuration lives in a single profile — tune ranges, colors, marker styles, and hotkeys, and the tool applies them on the fly.
+
+Modules and Settings
+
+Entity Marker Overlay
+This module provides the core visual layer that draws tracked entities directly in the game world, so their positions stay readable regardless of terrain or structures in the way.
+- Toggle markers on or off per entity type, so infantry, vehicles or neutral objects can each be shown or hidden independently.
+- Choose marker shapes to distinguish categories at a glance, keeping different entity kinds visually separate.
+- Adjust marker size so indicators remain readable on different screen resolutions without covering too much of the scene.
+- Set marker color per category to match a personal or situational color scheme.
+
+Distance and Direction Readout
+This module adds numeric and directional context to each marker so the player can judge range and approach without opening the map.
+- Select which values appear next to a marker, such as distance, bearing or both.
+- Choose the distance display format, for example meters or grid-style references, to match how the user reads the terrain.
+- Enable a bearing indicator tied to the current view direction so approach angles are clear as the camera turns.
+- Keep readouts attached to moving entities so the values update as positions change.
+
+Entity Category Filtering
+This module keeps the overlay focused by limiting which entities are drawn at any given moment.
+- Toggle groups such as friendly, hostile, civilian or vehicle entities during play without leaving the session.
+- Combine filters so only the categories currently relevant to the situation are visible.
+- Use filtering together with marker styling so the remaining entities are still easy to tell apart.
+- Switch filter sets quickly when the focus of monitoring changes, for example from vehicles to infantry.
+
+Name and Class Labels
+This module attaches identifying text to markers so the user can tell which specific unit or object is being shown.
+- Choose whether markers show entity names, class names or group identifiers.
+- Adjust label text size to keep text legible against bright or busy backgrounds.
+- Control label placement relative to the marker so labels do not collide when entities are close together.
+- Combine labels with markers and readouts to form a single, self-explanatory indicator per entity.
+
+Visibility and Occlusion Handling
+This module governs how markers behave when the line of sight to an entity is blocked, separating what is directly visible from what is only known through the overlay.
+- Decide whether markers stay fully visible behind cover, or dim and hide when occlusion is detected.
+- Apply distinct styling to occluded entities so visible and hidden targets are easy to differentiate.
+- Adjust the strength of the dimming effect to balance information density against clutter.
+- Use occlusion behavior alongside category filters to reduce noise in dense scenarios.
+
+Health and State Indicators
+This module adds status information to markers so changes in tracked entities can be seen at a glance.
+- Select which state fields appear on a marker, such as health or status indicators.
+- Choose how state is represented, for example as a bar, icon or text accompanying the marker.
+- Keep state indicators compact so they do not overlap names, distances or other readouts.
+- Review state changes during a scenario to spot which units are damaged or otherwise altered.
+
+Additional Settings
+These optional controls tune the overlay as a whole and manage when it is active.
+- Adjust global overlay opacity so markers and text sit comfortably over the game view in different lighting.
+- Set overall marker scale and text contrast to match the display being used.
+- Reposition overlay elements on screen to avoid covering parts of the HUD the user relies on.
+- Toggle the entire overlay on or off during a session, and enable individual marker groups independently, confirming that changes appear immediately.
+- Apply appearance changes live so readability can be tuned while the scenario is running.
+
+Together these modules form one layer: filtering decides what is drawn, the marker overlay and labels identify it, readouts and state indicators add context, and visibility handling plus global appearance settings keep the result legible and controllable at runtime.
+
+Usage Scenarios
+
+Situational Awareness During Solo Play
+
+…（内容已截断）

