@@ -1,0 +1,1597 @@
+{
+  "date": "2026-11-21",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-22T06:34:12.052Z",
+  "count": 60,
+  "newCount": 32,
+  "sources": {
+    "trending": 16,
+    "new": 32,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "name": "Claude-BugHunter",
+      "owner": "elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars": 16411,
+      "forks": 1862,
+      "starsToday": 1803,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elementalsouls-claude-bughunter-8f8b4d67.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "language": "TypeScript",
+      "stars": 206395,
+      "forks": 10792,
+      "starsToday": 1006,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 323870,
+      "forks": 28726,
+      "starsToday": 883,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "XiaoYouChR/Ghost-Downloader-3",
+      "name": "Ghost-Downloader-3",
+      "owner": "XiaoYouChR",
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "description": "The only downloader you need. 下载器的集大成者。",
+      "language": "Python",
+      "stars": 14615,
+      "forks": 884,
+      "starsToday": 779,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "xiaoyouchr-ghost-downloader-3-c290958b.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "HKUDS/CLI-Anything",
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 62225,
+      "forks": 5647,
+      "starsToday": 769,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hkuds-cli-anything-c427889b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "mjmirza/app-store-compliance",
+      "name": "app-store-compliance",
+      "owner": "mjmirza",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 111 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+      "language": "Shell",
+      "stars": 3535,
+      "forks": 217,
+      "starsToday": 720,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mjmirza-app-store-compliance-71069240.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "zhouxiaoka/autoclip",
+      "name": "autoclip",
+      "owner": "zhouxiaoka",
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+      "language": "Python",
+      "stars": 12995,
+      "forks": 2088,
+      "starsToday": 683,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zhouxiaoka-autoclip-b1c879a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "cathrynlavery/diagram-design",
+      "name": "diagram-design",
+      "owner": "cathrynlavery",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 45 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars": 69910,
+      "forks": 4690,
+      "starsToday": 583,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cathrynlavery-diagram-design-41ea088f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "toeverything/AFFiNE",
+      "name": "AFFiNE",
+      "owner": "toeverything",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+      "language": "TypeScript",
+      "stars": 76420,
+      "forks": 5602,
+      "starsToday": 574,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "toeverything-affine-c67d0b7a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "mvanhorn/last30days-skill",
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 72165,
+      "forks": 6390,
+      "starsToday": 560,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mvanhorn-last30days-skill-ce334b66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "jingyaogong/minimind",
+      "name": "minimind",
+      "owner": "jingyaogong",
+      "url": "https://github.com/jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "language": "Python",
+      "stars": 68268,
+      "forks": 8927,
+      "starsToday": 488,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jingyaogong-minimind-e3acf9ef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "Tracer-Cloud/opensre",
+      "name": "opensre",
+      "owner": "Tracer-Cloud",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "description": "The open-source agent for CI/CD reliability.",
+      "language": "Python",
+      "stars": 14084,
+      "forks": 1946,
+      "starsToday": 450,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tracer-cloud-opensre-87ae8ae9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 11570,
+      "forks": 1449,
+      "starsToday": 326,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "cursor/plugins",
+      "name": "plugins",
+      "owner": "cursor",
+      "url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 18175,
+      "forks": 1985,
+      "starsToday": 260,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cursor-plugins-07a8bcfb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "openvinotoolkit/openvino",
+      "name": "openvino",
+      "owner": "openvinotoolkit",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "language": "C++",
+      "stars": 11978,
+      "forks": 3654,
+      "starsToday": 200,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openvinotoolkit-openvino-5d345dc2.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "nginx/nginx",
+      "name": "nginx",
+      "owner": "nginx",
+      "url": "https://github.com/nginx/nginx",
+      "description": "The official NGINX Open Source repository.",
+      "language": "C",
+      "stars": 32776,
+      "forks": 8375,
+      "starsToday": 189,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nginx-nginx-1304abc5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 17,
+      "fullName": "omonkeyz/xbox-emulator",
+      "name": "xbox-emulator",
+      "owner": "omonkeyz",
+      "url": "https://github.com/omonkeyz/xbox-emulator",
+      "description": "Progress notes for running Xbox Series X|S builds on PC (TomBox + rage9)",
+      "language": "Rust",
+      "stars": 909,
+      "forks": 46,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-21T08:08:39Z",
+      "updatedAt": "2026-11-22T06:32:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "omonkeyz-xbox-emulator-ba746e24.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "sybil-solutions/skill-distill",
+      "name": "skill-distill",
+      "owner": "sybil-solutions",
+      "url": "https://github.com/sybil-solutions/skill-distill",
+      "description": "Distill a good Claude Code / Codex session into a skill an open-weight model can follow to reproduce the task",
+      "language": "Python",
+      "stars": 399,
+      "forks": 34,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-21T01:43:00Z",
+      "updatedAt": "2026-11-22T06:30:15Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sybil-solutions-skill-distill-407d9f3c.txt"
+    },
+    {
+      "rank": 19,
+      "fullName": "opokukopoku/gta-6-pc-release",
+      "name": "gta-6-pc-release",
+      "owner": "opokukopoku",
+      "url": "https://github.com/opokukopoku/gta-6-pc-release",
+      "description": "GTA 6 PC Release: Full Access, Zero Hassle",
+      "language": "HTML",
+      "stars": 377,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "gta6-cover-art",
+        "gta6-cover-art-01",
+        "gta6-disk-space",
+        "gta6-online",
+        "gta6-pc",
+        "gta6-preload",
+        "gta6-trophy-rarity-forecast-01",
+        "gta6-twitch-ccu-forecast-01"
+      ],
+      "createdAt": "2026-11-21T14:16:44Z",
+      "updatedAt": "2026-11-22T06:32:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "opokukopoku-gta-6-pc-release-aeced898.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 20,
+      "fullName": "kyle-millerx2098t3/daw-synth-fl-studio-2026-producer-portable-x64",
+      "name": "daw-synth-fl-studio-2026-producer-portable-x64",
+      "owner": "kyle-millerx2098t3",
+      "url": "https://github.com/kyle-millerx2098t3/daw-synth-fl-studio-2026-producer-portable-x64",
+      "description": "DAW & Synth Studio Suite FL Studio 2026.1 Producer All-Plugins Edition Runtime: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 350,
+      "forks": 56,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "ableton-live-12",
+        "all",
+        "autotune-pro",
+        "daw",
+        "daw-2026",
+        "daw-all",
+        "daw-edition"
+      ],
+      "createdAt": "2026-11-21T20:43:48Z",
+      "updatedAt": "2026-11-22T06:04:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kyle-millerx2098t3-daw-synth-fl-studio-2026-producer-portable-x64-2db082b8.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "antonhall-x91s9/discord-local-uncensored-ai-activity-utility-quest-auto-po",
+      "name": "discord-local-uncensored-ai-activity-utility-quest-auto-po",
+      "owner": "antonhall-x91s9",
+      "url": "https://github.com/antonhall-x91s9/discord-local-uncensored-ai-activity-utility-quest-auto-po",
+      "description": "Discord & Local Uncensored AI Discord Activity serial-utility, Quest Auto-Completer & Badge Booster: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 342,
+      "forks": 52,
+      "starsToday": 0,
+      "topics": [
+        "activity",
+        "auto",
+        "badge",
+        "booster",
+        "completer",
+        "cuda-portable",
+        "deep-live-cam",
+        "discord-activity"
+      ],
+      "createdAt": "2026-11-21T20:49:06Z",
+      "updatedAt": "2026-11-22T05:30:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "antonhall-x91s9-discord-local-uncensored-ai-activity-utility-quest-auto-po-b3bdd9bd.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "danx1905k8/war-thunder-realistic-tank-outline-thermal-portable-x64",
+      "name": "war-thunder-realistic-tank-outline-thermal-portable-x64",
+      "owner": "danx1905k8",
+      "url": "https://github.com/danx1905k8/war-thunder-realistic-tank-outline-thermal-portable-x64",
+      "description": "War Thunder Realistic Tank Outline & Thermal Sight Mod: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 342,
+      "forks": 49,
+      "starsToday": 0,
+      "topics": [
+        "ballistic-calculator",
+        "external-overlay",
+        "lead-indicator",
+        "mod",
+        "outline",
+        "realistic",
+        "sight",
+        "tank"
+      ],
+      "createdAt": "2026-11-21T21:27:22Z",
+      "updatedAt": "2026-11-22T05:54:11Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "danx1905k8-war-thunder-realistic-tank-outline-thermal-portable-x64-6df5d295.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "leonmiller-io01l1/gta-6-vice-city-ps5-remote-play-60fps-portable-x64",
+      "name": "gta-6-vice-city-ps5-remote-play-60fps-portable-x64",
+      "owner": "leonmiller-io01l1",
+      "url": "https://github.com/leonmiller-io01l1/gta-6-vice-city-ps5-remote-play-60fps-portable-x64",
+      "description": "GTA 6 Vice City PS5 Remote Play 60FPS FrameGen Enhancer: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 340,
+      "forks": 47,
+      "starsToday": 0,
+      "topics": [
+        "60fps",
+        "dx12",
+        "enhancer",
+        "frame-generation",
+        "framegen",
+        "gta-60fps",
+        "gta-enhancer",
+        "gta-framegen"
+      ],
+      "createdAt": "2026-11-21T21:03:42Z",
+      "updatedAt": "2026-11-22T05:12:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "leonmiller-io01l1-gta-6-vice-city-ps5-remote-play-60fps-portable-x64-2b861840.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "markdevx1901r4/shadps4-bloodborne-pc-60fps-patch-vertex-explosion-portabl",
+      "name": "shadps4-bloodborne-pc-60fps-patch-vertex-explosion-portabl",
+      "owner": "markdevx1901r4",
+      "url": "https://github.com/markdevx1901r4/shadps4-bloodborne-pc-60fps-patch-vertex-explosion-portabl",
+      "description": "ShadPS4 Bloodborne PC 60FPS Patch, Vertex Explosion Fix & SysModules Pack: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 339,
+      "forks": 57,
+      "starsToday": 0,
+      "topics": [
+        "60fps",
+        "60fps-patch",
+        "bloodborne-pc",
+        "explosion",
+        "fix",
+        "pack",
+        "patch",
+        "ps4-emulator"
+      ],
+      "createdAt": "2026-11-21T20:41:14Z",
+      "updatedAt": "2026-11-22T06:04:56Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "markdevx1901r4-shadps4-bloodborne-pc-60fps-patch-vertex-explosion-portabl-3b75a6b6.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "nickcode-01e6/samsung-android-mtp-unlocktool-portable-loader-xiaomi-port",
+      "name": "samsung-android-mtp-unlocktool-portable-loader-xiaomi-port",
+      "owner": "nickcode-01e6",
+      "url": "https://github.com/nickcode-01e6/samsung-android-mtp-unlocktool-portable-loader-xiaomi-port",
+      "description": "Samsung & Android mtp-csc Toolkit UnlockTool Portable Loader — Xiaomi HyperOS 2.0 & Auth service-helper: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 339,
+      "forks": 32,
+      "starsToday": 0,
+      "topics": [
+        "auth",
+        "helper",
+        "hyperos",
+        "hyperos-bootloader",
+        "loader",
+        "mtk-helper",
+        "mtp-helper",
+        "portable"
+      ],
+      "createdAt": "2026-11-21T21:31:58Z",
+      "updatedAt": "2026-11-22T06:04:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nickcode-01e6-samsung-android-mtp-unlocktool-portable-loader-xiaomi-port-26cf8cea.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "ryanhall-2095a5/xeno-bootstrapper-multi-instance-roblox-account-portable-x",
+      "name": "xeno-bootstrapper-multi-instance-roblox-account-portable-x",
+      "owner": "ryanhall-2095a5",
+      "url": "https://github.com/ryanhall-2095a5/xeno-bootstrapper-multi-instance-roblox-account-portable-x",
+      "description": "Xeno bootstrapper Multi-Instance Roblox Account Manager & FPS extension: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "C++",
+      "stars": 337,
+      "forks": 32,
+      "starsToday": 0,
+      "topics": [
+        "account",
+        "bridge",
+        "direct-bootstrapper",
+        "fps",
+        "instance",
+        "luau",
+        "manager",
+        "multi"
+      ],
+      "createdAt": "2026-11-21T21:34:07Z",
+      "updatedAt": "2026-11-22T04:50:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ryanhall-2095a5-xeno-bootstrapper-multi-instance-roblox-account-portable-x-bdd98190.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "nikita-deveng1999g0/switch-emulator-keys-firmware-nsp-box-xci-nsp-portable-x64",
+      "name": "switch-emulator-keys-firmware-nsp-box-xci-nsp-portable-x64",
+      "owner": "nikita-deveng1999g0",
+      "url": "https://github.com/nikita-deveng1999g0/switch-emulator-keys-firmware-nsp-box-xci-nsp-portable-x64",
+      "description": "Switch Emulator Keys & Firmware NSP-Box Switch 2 XCI/NSP Decryption & Merge Toolkit: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 335,
+      "forks": 50,
+      "starsToday": 0,
+      "topics": [
+        "box",
+        "citron",
+        "decryption",
+        "emulator",
+        "merge",
+        "nsp",
+        "nsp-box",
+        "nx"
+      ],
+      "createdAt": "2026-11-21T21:29:45Z",
+      "updatedAt": "2026-11-22T06:07:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nikita-deveng1999g0-switch-emulator-keys-firmware-nsp-box-xci-nsp-portable-x64-e7907304.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "artem-petrovlab04i2/counter-strike-2-inventory-skin-knife-glove-portable-x64",
+      "name": "counter-strike-2-inventory-skin-knife-glove-portable-x64",
+      "owner": "artem-petrovlab04i2",
+      "url": "https://github.com/artem-petrovlab04i2/counter-strike-2-inventory-skin-knife-glove-portable-x64",
+      "description": "Counter-Strike 2 Inventory Skin, Knife & Glove Changer: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "C++",
+      "stars": 334,
+      "forks": 43,
+      "starsToday": 0,
+      "topics": [
+        "changer",
+        "counter-changer",
+        "counter-glove",
+        "counter-inventory",
+        "counter-knife",
+        "counter-skin",
+        "counter-strike-2",
+        "cpp"
+      ],
+      "createdAt": "2026-11-21T21:24:49Z",
+      "updatedAt": "2026-11-22T05:25:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "artem-petrovlab04i2-counter-strike-2-inventory-skin-knife-glove-portable-x64-7333ac5c.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "eric-lopezdev1992b4/polar-client-skyblock-mining-2026",
+      "name": "polar-client-skyblock-mining-2026",
+      "owner": "eric-lopezdev1992b4",
+      "url": "https://github.com/eric-lopezdev1992b4/polar-client-skyblock-mining-2026",
+      "description": "Polar Client preactivated — Hypixel Skyblock Mithril, Gemstone, Powder & Commission Macro (2026 Edition): native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 334,
+      "forks": 32,
+      "starsToday": 0,
+      "topics": [
+        "cmake",
+        "configuration",
+        "cpp",
+        "directx-11",
+        "directx-12",
+        "hypixel-skyblock",
+        "imgui",
+        "multithreading"
+      ],
+      "createdAt": "2026-11-21T23:19:31Z",
+      "updatedAt": "2026-11-22T06:07:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "eric-lopezdev1992b4-polar-client-skyblock-mining-2026-b2ce5672.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "kyle-moore-code2001v1/marvel-rivals-hitscan-projectile-smoothing-assistant-porta",
+      "name": "marvel-rivals-hitscan-projectile-smoothing-assistant-porta",
+      "owner": "kyle-moore-code2001v1",
+      "url": "https://github.com/kyle-moore-code2001v1/marvel-rivals-hitscan-projectile-smoothing-assistant-porta",
+      "description": "Marvel Rivals Hitscan & Projectile Smoothing Assistant: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "C++",
+      "stars": 334,
+      "forks": 47,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "assistant",
+        "fps-bridge",
+        "hitscan",
+        "hud",
+        "marvel-assistant",
+        "marvel-hitscan",
+        "marvel-projectile"
+      ],
+      "createdAt": "2026-11-21T21:22:09Z",
+      "updatedAt": "2026-11-22T06:04:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kyle-moore-code2001v1-marvel-rivals-hitscan-projectile-smoothing-assistant-porta-c4bd5437.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "marcus-ali-lab1905z4/path-of-exile-2-map-reveal-zoom-out-portable-x64",
+      "name": "path-of-exile-2-map-reveal-zoom-out-portable-x64",
+      "owner": "marcus-ali-lab1905z4",
+      "url": "https://github.com/marcus-ali-lab1905z4/path-of-exile-2-map-reveal-zoom-out-portable-x64",
+      "description": "Path of Exile 2 Map Reveal, Zoom-Out & Fog Remover: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 333,
+      "forks": 53,
+      "starsToday": 0,
+      "topics": [
+        "flask-macro",
+        "fog",
+        "loot-filter",
+        "map",
+        "map-overlay",
+        "out",
+        "overlay",
+        "path-fog"
+      ],
+      "createdAt": "2026-11-21T20:06:40Z",
+      "updatedAt": "2026-11-22T06:04:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "marcus-ali-lab1905z4-path-of-exile-2-map-reveal-zoom-out-portable-x64-4fc7ec5a.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "sergeygarcia-devo0/wave-velocity-bootstrapper-external-luau-loader-serial-por",
+      "name": "wave-velocity-bootstrapper-external-luau-loader-serial-por",
+      "owner": "sergeygarcia-devo0",
+      "url": "https://github.com/sergeygarcia-devo0/wave-velocity-bootstrapper-external-luau-loader-serial-por",
+      "description": "Wave & Velocity bootstrapper Velocity External LuaU module-loader & device-id serial-utility: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 333,
+      "forks": 47,
+      "starsToday": 0,
+      "topics": [
+        "bloxstrap",
+        "external",
+        "fflags",
+        "loader",
+        "luau",
+        "portable",
+        "roblox-loader",
+        "serial"
+      ],
+      "createdAt": "2026-11-21T21:00:54Z",
+      "updatedAt": "2026-11-22T06:07:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sergeygarcia-devo0-wave-velocity-bootstrapper-external-luau-loader-serial-por-00240b80.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "jake-j-19d3/discord-local-uncensored-ai-deep-live-cam-v2-portable-x64",
+      "name": "discord-local-uncensored-ai-deep-live-cam-v2-portable-x64",
+      "owner": "jake-j-19d3",
+      "url": "https://github.com/jake-j-19d3/discord-local-uncensored-ai-deep-live-cam-v2-portable-x64",
+      "description": "Discord & Local Uncensored AI Deep-Live-Cam v2.1 1-Click Realtime Webcam FaceSwap CUDA Portable: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 332,
+      "forks": 37,
+      "starsToday": 0,
+      "topics": [
+        "cam",
+        "click",
+        "cuda-portable",
+        "deep",
+        "deep-live-cam",
+        "discord-cam",
+        "discord-click",
+        "discord-deep"
+      ],
+      "createdAt": "2026-11-21T21:31:42Z",
+      "updatedAt": "2026-11-22T06:07:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jake-j-19d3-discord-local-uncensored-ai-deep-live-cam-v2-portable-x64-513ede6f.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "danielrops99q3/deadlock-minimap-cooldown-jungle-timer-portable-x64",
+      "name": "deadlock-minimap-cooldown-jungle-timer-portable-x64",
+      "owner": "danielrops99q3",
+      "url": "https://github.com/danielrops99q3/deadlock-minimap-cooldown-jungle-timer-portable-x64",
+      "description": "Deadlock Minimap Cooldown & Jungle Timer Overlay: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 331,
+      "forks": 51,
+      "starsToday": 0,
+      "topics": [
+        "cooldown",
+        "cpp",
+        "deadlock",
+        "deadlock-cooldown",
+        "deadlock-jungle",
+        "deadlock-minimap",
+        "deadlock-timer",
+        "external-hud"
+      ],
+      "createdAt": "2026-11-21T21:16:43Z",
+      "updatedAt": "2026-11-22T06:04:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "danielrops99q3-deadlock-minimap-cooldown-jungle-timer-portable-x64-dae470ef.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "daviddevhq98y8/monster-hunter-wilds-reframework",
+      "name": "monster-hunter-wilds-reframework",
+      "owner": "daviddevhq98y8",
+      "url": "https://github.com/daviddevhq98y8/monster-hunter-wilds-reframework",
+      "description": "Monster Hunter Wilds REFramework + Monster HP Bar, Crown & DPS Overlay Mod — Download prebuilt Windows 10/11 x64 release. Keywords: monster hunter wilds, mhwilds, monster hunter wilds mods, monster hunter wilds cheat, monster hunter wilds trainer, reframework, mhwilds save editor, mhwilds dps overla",
+      "language": "Jupyter Notebook",
+      "stars": 331,
+      "forks": 27,
+      "starsToday": 0,
+      "topics": [
+        "cmake",
+        "configuration",
+        "cpp",
+        "directx-11",
+        "directx-12",
+        "imgui",
+        "mhwilds",
+        "monster-hunter-wilds"
+      ],
+      "createdAt": "2026-11-21T21:54:34Z",
+      "updatedAt": "2026-11-22T05:12:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "daviddevhq98y8-monster-hunter-wilds-reframework-43b227e0.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "ericmoorecode2001j6/monster-hunter-wilds-reframework-download",
+      "name": "monster-hunter-wilds-reframework-download",
+      "owner": "ericmoorecode2001j6",
+      "url": "https://github.com/ericmoorecode2001j6/monster-hunter-wilds-reframework-download",
+      "description": "Monster Hunter Wilds REFramework + Monster HP Bar, Crown & DPS Overlay Mod [Direct Download] — Download prebuilt Windows 10/11 x64 release. Keywords: monster hunter wilds, mhwilds, monster hunter wilds mods, monster hunter wilds cheat, monster hunter wilds trainer, reframework, mhwilds save editor, ",
+      "language": "C++",
+      "stars": 331,
+      "forks": 31,
+      "starsToday": 0,
+      "topics": [
+        "cmake",
+        "configuration",
+        "cpp",
+        "directx-11",
+        "directx-12",
+        "imgui",
+        "mhwilds",
+        "monster-hunter-wilds"
+      ],
+      "createdAt": "2026-11-21T23:03:58Z",
+      "updatedAt": "2026-11-22T05:09:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ericmoorecode2001j6-monster-hunter-wilds-reframework-download-0270ce5f.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "felixrajdev2096h7/fivem-citizenfx-adhesive-utility-clean-cleaner-portable-x6",
+      "name": "fivem-citizenfx-adhesive-utility-clean-cleaner-portable-x6",
+      "owner": "felixrajdev2096h7",
+      "url": "https://github.com/felixrajdev2096h7/fivem-citizenfx-adhesive-utility-clean-cleaner-portable-x6",
+      "description": "FiveM CitizenFX Adhesive serial-utility, Clean Cleaner & Serial manager: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "C++",
+      "stars": 331,
+      "forks": 51,
+      "starsToday": 0,
+      "topics": [
+        "adhesive",
+        "citizenfx",
+        "clean",
+        "cleaner",
+        "dx11",
+        "fivem",
+        "fivem-adhesive",
+        "fivem-clean"
+      ],
+      "createdAt": "2026-11-21T20:04:52Z",
+      "updatedAt": "2026-11-22T05:25:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "felixrajdev2096h7-fivem-citizenfx-adhesive-utility-clean-cleaner-portable-x6-d365b123.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "dave-wilsoncode1999d3/elden-ring-nightreign-standalone-trainer-relic-murk-portab",
+      "name": "elden-ring-nightreign-standalone-trainer-relic-murk-portab",
+      "owner": "dave-wilsoncode1999d3",
+      "url": "https://github.com/dave-wilsoncode1999d3/elden-ring-nightreign-standalone-trainer-relic-murk-portab",
+      "description": "Elden Ring Nightreign Standalone Trainer, Relic & Murk Editor: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "C++",
+      "stars": 330,
+      "forks": 41,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "editor",
+        "elden-editor",
+        "elden-murk",
+        "elden-relic",
+        "elden-ring-nightreign",
+        "elden-standalone",
+        "fps-bridge"
+      ],
+      "createdAt": "2026-11-21T21:22:04Z",
+      "updatedAt": "2026-11-22T06:04:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dave-wilsoncode1999d3-elden-ring-nightreign-standalone-trainer-relic-murk-portab-21087ea8.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "ivanjops96a3/polymarket-perp-dex-whale-wallet-copytrader-resolution-por",
+      "name": "polymarket-perp-dex-whale-wallet-copytrader-resolution-por",
+      "owner": "ivanjops96a3",
+      "url": "https://github.com/ivanjops96a3/polymarket-perp-dex-whale-wallet-copytrader-resolution-por",
+      "description": "Polymarket & Perp DEX HFT Suite Polymarket Whale Wallet Copytrader & Resolution Sniping Engine: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 330,
+      "forks": 44,
+      "starsToday": 0,
+      "topics": [
+        "clob",
+        "copytrader",
+        "engine",
+        "fragment-sniper",
+        "hft",
+        "hyperliquid",
+        "polymarket",
+        "polymarket-bot"
+      ],
+      "createdAt": "2026-11-21T20:46:26Z",
+      "updatedAt": "2026-11-22T06:04:32Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ivanjops96a3-polymarket-perp-dex-whale-wallet-copytrader-resolution-por-5006cb9e.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "ryan-v-x2003c8/ea-sports-fc-26-green-timed-finishing-legacy-portable-x64",
+      "name": "ea-sports-fc-26-green-timed-finishing-legacy-portable-x64",
+      "owner": "ryan-v-x2003c8",
+      "url": "https://github.com/ryan-v-x2003c8/ea-sports-fc-26-green-timed-finishing-legacy-portable-x64",
+      "description": "EA Sports FC 26 Green Timed-Finishing, Legacy Defending & Division Trainer: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 330,
+      "forks": 47,
+      "starsToday": 0,
+      "topics": [
+        "career-editor",
+        "defending",
+        "division",
+        "ea-defending",
+        "ea-division",
+        "ea-fc-26",
+        "ea-finishing",
+        "ea-green"
+      ],
+      "createdAt": "2026-11-21T21:27:23Z",
+      "updatedAt": "2026-11-22T05:12:48Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ryan-v-x2003c8-ea-sports-fc-26-green-timed-finishing-legacy-portable-x64-05048294.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "antong-code95j8/rust-recoil-script-download",
+      "name": "rust-recoil-script-download",
+      "owner": "antong-code95j8",
+      "url": "https://github.com/antong-code95j8/rust-recoil-script-download",
+      "description": "Rust No-Recoil Script 2026 — Undetected HID Mouse Macro with Auto Weapon Detection [Direct Download] — Download prebuilt Windows 10/11 x64 release. Keywords: rust, rust cheat, rust cheats, rust hack, rust recoil script, rust no recoil, rust esp, rust aimbot.",
+      "language": "Jupyter Notebook",
+      "stars": 328,
+      "forks": 27,
+      "starsToday": 0,
+      "topics": [
+        "cmake",
+        "configuration",
+        "cpp",
+        "directx-11",
+        "directx-12",
+        "imgui",
+        "multithreading",
+        "performance-tuning"
+      ],
+      "createdAt": "2026-11-21T23:07:51Z",
+      "updatedAt": "2026-11-22T04:53:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "antong-code95j8-rust-recoil-script-download-ef35c25d.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "ericgarciacode03f3/creative-video-adobe-cc-v4-universal-portable-x64",
+      "name": "creative-video-adobe-cc-v4-universal-portable-x64",
+      "owner": "ericgarciacode03f3",
+      "url": "https://github.com/ericgarciacode03f3/creative-video-adobe-cc-v4-universal-portable-x64",
+      "description": "Creative & Video Pro Suite Adobe cc-bridge v4.2 Universal 2026 Creative Cloud runtime-updater: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 328,
+      "forks": 49,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "adobe",
+        "after-effects-plugins",
+        "capcut-pro",
+        "cc",
+        "cloud",
+        "creative-2026",
+        "creative-adobe"
+      ],
+      "createdAt": "2026-11-21T20:51:45Z",
+      "updatedAt": "2026-11-22T05:10:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ericgarciacode03f3-creative-video-adobe-cc-v4-universal-portable-x64-999fb664.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "marcus-ali-lab1905z4/cad-3d-engineering-suite-solidworks-2026-sp1-ssq-po",
+      "name": "cad-3d-engineering-suite-solidworks-2026-sp1-ssq-po",
+      "owner": "marcus-ali-lab1905z4",
+      "url": "https://github.com/marcus-ali-lab1905z4/cad-3d-engineering-suite-solidworks-2026-sp1-ssq-po",
+      "description": "CAD, 3D & Engineering Suite SolidWorks 2026 SP1 ssq-bridge Local network-daemon Toolkit: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 328,
+      "forks": 28,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "autocad-2026",
+        "blender-addons",
+        "cad-2026",
+        "cad-cam",
+        "cad-config",
+        "cad-local",
+        "cad-server"
+      ],
+      "createdAt": "2026-11-21T19:58:23Z",
+      "updatedAt": "2026-11-22T06:02:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "marcus-ali-lab1905z4-cad-3d-engineering-suite-solidworks-2026-sp1-ssq-po-e554e8af.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "oscar-j-code1904n1/blox-fruits-script",
+      "name": "blox-fruits-script",
+      "owner": "oscar-j-code1904n1",
+      "url": "https://github.com/oscar-j-code1904n1/blox-fruits-script",
+      "description": "Blox Fruits Script 2026 — Keyless Auto-Farm, Sea Events, Kitsune & Fruit Sniper — Download prebuilt Windows 10/11 x64 release. Keywords: blox fruits script, fisch script, rivals script, jujutsu infinite script, blue lock rivals script, da hood script, pet simulator 99 script, anime vanguards script.",
+      "language": "C++",
+      "stars": 328,
+      "forks": 27,
+      "starsToday": 0,
+      "topics": [
+        "blox-fruits-script",
+        "blue-lock-rivals-script",
+        "cmake",
+        "configuration",
+        "cpp",
+        "da-hood-script",
+        "directx-11",
+        "directx-12"
+      ],
+      "createdAt": "2026-11-21T21:54:29Z",
+      "updatedAt": "2026-11-22T06:02:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "oscar-j-code1904n1-blox-fruits-script-d9793a2e.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "tomivanovops00n9/civilization-vii-ui-quick-deal-detailed-portable-x64",
+      "name": "civilization-vii-ui-quick-deal-detailed-portable-x64",
+      "owner": "tomivanovops00n9",
+      "url": "https://github.com/tomivanovops00n9/civilization-vii-ui-quick-deal-detailed-portable-x64",
+      "description": "Civilization VII UI Quick-Deal, Detailed Yield & Policy Card Calculator: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 328,
+      "forks": 45,
+      "starsToday": 0,
+      "topics": [
+        "calculator",
+        "card",
+        "civ-7",
+        "civilization-7",
+        "civilization-calculator",
+        "civilization-card",
+        "civilization-deal",
+        "civilization-detailed"
+      ],
+      "createdAt": "2026-11-21T21:24:48Z",
+      "updatedAt": "2026-11-22T06:07:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tomivanovops00n9-civilization-vii-ui-quick-deal-detailed-portable-x64-3ce29299.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "benhhq1993s5/dune-awakening-external-player-ornithopter-radar-portable",
+      "name": "dune-awakening-external-player-ornithopter-radar-portable",
+      "owner": "benhhq1993s5",
+      "url": "https://github.com/benhhq1993s5/dune-awakening-external-player-ornithopter-radar-portable",
+      "description": "Dune Awakening External Player/Ornithopter Radar & Recoil Helper: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 327,
+      "forks": 39,
+      "starsToday": 0,
+      "topics": [
+        "dune-awakening",
+        "dune-external",
+        "dune-helper",
+        "dune-ornithopter",
+        "dune-player",
+        "dune-radar",
+        "dune-recoil",
+        "external"
+      ],
+      "createdAt": "2026-11-21T21:22:04Z",
+      "updatedAt": "2026-11-22T06:04:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "benhhq1993s5-dune-awakening-external-player-ornithopter-radar-portable-7d892b4c.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "dan-leelab19f7/roblox-game-hub-fisch-auto-cast-instant-portable-x64",
+      "name": "roblox-game-hub-fisch-auto-cast-instant-portable-x64",
+      "owner": "dan-leelab19f7",
+      "url": "https://github.com/dan-leelab19f7/roblox-game-hub-fisch-auto-cast-instant-portable-x64",
+      "description": "Roblox Game Hub Fisch Auto-Cast, Instant Reel & Aurora Totem Macro: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 327,
+      "forks": 39,
+      "starsToday": 0,
+      "topics": [
+        "aurora",
+        "auto",
+        "blox-fruits-script",
+        "blue-lock-rivals",
+        "cast",
+        "fisch",
+        "fisch-script",
+        "instant"
+      ],
+      "createdAt": "2026-11-21T21:01:14Z",
+      "updatedAt": "2026-11-22T06:04:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dan-leelab19f7-roblox-game-hub-fisch-auto-cast-instant-portable-x64-08a3d3c0.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "oliverwrightx2091g8/task-bar-hero-auto-battler-macro-loot-portable-x64",
+      "name": "task-bar-hero-auto-battler-macro-loot-portable-x64",
+      "owner": "oliverwrightx2091g8",
+      "url": "https://github.com/oliverwrightx2091g8/task-bar-hero-auto-battler-macro-loot-portable-x64",
+      "description": "Task Bar Hero Auto-Battler Macro & Loot Filter: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.",
+      "language": "Jupyter Notebook",
+      "stars": 327,
+      "forks": 41,
+      "starsToday": 0,
+      "topics": [
+        "auto",
+        "autoclicker",
+        "battler",
+        "filter",
+        "idle-game",
+        "loot",
+        "macro",
+        "open-source"
+      ],
+      "createdAt": "2026-11-21T20:01:05Z",
+      "updatedAt": "2026-11-22T04:14:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "oliverwrightx2091g8-task-bar-hero-auto-battler-macro-loot-portable-x64-a10aeba7.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "freeCodeCamp/freeCodeCamp",
+      "name": "freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript",
+      "stars": 459459,
+      "forks": 47404,
+      "starsToday": 0,
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "createdAt": "2014-12-24T17:49:19Z",
+      "updatedAt": "2026-11-22T05:44:27Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "freecodecamp-freecodecamp-5d095e95.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "EbookFoundation/free-programming-books",
+      "name": "free-programming-books",
+      "owner": "EbookFoundation",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "description": ":books: Freely available programming books",
+      "language": "Python",
+      "stars": 402047,
+      "forks": 67230,
+      "starsToday": 0,
+      "topics": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ],
+      "createdAt": "2013-10-11T06:50:37Z",
+      "updatedAt": "2026-11-22T05:43:57Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ebookfoundation-free-programming-books-c336ecc2.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 252853,
+      "forks": 51809,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-22T06:32:09Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 52,
+      "fullName": "yt-dlp/yt-dlp",
+      "name": "yt-dlp",
+      "owner": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "language": "Python",
+      "stars": 209740,
+      "forks": 18533,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "createdAt": "2020-10-26T04:22:55Z",
+      "updatedAt": "2026-11-22T06:29:07Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "yt-dlp-yt-dlp-54c7d6d8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 195275,
+      "forks": 13761,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-22T06:28:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 54,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 187811,
+      "forks": 19133,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-11-22T06:32:26Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "clash-verge-rev/clash-verge-rev",
+      "name": "clash-verge-rev",
+      "owner": "clash-verge-rev",
+      "url": "https://github.com/clash-verge-rev/clash-verge-rev",
+      "description": "A modern GUI client based on Tauri, designed to run in Windows, macOS and Linux for tailored proxy experience",
+      "language": "TypeScript",
+      "stars": 159839,
+      "forks": 11496,
+      "starsToday": 0,
+      "topics": [
+        "clash",
+        "clash-meta",
+        "clash-verge",
+        "linux",
+        "mac",
+        "mihomo",
+        "tauri-app",
+        "windows"
+      ],
+      "createdAt": "2023-11-21T18:24:03Z",
+      "updatedAt": "2026-11-22T06:30:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "clash-verge-rev-clash-verge-rev-e0177d13.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Svelte",
+      "stars": 159239,
+      "forks": 23108,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "createdAt": "2023-10-06T22:08:27Z",
+      "updatedAt": "2026-11-22T06:28:06Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "open-webui-open-webui-3b98bdb5.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 151686,
+      "forks": 14575,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-22T06:32:18Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 58,
+      "fullName": "langchain-ai/langchain",
+      "name": "langchain",
+      "owner": "langchain-ai",
+      "url": "https://github.com/langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "language": "Python",
+      "stars": 149964,
+      "forks": 25154,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "deepagents",
+        "enterprise",
+        "framework"
+      ],
+      "createdAt": "2022-10-17T02:58:36Z",
+      "updatedAt": "2026-11-22T06:22:49Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "langchain-ai-langchain-5dbbd123.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "ripienaar/free-for-dev",
+      "name": "free-for-dev",
+      "owner": "ripienaar",
+      "url": "https://github.com/ripienaar/free-for-dev",
+      "description": "A list of SaaS, PaaS and IaaS offerings that have free tiers of interest to devops and infradev",
+      "language": "HTML",
+      "stars": 143354,
+      "forks": 15421,
+      "starsToday": 0,
+      "topics": [
+        "awesome-list",
+        "free-for-developers"
+      ],
+      "createdAt": "2015-03-18T21:06:26Z",
+      "updatedAt": "2026-11-22T06:23:52Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ripienaar-free-for-dev-6a1523e8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "excalidraw/excalidraw",
+      "name": "excalidraw",
+      "owner": "excalidraw",
+      "url": "https://github.com/excalidraw/excalidraw",
+      "description": "Virtual whiteboard for sketching hand-drawn like diagrams",
+      "language": "TypeScript",
+      "stars": 136090,
+      "forks": 16245,
+      "starsToday": 0,
+      "topics": [
+        "canvas",
+        "collaboration",
+        "diagrams",
+        "drawing",
+        "hacktoberfest",
+        "productivity",
+        "whiteboard"
+      ],
+      "createdAt": "2020-01-02T01:04:43Z",
+      "updatedAt": "2026-11-22T05:56:24Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "excalidraw-excalidraw-8fbe0d58.txt"
+    }
+  ]
+}

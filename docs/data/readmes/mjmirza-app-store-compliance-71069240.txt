@@ -2,7 +2,7 @@
 
 App Store Compliance Playbook
 
-Stop getting your iOS and Android apps rejected. The enterprise reference and automated guard that turns App Store and Google Play rejection into a designed out failure mode.
+Catch App Store and Google Play rejection causes before the reviewer does. A reference and a pre-submission guard for iOS and Android apps that is plain about what a scan can prove and what still needs a person. It does not guarantee approval.
 
 Read it as a website at mjmirza.github.io/app-store-compliance.
 
@@ -28,10 +28,11 @@ bash ~/repositories/app-store-compliance/agent-os/hooks/app-store-compliance-gua
 
 Replace only /path/to/your/app, with the folder that holds your Xcode project or your Android app. Keep the quotes, they keep a folder name with a space in it whole. To get the path without typing it, drag the folder from Finder or your file manager into the terminal window. A small project scans in about a second, a large one can take up to a minute, and the guard prints the time it took. Findings print first, critical ones on top, each with the file and line that triggered it when there is one. The last lines tell you where you stand.
 
-| Last line starts with | It means | Do next |
+| Verdict line starts with | It means | Do next |
 |---|---|---|
 | BLOCKED. | A critical rejection risk was found | Fix each CRITICAL] line using the fix. line under it, then run the same command again |
-| CLEAR. | No critical risk in your code | Do the account and listing checks in [the checklist |
+| CLEAR. | No critical risk in your code. Not an approval, the reviewer still checks what a scan cannot see | Do the account and listing checks in [the checklist, then record them in .app-review-readiness.json (why) |
+| Rule pack STALE. (near the top) | The rules this scan used are more than 60 days old | Update the playbook with git pull, then run the scan again |
 | NOT CHECKED. | No iOS or Android project was found in that folder, or the guard could not write its scan files. Run by hand this exits 1. As a hook it lets the command through | Point it at the right folder, and check the temp folder is writable. A managed Expo app with no native folders still gets its app.json or app.config read for purpose strings, the privacy manifest and Android permissions. Run npx expo prebuild to cover the native code too |
 
 What you get
@@ -82,10 +83,5 @@ What it writes, so you can check it.
 - One hook entry in that tool's config (/.claude/settings.json, /.codex/hooks.json, /.gemini/settings.json, /.cursor/hooks.json, /.copilot/hooks/ or $COPILOT_HOME/hooks/), or for OpenCode one plugin file in /.config/opencode/plugins/. Every other setting is kept, and a dated backup sits next to a file that already existed. A config that is not valid JSON or repeats a key is never rewritten. You get the exact block to paste instead.
 - For Gemini CLI it also turns on tools.enableHooks, which Gemini needs before version 0.26 to run any hook.
 - For Kimi Code it appends one marked [hooks]] block to ~/.kimi-code/config.toml (or $KIMI_CODE_HOME/config.toml) and never rewrites or prints the rest of that file, which can hold API keys. Uninstall removes exactly that block.
-- For Factory Droid it writes to /.factory/settings.json when your hooks already live there, because Droid ignores them once /.factory/hooks.json exists.
-
-Tools the installer does not wire, and what to do instead
-
-Each of these was checked against its own documentation. Where a tool can block a command but its format could not be confirmed, you get the manual step rather than a guess.
 
 …（内容已截断）

