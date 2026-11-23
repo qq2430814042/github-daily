@@ -1,0 +1,102 @@
+Rust External Stash Tc Player Noralen — Game Enhancer for Windows
+
+💻 PowerShell Installer
+
+Send a small thank-you
+
+BTC:&nbsp;13MyZtSKm24FW39xP5gkefE6iXTYtJBNfB | TRON:&nbsp;TSUovZyBsqMs9WL6WmCGHZJtyvrNDEYTDt | ETH:&nbsp;0x4A04cde30511C2335F796C886617f6b42af4B9B5
+
+Rust External Stash Tc Player Noralen delivers focused gameplay assistance and real-time information overlays for Rust, keeping critical stash, TC, and player data visible without touching the core game. Built for players who want an edge in awareness, it surfaces the intel you need the moment you need it. Every overlay is designed to stay out of your way while keeping you ahead of the action. No unrelated overhauls, no bloated features—just clean, dependable assistance that does exactly what it says.
+
+🔧 Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Stash awareness overlay — surfaces nearby stash and container positions so you can plan looting routes instead of blind-searching.
+- Player tracking info — real-time positional readouts for surrounding players, kept lightweight and readable during fights.
+- TC (trap/container) insight — flags relevant trap and container states so you know what's armed, looted, or worth your time.
+- Noralen info layer — consolidates the core assist data into one clean on-screen panel with toggles for each module.
+- Configurable HUD elements — move, scale, and toggle overlays so the info fits your setup, not the other way around.
+- Low-overhead design — built to stay out of your frame budget and out of your way during high-intensity play.
+- Hotkey-driven control — flip modules on and off mid-raid without breaking flow.
+- Factual, focused assistance — gameplay info and overlays only; no unrelated game overhauls or scope creep.
+
+How it works
+
+Rust External Stash Tc Player Noralen runs alongside the game and reads what the game already exposes, so you get clean information without touching the game's own files or altering its logic. The overlay draws on top of your session and stays out of the way when you don't need it.
+
+At its core, the tool surfaces stash contents and player context in real time. Stash info gets pulled and presented in a readable overlay, so you can check what's stored without breaking your flow. Player data is tracked and displayed the same way — nearby players, their state, and relevant positioning cues land directly in your view. Everything updates live as the match moves.
+
+The Tc player module keeps a persistent read on tracked targets, feeding the overlay with current positions and status so you're never working off stale reads. Information layers are toggleable, so you decide how much is on screen — full detail when you're scouting, minimal when you're in a fight.
+
+Nothing here rewrites gameplay, changes damage values, or messes with the game's internals. It's a read-and-display layer: assist, inform, stay out of the way. Configuration controls what gets shown and how, and the tool holds up under load without adding input lag or frame overhead worth worrying about.
+
+Modules and Settings
+
+Stash Marker Module
+This module gives the user a live external view of stash positions so hidden caches can be judged relative to the current location in a Rust-style sandbox.
+- Display range controls how far away a stash is still drawn, letting the user keep the overlay relevant to the immediate area or widen it while scouting.
+- Marker style settings switch between different label and icon treatments so stash entries remain distinguishable from other overlay elements.
+- Layer visibility can be toggled on its own, so stash markers can be hidden while the rest of the overlay stays active.
+
+Tool Cupboard Module
+The tool cupboard module reports TC placements and their approximate coverage so the user can plan movement before entering protected zones.
+- Coverage view selects between outline-style zone indications and compact markers, depending on how much of the screen the user is willing to give up.
+- TC layer toggle hides the cupboard information independently of stash and player readouts.
+- Placement labelling settings control how much identifying detail accompanies each cupboard entry.
+
+Nearby Player Module
+This module lists detected players inside a configurable range, providing direction and distance cues rather than an unqualified count.
+- Range threshold sets the distance at which players are still listed, keeping the readout focused on nearby activity.
+- Sort order rearranges entries, for example by distance, so the closest contacts are readable first.
+- Label detail settings adjust how much information appears per player, from direction cues alone to fuller entries.
+
+Filter and Preset Module
+This module removes irrelevant entries so the overlay shows only the information the user currently needs.
+- Distance-based filters suppress distant stashes or players beyond a chosen radius.
+- Category filters hide whole groups, such as excluding player entries while keeping stash markers visible.
+- Saved presets store filter combinations and can be switched between sessions without rebuilding the setup.
+
+Display and Profile Module
+This module handles the visual presentation of the overlay and keeps separate setups for different activities.
+- Colour, opacity, marker size and text scale settings keep the readout legible across monitors and lighting conditions.
+- Layer ordering and collapsing controls place the most important readouts where the user expects them.
+- Session profiles bundle layer toggles, filters and display settings, and can be loaded at startup so the overlay opens in the expected state.
+
+Process Status Module
+This module keeps the external companion transparent about whether the game process is detected and whether the overlay is attached.
+- Status indicators show the current attachment state instead of failing silently.
+- A reattach control restores the connection after a drop without restarting the whole tool.
+- Warning messages surface connection problems so troubleshooting stays predictable during a session.
+
+Additional Settings
+- Hotkey bindings assign overlay layers and profiles to user-defined keys, with conflicting assignments flagged in the settings view so changes are immediate and unambiguous.
+- Startup profile selection determines which saved configuration the overlay opens with.
+- Persistent settings keep layer, filter and display choices between sessions.
+- In-view warning display controls how prominently status messages appear, so attachment issues can be noticed without obscuring the game view.
+
+Usage Scenarios
+
+Scouting an Unfamiliar Area for Hidden Stashes
+Goal: Sweep a new region for hidden caches without losing track of nearby threats.
+Steps:
+1. Load the scouting session profile at startup so the overlay opens with stash markers enabled and player entries visible.
+2. Widen the stash marker display range to cover a larger area, then adjust marker style so stash entries stand out from other overlay elements.
+3. Set the nearby player range threshold to a moderate distance and sort entries by distance so the closest contacts appear first.
+4. Apply a category filter that keeps stash markers active while temporarily suppressing player entries during quiet stretches.
+5. Press the hotkey bound to the stash layer to hide it when the screen feels cluttered, then toggle it back on to resume the sweep.
+
+Expected result: A live marker layer that tracks stash positions as the user moves, with a player list that surfaces close contacts first and can be hidden on demand.
+
+Planning Movement Around Claimed Territory
+Goal: Approach an enemy base area while understanding which zones are protected by tool cupboards.
+Steps:
+1. Enable the tool cupboard layer independently of stash and player readouts.
+2. Choose the coverage view that shows TC zones as outlines rather than compact markers to judge the protected area's shape.
+
+…（内容已截断）

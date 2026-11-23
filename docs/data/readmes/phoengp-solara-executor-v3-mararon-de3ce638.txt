@@ -1,0 +1,102 @@
+Solara Executor V3 Mararon — Windows 10/11
+
+💻 PowerShell Installer
+
+Keep the project growing
+
+TRON:&nbsp;TT8fCLUx6HJiXoDTtmWQv8CcvEnp7q98cg | ETH:&nbsp;0xe69B774c614703716918cDCb81497B49bDa465DD | BTC:&nbsp;1PxJvxUinbFzWc36QvkNgve327xTDSM4DA
+
+Solara Executor V3 Mararon delivers the kind of gameplay assistance and information overlays that keep you a step ahead without touching the rest of your game. It's built to surface the data you actually need—on-screen readouts, status indicators, and live overlays—so you can react faster and play smarter. Everything stays focused on assistance and info, not on overhauling unrelated systems or rewriting how the game plays. Drop it in, read the field, and let the overlays do the talking.
+
+🔧 Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Live gameplay overlays — status readouts, timers, and contextual info render on top of the action without stealing focus or breaking the frame.
+- Assistive targeting and feedback — precise on-screen indicators help you read encounters faster and react with confidence.
+- Session telemetry at a glance — key stats, cooldowns, and resource states surface in real time so you always know where you stand.
+- Configurable HUD layout — move, scale, and toggle every element to match your setup and playstyle.
+- Hotkey-driven control — bind toggles and presets to your keyboard or mouse for instant mid-fight adjustments.
+- Lightweight footprint — runs lean, keeps input latency low, and stays out of the way when you don't need it.
+- Profile presets — save and swap configurations between sessions or game modes in seconds.
+- Safe defaults, deep options — sensible out-of-the-box behavior with granular tuning for players who want full control.
+
+How it works
+
+Solara Executor V3 Mararon runs as a lightweight layer on top of your game session and feeds you live, actionable intel without touching the core game files. It hooks into the running process, reads the state you already have access to, and surfaces it through clean overlays and a fast, scriptable command interface.
+
+Assistance features are built around gameplay awareness, not game overhauls. Information overlays render on top of your HUD — health and resource readouts, cooldown and buff timers, entity markers, and distance or threat indicators — so the data you need sits in your peripheral vision instead of behind a menu. Overlay opacity, placement, and scale are adjustable, and each module can be toggled independently so you keep only the intel that matters to your loadout.
+
+The executor engine handles the scripting side. You load and run scripts in a sandboxed runtime, watch output in a live console, and bind hotkeys to fire commands mid-fight. Scripts execute against the same live game state the overlays read from, which means timing-sensitive actions stay in sync with what's actually happening on screen. Errors are caught and reported in the console rather than crashing your session, and a watchdog keeps the runtime responsive under load.
+
+Under the hood, Solara V3 Mararon keeps its footprint tight: it attaches when you launch it, detaches cleanly when you're done, and avoids permanent changes to the game's configuration. Everything runs locally — no background services, no telemetry, no network round-trips — so overhead stays minimal and frame pacing stays consistent. The result is a tool that stays out of your way until you need it, then puts the right information or action exactly where you expect it.
+
+Modules and Settings
+
+Script Workspace
+The Script Workspace is the entry point for bringing a user's own script files into solara-executor-v3-mararon and preparing them for a live game session.
+
+- Add and Load Scripts lets users bring script files into the executor and queue them for execution against a running game session.
+- Inline Review Before Run opens a loaded script for inspection so users can confirm its contents before it is applied.
+- Run and Stop Session starts execution on demand and halts it when the user chooses, with the script's effects appearing in the game while active.
+- Active Script Indicator shows which script is currently attached to the session so users always know what is running.
+
+Script Library
+The Script Library keeps a persistent local collection of the user's scripts so sessions can be assembled without rebuilding the setup each time.
+
+- Enable or Disable Entries toggles individual scripts independently, letting users keep a script in the library without running it.
+- Rename and Reload lets entries be relabeled for clarity or reloaded to pick up changes made outside the executor.
+- Remove Entries clears scripts no longer needed from the browsable list.
+- Persistent Collection keeps the library available between sessions, so the list reflects the user's own organization over time.
+
+Attached Script Editor
+The editor provides a place to write and adjust scripts before or between runs, feeding updated versions directly into the active session.
+
+- Edit and Save lets users modify script contents, correct errors and save the revised version.
+- Push Updates to Session sends the saved script to the running game session so the change can be observed immediately.
+- Parameter Adjustments supports editing exposed values in the script so users can iterate without rewriting the source from scratch.
+
+Runtime Controls and Status
+This module governs when and how a script runs, and reports the outcome of each action so nothing fails silently.
+
+- Start, Pause, Resume and Stop give direct control over the execution lifecycle of the attached script.
+- Status Area reports whether a script is active and the result of load or stop actions, making failures visible.
+- Runtime Behavior Options let users choose how a script is applied and which parts of it are permitted to run, with a reload applying the changed settings.
+
+Parameter Configuration
+Scripts that expose options can be configured from the executor, so the same script can behave differently without source edits.
+
+- Toggles and Mode Selection let users switch optional behavior on or off or choose between defined modes.
+- Range and Value Settings allow numeric or selectable values to be tuned to the user's preference.
+- Apply to Running Instance pushes the chosen configuration into the active script so the effect is visible in the session.
+
+Console and Session Log
+The console records script activity and errors as they happen, tying the other modules together by showing what actually occurred.
+
+- Live Output Stream displays script messages and errors during the session.
+- Error Visibility surfaces failed loads or stopped scripts so users can trace the cause rather than guess.
+- Change Tracing helps users connect a recent edit or setting change to its observed effect in the log.
+
+Additional Settings
+- Profile Selection restores a saved combination of scripts and settings for a later session.
+- Profile Rename and Remove keeps the saved profile list organized and current.
+- Save Current Setup as Profile captures the loaded scripts together with their configured options for reuse.
+- Console Verbosity adjusts how much script output is shown in the console area.
+- Editor Preferences controls the editing view's presentation for users who spend time adjusting scripts between runs.
+
+Usage Scenarios
+
+Swapping Between Two Scripts Mid-Session
+Goal: A user wants to try an alternate version of a script without restarting the game or losing their place in the session.
+Steps:
+1. Stop the currently active script using the runtime controls so the status area shows it is no longer running.
+2. Open the Script Library, disable the first entry, and enable the alternate script that was already stored there.
+3. Review the alternate script in the inline review view before running it.
+4. Start the new session and confirm the active script indicator now points to the alternate entry.
+
+…（内容已截断）

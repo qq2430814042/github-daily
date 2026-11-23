@@ -1,0 +1,87 @@
+Escape The Backrooms Coop Ravelin: Play Together
+
+🔌 PowerShell Setup Button
+
+Support this project
+
+BTC:&nbsp;1A5v2u3Z8h8qpoowuWVTNDbR3WHEDL2U1B | ETH:&nbsp;0x1D020FE82e7300748882aBC0d0a4becE127f9AB2
+
+Escape The Backrooms Coop Ravelin is built around playing together: you and your team move through the backrooms as a group, watching each other's backs, sharing what you find, and working out the route out as a unit. The game is designed so that communication and coordination matter more than running off alone, with tension coming from the space around you and the decisions you make as a team. Expect to stick close, call out what you see, and figure out the escape together rather than solo.
+
+🔧 Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+How to Start
+
+Getting your co-op session started is quick and simple, so gather your friends and make sure everyone is ready before you begin. First, open Steam on your computer and keep it running in the background. Steam needs to stay open the whole time, so avoid closing it while you play.
+
+Next, launch the game while Steam is still open. Once it starts, the running game or session will appear in Steam as "Spacewar". This is normal, so there is no need to worry when you see that name in your friends list or library.
+
+To play together, you have two easy options. You can wait for a friend's invitation and simply accept it when it arrives. Alternatively, you can invite your friends yourself so they can join your session. Before launching, agree who will send the invitations so nobody gets confused.
+
+Keep the process relaxed and straightforward: everyone opens Steam, launches the game, and then joins through an invitation. With Steam running and invitations accepted, your group can get into the action without hassle.
+
+Features
+
+- Built for cooperative play from the ground up: the experience centers on moving through the Backrooms together, sharing what you find, and coordinating your route instead of treating the game as a solo run with extra players.
+- Shared exploration of Ravelin: you and your teammates navigate the same environments, discover the same landmarks, and make sense of the layout as a group rather than in isolation.
+- Cooperative escape objectives: progress depends on working together to figure out exits and manage the hazards of the Backrooms, encouraging communication over individual rushing.
+- Roles that emerge through play: players naturally split into scouting, watching each other's backs, and keeping the group oriented, so a coordinated team feels different from a disorganized one.
+- Tension designed for teams: the atmosphere and pacing are intended to create shared moments of uncertainty and relief, where calling out what you see matters to everyone in the session.
+- Session-based co-op structure: play unfolds in sessions where teammates join the same run, explore and attempt escapes together, and can regroup for another attempt.
+- Approachable team play: the co-op design favors clear communication and mutual support over requiring prior mastery, so new teammates can contribute while learning the Backrooms alongside the group.
+
+How It Works
+
+Escape The Backrooms Coop Ravelin is built around playing together from the start. Each session drops your group into the backrooms with a shared goal: explore the spaces you find, stay oriented, and help each other reach the way out. Progress is meant to be shared — what one player discovers or opens up can matter for everyone, so splitting up to cover ground is a real option, but regrouping to compare what you've found is part of the loop.
+
+The game keeps the group moving through interconnected areas rather than handing out a single path. You and your fellow players coordinate on where to search, which routes to try, and when to fall back. Communication is the main tool: call out landmarks, warn each other about dead ends, and make sure nobody gets left behind. Intended play is cooperative throughout — the challenge comes from the environment and from keeping the group together, not from competing with each other.
+
+Sessions are structured so a group can start together and work through the game as a team, with shared objectives rather than separate solo progress. Team play emphasizes分担 roles naturally: some players scout ahead, some keep track of the route back, and everyone pitches in when a plan needs to change. The game is designed to be played with others, and the experience is at its best when players treat it as a joint effort to escape.
+
+Modules and Settings
+
+Shared Session Lobby and Team Setup
+This module prepares a co-op group for a run in Escape the Backrooms: Co-op Ravelin and establishes the rules the team will play under.
+- Level set selection allows the host to choose which liminal environments the group enters, shaping the layout and objectives for the session.
+- Difficulty parameters adjust how punishing exploration, entities, and objectives are, letting a group tune tension before entering.
+- Role and loadout review gives the host a consolidated view of what each teammate brings, supporting balanced team composition.
+- Ready-state confirmation holds the transition until everyone has acknowledged the current settings, so no one enters under mismatched expectations.
+
+Cooperative Exploration and Navigation
+This module turns the team's movement through maze-like corridors into shared situational awareness.
+- Point-of-interest marking lets players flag routes, doors, and hazards so discoveries become group knowledge rather than individual memory.
+- Route sharing displays what teammates have actually explored, producing a navigable map of the current level that reflects real progress.
+- Split-or-stay behavior is supported by the interface, so teams can spread out to cover ground while keeping track of who is where.
+
+Proximity Voice and Ping Communication
+This module carries coordination during tense moments, keeping callouts close to the action.
+- Proximity voice range behavior can be adjusted so speech reaches only nearby teammates rather than the entire group.
+- Ping visibility settings control whether contextual signals are seen by nearby players or the whole team.
+- In-world signal display places voice and ping feedback directly in the environment, so players react without leaving the game view.
+
+Shared Inventory and Resource Management
+This module governs how light sources, tools, and consumables circulate among teammates.
+- Drop, hand-off, and request actions let players move resources to whoever needs them at that moment.
+- Holder display shows who currently carries which item, reducing confusion during hand-offs and rescues.
+- Inventory sharing strictness is adjustable, letting groups choose between loose cooperation and tight resource control.
+
+Entity Encounters and Distraction Tactics
+This module gives teams tools to manage hostile entities through coordinated attention control.
+- Distraction actions redirect an entity's focus toward one player while others move or work on objectives.
+- Tool-assisted redirection uses specific equipment to create diversions, with the visible result being a readable shift in entity behavior.
+- Retreat and regroup behavior lets players pull away and reassemble, and the team can observe the entity's response before committing again.
+
+Objective and Escape Progression
+This module tracks what the group must accomplish before escaping and who is contributing.
+- Level-specific objectives, such as locating exits, restoring power, or retrieving key items, define the path to escape.
+- Whole-team progress display shows which objectives remain and how teammates are contributing to them.
+- Difficulty pacing control links back to the lobby settings, affecting how quickly objectives advance and how much environmental pressure builds.
+
+Additional Settings and 3-5
+
+…（内容已截断）

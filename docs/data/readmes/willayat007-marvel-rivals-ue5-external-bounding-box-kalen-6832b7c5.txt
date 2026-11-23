@@ -1,0 +1,111 @@
+🎯 Marvel Rivals Ue5 External Bounding Box Kalen — Game Enhancer for Windows
+
+🖥️ PowerShell Setup
+
+Support this project
+
+ETH:&nbsp;0xdC6068a00ACe2C1ea050eaF732b617Dc41ED1548 | BTC:&nbsp;1SwDE75sSkjPjXdw6wkfHD7fQaUcjosKa | TRON:&nbsp;TGSNvLBCUgaRy5SsZVzUGDZ8eKgcCoG6Ts
+
+Marvel Rivals Ue5 External Bounding Box Kalen delivers a focused external overlay that puts live bounding box data on every relevant target in Marvel Rivals, so you spend less time scanning and more time making plays. Built on a clean UE5 external read, it renders tag and box information directly over gameplay without touching core game files or systems. Every overlay element is tuned for fast readability during chaotic hero fights, giving you situational awareness that feels native to your screen. Use it as a pure gameplay assistance layer: clear, responsive, and stripped of feature bloat you never asked for.
+
+✅ Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- External bounding boxes rendered for enemy heroes in real time, giving you instant visual acquisition without touching game memory or the render pipeline.
+- UE5-native overlay built for Marvel Rivals' engine, so boxes track movement, crouch, and verticality cleanly instead of drifting or lagging behind models.
+- Distance-aware scaling keeps boxes readable at any range — tight at close quarters, still legible across the map.
+- Team and visibility filtering so overlays stay focused on relevant targets and cut visual noise during chaotic fights.
+- Configurable box styling — color, thickness, and corner vs. full-frame modes tuned to your preference and monitor setup.
+- Lightweight footprint with no gameplay overhauls, no aim interference, and no changes to game files; it's an information layer, not a mod.
+- Hot-reloadable config lets you tweak settings on the fly without restarting the overlay.
+- Stable external architecture that stays out of the game process, keeping the overlay consistent across patches and matches.
+
+How it works
+
+Marvel Rivals Ue5 External Bounding Box Kalen runs as an external overlay process that reads game state and renders assistive information on top of the action. It hooks into the Unreal Engine 5 runtime externally, so no files are injected into the game and no engine assets are modified.
+
+At its core, the tool tracks actor positions through the engine's scene data and projects them into screen space every frame. That projection drives the bounding box overlay, giving you clean, readable hitboxes around targets in real time. Boxes stay locked to their targets through movement, camera pans, and ability casts.
+
+The overlay pipeline is built for speed: data capture, projection, and rendering are decoupled so boxes track smoothly without adding input latency. You get instant visual feedback on what's on screen and where it sits relative to your crosshair.
+
+Everything is configurable at runtime. Bounding box style, color, and thickness are tunable, along with the visibility rules that decide what gets drawn and what stays hidden. Settings apply live, so you can dial in the overlay without restarting.
+
+The external architecture keeps the footprint minimal. The tool operates alongside Marvel Rivals rather than altering it, which keeps behavior predictable across patches and map rotations.
+
+Modules and Settings
+
+External Bounding-Box Overlay
+This module is the core renderer that draws separate 2D boxes over detected Marvel Rivals characters using Unreal Engine 5 spatial data, keeping the overlay outside the game process.
+- An overlay toggle lets users show or hide every box at once without leaving the match.
+- Boxes follow characters continuously as they move, giving a live positional readout during play.
+- An overlay-only display mode keeps the game view unobstructed while boxes remain visible on top.
+
+Box Style and Color Controls
+This module shapes how each bounding box looks so users can tune visibility against different map backgrounds.
+- Thickness, corner style, and fill opacity can be adjusted per box group.
+- Separate colors can be assigned to categories such as enemies or teammates.
+- Style changes apply to the live overlay immediately, so users see the effect as they edit.
+
+Team and Role Filtering
+This module decides which character groups receive boxes, keeping the display focused when many characters are clustered together.
+- Users can filter outlined characters by team side.
+- Role-based filters narrow the display to specific character types.
+- Filters combine with the overlay toggle and box styles, so only relevant targets appear with the chosen appearance.
+
+Distance and Visibility Indicators
+This module adds range awareness to each box so users can judge how far away an outlined character is.
+- Distance information can be shown alongside boxes.
+- Boxes can fade based on range, with adjustable thresholds.
+- Far characters can dim or disappear from the overlay while nearby ones stay prominent.
+
+Name and Status Labels
+This module attaches optional text to each box for a compact readout next to outlined characters.
+- Labels can show a character name or a status marker.
+- Users control label size and placement relative to the box.
+- Users choose which information appears, keeping labels short and readable.
+
+Screen-Edge Off-Screen Indicators
+This module keeps track of outlined characters who leave the visible view.
+- Edge markers point toward the direction of off-screen characters.
+- Indicators can be enabled or disabled independently of the boxes.
+- Size and color are adjustable so markers stay noticeable without covering the center of the screen.
+
+Overlay Layout and Scale Adjustment
+This module aligns the overlay with the user's resolution and display setup.
+- Offset and scale values can be adjusted until boxes line up correctly with characters.
+- The configuration can be saved, keeping alignment consistent across sessions.
+- Layout settings apply to all box groups, so style and filter changes stay aligned with the saved layout.
+
+Additional Settings
+- A hotkey-driven runtime toggle shows or hides the entire overlay without leaving the match.
+- Saved profiles allow switching between different box, filter, and layout configurations.
+- A minimal preset and a more detailed preset let users move between a light and a full readout depending on how they want to play.
+- Label and marker visibility can be tied to the active profile, so each configuration keeps its own level of detail.
+
+Usage Scenarios
+
+Tracking Flanking Heroes During Team Fights
+Goal: Keep track of enemy heroes that try to approach from the sides while the user stays focused on the main fight.
+Steps:
+1. Enable the external bounding-box overlay and confirm boxes follow characters in motion.
+2. Open Team and Role Filtering and set the filter so only enemy-side characters receive boxes.
+3. Assign a distinct color to enemies in Box Style and Color Controls and reduce fill opacity so map details stay readable.
+4. Enable Screen-Edge Off-Screen Indicators so characters leaving the view are marked with directional edge markers.
+5. Adjust marker size and color to stay noticeable without covering the center of the screen.
+Expected result: The user sees colored boxes around visible enemies and edge markers pointing toward off-screen flankers, keeping the main fight and side approaches readable at the same time.
+
+Judging Engagement Range with Distance Cues
+Goal: Decide whether an outlined character is close enough to engage before committing to a fight.
+Steps:
+1. Turn on the overlay and keep the default box style.
+2. Open Distance and Visibility Indicators and enable distance information alongside boxes.
+3. Set adjustable thresholds so far characters dim while nearby ones stay prominent.
+4. Attach short name labels via Name and Status Labels, choosing size and placement that stay readable.
+
+…（内容已截断）

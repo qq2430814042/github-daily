@@ -98,11 +98,23 @@ Translation Contributors
 
         323770 words
 
+          Nguyễn Anh Kiệt
+
+          (hzzmonet)
+
+        15061 words
+
+          CHEONG-KYUN
+
+          (oocr)
+
+        6913 words
+
           Daniel Neves
 
           (Havokdan)
 
-        4443 words
+        4481 words
 
           i0ntempest
 

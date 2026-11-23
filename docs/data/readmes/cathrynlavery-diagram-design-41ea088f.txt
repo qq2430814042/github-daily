@@ -1,5 +1,5 @@
 **An agent skill that draws diagrams as one self-contained HTML + SVG file, in your brand.
-51 diagram types. No shadows. No Mermaid slop.**
+52 diagram types. No shadows. No Mermaid slop.**
 
 Website · Gallery · Changelog
 

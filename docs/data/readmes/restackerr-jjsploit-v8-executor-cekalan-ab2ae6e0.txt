@@ -1,0 +1,97 @@
+Jjsploit V8 Executor Cekalan — Windows 10/11
+
+💻 PowerShell Installer
+
+Fuel the next update
+
+BTC:&nbsp;1Nvd4j3vWd2n3eNEwMxG9q2m25y3sMCC5C | ETH:&nbsp;0xA747D984E2e579C030482061708544B2E18F8b6C
+
+Jjsploit V8 Executor Cekalan delivers a focused gameplay assistance layer built for players who want clear, real-time information without touching the core game. It overlays the essentials—live stats, status readouts, and contextual hints—directly onto your session so you can react faster and play smarter. Every feature is designed to assist and inform, not to overhaul or replace the game you already know. The result is a lean, responsive toolset that keeps the action front and center while giving you the data you need to stay ahead.
+
+📋 System Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Instant script execution — fire scripts into a live session with a single action, no restart dance, no downtime. Built for players who want to test ideas fast and keep momentum.
+- Live information overlays — on-screen readouts for the data that matters mid-match: state values, counters, timers, and debug info rendered right where you need them. Toggle what you see, keep the clutter off.
+- Real-time state inspection — peek into the running game's variables and structures without breaking your flow. Useful for verifying behavior and confirming that a change actually landed.
+- Script library workflow — load, swap, and re-run scripts from within the executor. Keep a working set handy so you can iterate instead of rebuilding from scratch every session.
+- Configurable overlay placement — reposition and resize overlays to fit your HUD. Nothing worse than an info panel covering the thing you're watching.
+- Execution feedback — clear pass/fail signals and error output so a broken script doesn't leave you guessing. Fix it, re-run it, move on.
+- Lightweight footprint — runs alongside the game without dragging performance down. The point is enhancement, not overhead.
+- Session persistence — your overlay and script preferences stick between sessions, so setup is a one-time job.
+
+How It Works
+
+Jjsploit V8 Executor Cekalan runs as a lightweight layer alongside your game session, injecting script execution and overlay tooling without touching the core game files. Once launched, it hooks into the game process, spins up its own execution environment, and waits for your input — no restarts, no deep system changes.
+
+Script execution pipeline
+Scripts you load are parsed and run inside an isolated V8 context, keeping execution contained while giving you direct access to the game's exposed API surface. The executor handles the handoff between your script and the running game in real time, so feedback loops stay tight — fire a script, see the result, adjust, repeat.
+
+Information overlays
+The overlay system renders directly on top of your game view, giving you live readouts without alt-tabbing or breaking immersion. Toggle what you need, hide what you don't — the overlay stays out of the way until you call it up.
+
+Execution controls
+A compact control panel lets you load, run, and stop scripts on demand. Hotkeys keep everything within reach mid-session, and the executor tracks active scripts so you always know what's running and can kill anything instantly.
+
+Session stability
+The executor is built to stay out of the game's critical path — script errors are caught and contained rather than spilling into the game process, and the tool detaches cleanly when you're done. No leftover hooks, no lingering processes.
+
+Modules and Settings
+
+Script Editor and Execution Control
+This module is the central workspace for composing scripts and driving their execution in jjsploit-v8-executor-cekalan, combining text editing with run controls so users can iterate quickly.
+- The editor accepts pasted script text or imported script content, letting users prepare code before committing to a run.
+- Start, stop and restart controls act on the current script without leaving the workspace, and the visible state indicator updates to reflect whether a script is idle, running or stopped.
+- Basic editing helpers such as line handling and syntax highlighting keep longer scripts readable while changes are made.
+- Because execution stays tied to the editor, edits made after a run can be tested immediately by restarting from the same panel.
+
+Script Library
+The library turns one-off pasted code into a reusable collection, so scripts that work well can be named, stored and recalled instead of being re-pasted each session.
+- Users save the current editor content under a chosen name, which then appears in the local script list.
+- Selecting an entry loads it back into the editor for review or direct execution.
+- Organizing saved entries keeps frequently used scripts separated from experimental ones, supporting a repeatable workflow across sessions.
+- The library feeds directly into the editor and execution controls, closing the loop between storage and running code.
+
+Execution Log and Output Panel
+This panel surfaces what happens while a script runs, giving users the feedback needed to diagnose problems and confirm expected behavior.
+- Printed output, status messages and error reports from the current run are displayed in the dedicated output area.
+- Users can clear the panel to start a fresh reading of a new run, and an option controls whether output is cleared automatically between executions.
+- Reviewing the log after a failed run helps users locate the point where a script diverged from expectations and return to the editor with a specific fix.
+
+Process Attachment
+Before scripts can act on a game, the tool needs to be pointed at the correct running process, and this module manages that connection state.
+- Users select or attach to a running game process, with the current attachment state shown in the interface.
+- If the game is restarted, reattaching redirects subsequent script execution to the new session rather than the stale one.
+- Attachment status works together with the execution controls, since a run is only meaningful once the intended session is targeted.
+
+Keybinds and Hotkeys
+This module lets users trigger frequent actions from the keyboard, reducing reliance on clicking through the interface during play.
+- Common actions such as executing the current script or clearing the output panel can be assigned to shortcuts.
+- Assigned shortcuts are listed in the interface, so users can confirm their bindings at a glance.
+- Hotkeys remain available while the tool is active, connecting the editor, execution and log modules into a faster loop.
+
+Additional Settings
+These optional controls fine-tune the workflow around the modules above.
+- Automatic execution of the last-used script on startup, for users who want to resume quickly.
+- Restoring the last loaded script and saved preferences when the tool is reopened, shortening setup between sessions.
+- Output clearing behavior between runs, to keep logs either continuous or fresh per execution.
+- Keybind review and reassignment, so shortcuts stay aligned with the user's habits as their workflow changes.
+
+Usage Scenarios
+
+Iterating on a New Script in a Single Session
+Goal: A user wants to test a freshly written script in a supported game and refine it based on what happens during execution.
+Steps:
+1. Attach the tool to the running game process and confirm the attachment state is shown in the interface.
+2. Paste the script text into the editor, review the syntax highlighting, and start execution from the same panel.
+3. Watch the status indicator switch to running and read printed output and any error reports in the output panel.
+4. Stop the script, return to the editor to correct the part that failed, and restart execution without leaving the workspace.
+5. Clear the output panel before the next run so only the newest results are visible.
+
+…（内容已截断）

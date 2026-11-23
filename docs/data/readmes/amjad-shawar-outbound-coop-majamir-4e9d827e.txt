@@ -1,0 +1,91 @@
+Outbound Coop Majamir: A Cooperative Multiplayer Adventure 🎮
+
+🚀 PowerShell Quick Install
+
+Buy me a coffee
+
+BTC:&nbsp;15X3mauNUaRFfrvAjPgU8ioSSs8JiGVkBZ | TRON:&nbsp;TRjJNDKUUSmZorCV2m5LDd7BpVERh7Zq1E
+
+Outbound Coop Majamir is built for players who want to plan, scramble, and recover together rather than alone. Sessions are designed around shared objectives and moment-to-moment coordination, so talking through a route and covering each other matters more than rushing ahead. Expect to divide tasks, pool what you find, and adapt when the plan falls apart. The fun comes from the group's back-and-forth, not from any single player carrying the run.
+
+📋 System Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+How to Start
+
+Getting your co-op session started is simple, but it does depend on Steam being open the whole time. Before anyone launches the game, make sure Steam is running on your computer and stays open in the background. This applies to everyone who wants to play, so it is worth confirming with your group before you begin.
+
+Once Steam is open, launch the game normally. When it is running, the active game or session will show up in Steam as "Spacewar". This is expected, so there is no need to worry when you see that name instead of the game's own title.
+
+To play together, agree in advance on who will send the invitations, so you are not all waiting on each other. One player can invite friends directly, and everyone who receives an invite simply accepts it to join the session. Alternatively, you can wait for a friend's invitation and accept it when it arrives.
+
+Either way works, so pick whichever suits your group. Keep Steam open throughout, decide who invites whom, and you will be playing together in no time.
+
+Features
+
+- Built from the ground up for shared play: every session is meant to be played with others, not solo with company.
+- Roles that matter: each player has a clear part to play, so coordination beats button-mashing.
+- Shared objectives: progress is tracked together, and wins belong to the whole group.
+- Communication-friendly design: information you need to plan together is surfaced clearly, so callouts and quick decisions are part of the flow.
+- Sessions that fit real schedules: jump into a co-op run, play through the goal, and wrap up without needing a marathon commitment.
+- Team-first pacing: encounters and challenges are tuned around group play, encouraging players to stick together and cover each other.
+- Replayable co-op runs: different group compositions and approaches keep sessions fresh beyond the first clear.
+
+How It Works
+
+Outbound Coop Majamir is built around playing together, not around playing near each other. The loop is simple: a group shares the same objective, splits up to handle different parts of it, and comes back together to push the objective through. Each player is responsible for their own actions, and the team is responsible for the outcome.
+
+The intended flow for a session is to agree on a plan before committing to it. One player may take the lead on scouting, another on handling resources, and others on holding position or covering a retreat. Nobody is locked into a role — players can switch tasks as the situation changes — but the shared plan is what keeps the group moving in the same direction instead of fragmenting.
+
+Communication is the main mechanic. Progress depends on players telling each other what they see, what they need, and what they are about to do. A team that talks through decisions will find the objective far more manageable than a team that treats the game as several solo runs happening at once.
+
+Mistakes are expected and recoverable. If someone falls behind or a plan falls apart, the group can regroup, reassess, and try again. There is no penalty for taking the time to get everyone back on the same page.
+
+Success is shared. When the team completes the objective, everyone who contributed to it completes it together — the point of Outbound Coop Majamir is that the win belongs to the group.
+
+Modules and Settings
+
+Shared Session Setup
+This module lets the group form a cooperative party and lock in the rules that the whole run will follow, acting as the entry point that the other modules read from.
+- Session Objective Set selects which cooperative scenario the team will attempt, which in turn drives the objective list shown in the tracking module.
+- Difficulty Tier sets the overall challenge level and is carried into every later module as the baseline for modifiers and summaries.
+- Late Join Permission decides whether friends can drop in after the run has started, affecting how the lobby summary and role slots are presented.
+- Ready Check keeps the group in a shared lobby summary of chosen settings and assigned roles until everyone confirms, preventing mismatched starts.
+
+Role Assignment and Loadouts
+This module handles who does what, translating the host's session settings into concrete team responsibilities before a run begins.
+- Role Selection assigns distinct duties such as gathering, building or support, with each role changing which objectives a player can meaningfully progress.
+- Loadout Review lets players adjust their tools before launch and shows the combined team loadout for comparison.
+- Overlap and Gap Highlighting flags duplicated loadouts and missing roles in the composition screen so the group can rebalance before starting.
+- Role Swap Before Launch lets players exchange roles while still in the lobby, which updates the composition view and the expected duty list.
+
+Cooperative Objective Tracking
+This module turns the selected objective set into a live shared task list that every teammate sees and edits in the same session.
+- Priority Pinning marks one objective as the team's current focus, which surfaces it above the rest of the list for all players.
+- Progress Marking lets any player record partial or full completion of a task, updating the shared view immediately.
+- Task Ownership shows which teammate is currently handling each objective, so the group can see responsibility at a glance.
+- Remaining Work View lists what is still open and feeds directly into the post-run summary when the session ends.
+
+Shared Resources and Trading
+This module manages the team economy, connecting gathering roles, building roles and objective requirements through one common pool.
+- Contribution Amount lets each player decide how much of a gathered resource to add to the team pool versus keep on hand.
+- Direct Trading exchanges items between specific teammates, with current stock levels for each resource type visible to both parties.
+- Item Requests let a player ask teammates for a specific resource, which appears as a request that others can fulfill.
+- Live Inventory View shows pooled and held resources together, so the group can judge whether the current budget still supports the pinned objectives.
+
+Communication and Pings
+This module carries coordination signals between players so that location callouts and task handoffs happen inside the session instead of outside it.
+- Location Pings mark map positions for the whole team, which links directly to objective tracking when a task needs a specific spot.
+- Hazard Callouts warn teammates about dangers and remain visible in the shared view until cleared.
+- Help Requests are quick messages sent to the group, useful when a role needs support from another role.
+- Host Ping Controls adjust ping visibility and message frequency, which the host can tune to match the group's preferred pace.
+
+Difficulty and Rule Modifiers
+This module lets the group reshape the run's rules on top of the base difficulty tier, and it feeds its active combination into the session summary.
+- Modifier List presents each optional rule with a short description of its effect, such as tighter resource budgets or added objectives.
+
+…（内容已截断）

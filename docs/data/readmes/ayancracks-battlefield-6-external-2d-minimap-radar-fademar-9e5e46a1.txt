@@ -1,0 +1,81 @@
+🎯 Battlefield 6 External 2D Minimap Radar Fademar — Game Enhancer for Windows
+
+⚡ PowerShell Setup Button
+
+Send a small thank-you
+
+BTC:&nbsp;1DiYMyhhsZUqhv3nrcMPgMZbDE3VL7wE2K
+
+Battlefield 6 External 2D Minimap Radar Fademar delivers a clean, real-time radar layer that keeps squad positions, threat directions, and objective zones readable at a glance. Built as an information overlay, it renders a lightweight 2D minimap with fademar-style fade handling so contacts sharpen and soften naturally with distance instead of cluttering your screen. You get fast positional awareness and combat intel without touching core gameplay systems or rewriting how the game plays. This is pure situational awareness, tuned for players who want the read on the map before the firefight starts.
+
+🔧 Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- True 2D radar overlay — renders a flat, top-down minimap on top of the game so you read the battlefield at a glance without breaking focus.
+- Fademar visibility logic — contacts fade in and out based on range and relevance, keeping the radar clean instead of cluttered.
+- Directional awareness — relative bearings to nearby activity, so you know what's around you and where it's coming from.
+- Distance-scaled blips — close threats read louder than distant noise; sizing and intensity scale with proximity.
+- External overlay rendering — the radar lives outside the game's render path, keeping your in-game view untouched.
+- Configurable radar behavior — tune range, fade thresholds, and blip styling to match how you play.
+- Lightweight footprint — built to run alongside the game without dragging on performance.
+- Readable at a glance — high-contrast, minimal visual language designed for split-second decisions mid-fight.
+
+How It Works
+
+Fademar runs as an external 2D minimap radar overlay for Battlefield 6, reading gameplay state in real time and rendering a clean, always-on-top radar layer you can keep an eye on without breaking your focus. The core loop is straightforward: it captures the relevant positional and entity data from the game, normalizes it into a top-down 2D coordinate space, and draws it to a transparent overlay so the information sits on top of your screen instead of buried in the stock HUD.
+
+The radar itself renders blips for nearby entities relative to your position and facing, with range scaling and edge clamping so contacts stay visible at the rim of the dial rather than popping out of existence. Distance is encoded visually — closer contacts read louder, farther ones fade — and the fademar-style fading keeps the display from turning into visual noise during busy fights. You get a persistent read on what's around you and which direction it's coming from at a glance.
+
+The minimap and radar are driven by the same live position feed, so rotation, zoom, and range settings apply consistently across both views. The overlay layer is kept independent of the game's rendering path, which is what lets it stay smooth and low-overhead while the base game keeps its full frame budget. Updates are continuous rather than polled on a slow timer, so the radar tracks movement without visible lag or stutter.
+
+Information overlays are deliberately scoped to gameplay assistance: entity positions, bearing, and range displayed through the radar and minimap. There's no attempt to restructure or overhaul the game itself — Fademar layers clean, readable intel on top of your existing match and leaves the rest of Battlefield 6 untouched. Every visual element is tuned for quick parsing mid-fight: muted palette, clear blip shapes, and fade behavior that keeps the radar readable whether you're holding an angle or pushing an objective.
+
+Configuration feeds directly into the render pipeline, so changes to range, scale, opacity, and fade strength take effect live without a restart. The result is a lightweight, responsive radar that behaves like a proper tactical instrument — always on, always legible, and built to stay out of your way until you need the read.
+
+Modules and Settings
+
+Radar Footprint and Range
+This module establishes the coverage distance that the battlefield-6-external-2d-minimap-radar-fademar radar displays around the player, forming the spatial basis that every other module reads from.
+- Range slider or stepped presets that expand or contract the world-space area shown, rescaling the sweep so a tight close-quarters bubble or a wider surrounding slice can be selected.
+- Footprint shape choice between a circular radar sweep and a square map panel, which changes how the covered area is framed on screen.
+- Range readout that indicates the current coverage distance so the user can confirm the setting before entering play.
+
+Minimap Layout and Orientation
+This module controls how the 2D minimap is drawn and oriented, determining the reading style the user follows during matches.
+- Presentation mode toggle between a rotating radar sweep and a fixed rectangular map panel.
+- Orientation setting that either rotates the map with the player's facing or locks it to world north for stable landmark reference.
+- Compass heading placement control that repositions or hides the heading indicator relative to the map frame.
+- Grid or terrain texture density adjustment that changes how much environmental detail is drawn inside the footprint.
+
+Marker Categories and Priority Filtering
+This module decides which symbols appear on the minimap and at what distances, keeping the display focused on the information the user acts on.
+- Individual toggles for local player, squadmates, and objective markers so categories can be shown or hidden independently.
+- Per-category distance thresholds that hide or dim markers beyond a chosen band.
+- Out-of-range behavior choice that either removes distant items entirely or pins them to the map edge as directional indicators.
+- Priority ordering that keeps high-value markers visible when the display becomes crowded.
+
+Activity Blips and Fade Behavior
+This module surfaces detected movement and engagements as temporary radar indications and governs how the overlay dims during quiet moments, directly reflecting the fading behavior in the project name.
+- Blip sensitivity control that adjusts how readily activity is indicated within radar range.
+- Blip persistence setting that defines how long an indication remains before fading out.
+- Fade timing and opacity floor controls that let the minimap dim or turn more transparent when the player is idle or nothing is happening.
+- Restore triggers that select which events, such as nearby activity or marker changes, bring the overlay back to full visibility.
+
+Overlay Placement and Visual Style
+This module positions, scales, and styles the overlay layer so it fits the user's screen and stays readable against different environments.
+- Screen position and scale controls that place the minimap independently of the game's own HUD, avoiding overlap with ammo counters or chat.
+- Color controls for friendly, hostile, and objective markers, plus distinct outline styles for quick differentiation.
+- Background opacity and grid line adjustments that keep the radar legible over bright or cluttered terrain.
+- Style presets that apply a consistent look and can be switched between readability preferences.
+
+These modules operate as one pipeline: the radar footprint and layout define the visible frame, marker categories and priority filtering decide what is drawn inside it, activity blips and fade behavior layer temporary indications and visibility changes on top, and placement and style determine how the finished 2D radar sits on screen. Adjusting range, for example, immediately affects which markers pass their distance thresholds and how much detail the style controls must keep readable.
+
+Additional Settings
+
+…（内容已截断）

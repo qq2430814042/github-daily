@@ -1,0 +1,96 @@
+Borderlands 4 Shift Golden Key Bridge Novelen — Windows Mod
+
+💻 PowerShell Installer
+
+Fuel the next update
+
+TRON:&nbsp;TAge9cGg9FCNPX7AjcJQkaC4ASPbWQtbyC | ETH:&nbsp;0xBc05e16F5f70Ad4Ed64Bf0cd1065a4f655B973Fb
+
+The Golden Key Bridge Novelen mod rewires the ancient Eridian lattice beneath the Borderlands 4 Shift network, letting your golden key reserves flow freely between characters without a single Vault Hunter left behind. Toss your keys into the shared reservoir, then pull them back out on any profile you like—no save-scumming, no back-and-forth, no whispers from the Vault. Built for modders who like clean hooks and predictable behavior, every handoff runs through the same bridge logic the game already trusts. Drop it in, fire it up, and let the keys do what keys were always meant to do: open doors.
+
+✅ Before You Start
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+The Golden Key Vault Never Closes
+
+Every golden key you've ever earned — or wished you had — now lives in one place. The bridge quietly syncs your Shift key pool across sessions, so you're never staring at an empty chest wondering where your loot went. Keys persist, stack cleanly, and stay ready for the moment you decide the RNG owes you something shiny.
+
+One Key, Infinite Possibilities
+
+Open the bridge's in-game panel and you'll find the key counter right where it belongs: next to your vault. Spend one, spend ten, or hold them all for a rainy boss fight — the mod keeps an exact tally and never skips a step. No phantom keys, no lost counts, no mystery math. What you've got is what you see.
+
+Modder-Friendly by Design
+
+Built for tinkerers. Every hook is exposed, config values are readable, and the key logic is structured so you can retune drop rates, adjust key thresholds, or graft your own Shift event handlers on top without rewriting the core. Configuration lives in a single, plainly-named file, and the event system plays nice with companion mods that want to react to key spends or grants.
+
+Zero Friction, Zero Surprises
+
+The bridge works silently in the background — no ceremony, no gated menus, no waiting for a server to agree with you. Fire up the game, and your key pool is already there, ready to be spent. It respects your existing saves, plays well with other Shift-related mods, and won't bully your install with forced dependencies.
+
+For the Loot Goblins
+
+If you've ever farmed a Shift code at 3 a.m. just to see the gold key counter tick up, this is for you. The bridge treats keys like the precious, farmable currency they are — with full visibility, clean handling, and no nonsense between you and the chestroom. Open early, open often. The vault is yours.
+
+How It Works
+
+Under the hood, Novelen acts as a lightweight relay between your game client and the Shift reward pipeline, watching for the exact moment a Golden Key offer is broadcast and translating it into a form your save can swallow whole. It never touches your core game files; instead it rides alongside the running session, intercepting the key payload, validating its shape, and quietly depositing the goods into your Shift inventory the way the game itself would—no hex surgery, no manual save editing, no crossed fingers.
+
+The bridge runs a small local listener that catches incoming Shift messages, filters out anything that isn't a Golden Key drop, and re-signs the payload so Borderlands 4 accepts it without raising an eyebrow. Redemption state is tracked in a tiny companion ledger keyed to your Shift account, which means duplicate keys get politely ignored and fresh ones get applied exactly once. Everything happens in memory during play, so your saves stay clean and your cloud sync stays blissfully unaware.
+
+Because it stays in the message layer rather than the save layer, Novelen plays nice with other mods and doesn't care whether you're running vanilla, a loot overhaul, or a full chaos build. If a key can be delivered, Novelen will find it, wrap it, and hand it over—then get out of the way so you can go back to opening that shiny chest.
+
+Modules and Settings
+
+Code List Management
+Maintains the editable collection of SHiFT codes that the bridge works from, so the user has a single reviewable source for every entry.
+- Code entry editor lets the user add, remove or annotate codes; each change is reflected directly in the versioned data file.
+- Group and tag fields let entries be sorted by promotion or time window, keeping the list readable as it grows.
+- Include/exclude toggles let the user park codes without deleting them, so the active list stays focused on what is currently actionable.
+
+Golden Key Inventory Tracking
+Records golden keys obtained or pending, grouped by their source, so the user can see the current tally without opening in-game reward screens.
+- Source labels can be renamed or reorganized to match the user's own tracking habits.
+- Status markers distinguish keys already credited from those still pending, and are updated after each processing pass.
+- Tally view options control how the inventory is summarized in the data file, such as by source or by batch.
+
+Redemption State Control
+Tracks the redemption status of each code so the user has a clear record of what has been processed and what remains.
+- Per-code state selection lets the user mark entries as redeemed, pending or skipped, and revise those states when a promotion changes.
+- Redundancy guard uses these states to keep already-processed entries out of the active queue.
+- State filter controls which statuses appear in the working view, so the user can focus on pending work only.
+
+Reward Claim Ordering
+Lets the user decide the sequence in which codes and key batches are processed, replacing a fixed in-game order with one they control.
+- Sequence arrangement works by reordering entries in the data file, with options to sort by expiry, promotion or manual placement.
+- Priority markers let time-limited entries be moved ahead of evergreen ones without deleting anything.
+- Order preview shows the resulting processing sequence before it is applied, so the user can confirm it matches their intent.
+
+Notification Hooks
+Surfaces reminders when tracked entries approach the expiration dates the user supplies.
+- Lead time setting controls how far ahead of a stated expiry a notice should appear.
+- Notice scope lets the user choose whether reminders cover all tracked codes, only pending ones, or only priority-marked entries.
+- Output channel selection determines where notices are surfaced within the user's chosen output, keeping reminders visible without extra checking.
+
+Expiration and Status Auditing
+Runs a review pass over tracked records to surface inconsistencies the user should resolve.
+- Issue conditions can be adjusted, such as flagging pending codes past their stated date or keys without a source label.
+- Audit scope limits the pass to a group, a profile or the full record set.
+- Attention list output presents flagged entries in a readable form, which the user resolves by editing the underlying records rather than through a separate repair step.
+
+Additional Settings
+- Configuration profiles keep separate setups, such as for a main character and an alternate save, with per-profile labels and notice behavior retained when switching.
+- Export format and fields control how much of the code and key record is included in plain-text or tabular summaries for backup or comparison.
+- File review options adjust how entries and their annotations are presented in the data file, making diffs between versions easier to read.
+- Audit timing decides whether the review pass runs at load, on demand, or after each edit, so flagged issues appear where the user expects them.
+
+Usage Scenarios
+
+Keeping a Seasonal Code List Readable Across Promotions
+
+…（内容已截断）

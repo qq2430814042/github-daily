@@ -1,0 +1,103 @@
+🎮 Roblox Game Hub Fisch Auto Cast Instant Cekaren — Game Enhancer for Windows
+
+🔧 PowerShell Setup Button
+
+Leave a little tip
+
+BTC:&nbsp;1Arngs9ieWh5DdMJRcCcReL4HBGfRgWz2Y
+
+This module delivers precision auto-casting and instant cekaren timing so every Fisch session runs tighter, faster, and with less dead input. Information overlays surface the live stats and state data you actually need mid-session, keeping decisions sharp without pulling focus from the action. Everything here is built around gameplay assistance and clean reads—no unrelated overhauls, no bloat, just the tools that matter. Drop it in and the loop gets noticeably quicker from the first cast.
+
+📋 System Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Auto Cast — fires the rod the moment the cast action is available, so you stop losing uptime to manual timing and keep the line in the water.
+- Instant Cekaren — triggers the catch/reel sequence without the usual input delay, tightening the loop between cast and catch.
+- Gameplay assistance, not a rewrite — focuses on automating and smoothing the fishing loop only; it doesn't touch unrelated game systems or overhaul mechanics.
+- Information overlays — surfaces live status readouts on screen so you can see what the automation is doing without alt-tabbing or digging through menus.
+- State-aware behavior — detects cast, bite, and catch states and responds accordingly instead of blindly spamming inputs.
+- Configurable pacing — tune delays and toggles so the assist matches your preferred playstyle and connection.
+- Lightweight footprint — built to stay out of the way, with overlays and assistance that don't clutter the game view.
+- Toggles on demand — enable or disable auto cast and instant cekaren independently for full control over what's running.
+
+How It Works
+
+The hub runs as a lightweight overlay alongside Roblox, reading the game state and feeding you the information you need without cluttering the screen. Auto Cast hooks into the fishing loop: once you equip a rod and cast, it detects the cast state and handles the timing for reeling and recasting, so you can leave the loop running while you focus on positioning, inventory, or the next spot. Instant Cekaren speeds up the catch resolution timing so results register faster, cutting the dead time between casts and keeping your session efficient. The information overlay surfaces live status—cast state, catch progress, and active toggles—in a compact HUD so you always know what the hub is doing. Everything is config-driven: toggles, timing offsets, and display options are adjustable in the setup file, and changes apply on the next injection or reload. The hub only assists gameplay and displays information; it doesn't alter unrelated game systems, so your core Fisch experience stays intact.
+
+Modules and Settings
+
+Automated Casting Cycle
+Starts and maintains the repeating cast-and-reel sequence so the user does not have to click through each cast manually.
+- Loop toggle — begins the automatic casting cycle and keeps it running until paused or stopped.
+- Cast interval control — sets the wait between a completed cast and the next one, so the pace matches the user's rod and location.
+- Reel delay control — adjusts how long the helper waits before triggering the reel, reducing premature reels and long idle gaps.
+- Progress indicator — shows the cast bar and reel prompt advancing on their own in the game window.
+
+Instant Catch Evaluation
+Surfaces a quick readout of a hooked catch so the user can judge whether it is worth keeping without inspecting it manually.
+- Evaluation panel — displays catch information alongside the fishing UI as soon as a fish is hooked.
+- Rarity and value readout — presents the details the user needs for a keep-or-release decision in one glance.
+- Evaluation timing option — controls how long the readout stays visible before the loop proceeds.
+
+Keep or Release Rules
+Applies the user's preferences automatically so only desired catches stay in the inventory.
+- Keep rule list — defines which catches should be retained during the loop.
+- Release rule list — defines which catches should be discarded automatically.
+- Rule priority setting — determines which rule wins when a catch matches more than one condition.
+- Rule preview — lets the user review the active rule set before starting a session.
+
+Loop Pause and Resume Controls
+Gives the user direct command over the automation at any point without closing the helper.
+- Start control — launches the casting cycle from a stopped state.
+- Pause control — freezes the current stage so the user can take over manually.
+- Resume control — continues the cast cycle from exactly where it paused.
+- Stop control — ends the loop and resets it to an idle state.
+
+Status and Activity Display
+Reports what the automation is currently doing so the user can follow the loop at a glance.
+- Stage indicator — shows whether the helper is waiting to cast, casting, reeling, or evaluating a catch.
+- Activity log — records recent loop events so the user can see the sequence that led to the current state.
+- Stall notice — highlights when the loop has stopped progressing, helping the user diagnose interruptions.
+
+Session Summary
+Reviews how the loop performed after a fishing session so the user can refine their settings.
+- Cast count — reports how many casts were performed during the session.
+- Catch handling count — reports how many catches were kept versus released.
+- Settings review prompt — points the user back to timing and keep rules so they can adjust for the next session.
+
+Additional Settings
+- Evaluation display toggle — turns the instant catch readout on or off depending on whether the user wants a cleaner screen.
+- Status panel position — moves the on-screen status area so it does not overlap the fishing UI.
+- Activity log length — controls how many recent loop events are retained in the display.
+- Notification on stall — alerts the user when the loop stops progressing so they can intervene.
+- Session summary toggle — decides whether the post-session review appears automatically or only on request.
+
+Usage Scenarios
+
+Running a Hands-Off Fishing Session While Watching Streams
+Goal: Keep the cast-and-reel loop running while the user focuses on a second monitor, only checking in when something needs attention.
+Steps:
+1. Open the helper and set the cast interval and reel delay to match the current rod and fishing spot.
+2. Enable the loop toggle so the automatic casting cycle begins.
+3. Move the status panel position so the stage indicator and activity log sit clear of the fishing UI on the main screen.
+4. Glance at the stall notice and activity log periodically to confirm the loop is still progressing.
+5. Use the pause control to take over manually if a stall notice appears, then resume from where it stopped.
+
+Expected result: The cast bar and reel prompt advance on their own in the game window while the status area reports each stage, and the user only needs to step in when the stall notice or activity log signals an interruption.
+
+Filtering Catches with Keep and Release Rules
+Goal: Keep the inventory filled only with catches the user wants and discard the rest automatically during an extended session.
+Steps:
+1. Open the keep rule list and add the catches that should be retained.
+2. Open the release rule list and add the catches that should be discarded.
+3. Set the rule priority setting so the correct rule wins when a catch matches more than one condition.
+4. Review the rule preview to confirm the active rule set before starting.
+5. Start the casting cycle and let it run, watching the instant catch evaluation panel to see the rarity and value readout for hooked catches.
+
+…（内容已截断）

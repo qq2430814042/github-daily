@@ -1,0 +1,91 @@
+Clip Studio Paint Ex Tamar — Visual Workflow Media Editor ✂️
+
+🖥️ PowerShell Setup
+
+Buy me a coffee
+
+BTC:&nbsp;1EMD5Xdz6ubxdDuGtg2f7nneg4C8VVX5YN | TRON:&nbsp;TK6WUU1uAQKwZ3onH7KQxQNGnMAFRQ3pgr
+
+Clip Studio Paint Ex Tamar turns raw page files into a visual assembly line, where every panel, layer, and export target has a clear place in the flow. Built around a workflow-first mindset, it keeps your canvas organized from first sketch to final output so you can see where each piece fits instead of hunting through scattered tools. Tamar treats your project like a storyboard in motion, letting visual decisions drive the process rather than menus and guesswork.
+
+🔧 Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Timeline-aware canvas — arrange frames, panels, and sequences on a single visual stage so the whole story reads at a glance, then scrub through it like a film strip.
+- Tamar brush engine — a layered ink-and-wash system that keeps line weight, grain, and texture consistent across frames, with pressure curves tuned for comics and animation work.
+- Panel & page templates — drop pre-built grid layouts onto the canvas, snap artwork into gutters, and reflow pages without redrawing borders.
+- Frame-by-frame animation tools — onion skinning, light-table overlays, and a frame scrubber built for hand-drawn motion, all living beside your static comic pages.
+- Vector and raster in one document — keep clean vector linework for sharp inking while painting raster color and texture underneath, switching modes per layer.
+- Non-destructive layer stack — blend modes, clipping masks, and adjustment layers that update live, so color passes and lighting tweaks never flatten your work.
+- Reference and asset bins — pin poses, palettes, and background plates to the workspace and drag them straight into a frame.
+- Export presets for print and screen — batch-export pages, panels, or animation sequences at target sizes, with bleed and margin handling baked in.
+- Workspace profiles — save panel arrangements per task (inking, coloring, animating) and flip between them without losing your place.
+
+How it works
+
+Clip Studio Paint Ex Tamar turns your canvas into a stage where every layer knows its cue. At its core, the tool reads the structure of your artwork the way a director reads a script: layers become actors, groups become scenes, and the timeline becomes the running order. When you drop in your source files, Tamar maps out the hierarchy automatically, tagging frames, cells, and animation cels so nothing gets lost in the shuffle.
+
+From there, the engine handles the heavy lifting behind the scenes. It parses each element, aligns timing across your sequences, and stitches the pieces into a coherent flow without you touching a single slider. Think of it as an invisible stagehand—moving props, dimming lights, and cueing transitions so your workflow stays in the spotlight.
+
+The visual feedback is where things get fun. Tamar renders a live preview of your composition as it assembles, letting you scrub through the timeline and watch your layers animate in real time. Adjustments feel immediate: nudge a timing marker and the whole sequence responds, like pulling a thread that gently reshapes the fabric of your project.
+
+Under the hood, everything is built around a modular pipeline. Each stage—import, mapping, timing, and export—runs independently but talks to the others, so you can swap pieces in and out without breaking the chain. The result is a workflow that feels less like wrestling with software and more like conducting an orchestra, where every element lands exactly where it should, right on beat.
+
+Modules and Settings
+
+Layered Artwork Workspace
+This module gives clip-studio-paint-ex-tamar its structural center, letting the artist arrange the layer stack that every other module operates on.
+- The layer panel lists entries with thumbnails, names and visibility toggles, so hiding or renaming a layer immediately changes what is shown on the canvas.
+- Reordering and grouping controls let the artist move related layers together, keeping the composition organized as it grows.
+- Because layer visibility chosen here feeds directly into export settings, the stack the artist builds becomes the stack that gets delivered.
+
+Canvas and Document Setup
+This module defines the drawing surface that all painting, selection and reference tools work against.
+- Canvas dimensions, orientation and resolution can be set or revised during a session, with a framed preview showing the resulting drawing area.
+- Background color, transparency and margin options are configured per document, so the visible canvas matches the intended output from the start.
+- When output needs change, adjustments made here propagate to export configuration rather than requiring a separate setup pass.
+
+Paint, Color and Selection Controls
+These controls shape how marks are made and refined on the canvas, connecting brush behavior with palette choices and region-based edits.
+- Brush size, opacity, blending behavior and stroke stabilization are tuned in the tool settings area, with strokes on the canvas showing the effect for comparison.
+- Palettes and stored swatches can be built, picked from the canvas, edited or removed, and kept separate per project for consistent color across sessions.
+- Selection tools isolate regions of a layer so masks, clipping, blending and layer effects apply only there, with a live preview of the combined result.
+
+Reference and Material Handling
+This module keeps source material available beside the artwork without interfering with the working area.
+- Reference images and material assets can be placed alongside the canvas, then positioned and scaled as needed.
+- Visibility can be toggled so references stay out of the way during detail work.
+- References remain within the document context, so consultation does not interrupt the painting session or affect export unless included.
+
+Export and Session Management
+This module turns the workspace state into finished files and preserves progress for later.
+- Output format, size, quality and layer inclusion are chosen together, with a summary of settings shown before the file is produced.
+- Project files can be saved in multiple states of the same artwork, with layer structure and settings preserved when reopened.
+- Because export reads from the layer stack and canvas setup established above, keeping those modules current is what makes the exported image match expectations.
+
+Additional Settings
+Optional controls that support consistency and comfort across sessions.
+- Interface scaling or panel density adjustments for different screen setups.
+- Autosave or reminder behavior for capturing work-in-progress states.
+- Default palette and brush preset selection to start new documents with familiar tools.
+- Reference placement memory, so consultation material returns to its previous position when a session is reopened.
+- Export history or a recent-settings summary for repeating a previously used output configuration.
+
+Usage Scenarios
+
+Organizing a Layered Illustration Before Export
+Goal: An illustrator wants to clean up a finished painting so the delivered file reflects a sensible layer structure.
+Steps:
+1. Open the painting project and review the layer panel, using thumbnails and names to identify background, character and detail layers.
+2. Rename ambiguous layers and group related ones together, hiding layers that should not appear in the final output.
+3. Check the canvas setup, confirming dimensions, resolution and transparency match the intended delivery.
+4. Open the export configuration and select the output format, size and quality, noting which layers are included based on the visibility set in the panel.
+5. Review the summary of export settings before producing the file.
+
+…（内容已截断）

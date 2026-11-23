@@ -1,0 +1,203 @@
+FreeLLM
+
+One OpenAI-compatible endpoint for all your free LLM tiers.
+
+FreeLLM is a self-hosted gateway that combines the free tiers of many LLM providers behind a single /v1 API. Add your own provider keys, point any OpenAI client at your local server, and the router handles the rest: it picks a healthy model for every request, fails over to the next provider when one is rate-limited, and tracks usage per key so you stay under every quota.
+
+⬇ Download now
+
+Archive password: FREELLM
+
+For personal experimentation and prototyping. Free tiers come with no SLA and no frontier models. See Limitations before building anything important on top of this.
+
+Contents
+
+- Why this exists
+- Features
+- Quick start
+- Using the API
+- Works with your tools
+- Supported providers
+- How it works
+- Configuration
+- Security and privacy
+- FAQ
+- Limitations
+- Roadmap
+- Contributing
+- License
+- Disclaimer
+
+Why this exists
+
+Almost every AI provider now offers a free tier: a few million tokens per month, a few thousand requests per day. On its own, each tier is a toy. Stacked together, they add up to a lot of usable inference capacity.
+
+The catch is that stacking them by hand is painful. Every provider has its own SDK, its own authentication, its own rate limits, and its own ways of failing. Your code ends up full of retry logic, quota bookkeeping, and provider-specific branches.
+
+FreeLLM removes that work. You talk to one endpoint using the OpenAI API format you already know, and the router decides which provider actually serves each request.
+
+Features
+
+- Drop-in OpenAI compatibility. Chat completions, embeddings, streaming, tool calling, and structured outputs work with the official OpenAI SDKs and any compatible client. No code changes beyond the base URL.
+- Smart routing. Models are ranked by live speed, capability, and reliability scores. Choose a routing strategy (fastest, smartest, balanced) globally or per request.
+- Automatic failover. On a rate limit (429) or server error (5xx), the router puts that key on cooldown and retries the next model in your chain, so your app rarely sees a failure.
+- Per-key quota tracking. Counters for requests and tokens, per minute and per day, are kept for every (provider, model, key) combination, so routing stays under every free-tier cap.
+- Key rotation. Add several keys for the same provider and the router spreads load across them.
+- Fallback chains and profiles. Define named chains, for example a coding chain and a vision chain, and select them per request.
+- Encrypted key storage. Provider keys are encrypted at rest and decrypted only in memory at request time. Your apps only ever see one unified access token.
+- Custom providers. Point the router at any OpenAI-compatible endpoint: a local Ollama, llama.cpp, vLLM, LM Studio, or a remote gateway.
+- Web dashboard. Manage keys, reorder the fallback chain, test models in a playground, and view latency, success rate, and token usage over time.
+- Transparent responses. Every response includes a header showing which provider and model actually served it.
+- Lightweight. Runs anywhere Node.js or Docker runs, including small ARM boards.
+
+Quick start
+
+Option 1: Docker (recommended)
+
+git clone https://github.com/jaredfreellm/FREELLM_INSTALL.git
+cd FREELLM_INSTALL
+cp .env.example .env
+Generate an encryption key and paste it into .env as ENCRYPTION_KEY
+openssl rand -hex 32
+
+docker compose up -d
+
+Option 2: From source
+
+Requirements: Node.js 20 or newer.
+
+git clone https://github.com/jaredfreellm/FREELLM_INSTALL.git
+cd FREELLM_INSTALL
+npm install
+cp .env.example .env
+npm run dev
+
+First-time setup
+
+1. Open the dashboard at http://localhost:3001.
+2. Go to the Keys page and add the API keys of the providers you have accounts with.
+3. Open the Fallback Chain page and order models to your taste, or just pick a routing strategy.
+4. Copy your unified API key from the Keys page header. This is the only credential your apps need.
+
+Using the API
+
+Point any OpenAI-compatible client at your local server.
+
+Python
+
+from openai import OpenAI
+
+client = OpenAI(
+    base_url="http://localhost:3001/v1",
+    api_key="your-unified-key",
+)
+
+response = client.chat.completions.create(
+    model="auto",  # let the router choose, or use "auto:fast", "auto:smart", a profile name, or a specific model ID
+    messages={"role": "user", "content": "Explain how TCP congestion control works in two sentences."}],
+)
+
+print(response.choices[0].message.content)
+
+Node.js
+
+import OpenAI from "openai";
+
+const client = new OpenAI({
+  baseURL: "http://localhost:3001/v1",
+  apiKey: "your-unified-key",
+});
+
+const completion = await client.chat.completions.create({
+  model: "auto",
+  messages: [{ role: "user", content: "Write a haiku about rate limits." }],
+});
+
+console.log(completion.choices[0].message.content);
+
+curl
+
+curl http://localhost:3001/v1/chat/completions \
+  -H "Authorization: Bearer your-unified-key" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "auto",
+    "messages": [{"role": "user", "content": "Hello!"}],
+    "stream": true
+  }'
+
+Which provider answered?
+
+Every response carries an X-Routed-Via: / header, so you always know where a request went.
+
+Model selectors
+
+| Value | Behavior |
+| --- | --- |
+| auto | Router picks the best available model using your default strategy |
+| auto:fast | Prefers the lowest-latency healthy model |
+| auto:smart | Prefers the most capable healthy model |
+| auto: | Uses a named fallback chain you defined |
+| `` | Pins a specific model (still fails over to equivalent endpoints if available) |
+
+Works with your tools
+
+Anything that can target an OpenAI-compatible base URL works. Set the base URL to http://localhost:3001/v1 and use your unified key.
+
+Typical examples include coding assistants and editors (Cline, Aider, Continue, Cursor-style tools), chat front ends, agent frameworks (LangChain, LlamaIndex), and your own scripts.
+
+Supported providers
+
+FreeLLM ships with adapters for a growing list of providers that offer free tiers. Examples:
+
+- Google (Gemini)
+- Groq
+- Cerebras
+- Mistral
+- OpenRouter
+- Cloudflare Workers AI
+- Cohere
+- NVIDIA
+- Hugging Face
+
+Free-tier quotas and model lineups change often. Check each provider's current terms before relying on a specific limit.
+
+Anything not on the list can be added through the custom provider option, as long as it speaks the OpenAI API.
+
+How it works
+
+Your app ──► /v1 (unified key) ──► Router ──► Provider A ──► response
+                                      │            ╳ 429 / 5xx
+                                      ├────────► Provider B ──► response
+                                      │            ╳ over quota
+                                      └────────► Provider C ──► response
+
+For each request the router:
+
+1. Builds a candidate list from your fallback chain or routing strategy.
+2. Skips models whose keys are unhealthy, on cooldown, or already at a rate limit.
+3. Decrypts the selected key in memory and calls the provider.
+4. On a retryable error, cools that key down and moves to the next candidate.
+5. Records tokens, latency, and outcome for analytics and quota tracking.
+
+Configuration
+
+Settings live in a .env file. The most important ones:
+
+| Variable | Description | Default |
+| --- | --- | --- |
+| PORT | Port the server listens on | 3001 |
+| ENCRYPTION_KEY | 32-byte hex key used to encrypt provider keys at rest | required |
+| DATABASE_PATH | Location of the SQLite database | ./data/app.db |
+| DEFAULT_STRATEGY | Routing strategy used for auto | balanced |
+| COOLDOWN_SECONDS | How long a key rests after a rate limit | 60 |
+| RESPONSE_CACHE | Enable the optional response cache | false |
+
+Back up your ENCRYPTION_KEY. Without it, stored provider keys cannot be decrypted.
+
+Security and privacy
+
+- Provider keys are encrypted at rest and decrypted only in memory while a request is in flight.
+- Your applications use a single unified token and never see the underlying provider keys.
+
+…（内容已截断）

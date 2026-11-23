@@ -1,0 +1,101 @@
+Big Walk Coop Dakaren — Cooperative Multiplayer
+
+⚡ PowerShell Setup Button
+
+Send a small thank-you
+
+ETH:&nbsp;0x8b95BC25E806e0389B605649210E7a73d8028096
+
+Big Walk Coop Dakaren is built for players who want to share a long journey rather than rush it alone. You and your partners walk the route together, coordinate your pace, and look out for each other as the road stretches on. Progress comes from staying in step and helping one another through the stretches that slow you down. Play it with people who enjoy talking through the next move and sticking together when the walk gets tough.
+
+🔧 Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+How to Start
+
+Getting your group into big-walk-coop-dakaren is quick and simple, so you can spend less time setting things up and more time enjoying the co-op experience together. Before anything else, open Steam and keep it running in the background. The game relies on Steam being active, so make sure it stays open the whole time you play.
+
+With Steam running, launch the game. Once it starts, the running game or session will appear in Steam as "Spacewar". This is expected, so there is no need to worry when you see that name instead of the project title.
+
+To play together, agree in advance on who will send the invitations, so nobody is left waiting. You can either wait for a friend's invitation and accept it when it arrives, or invite your friends yourself so they can join your session. Both approaches work equally well.
+
+Keep the process relaxed: confirm everyone has Steam open, decide who invites whom, and then let the invitations bring the group together. Following these few steps keeps the starting process easy to understand and follow for everyone involved.
+
+Features
+
+- Designed around shared traversal: plan a route together, move as a group, and keep the whole team in the loop as you go.
+- Cooperative pacing that rewards sticking together and communicating, rather than racing ahead alone.
+- Session flow built for drop-in, drop-out team play so a run can continue when someone steps away and rejoins.
+- Clear shared goals that give everyone a role in the walk, from scouting the path to keeping the group on track.
+- Team-oriented decision points where the group chooses the next leg of the journey together.
+- Readable group state so players can see how the team is doing without guessing.
+- Built to be played in short shared sessions or longer cooperative stretches, depending on what the group wants.
+- Focused on the fun of moving and exploring as a team, with the journey itself as the main event.
+
+How It Works
+
+Big Walk Coop Dakaren is built around walking together, not racing ahead. You and your co-op partners share the same journey: pick a route, set off on foot, and keep each other company through long stretches of travel. Progress comes from moving as a group, so the pace of the walk is set by the people you're with rather than by any single player.
+
+The core loop is simple. Agree on a direction, start walking, and stay in touch as the terrain and distance add up. When someone falls behind or takes a different path, the group decides together whether to wait, double back, or press on. Those small decisions are the game: coordination, patience, and the shared rhythm of a long walk.
+
+Sessions are meant to be played cooperatively from start to finish. Everyone in a session participates in the same walk, and the experience is designed around conversation and mutual support rather than competition. There are no solo shortcuts to the group's destination—what matters is that the party arrives together.
+
+Team play rewards communication. Check in on your partners, share what you notice along the way, and adjust your pace so the group stays intact. Big Walk Coop Dakaren treats the walk itself as the shared activity, so the most successful teams are the ones that look out for each other and treat the journey as something everyone contributes to.
+
+Modules and Settings
+
+Shared Traversal Module
+This module keeps movement through the game world a group activity, so pacing and positioning decisions are made with the team in mind.
+- Pace Matching: lets one player slow down or speed up so the group stays together instead of drifting apart.
+- Position Awareness: shows where partners are relative to each other, helping players decide when to wait or catch up.
+- Regroup Control: provides a way to pause forward movement until everyone is ready to continue as a unit.
+
+Cooperative Objectives Module
+This module organizes objectives around joint action, letting the team divide work and see progress as a shared result.
+- Task Assignment: allows players to claim or swap parts of an objective so responsibilities are clear before starting.
+- Shared Progress View: reflects advancement for the whole group, so decisions to continue or revisit are made on common information.
+- Objective Handoff: lets one player pass a task to another when roles need to shift mid-session.
+
+Role Division Module
+This module supports splitting responsibilities such as leading, supporting or handling specific tasks, with players choosing the split themselves.
+- Role Selection: lets each participant pick a responsibility that fits the current situation.
+- Flexible Switching: allows roles to change during a session without restarting the run.
+- Task Ownership Display: makes it visible who is handling what, reducing duplicated effort.
+
+Group Pacing Module
+This module manages how quickly the group moves through content, keeping sessions synchronized rather than splitting into solo runs.
+- Wait and Hold: lets a player signal the group to hold position until others arrive.
+- Regroup Prompts: offers a way to call the team back together after separate activity.
+- Pace Preference: lets players indicate their preferred speed so the team can settle on a shared rhythm.
+
+Session Coordination Module
+This module structures play into shared sessions where participants join the same cooperative run and stay aligned on starts, pauses and regrouping.
+- Session Start Coordination: lets the group agree on when to begin rather than starting at different moments.
+- Pause and Resume: keeps all participants in the same context when the team needs a break.
+- Participant Overview: shows who is currently in the session so the group knows its composition.
+
+Communication and Feedback Module
+This module ties planning and progress reporting together, so clearer communication visibly leads to more coordinated group behavior.
+- Check-In Controls: support light coordination for teams that prefer minimal back-and-forth.
+- Planning Prompts: support more detailed planning when the group wants to map out next steps.
+- Collective Progress Feedback: gives the team a shared reference point for deciding whether to continue, adjust or revisit earlier content.
+
+Additional Settings
+- Team Composition Adjustment: redistributes responsibilities when a participant joins or steps away, so the group can keep working toward its objectives.
+- Coordination Depth: lets the group choose between light check-ins and detailed planning depending on preference.
+- Session Continuity: keeps shared context available when the team pauses and later resumes the same run.
+- Group Size Fit: adapts how responsibilities are spread across different team sizes within the cooperative scope.
+
+Usage Scenarios
+
+Keeping a Two-Player Run Together Through a Long Traversal
+Goal: A pair of players wants to cross a lengthy stretch of the world as a unit without one player constantly falling behind.
+Steps:
+1. Each player uses Pace Preference in the Group Pacing Module to indicate their preferred speed, and the pair settles on a shared rhythm.
+2. One player enables Pace Matching in the Shared Traversal Module, slowing down at key points so the partner can keep up.
+
+…（内容已截断）

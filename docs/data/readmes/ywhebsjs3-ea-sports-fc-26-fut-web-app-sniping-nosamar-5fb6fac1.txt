@@ -1,0 +1,88 @@
+🚀 Ea Sports Fc 26 Fut Web App Sniping Nosamar — friendly, feature-rich bot for automated your act...
+
+🛠️ PowerShell Setup Button
+
+Support my work
+
+TRON:&nbsp;TM8Rbxxi1uQC1J2rSdEEFKsdLvoooroWDx | ETH:&nbsp;0x8A6FEB775C6Ee39891cf17E88B1dEeC685e58e24
+
+Ea Sports Fc 26 Fut Web App Sniping Nosamar is a fully automated bot built for the community, by the community, to take the grind out of sniping in the FC 26 FUT Web App. It runs hands-free so you can chase those elusive transfer targets without parking yourself in front of a screen for hours. Packed with smart filtering, fast refresh logic, and configurable sniping profiles, it gives you the tools to hunt players your way. Every feature is shaped by player feedback and real in-game testing, making it a genuinely community-driven companion for your FUT grind.
+
+✅ Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Fully automated sniping engine — set your targets once and let the bot handle the rest, scanning the transfer market around the clock without you lifting a finger.
+- No SAMAR interference — built to run cleanly and quietly so your sniping sessions stay smooth, stable, and uninterrupted.
+- Lightning-fast buy logic — optimized decision-making means it reacts to listings the moment they appear, giving you a real shot at those under-priced gems.
+- Smart filter presets — save and switch between multiple sniping configurations for different players, ratings, or budget ranges.
+- Auto-relist and trade management — keep your transfer list moving by automatically relisting unsold items and managing your trade pile.
+- Budget guardrails — set maximum spend limits so the bot never goes overboard and always stays within your coin comfort zone.
+- Detailed activity logs — every snipe, miss, and purchase is recorded so you can review performance and fine-tune your strategy.
+- Friendly configuration — simple, readable settings files mean anyone in the community can tweak behavior without digging through code.
+- Community-driven development — shaped by feedback from fellow FUT grinders, with features and fixes informed by real users like you.
+- Lightweight and self-contained — runs comfortably in the background on modest setups, no heavyweight dependencies required.
+- Regular updates — actively maintained to keep pace with the ever-changing FUT web app experience.
+
+How It Works
+
+Under the hood, the bot runs a tight loop that mirrors how a fast human snipes on the transfer market — but without the fatigue, hesitation, or missed clicks. Once you start it, it authenticates your session, loads your search criteria, and begins scanning the market in rapid cycles, comparing every listing against the limits you set. When a match appears that fits your filters and budget, it springs into action instantly, attempting the purchase before the listing disappears.
+
+The core of the bot is its search engine. You define what you're hunting for — player name, rating range, chemistry style, price ceiling, or a specific card version — and the bot turns that into a repeating query. Each cycle refreshes results, evaluates them against your rules, and decides whether to buy, skip, or keep watching. Because it operates continuously, it catches those short-lived underpriced listings that vanish in the blink of an eye.
+
+Layered on top of the search is a smart decision system. The bot tracks your coin balance, respects your maximum spend per card, and can be told how many copies of a given player you want to stockpile. It avoids duplicate purchases beyond your target, pauses when funds run low, and resumes automatically once your balance recovers. Configurable cooldowns and retry logic keep things stable even when the market gets crowded or the web app throws the occasional hiccup.
+
+Everything is driven by your configuration — no hardcoded behaviour you can't tweak. Thresholds, filters, purchase limits, polling intervals, and safety switches all live in plain, readable settings so you can dial in the bot's aggression to match your playstyle, whether you're casually flipping a few cards or running an all-out sniping session. The community has shaped these options over time, and each new release folds in feedback from people actually using it day to day.
+
+Logging and feedback are built in so you're never flying blind. The bot reports what it searched, what it found, what it bought, and why it skipped the rest, giving you a clear trail to review and refine your strategy. Run it in the foreground to watch every move, or let it work quietly in the background while you get on with your day.
+
+In short: you set the rules, the bot does the grinding. It watches the market relentlessly, reacts in milliseconds, and hands you the wins — all while respecting the limits you put in place. Friendly to newcomers, powerful for veterans, and built to grow with the community around it.
+
+Modules and Settings
+
+Automated Transfer Market Sniping
+This module drives the core sniping loop of the bot by repeatedly querying the transfer market for listings that match the active search configuration.
+- Target player or card selection determines which listings the bot pursues during a session.
+- Price ceiling sets the maximum spend the bot is allowed to commit per purchase.
+- Rating range narrows matching to cards within the user's acceptable quality band.
+- Start, pause and stop controls let the user run sessions on demand and halt them immediately when needed.
+
+Search Configuration Library
+This module stores the user's saved sniping targets so multiple goals can be managed without re-entering filters each time.
+- Each configuration can be created, edited, enabled or disabled independently.
+- Configurations can be switched as the active target, so the bot only works on the listings the user currently cares about.
+- Saved configurations persist across sessions, keeping frequently used targets ready for reuse.
+
+Bid and Buy-Now Behavior
+This module controls how the bot competes for listings once a match is found.
+- A per-configuration toggle selects buy-now purchasing, bidding, or both as the allowed acquisition method.
+- Bid increment settings define how far above the current bid the bot may go within the configured cap.
+- The resulting bid history and won items are shown alongside the rules that produced them, so the user can verify spend stayed within limits.
+
+Session Scheduling and Limits
+This module keeps automated activity bounded to windows and volumes the user defines.
+- Session length limits cap how long a sniping run may continue before stopping automatically.
+- Action count limits cap the number of purchase or bid attempts per session.
+- When a session ends or a limit is reached, a summary of the activity performed during that period is presented for review.
+
+Club and Consumable Automation
+This module handles routine club upkeep in the background while sniping runs or between sessions.
+- Task category toggles let the user choose which housekeeping actions are enabled, such as organizing duplicates or applying consumables.
+- Consumable rules determine which items are applied and to which players, based on the user's selections.
+- Results appear in the club view, with each automated action recorded for the user to confirm.
+
+Squad Building Objective Assistance
+This module supports objective progress by preparing and submitting squads that satisfy stated requirements.
+- Objective selection determines which squad-building goals the bot attempts.
+- Constraint options, such as untradeable-only usage, restrict which players may be included in submissions.
+- The objective progress screen reflects completed steps, and the bot reports which submissions were made.
+
+Activity Logging and Session Reports
+This module records everything the bot does so the user can audit and tune behavior over time.
+
+…（内容已截断）

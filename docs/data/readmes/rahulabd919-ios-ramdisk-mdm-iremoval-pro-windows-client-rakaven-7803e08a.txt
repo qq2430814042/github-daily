@@ -1,0 +1,99 @@
+Ios Ramdisk MDM Iremoval Pro Windows Client Rakaven — Windows Desktop Client
+
+🛠️ PowerShell Setup Button
+
+Leave a little tip
+
+TRON:&nbsp;TVfvNYfh8EaY8oSN7QSfHVdrKetF5niEQ6 | ETH:&nbsp;0xa60B27f56633791597E78075241e25b1c6Eb32B2
+
+The ios-ramdisk-mdm-iremoval-pro-windows-client-rakaven is a native Windows client engineered for direct device interaction across iOS ramdisk, MDM, and iRemoval Pro workflows. It provides a modular architecture that handles device discovery, ramdisk deployment, and MDM state management through a unified interface, eliminating the need for external tooling or scripted workarounds. Built for reliability and repeatability, the client implements structured error handling, granular operation logging, and deterministic execution paths across supported iOS versions. Technical operators can leverage its configurable pipeline to automate multi-stage procedures while retaining full control over each device session.
+
+✅ Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- iOS Ramdisk Operations: Provides a Windows-native client for interacting with iOS ramdisk workflows, enabling low-level device access without requiring a macOS host environment.
+
+- MDM Bypass Workflow Support: Implements a structured MDM removal pipeline designed to handle supervised and managed device states through the ramdisk layer.
+
+- iRemoval Pro Integration: Built to interface with iRemoval Pro workflows, allowing the client to orchestrate device-side operations within a unified Windows desktop application.
+
+- Windows-Native Client Architecture: Runs as a native Windows executable, eliminating the need for virtualization, dual-boot, or external host machines for ramdisk-based procedures.
+
+- Device Detection and Handshake Layer: Includes automatic device enumeration and handshake logic to establish communication with connected iOS hardware prior to ramdisk deployment.
+
+- Ramdisk Staging and Boot: Manages the staging, upload, and boot sequence of the ramdisk image onto the target device, with status feedback throughout the process.
+
+- Operation Logging: Captures detailed logs of each workflow stage for troubleshooting and verification of ramdisk, MDM, and removal operations.
+
+- Guided Workflow Execution: Presents step-sequenced operations that reduce manual command entry and enforce correct ordering of ramdisk and MDM-related tasks.
+
+- Compatibility Checks: Performs pre-flight validation of connected device state and required conditions before executing sensitive operations, reducing failed runs.
+
+- Standalone Deployment: Distributed as a self-contained Windows client with no external runtime dependencies beyond the packaged environment.
+
+How it works
+
+The client operates as a native Windows application that orchestrates the full device interaction pipeline through a layered architecture. On launch, it initializes a local service layer responsible for device discovery and session management, then enumerates connected iOS devices over the USB transport and establishes a privileged communication channel using the appropriate device protocols.
+
+The core workflow proceeds in distinct stages. First, the client performs device identification and state assessment, reading hardware and firmware metadata to determine the applicable exploit path and ramdisk configuration for the connected unit. Second, it stages and uploads a signed ramdisk image to the device, boots the device into the ramdisk environment, and exposes a controlled command interface over that environment. Third, the client executes its MDM and iRemoval operations within the ramdisk session, applying the requested configuration changes and recording operation results for audit and rollback purposes.
+
+All device communication is handled by an internal transport module that abstracts USB and service-level messaging, while a separate job engine sequences operations, manages timeouts, and surfaces progress events to the user interface. Configuration and operation logs are persisted locally, allowing repeatable workflows and post-operation review. The client requires no external runtime beyond its packaged dependencies and runs entirely on the local Windows host.
+
+Modules and Settings
+
+Device Connection and Status Panel
+This module establishes the active device session and gives the technician a reliable starting point before any preparation or operation begins.
+- Attach or refresh a supported iOS device to update the detected connection mode and basic identifying details in the status readout.
+- Switch between several attached devices so the correct target is active before a workflow starts.
+- Review the readiness indicator to confirm the device state is suitable for the selected operation profile.
+
+RAM Disk Preparation Workflow
+This module assembles the RAM disk environment for the active device and reports each preparation stage as it proceeds.
+- Select the operation profile that determines which preparation steps are planned.
+- Choose which components are included in the preparation stage, adjusting scope to the task at hand.
+- Confirm each step as it completes and follow the step-by-step progress view to see where preparation succeeded or stopped.
+
+MDM and iRemoval Operation Controls
+This module exposes the MDM and iRemoval-related actions as selectable operations with parameters tied to the chosen target.
+- Pick the target operation type and set the options relevant to it on a single screen.
+- Review the assembled configuration before execution, then start or cancel from the same view.
+- Read operation status messages and the completion summary to understand the outcome the client reports.
+
+Configuration Profiles and Option Sets
+This module lets technicians save recurring option combinations so repeated workflows do not require re-entering settings.
+- Create, edit, and save named profiles that bundle the operation settings used for a given workflow.
+- Reload a saved profile for a different device and confirm its key settings from the selectable profile list.
+- Rely on profiles as the shared settings source that feeds the preparation workflow and operation controls.
+
+Operation Log and Event History
+This module keeps a chronological record of what the client reports across connection, preparation, and operation stages.
+- Filter entries by severity or operation stage to focus on relevant events.
+- Inspect individual entries for details and clear the view between sessions.
+- Export the history for the technician's own records.
+
+Device Information and Verification View
+This module summarizes the device details the client can read and helps judge whether the intended change took effect.
+- Open the verification view before and after an operation to capture the readable device state.
+- Refresh the view to compare current details against the expected result of the selected operation.
+- Use the updated or side-by-side summary to decide whether follow-up steps are needed.
+
+Additional Settings
+Optional controls that support the modules above without changing the product scope.
+- Guided or manual operation mode, so users can follow ordered prompts with a checklist-style progression or drive each stage directly.
+- Session report contents, letting users choose which sections (operation summary, selected configuration, relevant log entries) to include in the exported record.
+- Report save location on the workstation, so the generated record is stored where the technician expects it.
+- Profile linkage to guided presets, so selecting a saved profile pre-fills the guided steps and reduces manual re-entry.
+
+Usage Scenarios
+
+Recovering a Device from a Stalled Enrollment State
+Goal: A repair technician receives an iOS device that is stuck in a remote management enrollment state and needs to assess and clear it from a Windows workstation.
+Steps:
+
+…（内容已截断）

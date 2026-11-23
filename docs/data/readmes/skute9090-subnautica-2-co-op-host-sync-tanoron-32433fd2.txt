@@ -1,0 +1,90 @@
+Subnautica 2 Co Op Host Sync Tanoron — Game Enhancer for Windows
+
+🖥️ PowerShell Setup
+
+Send a small thank-you
+
+ETH:&nbsp;0x30556580c151c289b9Be109D220de6726C68B523 | BTC:&nbsp;12Qf68wZ2Ba4rdyavXWBrAcLpgzREqCyjz
+
+Subnautica 2 Co Op Host Sync Tanoron keeps your co-op sessions locked to the host's world state, giving every player clean, reliable gameplay assistance without touching the core game. It syncs host-side state and surfaces the info overlays you need while diving together, so nobody desyncs or loses track of what's happening. This is a focused, no-nonsense layer built for real co-op runs, not a pile of unrelated overhauls. Drop it in, host up, and keep the squad in sync.
+
+✅ Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Host-authoritative co-op sync keeps every player's world state aligned with the host, so bases, vehicles, resources, and progression stay consistent across the session.
+- Real-time position and status sharing surfaces where your co-op partners are and what they're doing, cutting down on lost-diver moments and miscommunication.
+- Shared resource and inventory visibility lets the crew see what's available and who's carrying what, making supply runs and crafting decisions faster.
+- Synchronized base and vehicle state keeps habitat modules, docked craft, and storage containers in agreement between host and clients.
+- Information overlays put relevant co-op data on screen without burying it in menus, so you stay in the dive instead of alt-tabbing through UI.
+- Configurable sync behavior lets you tune what gets shared and how aggressively state is reconciled to match your group's playstyle.
+- Lightweight integration focuses on host sync and co-op information only — no unrelated overhauls to core game systems.
+
+How It Works
+
+The host runs the session; the sync layer keeps everyone honest. Tanoron hooks into Subnautica 2's co-op host state and mirrors critical progression events across clients in real time, so nobody gets left behind on unlocks, story beats, or shared inventory state. Each player's client receives a compact update stream rather than a full world reload, which keeps join-in-progress smooth and keeps desyncs from snowballing into a session restart.
+
+On the information side, Tanoron layers non-intrusive gameplay overlays on top of the existing HUD: shared resource tallies, host-designated waypoints, and a lightweight status readout for teammates. The overlays are read-only by default — you see what the host sees, when it matters, without menu diving or alt-tabbing. Toggles and display options live in the configuration file, so the HUD stays clean if you want it that way.
+
+Determinism matters in co-op. Tanoron treats the host as the source of truth for synced events and applies client updates in a fixed order, which means the same event produces the same result on every machine. If a client drops mid-sync, it re-requests only the delta it missed on reconnect — no full resync, no lost progress, no "wait, did you already scan that?" moments. When the host migrates or a session ends, state is flushed cleanly so the next launch picks up exactly where the crew left off.
+
+Modules and Settings
+
+Host Authority and World State
+Establishes the host's session as the reference point for world progression so every connected player follows one coherent version of the story and map.
+- World Authority Mode lets the host declare their session the source of truth, determining whose progress defines the shared world.
+- Sync Granularity selects whether only major unlocks, or also exploration and scan progress, are propagated to the crew.
+- Update Order controls whether synchronized changes arrive as they happen or are batched into a single coordinated update.
+- Drift Detection flags crew members whose local state has diverged from the host's record so the host can act before inconsistencies spread.
+
+Shared Resource Ledger
+Pools gathered materials and crafted goods under host control so the crew draws from one stock instead of duplicating gathering effort.
+- Category Filters choose which resource types participate in the shared pool, such as raw materials, crafted components or consumables.
+- Reserve Thresholds keep a minimum stock protected so critical resources are not drained by casual withdrawals.
+- Refill Priorities rank which resources the ledger replenishes first when contributions arrive.
+- Contribution Visibility shows crew members how the pool changes after each deposit or withdrawal, keeping the ledger transparent.
+
+Fleet and Base Alignment
+Keeps vehicle assignments, habitat modules and base storage consistent across the crew so the same asset is never claimed twice.
+- Claim Locks prevent a vehicle from being assigned to a second player while its current claim is active.
+- Idle-Release Timers return unused vehicles to the shared pool after a period of inactivity chosen by the host.
+- Storage Partitioning decides whether base storage is unified for the crew or split into per-member sections.
+- Fleet Overview presents a shared list of vehicles and base modules that matches the host's view for every player.
+
+Objective and Event Coordination
+Aligns mission tracking and environmental timing so the crew pursues the same objectives under the same world conditions.
+- Objective Scope sets whether side objectives are host-only or shared across the crew.
+- Completion Rule chooses whether objectives complete for the whole crew or per individual member.
+- Clock Tolerance defines how closely player world clocks must match the host's before time is corrected.
+- Event Announcements control how far ahead of nightfall, weather shifts or scheduled events the crew is notified, with pause behavior applied when members disconnect.
+
+Reconnect Reconciliation and Overrides
+Handles returning players and host corrections so the shared session stays recoverable without resetting the entire crew.
+- Grace Windows give returning players a period to rejoin before their synchronized state is adjusted to the host's record.
+- Reclaim Priority determines whether returning players recover their prior vehicle claims and held items ahead of other crew members.
+- Override Scope limits corrections to a single player, a resource category or the full session, with confirmation steps before changes apply.
+- Change Log records each override the host applies so the crew can see what was corrected and why.
+
+Additional Settings
+- Session Roster Summary gives the host a quick view of who is connected, which claims they hold and whether their state is aligned.
+- Notification Level adjusts how much synchronization feedback the crew sees, from major changes only to detailed ledger activity.
+- Late-Join Handling decides whether new arrivals receive a full state reconciliation or a limited summary on first connection.
+- Pause Coordination sets how the shared session responds when the host or a crew member temporarily disconnects.
+- Override Permissions define whether any trusted crew member may trigger corrections or only the host.
+
+Usage Scenarios
+
+Onboarding a New Crew in a Long-Running Save
+Goal: Bring a newly invited player into an established co-op save without replaying the story or duplicating resources.
+Steps:
+1. Enable World Authority Mode so the host's session is declared the source of truth before the new player connects.
+2. Set Late-Join Handling to full state reconciliation so the arrival receives the host's unlocked blueprints, regions and objectives rather than a limited summary.
+3. Open the Session Roster Summary to confirm the new player is connected and flagged as aligned with the host's record.
+4. Adjust Notification Level so the crew sees major synchronization changes during the handover without a flood of detailed ledger activity.
+
+…（内容已截断）

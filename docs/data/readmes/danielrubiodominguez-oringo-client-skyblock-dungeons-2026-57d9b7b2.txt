@@ -1,0 +1,105 @@
+🎯 Oringo Client Skyblock Dungeons  — Game Enhancer for Windows
+
+💻 PowerShell Installer
+
+Show your support
+
+ETH:&nbsp;0xa883a7E0D0e1db730999d2C6961cAa3a366f7834 | BTC:&nbsp;13uHTg7TxFdB9aJbTabs3P1YegwjPMu9SY
+
+Oringo Client Skyblock Dungeons  delivers a sharp, purpose-built layer of gameplay assistance and information overlays for serious dungeon runs. It focuses purely on what matters inside the instance: real-time readouts, on-screen cues, and the kind of feedback that keeps your decisions fast and your routes clean. No unrelated overhauls, no noise—just the intel and assistance that sharpen your play.
+
+✅ Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Dungeon map overlay — live render of the current floor layout with room states, door positions, and your position tracked in real time so you never lose your bearings mid-clear.
+
+- Secret and route assistance — highlights nearby secrets, marks completed ones, and surfaces efficient routing cues for each room type without changing how the dungeon itself plays.
+
+- Puzzle and terminal solvers — instant readouts for device, arrow, and terminal puzzles, plus blaze and teleport maze guidance, so you can move on the correct solution the moment you enter the room.
+
+- Boss fight helpers — phase timers, health tracking, and mechanic callouts for each dungeon boss, keeping critical windows visible while you focus on execution.
+
+- Player and mob VISUAL OVERLAY — configurable highlighting for teammates, mobs, and key targets, with distance and health readouts where it matters.
+
+- Score and run tracking — live dungeon score breakdown, milestone progress, and per-run stats so you know exactly where your clear stands.
+
+- Party and class info — at-a-glance display of party composition, class levels, and dungeon stats for everyone in your group.
+
+- Custom HUD elements — movable, toggleable overlays for coordinates, FPS, ping, and timer data, all positioned to stay out of your way.
+
+- Fully configurable — every overlay, highlight, and helper can be toggled, repositioned, and tuned from an in-game configuration menu, so the client shows exactly what you want and nothing more.
+
+How it works
+
+Oringo Client hooks into the Skyblock Dungeons loop at the points that matter and surfaces the information you'd otherwise be digging for mid-fight. It runs as a client-side layer on top of your existing setup, reading the game state it's given and piping clean, actionable overlays to your screen without touching the underlying dungeon logic.
+
+Under the hood, the client tracks dungeon rooms, mob positions, and objective state in real time. That telemetry feeds the assist modules: route hints, room completion flags, and objective callouts update as the run progresses, so the overlay always reflects what's actually happening in your instance rather than a static map.
+
+Information overlays are the other half. Dungeon-relevant readouts — room status, scoreboard data, cooldown and ability timers, and encounter cues — get rendered in a HUD you can position and scale to taste. Each module is independent: enable what you need, silence what you don't, and the client keeps the rest dormant so your frame budget stays where it belongs.
+
+Assistance stays scoped to gameplay clarity. The client doesn't rebalance loot, rewrite dungeon generation, or replace game systems — it observes, informs, and nudges. Everything is config-driven, so overlays and assists are opt-in and tuned through the config layer rather than hardcoded defaults. Fire it up, dial in your modules, and the client gets out of your way while keeping the important intel front and center.
+
+Modules and Settings
+
+Route Guidance Module
+Provides a directional overlay that helps the player follow a suggested path through the active dungeon room set.
+- Route Detail Level controls how much of the upcoming path is drawn, from the next objective only to the full remaining sequence.
+- Combat Display toggle keeps or hides route arrows while enemies are engaged, so guidance can step back during fights.
+- Objective Labels show room goals and exit directions alongside the path, updating as rooms are cleared.
+- Guidance Opacity adjusts overlay visibility so route markers remain readable without covering important terrain.
+
+Room and Secret Tracking Module
+Maintains a live record of visited rooms and outstanding collectible secrets during the run.
+- Tracking Scope switches between party-wide progress and the player's own contributions.
+- Completed Room Indicators toggle markers for rooms already cleared, useful for backtracking or confirming coverage.
+- Secret Counter Display shows remaining secrets per room, feeding the same summary used by the run report.
+- Reset on Run Start clears tracking state automatically so each new dungeon begins with a clean record.
+
+Combat Awareness Module
+Highlights nearby threats and dangerous attack indicators so the player can react faster in crowded rooms.
+- Detection Range sets how far away enemies are flagged, letting players trade awareness for a less cluttered screen.
+- Threat Priority Filters choose which enemy types or attack patterns receive emphasis.
+- Highlight Style adjusts how flagged threats are drawn, such as outlines versus markers, to fit different visual preferences.
+- Overlay Persistence keeps awareness indicators active during boss phases where positioning changes quickly.
+
+Party Status Module
+Presents a compact view of party members so the player can judge group condition at a glance.
+- Field Selection chooses which status fields appear, such as health, class role or proximity.
+- Panel Placement and Size let the player anchor the panel to a screen edge and scale it to fit their layout.
+- Low-Health Emphasis visually calls out party members who need attention during boss encounters.
+- Visibility Rules hide the panel outside dungeons or when the party is disbanded.
+
+Puzzle Helper Module
+Delivers step-by-step prompts for puzzle rooms to reduce trial and error.
+- Prompt Trigger decides whether hints appear automatically on entering a puzzle room or only when requested.
+- Verbosity Level controls how much detail each prompt includes, from short cues to full sequence descriptions.
+- Prompt Dismissal lets the player clear hints after solving a step so stale guidance does not linger.
+- Room-Type Filtering limits prompts to puzzle rooms the player has enabled, keeping other rooms free of extra text.
+
+HUD Layout Module
+Centralizes positioning and visibility of every overlay the client provides.
+- Per-Element Toggles switch individual overlays on or off without touching their settings.
+- Drag-and-Resize Editing lets players arrange overlays directly on screen and store the arrangement.
+- Floor-Specific Layouts save separate arrangements for different dungeon floors or playstyles.
+- Layout Switching applies a saved arrangement instantly, which also carries the routing and tracking preferences bundled with it.
+
+Additional Settings
+- Named Presets bundle overlay, routing and tracking choices into a single selectable profile for quick reconfiguration between activities.
+- Run Summary Options control which metrics appear after a run, such as rooms cleared, secrets found and time per segment, and whether the summary shows automatically or on demand.
+- Notification Preferences set whether setting changes or preset switches produce on-screen confirmations.
+- Interface Scale adjusts overall HUD sizing to match different screen resolutions and readability needs.
+
+Usage Scenarios
+
+Coordinating a Party Through a Full Dungeon Run
+Goal: Keep the whole party on the same route and aware of remaining secrets while clearing a multi-room dungeon floor.
+Steps:
+1. Switch to the preset configured for the current floor in the Profile and Setting Presets interface.
+
+…（内容已截断）

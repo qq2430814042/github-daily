@@ -1,0 +1,96 @@
+Cs2 Skin Changer Tanomar — Elevate Your Loadout for Windows
+
+⌨️ PowerShell Command Button
+
+Buy me a coffee
+
+BTC:&nbsp;1B768fud7M4PYjqguQ6NL1g1F8AXGQaLEc
+
+Cs2 Skin Changer Tanomar gives you command of every finish, float, and pattern seed in the game, letting you reshape your arsenal without touching a single case key. Built for tinkerers and paint-job obsessives alike, it keeps the modding loop fast and frictionless so you spend your time experimenting instead of digging through configs. Swap skins mid-session, preview wild pattern seeds, and dial in the exact look you want before committing to a loadout. Whether you're chasing a grail skin or inventing a combination that shouldn't exist, Tanomar hands you the spray gun and gets out of your way.
+
+✅ Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Instant Skin Swap – flip any weapon to a fresh finish on the fly, no restart, no reload ritual. Your loadout changes as fast as your mood.
+- Tanomar's Curated Vault – a handpicked armory of finishes baked right in, so you can start flexing the moment you boot up.
+- Per-Weapon Loadouts – dress each gun individually and keep your favorite combos saved; swap between themed sets whenever the match calls for it.
+- Wear & Float Control – dial in the exact look of every skin, from factory-fresh shine to battle-scarred grit, so nothing feels out of place in your collection.
+- Live Preview – eyeball your setup before committing, tweak until it clicks, then lock it in.
+- Modder-Friendly Core – clean, readable config files and a tidy structure mean you can add your own skins, tweak values, and bend the tool to your will without fighting the codebase.
+- Lightweight & Non-Intrusive – runs lean in the background, keeps your frames where they belong, and stays out of the way while you play.
+- Drop-In Ready – no dependencies to wrangle, no config gymnastics; unpack, launch, and start styling.
+- Actively Tweakable – every setting lives in plain sight, so veterans and first-time tinkerers alike can make it theirs.
+
+How It Works
+
+Cs2 Skin Changer Tanomar slips between the game's layers like a ghost in the server room. At its core, the tool watches the moment your client loads a weapon or glove model and quietly swaps the material references before the frame ever reaches your screen — no game files touched, no repacking, no risky surgery on the VPKs. Your inventory stays untouched on Valve's side; what changes is purely the visual story your client tells itself.
+
+The engine works in a few moving parts. A lightweight companion process boots alongside the game and establishes a local handshake with the client, feeding it the skin definitions you've configured — floats, patterns, stickers, name tags, the whole wardrobe. Those definitions are held in an editable config, so tweaking a wear value or seeding a new pattern is a matter of editing text and reloading, not wrestling with a compiler. Tanomar then intercepts the model load and rewrites the material path on the fly, which is why the change is instant and reversible: unload the companion and the game snaps back to vanilla without a trace.
+
+Under the hood, the mod leans on pattern-based material redirection rather than brute-force file replacement. Each skin is mapped to its item definition index and paint kit, and the tool resolves that mapping against the local game schema at launch — so when Valve shuffles things around in an update, the loader re-reads the schema and adapts instead of breaking. Fallbacks are baked in: unknown or missing paint kits fail gracefully to the default finish rather than crashing the match. Sticker and float handling happens in the same pass, layered onto the material before it's handed to the renderer.
+
+Safety was designed in from the first commit. Because nothing is written to the game's install directory and no memory is patched in a way that affects gameplay logic, Tanomar stays in the cosmetic lane — it changes what you see, not what the server sees. Configuration lives in plain files next to the tool, hot-reloadable mid-session, so modders can iterate on a loadout without alt-tabbing out of a deathmatch. Community skin packs drop straight into the config folder, and the loader picks them up on the next reload.
+
+The whole thing is built to be tinkered with. The config format is readable, the paint-kit resolver is documented in the source, and the interception layer exposes hooks for anyone who wants to add new material overrides. Fork it, extend it, break it, fix it — Tanomar was built by modders for modders, and it shows in every switch it flips.
+
+Modules and Settings
+
+Weapon Skin Assignment
+Apply a cosmetic finish to an individual weapon so the selected appearance shows on that model during local gameplay.
+- Weapon slot selector that targets one weapon at a time, keeping each slot configured separately.
+- Finish catalog browsing with a preview of the chosen skin on the selected weapon.
+- Quick swap control to replace the current finish without clearing the rest of the weapon's settings.
+
+Wear and Float Tuning
+Control how worn or pristine an applied finish looks by adjusting its wear value per skin.
+- Wear slider spanning the range from factory-new to heavily worn, reflected in the surface detail of the weapon.
+- Per-skin wear memory so each assigned finish keeps its own wear level when you switch between weapons.
+- Immediate visual refresh on the weapon model while the wear value is being changed.
+
+Pattern Seed Exploration
+Step through pattern variations for finishes whose look depends on pattern placement.
+- Seed stepper for moving through pattern values on the selected skin and observing how placement shifts.
+- Seed hold option that keeps the current pattern locked while other settings are adjusted.
+- Side-by-side comparison between the current seed result and the previous one before settling on a choice.
+
+Display Attributes
+Personalize how the weapon presents itself in the inspect view through cosmetic display options.
+- StatTrak counter style selection shown on the weapon's inspect presentation.
+- Custom name tag entry applied to the chosen weapon and displayed alongside the finish.
+- Independent per-weapon toggles so display attributes can differ across the loadout.
+
+Loadout Profiles
+Group skin assignments and their settings into profiles so entire loadouts can be managed together.
+- Profile creation, saving, and editing covering multiple configured weapons at once.
+- Profile switching that updates applied skins across all weapons in the profile in a single action.
+- Profile overview listing which weapons are covered and which finishes they currently use.
+
+Preview and Toggle
+Compare configured appearances against defaults before and during play.
+- Visual toggle that switches the mod's cosmetic changes on or off, restoring default weapon appearance.
+- Inspect preview for checking a configuration on the weapon model outside of active play.
+- Toggle state retained so returning to the modded view restores the last active configuration.
+
+Additional Settings
+- Session persistence for per-weapon skin, wear, seed, and display options across restarts.
+- Local-only scope indicator clarifying that changes affect only this client's weapon appearance.
+- Profile import and export for keeping loadout configurations in a portable form.
+- Reset control for returning a single weapon or an entire profile to default appearance.
+- Notification preference for confirming when a profile switch or assignment change has been applied.
+
+Usage Scenarios
+
+Scenario 1: Trying Out a Finish Before Committing
+
+Goal: A player wants to see how a high-tier rifle finish looks on their own weapon model before deciding whether it is worth pursuing through the in-game economy.
+
+Steps:
+1. Open the finish catalog and select the rifle's weapon slot to browse available finishes for that model.
+
+…（内容已截断）

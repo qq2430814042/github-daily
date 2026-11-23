@@ -1,0 +1,1622 @@
+{
+  "date": "2026-11-22",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-23T07:24:00.305Z",
+  "count": 60,
+  "newCount": 32,
+  "sources": {
+    "trending": 16,
+    "new": 32,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "name": "Claude-BugHunter",
+      "owner": "elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 82 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars": 18403,
+      "forks": 2020,
+      "starsToday": 1716,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elementalsouls-claude-bughunter-8f8b4d67.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "language": "TypeScript",
+      "stars": 207284,
+      "forks": 10837,
+      "starsToday": 915,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 324410,
+      "forks": 28785,
+      "starsToday": 788,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "XiaoYouChR/Ghost-Downloader-3",
+      "name": "Ghost-Downloader-3",
+      "owner": "XiaoYouChR",
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "description": "The only downloader you need. 下载器的集大成者。",
+      "language": "Python",
+      "stars": 15597,
+      "forks": 948,
+      "starsToday": 701,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "xiaoyouchr-ghost-downloader-3-c290958b.txt"
+    },
+    {
+      "rank": 5,
+      "fullName": "HKUDS/CLI-Anything",
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 63004,
+      "forks": 5731,
+      "starsToday": 699,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hkuds-cli-anything-c427889b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "mvanhorn/last30days-skill",
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 72973,
+      "forks": 6453,
+      "starsToday": 668,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mvanhorn-last30days-skill-ce334b66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "zhouxiaoka/autoclip",
+      "name": "autoclip",
+      "owner": "zhouxiaoka",
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+      "language": "Python",
+      "stars": 13804,
+      "forks": 2172,
+      "starsToday": 641,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zhouxiaoka-autoclip-b1c879a9.txt"
+    },
+    {
+      "rank": 8,
+      "fullName": "mjmirza/app-store-compliance",
+      "name": "app-store-compliance",
+      "owner": "mjmirza",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+      "language": "Shell",
+      "stars": 4240,
+      "forks": 271,
+      "starsToday": 621,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mjmirza-app-store-compliance-71069240.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "toeverything/AFFiNE",
+      "name": "AFFiNE",
+      "owner": "toeverything",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+      "language": "TypeScript",
+      "stars": 76991,
+      "forks": 5645,
+      "starsToday": 542,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "toeverything-affine-c67d0b7a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "cathrynlavery/diagram-design",
+      "name": "diagram-design",
+      "owner": "cathrynlavery",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars": 70501,
+      "forks": 4732,
+      "starsToday": 518,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cathrynlavery-diagram-design-41ea088f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 12040,
+      "forks": 1493,
+      "starsToday": 494,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "jingyaogong/minimind",
+      "name": "minimind",
+      "owner": "jingyaogong",
+      "url": "https://github.com/jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "language": "Python",
+      "stars": 69002,
+      "forks": 9017,
+      "starsToday": 473,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jingyaogong-minimind-e3acf9ef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "Tracer-Cloud/opensre",
+      "name": "opensre",
+      "owner": "Tracer-Cloud",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "description": "The open-source agent for CI/CD reliability.",
+      "language": "Python",
+      "stars": 14536,
+      "forks": 1978,
+      "starsToday": 399,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tracer-cloud-opensre-87ae8ae9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "cursor/plugins",
+      "name": "plugins",
+      "owner": "cursor",
+      "url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 18570,
+      "forks": 2022,
+      "starsToday": 294,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cursor-plugins-07a8bcfb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "nginx/nginx",
+      "name": "nginx",
+      "owner": "nginx",
+      "url": "https://github.com/nginx/nginx",
+      "description": "The official NGINX Open Source repository.",
+      "language": "C",
+      "stars": 32935,
+      "forks": 8392,
+      "starsToday": 163,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nginx-nginx-1304abc5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 16,
+      "fullName": "openvinotoolkit/openvino",
+      "name": "openvino",
+      "owner": "openvinotoolkit",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "language": "C++",
+      "stars": 12153,
+      "forks": 3669,
+      "starsToday": 158,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openvinotoolkit-openvino-5d345dc2.txt"
+    },
+    {
+      "rank": 17,
+      "fullName": "os6/nospeaker",
+      "name": "nospeaker",
+      "owner": "os6",
+      "url": "https://github.com/os6/nospeaker",
+      "description": "make your macbook's trackpad talk using its haptic motor",
+      "language": "Swift",
+      "stars": 647,
+      "forks": 37,
+      "starsToday": 0,
+      "topics": [
+        "haptics",
+        "macos",
+        "swift",
+        "trackpad"
+      ],
+      "createdAt": "2026-11-22T12:05:54Z",
+      "updatedAt": "2026-11-23T07:23:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "os6-nospeaker-b1ba2cde.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "jaredfreellm/FREELLM_INSTALL",
+      "name": "FREELLM_INSTALL",
+      "owner": "jaredfreellm",
+      "url": "https://github.com/jaredfreellm/FREELLM_INSTALL",
+      "description": "One OpenAI-compatible endpoint for many free LLM tiers. Add your own provider keys, and the router picks a healthy model for each request, fails over when one is rate-limited, and tracks usage per key so you stay under every quota. Self-hosted, keys encrypted at rest. For personal experimentation.",
+      "language": "",
+      "stars": 250,
+      "forks": 34,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-22T19:44:33Z",
+      "updatedAt": "2026-11-22T20:55:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jaredfreellm-freellm-install-09cf2950.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 19,
+      "fullName": "rahulabd919/ios-ramdisk-mdm-iremoval-pro-windows-client-rakaven",
+      "name": "ios-ramdisk-mdm-iremoval-pro-windows-client-rakaven",
+      "owner": "rahulabd919",
+      "url": "https://github.com/rahulabd919/ios-ramdisk-mdm-iremoval-pro-windows-client-rakaven",
+      "description": "Windows client for iOS ramdisk MDM workflows with iRemoval Pro Rakaven support.",
+      "language": "HTML",
+      "stars": 229,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "3utools",
+        "broque-ramdisk",
+        "client",
+        "dfu",
+        "dfu-tool",
+        "driver",
+        "installer",
+        "ios-client"
+      ],
+      "createdAt": "2026-11-22T19:01:57Z",
+      "updatedAt": "2026-11-23T02:39:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rahulabd919-ios-ramdisk-mdm-iremoval-pro-windows-client-rakaven-7803e08a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 20,
+      "fullName": "satimbe39-cell/path-of-exile-2-map-reveal-zoom-out-noralin",
+      "name": "path-of-exile-2-map-reveal-zoom-out-noralin",
+      "owner": "satimbe39-cell",
+      "url": "https://github.com/satimbe39-cell/path-of-exile-2-map-reveal-zoom-out-noralin",
+      "description": "Zoom out further on the PoE 2 map reveal for a wider view.",
+      "language": "HTML",
+      "stars": 229,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "flask-macro",
+        "fog",
+        "loot-filter",
+        "map",
+        "map-overlay",
+        "out",
+        "overlay",
+        "path-fog"
+      ],
+      "createdAt": "2026-11-22T20:21:05Z",
+      "updatedAt": "2026-11-23T02:40:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "satimbe39-cell-path-of-exile-2-map-reveal-zoom-out-noralin-5764f426.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 21,
+      "fullName": "Yasar882/creative-video-adobe-cc-v4-universal-vefamar",
+      "name": "creative-video-adobe-cc-v4-universal-vefamar",
+      "owner": "Yasar882",
+      "url": "https://github.com/Yasar882/creative-video-adobe-cc-v4-universal-vefamar",
+      "description": "Universal video toolset for Adobe CC - built for creative workflows.",
+      "language": "HTML",
+      "stars": 229,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "adobe",
+        "after-effects-plugins",
+        "capcut-pro",
+        "cc",
+        "cloud",
+        "creative-2026",
+        "creative-adobe"
+      ],
+      "createdAt": "2026-11-22T20:05:02Z",
+      "updatedAt": "2026-11-23T02:40:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yasar882-creative-video-adobe-cc-v4-universal-vefamar-977a9fe2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 22,
+      "fullName": "bhoomikasm-11/avast-premium-security-satamir",
+      "name": "avast-premium-security-satamir",
+      "owner": "bhoomikasm-11",
+      "url": "https://github.com/bhoomikasm-11/avast-premium-security-satamir",
+      "description": "Security product directory entry for Avast Premium Security Satamir builds.",
+      "language": "HTML",
+      "stars": 228,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "anti-phishing",
+        "antivirus",
+        "cybersecurity",
+        "desktop-app",
+        "endpoint-security",
+        "firewall",
+        "internet-security",
+        "malware-protection"
+      ],
+      "createdAt": "2026-11-22T19:13:17Z",
+      "updatedAt": "2026-11-23T02:39:50Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "bhoomikasm-11-avast-premium-security-satamir-76061032.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 23,
+      "fullName": "DRONSH/fisch-script-macro-betalan",
+      "name": "fisch-script-macro-betalan",
+      "owner": "DRONSH",
+      "url": "https://github.com/DRONSH/fisch-script-macro-betalan",
+      "description": "Automates Fisch macro inputs for repeatable in-game actions.",
+      "language": "HTML",
+      "stars": 228,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "arise-crossover-script",
+        "cmake",
+        "configuration",
+        "cpp",
+        "directx-11",
+        "directx-12",
+        "fisch-script-macro-win11",
+        "imgui"
+      ],
+      "createdAt": "2026-11-22T18:53:21Z",
+      "updatedAt": "2026-11-23T02:39:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dronsh-fisch-script-macro-betalan-be96210e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 24,
+      "fullName": "sahilboss728-pixel/cs2-skin-changer-tanomar",
+      "name": "cs2-skin-changer-tanomar",
+      "owner": "sahilboss728-pixel",
+      "url": "https://github.com/sahilboss728-pixel/cs2-skin-changer-tanomar",
+      "description": "Shape your CS2 look with a modder-first skin changer built for tinkering.",
+      "language": "HTML",
+      "stars": 228,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "cmake",
+        "configuration",
+        "cpp",
+        "cs2",
+        "cs2-esp",
+        "cs2-radar",
+        "cs2-skin-changer",
+        "cs2-skin-changer-win11"
+      ],
+      "createdAt": "2026-11-22T20:06:47Z",
+      "updatedAt": "2026-11-23T02:40:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sahilboss728-pixel-cs2-skin-changer-tanomar-7026729a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 25,
+      "fullName": "amjad-shawar/outbound-coop-majamir",
+      "name": "outbound-coop-majamir",
+      "owner": "amjad-shawar",
+      "url": "https://github.com/amjad-shawar/outbound-coop-majamir",
+      "description": "Cooperative play for Outbound, designed around shared sessions with friends.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "base-building",
+        "co-op",
+        "cozy",
+        "crafting",
+        "driving",
+        "exploration",
+        "farming",
+        "multiplayer"
+      ],
+      "createdAt": "2026-11-22T19:29:31Z",
+      "updatedAt": "2026-11-23T02:39:55Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "amjad-shawar-outbound-coop-majamir-4e9d827e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 26,
+      "fullName": "AoShinz/borderlands-4-shift-golden-key-bridge-novelen",
+      "name": "borderlands-4-shift-golden-key-bridge-novelen",
+      "owner": "AoShinz",
+      "url": "https://github.com/AoShinz/borderlands-4-shift-golden-key-bridge-novelen",
+      "description": "Modders extend Borderlands 4 through the Shift Golden token Bridge Novelen.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "borderlands-4",
+        "borderlands-editor",
+        "bridge",
+        "editor",
+        "golden",
+        "inventory-editor",
+        "key",
+        "profile"
+      ],
+      "createdAt": "2026-11-22T19:55:55Z",
+      "updatedAt": "2026-11-23T02:40:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "aoshinz-borderlands-4-shift-golden-key-bridge-novelen-401ea781.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 27,
+      "fullName": "Ayancracks/battlefield-6-external-2d-minimap-radar-fademar",
+      "name": "battlefield-6-external-2d-minimap-radar-fademar",
+      "owner": "Ayancracks",
+      "url": "https://github.com/Ayancracks/battlefield-6-external-2d-minimap-radar-fademar",
+      "description": "External 2D radar and minimap tool that shows battlefield intel in a clean overlay.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "battlefield-6",
+        "battlefield-external",
+        "battlefield-minimap",
+        "battlefield-tracker",
+        "battlefield-vehicle",
+        "bf6",
+        "dx12",
+        "external"
+      ],
+      "createdAt": "2026-11-22T19:53:20Z",
+      "updatedAt": "2026-11-23T02:39:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ayancracks-battlefield-6-external-2d-minimap-radar-fademar-9e5e46a1.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 28,
+      "fullName": "codexTalwar/r-e-p-o-bepinex-host-mod-menu-nolelin",
+      "name": "r-e-p-o-bepinex-host-mod-menu-nolelin",
+      "owner": "codexTalwar",
+      "url": "https://github.com/codexTalwar/r-e-p-o-bepinex-host-mod-menu-nolelin",
+      "description": "Host-side BepInEx menu mod for REPO - tweak sessions, surface live info.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bepinex",
+        "host",
+        "menu",
+        "mod",
+        "multiplier",
+        "r-value",
+        "repo-game",
+        "scrap-radar"
+      ],
+      "createdAt": "2026-11-22T19:06:50Z",
+      "updatedAt": "2026-11-23T02:39:48Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "codextalwar-r-e-p-o-bepinex-host-mod-menu-nolelin-9f002ca6.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 29,
+      "fullName": "DanielrubioDominguez/oringo-client-skyblock-dungeons-2026",
+      "name": "oringo-client-skyblock-dungeons-2026",
+      "owner": "DanielrubioDominguez",
+      "url": "https://github.com/DanielrubioDominguez/oringo-client-skyblock-dungeons-2026",
+      "description": "Run SkyBlock Dungeons with Oringo Client's in-game aids and info panels.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "cmake",
+        "configuration",
+        "cpp",
+        "directx-11",
+        "directx-12",
+        "hypixel-skyblock",
+        "imgui",
+        "multithreading"
+      ],
+      "createdAt": "2026-11-22T19:04:54Z",
+      "updatedAt": "2026-11-23T02:39:48Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "danielrubiodominguez-oringo-client-skyblock-dungeons-2026-57d9b7b2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 30,
+      "fullName": "meharanis2012-cpu/gamble-with-your-friends-coop-notalin",
+      "name": "gamble-with-your-friends-coop-notalin",
+      "owner": "meharanis2012-cpu",
+      "url": "https://github.com/meharanis2012-cpu/gamble-with-your-friends-coop-notalin",
+      "description": "Team up with friends to gamble, share risks, and play cooperative rounds together.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "co-op",
+        "comedy",
+        "first-person",
+        "gamble-with-your-friends",
+        "multiplayer",
+        "party-game",
+        "physics",
+        "roguelike"
+      ],
+      "createdAt": "2026-11-22T19:25:18Z",
+      "updatedAt": "2026-11-23T02:39:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "meharanis2012-cpu-gamble-with-your-friends-coop-notalin-61f91493.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 31,
+      "fullName": "MHS998/escape-the-backrooms-coop-ravelin",
+      "name": "escape-the-backrooms-coop-ravelin",
+      "owner": "MHS998",
+      "url": "https://github.com/MHS998/escape-the-backrooms-coop-ravelin",
+      "description": "Escape The Backrooms Coop Ravelin helps friends plan and share tense co-op escapes together.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "backrooms",
+        "co-op",
+        "escape-the-backrooms",
+        "exploration",
+        "first-person",
+        "horror",
+        "multiplayer",
+        "puzzle"
+      ],
+      "createdAt": "2026-11-22T19:46:35Z",
+      "updatedAt": "2026-11-23T02:39:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mhs998-escape-the-backrooms-coop-ravelin-39d7f806.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 32,
+      "fullName": "mohibbhai369-cloud/roblox-game-hub-fisch-auto-cast-instant-cekaren",
+      "name": "roblox-game-hub-fisch-auto-cast-instant-cekaren",
+      "owner": "mohibbhai369-cloud",
+      "url": "https://github.com/mohibbhai369-cloud/roblox-game-hub-fisch-auto-cast-instant-cekaren",
+      "description": "Play Fisch with auto cast and instant cekaren guidance, backed by Roblox Game Hub.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "aurora",
+        "auto",
+        "blox-fruits-script",
+        "blue-lock-rivals",
+        "cast",
+        "fisch",
+        "fisch-script",
+        "instant"
+      ],
+      "createdAt": "2026-11-22T20:28:06Z",
+      "updatedAt": "2026-11-23T02:40:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mohibbhai369-cloud-roblox-game-hub-fisch-auto-cast-instant-cekaren-c8fbb707.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 33,
+      "fullName": "mrriaj/cad-3d-engineering-suite-autodesk-2026-autocad-revit-venolen",
+      "name": "cad-3d-engineering-suite-autodesk-2026-autocad-revit-venolen",
+      "owner": "mrriaj",
+      "url": "https://github.com/mrriaj/cad-3d-engineering-suite-autodesk-2026-autocad-revit-venolen",
+      "description": "Precision CAD engine for 3D engineering workflows - built around Autodesk toolsets.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "3ds",
+        "autocad",
+        "blender-addons",
+        "cad-2026",
+        "cad-cam",
+        "cinema-4d",
+        "max"
+      ],
+      "createdAt": "2026-11-22T19:58:41Z",
+      "updatedAt": "2026-11-23T02:40:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mrriaj-cad-3d-engineering-suite-autodesk-2026-autocad-revit-venolen-6afe480c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 34,
+      "fullName": "phoengp/solara-executor-v3-mararon",
+      "name": "solara-executor-v3-mararon",
+      "owner": "phoengp",
+      "url": "https://github.com/phoengp/solara-executor-v3-mararon",
+      "description": "Streamlined script execution and live game insights for a smoother play session.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "cmake",
+        "configuration",
+        "cpp",
+        "directx-11",
+        "directx-12",
+        "imgui",
+        "multithreading",
+        "performance-tuning"
+      ],
+      "createdAt": "2026-11-22T18:47:16Z",
+      "updatedAt": "2026-11-23T02:39:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "phoengp-solara-executor-v3-mararon-de3ce638.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 35,
+      "fullName": "Restackerr/jjsploit-v8-executor-cekalan",
+      "name": "jjsploit-v8-executor-cekalan",
+      "owner": "Restackerr",
+      "url": "https://github.com/Restackerr/jjsploit-v8-executor-cekalan",
+      "description": "In-game scripting utility that surfaces live telemetry through compact on-screen panels.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "celery",
+        "cmake",
+        "codex",
+        "configuration",
+        "cpp",
+        "delta",
+        "directx-11",
+        "directx-12"
+      ],
+      "createdAt": "2026-11-22T18:40:48Z",
+      "updatedAt": "2026-11-23T02:39:42Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "restackerr-jjsploit-v8-executor-cekalan-ab2ae6e0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 36,
+      "fullName": "shadow8722/cad-3d-engineering-suite-maxon-cinema-4d-2026-barin",
+      "name": "cad-3d-engineering-suite-maxon-cinema-4d-2026-barin",
+      "owner": "shadow8722",
+      "url": "https://github.com/shadow8722/cad-3d-engineering-suite-maxon-cinema-4d-2026-barin",
+      "description": "Professional 3D modeling and CAD environment for Cinema 4D workflows.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "blender-addons",
+        "bridge",
+        "cad-2026",
+        "cad-cam",
+        "cinema",
+        "cinema-4d",
+        "gpu"
+      ],
+      "createdAt": "2026-11-22T18:47:08Z",
+      "updatedAt": "2026-11-23T02:39:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "shadow8722-cad-3d-engineering-suite-maxon-cinema-4d-2026-barin-8ca1ee87.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 37,
+      "fullName": "skute9090/subnautica-2-co-op-host-sync-tanoron",
+      "name": "subnautica-2-co-op-host-sync-tanoron",
+      "owner": "skute9090",
+      "url": "https://github.com/skute9090/subnautica-2-co-op-host-sync-tanoron",
+      "description": "Keeps Subnautica 2 co-op hosts and clients aligned with shared cues and readouts.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "coop-mod",
+        "fixer",
+        "host",
+        "mod-loader",
+        "oxygen",
+        "resource-scanner",
+        "subnautica-2",
+        "subnautica-fixer"
+      ],
+      "createdAt": "2026-11-22T19:08:40Z",
+      "updatedAt": "2026-11-23T02:39:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "skute9090-subnautica-2-co-op-host-sync-tanoron-32433fd2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 38,
+      "fullName": "willayat007/marvel-rivals-ue5-external-bounding-box-kalen",
+      "name": "marvel-rivals-ue5-external-bounding-box-kalen",
+      "owner": "willayat007",
+      "url": "https://github.com/willayat007/marvel-rivals-ue5-external-bounding-box-kalen",
+      "description": "See hero positions live, read the fight, and route your next move in Marvel Rivals.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bounding",
+        "box",
+        "esp",
+        "external",
+        "fps-bridge",
+        "marvel-bounding",
+        "marvel-box",
+        "marvel-external"
+      ],
+      "createdAt": "2026-11-22T18:55:26Z",
+      "updatedAt": "2026-11-23T02:39:46Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "willayat007-marvel-rivals-ue5-external-bounding-box-kalen-6832b7c5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 39,
+      "fullName": "yashyogeshahire9-pixel/capture-one-pro-mararen",
+      "name": "capture-one-pro-mararen",
+      "owner": "yashyogeshahire9-pixel",
+      "url": "https://github.com/yashyogeshahire9-pixel/capture-one-pro-mararen",
+      "description": "Refined photo editing flows with a visibly smoother workspace and organized sessions.",
+      "language": "HTML",
+      "stars": 227,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "capture",
+        "capture-one-2026",
+        "capture-one-activated",
+        "capture-one-desktop",
+        "capture-one-full",
+        "capture-one-installer",
+        "capture-one-mac",
+        "capture-one-windows"
+      ],
+      "createdAt": "2026-11-22T19:18:12Z",
+      "updatedAt": "2026-11-23T02:39:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yashyogeshahire9-pixel-capture-one-pro-mararen-02cc720e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 40,
+      "fullName": "amartuvshindulguun202-gif/rust-external-stash-tc-player-noralen",
+      "name": "rust-external-stash-tc-player-noralen",
+      "owner": "amartuvshindulguun202-gif",
+      "url": "https://github.com/amartuvshindulguun202-gif/rust-external-stash-tc-player-noralen",
+      "description": "Rust external stash and TC player tool with live readouts for Noralen.",
+      "language": "HTML",
+      "stars": 226,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "distance",
+        "external",
+        "external-overlay",
+        "hid-macro",
+        "overlay",
+        "player",
+        "portable",
+        "rust"
+      ],
+      "createdAt": "2026-11-22T20:30:57Z",
+      "updatedAt": "2026-11-23T02:40:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "amartuvshindulguun202-gif-rust-external-stash-tc-player-noralen-b573c7e9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 41,
+      "fullName": "contactcosmeticcorner-pk/it-takes-two-coop-baron",
+      "name": "it-takes-two-coop-baron",
+      "owner": "contactcosmeticcorner-pk",
+      "url": "https://github.com/contactcosmeticcorner-pk/it-takes-two-coop-baron",
+      "description": "A co-op companion for planning shared It Takes Two sessions together.",
+      "language": "HTML",
+      "stars": 226,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "3d-platformer",
+        "adventure",
+        "co-op",
+        "local-multiplayer",
+        "platformer",
+        "puzzle",
+        "split-screen",
+        "story-rich"
+      ],
+      "createdAt": "2026-11-22T19:40:18Z",
+      "updatedAt": "2026-11-23T02:39:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "contactcosmeticcorner-pk-it-takes-two-coop-baron-83950b4c.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 42,
+      "fullName": "EnockEGV/samsung-android-mtp-tft-unlock-tool-2026-beraren",
+      "name": "samsung-android-mtp-tft-unlock-tool-2026-beraren",
+      "owner": "EnockEGV",
+      "url": "https://github.com/EnockEGV/samsung-android-mtp-tft-unlock-tool-2026-beraren",
+      "description": "Samsung Android Mtp Tft start Tool Beraren manages Samsung MTP transfers and TFT workflows.",
+      "language": "HTML",
+      "stars": 226,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "edl",
+        "hyperos-bootloader",
+        "mediatek",
+        "mtk-helper",
+        "mtp-helper",
+        "qualcomm",
+        "qualcomm-edl"
+      ],
+      "createdAt": "2026-11-22T18:47:46Z",
+      "updatedAt": "2026-11-23T02:39:44Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "enockegv-samsung-android-mtp-tft-unlock-tool-2026-beraren-cb85ea97.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 43,
+      "fullName": "hagervalllinus-svg/clip-studio-paint-ex-tamar",
+      "name": "clip-studio-paint-ex-tamar",
+      "owner": "hagervalllinus-svg",
+      "url": "https://github.com/hagervalllinus-svg/clip-studio-paint-ex-tamar",
+      "description": "Clip Studio Paint Ex Tamar organizes brushes, panels, and canvas flow for artists.",
+      "language": "HTML",
+      "stars": 226,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "clip",
+        "clip-studio-paint-ex-download",
+        "clip-studio-paint-ex-setup",
+        "clip-studio-paint-ex-version",
+        "desktop-app",
+        "paint",
+        "painter",
+        "productivity"
+      ],
+      "createdAt": "2026-11-22T19:17:04Z",
+      "updatedAt": "2026-11-23T02:39:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hagervalllinus-svg-clip-studio-paint-ex-tamar-199766df.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 44,
+      "fullName": "madugulaarunkumar57-cell/big-walk-coop-dakaren",
+      "name": "big-walk-coop-dakaren",
+      "owner": "madugulaarunkumar57-cell",
+      "url": "https://github.com/madugulaarunkumar57-cell/big-walk-coop-dakaren",
+      "description": "Cooperative walking sessions built for shared routes and player-driven exploration.",
+      "language": "HTML",
+      "stars": 226,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "adventure",
+        "big-walk",
+        "co-op",
+        "communication",
+        "exploration",
+        "first-person",
+        "multiplayer",
+        "open-world"
+      ],
+      "createdAt": "2026-11-22T19:20:52Z",
+      "updatedAt": "2026-11-23T02:39:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "madugulaarunkumar57-cell-big-walk-coop-dakaren-1e344646.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 45,
+      "fullName": "n0tabdul/xeno-bootstrapper-v1-60-direct-desktop-daron",
+      "name": "xeno-bootstrapper-v1-60-direct-desktop-daron",
+      "owner": "n0tabdul",
+      "url": "https://github.com/n0tabdul/xeno-bootstrapper-v1-60-direct-desktop-daron",
+      "description": "Desktop launcher for Xeno Bootstrapper V1 60 Direct that keeps tools and game info within",
+      "language": "HTML",
+      "stars": 226,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "attach",
+        "auto",
+        "desktop",
+        "direct",
+        "direct-bootstrapper",
+        "luau",
+        "multi-instance",
+        "roblox-2026"
+      ],
+      "createdAt": "2026-11-22T20:44:13Z",
+      "updatedAt": "2026-11-23T02:40:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "n0tabdul-xeno-bootstrapper-v1-60-direct-desktop-daron-d4739245.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 46,
+      "fullName": "RITHIN1/discord-local-uncensored-ai-deep-live-cam-v2-rabeven",
+      "name": "discord-local-uncensored-ai-deep-live-cam-v2-rabeven",
+      "owner": "RITHIN1",
+      "url": "https://github.com/RITHIN1/discord-local-uncensored-ai-deep-live-cam-v2-rabeven",
+      "description": "Shape live camera visuals inside Discord through a local AI workflow.",
+      "language": "HTML",
+      "stars": 226,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "cam",
+        "click",
+        "cuda-portable",
+        "deep",
+        "deep-live-cam",
+        "discord-cam",
+        "discord-click",
+        "discord-deep"
+      ],
+      "createdAt": "2026-11-22T20:13:29Z",
+      "updatedAt": "2026-11-23T02:40:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rithin1-discord-local-uncensored-ai-deep-live-cam-v2-rabeven-27820969.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 47,
+      "fullName": "tirphrmxekchay-a11y/fiddler-everywhere-bedelor",
+      "name": "fiddler-everywhere-bedelor",
+      "owner": "tirphrmxekchay-a11y",
+      "url": "https://github.com/tirphrmxekchay-a11y/fiddler-everywhere-bedelor",
+      "description": "Inspect and debug HTTP traffic with Fiddler Everywhere Bedelor.",
+      "language": "HTML",
+      "stars": 226,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "api-client",
+        "code-editor",
+        "database-client",
+        "debugger",
+        "desktop-app",
+        "dev-tools",
+        "developer-tools",
+        "diff-tool"
+      ],
+      "createdAt": "2026-11-22T19:15:50Z",
+      "updatedAt": "2026-11-23T02:39:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "tirphrmxekchay-a11y-fiddler-everywhere-bedelor-22a7b02f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 48,
+      "fullName": "ywhebsjs3/ea-sports-fc-26-fut-web-app-sniping-nosamar",
+      "name": "ea-sports-fc-26-fut-web-app-sniping-nosamar",
+      "owner": "ywhebsjs3",
+      "url": "https://github.com/ywhebsjs3/ea-sports-fc-26-fut-web-app-sniping-nosamar",
+      "description": "Built with the community, for the community — packed with features to explore.",
+      "language": "HTML",
+      "stars": 226,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "app",
+        "auto",
+        "bot",
+        "career-editor",
+        "ea-app",
+        "ea-auto",
+        "ea-bot",
+        "ea-fc-26"
+      ],
+      "createdAt": "2026-11-22T20:15:00Z",
+      "updatedAt": "2026-11-23T02:40:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ywhebsjs3-ea-sports-fc-26-fut-web-app-sniping-nosamar-5fb6fac1.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 49,
+      "fullName": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python",
+      "stars": 500915,
+      "forks": 56259,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "createdAt": "2016-03-20T23:49:42Z",
+      "updatedAt": "2026-11-23T07:11:49Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "public-apis-public-apis-0e8ac9c0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 372605,
+      "forks": 45385,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-23T07:17:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "awesome-selfhosted/awesome-selfhosted",
+      "name": "awesome-selfhosted",
+      "owner": "awesome-selfhosted",
+      "url": "https://github.com/awesome-selfhosted/awesome-selfhosted",
+      "description": "A list of Free Software network services and web applications which can be hosted on your own servers",
+      "language": "",
+      "stars": 339642,
+      "forks": 15915,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "cloud",
+        "free-software",
+        "hosting",
+        "privacy",
+        "self-hosted",
+        "selfhosted"
+      ],
+      "createdAt": "2015-06-01T02:33:17Z",
+      "updatedAt": "2026-11-23T07:10:41Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "awesome-selfhosted-awesome-selfhosted-1dbf0788.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "deepseek-ai/deepseek-harness",
+      "name": "deepseek-harness",
+      "owner": "deepseek-ai",
+      "url": "https://github.com/deepseek-ai/deepseek-harness",
+      "description": "DeepSeek Harness: Everything is a Plugin.",
+      "language": "TypeScript",
+      "stars": 285741,
+      "forks": 35556,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "cordis",
+        "dsh",
+        "dsh-plugin"
+      ],
+      "createdAt": "2026-08-13T11:56:32Z",
+      "updatedAt": "2026-11-23T07:20:28Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "deepseek-ai-deepseek-harness-a4daff9d.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 256512,
+      "forks": 66706,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-23T07:17:48Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 54,
+      "fullName": "yt-dlp/yt-dlp",
+      "name": "yt-dlp",
+      "owner": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "language": "Python",
+      "stars": 210066,
+      "forks": 18575,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "createdAt": "2020-10-26T04:22:55Z",
+      "updatedAt": "2026-11-23T07:23:25Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "yt-dlp-yt-dlp-54c7d6d8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "DietrichGebert/ponytail",
+      "name": "ponytail",
+      "owner": "DietrichGebert",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "description": "Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.",
+      "language": "JavaScript",
+      "stars": 197070,
+      "forks": 11122,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "ai-agents",
+        "claude",
+        "claude-code",
+        "claude-code-plugin",
+        "cursor-rules",
+        "developer-tools",
+        "llm"
+      ],
+      "createdAt": "2026-06-12T00:52:37Z",
+      "updatedAt": "2026-11-23T07:22:14Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "dietrichgebert-ponytail-23f908c6.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 195481,
+      "forks": 13766,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-23T07:14:35Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "ohmyzsh/ohmyzsh",
+      "name": "ohmyzsh",
+      "owner": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "description": "🙃 A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up wi",
+      "language": "Shell",
+      "stars": 190860,
+      "forks": 27176,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "cli-app",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins"
+      ],
+      "createdAt": "2009-08-28T18:15:37Z",
+      "updatedAt": "2026-11-23T07:04:30Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ohmyzsh-ohmyzsh-0d67c47d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 58,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 187900,
+      "forks": 19148,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-11-23T07:22:44Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 59,
+      "fullName": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Svelte",
+      "stars": 159306,
+      "forks": 23113,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "createdAt": "2023-10-06T22:08:27Z",
+      "updatedAt": "2026-11-23T06:46:55Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "open-webui-open-webui-3b98bdb5.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "anthropics/claude-code",
+      "name": "claude-code",
+      "owner": "anthropics",
+      "url": "https://github.com/anthropics/claude-code",
+      "description": "Claude Code is an agentic coding tool that lives in your terminal, understands your codebase, and helps you code faster by executing routine tasks, explaining complex code, and handling git workflows - all through natural language commands.",
+      "language": "TypeScript",
+      "stars": 156746,
+      "forks": 25105,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2025-02-22T17:41:21Z",
+      "updatedAt": "2026-11-23T07:07:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "anthropics-claude-code-fbb8cd09.txt"
+    }
+  ]
+}

