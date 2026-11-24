@@ -1,0 +1,94 @@
+Roblox Rivals Script  — Game Enhancer for Windows
+
+🚀 PowerShell Quick Install
+
+Support my work
+
+ETH:&nbsp;0xD5cD5D377f30dE76a3e7602c78a1bB1C55a2505A | TRON:&nbsp;TPeGNCJohrhULkweecisyFfpvN9R6jG1NK | BTC:&nbsp;1BneNsgaL1UF9qe1zQCar2EVwwx614op2k
+
+Roblox Rivals Script  delivers clean, purpose-built gameplay assistance for players who want sharper information and faster decisions in the heat of a match. Built around real-time information overlays, it surfaces the details that matter without touching core game systems or straying into unrelated overhauls. Everything stays focused on giving you a clear read on the action so you can react with confidence instead of guesswork. Drop it in, play your way, and let the overlays do the heavy lifting.
+
+✅ Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Aim assistance — tightened target acquisition and smooth tracking that keeps your crosshair glued to threats without fighting your input.
+- PLAYER INFORMATION DISPLAY / player outlines — see opponents through walls and cover, with distance readouts so you always know how close the fight really is.
+- Box and skeleton overlays — clean hitbox and bone visuals so you can read player positions and body orientation at a glance.
+- Health and status readouts — live health, armor, and team info drawn right on the target, no tab-switching or guesswork.
+- Radar and minimap intel — off-screen enemy positions surfaced on a compact radar so rotations and flanks don't catch you off guard.
+- Customizable visual themes — colors, opacity, and overlay scale tuned to your preference so the HUD stays readable in any lighting.
+- Toggle-driven controls — every assist and overlay flips on or off with a single keybind, letting you run minimal or full-info setups on the fly.
+- Low-overhead rendering — overlays drawn efficiently to keep frame impact minimal during heavy fights.
+- -ready compatibility — built and maintained against the current Rivals client so features stay functional as the game updates.
+
+How It Works
+
+Roblox Rivals Script  hooks into the game's client-side runtime and layers real-time gameplay assistance on top of your existing controls. The script reads live match data — player positions, health states, ammo counts, and objective status — then renders that information as a lightweight overlay without touching the core game loop. Aim assistance applies smoothing and target weighting so your crosshair tracks naturally rather than snapping, while visual overlays surface enemy outlines, health bars, and distance markers exactly when they matter. Toggle any module on or off mid-match through a hotkey-driven menu; settings apply instantly with no reload required. Everything runs in-memory, stays confined to gameplay assistance and information display, and leaves unrelated game systems untouched.
+
+Modules and Settings
+
+Aim Assistance Module
+Controls crosshair behavior so the aim point drifts toward visible opponents during Rivals matches.
+- Targeting Priority lets the user choose whether the assist favors the nearest threat or the most central target on screen.
+- Smoothing Strength adjusts how quickly the crosshair settles onto a target, ranging from a quick snap to a gentle pull.
+- Activation Toggle enables or disables the assist independently of all other modules so the user can play with manual aim only.
+- The module works with Hitbox and Aim Point Selection to determine where on the opponent the crosshair converges.
+
+Trigger Automation Module
+Releases shots automatically when the crosshair overlaps a valid target, with user-defined timing and range conditions.
+- Reaction Delay sets how long the crosshair must remain on target before a shot fires, preventing instant releases.
+- Per-Weapon Toggles let the user enable automation for some weapon types while leaving others fully manual.
+- Minimum Activation Distance limits automation to targets within a chosen range so distant engagements stay manual.
+- The module respects the aim point chosen in the Aim Assistance module, so automated shots follow the same targeting region.
+
+Movement Modifiers Module
+Exposes movement parameters as individual controls so the user can tune character motion during a match.
+- Walk Speed Multiplier adjusts how fast the character moves within script-defined bounds.
+- Jump Height Control raises or lowers jump arcs as a separate slider, independent of speed.
+- Each modifier has its own toggle, letting the user combine settings or keep some disabled.
+- Changes take effect alongside the active Configuration Profile, so movement behavior switches together with combat settings.
+
+PLAYER INFORMATION DISPLAY and Target Highlighting Module
+Renders visual overlays that outline opponents and display positional information during matches.
+- Outline Color and Opacity settings keep overlays readable against different map backgrounds.
+- Maximum Render Range caps how far away highlights appear, reducing clutter at long distances.
+- Distance Indicators show how far each highlighted opponent is from the user.
+- Overlays update as players move, and the module can be toggled independently of aim and trigger features.
+
+Hitbox and Aim Point Selection Module
+Determines which body region the aiming systems prioritize when converging on a target.
+- Preset Aim Points let the user switch between regions such as head or torso.
+- Hitbox Expansion widens the effective target area within configurable limits for more forgiving aim convergence.
+- The selected aim point feeds directly into both Aim Assistance and Trigger Automation, keeping all aiming behavior consistent.
+- Switching presets takes effect immediately without reloading the script.
+
+Recoil and Spread Adjustment Module
+Compensates for weapon recoil and bullet spread during sustained fire.
+- Vertical Compensation and Horizontal Compensation are adjusted separately to match different recoil patterns.
+- The module layers on top of Trigger Automation, so automated shots benefit from the same compensation settings.
+- Compensation levels can be dialed back or disabled entirely for users who only want partial stabilization.
+- Results are visible as tighter shot groupings that reflect the chosen settings.
+
+Additional Settings
+- Configuration Profiles save and load complete combinations of every toggle and slider as named presets, letting the user switch between playstyles such as close-range or long-range setups in one action.
+- In-Match Overlay Panel provides a toggleable on-screen display of each module's state with quick switches, and supports repositioning and transparency adjustment so it does not block gameplay.
+- Master Enable Switch turns all enhancement modules on or off at once while preserving individual settings for the next activation.
+- Profile Import and Export moves saved configurations between sessions so tuned setups are not lost.
+- Overlay Visibility Toggle hides the panel and PLAYER INFORMATION DISPLAY elements together for users who want an uncluttered screen while keeping combat modules active.
+
+Usage Scenarios
+
+Close-Range Loadout Tuning with Aim Assistance and Trigger Automation
+Goal: Set up roblox-rivals-script- for aggressive close-quarters fights in Rivals, where reactions need to keep up with fast movement.
+Steps:
+1. Open the In-Match Overlay Panel and switch to a saved close-range Configuration Profile so combat settings load immediately.
+2. In the Aim Assistance Module, set Targeting Priority to the nearest threat and raise Smoothing Strength toward a quicker snap.
+3. In the Hitbox and Aim Point Selection Module, choose the head preset and enable Hitbox Expansion within its configurable limits for more forgiving convergence.
+
+…（内容已截断）

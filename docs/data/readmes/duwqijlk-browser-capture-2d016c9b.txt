@@ -1,0 +1,175 @@
+browser-capture
+
+ai羊毛交流群：t.me/muihbb
+
+零第三方依赖的浏览器 CDP + 隐匿 Hook 抓包与全量逆向采集 Skill / CLI。
+原生基于 Node.js 22+ 内置 fetch 与 WebSocket 实现，统一支持 BitBrowser（比特浏览器）、AdsPower 以及直连任意 Chrome / Chromium / Brave / VisibleV8 调试端口，既可直接命令行运行，也可直接作为标准 AI Agent Skill（含 SKILL.md）接入各类编码/逆向 Agent。
+
+核心特性
+
+- 全三档默认零 Runtime.enable 泄漏：彻底绕过依赖 Runtime.enable 序列化触发的 console getter 反调试陷阱（Error.stack / DOM .id / RegExp.toString / Symbol.toStringTag / 自定义对象 getter）；deep 模式改用 getter-safe JS 监听器平替控制台与异常捕获（按需可用 --with-runtime 显式开启）。
+- 匿名零特征 Hook 包装：binding 捕获进闭包并立即从 window 删除，控制器藏入 per-run Symbol，原生 API 经 Proxy + WeakMap 伪装 native code]，且移除全部内部具名函数——即使被 Hook 的原生 API 同步抛错，Error.stack 也不泄露任何内部栈帧名。
+- 模块化裁剪与精细控噪：支持 --hooks  与 --async-depth 。在强反调试站可直接用 --mode deep --hooks none --async-depth 0 --strip-script-debugger 实现零主世界 JS 注入同时完整落盘静态/动态 JS 源码与请求调用栈。
+- 响应层词法级等长去 debugger：--strip-script-debugger 通过 CDP Fetch.enable 在网络响应层只替换真实 debugger 语句为等长 8 字符（后接 ; 用 void 0  ，否则用空块 {      } 免疫 ASI 续行风险），行号、列号与脚本 .length 零漂移，绝不误伤字符串、模板字符串、注释、正则与属性/方法名。
+- 全链路逆向数据采集：Page / iframe / WebWorker / ServiceWorker 静态与动态 eval/blob 源码按 SHA256 去重落盘；自动提取 .wasm 二进制与导出表；记录 HTTP/HTTPS（含 ExtraInfo 真实 Cookie 与 16 MiB 正文）、WebSocket 帧、SSE / NDJSON 流式 response_chunk、DOMStorage、document.cookie、crypto.subtle 与按需内存指标/分配采样/堆快照。
+- 热替换 + 一键分析闭环：内置 --override RULES.json 本地文件/正则响应热替换、离线 correlate（调用栈 + 32 层异步 parent 链 ↔ 本地源码片段自动关联）以及 export-har（标准 HAR 1.2 导出）。
+
+三档采集模式对比
+
+| 能力 | stealth | standard（默认） | deep |
+| --- | :---: | :---: | :---: |
+| 全窗口 HTTP/HTTPS + ExtraInfo Cookie + 16 MiB 正文 + WS 帧 + 原生 SSE | ✅ | ✅ | ✅ |
+| 浏览器原生 DOMStorage（localStorage / sessionStorage） | ✅ | ✅ | ✅ |
+| --override 本地文件/正则热替换 & --strip-script-debugger 响应层去 debugger | ✅ | ✅ | ✅ |
+| 默认零 Runtime.enable 泄漏 | ✅ | ✅ | ✅（可选 --with-runtime） |
+| 隐匿匿名 JS Hook（闭包 binding + Symbol + [native code] Proxy，支持 --hooks 裁剪） | ❌（零注入） | ✅ | ✅（可 --hooks none 零注入） |
+| Getter-safe console 日志 + error / unhandledrejection 异常采集 | ❌ | 按 --hooks console | ✅ |
+| Page + WebWorker / ServiceWorker 静态与动态 eval 源码去重落盘 | ❌ | ❌ | ✅ |
+| WebAssembly .wasm 二进制自动提取与导出表记录 | ❌ | 按 --hooks wasm | ✅ |
+| 异步堆栈（--async-depth 0..64）+ fetch/XHR/cookie/crypto/WS/SSE 调用栈 | ❌ | ❌ | ✅ |
+| 流式 SSE / NDJSON 逐块 response_chunk + --strip-debugger | ❌ | ❌ | ✅ |
+| metrics / memory-sample / heap-snapshot | 仅 metrics | metrics + memory-sample | 全支持 |
+| 离线 correlate 源码关联 & export-har HAR 1.2 导出 | ✅ | ✅ | ✅ |
+
+支持的浏览器 Provider
+
+| Provider (-p) | 别名 | --window 含义 | 默认本地端点 | 专属能力 |
+| --- | --- | --- | --- | --- |
+| bitbrowser | bit, bb | UI 窗口序号 seq | http://127.0.0.1:54348 | 可选 --browser-id ID、支持 --restart |
+| adspower | ads | 窗口编号 serial_number | http://127.0.0.1:50325 | 支持 --restart |
+| chrome | chromium, cdp, direct, vv8, visiblev8 | 远程调试端口（默认 9222） | http://127.0.0.1:9222 | 支持直连 --ws-url ws://127.0.0.1:PORT/devtools/browser/... |
+
+不同 Provider 与窗口编号按 -window- 自动隔离锁、状态与数据目录，支持多浏览器、多窗口并发抓包互不干扰。
+
+环境要求与安装
+
+- Node.js >= 22（使用原生 fetch、WebSocket 与 node:test，无需 npm install）。
+- 支持 Windows / macOS / Linux。
+
+方式 1：作为独立命令行工具使用
+
+git clone https://github.com/duwqijlk/browser-capture.git
+cd browser-capture
+
+查看完整帮助
+node bin/capture.cjs --help
+Windows 可直接用 .\run.cmd --help
+macOS / Linux 可直接用 ./run.sh --help
+
+方式 2：作为 AI Agent Skill 安装
+
+直接将整个 browser-capture/ 目录放入你的 AI Agent Skills 目录即可（内含标准 [SKILL.md）：
+
+- Claude Code：~/.claude/skills/browser-capture
+- Codex / OpenClaw / 自定义 Agent：放到对应 skills/browser-capture 目录
+- 项目级 Workspace：放到项目 .agent/skills/browser-capture 或 .claude/skills/browser-capture
+
+快速上手
+
+1. 基础抓包（三种模式）
+
+A) 无痕纯 CDP 抓包（强风控站，或直连 Chrome / VisibleV8 端口）
+node bin/capture.cjs start -p chrome --window 9222 --mode stealth --url https://example.org/
+
+B) 默认隐匿 Hook 抓包（BitBrowser / AdsPower）
+node bin/capture.cjs start -p bitbrowser --window 1030 --url https://example.org/
+node bin/capture.cjs start -p adspower   --window 12   --url https://example.org/
+
+C) 全量深度逆向（默认零 Runtime.enable，含 Worker/WASM/SSE/异步栈/源码落盘）
+node bin/capture.cjs start -p chrome --window 9222 --mode deep --url https://example.org/
+
+2. 强反调试站实战组合
+
+极限组合：零主世界 JS 注入 + 零异步栈开销 + 响应层词法级去 debugger + 全量 CDP Network & Debugger 源码
+node bin/capture.cjs start -p chrome --window 9222 --mode deep --hooks none --async-depth 0 --strip-script-debugger --url https://example.org/
+
+最小化精准 Hook：只追踪 WASM 与 WebCrypto，其余原生 API 100% 保持原样
+node bin/capture.cjs start -p chrome --window 9222 --mode deep --hooks wasm,crypto --url https://example.org/
+
+响应热替换：用本地脚本/正则补丁干掉特定反调试分支（三档模式通用）
+node bin/capture.cjs start -p chrome --window 9222 --mode deep --strip-script-debugger --override ./examples/override-rules.example.json --url https://example.org/
+
+更多分层反反调试技巧见 docs/ANTI-DEBUG-GUIDE.md。
+
+3. 运行期控制、内存分析与离线导出
+
+查看状态 / 新开标签页
+node bin/capture.cjs status        -p chrome --window 9222
+node bin/capture.cjs new-tab       -p chrome --window 9222 --url https://another.example.org/
+
+按需采集性能指标、内存分配采样与堆快照
+node bin/capture.cjs metrics       -p chrome --window 9222
+node bin/capture.cjs memory-sample -p chrome --window 9222 --duration 3000
+node bin/capture.cjs heap-snapshot -p chrome --window 9222
+
+优雅停机（自动刷盘并完整还原页面 Hook 与浏览器设置，保留用户标签页）
+node bin/capture.cjs stop          -p chrome --window 9222
+
+离线一键关联调用栈 ↔ 本地源码片段（生成 analysis/）
+node bin/capture.cjs correlate     -p chrome --window 9222
+
+离线一键导出标准 HAR 1.2（含 Cookie 与 WebSocket 帧）
+node bin/capture.cjs export-har    -p chrome --window 9222 --out ./capture.har
+
+完整输出文件列表与字段说明见 docs/OUTPUT-SCHEMA.md。
+
+目录结构
+
+browser-capture/
+├── README.md                          # 项目说明（本文件）
+├── SKILL.md                           # AI Agent 标准 Skill 规范
+├── LICENSE                            # MIT 开源协议
+├── package.json                       # Node >=22 声明、零依赖配置与测试脚本
+├── run.cmd / run.sh                   # Windows / POSIX 快捷启动脚本
+├── bin/                               # CLI 与后台 Worker 入口
+│   ├── capture.cjs                    # 主命令行入口
+│   ├── worker.cjs                     # 后台守护采集进程
+│   ├── verify-local.cjs               # 本地闭环验收脚本
+│   ├── verify-repair.cjs              # 故障恢复专项验收脚本
+│   └── verify-cold-start.cjs          # 冷启动验收脚本
+├── lib/                               # 核心引擎（零第三方依赖）
+│   ├── modes.cjs                      # 三档模式与 --hooks / --async-depth 校验
+│   ├── collector.cjs                  # CDP 会话调度、Debugger/DOMStorage/Fetch 编排
+│   ├── cdp-client.cjs                 # 原生 WebSocket CDP 客户端
+│   ├── cdp-recorder.cjs               # Network / WebSocket / SSE 原始流与正文落盘
+│   ├── page-hook.cjs                  # 隐匿匿名主世界 Hook 引擎
+│   ├── strip-debugger.cjs             # 词法级等长 debugger 语句中和器
+│   ├── overrides.cjs                  # CDP Fetch.enable 响应热替换与补丁引擎
+│   ├── controller.cjs                 # 跨窗口文件锁、状态机与 IPC 通道
+│   ├── correlate.cjs                  # 异步调用栈 ↔ 本地源码关联引擎
+│   ├── har-exporter.cjs               # HAR 1.2 导出器
+│   ├── loopback.cjs                   # 回环地址安全校验
+│   └── providers/                     # 浏览器 Provider 适配层
+│       ├── index.cjs
+│       ├── bitbrowser.cjs
+│       ├── adspower.cjs
+│       └── chrome.cjs
+├── examples/                          # --override 实战规则与本地替换脚本示例
+│   ├── override-rules.example.json
+│   └── patched-sign.example.js
+├── docs/                              # 进阶文档
+│   ├── ANTI-DEBUG-GUIDE.md            # 强反调试站分层攻坚手册
+│   └── OUTPUT-SCHEMA.md               # 输出目录与产物结构说明
+├── tests/                             # 全量离线测试套件（67 个测试用例）
+│   ├── capture.test.cjs
+│   ├── repair.test.cjs
+│   ├── providers.test.cjs
+│   ├── modes.test.cjs
+│   ├── reverse-kit.test.cjs
+│   └── worker-e2e.test.cjs
+└── .github/workflows/ci.yml           # GitHub Actions 跨平台 CI（Ubuntu + Windows）
+
+运行测试
+
+无需启动任何外部浏览器或网络服务，全部 67 个离线单元测试与 E2E 测试一键运行：
+
+npm test
+
+社区与免责声明
+
+- ai羊毛交流群：https://t.me/muihbb
+- 本工具仅用于合法授权的接口调试、安全研究、性能分析与前端逆向学习；所有 CDP / 浏览器 API 均强制限定 loopback（127.0.0.1 / localhost）本地回环地址，请勿用于任何未经授权的抓取或违规用途。
+
+License
+
+MIT

