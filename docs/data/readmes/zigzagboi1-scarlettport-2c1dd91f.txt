@@ -1,0 +1,146 @@
+ScarlettPort
+
+A bring-your-own-copy compatibility layer for Xbox Series X|S titles on Windows.
+No emulator, no streaming. The title's own x64 code runs on your CPU, and its RDNA2 GPU code is recompiled for your graphics card on the fly. You supply a dump of your own legally purchased copy; nothing of any title is included here. Wine and Proton are the spirit of it.
+
+Where it stands
+
+Developed and tested so far against one open-world title. It reaches the lit world on an RTX 3060 at about 3-4 fps (Series S profile). It is not yet verified playable.
+
+██████████░░░░░░░░░░  50%
+
+boots ✅ → intro & menus ✅ → world loads ✅ → lit world ✅ (3-4 fps) → shadowed areas 🔨 → playable speed ⏳
+
+Donations are voluntary gifts that support development time. They are not a purchase: they buy no game content, access, builds or perks.
+PayPal: please send as Friends & Family (a gift).
+
+📸 Screenshots
+
+All captured on an RTX 3060 under Windows 10.
+
+Gameplay view, lit
+
+The title's own final image in gameplay: sunlight, textures, a fence and buildings, with the movement hint on screen. Shadowed areas are still too dark and some HUD text is cut off. Built on the public VIctory fork by fxceless (GPL-3.0) with community work and our changes on top.
+
+Gameplay view with stand-in lighting (earlier build)
+
+An earlier build, before the title's own lighting translated: a stand-in lighting pass (sky, a sun, fog) over the world's own geometry buffers. Fences, a bin and props are drawn; terrain and most surface colours are missing.
+
+First gameplay frame (earlier build)
+
+The title's own movement hint, drawn over a still-black 3D picture because the lighting shaders did not all translate yet in that build.
+
+Street, debug colours (earlier build)
+
+One of the title's own geometry buffers shown in the window with a debug colour view, in real time. Lighting and textures are not there. That view is not part of the current runtime source.
+
+Interior, debug colours (earlier build)
+
+A sofa from an interior scene, drawn in real time with the same debug colour view of an internal buffer. The geometry is there; the lighting pass still output black in that build.
+
+First world geometry (earlier build)
+
+One of the title's own render passes drawing the ground in 3D perspective. An internal pass, not a final image.
+
+First-boot settings screen
+
+A first-boot settings screen drawn by the title on the VIctory runtime; the window caption shows 30 fps. Other screens (title artwork, loading screens, legal notices) are left out of this repo on purpose.
+
+🧱 What blocks a good picture
+
+Measured on an RTX 3060 (Series S profile, the title's own upscaler):
+
+- Speed: about 3-4 fps in the world. The intro cutscene is very slow unless it is skipped.
+- Shadowed areas are too dark. The title's ray-traced lighting and shadows do not run yet; the ray-tracing work so far is described in runtime/victory/docs/fork-ray-tracing.md.
+- Not verified playable: nobody has played a session end to end.
+
+Details: docs/STATUS.md. Plan: docs/ROADMAP.md.
+
+🚦 Where we are
+
+| Stage | Status | Notes |
+|---|:---:|---|
+| Executable loads, imports bind | ✅ | the title's console DLLs load |
+| Intro, setup and menus | ✅ | 30 fps, audio plays |
+| Open world loads | ✅ | world data streams in through DirectStorage |
+| Lit world renders | ✅ | about 3-4 fps on an RTX 3060, Series S profile |
+| All shaders translate and validate | ✅ | 26,084 of 26,084 (71 oversized mesh shaders validate when linked to their pixel shaders) |
+| Keyboard and mouse | ✅ | click to capture, W walks the character |
+| Shadowed areas | 🔨 | too dark |
+| Intro cutscene | 🔨 | very slow unless skipped |
+| Speed work | 🔨 | batched indirect draws, precise GPU waits, fewer memory copies: built, being measured |
+| Playable | ⏳ | not verified |
+| 30 fps on a mid-range PC | ⏳ | the goal |
+
+🚀 Run it
+
+You need your own dump of your own legally obtained Xbox Series copy. This repo contains no game files of any kind, and never will.
+
+Requirements: Windows 10/11 x64 · a D3D12 GPU with Shader Model 6.6 and mesh shaders (RTX 20-series / RX 6000 or newer) · 32 GB RAM recommended · Rust (MSVC) · Windows SDK
+
+Two runtimes are included (docs/RUNTIMES.md):
+
+A. VIctory-based runtime: furthest today (lit world)
+
+git clone https://github.com/ZigZagBoi1/ScarlettPort.git
+cd ScarlettPort
+.\scripts\setup-victory.ps1                                   # build + Agility SDK
+.\scripts\play-victory.ps1 -Game "D:\path\to\your\dump"       # Series S profile by default
+
+B. XCL + launcher: menus and loading screens
+
+.\scripts\setup.ps1 -Game "D:\path\to\your\dump"     # build + Agility SDK + precompile shaders (~45 min, once)
+.\scripts\play.ps1  -Game "D:\path\to\your\dump" -AutoMenu
+
+Or download the one-exe launcher from Releases.
+
+- play-victory.ps1 sets the recommended environment (--console series-s, VICTORY_OWN_UPSCALER=1, VICTORY_NO_WATCHDOG=1). Its switches include -AutoInput, -FastBoot (testing only) and -SaveSlot.
+- While the game runs, write button names into press.txt (e.g. DOWN DOWN A) to press them.
+- Logs go to logs\. Attach one when you open an issue.
+- Controls: an Xbox controller works best. On the VIctory runtime with no pad connected, the keyboard is a pad: Enter = A, Backspace = B, WASD = left stick, IJKL = right stick.
+
+Environment variables: docs/RUNTIMES.md. Build instructions: docs/BUILDING.md.
+
+🤖 Task board: grab one, send a PR
+
+Every task is sized for one person + one AI coding agent. Pick one, comment on its issue to claim it, and send a PR. Read CONTRIBUTING.md first (it takes two minutes).
+
+Rendering
+
+-  ] #1 Light in shadow. Ray-traced bounce light and shadows do not run yet, so shadowed areas are too dark. See runtime/victory/docs/fork-ray-tracing.md.
+- [ ] #2 Missing walls and roofs. Some cards lose the first room's walls and roof with certain switches; find the cause (see runtime/victory/VICKY.md).
+- [ ] #3 Faster wave64 on NVIDIA. 64-lane programs run as two 32-lane halves. Profile them and cut the overhead.
+
+Performance
+
+- [ ] #4 Frame time. About 3-4 fps in the world. Profile the title-memory copies and the submission path.
+- [ ] #5 Intro cutscene speed. The intro is very slow unless skipped; find out why.
+- [ ] #6 Shader cache warm-up. A way to fill the cache before the first run.
+
+Tooling & docs
+
+- [ ] #7 Hardware reports. Run it on your GPU and post results (GPU, driver, fps, how far it got).
+- [ ] #8 One-click launcher for the VIctory-based runtime.
+
+🗂️ What's in here
+
+ScarlettPort/
+├── scripts/          setup.ps1 / play.ps1 (XCL), setup-victory.ps1 / play-victory.ps1 (VIctory-based runtime)
+├── runtime/
+│   ├── xcl/          XCL (ivall/xcl) with our changes: console OS layer, D3D12.X, RDNA2 -> HLSL -> DXIL
+│   └── victory/      VIctory-based runtime: fxceless/victory-fork + merged community work + our changes (see SCARLETTPORT.md)
+├── launcher/         native one-exe launcher (Rust, egui) for the XCL runtime
+├── patches/          our changes to each runtime as plain diffs (xcl-stack.patch, victory-stack.patch)
+├── docs/             STATUS, RUNTIMES, BUILDING, ROADMAP
+├── assets/           screenshots
+└── LICENSE.md        licensing overview
+
+⚖️ Legal
+
+- This project is not affiliated with, endorsed by or sponsored by the developer or publisher of any title it is used with, or by Microsoft. It is free and is not sold.
+- It contains no game files, code, assets or keys, and no console SDK code.
+- It does not download game files. The scripts download only Microsoft's public D3D12 Agility SDK from NuGet.
+- You need your own legally obtained copy of a title and your own dump of it. This project does not provide, link to or help obtain game files.
+- Third-party runtimes keep their own licences and credits: runtime/xcl is XCL by ivall and contributors (GPL-2.0-only); runtime/victory is VIctory by Marvisak and contributors, via fxceless/victory-fork, with community work credited in runtime/victory/SCARLETTPORT.md (GPL-3.0-or-later). Each keeps its own LICENSE. See [LICENSE.md.
+
+…（内容已截断）

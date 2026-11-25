@@ -1,0 +1,134 @@
+VIctory fork (work in progress)
+
+A work-in-progress fork of VIctory, a
+compatibility layer that runs an Xbox Series title natively on Windows from
+files the user supplies. This fork follows upstream
+main and adds fixes aimed at one goal: getting the game's world to render
+correctly and playably on one particular PC.
+
+This repository contains no game files, code or assets. You need your own
+copy of the game. It is not affiliated with or endorsed by the game's
+developer or publisher.
+
+Credits
+
+- VIctory by Marvisak and its
+  contributors is the base of everything here: the loader, the runtime
+  services, the Direct3D 12 back end and the shader recompiler. Licensed
+  GPL-3.0-or-later; so is this fork. Upstream's history is kept intact below
+  the single commit that carries this fork's changes.
+- XCL by ivall and its contributors
+  (GPL-2.0-only) was used as a reference for how the same title behaves under
+  another layer. Fixes inspired by it were written anew in VIctory's code.
+- The guard over every view of a memory page is code by myokex
+  (victory-amd, commit c6dc4d8), which
+  adapts pull request #115 here by Spexivus, its correction by joroyt and a part of
+  VIctory #1122 by tightfall. The read-beside fix for kernel reads into title
+  memory is by Joshua Odom (commit 10ea38e of the same fork family). Both
+  are carried here unchanged apart from one merge conflict.
+- This fork's changes were developed with Claude Code.
+
+Status of this fork (2026-11-25)
+
+Not playable yet: 2.5 to 4 frames per second, and shadowed areas are black.
+Tested on one machine: Windows 11, Intel i7-14700KF, NVIDIA RTX 4070 12 GB,
+32 GB RAM. The Series X profile is used throughout.
+
+| Stage | State in this fork |
+|-------|--------------------|
+| Boot, menus, start screen | works, 30 fps (as upstream) |
+| Opening cutscene | plays from start to finish, in order, lit: title cards, credits cards, night and dusk shots |
+| Saves | the game autosaves a checkpoint and loads it again |
+| First gameplay scene (the prologue) | renders: characters, textures, sky, sunlit exterior; HUD, pause menu and pad input work |
+| Light in shadow | missing: the game's ray-traced bounce light and ray-traced lamp and sun shadows do not run yet, so anything the sun does not hit directly is black |
+| Frame rate in the world | 2-4 fps: 420-450 ms per frame by default, 240-350 ms with the newer switches (VICTORY_RELAY=2, or VICTORY_LATE_WAIT=3 VICTORY_WIDE_BACK=1 VICTORY_CARD_BUFFERS_MIN_MB=1 VICTORY_CARD_BUFFERS_MB=1024); it started at 3-6 seconds per frame |
+| Stability | no driver hang or device loss in normal runs (a hang introduced by the wave64 update was found and fixed: its barrier form for 64-lane programs is now off unless VICTORY_WAVE_WIDE=1) |
+
+Newest (2026-11-25, later the same day)
+
+**Update, the same night: the first room now renders right on the test
+machine** (walls, textures, people, lamps), at 190 to 450 ms a frame (2 to 5
+frames a second): the picture work has caught up, the frame rate has not.
+What did it, on top of the list below:
+- Descriptor records the title copies into its heap as plain bytes are
+  mirrored before every submission (pull request #305 by Flyander, after
+  upstream VIctory 86a5ed6). Measured here: about 40,000 records a frame
+  that no call had announced; their host slots were empty or stale.
+- A buffer view that does not start on an element of its buffer's host
+  copy gets a copy of its own bytes instead of being refused (after
+  upstream 86a5ed6): 3 to 6 such views a frame.
+- Room on the card is kept for the render targets and buffer copies a
+  world makes in its first frame: 98 buffer copies are made (945 MB) where
+  the runs before made 1, and the processor no longer compares 550 to
+  710 MB a frame looking for shader writes (25 MB now).
+- Levels on demand ran on the card for the first time
+  (VICTORY_LEVELS_ON_DEMAND=1, still off by default; with the fixes of
+  pull request #747 by AscilCH): 3.1 GB of the card not allocated for
+  texture levels the title does not hold, no device loss.
+- Guarded blocks under storage writes are opened by default; 14 more
+  shader programs translate; a program is translated with first-half
+  interpolation pairs only if it was refused for one (with that on for
+  every program, 8,551 working pixel programs came out changed).
+- Frame rate, first cuts on the processor side: the descriptor sync uses a
+  cheap fingerprint and leaves draw-table slots to their draws (the pass
+  over the heap went from 70-220 ms a frame to about 3), and memory the
+  guards already hold is not asked of the write watch (pull request #670
+  by Jonirulah). Card copies' pieces can come down inside their own
+  flights (pull request #648 by Jonirulah, VICTORY_CARD_FETCH_INFLIGHT=1,
+  off by default: the copy-back thread's wait went from 181 ms a frame to
+  0 here, but the card got busier, so no gain is claimed yet). The frame is
+  still 250 to 380 ms: the card is the limit now, most of it the
+  per-record clamp before each of some 6,700 indirect draws a frame.
+- Tried and NOT in this tree: pull request #220 (cheaper indirect draws)
+  with VICTORY_INDIRECT_WINDOW=1 cut the card's time from about 100-150
+  to 35-80 ms a frame here, and lost the device twice (once with a page
+  fault on the card after 160 s). Do not turn windows on with it yet.
+- Known and counted, not fixed yet: an indirect compute pass asks for
+  about 77,500 thread groups in x where one dispatch runs 65,535 (the
+  rest is cut off).
+
+Memory sync between the title's memory and the copies on the card:
+- **A write through one view of a physical page is seen by the copies taken
+  through its other views** (VICTORY_VIEW_GUARD=0 turns it off). The title
+  shows one page at several addresses and a copy was guarded at one of them
+  only. Measured on the test machine: 0.8 to 1.0 million such writes in a
+  five-minute run, every one of which used to leave a copy stale. Since it
+  went in, the first room had its walls in the later frames of 4 runs out of
+  4 (2 of 5 before); the room's very first shot still comes up without walls
+  in some runs.
+- Kernel reads into title memory are read beside and copied in, so a block
+  guarded again in between no longer fails the read.
+- Writes of the storage layer into physical pages are counted where the title
+  has those pages mapped (10,000 to 50,000 guarded blocks of copies lay under
+  them in every run) and can open the guards there:
+  VICTORY_PAGE_WRITES=guards (off by default; 1, slots, all do more).
+- Failed page-destination reads are retried (VICTORY_DSTORAGE_RETRIES=0 = as before).
+
+Card memory (the test card is full from the first frame of the world: 85 to
+99 % of its budget for a whole run, about 26,000 texture copies let go and
+3,400 made again in five minutes, 2.8 GB of render targets that are all in
+use):
+- Levels on demand, off by default (VICTORY_LEVELS_ON_DEMAND=1): a
+  texture the title fills takes card memory only for the levels the title
+  holds (2.2 to 3.0 GB of the copies were levels it does not hold). Its test
+  runs on the software adapter; it has not run on a card yet.
+- Refused texture slots are held back for a few seconds so that a pass
+  reaches the slots behind them (VICTORY_FULL_CARD_PASS=0 = as before);
+  room can be kept for the card copies of title buffers
+  (VICTORY_CARD_ROOM_FOR_BUFFERS=1, off).
+
+Tools and diagnostics:
+- victory translate  --warm all --jobs N translates every
+  shader ahead of a run, on the processor only (about 4.5 to 6.5 minutes
+  here); the shader cache is keyed on the translator's source, so a new
+  build that does not touch the translator starts warm.
+- Counters, all off or diagnostics-only: VICTORY_MERGE_RACE=1 (title bytes
+  a copy-back is about to put back to older values: none found in 138,000
+  copy-backs), VICTORY_WALLS_TRACE, VICTORY_CARD_ACCOUNTING, and a census
+  of the copies the texture sweep never lets go.
+
+What this fork changed (summary)
+
+Rendering:
+
+…（内容已截断）

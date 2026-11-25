@@ -1,0 +1,1540 @@
+{
+  "date": "2026-11-24",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-25T08:18:57.247Z",
+  "count": 60,
+  "newCount": 32,
+  "sources": {
+    "trending": 16,
+    "new": 32,
+    "highStar": 13
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "name": "Claude-BugHunter",
+      "owner": "elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 84 skills, 15 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars": 21970,
+      "forks": 2273,
+      "starsToday": 1826,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elementalsouls-claude-bughunter-8f8b4d67.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "XiaoYouChR/Ghost-Downloader-3",
+      "name": "Ghost-Downloader-3",
+      "owner": "XiaoYouChR",
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "description": "The only downloader you need. 下载器的集大成者。",
+      "language": "Python",
+      "stars": 17709,
+      "forks": 1061,
+      "starsToday": 1092,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "xiaoyouchr-ghost-downloader-3-c290958b.txt"
+    },
+    {
+      "rank": 3,
+      "fullName": "HKUDS/CLI-Anything",
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 65153,
+      "forks": 5926,
+      "starsToday": 1074,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hkuds-cli-anything-c427889b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 326086,
+      "forks": 28938,
+      "starsToday": 1003,
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "createdAt": "2025-10-09T19:45:18Z",
+      "updatedAt": "2026-11-25T08:18:09Z",
+      "sources": [
+        "trending",
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "language": "TypeScript",
+      "stars": 209276,
+      "forks": 10937,
+      "starsToday": 991,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "zhouxiaoka/autoclip",
+      "name": "autoclip",
+      "owner": "zhouxiaoka",
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "description": "AutoClip｜一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。Open-source AI video clipping & content repurposing.",
+      "language": "Python",
+      "stars": 15735,
+      "forks": 2295,
+      "starsToday": 980,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zhouxiaoka-autoclip-b1c879a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "mjmirza/app-store-compliance",
+      "name": "app-store-compliance",
+      "owner": "mjmirza",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 124 documented rejection patterns and fixes, privacy manifest and Data safety checks, 112 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+      "language": "Shell",
+      "stars": 6087,
+      "forks": 395,
+      "starsToday": 928,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mjmirza-app-store-compliance-71069240.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "cathrynlavery/diagram-design",
+      "name": "diagram-design",
+      "owner": "cathrynlavery",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars": 72406,
+      "forks": 4820,
+      "starsToday": 802,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cathrynlavery-diagram-design-41ea088f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "jingyaogong/minimind",
+      "name": "minimind",
+      "owner": "jingyaogong",
+      "url": "https://github.com/jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "language": "Python",
+      "stars": 70565,
+      "forks": 9174,
+      "starsToday": 727,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jingyaogong-minimind-e3acf9ef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "mvanhorn/last30days-skill",
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 74569,
+      "forks": 6573,
+      "starsToday": 703,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mvanhorn-last30days-skill-ce334b66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "toeverything/AFFiNE",
+      "name": "AFFiNE",
+      "owner": "toeverything",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+      "language": "TypeScript",
+      "stars": 78152,
+      "forks": 5706,
+      "starsToday": 584,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "toeverything-affine-c67d0b7a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 12780,
+      "forks": 1530,
+      "starsToday": 403,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "Tracer-Cloud/opensre",
+      "name": "opensre",
+      "owner": "Tracer-Cloud",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "description": "The open-source agent for CI/CD reliability.",
+      "language": "Python",
+      "stars": 15306,
+      "forks": 2020,
+      "starsToday": 398,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tracer-cloud-opensre-87ae8ae9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "cursor/plugins",
+      "name": "plugins",
+      "owner": "cursor",
+      "url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 19353,
+      "forks": 2089,
+      "starsToday": 360,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cursor-plugins-07a8bcfb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "openvinotoolkit/openvino",
+      "name": "openvino",
+      "owner": "openvinotoolkit",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "language": "C++",
+      "stars": 12536,
+      "forks": 3698,
+      "starsToday": 185,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openvinotoolkit-openvino-5d345dc2.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "nginx/nginx",
+      "name": "nginx",
+      "owner": "nginx",
+      "url": "https://github.com/nginx/nginx",
+      "description": "The official NGINX Open Source repository.",
+      "language": "C",
+      "stars": 33281,
+      "forks": 8398,
+      "starsToday": 158,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nginx-nginx-1304abc5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 17,
+      "fullName": "fxceless/victory-fork",
+      "name": "victory-fork",
+      "owner": "fxceless",
+      "url": "https://github.com/fxceless/victory-fork",
+      "description": "Work-in-progress fork of VIctory: getting an Xbox Series title to render and run on a Windows PC. No game files.",
+      "language": "Rust",
+      "stars": 2423,
+      "forks": 640,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-24T18:02:37Z",
+      "updatedAt": "2026-11-25T08:18:28Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "fxceless-victory-fork-82d6a793.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 18,
+      "fullName": "ProjectLeonidaL/leonida",
+      "name": "leonida",
+      "owner": "ProjectLeonidaL",
+      "url": "https://github.com/ProjectLeonidaL/leonida",
+      "description": "Continuation of Project Leonida, aiming to bring GTA VI from Xbox to PC through static recompilation.",
+      "language": "Python",
+      "stars": 415,
+      "forks": 48,
+      "starsToday": 0,
+      "topics": [
+        "community-driven",
+        "cpp",
+        "gta6",
+        "gta6-pc",
+        "gtavi",
+        "leonida",
+        "open-source",
+        "pc-port"
+      ],
+      "createdAt": "2026-11-24T02:20:14Z",
+      "updatedAt": "2026-11-25T08:00:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "projectleonidal-leonida-fd4c1c86.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 19,
+      "fullName": "ZigZagBoi1/ScarlettPort",
+      "name": "ScarlettPort",
+      "owner": "ZigZagBoi1",
+      "url": "https://github.com/ZigZagBoi1/ScarlettPort",
+      "description": "Native PC port layer for an Xbox Series X|S title: the game's x64 code runs on your CPU and its RDNA2 GPU code is recompiled for your graphics card. Bring your own files.",
+      "language": "Rust",
+      "stars": 288,
+      "forks": 13,
+      "starsToday": 0,
+      "topics": [
+        "d3d12",
+        "pc-port",
+        "rdna2",
+        "shader-recompiler",
+        "xbox"
+      ],
+      "createdAt": "2026-11-24T09:36:26Z",
+      "updatedAt": "2026-11-25T08:18:12Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "zigzagboi1-scarlettport-2c1dd91f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 20,
+      "fullName": "QakajaVeca60/deadlock-cheat-esp-aimbot-win11",
+      "name": "deadlock-cheat-esp-aimbot-win11",
+      "owner": "QakajaVeca60",
+      "url": "https://github.com/QakajaVeca60/deadlock-cheat-esp-aimbot-win11",
+      "description": "Deadlock Cheat ESP Aimbot Win11 [2026] — Standalone Windows 10/11 (x64) Release, Setup & Config",
+      "language": "C++",
+      "stars": 212,
+      "forks": 13,
+      "starsToday": 0,
+      "topics": [
+        "deadlock",
+        "deadlock-aimbot",
+        "deadlock-cheat",
+        "deadlock-esp",
+        "deadlock-hack",
+        "source-2"
+      ],
+      "createdAt": "2026-11-24T09:17:38Z",
+      "updatedAt": "2026-11-25T05:38:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "qakajaveca60-deadlock-cheat-esp-aimbot-win11-8a3591e3.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "Hiroshis198/lossless-scaling-3-dlss4-unlocked-2026",
+      "name": "lossless-scaling-3-dlss4-unlocked-2026",
+      "owner": "Hiroshis198",
+      "url": "https://github.com/Hiroshis198/lossless-scaling-3-dlss4-unlocked-2026",
+      "description": "Lossless Scaling 3 Dlss4 Unlocked 2026 [2026] — Standalone Windows 10/11 (x64) Release, Setup & Config",
+      "language": "C#",
+      "stars": 211,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [
+        "dlss-4",
+        "frame-generation",
+        "lossless-scaling",
+        "lsfg-3",
+        "pc-gaming",
+        "upscaler"
+      ],
+      "createdAt": "2026-11-24T09:04:21Z",
+      "updatedAt": "2026-11-25T05:38:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hiroshis198-lossless-scaling-3-dlss4-unlocked-2026-6d7416c4.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "GimetuLoxa79/rob-run-cheat-mod-menu-v2",
+      "name": "rob-run-cheat-mod-menu-v2",
+      "owner": "GimetuLoxa79",
+      "url": "https://github.com/GimetuLoxa79/rob-run-cheat-mod-menu-v2",
+      "description": "Rob Run Cheat Mod Menu V2 [2026] — Standalone Windows 10/11 (x64) Release, Setup & Config",
+      "language": "C++",
+      "stars": 209,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [
+        "cmake",
+        "cpp",
+        "directx-11",
+        "directx-12",
+        "imgui",
+        "multithreading",
+        "performance-tuning",
+        "rob-run"
+      ],
+      "createdAt": "2026-11-24T09:10:18Z",
+      "updatedAt": "2026-11-25T05:38:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "gimetuloxa79-rob-run-cheat-mod-menu-v2-62ed6e97.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "MikhailMa649/polymarket-trading-bot-clob-arbitrage",
+      "name": "polymarket-trading-bot-clob-arbitrage",
+      "owner": "MikhailMa649",
+      "url": "https://github.com/MikhailMa649/polymarket-trading-bot-clob-arbitrage",
+      "description": "Polymarket Trading Bot & CLOB Arbitrage Engine [2026] — Automated Prediction Market Whale Copytrade & Kelly Sizing",
+      "language": "Python",
+      "stars": 208,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "clob-trading-bot",
+        "polymarket-arbitrage",
+        "polymarket-bot",
+        "polymarket-trading-bot",
+        "prediction-market-bot"
+      ],
+      "createdAt": "2026-11-24T21:48:41Z",
+      "updatedAt": "2026-11-25T05:38:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mikhailma649-polymarket-trading-bot-clob-arbitrage-cd4335a4.txt"
+    },
+    {
+      "rank": 24,
+      "fullName": "marthason52665/fortnite-hwid-spoofer-eac-battleye-cleaner",
+      "name": "fortnite-hwid-spoofer-eac-battleye-cleaner",
+      "owner": "marthason52665",
+      "url": "https://github.com/marthason52665/fortnite-hwid-spoofer-eac-battleye-cleaner",
+      "description": "Valorant HWID Spoofer & Fortnite HWID Spoofer [2026] — Vanguard Van 152, EAC & BattlEye TPM 2.0 Cleaner (x64)",
+      "language": "C#",
+      "stars": 207,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [
+        "eac-spoofer",
+        "fortnite-hwid-spoofer",
+        "hwid-spoofer",
+        "valorant-hwid-spoofer",
+        "van-152-cleaner",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-24T21:54:19Z",
+      "updatedAt": "2026-11-25T05:38:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "marthason52665-fortnite-hwid-spoofer-eac-battleye-cleaner-c965aa90.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "ivanmustafa/rob-run-cheats-mod-menu",
+      "name": "rob-run-cheats-mod-menu",
+      "owner": "ivanmustafa",
+      "url": "https://github.com/ivanmustafa/rob-run-cheats-mod-menu",
+      "description": "Rob Run Cheats Mod Menu [2026] — Standalone Windows 10/11 (x64) Release, Setup & Config",
+      "language": "C++",
+      "stars": 206,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "configuration",
+        "cpp",
+        "directx",
+        "directx-11",
+        "overlay",
+        "rob-run",
+        "rob-run-2026",
+        "rob-run-config"
+      ],
+      "createdAt": "2026-11-24T20:32:28Z",
+      "updatedAt": "2026-11-25T05:38:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ivanmustafa-rob-run-cheats-mod-menu-08ed2db1.txt"
+    },
+    {
+      "rank": 26,
+      "fullName": "diane7022/gta-6-pc-companion-toolkit",
+      "name": "gta-6-pc-companion-toolkit",
+      "owner": "diane7022",
+      "url": "https://github.com/diane7022/gta-6-pc-companion-toolkit",
+      "description": "GTA 6 PC Companion Toolkit [2026] — Standalone Windows 10/11 (x64) Release, Setup & Config",
+      "language": "C++",
+      "stars": 205,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [
+        "cpp",
+        "directx-11",
+        "gta-6-companion",
+        "gta-6-companion-2026",
+        "gta-6-companion-pc",
+        "gta-6-config",
+        "gta-6-esp",
+        "gta-6-esp-menu"
+      ],
+      "createdAt": "2026-11-24T21:33:28Z",
+      "updatedAt": "2026-11-25T05:38:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "diane7022-gta-6-pc-companion-toolkit-52c299f6.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "Norao01/fabfilter-total-bundle-2026-vst3-pc",
+      "name": "fabfilter-total-bundle-2026-vst3-pc",
+      "owner": "Norao01",
+      "url": "https://github.com/Norao01/fabfilter-total-bundle-2026-vst3-pc",
+      "description": "iZotope Ozone 11 & FabFilter Total Bundle [2026] — VST3 Mastering Suite, Pro-Q 4 & Ozone 11 Advanced for PC",
+      "language": "C#",
+      "stars": 204,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "audio-mastering-2026",
+        "fabfilter-total-bundle",
+        "izotope-ozone-11",
+        "ozone-11-vst3",
+        "vst3-plugins",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-24T17:43:39Z",
+      "updatedAt": "2026-11-25T05:38:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "norao01-fabfilter-total-bundle-2026-vst3-pc-49e237f1.txt"
+    },
+    {
+      "rank": 28,
+      "fullName": "ursulagarcia861/windsurf-cursor-pro-trial-unlocker-pc",
+      "name": "windsurf-cursor-pro-trial-unlocker-pc",
+      "owner": "ursulagarcia861",
+      "url": "https://github.com/ursulagarcia861/windsurf-cursor-pro-trial-unlocker-pc",
+      "description": "Windsurf Cursor Pro Trial Unlocker PC [2026] — Standalone Windows 10/11 (x64) Release, Setup & Config",
+      "language": "C#",
+      "stars": 203,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "ai-code-editor",
+        "automation",
+        "cli-utility",
+        "configuration",
+        "csharp",
+        "cursor-pro-unlocker",
+        "desktop-app",
+        "dotnet"
+      ],
+      "createdAt": "2026-11-24T17:45:02Z",
+      "updatedAt": "2026-11-25T05:38:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ursulagarcia861-windsurf-cursor-pro-trial-unlocker-pc-5d6e8a48.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "PaulSchaefer86202/cs2-cheat-external-esp-triggerbot-v2",
+      "name": "cs2-cheat-external-esp-triggerbot-v2",
+      "owner": "PaulSchaefer86202",
+      "url": "https://github.com/PaulSchaefer86202/cs2-cheat-external-esp-triggerbot-v2",
+      "description": "CS2 Cheat & Counter-Strike 2 External ESP, Triggerbot & Radar Overlay [2026] — VAC-Live Safe Windows 10/11 x64",
+      "language": "C++",
+      "stars": 195,
+      "forks": 19,
+      "starsToday": 0,
+      "topics": [
+        "counter-strike-2-cheat",
+        "cs2-cheat",
+        "cs2-esp",
+        "cs2-external",
+        "cs2-triggerbot",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-24T21:54:19Z",
+      "updatedAt": "2026-11-25T05:38:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "paulschaefer86202-cs2-cheat-external-esp-triggerbot-v2-b4e608fc.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "kevinr-2752/PClabs",
+      "name": "PClabs",
+      "owner": "kevinr-2752",
+      "url": "https://github.com/kevinr-2752/PClabs",
+      "description": "",
+      "language": "Go",
+      "stars": 193,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "clipping",
+        "gta-6-pc-version",
+        "gta6-preload",
+        "tiktok"
+      ],
+      "createdAt": "2026-11-24T11:44:49Z",
+      "updatedAt": "2026-11-25T00:47:16Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kevinr-2752-pclabs-121563c9.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "YutozeXesi67/clair-obscur-expedition-33-parry-trainer-mod",
+      "name": "clair-obscur-expedition-33-parry-trainer-mod",
+      "owner": "YutozeXesi67",
+      "url": "https://github.com/YutozeXesi67/clair-obscur-expedition-33-parry-trainer-mod",
+      "description": "Clair Obscur: Expedition 33 Parry Timing Trainer, Turn-Order HUD & Ultrawide Mod Suite (2026 Windows x64)",
+      "language": "C++",
+      "stars": 189,
+      "forks": 19,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "clair-obscur-expedition-33",
+        "expedition-33",
+        "expedition-33-mods",
+        "parry-timing-overlay",
+        "pictos-build-planner"
+      ],
+      "createdAt": "2026-11-24T21:52:24Z",
+      "updatedAt": "2026-11-25T05:38:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "yutozexesi67-clair-obscur-expedition-33-parry-trainer-mod-4f5d4af3.txt"
+    },
+    {
+      "rank": 32,
+      "fullName": "Norao01/solana-pump-fun-jito-bundler-sniper",
+      "name": "solana-pump-fun-jito-bundler-sniper",
+      "owner": "Norao01",
+      "url": "https://github.com/Norao01/solana-pump-fun-jito-bundler-sniper",
+      "description": "Jito MEV Bot & Solana Pump.fun gRPC Sniper Bundler [2026] — Sub-Millisecond ShredStream Arbitrage & Tip Optimizer",
+      "language": "Python",
+      "stars": 188,
+      "forks": 19,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "jito-bundler",
+        "jito-mev-bot",
+        "pump-fun-sniper-bot",
+        "solana-mev-bot",
+        "solana-sniper-bot"
+      ],
+      "createdAt": "2026-11-24T21:10:30Z",
+      "updatedAt": "2026-11-25T05:38:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "norao01-solana-pump-fun-jito-bundler-sniper-410958c8.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "henkbonnet297/steal-a-brainrot-roblox-index-macro",
+      "name": "steal-a-brainrot-roblox-index-macro",
+      "owner": "henkbonnet297",
+      "url": "https://github.com/henkbonnet297/steal-a-brainrot-roblox-index-macro",
+      "description": "Steal a Brainrot Script & Roblox Index Macro [2026] — Base Shield Timer, Auto Collect & Cash Tracker",
+      "language": "C#",
+      "stars": 182,
+      "forks": 53,
+      "starsToday": 0,
+      "topics": [
+        "auto-farm-macro",
+        "roblox-2026",
+        "roblox-brainrot-macro",
+        "steal-a-brainrot",
+        "steal-a-brainrot-script",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-24T23:59:53Z",
+      "updatedAt": "2026-11-25T05:38:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "henkbonnet297-steal-a-brainrot-roblox-index-macro-f2897ccf.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "kprice417/rust-recoil-script-esp-macro-2026",
+      "name": "rust-recoil-script-esp-macro-2026",
+      "owner": "kprice417",
+      "url": "https://github.com/kprice417/rust-recoil-script-esp-macro-2026",
+      "description": "Rust Recoil Script & Rust Macro Suite [2026] — Humanized Mouse Smoothing, Auto Weapon Detection & Overlay",
+      "language": "C++",
+      "stars": 177,
+      "forks": 36,
+      "starsToday": 0,
+      "topics": [
+        "fps-overlay",
+        "recoil-helper",
+        "rust-macro-2026",
+        "rust-recoil-script",
+        "rust-script",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-24T21:54:19Z",
+      "updatedAt": "2026-11-25T01:34:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kprice417-rust-recoil-script-esp-macro-2026-1db42f79.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "pinargomez/raydium-meteora-grpc-sniper-bot",
+      "name": "raydium-meteora-grpc-sniper-bot",
+      "owner": "pinargomez",
+      "url": "https://github.com/pinargomez/raydium-meteora-grpc-sniper-bot",
+      "description": "Raydium Sniper Bot & Solana Copy Trading Bot [2026] — Sub-Millisecond Yellowstone gRPC & Jito MEV Executor",
+      "language": "Python",
+      "stars": 177,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "jito-mev-bot",
+        "meteora-dlmm-bot",
+        "raydium-sniper-bot",
+        "solana-copy-trading-bot",
+        "solana-sniper-bot"
+      ],
+      "createdAt": "2026-11-24T09:53:24Z",
+      "updatedAt": "2026-11-25T05:38:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "pinargomez-raydium-meteora-grpc-sniper-bot-e3124823.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "marek8606/hollow-knight-silksong-map-crest-tracker",
+      "name": "hollow-knight-silksong-map-crest-tracker",
+      "owner": "marek8606",
+      "url": "https://github.com/marek8606/hollow-knight-silksong-map-crest-tracker",
+      "description": "Hollow Knight: Silksong Pharloom Interactive Map Overlay, Crest Build Planner & 100% Save Analyzer (2026)",
+      "language": "C#",
+      "stars": 176,
+      "forks": 57,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "bepinex-silksong",
+        "hollow-knight-silksong",
+        "pharloom-interactive-map",
+        "silksong-map",
+        "silksong-save-editor"
+      ],
+      "createdAt": "2026-11-24T23:59:03Z",
+      "updatedAt": "2026-11-25T05:38:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "marek8606-hollow-knight-silksong-map-crest-tracker-8e12aadf.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "KimberlyReddy52140/valorant-colorbot-triggerbot",
+      "name": "valorant-colorbot-triggerbot",
+      "owner": "KimberlyReddy52140",
+      "url": "https://github.com/KimberlyReddy52140/valorant-colorbot-triggerbot",
+      "description": "Valorant Colorbot & Arduino Pixel Triggerbot [2026] — 240Hz Purple Outline HSV Filter & Smoothing for Windows 10/11",
+      "language": "C++",
+      "stars": 174,
+      "forks": 31,
+      "starsToday": 0,
+      "topics": [
+        "arduino-colorbot",
+        "pixel-aim-assist",
+        "valorant-2026",
+        "valorant-colorbot",
+        "valorant-triggerbot",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-24T09:47:00Z",
+      "updatedAt": "2026-11-25T05:38:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kimberlyreddy52140-valorant-colorbot-triggerbot-aab47b95.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "JisungDiaz447/blox-fruits-script-keyless-2026",
+      "name": "blox-fruits-script-keyless-2026",
+      "owner": "JisungDiaz447",
+      "url": "https://github.com/JisungDiaz447/blox-fruits-script-keyless-2026",
+      "description": "Blox Fruits Script [2026] — Keyless Auto Farm Mastery, Dragon/Kitsune Fruit Sniper & Sea Events Macro for Roblox",
+      "language": "C++",
+      "stars": 173,
+      "forks": 29,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "auto-farm-roblox",
+        "blox-fruits",
+        "blox-fruits-script",
+        "keyless-script",
+        "roblox-blox-fruits-script"
+      ],
+      "createdAt": "2026-11-24T08:56:43Z",
+      "updatedAt": "2026-11-25T05:38:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jisungdiaz447-blox-fruits-script-keyless-2026-0711391b.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "rajmyers29/jupiter-v6-atomic-arbitrage-bot",
+      "name": "jupiter-v6-atomic-arbitrage-bot",
+      "owner": "rajmyers29",
+      "url": "https://github.com/rajmyers29/jupiter-v6-atomic-arbitrage-bot",
+      "description": "Jupiter Arbitrage Bot & Solana DEX Atomic MEV Bot [2026] — V6 Quote Router, Flash Loan & Jito Bundler",
+      "language": "Python",
+      "stars": 173,
+      "forks": 22,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "jito-mev-bot",
+        "jupiter-arbitrage-bot",
+        "solana-arbitrage-bot",
+        "solana-jupiter-bot",
+        "solana-trading-bot"
+      ],
+      "createdAt": "2026-11-24T18:07:05Z",
+      "updatedAt": "2026-11-25T05:38:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rajmyers29-jupiter-v6-atomic-arbitrage-bot-6e810983.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "dorothyyou08781/bip39-mnemonic-seed-balance-scanner-keyless",
+      "name": "bip39-mnemonic-seed-balance-scanner-keyless",
+      "owner": "dorothyyou08781",
+      "url": "https://github.com/dorothyyou08781/bip39-mnemonic-seed-balance-scanner-keyless",
+      "description": "Seed Phrase Checker & Wallet Seed Phrase Checker [2026] — BIP39 Multi-Chain ETH/SOL/BTC/USDT Balance Scanner",
+      "language": "Python",
+      "stars": 172,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [
+        "2026",
+        "bip39-scanner",
+        "crypto-wallet-checker",
+        "metamask-seed-recovery",
+        "seed-phrase-checker",
+        "wallet-seed-phrase-checker"
+      ],
+      "createdAt": "2026-11-24T11:50:10Z",
+      "updatedAt": "2026-11-25T01:30:30Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dorothyyou08781-bip39-mnemonic-seed-balance-scanner-keyless-18bd1345.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "JianPolyakov74004/marvel-rivals-cheat-esp-pc",
+      "name": "marvel-rivals-cheat-esp-pc",
+      "owner": "JianPolyakov74004",
+      "url": "https://github.com/JianPolyakov74004/marvel-rivals-cheat-esp-pc",
+      "description": "Marvel Rivals Cheat ESP PC [2026] — Standalone Windows 10/11 (x64) Release, Setup & Config",
+      "language": "C++",
+      "stars": 161,
+      "forks": 29,
+      "starsToday": 0,
+      "topics": [
+        "marvel-rivals-aimbot",
+        "marvel-rivals-cheat",
+        "marvel-rivals-esp",
+        "marvel-rivals-pc",
+        "ue5-overlay",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-24T15:43:42Z",
+      "updatedAt": "2026-11-25T05:38:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "jianpolyakov74004-marvel-rivals-cheat-esp-pc-d35e4d62.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "Elenar74/fl-studio-2026-producer-unlocked-x64",
+      "name": "fl-studio-2026-producer-unlocked-x64",
+      "owner": "Elenar74",
+      "url": "https://github.com/Elenar74/fl-studio-2026-producer-unlocked-x64",
+      "description": "Fl Studio 2026 Producer Unlocked X64 [2026] — Standalone Windows 10/11 (x64) Release, Setup & Config",
+      "language": "C#",
+      "stars": 156,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [
+        "daw-studio-2026",
+        "fl-studio",
+        "fl-studio-2026",
+        "music-production",
+        "vst3-plugins",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-24T21:04:36Z",
+      "updatedAt": "2026-11-25T01:33:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "elenar74-fl-studio-2026-producer-unlocked-x64-dbd380d2.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "avivetech/Leonida",
+      "name": "Leonida",
+      "owner": "avivetech",
+      "url": "https://github.com/avivetech/Leonida",
+      "description": "Leonida (GPL-3.0), continued here after ItsNotRexed/Leonida went offline on 2026-11-24. main = last upstream main; forge/* = the original maintainers' integration forge (git.notrexed.dev/enx/leonida).",
+      "language": "Python",
+      "stars": 155,
+      "forks": 33,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-24T00:35:16Z",
+      "updatedAt": "2026-11-25T07:28:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "avivetech-leonida-039c7985.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 44,
+      "fullName": "agnieszkadanielsson36/dead-rails-roblox-script-2026",
+      "name": "dead-rails-roblox-script-2026",
+      "owner": "agnieszkadanielsson36",
+      "url": "https://github.com/agnieszkadanielsson36/dead-rails-roblox-script-2026",
+      "description": "Dead Rails Script [2026] — Keyless Auto Bond Farm, Instant Win, Train Fuel & Turret Companion for Roblox",
+      "language": "C++",
+      "stars": 154,
+      "forks": 19,
+      "starsToday": 0,
+      "topics": [
+        "auto-bond-farm",
+        "dead-rails",
+        "dead-rails-roblox",
+        "dead-rails-script",
+        "roblox-script-2026",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-24T20:46:32Z",
+      "updatedAt": "2026-11-25T01:32:57Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "agnieszkadanielsson36-dead-rails-roblox-script-2026-d9605e29.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "SanjayLefevre70/wave-keyless-executor",
+      "name": "wave-keyless-executor",
+      "owner": "SanjayLefevre70",
+      "url": "https://github.com/SanjayLefevre70/wave-keyless-executor",
+      "description": "Wave Keyless Executor [2026] — Standalone Windows 10/11 (x64) Release, Setup & Config",
+      "language": "C++",
+      "stars": 152,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "keyless-executor",
+        "roblox-executor-pc",
+        "wave-2026",
+        "wave-executor",
+        "wave-roblox-executor",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-24T19:03:01Z",
+      "updatedAt": "2026-11-25T01:32:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sanjaylefevre70-wave-keyless-executor-0324f3a9.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "Shuji23605/autocad-2026-pelna-wersja-pl-pobierz-64-bit-offline",
+      "name": "autocad-2026-pelna-wersja-pl-pobierz-64-bit-offline",
+      "owner": "Shuji23605",
+      "url": "https://github.com/Shuji23605/autocad-2026-pelna-wersja-pl-pobierz-64-bit-offline",
+      "description": "Autodesk 2026 Patcher & AutoCAD/Inventor/Revit 2026 Offline Workstation Configuration Suite (Windows x64)",
+      "language": "C#",
+      "stars": 147,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "autocad-2026",
+        "autodesk-2026",
+        "autodesk-2026-patcher",
+        "cad-workstation",
+        "inventor-2026",
+        "revit-2026"
+      ],
+      "createdAt": "2026-11-24T22:51:18Z",
+      "updatedAt": "2026-11-25T01:34:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "shuji23605-autocad-2026-pelna-wersja-pl-pobierz-64-bit-offline-01119156.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "brainintelli/BioSignal-Guided-LLM-Reinforcement-Learning",
+      "name": "BioSignal-Guided-LLM-Reinforcement-Learning",
+      "owner": "brainintelli",
+      "url": "https://github.com/brainintelli/BioSignal-Guided-LLM-Reinforcement-Learning",
+      "description": "Biosignal-guided reinforcement learning for LLM agents: offline organoid neural recordings as policy inputs in a Godot survival game, with paired evaluation.",
+      "language": "Python",
+      "stars": 142,
+      "forks": 27,
+      "starsToday": 0,
+      "topics": [
+        "biosignals",
+        "electrophysiology",
+        "godot",
+        "language-models",
+        "llm",
+        "llm-agents",
+        "microelectrode-arrays",
+        "neural-signals"
+      ],
+      "createdAt": "2026-11-24T02:39:01Z",
+      "updatedAt": "2026-11-25T04:49:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "brainintelli-biosignal-guided-llm-reinforcement-learning-0783e257.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 48,
+      "fullName": "DesertGamer/VIctory-V2",
+      "name": "VIctory-V2",
+      "owner": "DesertGamer",
+      "url": "https://github.com/DesertGamer/VIctory-V2",
+      "description": "VIctory V2 — community-merged fork of VIctory, an attempt at running GTA VI on PC",
+      "language": "Rust",
+      "stars": 133,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-24T20:30:30Z",
+      "updatedAt": "2026-11-25T00:50:00Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "desertgamer-victory-v2-3f556698.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 49,
+      "fullName": "EbookFoundation/free-programming-books",
+      "name": "free-programming-books",
+      "owner": "EbookFoundation",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "description": ":books: Freely available programming books",
+      "language": "Python",
+      "stars": 402240,
+      "forks": 67236,
+      "starsToday": 0,
+      "topics": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ],
+      "createdAt": "2013-10-11T06:50:37Z",
+      "updatedAt": "2026-11-25T08:17:49Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ebookfoundation-free-programming-books-c336ecc2.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 372722,
+      "forks": 45390,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-25T08:14:04Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 332445,
+      "forks": 27948,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-25T08:17:19Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 52,
+      "fullName": "yt-dlp/yt-dlp",
+      "name": "yt-dlp",
+      "owner": "yt-dlp",
+      "url": "https://github.com/yt-dlp/yt-dlp",
+      "description": "A feature-rich command-line audio/video downloader",
+      "language": "Python",
+      "stars": 210547,
+      "forks": 18644,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "downloader",
+        "python",
+        "sponsorblock",
+        "youtube-dl",
+        "youtube-downloader",
+        "yt-dlp"
+      ],
+      "createdAt": "2020-10-26T04:22:55Z",
+      "updatedAt": "2026-11-25T08:11:51Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "yt-dlp-yt-dlp-54c7d6d8.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 195860,
+      "forks": 13764,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-25T08:14:03Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 54,
+      "fullName": "ultraworkers/claw-code",
+      "name": "claw-code",
+      "owner": "ultraworkers",
+      "url": "https://github.com/ultraworkers/claw-code",
+      "description": "An agent-managed museum exhibit, built in Rust with Gajae-Code / LazyCodex — developed and maintained with no human intervention.",
+      "language": "Rust",
+      "stars": 194722,
+      "forks": 107103,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-03-31T08:58:08Z",
+      "updatedAt": "2026-11-25T07:59:48Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ultraworkers-claw-code-6882ee54.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 188053,
+      "forks": 19185,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-11-25T08:13:04Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "github/gitignore",
+      "name": "gitignore",
+      "owner": "github",
+      "url": "https://github.com/github/gitignore",
+      "description": "A collection of useful .gitignore templates",
+      "language": "",
+      "stars": 176451,
+      "forks": 81999,
+      "starsToday": 0,
+      "topics": [
+        "git",
+        "gitignore"
+      ],
+      "createdAt": "2010-11-08T20:17:14Z",
+      "updatedAt": "2026-11-25T07:24:30Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-gitignore-07244a5f.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "JavaScript",
+      "stars": 175128,
+      "forks": 78752,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-25T05:23:33Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "Genymobile/scrcpy",
+      "name": "scrcpy",
+      "owner": "Genymobile",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "description": "Display and control your Android device",
+      "language": "C",
+      "stars": 155644,
+      "forks": 14279,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "c",
+        "ffmpeg",
+        "genyteam-system",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen"
+      ],
+      "createdAt": "2017-11-21T18:00:27Z",
+      "updatedAt": "2026-11-25T08:15:55Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "genymobile-scrcpy-2a59cd95.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "name": "ui-ux-pro-max-skill",
+      "owner": "nextlevelbuilder",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "description": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+      "language": "Python",
+      "stars": 153895,
+      "forks": 16213,
+      "starsToday": 0,
+      "topics": [
+        "ai-skills",
+        "antigravity",
+        "claude",
+        "claude-code",
+        "codex",
+        "command-line",
+        "copilot",
+        "cursor-ai"
+      ],
+      "createdAt": "2025-11-30T11:36:31Z",
+      "updatedAt": "2026-11-25T08:18:19Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nextlevelbuilder-ui-ux-pro-max-skill-c6cf066b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 60,
+      "fullName": "Graphify-Labs/graphify",
+      "name": "graphify",
+      "owner": "Graphify-Labs",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "description": "Turn any codebase, with its docs, SQL schemas, configs, and PDFs, into a queryable knowledge graph. A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI: local deterministic AST parsing, every edge explained, no vector store.",
+      "language": "Python",
+      "stars": 153105,
+      "forks": 14721,
+      "starsToday": 0,
+      "topics": [
+        "ai-agents",
+        "antigravity",
+        "ast",
+        "claude-code",
+        "code-analysis",
+        "code-search",
+        "codex",
+        "cursor"
+      ],
+      "createdAt": "2026-04-03T15:49:07Z",
+      "updatedAt": "2026-11-25T08:17:00Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "graphify-labs-graphify-72496aaa.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

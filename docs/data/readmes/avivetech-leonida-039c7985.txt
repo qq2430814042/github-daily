@@ -1,0 +1,62 @@
+Leonida
+
+Grand Theft Auto VI (Xbox Series) running natively on Windows, built on your PC from your own copy.
+
+  Other languages |
+  Status |
+  How to build |
+  How it works |
+  Want to help? |
+  Credits |
+  License |
+  Discord
+
+Leonida is a static recompilation project. The Xbox Series CPU is x86-64 like a PC, so the game's code is loaded
+and run natively, and the console's system software is reimplemented. The console's precompiled RDNA2 GPU programs
+are translated to SPIR-V for Vulkan. The game's models, textures and audio are read from your package. All of this
+happens on your PC, from your own copy of the game.
+
+This repository does not contain the game, keys or an executable, and it does not explain how to get them. You
+need your own copy, with its files already readable on disk. Nothing here decrypts or works around any protection.
+Everything the build creates (the generated shaders, extracted assets, the runtime folder and your saves) comes
+from your game and stays on your PC. Never share those files.
+
+Discord: https://discord.gg/xsqS3DqqVF
+
+Custom Git Mirror: https://git.notrexed.dev/notrexed/Leonida
+
+Project status
+
+Early. The game does not boot yet. Everything that can be done without the game's executable is in place, so
+work on booting can start as soon as one is available to a developer.
+
+| What | Status |
+|---|---|
+| Booting, story mode, anything playable | ❌ No |
+| Finding and checking your copy (Xbox Series 1.0.2.1) | ✅ Works |
+| Shaders: carve, unpack native RDNA2 code, disassemble | ✅ All 26,503 |
+| Shaders: RDNA2 → SPIR-V translation | ✅ 26,503 / 26,503 translated: 2,236 VS, 12,101 PS, 2,689 CS, 9,282 mesh, 195 geometry, with a per-shader metadata index for pipeline creation. The LLVM 23.1.5 Linux rerun at c432cdc and the LLVM 23.1.3 Windows rerun at 43d0015 both translated all 26,503 (Linux, Windows). Translation and SPIR-V validation are separate steps; validation results are listed below. ⚠️ 23,841 are wave64: exact on 64-wide subgroups (AMD). On 32-wide subgroups (NVIDIA, Intel), compute and mesh shaders are exact with wave64 emulation (--wave64-emulate, on by default there); cross-half wave ops in vertex, pixel and geometry shaders are still approximate |
+| SPIR-V validation (spirv-val) | ✅ 26,503 / 26,503 passed in the LLVM 23.1.5 Linux rerun at c432cdc and in the full-corpus rerun at 43d4703, after dcd8ecf fixed the SPIR-V ID-bound error (Linux rerun, full-corpus rerun). On Windows at 43d0015, all 26,503 translated but 26,501 passed validation; the two ID-bound failures were fixed by dcd8ecf. The intermediate dedd75c run also passed 26,501. |
+| Shader translator checked on a real GPU | ⚠️ The hand-written GPU tests (vertex fetch, texture sampling, exports, ALU ops, partial-register ops, barycentrics, wave-uniform branches, compute LDS/barriers/buffer stores, wave64 masks) have been run on more than 30 GPU and driver combinations, with results in #166: NVIDIA Turing, Ampere, Ada and Blackwell (Windows and Linux); AMD GCN3, RDNA1, RDNA2, RDNA3 and RDNA4 (Windows driver and RADV); Intel Gen9 (ANV); Apple M1 (MoltenVK, no geometry or mesh stages); and Mesa llvmpipe. Wave64 tests need 64-wide subgroups (AMD) or LEONIDA_W64_EMULATE=1. These are small test shaders: the game's own shaders are checked by spirv-val and by driver pipeline creation (vk_pipeline_check), not by their output |
+| Models (OBJ with real names, UVs, material references) | ✅ Exported. A ten-archive scan at decoder pin e293917 recovered 382,781 models with zero readback decode failures. This includes 343,327 models from levels.rpf. A full OBJ export of that archive is pending. See recount and export scope. |
+| Texture dictionaries and world texture pools (DDS) | ✅ Exported. rpf9dump decodes BCPack BC1, BC3, BC4 and BC5 chunks in strict mode and skips BC6H, BC7 and chunks that need unconfirmed history; the assets stage then completes what it can with a clean-room decoder (tools/bcpack.py, which tools/ttpf_assets.py runs through tools/ttpf_mips.py) that rebuilds BC1, BC3, BC4, BC5, BC6H and BC7, and records the rest as a BCPackLimitation in manifest.json (most BC6H/BC7 chunks and the unconfirmed-history ones need a local history table, which the repo does not ship) (notes) |
+| Audio banks (AWC: Opus, XMA2) | ✅ Exported whole. Opus repackaged losslessly as Ogg Opus; PCM (codec 0/2) as WAV; XMA2 decoded with ffmpeg. --wav adds 16-bit PCM WAV (notes) |
+| Music/radio config | ? Measured. 1,589 audio-config records with exact durations and AWC stream ids; station grouping and content-id lists; no per-track start offsets (notes) |
+| PE loader and import shims | ⚠️ Runs a stand-in executable end to end (gta6rt --run: CRT startup, statics, heap, files, threads, GDK imports through the shims, exit code back). Controllers through a GameInput shim on SDL3 (any controller SDL supports, rumble, DualSense trigger effects and lightbar; built when SDL3 is installed or with -DLEONIDA_SDL3_FETCH=ON, notes). --trace-d3d12 logs every D3D12 call and its outcome for the first boot. Untested against the real executable |
+| Xbox D3D12 → Vulkan | ⚠️ In progress. A Vulkan-backed device behind the Xbox-ABI proxy creates queues, command lists, fences, descriptor heaps, committed, placed and reserved resources, render-target and depth views (3D targets included), texture views and samplers (2D, cube, 1D and 3D views, the depth and stencil planes of depth-stencil textures, packed formats such as B5G6R5, B4G4R4A4 and R9G9B9E5, buffer SRVs — raw, structured and typed; they go into the bindless set), root signatures, pipelines and query heaps, and draws run on Vulkan. Barriers, clears, uploads, copies (BC included), colour resolves, predication, CPU-side texture reads and writes, and occlusion, timestamp and pipeline-statistics queries run on Vulkan, checked on one GPU. The console-shaped command-list proxy, the measured PresentX queue slots (30/32, layout-detected) wired to the presentation core, and AllocateUploadMemory (list slot 148, a mapped-upload arena whose addresses translate to buffer device addresses in root descriptors and IA/SO views) cover the console-ABI surface the package measures. Still open: the console list tail and the descriptor-table record model (plan) |
+| Ray tracing (BVH) | ⚠️ In progress. BuildRaytracingAccelerationStructure builds BLASes and TLASes on the GPU in the console's XDXR BVH4 layout (the default; LEONIDA_RT_AS=khr uses Vulkan's own acceleration structures instead), which the translated shaders walk themselves through image_bvh_intersect_ray (all four triangle node types, TRI0-TRI3, with the barycentric remap byte); the GPU builder writes TRI0 and TRI1 leaves. Updates refit instead of rebuilding, and clone, compaction and the compacted/current postbuild sizes work; checked against a CPU reference on synthetic scenes. The build descriptions are recovered from the package's XboxBvhBuilder.dll (notes). The game's *_bvh4.rpf packs are measured: offline-built, dehydrated BLASes that rehydrate through that DLL with their geometry from the drawables in levels.rpf (measured on 8 of the 10 sampled BLAS; notes). Not done in the builder: serialization. TRI1 pairing (no memory saved yet) and BOX16 nodes for MINIMIZE_MEMORY BLASes (an assumed switch) are in (notes). Open: whether the game rehydrates the packs or rebuilds them (#313) |
+
+The table above is written by hand. To measure it on your own checkout (unit and runtime tests, which rows of
+the translator contract were confirmed on a GPU, measured imports, your corpus counts and, with --github, CI
+and the D3D- items), run python -I tools/progress_dashboard.py --out  and open
+progress.html (notes).
+
+Platforms
+
+Nothing is playable on any platform yet (see Project status). What runs where today:
+
+| Platform | Today |
+|---|---|
+| Windows | Everything: make_game.py, the tools, and the runtime (gta6rt and the D3D12 → Vulkan layer) with its tests. |
+
+…（内容已截断）

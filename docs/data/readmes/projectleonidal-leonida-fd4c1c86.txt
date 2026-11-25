@@ -1,0 +1,137 @@
+Telegram — Leonida Legacy
+
+  Leonida Legacy
+
+Grand Theft Auto VI (Xbox Series) running natively on Windows, built on your PC from your own copy.
+
+Continued by orkan1k.
+
+ItsNotRexed just wanted to play on the PC.
+
+  Status |
+  How to build |
+  How it works |
+  Want to help? |
+  Contact |
+  Credits |
+  License
+
+Leonida Legacy is a static recompilation project. The Xbox Series CPU is x86-64 like a PC, so the game's code is loaded
+and run natively, and the console's system software is reimplemented. The console's precompiled RDNA2 GPU programs
+are translated to SPIR-V for Vulkan. The game's models, textures and audio are read from your package. All of this
+happens on your PC, from your own copy of the game.
+
+This repository does not contain the game, keys or an executable, and it does not explain how to get them. You
+need your own copy, with its files already readable on disk. Nothing here decrypts or works around any protection.
+Everything the build creates (the generated shaders, extracted assets, the runtime folder and your saves) comes
+from your game and stays on your PC. Never share those files.
+
+Project status
+
+Early. The game does not boot yet. Everything that can be done without the game's executable is in place, so
+work on booting can start as soon as one is available to a developer.
+
+| What | Status |
+|---|---|
+| Finding and checking your copy (Xbox Series 1.0.2.1) | ✅ Works |
+| Shaders: carve, unpack native RDNA2 code, disassemble | ✅ All 26,503 |
+| Shaders: RDNA2 → SPIR-V translation | ✅ All 26,503 programs translate and pass spirv-val (2,236 VS, 12,101 PS, 2,689 CS, 9,282 mesh, 195 geometry); see docs/design.md |
+| Shader translator checked on a real GPU | ⚠️ Manual GPU checks (fetch, textures, exports, ALU). Full build runs tools/verify_build.py (vk_harness) after the shaders stage |
+| Models (OBJ with real names, UVs, material references) | ✅ Exported. Not all layouts are decoded yet |
+| Texture dictionaries and world texture pools (DDS) | ✅ Exported. Some pool entries (BCPack) are skipped |
+| Audio banks (AWC: Opus, XMA2) | ✅ Exported whole. Decoding to WAV is not done yet |
+| PE loader and import shims | ⚠️ Maps/relocates/binds imports; gta6rt --self-test via tools/verify_build.py. Real game exe still needed for full coverage |
+| Xbox D3D12 → Vulkan | ⚠️ In progress: Vulkan-backed ID3D12Device (queues, allocators, command lists, fences, descriptor heaps, draws, dispatches, present) behind the Xbox-ABI proxy — GPU milestones M0–M2 (d3d12_present_test, d3d12_draw_test, d3d12_m2_textured_test). Default is PC D3D12; use LEONIDA_D3D12=vulkan for Vulkan. Still open for the full title: traced COM coverage, tessellation/stream-output PSOs, mesh PSOs, present path. See docs/d3d12_vulkan.md |
+| Booting, story mode, anything playable | ❌ No (needs the game executable and the D3D12→Vulkan layer) |
+
+How to build
+
+The port isn't downloaded ready-made. It's built on your PC from your own copy.
+
+The easy way:
+
+1. Install the prerequisites below (or double-click Install-Prerequisites.bat / let Build.bat install missing tools automatically).
+2. Download this project with its submodule: git clone --recursive https://github.com/ProjectLeonidaL/leonida. A
+   "Download ZIP" from GitHub leaves out third_party/rpf9-explorer. The build fetches it if git is installed,
+   and otherwise tells you what to do.
+3. Optional: double-click Check-PC.bat (or python -I scripts/pc_readiness.py; --lang de or ru from
+   scripts/i18n/pc_readiness/) to see whether this PC has the tools, disk space, game package and GPU for the build
+   — without starting a build.
+4. Double-click Build.bat.
+
+It finds your copy of the game by itself: it looks in Downloads, Desktop, Documents, Games, your home folder and
+the top of every drive, two folders deep. It recognises the version from a few file sizes, without reading
+anything large. If you have more than one copy it asks which one, and if it finds none it asks you to paste the
+folder. Before starting it checks that everything below is installed and that there is enough free space, and it
+lists anything missing in one go. The result goes to Documents\Leonida Legacy. A stopped build continues where it left
+off.
+
+Your game folder is the one that holds MicrosoftGame.Config and the .rpf archives, as plain files.
+
+Prerequisites:
+
+- Your own copy of the Xbox Series package, version 1.0.2.1.
+- Windows 10/11 x64, with about 350 GB free for work files. They can go on another drive with --work.
+- Python 3.11+ (tick "Add python.exe to PATH").
+- .NET 8 SDK.
+- Vulkan SDK, for spirv-as / spirv-val.
+- LLVM 21+ with llvm-mc on PATH, or set LLVM_MC to its path.
+- Visual Studio 2022 with Desktop development with C++, for the runtime stage.
+
+On Windows, Install-Prerequisites.bat (or Build.bat, which runs the same installer quietly) uses winget where possible and can build llvm-mc with scripts\build_llvm_mc.ps1. It never downloads the game. Set LEONIDA_SKIP_PREREQ_INSTALL=1 to skip auto-install. After installs, open a new terminal so PATH and VULKAN_SDK refresh.
+
+From a terminal, with the same behaviour and more control:
+
+python -I make_game.py --find                          # list the copies found on this PC
+python -I make_game.py --check                         # check your copy, build nothing
+python -I make_game.py --game "D:\path\to\your\package" --out "D:\Games\Leonida Legacy" --work "E:\leonida-legacy-work"
+python -I make_game.py --stages shaders,assets         # only some stages
+
+Stages run in order: check, shaders, assets, runtime. The shader translation is the longest step: several
+hours on one core for now.
+
+Runtime / GPU checks: a full build (Build.bat or all default stages) ends with tools/verify_build.py:
+PE self-map, Vulkan device (GPU driver or Lavapipe from your installed Vulkan SDK), and—after the shaders stage—a vk_harness draw using SPIR-V in \shaders\spirv. Nothing is downloaded during verify.
+
+python -I tools/verify_build.py --work "\work"            # after runtime build
+python -I tools/verify_build.py --work "\work" --require-gpu   # after shaders + runtime
+python -I tools/vulkan_probe.py   # optional SDK / ICD check
+
+How it works
+
+| Piece | What it does | Where |
+|---|---|---|
+| Version check | Every package file's name, size and SHA-256 for each supported version | game/, make_game.py |
+| Shader pipeline | Carves DXBC containers from shaders.rpf without its encrypted table of contents. Unpacks the XBCH → FSSM native RDNA2 program, disassembles it with LLVM (gfx1013) and translates it to SPIR-V | tools/shader_carve.py, fssm_unpack.py, shader_disasm.py, rdna2spirv.py |
+| Asset export | Finds validated resources inside RPF9 archives and the loose .ttpf texture pools | tools/rpf9dump (on rpf9-explorer's Core) |
+| Runtime | Maps the PE image, resolves imports to shims (GDK, XMem, d3d12_xs) | runtime/ |
+| Research tools | PE/RTTI inspection, raw carving, texture tiling probes, GPU test harnesses | tools/, runtime/test/ |
+| Post-build verify | PE self-map, Vulkan device, optional GPU draw | tools/verify_build.py, tools/vulkan_env.py |
+
+The translator's runtime contract (user SGPRs, push constants, memory model, bindless images, vertex fetch,
+system values) and all the format notes are in docs/design.md.
+
+Want to help?
+
+The biggest open pieces:
+
+- Xbox D3D12 → Vulkan: trace the game's real d3d12_xs calls, root-signature→user-SGPR mapping, remaining PSO/present paths (see docs/d3d12_vulkan.md).
+- Audio decoding: Opus/XMA2 streams in AWC banks to PCM.
+- Model layouts the decoder rejects today.
+
+See CONTRIBUTING.md. Never attach game files, extracted assets or generated shaders to issues or
+pull requests.
+
+Contact
+
+- Discord: discord.gg/dxMD2XqyEJ
+- Telegram: @wouldscams
+- News & updates: Leonida Legacy on Telegram
+
+Credits
+
+- rpf9-explorer by breadbbbb: the RPF9 model, texture-pool and AWC
+  decoders used by tools/rpf9dump (git submodule).
+- Mesa (MIT): GFX10 resource-descriptor layout (tools/gfx10_formats.json),
+
+…（内容已截断）

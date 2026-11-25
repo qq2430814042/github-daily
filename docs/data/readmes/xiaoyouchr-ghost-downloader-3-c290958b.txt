@@ -96,7 +96,7 @@ Translation Contributors
 
           XiaoYouChR
 
-        323770 words
+        324042 words
 
           Nguyễn Anh Kiệt
 
@@ -124,6 +124,12 @@ Translation Contributors
 
         1010 words
 
+          Ryuu
+
+          (ryuuDre)
+
+        633 words
+
           Kay Xue學昀楷
 
           (s0990)
@@ -135,12 +141,6 @@ Translation Contributors
           (mediaket)
 
         245 words
-
-          Ryuu
-
-          (ryuuDre)
-
-        179 words
 
           Dima88888
 

