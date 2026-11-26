@@ -1,0 +1,30 @@
+无限制写实生图工作室（unrestricted-image-studio）
+
+一套自托管的写实生图服务：五引擎可切换（FLUX.2-klein / Realistic Vision /
+Lustify / Chroma / Pony Realism），跑在你自己的 Modal 云 GPU 上，
+中间没有平台审核层。支持 FaceID 锁脸、中文提示词自动翻译、种子复现。
+
+怎么用（给你的 Muse / 智能体）
+
+把这个仓库的链接（或 zip）发给你的智能体，说一句：加载技能。
+
+它会读 SKILL.md，带你完成两件只有你能做的事（注册 Modal 账号、
+设一个鉴权令牌），剩下的部署、调参、验收它全包。
+
+手动部署也行：modal deploy flux_app.py，细节见 SKILL.md。
+
+文件
+
+- flux_app.py —— 全部生产代码（Modal App ＋ 五引擎 ＋ FastAPI 接口）
+- SKILL.md —— 复刻手册：配方、参数、坑、验收清单，全是实测结论
+
+成本
+
+Modal 每月送 $30 额度，A10G 按秒计费，一张图约 $0.01~0.05，
+闲置自动缩零。轻度使用基本免费。
+
+注意
+
+- 18+：生成主体请写明成年。
+- 鉴权令牌只存 Modal Secret，不要写进代码或公开仓库。
+- 改配置重部署前先 modal app stop flux-studio --yes，手册里有原因。

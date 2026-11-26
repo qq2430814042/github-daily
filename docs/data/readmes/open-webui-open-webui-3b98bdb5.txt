@@ -1,6 +1,6 @@
 Open WebUI
 
-Open WebUI is a home for AI: an extensible, easy-to-use, self-hosted platform built to run entirely offline. Connect local models through Ollama or use OpenAI-compatible APIs for local and cloud models.
+Open WebUI is a home for AI: an extensible, easy-to-use, self-hosted platform built to run entirely offline. Connect local models through Ollama, use OpenAI-compatible APIs for local and cloud models, or add agents through Agent Client Protocol (ACP).
 
 English |
 简体中文 |

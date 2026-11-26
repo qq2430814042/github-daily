@@ -1,0 +1,134 @@
+Stop vulnerabilities before they ship. Catch leaked secrets before they cost you.
+
+SemSec
+
+SemSec is Robusta Studio's open-source Semgrep ruleset built for teams that ship fast and refuse to ship insecure. It combines taint-tracking vulnerability detection across 4 languages, vibe-coding security checks for Supabase/Next.js/Firebase, and precision secret scanning for 75 cloud providers — all in one semgrep --config command.
+
+Every rule traces back to a real exploit. Not theory. Not "best practice." Real CVEs, real HackerOne reports, real breaches — distilled from 60,517 vulnerability records into patterns that catch what matters and stay quiet when it doesn't.
+
+Why SemSec
+
+Most static analysis tools bury you in noise. SemSec takes a different approach:
+
+Taint-mode, not pattern-match. Rules don't just grep for exec() — they trace whether attacker-controlled HTTP input actually reaches the dangerous sink. If your code sanitizes the input, the rule stays silent. This is the difference between 200 false positives and 3 real findings.
+
+Grounded in real exploits. Every rule maps to actual CVEs and HackerOne reports. The SQL injection rule catches CVE-2022-24266 patterns. The SSRF rule catches CVE-2021-40438 patterns. The command injection rule catches CVE-2023-30258 patterns. If it hasn't caused a breach, it's not in here.
+
+Secret detection that knows the format. Not regex soup hoping to match "anything that looks secret." Each detector targets a provider's exact key format — AWS keys start with AKIA, Stripe keys start with sk_live_, Anthropic keys start with sk-ant-api03-. Precise prefix + length + charset = high confidence, low noise.
+
+Quick Start
+
+Clone
+git clone https://github.com/RobustaStudio/semsec.git
+
+Scan your project with everything
+semgrep --config semsec/ /path/to/your/project
+
+Vibe coding audit — Supabase RLS, Next.js auth, Firebase rules
+semgrep --config semsec/vibe-coding-security.yaml .
+
+Secrets only — find leaked keys in 30 seconds
+semgrep --config semsec/hardcoded-secrets.yaml .
+
+Web vulnerabilities only — Python
+semgrep --config semsec/python-web-taint.yaml .
+
+CI-ready SARIF output
+semgrep --config semsec/ --sarif -o results.sarif .
+
+What's Inside
+
+Vulnerability Detection (47 rules)
+
+Taint-tracking rules that follow data from HTTP input through dangerous sinks, with sanitizer exceptions to eliminate false positives.
+
+| Ruleset | Rules | Frameworks | Vulnerability Classes |
+|---------|-------|------------|----------------------|
+| Python | 10 | Django, Flask, FastAPI | SQLi, CMDi, SSRF, Path Traversal, SSTI, XXE, Deserialization, File Upload, Open Redirect |
+| JavaScript | 8 | Express, Node.js | XSS, SQLi, CMDi, SSRF, Prototype Pollution, NoSQL Injection, Path Traversal |
+| Java | 7 | Spring Boot, Servlet | SQLi, CMDi, Deserialization, XXE, EL Injection, LDAP Injection |
+| PHP | 7 | Laravel, WordPress | SQLi, CMDi, LFI, Deserialization, XSS, SSRF, extract() abuse |
+| Auth & Access | 8 | Cross-language | Hardcoded JWT secrets, Missing Auth on APIs, IDOR, CSRF bypass, Cookie trust, WP nopriv |
+| Crypto | 7 | Cross-language | MD5 passwords, ECB mode, deprecated ciphers, Math.random() tokens, TLS verification disabled |
+
+Vibe Coding Security (35 rules)
+
+Purpose-built rules for the most common mistakes in AI-assisted / vibe-coded web apps:
+
+| Category | Rules | What It Catches |
+|----------|-------|-----------------|
+| Supabase | 7 | RLS disabled/bypassed, service key on client, permissive policies, USING (true), getSession() instead of getUser(), select("*") over-fetching |
+| Next.js | 4 | API routes without auth, Server Actions without auth, NEXT_PUBLIC_ secret exposure, middleware matcher gaps |
+| Firebase | 3 | allow read/write: if true, Admin SDK in client-side code |
+| Stripe | 2 | Webhook signature not verified, payment amount from client input |
+| Auth | 3 | Client-side role checks, hardcoded admin emails, JWT decode without verify |
+| CORS | 2 | Wildcard origin, wildcard + credentials |
+| Data Exposure | 2 | Prisma user returned without field filtering, Supabase select("*") |
+| Input Validation | 2 | Server Actions / API routes without Zod validation, mass assignment |
+| IDOR | 1 | Delete/update by URL param without ownership check |
+| Database | 2 | Drizzle sql.raw() injection, Prisma $queryRawUnsafe injection |
+| AI Security | 2 | Prompt injection via user input in system prompt, OpenAI key on client |
+| Deployment | 2 | Secrets in .env files, debug mode in production |
+| Rate Limiting | 1 | Auth endpoints without rate limiting |
+| File Upload | 1 | Upload without file type validation |
+| Storage | 1 | Public Supabase bucket uploads |
+
+React & Vue Client-Side Security (20 rules)
+
+| Category | What It Catches |
+|----------|-----------------|
+| XSS | dangerouslySetInnerHTML, v-html, innerHTML, document.write(), ref.current.innerHTML, iframe srcdoc/src, javascript: URLs, HTML parser libraries |
+| Code Execution | eval(), Function(), setTimeout(string) |
+| postMessage | Missing origin validation, wildcard "*" target |
+| Open Redirect | location.href / router navigation from URL params |
+| Token Storage | Tokens/secrets in localStorage/sessionStorage, document.cookie |
+| Misc | target="_blank" without noopener, URL.createObjectURL with untrusted blob |
+
+ORM Security — Prisma, Drizzle, Mongoose (17 rules)
+
+| ORM | What It Catches |
+|-----|-----------------|
+| Prisma | Mass assignment (create({ data: req.body })), deleteMany/updateMany without owner, $queryRawUnsafe, raw query concatenation, user object returned unfiltered |
+| Drizzle | sql.raw() with input, execute with concatenation, delete/update without .where() |
+| Mongoose | $where JS injection, mass assignment on findByIdAndUpdate, findByIdAndDelete without ownership, query injection via req.query, missing runValidators |
+
+Serverless & Edge Functions (15 rules)
+
+| Platform | What It Catches |
+|----------|-----------------|
+| Cloudflare Workers | eval()/Function() in workers, secrets in wrangler.toml |
+| AWS Lambda | AuthType: NONE (SAM + serverless.yml), raw error exposure, secrets in IaC |
+| Vercel Edge | Edge handler without auth, narrow middleware matcher |
+| Deno Deploy | Path traversal via Deno.readFile/Deno.writeFile with user input |
+| General | CORS wildcard in responses/config, missing body size limit, auth timing attacks, error leaks |
+
+Webhook Security (16 rules)
+
+Catches unverified webhook handlers for: Clerk, GitHub, Paddle, LemonSqueezy, Resend, Twilio, SendGrid, Shopify, Svix, Discord, Slack, plus generic catch-all. Also detects trust-before-verify, error disclosure, and replay/idempotency issues.
+
+tRPC & GraphQL Security (13 rules)
+
+| Framework | What It Catches |
+|-----------|-----------------|
+| tRPC | Mutations on publicProcedure, DB writes without auth, missing .input() validation, full user object returned, verbose error exposure |
+| GraphQL | Introspection enabled in production, no depth/complexity limit, resolver mutations without auth, password fields in schema, persistedQueries: false, N+1 without DataLoader, subscriptions without auth, dynamic buildSchema |
+
+Secret Detection (99 rules, 75 providers)
+
+Provider-specific patterns targeting exact key formats — prefix, length, character set — for maximum confidence and minimal false positives.
+
+Cloud & Infrastructure (13 providers)
+
+AWS (Access Key + Secret Key), GCP (API Key + Service Account), Azure (Storage + DevOps PAT), Alibaba Cloud, DigitalOcean, Heroku, Cloudflare, Pulumi, Terraform Cloud, Tailscale, Doppler, Infisical, HashiCorp Vault
+
+AI & Machine Learning (12 providers)
+
+OpenAI (legacy + project keys), Anthropic, Groq, xAI (Grok), OpenRouter, HuggingFace, Replicate, NVIDIA, Fireworks AI, Pinecone, LangSmith, ElevenLabs
+
+Git, CI/CD & Package Registries (13 providers)
+
+GitHub (PAT + fine-grained), GitLab (PAT + OAuth2), Bitbucket, Sourcegraph (+ Cody), CircleCI, Buildkite, Harness, Deno Deploy, npm, PyPI, NuGet, RubyGems, Docker Hub
+
+Payments & Commerce (8 providers)
+
+…（内容已截断）

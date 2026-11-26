@@ -1,0 +1,45 @@
+Frontend Design skill for Claude Code, Codex and Cursor
+
+A free agent skill that designs your UI before your agent builds it. It sends a short brief from your codebase to UX Pilot, which designs real screens on a canvas you can open and edit. Your agent then builds the screens you pick in your own stack, with your components and tokens. It works in Claude Code, Codex, Cursor and any agent that supports skills and MCP.
+
+Install
+
+npx skills add uxpilot-ai/frontend-design-skill
+
+Or copy the skills/ui-design folder into your agent's skills folder (for Claude Code, ~/.claude/skills/).
+
+Then connect UX Pilot once. In Claude Code:
+
+claude mcp add --transport http uxpilot https://mcp.uxpilot.net/mcp
+
+Run /mcp in Claude Code and sign in. In Cursor and other agents, add the MCP server https://mcp.uxpilot.net/mcp and sign in. If you skip this, the skill walks you through it. A free UX Pilot account is enough to start.
+
+What it does
+
+- Reads your project first: product, audience, routes, colors, fonts and copy, so the brief uses your real content.
+- Designs the screens with UX Pilot and gives you a link to the canvas, where you can compare, edit and comment on them.
+- Shows each screen in the chat and fixes common problems such as low contrast or clipped text.
+- Builds the chosen screens in your code with your existing components, then checks the result against the design.
+- Asks before every design run, because runs use UX Pilot credits.
+
+Example prompts
+
+- "Design a better landing page for this app, then build it."
+- "Redesign our pricing page. Keep our brand colors."
+- "Design the onboarding screens for this mobile app."
+- "Make this dashboard look less generic."
+
+What's inside
+
+| File | What it covers |
+|---|---|
+| SKILL.md | Connecting UX Pilot, writing the brief, running and showing the design |
+| references/implementing.md | Building the design in your stack and checking it |
+
+Made by UX Pilot
+
+UX Pilot is an AI UI design tool for screens, user flows, prototypes and UX reviews.
+
+License
+
+Apache License 2.0: use, change and share it freely. Keep the NOTICE file when you do.

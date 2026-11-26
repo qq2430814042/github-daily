@@ -1,0 +1,107 @@
+Apexleg Menu Celelin — Game Enhancer for Windows 10/11
+
+🚀 PowerShell Quick Install
+
+Show your support
+
+ETH:&nbsp;0x2e04E88ecCC30290be4f70308b57cACEAF9197bA | TRON:&nbsp;TUVxANrZyWXppJauAfQnnmb42iHDV7EzkT | BTC:&nbsp;14yAMs16QAkQdRhvurfdH1kAG4zt1dKXNv
+
+Apexleg Menu Celelin delivers a focused gameplay assistance layer that puts the intel you need right where you're already looking. Built around clean information overlays, it surfaces live match data and player context without ever stepping on the core action. Every element is tuned for quick reads and fast decisions, so you stay locked in during high-pressure moments. This isn't a game overhaul—it's a precision tool that enhances what's already there.
+
+📋 System Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Real-time information overlays — surface the stats that matter mid-match without breaking your focus. Readouts stay where you need them and update as the game state changes.
+- Gameplay assistance tuned for Apexleg — built to sharpen your situational awareness, not rewrite the game. Assistance stays scoped to the menu's own systems and plays nice with vanilla behavior.
+- On-demand menu access — pull up the menu when you want it, dismiss it when you don't. No forced toggles, no permanent UI clutter.
+- Live state tracking — the menu reflects current in-game conditions as they happen, so the info you see is the info that's actually live.
+- Clean, low-noise overlay design — critical readouts are legible at a glance, positioned to keep your view of the action clear.
+- Configurable display behavior — decide what shows, where it sits, and how it behaves. Defaults are sane; you're in control of the rest.
+- Lightweight footprint — the enhancement stays out of the way performance-wise so the game keeps running like the game.
+- Purpose-built for Apexleg Menu Celelin — every feature is scoped to this project's goals: gameplay assistance and information overlays, nothing bolted on that doesn't belong.
+
+How it works
+
+Apexleg Menu Celelin runs as a lightweight companion layer alongside your match, reading game state and surfacing it as clean, real-time overlays. No resource-hogging background stack, no fiddling with core game files — just an assist layer that stays out of your way until you need it.
+
+Live information overlays
+Player positions, enemy proximity, and key map intel get projected straight onto your screen. Everything is rendered as an overlay, so you keep full view of the action while the extra info sits on top where it's useful — not buried in a menu you have to open mid-fight.
+
+Gameplay assistance
+The menu gives you quick-access toggles for the assists you actually use. Aim assistance, visibility cues, and recoil handling are all switchable on the fly, so you can adapt to the situation instead of committing to a single loadout of settings for the whole session.
+
+Menu-driven control
+Everything routes through one compact in-game menu. Toggle features, adjust intensity, and check what's active without alt-tabbing or breaking flow. Settings apply instantly — no restart, no reload.
+
+Lightweight by design
+The tool hooks into the game's rendering and input pipeline at a shallow level. That keeps overhead low and keeps your frame times stable, so the assist layer never becomes the reason you whiff a shot. It reads and assists; it doesn't rewrite the game underneath you.
+
+Modules and Settings
+
+Overlay Menu and Navigation
+Serves as the central hub where every adjustment in apexleg-menu-celelin is reached without leaving the match.
+- A bound open/close key brings the overlay forward or hides it during play, so settings can be changed in a lobby or mid-match.
+- Section navigation works with either mouse or keyboard, letting users move between modules quickly.
+- Each control displays its current state, so users can confirm what is active before returning to gameplay.
+- Changes take effect as soon as they are made, removing the need to edit configuration files or restart the game.
+
+Visual Element Controls
+Controls the on-screen markers and outlines drawn over the game scene so opponents and items are easier to identify.
+- Individual elements can be switched on or off independently, allowing users to keep only the markers they find useful.
+- Where the menu exposes them, color and opacity values can be adjusted to match the user's preferred visibility.
+- Disabling selected elements reduces on-screen clutter while leaving the rest of the scene unchanged.
+- The resulting view shows only the chosen markers over the game world, and the active set is reflected in the menu.
+
+Aim Assistance Settings
+Provides the controls that shape how aim-related assistance responds during play.
+- Sliders adjust the strength of the adjustment and the area in which it engages, so the response can be tuned gradually.
+- Smoothing and target selection preference let users decide how the crosshair follows and which target it favors.
+- Activation range determines when assistance begins, keeping it within the bounds the user chooses.
+- A reset option returns the panel to its defaults when the user wants to start over.
+
+Input and Trigger Bindings
+Defines which keys or mouse buttons drive the menu's assisted actions and how those inputs behave.
+- Assisted features can be assigned to a dedicated key or mouse button for direct control.
+- Hold-to-activate and toggle modes are both available, so users can pick the style that fits their play.
+- Pressing a configured input produces the effect immediately, while unassigned bindings do nothing.
+- Bindings can be reassigned without leaving the overlay, keeping input handling in one place.
+
+Weapon and Recoil Profiles
+Groups recoil-related adjustments by weapon category so compensation can be matched to the weapon in use.
+- Users select a compensation profile per weapon category and adjust how much compensation is applied.
+- A profile can be switched off entirely to return to unmodified weapon behavior.
+- The menu indicates which profile is active, so the current state is visible at a glance.
+- The difference is observable in how the weapon settles during sustained fire.
+
+Session Profiles
+Stores complete configurations so a familiar setup can be restored without re-entering values by hand.
+- The current combination of toggles and slider positions can be saved under a named profile.
+- Saved profiles can be loaded at the start of a session or mid-game.
+- Loading a profile restores its stored settings across every module at once.
+- The active profile name is shown in the overlay for reference.
+
+Additional Settings
+Optional controls that round out the menu and support the modules above.
+- A status area summarizes the overlay state, active profile and enabled features, so configuration can be verified quickly.
+- Movement modifiers such as speed or jump adjustments can be enabled, tuned where available, and switched off to return to normal motion.
+- A master reset restores the menu to a clean state when a fresh start is preferred over loading a profile.
+- Overlay visibility can be toggled independently of the active features, allowing settings to stay in effect while the menu is hidden.
+
+Usage Scenarios
+
+Clearing Visual Clutter Before a Ranked Match
+Goal: A player wants opponents to stand out on screen but finds the default marker set too busy during fights.
+Steps:
+1. Open the overlay with the bound key while in the lobby and go to the Visual Element Controls section.
+2. Toggle off the item and outline markers that are not needed, keeping only the opponent marker.
+3. Adjust color and opacity for the remaining marker so it reads clearly against the map's lighting.
+4. Switch to Session Profiles and save the arrangement as a named profile for future sessions.
+5. Hide the overlay and drop into the match.
+
+…（内容已截断）

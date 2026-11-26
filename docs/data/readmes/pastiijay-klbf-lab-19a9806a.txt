@@ -1,0 +1,63 @@
+KLBF Lab
+
+Played from a new game to the open world: the first character's prologue and the second character's first mission completed, free roam from the second character's house, on an AMD Radeon RX 9070 XT.
+
+An open lab that runs the Xbox Series X|S (Scarlett) build of the game natively on a Windows PC: a GDK compatibility layer (kernelx, xgameruntime, d3d12_xs → host D3D12, RDNA2 → DXIL shader translation) that combines the best fixes from open compatibility projects into one tested build. Our own fixes (AMD Radeon stability and rendering, water physics, pre-building pipelines, optional AMD FSR frame generation) and fixes from other contributors, credited below.
+
+This is the one version we recommend. It is meant for every graphics card; so far we have tested it on an AMD Radeon RX 9070 XT, and reports from other cards (NVIDIA, Intel, other AMD) are very welcome. New builds are tried first on the beta branch of this repository (test builds); issues and test reports go in this repository's issues.
+
+Playing on Linux / Proton? Our Linux work is led by community member @zocram4cc: see his Wine/Proton fixes (#34, #35), the Linux notes in the guide and the RX 7800 XT report by @Adiker (#19). Post Linux results in an issue and tag @zocram4cc.
+
+Status (2026-11-25, Lab 35)
+
+Tested on one machine: AMD Radeon RX 9070 XT 16 GB (Adrenalin 32.0.32029.2010), AMD Ryzen 7 9800X3D, 32 GB RAM, Windows 11. Self-reported, one machine so far.
+
+| Stage | Status | Notes |
+|---|---|---|
+| Boot, first-run screens, intro, menus | ✅ Works | 30 fps |
+| In game | ✅ Player in control | the player controls the character from the prison prologue up to the second character's first mission |
+| Frame rate, prologue (prison, in the cell) | ✅ ~7.3 fps | standing in the first character's cell: average 7.34, 1% low 7.0, peak 7.7 over 72 min |
+| Frame rate, prologue while playing (cell → office → robbery → arrest) | 🟡 ~5.7 fps | average 5.7, median 5.7, peak 9.4 |
+| Frame rate, the second character's first mission (on the boat) | 🟡 ~6.3 fps | average 6.3, median 6.5, peak 9.8 |
+| Settings | — | renders at 1280×720 (--console series-s), upscaled to 1920×1080 with AMD FSR; dips to ~0.5–1 fps while a new area loads |
+| Frame rate in game, native resolution | 🟡 ~5 fps | about 200 ms per frame |
+| Stability | ✅ Record: 77 min of play without a crash | on test build Lab 39, stopped by choice to get back to work on the project, not by a crash. This version has never crashed in our tests; we haven't pushed it that far yet |
+| Rendering | 🟡 Mostly right | walls, lighting, hair and outfits drawn; purple tint on small flat objects (posters, stickers, towels), some faces deformed (guards, bank), faint diagonal lines on surfaces, the boat sits on the seabed (water physics fixed in test build Lab 39); the HUD (subtitles, objectives, prompts) stays hidden with the recommended settings in this version; fixed in test build Lab 38 (KLBF Lab Beta); at night the vegetation turns magenta and the ground stays very dark |
+| Story progress | ✅ Open world reached: prologue and the second character's first mission completed, 3% of the story | played from a new game on our own build, with our own saves (no save file from anyone else): the first character's prologue, then all of the first mission, then free roam from the second character's house, in a 77 min session without a crash (test build Lab 39); autosave and manual saves work, and the bed moves the time between day and night |
+
+Stability policy: we never publish a build that crashed in our tests. Every session length shown here is when we stopped, to get back to work on the project or because a test run reached its planned end, not a crash.
+
+Why AMD FSR
+
+The recommended settings render the world at 1280×720 and upscale it to 1920×1080 with AMD FSR (FidelityFX Super Resolution). The game itself does the same on console: it ships with its own FSR upscaler and calls it every frame. KLBF Lab hands that call to AMD's official FidelityFX SDK on the PC, so the picture is upscaled the way the game expects, and the frame rate goes up by about a third. FSR works on AMD, NVIDIA and Intel cards. Native resolution without FSR is listed too (~5 fps).
+
+Built by KLBF Lab
+
+What this project wrote itself, checked commit by commit (everything taken from other forks keeps its credit in Credits):
+
+- A pipeline pre-build that survives AMD's shader compiler. On top of the upstream pre-build, KLBF Lab saves progress as it goes (every 200 pipelines and every minute) and resumes after a crash. Pipelines that crash the driver (amdxc64.dll) are recorded in prebuild-crashed.txt, and every later run skips them. This is what lets the game start on Radeon cards that crash elsewhere.
+- Console wave32 programs on 64-lane AMD hardware. Each half of a 64-lane wave runs as one console wave, with wave reductions done per half and the console's float-denormal handling. This is the base of correct pixel and vertex shading on RDNA.
+- NaN guard on colour exports and typed stores, against the purple/black areas one invalid value spreads on AMD. Proposed upstream too: fxceless/victory-fork#837.
+- The console's plane composition. Each present plane is composed with its own resources, in submission order, scaled the way the console scales it.
+- AMD frame generation (VICTORY_FRAMEGEN=1) through FidelityFX SDK 2.4, with the interface plane handed to the SDK so menus and HUD are not interpolated. Also a no-SDK fallback for the title's upscale (VICTORY_FFX_SIMPLE=1).
+- A per-frame budget for texture uploads (VICTORY_TEXTURE_QUEUE_MB/MS), so streaming doesn't stall a frame.
+- Proven in play, on our own saves. From a new game to the open world: the prologue and the first mission completed, including the water mission with boats floating. The water fix itself is credited to Geckomacabre/vx-layer and MiamiGame/XTP; we integrated and proved it. Record: 77 min of play without a crash.
+- A beginner's guide (docs/GUIDE.md) with every command to copy and paste, Windows 10 and Linux notes, and a troubleshooting table built from players' reports.
+
+Progress
+
+How far the project gets in the story, scene by scene (one machine: AMD Radeon RX 9070 XT, recommended settings with AMD FSR). Frame rates are measured in the world, while playing, unless stated.
+
+| Part of the story | Reached | Frame rate (average / peak) | Notes |
+|---|---|---|---|
+| Boot, intro video, start screen, menus | ✅ | 30 fps | menus stay black with the recommended settings: press A |
+| Prologue: the first character's cell | ✅ | 7.3 standing / 5.7 while playing, peak 9.4 | walls, lighting, outfit right |
+| Prologue: the office interview | ✅ | (prologue while playing: 5.7) | faces mostly right, some deformed |
+| Prologue: the robbery | ✅ | (prologue while playing: 5.7) | purple stickers on the glass, bank faces deformed |
+| Prologue: the escape and the arrest | ✅ | ~4 outside, high-contrast light | the earlier crash point, passed since Lab 33 |
+| The second character's first mission: the boat | ✅ (test build Lab 39) | 6.3 / 9.8 | the boat floats and drives since Lab 39; on this version (Lab 35) it sits on the seabed: fail the checkpoint 3 times and the game offers to skip it |
+| The first mission: on foot in the swamp, the camp, finding a story character | ✅ | 5.2 average / 12.9 peak (41 min session, test build Lab 38) | first fight works; with Lab 39 the character climbs out of the water normally |
+| The first mission: the seaplane, the water landing, the night drive home | ✅ (test build Lab 39) | 5.2 average / 12.5 peak over the 77 min session; 9 in flight | mission completed; at night the vegetation turns magenta and the ground stays very dark |
+| The second character's house, first manual save | ✅ (test build Lab 39) | — | the bed saves the game; the save menu shows the first mission at 3% |
+
+…（内容已截断）

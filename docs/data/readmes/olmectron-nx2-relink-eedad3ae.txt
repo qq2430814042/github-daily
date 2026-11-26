@@ -1,0 +1,128 @@
+nx2-relink
+
+Makes a Nintendo Switch 2 game you own into a homebrew program (.nro) that runs it on a Switch 2: the game's own code,
+relinked, not emulated.
+
+A fork of nx-relink, which does the same for Switch games on a Switch.
+
+Experimental software. Use it at your own risk.
+This runs unofficial code on your console. Games can crash or freeze, saved data can be lost or corrupted, files on your SD
+card can be damaged, and running homebrew at all can have consequences with the console's maker, a ban included. It is provided
+"as is", with no warranty of any kind. The authors take no responsibility for any damage or loss: to your console, your card,
+your data or your accounts. If that isn't acceptable to you, don't use it.
+
+Use your own backups only.
+This project contains no games, no keys and no Nintendo files, and it won't get them for you. It works only with dumps of games
+you own, made by you from your own console. Nothing leaves your computer or your card. Don't ask for game files here, and don't
+post them: such issues are closed.
+
+A game crashed or didn't start? There is a file for that.
+After a run that ended badly, the port writes crash.txt in its own folder of the SD card:
+/nx2-relink//crash.txt  (`` is the port's short name)
+It says what happened (with the console's own error code, when it gave one) and has the end of that run's log. **Open an issue
+and attach that file** (and log.txt, beside it), with the game's name and version: that is everything needed to look into it.
+It is plain text you can read before sending, and has no account or serial number in it.
+
+What it does
+
+A Switch 2 game is already code for the Switch 2's processor, and its own SDK already drives that console's display, graphics
+processor and sound. Nothing is translated: the game's modules run as they are, and what surrounds them is replaced.
+
+| Part of the game | What happens to it |
+|---|---|
+| Code (main, sdk, subsdk*) | Kept whole and mapped by the console's loader, or relinked into the .nro (the tool decides which, by the game) |
+| rtld, the console's loader | Replaced by the port's own |
+| System calls | Pass through the port first, which answers them or lets them through |
+| The game's files (RomFS) | Served from the SD card |
+| Saved data | A folder of the SD card |
+| Mods | Optional: loose files in a folder of the SD card, laid over the game's own when it starts |
+| Memory | Left to the console: the game takes it as it asks for it |
+| Graphics and sound | The game's own SDK, on the console's real drivers |
+
+Compatibility
+
+No list of games is kept here. This is an early release, and nothing in the tool is written for a particular game: what differs
+from one game to the next is read from the game itself, so a game that was never tried has a fair chance.
+
+How it was tried. A few commercial Switch 2 games, from NUP dumps with their updates, built with this tool and run on a
+Switch 2 with kaiHEN 20261117.1: games of SDK 20 and of SDK 22, some from their menus into a new game (one of them saving
+and loading a saved game), others to their title and first screens.
+
+Compatibility has been tried with kaiHEN 20261117.1 only. A port leans on things that are kaiHEN's own (its loader
+service, the memory it leaves a program), which another version may do differently. If you use another version, say which in
+your report.
+
+What is decided by the game, with nothing to set:
+
+- Packing. A module packed as LZ4 or as ZBIC (system 22 and later) is read either way.
+- Modules. A game that loads none of its own as it runs has all its modules kept whole, as on its console. One that loads
+  some (through nn::ro; one of those tried loads 36) has only the modules that must be whole kept so, to leave the loader
+  room for the rest. Both kinds were tried.
+- Memory. No amount is set aside or guessed for a game: it takes memory from the console as it asks for it. A game whose
+  own table of heaps keeps part of the console's memory apart from its heap is told of the console's full figure, as it sizes
+  itself by it; any other is told of what the port really has.
+- Updates. The newest program, and each update's files over the game's.
+
+Not every game will run. When one doesn't, the port leaves crash.txt in its folder on the card
+(/nx2-relink//crash.txt): open an issue with that file, the game's name and version, and your kaiHEN version.
+
+The tool tells you when it can't take a game. Before building, it checks every module of the game's program:
+
+- A packing it doesn't know: NOT SUPPORTED YET, with the module's name. Nothing is wrong with your dump; a later release
+  may open it. (LZ4 and ZBIC, the two met so far, are both read.)
+- A damaged dump: which file, and how. One case is named outright: a folder copied over FTP in "ASCII" or "Auto" mode arrives
+  damaged in the files that have no extension (main, sdk, subsdk0). Copy the exefs folders again in binary mode.
+- A Switch game's program: that is nx-relink's.
+
+What you need
+
+- A Switch 2 that runs homebrew. This was made and tried with kaiHEN 20261117.1, and with no other version: the homebrew
+  menu started over a game (hold R while starting it). A port needs the whole of the console's memory and kaiHEN's loader
+  service.
+- Your game's dump: a NUP container, or a folder of its loose files. No keys are needed: these dumps aren't encrypted.
+- A computer with Python 3.10 or newer, devkitPro (devkitA64 and switch-tools,
+  from the switch-dev group), and ounce-devkit installed into it.
+- A way to put files on the console's card: the card in your computer (the fastest, for a game's gigabytes), or an FTP server
+  on the console (port 5000).
+
+Which game you start the homebrew menu over matters. To the console, a port is that game, and it has what that game's
+own description allows, not what its own game was made for. Three such things are known:
+- the memory for graphics the console keeps for the program;
+- its system resource: without any, a program can't map memory as it runs, which some games do from their start;
+- the system services it may open.
+Services are stood in for. When the console refuses the host game a service that the port's game asks for, and the
+service is one a game can run without (the network and its sockets, online data, amiibo, friends, parental controls, play
+reports and the like), the port answers in its place: every request is "done", with nothing in the answer, and the network
+is "down". What the game does with that service won't work; the game itself goes on. log.txt has a line for each:
+THE PORT STANDS IN FOR "". This only happens when a service is refused: with a host game that has it, the game
+talks to the console's own.
+What can't be stood in for: the services of the graphics processor, the display, the controllers and the game's files,
+and the two memory figures above. A port whose game needs one of those and whose host game lacks it ends at its start, or as
+it runs, and its report says which. Games made with an older graphics path (some "Switch 2 Edition" releases) need a host
+game of the same kind.
+Start the homebrew menu over the same game the port was made from, whenever you can: it has exactly what the game
+needs. Otherwise try another game, a large and recent one for choice.
+log.txt (and so crash.txt) says near its start what the host game had and what the port's game was made for, and names
+a service the console refused. The tool says the game's own figures when it builds a port.
+
+Then, in this folder:
+
+python nxrelink.py setup
+
+checks all of the above, installs the Python packages that are missing (lz4, zstandard, Pillow), and says where to get
+whatever it can't install itself.
+
+Use
+
+With a window:
+
+python nxrelink.py
+
+Choose the game, the card, and press Build and install. The bottom of the window always shows the step, a bar, and in long
+copies the speed and the time left.
+
+From a terminal, everything in one go:
+
+python nxrelink.py make game.nup --name mygame --sd E:
+
+…（内容已截断）

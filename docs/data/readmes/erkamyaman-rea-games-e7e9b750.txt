@@ -1,0 +1,112 @@
+Made in Türkiye 🇹🇷 by erKam Yaman · ❤️ Sponsor me · Sponsors · MIT
+Sponsored by  CodeRabbit
+
+Also by me: rust-anything, rewrite your app in Rust and prove it still behaves the same.
+
+The original 2048 (left) and a rebuild (right), same moves, same random numbers: the boards match on every move.
+
+Chrome's Dino: 1,800 steps, 23 obstacles, a pterodactyl, then a crash. Obstacle positions, dino height, crash and score match on every step.
+
+Canvas Bird: the original's state is private, so its draw calls are compared instead: all 1,140 steps match.
+
+Part of a family: rea takes software apart, rea-video
+does it for video, craft-anything rebuilds apps, and
+rust-anything proves a Rust rewrite behaves like the original.
+rea-games does it for games.
+
+Play the rebuilds
+
+In your browser, no install: erkamyaman.github.io/rea-games
+
+Each is written from a behavior spec (GAME.md), draws its own art, and passes its recording.
+
+| Game | Original | Play | Verified |
+|---|---|---|---|
+| 2048 | gabrielecirulli/2048, MIT | play it | 19 cases, 24,044 inputs: web, Godot and Rust (Bevy) ports |
+| Dino | Chrome's offline dinosaur (copy, BSD-3) | play it | 29 cases, 63,000 frames: web, Godot and Rust (Bevy) ports |
+| Canvas Bird | giotiskl/Canvas-Bird, MIT | play it | 30 cases, 68,409 frames: web, Godot and Rust (Bevy) ports |
+| Blocks (falling blocks) | jakesgordon/javascript-tetris, MIT | play it | 36 cases, 104,208 frames: web, Godot and Rust (Bevy) ports |
+| Bricks (brick breaking) | jakesgordon/javascript-breakout, MIT | play it | 37 cases, 209,600 steps: web port |
+| Paddles (two-paddle ball game) | jakesgordon/javascript-pong, MIT | play it | 19 cases, 198,300 steps: web port |
+
+How it works
+
+original game ──(fake clock, seeded random numbers)──> cases/*.json   inputs + every random number + state after each step
+                                                                          │
+GAME.md  (what the recording shows)  ──> your port, in any engine  ──> rea-games verify  ──> identical, or the first difference
+
+1. Record. The original runs unmodified. Its clock and Math.random are replaced from outside, so a run can be repeated. Every random number it draws is saved (the tape), with the inputs and the game state after each step.
+2. Spec. GAME.md states the rules, the order of operations in a frame, the constants, the quirks (including the original's bugs) and what is not modelled.
+3. Port. Any program that reads a case on stdin and prints {trace, tapeUsed} is a port: JavaScript, Rust, Godot run headless, C#.
+4. Verify. Every recorded state must match exactly, and the port must use exactly the recorded random numbers. The first difference is printed with its path.
+
+$ node bin/rea-games.mjs verify all
+2048 / web          => 19/19 cases identical, 24044 inputs
+2048 / bevy         => 19/19 cases identical, 24044 inputs
+2048 / godot        => 19/19 cases identical, 24044 inputs
+canvas-bird / web   => 30/30 cases identical, 68409 inputs
+canvas-bird / godot => 30/30 cases identical, 68409 inputs
+canvas-bird / bevy  => 30/30 cases identical, 68409 inputs
+dino / web          => 29/29 cases identical, 63000 inputs
+dino / godot        => 29/29 cases identical, 63000 inputs
+dino / bevy         => 29/29 cases identical, 63000 inputs
+blocks / web        => 36/36 cases identical, 104208 inputs
+blocks / godot      => 36/36 cases identical, 104208 inputs
+blocks / bevy       => 36/36 cases identical, 104208 inputs
+bricks / web        => 37/37 cases identical, 209600 inputs
+paddles / web       => 19/19 cases identical, 198300 inputs
+
+A check that cannot fail proves nothing, so each port was also broken on purpose (a constant, a collision offset, a timing gate, a spawn-gap factor): verify failed each time, for example 5 of 30 Canvas Bird cases pass with the 30 fps gate changed, 3 of 19 for 2048 with the spawn odds changed from 0.9 to 0.8.
+
+Use it with an agent
+
+claude plugin marketplace add erkamyaman/rea-games
+claude plugin install rea-games@rea-games
+
+The same plugin is listed in .agents/plugins/marketplace.json for agents that use that marketplace format (for example Codex: codex plugin marketplace add erkamyaman/rea-games, then codex plugin add rea-games@rea-games).
+
+Then: "rea this game: , rebuild it in Godot." The skill (skills/rea-games/SKILL.md) runs the loop above. It records, writes the spec, builds the port, verifies, and reports what it could not cover.
+
+Or by hand:
+
+node bin/rea-games.mjs list
+node bin/rea-games.mjs new my-game        # scaffold games/my-game
+node bin/rea-games.mjs record my-game     # run the original, write the cases
+node bin/rea-games.mjs verify my-game --port web
+node bin/rea-games.mjs pack all           # gzip the cases for git
+
+Needs Node 22. Browser games also need Playwright with Chromium; the Rust ports need cargo, the Godot one a Godot 4.4 binary (REA_GODOT=/path/to/godot).
+
+Engines
+
+| Target | Status |
+|---|---|
+| Web (canvas, one HTML file, mobile friendly) | every game (2048, Dino, Canvas Bird, Blocks, Bricks, Paddles), verified |
+| Rust / Bevy | 2048, Dino, Canvas Bird and Blocks as Bevy projects (dino-core logic verified through dino-runner; the Bevy window itself compiles and ran 25 s under Xvfb, never played) |
+| Godot 4.4 (GDScript) | 2048, Dino, Canvas Bird and Blocks, verified: a headless runner passes all 19 cases. A playable scene (ports/godot/main.tscn) loads and takes input in a headless smoke test; its look has not been checked |
+| Unity (C#) | not started |
+| Capacitor (wrap the web build for iOS/Android) | not started; Capacitor wraps a web build, so it builds on the web ports |
+
+A port counts as verified only when verify runs it through its runner. Ports that are not verified are labelled as such.
+
+Legal, in short
+
+Rebuilding behavior from a recording is clean-room work. Originals are included only where their licence allows it, unmodified, with their licence (NOTICE). Rebuilds use no art, sound, names or code from the originals. If you add a game, check its licence first and do not use a trademarked name.
+
+What it does not do (yet)
+
+- It matches behavior, not looks: the rebuilds draw their own art.
+- Games must be runnable and deterministic once their clock and random numbers are controlled. Network games, and games whose state cannot be observed from outside, need more work.
+- Coverage is what the cases hit. Each GAME.md lists the gaps (for Dino: few crashes into the flying obstacle; for Canvas Bird: few hits on the bottom pipe).
+
+Details: docs/STATUS.md · DECISIONS.md · docs/pitfalls.md · NOTICE
+
+Sponsors
+
+  rea-games is free and open source. If it helps your work, please consider sponsoring it.
+
+  Your support keeps new games and engine ports coming.
+
+Your safety comes first: sponsors get a logo and a link here, nothing more. No paid recommendations and no setup guides for third-party AI API resellers, so nothing here steers your code, keys or data somewhere you didn't choose.
+
+MIT licensed. Made in Türkiye 🇹🇷 by erKam Yaman.

@@ -1,0 +1,112 @@
+BRVIctory-ka1qux
+
+Runs an Xbox Series title natively on Windows, from files the user supplies.
+A fork of victory-fork by fxceless,
+itself a fork of VIctory by Marvisak,
+developed and measured on an AMD Radeon card.
+
+This fork collects what it took to get the title's world drawn on one AMD
+machine: fixes of its own, open pull requests of victory-fork that were tested
+there one by one, and ports from other forks. Every change that affects the
+picture was checked in the running title on that machine, most of them against
+a counter rather than against a screenshot.
+
+This repository contains no game files, code or assets. You need your own
+copy of the game. It is not affiliated with or endorsed by the game's developer
+or publisher.
+
+State on the test machine (2026-11-26)
+
+Windows 11, Intel Core i5-13600KF, AMD Radeon RX 7800 XT 16 GB (RDNA3, driver
+32.0.32029.2010), 32 GB RAM. Series X profile, diagnostics build.
+
+| Stage | Status | Measured |
+|---|---|---|
+| Boot, menus, saves | ✅ | work (as upstream) |
+| Getting into the world | ✅ | about 3 minutes from launch, with the caches warm and the movies skipped |
+| The world | ✅ | drawn from a save: rooms with walls, ceilings and textures, lit by their lamps and by the sun; characters with skin, hair and clothes; exteriors with buildings; HUD and prompts. Also the open world later in the story (a save converted from another console, below): a city of high-rise buildings, palms, pools, a beach and the sea with boats |
+| Light in shadow | 🟡 | the title's own ray-traced light runs, on by default (VICTORY_RAYS=0 turns it off): its structures are built and traced, and shaded faces of buildings, trees and characters get bounced light, where without it they are near black. Four runs on the street, 5 to 11 minutes in the world, with no crash and no device removal; a frame costs about 0.05 to 0.1 s more |
+| Play | 🟡 | a 25-minute play session, from the first room on to the next objective, on an earlier build of this branch; a 17-minute session in the open world with victory-fork's speed defaults on, with no crash |
+| Frame rate | 🟡 | in the open world, with ray-traced light and the switches below: a median of 0.30 to 0.32 s a frame (about 3.1 to 3.3 frames a second) on a street with 5,800 to 7,300 draws a frame, 0.15 to 0.23 s at best; per draw about 51 to 55 µs, against 60 µs before this build's memory and submission changes. Preparing 76 ms and copying back 35 ms a frame, against 108 and 55. 0.53 to 0.56 s without victory-fork's speed defaults |
+| Stability | ✅ | no crash and no device removal in the last fifty runs (4 to 25 minutes each), four of them with ray tracing on |
+| Memory | 🟡 | the process takes about 31 GB of a 32 GB PC (it was 32.5): part of the title's memory is now read by the card in place instead of copied (1.9 GB in a street run), and root constant buffer views get 64 KiB copies instead of 4 MiB ones. The card holds about 12 to 12.7 GB of its 14 GB budget; textures it has no room for are made at a lower resolution or wait (below) |
+| Upscaling | ✅ | AMD's FSR 4.1.2 (FidelityFX SDK 2.4.0, DLLs supplied by the user) runs on the RX 7800 XT in place of the title's own upscaler: rendering at 1920x1080 for a 3840x2160 picture in a street run, picture sharp (below) |
+| Tests | ✅ | cargo test --workspace runs 873 tests and all pass on the test machine (one GPU test fails now and then when the whole suite runs in one thread; it passes alone) |
+
+Known problems:
+
+- The title's ray-traced light is on by default (below) but has been measured
+  on one street of the open world only; interiors, night and other scenes are
+  not checked yet. With VICTORY_RAYS=0 a constant stands in for that light,
+  so shaded places are lit, but flat.
+- In a cutscene at the start of the save used for testing, the main
+  character's torso shows the clothes of an earlier scene while the sleeves
+  are right: the title bakes the outfit before the new outfit's textures have
+  reached its memory. Under investigation.
+- Loading is slower than the title's clock. A scene starts before all of it
+  has streamed in: the shell of the first room (walls and ceiling) arrives 10
+  to 25 seconds into the opening shot, in every launch looked at. An earlier
+  version of this page called that "missing in some launches"; it was one
+  picture taken at different moments of the shot.
+- The characters' baked skin and clothes were right in 2 launches of 5 on the
+  previous build and are right in all five since victory-fork's 310c6eb
+  and its pull requests #606 and #632 went in (below). That is still a small
+  count; VICTORY_BAKE_PROBE=1 reads the bake's result back, and its
+  sequence of hashes was the same in the launches it was on.
+- In the open world the card fills up. Textures it has no room for are now
+  made without their largest mips (below); before, thousands waited and walls,
+  cupboards and some objects showed black with light speckles. Such a texture
+  stays at the lower resolution until it is let go.
+- The frame is still bound by the processor, not the card: FSR at 1080p
+  draws as sharp a picture but did not shorten the frame on this machine. Of
+  a 0.3 s frame about 0.08 s is preparing, 0.035 s copying back, and the card
+  is busy about a quarter of the time; the rest is the title's thread waiting
+  on submissions.
+- With the card near its budget (12 to 12.7 GB of 14), 1,000 to 1,500 passes
+  a run find no room for a texture, and some far buildings show dark until
+  room comes back. VICTORY_LEVELS_ON_DEMAND=1 frees 1.2 GB of the card but
+  still shows black facades on some buildings (fixes being ported).
+- Two of the title's compute programs do not translate, and the programs that
+  only shade ray-tracing hits are left out on purpose.
+- Tested on one machine only. The switches under "Running it" are the ones the
+  state above was measured with.
+
+How it works
+
+Nothing is emulated. The title's executable is a PE32+ image of x86-64 code:
+the loader maps it, applies its relocations, sets up its TLS and binds its
+imports to implementations of the console's interfaces (an HLE of the
+XGameRuntime, memory (xmem), DirectStorage and D3D12.X layers), so its code
+runs on the host CPU as it is. Its command lists become host D3D12 command
+lists. Its shaders are machine code for the console's RDNA2 graphics
+processor; a shader recompiler translates each program to DXIL when the title
+makes a pipeline, and caches the result. Textures are detiled from the
+console's layouts (swizzle and tiling modes) and BCPack streams are unpacked;
+audio is decoded from XMA2 and Opus; the title's Bink movies play through its
+own library. docs/architecture.md has the crates.
+
+What this fork adds to victory-fork
+
+Each change is explained in its commit message and in a comment where it is.
+
+Title memory read in place, and leaner copies (VICTORY_UNIFIED=1):
+
+- The card reads parts of the title's memory where they are, through heaps
+  opened with OpenExistingHeapFromAddress1 over a view of this layer's own
+  (never over the section's handle, which on this machine keeps the section
+  committed until a reboot): runs of consecutive physical pages, and runs
+  inside the title's large private arenas, in windows of 256 KiB to 32 MiB,
+  within the host's shared GPU memory budget. In a street run 378 windows over
+  physical pages (813 MB) and 249 over private memory (1,060 MB) had no copy.
+  When the title frees or protects memory a window covers, the window is let
+  go first (the idea and the retry of upstream pull request #2921). Probes on
+  the card: nothing stays committed after a run, and opening a heap over
+  committed memory does not charge the commit again.
+- A root constant buffer view the title names without a length gets a 64 to
+  128 KiB copy instead of a 4 MiB one (a constant buffer reads at most 64 KiB;
+  found by avatarmanz/VIctory-7900XTX issue #38). VICTORY_CBV_WINDOW=0 goes
+  back.
+
+Frame-time switches (off by default; the state above was measured with
+
+…（内容已截断）

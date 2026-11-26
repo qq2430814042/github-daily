@@ -1,0 +1,75 @@
+Inkworks
+
+Interactive 3D "how it works" pages that look like an engineering drawing, built by your coding agent.
+
+  &nbsp;
+
+  &nbsp;
+
+Ask your agent for "an interactive 3D page that shows how a car engine works" and it builds a white engineering drawing that moves. Light grey parts with ink outlines, numbered drafting balloons, and the machine running slowly enough to follow. Readers can pause it, step one phase at a time, scrub a cycle chart, follow one cylinder, open the throttle and orbit the camera.
+
+Everything is code: three.js parts built from primitives, closed-form kinematics, no model files and no generated video. Every motion on the page comes from one driver angle, so stepping, scrubbing and slow motion are always exact.
+
+Left: the engine in the figure layout. Right: the second example, a bike pump, on the full sheet. Its delivery phase starts later on every stroke as the tyre fills.
+
+Install
+
+npx skills add Moh4696/inkworks-skill
+
+That uses the npx skills CLI (Node 22.20+). It installs for Claude Code, Codex, Cursor, Gemini CLI, OpenCode and dozens more. Start a new agent session afterwards.
+
+Claude Code plugin
+
+/plugin marketplace add Moh4696/inkworks-skill
+/plugin install inkworks-skill@inkworks-skill
+
+Codex plugin
+
+codex plugin marketplace add Moh4696/inkworks-skill
+codex plugin add inkworks-skill@inkworks-skill
+
+Without Node
+
+curl -fsSL https://raw.githubusercontent.com/Moh4696/inkworks-skill/main/install.sh | bash
+
+It clones the repo to ~/.inkworks-skill and links the skill into every agent it finds. Run it again to update; --uninstall removes it.
+
+What it makes
+
+Any machine with a cycle: engines, pumps, compressors, locks, gearboxes, turbines, sewing machines, steam valve gear, a beating heart. You get one page in one of two layouts. Both are always available, so you can switch with ?layout=.
+
+| Layout | What is on it | Best for |
+| --- | --- | --- |
+| sheet | Drawing border with zone letters, headline, phase panel with live readouts, gauge, input slider, slow-motion buttons, an x-y loop (P-V for the engine), transport buttons, title block, and a cycle chart you can drag to scrub | A page people explore |
+| figure | The model alone on a rounded card, labels both sides, unit tags with dashed leaders, a status line and a slim control strip | Embeds, posts and clips |
+
+How it works
+
+- The kit (skills/inkworks/kit/) is a complete page with no build step and three.js vendored. kit.js is the drawing style: toon parts with ink edges and constant-pixel outlines, hidden-line ghosts, glass, particle streams, sparks, gears and springs. sheet.js is everything around the machine: the DOM, state, loop, both layouts, controls, gauge, charts, labels and tags.
+- A mechanism is one file. It holds the geometry, the kinematics as functions of one driver angle, phase names and text, labels, readouts, the camera, and what the slider drives. starter.js is the smallest complete one, with every field commented. engine.js and pump.js are the worked examples.
+- Tools. smoke.py clicks every control in both layouts at three screen sizes and fails on any page error. record.py makes frame-exact 60 fps walkthrough clips with a drawn cursor and real mouse events, from a short plan file. engine_sound.py shows how to synthesise a sound track from the clip's own per-frame state, so the engine note follows the tachometer.
+
+Try it
+
+git clone https://github.com/Moh4696/inkworks-skill && cd inkworks-skill/skills/inkworks
+python3 kit/serve.py 9081
+http://localhost:9081/?m=engine   http://localhost:9081/?m=pump&layout=sheet   http://localhost:9081/?m=starter
+
+Start your own:
+
+python3 scripts/new_project.py ~/how-a-lock-works --name lock --from starter --layout figure
+
+To use the tools, run pip install -r requirements.txt and then python -m playwright install webkit. Clips also need ffmpeg.
+
+Feedback
+
+Open an issue or a pull request, or find me on X at @exploraX_.
+
+Works well with
+
+- Open 3D Skills: three.js scenes, exploded views, scroll films and frame-exact recording, from the same author.
+- Cinematic Skill: narrated documentary-style films built from code.
+
+License
+
+MIT License · Copyright (c) 2026 exploraX. three.js is vendored under its own MIT licence (skills/inkworks/kit/vendor/three/LICENSE).

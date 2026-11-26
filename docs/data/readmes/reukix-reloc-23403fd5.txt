@@ -1,0 +1,111 @@
+Reloc
+
+  面向 iOS 的外设级定位模拟工具
+
+    基于 Swift、Objective-C 与 Rust FFI 构建 · 通过本机回环实现 iAP2 / MFi-v3 / NMEA 外设定位注入
+简介
+
+Reloc 是一款运行在 iPhone 本机的外设级定位模拟应用。应用通过外部代理提供的本地回环（10.7.0.1）连接系统的 com.apple.carkit.service 服务，完成 Remote Pairing / Lockdown 会话协商、iAP2 链路同步、MFi-v3 鉴权与 NMEA-0183（$GPGGA / $GPRMC）报文流式下发，使系统以标准外设 GPS 身份接收实时坐标。
+
+核心功能
+
+| 模块 | 能力说明 |
+| :--- | :--- |
+| 定格定位 | 地图点击选点、关键词搜索、手动输入 WGS-84 坐标、自动反地理编码、运行中浏览并热更新定位、停止二次确认恢复真实 GPS |
+| 坐标优化 | 中国大陆地图 GCJ-02 ↔ WGS-84 自动双向纠偏；可选 ±0.6 m 自然 GPS 微幅漂移；标准 / 卫星 / 混合地图样式切换 |
+| 后台保活 | 导航级后台定位保活 + 非零次声音频双保险；支持开关系统「定位服务」刷新缓存后自动重建后台断言，以及断线自动重连 |
+| 本机配对 | 兼容 .rppairing 与 .mobiledevicepairing；iOS 27+ 支持本机直接配对与 画中画（PiP）悬浮指引窗 实时展示 6 位配对码 |
+| 数据与实测 | 收藏夹（支持重命名 / 删除）、最近 30 条使用记录、异常中断一键恢复；内置 CoreLocation 实测面板（isSimulatedBySoftware / isProducedByAccessory）与协议日志筛选 |
+
+系统兼容性
+
+| 系统版本 | 日常脱离电脑运行 | 首次获取配对文件方式 | 说明 |
+| :--- | :---: | :--- | :--- |
+| iOS 27.0+ | 支持 | 本机一键配对（免电脑）或导入已有文件 | 通过 _remotepairing-pairable-host._tcp. + 画中画悬浮窗完成配对 |
+| iOS 17.0 – 26.x | 支持 | 需电脑通过 USB 首次导出，导入后长期脱离电脑 | iOS 27 之前系统限制陌生主机无线首次配对 |
+
+Reloc 自身不创建 VPN，回环流量（10.7.0.1）由外部代理工具提供。
+
+快速开始与获取配对文件
+
+1. 启用本机回环
+在外部代理工具中启用指向 10.7.0.1 的本机回环映射。
+
+2. 获取并导入配对文件
+
+方式 A：iOS 27+ 本机直接配对（免电脑，推荐）
+1. 打开 Reloc 「设备连接」 页，点击 「一键配对这台 iPhone」，画中画悬浮指引窗会自动弹出。
+2. 前往系统 「设置 → 隐私与安全性 → 开发者模式」，滑到底部点击 「与 Reloc 配对」。
+3. 对照悬浮窗中实时显示的 6 位配对码完成输入，配对记录将自动保存。
+
+方式 B：iOS 17 – 26 通过电脑首次导出配对文件
+使用 USB 数据线连接 iPhone 并点击 「信任此电脑」，任选以下一种工具导出：
+
+- 使用 idevice_pair（推荐，跨平台）：
+  连接设备后直接生成并导出 .mobiledevicepairing / .plist 配对文件。
+- 使用 pymobiledevice3（命令行）：
+  pip3 install -U pymobiledevice3
+
+通过 USB 完成首次配对并开启 Wi-Fi 连接
+  pymobiledevice3 lockdown pair
+  pymobiledevice3 lockdown wifi-connections on
+
+导出系统已保存的配对记录（将  替换为设备 UDID）
+macOS:
+  sudo cp /var/db/lockdown/.plist ~/Desktop/pairing.mobiledevicepairing
+Windows:
+复制 C:\ProgramData\Apple\Lockdown\.plist
+
+- 导入到 Reloc：
+  将 .rppairing / .mobiledevicepairing / .plist 传至 iPhone 后，在 Reloc 「设备连接」 页点击 「导入已有配对文件」；或直接放入 「文件 → 我的 iPhone → Reloc」 目录，启动 App 时会自动导入。
+
+3. 验证并开始使用
+在 「设备连接」 页点击 「检测设备连接」，状态变为 「设备回环已就绪」 后即可切回 「定位」 页开始定格定位。
+
+后台保活提示：建议在系统 「设置 → 隐私与安全性 → 定位服务 → Reloc」 中将定位权限设为 「始终」 并保持「精确位置」开启，避免切入微信等第三方应用时被系统挂起导致定位恢复。
+
+从源码构建
+
+环境要求
+- macOS + Xcode 15 及以上
+- XcodeGen（brew install xcodegen）
+- （可选）如需重新编译 RelocDeviceBridge.xcframework：Rust toolchain（aarch64-apple-ios / aarch64-apple-ios-sim）
+
+准备本地 MFi 凭据
+请自行准备合法的 MFi-v3 凭据文件并放入本地目录（切勿将私有凭据提交至公开仓库）：
+- Reloc/Resources/MFi/certificate.p7b
+- Reloc/Resources/MFi/identity.pk8
+
+生成工程与打包未签名 IPA
+1. 生成 Xcode 工程
+xcodegen generate
+
+2. 编译未签名真机 Release 产物
+xcodebuild build \
+  -project Reloc.xcodeproj \
+  -scheme Reloc \
+  -configuration Release \
+  -sdk iphoneos \
+  -derivedDataPath build/DerivedData \
+  CODE_SIGNING_ALLOWED=NO
+
+3. 打包为未签名 Reloc.ipa（供自行签名安装）
+mkdir -p build/Payload
+cp -R build/DerivedData/Build/Products/Release-iphoneos/Reloc.app build/Payload/
+(cd build && zip -qry Reloc.ipa Payload)
+
+常见问题
+
+1. 本机配对或连接验证提示无法发布 / 发现本地服务？
+
+请前往系统 「设置 → 隐私与安全性 → 本地网络（繁體：區域網路）」 确认已允许 Reloc 访问本地网络，并确保外部代理已正确启用 10.7.0.1 回环。
+
+2. 已显示运行中但系统地图位置未立即刷新？
+
+iOS 在存在真实 GNSS 信号时可能延迟切换到外设源。请保持 Reloc 在后台运行，前往系统 「设置 → 隐私与安全性 → 定位服务」 关闭定位服务约 10 秒后再重新打开，或在 「实测与日志」 页观察 isProducedByAccessory 是否变为 true。
+
+免责声明与许可证
+
+免责声明：本项目仅用于 iOS 外设定位通信协议研究、应用开发调试与自动化测试。使用者须严格遵守所在地区法律法规及目标服务的使用条款，因滥用本软件产生的一切后果由使用者自行承担。
+
+本项目依据 GNU Affero General Public License v3.0 (AGPL-3.0-only) 开源发布，完整条款请参阅 LICENSE。任何基于本项目的修改版本在分发或通过网络提供交互服务时，均须在相同 AGPL-3.0 协议下公开完整对应源代码。

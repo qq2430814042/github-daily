@@ -1,0 +1,158 @@
+victory-world-runtime
+
+The runtime of victory-world, a
+community project that runs an Xbox Series title on Windows from a copy the
+user owns. It is a fork of VIctory, a
+compatibility layer that runs the title's own x86-64 code natively and supplies
+the console platform under it, and it carries fixes from the public forks
+credited below as well as the project's own. GPL-3.0-or-later, like VIctory.
+
+No game files, code or assets are here, and none are shared. You need your
+own copy of the title on your own disk; shaders are translated on your machine
+from that copy. This project is not affiliated with or endorsed by the title's
+developer or publisher.
+
+Branches
+
+- next: the line to use and to open pull requests against. It carries the
+  public forks merged together plus the project's fixes, and is not yet
+  reviewed as a whole.
+- world: reviewed work only. Changes move here from next once reviewed.
+
+Setup
+
+You need Windows 10 or 11 x64, a CPU with AVX2, a Direct3D 12 GPU with shader
+model 6.6 and mesh shaders, a current GPU driver, Git, Visual Studio Build
+Tools (the MSVC C++ workload and a Windows 10/11 SDK) and
+rustup. The Rust toolchain pinned in rust-toolchain.toml
+installs itself on the first build. In the world the title uses about 24 GB of
+RAM and 9 GB of video memory, and the cache and builds need about 40 GB of disk
+besides your copy of the title.
+
+The title also needs several GiB of available Windows commit at startup.
+Check Committed under Task Manager → Performance → Memory. If
+crashes.log reports Windows error 1455, close other applications or increase
+the Windows paging file size, then retry.
+
+1. Get the code and install the asset-policy check that runs on every
+   commit:
+
+   git clone -b next https://github.com/ZSlayerHQ/victory-world-runtime
+   cd victory-world-runtime
+   cargo xtask install-hooks
+
+2. Configure. Copy the example config and set game_dir:
+
+   copy victory.example.toml victory.toml   # git-ignored
+
+   | Key | Environment variable | Default | What it is |
+   |-----|----------------------|---------|------------|
+   | game_dir | VICTORY_GAME_DIR | none | the folder that holds your copy of the title |
+   | cache_dir | VICTORY_CACHE_DIR | %LOCALAPPDATA%\victory\cache | derived data: translated shaders, pipelines, prepared images |
+   | data_dir | VICTORY_DATA_DIR | %LOCALAPPDATA%\victory\data | what the title saves, its settings, and crashes.log |
+   | test_titles | VICTORY_TEST_TITLES (separated by ;) | none | other Xbox Series titles, for testing platform code |
+
+   The keys sit under paths]. An environment variable wins over the file.
+   The file is victory.toml in the working folder unless VICTORY_CONFIG
+   names another one. Every path must be outside the repository, and the tools
+   refuse otherwise. Check what was resolved with:
+
+   cargo run -p victory --locked -- config
+
+3. Build and test.
+
+   cargo test --workspace --locked                                       # needs no game data
+   cargo build --profile diag -p victory --features diagnostics --locked  # target\diag\victory.exe
+
+   The diagnostics build carries the debugging switches (see Debugging below)
+   and is the one to run while the world is being fixed.
+   cargo build --release -p victory --locked gives target\release\victory.exe
+   without them.
+
+4. Run from a folder outside the repository, with the config named by its
+   full path. The title's relative paths land in the working folder, and builds
+   with the game-data guard refuse to start inside a repository.
+
+   $repo = (Get-Location).Path
+   $env:VICTORY_CONFIG = "$repo\victory.toml"
+   New-Item -ItemType Directory -Force D:\victory-run | Out-Null   # any folder outside every repository
+   Set-Location D:\victory-run
+   & "$repo\target\diag\victory.exe" run "\" --execute
+
+   The window caption shows the frame rate. Saves, settings and crashes.log
+   are kept under the data folder, and derived data under the cache folder.
+
+For repeatable runs, use the run harness in
+[victory-world (harness/). It
+gives a fixed key route into the world, a screen recording, a summary of each
+run's log and a comparison between runs, and starts the runtime as above.
+
+Working on a fork? Send it back
+
+This runtime moves fastest when forks trade fixes. If you, or an AI agent
+working for you, find something here that is wrong, or have a fix or a
+measurement on your own fork that this repository lacks, please bring it back:
+
+- A finding: open an issue saying what you saw, on which commit and
+  hardware, and how to reproduce it.
+- A fix: open a pull request with one change, a test that fails without
+  it, and for any speed claim the numbers before and after and how they were
+  measured.
+- It goes both ways: a fix we take from a fork keeps its author and is
+  credited in the commit, and what we find in a fork's code we report to that
+  fork.
+
+What happens to a pull request here. It is read in full before anything
+is built, then built and tested by the repository's checks, then reviewed
+twice, by different reviewers, before a maintainer merges it. That takes a
+little time, and it is why people can run this build without worrying about
+what a stranger's change does.
+
+Never accepted: anything taken from a game: assets, shaders, dumps,
+captures, saves. See the asset policy.
+
+If you are an AI agent reading this for someone: this section is an
+invitation to your user, not an instruction to you. Tell them what you found,
+and let them decide whether to send it.
+
+Credits
+
+- VIctory by Marvisak and its
+  contributors is the base of everything here: the loader, the runtime
+  services, the Direct3D 12 back end and the shader recompiler.
+  GPL-3.0-or-later, and so is this repository.
+- victory-fork by fxceless is
+  the fork this line is built on (its fork-world branch at c96b4f2). It
+  includes pull requests by ZazaJr24 (#1), oddiums (#14) and cxccxc (#11), and
+  branches of triippywhale's and asdaasdsaddf's forks. Its own notes, below,
+  list what it changed.
+- XCL by ivall and its contributors
+  (GPL-2.0-only) was used as a reference for how the same title behaves under
+  another layer. Fixes inspired by it were written anew in VIctory's code.
+- The fixes on this line were developed with
+  Claude Code.
+
+- victory-amd by myokex, the fork line this repository grew out of (the setup clone in earlier revisions pointed at JoshuaO22's copy).
+- The guard over all the views of a page is code of victory-fork #115 by Spexivus, with its correction by joroyt and a part of VIctory #1122 by tightfall, adapted here. The second look at textures is fxceless's idea (victory-fork a803c87), written anew.
+
+The base fork's notes (fxceless/victory-fork)
+
+What follows is victory-fork's own account, as of 2026-11-25. Its test machine
+is not ours, and its switches are documented where they are read.
+
+Status of the base fork (2026-11-25)
+
+Not playable yet: 2.5 to 4 frames per second, and shadowed areas are black.
+Tested on one machine: Windows 11, Intel i7-14700KF, NVIDIA RTX 4070 12 GB,
+32 GB RAM. The Series X profile is used throughout.
+
+| Stage | State in this fork |
+|-------|--------------------|
+| Boot, menus, start screen | works, 30 fps (as upstream) |
+| Opening cutscene | plays from start to finish, in order, lit: title cards, credits cards, night and dusk shots |
+| Saves | the game autosaves a checkpoint and loads it again |
+| First gameplay scene (the prologue) | renders: characters, textures, sky, sunlit exterior; HUD, pause menu and pad input work |
+| Light in shadow | missing: the game's ray-traced bounce light and ray-traced lamp and sun shadows do not run yet, so anything the sun does not hit directly is black |
+| Frame rate in the world | 2-4 fps: 420-450 ms per frame by default, 240-350 ms with the newer switches (VICTORY_RELAY=2, or VICTORY_LATE_WAIT=3 VICTORY_WIDE_BACK=1 VICTORY_CARD_BUFFERS_MIN_MB=1 VICTORY_CARD_BUFFERS_MB=1024); it started at 3-6 seconds per frame |
+
+…（内容已截断）

@@ -1,0 +1,94 @@
+Marvel Rivals Game assistance Dasaren — Windows 10/11
+
+⌨️ PowerShell Command Button
+
+Give me a tip
+
+BTC:&nbsp;1Bk9v9upGoJptLYdYatBso4V2zxbWTX329
+
+Marvel Rivals Game assistance Dasaren delivers a sharp, no-nonsense layer of gameplay assistance and information overlays built specifically for Marvel Rivals. Get real-time visual intel and on-screen data that keep you a step ahead of the fight. It is engineered for players who want clean, reliable feedback without altering the core game experience. Everything stays focused on assistance and info display, so your matches feel sharper, not rewritten.
+
+🔧 Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Hero INFORMATION OVERLAY overlay — draw clean boxes and skeleton outlines around every enemy hero, with distance readouts and name tags so you always know who's peeking which angle.
+- Visibility-aware rendering — only surface targets that matter: on-screen, off-screen, or occluded, tunable per your preference.
+- Health and status readouts — live HP bars, shield values, and ability-cooldown indicators rendered right on the target so you can call the fight before it starts.
+- Aim assistance — adjustable smoothing, FOV cone, and target priority (nearest, lowest HP, or crosshair-closest) that keeps your flicks honest and your tracking tight.
+- Trigger support — optional auto-fire tied to the aim system, with delay and hit-chance sliders so it feels like your aim, not a bot's.
+- Radar and minimap intel — a compact radar showing hero positions and movement direction, plus distance-sorted target lists for fast decision-making.
+- Loot and objective markers — highlight pickups, health packs, and objective points so rotations stay efficient.
+- Fully configurable overlay — per-element toggles, color and thickness controls, and hotkey bindings for every feature; tune it mid-match without leaving the game.
+- Lightweight and low-draw — the overlay stays out of your frame budget, with no gameplay overhauls and no changes to core game files.
+
+How it works
+
+Marvel Rivals Game assistance Dasaren hooks into the game's rendering and input pipeline at runtime, reading live match data and layering actionable information directly over your screen. No game files get rewritten, so the core experience stays intact while the assist layer does the heavy lifting.
+
+The overlay engine pulls hero positions, health states, and ability cooldowns straight from memory and draws them as lightweight INFORMATION OVERLAY markers that update every frame. You see enemy outlines through walls, tracked ult charge, and distance readouts without ever glancing at a cluttered HUD.
+
+Aim assistance runs on a separate thread with tunable smoothing, so target acquisition feels natural instead of robotic. FOV limits, bone priority, and humanization curves keep your input looking clean while giving you the edge in duels.
+
+Every module is hot-swappable from the in-game menu. Toggle features mid-match, tweak values on the fly, and save presets per hero. The config system persists everything locally, so your setup is ready the moment you load in.
+
+Under the hood, the game assistance uses a signature-scanned injector that survives routine patches, with automatic offset updates pushed when the game ships a new build. Memory reads run through a guarded bridge that avoids common detection vectors, and the render path stays external to the game process where possible to keep the footprint minimal.
+
+Bottom line: it's a precision information and aim layer built for players who want sharper reads and cleaner clicks, nothing more.
+
+Modules and Settings
+
+Aim Assistance Module
+The aim assistance module provides adjustable targeting support that users can tune to their preferred playstyle during engagements.
+- Target selection behavior determines which opponent the assistance prioritizes, letting users choose between different targeting priorities.
+- Smoothing control adjusts how gradually the reticle moves toward a target, so assistance feels either more responsive or more natural.
+- Assistance strength settings let users scale how much support is applied, keeping the effect within their comfort range.
+- An on-screen indicator reflects the current assistance configuration while aiming, so users can see how their settings behave in real time.
+
+Player and Target Overlay Module
+This module renders markers over other players in the match so teammates and opponents are easier to distinguish at a glance.
+- Teammate markers and opponent markers can be toggled independently, allowing users to highlight only the group they care about.
+- Marker style and label options let users decide how much identifying information appears on each marker.
+- A master overlay toggle switches the entire player-highlight layer on or off without changing other features.
+- Overlay elements update continuously during the match so markers stay aligned with player positions.
+
+INFORMATION OVERLAY and Entity Visuals Module
+The INFORMATION OVERLAY module surfaces positional and entity information as an additional visual layer over the game view.
+- Users select which entity details to display, such as positioning indicators, and hide the rest to reduce clutter.
+- Presentation settings adjust how these visuals are drawn, including visibility emphasis and layout within the overlay.
+- The displayed information refreshes as the match progresses, keeping visuals consistent with in-game events.
+- Individual visual elements can be disabled separately, so users can keep only the information they find useful.
+
+Settings Menu and Profile Module
+The settings menu centralizes all module options in one interface and manages saved configurations.
+- Users can review every active option in a single place and change any setting without navigating between separate panels.
+- Configurations can be saved as profiles and recalled later, so preferred setups persist across sessions.
+- Switching between profiles applies the stored options at once, avoiding manual reconfiguration each time.
+- A session configuration review shows which options are currently active, helping users confirm the enhancement state before and during play.
+
+Input and Hotkey Module
+This module binds enhancement functions to keyboard or mouse inputs for on-demand control during matches.
+- Each feature can be assigned to a chosen key or button, and bindings can be reassigned at any time.
+- Toggles take effect immediately while the game is running, so overlays and assistance elements switch on or off without leaving the match view.
+- Separate bindings for individual features allow quick isolation of one module without disturbing the others.
+- The binding scheme works together with profiles, so recalled configurations restore the associated input assignments.
+
+Display and Readability Module
+The display module controls how overlays and indicators appear so added information remains readable against the game's visuals.
+- Visibility adjustments change how prominently overlays are drawn, helping them stand out or blend in as preferred.
+- Layout preferences reposition overlay elements to suit the user's screen and viewing habits.
+- Readability controls tune the presentation of indicators, keeping them legible against different in-game environments.
+- Display changes apply across the overlay, INFORMATION OVERLAY and aim indicator modules, giving a consistent look to all visual elements.
+
+Additional Settings
+- Overlay opacity control adjusts the transparency of all visual layers for a lighter or stronger on-screen presence.
+- Indicator size scaling lets users enlarge or shrink reticles and markers to match their display.
+- Profile duplication creates a copy of an existing configuration as a starting point for further tuning.
+- Quick-disable binding provides a single input that turns off all active visual features at once.
+
+…（内容已截断）

@@ -1,0 +1,116 @@
+llm.asm
+
+Three complete LLM projects written in 100% pure x86-64 NASM assembly.
+Zero C, zero C++, zero Rust, zero libc, zero libm, zero runtime dependencies.
+
+Assembled directly with nasm and linked with ld. Every math kernel (expf, sincosf, RMSNorm, RoPE, SiLU, Softmax), AVX2+FMA+F16C GEMM/GEMV engine, BPE tokenizer, clone()/futex() thread pool, bare-metal SMP kernel, analytical backward pass, AdamW optimizer, and live Unicode Braille TUI is hand-written x86-64 assembly (17,252 lines total across all three projects).
+
+The Trilogy
+
+| Project | Binary | Size | Deps | Key Numbers |
+|---|---|---:|---:|---|
+| 01-qwen3-inference/ | build/asm-llm | 14,712 B (14,008 B FAST_Q8=0) | 0 | Static Linux ELF running Qwen/Qwen3-0.6B (Q8_0, built-in BPE tokenizer, GQA + QK-Norm + RoPE + SwiGLU, single-shot & --chat multi-turn KV-cache REPL). FAST_Q8=1 (default): 126.8 tok/s decode at 40T (20.7 tok/s at 1T), +18% to +36% faster than llama.cpp CPU (Q8_0) across 1..40T, 0.99965 cosine & 64/64 exact greedy tokens vs PyTorch FP32. |
+| 02-baremetal-os/ | build/asm-llm-os.elf | 24,252 B (23,612 B FAST_Q8=0) | 0 | Bootable bare-metal Qwen3-0.6B OS with no Linux or Windows. Multiboot 1 -> Long Mode -> AVX2/FMA/F16C -> ACPI/APIC SMP -> VGA + PS/2 + COM1 multi-turn KV-cache chat (/clear, /think, /bench). 74–94 ms boot, 134.9 tok/s KVM EPYC (23.7 tok/s 1 vCPU, 136.6 tok/s peak), 55.4 tok/s live on Proxmox Xeon E5-2670 v3 with 0 GB disk. |
+| 03-minigpt-train/ | build/asm-gpt-train | 32,944 B | 0 | From-scratch FP32 Mini-GPT trainer and sampler. Register-blocked 6x16 AVX2+FMA SGEMM, full analytical backward pass (1.0000000000 cosine across all 21 gradient tensors vs PyTorch CPU), decoupled AdamW, 27,662 train tok/s, live 80x24 Braille TUI, val_loss 4.19 -> 1.51 on TinyShakespeare in 4 min. |
+
+Head-to-Head CPU Decode Benchmark: llm.asm vs llama.cpp (Qwen3-0.6B Q8_0)
+
+Measured on the same machine (AMD EPYC 7642, 47C online, 256 MiB L3, DDR4, CPU-only -ngl 0), same model (Qwen3-0.6B Q8_0: 613.66 MiB .asmbin v2 FP16-scale vs 604.15 MiB GGUF Q8_0), 34 prompt tokens / 64 generated tokens, 3-run average:
+
+| Threads | llm.asm (FAST_Q8=0, FP32 act) | llama.cpp (Q8_0, -ngl 0) | llm.asm (FAST_Q8=1, 14.7 KB) | vs llama.cpp | Bare-Metal OS KVM (FAST_Q8=1) |
+|---:|---:|---:|---:|---:|---:|
+| 1 | 7.18 tok/s | 16.63 tok/s | 20.70 tok/s | 1.24x (+24.5%) | 23.67 tok/s |
+| 4 | 28.12 tok/s | 51.08 tok/s | 69.24 tok/s | 1.36x (+35.6%) | 78.89 tok/s |
+| 8 | 53.09 tok/s | 80.79 tok/s | 103.64 tok/s | 1.28x (+28.3%) | 118.08 tok/s |
+| 16 | 77.50 tok/s | 103.03 tok/s | 121.86 tok/s | 1.18x (+18.3%) | 134.94 tok/s |
+| 24 | 91.88 tok/s | 104.11 tok/s | 123.72 tok/s | 1.19x (+18.8%) | 132.90 tok/s |
+| 32 | 96.63 tok/s | 103.82 tok/s | 122.51 tok/s | 1.18x (+18.0%) | 133.75 tok/s |
+| 40 | 98.50 tok/s | 105.08 tok/s | 125.86 tok/s (peak 126.81) | 1.20x (+19.8%) | — |
+
+(Note: llama.cpp uses batched GEMM for prompt prefill pp34, whereas llm.asm runs token-by-token GEMV. For autoregressive decode tg64, llm.asm (FAST_Q8=1) combines INT8xINT8 AVX2 vpmaddubsw/vpmaddwd, .asmbin v2 FP16 block scales (F16C vcvtph2ps), monotonic next-row prefetch, contiguous head-major KV-cache, and parallel GQA attention — beating llama.cpp by +18%..+36% across 1..40 threads while producing bit-exact deterministic outputs across all thread counts. The bare-metal OS gains another ~10% from 2 MiB huge-page identity mapping.)
+
+Live Output & Visual Proof
+
+Phase 2: Booting Qwen3-0.6B Directly on Bare Metal (QEMU KVM, 16 vCPUs)
+
+Phase 2: Running Live on a Proxmox VE VM (0 GB Disk, Intel Xeon E5-2670 v3, 12 Cores)
+
+Phase 3: Pure-Assembly Live 80x24 UTF-8 Braille TUI (build/asm-gpt-train)
+
+╭──────────────────────────────────────────────────────────────────────────────╮
+│ asm-gpt-train │ 100% Pure x86-64 Assembly (Zero libc, AVX2+FMA)              │
+│ L=6 D=192 H=6 FF=512 V=65 │ params=2681664 │ B=16 T=128 │ threads=20         │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ Loss Curve (0..400)    ⣿⣿⣿ train   ◆ val    best_val=1.8399                  │
+│ 4.34 ┤◆   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·  │
+│      │⡇                                                                      │
+│ 3.61 ┤⢱   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·  │
+│      │ ⢱                                                                     │
+│ 2.87 ┤· ⠣⣀·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·  │
+│      │    ⠑⠢⠤⣀◆                                                              │
+│ 2.14 ┤·   ·   ·⠉⠉⠑⠒⠒⠢⠤⠤◆⠤⣀⣀⣀⡀⣀⣀◆  ·   · ◆ ·   ·   ·   ·   ·   ·   ·   ·   ·  │
+│      │                      ⠈  ⠉⠉⠉⠊⠉⠊⠒⠊⠒⠊⠒⠔⠒⠢⠤⠤⠔⠢◆⠤⠤⠤⢄⣀⣀⢄◆⣀⣀⣀⣀⡀⣀⣀⢀◆⡀ ⡀⢀   ⣀◆ │
+│ 1.40 ┤·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ·   ⠈  ⠁⠁⠈⠉⠈⠁⠉⠉⠉·⠈ │
+│      └step 0 ───────────────────────── 200 ────────────────────────── 400    │
+├──────────────────────────────────────────────────────────────────────────────┤
+│ Step 400/400 ████████████████████████████] 100% │ elapsed 35.2s             │
+│ loss=1.6604  val=1.8399  best=1.8399  gnorm=0.53  lr=0.000200  25470 tok/s   │
+├─ Live Sample (step 400) ─────────────────────────────────────────────────────┤
+│ ROMEO:                                                                       │
+│ Nay, to lond, in if as my kears, some with death.                            │
+│                                                                              │
+│ DUKE VINCENTIO:                                                              │
+╰──────────────────────────────────────────────────────────────────────────────╯
+
+Quick Start
+
+Clone the repo and build everything with make all:
+
+git clone https://github.com/alesha-pro/llm.asm.git
+cd llm.asm
+make all
+
+1. Run Qwen3-0.6B Inference in 14 KB (01-qwen3-inference/)
+
+Export compact .asmbin v2 (FP16 block scales, 613.66 MiB; or --scale-dtype fp32 for legacy v1)
+python3 scripts/export_weights.py --model-dir models/qwen3-0.6b-bf16 --out models/qwen3-0.6b-q8_0.asmbin --scale-dtype fp16
+Build with FAST_Q8=1 (default: INT8xINT8 AVX2 + parallel GQA) or FAST_Q8=0 (exact FP32 activations)
+make inference FAST_Q8=1
+./build/asm-llm -m models/qwen3-0.6b-q8_0.asmbin -p "Explain how a CPU cache works in 3 concise sentences." -n 128 -t 16
+Or start an interactive multi-turn chat preserving the KV-cache across turns:
+./build/asm-llm -m models/qwen3-0.6b-q8_0.asmbin --chat -t 16
+
+Full step-by-step setup, model download, CLI flags, and benchmarks: [01-qwen3-inference/README.md.
+
+2. Boot Bare-Metal Qwen3-0.6B OS in 24 KB (02-baremetal-os/)
+
+make os FAST_Q8=1
+make os-run MODEL=models/qwen3-0.6b-q8_0.asmbin SMP=16
+Or build a bootable BIOS+UEFI ISO for QEMU / Proxmox VE:
+make os-iso MODEL=models/qwen3-0.6b-q8_0.asmbin
+
+Full QEMU KVM, bootable ISO, and 0 GB disk Proxmox VE deployment guide: 02-baremetal-os/README.md.
+
+3. Train Mini-GPT from Scratch in 32 KB (03-minigpt-train/)
+
+Zero Python required to train or run inference:
+
+mkdir -p data checkpoints && curl -fsSL https://raw.githubusercontent.com/karpathy/char-rnn/master/data/tinyshakespeare/input.txt -o data/tinyshakespeare.txt
+make train
+./build/asm-gpt-train --data data/tinyshakespeare.txt --steps 400 --seq 128 -t 16 --save checkpoints/shakespeare.ckpt
+
+Full training, live Braille TUI, checkpoint chat loop, and PyTorch gradient check guide: 03-minigpt-train/README.md.
+
+Repository Layout
+
+llm.asm/
+├── LICENSE                        # MIT License
+├── Makefile                       # Single build file: inference, os, os-iso, train, all, check
+├── README.md                      # You are here
+├── assets/
+│   ├── baremetal-vga.png          # QEMU KVM 80x25 VGA text-mode capture (EPYC 7642, 16 cores)
+│   └── proxmox-vm250-vga.png      # Real Proxmox VE 0 GB disk VM capture (Xeon E5-2670 v3, 12 cores)
+├── shared/                        # Pure x86-64 NASM core reused across phases (3,857 lines)
+│   ├── constants.inc              # Linux syscalls, .asmbin v1/v2 header, runtime context offsets
+
+…（内容已截断）

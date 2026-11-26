@@ -1,0 +1,94 @@
+Before You Install T3 Code
+
+  Independent source-code, telemetry, security, governance, and public-record audit of pingdotgg/t3code — backed by 320 primary URLs, 108 visual receipts, and 1,151 analyzed X posts.
+
+  🌐 Open Interactive Audit Portal (GitHub Pages)
+  ·
+
+  ·
+  108 Visual Receipts
+  ·
+  320 Primary Sources
+
+  UN Official Languages:
+  English ·
+  简体中文 ·
+  Français ·
+  Español ·
+  Русский ·
+  العربية
+
+  Community Editions:
+  繁體中文 ·
+  日本語 ·
+  한국어 ·
+  Deutsch ·
+  Português ·
+  Italiano ·
+  Nederlands ·
+  Polski ·
+  Türkçe ·
+  Tiếng Việt ·
+  Bahasa Indonesia ·
+  हिन्दी
+
+  Audited Baseline: 9d3195b4 (#42000) ·
+  Latest Upstream Check: ca81b7b9 (#42634, Nov 25 14:49 CST · +259 commits)
+
+Scope & Verification Policy
+- Coverage: Consolidates the 2 origin posts, 18 documented audit parts (Nov 24–25, 2026), 6 deep technical dossiers (docs/dossiers/), 320 canonical primary URLs (SRC-001–SRC-320), 108 visual receipts & charts (EV-001–EV-108), the Interactive Evidence Portal, and a 1,151-post @theo X dataset (Nov 7–24, 2026).
+- Codebase Tracking: Primary snapshot 9d3195b4 (PR #42000, 2026-11-24T08:41:04Z), continuously re-verified through main HEAD ca81b7b9 (PR #42634, 2026-11-25 14:49 CST).
+- Editorial Rules: Zero shortened redirect URLs and zero private contact details. Factual corrections, upstream fixes, or translation improvements are welcome via Pull Request with primary citations — see CONTRIBUTING.md.
+
+TL;DR (30-Second Verdict)
+
+Bottom Line: pingdotgg/t3code shipped default-on telemetry routed through a closed-source server (ingest.t3.codes), left multiple critical local-safety and auth gaps open alongside 0 published GitHub Security Advisories, spoofed Google Antigravity headers against ToS, and runs T3 Connect with zero end-to-end encryption. Post-audit patches through ca81b7b9 closed several high-profile leaks, but core architectural risks remain active today.
+Who is most affected: Non-admin desktop users, corporate developers with internal endpoints or SSH_AUTH_SOCK/GITHUB_TOKEN in their environment, Google Antigravity / Gemini subscribers, Claude Auto mode users, and anyone using T3 Connect, --lan, or linked GitHub accounts.
+
+Choose Your Reading Path
+
+| If you are… | Start here |
+|---|---|
+| Evaluating whether to install T3 Code | Scan the Fixed vs. Still Open table below and the Risk Matrix. |
+| Already running T3 Code on your machine | Jump straight to the 2-Minute Hardening & Cleanup Checklist (DO_NOT_TRACK=1, /etc/hosts, VACUUM, token revocation). |
+| Reviewing code receipts, charts, or screenshots | Browse the Interactive Evidence Portal (search all 108 receipts, inspect 4 interactive charts, copy commands) or open the 6 Deep Dossiers. |
+
+At a Glance: What Changed vs. What Remains Unfixed (ca81b7b9)
+
+| Audit Area | Baseline Finding (9d3195b4) | Upstream Status at ca81b7b9 (Nov 25 14:49 CST) | Deep Dive |
+|---|---|---|---|
+| Telemetry & Privacy | Default-on PostHog (PR #174) while site promised "No telemetry"; raw events kept at closed-source ingest.t3.codes; unsalted SHA-256 reads of .codex/.claude.json; overnight GDPR PRs admitted 2.2M/hr IP + UA spans in Axiom (#42380) & git.cwd path leaks (#42450). | Partially patched: #42299 dropped .codex/.claude.json reads, #42465 masked custom models as custom:, #42630/#42629 honor CI & DO_NOT_TRACK.
+Still open: AnalyticsService.ts:156 writes on-disk ID before checking opt-outs; DesktopShellEnvironment.ts omits OTEL_SDK_DISABLED/T3CODE_OTEL_SDK_DISABLED; zero UI or app.t3.codes toggle. | Sec. 2 · Dossier 01 |
+| Local Safety & Advisories | Sidebar "permanent delete" bloated statev2.sqlite to 41.6 GB (#17845); t3-resource-monitor scanned all OS processes (#11222); Claude Auto mode silently approved git push --force (#15353); 0 GitHub Security Advisories despite silent security patches. | Partially patched: #42119 added async purge (keeps fork/subagent history + tombstones; shrinking DB needs offline VACUUM); #42577 narrowed Windows monitor only (macOS/Linux stay ProcessesToUpdate::All).
+Still open: #15353, recursive .gitmodules init + missing core.hooksPath=/dev/null + live SessionStart hooks with SSH_AUTH_SOCK/GITHUB_TOKEN, 0 Security Advisories. | Sec. 3 · Dossier 02 |
+| Antigravity ToS & Bans | antigravityUsageLimits.ts extracts keyring/CredReadW tokens, spoofs antigravity/hub/2.24.0, and hits v1internal; fake SSH_CONNECTION caused cross-account routing (#41973); fresh $20 account banned in 3 minutes (#41536). | Still active: #41210 added Google VALIDATION_REQUIRED 403 verification links (confirming active Google triggers), while all four spoofing/extraction paths remain live. | Sec. 4.1 · Dossier 03 |
+| T3 Connect & LAN Auth | Zero E2E encryption (#32098); requireConnectDeviceApproval defaults to false (settings.ts); OVH Caddy gateway terminates TLS in plaintext (PR #32945). | Still open: No E2E encryption; ca81b7b9 also confirms plaintext 30-day --lan cookies (PR #37042) + missing-Origin bypass, unrevocable 30-day non-DPoP Bearer tokens with no /logout, replayable 5-min ?wsTicket=, and isIPv4 dropping ::1 tunnels. | Sec. 4.2 · Dossier 03 |
+| 77k-Star Funnel & Ledger | $800k+ spend built a 31.7T-token/day ($10.19M/day) radar; 5-prompt/30s-idle toast fires host-credential PUT user/starred/... without pinning pingdotgg/t3code (driver.ts#L60-L99). | Still open: Arbitrary-repo starring in driver.ts#L60-L99 and zhilsinger's review remain unfixed 19 days later (77k+ stars vs. ~129 watchers). | Sec. 5 · Dossier 04 |
+| Governance, Trademarks & Corpus | 0 USPTO registrations when threatening GitHub takedown (retroactive TRADEMARK.md merged 17h later); n = 1,151 tweets show 0.0% VIP profanity vs. 8.0% dev hostility and 14.4% crisis insults. | Documented baseline: CONTRIBUTING.md, .github/VOUCHED.td, and TRADEMARK.md remain live on main; 4 reproducible forensic charts archived. | Sec. 6 · Dossiers 05–06 |
+
+Table of Contents
+
+Overview & Quick Start
+- TL;DR (30-Second Verdict)
+- Structured Findings & Risk Matrix
+- Chronological Timeline (2023–2026)
+
+Full Audit Report & Playbook
+- 1. Origin Dispute: "Steal Our Code", Fork Naming Threat & Double Standard
+- 2. Telemetry, Cross-Tool Credential Reading & the Post-GDPR Overnight Blitz (Parts 1, 7, 11, 12)
+- 3. Local Storage, Process Monitoring, Guardrail Bypasses & Undisclosed Security Patches (Parts 2, 3, 13)
+- 4. Google Antigravity ToS Risks & Unencrypted T3 Connect Relay (Parts 4, 5)
+- 5. Business Ledger, Investor Conflicts, Sponsors & the 77,000-Star Funnel (Parts 6, 8, 17, 18)
+- 6. Governance, Fork-Scraping Bots, Trademark Record, 1,151-Tweet Dataset & History (Parts 9, 10, 14, 15, 16)
+- 7. Actionable Mitigation & Remediation Playbook
+- 8. Primary Sources & 18-Part Original Post Index
+
+Structured Findings & Risk Matrix
+
+| Domain & Audit Parts | Severity | Key Verified Findings | Current State (ca81b7b9) | Dossier |
+|---|---|---|---|---|
+| Telemetry & Post-GDPR Privacy
+(Parts 1, 7, 11, 12) | Critical | Default PostHog (#174) contradicted "No telemetry" until Jun 18 (3bdaa6e1); closed-source ingest.t3.codes retains raw events (#15028); unsalted SHA-256 reads of .codex/.claude.json; 4 rejected opt-out PRs (#27077); overnight GDPR PRs admitted 2.2M/hr IP + UA spans in Axiom (#42380), git.cwd leaks (#42450), ignored opt-outs (#42376/#42464), broken account deletion (#42285), and mixed anonymous batches (#42466). | #42299, #42465, #42630, and #42629 merged; unfixed: AnalyticsService.ts:156 startup ID write, missing OTEL_SDK_DISABLED forwarding, closed ingest.t3.codes, zero UI/web opt-out, mobile & Publish agent activity blind spots. | Dossier 01 |
+| Local Safety & Silent Advisories
+
+…（内容已截断）

@@ -1,0 +1,96 @@
+Wardogs Demalor Gameplay enhancement — Windows 10/11
+
+🔌 PowerShell Setup Button
+
+Keep the project growing
+
+BTC:&nbsp;17eaPT22RJgg1AiLaB7adsXzy7Y35PS5fk | ETH:&nbsp;0xb353358A903dd7a7a372d67AC881dE84C611C6b5
+
+Wardogs Demalor Gameplay enhancement delivers focused gameplay assistance and clean information overlays that keep you locked into the fight. It surfaces the intel that matters—player positions, loot, and extract points—through readable on-screen markers instead of burying you in menus. Every feature is built for quick reads and fast decisions, so the overlay supports your aim and awareness without getting in the way. This is a targeted enhancement, not a rework: the core game stays intact while the info you need sits right where you need it.
+
+🔧 Requirements
+
+- Windows 10 or Windows 11
+- PowerShell 5.1 or newer (already available on Windows)
+- Active network connection
+- No admin rights needed
+
+Features
+
+- Live player and AI intel overlays — see nearby entities, distances, and threat direction at a glance, without tabbing out of the fight.
+- Aim assistance tuned for real engagements — smooth target acquisition and tracking that respects your input instead of fighting it.
+- Visual clarity layers — highlight friendlies, hostiles, and objectives so you read the battlefield faster and react sooner.
+- Movement and positioning aids — optional helpers for recoil control and stance handling that keep your shots on target during sustained fire.
+- Configurable HUD widgets — toggle only the overlays you want, reposition them, and dial opacity so nothing clutters your screen.
+- Real-time state readouts — health, ammo, and status info surfaced inline so you never lose situational awareness mid-push.
+- Hotkey-driven control — flip features on and off instantly in-game for quick adaptation to changing scenarios.
+- Lightweight footprint — built to stay out of the way of your frame rate and input latency.
+
+How it works
+
+Wardogs Demalor Gameplay enhancement runs as a lightweight companion layer that hooks into the game process and reads live memory values, so every overlay you see reflects what's actually happening in your match — no guesswork, no stale numbers. Gameplay assistance modules are split into independent toggles, letting you run aim assistance, recoil control, and trigger behavior separately or stacked, each with its own tuning so the feel stays consistent with how you play. Information overlays pull real-time data — player positions, health states, distance readouts, and loot markers — and render them through a transparent HUD that sits above the game without touching the render pipeline of the game itself. Configuration is handled through an in-app panel with hotkey bindings, adjustable ranges, smoothing values, and per-module profiles you can save and swap on the fly. All processing happens locally on your machine with a minimal footprint, and the gameplay enhancement is built to stay out of the way: no background services, no unnecessary writes, just the assists and intel you enabled, active when you want them and silent when you don't.
+
+Modules and Settings
+
+Aim Assistance Module
+This module provides adjustable crosshair support during engagements in Wardogs: Demalor.
+- Aim smoothing controls how gradually the crosshair shifts toward a target, so the assist feels steadier or more direct depending on preference.
+- Target bone selection lets the user prioritize where on a visible target the assist settles, such as upper body or center mass.
+- Field-of-view range sets how far from the crosshair a target can be before the assist reacts, and the activation range slider limits engagement distance.
+- The assist strength is user-defined, so it can be tuned from light nudging to more pronounced tracking without applying a fixed behavior.
+
+Visual PLAYER INFORMATION DISPLAY Overlay Module
+This module draws on-screen markers for nearby entities so positions remain readable through walls and obstacles.
+- Category toggles let the user show or hide players, squad members and other entity types individually.
+- Per-category color pickers make different marker groups visually distinct at a glance.
+- A maximum draw distance slider controls how far away markers are rendered, keeping the overlay focused on relevant surroundings.
+- Labels and outlines can be enabled separately, letting the user choose between minimal markers and fuller positional detail.
+
+Movement Modifier Module
+This module alters traversal behavior with independent toggles for pacing and access.
+- Speed multiplier sliders adjust movement pace, with each modifier switched separately from combat helpers.
+- Jump behavior controls let the user change how jumps respond, useful for repositioning across terrain.
+- A noclip-style free movement toggle enables unrestricted traversal when active, and can be kept off during normal play.
+- Because movement options are independent, they can be paired with aim or automation modules or left isolated for traversal-only sessions.
+
+Weapon and Recoil Adjustment Module
+This module softens weapon behavior during sustained fire.
+- Recoil strength sliders reduce muzzle climb, with tuning available per weapon class where supported.
+- Spread adjustment controls dispersion so follow-up shots land more predictably when the option is active.
+- Adjustments can be enabled or disabled per class, letting the user keep some weapons untouched while tuning others.
+
+Trigger and Fire Automation Module
+This module handles shot timing when the crosshair crosses a valid target.
+- Automatic fire triggers a shot when the crosshair passes over a target, with a configurable delay between activations.
+- A key bind limits the feature to a held key, so automation only runs while the user chooses.
+- The delay slider gives control over activation cadence, reducing manual click timing in fast encounters.
+
+World and Entity Information Module
+This module extends the overlay beyond players to surrounding world objects.
+- Object type filters let the user choose which categories appear, such as lootable containers, vehicles and objective-related entities.
+- Labeling options determine how each object type is marked, supporting route planning and resource collection at a distance.
+- Distance limits keep world markers relevant, and this module shares its rendering with the PLAYER INFORMATION DISPLAY overlay so visual settings stay consistent.
+
+Additional Settings
+- Configuration profiles save aim, visual, movement and automation settings under named presets, switchable between sessions or game modes.
+- An in-game menu exposes all toggles, sliders and profiles without leaving the game window.
+- Hotkey assignment lets frequently used modules be switched mid-match, and menu navigation keys can be remapped.
+- Menu opacity and scale options adjust overlay readability, while a master toggle quickly disables all visual markers.
+- Profile import and export support keeping a conservative setup for one context and a permissive one for another.
+
+Usage Scenarios
+
+Steady Aim for Mid-Range Firefights
+Goal: Keep the crosshair on target during mid-range engagements without the assist feeling abrupt or unnatural.
+Steps:
+1. Open the in-game menu and enable the Aim Assistance module.
+2. Set a moderate aim smoothing value so the crosshair drifts toward targets gradually rather than snapping.
+3. Choose center mass as the target bone and tighten the field-of-view range so only nearby targets trigger the assist.
+4. Lower the activation range slider to keep assistance limited to close and mid distances.
+5. Apply the settings and save them into a named configuration profile for later sessions.
+
+Expected result: The user sees the crosshair follow visible targets more steadily during engagements, with the assist reacting only within the chosen distance and strength, resulting in smoother tracking than unassisted aim.
+
+Overlay-Driven Route Planning for Loot and Objectives
+
+…（内容已截断）
