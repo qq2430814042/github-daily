@@ -1,0 +1,189 @@
+Reconsolidatable Streaming 3D Reconstruction
+
+LingBot-Map 2.0 · Geometric Streaming Base Model
+
+Robbyant Team
+
+https://github.com/user-attachments/assets/57b41dfa-0281-4b09-8b57-e2cddf8cb659
+
+Watch the 1080p demo on Hugging Face
+
+🗺️ Meet LingBot-Map 2.0!
+
+LingBot-Map 2.0 predicts camera poses and dense geometry from incoming RGB sequences. This repository provides the geometric streaming base model from the technical report, trained for causal Online Streaming.
+
+- Streaming Reconstruction: Predict camera poses, intrinsics, depth and confidence from incoming RGB frames.
+- Flexible Integration: Run reconstruction from the command line or integrate frame-by-frame inference and keyframe selection into your application.
+
+📑 Table of Contents
+
+Click to expand
+
+- Demo Video
+- News
+- TODO
+- Installation
+- Model Download
+- Quick Start
+- Interactive Demo (demo.py)
+- Streaming Inference (infer.py)
+- Benchmarks
+- Resources
+- License
+- Citation
+- Acknowledgments
+
+📰 News
+
+- 2026-11-23 — Added the evaluation benchmark with dataset preparation and evaluation instructions.
+- 2026-11-21 — Released the causal streaming inference code. See Model Download for the geometric streaming base model.
+
+📋 TODO
+
+- ✅ Release model weights
+- ✅ Release streaming inference code
+- ✅ Release interactive demos and example sequences
+- ✅ Release evaluation benchmarks
+
+⚙️ Installation
+
+1. Create a conda environment
+
+conda create -n lingbot-map2 python=3.11 -y
+conda activate lingbot-map2
+
+2. Install PyTorch (CUDA 12.8)
+
+A BF16-capable CUDA GPU and PyTorch 2.8 or later are required. For a CUDA 12.8 environment:
+
+pip install torch==2.8.0 --index-url https://download.pytorch.org/whl/cu128
+
+3. Install the LingBot-Map 2.0 Geometric Streaming Base Model
+
+Clone or download this repository, then run from its root directory:
+
+pip install -e .
+
+FlashInfer is included in the package dependencies declared in pyproject.toml. If your package mirror does not carry it, install it with pip install --index-url https://pypi.org/simple flashinfer-python before installing this package.
+
+4. Install benchmark dependencies (optional)
+
+pip install -e ".benchmark]"
+
+5. Install visualization dependencies (optional)
+
+pip install -e ".[vis]"
+
+📦 Model Download
+
+| Model Name | Hugging Face | ModelScope | Description |
+| :--- | :--- | :--- | :--- |
+| LingBot-Map 2.0 Geometric Streaming Base Model | [Hugging Face | ModelScope | Pure causal checkpoint for online 3D reconstruction. |
+
+The model repositories are currently private. Authenticate with an
+account that has access, then download the paired configuration and weights:
+
+pip install -U huggingface_hub
+hf auth login
+python download_model.py --source hf --output checkpoints/base-streaming
+
+For ModelScope, install modelscope, authenticate with a permitted account and
+use --source modelscope. The downloader validates the weight SHA-256.
+
+Keep model_weights.pt and config.json together and pass both paths as shown below. The released configuration describes the Geometric Streaming Base Model checkpoint; causal.example.json is only a schema example. The loader checks the checkpoint SHA256, causal training mode, and every parameter key and shape. It accepts a model-only tensor dictionary or a model tensor dictionary loaded with weights_only=True.
+
+🚀 Quick Start
+
+Run streaming reconstruction on a folder of RGB images:
+
+python infer.py \
+    --checkpoint checkpoints/base-streaming/model_weights.pt \
+    --config checkpoints/base-streaming/config.json \
+    --images path/to/rgb \
+    --output outputs/sequence
+
+Images are processed in natural filename order. The CLI retains Uniform320 keyframes while predicting every input frame; --keyframe-interval 1 retains every frame. Predictions include original raw_indices and are saved as .npz files containing poses, intrinsics, depth and confidence, alongside a run manifest. Use --image-list frames.json to supply an explicit input order.
+
+🖥️ Interactive Demo (demo.py)
+
+View Online reconstruction in your browser with Viser:
+
+pip install -e ".vis]"
+python demo.py \
+    --checkpoint checkpoints/base-streaming/model_weights.pt \
+    --config checkpoints/base-streaming/config.json \
+    --images path/to/rgb --mask-sky
+
+Open http://localhost:8080. The viewer mirrors LingBot-Map's interactive
+Viser interface: Video Display (current RGB frame preview), **Reset up
+direction, **Reset Defaults, and Reset View Direction presets (**Look
+At Scene Center, **Overview, Front/Back/Top/Left/Right, **First
+Camera), **3D / 4D mode switching, Playback timeline and FPS controls,
+display sliders (Focal Length, Point Size, Camera Size,
+Downsample Factor, Show Camera, Visibility Threshold, **Camera
+Downsample Factor), **Screenshot, Export GLB (Points/Spheres with
+optional cameras and trajectory), and Video Saving (FFmpeg export of point
+cloud and original RGB videos; pip install -e ".[vis]" bundles
+imageio-ffmpeg, or a system ffmpeg binary on PATH is used if available).
+The viewer stays open until you press Ctrl+C in the terminal.
+
+Your image sequences
+
+Four hosted example sequences are documented in [example/:
+courthouse, university, bund, and apartment (1,570 images, 0.918 GiB).
+Download the original images from the Hugging Face example dataset. View all-time dataset downloads.
+
+pip install -U huggingface_hub
+While the dataset is private, first log in with an authorized account:
+hf auth login
+hf download robbyant/lingbot-map-v2-examples --repo-type dataset \
+    courthouse.tar university.tar bund.tar apartment.tar \
+    manifest.json --local-dir example
+(cd example && for scene in courthouse university bund apartment; do tar -xf "$scene.tar" || exit 1; done)
+
+KITTI 08 is a fifth example. Download the official KITTI color odometry ZIP, then extract its 321 preselected keyframes and run the demo:
+
+python example/prepare_kitti08.py /path/to/data_odometry_color.zip
+python demo.py --checkpoint checkpoints/base-streaming/model_weights.pt \
+    --config checkpoints/base-streaming/config.json --images example/kitti08 \
+    --width 512 --height 288 --keyframe-interval 1 --depth-stride 1
+
+The interval of 1 retains every supplied keyframe. See the example README for the ordered manifest, image checksums and attribution.
+
+Use --images path/to/rgb for your own image folder, or provide an ordered list
+with --image-list frames.json. The matching causal checkpoint and JSON
+configuration are required. --model_path and --image_folder are accepted
+aliases. The model uses the same preprocessing and Uniform320 keyframe policy
+as infer.py; --keyframe-interval overrides the latter.
+
+View saved predictions
+
+You can also display a completed infer.py run without loading a model or using CUDA:
+
+python demo.py --predictions outputs/sequence --mask-sky
+
+The run must include depth and its original images must remain accessible at the
+paths recorded in manifest.json. The viewer uses the recorded processed image
+size to align RGB colors with predicted depth.
+
+Display options
+
+The drawing defaults follow LingBot-Map's demo: --point-size 0.00001,
+--conf-threshold 1.5 (an absolute confidence threshold), and
+--downsample-factor 10 (keep every tenth point after filtering). Cameras use
+small, untextured frustums with a temporal color gradient; click a camera to
+view the scene from its pose. Overview and Look At Scene Center use
+camera positions to avoid letting far-away points dominate the view, and
+Reset Defaults restores the initial sliders, 3D mode, and overview camera.
+
+The visibility slider follows V1's range of 1 to 5, in steps of 0.01. Changing
+the threshold or downsample factor removes the old clouds and recreates them
+from the filtered, sampled points. Raw confidence scores can exceed 5; this
+slider is an absolute cutoff, not a percentile or probability.
+
+--mask-sky enables the same ONNX sky segmentation and threshold as LingBot-Map.
+On first use, the model is downloaded from
+skyseg to
+~/.cache/lingbot-map2/skyseg.onnx. Use --sky-model /path/to/skyseg.onnx for an
+
+…（内容已截断）

@@ -1,6 +1,6 @@
 /last30days
 
-English | Français | Deutsch | Español | Português (Brasil) | 日本語 | 简体中文 | العربية | فارسی | Türkçe
+English | Français | Deutsch | Español | Português (Brasil) | 日本語 | 简体中文 | العربية | فارسی | Türkçe | Tiếng Việt | Русский
 
 An AI agent-led search engine scored by upvotes, likes, and real money - not editors.
 

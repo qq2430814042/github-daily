@@ -1,0 +1,169 @@
+LingBot-Navi: Scene‑aware Navigation with Spatial Memory
+
+English | 简体中文
+
+Spatial Memory · Object Grounding · Image Localization · Coordinate Navigation
+
+🧭 Meet LingBot-Navi!
+
+LingBot-Navi addresses a central challenge in continuous robot navigation: using earlier observations to understand new requests and reach targets beyond the current view. It connects historical scene evidence, the current image, and language through Spatial Memory.
+
+- Reusable 3D memory: anchors visual features to reconstructed surfaces and organizes them into compact spatial tokens across local reconstruction blocks.
+- Unified scene understanding and navigation: combines a spatial memory encoder, a vision-language decoder, and a trajectory decoder for object grounding, image localization, spatial question answering, and 3D route prediction.
+- Workplace data and evaluation: introduces a dataset of reconstructed real-world workplaces and a sequential-task benchmark for studying memory reuse across successive navigation goals.
+
+📑 Table of Contents
+
+Click to expand
+
+- News
+- Installation
+- Model Download
+- Dataset
+- Quick Start
+  - Build Spatial Memory
+  - Object Grounding
+  - Image Localization
+  - Coordinate Navigation
+  - Frontier Exploration
+  - Local Route Execution
+- Benchmark
+- License
+- Citation
+- Acknowledgments
+
+📰 News
+
+- 2026-11-26 — First public release of LingBot-Navi, including the inference code, model weights, and dataset.
+
+⚙️ Installation
+
+Requirements: Linux x86_64, Python 3.10+, and an NVIDIA GPU. Rendering requires the CUDA 12.8 toolkit and a C++ compiler.
+
+git clone https://github.com/Robbyant/lingbot-navi.git LingBot-Navi
+cd LingBot-Navi
+conda create -n lingbot-navi -c conda-forge python=3.10 git -y
+conda activate lingbot-navi
+python install.py
+
+python install.py also installs the pinned lingbot-map package used by the spatial-memory example and closed-loop evaluation.
+
+📦 Model Download
+
+| Model Name | Huggingface Repository | ModelScope Repository | Description |
+| --- | --- | --- | --- |
+| LingBot-Navi | robbyant/lingbot-navi | Robbyant/lingbot-navi | Spatial memory model for object grounding, image localization, and coordinate navigation. |
+
+🌍 Dataset
+
+| Dataset Name | Huggingface Repository | ModelScope Repository | Description |
+| --- | --- | --- | --- |
+| LingBot-Navi | robbyant/LingBot-Navi | Robbyant/LingBot-Navi | 511 reconstructed real-world scenes. |
+| LingBot-Navi-Test | robbyant/LingBot-Navi-Test | Robbyant/LingBot-Navi-Test | 36 test scenes included in the full LingBot-Navi dataset. |
+
+3DGS Rendering Example
+
+This example loads a 3DGS PLY scene and renders an RGB image from the specified camera pose for display:
+
+python -m examples.render_3dgs \
+  --ply /path/to/scene.ply \
+  --pose 0 0 1.5 0 0 0
+
+--pose is x y z roll pitch yaw, in meters and degrees. It is optional and defaults to 0 0 1.5 0 0 0.
+
+🚀 Quick Start
+
+Run commands from the repository root. Download LingBot-Navi weights and LingBot-Map weights. Copy or symlink data and complete checkpoint directories into the layout below; prepare only the assets needed for the features you run. The 3DGS asset used for testing is demo.ply from LingBot-Navi-Test, available on Hugging Face or ModelScope.
+
+Place the entire downloaded lingbot-navi folder under ckpts/, keeping its contents together.
+
+datasets/
+  goat/hm3d/v1/             # GOAT task splits
+  goat/scene_datasets/      # HM3D scene assets
+  lingbot/                  # lingbot-navi evaluation release (manifest.json)
+ckpts/
+  lingbot-navi/
+    navigation_transformer/
+    local_planner/checkpoint.pt
+  lingbot-map/
+    lingbot-map.pt          # spatial-memory demo and lingbot-map1.0 evaluation
+
+Example symlinks (replace /path/to/...; alternatively use cp -a SOURCE DESTINATION to copy to the same locations):
+
+mkdir -p datasets/goat ckpts/lingbot-map
+ln -s /path/to/lingbot-navi ckpts/lingbot-navi
+ln -s /path/to/lingbot-map.pt ckpts/lingbot-map/lingbot-map.pt
+
+Set LINGBOT_GS_ASSET to the path of the downloaded demo.ply file.
+
+export LINGBOT_GS_ASSET=/path/to/demo.ply
+
+- Demo 1: Build Spatial Memory by rendering a 3DGS scene along six saved camera trajectories.
+- Demos 2–4: Run object grounding, image localization, and coordinate navigation using the provided memory.npz or your own memory. Demo 1 is optional.
+- Demo 5: Follow the predicted route with the local planner and save an execution video.
+
+The bundled memory was rebuilt from the six recorded trajectory segments (segment_01–segment_06), with 11,394 points after preprocessing. Each block retains its own local coordinate frame; predictions use the first-block frame.
+
+The commands below save predictions (result.json) and visualizations under outputs/demo/. Use a new output directory when repeating a demo.
+
+1. Build Spatial Memory
+
+Replay the camera positions, orientations, intrinsics and block assignments in trajectory.json to render RGB observations from the 3DGS scene. LingBot-Map reconstructs each block, and Qwen3.5-4B provides its visual features.
+
+The example contains 387 capture frames in six trajectory segments, with 71, 79, 69, 64, 71 and 33 frames respectively. Colors link the capture trajectories (left) to their memory blocks (center). On the right, the six blocks are transformed into scene coordinates and projected onto the same 3DGS cutaway, at the same scale and orientation. The cutaway shows points from −0.1 to 1.6 m above the floor. Arrows show camera viewing directions. Circles and squares mark each segment's first and last frames.
+
+python -m examples.build_spatial_memory \
+  --gs-asset "$LINGBOT_GS_ASSET" \
+  --output-dir "outputs/demo/spatial_memory"
+
+The generated memory.npz can be used in Demos 2–4. Set --memory to this file and --scene to the scene.json in the same output directory.
+
+2. Object Grounding
+
+Distinguish similar targets using surrounding objects: locate the teal bar chair beside the pink vase and the one beside the striped vase.
+
+Replace grounding question with a description of the target object.
+
+python -m examples.demo \
+  --task grounding --question "grounding question" \
+  --gs-asset "$LINGBOT_GS_ASSET" \
+  --output-dir "outputs/demo/grounding"
+
+3. Image Localization
+
+Use query.png to query Spatial Memory for the camera position and orientation. The example image looks northwest from the lower-right corridor in the BEV; its camera parameters are in scene.json.
+
+Query image preparation
+
+The example is rendered at 1080×640 with a 90° horizontal FOV, resized with Lanczos to a 640-pixel long edge, and center-cropped to 640×352 for 32-pixel alignment. Camera intrinsics are adjusted for resizing and cropping. For your own images, provide the corresponding intrinsics in scene.json.
+
+python -m examples.demo \
+  --task localization --question "Where am I?" \
+  --gs-asset "$LINGBOT_GS_ASSET" \
+  --output-dir "outputs/demo/localization"
+
+Example output:
+
+The image pose is  at (+1.82,-3.73,-0.46),
+quaternion_xyzw=(-0.0012,+0.0019,+0.7644,+0.6447).
+
+Position error: 0.374 m. Orientation error: 4.420°. Both are measured against the query camera pose.
+
+4. Coordinate Navigation
+
+Use the pose predicted in Demo 3 as the starting point and navigate to -1.366958, 4.164281, -0.513988] (meters in the first-block frame). The goal is in the open area northwest of the round table.
+
+python -m examples.demo \
+  --task coordinate --question "Navigate to the goal" \
+  --localization-result "outputs/demo/localization/result.json" \
+  --goal-xyz -1.366958 4.164281 -0.513988 \
+  --gs-asset "$LINGBOT_GS_ASSET" \
+  --output-dir "outputs/demo/navigation"
+
+The figure illustrates the predicted route in BEV and the first-person view at stop. With the bundled memory, Demo 4 predicts 80 waypoints and the Demo 5 rollout stops 0.03 m from the route endpoint.
+
+This demo visualizes an offline trajectory prediction.
+
+5. Local Route Execution
+
+…（内容已截断）

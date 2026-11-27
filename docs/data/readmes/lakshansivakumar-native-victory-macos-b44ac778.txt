@@ -1,0 +1,112 @@
+Native VIctory for macOS
+
+A native macOS port of VIctory, the Xbox Series emulator for GTA VI.
+
+No Wine, no CrossOver, no Game Porting Toolkit: the game's code runs in our own process, and its GPU work goes straight to Metal.
+
+Not playable yet, but it gets as far as the story. The game boots natively on a Mac, plays its boot movie, and shows the start screen and every setup screen on Metal at about 30 fps, with sound, keyboard and controllers. Then it loads story mode and runs into the prologue's world: the prologue crash is fixed, and on our test Mac the game keeps running with the dialogue playing. The world is not watchable yet: it draws, but the lighting pass is still refused, so the picture is mostly black, and it runs at about 0.5 fps. Lighting and speed are what everyone is working on now: see #15. No game files are included here, ever. You need your own legally obtained copy of the game.
+
+📸 See the latest screenshots (the game's start screen and setup menus, rendered natively on Metal).
+
+Why a native port?
+
+The Wine-based route stacks the game on Wine, a Windows Direct3D 12 layer and Apple's D3DMetal. This project removes those layers:
+
+| Layer | Wine route | Native route (this repo) |
+| --- | --- | --- |
+| Game code (x86-64) | Wine process under Rosetta | Our own process under Rosetta, or recompiled to arm64 |
+| Windows and Xbox system calls | Wine + VIctory | Reimplemented in Rust for macOS (victory-hle, about 1,000 functions) |
+| Console graphics (D3D12.X) | D3D12 → D3DMetal → Metal | Straight to Metal (victory-gpu) |
+| Console shaders (GFX10) | → DXIL → D3DMetal | → DXIL → Apple Metal Shader Converter |
+
+Fewer layers means fewer places for things to break, and much better speed: boot frames run at about 28 to 30 fps.
+
+Where we are
+
+| Area | State |
+| --- | --- |
+| Loader: maps the game and its DLLs, TLS, exceptions, threads | ✅ Works |
+| System calls: memory, files, threads, time, C runtime, sockets, audio (XAudio2), DirectStorage | ✅ Works for everything the boot uses |
+| Sound | 🟡 Plays through CoreAudio (the game's Windows Spatial Audio stream, mixed to stereo); reverb is still silent |
+| Loading: DirectStorage reads about 9,500 requests at about 79 MB/s | ✅ Works |
+| GPU: every draw gets a Metal pipeline, built from the console's own pipeline descriptions | ✅ Works (some parts are inferred, see docs/native-host.md) |
+| Shaders: GFX10 → DXIL → Metal | 🟡 Most translate, including the world's mesh shaders. A few hundred are still refused once the world loads (most are 64-lane console waves the Mac's 32-lane GPU has to split), and a refused shader's work is skipped. A general fix for that class is being built. Shaders are cached on disk between runs |
+| Boot movie and menus in the window | ✅ The boot movie plays smoothly, and the start screen and setup screens show with correct text and blending. The black window on M1/M2 is fixed (#91) |
+| Start screen ("press A") and input | ✅ Passed; the keyboard and Game Controller pads (Xbox, DualShock 4, DualSense) drive the gamepad in the window |
+| Running past ~50 s | ✅ Fixed: the old Metal GPU timeout is gone (#2) |
+| Story mode load | ✅ Loads, and reaches the prologue |
+| Prologue | 🟡 Runs into the world without crashing; the dialogue plays. The crash (GPU work that overwrote the game's memory) is fixed. With a cold shader cache, the first world frame can still take more than 30 s and trip the game's own watchdog; a second run is usually past it (#15) |
+| World picture | 🔴 The surfaces are drawn (the G-buffer has content), but the compute pass that lights them is still refused, so the screen is mostly black. Being worked on now |
+| World frame rate | 🔴 About 0.5 fps on an M5 Pro with 48 GB (was 0.07). Most of a frame goes to copying the textures the world streams in, one by one; that fix is in progress |
+| macOS 15 | 🟡 Boots and loads, but Apple's Metal compiler crashes on a few world pipelines, which holds the first world frame. Some macOS 27 Macs also report this failure (#181) |
+| Memory on 16 to 24 GB Macs | 🟡 Use the Series S profile (the default there); Series X can run out of GPU memory at the world load. Macs with 32 GB or more keep GPU memory resident in one set by default, which is much faster; on smaller Macs you can try it with VICTORY_METAL_RESIDENCY_SETS=heap and tell us how it goes (#8, #79) |
+| Apple Silicon recompilation (no Rosetta) | 🟡 The whole game (440,000 functions) recompiles to arm64, and a contributor's branch boots it to the intro at 30 fps (#115); not on main yet |
+| Gameplay | 🔴 Not yet |
+
+The live list of open problems, with everything we already know about each one, is in docs/ROADMAP.md.
+
+Quick start
+
+You need:
+
+- an Apple Silicon Mac (M1 or newer) with macOS 15 or newer and about 20 GB free;
+- rustup (not Homebrew's rust package);
+- Apple's free Metal Shader Converter (download and run the installer);
+- your own copy of the Xbox Series game files.
+
+1. Get the code and build it.
+
+git clone https://github.com/LakshanSivakumar/Native-Victory-macOS.git
+
+cd Native-Victory-macOS && tools/macos/native-setup.sh
+
+The setup script checks Rosetta, the Xcode command line tools, rustup and the Metal Shader Converter. It tells you exactly what to install if anything is missing, then builds victory.
+
+2. Run the game.
+
+tools/macos/run-native.sh /path/to/your/game/folder
+
+Point it at the folder that holds game_scarlett_master.exe. A window opens; after a few seconds of black while it loads, you should see the boot movie and then the menus, and the full log is saved under runs/. The script also presses Enter for you every two seconds until 80 s to get past the start screen. Click the window and the keyboard drives the game's gamepad:
+
+| Keys | Pad |
+| --- | --- |
+| Enter, Space | A |
+| Escape, Backspace | B |
+| X, Y | X, Y |
+| Arrow keys | D-pad |
+| W A S D | left stick |
+| Tab | Menu (Start) |
+| Q, E | left, right shoulder |
+| Z, C | left, right trigger |
+
+Controllers. An Xbox pad, a PS4 DualShock 4 or a PS5 DualSense connected to the Mac (USB, or Bluetooth through System Settings → Bluetooth; on a DualShock 4 hold Share and PS until the light bar flashes to pair) drives the gamepad while the window is in front. The keyboard still works alongside it. On a PlayStation pad Cross, Circle, Square and Triangle are A, B, X and Y, Options is Menu, and Share or a touchpad click is View. With several controllers connected, the one you used last wins. The run log names the controller it picked (controller: drives the pad); if it says none, check that macOS sees the controller in System Settings → Game Controllers.
+
+Add --headless to run without a window, or --seconds 60 to stop after a minute.
+
+3. Tell us what happened. Open a Tester report and attach the log. Reports from different Macs (M1 to M5, 8 GB to 128 GB) are very useful.
+
+Help wanted
+
+Whatever your background, there is something to do:
+
+- Testers: run the game on your Mac and file a tester report. No coding needed.
+- Graphics and Metal: the shader refusals that keep the world unlit (#4), frame rate in the world, and GPU memory use on 16 to 24 GB Macs.
+- Debugging: runs that reach the prologue's world (#15). Logs from your own Mac help a lot, especially on macOS 15 and on 16 to 24 GB.
+- Compilers: the arm64 recompiler (jump tables, SSE, exceptions).
+- Rust and systems: missing Windows and Xbox system calls, speed, tests.
+
+Read CONTRIBUTING.md to get started, then pick something from docs/ROADMAP.md or the issues labelled good first issue.
+
+Documentation
+
+| Document | What it covers |
+| --- | --- |
+| docs/ROADMAP.md | Open problems, what is known, where to start |
+| docs/native-host.md | The native host in depth: loader, system calls, findings, every diagnostic switch |
+| docs/metal-backend.md | The Metal backend and the Metal Shader Converter |
+| docs/architecture.md | VIctory's overall design |
+| docs/asset-policy.md | What may and may not be committed |
+
+Legal
+
+…（内容已截断）

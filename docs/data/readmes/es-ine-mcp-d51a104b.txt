@@ -1,0 +1,226 @@
+INE MCP
+
+Official statistics of Spain, straight from the source, for any AI assistant.
+
+A Model Context Protocol server for the public JSON API of
+INE (Instituto Nacional de Estadística / Statistics Spain).
+
+Quick start ·
+Connect a client ·
+Available tools ·
+Available operations
+
+English · Spanish
+
+Give your AI assistant direct access to Statistics Spain's official statistics.
+
+This server lets any MCP client (Claude, Codex, Cursor, VS Code, Windsurf, Gemini CLI, Zed and others) query the public JSON API of the INE (Instituto Nacional de Estadística, Statistics Spain). Ask in plain language, for example "What was the unemployment rate for men in Murcia over the last four quarters?", and the assistant will find the right statistical operation, choose the table, resolve the filters and answer with the figures and a link to the official INE table.
+
+| | |
+| --- | --- |
+| Hosted endpoint | Available soon (meanwhile, run it locally) |
+| Transport | stdio (default) or Streamable HTTP |
+| Authentication | None, the data is public |
+| Coverage | Spain and its territorial breakdowns (autonomous communities, provinces, municipalities…) |
+| Language | Tool descriptions in English; data labels in Spanish, as INE publishes them |
+| Catalogue | 166 operations, 110 with tables available today (full list) |
+
+Why use it
+
+- Real data, not memory. Every figure is fetched from INE's API at request time.
+- A guided path. Five tools must be called in order; the server rejects skipped steps and identifiers it never returned.
+- Always sourced. Each result includes the operation, the table, its public URL and the filters applied.
+- Quick. Every step takes several requests at once and resolves them in parallel.
+
+Contents
+
+- Quick start
+- Installation
+  - Hosted server
+  - Run locally
+  - Connect a client
+- Example questions
+- Available tools
+  - Enforced order
+- Available operations
+- Development
+- Troubleshooting
+- Limitations
+- Privacy
+- Data source and attribution
+- Links
+- WIP and disclaimer
+  - Work in progress
+  - Disclaimer
+- Package maintenance and contributing
+- Licensing
+
+Quick start
+
+1. Install uv and clone the repository (details).
+2. Register the server in your client, for example with Claude Code:
+
+   claude mcp add ine -- uv run --directory /path/to/ine-mcp ine-mcp
+
+3. Ask a question: "Give me the last four quarterly unemployment rates for men in Murcia."
+
+Installation
+
+Two ways to use the server: the hosted endpoint (available soon) or a local
+copy running on your machine. The local setup is available today.
+
+Hosted server
+
+Available soon. A public endpoint has not been published yet. Once it is,
+this section will list the URL and the configuration snippets for each client.
+
+| | |
+| --- | --- |
+| Endpoint | Available soon |
+| Transport | Streamable HTTP |
+| Authentication | None |
+
+Run locally
+
+Requirements: Python 3.11 or later, and uv.
+
+git clone https://gitlab.ine.es/prod-estadistica/metodologia/ia-ready/mcp.git ine-mcp
+
+cd ine-mcp
+
+With uv:
+
+uv sync
+
+uv run ine-mcp
+
+The server starts on the stdio transport and waits for an MCP client. It prints nothing until a client connects; that is expected.
+
+To update an existing clone, run git pull and then uv sync again.
+
+Connect a client
+
+In the snippets below, replace /path/to/ine-mcp with the absolute path of your clone.
+
+Command-line clients (one line)
+
+| Client | Command |
+| --- | --- |
+| Claude Code | claude mcp add ine -- uv run --directory /path/to/ine-mcp ine-mcp |
+| Codex (OpenAI) | codex mcp add ine -- uv run --directory /path/to/ine-mcp ine-mcp |
+| VS Code | code --add-mcp '{"name":"ine","command":"uv","args":"run","--directory","/path/to/ine-mcp","ine-mcp"]}' |
+
+Clients with a JSON file
+
+Most clients read the same block. Paste it into the file for your client and restart it:
+
+{
+	"mcpServers": {
+		"ine": {
+			"command": "uv",
+			"args": ["run", "--directory", "/path/to/ine-mcp", "ine-mcp"]
+		}
+	}
+}
+
+| Client | Configuration file |
+| --- | --- |
+| Claude Desktop (macOS) | ~/Library/Application Support/Claude/claude_desktop_config.json |
+| Claude Desktop (Windows) | %APPDATA%\Claude\claude_desktop_config.json |
+| Claude Desktop (Microsoft Store) | %LOCALAPPDATA%\Packages\Claude_pzs8sxrjxfjjc\LocalCache\Roaming\Claude\claude_desktop_config.json |
+| Cursor | ~/.cursor/mcp.json (global) or .cursor/mcp.json (project) |
+| Windsurf | ~/.codeium/windsurf/mcp_config.json |
+| Gemini CLI | ~/.gemini/settings.json |
+| Cline, LM Studio and others | The client's MCP settings file (same mcpServers block) |
+
+Some clients use a different format:
+
+VS Code (.vscode/mcp.json): key servers and a type
+
+{
+	"servers": {
+		"ine": {
+			"type": "stdio",
+			"command": "uv",
+			"args": ["run", "--directory", "/path/to/ine-mcp", "ine-mcp"]
+		}
+	}
+}
+
+Codex (~/.codex/config.toml): TOML instead of JSON
+
+[mcp_servers.ine]
+command = "uv"
+args = ["run", "--directory", "/path/to/ine-mcp", "ine-mcp"]
+
+Example questions
+
+- "What was the CPI rate in Madrid over the last year?"
+- "Find the INE statistical operation for the Labour Force Survey."
+- "Which Labour Force Survey tables break unemployment down by age group or sex?"
+- "Give me the last four quarterly unemployment rates for men in Murcia."
+- "How many people live in each province, according to the latest figures?"
+
+Available tools
+
+The server exposes five read-only tools. They are meant to be called in order, and each one accepts a batch of requests that it resolves in parallel.
+
+| Step | Tool | Description |
+| --- | --- | --- |
+| 1 | ine_select_operation | Searches the catalogue of statistical operations (CPI, Labour Force Survey, GDP…) by name and description. |
+| 2 | ine_select_multiple_tables | Lists the tables of one or more operations, optionally filtered by search terms. |
+| 3 | ine_select_multiple_table_groups | Returns the variables (groups) that structure one or more tables. |
+| 4 | ine_select_multiple_values | Returns the values of the chosen variables — for example, the provinces or the sex categories. |
+| 5 | ine_select_multiple_table_data | Extracts the observations, filtered by tv pairs and a period. |
+
+How it uses the tools (simple case):
+
+sequenceDiagram
+    participant A as AI assistant
+    participant S as INE MCP server
+    participant I as INE API
+
+    Note over A,S: Step 1 · find the operation
+    A->>S: ine_select_operation("labour force survey")
+    S->>I: list operations
+    I-->>S: catalogue
+    S-->>A: matching operations (operation id)
+
+    Note over A,S: Step 2 · find the table
+    A->>S: ine_select_multiple_tables(operation id)
+    S->>I: tables of the operation
+    S-->>A: candidate tables (table id)
+
+    Note over A,S: Step 3 · understand the table
+    A->>S: ine_select_multiple_table_groups(table id)
+    S->>I: variables of the table
+    S-->>A: variables (group_id)
+
+    Note over A,S: Step 4 · choose the values
+    A->>S: ine_select_multiple_values(table id, group_id)
+    S->>I: values of the variable
+    S-->>A: values (FK_Variable and Id)
+
+    Note over A,S: Step 5 · get the data
+    A->>S: ine_select_multiple_table_data(table id, tv filters, period)
+    S->>I: table data
+    S-->>A: observations + source (table URL, filters, period)
+
+Each step only accepts identifiers returned by the previous ones; if a step is skipped, the server answers BLOCKED.
+
+All five tools are annotated readOnlyHint and openWorldHint. The first four are also marked idempotent.
+
+Enforced order
+
+The sequence is checked in code, and the check cannot be switched off. A call that arrives too early returns an error that starts with BLOCKED, names the missing step and says what to call next.
+
+| Step | Accepted only if |
+| --- | --- |
+| 2 | The operation ID or code exists in the operations catalogue. |
+| 3 | The table was returned by step 2. |
+| 4 | The table's variables were queried in step 3 and group_id is one of them. |
+| 5 | Steps 2 to 4 are complete for the table, and every tv filter is well formed and matches a value returned by step 4. |
+
+Available operations
+
+…（内容已截断）

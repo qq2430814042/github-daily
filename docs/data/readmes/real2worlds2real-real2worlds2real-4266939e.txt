@@ -1,0 +1,97 @@
+Real2Worlds2Real: Scaling Self-Improving Agentic Real2Sim2Real for Robot Manipulation
+
+Code for the paper
+(project page · arXiv:2611.31098).
+
+Jinzhong Gu1,&#42;, Jiakai Chen3,&#42;, Xinyi Cao4,&#42;, Yan Shen1,&#42;,
+Hangke Sui3,&#42;, Shutian Zheng1, Xiang Xiao2, Haoran Lu1, Fan Xu1,
+Lu Shi2, Daochen Shi2, Ruihua Zhang2, Wei Zhan1,
+Masayoshi Tomizuka1, Ruihai Wu1
+
+1University of California, Berkeley · 2NVIDIA · 3University of Illinois Urbana-Champaign · 4Carnegie Mellon University · &#42; Equal contribution
+
+Citation and source history
+
+From observations of a real scene to a policy prepared for the real robot. An agent (ASTRA) does the work through
+layered skills and tools it selects as needed, inspects the evidence each step produces and revises its own results.
+Simulation success is intermediate evidence; real validation is run and reported by people.
+
+Start a reconstruction with the agent module workflow. One astra-e2e run can use calibrated cameras and poses, individual object workers, native physics checks and scene assembly. Choose an object, scene or policy handover as the goal.
+
+Demos
+
+Real Robot
+
+Simulation
+
+Public interfaces
+
+| Component | Python package | Command |
+|---|---|---|
+| Real2Sim Harness builds and reviews editable assets in task workspaces. | real2sim_harness | real2sim-harness |
+| Calibrated Scene Reconstruction reconstructs metric scenes from capture, places the robot, and checks physics and delivery. | calibrated_scene_reconstruction | calibrated-scene-reconstruction |
+| Policy station develops, freezes and evaluates a policy under a task budget. | astra_station | astra-station |
+| End-to-end workflow binds the accepted scene to a station task and prepares the handover. | astra_e2e | astra-e2e |
+
+Use the configuration templates to start a run. The reconstructed examples include interactive USDZ scenes for screw closure, gear meshing, insertion, cup nesting and pushing.
+
+real-world observations          real2sim/                    policy_development/              real robot
+ photos, walk-around video, ──>  twin · cousins · physics ──>  station: methods chosen, run ──>  hand-over package,
+ motion video, task in words     delivery record               and compared; one frozen          validation by people
+                                                               deliverable, sealed evaluation    (pending until reported)
+                                 └──────────────── end_to_end/: the chain checks each hand-over ────────────────┘
+
+The two parts do not import each other. Part 1 hands over a small JSON record of an accepted twin
+(delivery record); Part 2 starts from it
+(astra-station new-twin-task --delivery ); the chain orders the stages
+(how it runs).
+
+Start
+
+From the checkout root on Linux, create a virtual environment with Python 3.11 or 3.12 and install the three local packages together:
+
+python3.11 -m venv .venv
+source .venv/bin/activate
+python -m pip install ./real2sim ./policy_development ./end_to_end
+source env.sh
+real2sim-harness --help
+calibrated-scene-reconstruction --help
+astra-station --help
+astra-e2e schemas
+
+Use python3.12 in the first command if that is your installed version. In a new shell, activate the same virtual environment and source env.sh before running the examples. The offline installation guide describes how to prepare a wheel directory.
+
+The default Vega 1P with Sharpa hands and the standard Franka Panda are included. Optional grasp synthesis uses a separate hand descriptor and solver. See the robot inventory and expected layout.
+
+- An agent working here starts from AGENTS.md.
+- Each part documents its own environments. Part 1's reconstruction needs a GPU workstation, Blender 4.5 and Isaac
+  Sim 5.1; Part 2's controller is standard library only and its stations run where the site file says.
+Scope and limits
+
+- The agent does not operate the real robot. Every record keeps real validation pending until a person has run it.
+- A twin is evidence about one capture. Scale comes from legal evidence in the capture, never from the task's true
+  dimensions; a simulation score never justifies changing geometry, friction or success definitions.
+- Task-specific policy-development code (task specifications, simulator backends of hand-authored tasks, real-robot
+  workers) is not part of this release. Supply it as your own task directory in the
+  station harness format. This repository holds the
+  task-independent parts and the path from a twin to a station.
+
+License
+
+The source code and documentation written for this project are released under the MIT License.
+
+The licence does not cover what this repository carries from others, which keeps its own terms:
+
+- For bundled robot models, Blender Cell Fracture and patches to upstream code, see the repository notices. Optional tabletop grasp synthesis requires a compatible solver supplied separately under its own terms. See the grasp setup guide.
+
+Citation
+
+@misc{real2worlds2real,
+  title         = {Real2Worlds2Real: Scaling Self-Improving Agentic Real2Sim2Real for Robot Manipulation},
+  author        = {Gu, Jinzhong and Chen, Jiakai and Cao, Xinyi and Shen, Yan and Sui, Hangke and Zheng, Shutian and
+                   Xiao, Xiang and Lu, Haoran and Xu, Fan and Shi, Lu and Shi, Daochen and Zhang, Ruihua and Zhan, Wei and
+                   Tomizuka, Masayoshi and Wu, Ruihai},
+  year          = {2026},
+  eprint        = {2611.31098},
+  archivePrefix = {arXiv}
+}

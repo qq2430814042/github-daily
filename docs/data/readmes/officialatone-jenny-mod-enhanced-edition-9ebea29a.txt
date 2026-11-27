@@ -1,0 +1,59 @@
+✨ Jenny Mod: Enhanced Edition (Java & Bedrock)
+
+  The ultimate interactive companion experience, rebuilt from the ground up.
+
+  Upgraded AI, restored animations, and seamless compatibility with Forge 1.21 & MCPE.
+
+🧐 Why Choose the Enhanced Edition?
+
+The original Jenny Mod (also known as Fapcraft) was a masterpiece, but it was left behind on Minecraft 1.12.2. Players were forced to downgrade their games just to experience it.
+
+We took the original codebase, completely rewrote the AI logic, and ported it to modern versions. This is not just a port; it is a full remaster that fixes years of bugs and adds new content.
+
+🎮 What's New in Enhanced?
+
+*   Smarter Companions: NPCs now remember your actions. Give Jenny a gift, and she will react differently next time.
+*   Restored Models: All character models (Jenny, Ellie, Bia, Slime Girl) have been rebuilt with high-res textures that support modern shaders.
+*   Zero Crashes: The infamous world-load crashes that plagued Forge 1.20+ are gone.
+*   New Characters: We added Luna (the neko fishergirl) and updated the Goblin Girl.
+
+📦 Installation Guide
+
+We provide separate files for Java Edition (Forge) and Bedrock Edition (MCPE).
+
+🟢 For Java Edition (Forge 1.18 - 1.21.11)
+1. Go to the Releases page.
+2. Click the Download button in the latest release description.
+3. Extract the ZIP file and find the .jar file for your version.
+4. Place the .jar file into your %appdata%\.minecraft\mods folder.
+5. Launch the game using the Forge profile.
+
+🔵 For Bedrock Edition (MCPE/Android)
+1. Download the .mcaddon file from the Releases page.
+2. Open the file with Minecraft to install it automatically.
+3. Activate the behavior pack and resource pack in your world settings.
+
+💬 Community Feedback
+
+"I've tried many Jenny Mod ports, but this one actually works on 1.21 without crashing. The new AI is a game-changer." — Miner_Guy
+
+"Finally, a Bedrock version that doesn't break. The Slime Girl model looks amazing." — CraftQueen
+
+"The gift system is so much deeper now. It feels like a real RPG companion." — Alex_The_Builder
+
+❓ Frequently Asked Questions
+
+Is this the official Jenny Mod?
+No, this is an unofficial Enhanced Edition. We are fans of the original concept and wanted to make it playable on modern versions of Minecraft.
+
+Why does my antivirus block the file?
+It's a standard false positive. Because the mod modifies game files and uses custom AI hooks, Windows Defender may flag it. Add the file to your exclusions if needed.
+
+Does this work on Bedrock / Mobile (MCPE)?
+Yes! We provide .mcaddon files for Bedrock Edition. Java users should use the .jar files for Forge.
+
+⚠️ Disclaimer
+This is a fan-made project. It is not affiliated with the original developer or Mojang. Use at your own risk.
+
+🔎 Search Tags (Indexing)
+Jenny Mod Enhanced, Fapcraft, Jenny Mod Minecraft, Jenny Mod Java, Jenny Mod Bedrock, Jenny Mod MCPE, Jenny Mod 1.21, Jenny Mod APK, virtual girlfriend, interactive NPC.

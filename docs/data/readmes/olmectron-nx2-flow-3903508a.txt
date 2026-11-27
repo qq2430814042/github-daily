@@ -1,0 +1,121 @@
+nx2-flow
+
+Experimental. Use it at your own risk. No warranty: the authors take no responsibility for any damage or loss (console,
+card, saved data, account).
+
+Use dumps of games you own, made by you. No game, key or console file is part of this project, and none will be provided.
+
+A launcher for Switch 2 games kept as NUP files on the card: a shelf of your games, in the manner of WiiFlow, and a loader
+that runs the one you pick straight from its NUP file. Nothing is built for each game on a computer.
+
+The shelf as the console shows it (the style it starts with, of nine), with stand-in games that have neither a name nor a cover.
+
+Work in progress. It has been tried with few games and one setup (kaiHEN 20261117.1).
+
+The two programs
+
+| folder | program | what it is | license |
+|---|---|---|---|
+| menu/ | nx2-flow.nro (Switch 2) | The shelf: lists the NUP files of a folder with their covers or icons, each game's options (detailed log, mod set, slot of saved data, advanced settings), receives files from a computer. | GPL-2.0-or-later |
+| loader/ | nx2-game.nro (Switch 2) | The game loader: runs one NUP file. Started by the menu. | MIT (Zstandard's decoder in third_party/: BSD) |
+
+The menu is built from the interface of toronja, hence its license.
+The loader is the runtime of nx2-relink with no game built into it.
+
+docs/layout.md says what is where on the card and how the programs talk to one another.
+
+On the card
+
+The two programs, built, are in the latest release: unzip it onto the
+card's root.
+
+/switch/nx2-flow/nx2-flow.nro      the menu (what the homebrew menu shows)
+/switch/nx2-flow/nx2-game.nro      the game loader
+/nx2-flow/games/                   your NUP files (another folder can be picked in the menu)
+/nx2-flow/covers/                  covers
+/nx2-flow//              one folder for each game: saved data, logs, mods, settings
+
+Open the homebrew menu over a game (hold R while starting it), start nx2-flow, pick a game.
+
+A FAT32 card: a game in parts
+
+A card formatted as FAT32 takes no file of 4 GB or more. Cut the NUP file in parts on the computer, with a tool you already
+have, and copy the parts to /nx2-flow/games/: the menu shows them as one game and the loader reads them as the one file they
+were. Nothing has to be joined again, and no special tool is needed.
+
+| With | How | What it makes |
+|---|---|---|
+| 7-Zip (Windows) | in 7-Zip's own window: select the file, File > Split file..., size 4000M | Game.nup.001, Game.nup.002, ... |
+| split (Linux, macOS, Git Bash) | split -b 4000m Game.nup Game.nup. | Game.nup.aa, Game.nup.ab, ... |
+| HJSplit and the like | Split, 4000 MB | Game.nup.001, Game.nup.002, ... |
+
+What is taken for one game's parts: files that share a name and differ in a numbered ending, numbered one after the other
+from 0 or 1.
+
+Game.nup.001  Game.nup.002  ...      a number as the last ending (also .00, .0, .1)
+Game.nup.part1  Game.nup.part2       "part" and a number
+Game.nup.aa  Game.nup.ab  ...        letters, after ".nup"
+Game.nu0  Game.nu1  ...              the ending's last letter made a number
+Game.part1.nup  Game.001.nup         the number before the ending
+Game/00  Game/01  ...                nameless parts in a folder of the game's own: the folder is the game
+
+The parts may be of any size under 4 GB, and need not be of one size. They can be in the games folder itself or in a folder of
+their own inside it; folders are looked into. A game whose part is missing isn't started: its log says which file is not
+all there.
+
+A file sent to the menu's own receiver (its Transfer screen) is cut the same way by the menu when the card can't take it
+whole; split= in /nx2-flow/menu.cfg makes it cut every larger file in parts of that size.
+
+Your own cover
+
+Any picture can be a game's cover: put it on the card, named by the game's title id.
+
+/nx2-flow/covers/.jpg         the front only
+/nx2-flow/covers/full/.jpg    the whole wrap: back, spine and front, left to right
+
+- The title id is 16 hex digits: the name of the game's folder in /nx2-flow/ (it is made the first time the game is started).
+- .jpg, .jpeg or .png. With both a front and a wrap, the wrap is shown.
+- The picture is fitted to the case, so its shape matters more than its size: a front is about 0.615 as wide as it is tall
+  (500 × 813, say), a whole wrap about 1.3 times as wide as it is tall (1300 × 1000).
+- A game with no cover stands as a case made of its own icon and name.
+
+The menu's Transfer screen takes the file from a computer; menu/README.md has the other way to get covers (GameTDB).
+
+What to know
+
+- Which game the homebrew menu is started over matters. To the console the running program is that game, and has what that
+  game may have: its memory for graphics, its "system resource", the services it may open. The loader stands in for the services
+  a game can run without (network, online data, amiibo and the like) and says so in the game's log; it can't for the rest. The
+  surest host is the same game, and a Switch 2 game needs a Switch 2 game as its host (a Switch game's has too little memory).
+  A user's table of what each host has is in issue 5.
+- Not every game runs. The console's loader service maps seven modules for one program. A game with more, or one that
+  loads modules of its own as it runs, has the ones that allow it made into one by the loader; a game that still doesn't fit
+  needs a port made for it with nx2-relink.
+- Updates and add-on content. A NUP file that holds the game with its update and its add-on content is read as one: the
+  update is laid over the game, and the add-on content is given to the game as the console would give it.
+- Mods. A file put in the game's folder under mods/, at the path it has inside the game, is what the game gets in place of
+  its own. More sets go in modsets//; the menu picks which is in use.
+- Slots of saved data. Each slot is a folder of the game's own saved data; the menu makes, copies and picks them.
+- Patches of the program. IPS and IPS32 patches go in the game's folder under exefs_patches/, each named by the build
+  id of the module it is for; the game's log has every module's build id.
+- The menu's own checks. The top of the screen says which game the homebrew menu was started over and what that host has.
+  A game's options show its last log and its crash report, and X there checks the NUP file: that it is all there, and what
+  it holds. A file that looks broken is said before the game is started.
+- When a game ends badly, its folder has crash.txt: the file to send with a report.
+
+Building
+
+Each folder has its own README. In short: devkitPro (devkitA64), ounce-devkit (libounce) for the two programs, Python 3.10 or newer for the loader's build script.
+
+Contributing
+
+Pull requests are welcome, for the menu and for the loader alike: both are this repository's own source. What helps one get in:
+
+- Say what it was tried with (the game by its title id, the host, docked or handheld) and attach the lines of log.txt or
+  crash.txt that show the before and the after.
+- Keep to what the change is for. A change for one game runs in every other one too: say what it does to a game that
+  doesn't need it.
+- No game's file, key or console file in a pull request or an issue, and no link to one.
+
+The loader's runtime (loader/runtime) is shared with nx2-relink: a fix made there is
+brought here, and one made here may go there.

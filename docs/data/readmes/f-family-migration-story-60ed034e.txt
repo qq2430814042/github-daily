@@ -1,0 +1,164 @@
+Aile Göç Hikâyesi
+
+Soy ağacınızı verin; Claude atalarınızın yaşadığı her yeri kendi döneminde araştırsın, kaynaklı bir rapor yazsın ve ailenizin göçünü Türkçe seslendirmeli bir harita videosuyla anlatsın.
+
+family-migration-story, Claude Code için bir skill ve plugin'dir. Girdi olarak e-Devlet "Alt-Üst Soy Bilgisi" PDF'ini, MyHeritage / Ancestry / FamilySearch'ten alınmış bir GEDCOM dosyasını ya da elle yazılmış bir listeyi kabul eder.
+
+Yukarıdaki görüntüler aşağıdaki uydurma "Örnek ailesi"nden alındı. Kişiler kurgusaldır; yerler, tarihler ve kaynaklar gerçektir.
+
+Ne üretir?
+
+1. Araştırma dosyası (research/dossier.json): Ailenin yaşadığı her yer, ailenin orada bulunduğu yıllar için araştırılır. Kaynaklar arasında Osmanlı arşiv kataloğu, salnameler, nüfus sayımları, Wikidata, akademik makaleler (OpenAlex, Crossref, DergiPark) ve dijitalleştirilmiş kitaplar (Internet Archive, HathiTrust) var. Her bulgu kaynağıyla ve bir güven derecesiyle yazılır.
+2. HTML rapor (report.html), şunları içerir:
+   - köken dağılımı
+   - kuşak kuşak kişiler
+   - her yerin o zamanı ve bugünü
+   - aile olaylarıyla dünya olaylarını birleştiren zaman çizelgesi
+   - açık sorular
+   - kaynakça
+3. Harita videosu (video/out/*.mp4), Remotion ile hazırlanır:
+   - Anne ve baba tarafları ayrı ayrı değil, tek bir zaman çizgisinde iç içe anlatılır.
+   - Göç yolları haritada çizilir ve dönem fotoğrafları gösterilir.
+   - Savaşlar, antlaşmalar, mübadele ve Soyadı Kanunu gibi dünya ve Türkiye olayları hikâyeye katılır.
+   - Seslendirme bilgisayarınızda yapılır; Türkçe için yazgi-tts kullanılır.
+
+Önerilen model: Claude Opus 5.5, effort xhigh
+
+Bu skill uzun ve çok adımlı bir iş yapar: onlarca kaynak okur, yüzlerce araç çağrısı yapar, bulguları derecelendirir, sonra hikâyeyi ve videoyu kurup kontrol eder. En iyi sonucu Claude Opus 5.5 ve xhigh effort ile verir. Daha küçük bir model ya da daha düşük effort daha az kaynak okur ve daha yüzeysel bir araştırma çıkarır.
+
+Claude Code'u bu ayarlarla başlatın:
+
+claude --model claude-opus-5-5 --effort xhigh
+
+Açık bir oturumda aynı ayarı /model claude-opus-5-5 ve ardından /effort xhigh ile yapabilirsiniz. Opus 5.5 güncel bir Claude Code ister; gerekirse önce claude update çalıştırın.
+
+Skill'in kendi ayarlarında da model: claude-opus-5-5 ve effort: xhigh var. Bu yüzden /family-migration-story diye çağırdığınızda Claude Code o tur için bu modeli ve effort'u kullanır. Hesabınızda bu model açık değilse oturumunuzdaki modelle devam eder; o durumda elinizdeki en güçlü modeli ve en yüksek effort'u seçin.
+
+Kurulum
+
+Terminalde iki komut:
+
+claude plugin marketplace add f/family-migration-story
+
+claude plugin install family-migration-story@family-migration-story
+
+Ya da açık bir Claude Code oturumunda:
+
+/plugin marketplace add f/family-migration-story
+/plugin install family-migration-story@family-migration-story
+
+Kurulumdan sonra Claude Code'u yeniden başlatın ya da oturumda /reload-plugins yazın.
+
+Güncellemek ve kaldırmak için:
+
+claude plugin update family-migration-story@family-migration-story
+
+claude plugin uninstall family-migration-story@family-migration-story
+
+Plugin sistemi yerine yalnızca skill klasörünü kullanmak isterseniz:
+
+git clone https://github.com/f/family-migration-story.git && cp -R family-migration-story/skills/family-migration-story ~/.claude/skills/
+
+Gereksinimler
+
+| Ne için | Gereken |
+|---|---|
+| Her şey | Güncel Claude Code, web araması açık |
+| e-Devlet PDF'i okumak | uv (pypdf'i geçici olarak kurar) |
+| Araştırma ve rapor | Python 3.10+ (yalnızca standart kütüphane) |
+| Video | Node.js 20+, ffmpeg/ffprobe, uv ve yaklaşık 5 GB boş disk |
+
+Video için gereken modeller ilk kullanımda bir kez indirilir:
+- yazgi-tts modeli (~1,2 GB)
+- doğrulama için faster-whisper (~0,5 GB)
+- Remotion'ın kullandığı tarayıcı
+
+Skill macOS'ta geliştirildi ve denendi. Türkçe dışındaki dillerde macOS'un kendi sesleri (say) kullanılır.
+
+Kullanım
+
+Soy ağacınızı Claude Code'a verin ve ne istediğinizi yazın:
+
+- "Ekteki e-Devlet soy ağacımı araştır; kaynaklı bir rapor ve Türkçe seslendirmeli bir harita videosu hazırla."
+- "MyHeritage'tan aldığım family.ged dosyasındaki ailemin nereden geldiğini araştır, kaynaklı rapor yaz. Video şimdilik gerekmiyor."
+- "Anneannemin ailesi 1924'te Kavala'dan gelmiş, babamın tarafı Rize'den. Elimde bu isimler ve doğum yılları var, bir göç videosu yapalım."
+
+Skill'i doğrudan çağırmak için /family-migration-story yazabilirsiniz.
+
+e-Devlet PDF'i nasıl alınır?
+1. turkiye.gov.tr'de "Alt-Üst Soy Bilgisi Sorgulama" hizmetini açın.
+2. Belgeyi oluşturup PDF olarak indirin.
+3. PDF'i sohbete sürükleyin.
+
+Aşamalar
+
+Her aşama bir sonraki aşamanın okuduğu dosyaları bırakır. İş herhangi bir aşamada durup sonra kaldığı yerden devam edebilir.
+
+| Aşama | Ne olur | Çıktı |
+|---|---|---|
+| 0. Kayıt | Soy ağacı tek bir biçime çevrilir ve doğrulanır. Ailede anlatılan hikâyeler (bir vapur, bir sandık, neden göçüldüğü) sorulur. | familytree.json |
+| 1. Araştırma | Her yer, ailenin orada yaşadığı yıllar için araştırılır. Bulgular kaynaklı ve dereceli olarak yazılır. Dünya olayları ve "aynanın öbür yüzü" (örneğin mübadelede o köyden kimin gittiği) de eklenir. | research/dossier.json |
+| 2. Rapor | Bulgular okunur bir rapora dönüşür. Size gösterilir; eksik ya da yanlış bir şey var mı diye sorulur. | report.html |
+| 3. Hikâye | Sahneler yazılır: tek zaman çizgisi, kollar arasında "o sırada…" geçişleri, bölüm kartları. Seslendirmeden önce taslak size gösterilir. | video/src/data/story.json |
+| 4. Video | Seslendirme yerelde yapılır ve her cümle yerel konuşma tanımayla kontrol edilir. Ardından video render edilir; ses düzeyi ve yazı titremesi kontrol edilir. | 1080p ve 720p .mp4 |
+
+Güven dereceleri
+
+Her bulgu bir derece taşır. Anlatımdaki ifade de bu dereceye göre seçilir:
+
+| Derece | Anlamı | Videoda nasıl söylenir |
+|---|---|---|
+| belgeli | Birincil ya da güvenilir ikincil kaynakta açıkça geçiyor | Düz cümleyle |
+| olası | Kaynaklar güçlü biçimde işaret ediyor | "büyük olasılıkla", "kayıtlar … gösteriyor" |
+| aile anlatısı | Ailede ya da köyde anlatılıyor, belgelenmedi | "ailede anlatılana göre" |
+| tahmin | Makul ama kanıtsız | "belki de", "… olabilir" |
+
+Örnek: Örnek ailesi (uydurma)
+
+Bu aile tamamen uydurmadır ve skill'in içinde assets/example/ klasöründe durur. Yerler, tarihler ve kaynaklar gerçektir.
+
+flowchart BT
+  ali"Ali Örnek
+1895, Selanik"] --> hasan
+  emine["Emine Örnek
+1900, Selanik"] --> hasan
+  hasan["Hasan Örnek
+1925, İzmir"] --> murat
+  fatma["Fatma Örnek
+1930, İzmir"] --> murat
+  mehmet["Mehmet Yılmaz
+1935, Of"] --> ayse
+  zehra["Zehra Yılmaz
+1938, Of"] --> ayse
+  murat["Murat Örnek
+1960, İzmir"] --> deniz
+  ayse["Ayşe Örnek
+1964, Of"] --> deniz
+  deniz["Deniz Örnek
+1992, Kadıköy"]
+
+Bilinenler bu kadar: doğum yerleri, yıllar ve ailede anlatılan tek bir cümle:
+
+"1924'te tek bir sandıkla bir vapura binip İzmir'e gelmişler."
+
+Deniz şunu yazıyor:
+
+Bu soy ağacından Türkçe seslendirmeli bir göç videosu ve kaynaklı bir rapor hazırla. Anne ve baba tarafını tarih sırasıyla karışık anlat.
+
+Araştırmanın bulduğu (her biri raporda kaynağıyla):
+- Selanik: Yüzyıl başında Selanik'in en kalabalık topluluğu Yahudilerdi; şehirde Müslümanlar, Rumlar ve Bulgarlar da yaşıyordu. (belgeli)
+- Balkan Savaşı: Yunan ordusu 8 Kasım 1912'de şehre girdi. Ali o sırada 17 yaşındaydı ve doğduğu şehir artık başka bir devletindi. (belgeli)
+- Büyük yangın: 18 Ağustos 1917'deki yangın şehrin tarihî merkezinin büyük bölümünü yaktı. (belgeli)
+- Mübadele: 30 Ocak 1923'te Lozan'da imzalanan sözleşmeyle Yunanistan'daki Müslümanlar ile Türkiye'deki Rumlar yer değiştirdi. (belgeli)
+- Vapur ve sandık: Ailenin vapur ve sandık hikâyesi aile anlatısı olarak kalıyor. Videoda da öyle söyleniyor: "Ailede anlatılana göre…" (aile anlatısı)
+- Soyadı: 1934'teki Soyadı Kanunu'yla aile "Örnek" soyadını alıyor. (belgeli)
+
+Rapor:
+
+Video (8 sahne, 18 cümle, 2 dakika 15 saniye). [Videonun tamamını sesiyle izleyin (720p, 5,2 MB).
+
+| | |
+|---|---|
+|  |  |
+
+…（内容已截断）

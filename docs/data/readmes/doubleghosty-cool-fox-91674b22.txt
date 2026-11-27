@@ -1,0 +1,122 @@
+cool_fox
+
+Experimental compatibility layer and shader translation runtime for running Xbox Series (Scarlett / GDK) x64 executables natively on Windows D3D12 (AMD Radeon and NVIDIA GeForce).
+
+Legal notice: This repository contains no copyrighted game code, keys, assets, or executables. It does not provide or link to any third-party software, and does not instruct or encourage bypassing console protections. Use only with software you are legally entitled to run. All original code here is licensed under GPL-3.0-or-later (see LICENSE and docs/asset-policy.md).
+
+Key Features & Recent Improvements
+
+- Pareto Memory Residency & 32 GB RAM Support: Adaptive GPU memory residency limits, preventing WDDM paging exhaustion (0x8007000E) on 16–32 GB systems.
+- Pipeline & Descriptor Stability:
+  - VICTORY_PIPELINE_WAIT_MS=0 & VICTORY_LIBRARY_STORE_LATER=1 in launchers to eliminate 500 ms frame stalls and 200 ms+ pipeline-library save hitches.
+  - Panic-safe pipeline worker queue (Pending::make_with) so a failed translation never hangs waiting threads.
+  - submit_split dynamic descriptor slot release (list::tables_done) and alias_of reference pinning (Held guard) to prevent slot exhaustion and use-after-free during async texture aliasing.
+  - DirectStorage staging buffer cleanup and idle list/upload trimming (VICTORY_LIST_IDLE_TRIM_S).
+  - Bindless heap root-signature flags (CBV_SRV_UAV_HEAP_DIRECTLY_INDEXED, SAMPLER_HEAP_DIRECTLY_INDEXED) are now probed at startup and omitted on runtimes that reject them, fixing "Unsupported bit-flag set" errors on older D3D12 runtimes.
+  - Offline batch shader translator (victory shaders) catches panics per-shader so a single void-value assert no longer kills the entire translation run.
+- Shader & Ray Tracing Fixes:
+  - Shader LOD slot fix (leaves unused LOD slots undefined in array texture coordinate queries to pass DXIL validation).
+  - Wave32 cascade lowering, scoped submerged shader lowering, and dynamic view address buffer indexing (SLOT_VIEW_ADDRESSES) for ray-tracing BVH descriptors.
+  - Voxel visibility wave64 mask provenance recovery and blendshape pre-dispatch initialization.
+- NVIDIA & Video Synchronization: Synchronous flush for decoded video frame copies (VICTORY_THIN=0, VICTORY_JOIN_PARTS=0 by default in launchers for NVIDIA compatibility) and constant ambient lighting (VICTORY_AMBIENT=constant:0.8).
+- Wine / Proton & DXIL Robustness: Code-generated root signatures for vkd3d-shader, single-latch DXIL loop CFG normalization, and 256 MiB pipeline worker stack.
+- Custom Resolution, Scaling & Framerate:
+  - VICTORY_OUTPUT=1920x1080 (or 2560x1440) and VICTORY_RENDER_SCALE=0.667..1.0.
+  - VICTORY_FRAME_INTERVAL_MS=16.667 (60 FPS) or 8.333 (120 FPS) while keeping simulation timing at 1.00x.
+- Renderer Ports (Performance):
+  - VICTORY_PORT_GUARD=1 and VICTORY_PORT_JOURNAL=1 now enabled by default in launchers: write-guard lock sharing and journal splitting save 2–5 ms per frame on all tested GPUs.
+  - VICTORY_PORT_CONSTANTS=1 and VICTORY_PORT_CBV=1 remain opt-in for NVIDIA 8 GB stability; AMD users should use Play-VIctory-AMD.cmd which enables all ports.
+  - VICTORY_LEVELS_ON_DEMAND=1 enabled by default: card memory allocated only for texture mip levels the title holds, saving up to 3 GB of VRAM.
+
+How to Run
+
+Requirements
+- Windows 10/11 x64
+- CPU with AVX2 support
+- Direct3D 12 GPU with Shader Model 6.6 and Mesh Shaders
+- Rust toolchain (see rust-toolchain.toml) and MSVC C++ Build Tools (with Windows SDK)
+
+Build from Source
+
+git clone https://github.com/DoubleGhosty/cool_fox.git
+cd cool_fox
+cargo build --release --locked -p victory
+
+Launch
+
+$env:VICTORY_GAME_DIR = 'D:\path\to\your\title'
+.\Play-VIctory.cmd
+
+For AMD Radeon GPUs (RX 7000+, 16 GB+ VRAM) with all renderer ports enabled:
+
+.\Play-VIctory-AMD.cmd
+
+For 4 GB VRAM GPUs or low-memory systems:
+
+.\Play-VIctory-4GB.cmd
+
+| Launcher | Target | Renderer Ports | Notes |
+|---|---|---|---|
+| Play-VIctory.cmd | NVIDIA + AMD, 8 GB+ | 6, 7 on; 1, 5 opt-in | Safe default for all GPUs |
+| Play-VIctory-AMD.cmd | AMD 16 GB+ | 1, 5, 6, 7 all on | Maximum performance; all ports from top community forks |
+| Play-VIctory-4GB.cmd | 4 GB VRAM | 6, 7 on; 1, 5 off | Series S profile, reduced card buffers |
+| scripts\play.ps1 | Diagnostics | 6, 7 on; -Safe disables | Full logging; -RayTracing for RT |
+
+Diagnostics & Pre-warming
+
+copy victory.example.toml victory.toml      # set your local paths outside this repo
+cargo build --locked --profile diag -p victory --features diagnostics
+scripts\play.ps1 -Exe
+
+scripts\play.ps1 -Safe disables newer experimental paths; -RayTracing enables ray-traced indirect lighting.
+
+To pre-translate shaders or pre-warm cached pipelines ahead of time:
+
+target\diag\victory.exe shaders
+target\diag\victory.exe warm --used
+
+warm has nothing to make until one run has written the pipelines down
+(scripts\play.ps1 -Exe  -Record). Some switches are part of the shader
+cache's key, so both commands should see the ones the runs do: run them as
+scripts\play.ps1 -Warm and scripts\play.ps1 -Shaders ,
+with the same -Safe, -RayTracing and -More as play.
+
+Commands, debugging switches, and technical notes are documented in docs/README-fxceless.md and docs/findings.md. Every VICTORY_... environment variable is also documented where it is read in the source.
+
+Performance Tuning (Renderer Ports)
+
+Each renderer port eliminates a class of per-frame CPU work. They are tested on AMD first and may have edge cases on NVIDIA with limited VRAM.
+
+| Port | Switch | What it does | Saving | Default |
+|---|---|---|---|---|
+| 1 | VICTORY_PORT_CONSTANTS=1 | Title's 174 MB constants heap read in place by the card; no uploads or fills | 6 ms, 17 MB/frame fewer copies | Off (8 GB NVIDIA: C++ exception #15) |
+| 5 | VICTORY_PORT_CBV=1 | Constant buffers read as raw bytes; 22,000 fills/frame eliminated | 4.7 ms | Off (8 GB NVIDIA: dropped surfaces) |
+| 6 | VICTORY_PORT_GUARD=1 | Write-guard lock shared by faults and refreshes, one claim per 64 KiB block | ~2 ms | On |
+| 7 | VICTORY_PORT_JOURNAL=1 | Journal notes split into 64 parts with their own locks; heaps synced at submit | ~1–3 ms | On |
+| RT | VICTORY_PORT_RT=1 | Ray-tracing submission ordering optimized; fills forwarded from copies | Removes 15–61 ms stalls with RT on | Off |
+
+Additional performance switches:
+- VICTORY_LEVELS_ON_DEMAND=1 — allocate card memory only for texture levels the title holds (saves up to 3 GB VRAM)
+- VICTORY_THIN=1 — record list calls instead of executing on title threads (AMD stable; NVIDIA: head skin may not draw)
+- VICTORY_JOIN_PARTS=8 — join submission parts across 8 threads
+- VICTORY_UPLOAD_AHEAD=1 — speculative texture uploads before the title asks
+- VICTORY_CARD_BUFFERS_MIN_KB=64 — minimum size for card-side buffer copies (lower = more buffers on card)
+- VICTORY_CARD_STEPS=2 — buffer fills on the GPU instead of stalling the CPU
+
+Architecture Highlights
+
+- Recorded Command Lists (VICTORY_THIN): List calls are recorded on the title's threads and translated across worker threads.
+- Parallel Submission Prep (VICTORY_ASYNC_SUBMIT, VICTORY_JOIN_PARTS): Frame preparation, AVX2 comparisons, descriptor records, and landings are parallelized and joined in submission order.
+- Write-Guard Relay (VICTORY_RELAY, VICTORY_LAND): GPU-written buffers are read back by changed dwords on a dedicated relay thread.
+- On-Card Buffer Fills (VICTORY_CARD_STEPS): Buffer fills depending on card-resident bytes execute on the GPU instead of stalling the CPU.
+- Dedicated Texture Copy Queue & Read-Back: Textures upload on a dedicated copy queue; GPU-written textures read by the CPU are copied back cleanly.
+- Frame Record & Replay: Per-pass timing and shader variant comparison via VICTORY_RECORD (docs/replay.md).
+
+Community & Portwatch
+
+The portwatch-vi.xyz tracker ranks compatibility layers by progress. As of November 2026, the leading open-source forks and their key techniques:
+
+| Project | GPU Target | Techniques adopted here |
+|---|---|---|
+
+…（内容已截断）

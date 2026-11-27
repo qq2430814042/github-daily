@@ -1,8 +1,12 @@
 简体中文 | English
 
-Swiftproxy – Premium Global Residential Proxy Network
-Swiftproxy provides 90M+ real residential IPs across 220+ locations worldwide, helping users access global content and manage location-specific network connections. With rotating and static residential proxies, flexible geo-targeting, and HTTP(S)/SOCKS5 support, Swiftproxy is ideal for cross-region downloads, network testing, and browser automation. Free testing available, with 10% off using code PROXY90.
+      Sponsor
 
+        Swiftproxy – Premium Global Residential Proxy Network
+
+        Swiftproxy provides 90M+ real residential IPs across 220+ locations worldwide, helping users access global content and manage location-specific network connections. With rotating and static residential proxies, flexible geo-targeting, and HTTP(S)/SOCKS5 support, Swiftproxy is ideal for cross-region downloads, network testing, and browser automation. Free testing available, with 10% off using code PROXY90.
+
+        IPStar is a professional provider of global residential IP proxy solutions. We own legally sourced, clean residential IP resources across more than 190 countries and regions worldwide, with a total pool of over 90 million IPs that is continuously updated. Our proxy IPs are 100% genuine residential IPs, delivering stable and reliable service with a request success rate above 99.9%, and supporting ultra-high concurrency. We are compatible with standard SOCKS5 and HTTP(S) protocols. With affordable pricing and traffic that never expires after purchase, IPStar is the ideal choice for big data scraping, large-scale cross-region downloading, e-commerce operations, and other automation tasks. Recharge now to enjoy an extra bonus of up to 8%.
 The only downloader you need
 
 Documentation · Watch Video · Report Bug · Request Feature
@@ -96,13 +100,13 @@ Translation Contributors
 
           XiaoYouChR
 
-        324042 words
+        324057 words
 
           Nguyễn Anh Kiệt
 
           (hzzmonet)
 
-        15061 words
+        15226 words
 
           CHEONG-KYUN
 
@@ -114,7 +118,7 @@ Translation Contributors
 
           (Havokdan)
 
-        4481 words
+        4753 words
 
           i0ntempest
 
@@ -190,9 +194,5 @@ Star History
 [stars-shield]: https://img.shields.io/github/stars/XiaoYouChR/Ghost-Downloader-3.svg?style=for-the-badge
 [stars-url]: https://github.com/XiaoYouChR/Ghost-Downloader-3/stargazers
 [issues-shield]: https://img.shields.io/github/issues/XiaoYouChR/Ghost-Downloader-3.svg?style=for-the-badge
-[issues-url]: https://github.com/XiaoYouChR/Ghost-Downloader-3/issues
-[release-shield]: https://img.shields.io/github/v/release/XiaoYouChR/Ghost-Downloader-3?style=for-the-badge
-[release-url]: https://github.com/XiaoYouChR/Ghost-Downloader-3/releases/latest
-[downloads-shield]: https://img.shields.io/github/downloads/XiaoYouChR/Ghost-Downloader-3/total?style=for-the-badge
-[atomgit-downloads-shield]: https://img.shields.io/badge/dynamic/xml?style=for-the-badge&label=AtomGit%20Downloads&color=red&url=https%3A%2F%2Fgitcode.com%2FXiaoYouChR%2FGhost-Downloader-3%2Fdownload%2Fbadge.svg&query=string%28%2F%2F*%5Blocal-name%28%29%3D%22span%22%20and%20contains%28%40class%2C%22download-num%22%29%5D%29
-[atomgit-downloads-url]: https://gitcode.com/XiaoYouChR/Ghost-Downloader-3/releases
+
+…（内容已截断）

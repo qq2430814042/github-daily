@@ -2,12 +2,14 @@ AutoClip
 
 Turn any video, link, or live stream into ready-to-post clips.
 
-Open-source, local-first AI clipping for podcasts, interviews, and gaming streams — with smart reframing, captions, covers, and titles built in.
+The open-source OpusClip alternative — local-first AI clipping for podcasts, interviews, and gaming streams with smart reframing, captions, covers, titles, and built-in MCP for AI agents. Zero subscriptions, no paywall.
 
   &nbsp;
   &nbsp;
   &nbsp;
   &nbsp;
+
+  &nbsp;&nbsp;
 
   Website
   &nbsp;&middot;&nbsp;
@@ -27,6 +29,14 @@ Open-source, local-first AI clipping for podcasts, interviews, and gaming stream
 
   ⭐ Free, MIT-licensed, zero subscriptions — everything cuts and renders on your machine. Star the repo if you find it useful!
 
+      APIMart
+
+      Low-cost AI image &amp; video API · GPT-Image-2 from $0.006/img
+
+      Sponsor / Partner with AutoClip
+
+      Put your AI API or creator tool in front of AutoClip users worldwide (cloud dynamic provider listing supported, zero client release needed).
+christine_zhouye@163.com
 Overview
 
 Drop in a link, local video, or live stream replay — AutoClip finds the best moments, tracks the speaker, burns in captions, generates covers, and exports ready-to-post clips for TikTok, Shorts, Reels, YouTube, Douyin, Xiaohongshu, and Bilibili.
@@ -175,9 +185,11 @@ Quick Start
 2. Open Settings, pick a cloud provider (or start Ollama / LM Studio), test the connection, and save — or click Try the built-in example with no API key.
 3. Paste a video link, drop a file, or switch to Live Replay to connect OBS or import a stream recording. Pick your platforms and click Generate.
 
-Installers are built publicly on GitHub Actions (Desktop Build) with build-provenance.json SHA-256 verification. Code signing and Apple notarization are tracked in #119.
+Installers are built publicly on GitHub Actions (Desktop Build) with build-provenance.json SHA-256 verification. First launch on an unsigned build: on macOS run xattr -dr com.apple.quarantine "/Applications/AutoClip Desktop.app" (or System Settings → Privacy &amp; Security → Open Anyway); on Windows click More info → Run anyway on SmartScreen. See Code Signing &amp; Verification Policy (notarization tracked in #119).
 
-2. CLI &amp; MCP (Claude Code, Codex, OpenCode &amp; scripts)
+2. CLI &amp; MCP (Claude Code, Cursor, Codex, OpenCode &amp; scripts)
+
+Let AI coding agents clip videos directly from your terminal (claude mcp add autoclip -- uvx autoclip-mcp). Full MCP setup guides: English · 简体中文 · 日本語 · 한국어 · Español · Deutsch.
 
 uvx autoclip-mcp
 npx skills add zhouxiaoka/autoclip
@@ -232,15 +244,5 @@ Affiliate link (separate from the sponsor above): sign up on Alibaba Cloud, crea
 FAQ
 
 Is AutoClip free? Do I need an API key?
-
-Yes — AutoClip is free and MIT-licensed. Cloud analysis, transcription, and AI covers use your own API keys at provider rates (local cover layout is free by default). Ollama and LM Studio require no cloud key. Direct publishing uses your own Bilibili or Upload-Post account.
-
-Does my video get uploaded to the cloud?
-
-Cutting and rendering run locally. Cloud analysis only sends transcript text; vision models only receive sampled frames; cloud ASR uploads audio. Running local LLMs + Whisper / SenseVoice keeps everything offline. Analytics and crash reports can be turned off in Settings. See Privacy.
-
-What kind of videos work best?
-
-Podcasts, interviews, talks, courses, and gaming live stream replays (OBS / Twitch / YouTube / Kick / Discord). Sources with existing subtitles are fastest; otherwise use local Whisper / SenseVoice or cloud ASR. For gameplay or low-dialogue streams, enable a vision-capable model.
 
 …（内容已截断）

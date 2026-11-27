@@ -70,6 +70,7 @@ bash ~/repositories/app-store-compliance/scripts/install.sh --tool all
 | Grok | install.sh --tool grok | Hook, skill | Start a new Grok session |
 | Qwen Code | install.sh --tool qwen | Hook, skill, in $QWEN_HOME when it is set | Restart Qwen Code |
 | Kimi Code | install.sh --tool kimi | Hook, skill | Restart Kimi Code |
+| Kiro | install.sh --tool kiro | Hook, skill | Start a new Kiro CLI session, or restart Kiro. The global hook in ~/.kiro/hooks/ needs Kiro CLI V3 |
 | Factory Droid | install.sh --tool droid | Hook, skill | Start a new Droid session |
 | Augment Auggie | install.sh --tool auggie | Hook, skill | Start a new Auggie session |
 | Windsurf | install.sh --tool windsurf | Hook, skill | Restart Windsurf |
@@ -79,9 +80,8 @@ Every run ends with Install verified. only after it has fed a submit command to 
 What it writes, so you can check it.
 
 - The guard, into that tool's own folder, for example /.codex/hooks/ or /.gemini/hooks/.
-- The skill. Claude Code reads it from /.claude/skills/. Every other tool reads one shared copy in /.agents/skills/.
+- The skill. Claude Code reads it from /.claude/skills/ and Kiro from /.kiro/skills/. Every other tool reads one shared copy in ~/.agents/skills/.
 - One hook entry in that tool's config (/.claude/settings.json, /.codex/hooks.json, /.gemini/settings.json, /.cursor/hooks.json, /.copilot/hooks/ or $COPILOT_HOME/hooks/), or for OpenCode one plugin file in /.config/opencode/plugins/. Every other setting is kept, and a dated backup sits next to a file that already existed. A config that is not valid JSON or repeats a key is never rewritten. You get the exact block to paste instead.
 - For Gemini CLI it also turns on tools.enableHooks, which Gemini needs before version 0.26 to run any hook.
-- For Kimi Code it appends one marked [hooks]] block to ~/.kimi-code/config.toml (or $KIMI_CODE_HOME/config.toml) and never rewrites or prints the rest of that file, which can hold API keys. Uninstall removes exactly that block.
 
 …（内容已截断）

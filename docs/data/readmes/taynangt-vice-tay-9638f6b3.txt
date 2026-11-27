@@ -1,0 +1,142 @@
+Vice-Tay
+
+Xbox Series compatibility on Windows, tuned on a GeForce RTX 4090.
+
+Vice-Tay builds on VIctory to run an Xbox Series title from your own files. The title's x86-64 code runs on the host CPU. The compatibility layer provides the console APIs it calls and translates its graphics work to Direct3D 12.
+
+Quick start · Gameplay · Measurements · Benchmark dashboard
+
+Measurements
+
+The goal is 30 rendered FPS in the open world with correct visuals. Both sessions used the Series S profile.
+
+| Session | Result |
+| --- | --- |
+| 30-minute playtest · bc090416 | Median of 21.1 rendered FPS. The run covered the prologue and boat section, then continued on foot on the island. |
+| 6-minute frame generation test · 88e80129 | Medians of 22.4 rendered FPS and 44.9 presented FPS with 2× frame generation on an experimental build. |
+
+The playtest logged a 17.0 FPS 1% low, a measure of its slowest frames, and peaked at 24.1 GB of private game memory. The frame generation sample used DLSS Quality to scale 720p to 1080p and AMD FSR 3.1.6 to generate frames between rendered frames.
+
+Playtest measurements · Frame generation settings and sample
+
+Test PC · RTX 4090 (24 GB), Ryzen 9 9950X3D, 48 GiB DDR5, Windows 11 Pro x64
+
+Full test configuration
+
+| Component | Configuration |
+| --- | --- |
+| CPU and motherboard | AMD Ryzen 9 9950X3D (16 cores, 32 threads), MSI MAG X870 TOMAHAWK WIFI (MS-7E51), BIOS 1.A93 |
+| Graphics | NVIDIA GeForce RTX 4090 (24 GB GDDR6X, driver 621.40), integrated AMD Radeon Graphics |
+| Memory | 2 × 24 GiB DDR5 at 8,000 MT/s, 43.4 GiB visible to Windows, 128 GiB page file |
+| Storage | Samsung 990 PRO 4 TB and 2 TB, Samsung 970 PRO 1 TB |
+| Display | Samsung Odyssey OLED G8 (G81SF), 3840 × 2160 at 240 Hz |
+| OS | Windows 11 Pro 26H2 x64, build 26300.10075 |
+
+Gameplay
+
+Checkpoint retries worked after the boat ran aground. The HUD, minimap, mission prompts and pause menu were usable along the route.
+
+This clip shows the boat section with the diagnostics overlay. It displays frame times, draw counts, CPU and GPU load, and memory use. Press F3 to toggle it in a diagnostics build.
+
+https://github.com/user-attachments/assets/bd07891c-c53f-4f46-9b7e-80463c379b84
+
+Browse ten screenshots from the Series S playtest on build 672cf831
+
+Getting started
+
+Requirements. Windows 10 or 11 x64, an AVX2-capable CPU, a Direct3D 12 GPU with Shader Model 6.6 and mesh shader support, Rust, and MSVC build tools with a Windows SDK. Rust uses the version pinned in rust-toolchain.toml.
+
+Bring your own copy of the title. Keep the executable, game data and derived cache outside this checkout. See the asset policy.
+
+1. Clone the repository and copy the configuration template.
+
+   git clone https://github.com/TaynanGT/Vice-Tay.git
+   Set-Location Vice-Tay
+   Copy-Item .\victory.example.toml .\victory.toml
+
+2. Set game_dir in victory.toml to the directory containing your title files. Build the diagnostics executable and launch the Series S profile with the path to your executable.
+
+   cargo build --locked --profile diag -p victory --features diagnostics
+   .\scripts\play.ps1 -Exe 'D:\victory-data\game\game.exe' -Console series-s
+
+Use Play-VIctory.cmd to pass the same options from Command Prompt. Double-click it to enter the executable's path at a prompt. The launcher defaults to full screen, the Series X profile and an automatic GPU preset. F11 or Alt+Enter toggles full screen during play.
+
+| Option | Use it to |
+| --- | --- |
+| -Console series-s | Select the lighter console profile used in the sessions above. |
+| -Machine 4090 / -Machine 4070 / -Machine 7900xtx | Select a GPU preset explicitly. See the RTX 4070 test notes. |
+| -Machine laptop | Try the 16 GB NVIDIA laptop preset, measured on one RTX 3050 laptop. |
+| -Safe | Launch with the conservative settings when investigating a graphics or stability issue. |
+| -Windowed / -NoPanel | Start in a window or hide the diagnostics overlay at launch. |
+| -RayTracing | Enable the structures needed for the title's ray-traced indirect lighting. |
+| -Fsr4K quality / -Dlss4K quality | Upscale to 3840 × 2160 with PC FSR or DLSS on Series X. |
+| -Build release | Use the executable built with cargo build --locked --release -p victory. The overlay requires a diagnostics build. |
+
+PC upscaling and Series S frame generation
+
+The Series X 4K profiles support quality, balanced and performance on
+build 1.0.2.1. They render at 2560 × 1440, 2258 × 1270 and 1920 × 1080
+respectively. For Series S, use -Dlss or -Fsr with the same three
+presets to keep the console profile's output size.
+
+For FSR, point VICTORY_FIDELITYFX_DIR or paths].fidelityfx_dir at the
+folder containing amd_fidelityfx_upscaler_dx12.dll. The 4K mode prefers
+FSR 4.1.2 and uses 3.1.6 when that is what the adapter supports. Series S
+uses FSR 3.1.6. Both profiles can use FSR when DLSS fails.
+For DLSS on an RTX card, get nvngx_dlss.dll from the NVIDIA DLSS SDK.
+Set VICTORY_DLSS_DIR or [paths].dlss_dir to its folder, or put the DLL
+beside victory.exe. Some drivers ship without this library. Vice-Tay
+checks for it before initializing NGX and uses the configured FSR
+fallback when it is missing. VICTORY_DLSS_NO_UPDATE=1 uses the installed
+selection without an NGX update. [AMD FSR SDK ·
+NVIDIA DLSS SDK
+
+For 2× Series S frame generation, pass -FrameGen. Point
+VICTORY_FFX_FG_DIR or paths].ffx_fg_dir at the SDK 2.4.0
+Kits/FidelityFX/signedbin folder with amd_fidelityfx_loader_dx12.dll
+and amd_fidelityfx_framegeneration_dx12.dll. If neither is set, the FSR
+upscaler folder is used. This uses AMD's analytical
+3.1.6 frame generation provider. The launch below uses DLSS on an RTX card.
+
+$env:VICTORY_FFX_FG_DIR = ''
+.\scripts\play.ps1 -Exe 'D:\victory-data\game\game.exe' -Console series-s -Dlss quality -FrameGen
+
+With neither PC upscaler selected, frame generation uses depth and motion
+vectors from the title's native FidelityFX loader. RENDER FPS in the
+diagnostics panel counts rendered frames, and FG OUTPUT FPS counts
+swap-chain presentations. The PC FSR bridge follows
+[DexNom's implementation
+through beloooo's port. The frame generation bridge follows
+PastiiJay's DirectX 12 integration.
+
+Shader cache and pipeline warm-up
+
+The launcher pretranslates shaders when the cache has fewer than 1,000 entries. It uses game_dir when configured and falls back to the executable's directory. The driver may still build pipelines during the first run.
+
+Run these steps separately from the repository root to warm the shader cache and compile pipelines seen in previous runs. Both steps can resume from cached work.
+
+.\target\diag\victory.exe shaders
+.\target\diag\victory.exe warm --used
+
+Pass an archive path to shaders to scan just that archive. -SkipShaders skips pretranslation at launch.
+
+Direct3D 12 Agility SDK on Windows 10
+
+For a Windows runtime that rejects root signature flags c00 or c01, use the application-local Microsoft.Direct3D.D3D12 1.620.2 package.
+
+1. Open the .nupkg as a ZIP and copy build/native/bin/x64/D3D12Core.dll to target\diag\D3D12\. The optional debug layer uses D3D12SDKLayers.dll from the same package.
+2. Build with the Agility SDK exports enabled.
+
+   $env:VICTORY_AGILITY_SDK = '1'
+   try { cargo build --locked --profile diag -p victory --features diagnostics }
+   finally { Remove-Item Env:VICTORY_AGILITY_SDK }
+
+3. Launch with scripts\play.ps1. Keep the D3D12 folder beside the executable. For a release build, use target\release\D3D12\ and build with --release.
+
+Linux and Proton: a faster wineserver
+
+Under Proton the title keeps 90,000 to 136,000 mapped views alive and maps or unmaps about a thousand a second. Stock wineserver keeps a process's views in a list and searches it from the front on every request, so everything that waits on the server slows down. linux/wineserver builds GE-Proton11-14's wineserver with a red-black tree of views and puts it in a copy of the GE-Proton folder, GE-Proton11-14-viewtree.
+
+bash linux/wineserver/build.sh
+
+…（内容已截断）

@@ -1,0 +1,152 @@
+About • Architecture • Agents • Verification • Install • Usage • Safety • Team
+
+AgntX-Hunter is an authorized-testing framework. It ships with a pending-authorization demo scope, no credentials, no targets and no populated databases. Nothing runs against any system until an engagement with explicit written authorization is enrolled in pentest/scope.json. See the Safety Model and Legal Disclaimer.
+
+🎯 What is AgntX-Hunter?
+
+AgntX-Hunter is the public home of BP5 — a lean, installable offensive-security agent framework that runs on top of the OpenCode V2 CLI. It orchestrates a disciplined team of 17 specialized AI agents that hunt, route, validate and report vulnerabilities across 9 vulnerability families, backed by 25 native skills and a read-only library of 155 technique playbooks.
+
+This is not a "prompt and pray" scanner. Every state change flows through one audited CLI, every outbound request passes a scope-fenced gateway, every finding needs independent evidence — and a protected human review is always the final gate.
+
+| | |
+|---|---|
+| Package ID | opencode-offsec-merged |
+| Release | 4.6.4-merged.6-runtime-patch4-lean |
+| Flavor | Runtime-only (no keys, no data, no tests, no session history) |
+| Main role | offsec-v4-operator |
+| Registry | pentest/agents/v4-index.json |
+| System of record | pentest/framework-v4.db + content-addressed evidence |
+
+✨ Highlights
+
+- 🧭 Coordinated hunting — the operator investigates live while Recon runs in the background; candidates are deduped through a shared hunter-lead ledger.
+- ⚔️ Nine family specialists — injection, client-side, access-auth, request-forgery, file-path, business-logic, infra, API and LLM-security — the only roles allowed to create confirmed findings.
+- 🧪 Cross-domain units — CTF solver, enterprise (network / AD / cloud / container) and malware-analysis agents.
+- 🔬 Two-tier independent validation — owner-controlled disposable canaries (poc_verified) or exact fenced replay with a control baseline (replay_stable). Neither auto-approves anything.
+- 🛡️ Fail-closed scope enforcement — host, port, scheme, DNS, TLS and exact-endpoint rules intersect; prompts can never widen them.
+- 🗄️ Single write path — all state changes go through python -m pentest.framework.cli with scope, lease-fencing and audit checks. No direct SQLite writes by agents.
+- 📦 Preservation-first installer — verified staging, external backups, coherent SQLite snapshots, rehearsed migrations and an INSTALL_RECEIPT.json.
+- 🧩 Dependency-free context plugin — token-saving compaction notes with opt-in, byte-exact large-output capture.
+
+🧠 Architecture
+
+flowchart TB
+    subgraph L0"🧑‍💻 Operator Layer"]
+        OC["OpenCode V2 CLI
+opencode.jsonc → AGENTS.md + FRAMEWORK_RULES.md"]
+    end
+    subgraph L1["🧭 Coordination & Discovery"]
+        MAIN["offsec-v4-operator
+primary hunter"]
+        RECON["offsec-v4-recon-agent
++ Python Recon Engine"]
+        AUDIT["offsec-v4-code-auditor
+read-only source review"]
+        LEAD["hunter-lead
+shared candidate ledger + dedup"]
+    end
+    subgraph L2["⚔️ Dispatch & Specialist Pool"]
+        SCHED["Scheduler-owned dispatch pump
+claims task → injects ephemeral fence"]
+        FAM["9 vulnerability-family specialists
+max 2 parallel · 1 per host"]
+        XDOM["cross-domain
+ctf-solver · enterprise · malware-analyst"]
+    end
+    subgraph L3["🗄️ System of Record"]
+        CLI["pentest.framework.cli
+single write path: scope · leases · fences · audit"]
+        GATE{"scope.json gate
+authorized / authorized_limited"}
+        GW["Fenced HTTP gateway
+GET/HEAD default · ≤1 req/s per host"]
+        DB[("framework-v4.db
++ content-addressed evidence")]
+    end
+    subgraph L4["🔬 Verification & Review"]
+        POC["offsec-v4-poc-agent
+owner-canary / exact replay"]
+        HUMAN["🔒 Protected human review"]
+        REP["offsec-v4-reporting-agent
+post-approval write-ups only"]
+        DASH["Unified dashboard
+loopback · read-only"]
+    end
+    OC --> MAIN
+    MAIN --> LEAD
+    RECON --> LEAD
+    AUDIT --> LEAD
+    LEAD --> SCHED
+    SCHED --> FAM
+    SCHED --> XDOM
+    FAM --> CLI
+    XDOM --> CLI
+    CLI --> GATE
+    GATE --> GW
+    GW --> TGT["🎯 Authorized targets only"]
+    CLI --> DB
+    FAM --> POC
+    POC --> HUMAN
+    HUMAN --> REP
+    DB --> DASH
+
+The layers, explained
+
+| Layer | What it does |
+|---|---|
+| Contracts | opencode.jsonc selects the main role and loads AGENTS.md; the installer adds FRAMEWORK_RULES.md to native instructions. Role names are stable because queued work depends on them. |
+| Coordination | One scheduler owns the single dispatch pump. It claims a task before launching a worker and injects an ephemeral fence — workers must submit evidence while their task is running. |
+| Specialists | Only the nine family specialists may create specialist_validated findings. Recon, Main, the code auditor and cross-domain roles route candidates through hunter-lead. |
+| Gateway | The pinned HTTP gateway checks the actual method before DNS/TLS/connection work. GET/HEAD by default; mutating verbs require explicit per-engagement opt-in and staged execution. |
+| Storage | pentest/framework-v4.db plus content-addressed evidence is the system of record. The CLI is the only writer. |
+| Review | The tokenless loopback dashboard is for viewing. Approval happens only in the protected reviewer workflow. Reporting runs strictly after approval. |
+
+Execution budgets (defaults)
+
+| Knob | Value |
+|---|---|
+| Recon batch size | 25 targets |
+| Strict per-target time | 15 s |
+| Batch window | 240 s |
+| Global parallel workers | 2 |
+| Per-host parallel workers | 1 |
+| Gateway pacing | ≤ 1 request / second / host |
+
+Two native layouts — never both
+
+| Layout | Agents | Skills |
+|---|---|---|
+| project | .opencode/agents | .opencode/skills |
+| global-flat | agents/ | skills/ |
+
+🤖 The Agent Roster
+
+All 17 agents, straight from [pentest/agents/v4-index.json:
+
+| Layer | Agent | Mission |
+|---|---|---|
+| 🧭 Coordination | offsec-v4-operator | Primary hunter & coordinator; submits candidates via hunter-lead |
+| 📡 Discovery | offsec-v4-recon-agent | Artifact analyst alongside the Python Recon Engine |
+| 💉 Specialist | offsec-family-injection | SQL/NoSQL/command/XXE/SSTI/LDAP/CSV/CRLF/header injection & deserialization |
+| 🕸️ Specialist | offsec-family-client-side | XSS (reflected/stored/DOM/blind), DOM clobbering, prototype pollution, postMessage, CSP, clickjacking |
+| 🔑 Specialist | offsec-family-access-auth | IDOR/BOLA/BFLA, privilege escalation, mass assignment, auth/2FA bypass, JWT/OAuth/SAML |
+| 🔀 Specialist | offsec-family-request-forgery | CSRF, SSRF, DNS rebinding, distinct-root-cause XXE impacts |
+| 📂 Specialist | offsec-family-file-path | Uploads, path traversal, LFI/RFI, Zip Slip |
+| 🧮 Specialist | offsec-family-business-logic | Race conditions, workflow confusion, logic authorization, price/parameter abuse |
+| 🏗️ Specialist | offsec-family-infra | Cloud/storage exposure, host headers, CI/CD & supply chain, smuggling, cache, CORS/headers |
+| 🔌 Specialist | offsec-family-api | GraphQL, resource limits, unsafe upstream APIs, old versions, OpenAPI/REST inventory |
+| 🧠 Specialist | offsec-family-llm-security | Prompt injection, sensitive-data disclosure, excessive tool agency, unsafe output handling |
+| 🔬 Verification | offsec-v4-poc-agent | Independent owner-canary & exact-replay validation |
+| 📖 Code review | offsec-v4-code-auditor | Opt-in read-only source audit; sends unverified leads to specialists |
+| 🚩 Cross-domain | offsec-v4-ctf-solver | CTF challenge analysis |
+| 🏢 Cross-domain | offsec-v4-enterprise | Enterprise network / AD / cloud / container review |
+| 🦠 Cross-domain | offsec-v4-malware-analyst | Malware analysis |
+| 📝 Reporting | offsec-v4-reporting-agent | Drafts submission write-ups from stored facts — after approval only |
+
+🔬 Evidence & Verification Pipeline
+
+flowchart LR
+    A"specialist_validated
+nine families only"] --> B{"Independent validator"}
+
+…（内容已截断）

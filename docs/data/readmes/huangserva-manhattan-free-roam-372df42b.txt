@@ -1,0 +1,143 @@
+曼哈顿漫游 · manhattan-free-roam
+
+一座能在浏览器里走路、开车、飞行的曼哈顿中城，外加一套把它渲染成 2K 短片的流程。城市用真实地图数据生成，代码全部由 AI 编程助手写成。这是一个向 GTA 致敬的爱好者作品。
+
+- 成片（60 秒，2K，带配乐和旁白）：下载原片（约 630 MiB）
+- 制作过程，写给新手：docs/making-of.md
+
+An open Midtown Manhattan that runs in the browser (Three.js + OpenStreetMap data), plus the Blender/Cycles pipeline that rendered it as a 60-second 2K film. All code was written by AI coding assistants. The README is in Chinese; the code comments are in English.
+
+里面有什么
+
+- 真实的城市：20,077 栋楼、14,730 段道路、32,407 棵树，位置都来自 OpenStreetMap。
+- 能逛：飞行、步行、开车三种方式，街上有车流和行人，可以切换白天和夜晚。
+- 45 座地标：帝国大厦、克莱斯勒大厦、中央车站等，用 AI 生成的 3D 模型。
+- 灯光秀：按 G，全城楼体变色，楼顶打出激光，无人机在天上拼出 MANHATTAN。
+- 镜头设计和录制：在城市里摆机位，连成飞行路线，直接录成视频。
+- 电影画面：把城市和镜头导进 Blender，用光线追踪渲染。
+
+它不是一个游戏：没有任务和玩法，近看细节也有限。离 GTA 有多远，文章里讲得很直白。
+
+快速开始
+
+需要 Node.js 20.9 或更新的版本（我们用的是 22）。
+
+npm install
+
+npm run dev
+
+然后用 Chrome 打开 ，点一下画面就可以开始。
+
+| 按键 | 作用 |
+| --- | --- |
+| W A S D、鼠标 | 移动、转向 |
+| Shift | 加速 |
+| Space / E，Q / C | 飞行时上升、下降 |
+| V | 在飞行和落地步行之间切换 |
+| E | 步行时走到车旁上车、下车 |
+| F | 搜索地点并导航 |
+| T | 白天 / 夜景 |
+| G | 灯光秀 |
+| B | 镜头设计面板 |
+| H、M | 隐藏界面、静音 |
+
+模型
+
+仓库里带着成片用的全部模型，在 public/models/ 下，共约 110 MB：45 座地标、11 种车、玩家和 6 种行人、5 种树。它们由 AI 3D 生成工具 Tripo 生成，再由 tools/build-models.mjs 减面、缩小贴图，处理成浏览器跑得动的小文件。授权见 ASSETS.md。
+
+模型是可选的。删掉某个模型，城市照样能跑：地标退回成按轮廓拉高的普通楼，车和人用程序画的简单形状代替。
+
+换成你自己的模型：用任何能导出 GLB 的 3D 生成工具，把文件放到 public/models//raw/.glb，然后运行：
+
+npm run models
+
+可用的名字：
+
+- landmarks：public/city.json 里 landmarks 的 id，比如 empirestate、chrysler、grandcentral、flatiron，一共 45 个。
+- cars：sedan、suv、taxi、van、truck、bus、pickup、police、ambulance、firetruck、schoolbus。
+- people：player（玩家）和 suit、coat、hoodie、worker、elder、jogger。
+- trees：oak、ginkgo、plane、locust、elm（只在 Blender 渲染时用，浏览器里的树用的是程序画的贴图）。
+
+仓库里没有带生成工具给出的原始模型（约 4 GB），只带了处理后的版本。
+
+换一座城市
+
+范围写在 tools/area.mjs 里，是一个经纬度方框。改掉它，然后：
+
+npm run data
+
+这条命令从 OpenStreetMap 下载方框里的楼、路、公园和水面，再生成 public/city.json。曼哈顿专用的内容（地标清单、城外的远景、时代广场的屏幕）不会自动跟着换，需要你让 AI 接着改。建议先从几个街区开始。
+
+设计镜头和录制
+
+在城市里按 B 打开镜头面板：飞到一个位置按 K 记下机位，再飞到下一个，按 P 试播，按 Z 录成视频。面板里可以把镜头存成文件。
+
+成片的镜头在 shots/trailer3.json（白天和夜晚）和 shots/lightshow3.json（灯光秀）里。也可以不开界面，用命令行录：
+
+node tools/record.mjs shots/trailer3.json
+
+需要开发服务器正在运行，电脑上装有 Chrome 和 ffmpeg。视频写到 renders/capture/。到这一步不需要显卡，可以先用录屏出一版样片。
+
+渲染成电影画面（进阶）
+
+这一步用 Blender 的 Cycles 渲染器，需要一块 NVIDIA 显卡。我们用的是 Blender 4.5 和一块 24 GB 显存的租用云显卡：2560×1440 下每帧 16 到 21 秒，全片约 3,450 帧，渲一遍约 17 小时。不要在没有独立显卡的电脑上试，会卡死。
+
+一、在自己的电脑上导出
+
+npm run export
+
+npm run bake
+
+export/ 里会得到整座城市（city.glb、scene.json）和每个镜头逐帧的机位、车和人的位置（shots-t3/、shots-ls4/）。
+
+二、把文件传到有显卡的机器上，在那边摆成这样：
+
+render/
+  tools/          本仓库的 tools/ 文件夹
+  job/
+    city.glb  scene.json  shots-t3/  shots-ls4/     来自 export/
+    ads.png                                         来自 assets/ads.png
+    models/                                         本仓库的 public/models/
+
+三、先渲一帧看效果，在 render/ 里运行：
+
+blender -b --python tools/blender_scene.py -- --root job --shot job/shots-t3/03-avenue-run.json --out-dir out/test --frames 100:101:1 --width 2560 --height 1440 --samples 96
+
+四、满意了再渲全片：
+
+BLENDER=blender tools/render/film.sh out
+
+它一个镜头接一个镜头地渲，每个镜头渲完自动合成 out/.cut.mp4。中途可以停：在 render/ 里建一个名叫 PAUSE 的空文件就会暂停，删掉继续；已经渲好的帧不会重渲。
+
+五、取回片段，合成全片。把 11 个 .cut.mp4 放进自己电脑上的 renders/film/，然后：
+
+node tools/assemble.mjs shots/film-cut.json --out renders/film/picture.mp4 --crf 12
+
+得到的是没有声音的画面。配乐和旁白要你自己准备：tools/mix_soundtrack.py 按一张时间表把音乐和旁白混成一条音轨，再用 ffmpeg 和画面合在一起。成片的旁白稿和做法见文章第六步。
+
+说明：tools/render/ 里的两个脚本是从我们实际使用的脚本改写成通用写法的（去掉了写死的路径），改写后的版本只做过语法检查，没有在新机器上完整跑过。导出和烘焙两步验证过：生成的文件和成片当时用的完全一致。
+
+文件夹说明
+
+| 位置 | 内容 |
+| --- | --- |
+| src/ | 浏览器里的城市：建楼、道路、车流、行人、树、日夜、灯光秀、镜头面板 |
+| public/city.json | 生成好的城市数据 |
+| tools/*.mjs | 下载和生成城市数据、处理模型、录制、导出、合成 |
+| tools/blender_*.py | 在 Blender 里重建城市的材质和灯光，并渲染 |
+| tools/render/ | 在显卡机器上排队渲染的脚本 |
+| shots/ | 成片的镜头和剪辑表 |
+| docs/ | 制作过程文章和配图 |
+
+协议
+
+- 代码：MIT，见 LICENSE。
+- 城市数据：© OpenStreetMap contributors，ODbL 协议。
+- 3D 模型：AI 生成，CC BY 4.0。
+- 其他素材，以及没有放进仓库的东西（配乐、旁白）：见 ASSETS.md。
+
+本项目是爱好者作品，与 Rockstar Games、Take-Two Interactive 没有任何关系。
+
+致谢
+
+OpenStreetMap 的贡献者们、Three.js、Blender、Tripo、CosyVoice、ffmpeg，以及写下全部代码的 Claude Code 和 Codex。

@@ -1,0 +1,1434 @@
+{
+  "date": "2026-11-26",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-27T08:12:40.248Z",
+  "count": 60,
+  "newCount": 32,
+  "sources": {
+    "trending": 16,
+    "new": 32,
+    "highStar": 13
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "name": "Claude-BugHunter",
+      "owner": "elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars": 25096,
+      "forks": 2552,
+      "starsToday": 1597,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elementalsouls-claude-bughunter-8f8b4d67.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "language": "TypeScript",
+      "stars": 211188,
+      "forks": 11072,
+      "starsToday": 1046,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "cathrynlavery/diagram-design",
+      "name": "diagram-design",
+      "owner": "cathrynlavery",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars": 74107,
+      "forks": 4960,
+      "starsToday": 955,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cathrynlavery-diagram-design-41ea088f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "XiaoYouChR/Ghost-Downloader-3",
+      "name": "Ghost-Downloader-3",
+      "owner": "XiaoYouChR",
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "description": "The only downloader you need. 下载器的集大成者。",
+      "language": "Python",
+      "stars": 19440,
+      "forks": 1180,
+      "starsToday": 889,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "xiaoyouchr-ghost-downloader-3-c290958b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 327759,
+      "forks": 29087,
+      "starsToday": 854,
+      "topics": [
+        "ai",
+        "brainstorming",
+        "coding",
+        "obra",
+        "sdlc",
+        "skills",
+        "subagent-driven-development",
+        "superpowers"
+      ],
+      "createdAt": "2025-10-09T19:45:18Z",
+      "updatedAt": "2026-11-27T08:12:17Z",
+      "sources": [
+        "trending",
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "zhouxiaoka/autoclip",
+      "name": "autoclip",
+      "owner": "zhouxiaoka",
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "description": "AutoClip｜The open-source OpusClip alternative — local-first AI clipping & MCP server, zero subscriptions. 一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。",
+      "language": "Python",
+      "stars": 17242,
+      "forks": 2417,
+      "starsToday": 774,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zhouxiaoka-autoclip-b1c879a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "mvanhorn/last30days-skill",
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 75987,
+      "forks": 6710,
+      "starsToday": 759,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mvanhorn-last30days-skill-ce334b66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "HKUDS/CLI-Anything",
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 66593,
+      "forks": 6078,
+      "starsToday": 746,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hkuds-cli-anything-c427889b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "jingyaogong/minimind",
+      "name": "minimind",
+      "owner": "jingyaogong",
+      "url": "https://github.com/jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "language": "Python",
+      "stars": 71900,
+      "forks": 9351,
+      "starsToday": 702,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jingyaogong-minimind-e3acf9ef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "mjmirza/app-store-compliance",
+      "name": "app-store-compliance",
+      "owner": "mjmirza",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 125 documented rejection patterns and fixes, privacy manifest and Data safety checks, 117 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+      "language": "Shell",
+      "stars": 7208,
+      "forks": 502,
+      "starsToday": 562,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mjmirza-app-store-compliance-71069240.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "toeverything/AFFiNE",
+      "name": "AFFiNE",
+      "owner": "toeverything",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+      "language": "TypeScript",
+      "stars": 79125,
+      "forks": 5774,
+      "starsToday": 525,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "toeverything-affine-c67d0b7a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "Tracer-Cloud/opensre",
+      "name": "opensre",
+      "owner": "Tracer-Cloud",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "description": "The open-source agent for CI/CD reliability.",
+      "language": "Python",
+      "stars": 15937,
+      "forks": 2079,
+      "starsToday": 327,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tracer-cloud-opensre-87ae8ae9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 13394,
+      "forks": 1576,
+      "starsToday": 309,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "cursor/plugins",
+      "name": "plugins",
+      "owner": "cursor",
+      "url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 19861,
+      "forks": 2165,
+      "starsToday": 270,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cursor-plugins-07a8bcfb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "openvinotoolkit/openvino",
+      "name": "openvino",
+      "owner": "openvinotoolkit",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "language": "C++",
+      "stars": 12863,
+      "forks": 3753,
+      "starsToday": 176,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openvinotoolkit-openvino-5d345dc2.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "nginx/nginx",
+      "name": "nginx",
+      "owner": "nginx",
+      "url": "https://github.com/nginx/nginx",
+      "description": "The official NGINX Open Source repository.",
+      "language": "C",
+      "stars": 33569,
+      "forks": 8436,
+      "starsToday": 150,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nginx-nginx-1304abc5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 17,
+      "fullName": "DoubleGhosty/cool_fox",
+      "name": "cool_fox",
+      "owner": "DoubleGhosty",
+      "url": "https://github.com/DoubleGhosty/cool_fox",
+      "description": "cool_fox: Leading CGBJ runtime continuation for GTA VI PC - Pareto residency, Wine/Vulkan fixes, FPS unlock, Port 5 CBV",
+      "language": "Rust",
+      "stars": 755,
+      "forks": 431,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T08:48:31Z",
+      "updatedAt": "2026-11-27T08:11:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "doubleghosty-cool-fox-91674b22.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 18,
+      "fullName": "Pixel679-cmyk/windows-titlebar-blur-customizer",
+      "name": "windows-titlebar-blur-customizer",
+      "owner": "Pixel679-cmyk",
+      "url": "https://github.com/Pixel679-cmyk/windows-titlebar-blur-customizer",
+      "description": "Customize Windows 10 and 11 title bar effects with Aero, Acrylic, Mica and advanced DWM blur effects.",
+      "language": "C++",
+      "stars": 703,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "acrylic",
+        "aero",
+        "aeroglass",
+        "blur",
+        "cplusplus",
+        "cpp",
+        "desktop",
+        "desktop-customization"
+      ],
+      "createdAt": "2026-11-26T21:26:56Z",
+      "updatedAt": "2026-11-27T08:11:53Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "pixel679-cmyk-windows-titlebar-blur-customizer-883e6e86.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 19,
+      "fullName": "0x1A6C1A9Y/focus-clock",
+      "name": "focus-clock",
+      "owner": "0x1A6C1A9Y",
+      "url": "https://github.com/0x1A6C1A9Y/focus-clock",
+      "description": "Un minuteur web minimal pour se concentrer, faire une pause et avancer une chose à la fois.",
+      "language": "HTML",
+      "stars": 473,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T13:54:20Z",
+      "updatedAt": "2026-11-27T08:11:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "0x1a6c1a9y-focus-clock-930f3d09.txt"
+    },
+    {
+      "rank": 20,
+      "fullName": "gary23w/f-ck_data_brokers",
+      "name": "f-ck_data_brokers",
+      "owner": "gary23w",
+      "url": "https://github.com/gary23w/f-ck_data_brokers",
+      "description": "fck_data_brokers.py is a free, open-source Python script that sends opt-out and deletion requests to data brokers on your behalf.",
+      "language": "Python",
+      "stars": 470,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [
+        "ccpa",
+        "cli",
+        "data-brokers",
+        "data-deletion",
+        "gdpr",
+        "lgpd",
+        "mcp",
+        "mcp-server"
+      ],
+      "createdAt": "2026-11-26T17:53:07Z",
+      "updatedAt": "2026-11-27T08:10:51Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "gary23w-f-ck-data-brokers-19059716.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 21,
+      "fullName": "HSgod/ps5-fpsunlocker-gta6",
+      "name": "ps5-fpsunlocker-gta6",
+      "owner": "HSgod",
+      "url": "https://github.com/HSgod/ps5-fpsunlocker-gta6",
+      "description": "Unlock FPS on Grand Theft Auto VI for jailbroken PS5",
+      "language": "C",
+      "stars": 323,
+      "forks": 15,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T08:38:39Z",
+      "updatedAt": "2026-11-27T08:09:04Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hsgod-ps5-fpsunlocker-gta6-8d7040a6.txt"
+    },
+    {
+      "rank": 22,
+      "fullName": "BlendEgretJudge/PClabs",
+      "name": "PClabs",
+      "owner": "BlendEgretJudge",
+      "url": "https://github.com/BlendEgretJudge/PClabs",
+      "description": "",
+      "language": "C#",
+      "stars": 308,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "clipping",
+        "gta6-preload",
+        "tiktok"
+      ],
+      "createdAt": "2026-11-26T21:46:29Z",
+      "updatedAt": "2026-11-27T06:55:31Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "blendegretjudge-pclabs-cd469329.txt"
+    },
+    {
+      "rank": 23,
+      "fullName": "TaynanGT/Vice-Tay",
+      "name": "Vice-Tay",
+      "owner": "TaynanGT",
+      "url": "https://github.com/TaynanGT/Vice-Tay",
+      "description": "VIctory tuned and fixed for an RTX 4090: runs the Xbox Series title from your own files. Built on Marvisak/VIctory and its forks; everyone is credited in the README and docs/credits.md.",
+      "language": "Rust",
+      "stars": 222,
+      "forks": 81,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T08:32:46Z",
+      "updatedAt": "2026-11-27T08:11:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "taynangt-vice-tay-9638f6b3.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 24,
+      "fullName": "Robbyant/lingbot-map-v2",
+      "name": "lingbot-map-v2",
+      "owner": "Robbyant",
+      "url": "https://github.com/Robbyant/lingbot-map-v2",
+      "description": "LingBot-Map 2.0: Geometric Streaming Base Model",
+      "language": "Python",
+      "stars": 193,
+      "forks": 4,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T10:17:03Z",
+      "updatedAt": "2026-11-27T08:09:58Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "robbyant-lingbot-map-v2-8ecdd924.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 25,
+      "fullName": "GenSZZ/kun_zai_tuan_li",
+      "name": "kun_zai_tuan_li",
+      "owner": "GenSZZ",
+      "url": "https://github.com/GenSZZ/kun_zai_tuan_li",
+      "description": "困在团里",
+      "language": "",
+      "stars": 178,
+      "forks": 31,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T05:38:44Z",
+      "updatedAt": "2026-11-27T08:11:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "genszz-kun-zai-tuan-li-f3cd3970.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 26,
+      "fullName": "es-ine/mcp",
+      "name": "mcp",
+      "owner": "es-ine",
+      "url": "https://github.com/es-ine/mcp",
+      "description": "MCP server connecting AI assistants to the Spanish National Statistics Institute (INE) public API. Enables access to official demographic, economic and social statistics, making it easy to search, retrieve and analyze reliable data using natural language.",
+      "language": "Python",
+      "stars": 168,
+      "forks": 6,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T08:25:48Z",
+      "updatedAt": "2026-11-27T08:09:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "es-ine-mcp-d51a104b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 27,
+      "fullName": "rorodev6/victory-nvidia-megafork",
+      "name": "victory-nvidia-megafork",
+      "owner": "rorodev6",
+      "url": "https://github.com/rorodev6/victory-nvidia-megafork",
+      "description": "NVIDIA experimental development line for Victory Megafork",
+      "language": "Rust",
+      "stars": 143,
+      "forks": 29,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T20:57:46Z",
+      "updatedAt": "2026-11-27T08:04:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rorodev6-victory-nvidia-megafork-ae307779.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 28,
+      "fullName": "sergiobanhos/generate-icons",
+      "name": "generate-icons",
+      "owner": "sergiobanhos",
+      "url": "https://github.com/sergiobanhos/generate-icons",
+      "description": "Agent skill that draws an original icon library matching your design system (React, Vue, Svelte, React Native, SVG).",
+      "language": "Python",
+      "stars": 123,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "agent-skills",
+        "claude-code",
+        "claude-skill",
+        "design-system",
+        "icons",
+        "svg"
+      ],
+      "createdAt": "2026-11-26T12:22:26Z",
+      "updatedAt": "2026-11-27T07:15:27Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "sergiobanhos-generate-icons-d2cd740b.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "Z-rox/mandyhub",
+      "name": "mandyhub",
+      "owner": "Z-rox",
+      "url": "https://github.com/Z-rox/mandyhub",
+      "description": "Community launcher",
+      "language": "Rust",
+      "stars": 119,
+      "forks": 18,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T04:53:00Z",
+      "updatedAt": "2026-11-27T07:03:03Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "z-rox-mandyhub-1d85125e.txt"
+    },
+    {
+      "rank": 30,
+      "fullName": "antostanislav/Vanity-Generator",
+      "name": "Vanity-Generator",
+      "owner": "antostanislav",
+      "url": "https://github.com/antostanislav/Vanity-Generator",
+      "description": "vanity generator, btc vanity, eth vanity, open-source bitcoin vanity address generator, all currencies vanity, vanity generation, A vanity address generator supporting over 100 cryptocurrencies, hijack clipboard, Vanity address generator,",
+      "language": "Python",
+      "stars": 112,
+      "forks": 109,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T10:34:21Z",
+      "updatedAt": "2026-11-27T08:10:26Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "antostanislav-vanity-generator-9dab7299.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "LakshanSivakumar/Native-Victory-macOS",
+      "name": "Native-Victory-macOS",
+      "owner": "LakshanSivakumar",
+      "url": "https://github.com/LakshanSivakumar/Native-Victory-macOS",
+      "description": "Native macOS port of the VIctory Xbox Series emulator for GTA VI: no Wine, game code in-process, GPU straight to Metal. Bring your own game copy.",
+      "language": "Rust",
+      "stars": 108,
+      "forks": 41,
+      "starsToday": 0,
+      "topics": [
+        "apple-silicon",
+        "emulator",
+        "gta6",
+        "macos",
+        "metal",
+        "rust",
+        "xbox"
+      ],
+      "createdAt": "2026-11-26T06:56:43Z",
+      "updatedAt": "2026-11-27T08:11:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lakshansivakumar-native-victory-macos-b44ac778.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 32,
+      "fullName": "Monesgoda/AgntX-Hunter",
+      "name": "AgntX-Hunter",
+      "owner": "Monesgoda",
+      "url": "https://github.com/Monesgoda/AgntX-Hunter",
+      "description": "penetration-testing / Bug Hunting / Red team agent framework for OpenCode — 17 scope-gated agents, evidence-first validation, mandatory human review.",
+      "language": "Python",
+      "stars": 98,
+      "forks": 22,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T14:22:37Z",
+      "updatedAt": "2026-11-27T07:22:29Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "monesgoda-agntx-hunter-a34e657e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 33,
+      "fullName": "huangserva/manhattan-free-roam",
+      "name": "manhattan-free-roam",
+      "owner": "huangserva",
+      "url": "https://github.com/huangserva/manhattan-free-roam",
+      "description": "Midtown Manhattan you can walk, drive and fly through in the browser (Three.js + OpenStreetMap), plus the Blender pipeline that rendered it as a 60-second 2K film.",
+      "language": "JavaScript",
+      "stars": 87,
+      "forks": 23,
+      "starsToday": 0,
+      "topics": [
+        "ai-generated",
+        "blender",
+        "cycles",
+        "manhattan",
+        "openstreetmap",
+        "threejs",
+        "webgl"
+      ],
+      "createdAt": "2026-11-26T12:15:14Z",
+      "updatedAt": "2026-11-27T08:09:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "huangserva-manhattan-free-roam-372df42b.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "carlm125/cool_fox",
+      "name": "cool_fox",
+      "owner": "carlm125",
+      "url": "https://github.com/carlm125/cool_fox",
+      "description": "",
+      "language": "",
+      "stars": 85,
+      "forks": 453,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T07:09:28Z",
+      "updatedAt": "2026-11-26T23:06:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "carlm125-cool-fox-22a15fb3.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "MikeDoesThingss/cgbj-reupload",
+      "name": "cgbj-reupload",
+      "owner": "MikeDoesThingss",
+      "url": "https://github.com/MikeDoesThingss/cgbj-reupload",
+      "description": "refork and download me before im gone :D boohoo rockstar - shouldn't gatekeep pc",
+      "language": "",
+      "stars": 85,
+      "forks": 29,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T17:34:07Z",
+      "updatedAt": "2026-11-27T03:51:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mikedoesthingss-cgbj-reupload-462f1542.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "OfficialAtone/jenny-mod-enhanced-edition",
+      "name": "jenny-mod-enhanced-edition",
+      "owner": "OfficialAtone",
+      "url": "https://github.com/OfficialAtone/jenny-mod-enhanced-edition",
+      "description": "Unofficial Enhanced Edition of the Jenny Mod (Fapcraft) for Minecraft Java and Bedrock. Upgraded NPC AI, new interactions, and full compatibility with modern versions.",
+      "language": "Java",
+      "stars": 79,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "all-the-mods-11",
+        "curseforge",
+        "curseforge-jenny-mod",
+        "forge-mod",
+        "java-edition",
+        "jenny",
+        "jenny-mod",
+        "jenny-mod-2026"
+      ],
+      "createdAt": "2026-11-26T23:23:42Z",
+      "updatedAt": "2026-11-26T23:46:08Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "officialatone-jenny-mod-enhanced-edition-9ebea29a.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "f/family-migration-story",
+      "name": "family-migration-story",
+      "owner": "f",
+      "url": "https://github.com/f/family-migration-story",
+      "description": "Soy ağacından kaynaklı aile tarihi raporu ve Türkçe seslendirmeli göç haritası videosu üreten Claude Code skill'i",
+      "language": "Python",
+      "stars": 75,
+      "forks": 2,
+      "starsToday": 0,
+      "topics": [
+        "claude-code",
+        "claude-skills",
+        "family-history",
+        "genealogy",
+        "remotion",
+        "soyagaci",
+        "turkish"
+      ],
+      "createdAt": "2026-11-26T14:00:19Z",
+      "updatedAt": "2026-11-27T08:08:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "f-family-migration-story-60ed034e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 38,
+      "fullName": "musijava/JIDE",
+      "name": "JIDE",
+      "owner": "musijava",
+      "url": "https://github.com/musijava/JIDE",
+      "description": "An Android IDE for Java: edit, compile, run and package Java programs on the device, with ECJ diagnostics, Git and a SQLite workspace.",
+      "language": "Java",
+      "stars": 68,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T12:11:11Z",
+      "updatedAt": "2026-11-27T03:25:54Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "musijava-jide-f93e36b1.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "123zhaozheng/SlideForge",
+      "name": "SlideForge",
+      "owner": "123zhaozheng",
+      "url": "https://github.com/123zhaozheng/SlideForge",
+      "description": "Turn documents, ideas, or flat AI slides into 100% native editable PowerPoint (.pptx) decks via multi-batch AI component sheets + OOXML layered reconstruction.",
+      "language": "Python",
+      "stars": 67,
+      "forks": 1,
+      "starsToday": 0,
+      "topics": [
+        "agent-skill",
+        "agent-skills",
+        "ai-agent",
+        "claude-code",
+        "claude-skills",
+        "cursor",
+        "editable-ppt",
+        "powerpoint"
+      ],
+      "createdAt": "2026-11-26T06:59:24Z",
+      "updatedAt": "2026-11-27T06:32:02Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "123zhaozheng-slideforge-900f9724.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "Olmectron/nx2-flow",
+      "name": "nx2-flow",
+      "owner": "Olmectron",
+      "url": "https://github.com/Olmectron/nx2-flow",
+      "description": "A WiiFlow-like shelf and loader that runs Switch 2 games straight from NUP files (homebrew, experimental)",
+      "language": "C",
+      "stars": 67,
+      "forks": 11,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T00:49:01Z",
+      "updatedAt": "2026-11-27T07:19:59Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "olmectron-nx2-flow-3903508a.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "superj0107/dsh-pojia",
+      "name": "dsh-pojia",
+      "owner": "superj0107",
+      "url": "https://github.com/superj0107/dsh-pojia",
+      "description": "DeepSeek Harness 破甲融合包：宿主清洗 + 破甲内核双层合一，统一 /pojia 命令",
+      "language": "JavaScript",
+      "stars": 66,
+      "forks": 28,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T04:31:05Z",
+      "updatedAt": "2026-11-27T07:19:40Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "superj0107-dsh-pojia-9986915f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 42,
+      "fullName": "Robbyant/lingbot-navi",
+      "name": "lingbot-navi",
+      "owner": "Robbyant",
+      "url": "https://github.com/Robbyant/lingbot-navi",
+      "description": "LingBot-Navi: Scene‑aware Navigation with Spatial Memory",
+      "language": "Python",
+      "stars": 63,
+      "forks": 5,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T06:05:26Z",
+      "updatedAt": "2026-11-27T08:10:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "robbyant-lingbot-navi-b54c5777.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 43,
+      "fullName": "QueenChieftain/RobRun",
+      "name": "RobRun",
+      "owner": "QueenChieftain",
+      "url": "https://github.com/QueenChieftain/RobRun",
+      "description": "",
+      "language": "",
+      "stars": 60,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "robrun-2026",
+        "robrun-esp",
+        "robrun-hack-tool",
+        "robrun-loot-radar",
+        "robrun-mod",
+        "robrun-mods",
+        "robrun-mods-menu",
+        "robrun-radar"
+      ],
+      "createdAt": "2026-11-26T18:17:24Z",
+      "updatedAt": "2026-11-26T21:13:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "queenchieftain-robrun-51a80591.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "real2worlds2real/real2worlds2real",
+      "name": "real2worlds2real",
+      "owner": "real2worlds2real",
+      "url": "https://github.com/real2worlds2real/real2worlds2real",
+      "description": "Real2Worlds2Real: Scaling Self-Improving Agentic Real2Sim2Real for Robot Manipulation",
+      "language": "Python",
+      "stars": 56,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T09:01:59Z",
+      "updatedAt": "2026-11-27T08:10:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "real2worlds2real-real2worlds2real-4266939e.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "cputroll/cgbj-reupload",
+      "name": "cgbj-reupload",
+      "owner": "cputroll",
+      "url": "https://github.com/cputroll/cgbj-reupload",
+      "description": "refork and download me before im gone :D boohoo rockstar - shouldn't gatekeep pc",
+      "language": "",
+      "stars": 52,
+      "forks": 84,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T08:13:46Z",
+      "updatedAt": "2026-11-27T00:21:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "cputroll-cgbj-reupload-b7615d3d.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "emad-ii/dot-product",
+      "name": "dot-product",
+      "owner": "emad-ii",
+      "url": "https://github.com/emad-ii/dot-product",
+      "description": "A Dot Product Is All You Need: the four-page paper, its Lean companion, and interactive proof guide.",
+      "language": "Lean",
+      "stars": 52,
+      "forks": 3,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T19:40:30Z",
+      "updatedAt": "2026-11-27T08:09:21Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "emad-ii-dot-product-668a8299.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "rorodev6/victory-megafork-amd",
+      "name": "victory-megafork-amd",
+      "owner": "rorodev6",
+      "url": "https://github.com/rorodev6/victory-megafork-amd",
+      "description": "",
+      "language": "Rust",
+      "stars": 51,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-26T20:41:04Z",
+      "updatedAt": "2026-11-27T07:46:38Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "rorodev6-victory-megafork-amd-c5ec91c8.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "kojoyeboah1/zapret-discord",
+      "name": "zapret-discord",
+      "owner": "kojoyeboah1",
+      "url": "https://github.com/kojoyeboah1/zapret-discord",
+      "description": "NEW FIX Как Обойти Блокировку Дискорда В России ?! Новый Дискорд Обход Для ПК ! Запрет Дискорд & Фикс ДС !",
+      "language": "Batchfile",
+      "stars": 50,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "discord",
+        "discordfix",
+        "fix-discord",
+        "fixdiscord",
+        "zapret-discord-fix",
+        "zapret-youtube-fix"
+      ],
+      "createdAt": "2026-11-26T18:31:39Z",
+      "updatedAt": "2026-11-27T04:53:17Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "kojoyeboah1-zapret-discord-906235e2.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 49,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 372855,
+      "forks": 45451,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-27T07:47:30Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 50,
+      "fullName": "torvalds/linux",
+      "name": "linux",
+      "owner": "torvalds",
+      "url": "https://github.com/torvalds/linux",
+      "description": "Linux kernel source tree",
+      "language": "C",
+      "stars": 256944,
+      "forks": 66777,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2011-09-04T22:48:12Z",
+      "updatedAt": "2026-11-27T08:11:41Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "torvalds-linux-1aff06f4.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "react/react",
+      "name": "react",
+      "owner": "react",
+      "url": "https://github.com/react/react",
+      "description": "The library for web and native user interfaces.",
+      "language": "JavaScript",
+      "stars": 253007,
+      "forks": 51859,
+      "starsToday": 0,
+      "topics": [
+        "declarative",
+        "frontend",
+        "javascript",
+        "library",
+        "react",
+        "ui"
+      ],
+      "createdAt": "2013-05-24T16:15:54Z",
+      "updatedAt": "2026-11-27T08:07:08Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "react-react-c94349b7.txt"
+    },
+    {
+      "rank": 52,
+      "fullName": "ohmyzsh/ohmyzsh",
+      "name": "ohmyzsh",
+      "owner": "ohmyzsh",
+      "url": "https://github.com/ohmyzsh/ohmyzsh",
+      "description": "🙃 A delightful community-driven (with 2,500+ contributors) framework for managing your zsh configuration. Includes 300+ optional plugins (rails, git, macOS, hub, docker, homebrew, node, php, python, etc), 140+ themes to spice up your morning, and an auto-update tool that makes it easy to keep up wi",
+      "language": "Shell",
+      "stars": 190936,
+      "forks": 27128,
+      "starsToday": 0,
+      "topics": [
+        "cli",
+        "cli-app",
+        "oh-my-zsh",
+        "oh-my-zsh-plugin",
+        "oh-my-zsh-theme",
+        "ohmyzsh",
+        "plugin-framework",
+        "plugins"
+      ],
+      "createdAt": "2009-08-28T18:15:37Z",
+      "updatedAt": "2026-11-27T08:06:13Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ohmyzsh-ohmyzsh-0d67c47d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 53,
+      "fullName": "ollama/ollama",
+      "name": "ollama",
+      "owner": "ollama",
+      "url": "https://github.com/ollama/ollama",
+      "description": "Get up and running with Kimi, GLM, MiniMax, DeepSeek, gpt-oss, Qwen, Gemma and other models.",
+      "language": "Go",
+      "stars": 188276,
+      "forks": 19225,
+      "starsToday": 0,
+      "topics": [
+        "deepseek",
+        "gemma",
+        "glm",
+        "go",
+        "golang",
+        "gpt-oss",
+        "llama",
+        "llm"
+      ],
+      "createdAt": "2023-06-26T19:39:32Z",
+      "updatedAt": "2026-11-27T07:48:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ollama-ollama-e62568a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 54,
+      "fullName": "twbs/bootstrap",
+      "name": "bootstrap",
+      "owner": "twbs",
+      "url": "https://github.com/twbs/bootstrap",
+      "description": "The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+      "language": "JavaScript",
+      "stars": 175138,
+      "forks": 78811,
+      "starsToday": 0,
+      "topics": [
+        "bootstrap",
+        "css",
+        "css-framework",
+        "html",
+        "javascript",
+        "sass",
+        "scss"
+      ],
+      "createdAt": "2011-07-29T21:19:00Z",
+      "updatedAt": "2026-11-27T02:58:29Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "twbs-bootstrap-25ec2eea.txt"
+    },
+    {
+      "rank": 55,
+      "fullName": "Genymobile/scrcpy",
+      "name": "scrcpy",
+      "owner": "Genymobile",
+      "url": "https://github.com/Genymobile/scrcpy",
+      "description": "Display and control your Android device",
+      "language": "C",
+      "stars": 155882,
+      "forks": 14288,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "c",
+        "ffmpeg",
+        "genyteam-system",
+        "libav",
+        "mirroring",
+        "recording",
+        "screen"
+      ],
+      "createdAt": "2017-11-21T18:00:27Z",
+      "updatedAt": "2026-11-27T08:05:11Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "genymobile-scrcpy-2a59cd95.txt"
+    },
+    {
+      "rank": 56,
+      "fullName": "github/spec-kit",
+      "name": "spec-kit",
+      "owner": "github",
+      "url": "https://github.com/github/spec-kit",
+      "description": "💫 Toolkit to help you get started with SDD or any other process!",
+      "language": "Python",
+      "stars": 151835,
+      "forks": 13644,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "copilot",
+        "development",
+        "engineering",
+        "prd",
+        "spec",
+        "spec-driven"
+      ],
+      "createdAt": "2025-08-21T22:54:31Z",
+      "updatedAt": "2026-11-27T08:09:47Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "github-spec-kit-a8419e0a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 57,
+      "fullName": "langchain-ai/langchain",
+      "name": "langchain",
+      "owner": "langchain-ai",
+      "url": "https://github.com/langchain-ai/langchain",
+      "description": "The agent engineering platform.",
+      "language": "Python",
+      "stars": 150059,
+      "forks": 25180,
+      "starsToday": 0,
+      "topics": [
+        "agents",
+        "ai",
+        "ai-agents",
+        "anthropic",
+        "chatgpt",
+        "deepagents",
+        "enterprise",
+        "framework"
+      ],
+      "createdAt": "2022-10-17T02:58:36Z",
+      "updatedAt": "2026-11-27T07:55:50Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "langchain-ai-langchain-5dbbd123.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "golang/go",
+      "name": "go",
+      "owner": "golang",
+      "url": "https://github.com/golang/go",
+      "description": "The Go programming language",
+      "language": "Go",
+      "stars": 140175,
+      "forks": 20161,
+      "starsToday": 0,
+      "topics": [
+        "go",
+        "golang",
+        "language",
+        "programming-language"
+      ],
+      "createdAt": "2014-08-19T04:33:40Z",
+      "updatedAt": "2026-11-27T07:54:46Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "golang-go-573b8bb7.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "rustdesk/rustdesk",
+      "name": "rustdesk",
+      "owner": "rustdesk",
+      "url": "https://github.com/rustdesk/rustdesk",
+      "description": "An open-source remote desktop application designed for self-hosting, as an alternative to TeamViewer.",
+      "language": "Rust",
+      "stars": 131745,
+      "forks": 21326,
+      "starsToday": 0,
+      "topics": [
+        "android",
+        "anydesk",
+        "dart",
+        "flatpak",
+        "flutter",
+        "flutter-apps",
+        "ios",
+        "linux"
+      ],
+      "createdAt": "2020-09-28T15:36:08Z",
+      "updatedAt": "2026-11-27T08:08:53Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "rustdesk-rustdesk-74db32a9.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "shadcn-ui/ui",
+      "name": "ui",
+      "owner": "shadcn-ui",
+      "url": "https://github.com/shadcn-ui/ui",
+      "description": "Composable, accessible components with thoughtful defaults. Build your own component library with code you can customize, extend, and make your own.",
+      "language": "TypeScript",
+      "stars": 129208,
+      "forks": 11452,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "base-ui",
+        "components",
+        "gen-ui",
+        "generative-ai",
+        "generative-ui",
+        "laravel",
+        "nextjs"
+      ],
+      "createdAt": "2023-01-04T12:43:27Z",
+      "updatedAt": "2026-11-27T08:12:23Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "shadcn-ui-ui-59ddb325.txt"
+    }
+  ]
+}
