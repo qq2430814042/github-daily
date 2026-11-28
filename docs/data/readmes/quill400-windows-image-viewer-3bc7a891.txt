@@ -1,0 +1,184 @@
+Windows Image Viewer & Photo Manager is a fast, lightweight, free, and open-source desktop image viewer for Windows. Browse photos, navigate folders, edit images, organize files, and optionally play videos through a clean graphical interface without needing command-line knowledge.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive Windows Image Viewer & Photo Manager 4.1.5.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep Windows Image Viewer & Photo Manager 4.1.5.exe and libvlc.dll together in that folder.
+5. Double-click Windows Image Viewer & Photo Manager 4.1.5.exe to launch the application.
+
+✨ Features
+
+- ⚡ Fast Image Viewing — Open images quickly and browse large collections with responsive navigation and minimal interface distractions.
+- 🔍 High Quality Image Scaling — Enjoy sharp image rendering with configurable scaling and zoom controls for different screen sizes.
+- ✂️ Built-In Photo Editing — Crop, rotate, and resize pictures directly inside the Windows image viewer.
+- 🗂️ Folder and Thumbnail Browser — Navigate image directories using convenient thumbnails and a dedicated folder browsing mode.
+- 📁 Quick File Organization — Copy or move photos to frequently used destination folders with configurable keyboard shortcuts.
+- 🎬 Optional Video Playback — Enable multimedia playback through the optional libmpv integration, including supported formats such as WebM.
+- ⌨️ Customizable Keyboard Shortcuts — Configure controls, personalize the interface, and access common image management actions without navigating menus.
+- 🖥️ Fullscreen and Slideshow — View images without distractions, launch slideshows, and explore collections in shuffle mode.
+- 📷 Image Information — Inspect available image metadata and EXIF information through the built-in information panel.
+- 🛠️ Custom Script Integration — Configure external commands and scripts to extend image workflows and automate repetitive tasks.
+
+🖼️ Overview
+
+The application combines essential photo viewing and file management tools in one compact Windows desktop interface.
+
+| Capability | Description |
+|---|---|
+| Image browsing | Navigate between images in a directory |
+| Zoom controls | Inspect images at different magnifications |
+| Folder navigation | Browse directories and thumbnail collections |
+| Image editing | Crop, rotate, and resize pictures |
+| File management | Copy, move, and delete selected images |
+| Multimedia | Optional video playback integration |
+| Personalization | Configurable themes and keyboard controls |
+
+🚀 Usage
+
+Getting started is straightforward:
+
+1. Open an image — Select an image file or open a directory containing your photos.
+2. Browse your collection — Use the arrow keys or mouse wheel to move between images.
+3. Adjust the view — Zoom in, zoom out, or switch between window, width, and original-size viewing modes.
+4. Organize pictures — Use the quick copy and move controls to transfer images between destination folders.
+5. Edit images — Access the editing commands to crop, rotate, or resize your current picture.
+6. Customize settings — Adjust keyboard shortcuts, themes, interface preferences, and optional integrations.
+
+⌨️ Default Keyboard Shortcuts
+
+The following table highlights common image viewer controls.
+
+| Action | Shortcut |
+|---|---|
+| Next image | Right Arrow / Mouse Wheel |
+| Previous image | Left Arrow / Mouse Wheel |
+| First image | Home |
+| Last image | End |
+| Zoom in | Ctrl + Up |
+| Zoom out | Ctrl + Down |
+| Fit to window | 1 |
+| Fit to width | 2 |
+| Original size | 3 |
+| Switch fit modes | Space |
+| Toggle fullscreen | F / F11 |
+| Show image information | I |
+| Crop image | X |
+| Resize image | R |
+| Rotate left | Ctrl + L |
+| Rotate right | Ctrl + R |
+| Quick copy | C |
+| Quick move | M |
+| Move to trash | Delete |
+| Open folder view | Enter / Backspace |
+| Open file | Ctrl + O |
+| Save changes | Ctrl + S |
+| Open settings | P |
+| Start slideshow | ~ |
+| Shuffle images | Ctrl + ~ |
+
+Tip: Keyboard bindings can be customized through the application settings.
+
+📂 Organize Images Faster
+
+The quick copy and move panels make it easier to sort large photo collections.
+
+- Configure frequently used destination folders.
+- Open the copy or move panel.
+- Select a destination using its corresponding number key.
+- Transfer the currently displayed image without repeatedly browsing directories.
+
+This workflow is useful for organizing screenshots, photographs, downloaded pictures, and other image collections.
+
+🎞️ Slideshow and Video Support
+
+Use slideshow mode to browse a collection automatically or enable shuffle mode for randomized viewing.
+
+For multimedia playback, the optional libmpv integration provides additional video capabilities when supported and configured in the application build.
+
+🖥️ Windows Desktop Experience
+
+Designed for everyday desktop use, this image viewer keeps frequently needed tools accessible without overwhelming the viewing area.
+
+Highlights include:
+
+- A clean, uncluttered graphical interface.
+- Convenient thumbnail and folder navigation.
+- Configurable display and interaction settings.
+- Fullscreen viewing for distraction-free browsing.
+- Practical image organization and editing tools.
+- Optional multimedia functionality.
+
+Whether you need a lightweight photo viewer for everyday browsing or a practical utility for managing image folders, the application brings essential tools together in one place.
+
+🔒 Security & Privacy
+
+Your files and privacy matter.
+
+- No Telemetry: No built-in behavioral tracking or analytics collection is intended.
+- No Account Required: Use the desktop application without creating an online account.
+- Open Source: Inspect the source code and review how the application works.
+- Local File Operations: Image browsing and editing are designed around files on your computer.
+- Community Reporting: Report suspected security vulnerabilities or unexpected behavior through the repository's issue-tracking process.
+
+Always keep backups of important photographs before performing destructive file operations or editing original files.
+
+🛠️ Technology
+
+The application is built around established desktop multimedia technologies.
+
+| Technology | Purpose |
+|---|---|
+| C++ | Core application development |
+| Qt 5 / Qt 6 | Desktop graphical interface |
+| libmpv | Optional video playback |
+| OpenCV | Optional image processing and scaling improvements |
+
+The exact capabilities available depend on the selected build configuration and included dependencies.
+
+❓ Frequently Asked Questions
+
+Is this Windows image viewer free?
+
+Yes. The project is open source and distributed under the MIT License.
+
+Does it support photo editing?
+
+Yes. Basic editing functionality includes cropping, rotating, and resizing images.
+
+Can I browse an entire image folder?
+
+Yes. Navigate between images and use the thumbnail and folder browsing interfaces to explore collections.
+
+Does it support video playback?
+
+Optional video playback is available through libmpv integration. Actual format support depends on the multimedia build and configuration.
+
+Can I customize keyboard shortcuts?
+
+Yes. The application provides configurable controls so you can adapt navigation and other actions to your workflow.
+
+Is it suitable for large photo collections?
+
+Its fast browsing, folder navigation, thumbnail interface, and quick file management tools make it useful for working through collections of images.
+
+Does it require command-line knowledge?
+
+No. Everyday image viewing, browsing, editing, and file organization are available through the graphical interface.
+
+🤝 Contributing
+
+Contributions, bug reports, and improvement suggestions are welcome.
+
+You can help improve the project by:
+
+- Reporting reproducible bugs.
+- Suggesting useful image viewer features.
+- Improving documentation.
+- Testing different Windows configurations.
+- Submitting code improvements and fixes.
+
+…（内容已截断）

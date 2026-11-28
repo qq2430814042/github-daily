@@ -1,0 +1,79 @@
+VI-Patch
+
+  Patches for Grand Theft Auto VI PS5.
+
+  PPSA38500 &nbsp;&middot;&nbsp;
+  v01.002.001
+
+VI-Patch is a set of patches for Grand Theft Auto VI. Use them with PS Patch System, or with the VI-Patch Payload.
+
+Patches
+
+- 60 FPS: removes the 30 fps cap. Needs 120 Hz forced on in PS Patch System settings.
+
+- 40 FPS: locks the game at a steady 40 FPS. Needs 120 Hz output (forced on in PS Patch System settings).
+
+- 1080p: renders the game at 1080p instead of 1440p. Works on its own (30 FPS) or together with 60 FPS.
+
+- Weather fix: on version 01.002.001 the weather gets stuck on sunny days (a game bug). This brings back rain, storms, hurricanes, fog and the four seasons.
+
+- Uncensored Experimental Patch: Australia/New Zealand version Restores the removed items and their stamina boost.
+
+- Close game fix: fixes the hang and the CE-108255-1 error when you close the game. Made by Eizovoid.
+
+- First person: press R3 + D-pad Right to switch between first and third person.
+
+- Skip intro logos: the Rockstar logo movie is skipped, so the game goes straight to loading.
+
+- Mandy replaces Lucia: Lucia becomes Mandy, with her own face, body and outfits. WORKS ONLY IN NEW GAME
+
+- No clothing: hold D-pad Down and press R3 to take the clothes off. Do it again to put them back on. Works on Jason and Lucia.
+
+- No Vignette: no dark corners when you drive fast or aim.
+
+- No depth of field: turns off the depth of field effect.
+
+- No lens flare: removes lens flares from the sun and lights.
+
+Use either the XML or the payload, not both.
+
+Run XML
+
+You need a PS5 with PS Patch System running.
+
+1. Copy PPSA38500.xml to /data/user/patches/xml_prospero/.
+2. Turn on the patches you want in PS Patch System.
+3. Start the game.
+
+Run Payload
+
+1. Send vi-patch.elf with your payload loader before you start the game.
+2. Start the game.
+3. 60 FPS and Weather fix on by default.
+
+The payload closes when it's done. Send it again every time you start the game.
+
+Choose your patches in /data/vi-patch/vipatch.txt (made on the first run). Set a patch to 1 for on or 0 for off, then send the payload again before you start the game.
+> 60 FPS=1
+1080p=0
+First person=0
+No Vignette=0
+No depth of field=0
+No lens flare=0
+Skip intro logos=0
+Weather fix=1
+No clothing=0
+Mandy replaces Lucia=0
+Close game fix=0
+40 FPS=0 (Needs 120 Hz forced on in PS Patch System settings, for the payload same as XML)
+Uncensored=0
+
+The patches are made for game version 01.002.001 only.
+
+Credits
+
+- PS Patch System by illusionyy: the patch loader
+- Eizovoid: the Close game fix
+- idarius & TaPiOn-: findings behind the Weather fix
+- Criminal: the 60 FPS patch and the frame-time fix for 40 FPS
+- HSgod: research on the 30 FPS cap and the render resolution also the frame-rate setters

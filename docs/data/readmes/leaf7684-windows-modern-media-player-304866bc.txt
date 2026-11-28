@@ -1,0 +1,189 @@
+Modern Windows Media Player is a free, open-source video and audio player for Windows 10 and Windows 11. Built around VLC playback technology and a clean Windows interface, it makes watching movies, listening to music, streaming network media, and managing playback simple — without requiring a command line.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive Modern Windows Media Player 4.4.5.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep Modern Windows Media Player 4.4.5.exe and libvlc.dll together in that folder.
+5. Double-click Modern Windows Media Player 4.4.5.exe to launch the application.
+
+✨ Features
+
+Everything you need for a comfortable desktop media playback experience.
+
+- 🎬 Universal Video Playback — Play a wide variety of video formats using the powerful VLC-based media engine.
+- 🎵 Audio File Support — Enjoy music and audio files with convenient playback controls and an intuitive interface.
+- 🪟 Modern Windows Interface — Experience a clean, Fluent-inspired desktop design with layouts adapted to different screen sizes.
+- 📺 Picture-in-Picture Mode — Keep videos visible in a compact floating player while working in other applications.
+- 🌐 Network Media Streaming — Browse supported network locations and play media stored on other devices.
+- 📡 Chromecast Support — Send compatible media to supported Chromecast devices for playback on a larger screen.
+- ⌨️ Keyboard Shortcuts — Control playback, volume, seeking, and window size using convenient keyboard commands.
+- 👆 Touch and Gesture Controls — Navigate playback and adjust volume using intuitive touch-friendly interactions.
+- 📸 Video Frame Capture — Save individual video frames as image files directly from the player.
+- 📐 Flexible Window Sizing — Adjust the playback window quickly with dedicated keyboard shortcuts.
+- 🎞️ Subtitle Support — Enjoy supported subtitle tracks and a more accessible viewing experience.
+- ⚡ Hardware-Accelerated Playback — Benefit from supported video acceleration capabilities offered by the underlying playback platform.
+
+🖼️ Overview
+
+A desktop media experience designed to keep playback controls accessible without getting in the way of your content.
+
+A player for everyday media
+
+Whether you are watching downloaded movies, browsing personal video collections, listening to music, or accessing media over a local network, the application provides a unified playback experience.
+
+Designed for Windows
+
+- Familiar desktop interaction patterns.
+- Responsive layouts for different window sizes.
+- Touch-friendly controls for compatible devices.
+- Convenient keyboard navigation.
+- A focused playback interface with minimal distractions.
+
+🚀 Usage
+
+Getting started is straightforward:
+
+1. Open the application from your Windows desktop or Start menu.
+2. Choose your media by opening a supported video or audio file.
+3. Control playback using the on-screen controls or keyboard shortcuts.
+4. Adjust your viewing experience with window resizing and picture-in-picture.
+5. Explore additional playback options such as subtitles, network media, and supported casting devices.
+
+⌨️ Keyboard shortcuts
+
+Keyboard controls make everyday media playback faster and easier.
+
+| Action | Control |
+|---|---|
+| Play / Pause | Space |
+| Seek through media | Arrow keys |
+| Adjust volume | Volume controls |
+| Change window size | Number keys 1–4 |
+| Toggle playback options | Supported shortcut keys |
+
+Available shortcuts may depend on the active playback view and application version.
+
+🖥️ Supported Platforms
+
+| Platform | Support |
+|---|---|
+| Windows 10 | Supported on compatible builds |
+| Windows 11 | Supported |
+| Touch-enabled Windows devices | Supported |
+| Xbox | Platform-dependent compatibility |
+
+The application uses the Universal Windows Platform (UWP) and a VLC-powered playback stack.
+
+🎥 Media Playback Technology
+
+The player uses the VLC ecosystem through LibVLCSharp, bringing established media playback capabilities into a native-feeling Windows application.
+
+Key technology components:
+
+- C# and .NET — Application development and core functionality.
+- Universal Windows Platform (UWP) — Windows application framework.
+- LibVLCSharp — .NET bindings for VLC media playback.
+- libVLC — Underlying multimedia playback engine.
+- Fluent-inspired UI — Consistent Windows-oriented interaction and visual design.
+
+This architecture provides a foundation for flexible media playback without requiring users to configure a separate command-line media tool.
+
+🌐 Network and Streaming Features
+
+Your media library does not have to live exclusively on your PC.
+
+Supported network playback workflows can make it easier to:
+
+- Access media from compatible network locations.
+- Browse available remote media sources.
+- Play supported files stored on other devices.
+- Cast compatible content to Chromecast devices.
+- Enjoy personal media collections across your home network.
+
+Network playback depends on source compatibility, device availability, and network configuration.
+
+🎞️ Supported Media and Compatibility
+
+Playback compatibility is provided by the integrated VLC media engine.
+
+Depending on the installed playback components and media configuration, the player can handle many common multimedia formats and containers.
+
+| Media type | Examples |
+|---|---|
+| Video containers | MP4, MKV, AVI, MOV |
+| Video codecs | H.264, H.265, VP9 |
+| Audio containers | MP3, FLAC, WAV, AAC |
+| Streaming media | Compatible network streams |
+| Subtitles | Supported embedded and external subtitle tracks |
+
+Actual format and codec support depends on the playback engine, platform capabilities, and media configuration. This table is illustrative rather than a guarantee that every codec is supported on every device.
+
+🔒 Security and Privacy
+
+Your desktop media player should respect your privacy.
+
+- No telemetry or tracking: The application is designed without built-in user activity tracking.
+- Open-source transparency: Source code can be inspected and audited.
+- Local playback: Play personal media without requiring an online account.
+- Network awareness: Network playback uses resources and connections you choose to access.
+- Responsible reporting: Report suspected vulnerabilities privately through the project's designated security reporting channel.
+
+Always obtain application packages from trusted distribution sources and keep your Windows installation updated.
+
+🛠️ Development and Contributions
+
+Contributions from the open-source community help improve compatibility, usability, and reliability.
+
+Areas where contributions are valuable include:
+
+- Media playback improvements.
+- Windows UI and accessibility.
+- Keyboard and touch interaction.
+- Network media browsing.
+- Subtitle handling.
+- Localization and translations.
+- Performance optimization.
+- Bug reports and documentation.
+
+Development environment
+
+The project uses the Microsoft Windows development ecosystem.
+
+Typical development requirements include:
+
+- Windows 10 or Windows 11.
+- Visual Studio with the UWP development workload.
+- A compatible .NET and C# development environment.
+- VLC and LibVLCSharp dependencies.
+- Git for source control.
+
+Build and run
+
+1. Clone the repository.
+2. Open the solution in Visual Studio.
+3. Restore the required project dependencies.
+4. Select a supported Windows target and architecture.
+5. Build the application.
+6. Start debugging to launch the desktop player.
+
+Consult the solution configuration and project documentation for the exact SDK and dependency requirements.
+
+Contributing guidelines
+
+Pull requests are welcome.
+
+When contributing:
+
+1. Check existing issues before starting substantial changes.
+2. Describe the problem or feature you intend to address.
+3. Keep changes focused and maintainable.
+4. Test playback and UI behavior on supported Windows configurations.
+5. Include screenshots or reproduction steps when relevant.
+
+🐛 Troubleshooting
+
+…（内容已截断）

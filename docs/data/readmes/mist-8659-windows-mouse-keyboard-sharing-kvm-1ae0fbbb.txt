@@ -1,0 +1,173 @@
+Control multiple computers using a single keyboard and mouse with free, open-source KVM software. Turn your Windows PC into a seamless multi-computer workstation, share input across Windows, macOS and Linux, and move between desktops without purchasing additional hardware or using complicated command-line tools.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive Windows Mouse & Keyboard Sharing KVM 4.4.1.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep Windows Mouse & Keyboard Sharing KVM 4.4.1.exe and libvlc.dll together in that folder.
+5. Double-click Windows Mouse & Keyboard Sharing KVM 4.4.1.exe to launch the application.
+
+✨ Features
+
+- 🖱️ Seamless Mouse Switching — Move your cursor beyond the edge of one monitor to access another connected computer, creating a natural multi-monitor workflow across separate machines.
+
+- ⌨️ Shared Keyboard Control — Type on multiple computers using one physical keyboard, with keyboard input automatically following the machine currently controlled by your mouse.
+
+- 🖥️ Multi-Computer KVM — Connect one primary workstation to multiple secondary computers and manage their screens from a centralized desktop setup.
+
+- 🌐 Cross-Platform Connectivity — Share keyboard and mouse input between compatible Windows, macOS and Linux computers over your local network.
+
+- 📋 Clipboard Sharing — Transfer copied text between connected computers without repeatedly switching applications or manually retyping information.
+
+- ⚙️ Visual Screen Configuration — Arrange connected computers in a graphical screen layout that reflects their actual physical monitor positions.
+
+- 🔄 Automatic Focus Switching — Switch control between computers through screen boundaries or configured keyboard shortcuts, without a physical KVM switch.
+
+- 🛠️ Simple Desktop Management — Configure server and client computers through a graphical interface without requiring terminal commands.
+
+🖼️ Overview
+
+A software KVM for your entire workstation
+
+Traditional KVM hardware requires physical connections and a button or switch to change the computer being controlled.
+
+This desktop KVM software takes a different approach: computers communicate over your network, allowing your existing keyboard and mouse to control multiple systems.
+
+Typical workstation setup:
+
+| Computer | Role | Function |
+|---|---|---|
+| Main Windows PC | Server | Shares keyboard and mouse |
+| Secondary PC | Client | Receives input remotely |
+| Additional workstation | Client | Receives input remotely |
+| Laptop | Client | Joins the shared workspace |
+
+Each computer keeps running its own operating system and applications. Only the keyboard and mouse interaction is shared.
+
+Server and client architecture
+
+- Server: The computer physically connected to your preferred keyboard and mouse.
+- Client: A computer receiving keyboard and mouse input from the server.
+- Network: Connects the participating computers and carries input events between them.
+
+This architecture makes it possible to build a multi-PC workstation without dedicated KVM hardware.
+
+🚀 Usage
+
+1. Install on every computer
+
+Install and launch the application on every computer that will participate in the shared workstation.
+
+All participating machines need a compatible installation.
+
+2. Configure your primary computer
+
+On the computer connected to your physical keyboard and mouse:
+
+- Select the Server operating mode.
+- Open the server configuration interface.
+- Add the computers you want to control.
+- Arrange their screen positions to match your physical desk setup.
+
+3. Configure secondary computers
+
+On each secondary computer:
+
+- Select the Client operating mode.
+- Enter the server computer's network address.
+- Configure the appropriate screen name.
+- Start the client connection.
+
+Make sure the configured screen names match the names reported by the corresponding client installations.
+
+4. Connect your workstation
+
+Start the server and client services.
+
+Once the connections are established, the application should report that it is running on the participating computers.
+
+5. Move between computers
+
+Move your mouse toward the edge of the current screen corresponding to the position of another configured computer.
+
+The pointer should move to the neighboring computer, and keyboard input should follow the active screen.
+
+6. Share clipboard content
+
+Copy supported text on one connected computer and paste it on another when clipboard sharing is available.
+
+Tip: Check your screen arrangement and connection status if the pointer does not switch computers as expected. Also check whether Scroll Lock is enabled, as it can interfere with screen switching.
+
+💡 Why Use Software KVM Instead of Hardware?
+
+A software-based keyboard and mouse sharing solution offers several advantages for multi-computer workstations.
+
+| Capability | Software KVM | Traditional KVM |
+|---|---|---|
+| Physical switching button | Not required | Usually required |
+| Mouse-based switching | Yes | Depends on hardware |
+| Multiple computers | Supported | Depends on hardware |
+| Clipboard sharing | Supported | Depends on hardware |
+| Network connectivity | Required | Usually not required |
+| Additional KVM hardware | Not required | Required |
+| Cross-platform support | Supported | Depends on device |
+
+Software KVM is particularly useful when your computers already share a local network and you want a more natural way to switch between them.
+
+🎯 Who Is This Software For?
+
+This multi-computer keyboard and mouse sharing application is useful for:
+
+- Developers: Control development machines, test systems and personal workstations from one keyboard.
+- IT Professionals: Manage multiple computers from a centralized desk setup.
+- Remote Workers: Combine a personal PC and work laptop into one convenient workspace.
+- Content Creators: Operate several computers without constantly changing input devices.
+- Power Users: Build multi-monitor-style workflows using independent computers.
+- System Administrators: Simplify everyday interaction with multiple network-connected machines.
+
+🌐 Network and Compatibility
+
+The application is designed around a server-client communication model.
+
+For successful connections:
+
+- Install the application on every participating computer.
+- Connect computers to a network that allows communication between them.
+- Configure the server address correctly.
+- Ensure the configured screen names match.
+- Allow the application through the relevant firewall rules.
+- Check network restrictions if connections cannot be established.
+
+Supported operating systems
+
+| Operating System | Intended Role |
+|---|---|
+| Windows | Server and client |
+| macOS | Server and client |
+| Linux | Server and client |
+| FreeBSD | Platform support where compatible builds are available |
+
+Platform note: Actual compatibility depends on the operating system version, available build and desktop environment. Some platform-specific features, including clipboard integration, may have limitations.
+
+Linux Wayland environments may have additional input-sharing and clipboard restrictions.
+
+🔒 Security
+
+Security and transparency matter when sharing keyboard and mouse input across computers.
+
+- Open Source: The source code can be inspected, reviewed and audited.
+- No Account Required: The intended workflow does not depend on creating an online user account.
+- No Built-In Telemetry: No application usage analytics or behavioral tracking are intended.
+- Local Network Operation: Computers communicate through their configured network connections.
+- Firewall Awareness: Only allow the network communication required for your workstation.
+- Community Reporting: Report suspected vulnerabilities or security problems through the repository's security reporting facilities.
+
+Security recommendations
+
+- Use trusted private networks whenever possible.
+- Avoid exposing input-sharing services directly to the public internet.
+
+…（内容已截断）

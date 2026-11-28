@@ -1,0 +1,158 @@
+Sprite Turntable · 角色转台
+
+从一张正面定妆图，生成 360° 全身透明序列，再打包成可在浏览器里拖动旋转、滚轮缩放的离线交互展示页。
+
+播放完整视频 · 7 秒 · 60 fps
+
+- 离线交互页（42.5 MiB）：从本仓库 Releases (v1.0.0) 下载 bunny-showcase.html，用桌面浏览器直接打开即可离线拖动旋转、滚轮缩放
+- 最终透明素材包（31.9 MiB）：从 Releases (v1.0.0) 下载 bunny-orbit-72-frames.zip（72 张 640 × 1920 8 位直通透明度 RGBA PNG）
+
+用 AI 助手阅读或修改工程时，可以从 AGENTS.md 开始。里面列出了每个制作环节的输入、源码和产物，也说明了助手怎样邀请你在自己的浏览器里体验转台。
+
+直接使用
+
+1. 浏览器离线体验：在 Releases 下载 bunny-showcase.html 并用桌面浏览器打开。单文件已内嵌全部 72 张原分辨率透明 PNG、样式与交互逻辑，完全离线运行。
+   - 左右拖动画面或拖动底部「水平视角」滑杆：以正面（0°）为中心左右旋转一整圈（左滑左转、右滑右转）。
+   - 鼠标滚轮或拖动底部「缩放」滑杆：在 1.00×～2.00× 之间平滑缩放。
+2. 二次开发与合成：在 Releases 下载 bunny-orbit-72-frames.zip，可直接导入自己的网页、游戏引擎或后期合成工程。
+
+技术路线总览
+
+整套方案的通用主干只需 4 步，任何角色都可沿用相同思路：
+
+1. 正面定妆与灰底构图：用文生图 / 图生图模型制作正视站姿定妆图，抠出主体并合成到纯中性灰（#808080）画布，确保头顶与脚底留白充足。
+2. 首尾同图 360° 环绕：将同一张灰底正面图同时作为视频模型的首帧与尾帧条件，配合环绕 LoRA 生成 73 帧固定姿态的水平环绕视频（取前 72 帧循环）。
+3. 双向分割与透明通道提取：用 SAM 2.1 从首尾共同的正面遮罩双向传播轮廓，再根据中性灰底色差解出半透明边缘，导出 72 张透明 PNG。
+4. 浏览器展示与打包：通过纯 HTML5 Canvas 根据水平角度查表绘制最接近的原生 PNG，支持外置图片部署或 Base64 打包成单文件离线 HTML。
+
+说明：下文中第 1 步的「袖口修缝」以及第 4 步的「鞋口纹理补全、轮廓抗锯齿、正面手臂精修」是针对本例兔女郎素材特定瑕疵做的特化修补，脚本中包含对应像素坐标与 SHA-256 校验。如果你换用自己的角色素材，只需走通上面的通用主干并产出 72 张干净的透明 PNG，即可跳过这些特化补丁，直接用 tools/export_html.py 生成交互网页。
+
+环境与模型清单
+
+| 使用场景 | 所需环境与依赖 |
+| --- | --- |
+| 仅从 PNG 生成单文件 HTML | Python 3（仅用标准库，无需安装任何第三方包） |
+| 重跑抠图与轮廓后处理（CPU） | Python 3.12、requirements.txt（NumPy、SciPy、OpenCV、Pillow）、FFmpeg |
+| 从零重跑 AI 生成与追踪（GPU） | 本地 ComfyUI（含 MiniMax H3 节点）、CUDA PyTorch、SAM 2.1，以及下表模型权重 |
+
+本例完整生成链路使用的模型权重（精确文件名、目录与 SHA-256 见 provenance/half/records/models.json）：
+
+| 环节 | 模型文件 | 放置位置 |
+| --- | --- | --- |
+| 正面定妆（Qwen-Image 2.1） | qwen_image_2.1_int8_convrot.safetensors
+qwen3vl_8b_int8_convrot.safetensors
+qwen_image_2.1_vae_bf16.safetensors | ComfyUI/models/diffusion_models/
+ComfyUI/models/text_encoders/
+ComfyUI/models/vae/ |
+| 360° 环绕（MiniMax H3） | minimax_h3_fl2va_pruned_fp8_scaled.safetensors
+qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors
+minimax_h3_video_vae_fp16.safetensors
+minimax_h3_flf2v_orbit_lora_v1.safetensors | ComfyUI/models/diffusion_models/
+ComfyUI/models/text_encoders/
+ComfyUI/models/vae/
+ComfyUI/models/loras/ |
+| 视频分割（SAM 2.1） | sam2.1_hiera_tiny.pt | 本地路径，直接传给 edge-matte/track.py |
+
+从零制作素材的步骤
+
+以下命令均在仓库根目录执行。
+
+1. 准备正面定妆图与中性灰底条件图
+
+- 在 ComfyUI 中运行 01-qwen-front.api.json，得到未抠像的正面全身定妆原图 01_front.png（960 × 1696）。保留原始 RGB 图像供后续修边使用。
+- 运行 make_front_matte.py（调用 SAM 2.1 单图分割）得到初版透明遮罩 01_front_rgba.png。
+- 运行 cuff_input.py，修补袖口与大腿间的背景细缝，并按固定缩放和平移合成到 640 × 1920 纯中性灰（#808080）画布，生成条件图 fullbody-cuffs-grey.png：
+
+python3 audits/hand-source/cuff_input.py
+
+换用自己的角色时，只需保证人物居中正视、双臂与躯干留有清晰空隙、头顶和鞋底有足够留白，并干净合成到 #808080 纯灰底即可。
+
+2. 用 MiniMax H3 生成 360° 环绕并无损归档
+
+- 实际产出最终成片的工作流为 cuff-orbit.api.json：将同一张灰底正面图同时接到 MiniMaxH3ImageToVideo 的 first_frame 和 last_frame，加载 minimax_h3_flf2v_orbit_lora_v1.safetensors（强度 1.0），以 res_multistep 28 步生成 73 张 640 × 1920 帧。
+- 启动本地 ComfyUI（默认 http://127.0.0.1:8188，可用 COMFY_URL 覆盖）后，用 generate.py 提交任务并回收 73 帧，再用 native.py 封装为无损 RGB 视频与逐帧校验指纹（如想跳过生成直接复现后续步骤，可从 Releases 下载 cuff-take.mkv 放入 audits/hand-source/inputs/）：
+
+python3 audits/hand-source/generate.py --cuff-matte
+python3 audits/hand-source/native.py archive \
+  work/hand-source/cuff-generation \
+  audits/hand-source/inputs/cuff-take.mkv
+
+之所以生成 73 帧却在展示时取 前 72 帧（000～071），是因为第 73 帧（索引 072）是强约束回到正面的尾帧；循环展示保留前 72 帧即可无缝闭环，第 73 帧留给双向分割追踪当作反向起点。
+
+3. SAM 2.1 双向追踪与分材质抠图
+
+- edge-matte/track.py：将正面遮罩同时放在第 0 帧（正向传播）与第 72 帧（反向传播），按距离加权融合出 72 帧稳定轮廓 edge-matte/support.npz（仓库已随附计算好的轮廓，仅需重跑分割时才需要 GPU 与 SAM 2.1）。
+- edge-matte/build.py：内部依次调用 edge-matte/matte.py（基于每行灰底色差与邻近前景颜色估计半透明覆盖率，单独保护反光兔耳、发梢、指缝与细高跟）和 edge-matte/instep.py（用定妆原图袜面纹理补回正面右侧鞋口漏掉的遮罩），输出 release/全身环绕透明PNG_72帧.zip 与换底检查页 release/人物边缘逐帧换底对照.html。
+
+1) 可选：GPU 重新运行 SAM 2.1 双向追踪（仓库已随附 edge-matte/support.npz）
+python3 edge-matte/track.py /path/to/sam2.1_hiera_tiny.pt
+
+2) CPU 抠图与鞋口补全（需先将 Releases 中的 cuff-take.mkv 放入 audits/hand-source/inputs/）
+python3 edge-matte/build.py
+
+抠图算法细节、鞋沿测量（measure_instep.py）与逐帧质检逻辑详见 edge-matte/README.md。
+
+4. 本例局部精修（按顺序串行接力）
+
+为消除浅色背景下的肩臂轮廓台阶与首帧手臂边缘偏差，本例在 build.py 之后串联了两步后处理（每步都会核对上一步 ZIP 的 SHA-256）：
+
+edge-matte/build.py            → release/全身环绕_透明PNG_72帧.zip
+  ↓
+edge-matte/refine_contours.py  → release/全身环绕_抗锯齿透明PNG_72帧.zip
+  ↓
+edge-matte/front_arm.py        → release/全身环绕_正面手臂精修_72帧.zip
+
+沿轮廓切向在预乘透明度空间做抗锯齿平滑
+python3 edge-matte/refine_contours.py
+
+从未抠像定妆原图重测正面双臂外缘并渐变衔接邻近角度
+python3 edge-matte/front_arm.py
+
+生成单文件离线 HTML
+
+从 Releases 下载 bunny-orbit-72-frames.zip 并保存为 release/全身环绕_正面手臂精修_72帧.zip（或完成上面的第 4 步）后，在仓库根目录执行（仅需 Python 3 标准库）：
+
+python3 tools/export_html.py
+
+输出为 release/兔女郎展示.html（约 42.5 MiB）。导出器会校验 ZIP 内的 72 个文件名、8 位 RGBA PNG 头信息与统一分辨率，再按帧号编码为 Base64 嵌入查看器模板 edge-matte/showcase.html。
+
+也可以指定自定义输入、输出或模板路径：
+
+python3 tools/export_html.py \
+  --frames ./素材/全身环绕_正面手臂精修_72帧.zip \
+  --output ./展示/兔女郎展示.html
+
+完整源码见 tools/export_html.py。
+
+部署外置 PNG 版 / 换用自己的素材
+
+如果希望部署到静态站点（按需加载图片，避免单文件 HTML 过大）：
+
+1. 解压 72 帧透明 PNG 压缩包到一个目录，确保根目录包含 orbit_000.png 至 orbit_071.png。
+2. 将查看器模板 edge-matte/showcase.html 复制到同一目录并重命名为 index.html。
+3. 部署到静态服务器，或在该目录运行本地服务预览：
+
+python3 -m http.server 8000
+
+- 背景切换：单文件离线版默认采用暖浅灰舞台；外置 PNG 版默认深色舞台，访问 index.html?background=light 可切换为浅色舞台。
+- 渲染原理与范围：页面根据当前水平视角直接选出最接近的一张原生 PNG 绘到 Canvas，不做跨帧插值混合，因此拖动和放大时能保持发丝与边缘锐度；素材覆盖固定高度的 360° 水平环绕，不包含俯视或仰视视角。
+
+换用自己角色时的 4 条素材约定
+
+1. 文件命名：共 72 张，命名为 orbit_000.png 至 orbit_071.png。
+2. 图像格式：8 位直通透明度（straight alpha）RGBA PNG，72 张分辨率保持一致（本例为 640 × 1920，模板按 naturalWidth / naturalHeight 自动适配，tools/export_html.py 也兼容任意统一的 RGBA 尺寸）。
+3. 朝向顺序：orbit_000.png 为正面对镜；帧号增大时人物朝画面左侧旋转（即相机相对人物向右绕行），约第 19 帧为正左侧、第 36 帧为正背面、第 48 帧为正右侧，经第 71 帧无缝接回第 0 帧。
+4. 角度映射 angleMap：模板 edge-matte/showcase.html 中的 angleMap 按 显示角度, 对应帧号] 补偿视频生成中的非匀速转动（本例为 [[0,0],[65,16],[90,19],[180,36],[270,48],[290,51],[360,72]]）。如果你的素材本身匀速转满一周，改为 [[0,0],[360,72]] 即可。
+
+仓库目录结构
+
+| 目录 / 文件 | 说明 |
+| --- | --- |
+| release/兔女郎展示.mp4 | 7 秒浅色背景展示视频（大体积离线 HTML、PNG 包与无损母片在 Releases 下载） |
+| tools/export_html.py | 72 帧透明 PNG 压缩包 → 单文件离线 HTML 导出器（纯 Python 3 标准库） |
+| edge-matte/ | 交互查看器模板 [showcase.html、SAM 2.1 双向追踪、抠图与精修脚本（详述见 edge-matte/README.md） |
+| audits/hand-source/ | 灰底参考处理、MiniMax H3 工作流 cuff-orbit.api.json 与生成/封装脚本 |
+| provenance/half/ | 上游 Qwen 定妆工作流 01-qwen-front.api.json、初版分割脚本、原始正面参考与 模型权重清单 |
+| assets/ | 补全鞋口遮罩的正面定妆图 正面定妆_鞋口补全.png |
+| docs/ | Git 分享封面图（1280 × 640）与 六视角朝向示例图 |
+| LICENSE | MIT 开源许可 |

@@ -1,0 +1,1549 @@
+{
+  "date": "2026-11-27",
+  "timezone": "Asia/Shanghai",
+  "generatedAt": "2026-11-28T07:36:55.650Z",
+  "count": 60,
+  "newCount": 32,
+  "sources": {
+    "trending": 16,
+    "new": 32,
+    "highStar": 12
+  },
+  "items": [
+    {
+      "rank": 1,
+      "fullName": "elementalsouls/Claude-BugHunter",
+      "name": "Claude-BugHunter",
+      "owner": "elementalsouls",
+      "url": "https://github.com/elementalsouls/Claude-BugHunter",
+      "description": "A Claude Code skill bundle for bug hunting and external red-team work - 85 skills, 16 slash commands, 681 disclosed-report patterns curated across 24 core vulnerability classes, plus enterprise identity + infrastructure attack matrices.",
+      "language": "Python",
+      "stars": 26458,
+      "forks": 2704,
+      "starsToday": 1608,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "elementalsouls-claude-bughunter-8f8b4d67.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 2,
+      "fullName": "obra/superpowers",
+      "name": "superpowers",
+      "owner": "obra",
+      "url": "https://github.com/obra/superpowers",
+      "description": "An agentic skills framework & software development methodology that works.",
+      "language": "Shell",
+      "stars": 328530,
+      "forks": 29201,
+      "starsToday": 922,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "obra-superpowers-1e49a71d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 3,
+      "fullName": "XiaoYouChR/Ghost-Downloader-3",
+      "name": "Ghost-Downloader-3",
+      "owner": "XiaoYouChR",
+      "url": "https://github.com/XiaoYouChR/Ghost-Downloader-3",
+      "description": "The only downloader you need. 下载器的集大成者。",
+      "language": "Python",
+      "stars": 20069,
+      "forks": 1279,
+      "starsToday": 836,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "xiaoyouchr-ghost-downloader-3-c290958b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 4,
+      "fullName": "firecrawl/firecrawl",
+      "name": "firecrawl",
+      "owner": "firecrawl",
+      "url": "https://github.com/firecrawl/firecrawl",
+      "description": "Knowledge infrastructure to make your agents smarter. Search, scrape and access 550+ data providers through one API.",
+      "language": "TypeScript",
+      "stars": 211856,
+      "forks": 11154,
+      "starsToday": 822,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "firecrawl-firecrawl-9c1a78a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 5,
+      "fullName": "cathrynlavery/diagram-design",
+      "name": "diagram-design",
+      "owner": "cathrynlavery",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "description": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi. 52 diagram types. Self-contained HTML + SVG. No shadows. No Mermaid slop.",
+      "language": "HTML",
+      "stars": 74587,
+      "forks": 5035,
+      "starsToday": 725,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cathrynlavery-diagram-design-41ea088f.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 6,
+      "fullName": "zhouxiaoka/autoclip",
+      "name": "autoclip",
+      "owner": "zhouxiaoka",
+      "url": "https://github.com/zhouxiaoka/autoclip",
+      "description": "AutoClip｜The open-source OpusClip alternative — local-first AI clipping & MCP server, zero subscriptions. 一个链接，一键出片。开源 AI 视频剪辑桌面工具，将播客、访谈、课程等长视频自动剪成短视频，生成字幕、封面和发布文案，适配抖音、小红书、TikTok、Reels 与 YouTube Shorts。",
+      "language": "Python",
+      "stars": 17739,
+      "forks": 2502,
+      "starsToday": 718,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "zhouxiaoka-autoclip-b1c879a9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 7,
+      "fullName": "mvanhorn/last30days-skill",
+      "name": "last30days-skill",
+      "owner": "mvanhorn",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "description": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "language": "Python",
+      "stars": 76485,
+      "forks": 6804,
+      "starsToday": 675,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mvanhorn-last30days-skill-ce334b66.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 8,
+      "fullName": "HKUDS/CLI-Anything",
+      "name": "CLI-Anything",
+      "owner": "HKUDS",
+      "url": "https://github.com/HKUDS/CLI-Anything",
+      "description": "\"CLI-Anything: Making ALL Software Agent-Native\" -- CLI-Hub: https://clianything.cc/",
+      "language": "Python",
+      "stars": 67135,
+      "forks": 6175,
+      "starsToday": 666,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "hkuds-cli-anything-c427889b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 9,
+      "fullName": "jingyaogong/minimind",
+      "name": "minimind",
+      "owner": "jingyaogong",
+      "url": "https://github.com/jingyaogong/minimind",
+      "description": "🧠 两小时从 0 训出你的 64M 大模型。Train your own 64M LLM from scratch in 2 hours.",
+      "language": "Python",
+      "stars": 72331,
+      "forks": 9460,
+      "starsToday": 660,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "jingyaogong-minimind-e3acf9ef.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 10,
+      "fullName": "mjmirza/app-store-compliance",
+      "name": "app-store-compliance",
+      "owner": "mjmirza",
+      "url": "https://github.com/mjmirza/app-store-compliance",
+      "description": "Avoid common App Store and Google Play rejections. Open playbook and pre-submission guard with 125 documented rejection patterns and fixes, privacy manifest and Data safety checks, 117 tracked deadlines (EU AI Act, DSA, COPPA, age laws), and a skill for AI coding agents.",
+      "language": "Shell",
+      "stars": 8068,
+      "forks": 608,
+      "starsToday": 530,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "mjmirza-app-store-compliance-71069240.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 11,
+      "fullName": "toeverything/AFFiNE",
+      "name": "AFFiNE",
+      "owner": "toeverything",
+      "url": "https://github.com/toeverything/AFFiNE",
+      "description": "There can be more than Notion and Miro. AFFiNE(pronounced [ə‘fain]) is a next-gen knowledge base that brings planning, sorting and creating all together. Privacy first, open-source, customizable and ready to use.",
+      "language": "TypeScript",
+      "stars": 79576,
+      "forks": 5852,
+      "starsToday": 474,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "toeverything-affine-c67d0b7a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 12,
+      "fullName": "Tracer-Cloud/opensre",
+      "name": "opensre",
+      "owner": "Tracer-Cloud",
+      "url": "https://github.com/Tracer-Cloud/opensre",
+      "description": "The open-source agent for CI/CD reliability.",
+      "language": "Python",
+      "stars": 16206,
+      "forks": 2164,
+      "starsToday": 328,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "tracer-cloud-opensre-87ae8ae9.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 13,
+      "fullName": "google-labs-code/stitch-skills",
+      "name": "stitch-skills",
+      "owner": "google-labs-code",
+      "url": "https://github.com/google-labs-code/stitch-skills",
+      "description": "A library of Agent Skills designed to work with the Stitch MCP server. Each skill follows the Agent Skills open standard, for compatibility with coding agents such as Antigravity, Gemini CLI, Claude Code, Cursor.",
+      "language": "TypeScript",
+      "stars": 13667,
+      "forks": 1634,
+      "starsToday": 311,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "google-labs-code-stitch-skills-7e24061a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 14,
+      "fullName": "cursor/plugins",
+      "name": "plugins",
+      "owner": "cursor",
+      "url": "https://github.com/cursor/plugins",
+      "description": "Cursor plugin specification and official plugins",
+      "language": "TypeScript",
+      "stars": 20060,
+      "forks": 2244,
+      "starsToday": 243,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "cursor-plugins-07a8bcfb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 15,
+      "fullName": "openvinotoolkit/openvino",
+      "name": "openvino",
+      "owner": "openvinotoolkit",
+      "url": "https://github.com/openvinotoolkit/openvino",
+      "description": "OpenVINO™ is an open source toolkit for optimizing and deploying AI inference",
+      "language": "C++",
+      "stars": 12978,
+      "forks": 3814,
+      "starsToday": 151,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "openvinotoolkit-openvino-5d345dc2.txt"
+    },
+    {
+      "rank": 16,
+      "fullName": "nginx/nginx",
+      "name": "nginx",
+      "owner": "nginx",
+      "url": "https://github.com/nginx/nginx",
+      "description": "The official NGINX Open Source repository.",
+      "language": "C",
+      "stars": 33700,
+      "forks": 8486,
+      "starsToday": 146,
+      "topics": [],
+      "createdAt": null,
+      "updatedAt": null,
+      "sources": [
+        "trending"
+      ],
+      "isNew": false,
+      "readmeFile": "nginx-nginx-1304abc5.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 17,
+      "fullName": "riveran0226/windows-explorer-blur-mica",
+      "name": "windows-explorer-blur-mica",
+      "owner": "riveran0226",
+      "url": "https://github.com/riveran0226/windows-explorer-blur-mica",
+      "description": "Free Windows 10 & 11 Explorer customization tool for Acrylic, Mica, transparency and background blur effects.",
+      "language": "C++",
+      "stars": 928,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "acrylic",
+        "blur",
+        "cpp",
+        "customization",
+        "dark-mode",
+        "desktop",
+        "desktop-customization",
+        "explorer"
+      ],
+      "createdAt": "2026-11-27T15:22:34Z",
+      "updatedAt": "2026-11-28T07:36:34Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "riveran0226-windows-explorer-blur-mica-cdbe1e8f.txt"
+    },
+    {
+      "rank": 18,
+      "fullName": "flint63-code/gitdesk-windows",
+      "name": "gitdesk-windows",
+      "owner": "flint63-code",
+      "url": "https://github.com/flint63-code/gitdesk-windows",
+      "description": "Free open-source Git GUI client for Windows with visual commit history, branch management, SSH, Git LFS and more.",
+      "language": "C#",
+      "stars": 923,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "bitbucket",
+        "cross-platform",
+        "desktop",
+        "developer-tools",
+        "dotnet",
+        "git",
+        "git-client",
+        "git-gui"
+      ],
+      "createdAt": "2026-11-27T15:14:35Z",
+      "updatedAt": "2026-11-28T07:35:42Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "flint63-code-gitdesk-windows-90246b4e.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 19,
+      "fullName": "mist-8659/windows-mouse-keyboard-sharing-kvm",
+      "name": "windows-mouse-keyboard-sharing-kvm",
+      "owner": "mist-8659",
+      "url": "https://github.com/mist-8659/windows-mouse-keyboard-sharing-kvm",
+      "description": "Free open-source KVM software to share one keyboard and mouse across multiple Windows, macOS and Linux computers.",
+      "language": "C++",
+      "stars": 920,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "c-plus-plus",
+        "clipboard",
+        "cross-platform",
+        "desktop",
+        "desktop-app",
+        "input-sharing",
+        "keyboard",
+        "keyboard-sharing"
+      ],
+      "createdAt": "2026-11-27T15:27:54Z",
+      "updatedAt": "2026-11-28T07:36:01Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "mist-8659-windows-mouse-keyboard-sharing-kvm-1ae0fbbb.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 20,
+      "fullName": "nocta1554/windows-video-downloader-gui",
+      "name": "windows-video-downloader-gui",
+      "owner": "nocta1554",
+      "url": "https://github.com/nocta1554/windows-video-downloader-gui",
+      "description": "Free open-source Windows video downloader GUI for YouTube and 1,000+ websites, powered by yt-dlp.",
+      "language": "C++",
+      "stars": 919,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "audio",
+        "c-plus-plus",
+        "desktop-application",
+        "downloader",
+        "graphical-interface",
+        "gui",
+        "media-downloader",
+        "nana"
+      ],
+      "createdAt": "2026-11-27T15:39:05Z",
+      "updatedAt": "2026-11-28T07:35:37Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "nocta1554-windows-video-downloader-gui-4dc1a664.txt"
+    },
+    {
+      "rank": 21,
+      "fullName": "Red2076-arch/waifu2x-image-upscaler-windows",
+      "name": "waifu2x-image-upscaler-windows",
+      "owner": "Red2076-arch",
+      "url": "https://github.com/Red2076-arch/waifu2x-image-upscaler-windows",
+      "description": "Free AI image upscaler and photo denoiser for Windows powered by Vulkan GPU acceleration and ncnn neural networks.",
+      "language": "C++",
+      "stars": 915,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "amd",
+        "artificial-intelligence",
+        "computer-vision",
+        "deep-learning",
+        "denoising",
+        "gpu",
+        "image-enhancement",
+        "image-processing"
+      ],
+      "createdAt": "2026-11-27T15:17:56Z",
+      "updatedAt": "2026-11-28T07:35:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "red2076-arch-waifu2x-image-upscaler-windows-0b52ebdc.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 22,
+      "fullName": "leaf7684/windows-modern-media-player",
+      "name": "windows-modern-media-player",
+      "owner": "leaf7684",
+      "url": "https://github.com/leaf7684/windows-modern-media-player",
+      "description": "Free open-source Windows media player with VLC playback, video streaming, subtitles and picture-in-picture.",
+      "language": "C#",
+      "stars": 913,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "audio-player",
+        "chromecast",
+        "csharp",
+        "desktop-app",
+        "dotnet",
+        "libvlc",
+        "libvlcsharp",
+        "media-player"
+      ],
+      "createdAt": "2026-11-27T15:34:01Z",
+      "updatedAt": "2026-11-28T07:36:41Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "leaf7684-windows-modern-media-player-304866bc.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 23,
+      "fullName": "hollow-445/windows-keyboard-manager",
+      "name": "windows-keyboard-manager",
+      "owner": "hollow-445",
+      "url": "https://github.com/hollow-445/windows-keyboard-manager",
+      "description": "Free open-source keyboard remapping software for Windows with custom layouts, programmable keys, layers and tap-hold actions.",
+      "language": "Haskell",
+      "stars": 911,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "automation",
+        "configuration",
+        "cross-platform",
+        "customization",
+        "desktop",
+        "haskell",
+        "key-mapping",
+        "keybindings"
+      ],
+      "createdAt": "2026-11-27T15:16:16Z",
+      "updatedAt": "2026-11-28T07:36:47Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "hollow-445-windows-keyboard-manager-36827308.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 24,
+      "fullName": "Riven-639/windows-dwm-blur-glass-customizer",
+      "name": "windows-dwm-blur-glass-customizer",
+      "owner": "Riven-639",
+      "url": "https://github.com/Riven-639/windows-dwm-blur-glass-customizer",
+      "description": "Free Windows 10 & 11 DWM customization tool for Aero, Acrylic, Mica, blur and transparent title bar effects.",
+      "language": "C++",
+      "stars": 902,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "acrylic",
+        "aero",
+        "aeroglass",
+        "blur",
+        "c",
+        "desktop",
+        "desktop-customization",
+        "dwm"
+      ],
+      "createdAt": "2026-11-27T15:20:45Z",
+      "updatedAt": "2026-11-28T07:35:49Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "riven-639-windows-dwm-blur-glass-customizer-4aad90f6.txt"
+    },
+    {
+      "rank": 25,
+      "fullName": "Ash793318/windows-hardware-monitor",
+      "name": "windows-hardware-monitor",
+      "owner": "Ash793318",
+      "url": "https://github.com/Ash793318/windows-hardware-monitor",
+      "description": "Free open-source Windows hardware monitoring app for CPU, GPU, RAM, SSD temperatures, fan speeds and system performance.",
+      "language": "C#",
+      "stars": 900,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "cpu",
+        "desktop",
+        "desktop-application",
+        "dotnet",
+        "free",
+        "gpu",
+        "hacktoberfest",
+        "hardware"
+      ],
+      "createdAt": "2026-11-27T15:10:30Z",
+      "updatedAt": "2026-11-28T07:35:52Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ash793318-windows-hardware-monitor-f2f8fc2a.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 26,
+      "fullName": "quartzdev666/windows-pdf-editor",
+      "name": "windows-pdf-editor",
+      "owner": "quartzdev666",
+      "url": "https://github.com/quartzdev666/windows-pdf-editor",
+      "description": "Free open-source Windows PDF editor to merge, split, rotate, crop, reorder and organize PDF pages with a visual interface.",
+      "language": "Python",
+      "stars": 900,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "desktop-application",
+        "document-editor",
+        "document-management",
+        "gtk",
+        "gtk3",
+        "linux",
+        "open-source",
+        "pdf"
+      ],
+      "createdAt": "2026-11-27T15:09:07Z",
+      "updatedAt": "2026-11-28T07:36:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "quartzdev666-windows-pdf-editor-963b6022.txt"
+    },
+    {
+      "rank": 27,
+      "fullName": "Quill400/windows-image-viewer",
+      "name": "windows-image-viewer",
+      "owner": "Quill400",
+      "url": "https://github.com/Quill400/windows-image-viewer",
+      "description": "Fast, free Windows image viewer with photo browsing, editing, folder management, and optional video playback.",
+      "language": "C++",
+      "stars": 900,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "c-plus-plus",
+        "cross-platform",
+        "desktop-application",
+        "image-browser",
+        "image-editor",
+        "image-processing",
+        "image-viewer",
+        "libmpv"
+      ],
+      "createdAt": "2026-11-27T15:36:56Z",
+      "updatedAt": "2026-11-28T07:36:36Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "quill400-windows-image-viewer-3bc7a891.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 28,
+      "fullName": "Loris-593/notebook-fan-control-windows",
+      "name": "notebook-fan-control-windows",
+      "owner": "Loris-593",
+      "url": "https://github.com/Loris-593/notebook-fan-control-windows",
+      "description": "Free open-source Windows laptop fan control software with custom cooling profiles and notebook temperature management.",
+      "language": "C#",
+      "stars": 899,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "c-sharp",
+        "computer",
+        "desktop-application",
+        "dotnet",
+        "fan-control",
+        "fan-speed-control",
+        "hardware",
+        "laptop"
+      ],
+      "createdAt": "2026-11-27T15:11:59Z",
+      "updatedAt": "2026-11-28T07:36:43Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "loris-593-notebook-fan-control-windows-959378c5.txt"
+    },
+    {
+      "rank": 29,
+      "fullName": "Leaf82770/windows-mica-backdrop-customizer",
+      "name": "windows-mica-backdrop-customizer",
+      "owner": "Leaf82770",
+      "url": "https://github.com/Leaf82770/windows-mica-backdrop-customizer",
+      "description": "Free Windows 11 desktop app to customize Mica, Acrylic, and system backdrop effects for Win32 applications.",
+      "language": "C#",
+      "stars": 894,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "acrylic",
+        "backdrop",
+        "customization",
+        "desktop",
+        "desktop-app",
+        "dotnet",
+        "fluent-design",
+        "mica"
+      ],
+      "createdAt": "2026-11-27T15:24:42Z",
+      "updatedAt": "2026-11-28T07:36:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "leaf82770-windows-mica-backdrop-customizer-e8e7aa32.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 30,
+      "fullName": "Codelab781/windows-clipboard-sync-manager",
+      "name": "windows-clipboard-sync-manager",
+      "owner": "Codelab781",
+      "url": "https://github.com/Codelab781/windows-clipboard-sync-manager",
+      "description": "Free open-source clipboard manager for Windows with cross-device sync, clipboard history, and text, image & file sharing.",
+      "language": "C#",
+      "stars": 893,
+      "forks": 0,
+      "starsToday": 0,
+      "topics": [
+        "avalonia",
+        "clipboard",
+        "clipboard-history",
+        "clipboard-manager",
+        "clipboard-sharing",
+        "clipboard-sync",
+        "cross-platform",
+        "csharp"
+      ],
+      "createdAt": "2026-11-27T15:29:52Z",
+      "updatedAt": "2026-11-28T07:36:45Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "codelab781-windows-clipboard-sync-manager-324fd029.txt"
+    },
+    {
+      "rank": 31,
+      "fullName": "dazacode/vilauncher",
+      "name": "vilauncher",
+      "owner": "dazacode",
+      "url": "https://github.com/dazacode/vilauncher",
+      "description": "VILauncher by the VIPortLive team: install, update and play community game projects. You bring your own game build.",
+      "language": "Rust",
+      "stars": 427,
+      "forks": 55,
+      "starsToday": 0,
+      "topics": [
+        "game-tools",
+        "gta",
+        "launcher",
+        "rockstar",
+        "rockstar-games",
+        "rockstargames",
+        "rust",
+        "tauri"
+      ],
+      "createdAt": "2026-11-27T01:11:31Z",
+      "updatedAt": "2026-11-28T07:35:35Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dazacode-vilauncher-8741915b.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 32,
+      "fullName": "ZiZc3/VI-Patch",
+      "name": "VI-Patch",
+      "owner": "ZiZc3",
+      "url": "https://github.com/ZiZc3/VI-Patch",
+      "description": "VI patches for PS5",
+      "language": "C",
+      "stars": 425,
+      "forks": 17,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-27T02:41:47Z",
+      "updatedAt": "2026-11-28T07:34:39Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "zizc3-vi-patch-bf596ff9.txt"
+    },
+    {
+      "rank": 33,
+      "fullName": "lindawu10389/stable-cascade-stage-a-pro-patcher-installer",
+      "name": "stable-cascade-stage-a-pro-patcher-installer",
+      "owner": "lindawu10389",
+      "url": "https://github.com/lindawu10389/stable-cascade-stage-a-pro-patcher-installer",
+      "description": "Stable Cascade: stage a.safetensors — Stable Cascade: stage a.safetensors Portable & Windows Setup",
+      "language": "Go",
+      "stars": 359,
+      "forks": 16,
+      "starsToday": 0,
+      "topics": [
+        "stable-cascade-stage-a-saf",
+        "stable-cascade-stage-a-saf-portable",
+        "stable-cascade-stage-a-saf-windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-27T22:39:09Z",
+      "updatedAt": "2026-11-28T06:47:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "lindawu10389-stable-cascade-stage-a-pro-patcher-installer-fbfa734c.txt"
+    },
+    {
+      "rank": 34,
+      "fullName": "ryu61903/rpcs3-pro-patcher-installer",
+      "name": "rpcs3-pro-patcher-installer",
+      "owner": "ryu61903",
+      "url": "https://github.com/ryu61903/rpcs3-pro-patcher-installer",
+      "description": "RPCS3 — RPCS3 Portable & Windows Setup",
+      "language": "Go",
+      "stars": 344,
+      "forks": 19,
+      "starsToday": 0,
+      "topics": [
+        "rpcs3",
+        "rpcs3-portable",
+        "rpcs3-windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-27T22:40:32Z",
+      "updatedAt": "2026-11-28T06:47:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ryu61903-rpcs3-pro-patcher-installer-213ba55b.txt"
+    },
+    {
+      "rank": 35,
+      "fullName": "Ruiz481/totk-optimizer-nx-pro-patcher-installer",
+      "name": "totk-optimizer-nx-pro-patcher-installer",
+      "owner": "Ruiz481",
+      "url": "https://github.com/Ruiz481/totk-optimizer-nx-pro-patcher-installer",
+      "description": "TotK Optimizer & NX Optimizer — TotK Optimizer & NX Optimizer Portable & Windows Setup",
+      "language": "Go",
+      "stars": 343,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "totk-optimizer-nx-optimize",
+        "totk-optimizer-nx-optimize-portable",
+        "totk-optimizer-nx-optimize-windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-27T22:40:32Z",
+      "updatedAt": "2026-11-28T06:47:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ruiz481-totk-optimizer-nx-pro-patcher-installer-210580f3.txt"
+    },
+    {
+      "rank": 36,
+      "fullName": "Arekejoker/sprite-turntable",
+      "name": "sprite-turntable",
+      "owner": "Arekejoker",
+      "url": "https://github.com/Arekejoker/sprite-turntable",
+      "description": "从一张定妆图制作可拖动旋转的 360° 角色转台，包含 72 帧透明素材、制作流程和离线展示页。",
+      "language": "Python",
+      "stars": 253,
+      "forks": 34,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-11-27T03:17:58Z",
+      "updatedAt": "2026-11-28T07:15:24Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "arekejoker-sprite-turntable-b9f3afad.txt"
+    },
+    {
+      "rank": 37,
+      "fullName": "Henris73/dify-ai-pro-patcher-installer",
+      "name": "dify-ai-pro-patcher-installer",
+      "owner": "Henris73",
+      "url": "https://github.com/Henris73/dify-ai-pro-patcher-installer",
+      "description": "SillyTavern Extras & KoboldCPP CUDA Bundle — SillyTavern Extras & KoboldCPP CUDA Bundle Portable & Windows Setup",
+      "language": "Go",
+      "stars": 214,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "sillytavern-extras-koboldc",
+        "sillytavern-extras-koboldc-portable",
+        "sillytavern-extras-koboldc-windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-27T22:39:38Z",
+      "updatedAt": "2026-11-28T06:47:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "henris73-dify-ai-pro-patcher-installer-27357dbb.txt"
+    },
+    {
+      "rank": 38,
+      "fullName": "roux71442/bluestacks-5-pro-patcher-installer",
+      "name": "bluestacks-5-pro-patcher-installer",
+      "owner": "roux71442",
+      "url": "https://github.com/roux71442/bluestacks-5-pro-patcher-installer",
+      "description": "Topaz Photo AI 3 Pro Full Suite — Topaz Photo AI 3 Pro Portable & Windows Setup",
+      "language": "Go",
+      "stars": 214,
+      "forks": 14,
+      "starsToday": 0,
+      "topics": [
+        "topaz-photo-ai-3-pro",
+        "topaz-photo-ai-3-pro-portable",
+        "topaz-photo-ai-3-pro-windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-27T22:39:17Z",
+      "updatedAt": "2026-11-28T06:47:05Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "roux71442-bluestacks-5-pro-patcher-installer-c242a9d9.txt"
+    },
+    {
+      "rank": 39,
+      "fullName": "Dangs5148/sandworm-playground-trainer-mod-menu",
+      "name": "sandworm-playground-trainer-mod-menu",
+      "owner": "Dangs5148",
+      "url": "https://github.com/Dangs5148/sandworm-playground-trainer-mod-menu",
+      "description": "Sandworm Playground Script — Sandworm Playground Roblox Script & Auto Farm GUI",
+      "language": "Go",
+      "stars": 200,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "roblox",
+        "roblox-script",
+        "sandworm-playground",
+        "sandworm-playground-roblox-script",
+        "sandworm-playground-script"
+      ],
+      "createdAt": "2026-11-27T22:08:09Z",
+      "updatedAt": "2026-11-28T06:27:07Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dangs5148-sandworm-playground-trainer-mod-menu-691f7765.txt"
+    },
+    {
+      "rank": 40,
+      "fullName": "deborahpolyakov49/evermore-high-trainer-mod-menu",
+      "name": "evermore-high-trainer-mod-menu",
+      "owner": "deborahpolyakov49",
+      "url": "https://github.com/deborahpolyakov49/evermore-high-trainer-mod-menu",
+      "description": "Evermore High Script — Evermore High Roblox Script & Auto Farm GUI",
+      "language": "Go",
+      "stars": 200,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "evermore-high",
+        "evermore-high-roblox-script",
+        "evermore-high-script",
+        "roblox",
+        "roblox-script"
+      ],
+      "createdAt": "2026-11-27T22:03:18Z",
+      "updatedAt": "2026-11-28T06:27:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "deborahpolyakov49-evermore-high-trainer-mod-menu-86c7bb2b.txt"
+    },
+    {
+      "rank": 41,
+      "fullName": "DebraNelson/grapple-sniper-arena-trainer-mod-menu",
+      "name": "grapple-sniper-arena-trainer-mod-menu",
+      "owner": "DebraNelson",
+      "url": "https://github.com/DebraNelson/grapple-sniper-arena-trainer-mod-menu",
+      "description": "Grapple Sniper Arena Script — Grapple Sniper Arena Roblox Script & Auto Farm GUI",
+      "language": "Go",
+      "stars": 200,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "grapple-sniper-arena",
+        "grapple-sniper-arena-roblox-script",
+        "grapple-sniper-arena-script",
+        "roblox",
+        "roblox-script"
+      ],
+      "createdAt": "2026-11-27T22:03:28Z",
+      "updatedAt": "2026-11-28T06:27:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "debranelson-grapple-sniper-arena-trainer-mod-menu-c222947c.txt"
+    },
+    {
+      "rank": 42,
+      "fullName": "Debrar059/scare-your-favorite-streamer-trainer-mod-menu",
+      "name": "scare-your-favorite-streamer-trainer-mod-menu",
+      "owner": "Debrar059",
+      "url": "https://github.com/Debrar059/scare-your-favorite-streamer-trainer-mod-menu",
+      "description": "Scare Your Favorite Streamer Script — Scare Your Favorite Streamer Roblox Script & Auto Farm GUI",
+      "language": "Go",
+      "stars": 200,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "roblox",
+        "roblox-script",
+        "scare-your-favorite-stre",
+        "scare-your-favorite-stre-roblox-scr",
+        "scare-your-favorite-stre-script"
+      ],
+      "createdAt": "2026-11-27T22:04:03Z",
+      "updatedAt": "2026-11-28T06:27:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "debrar059-scare-your-favorite-streamer-trainer-mod-menu-8157c442.txt"
+    },
+    {
+      "rank": 43,
+      "fullName": "DeduduVa38/just-an-innocent-game-trainer-mod-menu",
+      "name": "just-an-innocent-game-trainer-mod-menu",
+      "owner": "DeduduVa38",
+      "url": "https://github.com/DeduduVa38/just-an-innocent-game-trainer-mod-menu",
+      "description": "just an innocent game Script — just an innocent game Roblox Script & Auto Farm GUI",
+      "language": "Go",
+      "stars": 200,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "just-an-innocent-game",
+        "just-an-innocent-game-roblox-script",
+        "just-an-innocent-game-script",
+        "roblox",
+        "roblox-script"
+      ],
+      "createdAt": "2026-11-27T22:04:02Z",
+      "updatedAt": "2026-11-28T06:27:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "deduduva38-just-an-innocent-game-trainer-mod-menu-f516451b.txt"
+    },
+    {
+      "rank": 44,
+      "fullName": "dennisdabrowski/barry-s-prison-run-obby-trainer-mod-menu",
+      "name": "barry-s-prison-run-obby-trainer-mod-menu",
+      "owner": "dennisdabrowski",
+      "url": "https://github.com/dennisdabrowski/barry-s-prison-run-obby-trainer-mod-menu",
+      "description": "BARRY'S PRISON RUN! (OBBY) Script — BARRY'S PRISON RUN! (OBBY) Roblox Script & Auto Farm GUI",
+      "language": "Go",
+      "stars": 200,
+      "forks": 8,
+      "starsToday": 0,
+      "topics": [
+        "barry-s-prison-run-obby",
+        "barry-s-prison-run-obby-roblox-scri",
+        "barry-s-prison-run-obby-script",
+        "roblox",
+        "roblox-script"
+      ],
+      "createdAt": "2026-11-27T22:04:24Z",
+      "updatedAt": "2026-11-28T06:27:06Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dennisdabrowski-barry-s-prison-run-obby-trainer-mod-menu-a4bf7597.txt"
+    },
+    {
+      "rank": 45,
+      "fullName": "Torres0953/velocity-roblox-executor",
+      "name": "velocity-roblox-executor",
+      "owner": "Torres0953",
+      "url": "https://github.com/Torres0953/velocity-roblox-executor",
+      "description": "Velocity Executor — Velocity Roblox Script Executor",
+      "language": "Go",
+      "stars": 200,
+      "forks": 13,
+      "starsToday": 0,
+      "topics": [
+        "luau",
+        "roblox",
+        "roblox-executor",
+        "velocity",
+        "velocity-executor"
+      ],
+      "createdAt": "2026-11-27T22:46:56Z",
+      "updatedAt": "2026-11-28T06:27:13Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "torres0953-velocity-roblox-executor-1cb9d485.txt"
+    },
+    {
+      "rank": 46,
+      "fullName": "DieterSiekiera428/ventoy-pro-patcher-installer",
+      "name": "ventoy-pro-patcher-installer",
+      "owner": "DieterSiekiera428",
+      "url": "https://github.com/DieterSiekiera428/ventoy-pro-patcher-installer",
+      "description": "Ventoy — Ventoy Portable & Windows Setup",
+      "language": "Go",
+      "stars": 197,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "ventoy",
+        "ventoy-portable",
+        "ventoy-windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-27T22:34:32Z",
+      "updatedAt": "2026-11-28T06:27:18Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "dietersiekiera428-ventoy-pro-patcher-installer-92f31502.txt"
+    },
+    {
+      "rank": 47,
+      "fullName": "eKrol93/discord-pro-patcher-installer",
+      "name": "discord-pro-patcher-installer",
+      "owner": "eKrol93",
+      "url": "https://github.com/eKrol93/discord-pro-patcher-installer",
+      "description": "Discord — Discord Portable & Windows Setup",
+      "language": "Go",
+      "stars": 197,
+      "forks": 12,
+      "starsToday": 0,
+      "topics": [
+        "discord",
+        "discord-portable",
+        "discord-windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-27T22:31:10Z",
+      "updatedAt": "2026-11-28T06:27:09Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "ekrol93-discord-pro-patcher-installer-03ea3b01.txt"
+    },
+    {
+      "rank": 48,
+      "fullName": "Elena74144/libreoffice-pro-patcher-installer",
+      "name": "libreoffice-pro-patcher-installer",
+      "owner": "Elena74144",
+      "url": "https://github.com/Elena74144/libreoffice-pro-patcher-installer",
+      "description": "LibreOffice — LibreOffice Portable & Windows Setup",
+      "language": "Go",
+      "stars": 197,
+      "forks": 9,
+      "starsToday": 0,
+      "topics": [
+        "libreoffice",
+        "libreoffice-portable",
+        "libreoffice-windows",
+        "windows-10",
+        "windows-11"
+      ],
+      "createdAt": "2026-11-27T22:31:22Z",
+      "updatedAt": "2026-11-28T06:27:10Z",
+      "sources": [
+        "new"
+      ],
+      "isNew": true,
+      "readmeFile": "elena74144-libreoffice-pro-patcher-installer-3530ee3f.txt"
+    },
+    {
+      "rank": 49,
+      "fullName": "public-apis/public-apis",
+      "name": "public-apis",
+      "owner": "public-apis",
+      "url": "https://github.com/public-apis/public-apis",
+      "description": "A collective list of free APIs",
+      "language": "Python",
+      "stars": 501864,
+      "forks": 56499,
+      "starsToday": 0,
+      "topics": [
+        "api",
+        "apis",
+        "dataset",
+        "development",
+        "free",
+        "list",
+        "lists",
+        "open-source"
+      ],
+      "createdAt": "2016-03-20T23:49:42Z",
+      "updatedAt": "2026-11-28T07:35:33Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "public-apis-public-apis-0e8ac9c0.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 50,
+      "fullName": "freeCodeCamp/freeCodeCamp",
+      "name": "freeCodeCamp",
+      "owner": "freeCodeCamp",
+      "url": "https://github.com/freeCodeCamp/freeCodeCamp",
+      "description": "freeCodeCamp.org's open-source codebase and curriculum. Learn math, programming, and computer science for free.",
+      "language": "TypeScript",
+      "stars": 459687,
+      "forks": 47355,
+      "starsToday": 0,
+      "topics": [
+        "careers",
+        "certification",
+        "community",
+        "curriculum",
+        "d3",
+        "education",
+        "freecodecamp",
+        "javascript"
+      ],
+      "createdAt": "2014-12-24T17:49:19Z",
+      "updatedAt": "2026-11-28T07:20:54Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "freecodecamp-freecodecamp-5d095e95.txt"
+    },
+    {
+      "rank": 51,
+      "fullName": "EbookFoundation/free-programming-books",
+      "name": "free-programming-books",
+      "owner": "EbookFoundation",
+      "url": "https://github.com/EbookFoundation/free-programming-books",
+      "description": ":books: Freely available programming books",
+      "language": "Python",
+      "stars": 402389,
+      "forks": 67272,
+      "starsToday": 0,
+      "topics": [
+        "books",
+        "education",
+        "hacktoberfest",
+        "list",
+        "resource"
+      ],
+      "createdAt": "2013-10-11T06:50:37Z",
+      "updatedAt": "2026-11-28T07:18:37Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ebookfoundation-free-programming-books-c336ecc2.txt"
+    },
+    {
+      "rank": 52,
+      "fullName": "nilbuild/developer-roadmap",
+      "name": "developer-roadmap",
+      "owner": "nilbuild",
+      "url": "https://github.com/nilbuild/developer-roadmap",
+      "description": "Interactive roadmaps, guides and other educational content to help developers grow in their careers.",
+      "language": "TypeScript",
+      "stars": 372914,
+      "forks": 45509,
+      "starsToday": 0,
+      "topics": [
+        "angular-roadmap",
+        "backend-roadmap",
+        "blockchain-roadmap",
+        "computer-science",
+        "dba-roadmap",
+        "developer-roadmap",
+        "devops-roadmap",
+        "frontend-roadmap"
+      ],
+      "createdAt": "2017-03-15T13:45:52Z",
+      "updatedAt": "2026-11-28T07:34:03Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "nilbuild-developer-roadmap-76ba8c44.txt"
+    },
+    {
+      "rank": 53,
+      "fullName": "mattpocock/skills",
+      "name": "skills",
+      "owner": "mattpocock",
+      "url": "https://github.com/mattpocock/skills",
+      "description": "Skills for Real Engineers. Straight from my .agents directory.",
+      "language": "Shell",
+      "stars": 334413,
+      "forks": 28144,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-02-03T11:15:53Z",
+      "updatedAt": "2026-11-28T07:35:00Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "mattpocock-skills-6ef6a81d.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 54,
+      "fullName": "avelino/awesome-go",
+      "name": "awesome-go",
+      "owner": "avelino",
+      "url": "https://github.com/avelino/awesome-go",
+      "description": "A curated list of awesome Go frameworks, libraries and software",
+      "language": "Go",
+      "stars": 196413,
+      "forks": 13777,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "awesome-list",
+        "go",
+        "golang",
+        "golang-library",
+        "hacktoberfest"
+      ],
+      "createdAt": "2014-07-06T13:42:15Z",
+      "updatedAt": "2026-11-28T07:36:47Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "avelino-awesome-go-a487ee68.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 55,
+      "fullName": "ultraworkers/claw-code",
+      "name": "claw-code",
+      "owner": "ultraworkers",
+      "url": "https://github.com/ultraworkers/claw-code",
+      "description": "An agent-managed museum exhibit, built in Rust with Gajae-Code / LazyCodex — developed and maintained with no human intervention.",
+      "language": "Rust",
+      "stars": 194705,
+      "forks": 107051,
+      "starsToday": 0,
+      "topics": [],
+      "createdAt": "2026-03-31T08:58:08Z",
+      "updatedAt": "2026-11-28T07:28:58Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "ultraworkers-claw-code-6882ee54.txt",
+      "readmeTruncated": true
+    },
+    {
+      "rank": 56,
+      "fullName": "521xueweihan/HelloGitHub",
+      "name": "HelloGitHub",
+      "owner": "521xueweihan",
+      "url": "https://github.com/521xueweihan/HelloGitHub",
+      "description": ":octocat: 分享 GitHub 上有趣、入门级的开源项目。Share interesting, entry-level open source projects on GitHub.",
+      "language": "Python",
+      "stars": 191701,
+      "forks": 13415,
+      "starsToday": 0,
+      "topics": [
+        "awesome",
+        "github",
+        "hellogithub",
+        "python"
+      ],
+      "createdAt": "2016-05-04T06:24:11Z",
+      "updatedAt": "2026-11-28T07:33:04Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "521xueweihan-hellogithub-592b065c.txt"
+    },
+    {
+      "rank": 57,
+      "fullName": "CyC2018/CS-Notes",
+      "name": "CS-Notes",
+      "owner": "CyC2018",
+      "url": "https://github.com/CyC2018/CS-Notes",
+      "description": ":books: 技术面试必备基础知识、Leetcode、计算机操作系统、计算机网络、系统设计",
+      "language": "JavaScript",
+      "stars": 186607,
+      "forks": 50584,
+      "starsToday": 0,
+      "topics": [
+        "algorithm",
+        "computer-science",
+        "cpp",
+        "interview",
+        "java",
+        "leetcode",
+        "python",
+        "system-design"
+      ],
+      "createdAt": "2018-02-13T14:56:24Z",
+      "updatedAt": "2026-11-28T06:40:40Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "cyc2018-cs-notes-9b48ee3d.txt"
+    },
+    {
+      "rank": 58,
+      "fullName": "open-webui/open-webui",
+      "name": "open-webui",
+      "owner": "open-webui",
+      "url": "https://github.com/open-webui/open-webui",
+      "description": "User-friendly AI Interface (Supports Ollama, OpenAI API, ...)",
+      "language": "Svelte",
+      "stars": 159706,
+      "forks": 23173,
+      "starsToday": 0,
+      "topics": [
+        "ai",
+        "llm",
+        "llm-ui",
+        "llm-webui",
+        "llms",
+        "mcp",
+        "ollama",
+        "ollama-webui"
+      ],
+      "createdAt": "2023-10-06T22:08:27Z",
+      "updatedAt": "2026-11-28T07:36:27Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "open-webui-open-webui-3b98bdb5.txt"
+    },
+    {
+      "rank": 59,
+      "fullName": "Snailclimb/JavaGuide",
+      "name": "JavaGuide",
+      "owner": "Snailclimb",
+      "url": "https://github.com/Snailclimb/JavaGuide",
+      "description": "Java 面试 & 后端通用面试指南，覆盖计算机基础、数据库、分布式、高并发、系统设计与 AI 应用开发",
+      "language": "JavaScript",
+      "stars": 159698,
+      "forks": 46085,
+      "starsToday": 0,
+      "topics": [
+        "agent",
+        "ai",
+        "context-engineering",
+        "deepseek",
+        "interview",
+        "java",
+        "mcp",
+        "mysql"
+      ],
+      "createdAt": "2018-05-07T13:27:00Z",
+      "updatedAt": "2026-11-28T06:41:02Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "snailclimb-javaguide-355a2214.txt"
+    },
+    {
+      "rank": 60,
+      "fullName": "farion1231/cc-switch",
+      "name": "cc-switch",
+      "owner": "farion1231",
+      "url": "https://github.com/farion1231/cc-switch",
+      "description": "A cross-platform desktop All-in-One assistant for Claude Code, Codex, OpenCode,DeepSeek Harness and more. Only official website: ccswitch.io",
+      "language": "Rust",
+      "stars": 157723,
+      "forks": 10309,
+      "starsToday": 0,
+      "topics": [
+        "ai-tools",
+        "claude-code",
+        "codex",
+        "deepseek-harness",
+        "desktop-app",
+        "grok",
+        "grokbuild",
+        "hermes"
+      ],
+      "createdAt": "2025-08-04T14:16:16Z",
+      "updatedAt": "2026-11-28T07:32:35Z",
+      "sources": [
+        "high-star"
+      ],
+      "isNew": false,
+      "readmeFile": "farion1231-cc-switch-c8240f91.txt",
+      "readmeTruncated": true
+    }
+  ]
+}

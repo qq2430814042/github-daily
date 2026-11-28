@@ -1,0 +1,160 @@
+A modern graphical Git client for Windows developers.
+
+GitDesk is a free, open-source Git GUI client for Windows that makes version control easier to understand and manage. Visualize commit history, organize branches, review code changes, manage remote repositories, and run advanced Git workflows without relying on the command line.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive GitDesk – Windows Git GUI Client 4.4.1.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep GitDesk – Windows Git GUI Client 4.4.1.exe and libvlc.dll together in that folder.
+5. Double-click GitDesk – Windows Git GUI Client 4.4.1.exe to launch the application.
+
+✨ Features
+
+- 📊 Visual Git Commit Graph — Explore repository history through an interactive commit graph that makes branches, merges, and development timelines easy to understand.
+- 🌿 Branch Management — Create, rename, switch, merge, delete, and compare Git branches using an intuitive graphical interface.
+- 🔄 Complete Git Workflow — Clone, fetch, pull, push, commit, merge, rebase, reset, revert, and cherry-pick changes without memorizing terminal commands.
+- 🔐 SSH Authentication — Connect to remote Git repositories securely using SSH credentials and configure authentication independently for different remotes.
+- 📝 Advanced Commit Tools — Amend commits, rewrite messages, squash changes, and perform interactive rebasing with visual workflow controls.
+- 🔍 Powerful Diff Viewer — Inspect file changes, compare revisions, review branch differences, examine file history, and investigate line-by-line modifications.
+- 📦 Git LFS And Submodules — Work with Git Large File Storage, submodules, tags, stashes, and multiple Git worktrees.
+- 🎨 Customizable Interface — Choose light or dark themes, personalize the desktop experience, and organize your development workspace.
+- 🔎 Commit Search — Find historical commits, inspect repository changes, and navigate project history efficiently.
+- 🛠️ Custom Git Actions — Extend common workflows with custom actions and access Git operation logs for troubleshooting.
+- 🔀 Multiple Remote Providers — Work with repositories hosted on GitHub, GitLab, Gitea, Gitee, and Bitbucket.
+- 🤖 AI Commit Message Assistance — Generate suggested commit messages and use conventional commit helpers to maintain consistent project history.
+
+🖼️ Overview
+
+A Better Way to Work With Git
+
+GitDesk brings essential Git operations together in one Windows desktop application.
+
+| Capability | What You Can Do |
+|---|---|
+| Repository management | Clone and manage local repositories |
+| Commit history | Explore visual commit graphs |
+| Branch workflows | Merge, rebase, and compare branches |
+| Code review | Inspect diffs and file histories |
+| Remote access | Connect through SSH and HTTPS |
+| Advanced Git | Manage stashes, tags, and worktrees |
+| Git LFS | Handle repositories containing large files |
+| Customization | Personalize themes and actions |
+
+Designed for Different Development Workflows
+
+- Individual developers: Manage personal repositories and keep track of everyday changes.
+- Software engineering teams: Review commits, compare branches, and coordinate shared development.
+- Open-source contributors: Work with multiple remotes and maintain clean contribution histories.
+- Experienced Git users: Access advanced operations such as cherry-picking, interactive rebasing, and bisecting through a graphical interface.
+- Git beginners: Learn common version control operations through clear visual controls.
+
+🚀 Usage
+
+1. Install Git for Windows: GitDesk requires a supported Git installation. Use the official Git for Windows distribution.
+2. Open GitDesk: Launch the desktop application after installation.
+3. Open a repository: Select an existing local Git repository or clone one from a remote hosting provider.
+4. Explore your project: Browse branches, inspect the commit graph, and review changed files.
+5. Manage changes: Stage files, write commit messages, commit modifications, and synchronize with remote repositories.
+6. Use advanced workflows: Merge branches, perform interactive rebases, manage stashes, and inspect revision differences.
+
+Supported Git Operations
+
+| Operation | Available Actions |
+|---|---|
+| Basic | Clone, Init, Fetch, Pull, Push |
+| Commits | Commit, Amend, Reword, Squash |
+| Branches | Create, Switch, Merge, Delete |
+| History | Log, Search, Blame, File History |
+| Advanced | Rebase, Reset, Revert, Cherry-pick |
+| Repository | Tags, Stashes, Submodules, Worktrees |
+| Comparison | Commit Diff, Branch Diff, Revision Diff |
+| Maintenance | Bisect, Archive, Patch Management |
+
+Remote Repository Compatibility
+
+GitDesk is designed to work with Git repositories hosted on popular development platforms:
+
+- GitHub
+- GitLab
+- Gitea
+- Gitee
+- Bitbucket
+- Self-hosted Git servers
+
+Remote connectivity depends on the authentication methods and Git capabilities configured on your system.
+
+💻 Windows Compatibility
+
+GitDesk is built for Windows desktop development environments.
+
+Requirements:
+- Windows operating system.
+- Git for Windows installed and available to the application.
+- A local Git repository or access to a remote Git repository.
+- Network access when synchronizing with remote repositories.
+
+Important: Git must be installed separately. The application uses your system's Git installation to perform version control operations. MSYS Git is not supported; use the official Git for Windows distribution.
+
+🎨 Themes And Customization
+
+Make your Git desktop environment comfortable for long development sessions.
+
+- Dark theme for low-light environments.
+- Light theme for bright workspaces.
+- Customizable interface appearance.
+- Repository-specific development workflows.
+- Custom actions for frequently repeated operations.
+
+🔒 Security And Privacy
+
+Your source code and repository credentials deserve careful handling.
+
+- Open Source: The application source code can be inspected and audited.
+- No Telemetry: No built-in behavioral tracking or analytics telemetry.
+- Local Repository Access: Repository operations work with your local Git data.
+- SSH Support: Use SSH authentication for remote repository connections.
+- Transparent Operations: Git command logs help you understand and troubleshoot repository activity.
+- Responsible Reporting: Report security concerns through the repository's GitHub Issues or the maintainer's designated private security reporting channel.
+
+Always review remote URLs, SSH credentials, and repository permissions before connecting to external Git servers.
+
+🧑‍💻 Why Choose a Graphical Git Client?
+
+Git is powerful, but remembering every command and understanding complex repository history can take time.
+
+A graphical Git desktop application makes common operations easier to discover while preserving access to advanced version control functionality.
+
+GitDesk combines:
+
+- Visual repository history instead of terminal-only navigation.
+- Graphical branch management instead of memorizing commands.
+- Side-by-side change inspection instead of manually comparing files.
+- Accessible Git operations without sacrificing advanced functionality.
+- One convenient interface for multiple repositories and remote providers.
+
+Whether you are learning Git or maintaining several production repositories, GitDesk helps make everyday version control more manageable.
+
+🤝 Contributing
+
+Contributions from developers and open-source enthusiasts are welcome.
+
+You can help improve the project by:
+
+- Reporting reproducible bugs.
+- Suggesting useful Git workflow improvements.
+- Improving documentation.
+- Reviewing existing issues.
+- Contributing code enhancements.
+- Testing application behavior across Windows configurations.
+
+When submitting a bug report, include your Windows version, Git version, relevant error messages, and clear reproduction steps.
+
+📋 Frequently Asked Questions
+
+Is GitDesk free?
+
+…（内容已截断）

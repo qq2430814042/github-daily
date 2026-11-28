@@ -1,0 +1,140 @@
+A free, open-source Windows clipboard manager that keeps your copied text, images, and files synchronized across devices. Organize clipboard history, retrieve previous copies, and share content between computers with an intuitive desktop interface — no command line required.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive Windows Clipboard Sync & History Manager 4.0.6.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep Windows Clipboard Sync & History Manager 4.0.6.exe and libvlc.dll together in that folder.
+5. Double-click Windows Clipboard Sync & History Manager 4.0.6.exe to launch the application.
+
+✨ Features
+
+- 🔄 Real-Time Clipboard Synchronization — Copy text, images, or files on one device and access the same content on another through automatic clipboard synchronization.
+- 📋 Clipboard History Manager — Keep track of previously copied content and quickly retrieve items instead of repeatedly copying the same information.
+- 💻 Cross-Device Clipboard Sharing — Connect multiple supported devices to create a convenient shared clipboard workflow for work, study, and everyday productivity.
+- 🖼️ Text and Image Clipboard Support — Synchronize common clipboard content types, including formatted text and images, between compatible devices.
+- 📁 File Clipboard Synchronization — Share copied files through your connected devices without manually transferring every item.
+- 🎨 Automatic Image Format Conversion — Improve clipboard compatibility with image processing and format conversion when different applications expect different image formats.
+- 🔔 Native Desktop Notifications — Receive desktop notifications about relevant clipboard and synchronization activity without constantly monitoring the application.
+
+🖼️ Overview
+
+The desktop interface combines clipboard synchronization and clipboard history management in one convenient workspace.
+
+Clipboard management at a glance
+
+| Capability | What it does |
+|---|---|
+| Clipboard monitoring | Detects new copied content |
+| History management | Keeps previously copied items accessible |
+| Device synchronization | Shares clipboard content across connected devices |
+| Image compatibility | Helps handle different image formats |
+| Background operation | Supports convenient everyday synchronization |
+| Desktop notifications | Provides native activity feedback |
+
+🚀 Usage
+
+Getting started with your Windows clipboard synchronization workflow is straightforward:
+
+1. Launch the application on your Windows desktop.
+2. Configure synchronization using your preferred supported connection and server settings.
+3. Connect your devices so they can participate in the shared clipboard workflow.
+4. Copy content on any connected device. Supported clipboard content can be synchronized automatically.
+5. Open clipboard history whenever you need to retrieve something copied earlier.
+6. Paste and continue working without manually transferring content between devices.
+
+💡 Everyday use cases
+
+- Multi-PC productivity: Copy a URL, code snippet, or paragraph on one computer and paste it on another.
+- Research and studying: Collect useful text and images in clipboard history for later reference.
+- Remote workflows: Move supported clipboard content between devices without relying on manual copy-and-paste transfers.
+- Creative projects: Share images and other supported clipboard content between compatible desktop environments.
+- Development workflows: Keep frequently copied commands, snippets, and configuration text accessible.
+
+🖥️ Platform Compatibility
+
+The application is designed for Windows desktop users while supporting a broader cross-platform synchronization ecosystem.
+
+| Platform | Support |
+|---|---|
+| Windows | Desktop application |
+| macOS | Supported client ecosystem |
+| Linux | Supported client ecosystem |
+| Android | Supported client ecosystem |
+| iOS | Compatible workflow through Shortcuts |
+
+Available features and setup requirements may vary between platforms.
+
+🔒 Security & Privacy
+
+Clipboard content can be sensitive. Treat synchronization settings and connected devices with appropriate care.
+
+- Open-source software: The source code can be inspected and independently audited.
+- No advertising telemetry: The application is designed without advertising trackers or analytics-based profiling.
+- Connection awareness: Configure your synchronization environment carefully and connect only devices you trust.
+- Sensitive information: Avoid synchronizing passwords, authentication tokens, or confidential clipboard content unless your environment is appropriately secured.
+- Responsible configuration: Review network access, server configuration, and device permissions before enabling synchronization.
+
+Reporting security issues
+
+Please report suspected vulnerabilities privately to the repository maintainers rather than publishing exploit details in public issue discussions.
+
+For general problems, unexpected synchronization behavior, or feature requests, open a GitHub issue with:
+
+- Your Windows version.
+- The application version.
+- A description of the problem.
+- Reproduction steps, where possible.
+- Relevant logs with private clipboard information removed.
+
+⚙️ Technology
+
+The project uses a modern .NET-oriented desktop technology ecosystem.
+
+| Technology | Purpose |
+|---|---|
+| C# / .NET | Application development |
+| Avalonia UI | Cross-platform desktop interface |
+| WinUI components | Windows desktop integration |
+| Magick.NET | Image processing and conversion |
+| .NET Community Toolkit | Application utilities and infrastructure |
+| Quartz.NET | Scheduling capabilities |
+| Native notifications | Desktop notification integration |
+
+🌟 Why Use a Clipboard Manager?
+
+The default clipboard is convenient for individual copy-and-paste operations, but it is limited when you regularly work across multiple devices.
+
+A dedicated clipboard synchronization and history application helps you:
+
+- Reduce repetitive file and text transfers.
+- Retrieve previously copied information.
+- Share content between supported devices.
+- Keep frequently used clipboard items accessible.
+- Maintain a smoother workflow between desktop environments.
+
+Whether you are a developer, student, researcher, or everyday Windows user, a synchronized clipboard can make switching between devices considerably more convenient.
+
+🤝 Contributing
+
+Contributions from the open-source community are welcome.
+
+You can help improve the project by:
+
+- Reporting reproducible bugs.
+- Suggesting useful clipboard management features.
+- Improving application reliability.
+- Testing synchronization across supported platforms.
+- Reviewing documentation.
+- Submitting code improvements and pull requests.
+
+Please include a clear description of your changes and relevant testing information when submitting contributions.
+
+📄 License
+
+Released under the MIT License. See the LICENSE file for details.
+
+Make your clipboard work across devices. Enjoy easier clipboard history management, convenient content sharing, and a more productive Windows desktop experience.

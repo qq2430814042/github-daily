@@ -60,6 +60,8 @@ Sources, scored by the people
 | Threads | The post-Twitter text layer. Conversations from creators and brands. |
 | Pinterest | Visual discovery. Pins, saves, and comments on products and ideas. |
 | Xiaohongshu (RED) | Chinese lifestyle, product, and creator signals. Requested explicitly with --search xhs when a logged-in x-mcp browser plugin or xiaohongshu-mcp service is running locally. |
+| Juejin | Chinese developer write-ups on what just shipped, ranked by likes, comments, saves, and views. Opt in with --search juejin or INCLUDE_SOURCES=juejin. Free, no API key. |
+| V2EX | The Chinese developer forum: threads and replies from the top topics. Opt in with --search v2ex or INCLUDE_SOURCES=v2ex. Free, no API key. |
 | Bluesky | The decentralized social layer. AT Protocol posts from the post-Twitter migration. |
 | Perplexity | Controlled Agent API synthesis, OpenRouter Sonar fallback, raw Search API rows, and explicit Deep Research. |
 | DEV Community (dev.to) | Developer articles and top comments through the public, keyless API. Opt in with --devto-tags, --search devto, or INCLUDE_SOURCES=devto. |
@@ -69,6 +71,5 @@ Sources, scored by the people
 | Amazon | Product ratings, prices, and customer reviews. Opt-in; requires an authenticated brightdata CLI and uses your Bright Data credits. |
 | DripStack | Financial newsletters and analyst writeups through a public, keyless API. Opt in with --search dripstack or INCLUDE_SOURCES=dripstack. |
 | Jobs / careers pages | What a company is hiring for, read from its own careers page (Workday, Apple, Amazon, Google, Microsoft, Netflix, Oracle, and more). A company run reads it automatically, and roles that hint at something unannounced become Jobs Page Secret Signals. Also selected with --hiring-signals, --search jobs, or the research plan. |
-| Patents | A company's new US patent filings, as evidence of what it is building before it ships. Free, no API key. Shows when your topic is a company. A filing becomes a Patent Secret Signal only when it is out of character for the company or describes something it has not shipped or announced. |
 
 …（内容已截断）

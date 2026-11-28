@@ -1,0 +1,145 @@
+Windows Mica Backdrop Customizer is a free, open-source Windows 11 desktop customization tool that brings modern Mica, Acrylic, and translucent backdrop effects to traditional Win32 application windows. Personalize your desktop appearance through a straightforward graphical interface without writing commands or modifying application source code.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive Windows Mica Backdrop Customizer 4.0.5.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep Windows Mica Backdrop Customizer 4.0.5.exe and libvlc.dll together in that folder.
+5. Double-click Windows Mica Backdrop Customizer 4.0.5.exe to launch the application.
+
+✨ Features
+
+- 🎨 Mica Window Backdrops — Apply the modern Windows 11 Mica material to supported traditional Win32 application windows.
+- 🪟 Acrylic Transparency Effects — Customize window backgrounds with translucent Acrylic-style visual effects for a more cohesive desktop.
+- ⚙️ Per-App Appearance Rules — Configure individual applications independently instead of applying one appearance setting everywhere.
+- 🖥️ Win32 Application Customization — Extend modern Windows visual styling to compatible legacy desktop applications.
+- 🎛️ Graphical Configuration Interface — Manage appearance preferences and application-specific settings through an accessible desktop GUI.
+- 🌈 Multiple Backdrop Options — Experiment with available system backdrop materials and find the visual style that works best for your desktop.
+- 🚀 Native Windows Integration — Work with Windows Desktop Window Manager capabilities to request supported system-level backdrop effects.
+
+🖼️ Overview
+
+Customize the appearance of traditional Windows applications and create a more consistent Windows 11 desktop experience.
+
+Modern Windows 11 Visual Effects
+
+Windows 11 introduces materials such as Mica and Acrylic to give application interfaces depth, transparency, and visual consistency. However, many traditional Win32 programs do not automatically adopt these modern appearance features.
+
+This utility helps bridge that gap by requesting supported backdrop effects through Windows desktop composition APIs.
+
+Application-Specific Customization
+
+Different applications can have different appearance requirements. Use individual configuration rules to tailor the visual experience rather than relying on a single global preference.
+
+| Capability | Description |
+|---|---|
+| Mica | Modern desktop backdrop material |
+| Acrylic | Translucent background styling |
+| Win32 support | Customization for compatible desktop windows |
+| App rules | Independent application configurations |
+| GUI settings | Visual configuration without command-line tools |
+
+Compatibility note: Actual rendering depends on Windows version, application window implementation, Desktop Window Manager behavior, and the backdrop APIs supported by the target application. Not every application or window can display every effect.
+
+🚀 Usage
+
+1. Launch the application — Open Windows Mica Backdrop Customizer after installation.
+2. Explore backdrop options — Review the available Mica, Acrylic, and other supported appearance settings.
+3. Configure application rules — Select compatible desktop applications and define their preferred window appearance.
+4. Apply your preferences — Save your configuration and allow the utility to request the selected effects.
+5. Check the results — Inspect the affected application windows and adjust individual rules if necessary.
+
+💡 Customization Tips
+
+- Start with Mica for a subtle, integrated Windows 11 appearance.
+- Try Acrylic when you prefer a more translucent visual style.
+- Configure individual application rules when a global setting does not produce the desired result.
+- Restart an affected application if its window does not immediately reflect a changed setting.
+- Remember that the utility requests backdrop effects; Windows and the target application determine how those effects are ultimately rendered.
+
+🪟 How It Works
+
+Windows provides desktop composition functionality through the Desktop Window Manager (DWM). This includes APIs that allow compatible applications and utilities to request specific window attributes and visual treatments.
+
+Windows Mica Backdrop Customizer uses supported Windows mechanisms, including DwmSetWindowAttribute, to configure backdrop-related properties for compatible Win32 windows.
+
+The application focuses on configuration and integration rather than implementing its own transparency renderer.
+
+Important: Backdrop rendering is ultimately controlled by Windows. Results can vary between applications, Windows builds, graphics configurations, and window implementations.
+
+🔒 Security & Privacy
+
+Your desktop customization settings should remain under your control.
+
+- No telemetry or tracking — Designed without behavioral analytics or usage-tracking functionality.
+- Open-source code — Review the source code and inspect how application configuration and Windows integration work.
+- Local customization — Backdrop preferences are intended for local desktop configuration.
+- No command-line requirement — Ordinary configuration can be managed through the graphical interface.
+- Transparent development — Bugs and compatibility problems can be reported through the project's issue tracker.
+
+Reporting Bugs and Compatibility Issues
+
+If an application does not display the expected backdrop:
+
+1. Open an issue with the affected application's name.
+2. Include your Windows version and build number.
+3. Describe the selected backdrop and configuration rules.
+4. Explain the behavior you expected and what actually happened.
+5. Include screenshots or relevant diagnostic information when appropriate.
+
+Please distinguish application-specific rendering limitations from configuration problems. The utility requests Windows effects but cannot guarantee that every third-party application will render them correctly.
+
+❓ Frequently Asked Questions
+
+Does this work with traditional Win32 applications?
+
+Yes. The application is designed to request modern Windows backdrop effects for compatible Win32 desktop application windows.
+
+Can I enable Mica on every Windows application?
+
+Not necessarily. Compatibility depends on the target application's window implementation and how it handles Windows composition and non-client areas.
+
+What is the difference between Mica and Acrylic?
+
+- Mica is a subtle backdrop material designed to create a layered, integrated Windows appearance.
+- Acrylic provides a more translucent visual treatment.
+
+Both are Windows visual materials, but their rendering and availability depend on the Windows environment.
+
+Does this replace the Windows theme?
+
+No. It complements Windows personalization by configuring supported backdrop effects for individual desktop application windows.
+
+Does the application draw transparency effects itself?
+
+No. It requests supported visual attributes from Windows. Desktop Window Manager and the target application are responsible for the actual rendering.
+
+Is programming knowledge required?
+
+No. The graphical interface is intended for users who want to customize their Windows desktop without writing scripts or application code.
+
+Is it free?
+
+Yes. This is a free, open-source Windows desktop customization project distributed under the MIT License.
+
+🛠️ Technology
+
+The project focuses on Windows desktop integration and modern Windows visual design.
+
+- Operating system: Windows 11
+- Application compatibility: Supported Win32 desktop applications
+- Backdrop integration: Windows Desktop Window Manager
+- Windows API: DwmSetWindowAttribute
+- Configuration: Graphical interface and application-specific rules
+- Visual materials: Mica, Acrylic, and other supported backdrop effects
+
+🤝 Contributing
+
+Contributions, bug reports, compatibility feedback, and suggestions are welcome.
+
+You can help improve the project by:
+
+…（内容已截断）

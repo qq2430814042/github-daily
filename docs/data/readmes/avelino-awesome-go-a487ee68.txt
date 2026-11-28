@@ -208,11 +208,11 @@ Libraries for building programs that leverage AI.
 - goai - Go SDK for building AI applications. One SDK, 20+ providers. Inspired by Vercel AI SDK.
 - golem - Framework for building dependable AI agents with typed dependencies, zero external dependencies, and native MCP support.
 - GoModel - AI gateway exposing a unified OpenAI-compatible API across OpenAI, Anthropic, Gemini, Groq, xAI, Ollama and other providers, with routing, usage tracking, rate limits, and guardrails.
+- graymatter - Local persistent memory layer and MCP server for AI agents with hybrid search, knowledge graph, and TUI.
 - hotplex - AI Agent runtime engine with long-lived sessions for Claude Code, OpenCode, pi-mono and other CLI AI tools. Provides full-duplex streaming, multi-platform integrations, and secure sandbox.
 - jargo - Framework for building real-time voice AI agents over WebRTC, wiring speech-to-text, LLMs, and text-to-speech into a streaming pipeline.
 - KafClaw - Agent runtime that connects AI agents through Kafka topics, with groups, an orchestrator, shared memory and skill routing.
 - keen-code - A context-efficient terminal-based AI coding agent. Provider agnostic, supports MCPs, Agent Skills, Subagents, and more. Comes with a simple and straightforward TUI.
 - langchaingo - LangChainGo is a framework for developing applications powered by language models.
-- langgraphgo - A Go library for building stateful, multi-actor applications with LLMs, built on the concept of LangGraph，with a lot of builtin Agent architectures.
 
 …（内容已截断）

